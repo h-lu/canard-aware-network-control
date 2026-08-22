@@ -1,7 +1,7 @@
 # K1 and tail compatibility of the fixed-scaled-delay chart
 
-Status: **Gate D is not yet closed by the present references or by the
-fixed-tube graph theorem.** There is a precise obstruction to applying the
+Status: **obstruction note, superseded for the canonical local root but not
+for an arbitrary physical outer selection.** There is a precise obstruction to applying the
 usual \(K_1\) center-manifold theorem to the special-flow reduction on a
 fixed neighborhood. That obstruction is not a no-go theorem: the
 exponential weight in the Krupa--Szmolyan first integral can suppress the
@@ -10,9 +10,13 @@ proves the individual-backtrack obstruction and a conditional suppression
 lemma, and records the part of the history lift that is complete. The
 fixed-tube mixed-jet prerequisite has since been closed in
 [mixed-jet-graph-proof.md](mixed-jet-graph-proof.md). The remaining
-curve-wise selected-trace theorem and the resulting trace-to-gap implication
-are stated more sharply in
-[long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md).
+curve-wise estimates were subsequently proved for every fixed admissible
+canonical preparation in
+[growing-tube-graph-proof.md](growing-tube-graph-proof.md) and
+[green-phase-selected-traces.md](green-phase-selected-traces.md), and assembled
+in [canonical-long-delay-theorem.md](canonical-long-delay-theorem.md).
+Transferring that result to an independently prescribed physical outer
+Fenichel selection remains conditional.
 
 ## 1. The two compactifications use incompatible delay times
 
@@ -221,7 +225,10 @@ If differentiation of the moving section introduces a fixed factor
 \(\delta^{-a}\), choose \(p\) larger by \(a\). Therefore failure of a
 uniform full-neighborhood \(C^1\) norm is harmless provided that the
 selected one-sided traces satisfy the single-exponential tame bound (11).
-That bound is not proved in the current documents.
+That bound is not proved in this obstruction note. The later phase-normal
+Green construction proves the needed bound for the fixed canonical
+preparation, while a separately prescribed physical outer selection still
+requires its own boundary-jet estimate.
 
 ## 4. What the cited theorems do and do not supply
 
@@ -337,17 +344,19 @@ project to the \(u\)-coordinates. This composition is the identity, so
 Thus a reduced intersection is equivalent to equality of the complete
 embedded histories once the physical selected curves have been constructed.
 
-## 7. Exact remaining estimates
+## 7. Physical outer-selection remainder after canonical closure
 
-A logarithmic-section proof of Gate D now has three specific obligations.
+The canonical logarithmic-section construction has discharged the graph and
+normalized-gap obligations below. For a separately prescribed physical outer
+selection, the first obligation remains genuinely new.
 
-1. Construct one-sided physical slow curves
+1. **Open for a physical outer selection:** construct one-sided physical slow curves
    \(S^a_{\delta,\eta,\nu}\) and \(S^r_{\delta,\eta,\nu}\) on the
    special-flow graph and prove (11) through two \(\eta\)-derivatives and
    the required \(\delta,\nu\) derivatives. Full-neighborhood \(K_1\)
    regularity is not required.
 
-2. Extend the graph-transform bounds to
+2. **Closed for the canonical construction:** extend the graph-transform bounds to
    \(|s|\le S_\delta+O(1)\). A sufficient one-extra-order estimate is
 
    \[
@@ -361,10 +370,12 @@ A logarithmic-section proof of Gate D now has three specific obligations.
    graph order yields the required \(O(\delta^3)\) gap error. The proof of
    the fixed-tube theorem suggests (19): the polynomial data have polynomial
    norms on the growing tube, a fixed-delay flow costs \(e^{CS_\delta}\),
-   and \(\delta e^{CS_\delta}\to0\). Those constants have not yet been
-   tracked.
+   and \(\delta e^{CS_\delta}\to0\). The required tracked constants are
+   proved in
+   [growing-tube-graph-proof.md](growing-tube-graph-proof.md).
 
-3. Multiply the geometric \(H\)-gap by the fixed nonzero normalization used
+3. **Closed for the canonical construction:** multiply the geometric
+   \(H\)-gap by the fixed nonzero normalization used
    in the symbolic audit, and call the resulting unscaled matching gap
    \(D\). Prove
 
@@ -400,18 +411,18 @@ and Lemma 4, would give
 and hence the claimed physical \(\mu=\delta^2\nu\) law.
 
 The conditional endpoint-suppression estimate is proved in Lemma 2 assuming
-(11). What remains is the single-exponential selected-trace bound (11) and the
-growing-tube graph bound (19). The normalized gap estimates (20) now follow
-from these inputs by Theorem 2 of
-[long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md);
-they do not follow unconditionally
-from the present fixed-tube theorem, Krupa--Touboul Lemmas 1--2, or
-Krupa--Szmolyan Propositions 3.4--3.5.
+(11). The canonical phase-normal traces satisfy the corresponding bound, the
+growing-tube theorem proves (19), and the normalized gap estimates (20) are
+assembled in
+[canonical-long-delay-theorem.md](canonical-long-delay-theorem.md). None of
+those results alone supplies (11) for a separately prescribed physical outer
+selection; that is the remaining outer-selection obligation.
 
-### Stop point
+### Historical stop point and subsequent closure
 
-These selected-trace and growing-graph inputs cannot honestly be promoted to
-proved statements from the current material.
+The following bullets explain why the references and fixed-tube argument
+available when this note was written did not, by themselves, prove the
+selected-trace and growing-graph inputs.
 
 - Fixed-\(\delta\) smoothness of the Krupa--Touboul overlap gives no bound
   on how its mixed parameter derivatives depend on
@@ -427,24 +438,22 @@ proved statements from the current material.
   of Krupa--Szmolyan leaves precisely this \(r_2^2\eta\) term inside its
   quadratic remainder.
 
-Accordingly, the rigorous output of this note is Proposition 1, Lemma 2,
-Proposition 3, and the conditional history-lift Lemma 4. The geometric root
-and its coefficient remain conditional on the selected-trace/growing-graph
-input, not on the subsequent Gaussian differentiation itself.
+Accordingly, the rigorous output internal to this note is Proposition 1,
+Lemma 2, Proposition 3, and the conditional history-lift Lemma 4. The later
+growing-tube and phase-normal Green proofs discharge the missing input for a
+fixed admissible canonical preparation. They do not discharge the separate
+boundary-jet hypothesis for an arbitrary physical outer selection.
 
 ## 8. Claim consequence
 
-The permitted current statement is:
+The updated statement is:
 
-> The finite-regularity fixed-tube invariant-history graph is proved, the local
-> \(r_2^2\eta\) graph jet is remainder-controlled and symbolically checked,
-> and a reduced intersection
-> would lift exactly to a complete-history
-> intersection. Individual backtrack maps are nonuniform, so the standard
-> full-neighborhood \(K_1\) theorem is not yet applicable; the first-integral
-> weight nevertheless makes a logarithmic-section proof viable. Its tame
-> selected-trace and growing-tube estimates remain open.
+> The finite-regularity fixed-tube invariant-history graph and local
+> \(r_2^2\eta\) graph jet are proved. Although the standard full-neighborhood
+> \(K_1\) theorem remains inapplicable, a frozen logarithmic-tube graph and
+> phase-normal one-sided Green construction now prove the coefficient
+> \(1/(4\alpha)\) for the preparation-indexed canonical local RFDE root.
 
-Until the selected-trace/growing-graph hypothesis is proved, the Gaussian value
-\(1/(4\alpha)\) remains a conditional candidate for the selected physical
-RFDE root, and Gate D must remain marked **open**.
+Thus canonical Gate D is closed. The same coefficient for a separately
+chosen physical outer RFDE root remains conditional on parameter-coherent
+full-history boundary jets, so physical outer-selection Gate D remains open.

@@ -1,12 +1,18 @@
 # The reduced canard root: a second-order parameterized splitting result
 
 Status: **exact normalization, actual fixed-tube graph coefficients, and a
-conditional second-order splitting template.** The compact-tube graph's
+conditional second-order splitting template subsequently closed for the
+canonical local root.** The compact-tube graph's
 finite mixed regularity is proved in
 [mixed-jet-graph-proof.md](mixed-jet-graph-proof.md). The selected long-delay
-trace/growing-graph estimate is not proved. Until it is closed, the Gaussian
-coefficient and selected reduced root below remain conditional rather than
-theorem outputs.
+trace/growing-graph estimate is not proved inside this note. It is proved for
+every fixed admissible canonical preparation in
+[growing-tube-graph-proof.md](growing-tube-graph-proof.md) and
+[green-phase-selected-traces.md](green-phase-selected-traces.md), with the
+result assembled in
+[canonical-long-delay-theorem.md](canonical-long-delay-theorem.md). The
+template remains conditional for an independently prescribed physical outer
+selection.
 
 The executable algebraic audit is
 [reduced_canard_root.py](../src/canard_control/reduced_canard_root.py).
@@ -641,7 +647,7 @@ verification for the current nonlocal special flow.
 
 ## 8. Integrity boundary
 
-At present the defensible statements are:
+Within this note, the defensible statements are:
 
 - the parameter normalization (11)--(12) is exact;
 - Conditional Proposition 1 is a valid implication under its explicit
@@ -652,10 +658,11 @@ At present the defensible statements are:
 - the implicit-function and \(C^2_\eta\) remainder argument giving
   (25)--(28) is complete once Lemma 3 supplies the selected long-delay
   traces and growing-tube remainder;
-- Lemma 3 is the unclosed model-specific analytic obligation, stated more
-  precisely in
+- Lemma 3 is the model-specific analytic obligation left open by this note
+  and stated more precisely in
   [long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md).
 
-Until Lemma 3 is proved, equations
-(25)--(28) must not be presented as an unconditional maximal-canard theorem
-for the RFDE.
+The later logarithmic-tube and phase-normal Green constructions prove the
+corresponding preparation-indexed canonical local RFDE history-connection
+theorem. They do not turn (25)--(28) into an unconditional theorem for an
+arbitrarily selected physical outer maximal canard.

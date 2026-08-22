@@ -380,7 +380,7 @@ itself, a maximal-canard theorem.
 | hard conditions \(w_\perp=0\) at both ends | overconstrains the full transverse BVP or silently deletes its blocks | synchronous-subspace canard or synchronization-constrained endpoint event |
 | compatible history-space Fredholm trace pair whose reduced defects satisfy (22) | supplies the hyperbolic range equations without inventing slow coordinates | selected local full-network geometric canard root, only after the zero-fiber condition and Fredholm/simple-root hypotheses are proved |
 
-The third choice is the flagship choice. Artificially synchronized endpoints
+The third choice is the frozen future full-network choice. Artificially synchronized endpoints
 must never be called a full-network maximal canard.
 
 ## 5. Domain, codomain, phase, and jump
@@ -590,7 +590,7 @@ In fold time, the transverse voltage and recovery rates contain
 \(-D_v/\delta\) and \(-D_w/\delta\), whereas the weak delayed terms remain
 perturbative. The repair therefore replaces the \(N-1\) near-center recovery
 directions by a plausible hyperbolic RFDE range problem. It is the cleanest
-proof-oriented first-paper choice among the two scaffolds considered here.
+proof-oriented future-promotion choice among the two scaffolds considered here.
 
 It does **not** by itself prove a one-gap theorem. The following remain open:
 

@@ -302,7 +302,9 @@ No code or identity in this note alone proves any of the following:
 
 The fixed physical recovery coupling becomes singular after the time change,
 so a standard parameter-smooth RFDE center-manifold theorem cannot be cited
-without additional work. The special-flow graph theorem now supplies the
-uniform compact-tube graph and its finite jets. What remains for the
-long-delay model is not this local graph, but its controlled use on growing
-logarithmic tubes and the selected attracting/repelling trace estimates.
+without additional work. The special-flow and mixed-jet theorems supply the
+uniform compact-tube graph and its finite jets. The growing-tube and
+phase-normal Green notes subsequently supply their controlled
+logarithmic-tube use and canonical one-sided traces, proving the
+preparation-indexed canonical local root. What remains open is the separate
+transfer to an independently prescribed physical outer Fenichel selection.

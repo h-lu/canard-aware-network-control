@@ -1,12 +1,12 @@
-# Flagship theorem specification
+# Frozen finite-network promotion specification
 
-Status: **working specification, 2026-08-22**. The correctly augmented
+Status: **future-work contract, not the current paper, 2026-08-22**. The correctly augmented
 \(\mathbb R^4\) reference-gap template, dual-scaffold \(2N\)-state operator
 contract, and concrete control benchmark are frozen, and exact/formal
 algebraic checks are executable. The actual endpoint bundles, model-specific
 Fredholm proof, uniform remainder, and control corollary remain targets.
 
-## 1. First-paper model class
+## 1. Future-promotion model class
 
 For nodes \(i=1,\dots,N\), consider
 
@@ -43,12 +43,19 @@ proof reference.
 Off synchrony, the concrete dual-scaffold benchmark is not an
 \(N\)-slow-neuron system: transverse recovery differences relax on an
 \(O(1)\) physical time scale and only the collective recovery coordinate is
-slow. This restriction is disclosed as part of the first-paper model class;
+slow. This restriction would be disclosed as part of the future-promotion model class;
 the original \(N\)-slow voltage-only network remains a harder extension.
 
 After fold blow-up and time rescaling, the scaled history interval is the fixed compact interval \([-\Theta_{\max},0]\). Version 1 treats moving point delays as finitely many smooth parameters on a strong Sobolev orbit space and permits infinite-dimensional measure perturbations only on fixed delay support. The ordinary operator norm on \(C^0\) is not used to declare two nearby point delays close. Freely moving measure support in a bounded-Lipschitz/Wasserstein space is an extension unless the required \(C^2\) theorem is supplied.
 
-The main theorem is frozen to a finite network near one exact equitable **two-module** skeleton. Nodes in the same receiving module have the same row-weighted delay measure from each source module, so block-synchronous histories close exactly. One collective canard direction is a hypothesis to be verified by the augmented Lin BVP; equitability and the instantaneous singular-Jacobian calculation alone do not imply it. The concrete control benchmark uses the dual-state scaffold above. The identical-module weak-only and voltage-only classes are retained as negative controls.
+The future theorem target is a finite network near one exact equitable
+**two-module** skeleton. Nodes in the same receiving module have the same
+row-weighted delay measure from each source module, so block-synchronous
+histories close exactly. One collective canard direction is a hypothesis to
+be verified by the augmented Lin BVP; equitability and the instantaneous
+singular-Jacobian calculation alone do not imply it. The concrete control
+benchmark uses the dual-state scaffold above. The identical-module weak-only
+and voltage-only classes are retained as negative controls.
 
 General rank-\(r\) closure is an extension. An adjacency-matrix spectral gap may help verify hypotheses, but it is not substituted for the RFDE variational estimate along the canard orbit.
 
@@ -173,7 +180,7 @@ connection must collapse to an intersection of the selected slow histories.
 A zero of an arbitrary experimental projection is instead an output-event
 threshold unless a separate equivalence theorem is proved.
 
-## 3. Main theorem target: structural transfer of the RFDE canard root
+## 3. Frozen future theorem target: structural transfer of the RFDE canard root
 
 ### Hypotheses to prove or verify
 
@@ -403,7 +410,7 @@ The operating point must satisfy \(\kappa_1^0\ne0\), since the formal leading
 safety derivative is
 \(\partial_s S_c=(\kappa_1/8)\varepsilon^{3/2}+O(\varepsilon^2)\).
 
-The target is not the generic statement “\(\det D_uQ\ne0\) implies invertibility.” The paper must derive the three sensitivity rows and prove on a nonempty admissible region \(U_*\) that
+The target is not the generic statement “\(\det D_uQ\ne0\) implies invertibility.” A future project would have to derive the three sensitivity rows and prove on a nonempty admissible region \(U_*\) that
 
 \[
 \inf_{u\in U_*}\sigma_{\min}(D_uQ(u))
@@ -441,13 +448,13 @@ The numerator must be enclosed or bounded through demonstrated contributions fro
 
 ## 7. Claim hierarchy
 
-| Role | First-paper content | Evidence required |
+| Role | Future-project content | Evidence required |
 |---|---|---|
-| Main theorem | RFDE Lin-gap/root transfer, (13)--(14) | complete proof with \(G_\perp(\delta)\), \(m_\delta^{(\nu)}\), and \(N\)-uniform constants |
+| Main theorem target | RFDE Lin-gap/root transfer, (13)--(14) | complete proof with \(G_\perp(\delta)\), \(m_\delta^{(\nu)}\), and \(N\)-uniform constants |
 | Explicit proposition | two-module first-moment law calibrated by (17)--(18) | mode closure, nonlocal reduction, and uniform remainder for (20) |
 | Concrete corollary | two-module FHN three-actuator result, (25)--(26) | derived sensitivities and certified singular-value lower bound |
 | Validation | numerical root enclosure and negative controls | independent refinement and reproducible residual bounds |
-| Extension | general rank-\(r\), graphons, strong/nonnormal delay networks | not claimed in v1 |
+| Extension | general rank-\(r\), graphons, strong/nonnormal delay networks | not claimed in the future base case |
 
 ## 8. Stop/go gates
 
@@ -459,4 +466,6 @@ The numerator must be enclosed or bounded through demonstrated contributions fro
 6. **Control gate:** prove (25) for the frozen FHN actuators or report a structural obstruction.
 7. **Validation gate:** require numerical uncertainty to be smaller than every reported physical shift.
 
-Failure at gates 2--4 narrows the main theorem before large simulations. Failure at gate 6 changes the control corollary, not the transfer theorem.
+Failure at gates 2--4 would narrow the future theorem before large
+simulations. Failure at gate 6 would change the future control corollary, not
+the transfer target.

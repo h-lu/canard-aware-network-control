@@ -1,35 +1,35 @@
-# Transverse delay organization and canard thresholds
+# Transverse delay organization and a canonical history-canard root
 
 Research repository for one proof-first flagship paper:
 
-> **Transverse Delay Effects on a Canard Threshold in a Two-Module
-> FitzHugh--Nagumo System**
+> **Transverse Delay Organization and a Canonical Local History-Canard Root
+> in a Two-Module FitzHugh--Nagumo RFDE**
 
 The current proof-first submission design is
 [docs/flagship-research-design.md](docs/flagship-research-design.md). It
-freezes a two-module transverse-delay theorem as the minimum publishable
-core. General finite-network transfer and three-coordinate control are
-promotion targets: they enter the same paper only after the core RFDE
-geometry and remainder are proved.
+freezes a two-module canonical local history-connection theorem as the
+minimum publishable core. Its proof components and independent skeptical
+audit are complete. General finite-network transfer and three-coordinate
+control remain frozen and are not claims of this paper.
 
 ## Central question
 
 Can two weakly delayed FitzHugh--Nagumo modules have the same total delayed
 gain and the same delay measure seen by the critical projection, yet have
-different local canard thresholds because the delay forcing passes through a
-stable transverse mode?
+different canonical local history-connection roots because the delay forcing
+passes through a stable transverse mode?
 
 The first paper has one mathematical spine:
 
 1. freeze one two-module, two-delay RFDE and prove its exact singular spectrum;
-2. construct its two-dimensional invariant history manifold and
-   complete-history embedding;
-3. calculate the transverse nonlinear return and prove the resulting simple
-   local canard root with a uniform remainder.
+2. construct its two-dimensional invariant history graph, including the
+   logarithmically growing tube needed for long physical delays;
+3. construct phase-normal one-sided traces and prove that their simple gap
+   root is equality of the two retained complete RFDE histories.
 
 The broader finite-network Lin transfer and frequency--amplitude--safety
-control programs remain in the repository as conditional promotions. They
-are not assumptions or parallel novelty claims of the base paper.
+control programs remain in the repository as frozen future work. They are
+not assumptions, promotions, or parallel novelty claims of the base paper.
 
 ## Base-paper scope
 
@@ -38,46 +38,56 @@ are not assumptions or parallel novelty claims of the base paper.
   \(\tau_k=\theta_k/\sqrt\varepsilon\);
 - one fixed, non-actuated transverse recovery coupling that removes the extra
   recovery center while vanishing on the critical recovery line;
-- fixed outer Fenichel selections, matching section, and phase convention;
-- a geometric intersection of selected local slow histories, not a global
-  spike detector;
+- the canonical prepared-tail selection, matching section, and phase
+  convention of the local theorem;
+- an exact intersection of two retained local RFDE histories, not an
+  assertion about every physical outer Fenichel family and not a global spike
+  detector;
 - delayed van der Pol only as the published scalar calibration.
 
 General finite \(N\), moving delay support, arbitrary node heterogeneity,
 three-coordinate control, graphon limits, strong delays, and global pulse
-events are promotion targets or later work, not claims of the base paper.
+events are frozen or later work, not claims of the base paper.
 
-## Target: one theorem
+## Proved canonical theorem
 
-For the fixed two-delay redistribution parameter \(\eta\), prove that the
-selected RFDE canard parameter satisfies
+For the fixed two-delay redistribution parameter \(\eta\), the component
+proofs assemble the canonical local root law
 
 \[
  \mu_c(\delta,\eta)-\mu_c(\delta,0)
- =c_\perp K\eta(\theta_0-\theta_1)\delta^3
+ =\frac{K(\theta_0-\theta_1)}{4\alpha}\,\delta^3\eta
  +O(\delta^4|\eta|+\delta^3\eta^2),
  \qquad \delta=\sqrt\varepsilon,
+ \qquad \alpha=\frac{\sqrt6}{4}.
 \]
 
 even though the total delayed gain and critical projected delay measure are
-independent of \(\eta\). The compact-tube history graph and the finite mixed
-jets required for its third-order Taylor remainder are proved; the local
-mixed vector-field coefficient is also checked independently by exact symbolic
-division. The candidate root coefficient
-\(c_\perp=1/(4\alpha)\) still depends on a
-whole-line pairing and is conditional on the selected-tail and growing-tube
-estimates listed below.
+independent of \(\eta\). The root is defined by the canonical prepared-tail
+and phase convention, and zero gap is proved to be equality of the retained
+complete histories under the injective history embedding. The growing-tube
+graph, one-sided Green/phase trace proof, weighted contraction seam, and
+independent falsification audit are complete. The exact finite-\(\delta\)
+root is indexed by the fixed admissible preparation datum \(\mathcal P\),
+while its displayed expansion is uniform over the declared bounded
+preparation class.
+
+This is not an unconditional theorem for an arbitrarily selected physical
+outer Fenichel maximal canard. Such a physical selection inherits the same
+coefficient only under the separate, parameter-coherent full-history
+boundary-jet hypothesis in
+[docs/canonical-long-delay-theorem.md](docs/canonical-long-delay-theorem.md).
 
 The precise claim hierarchy and falsification gates are in
 [docs/flagship-research-design.md](docs/flagship-research-design.md). The
 general-network specifications in
-[docs/scope-and-theorems.md](docs/scope-and-theorems.md) are promotion
-contracts, not proved inputs to this theorem.
+[docs/scope-and-theorems.md](docs/scope-and-theorems.md) are frozen
+future-work contracts, not proved inputs or active promotions of this theorem.
 
 ## Current proof status
 
-The base project now has exact algebra, a finite-regularity compact-tube graph,
-and one sharply identified long-delay theorem gap.
+The canonical route is proved; the physical outer-selection route remains
+open.
 
 1. **Exact model and spectrum.** The final two-module equation, anisotropic
    blow-up, delay-layer identities, fold data, and singular Jordan structure
@@ -91,45 +101,40 @@ and one sharply identified long-delay theorem gap.
    common Banach fibers now proves the required
    \(C_u^3C_{\delta,\eta}^{3,2}\) mixed regularity and an
    \(O(\delta^3)\) fixed-tube graph remainder.
-3. **Actual local graph jet and conditional root coefficient.** The proved
+3. **Actual local graph jet.** The proved
    mixed regularity promotes the invariance recursion to a Taylor coefficient
    of the compact-tube graph, while exact symbolic division independently gives
    \[
    \partial_\eta q_{2,X}(\gamma_0(s))
    =-\frac{K(\theta_0-\theta_1)}{4\alpha}s.
    \]
-   If the selected-tail estimates justify the whole-line Gaussian pairing,
-   the parameterized second-order splitting gives
-   \[
-   c_\perp=\frac{1}{4\alpha},\qquad
-   \mu_c(\delta,\eta)-\mu_c(\delta,0)
-   =\frac{K\eta(\theta_0-\theta_1)}{4\alpha}\delta^3
-   +O(\delta^4|\eta|+\delta^3\eta^2).
-   \]
-   The displayed root coefficient is therefore conditional, not a theorem on
-   a fixed compact tube: the omitted selected tails contribute at the same
-   order as the whole-line pairing.
-4. **Remaining long-delay gate.** Individual long-delay backtrack maps have no
-   uniform fixed-neighborhood \(C^1\) bound, so the standard \(K_1\) route is
-   not yet applicable when \(\tau_k=\theta_k/\delta\). A logarithmic matching
-   argument can suppress the resulting endpoint growth. The trace-to-gap
-   implication and its three normalized derivative estimates are proved, but
-   their model-specific input remains open as one selected-trace lemma: a
-   one-sided, curve-wise \(C_\nu^1C_\eta^2\) trace bound together with
-   growing-tube graph membership. Until that lemma is proved, the displayed
-   root law is conditional rather than the completed RFDE theorem.
-5. **Numerical diagnostic.** Literal method-of-steps integration of the exact
-   four-dimensional chart gives
+4. **Canonical long-delay Gate D (passed).** A frozen
+   target-dependent cutoff gives the required mixed jets and remainder on the
+   logarithmically growing flow hull. Explicit one-sided Green operators remove
+   the normally growing mode, fix the tangent phase, and construct the
+   canonical attracting/repelling traces. The normalized gap calculation and
+   injective history lift then give the exact coefficient and remainder above.
+   The assembled theorem and verification record are in
+   [docs/canonical-long-delay-theorem.md](docs/canonical-long-delay-theorem.md).
+5. **Physical outer-selection Gate D (open).** No arbitrary outer Fenichel
+   family is identified with the canonical traces. The extension is
+   conditional on a fixed selection rule whose full-history boundary residual
+   and rectangular \(C_\nu^1C_\eta^2\) jets have the stated tame bounds. The
+   exact physical modal algebra is known; the parameter-coherent outer
+   Lyapunov--Perron estimate is not.
+6. **Numerical diagnostic.** Literal method-of-steps integration of one
+   finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
    \(-0.1969771\) to \(-0.2036174\), against the predicted
-   \(K(\theta_0-\theta_1)/(4\alpha)=-0.2041241\). This is strong
-   falsification evidence, not a replacement for the missing tail estimates.
+   \(K(\theta_0-\theta_1)/(4\alpha)=-0.2041241\). This is falsification
+   evidence for the coefficient, not a proof that the diagnostic root equals
+   the canonical history root or a physical outer root.
 
 ## Repository map
 
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
 - `docs/flagship-research-design.md` -- proof-first main theorem, shortest dependency chain, stop/go gates, and paper architecture;
-- `docs/scope-and-theorems.md` -- general-network promotion contract and its stop/go gates;
+- `docs/scope-and-theorems.md` -- frozen general-network future-work contract and its stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;
 - `docs/two-module-reference.md` -- frozen FHN benchmark and weak-only transverse obstruction;
@@ -143,7 +148,11 @@ and one sharply identified long-delay theorem gap.
 - `docs/mixed-jet-graph-proof.md` -- finite-scale mixed-jet closure and the uniform fixed-tube Taylor remainder;
 - `docs/reduced-canard-root.md` -- conditional second-order splitting template and exact symbolic integrands;
 - `docs/k1-tail-compatibility.md` -- long-delay \(K_1\) obstruction and logarithmic rescue mechanism;
-- `docs/long-delay-selected-trace-proof.md` -- proved trace-to-gap implication and the remaining model-specific selected-trace lemma;
+- `docs/long-delay-selected-trace-proof.md` -- normalized trace-to-gap calculation and root displacement;
+- [docs/growing-tube-graph-proof.md](docs/growing-tube-graph-proof.md) -- frozen-cutoff logarithmic-tube graph theorem and mixed remainder;
+- [docs/green-phase-selected-traces.md](docs/green-phase-selected-traces.md) -- explicit one-sided Green operators, phase normalization, and canonical trace theorem;
+- [docs/canonical-long-delay-theorem.md](docs/canonical-long-delay-theorem.md) -- dependency-explicit canonical history-connection theorem, exact root law, physical-selection corollary, and audit checklist;
+- [docs/outer-modal-algebra.md](docs/outer-modal-algebra.md) -- exact physical modal equations and the still-open outer-selection boundary;
 - `docs/model-repair-options.md` -- comparison of the long-delay theorem with a lower-risk fixed-physical-delay variant;
 - `docs/sprint-01.md` -- first two-week execution plan linked to GitHub issues;
 - `manuscript/outline.md` -- single-paper narrative, figures, and evidence standard;
@@ -157,11 +166,15 @@ and one sharply identified long-delay theorem gap.
 - `src/canard_control/final_model_blowup.py` -- exact chart construction and scaling audit;
 - `src/canard_control/nonlocal_graph_jet.py` -- symbolic invariant-graph and mixed-jet calculation;
 - `src/canard_control/reduced_canard_root.py` -- conditional splitting and exact Gaussian-integral checks;
+- [src/canard_control/green_phase.py](src/canard_control/green_phase.py) -- executable tangent/normal frame and one-sided Green identities;
+- [src/canard_control/outer_modal_audit.py](src/canard_control/outer_modal_audit.py) -- exact physical modal equations, branch jets, and fast-gap audit;
 - `src/canard_control/exact_chart_threshold_diagnostic.py` -- literal method-of-steps integration and finite-section KS energy-gap root for the exact four-dimensional chart, explicitly diagnostic rather than a proof;
 - `experiments/transverse_lin_sweep.py` -- finite-interval boundary-condition diagnostic, explicitly not an RFDE inverse certificate;
 - `experiments/exact_chart_threshold_diagnostic.py` -- reproducible central-difference convergence table for the formal transverse threshold coefficient;
 - `docs/exact-chart-threshold-diagnostic.md` -- archived numerical table and history/section-dependence disclaimer;
-- `tests/` -- symbolic and numerical regression tests.
+- [tests/test_green_phase.py](tests/test_green_phase.py) -- exact tangent/normal frame and one-sided Green regression tests;
+- [tests/test_outer_modal_audit.py](tests/test_outer_modal_audit.py) -- physical modal algebra, branch-jet, and fast-gap regression tests;
+- `tests/` -- remaining symbolic and numerical regression tests.
 
 ## Project tracking
 
@@ -178,11 +191,13 @@ scaling
  \tau_k=\theta_k/\delta
 \]
 
-and targets the \(O(\delta^3)\) physical threshold effect. The remaining
-proof gate is the curve-wise selected-trace/growing-tube lemma isolated in
-`docs/long-delay-selected-trace-proof.md`. The fixed-physical-delay
-variant remains only a documented fallback and is not an active theorem
-target.
+and proves an \(O(\delta^3)\) effect for the canonical local history root.
+The canonical growing-graph, one-sided trace, gap, and history-lift components
+of Gate D and the independent falsification audit have passed. The distinct
+physical outer-selection
+gate remains open and conditional on parameter-coherent full-history boundary
+jets. The fixed-physical-delay variant remains only a documented fallback and
+is not an active theorem target.
 
 The full \(2N\)-state Lin transfer and three-coordinate control remain frozen
-until one of these base theorems is complete.
+and outside this paper.

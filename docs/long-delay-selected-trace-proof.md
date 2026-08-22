@@ -1,12 +1,14 @@
 # Long-delay selected traces and the normalized canard gap
 
-Status: **an abstract trace-to-gap implication is proved below, but its
-selected-trace and growing mixed-graph inputs are not proved for the
-long-delay RFDE.** In particular, this note does
-not close Gate D and does not promote the conditional coefficient
-\(1/(4\alpha)\) to an RFDE maximal-canard theorem. It identifies a smaller
-missing statement than full-neighborhood \(K_1\) regularity: a curve-wise,
-Gaussian-weighted estimate for the two selected outer-to-inner trace maps.
+Status: **the abstract trace-to-gap implication is proved below. Its
+growing-graph and one-sided trace inputs have now been proved for the
+explicitly prepared canonical local history connection.** See
+`growing-tube-graph-proof.md` and `green-phase-selected-traces.md`. This
+closes the coefficient theorem for that preparation-indexed local RFDE
+object. It does **not** prove that an unspecified pair of physical outer
+Fenichel histories has the same root. The lemma below is retained as the
+additional curve-wise, full-history hypothesis needed for that physical
+outer interpretation.
 
 The distinction is essential. The first-integral weight suppresses an
 endpoint after suitable bounds on its parameter derivatives have been
@@ -61,12 +63,16 @@ The auxiliary transition sections are
 
 \[
  \Sigma^a_\delta:
- Y=\frac{S_\delta^2-2}{4\alpha},\ X<0,
+ Y=\frac{S_\delta^2-2}{4\alpha},\ X>0,
  \qquad
  \Sigma^r_\delta:
- Y=\frac{S_\delta^2-2}{4\alpha},\ X>0.
+ Y=\frac{S_\delta^2-2}{4\alpha},\ X<0.
 \tag{3}
 \]
+
+Indeed, (1) has \(X(-S_\delta)>0\) on the attracting fast branch and
+\(X(S_\delta)<0\) on the repelling fast branch. The superscripts in (3)
+refer to those stability types, not to the sign of the flow time.
 
 They recede in \(K_2\), but their physical fold radius tends to zero:
 
@@ -156,12 +162,16 @@ The Gaussian is decisive: for fixed \(c,m\),
 
 The following is the missing model-specific statement.
 
-> **Selected-trace lemma T (open for the final long-delay RFDE).** There are
-> \(c,m,C,M>0\) such that the fixed outer selections reach (3), belong to the
+> **Physical selected-trace lemma T (open for arbitrary outer selections).** There are
+> \(p_0,c,m,C,M>0\), fixed before \(p\) is chosen, such that for every
+> \(p\geq p_0\) the fixed outer selections reach (3), belong to the
 > uncut invariant-history graph together with every delayed backtrack used
 > there, cross their section transversely exactly once, and depend \(C^1\) on
-> \(\nu\) and \(C^2\) on \(\eta\). After the
-> matching-section phase is fixed, their hitting times satisfy
+> \(\nu\) and \(C^2\) on \(\eta\). The attracting-forward and
+> repelling-backward one-sided boundary projections, together with the
+> matching-section phase, annihilate the normally growing homogeneous mode;
+> these bounds concern the projected traces, not the ambient propagation
+> operator. After that phase is fixed, their hitting times satisfy
 > \[
 >  t_a=-S_\delta+O(1),\qquad t_r=S_\delta+O(1),
 > \tag{T0}
@@ -192,8 +202,13 @@ The following is the missing model-specific statement.
 >  \leq C\delta^{-M}\langle S_\delta\rangle^m e^{cS_\delta},
 > \tag{T2}
 > \]
-> for the derivatives \(\mathscr D\) used in (T1).
+> for the derivatives \(\mathscr D\) used in (T1). The same
+> \(c,m,C,M\) work for all \(p\geq p_0\); in particular, none of them may
+> absorb the normal factor \(e^{S_\delta^2/2}=\delta^{-p}\).
 
+This uniformity prevents a circular use of endpoint suppression.
+Equivalently, one may first prove a pointwise one-sided trace theorem with
+fixed loss exponents and only then choose one sufficiently large \(p\).
 The powers of \(\delta\) in (T1) are forced by the final chart: \(\nu\)
 first occurs in \(\delta q_1\), whereas \(\eta\) first occurs in
 \(\delta^2q_2\). The factor \(e^{c|s|}\) allows the genuine derivative loss
@@ -400,7 +415,7 @@ The proof uses the pointwise-in-\(s\) exponential allowance through the
 Gaussian norm (8). Replacing it by the crude growing-tube supremum
 \(e^{cS_\delta}\) inside the integrals would create false subalgebraic losses.
 
-## 5. Root consequence, conditional on the selected traces and growing graph
+## 5. Canonical root consequence and conditional physical transfer
 
 The leading gap at \(\delta=0\) is
 
@@ -431,9 +446,12 @@ and, since \(\mu=\delta^2\nu\),
 \tag{19}
 \]
 
-Equations (18)--(19) remain conditional because Lemma T is open.
+Equations (18)--(19) are unconditional for the fixed canonical preparation
+constructed in the companion Green and growing-graph notes. Their use for
+an independently prescribed physical outer selection remains conditional on
+Lemma T.
 
-## 6. Why the current theorems do not prove Lemma T
+## 6. Why the canonical theorem does not prove physical Lemma T
 
 The obstruction is not the Gaussian calculation. In the \(K_1\) coordinate
 \(\rho=\sqrt{\epsilon_1}\), a fixed \(K_2\) delay is a past time
@@ -478,9 +496,9 @@ used in place of (T2). Formula (21) is not asserted to arise from the final
 RFDE; it disproves the claimed implication from the presently available
 hypotheses.
 
-## 7. The minimum remaining theorem
+## 7. The additional theorem needed for a physical outer selection
 
-To close the long-delay route, one must prove Lemma T by a curve-wise
+To close the distinct physical-outer route, one must prove Lemma T by a curve-wise
 construction. The precise operator input can be stated as follows. On the
 fixed scaled history space
 
@@ -585,11 +603,15 @@ A sufficient proof package for (23) and (27) is:
 4. the finite-depth coefficient calculation (24), stable-tail estimate
    (26), and mixed graph remainder (27).
 
-No result currently proved in this repository supplies item 1 or 2. No cited
-fixed-delay center-manifold or standard \(K_1\) theorem has the required
-uniformity as the physical delay \(\theta_1/\delta\) diverges. Therefore the
-smallest honest stop point is Lemma T, not the Gaussian pairing and not the
-second \(\eta\)-derivative calculation.
+The canonical preparation now supplies curve-wise versions of items 1--3
+by an explicit planar phase-normal Green operator on the exact growing
+history graph; item 4 is proved by the frozen-cutoff graph theorem. Those
+proofs yield a preparation-indexed local history connection. They do not
+supply items 1--3 for an independently prescribed physical outer Fenichel
+family. No cited fixed-delay center-manifold or standard \(K_1\) theorem has
+the required full-history overlap and parameter uniformity as the physical
+delay \(\theta_1/\delta\) diverges. Thus Lemma T is now the stop point only
+for the physical-outer interpretation, not for the canonical local root.
 
 ## 8. Claim boundary
 
@@ -597,13 +619,16 @@ The defensible conclusion is:
 
 - the logarithmic sections and Gaussian trace norm needed by the long-delay
   argument are explicit;
-- under the single selected-trace lemma T and the growing mixed graph jet,
-  all three normalized gap derivative estimates, including
-  \(\partial_{\eta\eta}D=O(\delta^2)\), follow by Theorem 2;
+- for the fixed admissible canonical preparation, the growing graph and
+  one-sided Green theorems verify the inputs to Theorem 2, so all three
+  normalized gap derivative estimates, including
+  \(\partial_{\eta\eta}D=O(\delta^2)\), hold;
 - fixed-neighborhood \(K_1\) regularity fails, and fixed-\(\delta\)
   smoothness of an outer selection does not imply Lemma T;
-- Lemma T is not proved for the final RFDE, so (18)--(19) remain conditional.
+- (18)--(19) are proved for the preparation-indexed canonical local history
+  root, whereas their transfer to an arbitrary physical outer Fenichel root
+  remains conditional on Lemma T.
 
-Numerical convergence of a prescribed-history finite-section root can test
-the sign and scale in (13), but it does not establish Lemma T or any estimate
-in (14).
+Numerical convergence of a prescribed-history finite-section root tests the
+sign and scale in (13), but it neither proves the analytic construction nor
+establishes the additional physical outer-selection lemma.

@@ -183,10 +183,10 @@ then the first coefficients are
 ### Proof status
 
 Steps 1--3 prove existence and uniqueness of the Lipschitz fixed point and its
-exact special-flow solutions. Steps 4--5 give the additional finite-jet proof
-scheme required for the full theorem target; that upgrade is not yet closed
-at publication level. Step 6 gives the history embedding at the regularity
-supplied by the preceding steps.
+exact special-flow solutions. Steps 4--5 give the finite-jet proof scheme; the
+application-required upgrade is completed at publication level in
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md). Step 6 gives the history
+embedding at the regularity supplied by the preceding steps.
 
 #### Step 1: a derivative-free fixed-point equation
 
@@ -673,7 +673,7 @@ The algebraic coefficient in (26) is also independently verified by symbolic
 division. These fixed-tube results do not determine its whole-line canard-root
 pairing.
 
-It does not yet establish:
+These two fixed-tube notes do not by themselves establish:
 
 1. that every nearby bounded RFDE orbit lies on this graph;
 2. a stable foliation for arbitrary histories;
@@ -688,8 +688,11 @@ finite \(\delta\)-jet is independent of the extension only after the cutoff
 is known to agree on every finite flow segment and iterated delay backtrack
 appearing in that coefficient's recursion. Equations (22)--(26) meet this
 condition on the explicitly declared uncut portion. The whole-line Gaussian
-pairing is not made cutoff-independent by Theorem target 1 and remains a separate
-matching problem.
+pairing is not made cutoff-independent by Theorem target 1 and is therefore a
+separate matching problem at this stage. The later growing-tube and
+phase-normal Green theorems solve that problem for every fixed admissible
+canonical preparation; they do not supply an arbitrary physical outer
+Fenichel selection.
 
 The first two items are unnecessary for the logical implication
 "reduced slow curves intersect \(\Rightarrow\) their embedded complete

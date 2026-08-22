@@ -11,9 +11,22 @@ The ingredients are individually occupied:
 - frequency--amplitude and phase--amplitude control;
 - convergence of DDE collocation, periodic BVP, and local bifurcation calculations.
 
-The search did **not** find a result that formulates a finite delayed-network canard as a one-dimensional RFDE Lin-matching root and transfers that root from an exact equitable reference system to a structurally perturbed finite network with an explicit first variation, transverse inverse bound, and second-order remainder. It also did not find a threshold-specific DDE discretization theorem that separates Runge--Kutta, delayed-history interpolation, reduction, and root errors.
+The search did **not** find a result showing that two delayed slow--fast
+systems with the same total delayed gain and the same complete critical
+projected delay measure can nevertheless have different
+preparation-indexed local RFDE history-connection roots because the
+transverse organization of the delay layers changes. That is the base
+paper's defensible intersection. “Delay + network + oscillator control” is
+not a novelty claim.
 
-This is the paper's defensible intersection. “Delay + network + oscillator control” is not a novelty claim.
+A broader gap also remains: no located result formulates a finite
+delayed-network canard as a one-dimensional RFDE Lin-matching root and
+transfers that root from an exact equitable reference system to a
+structurally perturbed finite network with an explicit first variation,
+transverse inverse bound, and second-order remainder. That problem is frozen
+as future work and is not a claim of the current paper. Likewise, the search
+did not find a threshold-specific DDE discretization theorem that separates
+Runge--Kutta, delayed-history interpolation, reduction, and root errors.
 
 ## Closest primary literature
 
@@ -81,13 +94,23 @@ The manuscript must not claim:
 - the first canard cascade or sequential recruitment phenomenon;
 - graphon convergence alone as evidence of canard-threshold convergence.
 
-## Precise gap and claim
+## Precise current claim and frozen broader gap
 
-The defensible target is:
+The current defensible claim is:
 
-> For a finite delayed slow--fast network that is a controlled perturbation of an exact equitable reference system with one canard matching direction, formulate a one-dimensional RFDE Lin gap and derive its structural first variation and root shift with an explicit transverse Green/Fredholm inverse bound.
+> For the frozen two-module FitzHugh--Nagumo RFDE and every fixed admissible
+> canonical preparation, redistributing two delay layers in a direction that
+> preserves the total gain and the complete critical projected delay measure
+> changes the local complete-history connection root by
+> \(K(\theta_0-\theta_1)\delta^3\eta/(4\alpha)\), with the stated uniform
+> remainder.
 
-An appropriate first-order form is
+The preparation-indexed theorem, its exact scope, and its distinction from a
+physical outer maximal canard are stated in
+[canonical-long-delay-theorem.md](canonical-long-delay-theorem.md).
+
+For a distinct future finite-network project, an appropriate first-order
+target would be
 
 \[
 d_N=d_0+D_{\mathcal R}d_0[\mathcal R_N]
@@ -111,7 +134,7 @@ A true maximal-canard parameter is a geometric property of the dynamical system 
 
 If the geometric mismatch is genuinely one-dimensional, every projection that does not annihilate that direction has the same root. If different observables produce different roots, they are output-dependent events and require a separate link to pulse onset. Non-smooth order-statistic outputs (first node, all nodes, or a \(q\)-fraction) remain numerical extensions.
 
-## Numerical subproblem embedded in the flagship paper
+## Frozen future numerical-certificate problem
 
 For a method-of-steps calculation, expect a decomposition of the form
 
@@ -125,7 +148,13 @@ For a method-of-steps calculation, expect a decomposition of the form
 +\Delta_{\rm interaction}.
 \]
 
-The RK chain-tree condition may eliminate only \(\Delta_{\rm RK}\). Dense-output/history interpolation depends on its own coefficients and on the fractional delay phase \(\{\tau/\Delta t\}\), so it needs a separate order condition or a residual-based bound. This is a supporting validation section of the flagship paper, not a second manuscript or a new RK theorem.
+The RK chain-tree condition may eliminate only \(\Delta_{\rm RK}\).
+Dense-output/history interpolation depends on its own coefficients and on the
+fractional delay phase \(\{\tau/\Delta t\}\), so it needs a separate order
+condition or a residual-based bound. This certificate belongs to the frozen
+finite-network promotion, not the current canonical theorem. The present
+base paper uses only a literal method-of-steps asymptotic diagnostic as
+falsification evidence and does not promote it to a numerical root theorem.
 
 ## Reusable public baselines
 

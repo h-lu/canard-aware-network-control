@@ -4,8 +4,11 @@ Status: **exact finite-dimensional audit plus an uncertified fixed-parameter
 RFDE root diagnostic, 2026-08-22.** The identities in Sections 2--6 are
 proved by direct algebra and reproduced in
 `src/canard_control/final_two_module.py`. Section 7 is numerical evidence
-only. Nothing in this note proves a full RFDE spectral gap, an invariant
-history manifold, or a canard-threshold theorem.
+only. Nothing in this note alone proves a full RFDE spectral gap, an
+invariant history manifold, or a canard-threshold theorem. The later
+special-flow, growing-tube, and phase-normal Green notes prove the
+preparation-indexed canonical local history-connection theorem; no such
+analytic conclusion is inferred from the algebra below.
 
 ## 1. Frozen equation and conventions
 
@@ -243,9 +246,10 @@ while
 \]
 
 Thus \(\eta\) changes a genuine transverse history channel while leaving all
-of (4)--(6) fixed. Equations (7)--(9) are exact; the assertion that this
-channel shifts the actual RFDE canard root still requires the nonlinear
-history-manifold and matching proof.
+of (4)--(6) fixed. Equations (7)--(9) are exact. The nonlinear
+history-manifold and matching proof is supplied later for the
+preparation-indexed canonical local root; an arbitrary physical outer
+maximal-canard interpretation is not a consequence of this algebra.
 
 ## 6. The repaired current-state singular spectrum
 

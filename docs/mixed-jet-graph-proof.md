@@ -850,6 +850,9 @@ Consequently Theorem 1 is an unconditional abstract theorem under
 assumptions 1--4.  Applying it to the final RFDE is conditional only on
 constructing a **single fixed cutoff** for which those hypotheses hold.
 It gives neither cutoff independence nor constants uniform on the
-logarithmically growing tube.  Those are precisely the remaining
-model-specific claims, and they cannot be obtained by taking the cutoff
-radius to infinity in this theorem.
+logarithmically growing tube. Those are separate model-specific claims and
+cannot be obtained by taking the cutoff radius to infinity in this theorem.
+They are subsequently proved for the frozen preparation-indexed canonical
+construction in
+[growing-tube-graph-proof.md](growing-tube-graph-proof.md); transfer to a
+separately prescribed physical outer selection remains conditional.
