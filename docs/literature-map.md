@@ -11,7 +11,7 @@ The ingredients are individually occupied:
 - frequency--amplitude and phase--amplitude control;
 - convergence of DDE collocation, periodic BVP, and local bifurcation calculations.
 
-The search did **not** find a result that transfers an **observable-projected canard-splitting root** from a delayed low-rank model to a finite heterogeneous network with an explicit error, then propagates that error into a three-output inverse-control margin. It also did not find a threshold-specific DDE discretization theorem that separates Runge--Kutta, delayed-history interpolation, reduction, and root errors.
+The search did **not** find a result that formulates a finite delayed-network canard as a one-dimensional RFDE Lin-matching root and transfers that root from an exact equitable reference system to a structurally perturbed finite network with an explicit first variation, transverse inverse bound, and second-order remainder. It also did not find a threshold-specific DDE discretization theorem that separates Runge--Kutta, delayed-history interpolation, reduction, and root errors.
 
 This is the paper's defensible intersection. “Delay + network + oscillator control” is not a novelty claim.
 
@@ -58,7 +58,7 @@ This is the paper's defensible intersection. “Delay + network + oscillator con
 
 | Work | What it establishes | Boundary left for this project |
 |---|---|---|
-| [Engelborghs et al. (2001)](https://doi.org/10.1137/S1064827599363381) and [Engelborghs, Luzyanina & Roose (2002)](https://doi.org/10.1145/513001.513002) | Periodic-solution collocation and practical DDE-BIFTOOL bifurcation analysis. | General solvers do not supply an observable canard-root uncertainty budget. |
+| [Engelborghs et al. (2001)](https://doi.org/10.1137/S1064827599363381) and [Engelborghs, Luzyanina & Roose (2002)](https://doi.org/10.1145/513001.513002) | Periodic-solution collocation and practical DDE-BIFTOOL bifurcation analysis. | General solvers do not supply an RFDE Lin-gap root uncertainty budget. |
 | [Andò & Breda (2020)](https://doi.org/10.1137/19M1295015) | Convergence of collocation for periodic solutions of retarded functional differential equations. | Constants are not shown uniform in the singular canard limit; no splitting-root perturbation. |
 | [de Wolff et al. (2021)](https://doi.org/10.1137/20M1347577) | Pseudospectral convergence of DDE Hopf bifurcation data. | Positive precedent for local bifurcation transfer, but maximal canards require fold passage and manifold matching. |
 | [Andò & Sieber (2025)](https://doi.org/10.1137/24M1711182) | Expected-order collocation convergence for functional BVPs with state-dependent delays under mild differentiability. | Local regularity/invertibility constants may deteriorate near a canard; no threshold-specific estimate. |
@@ -81,30 +81,31 @@ The manuscript must not claim:
 
 The defensible target is:
 
-> For a finite delayed slow--fast network that is a controlled perturbation of an exact equitable \(r\)-module skeleton, derive an observable-projected section-splitting root shift with explicit spectral, delay-kernel, and observable residuals; then propagate the bound into the local invertibility and safety margin of \(u\mapsto(F,R,\Delta_c)\).
+> For a finite delayed slow--fast network that is a controlled perturbation of an exact equitable reference system with one canard matching direction, formulate a one-dimensional RFDE Lin gap and derive its structural first variation and root shift with an explicit transverse Green/Fredholm inverse bound.
 
 An appropriate first-order form is
 
 \[
-d_{N,h}=d_{r,h}+\mathcal M_{\varepsilon,h}[\mathcal R_N]
+d_N=d_0+D_{\mathcal R}d_0[\mathcal R_N]
 +O(C_\varepsilon\Delta_N^2),
 \qquad
-|\mu_{c,N}^{h}-\mu_{c,r}^{h}|
+|\mu_{c,N}-\mu_{c,0}|
 \le
-\frac{C_\varepsilon}{m_{\varepsilon,h}}\Delta_N.
+\frac{C_\varepsilon}{m_\varepsilon}\Delta_N.
 \]
 
-The residual should expose the spectral gap/conditioning, network residual, delay-kernel residual, node heterogeneity, and distance of the observable from the retained left spectral space. If a delay-moment term of order \(\varepsilon^{3/2}\) is claimed, the joint limit must make the transfer remainder smaller than that term.
+The residual should expose network weights, delay measures, and node heterogeneity in a norm compatible with delay translation. The decisive constant is a transverse RFDE Green/Fredholm inverse bound \(G_\perp(\varepsilon)\); an adjacency spectral gap alone is not a substitute. If a delay-moment term of order \(\varepsilon^{3/2}\) is claimed, the joint limit must make the transfer remainder smaller than that term.
 
 ## Terminology correction
 
 A true maximal-canard parameter is a geometric property of the dynamical system and need not depend on the measuring instrument. Therefore:
 
-- use **maximal-canard threshold** only when full attracting and repelling slow manifolds intersect;
-- use **observable-projected canard threshold** for a zero of a scalar projected splitting;
+- use **maximal-canard threshold** only when all Lin matching conditions vanish and the selected invariant manifolds intersect;
+- use **Lin-gap root** while proving the one-dimensional matching theorem;
+- use **projected output root** for a zero of an arbitrary scalar projection, without identifying it with a canard;
 - use **output-event threshold** for a detector-defined amplitude/pulse event.
 
-Different nondegenerate projections may collapse to the same root in a one-dimensional splitting direction. Observable dependence is itself a hypothesis to test, not an assumption to market. Non-smooth order-statistic outputs (first node, all nodes, or a \(q\)-fraction) remain numerical extensions.
+If the geometric mismatch is genuinely one-dimensional, every projection that does not annihilate that direction has the same root. If different observables produce different roots, they are output-dependent events and require a separate link to pulse onset. Non-smooth order-statistic outputs (first node, all nodes, or a \(q\)-fraction) remain numerical extensions.
 
 ## Numerical subproblem embedded in the flagship paper
 
@@ -120,7 +121,7 @@ For a method-of-steps calculation, expect a decomposition of the form
 +\Delta_{\rm interaction}.
 \]
 
-The RK chain-tree condition may eliminate only \(\Delta_{\rm RK}\). Dense-output/history interpolation depends on its own coefficients and on the fractional delay phase \(\{\tau/h\}\), so it needs a separate order condition or a residual-based certificate. This is a supporting section of the flagship paper, not a second manuscript.
+The RK chain-tree condition may eliminate only \(\Delta_{\rm RK}\). Dense-output/history interpolation depends on its own coefficients and on the fractional delay phase \(\{\tau/\Delta t\}\), so it needs a separate order condition or a residual-based bound. This is a supporting validation section of the flagship paper, not a second manuscript or a new RK theorem.
 
 ## Reusable public baselines
 

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "canard-aware-network-control"
 version = "0.1.0"
-description = "Reproducible calculations for observable-projected canard-threshold transfer"
+description = "Reproducible calculations for RFDE Lin-gap canard-threshold transfer"
 requires-python = ">=3.11"
 dependencies = ["sympy>=1.13"]
 

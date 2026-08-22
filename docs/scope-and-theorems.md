@@ -1,10 +1,10 @@
-# Scope and candidate theorem ladder
+# Flagship theorem specification
 
-Status: **working specification, 2026-08-22**. Every theorem below is a target until a proof and its computational checks are merged.
+Status: **working specification, 2026-08-22**. Only the exact synchronous closure and formal polynomial coefficient checks have been completed. The main theorem, uniform remainder, and control corollary below are targets.
 
-## 1. Canonical network class
+## 1. First-paper model class
 
-For nodes \(i=1,\dots,N\), start from
+For nodes \(i=1,\dots,N\), consider
 
 \[
 \dot x_i=f(x_i,y_i;\mu,u)+\varepsilon
@@ -15,226 +15,290 @@ q\!\left(x_i(t),x_j(t-\tau_{ij});u\right),
 \tag{1}
 \]
 
-with \(0<\varepsilon\ll1\), weak diffusive network feedback satisfying \(q(x,x;u)=0\), and
+with \(0<\varepsilon\ll1\), weak diffusive feedback satisfying \(q(x,x;u)=0\), and
 
 \[
-\tau_{ij}=\Theta_{ij}/\sqrt{\varepsilon},
+\tau_{ij}=\Theta_{ij}/\sqrt\varepsilon,
 \qquad \Theta_{ij}\in[0,\Theta_{\max}].
 \tag{2}
 \]
 
-The topology is decomposed as
+After fold blow-up and time rescaling, the scaled history interval is the fixed compact interval \([-\Theta_{\max},0]\). Delay perturbations are measured either on a compatible \(C^1\) solution manifold or by a bounded-Lipschitz/Wasserstein-type norm on delay measures together with a history-derivative bound. The ordinary operator norm on \(C^0\) is not used to declare two nearby point delays close.
+
+The main theorem is frozen to a finite network near one exact equitable **two-module** skeleton. Nodes in the same receiving module have the same row-weighted delay measure from each source module, so block-synchronous histories close exactly. The reduced two-module RFDE has exactly one simple collective canard direction; the module-difference direction and all within-module directions belong to the transverse Lin problem. The common-row-measure rank-one class is used only for the explicit van der Pol proposition.
+
+General rank-\(r\) closure is an extension. An adjacency-matrix spectral gap may help verify hypotheses, but it is not substituted for the RFDE variational estimate along the canard orbit.
+
+Write the structural residual as
 
 \[
-W_N=W_N^{(r)}+E_N,
+\mathcal R_N=(\Delta W_N,\Delta\rho_N,\Delta p_N),
+\qquad
+\eta_N=\|\mathcal R_N\|_{\mathfrak R},
 \tag{3}
 \]
 
-where \(W_N^{(r)}\) has an equitable \(r\)-block representation and \(E_N\) is small in a norm chosen to control the delayed coupling operator. Delays are constant on each ordered module pair in the exact skeleton, \(\tau_{ij}=\tau_{ab}\) for \(i\in M_a,j\in M_b\), and may carry a controlled delay-kernel residual in the perturbed network. The retained spectral subspace is separated by a gap \(\gamma_r>0\); directed extensions additionally require a uniformly controlled eigenvector condition number.
+where \(\|\cdot\|_{\mathfrak R}\) is fixed before the theorem is stated and controls edge weights, delay measures, and node heterogeneity on the chosen history space.
 
-Two concrete models anchor the paper:
+## 2. The mathematical object: a one-dimensional Lin gap
 
-- **analytic calibration:** the weakly delayed van der Pol equation;
-- **biological benchmark:** a two-module delayed FitzHugh--Nagumo network.
+The threshold is not defined by subtracting two sets such as \(M^a\cap\Sigma\) and \(M^r\cap\Sigma\). Instead:
 
-The general theorem is stated only at the regularity and spectral strength actually needed by these two cases.
+1. fix compact entry and exit data and one transverse matching section \(\Sigma\);
+2. impose a common phase condition;
+3. solve the attracting and repelling RFDE boundary-value pieces while matching every transverse coordinate;
+4. leave one scalar jump in a fixed cokernel direction \(\psi_\varepsilon\).
 
-## 2. Fixed observable and threshold definition
-
-Choose one smooth aggregate observable
+Let \(\mathfrak F_\varepsilon(z,\mu,\mathcal R)=0\) denote this Lin boundary-value problem. After the phase condition, assume its reference linearization is Fredholm of index zero, with one declared canard matching direction and a bounded inverse on the transverse complement. Define
 
 \[
-h_N(X)=\ell_N^\top X,
+G_\perp(\varepsilon)
+=
+\left\|
+\left(D_z\mathfrak F_\varepsilon\vert_{\psi_\varepsilon^\perp}\right)^{-1}
+\right\|,
 \tag{4}
 \]
 
-where \(\ell_N\) is fixed before parameter continuation. The default is a positive Perron weight or a declared module average. Changing \(\ell_N\) changes the scientific question and may change the threshold.
-
-After blow-up, select attracting and repelling invariant manifolds using the same compact entry data, continue both to one fixed transverse section \(\Sigma\), and define their signed observable splitting
+and define the scalar Lin gap
 
 \[
-d_N(\mu,u;\varepsilon)=
-\mathcal H_N\!\left(M^a_N\cap\Sigma\right)-
-\mathcal H_N\!\left(M^r_N\cap\Sigma\right).
+d_\varepsilon(\mu,\mathcal R)
+=\langle\psi_\varepsilon,
+\operatorname{jump}(z^a,z^r)\rangle.
 \tag{5}
 \]
 
-The local observable-projected canard threshold is the simple root
+The reference canard parameter is a simple root
 
 \[
-d_N(\mu_{c,N}^{h},u;\varepsilon)=0,
+d_\varepsilon(\mu_{c,0},0)=0,
 \qquad
-|\partial_\mu d_N|=m_{\varepsilon,h}>0.
+|\partial_\mu d_\varepsilon(\mu_{c,0},0)|
+\ge m_\varepsilon>0.
 \tag{6}
 \]
 
-At a declared operating point \(\mu_{\rm op}\), define the signed pulse-safety margin
+If solving all matching equations makes the selected invariant manifolds intersect, \(\mu_c\) is a geometric maximal-canard parameter. A zero of an arbitrary experimental projection is instead called an output-event threshold unless a separate equivalence theorem is proved. Experimental observables remain essential for amplitude and validation, but they do not replace the Lin matching equations.
+
+## 3. Main theorem target: structural transfer of the RFDE canard root
+
+### Hypotheses to prove or verify
+
+- the blown-up RFDE and the Lin map are \(C^2\) in \((z,\mu,\mathcal R)\) on a fixed history domain;
+- the fold has one simple canard center direction;
+- the reference transverse variational problem admits the bound (4);
+- the residual norm (3) makes delay translation differentiable on the chosen solution manifold;
+- the Lin gap is transverse as in (6);
+- all constants are uniform in \(N\) for the admitted reference class;
+- the joint smallness condition
+  \[
+  \zeta_N(\varepsilon):=G_\perp(\varepsilon)\eta_N\ll1
+  \tag{7}
+  \]
+  holds.
+
+### Candidate statement
+
+For \(\mu\) in a fixed root neighborhood and \(\zeta_N\) sufficiently small,
 
 \[
-\Delta_{c,N}^{h}=\mu_{c,N}^{h}-\mu_{\rm op}
-\tag{7}
-\]
-
-with orientation fixed so that \(\Delta_c>0\) is the safe side. Thus assigning \(\Delta_c\) is equivalent to assigning the threshold when \(\mu_{\rm op}\) is fixed. A visually detected amplitude jump is a validation statistic, not the theorem's definition.
-
-This root is not automatically the system's geometric maximal-canard parameter. The latter name is reserved for an actual intersection of the full selected manifolds. If the splitting is effectively one-dimensional, all nonannihilating projections may yield the same root; observable dependence is therefore tested rather than assumed.
-
-## 3. Candidate theorem ladder
-
-### T1. Exact module reduction
-
-**Candidate statement.** If the weight matrix is equitable, delays and node parameters are block-constant, and the initial history is block-synchronous, then the block-synchronous history space is invariant under (1). Its restriction is exactly an \(r\)-module RFDE.
-
-**Proof route.** Direct substitution and uniqueness in the RFDE phase space. Record the precise normalization of row sums; do not infer it from a low-rank approximation alone.
-
-**Falsifier.** Any coupling convention for which equality of within-block histories fails to imply equality of within-block vector fields.
-
-### T2. Observable-projected threshold transfer
-
-Let \(d_r\) denote the splitting of the exact reduced RFDE. For residual size
-
-\[
-\eta_N=\frac{\operatorname{cond}(V_r)}{\gamma_r}
-\left(\|E_N\|_{\mathrm{delay}}+
-\|\Delta\mathcal K_N\|_{\mathrm{delay}}+
-\|\Delta p_N\|\right)
-+\operatorname{dist}(\ell_N,\operatorname{Ran}P_r^*),
+d_\varepsilon(\mu,\mathcal R_N)
+=d_\varepsilon(\mu,0)
++D_{\mathcal R}d_\varepsilon(\mu,0)[\mathcal R_N]
++O\!\left(C_\varepsilon\zeta_N^2\right),
 \tag{8}
 \]
 
-target a uniform expansion
+and there is one nearby root satisfying
 
 \[
-d_N(\mu,u;\varepsilon)
-=d_r(\mu,u;\varepsilon)
-+\mathcal L_{\varepsilon,h}[E_N,\Delta\mathcal K_N,\Delta p_N]
-+O(\eta_N^2).
+\boxed{
+\mu_{c,N}-\mu_{c,0}
+=-
+\frac{D_{\mathcal R}d_\varepsilon(\mu_{c,0},0)[\mathcal R_N]}
+{\partial_\mu d_\varepsilon(\mu_{c,0},0)}
++O\!\left(\frac{C_\varepsilon}{m_\varepsilon}\zeta_N^2\right).
+}
 \tag{9}
 \]
 
-If \(m_{\varepsilon,h}:=|\partial_\mu d_r(\mu_{c,r}^{h})|>0\), the root shift should be
+The mathematical contribution is the RFDE Lin-gap differentiability, the computable first-variation functional, and the explicit dependence on \(G_\perp(\varepsilon)\), not the final scalar implicit-function step.
+
+To resolve an \(O(\varepsilon^{3/2})\) physical delay effect against the unperturbed reference, require
 
 \[
-\mu_{c,N}^{h}-\mu_{c,r}^{h}
-=-
-\frac{\mathcal L_{\varepsilon,h}[E_N,\Delta\mathcal K_N,\Delta p_N]}
-{\partial_\mu d_r(\mu_{c,r}^{h})}
-+O(\eta_N^2).
+\frac{
+|D_{\mathcal R}d_\varepsilon[\mathcal R_N]|
++C_\varepsilon\zeta_N^2
+}{m_\varepsilon}
+=o(\varepsilon^{3/2}).
 \tag{10}
 \]
 
-**Proof route.** Uniform graph transform or Lyapunov--Perron control for the selected manifolds, a bounded observable projection, then a quantitative implicit-function argument.
+### Primary falsifiers
 
-The dependence of \(m_{\varepsilon,h}\) and all constants on \(\varepsilon\) remains explicit; uniform transversality is not assumed for free. To resolve a proposed \(O(\varepsilon^{3/2})\) delay-moment term, require the joint limit \(C_\varepsilon\eta_N=o(\varepsilon^{3/2})\).
+- all node-fold directions remain critical and \(G_\perp(\varepsilon)\) grows too rapidly;
+- the chosen delay residual is not differentiable on the history space;
+- the Lin problem has more than one unmatched direction;
+- \(m_\varepsilon\) vanishes at the proposed operating point;
+- the first variation depends on matrix-valued transverse delay measures that cannot be represented by the proposed scalar moment.
 
-**Falsifier.** Loss of normal hyperbolicity outside the designated fold chart, a vanishing transversality denominator, residual growth with \(N\) in the chosen operator norm, or an observable that annihilates the critical splitting direction.
+Failure narrows the theorem to the exact invariant row-measure class or forces a different coupling scaling. It is not hidden by trajectory-level agreement.
 
-### T3. Topology-weighted delay-moment selection
+## 4. Explicit proposition target: the first weighted delay moment
 
-Define projected moments after fixing the block/Perron weights, for example
+For the weakly delayed van der Pol calibration, suppose \(W\) is row-stochastic and every row has the same scaled-delay measure
 
 \[
-M_k(W,\Theta;\ell,r)
-=\sum_{i,j}\ell_i W_{ij}r_j\Theta_{ij}^{k}.
+\rho_i=\sum_jW_{ij}\delta_{\Theta_{ij}}=\rho,
+\qquad
+m_k(\rho)=\int\theta^k\,d\rho(\theta).
 \tag{11}
 \]
 
-The blow-up calculation should determine, rather than assume, the first nonzero order at which each \(M_k\) enters the reduced splitting:
+The synchronous history space is then exactly invariant and reduces to one distributed-delay RFDE. The formal van der Pol solvability calculation gives
 
 \[
-d_r=d_{r,0}
-+\sum_{k\ge1} C_k(\varepsilon,u)M_k
-+R_K.
+a_c
+=1-\frac18\varepsilon
++\frac K8m_1(\rho)\varepsilon^{3/2}
++O(\varepsilon^2).
 \tag{12}
 \]
 
-The paper will report only moments whose coefficients and uniform remainders are proved. No numerical fit will be presented as a selection law.
-
-The scalar delayed van der Pol calibration is now derived independently:
+This calibration is complete only after proving an estimate
 
 \[
-a_c=1-\frac18\varepsilon
-+\frac{K\Theta}{8}\varepsilon^{3/2}
-+O(\varepsilon^2).
+\left|
+a_c-1+\frac18\varepsilon
+-\frac K8m_1(\rho)\varepsilon^{3/2}
+\right|
+\le C\varepsilon^2
 \tag{13}
 \]
 
-Thus \(K\Theta/8\) is established for one oscillator. Replacing \(\Theta\) by a projected network moment \(M_1\) remains a guarded hypothesis until transverse delayed modes and the observable normalization are controlled; see [the leading-moment derivation](derivation-leading-moment.md).
+uniformly in \(N\) and in a declared compact class of measures \(\rho\). At this order \(m_2\) changes the formal critical graph but cancels from the parameter solvability condition.
 
-**Proof route.** Expand the reduced history functional on the nonlocal center manifold and project it with the adjoint splitting functional. A direct short-delay Taylor expansion is not used because the scaled delay is \(O(1)\).
-
-**Falsifier.** A competing history functional at the same order that cannot be represented by finitely many weighted moments on the stated delay class.
-
-### T4. Frequency--amplitude--safety assignment
-
-For a stable periodic branch on the chosen side of the threshold, define
+For the exact two-module skeleton, let \(\rho_{ab}\) be the row-weighted delay measure from source module \(b\) to receiving module \(a\), and set
 
 \[
-Q(u)=\bigl(F(u),R_h(u),\Delta_c^h(u)\bigr),
+ m_{1,ab}=\int\theta\,d\rho_{ab}(\theta),
 \qquad
-F=1/T,
-\qquad
-R_h=\bigl(\max h_N-\min h_N\bigr)^2.
+M_1^{(2)}
+=\sum_{a,b=1}^2(\ell_c)_aB_{ab}(r_c)_b m_{1,ab},
 \tag{14}
 \]
 
-Squaring the observable amplitude avoids the square-root singularity of amplitude at a Hopf point. Use three physically distinct controls \(u=(u_{\rm lin},u_{\rm nl},u_{\rm delay})\), where the third changes a realizable weighted delay moment while preserving nonnegative delays and admissible weights.
+where \(r_c,\ell_c\) are the dynamical critical right and left module modes, normalized by \(\ell_c^\top r_c=1\). They are not experimental observable weights.
 
-**Candidate statement.** If \(Q\) is \(C^1\) and
+The proposition targets
 
 \[
-\det D_uQ(u_0)\neq0,
+\mu_{c,2}
+=\mu_{c,0}+c_0\varepsilon
++C_{\rm model}K M_1^{(2)}\varepsilon^{3/2}
++O(\varepsilon^2),
 \tag{15}
 \]
 
-then every nearby target \((F_*,R_*,\Delta_{c,*}^{h})\) has a unique nearby control. A rank-deficient Jacobian is a local no-go certificate for independent assignment with that actuator set.
-
-**Proof route.** Periodic-orbit sensitivity/adjoint equations for \(F\) and \(R_h\), splitting sensitivity for \(\Delta_c^h\), then the inverse-function theorem.
-
-**Falsifier.** Rank below three across an open admissible control set. In that case the actuator family, not the optimizer, is insufficient.
-
-### T5. Numerical threshold certificate
-
-Let \(\widehat d_N\) combine periodic/history collocation or fixed-step integration, interpolation of delayed histories, projection to the reduced network, and a scalar root solve. If the exact splitting is transverse, target
+uniformly over a declared compact module-pair measure class. A sufficient leading-order closure condition is
 
 \[
-|\widehat\mu_c^h-\mu_c^h|
-\le \frac{1}{m_{\varepsilon,h}}
-\left(
-C_{\rm RK}h^p
-+C_{\rm hist}\Delta_h^q
-+C_{\rm red}\eta_N
-+|\widehat d_N(\widehat\mu_c^h)|
-+C_{\rm int}\mathcal E_{\rm int}
-\right).
+P_\perp\mathbb B(d\theta)r_c=0
+\quad\text{as a measure identity}.
 \tag{16}
 \]
 
-Here \(\mathcal E_{\rm int}\) collects demonstrated cross-terms rather than silently treating error sources as additive. For fold-local Runge--Kutta calculations, the chain-tree defect is tracked explicitly.
+Here \(\mathbb B(d\theta)\) is the two-module operator-valued delay measure and \(P_\perp\) projects away from the critical collective mode. Without this condition, eliminating transverse histories may produce another same-order resolvent functional, which must be written explicitly rather than hidden inside \(M_1^{(2)}\). The Dirac scalar case reproduces Zhang et al. (2026) with \(c_0=-1/8\) and \(C_{\rm VdP}=1/8\); that case is a calibration, not a novelty claim.
 
-**Falsifier.** Nonmonotone refinement, a fitted convergence rate inconsistent with the proven regularity, or a certificate wider than the predicted topology/delay shift.
+## 5. Concrete corollary target: three actuators in two-module FHN
 
-### Stretch corollary. Canard conditioning
+On a declared hyperbolic periodic branch of the two-module delayed FitzHugh--Nagumo benchmark, fix an operating parameter \(\mu_{\rm op}\), set \(\Delta_c(u)=\mu_c(u)-\mu_{\rm op}\), and define
 
-The inverse map is expected to become severely ill-conditioned across an exponentially narrow canard window. The first paper will seek upper and lower bounds on the smallest singular value of \(D_uQ\), but it will claim a law such as \(\kappa(D_uQ)\asymp e^{S/\varepsilon}\) only if both directions are proved. Otherwise conditioning remains a measured limitation, not a theorem.
+\[
+Q(u)=\bigl(F(u),R_h(u),\Delta_c(u)\bigr),
+\qquad
+F=1/T,
+\qquad
+R_h=(\max h_N-\min h_N)^2.
+\tag{17}
+\]
 
-## 4. Claim hierarchy for one paper
+The experimental observable \(h_N\) is fixed and is distinct from the critical adjoint mode \(\ell_c\). Differentiability of \(R_h\) requires unique nondegenerate extrema and no peak switching. For module voltages \(v_a\), freeze the actuator family
 
-| Level | Required evidence | Intended content |
+\[
+\Phi_1(v_a,v_b^\tau)=v_b^\tau-v_a,
+\qquad
+\Phi_3(v_a,v_b^\tau)
+=(v_b^\tau-v_*)^3-(v_a-v_*)^3,
+\tag{18}
+\]
+
+and a realizable delay deformation
+
+\[
+\Theta_{ab}(s)=\Theta_{ab}^0+s\Xi_{ab},
+\qquad
+\partial_sM_1^{(2)}\ne0,
+\qquad
+u=(\kappa_1,\kappa_3,s).
+\tag{19}
+\]
+
+The target is not the generic statement “\(\det D_uQ\ne0\) implies invertibility.” The paper must derive the three sensitivity rows and prove on a nonempty admissible region \(U_*\) that
+
+\[
+\inf_{u\in U_*}\sigma_{\min}(D_uQ(u))
+\ge c_Q(\varepsilon)>0,
+\tag{20}
+\]
+
+with the transferred-threshold uncertainty smaller than the induced safety-margin change. A useful proof factorization is the Schur complement
+
+\[
+A_\varepsilon=D_{(\kappa_1,\kappa_3)}(F,R_h),
+\qquad
+S_{\Delta,\varepsilon}
+=\partial_s\Delta_c
+-D_{(\kappa_1,\kappa_3)}\Delta_c\,
+A_\varepsilon^{-1}\partial_s(F,R_h),
+\tag{21}
+\]
+
+for which \(\det D_uQ=\det A_\varepsilon\,S_{\Delta,\varepsilon}\). The task is to derive nonzero leading coefficients for both factors, not merely plot a determinant. The inverse-function theorem is then a corollary. A no-go result requires a structural rank bound on a neighborhood or an explicit functional dependence; rank loss at one point alone is not a no-go theorem.
+
+## 6. Supporting validation, not a second theorem program
+
+For a computed Lin gap \(\widehat d\) on a root interval \(I\), the basic certificate is
+
+\[
+|\widehat\mu_c-\mu_c|
+\le
+\frac{\sup_{\mu\in I}|\widehat d(\mu)-d(\mu)|}
+{\inf_{\mu\in I}|\partial_\mu d(\mu)|}.
+\tag{22}
+\]
+
+The numerator must be enclosed or bounded through demonstrated contributions from RFDE discretization, delayed-history interpolation, delay quadrature, Lin-BVP residual, center-manifold truncation, and network reduction. Constants are not assumed uniform in \(\varepsilon\). The earlier ODE Runge--Kutta chain-tree result is cited only for its covered map--flow component and is not extended to histories without a new proof.
+
+## 7. Claim hierarchy
+
+| Role | First-paper content | Evidence required |
 |---|---|---|
-| Theorem | complete assumptions, uniform constants, proof | T1, a scoped T2, local T4 |
-| Proposition | derivation plus symbolic/numerical cross-check | model-specific T3, T5 specialization |
-| Validated conjecture | preregistered convergence and out-of-sample tests | larger heterogeneous networks |
-| Extension | qualitative demonstration only | graphon or strongly nonnormal examples |
+| Main theorem | RFDE Lin-gap/root transfer, (8)--(9) | complete proof with \(G_\perp(\varepsilon)\), \(m_\varepsilon\), and \(N\)-uniform constants |
+| Explicit proposition | two-module first-moment law calibrated by (12)--(13) | mode closure, nonlocal reduction, and uniform remainder for (15) |
+| Concrete corollary | two-module FHN three-actuator result, (20)--(21) | derived sensitivities and certified singular-value lower bound |
+| Validation | numerical root enclosure and negative controls | independent refinement and reproducible residual bounds |
+| Extension | general rank-\(r\), graphons, strong/nonnormal delay networks | not claimed in v1 |
 
-The abstract must distinguish these levels.
+## 8. Stop/go gates
 
-## 5. Stop/go gates
+1. **Definition gate:** construct a well-posed Lin BVP with exactly one unmatched direction.
+2. **Transverse gate:** obtain or numerically falsify a usable \(G_\perp(\varepsilon)\) scaling.
+3. **Moment gate:** prove the uniform remainder and mode closure behind (15); the formal scalar coefficient alone is insufficient.
+4. **Transfer gate:** verify the first variation and quadratic normalized remainder for controlled residual directions.
+5. **Control gate:** prove (20) for the frozen FHN actuators or report a structural obstruction.
+6. **Validation gate:** require numerical uncertainty to be smaller than every reported physical shift.
 
-1. **Definition gate:** the splitting root agrees with an independently computed maximal canard in delayed van der Pol.
-2. **Moment gate:** the first nonzero weighted delay moment and coefficient survive two independent derivations.
-3. **Transfer gate:** threshold error scales with the declared residual norm on held-out networks.
-4. **Rank gate:** the smallest singular value of \(D_uQ\) stays separated from zero on a nontrivial admissible neighborhood.
-5. **Certification gate:** discretization uncertainty is smaller than the effect being claimed.
-
-Failure at gates 1--3 narrows the theorem. Failure at gate 4 produces a no-go result and actuator redesign. Failure at gate 5 blocks quantitative biological claims.
+Failure at gates 1--3 narrows the main theorem before large simulations. Failure at gate 5 changes the control corollary, not the transfer theorem.

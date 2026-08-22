@@ -1,80 +1,88 @@
-# Sprint 01: analytical feasibility before scale-up
+# Sprint 01: Lin-gap feasibility before scale-up
 
 Window: **2026-08-22 to 2026-09-04**
 
-Goal: decide whether the flagship theorem chain is viable on delayed van der Pol and an exact two-module network before investing in large simulations.
+Goal: decide whether one RFDE canard-root transfer theorem is viable before investing in large simulations or general rank-\(r\) claims.
 
-## Work packages
+## WP1 -- Define the scalar Lin gap ([#1](https://github.com/h-lu/canard-aware-network-control/issues/1))
 
-### WP1 -- Freeze the mathematical object ([#1](https://github.com/h-lu/canard-aware-network-control/issues/1))
+- [ ] Fix the blown-up history space, entry/exit data, matching section, and phase condition.
+- [ ] Write the RFDE Lin boundary-value operator.
+- [ ] Determine its Fredholm index after the phase condition.
+- [ ] Verify that the relevant cokernel is one-dimensional.
+- [ ] Define the adjoint gap and prove coordinate/complement independence.
+- [ ] Separate a geometric maximal-canard root from an output-event threshold.
 
-- [x] Choose a section-defined observable splitting as the threshold.
-- [x] Freeze the weak-coupling/scaled-delay regime.
-- [x] Declare graphons and arbitrary sparse networks out of first-paper scope.
-- [ ] Write the precise entry data, section, orientation, and invariant-manifold selections.
-- [ ] State the compact parameter wedge and all uniformity requirements.
+Acceptance: a mathematically defined scalar gap, not a projected difference between two sets.
 
-Acceptance: two independent implementations return the same delayed van der Pol threshold to the predicted numerical tolerance.
+## WP2 -- Build the exact reference and audit transverse modes ([#2](https://github.com/h-lu/canard-aware-network-control/issues/2))
 
-### WP2 -- Exact two-module reduction ([#2](https://github.com/h-lu/canard-aware-network-control/issues/2))
+- [ ] Prove the common-row-measure synchronous RFDE closure.
+- [ ] Write the exact two-module delayed FHN reference system.
+- [ ] Derive the transverse delayed variational/Lin operator.
+- [ ] Construct or bound its Green/Fredholm inverse \(G_\perp(\varepsilon)\).
+- [ ] Test whether \(O(\varepsilon)\) coupling leaves additional fold-critical directions.
+- [ ] If the inverse grows too rapidly, restrict the residual scaling or reference class.
 
-- [ ] Fix the weight normalization and equitable-partition notation.
-- [ ] Prove invariance of the block-synchronous history space.
-- [ ] Derive the exact two-module RFDE.
-- [ ] Construct one perturbation family with a tunable residual norm.
+Acceptance: an explicit \(G_\perp(\varepsilon)\) estimate or a documented falsification that narrows Theorem A.
 
-Acceptance: full and reduced trajectories agree at roundoff for block-synchronous histories when the residual is zero.
+## WP3 -- Complete Proposition B ([#3](https://github.com/h-lu/canard-aware-network-control/issues/3))
 
-### WP3 -- Delay-moment derivation ([#3](https://github.com/h-lu/canard-aware-network-control/issues/3))
+- [x] Reproduce the delayed van der Pol blow-up scaling.
+- [x] Verify formally \(\nu_0=-1/8\) and \(\nu_1=K\Theta/8\).
+- [x] Derive the formal \(Km_1/8\) coefficient for the common-row-measure class.
+- [ ] Put the expansion inside the Lin-gap formulation.
+- [ ] Prove an \(O(\varepsilon^2)\) remainder uniform in \(N\) and the declared measure class.
+- [ ] Verify that \(m_2\) changes the graph but cancels from the parameter at this order.
+- [ ] Derive the two-module \(M_1^{(2)}\) term under an explicit leading mode-closure condition, or expose the extra transverse resolvent term.
 
-- [x] Reproduce the published delayed van der Pol blow-up scaling.
-- [x] Derive the first two parameter solvability conditions and translated-history correction.
-- [ ] Project each term onto the chosen observable splitting.
-- [x] Identify the scalar first-delay coefficient \(K\Theta/8\); record its cancellation mechanism.
-- [x] Derive \(Km_1/8\) for exact rank-one networks with row-equivalent delay measures.
-- [ ] Extend the moment law to distinct rank-\(r\) modules and exclude transverse terms.
-- [ ] Cross-check the network coefficient by symbolic algebra and high-precision continuation.
+Acceptance: a theorem-level remainder; symbolic coefficient agreement alone does not pass.
 
-Acceptance: coefficient and order agree across the two derivations, without regression fitting.
+## WP4 -- Prove Theorem A ([#4](https://github.com/h-lu/canard-aware-network-control/issues/4))
 
-### WP4 -- Transfer lemma ([#4](https://github.com/h-lu/canard-aware-network-control/issues/4))
+- [ ] Choose a residual norm that controls delay translation on the strong history space.
+- [ ] Prove \(C^2\) dependence of the Lin problem on weights, delay measures, and node parameters.
+- [ ] Solve the range equation using \(G_\perp(\varepsilon)\).
+- [ ] Derive the first-variation functional and quadratic remainder.
+- [ ] Transfer the simple root with an explicit \(m_\varepsilon\) denominator.
+- [ ] State the joint limit needed to resolve the \(O(\varepsilon^{3/2})\) moment term.
 
-- [ ] Select the delayed coupling operator norm.
-- [ ] Bound the manifold/splitting perturbation in that norm.
-- [ ] Apply a quantitative root perturbation lemma.
-- [ ] Test first-order threshold shift on held-out residual directions.
+Acceptance: a complete scoped proof or a precise obstruction reducing the theorem to the exact invariant class.
 
-Acceptance: normalized remainder is second order over at least one decade before numerical error dominates.
+## WP5 -- Establish Corollary C ([#5](https://github.com/h-lu/canard-aware-network-control/issues/5))
 
-### WP5 -- Control rank pilot ([#5](https://github.com/h-lu/canard-aware-network-control/issues/5))
+- [ ] Freeze the two-module FHN equations, observable, parameter box, and linear/cubic/delay-deformation actuators.
+- [ ] Prove periodic-branch hyperbolicity and unique nondegenerate output extrema.
+- [ ] Derive the frequency, amplitude, and Lin-root sensitivities.
+- [ ] Factor the response determinant into the \((F,R_h)\) block and the safety Schur complement.
+- [ ] Prove \(\sigma_{\min}(D_uQ)\ge c_Q(\varepsilon)>0\) on a nonempty region.
+- [ ] Derive a quantitative local inverse radius.
+- [ ] Prove a structural one-/two-actuator rank obstruction if available.
 
-- [ ] Specify admissible linear, nonlinear, and delay-moment actuators.
-- [ ] Derive adjoint/sensitivity equations for \(F\), \(R_h\), and \(\Delta_c^h\).
-- [ ] Compute singular values and actuator-condition maps.
-- [ ] Compare against one- and two-actuator no-go baselines.
+Acceptance: a proved or rigorously enclosed lower bound; a plotted nonzero determinant alone is insufficient.
 
-Acceptance: either exhibit an open full-rank region or record a rigorous local obstruction and redesign the actuator set.
+## WP6 -- Verification module ([#6](https://github.com/h-lu/canard-aware-network-control/issues/6))
 
-### WP6 -- Numerical certificate skeleton ([#6](https://github.com/h-lu/canard-aware-network-control/issues/6))
+- [ ] Implement two independent RFDE root calculations.
+- [ ] Enclose the Lin-gap residual and derivative denominator on a root interval.
+- [ ] Separate physical delay, full/reduced transfer, and numerical errors.
+- [ ] Test the first variation on held-out residual directions.
+- [ ] Run delay-moment, trajectory-close/threshold-wrong, and actuator-count negative controls.
+- [ ] Reject every claimed effect smaller than its uncertainty.
 
-- [ ] Separate RK/collocation, history interpolation, reduction, and root errors.
-- [ ] Add the fold-local RK chain-tree defect to method metadata.
-- [ ] Implement nested refinement and an uncertainty budget.
-- [ ] Reject results whose uncertainty exceeds the claimed threshold shift.
+Acceptance: all four paper claims are resolved within a reproducible uncertainty budget.
 
-Acceptance: a manufactured delayed problem recovers its known threshold and observed order inside the certificate.
-
-## Calendar
+## Calendar and decision gates
 
 | Date | Primary output | Decision |
 |---|---|---|
-| Aug 22--23 | literature map, scope, definitions | novelty and scope freeze |
-| Aug 24--26 | exact reduction + symbolic blow-up notebook | first nonzero moment |
-| Aug 27--29 | transfer lemma draft + residual experiment | theorem viability |
-| Aug 30--Sep 1 | three-coordinate sensitivity pilot | full-rank/no-go |
-| Sep 2--3 | numerical error budget + refinement tests | certification viability |
-| Sep 4 | internal proof/claim audit | continue, narrow, or redesign |
+| Aug 22--24 | Lin operator, phase condition, and scalar gap | definition gate |
+| Aug 25--27 | exact reference and transverse inverse audit | theorem feasibility gate |
+| Aug 28--30 | first-moment uniform-remainder attempt | proposition gate |
+| Aug 31--Sep 2 | Lyapunov--Schmidt/root-transfer proof | main theorem gate |
+| Sep 3 | concrete FHN sensitivity pilot | corollary gate |
+| Sep 4 | proof/claim audit and next-sprint decision | continue, narrow, or redesign |
 
 ## Reproducibility rule
 
-Every figure must be generated from a committed configuration and machine-readable result summary. Raw large trajectories remain outside Git; checksums and generation commands are committed. No device is assigned by this plan--the first sprint is CPU-scale and hardware placement is a later explicit decision.
+Every figure is generated from a committed configuration and machine-readable summary. Large trajectories remain outside Git; checksums and generation commands are committed. No device is assigned by this plan. The first sprint is a CPU-scale analytical and small-system feasibility audit.

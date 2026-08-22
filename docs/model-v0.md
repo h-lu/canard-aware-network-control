@@ -51,11 +51,11 @@ Primes denote \(d/ds\). The symbolic test in `tests/test_symbolic_blowup.py` ver
 
 1. Weak delayed feedback enters the fold chart at order \(\delta=\sqrt\varepsilon\).
 2. The scaled delay \(\Theta\) is \(O(1)\), so a naive short-delay Taylor expansion of \(X(s-\Theta)\) is not justified.
-3. A topology-weighted delay-moment law must come from the nonlocal center-manifold/history reduction and splitting projection, not from replacing \(\Theta\) by a fitted “effective delay.”
-4. The network version inherits a sum of translated histories. Exact module closure therefore requires module-pair-constant delay kernels; arbitrary edgewise delays are perturbations.
+3. A topology-weighted delay-moment law must come from the nonlocal center-manifold/history reduction and the adjoint Lin-gap functional, not from replacing \(\Theta\) by a fitted “effective delay.”
+4. The network version inherits a sum of translated histories. Block-constant delays are sufficient for exact module closure but not necessary: it is enough that nodes in the same receiving module have the same row-weighted delay measure from every source module. Other edgewise-delay patterns are structural perturbations.
 
 ## First derivation task
 
-Reproduce the leading center-manifold/history expansion in the same normalization as Zhang et al. (2026), then evaluate its contribution to the fixed-section splitting functional. Only after the coefficient is recovered for one oscillator should the calculation be lifted to the two-module network.
+Reproduce the leading center-manifold/history expansion in the same normalization as Zhang et al. (2026), then evaluate its contribution to the adjoint Lin-gap functional. Only after the coefficient is recovered for one oscillator should the calculation be lifted to the declared two-module network.
 
-The scalar recovery is now complete through \(O(\varepsilon^{3/2})\); see [leading delay-moment calibration](derivation-leading-moment.md). The remaining task is the controlled network lift.
+The scalar coefficients are now reproduced formally through \(O(\varepsilon^{3/2})\); see [leading delay-moment calibration](derivation-leading-moment.md). A uniform remainder and a well-posed Lin-gap interpretation remain to be proved before this becomes a threshold theorem. Only then is the network transfer addressed.
