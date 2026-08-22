@@ -1,5 +1,48 @@
 # Flagship manuscript outline
 
+Status: **broad promotion outline.** The minimum submission theorem and the
+rules for admitting the general-network and control sections are governed by
+`docs/flagship-research-design.md`. Until its Gate D is passed, the base paper
+uses the shorter architecture below; the former full-network program remains
+a promotion target rather than an assumed main result.
+
+## Proof-first base paper
+
+Working title: **Transverse Delay Effects on a Canard Threshold in a
+Two-Module FitzHugh--Nagumo System**
+
+1. **Introduction and main theorem**
+   - Same total delayed gain and same critical projected delay measure.
+   - Nonzero transverse delay organization and the threshold law.
+   - Zhang et al. (2026) supplies the scalar comparison case; no theorem is
+     imported into the FHN system without verifying its hypotheses.
+2. **The fixed two-module RFDE**
+   - Final positive two-layer family and fixed recovery coupling.
+   - Exact fold, projection, positivity, and singular-spectrum identities.
+3. **The nonlocal invariant manifold**
+   - Two-dimensional invariant history manifold and parameter regularity.
+   - Stable foliation and its injective history embedding.
+4. **The reduced fold jet**
+   - Stable transverse delay response.
+   - Nonlinear return and the actual coefficient \(c_\perp\).
+5. **The canard intersection**
+   - Simple matching root and uniform remainder.
+   - Lift from the reduced intersection to complete RFDE histories.
+6. **Numerical asymptotic check**
+   - Normalized threshold difference and independent refinement uncertainty.
+7. **Discussion and promotion gates**
+   - General finite-\(N\) root transfer only if its model-specific inverse is
+     proved.
+   - Three-coordinate control only if a certified rank bound requires no
+     independent theory chain.
+
+The base paper uses two figures: a transverse-return mechanism schematic and
+a computed normalized threshold-limit plot.
+
+---
+
+## Promotion outline
+
 Working title: **Canard-Threshold Transfer under Weak Delayed Feedback in Slow--Fast Networks**
 
 ## One-sentence target
@@ -25,7 +68,8 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - Delayed van der Pol work supplies the single-delay calibration.
    - Spectral network reduction supplies reference observables but not a nonhyperbolic root bound.
    - Frequency--amplitude control supplies two output coordinates but not a proved canard-safety coordinate.
-   - State Theorem A as the sole flagship contribution.
+   - If the promotion gates pass, state Theorem A as the promoted paper's sole
+     flagship contribution.
 
 2. **Reference RFDE and exact closure**
    - Weak-feedback/scaled-delay model and the fixed blown-up history interval.
@@ -38,7 +82,7 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
 3. **One-dimensional Lin matching problem**
    - \(\mathbb R^4\) reference-gap template versus the full \(2N\)-state operator for synchrony-breaking residuals.
    - Entry and exit data, matching section, phase condition, and complete \(2N\)-state history jump.
-   - Full-history jump and the center/solution-manifold construction of the backward-extendible repelling piece.
+   - Full-history jump and the invariant-history construction of the backward-extendible repelling piece.
    - Trace-index audit: prove a history-space transverse Fredholm pair of index zero; \(d_-+d_+=2\) is only its reduced-skeleton diagnostic, and hard synchronization at both endpoints is excluded.
    - Zero-fiber implication: a zero complete-history jump must force the endpoint fiber coordinates to vanish before the root is called a slow-manifold intersection.
    - Post-phase Fredholm index \(-1\), one-dimensional cokernel, and the index-zero scalar-jump augmentation.
@@ -47,7 +91,7 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - Separate definition of experimental output-event thresholds.
 
 4. **Proposition B: delayed van der Pol first-moment law**
-   - Nonlocal center-manifold/history calculation.
+   - Nonlocal invariant-history calculation.
    - Dirac-delay recovery as a published calibration, not a new result.
    - Common-row-measure closure and \((K/8)m_1\) calibration.
    - Two-module critical modes, \(M_1^{(2)}\), and the layerwise mode-closure condition.
@@ -102,4 +146,8 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
 
 ## Submission rule
 
-The abstract leads with Theorem A. Proposition B, Corollary C, and Verification D are subordinate parts of the same proof chain. No scalar \(K\Theta/8\), generic inverse-function theorem, ordinary equitable closure, or earlier RK chain-tree result is presented as a new contribution.
+If Gates E and F pass and the promoted paper is adopted, its abstract leads
+with Theorem A. Proposition B, Corollary C, and Verification D are subordinate
+parts of the same proof chain. No scalar \(K\Theta/8\), generic
+inverse-function theorem, ordinary equitable closure, or earlier RK
+chain-tree result is presented as a new contribution.

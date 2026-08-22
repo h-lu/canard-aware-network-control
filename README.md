@@ -1,45 +1,74 @@
-# Canard-threshold transfer under weak delayed feedback
+# Transverse delay organization and canard thresholds
 
-Research repository for one flagship paper:
+Research repository for one proof-first flagship paper:
 
-> **Canard-threshold transfer under weak delayed feedback in slow--fast networks, with a concrete frequency--amplitude--safety corollary**
+> **Transverse Delay Effects on a Canard Threshold in a Two-Module
+> FitzHugh--Nagumo System**
+
+The current proof-first submission design is
+[docs/flagship-research-design.md](docs/flagship-research-design.md). It
+freezes a two-module transverse-delay theorem as the minimum publishable
+core. General finite-network transfer and three-coordinate control are
+promotion targets: they enter the same paper only after the core RFDE
+geometry and remainder are proved.
 
 ## Central question
 
-When a biological network with weak delayed feedback is close to a canard explosion, can a reduced RFDE predict the **manifold-matching threshold** of the full finite network with a controlled error?
+Can two weakly delayed FitzHugh--Nagumo modules have the same total delayed
+gain and the same delay measure seen by the critical projection, yet have
+different local canard thresholds because the delay forcing passes through a
+stable transverse mode?
 
 The first paper has one mathematical spine:
 
-1. formulate the delayed canard as a one-dimensional Lin matching gap;
-2. prove the gap and its simple root respond differentiably to finite-network residuals;
-3. calculate the leading topology-weighted delay functional in a controlled model class.
+1. freeze one two-module, two-delay RFDE and prove its exact singular spectrum;
+2. construct its two-dimensional invariant history manifold and
+   complete-history embedding;
+3. calculate the transverse nonlinear return and prove the resulting simple
+   local canard root with a uniform remainder.
 
-A two-module delayed FitzHugh--Nagumo control target and planned residual-based
-computation support this theorem program. They are not parallel novelty
-claims.
+The broader finite-network Lin transfer and frequency--amplitude--safety
+control programs remain in the repository as conditional promotions. They
+are not assumptions or parallel novelty claims of the base paper.
 
-## Frozen first-paper scope
+## Base-paper scope
 
-- finite networks near an exact equitable two-module skeleton whose one-gap Fredholm hypothesis is verified rather than inferred from equitability;
-- weak delayed feedback \(J=O(\varepsilon)\) and scaled delays \(\tau_{ij}=\Theta_{ij}/\sqrt{\varepsilon}\), with \(\Theta_{ij}\) in a compact set;
-- fixed instantaneous voltage and recovery synchronization scaffolds in the concrete FHN control benchmark; both vanish on the collective history and neither is an actuator;
-- a fixed entry/exit formulation, phase condition, and one-dimensional Lin gap after all transverse matching conditions are imposed;
-- a compatible strong history space or delay-measure norm in which delay translations are controlled;
-- an explicit transverse RFDE Green/Fredholm inverse bound \(G_\perp(\sqrt\varepsilon)\), rather than adjacency spectral gap alone;
-- delayed van der Pol as the analytic calibration model;
-- a two-module delayed FitzHugh--Nagumo network as the biological benchmark;
-- three design coordinates: linear feedback gain, nonlinear feedback gain, and a realizable weighted delay moment.
+- exactly two voltage--recovery modules and two fixed scaled delay atoms;
+- source-history feedback of size \(O(\varepsilon)\), with physical delays
+  \(\tau_k=\theta_k/\sqrt\varepsilon\);
+- one fixed, non-actuated transverse recovery coupling that removes the extra
+  recovery center while vanishing on the critical recovery line;
+- fixed local entry, exit, matching, and phase conditions;
+- a geometric intersection of selected local slow histories, not a global
+  spike detector;
+- delayed van der Pol only as the published scalar calibration.
 
-General rank-\(r\) closure, graphon limits, arbitrary sparse nonnormal networks, strong delays, and nonsmooth all-node thresholds are extensions, not claims of the first paper.
+General finite \(N\), moving delay support, arbitrary node heterogeneity,
+three-coordinate control, graphon limits, strong delays, and global pulse
+events are promotion targets or later work, not claims of the base paper.
 
-## Targets: one theorem, one proposition, one corollary
+## Target: one theorem
 
-1. **Main theorem -- RFDE Lin-gap threshold transfer.** Near an exact reference network, the full-network canard matching root has a first-order structural response and a controlled second-order remainder. The constants expose \(G_\perp(\sqrt\varepsilon)\), root transversality, and the chosen residual norm.
-2. **Explicit proposition -- first delay moment plus transverse correction.** Use the common-row-measure delayed van der Pol class as calibration, prove the two-module parallel \(M_1^{(2)}\) coefficient under layerwise mode closure, and otherwise retain an explicit transverse resolvent functional, with a uniform remainder.
-3. **Concrete corollary -- two-module FHN control.** For three specified admissible actuators, derive the response matrix for frequency, squared amplitude, and canard safety margin and prove a nonzero singular-value lower bound on a declared parameter region.
-4. **Validation module.** Enclose the Lin-gap root error by residual and refinement bounds; reuse the earlier ODE/RK threshold result only as a cited baseline.
+For the fixed two-delay redistribution parameter \(\eta\), prove that the
+selected RFDE canard parameter satisfies
 
-These are research targets, not established results. The scalar and common-row-measure coefficients currently have formal polynomial-solvability checks, but not the uniform remainder required by the proposition. Precise statements and falsification gates are in [docs/scope-and-theorems.md](docs/scope-and-theorems.md).
+\[
+ \mu_c(\delta,\eta)-\mu_c(\delta,0)
+ =c_\perp K\eta(\theta_0-\theta_1)\delta^3
+ +O(\delta^4|\eta|+\delta^3\eta^2),
+ \qquad \delta=\sqrt\varepsilon,
+\]
+
+even though the total delayed gain and critical projected delay measure are
+independent of \(\eta\). The actual coefficient, history lift, and uniform
+remainder must be proved for the final RFDE. The current value
+\(c_\perp=1/(4\alpha)\) is a formal candidate, not a result.
+
+The precise claim hierarchy and falsification gates are in
+[docs/flagship-research-design.md](docs/flagship-research-design.md). The
+general-network specifications in
+[docs/scope-and-theorems.md](docs/scope-and-theorems.md) are promotion
+contracts, not proved inputs to this theorem.
 
 ## First feasibility result
 
@@ -76,6 +105,7 @@ proof.
 ## Repository map
 
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
+- `docs/flagship-research-design.md` -- proof-first main theorem, shortest dependency chain, stop/go gates, and paper architecture;
 - `docs/scope-and-theorems.md` -- model, Lin-gap definition, main theorem specification, and stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;
@@ -101,13 +131,10 @@ proof.
 
 ## Immediate decision gate
 
-Before large simulations, the project must construct the dual-scaffold full
-\(2N\)-state Lin operator and complementary dichotomy/fiber endpoint bundles
-(or an equivalent two-dimensional center-manifold lift), prove that every
-transverse block has index zero and is an isomorphism, prove that the
-collective augmentation has one cokernel direction, and obtain a usable
-transverse inverse bound \(G_\perp(\sqrt\varepsilon)\). The operator contracts
-and finite-dimensional algebra are fixed; their invariant-manifold and
-Fredholm hypotheses are not. The first-delay coefficient and root
-transversality are then checked inside the full formulation. Failure narrows
-the theorem to the exact invariant class before any expensive computation.
+Before large simulations, the project must write the single final two-module
+RFDE, rerun its exact algebra, prove the relevant RFDE spectral gap, and
+construct a parameter-regular two-dimensional invariant history manifold with
+an injective history embedding. Only then may the formal transverse coefficient
+be promoted to a geometric canard-root law. The full \(2N\)-state Lin
+operator, an \(N\)-uniform inverse, and three-coordinate control are attempted
+only after that base theorem passes its geometry and remainder gates.
