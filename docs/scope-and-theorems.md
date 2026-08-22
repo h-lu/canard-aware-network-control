@@ -1,10 +1,10 @@
 # Flagship theorem specification
 
 Status: **working specification, 2026-08-22**. The correctly augmented
-\(\mathbb R^4\) reference-gap template and concrete control benchmark are
-frozen, and exact/formal algebraic checks are executable. The full
-\(2N\)-state Lin operator and endpoint bundles, model-specific Fredholm proof,
-uniform remainder, and control corollary remain targets.
+\(\mathbb R^4\) reference-gap template, dual-scaffold \(2N\)-state operator
+contract, and concrete control benchmark are frozen, and exact/formal
+algebraic checks are executable. The actual endpoint bundles, model-specific
+Fredholm proof, uniform remainder, and control corollary remain targets.
 
 ## 1. First-paper model class
 
@@ -12,12 +12,13 @@ For nodes \(i=1,\dots,N\), consider
 
 \[
 \dot x_i=f(x_i,y_i;\mu,u)
-+\mathcal S_{N,i}(x)
++\mathcal S^x_{N,i}(x)
 +\varepsilon
 \sum_{j=1}^N W_{ij}
 q\!\left(x_i(t),x_j(t),x_j(t-\tau_{ij});u\right),
 \qquad
-\dot y_i=\varepsilon g(x_i,y_i;\mu,u),
+\dot y_i=\varepsilon g(x_i,y_i;\mu,u)
++\mathcal S^y_{N,i}(y),
 \tag{1}
 \]
 
@@ -30,14 +31,24 @@ with \(0<\varepsilon\ll1\), weak delayed feedback satisfying
 \tag{2}
 \]
 
-The instantaneous scaffold \(\mathcal S_N\) vanishes on the selected
-collective history. It is included only where needed to isolate one fast fold
-direction; the concrete FHN benchmark uses \(D(P-I)x\) with fixed \(D>0\).
-It therefore does not alter the collective weak-delay calibration.
+The fixed instantaneous scaffolds \(\mathcal S_N^x,\mathcal S_N^y\) vanish on
+the selected collective history. The concrete FHN benchmark uses
+\(D(P-I)x\) and \(E(P-I)y\), with fixed \(D,E>0\). The voltage scaffold
+isolates one fast fold direction; the recovery scaffold removes the
+\(N-1\) transverse slow centers that otherwise survive at
+\(\varepsilon=0\). Neither is an actuator, and neither alters the collective
+weak-delay calibration. The voltage-only case is a negative control, not the
+proof reference.
+
+Off synchrony, the concrete dual-scaffold benchmark is not an
+\(N\)-slow-neuron system: transverse recovery differences relax on an
+\(O(1)\) physical time scale and only the collective recovery coordinate is
+slow. This restriction is disclosed as part of the first-paper model class;
+the original \(N\)-slow voltage-only network remains a harder extension.
 
 After fold blow-up and time rescaling, the scaled history interval is the fixed compact interval \([-\Theta_{\max},0]\). Version 1 treats moving point delays as finitely many smooth parameters on a strong Sobolev orbit space and permits infinite-dimensional measure perturbations only on fixed delay support. The ordinary operator norm on \(C^0\) is not used to declare two nearby point delays close. Freely moving measure support in a bounded-Lipschitz/Wasserstein space is an extension unless the required \(C^2\) theorem is supplied.
 
-The main theorem is frozen to a finite network near one exact equitable **two-module** skeleton. Nodes in the same receiving module have the same row-weighted delay measure from each source module, so block-synchronous histories close exactly. One collective canard direction is a hypothesis to be verified by the augmented Lin BVP; equitability alone does not imply it. The concrete control benchmark uses the scaffold above. The identical-module weak-only class is retained as a negative control because all node-fold directions coalesce at \(\varepsilon=0\).
+The main theorem is frozen to a finite network near one exact equitable **two-module** skeleton. Nodes in the same receiving module have the same row-weighted delay measure from each source module, so block-synchronous histories close exactly. One collective canard direction is a hypothesis to be verified by the augmented Lin BVP; equitability and the instantaneous singular-Jacobian calculation alone do not imply it. The concrete control benchmark uses the dual-state scaffold above. The identical-module weak-only and voltage-only classes are retained as negative controls.
 
 General rank-\(r\) closure is an extension. An adjacency-matrix spectral gap may help verify hypotheses, but it is not substituted for the RFDE variational estimate along the canard orbit.
 
@@ -54,8 +65,8 @@ where \(\|\cdot\|_{\mathfrak R}\) is fixed before the theorem is stated and cont
 
 \[
 \eta_N^{\rm op}
-=\|\mathfrak F_\delta(\cdot,\nu,\mathcal R_N)
--\mathfrak F_\delta(\cdot,\nu,0)\|_{\mathscr Y},
+=\|\mathfrak F_{\delta,N}(\cdot,\nu,\mathcal R_N)
+-\mathfrak F_{\delta,N}(\cdot,\nu,0)\|_{\mathscr Y_N},
 \tag{4}
 \]
 
@@ -87,6 +98,13 @@ L_{\delta,N}=D_{z_N}\mathfrak F_{\delta,N},
 \operatorname{ind}L_{\delta,N}=-1.
 \tag{5}
 \]
+
+The domain/codomain, full jump, and transverse trace-index contract are fixed
+in [the full-network operator note](full-network-lin-operator.md). In
+particular, the reduced two-dimensional current-state skeleton has the
+necessary diagnostic \(d_-+d_+=2\). The actual RFDE theorem must construct a
+history-space Fredholm trace pair of index zero; the skeleton count is not a
+substitute for that proof.
 
 Choose \(\psi_{\delta,N}\in\mathscr Y_N^*\) and
 \(e_{\delta,N}\in\mathscr Y_N\) such that
@@ -145,11 +163,15 @@ d_{\delta,N}(\nu_{c,0},0)=0,
 \tag{11}
 \]
 
-Because every other BVP residual has been solved and (9) matches complete
-histories when \(d_\delta=0\), the root is a selected local geometric
-maximal-canard parameter. A zero of an arbitrary experimental projection is
-instead an output-event threshold unless a separate equivalence theorem is
-proved.
+Because every other BVP residual has been solved and the Lin direction is
+supported only in the jump component, \(d_{\delta,N}=0\) is equivalent to a
+zero complete-history jump. Calling that root a selected local geometric
+maximal-canard parameter additionally requires the endpoint zero-fiber
+implication in the
+[full-network contract](full-network-lin-operator.md): a matched fiber
+connection must collapse to an intersection of the selected slow histories.
+A zero of an arbitrary experimental projection is instead an output-event
+threshold unless a separate equivalence theorem is proved.
 
 ## 3. Main theorem target: structural transfer of the RFDE canard root
 
@@ -157,7 +179,7 @@ proved.
 
 - the blown-up RFDE and the Lin map are \(C^2\) in \((z,\nu,\mathcal R)\) on the declared strong spaces and fixed history domain;
 - the layer problem has one simple fast fold direction;
-- the entry/exit discs specify every transverse recovery coordinate and make all transverse history blocks isomorphisms;
+- every transverse block has a geometrically derived history-space dichotomy/fiber trace pair proved Fredholm of index zero and is an isomorphism; any finite-defect reduction obeys the diagnostic \(d_-+d_+=2\); equivalently, a two-dimensional center-manifold construction is supplied with a complete-history fiber lift;
 - the reference transverse variational problem admits the bound (8);
 - the finite delay parameters and fixed-support residual class induce (4);
 - the Lin gap is transverse as in (11);
@@ -212,7 +234,8 @@ particular, require
 ### Primary falsifiers
 
 - all node-fold directions remain critical and \(G_\perp(\delta)\) grows too rapidly;
-- the fixed voltage scaffold leaves transverse recovery directions free, producing a kernel or a multi-slow canard family;
+- the fixed dual-state scaffold fails to produce an \(N\)-uniform transverse RFDE isomorphism once the long-delay spectrum and endpoint bundles are included;
+- the proposed history-space endpoint pair is not Fredholm of index zero, or defines only a hard-synchronized restricted event;
 - the chosen delay residual is not differentiable on the history space;
 - the Lin problem has more than one unmatched direction;
 - \(m_\delta^{(\nu)}\) vanishes at the proposed operating point;
@@ -304,14 +327,34 @@ P_\perp\mathbb B(d\theta)r_c=0
 Here \(P_\perp\) projects away from the critical collective mode. Vanishing of
 the complete leading delay-induced \(\mathcal J_{\perp,\delta}\) additionally
 requires the current, instantaneous, nonlinear, and endpoint/Lin operators to
-respect the same critical/transverse splitting. The exact family in [the moment counterexample](two-module-moment-counterexample.md) keeps the total gain and \(M_1^{(2)}\) fixed while changing \(P_\perp\mathbb B r_c\), and has a nonzero local nonlinear return channel. It proves that \(M_1^{(2)}\) alone does not determine the transverse range equation; the dynamic adjoint must calculate \(\mathcal J_{\perp,\delta}\) or prove a further cancellation. For nonnegative receiver-self diffusion, a Perron no-go lemma further shows that positive-mode exact layerwise closure collapses to the common-row-measure class. The Dirac scalar case reproduces Zhang et al. (2026) with \(c_0=-1/8\) and \(C_{\rm VdP}=1/8\); that case is a calibration, not a novelty claim. The symmetric scaffolded FHN benchmark reduces exactly to a scalar two-delay RFDE and is reserved for Corollary C.
+respect the same critical/transverse splitting. The exact family in
+[the moment counterexample](two-module-moment-counterexample.md) keeps the
+total gain and \(M_1^{(2)}\) fixed while changing
+\(P_\perp\mathbb B r_c\), and has a nonzero local nonlinear return channel.
+It proves that \(M_1^{(2)}\) alone does not determine the transverse range
+equation; the dynamic adjoint must calculate
+\(\mathcal J_{\perp,\delta}\) or prove a further cancellation. Its original
+two-recovery formulation is only a range-forcing counterexample, because it
+also has an extra transverse slow center. A scalar dynamic-adjoint coefficient
+must be derived in a shared-recovery or compatible dual-scaffold repair before
+it enters (20). The [shared-recovery inner audit](shared-recovery-moment.md)
+computes the formal local value
+\(\mathcal J_{\perp,0}=\eta(\theta_0-\theta_1)/4\) and exposes its endpoint
+term, but does not yet supply the full-history RFDE theorem. For nonnegative
+receiver-self diffusion, a Perron no-go lemma
+further shows that positive-mode exact layerwise closure collapses to the
+common-row-measure class. The Dirac scalar case reproduces Zhang et al. (2026)
+with \(c_0=-1/8\) and \(C_{\rm VdP}=1/8\); that case is a calibration, not a
+novelty claim. The symmetric dual-scaffold FHN benchmark reduces exactly to a
+scalar two-delay RFDE and is reserved for Corollary C.
 
 ## 5. Concrete corollary target: three actuators in two-module FHN
 
 Use the exact symmetric benchmark in
 [the reference note](two-module-reference.md): a fixed rank-one averaging
-matrix, fixed \(D(P-I)v\) synchronization scaffold, within/cross delays, and
-weak delayed actuators. On a declared hyperbolic periodic branch, fix
+matrix, fixed \(D(P-I)v\) and \(E(P-I)w\) synchronization scaffolds,
+within/cross delays, and weak delayed actuators. On a declared hyperbolic
+periodic branch, fix
 \(a_{\rm op}\), set the positive-side safety margin
 
 \[
@@ -408,11 +451,12 @@ The numerator must be enclosed or bounded through demonstrated contributions fro
 
 ## 8. Stop/go gates
 
-1. **Definition gate (passed at specification level):** prove the frozen-model Lin BVP has exactly one unmatched direction.
-2. **Transverse gate:** obtain or numerically falsify a usable \(G_\perp(\delta)\) scaling.
-3. **Moment gate:** prove the uniform remainder and mode closure behind (20); the formal scalar coefficient alone is insufficient.
-4. **Transfer gate:** verify the first variation and quadratic normalized remainder for controlled residual directions.
-5. **Control gate:** prove (25) for the frozen FHN actuators or report a structural obstruction.
-6. **Validation gate:** require numerical uncertainty to be smaller than every reported physical shift.
+1. **Reference-template gate (passed):** the \(\mathbb R^4\) jump augmentation and index bookkeeping are fixed.
+2. **Full-definition gate (operator contract fixed; geometry open):** construct the declared history-space endpoint bundles, prove every transverse trace pair is Fredholm of index zero and every block is an isomorphism, and leave exactly one unmatched collective direction.
+3. **Transverse gate:** obtain or numerically falsify a usable \(G_\perp(\delta)\) scaling.
+4. **Moment gate:** prove the uniform remainder and mode closure behind (20); the formal scalar coefficient alone is insufficient.
+5. **Transfer gate:** verify the first variation and quadratic normalized remainder for controlled residual directions.
+6. **Control gate:** prove (25) for the frozen FHN actuators or report a structural obstruction.
+7. **Validation gate:** require numerical uncertainty to be smaller than every reported physical shift.
 
-Failure at gates 1--3 narrows the main theorem before large simulations. Failure at gate 5 changes the control corollary, not the transfer theorem.
+Failure at gates 2--4 narrows the main theorem before large simulations. Failure at gate 6 changes the control corollary, not the transfer theorem.

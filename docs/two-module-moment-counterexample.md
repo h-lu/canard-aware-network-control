@@ -1,9 +1,11 @@
 # Two-module delay moment: closure lemma and range-forcing counterexample
 
-Status: **finite-dimensional identities proved exactly; the RFDE threshold
-expansion and uniform remainder remain targets.** This note separates the
-scalar moment that is visible to the critical projection from a transverse
-delay functional that the projection can miss.
+Status: **finite-dimensional range-forcing identities proved exactly; the
+original two-recovery model is not a scalar-gap reference.** This note
+separates the scalar moment visible to the critical projection from a
+transverse delay forcing that the projection can miss. A shared-recovery or
+dual-scaffold repair is required before turning that forcing into an intrinsic
+one-dimensional RFDE threshold coefficient.
 
 ## 1. Exact layerwise closure criterion
 
@@ -110,6 +112,21 @@ The fold is nondegenerate because
 
 Along \(v=v_*+rX\), the slow field is exactly \(r(X-\mu)\), so \(\mu\)
 is a scalar unfolding of the critical direction.
+
+This does not make the complete four-state singular problem planar. Its
+\(\varepsilon=0\) Jacobian is
+
+\[
+ J_0=\begin{pmatrix}A_0&-I\\0&0\end{pmatrix},
+ \qquad
+ \det(zI-J_0)=z^3(z+2),
+ \tag{11a}
+\]
+
+with \(\dim\ker J_0=2\) and \(\dim\ker J_0^2=3\). Thus one transverse
+recovery direction remains slow. Before compatible entry/exit fibers are
+constructed, the model supplies an exact range-forcing counterexample but not
+an intrinsic scalar maximal-canard root.
 
 ## 3. Source-history feedback architecture
 
@@ -250,8 +267,10 @@ be established, if present, by the frozen Lin calculation.
 
 ## 5. Corrected Proposition B target
 
-Subject to the actual Lyapunov--Schmidt scaling, a candidate bookkeeping form
-is
+Equation (11a) blocks a direct scalar Lyapunov--Schmidt reduction of the
+original two-recovery system. Subject to first replacing it by a declared
+shared-recovery or compatible dual-scaffold model, and then verifying the
+actual Lyapunov--Schmidt scaling, a candidate bookkeeping form is
 
 \[
  \boxed{
@@ -343,6 +362,7 @@ The following are exact and executable in
 `src/canard_control/two_module_moment.py`:
 
 - the FHN equilibrium, critical modes, and fold nondegeneracy;
+- the extra transverse slow center in the original two-recovery formulation;
 - positivity on the declared \(\eta\) interval;
 - fixed total gain and fixed projected delay measure;
 - the transverse first-moment forcing;

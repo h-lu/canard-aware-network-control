@@ -1,10 +1,10 @@
 """Exact algebra for the proof-oriented two-module FHN benchmark.
 
-The benchmark uses a fixed instantaneous synchronization scaffold and weak
-delayed actuators.  The scaffold vanishes on the collective history, so the
-scalar delayed-canard calibration is unchanged, while its fast Jacobian
-separates the collective voltage direction from every transverse voltage
-direction.
+The benchmark uses fixed instantaneous voltage and recovery synchronization
+scaffolds and weak delayed actuators.  Both scaffolds vanish on the collective
+history, so the scalar delayed-canard calibration is unchanged.  The full
+fold-Jacobian audit is implemented in ``full_network_blocks``; this module
+records the exact collective reduction and first-delay moment.
 
 This module checks finite-dimensional algebra only.  It does not prove the
 RFDE Fredholm hypotheses or periodic-orbit sensitivity bounds.
@@ -99,4 +99,3 @@ def symmetric_reference_algebra(
         shifted_moment_derivative=shifted_moment_derivative,
         formal_threshold=formal_threshold,
     )
-

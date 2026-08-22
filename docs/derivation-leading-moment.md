@@ -180,8 +180,13 @@ respect the same critical/transverse splitting. The
 the total gain and the projected \(M_1^{(2)}\) fixed while changing the
 transverse forcing, and verifies a nonzero local nonlinear return channel.
 It therefore proves that \(M_1^{(2)}\) alone does not determine the range
-equation outside the closure class. Showing that the complete dynamic-adjoint
-contribution is nonzero is still part of the RFDE calculation.
+equation outside the closure class. Its original two-recovery formulation has
+an extra transverse slow center, so it is not itself a scalar-gap threshold
+model. The [shared-recovery formal repair](shared-recovery-moment.md) produces
+the local candidate
+\(\mathcal J_{\perp,0}=\eta(\theta_0-\theta_1)/4\) and an explicit
+finite-section endpoint term, but showing that the complete full-history
+dynamic-adjoint contribution is nonzero remains part of the RFDE calculation.
 
 ## 7. Exact rank-one row-measure closure and formal coefficient
 

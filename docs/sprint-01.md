@@ -8,7 +8,10 @@ Goal: decide whether one RFDE canard-root transfer theorem is viable before inve
 
 - [x] Fix the \(\mathbb R^4\) reference history space, candidate entry/exit data, matching section, and phase condition.
 - [x] Write the \(\mathbb R^4\) reference full-history RFDE Lin boundary-value template.
-- [ ] Construct the full \(2N\)-state operator and compatible entry/exit bundles for synchrony-breaking residuals.
+- [x] Write the full \(2N\)-state domain/codomain, complete-history jump, modal index table, and endpoint-bundle contract for synchrony-breaking residuals.
+- [ ] Construct the actual compatible entry/exit fiber bundles and verify their invariant-manifold meaning.
+- [ ] Prove the zero-fiber implication from a zero complete-history jump to intersection of the selected slow histories.
+- [x] Derive the reduced current-state trace diagnostic \(d_-+d_+=2\) and show why point constraints at both ends are inadmissible as an unproved shortcut.
 - [x] Correct the required post-phase index to \(-1\) and define the index-zero jump augmentation.
 - [ ] Verify that the relevant cokernel is one-dimensional.
 - [x] Define the adjoint gap and its normalization-independent root response.
@@ -29,7 +32,9 @@ Acceptance: a mathematically defined full-network scalar gap, not a projected di
 - [x] Implement the finite-interval singular-value sweep and verify that symmetric versus asymmetric endpoint choices change the observed weak-only exponent.
 - [x] Restrict the weak-only class to a negative control/narrow joint limit and freeze a scaffolded FHN control benchmark.
 - [x] Show that the scaffold leaves \(N-1\) recovery center directions at \(\varepsilon=0\); a single fast fold is not a one-cokernel proof.
-- [ ] Prove the one-cokernel property and bound \(G_\perp(\delta)\) for the scaffolded Lin BVP.
+- [x] Redesign the proof reference with fixed \(E(P-I)w\) recovery synchronization and verify exactly that its generalized singular center has dimension two.
+- [ ] Construct history-space exponential-dichotomy/Fredholm endpoint pairs of index zero, or an equivalent center-manifold history lift, for the dual scaffold.
+- [ ] Prove the one-cokernel property and bound \(G_\perp(\delta)\) for the dual-scaffold Lin BVP.
 
 Acceptance: an explicit \(G_\perp(\delta)\) estimate or a documented falsification that narrows Theorem A.
 
@@ -45,7 +50,8 @@ Acceptance: an explicit \(G_\perp(\delta)\) estimate or a documented falsificati
 - [x] Construct a positive two-delay family with fixed total gain and fixed projected \(M_1^{(2)}\) but nonzero transverse forcing.
 - [x] Verify a nonzero FHN nonlinear return coefficient for that forcing.
 - [x] Prove the Perron no-go mechanism for positive-mode closure in nonnegative receiver-self diffusion.
-- [ ] Derive the dynamic-adjoint transverse functional \(\mathcal J_{\perp,\delta}\), its coefficient, and its singular-limit scaling.
+- [x] Repair the eta-family with one shared recovery and compute the formal local coefficient \(\mathcal J_{\perp,0}=\eta(\theta_0-\theta_1)/4\), including the finite-section endpoint term.
+- [ ] Derive the complete-history RFDE dynamic-adjoint functional \(\mathcal J_{\perp,\delta}\), including true endpoint/jump terms, and prove its singular-limit scaling.
 
 Acceptance: a theorem-level remainder; symbolic coefficient agreement alone does not pass.
 
@@ -62,7 +68,7 @@ Acceptance: a complete scoped proof or a precise obstruction reducing the theore
 
 ## WP5 -- Establish Corollary C ([#5](https://github.com/h-lu/canard-aware-network-control/issues/5))
 
-- [ ] Freeze the two-module FHN equations, observable, parameter box, and linear/cubic/delay-deformation actuators.
+- [x] Freeze the dual-scaffold two-module FHN equations, observable, symbolic parameter wedge, and linear/cubic/delay-deformation actuators; numerical bounds remain open.
 - [ ] Prove periodic-branch hyperbolicity and unique nondegenerate output extrema.
 - [ ] Derive the frequency, amplitude, and Lin-root sensitivities.
 - [ ] Factor the response determinant into the \((F,R_h)\) block and the safety Schur complement.
@@ -88,7 +94,7 @@ Acceptance: all four paper claims are resolved within a reproducible uncertainty
 | Date | Primary output | Decision |
 |---|---|---|
 | Aug 22--24 | Lin operator, phase condition, and scalar gap | specification passed; Fredholm proof open |
-| Aug 25--27 | exact reference and transverse inverse audit | weak-only uniform gate failed; scaffolded reference frozen |
+| Aug 25--27 | exact reference and transverse inverse audit | weak-only and voltage-only gates failed; dual-scaffold reference frozen |
 | Aug 28--30 | first-moment uniform-remainder attempt | proposition gate |
 | Aug 31--Sep 2 | Lyapunov--Schmidt/root-transfer proof | main theorem gate |
 | Sep 3 | concrete FHN sensitivity pilot | corollary gate |

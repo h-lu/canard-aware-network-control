@@ -35,6 +35,7 @@ This is the paper's defensible intersection. “Delay + network + oscillator con
 
 | Work | What it establishes | Boundary left for this project |
 |---|---|---|
+| [Ambrosio & Aziz-Alaoui (2012)](https://doi.org/10.1016/j.camwa.2012.01.056), [Cebrián-Lacasa et al. (2024)](https://doi.org/10.1016/j.physrep.2024.09.014) | Coupled/reaction--diffusion FitzHugh--Nagumo systems and synchronization are established model classes; the survey explicitly records discrete coupling in both activator and recovery components as an FHN variant. | Supports the biological/mathematical legitimacy of the fixed dual-state scaffold, but supplies no canard Lin-gap, delayed threshold transfer, or singular inverse estimate. The scaffold architecture is not a novelty claim. |
 | [Laurence et al. (2019)](https://doi.org/10.1103/PhysRevX.9.011042) | Spectral dimension reduction with eigenvector-weighted network observables. | General trajectory/bifurcation approximation, not a nonhyperbolic splitting-root bound. |
 | [Thibeault et al. (2020)](https://doi.org/10.1103/PhysRevResearch.2.043215) | Multi-dimensional reduction for modular/heterogeneous network dynamics. | No slow--fast canard threshold transfer theorem. |
 | [Masuda & Kundu (2022)](https://doi.org/10.1103/PhysRevResearch.4.023257) | Leading and non-leading spectral observables can differ materially in state and bifurcation accuracy. | Motivates an explicit observable-projection error but does not provide one for canards. |

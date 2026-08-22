@@ -29,7 +29,8 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
 
 2. **Reference RFDE and exact closure**
    - Weak-feedback/scaled-delay model and the fixed blown-up history interval.
-   - Fixed instantaneous transverse scaffold for the concrete FHN benchmark; it vanishes on the collective history.
+   - Fixed instantaneous voltage--recovery synchronization scaffolds for the concrete FHN benchmark; both vanish on the collective history.
+   - Exact singular-Jacobian comparison: weak-only and voltage-only negative controls versus the two-dimensional collective center of the dual-scaffold reference.
    - Common-row-measure synchronous RFDE and the two-module FHN reference class.
    - Residual norm for weights, delay measures, and node heterogeneity.
    - Why adjacency spectral gap alone does not control the fold passage.
@@ -38,6 +39,8 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - \(\mathbb R^4\) reference-gap template versus the full \(2N\)-state operator for synchrony-breaking residuals.
    - Entry and exit data, matching section, phase condition, and complete \(2N\)-state history jump.
    - Full-history jump and the center/solution-manifold construction of the backward-extendible repelling piece.
+   - Trace-index audit: prove a history-space transverse Fredholm pair of index zero; \(d_-+d_+=2\) is only its reduced-skeleton diagnostic, and hard synchronization at both endpoints is excluded.
+   - Zero-fiber implication: a zero complete-history jump must force the endpoint fiber coordinates to vanish before the root is called a slow-manifold intersection.
    - Post-phase Fredholm index \(-1\), one-dimensional cokernel, and the index-zero scalar-jump augmentation.
    - Transverse inverse \(G_\perp(\delta)\), \(\delta=\sqrt\varepsilon\).
    - Definition of the geometric Lin gap and its simple root.
@@ -49,6 +52,7 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - Common-row-measure closure and \((K/8)m_1\) calibration.
    - Two-module critical modes, \(M_1^{(2)}\), and the layerwise mode-closure condition.
    - Exact fixed-total/fixed-moment family with nonzero transverse forcing and nonlinear return.
+   - Shared-recovery repair and its formal local coefficient \(\mathcal J_{\perp,0}=\eta(\theta_0-\theta_1)/4\), with the RFDE endpoint term kept explicit.
    - Perron no-go: positive-mode closure in nonnegative receiver-self diffusion collapses to common-row measures.
    - Dynamic-adjoint formula and singular-limit scaling for \(\mathcal J_{\perp,\delta}\), followed by a uniform \(O(\varepsilon^2)\) remainder in the admitted regime.
 
@@ -60,7 +64,7 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - Joint limit needed to distinguish an \(O(\varepsilon^{3/2})\) physical effect.
 
 6. **Corollary C: two-module FHN three-coordinate control**
-   - Fix the scaffolded equations, asymmetric output, parameter box, periodic branch, and the linear, cubic, and common-delay-shift actuators.
+   - Fix the dual-scaffold equations, asymmetric output, parameter box, periodic branch, and the linear, cubic, and common-delay-shift actuators.
    - Periodic-orbit sensitivities for frequency and squared peak-to-peak amplitude.
    - Lin-root sensitivity for the positive safety margin \(S_c=a_{\rm op}-a_c\).
    - Factor the Jacobian through its \((F,R_h)\) block and safety Schur complement.

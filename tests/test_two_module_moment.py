@@ -18,6 +18,18 @@ def test_fhn_core_has_one_non_degenerate_critical_mode() -> None:
     assert result.fold_nondegeneracy == -result.sigma
 
 
+def test_original_two_recovery_counterexample_has_an_extra_slow_center() -> None:
+    result = two_module_moment_audit()
+    spectral_parameter = sp.symbols("z")
+    jacobian = result.full_singular_jacobian
+
+    assert sp.factor(jacobian.charpoly(spectral_parameter).as_expr()) == (
+        spectral_parameter**3 * (spectral_parameter + 2)
+    )
+    assert 4 - jacobian.rank() == 2
+    assert 4 - (jacobian**2).rank() == 3
+
+
 def test_delay_redistribution_keeps_total_gain_and_projected_layers() -> None:
     result = two_module_moment_audit()
 

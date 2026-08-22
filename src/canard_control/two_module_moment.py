@@ -24,6 +24,7 @@ class TwoModuleMomentAudit:
     equilibrium_v: sp.Matrix
     equilibrium_w: sp.Matrix
     fast_jacobian: sp.Matrix
+    full_singular_jacobian: sp.Matrix
     critical_right: sp.Matrix
     critical_left: sp.Matrix
     critical_projector: sp.Matrix
@@ -93,6 +94,10 @@ def two_module_moment_audit() -> TwoModuleMomentAudit:
         fast_field.jacobian((v_1, v_2)).subs(
             {v_1: equilibrium_v[0], v_2: equilibrium_v[1]}
         )
+    )
+    full_singular_jacobian = sp.Matrix.vstack(
+        sp.Matrix.hstack(fast_jacobian, -sp.eye(2)),
+        sp.zeros(2, 4),
     )
 
     critical_right = sp.Matrix([1, 2])
@@ -198,6 +203,7 @@ def two_module_moment_audit() -> TwoModuleMomentAudit:
         equilibrium_v=equilibrium_v,
         equilibrium_w=equilibrium_w,
         fast_jacobian=fast_jacobian,
+        full_singular_jacobian=full_singular_jacobian,
         critical_right=critical_right,
         critical_left=critical_left,
         critical_projector=critical_projector,

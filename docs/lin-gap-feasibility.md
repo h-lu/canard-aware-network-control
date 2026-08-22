@@ -1,10 +1,11 @@
 # RFDE Lin-gap formulation
 
-Status: **the \(\mathbb R^4\) reference-gap template is fixed; the full
-\(2N\)-state operator, endpoint bundles, and Fredholm gate remain open.** This
-specification removes the earlier set-subtraction ambiguity and fixes the
-index bookkeeping after phase fixing. It does not yet define a full-network
-maximal-canard root or a global pulse threshold.
+Status: **the \(\mathbb R^4\) reference-gap template and the separate
+\(2N\)-state operator contract are fixed; the actual endpoint bundles and
+Fredholm gate remain open.** This specification removes the earlier
+set-subtraction ambiguity and fixes the index bookkeeping after phase fixing.
+It does not yet prove a full-network maximal-canard root or a global pulse
+threshold.
 
 ## 1. Fixed history and differentiability spaces
 
@@ -64,6 +65,22 @@ with a complete \(2N\)-state history jump. At the exact reference, that
 operator must decompose into collective, module-difference, and within-module
 history blocks. A Fredholm result only for the \(\mathbb R^4\) subsystem would
 prove a reduced theorem, not Theorem A for structurally perturbed networks.
+
+The proof reference now includes fixed dual-state synchronization
+\(D(P-I)v+E(P-I)w\), with \(D,E>0\). At the singular fold its exact
+current-state Jacobian has one collective length-two zero Jordan chain and
+\(N-1\) transverse blocks with eigenvalues \(-D,-E\). This removes the
+voltage-only model's \(N-1\) recovery centers, but it is only the algebraic
+input to the full RFDE construction. The weak long-delay spectrum, endpoint
+bundles, and transverse history-block inverse still have to be proved.
+After quotienting out the canonical RFDE history directions, a reduced
+two-dimensional transverse skeleton with finite defect dimensions
+\(d_-,d_+\) has the diagnostic count \(d_-+d_+-2\). Point constraints at
+both ends fail this diagnostic. This is not an RFDE index theorem: the proof
+must construct a history-space dichotomy/Fredholm trace pair of index zero
+and only then recover \(d_-+d_+=2\) in a justified finite-defect reduction,
+or work on the two-dimensional center manifold and prove a complete-history
+fiber lift.
 
 Bounded-Lipschitz or Wasserstein control of freely moving Dirac masses is an
 extension. Such a metric gives useful Lipschitz closeness, but by itself does
@@ -126,8 +143,8 @@ intervals are rescaled to fixed domains in the analysis. Define
 \[
  \bar{\mathfrak F}_\delta(z,\nu,\mathcal R)=
  \begin{pmatrix}
- \dot u^--\mathcal F_\delta((u^-)_s;\nu,\mathcal R)\\
- \dot u^+-\mathcal F_\delta((u^+)_s;\nu,\mathcal R)\\
+ \dot u^--\bar{\mathcal F}_\delta((u^-)_s;\nu,\mathcal R)\\
+ \dot u^+-\bar{\mathcal F}_\delta((u^+)_s;\nu,\mathcal R)\\
  B_-((u^-)_{-T_-},\alpha_-;\nu,\mathcal R)\\
  B_+((u^+)_{T_+},\alpha_+;\nu,\mathcal R)\\
  \xi_c((u^-)_0)\\
@@ -245,16 +262,22 @@ The strict Lin gap is
 \]
 
 All dynamic, entry, exit, and phase residuals have already been solved. Since
-\(\bar e_\delta\) lies only in the jump component,
+\(\bar e_\delta\) lies only in the jump component, augmented-IFT uniqueness
+gives
 
 \[
  \bar d_\delta=0
  \quad\Longleftrightarrow\quad
- (u^-)_0=(u^+)_0
- \quad\Longleftrightarrow\quad
- \text{the selected local slow manifolds match completely}.
+ (u^-)_0=(u^+)_0.
  \tag{19}
 \]
+
+If the endpoint maps directly parameterize the selected slow-manifold slices
+without extra fiber coordinates, (19) is also equivalent to their local
+intersection. If invariant-fiber coordinates are present, that geometric
+interpretation requires the additional zero-fiber implication specified in
+`full-network-lin-operator.md`; a zero complete-history jump alone gives only
+a matched fiber connection.
 
 The adjoint \(\bar\psi_\delta\) is not the static network left mode \(\ell_c\).
 For a discrete-delay variational equation it contains an advanced dynamic
@@ -264,7 +287,7 @@ variation has the schematic form
 \[
  D_{\mathcal R}\bar d_\delta[\mathcal R]
  =\int p_\delta(s)^\top
- D_{\mathcal R}\mathcal F_\delta(q_{\delta,s})[\mathcal R],ds
+ D_{\mathcal R}\bar{\mathcal F}_\delta(q_{\delta,s})[\mathcal R],ds
  +\text{boundary terms}.
  \tag{20}
 \]
@@ -318,19 +341,24 @@ Completed for the \(\mathbb R^4\) reference template:
 - full-history matching rather than current-state matching;
 - one phase condition and the correct post-phase Fredholm index;
 - the algebraic form of an index-zero augmented Lin operator;
-- a candidate scalar gap whose zero is equivalent to a complete selected-history match if the stated Fredholm hypotheses hold;
+- a candidate scalar gap whose zero is equivalent to a complete selected-history match only if the stated Fredholm and endpoint zero-fiber hypotheses hold;
 - normalization-invariant first root response.
 
 Still open for the frozen reference and its full \(2N\)-state extension:
 
 - [ ] construct the center/solution manifold and selected endpoint maps;
-- [ ] declare the dimension of the entry/exit discs and whether each transverse recovery coordinate is free, synchronized, or fiber-selected;
+- [ ] construct dual-scaffold history-space dichotomy/fiber endpoint pairs and prove they are Fredholm of index zero in every transverse block, or prove a two-dimensional center-manifold construction with complete-history lift;
 - [ ] prove the required \(C^2\) dependence for the finite delay parameters;
 - [ ] prove (11), closed range, and invertibility of (14);
-- [ ] define \(\mathfrak F_{\delta,N}\) with its complete \(2N\)-state jump, decompose collective, module-difference, and within-module history blocks, and bound \(G_\perp(\delta)\) from that full Lin BVP;
+- [ ] realize the specified \(\mathfrak F_{\delta,N}\) with constructed endpoint maps, prove its collective/module-difference/within-module history decomposition, and bound \(G_\perp(\delta)\) from that full Lin BVP;
 - [ ] derive the dynamic adjoint and boundary terms in (20);
 - [ ] prove a uniform lower bound in (21) on the declared parameter wedge;
 - [ ] connect the local matched segment to a global pulse threshold.
+
+The detailed full-network domain/codomain and trace-index contract are in
+[the dual-scaffold operator specification](full-network-lin-operator.md).
+That note fixes what must be proved; it does not discharge the open items
+above.
 
 The classical foundation is supplied by RFDE phase-space and invariant-
 manifold theory, exponential-dichotomy/Fredholm results, and Lin reductions

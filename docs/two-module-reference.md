@@ -1,8 +1,9 @@
 # Two-module FHN reference and transverse feasibility audit
 
-Status: **concrete control benchmark frozen; weak-only uniform one-gap
-assumption rejected.** Exact reductions and the inner formal calculations are
-checked algebraically. The model-specific RFDE Fredholm estimate remains open.
+Status: **dual-scaffold control benchmark frozen; weak-only and voltage-only
+uniform one-gap shortcuts rejected.** Exact reductions, the full singular
+Jacobian, and the inner formal diagnostics are checked algebraically. The
+model-specific RFDE endpoint bundles and Fredholm estimate remain open.
 
 ## 1. Proof-oriented FHN benchmark
 
@@ -39,14 +40,20 @@ The frozen node model is
  \kappa_1[v_j(t-\tau_{ij})-v_i]
  +\kappa_3[(v_j(t-\tau_{ij})-1)^3-(v_i-1)^3]
  \right\},\\
- \dot w_i={}&\varepsilon(v_i-a).
+ \dot w_i={}&\varepsilon(v_i-a)
+ +E\sum_jP_{ij}(w_j-w_i).
 \end{aligned}
 \tag{3}
 \]
 
-Here \(D>0\) is a fixed instantaneous synchronization scaffold, not an
-actuator. It vanishes on the collective history. The three weak delayed
-actuators are
+Here \(D>0\) and \(E>0\) are fixed instantaneous voltage and recovery
+synchronization scaffolds, not actuators. Both vanish on the collective
+history. The recovery scaffold is essential to the proof reference: without
+it, every node contributes a slow recovery center direction at the singular
+fold. Two-component diffusion/coupling is a standard FitzHugh--Nagumo
+reaction--diffusion architecture; the present rank-one coupling is chosen for
+an exact finite-network reduction, not claimed as a literal synaptic model.
+The three weak delayed actuators are
 
 \[
  u=(\kappa_1,\kappa_3,s).
@@ -60,7 +67,7 @@ while allowing it to affect the full periodic orbit.
 A symbolic parameter wedge is
 
 \[
- D\in[D_0,D_1],\quad
+ D\in[D_0,D_1],\quad E\in[E_0,E_1],\quad
  \kappa_1\in[\kappa_-,\kappa_+]\subset(0,\infty),\quad
  |\kappa_3|\le\kappa_3^*,\quad |s|\le s^*,
  \tag{5}
@@ -91,7 +98,8 @@ is invariant. For \(b\ne a\), its restriction is
  \Psi(V_a,V_a(t-\tau_0))
  +\Psi(V_a,V_b(t-\tau_1))
  \right],\\
- \dot W_a={}&\varepsilon(V_a-a),
+ \dot W_a={}&\varepsilon(V_a-a)
+ +\frac E2(W_b-W_a),
 \end{aligned}
 \tag{7}
 \]
@@ -186,69 +194,107 @@ two-module example for Proposition B. A genuinely modular moment law needs
 nonidentical module-pair measures or critical modes and must retain any
 same-order transverse resolvent term.
 
-## 4. One fast fold direction in the concrete benchmark
+## 4. Why both instantaneous scaffolds are part of the proof reference
 
-At the synchronous fold, the instantaneous fast voltage Jacobian contributed
-by the scaffold is
+At the synchronous fold, the complete \(\varepsilon=0\) current-state
+Jacobian is
 
 \[
- D(P-I).
+ J_0=
+ \begin{pmatrix}
+ D(P-I)&-I\\
+ 0&E(P-I)
+ \end{pmatrix}.
  \tag{15}
 \]
 
-Since \(P\) is a rank-one projection, (15) has eigenvalue zero on the
-collective voltage mode and eigenvalue \(-D\) on all \(N-1\) transverse
-voltage modes. Thus the layer problem has one fast fold direction. The weak
-delayed terms perturb the transverse fast spectrum only by \(O(\varepsilon)\)
-on compact parameter sets.
-
-It does **not** imply that the complete Lin BVP has one cokernel direction.
-At \(\varepsilon=0\), the full voltage--recovery Jacobian is
+Since \(P\) is a rank-one projection, the collective block is
 
 \[
- \begin{pmatrix}D(P-I)&-I\\0&0\end{pmatrix}.
+ \begin{pmatrix}0&-1\\0&0\end{pmatrix},
+ \tag{16}
 \]
 
-The collective block has the usual two-dimensional zero generalized space,
-but each transverse block
+whereas every module-difference or within-module block is
 
 \[
- \begin{pmatrix}-D&-1\\0&0\end{pmatrix}
+ \begin{pmatrix}-D&-1\\0&-E\end{pmatrix}.
+ \tag{17}
 \]
 
-retains one recovery center direction. Hence the singular center dimension is
-\(N+1\), not two, consistent with general multiple-slow-variable fold theory
-([Wechselberger 2012](https://doi.org/10.1090/S0002-9947-2012-05575-9)). At
-\(\varepsilon>0\), a transverse block has the physical-
-time roots
+Consequently, for \(D,E>0\),
 
 \[
- \lambda_f=-D+O(\delta),
+ \det(zI-J_0)
+ =z^2(z+D)^{N-1}(z+E)^{N-1},
+ \tag{18}
+\]
+
+\[
+ \dim\ker J_0=1,
  \qquad
- \lambda_s=-\frac{\varepsilon}{D}+O(\varepsilon^{3/2}),
+ \dim\ker J_0^2=2.
+ \tag{19}
 \]
 
-or, in fold time,
+Thus the singular current-state problem has exactly the one collective
+length-two Jordan chain expected at a planar fold, while all \(2N-2\)
+transverse current-state directions are hyperbolic. This identity is exact
+for every module size and is executable in
+`src/canard_control/full_network_blocks.py`.
+
+The recovery term is not an algebraic trick hidden in an actuator. Coupled
+FitzHugh--Nagumo reaction--diffusion systems with diffusion/coupling in both
+components are established model variants; see
+[Ambrosio and Aziz-Alaoui (2012)](https://doi.org/10.1016/j.camwa.2012.01.056)
+and the model survey of
+[Cebrián-Lacasa et al. (2024)](https://doi.org/10.1016/j.physrep.2024.09.014).
+Here it has a narrower mathematical role: it is fixed, vanishes on exact
+synchrony, and supplies an \(N\)-uniform transverse gap in the instantaneous
+current-state Jacobian. The history-space RFDE gap remains to be proved.
+
+The voltage-only case \(E=0\) is retained as a negative control. Then
 
 \[
- \Lambda_f=-\frac D\delta+O(1),
+ \det(zI-J_0)=z^{N+1}(z+D)^{N-1},
  \qquad
- \Lambda_s=-\frac\delta D+O(\delta^2).
+ \dim\ker J_0=N,
+ \qquad
+ \dim\ker J_0^2=N+1.
+ \tag{20}
 \]
 
-Thus the scaffold proves exactly one **fast fold** direction but does not by
-itself prove one Lin cokernel. The entry/exit history discs must declare
-whether transverse recovery coordinates are free, synchronized, or selected
-by compatible fibers. Free recovery directions may yield a family or an
-actual kernel; hard endpoint selection can hide the slow degeneration; a
-full slow-manifold construction naturally suggests an
-\(O(\delta^{-1})\) Green scale if the transverse BVP is otherwise invertible.
+It therefore has \(N-1\) extra transverse recovery center directions. This
+does not logically forbid a one-gap problem at each fixed
+\(\varepsilon>0\): with one free recovery trace at each end, the reduced
+current-state endpoint diagnostic for a two-dimensional transverse block is
+zero. This does not determine the RFDE Fredholm index. It does show that the
+singular limit contains an additional kernel/cokernel mechanism and that an
+\(O(1)\), \(N\)-uniform inverse cannot be inferred from the voltage gap.
+Hard synchronization of both endpoint traces instead defines a restricted
+BVP. General multiple-slow-variable fold theory explains why one fast fold
+alone is insufficient
+([Wechselberger 2012](https://doi.org/10.1090/S0002-9947-2012-05575-9)).
 
-The concrete theorem must therefore prove a direct-sum Fredholm result for
-the collective, module-difference, and within-module blocks in an
-\(N\)-uniform weighted norm. The scaffold removes the immediate multi-fold
-contradiction present in the weak-only reference, but it does not pass that
-gate automatically.
+Equations (18)--(19) remove this finite-dimensional center obstruction; they
+do **not** prove the RFDE Fredholm statement. If the left and right trace
+bundles of a reduced two-dimensional transverse skeleton have finite defect
+dimensions \(d_-\) and \(d_+\), its diagnostic trace count is
+
+\[
+ \operatorname{ind}_{\rm skel}L_\perp=d_-+d_+-2.
+ \tag{20a}
+\]
+
+This is not the index of an unconstructed RFDE history-space operator.
+Point-valued slices at both ends give the skeleton value \(-2\). The proof
+must instead construct a history-space exponential-dichotomy/Fredholm trace
+pair of index zero and recover \(d_-+d_+=2\) only in a proved finite-defect
+reduction, or construct the canard on the two-dimensional center manifold and
+prove a complete-history fiber lift. It must also control the
+weak long-delay spectrum and show that the collective post-phase Lin block
+has index \(-1\), zero kernel, and one-dimensional cokernel, while every
+transverse history block is an \(N\)-uniform index-zero isomorphism.
 
 ## 5. Output and safety coordinates
 
@@ -258,7 +304,7 @@ Fix
  \bar v_a=\frac1{n_a}\sum_{i\in C_a}v_i,
  \qquad
  h_N=\frac23\bar v_1+\frac13\bar v_2.
- \tag{16}
+ \tag{21}
 \]
 
 The output is deliberately different from the collective adjoint weight. On
@@ -268,7 +314,7 @@ a declared hyperbolic periodic branch with unique nondegenerate extrema, use
  F=1/T,
  \qquad
  R_h=(\max h_N-\min h_N)^2.
- \tag{17}
+ \tag{22}
 \]
 
 If \(a>a_c\) is the nonpulsatile side in the selected wedge, the positive
@@ -276,7 +322,7 @@ safety margin is
 
 \[
  S_c=a_{\rm op}-a_c.
- \tag{18}
+ \tag{23}
 \]
 
 The earlier notation \(\Delta_c=a_c-a_{\rm op}\) equals \(-S_c\); it should
@@ -293,7 +339,7 @@ With \(\delta=\sqrt\varepsilon\), the fold-scaled variational equation is
  u'=-2Xu+v
  +\delta[-X^2u+K(u-\lambda u(s-\Theta))],
  \qquad v'=-u.
- \tag{19}
+ \tag{24}
 \]
 
 The topology, gain, and delay disappear at \(\delta=0\). On the canonical
@@ -305,7 +351,7 @@ leading canard \(X_0=-s/2\), every network mode has
  \phi_0=(-1,s)^\top,
  \quad
  \psi_0=e^{-s^2/2}(s,1)^\top.
- \tag{20}
+ \tag{25}
 \]
 
 Thus the singular problem contains a relative-canard copy in every network
@@ -316,7 +362,7 @@ bound
 
 \[
  G_\perp(\delta)\ge c\delta^{-1}.
- \tag{21}
+ \tag{26}
 \]
 
 This rules out an assumed \(O(1)\) inverse, but it does not determine the
@@ -331,7 +377,7 @@ adjoint projection is
 \[
  M_{1,\lambda}
  =\kappa\int_{-\infty}^{\infty}s e^{-s^2/2}\,ds=0.
- \tag{22}
+ \tag{27}
 \]
 
 The forcing is in the range: with
@@ -340,7 +386,7 @@ The forcing is in the range: with
 \[
  r_1=(0,\kappa),
  \qquad L_0r_1=(-\kappa,0).
- \tag{23}
+ \tag{28}
 \]
 
 For the generalized slow equation
@@ -351,7 +397,7 @@ For the generalized slow equation
  M_{2,\lambda}
  =K(1-\lambda)\frac{1+2b}{4}\sqrt{2\pi}.
  }
- \tag{24}
+ \tag{29}
 \]
 
 Let
@@ -367,19 +413,19 @@ The canonical symmetric whole-line inner calculation predicts
  G_\perp(\varepsilon)
  \asymp
  \frac{1}{\varepsilon|K|\gamma}
- \tag{25}
+ \tag{30}
 \]
 
 for the collective, module-difference, and within-module decomposition, if
 the second reduced matrix is the only obstruction and is nonsingular.
-Equation (25) is a formal diagnostic, not a theorem.
+Equation (30) is a formal diagnostic, not a theorem.
 
 Finite or asymmetric sections can restore an order-\(\delta\) interior term,
 
 \[
  \int_{s_-}^{s_+}s e^{-s^2/2}\,ds
  =e^{-s_-^2/2}-e^{-s_+^2/2},
- \tag{26}
+ \tag{31}
 \]
 
 and the complete coefficient also contains boundary and phase terms. The
@@ -394,16 +440,16 @@ evidence for \(G_\perp\).
 
 ## 8. Residual normalization and decision
 
-Let \(\eta_W\) denote a raw weight residual. In (19), its blown-up operator
+Let \(\eta_W\) denote a raw weight residual. In (24), its blown-up operator
 size is \(O(\delta|K|\eta_W)\), not \(O(\eta_W)\). The perturbative condition
 is therefore
 
 \[
  G_\perp(\delta)\,\delta|K|\eta_W\ll1.
- \tag{27}
+ \tag{32}
 \]
 
-Under the formal scaling (25), this already suggests
+Under the formal scaling (30), this already suggests
 \(\eta_W=o(\sqrt\varepsilon)\). The exact threshold-error requirement must be
 derived in the physical parameter after the dynamic adjoint and
 \(\partial_\nu d\) are normalized; no stronger raw-residual exponent is
@@ -411,7 +457,8 @@ claimed here.
 
 The project decision is:
 
-1. Corollary C uses the proof-oriented scaffolded model (3).
+1. Corollary C uses the dual-scaffold proof reference (3), with fixed
+   \(D,E>0\).
 2. Theorem A keeps \(G_\perp(\delta)\) explicit and does not infer it from an
    adjacency gap.
 3. The weak-only identical-module class is retained as a negative control and
@@ -419,7 +466,7 @@ The project decision is:
 4. Proposition B uses a separate nontrivial modular reference; the symmetric
    control benchmark cannot supply that novelty.
 5. Large heterogeneous simulations remain blocked until the actual augmented
-   RFDE Lin operator replaces the finite-interval diagnostic below.
+   RFDE Lin operator verifies the weak-delay spectrum and endpoint bundles.
 
 ## 9. Finite-interval boundary-condition diagnostic
 
@@ -440,17 +487,19 @@ four smallest values, its log--log slopes are:
 |---|---:|
 | symmetric weak-only | 2.0002 |
 | asymmetric weak-only | 1.0060 |
-| symmetric chart scaffold | -0.0090 |
-| asymmetric chart scaffold | 0.0074 |
-| symmetric physical scaffold | -0.0058 |
+| symmetric voltage-only chart scaffold | -0.0090 |
+| asymmetric voltage-only chart scaffold | 0.0074 |
+| symmetric voltage-only physical scaffold | -0.0058 |
 
 The weak-only rows reproduce the analytical distinction between a symmetric
-inner cancellation and an endpoint contribution. The discrete scaffold rows
-show plateaus under these **fixed endpoint conditions**, but they do not prove
-an RFDE inverse bound. In particular, the endpoint lines can pin transverse
-recovery directions that a full \(N\)-slow Fenichel manifold would leave
-free. The plateau also depends on the interval, grid, Euclidean unknown norm,
-and residual-row scaling.
+inner cancellation and an endpoint contribution. The voltage-only scaffold
+rows show plateaus under these **fixed endpoint conditions**, but they do not
+prove an RFDE inverse bound: the endpoint lines can artificially pin the
+transverse recovery directions exposed by (20). The new \(E>0\) recovery
+scaffold is audited by the exact full Jacobian (15), not by retroactively
+reinterpreting this older finite-section sweep. Every reported plateau also
+depends on the interval, grid, Euclidean unknown norm, and residual-row
+scaling.
 
 This experiment is a falsifier for BVP choices: the final Lin computation
 must replace its incoming-history closure and endpoint lines by compatible
