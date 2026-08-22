@@ -1,0 +1,255 @@
+{
+  "disclaimer": "The prescribed history and finite leading-energy exit section are diagnostic choices. Their roots are not complete-history intersections and cannot establish section-independent or uniform canard-threshold asymptotics.",
+  "equation": "docs/final-model-blowup.md equation (6)",
+  "exit_condition": "normalized leading KS Hamiltonian energy gap equals zero at +S",
+  "history": "leading canard plus singular transverse graph on [-S-theta_1,-S]",
+  "integrator": {
+    "algorithm": "method of steps; scipy.solve_ivp Radau per segment",
+    "atol": 2e-11,
+    "bracket_policy": "zero root: center 0, initial half-width 0.25; eta roots: center at zero root, half-width max(0.02,8*delta*h); double until a sign change, maximum half-width 16",
+    "max_step": 0.08,
+    "root_algorithm": "Brent on normalized KS zero-energy gap",
+    "root_rtol": 2e-10,
+    "root_xtol": 2e-10,
+    "rtol": 2e-09,
+    "segment_length_upper_bound": 0.5
+  },
+  "parameters": {
+    "alpha": 0.6123724356957945,
+    "eta_step": 0.04,
+    "recovery_gap": 1.5,
+    "theta_0": 0.5,
+    "theta_1": 1.0,
+    "weak_gain": 1.0
+  },
+  "predicted_coefficient": -0.20412414523193154,
+  "quotient": "(nu_c(+h)-nu_c(-h))/(2*delta*h)",
+  "refinements": {
+    "delta": 0.0025,
+    "max_step_rows": [
+      {
+        "absolute_error": 0.0005067690886590703,
+        "delta": 0.0025,
+        "eta_step": 0.04,
+        "nu_minus": -0.7468193013958526,
+        "nu_plus": -0.7468600248710813,
+        "nu_zero": -0.7468396631887171,
+        "predicted_coefficient": -0.20412414523193154,
+        "quotient_central": -0.20361737614327247,
+        "quotient_minus": -0.20361792864465045,
+        "quotient_plus": -0.20361682364189448,
+        "relative_error": 0.002482651369259943,
+        "root_residual_max": 7.954853731284572e-08,
+        "section_half_width": 5.0
+      },
+      {
+        "absolute_error": 0.0005067707473322691,
+        "delta": 0.0025,
+        "eta_step": 0.04,
+        "nu_minus": -0.74681930139051,
+        "nu_plus": -0.7468600248654069,
+        "nu_zero": -0.7468396631831034,
+        "predicted_coefficient": -0.20412414523193154,
+        "quotient_central": -0.20361737448459927,
+        "quotient_minus": -0.20361792593348582,
+        "quotient_plus": -0.2036168230357127,
+        "relative_error": 0.0024826594950659174,
+        "root_residual_max": 7.944811453164391e-08,
+        "section_half_width": 5.0
+      },
+      {
+        "absolute_error": 0.0005067722516844675,
+        "delta": 0.0025,
+        "eta_step": 0.04,
+        "nu_minus": -0.7468193013900731,
+        "nu_plus": -0.7468600248646692,
+        "nu_zero": -0.7468396631825651,
+        "predicted_coefficient": -0.20412414523193154,
+        "quotient_central": -0.20361737298024707,
+        "quotient_minus": -0.2036179249198522,
+        "quotient_plus": -0.20361682104064194,
+        "relative_error": 0.002482666864856476,
+        "root_residual_max": 7.963259984755666e-08,
+        "section_half_width": 5.0
+      }
+    ],
+    "max_step_settings": [
+      0.08,
+      0.04,
+      0.02
+    ],
+    "max_step_spread": 3.163025397157071e-09,
+    "section_half_width": 5.0,
+    "tolerance_rows": [
+      {
+        "absolute_error": 0.0005067690886590703,
+        "delta": 0.0025,
+        "eta_step": 0.04,
+        "nu_minus": -0.7468193013958526,
+        "nu_plus": -0.7468600248710813,
+        "nu_zero": -0.7468396631887171,
+        "predicted_coefficient": -0.20412414523193154,
+        "quotient_central": -0.20361737614327247,
+        "quotient_minus": -0.20361792864465045,
+        "quotient_plus": -0.20361682364189448,
+        "relative_error": 0.002482651369259943,
+        "root_residual_max": 7.954853731284572e-08,
+        "section_half_width": 5.0
+      },
+      {
+        "absolute_error": 0.0005067718980784341,
+        "delta": 0.0025,
+        "eta_step": 0.04,
+        "nu_minus": -0.7468193013928365,
+        "nu_plus": -0.7468600248675032,
+        "nu_zero": -0.746839663185347,
+        "predicted_coefficient": -0.20412414523193154,
+        "quotient_central": -0.2036173733338531,
+        "quotient_minus": -0.20361792510525945,
+        "quotient_plus": -0.20361682156244676,
+        "relative_error": 0.002482665132547773,
+        "root_residual_max": 7.94140253557174e-08,
+        "section_half_width": 5.0
+      },
+      {
+        "absolute_error": 0.0005067714512136667,
+        "delta": 0.0025,
+        "eta_step": 0.04,
+        "nu_minus": -0.7468193013905088,
+        "nu_plus": -0.7468600248652649,
+        "nu_zero": -0.7468396631832455,
+        "predicted_coefficient": -0.20412414523193154,
+        "quotient_central": -0.20361737378071787,
+        "quotient_minus": -0.20361792736678375,
+        "quotient_plus": -0.203616820194652,
+        "relative_error": 0.0024826629433664445,
+        "root_residual_max": 7.944046287455819e-08,
+        "section_half_width": 5.0
+      }
+    ],
+    "tolerance_settings": [
+      {
+        "atol": 2e-11,
+        "rtol": 2e-09
+      },
+      {
+        "atol": 5e-12,
+        "rtol": 5e-10
+      },
+      {
+        "atol": 1e-12,
+        "rtol": 1e-10
+      }
+    ],
+    "tolerance_spread": 2.8094193638139586e-09
+  },
+  "rows": [
+    {
+      "absolute_error": 0.007147084311354107,
+      "delta": 0.12,
+      "eta_step": 0.04,
+      "nu_minus": -0.4987338382482387,
+      "nu_plus": -0.5006248180330762,
+      "nu_zero": -0.4996792204603038,
+      "predicted_coefficient": -0.20412414523193154,
+      "quotient_central": -0.19697706092057743,
+      "quotient_minus": -0.19695462751355883,
+      "quotient_plus": -0.19699949432759603,
+      "relative_error": 0.03501341942293691,
+      "root_residual_max": 1.8030021919912542e-11,
+      "section_half_width": 2.5
+    },
+    {
+      "absolute_error": 0.0023987504287970862,
+      "delta": 0.08,
+      "eta_step": 0.04,
+      "nu_minus": -0.573606228499677,
+      "nu_plus": -0.5748972710264171,
+      "nu_zero": -0.5742517232628592,
+      "predicted_coefficient": -0.20412414523193154,
+      "quotient_central": -0.20172539480313445,
+      "quotient_minus": -0.2017171134944401,
+      "quotient_plus": -0.2017336761118288,
+      "relative_error": 0.011751429141670424,
+      "root_residual_max": 1.7217338665886928e-12,
+      "section_half_width": 2.75
+    },
+    {
+      "absolute_error": 0.0015797947578661542,
+      "delta": 0.05,
+      "eta_step": 0.04,
+      "nu_minus": -0.6386309519391579,
+      "nu_plus": -0.6394411293410541,
+      "nu_zero": -0.6390360357699477,
+      "predicted_coefficient": -0.20412414523193154,
+      "quotient_central": -0.20254435047406538,
+      "quotient_minus": -0.20254191539492705,
+      "quotient_plus": -0.2025467855532037,
+      "relative_error": 0.007739382110191558,
+      "root_residual_max": 2.0983215165415459e-13,
+      "section_half_width": 3.0
+    },
+    {
+      "absolute_error": 0.0013787319540432275,
+      "delta": 0.01,
+      "eta_step": 0.04,
+      "nu_minus": -0.7368457179367783,
+      "nu_plus": -0.7370079142674006,
+      "nu_zero": -0.7369268160943023,
+      "predicted_coefficient": -0.20412414523193154,
+      "quotient_central": -0.2027454132778883,
+      "quotient_minus": -0.2027453938099888,
+      "quotient_plus": -0.20274543274578782,
+      "relative_error": 0.006754379558952587,
+      "root_residual_max": 5.672573522019775e-12,
+      "section_half_width": 4.0
+    },
+    {
+      "absolute_error": 0.0009044918197970986,
+      "delta": 0.005,
+      "eta_step": 0.04,
+      "nu_minus": -0.7444487902505629,
+      "nu_plus": -0.7445300781119277,
+      "nu_zero": -0.7444894340945625,
+      "predicted_coefficient": -0.20412414523193154,
+      "quotient_central": -0.20321965341213444,
+      "quotient_minus": -0.20321921999799653,
+      "quotient_plus": -0.20322008682627235,
+      "relative_error": 0.004431086870048567,
+      "root_residual_max": 1.9717180554934544e-08,
+      "section_half_width": 4.5
+    },
+    {
+      "absolute_error": 0.0005067690886590703,
+      "delta": 0.0025,
+      "eta_step": 0.04,
+      "nu_minus": -0.7468193013958526,
+      "nu_plus": -0.7468600248710813,
+      "nu_zero": -0.7468396631887171,
+      "predicted_coefficient": -0.20412414523193154,
+      "quotient_central": -0.20361737614327247,
+      "quotient_minus": -0.20361792864465045,
+      "quotient_plus": -0.20361682364189448,
+      "relative_error": 0.002482651369259943,
+      "root_residual_max": 7.954853731284572e-08,
+      "section_half_width": 5.0
+    }
+  ],
+  "software": {
+    "numpy": "2.5.2",
+    "python": "3.14.4",
+    "scipy": "1.18.0"
+  },
+  "source": {
+    "git": {
+      "head": "3de41be8bc6dcf8e6f75423c4a7be2675de7cd5c",
+      "worktree_dirty_at_generation": true
+    },
+    "sha256": {
+      "chart_algebra": "0c69e49e206928a331ac4006cf206e479b112443888606d369c882e82d849ba6",
+      "driver": "b1e5a486eb3a32c24367ca953579f05c7a49befeec6509ddc4f437735dc5ea0b",
+      "solver": "134c06b94bf5475a739b13976568aa30c3eac4cd6aa8beea8208da6347262d8e"
+    }
+  },
+  "status": "diagnostic numerical evidence; not a theorem or proof"
+}

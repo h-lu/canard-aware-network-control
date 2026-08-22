@@ -45,8 +45,8 @@ method:
 
 - the published scalar problem computes a threshold inside one delayed
   oscillator;
-- the present problem proves that a transverse delay organization changes the
-  threshold even when the scalar delayed data are held fixed.
+- the target theorem aims to prove that a transverse delay organization
+  changes the threshold even when the scalar delayed data are held fixed.
 
 ## 3. Base RFDE and fixed-data contract
 
@@ -155,20 +155,27 @@ hidden as a control input. Fix once and for all
 
 \[
  K\neq0,\qquad D_w>0,\qquad
- 0<\theta_0<\theta_1,\qquad L>0,
+ 0<\theta_0<\theta_1,
  \qquad 0<\bar\eta<1/20.
 \]
 
 For \(|\eta|\leq\bar\eta\), both delayed layer matrices are positive. Every
-estimate constant in the base theorem may depend on these fixed data and on
-the frozen section conventions, but not on \(\delta\) or \(\eta\).
+estimate constant in the base theorem may depend on these fixed data, on the
+selected outer slow manifolds below, and on the gap normalization, but not on
+\(\delta\) or \(\eta\).
 
 The proof is formulated after the fold blow-up and time scaling
 \(s=\delta t\), so the history interval is the fixed interval
-\([ -\theta_1,0]\). With
-\(X=\delta^{-1}\ell^\top(v-v_*)\), fix local entry and exit sections
-\(X=\pm L\), a matching section \(X=0\), and a phase condition placing the
-match at \(s=0\). The intended object is an injective history embedding
+\([ -\theta_1,0]\). Fix the attracting and repelling Fenichel slow manifolds
+on outer sections in physical/K1 coordinates; these selections define which
+maximal canard is being followed. With
+\(X=\delta^{-1}\ell^\top(v-v_*)\), use \(X=0\) only as the matching/gap
+section, with a phase condition placing the match at \(s=0\). For the
+long-delay proof, the auxiliary K2 transition sections recede as
+\(s=\pm S_\delta\), where
+\(S_\delta=\sqrt{2p\log(1/\delta)}\); they are not fixed entry/exit sections
+defining a different finite-tube root. The intended object is an injective
+history embedding
 
 \[
  \iota_{\delta,\eta}:U\subset\mathbb R^2
@@ -187,8 +194,9 @@ The following are fixed for version 1:
 
 - \(N=2\), with two fixed modules rather than arbitrary module sizes;
 - two fixed delay atoms rather than moving delay measures;
-- the fixed \(K,D_w,\theta_0,\theta_1,L\) and positivity radius above;
-- one local right-fold canard and fixed entry/exit sections;
+- the fixed \(K,D_w,\theta_0,\theta_1\) and positivity radius above;
+- one local right-fold canard, fixed outer Fenichel selections, and the
+  matching section \(X=0\);
 - the geometric threshold is a local slow-history intersection, not a global
   spike detector.
 
@@ -235,7 +243,11 @@ Jacobian has
 \]
 
 so its generalized center is exactly the collective length-two Jordan chain.
-This identity does not prove the RFDE spectral gap required in Gate A.
+This finite-dimensional identity alone does not prove an RFDE spectral gap.
+For the final scaled equation, however, the Rouché--Schur argument in
+[rfde-relevant-spectrum.md](rfde-relevant-spectrum.md) proves that exactly two
+simple characteristic roots lie in the declared relevant half-plane and that
+all remaining roots are uniformly separated to the left.
 
 Let
 
@@ -244,7 +256,17 @@ Let
 \tag{9}
 \]
 
-The current inner calculation predicts
+The formal compact-tube invariance recursion yields the local mixed
+vector-field jet
+
+\[
+ \partial_\eta q_{2,X}(\gamma_0(s))
+ =-\frac{K(\theta_0-\theta_1)}{4\alpha}s.
+\tag{9a}
+\]
+
+If the selected-tail estimates justify the whole-line Gaussian pairing, the
+conditional splitting corollary gives
 
 \[
  \partial_\eta\mu_c(\delta,0)
@@ -253,11 +275,15 @@ The current inner calculation predicts
 \tag{10}
 \]
 
-Equation (10) is a target, not an established RFDE result. It may change when
-the actual invariant-history embedding and endpoint terms are computed. A
-different nonzero coefficient is an acceptable theorem; an exact
-cancellation changes the project into a first-nonzero-order or cancellation
-theorem.
+Equation (9a) is the exact symbolic coefficient of the formal invariance
+recursion; its remainder control depends on the mixed-regularity lemma.
+Equation (10) is not a fixed-tube theorem. A fixed tube cannot determine the
+whole-line Melnikov coefficient because omitted endpoint and tail terms occur
+at the same order. The three uniform estimates
+isolated in [k1-tail-compatibility.md](k1-tail-compatibility.md) are precisely
+what would promote the conditional calculation in
+[reduced-canard-root.md](reduced-canard-root.md) to the selected long-delay
+RFDE maximal-canard root.
 
 ## 5. Minimum theorem target for the base paper
 
@@ -267,7 +293,9 @@ The theorem should have the following form.
 > \(\delta_0,\eta_*,C>0\), with \(\eta_*\leq\bar\eta\), such that, for
 > \(0<\delta\leq\delta_0\) and \(|\eta|\leq\eta_*\), the two-module RFDE
 > (M) has a unique selected local matching root
-> \(\mu_c(\delta,\eta)\). The corresponding reduced attracting and repelling
+> \(\mu_c(\delta,\eta)\) among roots for which
+> \(\nu=\mu/\delta^2\) lies in a fixed neighborhood of
+> \(\nu_0=-11/(24\alpha)\). The corresponding reduced attracting and repelling
 > histories have the same image under \(\iota_{\delta,\eta}\), so this root is
 > the unique selected local RFDE maximal-canard parameter. Moreover, for the
 > coefficient \(c_\perp\) obtained
@@ -283,23 +311,24 @@ The theorem should have the following form.
 > The total gain (6) and projected delay measure (7) are independent of
 > \(\eta\), whereas \(c_\perp\neq0\).
 
-The formal candidate value is \(c_\perp=1/(4\alpha)\), but the paper may state
-it only after the full reduction proves it. The coefficient may depend on the
-fixed model data and parameter normalization. If the root is called
-geometric, its value must be shown independent of admissible section and gap
-conventions. Every uniformity statement in (11) must be fixed in the theorem
-rather than supplied by a numerical experiment.
+The whole-line conditional calculation gives the candidate
+\(c_\perp=1/(4\alpha)\). The paper may state it as the coefficient of the
+selected RFDE root only after the long-delay tail/matching estimates close.
+If the root is called geometric, its value
+must be shown independent of admissible section and gap conventions. Every
+uniformity statement in (11) must be proved rather than supplied by a
+numerical experiment.
 
 ## 6. Shortest proof route
 
 ```mermaid
 flowchart TD
-    A["Exact layer identities and current-state singular spectrum"] --> B["RFDE spectral subspace and complementary gap"]
-    B --> C["Two-dimensional invariant history manifold"]
-    C --> D["Embedding iota and stable foliation"]
-    D --> E["Reduced fold jet including the transverse delay channel"]
-    E --> F["Simple planar canard matching root with a uniform remainder"]
-    F --> G["Lifted RFDE slow-history intersection"]
+    A["Exact layer identities and current-state singular spectrum"] --> B["RFDE relevant characteristic-root count"]
+    B --> C["Lipschitz invariant history graph"]
+    C --> D["Injective complete-history embedding iota"]
+    D --> E["Mixed-jet regularity and formal fold jet"]
+    E --> F["Long-delay selected-trace and growing-tube estimates"]
+    F --> G["Whole-line coefficient and simple lifted RFDE intersection"]
     G --> H["Main theorem and coefficient c_perp"]
     H --> I["Optional general-N transfer"]
     H --> J["Optional three-coordinate control"]
@@ -309,12 +338,13 @@ Each supporting result has one mathematical job.
 
 | Result | Object that must be constructed or estimated | Obstruction removed | Current status |
 |---|---|---|---|
-| Lemma 1 | Identities (6)--(8), fold nondegeneracy, and the repaired singular characteristic polynomial | Excludes a disguised scalar-moment change and removes the extra recovery center | Exact algebra exists; it must be rerun for the single final equation |
-| Proposition 2 | A two-dimensional invariant history manifold \(\mathcal M_{\delta,\eta}=\iota_{\delta,\eta}(U)\), parameterized uniformly in \((\delta,\eta)\) | Infinite-dimensional history and backward-extension problem | Open; first proof gate |
-| Proposition 3 | Stable foliation and a transverse inverse estimate on the chosen weighted spaces | Converts the current-state spectral gap into an actual RFDE range solve | Open |
-| Proposition 4 | The reduced vector-field jet through the order producing \(\eta\delta^3\) | Upgrades the formal response and includes all embedding/endpoint contributions | Formal interior calculation only |
-| Proposition 5 | A simple attracting/repelling slow-curve intersection and the remainder in (11) | Converts a jet into an actual geometric canard root | Open |
-| Lift lemma | Equivalence between the reduced intersection and intersection of embedded complete histories | Prevents a matched-fiber event from being mislabeled as an RFDE maximal canard | Open |
+| Lemma 1 | Identities (6)--(8), fold nondegeneracy, positivity, exact blow-up, and the repaired singular characteristic polynomial | Excludes a disguised scalar-moment change and removes the extra recovery center | Proved and symbolically tested for (M) |
+| Proposition 2 | Exactly two simple relevant RFDE roots and a uniform complementary characteristic-root gap | Counts the critical characteristic directions without discarding high-frequency roots | Proved by Rouché--Schur root counting; phase-space projector bounds are not claimed |
+| Proposition 3 | A bounded Lipschitz invariant history graph and injective complete-history map on a fixed compact tube | Infinite-dimensional history and backward-extension problem | Lipschitz fixed point proved by special-flow contraction with cutoff |
+| Lemma 4 | Finite-order mixed \((u,\delta,\eta)\) regularity and a uniform Taylor remainder for the graph | Converts the formal invariance recursion into a coefficient of the actual graph | Open; fiber-contraction scheme written, common jet spaces/operators still required |
+| Proposition 5 | The reduced vector-field jet through the order that can produce an \(\eta\delta^3\) root shift | Identifies the local history-embedding return before the global pairing | Formal coefficient (9a) uniquely determined and symbolically checked; remainder control depends on Lemma 4 |
+| Proposition 6 | Selected one-sided trace bounds, growing-tube graph remainder, normalized gap derivatives, and the whole-line pairing | Determines whether the local jet produces the candidate coefficient for the physical long-delay traces | Open long-delay theorem gate |
+| Lift lemma | Equivalence between a reduced intersection inside the injective graph and equality of the embedded complete histories | Prevents a reduced event from being mislabeled as an RFDE history intersection | Proved conditionally on the selected curves belonging to the graph; global membership follows only after Proposition 6 |
 
 The first paper should construct the matching gap in coordinates on
 \(\mathcal M_{\delta,\eta}\) and use the injective history embedding to prove
@@ -329,40 +359,53 @@ assumptions available to the base proof.
 
 ### Gate A -- relevant spectrum
 
-Prove that the repaired RFDE has exactly the required two-dimensional
-relevant spectral subspace and a uniform complementary gap in the declared
-scaled history setting.
-
-- **Pass:** construct Proposition 2.
-- **Fail:** use the shared-recovery three-state model only if the coefficient
-  mechanism survives and the biological/modeling restriction is stated.
+**Passed for the frozen-equilibrium characteristic-root count.** The final
+scaled RFDE has exactly two simple relevant roots and a uniform complementary
+root gap. Fixed-contour characteristic-matrix inverses are bounded. A
+phase-space Riesz-projector bound and a nonautonomous Green-operator estimate
+are not claimed; the special-flow graph construction does not use them.
 
 ### Gate B -- parameter-regular invariant history manifold
 
-Obtain enough \((\delta,\eta)\)-regularity to compute the jet and control its
-remainder.
-
-- **Pass:** compute the true coefficient.
-- **Fail:** a fixed-\(\delta\) implicit-function result is not a flagship
-  asymptotic theorem; stop and redesign.
+**Partially passed on every fixed compact fold tube.** The contraction proves
+a unique bounded Lipschitz history graph and an injective complete-history
+map. The finite-order mixed-jet regularity and uniform Taylor remainder remain
+an explicit lemma target; the present fiber argument has not yet specified
+all common jet spaces and highest-order operator estimates.
 
 ### Gate C -- coefficient
 
-Calculate every interior, embedding, endpoint, and history-jump contribution.
-
-- **Nonzero:** prove (11) with the calculated coefficient.
-- **Cancellation:** determine the first nonzero order or prove a structural
-  cancellation theorem.
-- **Uncontrolled:** do not identify the formal inner coefficient with the
-  RFDE threshold derivative.
+**Formal local jet fixed; graph coefficient and root coefficient open.** The
+invariance recursion uniquely gives (9a), and symbolic division checks it.
+It becomes a remainder-controlled jet of the actual history graph only after
+Gate B's mixed-regularity lemma closes. The value \(1/(4\alpha)\) then requires
+a whole-line Gaussian pairing; a fixed tube cannot certify that pairing.
 
 ### Gate D -- geometric canard
 
-Prove the simple root, uniform remainder, and history-lift equivalence.
+**Open for the long-delay model.** Prove:
 
-- **Pass:** the main theorem is complete.
-- **Fail:** use “reduced connection root,” not “RFDE maximal-canard
-  threshold,” and do not submit it as the stated theorem.
+1. the selected one-sided trace tame bound;
+2. the growing-tube invariant-graph remainder;
+3. the normalized gap and parameter-derivative bounds.
+
+The logarithmic-section suppression lemma then closes the simple root,
+uniform remainder, and history-lift equivalence. Until all three estimates are
+proved, use “conditional reduced connection root,” not “proved RFDE
+maximal-canard threshold.”
+
+### Model-selection gate
+
+Before continuing Gate D, choose between:
+
+- the current long-delay model \(\tau_k=\theta_k/\delta\), whose
+  \(O(\delta^3)\) coefficient requires new logarithmic-tail analysis; or
+- fixed physical delays \(\tau_k=O(1)\), which restore the standard \(K_1\)
+  route but move the first transverse term to \(O(\delta^4)\).
+
+The first route is more novel and riskier. The second is the recommended
+proof-completion route if the priority is one defensible paper rather than a
+new long-delay tail theorem.
 
 ### Gate E -- promotion to general networks
 
@@ -383,10 +426,13 @@ title, abstract, and main claims.
 
 | Level | Permitted claim | Evidence required |
 |---|---|---|
-| Exact | Fixed total gain, fixed projected delay measure, algebraic mode forcing, and generalized-center dimension of the \(\varepsilon=0\) current-state Jacobian | Symbolic or hand proof for the final model |
-| Formal | Candidate coefficient \(1/(4\alpha)\) | Truncated inner calculation, explicitly labelled formal |
-| Theorem | Actual coefficient, local RFDE canard root, and remainder (11) | Center-manifold construction, history lift, simple root, and uniform estimates |
-| Numerical | Convergence of normalized threshold differences | Two independent refinements and uncertainty below the observed discrepancy |
+| Exact | Final model, fixed total gain, fixed projected delay measure, algebraic transverse forcing, exact blow-up, singular Jordan chain, and characteristic determinant | Symbolic and hand proof for (M) |
+| Proved analytic | Relevant-root count, bounded Lipschitz cutoff history graph, and conditional injective history lift | Rouché--Schur estimate and base special-flow contraction |
+| Formal/local | Mixed vector-field jet (9a) | Exact invariance recursion and symbolic division audit |
+| Proof pending | Finite-order mixed regularity of the actual graph | Fully specified jet fiber and uniform Taylor-remainder proof |
+| Conditional | Whole-line coefficient \(1/(4\alpha)\) and long-delay root expansion (11) | Mixed-regularity lemma plus the three explicitly stated tail/matching estimates and conditional splitting argument |
+| Theorem | Selected RFDE canard root and uniform remainder (11) | Close Gate D and prove the selected curves lie in the history graph through the logarithmic matching region |
+| Numerical | Convergence of normalized finite-section threshold differences | Reproducible method-of-steps refinements with history/section dependence reported |
 | Excluded | Global spiking threshold, arbitrary finite network, or independent three-coordinate assignment | Not inferred from the local theorem |
 
 ## 9. Paper architecture
@@ -395,13 +441,15 @@ title, abstract, and main claims.
    state (11), and explain the boundary with Zhang et al. (2026).
 2. **The fixed two-module RFDE.** Give the equation, exact invariants, fold
    geometry, and repaired singular spectrum.
-3. **Nonlocal invariant manifold.** Construct
-   \(\mathcal M_{\delta,\eta}\), its embedding, stable foliation, and parameter
-   dependence.
+3. **Nonlocal invariant history graph.** Construct
+   \(\mathcal M_{\delta,\eta}\), its injective complete-history embedding, and
+   mixed parameter jets on the compact fold tube.
 4. **The reduced fold jet.** Calculate the transverse range response and its
    nonlinear return to the critical equation.
-5. **The canard intersection.** Prove the simple root, remainder, history
-   lift, and main theorem.
+5. **The canard intersection.** For the long-delay route, prove the selected
+   trace, growing-tube, and logarithmic matching estimates; for the fixed-delay
+   route, replace this with the regular \(K_1\) third-order splitting. Then
+   prove the simple root, remainder, history lift, and main theorem.
 6. **Numerical check.** Test only the normalized limit
    \[
    \frac{\mu_c(\delta,\eta)-\mu_c(\delta,0)}
@@ -425,7 +473,7 @@ Use at most two essential figures in the base paper.
    transverse response \(\to\) nonlinear return \(\to\) canard-root shift.
    It must be labelled as a schematic, not a phase portrait proof.
 2. **Computed asymptotic test:** the normalized quantity in (12), with
-   refinement uncertainty, against \(\delta\).
+   tolerance and maximum-step refinements, against \(\delta\).
 
 If Gate E passes, add one full/reduced structural-root displacement figure.
 If Gate F passes, replace rather than supplement a figure with the certified
@@ -433,29 +481,32 @@ control singular-value region.
 
 ## 11. Work plan
 
-### Phase I -- close the model and spectrum
+### Phase I -- close the model and spectrum (completed)
 
 - write one final RFDE combining the positive two-layer family and the fixed
   recovery coupling;
 - rerun every exact equilibrium, projection, positivity, and spectrum check;
 - prove or falsify Gate A before adding simulations.
 
-### Phase II -- construct the invariant geometry
+### Phase II -- construct the compact-tube invariant geometry (partial)
 
-- select the RFDE theorem used for the invariant history manifold and translate
-  every hypothesis into the scaled model;
-- construct the stable foliation and complete-history embedding;
-- freeze entry/exit sections only after that geometry exists.
+- prove the special-flow graph by contraction rather than applying a singular
+  RFDE center-manifold theorem as a black box;
+- construct the injective complete-history embedding;
+- complete the common mixed-jet fiber and uniform compact-tube Taylor
+  remainder.
 
-### Phase III -- compute and prove the threshold law
+### Phase III -- formal local jet (completed) and model selection (current)
 
-- derive the true reduced jet and adjoint/solvability coefficient;
-- prove the simple canard root and (11);
-- verify the history lift.
+- retain the symbolically fixed compact-tube jet and conditional whole-line
+  splitting law;
+- choose long physical delays or fixed physical delays;
+- close the corresponding tail/\(K_1\) estimates before promoting (11).
 
 ### Phase IV -- validate and decide promotion
 
-- implement the normalized test (12) with two refinements;
+- retain the implemented method-of-steps convergence diagnostic as
+  falsification evidence, not proof;
 - audit every claim as exact, formal, proved, or numerical;
 - attempt Gates E and F only after the main theorem is complete.
 

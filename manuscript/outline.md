@@ -1,10 +1,12 @@
 # Flagship manuscript outline
 
-Status: **broad promotion outline.** The minimum submission theorem and the
-rules for admitting the general-network and control sections are governed by
-`docs/flagship-research-design.md`. Until its Gate D is passed, the base paper
-uses the shorter architecture below; the former full-network program remains
-a promotion target rather than an assumed main result.
+Status: **base-paper outline under a model-selection gate, followed by a
+conditional promotion outline.** The exact local algebra, relevant-root
+count, and Lipschitz compact-tube graph are proved. The mixed jet is fixed by
+the formal invariance recursion, while its graph remainder, the whole-line
+coefficient, and the physical long-delay root remain proof obligations in
+`docs/k1-tail-compatibility.md`. The alternative fixed-physical-delay route is
+recorded in `docs/model-repair-options.md`.
 
 ## Proof-first base paper
 
@@ -20,16 +22,24 @@ Two-Module FitzHugh--Nagumo System**
    - Final positive two-layer family and fixed recovery coupling.
    - Exact fold, projection, positivity, and singular-spectrum identities.
 3. **The nonlocal invariant manifold**
-   - Two-dimensional invariant history manifold and parameter regularity.
-   - Stable foliation and its injective history embedding.
+   - Proved Lipschitz history graph and injective complete-history map; no
+     backward RFDE initial-value problem is used.
+   - Open finite-order mixed-regularity lemma and Taylor remainder.
 4. **The reduced fold jet**
    - Stable transverse delay response.
-   - Nonlinear return and the actual coefficient \(c_\perp\).
+   - Symbolically determined mixed vector-field jet and the conditional
+     whole-line candidate \(c_\perp=1/(4\alpha)\).
 5. **The canard intersection**
-   - Simple matching root and uniform remainder.
+   - Long-delay option: selected-trace, growing-tube, and logarithmic matching
+     estimates.
+   - Fixed-delay option: regular \(K_1\) third-order splitting with an
+     \(O(\delta^4)\) transverse effect.
+   - Simple matching root and uniform remainder only after the selected option
+     is complete.
    - Lift from the reduced intersection to complete RFDE histories.
 6. **Numerical asymptotic check**
-   - Normalized threshold difference and independent refinement uncertainty.
+   - Normalized threshold difference with tolerance and maximum-step
+     refinements.
 7. **Discussion and promotion gates**
    - General finite-\(N\) root transfer only if its model-specific inverse is
      proved.
