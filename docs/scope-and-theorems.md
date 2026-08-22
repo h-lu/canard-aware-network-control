@@ -1,6 +1,10 @@
 # Flagship theorem specification
 
-Status: **working specification, 2026-08-22**. The Lin gap is now defined by a correctly augmented Fredholm problem, the concrete control benchmark is frozen, and exact/formal algebraic checks are executable. The model-specific Fredholm proof, uniform remainder, and control corollary remain targets.
+Status: **working specification, 2026-08-22**. The correctly augmented
+\(\mathbb R^4\) reference-gap template and concrete control benchmark are
+frozen, and exact/formal algebraic checks are executable. The full
+\(2N\)-state Lin operator and endpoint bundles, model-specific Fredholm proof,
+uniform remainder, and control corollary remain targets.
 
 ## 1. First-paper model class
 
@@ -11,14 +15,14 @@ For nodes \(i=1,\dots,N\), consider
 +\mathcal S_{N,i}(x)
 +\varepsilon
 \sum_{j=1}^N W_{ij}
-q\!\left(x_i(t),x_j(t-\tau_{ij});u\right),
+q\!\left(x_i(t),x_j(t),x_j(t-\tau_{ij});u\right),
 \qquad
 \dot y_i=\varepsilon g(x_i,y_i;\mu,u),
 \tag{1}
 \]
 
 with \(0<\varepsilon\ll1\), weak delayed feedback satisfying
-\(q(x,x;u)=0\), and
+\(q(x,x,x;u)=0\), and
 
 \[
 \tau_{ij}=\Theta_{ij}/\sqrt\varepsilon,
@@ -64,76 +68,79 @@ The threshold is not defined by subtracting two sets such as \(M^a\cap\Sigma\) a
 
 1. fix compact entry and exit data and one transverse matching section \(\Sigma\), which supplies the phase condition;
 2. solve the attracting and repelling RFDE boundary-value pieces while matching every transverse coordinate;
-3. leave one scalar jump in a fixed cokernel direction \(\psi_\delta\).
+3. leave one scalar jump in a fixed cokernel direction \(\psi_{\delta,N}\).
 
-Let \(\mathfrak F_\delta(z,\nu,\mathcal R)=0\) denote the full-history Lin
-boundary-value problem specified in
-[the feasibility note](lin-gap-feasibility.md), where
-\(a=1+\delta^2\nu\). After its single phase condition, require
+Let \(\bar{\mathfrak F}_\delta\) denote the \(\mathbb R^4\) reference
+template in [the feasibility note](lin-gap-feasibility.md). For an \(N\)-node
+residual, the theorem still has to construct its full-history extension
+\(\mathfrak F_{\delta,N}(z_N,\nu,\mathcal R_N)=0\) on
+\(C([-\Theta_{\max},0],\mathbb R^{2N})\), with a complete \(2N\)-state jump,
+where \(a=1+\delta^2\nu\). After its single phase condition, require
 
 \[
-L_\delta=D_z\mathfrak F_\delta,
+L_{\delta,N}=D_{z_N}\mathfrak F_{\delta,N},
 \qquad
-\ker L_\delta=\{0\},
+\ker L_{\delta,N}=\{0\},
 \qquad
-\dim\operatorname{coker}L_\delta=1,
+\dim\operatorname{coker}L_{\delta,N}=1,
 \qquad
-\operatorname{ind}L_\delta=-1.
+\operatorname{ind}L_{\delta,N}=-1.
 \tag{5}
 \]
 
-Choose \(\psi_\delta\in\mathscr Y^*\) and
-\(e_\delta\in\mathscr Y\) such that
+Choose \(\psi_{\delta,N}\in\mathscr Y_N^*\) and
+\(e_{\delta,N}\in\mathscr Y_N\) such that
 
 \[
-\operatorname{Range}L_\delta=\ker\psi_\delta,
+\operatorname{Range}L_{\delta,N}=\ker\psi_{\delta,N},
 \qquad
-\psi_\delta(e_\delta)=1,
+\psi_{\delta,N}(e_{\delta,N})=1,
 \tag{6}
 \]
 
-with \(e_\delta\) supported only in the history-jump component. The
+with \(e_{\delta,N}\) supported only in the history-jump component. The
 index-zero augmented operator
 
 \[
-\widehat L_\delta(\zeta,\gamma)
-=L_\delta\zeta-\gamma e_\delta
+\widehat L_{\delta,N}(\zeta,\gamma)
+=L_{\delta,N}\zeta-\gamma e_{\delta,N}
 \tag{7}
 \]
 
-must be invertible. Define
+must be invertible. The claimed transverse/range bound must be uniform in the
+admitted network sizes:
 
 \[
-G_\perp(\delta)
-=\left\|
-(L_\delta:\mathscr X\to\operatorname{Range}L_\delta)^{-1}
-\right\|.
+\left\|
+(L_{\delta,N}:\mathscr X_N\to\operatorname{Range}L_{\delta,N})^{-1}
+\right\|
+\le G_\perp(\delta).
 \tag{8}
 \]
 
 Solving
 
 \[
-\mathfrak F_\delta(z(\nu,\mathcal R),\nu,\mathcal R)
-=d_\delta(\nu,\mathcal R)e_\delta
+\mathfrak F_{\delta,N}(z_N(\nu,\mathcal R_N),\nu,\mathcal R_N)
+=d_{\delta,N}(\nu,\mathcal R_N)e_{\delta,N}
 \tag{9}
 \]
 
 defines the strict scalar gap
 
 \[
-d_\delta(\nu,\mathcal R)
-=\psi_\delta\mathfrak F_\delta
-(z(\nu,\mathcal R),\nu,\mathcal R).
+d_{\delta,N}(\nu,\mathcal R_N)
+=\psi_{\delta,N}\mathfrak F_{\delta,N}
+(z_N(\nu,\mathcal R_N),\nu,\mathcal R_N).
 \tag{10}
 \]
 
 The reference parameter is a simple root
 
 \[
-d_\delta(\nu_{c,0},0)=0,
+d_{\delta,N}(\nu_{c,0},0)=0,
 \qquad
-|\partial_\nu d_\delta(\nu_{c,0},0)|
+|\partial_\nu d_{\delta,N}(\nu_{c,0},0)|
 \ge m_\delta^{(\nu)}>0.
 \tag{11}
 \]
@@ -149,7 +156,8 @@ proved.
 ### Hypotheses to prove or verify
 
 - the blown-up RFDE and the Lin map are \(C^2\) in \((z,\nu,\mathcal R)\) on the declared strong spaces and fixed history domain;
-- the fold has one simple canard center direction;
+- the layer problem has one simple fast fold direction;
+- the entry/exit discs specify every transverse recovery coordinate and make all transverse history blocks isomorphisms;
 - the reference transverse variational problem admits the bound (8);
 - the finite delay parameters and fixed-support residual class induce (4);
 - the Lin gap is transverse as in (11);
@@ -166,9 +174,9 @@ proved.
 For \(\nu\) in a fixed root neighborhood and \(\zeta_N\) sufficiently small,
 
 \[
-d_\delta(\nu,\mathcal R_N)
-=d_\delta(\nu,0)
-+D_{\mathcal R}d_\delta(\nu,0)[\mathcal R_N]
+d_{\delta,N}(\nu,\mathcal R_N)
+=d_{\delta,N}(\nu,0)
++D_{\mathcal R}d_{\delta,N}(\nu,0)[\mathcal R_N]
 +O\!\left(C_\delta\zeta_N^2\right),
 \tag{13}
 \]
@@ -179,8 +187,8 @@ and there is one nearby root satisfying
 \boxed{
 \nu_{c,N}-\nu_{c,0}
 =-
-\frac{D_{\mathcal R}d_\delta(\nu_{c,0},0)[\mathcal R_N]}
-{\partial_\nu d_\delta(\nu_{c,0},0)}
+\frac{D_{\mathcal R}d_{\delta,N}(\nu_{c,0},0)[\mathcal R_N]}
+{\partial_\nu d_{\delta,N}(\nu_{c,0},0)}
 +O\!\left(\frac{C_\delta}{m_\delta^{(\nu)}}\zeta_N^2\right).
 }
 \tag{14}
@@ -194,7 +202,7 @@ particular, require
 
 \[
 \frac{
-|D_{\mathcal R}d_\delta[\mathcal R_N]|
+|D_{\mathcal R}d_{\delta,N}[\mathcal R_N]|
 +C_\delta\zeta_N^2
 }{m_\delta^{(\nu)}}
 =o(\delta).
@@ -204,6 +212,7 @@ particular, require
 ### Primary falsifiers
 
 - all node-fold directions remain critical and \(G_\perp(\delta)\) grows too rapidly;
+- the fixed voltage scaffold leaves transverse recovery directions free, producing a kernel or a multi-slow canard family;
 - the chosen delay residual is not differentiable on the history space;
 - the Lin problem has more than one unmatched direction;
 - \(m_\delta^{(\nu)}\) vanishes at the proposed operating point;
@@ -245,29 +254,46 @@ a_c-1+\frac18\varepsilon
 
 uniformly in \(N\) and in a declared compact class of measures \(\rho\). At this order \(m_2\) changes the formal critical graph but cancels from the parameter solvability condition.
 
-For the exact two-module skeleton, let \(\rho_{ab}\) be the row-weighted delay measure from source module \(b\) to receiving module \(a\), and set
+For the exact two-module skeleton, let \(\mathbb B(d\theta)\) be the
+operator-valued row-weighted delay measure, including the module-pair gain in
+each entry, and set
 
 \[
- m_{1,ab}=\int\theta\,d\rho_{ab}(\theta),
-\qquad
 M_1^{(2)}
-=\sum_{a,b=1}^2(\ell_c)_aB_{ab}(r_c)_b m_{1,ab},
+=\ell_c^\top
+\left(\int\theta\,\mathbb B(d\theta)\right)r_c
+=\sum_{a,b=1}^2
+(\ell_c)_a(r_c)_b
+\int\theta\,d\mathbb B_{ab}(\theta),
 \tag{19}
 \]
 
-where \(r_c,\ell_c\) are the dynamical critical right and left module modes, normalized by \(\ell_c^\top r_c=1\). They are not experimental observable weights.
+where \(r_c,\ell_c\) are the dynamical critical right and left module modes,
+normalized by \(\ell_c^\top r_c=1\). They are not experimental observable
+weights. If \(\mathbb B_{ab}=B_{ab}\widehat\rho_{ab}\), then
+\(\widehat\rho_{ab}\) is a conditional probability measure; this alternative
+normalization introduces one factor \(B_{ab}\), not two.
 
-The proposition targets
+The proposition targets the two-term structure
 
 \[
 a_{c,2}
 =1+c_0\varepsilon
-+C_{\rm model}K M_1^{(2)}\varepsilon^{3/2}
++K\varepsilon^{3/2}
+\left(
+C_\parallel M_1^{(2)}
++\mathcal J_{\perp,\delta}[\mathbb B]
+\right)
 +O(\varepsilon^2),
 \tag{20}
 \]
 
-uniformly over a declared compact module-pair measure class. A sufficient leading-order closure condition is
+uniformly over a declared compact module-pair measure class, **conditional on**
+\(\mathcal J_{\perp,\delta}=O(1)\). If it grows with \(\delta^{-1}\), the
+ordering must be revised rather than hidden in the remainder. The transverse
+functional composes delayed translation, the transverse RFDE range inverse,
+and dynamic critical-adjoint solvability. A sufficient condition that closes
+the delayed-source part is
 
 \[
 P_\perp\mathbb B(d\theta)r_c=0
@@ -275,7 +301,10 @@ P_\perp\mathbb B(d\theta)r_c=0
 \tag{21}
 \]
 
-Here \(\mathbb B(d\theta)\) is the two-module operator-valued delay measure and \(P_\perp\) projects away from the critical collective mode. Without this condition, eliminating transverse histories may produce another same-order resolvent functional, which must be written explicitly rather than hidden inside \(M_1^{(2)}\). The Dirac scalar case reproduces Zhang et al. (2026) with \(c_0=-1/8\) and \(C_{\rm VdP}=1/8\); that case is a calibration, not a novelty claim. The symmetric scaffolded FHN benchmark reduces exactly to a scalar two-delay RFDE and is reserved for Corollary C; it is not presented as the nontrivial modular instance of this proposition.
+Here \(P_\perp\) projects away from the critical collective mode. Vanishing of
+the complete leading delay-induced \(\mathcal J_{\perp,\delta}\) additionally
+requires the current, instantaneous, nonlinear, and endpoint/Lin operators to
+respect the same critical/transverse splitting. The exact family in [the moment counterexample](two-module-moment-counterexample.md) keeps the total gain and \(M_1^{(2)}\) fixed while changing \(P_\perp\mathbb B r_c\), and has a nonzero local nonlinear return channel. It proves that \(M_1^{(2)}\) alone does not determine the transverse range equation; the dynamic adjoint must calculate \(\mathcal J_{\perp,\delta}\) or prove a further cancellation. For nonnegative receiver-self diffusion, a Perron no-go lemma further shows that positive-mode exact layerwise closure collapses to the common-row-measure class. The Dirac scalar case reproduces Zhang et al. (2026) with \(c_0=-1/8\) and \(C_{\rm VdP}=1/8\); that case is a calibration, not a novelty claim. The symmetric scaffolded FHN benchmark reduces exactly to a scalar two-delay RFDE and is reserved for Corollary C.
 
 ## 5. Concrete corollary target: three actuators in two-module FHN
 

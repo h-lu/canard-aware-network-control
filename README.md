@@ -33,7 +33,7 @@ General rank-\(r\) closure, graphon limits, arbitrary sparse nonnormal networks,
 ## One theorem, one proposition, one corollary
 
 1. **Main theorem -- RFDE Lin-gap threshold transfer.** Near an exact reference network, the full-network canard matching root has a first-order structural response and a controlled second-order remainder. The constants expose \(G_\perp(\sqrt\varepsilon)\), root transversality, and the chosen residual norm.
-2. **Explicit proposition -- first delay moment.** Use the common-row-measure delayed van der Pol class as calibration, then prove the two-module \(M_1^{(2)}\) coefficient under an explicit mode-closure condition, with a uniform remainder.
+2. **Explicit proposition -- first delay moment plus transverse correction.** Use the common-row-measure delayed van der Pol class as calibration, prove the two-module parallel \(M_1^{(2)}\) coefficient under layerwise mode closure, and otherwise retain an explicit transverse resolvent functional, with a uniform remainder.
 3. **Concrete corollary -- two-module FHN control.** For three specified admissible actuators, derive the response matrix for frequency, squared amplitude, and canard safety margin and prove a nonzero singular-value lower bound on a declared parameter region.
 4. **Validation module.** Enclose the Lin-gap root error by residual and refinement bounds; reuse the earlier ODE/RK threshold result only as a cited baseline.
 
@@ -41,16 +41,22 @@ These are research targets, not established results. The scalar and common-row-m
 
 ## First feasibility result
 
-The definition gate has produced two substantive corrections:
+The reference-template audit has produced three substantive corrections:
 
-1. after phase fixing, the one-gap Lin linearization has Fredholm index
-   \(-1\), zero kernel, and one-dimensional cokernel; adjoining the scalar Lin
-   jump gives the invertible index-zero operator;
+1. after phase fixing, a valid one-gap Lin formulation must have Fredholm
+   index \(-1\), zero kernel, and one-dimensional cokernel; adjoining the
+   scalar Lin jump then gives an invertible index-zero operator. Verifying
+   these properties for the frozen RFDE model remains a proof gate;
 2. two identical modules coupled only through \(O(\varepsilon)\) delayed
    diffusion inherit a repeated node-canard degeneracy at \(\varepsilon=0\).
    In the canonical symmetric inner problem the first relative splitting
    projection cancels and the formal second coefficient is nonzero, predicting
    a potentially severe \(G_\perp=O(\varepsilon^{-1})\) conditioning.
+3. an exact two-delay family can keep both the total gain matrix and projected
+   \(M_1^{(2)}\) fixed while changing transverse forcing and admitting a
+   nonzero local nonlinear return channel. Hence the scalar moment does not
+   determine the full range equation; a general law must calculate the
+   transverse resolvent functional or prove its dynamic cancellation.
 
 Accordingly, the weak-only class is a negative control or a narrow
 joint-limit theorem. The concrete FHN control corollary uses a fixed
@@ -62,15 +68,18 @@ claimed proved.
 
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
 - `docs/scope-and-theorems.md` -- model, Lin-gap definition, main theorem specification, and stop/go gates;
-- `docs/lin-gap-feasibility.md` -- full-history BVP, correct Fredholm index, augmented gap, and open proof obligations;
+- `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template, correct Fredholm index bookkeeping, and the open \(2N\)-state extension;
 - `docs/two-module-reference.md` -- frozen FHN benchmark and weak-only transverse obstruction;
+- `docs/two-module-moment-counterexample.md` -- exact mode-closure lemma, fixed-moment range-forcing counterexample, and Perron no-go result;
 - `docs/derivation-leading-moment.md` -- formally checked scalar/common-row-measure coefficients and the missing remainder obligations;
 - `docs/sprint-01.md` -- first two-week execution plan linked to GitHub issues;
 - `manuscript/outline.md` -- single-paper narrative, figures, and evidence standard;
 - `references/references.bib` -- curated and deduplicated primary references;
 - `src/canard_control/transverse_modes.py` -- executable weak-only inner splitting audit;
 - `src/canard_control/reference_fhn.py` -- exact algebra for the scaffolded two-module benchmark;
-- `tests/`, `experiments/` -- verification and reproducible experiments.
+- `src/canard_control/two_module_moment.py` -- exact two-layer moment/range-forcing counterexample;
+- `experiments/transverse_lin_sweep.py` -- finite-interval boundary-condition diagnostic, explicitly not an RFDE inverse certificate;
+- `tests/` -- symbolic and numerical regression tests.
 
 ## Project tracking
 
@@ -79,4 +88,10 @@ claimed proved.
 
 ## Immediate decision gate
 
-Before large simulations, the project must prove the frozen-model augmented Lin operator has one cokernel direction and obtain a usable transverse inverse bound \(G_\perp(\sqrt\varepsilon)\). The definition itself is now fixed. The first-delay coefficient and root transversality are then checked inside that formulation. Failure narrows the theorem to the exact invariant class before any expensive computation.
+Before large simulations, the project must construct the full \(2N\)-state Lin
+operator and endpoint bundles, prove that its augmentation has one cokernel
+direction, and obtain a usable transverse inverse bound
+\(G_\perp(\sqrt\varepsilon)\). Only the \(\mathbb R^4\) reference-gap template
+is fixed. The first-delay coefficient and root transversality are then checked
+inside the full formulation. Failure narrows the theorem to the exact
+invariant class before any expensive computation.

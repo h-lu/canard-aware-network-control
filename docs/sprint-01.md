@@ -4,10 +4,11 @@ Window: **2026-08-22 to 2026-09-04**
 
 Goal: decide whether one RFDE canard-root transfer theorem is viable before investing in large simulations or general rank-\(r\) claims.
 
-## WP1 -- Define the scalar Lin gap ([#1](https://github.com/h-lu/canard-aware-network-control/issues/1))
+## WP1 -- Define the reference gap and full-network Lin operator ([#1](https://github.com/h-lu/canard-aware-network-control/issues/1))
 
-- [x] Fix the blown-up history space, entry/exit data, matching section, and phase condition.
-- [x] Write the full-history RFDE Lin boundary-value operator.
+- [x] Fix the \(\mathbb R^4\) reference history space, candidate entry/exit data, matching section, and phase condition.
+- [x] Write the \(\mathbb R^4\) reference full-history RFDE Lin boundary-value template.
+- [ ] Construct the full \(2N\)-state operator and compatible entry/exit bundles for synchrony-breaking residuals.
 - [x] Correct the required post-phase index to \(-1\) and define the index-zero jump augmentation.
 - [ ] Verify that the relevant cokernel is one-dimensional.
 - [x] Define the adjoint gap and its normalization-independent root response.
@@ -15,7 +16,7 @@ Goal: decide whether one RFDE canard-root transfer theorem is viable before inve
 - [x] Separate a geometric maximal-canard root from an output-event threshold.
 - [ ] Construct the backward-extendible repelling piece on the RFDE center/solution manifold.
 
-Acceptance: a mathematically defined scalar gap, not a projected difference between two sets.
+Acceptance: a mathematically defined full-network scalar gap, not a projected difference between two sets or only a reduced \(\mathbb R^4\) template.
 
 ## WP2 -- Build the exact reference and audit transverse modes ([#2](https://github.com/h-lu/canard-aware-network-control/issues/2))
 
@@ -25,7 +26,9 @@ Acceptance: a mathematically defined scalar gap, not a projected difference betw
 - [ ] Construct or bound its Green/Fredholm inverse \(G_\perp(\delta)\), \(\delta=\sqrt\varepsilon\).
 - [x] Show that \(O(\varepsilon)\) delayed coupling leaves repeated fold-critical directions at \(\varepsilon=0\).
 - [x] Verify zero first and nonzero formal second inner splitting coefficients for the symmetric whole-line diagnostic.
+- [x] Implement the finite-interval singular-value sweep and verify that symmetric versus asymmetric endpoint choices change the observed weak-only exponent.
 - [x] Restrict the weak-only class to a negative control/narrow joint limit and freeze a scaffolded FHN control benchmark.
+- [x] Show that the scaffold leaves \(N-1\) recovery center directions at \(\varepsilon=0\); a single fast fold is not a one-cokernel proof.
 - [ ] Prove the one-cokernel property and bound \(G_\perp(\delta)\) for the scaffolded Lin BVP.
 
 Acceptance: an explicit \(G_\perp(\delta)\) estimate or a documented falsification that narrows Theorem A.
@@ -38,7 +41,11 @@ Acceptance: an explicit \(G_\perp(\delta)\) estimate or a documented falsificati
 - [ ] Put the expansion inside the Lin-gap formulation.
 - [ ] Prove an \(O(\varepsilon^2)\) remainder uniform in \(N\) and the declared measure class.
 - [ ] Verify that \(m_2\) changes the graph but cancels from the parameter at this order.
-- [ ] Derive the two-module \(M_1^{(2)}\) term under an explicit leading mode-closure condition, or expose the extra transverse resolvent term.
+- [x] Prove the exact layerwise mode-closure criterion.
+- [x] Construct a positive two-delay family with fixed total gain and fixed projected \(M_1^{(2)}\) but nonzero transverse forcing.
+- [x] Verify a nonzero FHN nonlinear return coefficient for that forcing.
+- [x] Prove the Perron no-go mechanism for positive-mode closure in nonnegative receiver-self diffusion.
+- [ ] Derive the dynamic-adjoint transverse functional \(\mathcal J_{\perp,\delta}\), its coefficient, and its singular-limit scaling.
 
 Acceptance: a theorem-level remainder; symbolic coefficient agreement alone does not pass.
 

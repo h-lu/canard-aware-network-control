@@ -8,9 +8,12 @@ For a finite weakly delayed slow--fast network near a controlled equitable refer
 
 ## Claim hierarchy
 
+Everything in this hierarchy is a planned claim unless a supporting note
+explicitly labels a finite-dimensional identity as proved.
+
 1. **Theorem A -- RFDE Lin-gap transfer.** The geometric matching root is differentiable in the structural residual, with a first-variation formula and an explicit remainder depending on the transverse Green/Fredholm inverse bound.
-2. **Proposition B -- first weighted delay moment.** The common-row-measure van der Pol class calibrates the coefficient; for the exact two-module class, a mode-closure condition selects \(M_1^{(2)}\) and yields a uniform \(O(\varepsilon^2)\) remainder.
-3. **Corollary C -- concrete FHN control.** For one fixed two-module delayed FitzHugh--Nagumo system and the frozen linear, cubic, and delay-deformation actuators, the response map \((F,R_h,S_c)\) has a proved singular-value lower bound on a nonempty admissible region.
+2. **Proposition B -- first weighted delay moment and transverse correction.** The common-row-measure van der Pol class calibrates the parallel coefficient. Layerwise mode closure removes delayed-source transverse forcing, while full current/nonlinear/endpoint block closure is needed to eliminate the complete transverse functional. A fixed-total/fixed-moment range-forcing counterexample and a Perron no-go lemma show why that functional must be calculated, or its dynamic cancellation proved, outside the closure class.
+3. **Corollary C -- concrete FHN control.** For one fixed two-module delayed FitzHugh--Nagumo system and the frozen linear, cubic, and delay-deformation actuators, prove a singular-value lower bound for the response map \((F,R_h,S_c)\) on a nonempty admissible region.
 4. **Verification D.** Independent RFDE computations resolve the physical delay term, the network-transfer term, and the numerical error separately.
 
 Exact equitable closure is a supporting lemma. The inverse-function theorem and scalar root perturbation step are tools, not novelty claims.
@@ -32,7 +35,8 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - Why adjacency spectral gap alone does not control the fold passage.
 
 3. **One-dimensional Lin matching problem**
-   - Entry and exit data, matching section, and phase condition.
+   - \(\mathbb R^4\) reference-gap template versus the full \(2N\)-state operator for synchrony-breaking residuals.
+   - Entry and exit data, matching section, phase condition, and complete \(2N\)-state history jump.
    - Full-history jump and the center/solution-manifold construction of the backward-extendible repelling piece.
    - Post-phase Fredholm index \(-1\), one-dimensional cokernel, and the index-zero scalar-jump augmentation.
    - Transverse inverse \(G_\perp(\delta)\), \(\delta=\sqrt\varepsilon\).
@@ -43,8 +47,10 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - Nonlocal center-manifold/history calculation.
    - Dirac-delay recovery as a published calibration, not a new result.
    - Common-row-measure closure and \((K/8)m_1\) calibration.
-   - Two-module critical modes, \(M_1^{(2)}\), and the leading mode-closure condition.
-   - Uniform \(O(\varepsilon^2)\) remainder and the possible same-order transverse resolvent term.
+   - Two-module critical modes, \(M_1^{(2)}\), and the layerwise mode-closure condition.
+   - Exact fixed-total/fixed-moment family with nonzero transverse forcing and nonlinear return.
+   - Perron no-go: positive-mode closure in nonnegative receiver-self diffusion collapses to common-row measures.
+   - Dynamic-adjoint formula and singular-limit scaling for \(\mathcal J_{\perp,\delta}\), followed by a uniform \(O(\varepsilon^2)\) remainder in the admitted regime.
 
 5. **Theorem A: structural transfer to the finite network**
    - Differentiability of the RFDE Lin problem in the chosen residual norm.

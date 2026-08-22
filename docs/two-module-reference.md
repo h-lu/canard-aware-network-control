@@ -202,10 +202,53 @@ voltage modes. Thus the layer problem has one fast fold direction. The weak
 delayed terms perturb the transverse fast spectrum only by \(O(\varepsilon)\)
 on compact parameter sets.
 
-This algebra does not prove a uniform bound for the complete Lin operator:
-transverse recovery variables and the entry/exit passage still enter
-\(G_\perp(\delta)\). It does remove the immediate multi-fold contradiction
-present in the weak-only identical-module reference.
+It does **not** imply that the complete Lin BVP has one cokernel direction.
+At \(\varepsilon=0\), the full voltage--recovery Jacobian is
+
+\[
+ \begin{pmatrix}D(P-I)&-I\\0&0\end{pmatrix}.
+\]
+
+The collective block has the usual two-dimensional zero generalized space,
+but each transverse block
+
+\[
+ \begin{pmatrix}-D&-1\\0&0\end{pmatrix}
+\]
+
+retains one recovery center direction. Hence the singular center dimension is
+\(N+1\), not two, consistent with general multiple-slow-variable fold theory
+([Wechselberger 2012](https://doi.org/10.1090/S0002-9947-2012-05575-9)). At
+\(\varepsilon>0\), a transverse block has the physical-
+time roots
+
+\[
+ \lambda_f=-D+O(\delta),
+ \qquad
+ \lambda_s=-\frac{\varepsilon}{D}+O(\varepsilon^{3/2}),
+\]
+
+or, in fold time,
+
+\[
+ \Lambda_f=-\frac D\delta+O(1),
+ \qquad
+ \Lambda_s=-\frac\delta D+O(\delta^2).
+\]
+
+Thus the scaffold proves exactly one **fast fold** direction but does not by
+itself prove one Lin cokernel. The entry/exit history discs must declare
+whether transverse recovery coordinates are free, synchronized, or selected
+by compatible fibers. Free recovery directions may yield a family or an
+actual kernel; hard endpoint selection can hide the slow degeneration; a
+full slow-manifold construction naturally suggests an
+\(O(\delta^{-1})\) Green scale if the transverse BVP is otherwise invertible.
+
+The concrete theorem must therefore prove a direct-sum Fredholm result for
+the collective, module-difference, and within-module blocks in an
+\(N\)-uniform weighted norm. The scaffold removes the immediate multi-fold
+contradiction present in the weak-only reference, but it does not pass that
+gate automatically.
 
 ## 5. Output and safety coordinates
 
@@ -287,7 +330,7 @@ adjoint projection is
 
 \[
  M_{1,\lambda}
- =\kappa\int_{-\infty}^{\infty}s e^{-s^2/2},ds=0.
+ =\kappa\int_{-\infty}^{\infty}s e^{-s^2/2}\,ds=0.
  \tag{22}
 \]
 
@@ -311,12 +354,19 @@ For the generalized slow equation
  \tag{24}
 \]
 
-Hence the canonical symmetric whole-line inner calculation predicts
+Let
+
+\[
+ \gamma=\min_{\lambda\in\operatorname{spec}(W)\setminus\{1\}}
+ |1-\lambda|.
+\]
+
+The canonical symmetric whole-line inner calculation predicts
 
 \[
  G_\perp(\varepsilon)
  \asymp
- \frac{1}{\varepsilon|K|\,\min\{1,p+q\}}
+ \frac{1}{\varepsilon|K|\gamma}
  \tag{25}
 \]
 
@@ -327,7 +377,7 @@ Equation (25) is a formal diagnostic, not a theorem.
 Finite or asymmetric sections can restore an order-\(\delta\) interior term,
 
 \[
- \int_{s_-}^{s_+}s e^{-s^2/2},ds
+ \int_{s_-}^{s_+}s e^{-s^2/2}\,ds
  =e^{-s_-^2/2}-e^{-s_+^2/2},
  \tag{26}
 \]
@@ -368,5 +418,47 @@ The project decision is:
    as a possible narrow exact-invariant theorem, not as the broad reference.
 4. Proposition B uses a separate nontrivial modular reference; the symmetric
    control benchmark cannot supply that novelty.
-5. Large heterogeneous simulations remain blocked until the augmented Lin
-   operator and its smallest singular value are implemented.
+5. Large heterogeneous simulations remain blocked until the actual augmented
+   RFDE Lin operator replaces the finite-interval diagnostic below.
+
+## 9. Finite-interval boundary-condition diagnostic
+
+`experiments/transverse_lin_sweep.py` discretizes a deliberately simplified
+modal inner BVP with implicit midpoint equations, constant incoming-history
+continuation, and the fixed endpoint lines
+
+\[
+ V(s_-)+s_-U(s_-)=0,
+ \qquad
+ V(s_+)+s_+U(s_+)=0.
+\]
+
+With 80 intervals, \(\delta=2^{-p}\) for \(p=4,\ldots,11\), and a fit to the
+four smallest values, its log--log slopes are:
+
+| case | slope of \(\sigma_{\min}\) |
+|---|---:|
+| symmetric weak-only | 2.0002 |
+| asymmetric weak-only | 1.0060 |
+| symmetric chart scaffold | -0.0090 |
+| asymmetric chart scaffold | 0.0074 |
+| symmetric physical scaffold | -0.0058 |
+
+The weak-only rows reproduce the analytical distinction between a symmetric
+inner cancellation and an endpoint contribution. The discrete scaffold rows
+show plateaus under these **fixed endpoint conditions**, but they do not prove
+an RFDE inverse bound. In particular, the endpoint lines can pin transverse
+recovery directions that a full \(N\)-slow Fenichel manifold would leave
+free. The plateau also depends on the interval, grid, Euclidean unknown norm,
+and residual-row scaling.
+
+This experiment is a falsifier for BVP choices: the final Lin computation
+must replace its incoming-history closure and endpoint lines by compatible
+solution-manifold histories and derived Lin bundles.
+
+The table is reproduced by
+
+```bash
+PYTHONPATH=src python3 experiments/transverse_lin_sweep.py \
+  --intervals 80 --first-power 4 --last-power 11 --tail-count 4
+```

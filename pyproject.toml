@@ -10,7 +10,8 @@ requires-python = ">=3.11"
 dependencies = ["sympy>=1.13"]
 
 [project.optional-dependencies]
-test = ["pytest>=8"]
+numeric = ["numpy>=2.0"]
+test = ["numpy>=2.0", "pytest>=8"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
