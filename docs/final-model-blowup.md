@@ -275,13 +275,15 @@ negative. The coefficient is independent of \(D_w\): the recovery variable
 \(W\) first enters the transverse voltage equation at order \(\delta^2\),
 after (11) has already been determined.
 
-Within this note, (13) is only formal. The subsequent construction in
+Within this note, (13) is only formal. The construction in
 [special-flow-graph-theorem.md](special-flow-graph-theorem.md) and the
-parameterized splitting in
-[reduced-canard-root.md](reduced-canard-root.md) make it rigorous on a fixed
-compact tube. Its identification with the selected physical long-delay root
-still requires the estimates in
-[k1-tail-compatibility.md](k1-tail-compatibility.md).
+finite-scale proof in
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md) make (11)--(12) actual
+Taylor coefficients of the graph on a fixed compact tube. They do **not**
+make the whole-line root formula (13) a fixed-tube theorem. Its identification
+with the selected physical long-delay root still requires the selected-trace
+lemma isolated in
+[long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md).
 
 ## 6. Obligations not proved by this blow-up note
 

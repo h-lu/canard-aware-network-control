@@ -60,9 +60,10 @@ selected RFDE canard parameter satisfies
 \]
 
 even though the total delayed gain and critical projected delay measure are
-independent of \(\eta\). The Lipschitz compact-tube history graph is proved;
-the local mixed vector-field jet is uniquely determined by the formal
-invariance recursion and checked symbolically. The candidate root coefficient
+independent of \(\eta\). The compact-tube history graph and the finite mixed
+jets required for its third-order Taylor remainder are proved; the local
+mixed vector-field coefficient is also checked independently by exact symbolic
+division. The candidate root coefficient
 \(c_\perp=1/(4\alpha)\) still depends on a
 whole-line pairing and is conditional on the selected-tail and growing-tube
 estimates listed below.
@@ -75,8 +76,8 @@ contracts, not proved inputs to this theorem.
 
 ## Current proof status
 
-The base project now has exact algebra, a proved Lipschitz local graph, and
-two sharply identified analytic gaps.
+The base project now has exact algebra, a finite-regularity compact-tube graph,
+and one sharply identified long-delay theorem gap.
 
 1. **Exact model and spectrum.** The final two-module equation, anisotropic
    blow-up, delay-layer identities, fold data, and singular Jordan structure
@@ -86,10 +87,13 @@ two sharply identified analytic gaps.
 2. **Compact-tube history reduction.** A constructive contraction proves a
    unique bounded Lipschitz special-flow history graph and an injective
    complete-history map on a fixed compact fold tube. This avoids treating
-   backward RFDE evolution as an initial-value problem. The finite-order
-   mixed-jet upgrade is specified but not yet publication-complete.
-3. **Formal local jet and conditional coefficient.** The invariance recursion
-   and exact symbolic division give
+   backward RFDE evolution as an initial-value problem. A triangular scale of
+   common Banach fibers now proves the required
+   \(C_u^3C_{\delta,\eta}^{3,2}\) mixed regularity and an
+   \(O(\delta^3)\) fixed-tube graph remainder.
+3. **Actual local graph jet and conditional root coefficient.** The proved
+   mixed regularity promotes the invariance recursion to a Taylor coefficient
+   of the compact-tube graph, while exact symbolic division independently gives
    \[
    \partial_\eta q_{2,X}(\gamma_0(s))
    =-\frac{K(\theta_0-\theta_1)}{4\alpha}s.
@@ -103,17 +107,17 @@ two sharply identified analytic gaps.
    +O(\delta^4|\eta|+\delta^3\eta^2).
    \]
    The displayed root coefficient is therefore conditional, not a theorem on
-   a fixed compact tube.
-   Promoting this formal jet to a remainder-controlled graph coefficient
-   first requires closing the mixed-jet fiber lemma.
+   a fixed compact tube: the omitted selected tails contribute at the same
+   order as the whole-line pairing.
 4. **Remaining long-delay gate.** Individual long-delay backtrack maps have no
    uniform fixed-neighborhood \(C^1\) bound, so the standard \(K_1\) route is
    not yet applicable when \(\tau_k=\theta_k/\delta\). A logarithmic matching
-   argument can suppress the resulting endpoint growth, but three
-   estimates remain open: a one-sided selected-trace tame bound, a
-   growing-tube graph remainder, and normalized gap-derivative bounds. Until
-   they are proved, the displayed root law is conditional rather than the
-   completed RFDE theorem.
+   argument can suppress the resulting endpoint growth. The trace-to-gap
+   implication and its three normalized derivative estimates are proved, but
+   their model-specific input remains open as one selected-trace lemma: a
+   one-sided, curve-wise \(C_\nu^1C_\eta^2\) trace bound together with
+   growing-tube graph membership. Until that lemma is proved, the displayed
+   root law is conditional rather than the completed RFDE theorem.
 5. **Numerical diagnostic.** Literal method-of-steps integration of the exact
    four-dimensional chart gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
@@ -135,9 +139,11 @@ two sharply identified analytic gaps.
 - `docs/final-model-exact-algebra.md` -- exact final-model algebra and singular Jordan structure;
 - `docs/final-model-blowup.md` -- exact anisotropic fold chart and projected/full-vector residual checks;
 - `docs/rfde-relevant-spectrum.md` -- Rouché--Schur count of the two relevant RFDE roots and complementary gap;
-- `docs/special-flow-graph-theorem.md` -- proved Lipschitz compact-tube history graph and the open finite-jet upgrade;
+- `docs/special-flow-graph-theorem.md` -- constructive Lipschitz compact-tube history graph and injective history map;
+- `docs/mixed-jet-graph-proof.md` -- finite-scale mixed-jet closure and the uniform fixed-tube Taylor remainder;
 - `docs/reduced-canard-root.md` -- conditional second-order splitting template and exact symbolic integrands;
-- `docs/k1-tail-compatibility.md` -- long-delay \(K_1\) obstruction, logarithmic rescue lemma, and the three open estimates;
+- `docs/k1-tail-compatibility.md` -- long-delay \(K_1\) obstruction and logarithmic rescue mechanism;
+- `docs/long-delay-selected-trace-proof.md` -- proved trace-to-gap implication and the remaining model-specific selected-trace lemma;
 - `docs/model-repair-options.md` -- comparison of the long-delay theorem with a lower-risk fixed-physical-delay variant;
 - `docs/sprint-01.md` -- first two-week execution plan linked to GitHub issues;
 - `manuscript/outline.md` -- single-paper narrative, figures, and evidence standard;
@@ -163,17 +169,20 @@ two sharply identified analytic gaps.
 - [Flagship-paper epic](https://github.com/h-lu/canard-aware-network-control/issues/9)
 - [Milestone: Flagship paper v1](https://github.com/h-lu/canard-aware-network-control/milestone/1)
 
-## Model decision gate
+## Frozen theorem route
 
-The exact algebraic return channel has been identified formally, but the paper
-must choose one of two honest theorem routes before further promotion work:
+Route A was selected on 2026-08-22. The base paper retains the long-delay
+scaling
 
-- keep the high-novelty long-delay scaling
-  \(\tau_k=\theta_k/\delta\), retain the \(O(\delta^3)\) effect, and prove the
-  three new logarithmic-tail estimates; or
-- use fixed physical delays \(\tau_k=O(1)\), which restores the standard
-  \(K_1\) geometry but moves the first transverse effect to
-  \(O(\delta^4)\).
+\[
+ \tau_k=\theta_k/\delta
+\]
+
+and targets the \(O(\delta^3)\) physical threshold effect. The remaining
+proof gate is the curve-wise selected-trace/growing-tube lemma isolated in
+`docs/long-delay-selected-trace-proof.md`. The fixed-physical-delay
+variant remains only a documented fallback and is not an active theorem
+target.
 
 The full \(2N\)-state Lin transfer and three-coordinate control remain frozen
 until one of these base theorems is complete.

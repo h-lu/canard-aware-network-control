@@ -7,8 +7,12 @@ fixed neighborhood. That obstruction is not a no-go theorem: the
 exponential weight in the Krupa--Szmolyan first integral can suppress the
 bad backtrack derivative on a logarithmically receding section. This note
 proves the individual-backtrack obstruction and a conditional suppression
-lemma, records the part of the history lift that is complete, and isolates
-the three tail estimates together with the mixed-jet prerequisite.
+lemma, and records the part of the history lift that is complete. The
+fixed-tube mixed-jet prerequisite has since been closed in
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md). The remaining
+curve-wise selected-trace theorem and the resulting trace-to-gap implication
+are stated more sharply in
+[long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md).
 
 ## 1. The two compactifications use incompatible delay times
 
@@ -396,16 +400,18 @@ and Lemma 4, would give
 and hence the claimed physical \(\mu=\delta^2\nu\) law.
 
 The conditional endpoint-suppression estimate is proved in Lemma 2 assuming
-(11). What remains is the single-exponential selected-trace bound (11), the
-growing-tube graph bound (19), and the normalized gap estimates (20). They do
-not follow verbatim
+(11). What remains is the single-exponential selected-trace bound (11) and the
+growing-tube graph bound (19). The normalized gap estimates (20) now follow
+from these inputs by Theorem 2 of
+[long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md);
+they do not follow unconditionally
 from the present fixed-tube theorem, Krupa--Touboul Lemmas 1--2, or
 Krupa--Szmolyan Propositions 3.4--3.5.
 
 ### Stop point
 
-These three estimates cannot honestly be promoted to proved statements from
-the current material.
+These selected-trace and growing-graph inputs cannot honestly be promoted to
+proved statements from the current material.
 
 - Fixed-\(\delta\) smoothness of the Krupa--Touboul overlap gives no bound
   on how its mixed parameter derivatives depend on
@@ -423,20 +429,22 @@ the current material.
 
 Accordingly, the rigorous output of this note is Proposition 1, Lemma 2,
 Proposition 3, and the conditional history-lift Lemma 4. The geometric root
-and its coefficient remain conditional on (11), (19), and (20).
+and its coefficient remain conditional on the selected-trace/growing-graph
+input, not on the subsequent Gaussian differentiation itself.
 
 ## 8. Claim consequence
 
 The permitted current statement is:
 
-> The Lipschitz invariant-history graph is proved, the local
-> \(r_2^2\eta\) jet is symbolically determined, and a reduced intersection
+> The finite-regularity fixed-tube invariant-history graph is proved, the local
+> \(r_2^2\eta\) graph jet is remainder-controlled and symbolically checked,
+> and a reduced intersection
 > would lift exactly to a complete-history
 > intersection. Individual backtrack maps are nonuniform, so the standard
 > full-neighborhood \(K_1\) theorem is not yet applicable; the first-integral
 > weight nevertheless makes a logarithmic-section proof viable. Its tame
 > selected-trace and growing-tube estimates remain open.
 
-Until (11), (19), and (20) are proved, the Gaussian value
+Until the selected-trace/growing-graph hypothesis is proved, the Gaussian value
 \(1/(4\alpha)\) remains a conditional candidate for the selected physical
 RFDE root, and Gate D must remain marked **open**.

@@ -275,13 +275,16 @@ conditional splitting corollary gives
 \tag{10}
 \]
 
-Equation (9a) is the exact symbolic coefficient of the formal invariance
-recursion; its remainder control depends on the mixed-regularity lemma.
+Equation (9a) is the exact symbolic coefficient of the invariance recursion.
+The finite-scale proof in
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md) promotes it to a Taylor
+coefficient of the actual graph on every fixed cutoff tube, with the required
+remainder control.
 Equation (10) is not a fixed-tube theorem. A fixed tube cannot determine the
 whole-line Melnikov coefficient because omitted endpoint and tail terms occur
-at the same order. The three uniform estimates
-isolated in [k1-tail-compatibility.md](k1-tail-compatibility.md) are precisely
-what would promote the conditional calculation in
+at the same order. The selected-trace/growing-graph input isolated in
+[long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md) is
+precisely what would promote the conditional calculation in
 [reduced-canard-root.md](reduced-canard-root.md) to the selected long-delay
 RFDE maximal-canard root.
 
@@ -326,7 +329,7 @@ flowchart TD
     A["Exact layer identities and current-state singular spectrum"] --> B["RFDE relevant characteristic-root count"]
     B --> C["Lipschitz invariant history graph"]
     C --> D["Injective complete-history embedding iota"]
-    D --> E["Mixed-jet regularity and formal fold jet"]
+    D --> E["Mixed-jet regularity and fixed-tube fold jet"]
     E --> F["Long-delay selected-trace and growing-tube estimates"]
     F --> G["Whole-line coefficient and simple lifted RFDE intersection"]
     G --> H["Main theorem and coefficient c_perp"]
@@ -341,9 +344,9 @@ Each supporting result has one mathematical job.
 | Lemma 1 | Identities (6)--(8), fold nondegeneracy, positivity, exact blow-up, and the repaired singular characteristic polynomial | Excludes a disguised scalar-moment change and removes the extra recovery center | Proved and symbolically tested for (M) |
 | Proposition 2 | Exactly two simple relevant RFDE roots and a uniform complementary characteristic-root gap | Counts the critical characteristic directions without discarding high-frequency roots | Proved by Rouché--Schur root counting; phase-space projector bounds are not claimed |
 | Proposition 3 | A bounded Lipschitz invariant history graph and injective complete-history map on a fixed compact tube | Infinite-dimensional history and backward-extension problem | Lipschitz fixed point proved by special-flow contraction with cutoff |
-| Lemma 4 | Finite-order mixed \((u,\delta,\eta)\) regularity and a uniform Taylor remainder for the graph | Converts the formal invariance recursion into a coefficient of the actual graph | Open; fiber-contraction scheme written, common jet spaces/operators still required |
-| Proposition 5 | The reduced vector-field jet through the order that can produce an \(\eta\delta^3\) root shift | Identifies the local history-embedding return before the global pairing | Formal coefficient (9a) uniquely determined and symbolically checked; remainder control depends on Lemma 4 |
-| Proposition 6 | Selected one-sided trace bounds, growing-tube graph remainder, normalized gap derivatives, and the whole-line pairing | Determines whether the local jet produces the candidate coefficient for the physical long-delay traces | Open long-delay theorem gate |
+| Lemma 4 | Finite-order mixed \((u,\delta,\eta)\) regularity and a uniform Taylor remainder for the graph | Converts the formal invariance recursion into a coefficient of the actual graph | Proved on fixed cutoff tubes by triangular common Banach fibers |
+| Proposition 5 | The reduced vector-field jet through the order that can produce an \(\eta\delta^3\) root shift | Identifies the local history-embedding return before the global pairing | Actual fixed-tube graph coefficient; independently checked by exact symbolic division |
+| Proposition 6 | Selected one-sided trace bounds, growing-tube graph membership, normalized gap derivatives, and the whole-line pairing | Determines whether the local jet produces the candidate coefficient for the physical long-delay traces | Trace-to-gap implication proved; model-specific selected-trace lemma T remains open |
 | Lift lemma | Equivalence between a reduced intersection inside the injective graph and equality of the embedded complete histories | Prevents a reduced event from being mislabeled as an RFDE history intersection | Proved conditionally on the selected curves belonging to the graph; global membership follows only after Proposition 6 |
 
 The first paper should construct the matching gap in coordinates on
@@ -367,45 +370,42 @@ are not claimed; the special-flow graph construction does not use them.
 
 ### Gate B -- parameter-regular invariant history manifold
 
-**Partially passed on every fixed compact fold tube.** The contraction proves
-a unique bounded Lipschitz history graph and an injective complete-history
-map. The finite-order mixed-jet regularity and uniform Taylor remainder remain
-an explicit lemma target; the present fiber argument has not yet specified
-all common jet spaces and highest-order operator estimates.
+**Passed on every fixed compact fold tube at the finite regularity needed by
+the coefficient calculation.** The contraction gives a unique bounded
+history graph and an injective complete-history map. The triangular
+mixed-jet proof gives uniform
+\(C_u^3C_{\delta,\eta}^{3,2}\) regularity and an
+\(O(\delta^3)\) graph remainder. These constants are not asserted to be
+uniform on the growing logarithmic tubes used in Gate D.
 
 ### Gate C -- coefficient
 
-**Formal local jet fixed; graph coefficient and root coefficient open.** The
-invariance recursion uniquely gives (9a), and symbolic division checks it.
-It becomes a remainder-controlled jet of the actual history graph only after
-Gate B's mixed-regularity lemma closes. The value \(1/(4\alpha)\) then requires
-a whole-line Gaussian pairing; a fixed tube cannot certify that pairing.
+**Fixed-tube graph coefficient proved; physical root coefficient open.** The
+invariance recursion uniquely gives (9a), the mixed-jet theorem makes it a
+remainder-controlled coefficient of the actual fixed-tube graph, and symbolic
+division checks it independently. The value \(1/(4\alpha)\) still requires
+the selected whole-line Gaussian pairing; a fixed tube cannot certify that
+pairing.
 
 ### Gate D -- geometric canard
 
-**Open for the long-delay model.** Prove:
+**Open for the long-delay model.** The remaining input is the selected-trace
+lemma T in
+[long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md):
+the fixed outer selections must admit curve-wise
+\(C_\nu^1C_\eta^2\) traces with Gaussian-weighted tame bounds and belong to
+the uncut growing history graph together with their delayed backtracks. Given
+T, the normalized gap derivatives, simple-root remainder, and history lift
+are proved. Until T is proved, use “conditional reduced connection root,” not
+“proved RFDE maximal-canard threshold.”
 
-1. the selected one-sided trace tame bound;
-2. the growing-tube invariant-graph remainder;
-3. the normalized gap and parameter-derivative bounds.
+### Frozen route A
 
-The logarithmic-section suppression lemma then closes the simple root,
-uniform remainder, and history-lift equivalence. Until all three estimates are
-proved, use “conditional reduced connection root,” not “proved RFDE
-maximal-canard threshold.”
-
-### Model-selection gate
-
-Before continuing Gate D, choose between:
-
-- the current long-delay model \(\tau_k=\theta_k/\delta\), whose
-  \(O(\delta^3)\) coefficient requires new logarithmic-tail analysis; or
-- fixed physical delays \(\tau_k=O(1)\), which restore the standard \(K_1\)
-  route but move the first transverse term to \(O(\delta^4)\).
-
-The first route is more novel and riskier. The second is the recommended
-proof-completion route if the priority is one defensible paper rather than a
-new long-delay tail theorem.
+The long-delay model \(\tau_k=\theta_k/\delta\) was selected on 2026-08-22.
+Gate D must therefore prove the logarithmic growing-tube and selected-trace
+estimates needed for the \(O(\delta^3)\) coefficient. The fixed-physical-delay
+variant is retained only as a falsification/fallback note and is not part of
+the active theorem or proof dependency graph.
 
 ### Gate E -- promotion to general networks
 
@@ -427,10 +427,9 @@ title, abstract, and main claims.
 | Level | Permitted claim | Evidence required |
 |---|---|---|
 | Exact | Final model, fixed total gain, fixed projected delay measure, algebraic transverse forcing, exact blow-up, singular Jordan chain, and characteristic determinant | Symbolic and hand proof for (M) |
-| Proved analytic | Relevant-root count, bounded Lipschitz cutoff history graph, and conditional injective history lift | Rouché--Schur estimate and base special-flow contraction |
-| Formal/local | Mixed vector-field jet (9a) | Exact invariance recursion and symbolic division audit |
-| Proof pending | Finite-order mixed regularity of the actual graph | Fully specified jet fiber and uniform Taylor-remainder proof |
-| Conditional | Whole-line coefficient \(1/(4\alpha)\) and long-delay root expansion (11) | Mixed-regularity lemma plus the three explicitly stated tail/matching estimates and conditional splitting argument |
+| Proved analytic | Relevant-root count, bounded cutoff history graph, injective history map, finite fixed-tube mixed jets, and fixed-tube Taylor remainder | Rouché--Schur estimate, special-flow contraction, and triangular common-fiber proof |
+| Proved local coefficient | Mixed graph jet (9a) on every declared uncut fixed tube | Mixed-jet theorem plus independent exact symbolic division audit |
+| Conditional | Whole-line coefficient \(1/(4\alpha)\) and long-delay root expansion (11) | Model-specific selected-trace lemma T plus the proved trace-to-gap argument |
 | Theorem | Selected RFDE canard root and uniform remainder (11) | Close Gate D and prove the selected curves lie in the history graph through the logarithmic matching region |
 | Numerical | Convergence of normalized finite-section threshold differences | Reproducible method-of-steps refinements with history/section dependence reported |
 | Excluded | Global spiking threshold, arbitrary finite network, or independent three-coordinate assignment | Not inferred from the local theorem |
@@ -488,20 +487,20 @@ control singular-value region.
 - rerun every exact equilibrium, projection, positivity, and spectrum check;
 - prove or falsify Gate A before adding simulations.
 
-### Phase II -- construct the compact-tube invariant geometry (partial)
+### Phase II -- construct the compact-tube invariant geometry (completed)
 
 - prove the special-flow graph by contraction rather than applying a singular
   RFDE center-manifold theorem as a black box;
 - construct the injective complete-history embedding;
-- complete the common mixed-jet fiber and uniform compact-tube Taylor
+- prove the common mixed-jet fiber theorem and uniform compact-tube Taylor
   remainder.
 
-### Phase III -- formal local jet (completed) and model selection (current)
+### Phase III -- fixed-tube local jet (completed) and long-delay proof (current)
 
 - retain the symbolically fixed compact-tube jet and conditional whole-line
   splitting law;
-- choose long physical delays or fixed physical delays;
-- close the corresponding tail/\(K_1\) estimates before promoting (11).
+- prove the long-delay growing-tube, selected-trace, and normalized-gap
+  estimates before promoting (11).
 
 ### Phase IV -- validate and decide promotion
 

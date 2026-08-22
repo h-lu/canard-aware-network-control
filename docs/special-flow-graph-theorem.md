@@ -1,19 +1,20 @@
 # A uniform special-flow history graph for the singular RFDE chart
 
-Status: **Lipschitz graph proved; finite-order mixed-jet upgrade not yet closed
-at publication level.** Steps 1--3 construct the unique bounded Lipschitz
-special-flow graph. The finite-order regularity and uniform Taylor remainder
-used by the coefficient calculation depend on Lemma target 2 below; the
-current fiber-contraction argument is a detailed proof scheme, but its common
-jet fibers and convergence estimates still need to be written out fully.
+Status: **Lipschitz graph proved here; the application-required finite mixed
+jets are proved in a companion note.** Steps 1--3 construct the unique bounded
+Lipschitz special-flow graph. The common Banach fibers, convergence estimates,
+and uniform third-order fixed-tube Taylor remainder needed by the final model
+are completed in
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md). The arbitrary-order
+version of Theorem target 1 below is not claimed.
 
 The proof is constructive. It does not cite a fixed-parameter RFDE center
 manifold theorem across the singular limit. The latter would be invalid here
 because the scaled transverse generator contains \(A/\delta\). The regularity
 argument follows the fiber-contraction strategy used for parameterization
-equations by Yang, Gimeno, and de la Llave (2021). The proof scheme and the
-estimates still required for the present weak-delay/strong-stable system are
-recorded below.
+equations by Yang, Gimeno, and de la Llave (2021). The application-specific
+finite-scale proof is separated from the arbitrary-order target below so that
+the two statements cannot be confused.
 
 ## 1. Abstract system and assumptions
 
@@ -84,7 +85,7 @@ For a complete vector field \(Q\), denote its flow by \(\Phi_Q^s\), and set
 
 ## 2. The graph theorem target
 
-**Theorem target 1 (uniform weak-delay special-flow graph).** Fix finite integers
+**Theorem target 1 (arbitrary finite-order weak-delay special-flow graph).** Fix finite integers
 \(s\geq2\) and \(N_*\geq1\), and suppose
 \(R\geq s+N_*+5\). Then there are
 \(\delta_0,C,C_{N_*}>0\) such that, for
@@ -339,10 +340,11 @@ The first term tends uniformly to zero as \(T\to\infty\). Changing variables
 in the integral recovers the second equation in (11). Thus every bounded
 solution of (5) in the declared neighborhood is the fixed point already
 constructed, which proves uniqueness of the bounded fixed point in the
-declared Lipschitz ball. The higher-regularity assertions of Theorem target 1
-still depend on Lemma target 2.
+declared Lipschitz ball. The arbitrary-order regularity assertions of Theorem
+target 1 still depend on Lemma target 2; the finite orders used by the final
+model are proved in the companion note.
 
-#### Step 4: a mixed-jet fiber lemma
+#### Step 4: the general mixed-jet target and its proved finite-scale case
 
 A same-order \(C^s\) Banach implicit-function theorem is not applicable:
 the map \(Q\mapsto H\circ\Phi_Q^{-\theta}\) loses a derivative. We therefore
@@ -353,7 +355,7 @@ record the finite-order jet argument used here. For a \(C^k\) map \(f\), put
  +\operatorname {Lip}(D^kf).
 \]
 
-**Lemma target 2 (mixed jets of the graph transform).** Let
+**Lemma target 2 (general mixed jets of the graph transform).** Let
 \(J=s+N_*+3\). On every bounded \(C_b^{J+1,1}\) ball of vector fields there
 are constants \(C_j,\Gamma_j\), \(0\leq j\leq J\), such that
 
@@ -477,6 +479,13 @@ defined and bounded explicitly at every mixed order. Once that bookkeeping is
 closed, the argument yields the \(C^s\) assertion, the \(C^2\) dependence on
 \(\eta\), and (4).
 
+For the finite rectangular jet family actually used below—three spatial and
+three \(\delta\) derivatives and two \(\eta\) derivatives—Theorem 1 of
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md) defines the common
+fibers, proves their affine highest-block contractions, and establishes
+strong convergence. Thus this application case is a theorem; the preceding
+paragraph concerns only the more general arbitrary-order target.
+
 #### Step 5: \(\delta\)-jets and their uniform remainders
 
 For this step use (11) itself, not the singularly rescaled unknown
@@ -490,7 +499,7 @@ constant map
  \mathcal T_{0,p}(Q,H)=(q_0,0).
 \]
 
-Conditional on Lemma target 2, the fixed point is \(C^{N_*+1}\) in \(\delta\) with
+Under Lemma target 2, the fixed point is \(C^{N_*+1}\) in \(\delta\) with
 values in \(C_b^s\), including after zero, and gives uniform bounds on the
 same derivatives after applying \(\partial_\eta^k\), \(0\leq k\leq2\).
 Set
@@ -513,20 +522,18 @@ The integral form of Taylor's theorem gives, for either component and for
 \tag{L7}
 \]
 
-The target uniform mixed-jet bound would prove (8)--(9). Conditional on Lemma
-target 2, differentiating (11) once at \(\delta=0\), and using
+The target uniform mixed-jet bound would prove (8)--(9). For the final model's
+third-order expansion, the companion finite-scale theorem supplies this
+bound. Differentiating (11) once at \(\delta=0\), and using
 \(\int_0^\infty e^{Ar}\,dr=-A^{-1}\), gives exactly (10).
 
 #### Step 6: complete-history embedding
 
-Conditional on Lemma target 2, equation (6) is \(C^s\). Evaluation at the
-present time followed by projection to the \(u\)-coordinates returns \(u\),
-so \(\iota\) is injective and has injective derivative. Equation (7) follows
-by translating the exact special-flow solution constructed in Step 3. At the
-already proved Lipschitz level, the same present-time projection proves
-injectivity and the integral equation gives the exact special-flow orbit. The
-\(C^s\) embedding and its derivative statement remain conditional on Lemma
-target 2.
+At the Lipschitz level, evaluation at the present time followed by projection
+to the \(u\)-coordinates returns \(u\), so \(\iota\) is injective and the
+integral equation gives the exact special-flow orbit. For the final model,
+the companion theorem upgrades (6) to a \(C^3\) embedding with injective
+derivative. Higher arbitrary orders remain conditional on Lemma target 2.
 
 ## 3. Exact application to the final two-module chart
 
@@ -643,24 +650,28 @@ equation occurs in \(Q_{2,X}\):
 \tag{26}
 \]
 
-Equations (24)--(26) are the uniquely determined formal coefficients in the
+Equations (24)--(26) are the uniquely determined coefficients in the
 invariance recursion for the chosen cutoff, and on the stated uncut portion
 they use only the physical vector field. Symbolic division checks that no
-negative power of \(\delta\) has been hidden. Promoting them to coefficients
-of the actual graph requires Lemma target 2; promoting (26) to a root
+negative power of \(\delta\) has been hidden. The companion finite-scale
+mixed-jet theorem promotes them to Taylor coefficients of the actual graph on
+the declared fixed tube. Promoting (26) to a physical long-delay root
 coefficient additionally requires the canard tail/matching theorem.
 
 ## 4. What is proved and what remains conditional
 
-The proved part establishes:
+Combining this note with
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md), the proved part
+establishes:
 
-1. a unique bounded Lipschitz special-flow graph for the cut-off local model;
-2. a two-sided Lipschitz reduced flow and an injective complete-history map.
+1. a unique bounded special-flow graph for the cut-off local model;
+2. a two-sided reduced flow and an injective complete-history map;
+3. the application-required finite mixed regularity, a uniform fixed-tube
+   \(O(\delta^3)\) Taylor remainder, and the actual graph coefficient (26).
 
-Conditional on Lemma target 2, it additionally gives uniform \(C^2\)
-dependence on \(\eta\), a controlled \(\delta\)-jet, and the transverse return
-(26). The algebraic coefficient in (26) is symbolically verified, but it is
-not yet a remainder-controlled coefficient of the actual graph.
+The algebraic coefficient in (26) is also independently verified by symbolic
+division. These fixed-tube results do not determine its whole-line canard-root
+pairing.
 
 It does not yet establish:
 

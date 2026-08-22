@@ -1,11 +1,11 @@
 # Flagship manuscript outline
 
-Status: **base-paper outline under a model-selection gate, followed by a
+Status: **base-paper outline on the frozen long-delay route, followed by a
 conditional promotion outline.** The exact local algebra, relevant-root
-count, and Lipschitz compact-tube graph are proved. The mixed jet is fixed by
-the formal invariance recursion, while its graph remainder, the whole-line
-coefficient, and the physical long-delay root remain proof obligations in
-`docs/k1-tail-compatibility.md`. The alternative fixed-physical-delay route is
+count, compact-tube graph, finite mixed jets, and fixed-tube Taylor remainder
+are proved. The selected-trace lemma, whole-line coefficient, and physical
+long-delay root remain proof obligations in
+`docs/long-delay-selected-trace-proof.md`. The alternative fixed-physical-delay route is
 recorded in `docs/model-repair-options.md`.
 
 ## Proof-first base paper
@@ -22,18 +22,17 @@ Two-Module FitzHugh--Nagumo System**
    - Final positive two-layer family and fixed recovery coupling.
    - Exact fold, projection, positivity, and singular-spectrum identities.
 3. **The nonlocal invariant manifold**
-   - Proved Lipschitz history graph and injective complete-history map; no
+   - Proved history graph, finite mixed jets, uniform fixed-tube Taylor
+     remainder, and injective complete-history map; no
      backward RFDE initial-value problem is used.
-   - Open finite-order mixed-regularity lemma and Taylor remainder.
 4. **The reduced fold jet**
    - Stable transverse delay response.
-   - Symbolically determined mixed vector-field jet and the conditional
-     whole-line candidate \(c_\perp=1/(4\alpha)\).
+   - Remainder-controlled fixed-tube mixed vector-field jet, independently
+     checked symbolically, and the conditional whole-line candidate
+     \(c_\perp=1/(4\alpha)\).
 5. **The canard intersection**
-   - Long-delay option: selected-trace, growing-tube, and logarithmic matching
-     estimates.
-   - Fixed-delay option: regular \(K_1\) third-order splitting with an
-     \(O(\delta^4)\) transverse effect.
+   - Selected-trace, growing-tube, and logarithmic matching estimates for
+     \(\tau_k=\theta_k/\delta\).
    - Simple matching root and uniform remainder only after the selected option
      is complete.
    - Lift from the reduced intersection to complete RFDE histories.

@@ -1,18 +1,22 @@
 # Contingency models if the long-delay family is not \(K_1\)-admissible
 
-Status: **model-selection memorandum, not a theorem.** The calculations
+Status: **fallback memorandum, not the active theorem route and not a
+theorem.** Route A in the flagship design means retaining the physical
+long-delay scaling \(\tau_k=\theta_k/\delta\). To avoid conflicting labels,
+the bounded-delay repair formerly called “Option A” in this memorandum is
+called **Fallback F** below. The calculations
 below identify the first nonzero \(\eta\)-coefficient on the formal invariant
 graph. They also isolate exactly which repair makes the classical
 Krupa--Szmolyan \(K_1\) construction applicable. A claimed maximal-canard
 formula still requires the indicated parameterized splitting proposition and
 the exact invariant-history reduction.
 
-The recommendation is Option A: keep the final two-module matrices and the
-fast source-history coupling, but use fixed physical delays. This changes one
-scaling assumption, preserves the complete projected-delay constraint and the
-transverse-return mechanism, and removes the nonlocal \(K_1\) tail. Its first
-hidden-topology threshold term is one order later than in the current
-long-delay model:
+Fallback F keeps the final two-module matrices and the fast source-history
+coupling, but uses fixed physical delays. It remains available only if the
+selected long-delay trace theorem is falsified. This change preserves the
+complete projected-delay constraint and the transverse-return mechanism while
+removing the nonlocal \(K_1\) tail. Its first hidden-topology threshold term is
+one order later than in the active long-delay model:
 
 \[
  \mu_c(\delta,\eta)-\mu_c(\delta,0)
@@ -107,7 +111,7 @@ is nonzero. Consequently every option below keeps the total gain and the
 moment, fixed under the topology deformation. What changes between the
 options is where (7) enters and how large a backtrack is seen in \(K_2\).
 
-## 3. Option A: fixed physical delays in the fast source
+## 3. Fallback F: fixed physical delays in the fast source
 
 ### 3.1 Model change
 
@@ -368,7 +372,7 @@ The sign reversal in (22) is caused by the two stable filters
 \]
 
 This variant still has an exact full-history lift after reduction. It is
-more invasive than Option A, its interpretation depends on a delayed
+more invasive than Fallback F, its interpretation depends on a delayed
 recovery pathway, and the new \(D_w^{-1}\) coefficient adds a second filter
 that must be estimated. Delayed recovery in FitzHugh--Nagumo-type models is
 not itself new. The hidden-topology derivative could remain new, but the
@@ -468,7 +472,7 @@ result, but it would enlarge the paper substantially.
 | option | classical \(K_1\) available? | first hidden-topology threshold | model intervention | full-history lift | assessment |
 |---|---:|---:|---:|---:|---|
 | current \(\tau=\theta/\delta\) | not from standard KS theory | \(+K(\theta_0-\theta_1)\eta\delta^3/(4\alpha)\) | none | inner tube yes; global matching open | high-payoff, high-risk |
-| A: fixed physical \(\tau\) | yes, after bounded-delay graph reduction | \(+K(\tau_0-\tau_1)\eta\delta^4/(4\alpha)\) | one scaling line | yes | **recommended proof model** |
+| Fallback F: fixed physical \(\tau\) | yes, after bounded-delay graph reduction | \(+K(\tau_0-\tau_1)\eta\delta^4/(4\alpha)\) | one scaling line | yes | proof-oriented fallback only |
 | B: recovery-source, long delay | no; full source also changes \(q_0\) | projected variant: \(-K(\theta_0-\theta_1)\eta\delta^3/(4\alpha D_w)\) | equation architecture | conditional on new \(K_1\) theory | reject as repair |
 | B plus bounded physical \(\tau\) | yes | \(-K(\tau_0-\tau_1)\eta\delta^4/(4\alpha D_w)\) | equation architecture plus scaling | yes | defensible backup, not minimal |
 | C: \(\varepsilon\)-smooth bounded window | yes for a fixed window | \(+Kd_0\eta\delta^4/(4\alpha)\) | delay law | yes; nonuniform as cap is removed | numerical bridge/appendix |
@@ -483,7 +487,7 @@ actuation such as \(K=O(1/\delta)\), or a non-smooth parameter scaling. Each
 choice reopens the very \(K_1\) regularity problem that the repair is meant to
 remove.
 
-## 7. Minimal proof and computation package for Option A
+## 7. Minimal proof and computation package for Fallback F
 
 The repaired flagship theorem can be completed without a nonlocal \(K_1\)
 theory if the following gates are closed.
@@ -516,5 +520,6 @@ theory if the following gates are closed.
    and separate history interpolation error from the threshold fit.
 
 The long-delay \(O(\delta^3)\) result can remain a clearly labeled conjecture
-or a numerical comparison. The paper's theorem should use Option A unless a
-separate proof closes the nonlocal \(K_1\) compatibility problem.
+or a numerical comparison. After the 2026-08-22 route decision, the paper
+continues with the long-delay theorem; Fallback F is activated only if the
+curve-wise selected-trace theorem is disproved or abandoned explicitly.

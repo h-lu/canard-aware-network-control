@@ -7,10 +7,12 @@ factor ``delta`` is restored, and derives the eta-dependent first graph jet
 from that block.
 
 The identities are exact.  They do not, on their own, prove existence or
-regularity of the nonlocal invariant graph.  A separate contraction proves a
-bounded Lipschitz graph, while the finite-order mixed-regularity upgrade
-needed to identify these formal jets with its Taylor coefficients remains an
-open proof obligation.
+regularity of the nonlocal invariant graph.  Separate analytic arguments in
+``docs/special-flow-graph-theorem.md`` and
+``docs/mixed-jet-graph-proof.md`` prove the bounded graph and the finite mixed
+regularity needed to identify these expressions with fixed-tube Taylor
+coefficients.  Neither the code nor those fixed-tube results prove the
+selected physical long-delay canard root.
 """
 
 from __future__ import annotations

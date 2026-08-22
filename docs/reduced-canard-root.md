@@ -1,10 +1,12 @@
 # The reduced canard root: a second-order parameterized splitting result
 
-Status: **exact normalization and symbolic integrands, plus a conditional
-second-order splitting template.** The compact-tube graph's finite-order
-mixed regularity and the selected K1/tail estimates are not yet proved. Until
-both are closed, the Gaussian coefficient and selected reduced root below are
-conditional calculations rather than theorem outputs.
+Status: **exact normalization, actual fixed-tube graph coefficients, and a
+conditional second-order splitting template.** The compact-tube graph's
+finite mixed regularity is proved in
+[mixed-jet-graph-proof.md](mixed-jet-graph-proof.md). The selected long-delay
+trace/growing-graph estimate is not proved. Until it is closed, the Gaussian
+coefficient and selected reduced root below remain conditional rather than
+theorem outputs.
 
 The executable algebraic audit is
 [reduced_canard_root.py](../src/canard_control/reduced_canard_root.py).
@@ -66,10 +68,10 @@ where \(u=(X,Y)^T\) and
 \tag{3}
 \]
 
-The finite-order graph target would give the expansion in (2), with two
-uniform \(\eta\)-derivatives, on every declared compact inner flow tube. At
-present this expansion is the formal invariance recursion whose uniform
-remainder is conditional on the mixed-jet lemma. The singular canard is
+The finite-scale graph theorem gives the expansion in (2), with two uniform
+\(\eta\)-derivatives, on every declared compact inner flow tube. It does not
+make the constants uniform on a logarithmically growing tube. The singular
+canard is
 
 \[
  \gamma_0(s)=
@@ -369,15 +371,15 @@ Therefore
 \tag{24}
 \]
 
-All quantities in (20)--(24) are exact symbolic identities of the formal
-invariance recursion and Gaussian pairing. They become coefficients of the
-actual graph and selected root only under the hypotheses of Corollary 2.
+The local vector-field quantities in (20)--(23) are actual fixed-tube graph
+coefficients by the finite mixed-jet theorem and are independently checked
+symbolically. The whole-line pairing (24) becomes the coefficient of the
+selected physical root only under the remaining hypothesis of Corollary 2.
 
 ## 6. The simple root and the uniform \(\eta\)-remainder
 
-**Corollary 2 (conditional selected maximal-canard root).** If the
-finite-order mixed-jet upgrade for the history graph and the final reduced
-special flow's K1/tail-admissibility lemma in Section 7 both hold,
+**Corollary 2 (conditional selected maximal-canard root).** If the final
+reduced special flow's selected-trace/growing-graph lemma in Section 7 holds,
 then there are \(\delta_0,\eta_0>0\) and a unique \(C^2\) function
 \(\nu_c(\delta,\eta)\), for the fixed selected slow manifolds, such that
 their reduced curves intersect. Moreover,
@@ -644,13 +646,16 @@ At present the defensible statements are:
 - the parameter normalization (11)--(12) is exact;
 - Conditional Proposition 1 is a valid implication under its explicit
   trace/endpoint hypotheses, not a verification of those hypotheses;
-- the final model satisfies the exact K2 algebraic identities and has the
-  symbolic coefficients (20)--(24);
+- the final model satisfies the exact K2 algebraic identities, and the
+  finite-scale mixed-jet theorem promotes (20)--(23) to actual fixed-tube
+  graph coefficients;
 - the implicit-function and \(C^2_\eta\) remainder argument giving
-  (25)--(28) is complete once the mixed-jet regularity lemma and Lemma 3 hold;
-- the mixed-jet regularity lemma and Lemma 3 are the unclosed analytic
-  obligations.
+  (25)--(28) is complete once Lemma 3 supplies the selected long-delay
+  traces and growing-tube remainder;
+- Lemma 3 is the unclosed model-specific analytic obligation, stated more
+  precisely in
+  [long-delay-selected-trace-proof.md](long-delay-selected-trace-proof.md).
 
-Until both the mixed-jet regularity lemma and Lemma 3 are proved, equations
+Until Lemma 3 is proved, equations
 (25)--(28) must not be presented as an unconditional maximal-canard theorem
 for the RFDE.
