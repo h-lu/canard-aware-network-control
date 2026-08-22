@@ -1,0 +1,282 @@
+\section{A logarithmic complete-history graph}
+\label{sec:history-graph}
+
+The rescaling in \cref{eq:blowup-scaling} makes the delay interval fixed,
+but the two transverse equations remain singular.  This section removes
+those equations by a graph that remembers complete histories.  The graph is
+constructed by a special-flow Lyapunov--Perron equation: delayed states are
+obtained from the backward flow of an unknown planar vector field, not by
+inverting the RFDE semiflow.
+
+\subsection{Special-flow form}
+
+Shift the singular algebraic graph by setting
+\begin{equation}
+\label{eq:stable-shift}
+ \widehat Z=Z+\frac{\alpha}{2}X^2,
+ \qquad
+ \widehat W=W+\frac{\alpha}{2d_w}X^2,
+ \qquad u=(X,Y)^T,\quad h=(\widehat Z,\widehat W)^T.
+\end{equation}
+The exact equations derived in \cref{sec:fold-jet} take the abstract form
+\begin{equation}
+\label{eq:special-flow-system}
+\begin{aligned}
+ u'(s)&=q_0(u(s))+\del F\bigl(u(s),h(s),
+             (u(s-\theta_j),h(s-\theta_j))_{j=0,1};
+             \del,\nu,\eta\bigr),\\
+ \del h'(s)&=Ah(s)+\del G\bigl(u(s),h(s),
+             (u(s-\theta_j),h(s-\theta_j))_{j=0,1};
+             \del,\nu,\eta\bigr),
+\end{aligned}
+\end{equation}
+where
+\begin{equation}
+\label{eq:q0-A}
+ q_0(X,Y)=\vect{Y-\alpha X^2\\-X},
+ \qquad
+ A=\mat{-2&0\\1&-d_w}.
+\end{equation}
+The matrix \(A\) is Hurwitz for every fixed \(d_w>0\), including the
+nonsemisimple case \(d_w=2\).  Every term not shown in
+\cref{eq:special-flow-system} is exactly divisible by \(\del\); no formal
+division by the singular parameter is being made.
+
+For a complete vector field \(Q\), let \(\Phi_Q^s\) be its flow and define
+\begin{equation}
+\label{eq:graph-evaluation}
+ \cE_{Q,H}(u)=\bigl(u,H(u),
+   (\Phi_Q^{-\theta_j}u,H(\Phi_Q^{-\theta_j}u))_{j=0,1}\bigr).
+\end{equation}
+An invariant graph \(h=H(u)\), with internal vector field \(Q\), satisfies
+\begin{equation}
+\label{eq:graph-invariance}
+\begin{aligned}
+ Q(u)&=q_0(u)+\del F(\cE_{Q,H}(u);\del,\nu,\eta),\\
+ \del DH(u)Q(u)&=AH(u)+\del G(\cE_{Q,H}(u);\del,\nu,\eta).
+\end{aligned}
+\end{equation}
+Rather than solve the derivative-losing second equation directly, we use
+\begin{equation}
+\label{eq:graph-transform}
+\begin{aligned}
+ \cT_Q(Q,H)(u)&=q_0(u)+\del F(\cE_{Q,H}(u);\del,\nu,\eta),\\
+ \cT_H(Q,H)(u)&=\del\int_0^\infty \e^{Ar}
+ G\bigl(\cE_{Q,H}(\Phi_Q^{-\del r}u);\del,\nu,\eta\bigr)\,\dd r.
+\end{aligned}
+\end{equation}
+The exponential kernel supplies a factor \(O(\del)\); the backward time in
+the unknown planar flow is only \(\del r\), while the fixed delay
+translations occur inside \(\cE_{Q,H}\).
+
+\subsection{Admissible preparations}
+
+Write the singular canard coordinates as
+\begin{equation}
+\label{eq:canard-coordinates}
+ \chi=-2\alpha X,
+ \qquad d=Y-\alpha X^2+\frac1{2\alpha}.
+\end{equation}
+The inverse coordinate map used below is
+\begin{equation}
+\label{eq:Gamma-coordinate-map}
+ \Gamma(\chi,d)
+ =\left(-\frac{\chi}{2\alpha},
+ d+\frac{\chi^2}{4\alpha}-\frac1{2\alpha}\right).
+\end{equation}
+Then \(\gamma_0(s)\) is the line \((\chi,d)=(s,0)\), and the singular
+flow is exactly
+\begin{equation}
+\label{eq:canard-coordinate-flow}
+ \chi'=1-2\alpha d,
+ \qquad d'=\chi d.
+\end{equation}
+
+\begin{definition}[Admissible preparation skeleton]
+\label{def:admissible-preparation}
+Fix finite derivative orders \(0\le a\le3\),
+\(0\le i\le1\), \(0\le j\le2\), a buffer
+\(B>2\theta_1+2\), a fixed hit buffer
+\(0<B_{\rm hit}<B\), and exponents
+\(1>\kappa_0>\cdots>\kappa_D>0\), where \(D\) is the finite number required
+by the nested ordered-jet induction in \cref{app:growing-tube}.  Set
+\(\widehat S_\del=S_\del+B_{\rm hit}\) and
+\(R_\del=S_\del+B\).  An admissible
+preparation skeleton \(\widehat{\cP}\) consists of:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item fixed smooth graph-preparation cutoffs and stable-state cutoff
+      profiles, together with a fixed rule producing a complete singular
+      preparation \(q_{0,\del}^{\rm pr}\) that equals \(q_0\) on the entire
+      declared uncut flow hull and on fixed neighborhoods of
+      \(\Gamma(\pm R_\del,0)\);
+\item the nested flow-hull buffers
+\(
+ |\chi|\le \widehat S_\del+B_j, |d|\le\del^{\kappa_j}
+\), with \(B_j=j(\theta_1+1)\), enlarged once so that every continuous
+depth-two delay backtrack is contained in the uncut set;
+\item a fixed degree-three extension operator in the normal coordinate,
+      used to pass from the shrinking exact tube to a fixed-width planar
+      tube, and separate planar trace-join profiles
+      \(\vartheta_{\rm nor}\), \(\vartheta_{{\rm long},\del}\).  The latter
+      equals one for \(\abs{\chi}\le\widehat S_\del\) and vanishes on fixed
+      neighborhoods of \(\chi=\pm R_\del\); the normal profile equals one
+      on \(\abs d\le\del^{\kappa_0}\);
+\item the phase condition \(X(0)=0\) and the two endpoint level conditions
+\(\mathscr H=0\) introduced in \cref{sec:connection}.
+\end{enumerate}
+The base profiles are independent of \((\del,\nu,\eta)\); their translated
+and longitudinally rescaled supports are prescribed by the displayed tube
+formula.  The graph-preparation cutoffs equal one on the declared flow hull,
+make the extended vector fields complete, and belong to a common bounded
+\(C^{12}\) class after the polynomial-in-\(S_\del\) weights used below are
+included.  A bounded admissible class means that
+all of these finite bounds and buffers are common.  Once the estimates have
+produced \(p_*(\widehat{\cP})\), choose \(p>p_*\) and call
+\(\cP=(p,\widehat{\cP})\) the resulting admissible preparation.
+\end{definition}
+
+The preparation datum determines the prepared planar field, rather than
+merely a class of fields.  Let
+\(\mathcal E_{\perp,\del}^{(3)}\) be its frozen left--right
+Taylor--Seeley extension through degree three in the unscaled normal
+coordinate, let \(\vartheta_{\rm nor}\) be its fixed-width normal cutoff,
+and let \(\vartheta_{{\rm long},\del}\) be its prescribed translated
+longitudinal join.  Let
+\(Q^{[\widehat S]}_{\del,\nu,\eta}\) be the exact graph field obtained by
+freezing the graph transform at that target.  Set
+\begin{equation}
+\label{eq:prepared-planar-field}
+ Q^{\rm pr}_{\del,\nu,\eta}(u)
+ =q_{0,\del}^{\rm pr}(u)
+ +\vartheta_{{\rm long},\del}(\chi(u))
+  \vartheta_{\rm nor}(d(u))
+  \mathcal E_{\perp,\del}^{(3)}
+   [Q^{[\widehat S]}_{\del,\nu,\eta}-q_0](u).
+\end{equation}
+The fixed rules that extract the boundary Taylor jets, the two extension
+operators, and every blending profile in
+\cref{eq:prepared-planar-field} are components of \(\widehat\cP\); the jet
+values themselves are supplied by the exact graph.  Thus \(Q^{\rm pr}\),
+and hence the exact finite-\(\del\)
+root, is uniquely determined once \(\cP\) is fixed.  The extension has the
+rectangular \(C_u^3C_\nu^1C_\eta^2\) bounds of the graph, and
+\(Q^{\rm pr}=Q\) only where the cutoffs equal one and the extension samples
+the exact shrinking tube.  Outside the longitudinal join it is the fixed
+complete singular preparation.
+
+Such data exist: take a fixed one-dimensional bump that equals one on
+\([-1,1]\), use its prescribed translated/rescaled copy in the longitudinal
+variable with scale
+\(\widehat S_\del+B_D+2(\theta_1+1)+2\), keep a fixed normal width, and use a fixed
+Taylor--Seeley extension across the boundary of the shrinking normal tube.
+The derivative bounds needed below are polynomial in \(S_\del\); no cutoff
+on the scale \(\e^{-S_\del^2/2}\) is used.  This explicit construction also
+shows why a flow hull, rather than a finite list of delayed endpoints, is
+part of the definition.
+
+\subsection{The graph theorem}
+
+\begin{theorem}[Logarithmic special-flow history graph]
+\label{thm:history-graph}
+Fix the model data, a compact \(\nu\)-interval, a sufficiently small compact
+\(\eta\)-interval contained in \cref{eq:eta-positive}, and a bounded
+class of admissible preparation skeletons.  There is a finite \(p_*>4\)
+depending only on their common bounds.  After fixing one skeleton and
+\(p>p_*\), there exist \(\del_0,C,c,m>0\) with the following
+properties for every \(0<\del<\del_0\).
+
+For each fixed target \(\del\), freeze the cutoff at
+\(S=\widehat S_\del=S_\del+B_{\rm hit}\) and use a dummy amplitude
+\(\rho\in[-\del,\del]\) in
+\cref{eq:graph-transform}.  The transform has a unique fixed point
+\((Q_{\rho,S},H_{\rho,S})\) in its declared Lipschitz neighborhood.  At
+\(\rho=\del\), on the core tube
+\begin{equation}
+\label{eq:core-tube}
+ |\chi|\le \widehat S_\del,\qquad |d|\le\del^{\kappa_0},
+\end{equation}
+it agrees with the uncut RFDE and has the expansion
+\begin{equation}
+\label{eq:growing-graph-expansion}
+ (Q,H)=(q_0,0)+\del(Q_1,H_1)+\del^2(Q_2,H_2)
+       +\del^3(R_Q,R_H).
+\end{equation}
+For \(0\le a\le3\), \(0\le i\le1\), and \(0\le j\le2\),
+\begin{equation}
+\label{eq:growing-graph-remainder}
+ \bigl|D_u^a\partial_\nu^i\partial_\eta^j(R_Q,R_H)
+       (\Gamma(\chi,d))\bigr|
+ \le C\langle\chi\rangle^m\e^{c|\chi|}.
+\end{equation}
+The coefficients \(Q_k,H_k\), \(k\le2\), depend only on the uncut
+depth-two flow hull and hence are common to all admissible preparations
+that agree there.
+
+Moreover,
+\begin{equation}
+\label{eq:history-embedding}
+ \iota_{\del,\nu,\eta}(u)(\vartheta)
+ =\bigl(\Phi_Q^\vartheta u,
+        H(\Phi_Q^\vartheta u)\bigr),
+ \qquad -\theta_1\le\vartheta\le0,
+\end{equation}
+is an injective \(C^3\) embedding into the history space \(\cC\).  On every
+special-flow segment whose current points and continuous delay backtracks
+remain in the uncut hull, the RFDE semiflow \(\mathcal S_t\) obeys the exact
+semiconjugacy
+\begin{equation}
+\label{eq:exact-semiconjugacy}
+ \mathcal S_t\iota_{\del,\nu,\eta}(u)
+ =\iota_{\del,\nu,\eta}(\Phi_Q^tu).
+\end{equation}
+All constants are uniform over the declared parameter box and any bounded
+preparation class with the same fixed \(p\).
+\end{theorem}
+
+In the remainder of the paper, \(Q,H\), and \(\iota\) always denote this
+single fixed point at the target \(\widehat S_\del\) frozen in \(\cP\).
+No later trace or history lift switches to a graph constructed with a
+different longitudinal target.
+
+\begin{proof}
+On a fixed tube, \cref{eq:graph-transform} maps a ball with
+\(\norm{Q-q_0}_{C^{0,1}}+\norm{H}_{C^{0,1}}=O(\del)\) into itself.
+Gronwall's inequality bounds the change of \(\Phi_Q^{-t}\) under a change of
+\(Q\), and the Hurwitz estimate
+\(\norm{\e^{Ar}}\le M\e^{-\beta r}\) makes both components a contraction
+with Lipschitz constant \(C\del\).  The fixed-point equation for \(H\) is
+equivalent, along the complete \(Q\)-flow, to the stable differential
+equation in \cref{eq:special-flow-system}.  This proves the exact orbit and
+semiconjugacy assertions without differentiating the graph.
+
+Finite regularity is recovered by an ordered fiber contraction.  Each
+highest mixed jet satisfies an affine recurrence with linear part
+\(O(\del)\); the exceptional first spatial jet is a nonlinear Lipschitz map
+with the same external factor.  Strong convergence of parameter difference
+quotients identifies the limiting jets and Taylor's integral formula gives
+the third-order remainder.  The complete fixed-tube argument, including the
+common jet fibers, is given in \cref{app:compact-graph,app:mixed-jets}.
+
+For the growing tube, freeze the target-dependent cutoff and Taylor expand
+only in the dummy amplitude \(\rho\).  Fixed-time flow jets in
+\cref{eq:canard-coordinate-flow} cost at most
+\(P(S)\e^{CS}\).  Since \(S=O(\bigl(\log(1/\del)\bigr)^{1/2})\),
+\(\del P(S)\e^{CS}=o(1)\).  Nested local fibers ensure that every lower
+jet is evaluated on the next larger tube, while the unique global
+highest-block term retains the factor \(\rho\).  Finite atom depth makes
+the first two coefficients independent of the outer cutoff.  This proves
+\cref{eq:growing-graph-expansion,eq:growing-graph-remainder}; the complete
+induction is in \cref{app:growing-tube}.
+
+Finally, present-time evaluation followed by projection to \(u\) is the
+identity, so \(\iota\) is injective.  Substitution of the fixed-point
+equations into the curve
+\((\Phi_Q^tu,H(\Phi_Q^tu))\) gives
+\cref{eq:exact-semiconjugacy}.
+\end{proof}
+
+The theorem is deliberately model-specific at the singular limit.  A
+standard parameter-dependent RFDE center-manifold theorem cannot simply be
+applied before removing the transverse block, because its rescaled
+generator contains \(A/\del\).  The special-flow transform is what makes
+the estimates regular at \(\del=0\).

@@ -1,0 +1,256 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Delayed feedback is intrinsic to many biological oscillators.  Signal
+transmission, synaptic processing, transcription, and transport take time,
+while the local units themselves often evolve on sharply separated time
+scales.  In an excitable neuronal model these two features meet near the
+transition from a small subthreshold response to a large voltage pulse.  The
+FitzHugh--Nagumo equations provide a standard low-dimensional description of
+this transition, and their coupled and spatially extended variants continue
+to serve as prototypes for neuronal and other biological media; see
+\citet{cebrianlacasa2024six} for a recent review.  Near a fold of the critical
+manifold, the relevant orbit may follow both an attracting and a repelling
+slow branch.  The parameter at which the two continuations connect is then
+exceptionally sensitive: a displacement that is algebraically small in the
+time-scale ratio can decide whether the response remains small or develops
+into a pulse.
+
+For planar ordinary differential equations, the geometry behind this
+sensitivity is well understood.  The blow-up analysis of fold and canard
+points by \citet{krupa2001extending}, together with the analysis of relaxation
+oscillations and canard explosion in \citet{krupa2001relaxation}, identifies
+the maximal canard as an intersection of attracting and repelling slow
+manifolds and resolves the associated threshold on the appropriate inner
+scale.  A delayed equation changes the mathematical object in two ways.
+First, its state at a given time is a history segment rather than a point.
+Second, delay pathways that are invisible after projection onto a critical
+mode can still excite stable transverse modes.  Those modes may return to the
+critical equation through the nonlinear geometry of the fold.  Thus a scalar
+reduction can reproduce the delay operator seen directly in the critical
+direction and nevertheless miss the first change in the connection
+parameter.
+
+This paper asks whether that loss of information actually occurs in a
+concrete slow--fast retarded functional differential equation (RFDE).  More
+precisely, suppose that two delayed networks have the same total delayed gain
+and the same complete delay measure after projection onto the critical fold
+mode.  Must they have the same local canard connection parameter to the first
+nontrivial order?  It is important here that the projected measures, and not
+only their first few moments, are identical.  We answer the question in the
+negative for a two-module FitzHugh--Nagumo network with weak feedback and two
+physical delays of order \(\eps^{-1/2}\).
+
+This scaling is singular in a specific way.  The delayed feedback has gain
+\(\eps K\), but its physical delay diverges as
+\(\eps^{-1/2}\).  After the fold time rescaling, the two delays become the
+fixed numbers \(\theta_0\) and \(\theta_1\), so the history differences
+survive in the inner problem.  The setting is therefore distinct from a
+small-delay expansion, in which translated histories are replaced by time
+derivatives and an inertial or slow manifold can be expanded in the delay;
+compare \citet{chicone2003inertial}.  It is also stronger than matching a
+finite list of delay moments.  Equality of the complete critical projected
+measure means that the projected delay functional agrees for every scalar
+critical history.  Any threshold displacement in the family below must
+therefore be produced outside that projected scalar equation.
+
+The issue lies close to, but is not settled by, the existing theory of
+delayed canards.  \citet{krupa2016explosion} studied canard explosions in DDEs
+with a one-dimensional slow manifold and showed, for delayed van der Pol
+dynamics, how the classical family ends at a Bogdanov--Takens bifurcation as
+the delay increases.  In the neuronal FitzHugh--Nagumo setting,
+\citet{krupa2016complex} described the small-delay canard regime and the
+delay-induced mixed-mode oscillations, bursting, and chaotic behavior that
+appear beyond it.  These works establish that delay can alter both the local
+fold dynamics and the surrounding oscillatory regimes.  They do not address
+two network delay organizations whose entire critical projection agrees.
+
+A complementary infinite-dimensional viewpoint was developed by
+\citet{avitabile2020local}.  Their center-manifold framework treats systems
+in which an infinite-dimensional fast subsystem is coupled to finitely many
+slow variables, and it gives a rigorous local reduction near bifurcations of
+the layer problem, with DDEs among its applications.  This theory explains
+why finite-dimensional local dynamics can persist in a broad class of
+spatio-temporal problems.  The object studied below requires additional
+information: a complete-history invariant graph must be controlled across a
+fold region whose inner length grows as the perturbation parameter tends to
+zero, and the two one-sided continuations must be matched without solving a
+backward initial-value problem for the RFDE semiflow.
+
+Classical RFDE center-manifold theory provides finite-dimensional invariant
+graphs and reduced flows for each fixed regular equation
+\citep{diekmannvangils1991center}; smooth parameter-dependent versions are
+also available for regular fixed-delay families
+\citep{bosschaert2020switching}.  A parameterization approach to delay
+perturbations, based on solving invariance equations with a contraction and
+then recovering higher regularity, was developed by
+\citet{yang2021parameterization}.  These results motivate the history-graph
+viewpoint used here, but they do not directly give estimates uniform through
+the singular block \(A/\del\) or on the logarithmically growing fold tube.
+We therefore prove the model-specific graph and mixed-jet estimates needed
+for the connection law.
+
+The closest scalar calculation is the recent work of
+\citet{zhang2026high}.  For a van der Pol oscillator with weak delayed
+feedback, they reduce the DDE on a nonlocal center manifold, expand the
+resulting planar flow, and use a nonlinear time transformation to compute
+high-order approximations of both the critical parameter and the critical
+canard manifold.  Their result provides an important single-oscillator
+comparison for the weak-feedback regime.  Our question is different even at
+leading order: the directly projected delayed equation is held fixed while a
+transverse delay channel is varied.  The resulting coefficient therefore
+cannot be obtained from the scalar projected measure.  Its proof also needs
+an invariant complete-history graph and a one-sided history connection,
+rather than a scalar reduced threshold calculation; in particular, equality
+must be established at the level of retained histories.
+
+There is a separate RFDE issue behind the word ``connection.''  A current
+state in \(\R^4\) does not determine whether two local pieces represent the
+same RFDE orbit: their histories on the whole retained delay interval must
+agree.  Conversely, the repelling piece cannot be selected by integrating an
+arbitrary terminal point backward, because an RFDE does not in general
+generate an invertible flow on its phase space.  Our construction selects
+both one-sided pieces on a locally invariant history graph and matches them
+there.  This distinction is immaterial in a planar ODE but essential here;
+it is also why an observable crossing or a small voltage mismatch is not
+used as the definition of the canard parameter.
+
+We now describe the mechanism and the main result.  Let
+\(\del=\sqrt\eps\), write the unfolding as \(\mu=\del^2\nu\), let
+\(0<\theta_0<\theta_1\) be the delays in inner time, and write the
+corresponding physical delays as \(\theta_k/\del\).  The model contains two
+positive delay layers \(C_0^\eta\) and \(C_1^\eta\), with \(\eta\) in a fixed
+compact subset of their positivity range and redistributing coupling between
+the layers.  If \(r\) and \(\ell\) are the right and left critical vectors
+normalized by \(\ell^{\mathsf T}r=1\), the construction has the exact
+identities
+\[
+ C_0^\eta+C_1^\eta=B,
+ \qquad
+ \ell^{\mathsf T}\mathbb B_\eta(\dd\theta)r
+ =\frac13\delta_{\theta_0}(\dd\theta)
+  +\frac23\delta_{\theta_1}(\dd\theta).
+\]
+Both the total gain \(B\) and every atom of the critical projected delay
+measure are independent of \(\eta\).  In contrast, for a transverse vector
+\(q\) and the complementary projection \(P_\perp\),
+\[
+ P_\perp\mathbb B_\eta(\dd\theta)r
+ =\eta q\bigl(\delta_{\theta_0}-\delta_{\theta_1}\bigr)(\dd\theta).
+\]
+The redistribution therefore forces a stable transverse voltage component
+by the difference of two delayed critical histories.  That component feeds
+back through the quadratic and cubic FitzHugh--Nagumo terms.  The effect is
+invisible to any reduction that retains only the complete critical
+projection, although it changes the local history connection.
+
+To state the result, one local selection must be fixed.  A local
+connection through the fold is chosen by an admissible preparation datum
+\(\cP\).  It specifies the fixed cutoffs used to extend the reduced field,
+the phase condition at the matching section, and the two tail level
+conditions.  These choices define attracting and repelling one-sided traces
+whose retained portions lie on a history graph for the unmodified RFDE.  The root is
+not defined by a voltage threshold, a peak amplitude, or another
+experimental observable: at the root the two retained complete histories
+coincide.  For each fixed admissible \(\cP\), the root is unique near the
+singular value and satisfies
+\begin{equation}
+ \label{eq:intro-root-law}
+ \mu_{c,\cP}(\del,\eta)-\mu_{c,\cP}(\del,0)
+ =\frac{K(\theta_0-\theta_1)}{4\alpha}\del^3\eta
+  +O\bigl(\del^4\abs{\eta}+\del^3\eta^2\bigr),
+ \qquad
+ \alpha=\frac{\sqrt6}{4}.
+\end{equation}
+The remainder is uniform on the fixed parameter box and over bounded
+admissible preparations with a common fixed logarithmic exponent \(p\).
+Since \(4\alpha=\sqrt6\), the coefficient in
+\eqref{eq:intro-root-law} is
+\(K(\theta_0-\theta_1)/\sqrt6\).  In particular, when \(K>0\) and
+\(\theta_0<\theta_1\), increasing \(\eta\) decreases the unscaled model
+parameter \(\mu_c\) at leading order.  The exact finite-\(\del\) root may
+depend on \(\cP\); the displayed displacement and its remainder are the
+preparation-indexed statement proved here.
+
+The conclusion is an identifiability result for critical-mode reductions.
+At \(\eta=0\) the two delays enter the critical projection with weights
+\(1/3\) and \(2/3\).  Varying \(\eta\) preserves these weights exactly and
+also preserves the current-state total gain, yet it moves the root by order
+\(\del^3\eta\) in the original unfolding parameter.  Consequently, even
+retaining the full projected delay kernel is insufficient unless the
+transverse delay response and its nonlinear return are controlled.  The
+point is not merely that two networks with the same average delay can behave
+differently; all projected delay tests agree in this family.  What differs
+is how the two layers distribute the critical history into a stable mode.
+
+Equation~\eqref{eq:intro-root-law} also separates the present contribution
+from a new existence result for delayed canards.  The leading singular
+canard is the classical planar one.  What is new in the analysis is the
+remainder-controlled passage from a transverse, projection-invisible RFDE
+perturbation to a simple complete-history connection root.  The proof must
+retain the anisotropic transverse variables long enough to compute their
+return, while controlling the selected histories on a domain that recedes
+in the inner chart.  A fixed compact reduction supplies the local Taylor
+coefficient but not, by itself, the root law: endpoint contributions at the
+matching scale still have to be shown smaller than the claimed remainder.
+
+Three analytical steps are responsible for \eqref{eq:intro-root-law}.  The
+first is an anisotropic fold reduction in complete-history space.  The
+critical voltage is of order \(\del\), whereas the transverse voltage and
+transverse recovery variables occur at orders \(\del^2\) and \(\del^4\),
+respectively.  In these coordinates the long physical delays become a fixed
+history interval.  A Lyapunov--Perron construction gives a prepared invariant
+history graph whose retained segments solve the uncut RFDE, together with an injective map from
+its reduced planar dynamics to complete histories.  This avoids assigning a
+backward evolution to an RFDE, whose natural solution operator is only a
+semiflow; compare the phase-space foundations in
+\citet{hale1993introduction}.
+
+The second step extends the required mixed parameter estimates from a fixed
+fold tube to the logarithmically growing interval
+\[
+ S_\del=\sqrt{2p\log(1/\del)}.
+\]
+This is long enough for Gaussian tail suppression to separate the local
+coefficient from the prepared endpoints, but short enough that the graph
+contraction and its \(C_\nu^1C_\eta^2\) jets remain uniform.  On this graph,
+the transverse delay difference produces an order-\(\del^2\) return term in
+the critical field.  Pairing that term with the adjoint Gaussian of the
+singular canard yields the coefficient in \eqref{eq:intro-root-law}.
+
+The third step turns this pairing into an actual connection theorem.  Along
+the singular orbit, the planar variational equation has a tangent mode and a
+normal mode with Gaussian growth at both ends.  We construct explicit
+phase-normal Green operators on the attracting and repelling half-intervals:
+the common phase removes the tangent mode, while opposite one-sided
+projections remove the incoming normal mode.  A first integral of the
+singular planar problem then defines a normalized gap.  Its
+\(\nu\)-derivative is bounded away from zero, its \(\eta\)-derivative contains
+the transverse-return coefficient, and the implicit-function theorem gives
+\eqref{eq:intro-root-law}.  Finally, equality at the planar matching section,
+uniqueness of the reduced flow, and injectivity of the history embedding
+lift the zero gap to equality of the retained complete RFDE histories.
+
+The theorem is local, and its preparation index is a genuine scope
+qualification.  If a separately prescribed physical attracting and
+repelling outer selection enters the local graph with parameter-coherent,
+tame full-history boundary jets, the same Gaussian argument transfers
+\eqref{eq:intro-root-law} to that selection.  We record this as a conditional
+transfer statement in \cref{rem:physical-outer}, because those boundary estimates are not proved here for an
+arbitrary RFDE Fenichel selection.  We likewise do not claim a global
+spiking theorem.  General finite networks and the independent control of
+frequency, amplitude, and a canard-safety coordinate require additional
+transverse inverse and periodic-orbit results and are not part of the present
+paper.
+
+The paper is organized as follows.  In \Cref{sec:model-main} we introduce
+the two-module RFDE, verify the exact projected-measure identities, and state
+the main theorem.  \Cref{sec:history-graph} constructs the invariant
+complete-history graph and establishes the mixed jets needed on the growing
+fold region.  The reduced fold expansion and the transverse-return
+coefficient are derived in \Cref{sec:fold-jet}.  In \Cref{sec:connection} we
+construct the one-sided Green operators, define the normalized gap, and
+prove the connection law.  \Cref{sec:numerics} gives an independent
+method-of-steps sign and scale check, without using it as part of the proof.
+The mathematical implications and the boundary with physical outer
+selections and larger networks are discussed in \Cref{sec:discussion}.

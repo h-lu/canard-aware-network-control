@@ -1,0 +1,145 @@
+\section{The reduced fold jet and transverse return}
+\label{sec:fold-jet}
+
+We now identify the coefficient that distinguishes the two delay
+organizations.  All formulas in this section are coefficients of the actual
+history graph from \cref{thm:history-graph}; the symbolic calculation is a
+check, not a substitute for the graph theorem.
+
+\subsection{Exact chart equations}
+
+For a scalar history \(\phi\), write \(\phi_j=\phi(s-\theta_j)\) and set
+\begin{equation}
+\label{eq:delay-operators}
+\begin{aligned}
+ \cD_c\phi&=\phi-\frac13\phi_0-\frac23\phi_1,\\
+ \cD_{cz}\phi&=-\frac16\phi+\frac1{12}\phi_0+\frac1{12}\phi_1,
+ \qquad \cD_z\phi=-\cD_{cz}\phi,\\
+ \Delta\phi&=\phi_0-\phi_1.
+\end{aligned}
+\end{equation}
+Substitution of \cref{eq:blowup-scaling} into
+\cref{eq:physical-model}, followed by projection onto the biorthogonal
+bases, gives the exact polynomial RFDE
+\begin{equation}
+\label{eq:exact-chart}
+\begin{aligned}
+X'={}&Y-\alpha X^2
+ +\del\left[K\cD_cX-2\alpha XZ-\frac{20}{9}\alpha^2X^3\right]\\
+&+\del^2\left[K\cD_{cz}Z-\alpha Z^2+4\alpha^2X^2Z\right]
+-\del^3\frac{20}{3}\alpha^2XZ^2
++\del^4\frac43\alpha^2Z^3,\\
+Y'={}&-X+\del\nu,\\
+\del Z'={}&-2Z-\alpha X^2
++\del\left[-2\alpha XZ+\frac43\alpha^2X^3-K\eta\Delta X\right]\\
+&+\del^2\left[-W-\alpha Z^2-\frac{20}{3}\alpha^2X^2Z
+              +K(\cD_zZ-\eta\Delta Z)\right]\\
+&+\del^3 4\alpha^2XZ^2-\del^4\frac{20}{9}\alpha^2Z^3,\\
+\del W'={}&Z-d_wW.
+\end{aligned}
+\end{equation}
+In particular, setting \(\del=0\) gives
+\cref{eq:singular-stable-graph,eq:singular-critical-system}.
+
+For later use, let \(\phi_0^s\) denote the complete flow of the prepared
+singular field and put
+\begin{equation}
+\label{eq:singular-backtracks}
+ X_{-j}(u)=\pi_X\phi_0^{-\theta_j}(u),
+ \qquad \Delta_0X=X_{-0}-X_{-1}.
+\end{equation}
+
+\begin{proposition}[First graph coefficients]
+\label{prop:transverse-return}
+On every uncut portion of the logarithmic core and its depth-two flow hull,
+the first reduced coefficient in \cref{eq:growing-graph-expansion} is
+\begin{equation}
+\label{eq:Q1}
+ Q_1(X,Y)=\vect{
+ K\left(X-\frac13X_{-0}-\frac23X_{-1}\right)
+ -\frac{11}{9}\alpha^2X^3\\ \nu}.
+\end{equation}
+The leading stable forcing after the shift \cref{eq:stable-shift} is
+\begin{equation}
+\label{eq:G0}
+ G_0(X,Y)=\vect{
+ \alpha XY+\frac43\alpha^2X^3-K\eta\Delta_0X\\
+ \dfrac{\alpha}{d_w}X(Y-\alpha X^2)}.
+\end{equation}
+Consequently
+\begin{equation}
+\label{eq:H1-eta}
+ \partial_\eta H_{1,\widehat Z}=-\frac K2\Delta_0X,
+ \qquad
+ \partial_\eta H_{1,\widehat W}=-\frac{K}{2d_w}\Delta_0X.
+\end{equation}
+Along the singular canard,
+\begin{equation}
+\label{eq:delayed-canard-difference}
+ \Delta_0X_0=\frac{\theta_0-\theta_1}{2\alpha},
+\end{equation}
+and the first nonzero return to the critical equation is
+\begin{equation}
+\label{eq:transverse-return-coefficient}
+ \partial_\eta Q_{2,X}(\gamma_0(s),\nu,0)
+ =-\frac{K(\theta_0-\theta_1)}{4\alpha}s.
+\end{equation}
+Moreover,
+\begin{equation}
+\label{eq:transverse-return-y-zero}
+ \partial_\eta Q_{2,Y}(\gamma_0(s),\nu,0)=0,
+\end{equation}
+because the exact critical recovery equation is
+\(Y'=-X+\del\nu\) and contains no delayed or transverse term.
+In particular this coefficient is independent of \(d_w\).
+\end{proposition}
+
+\begin{proof}
+Insert \cref{eq:stable-shift} into \cref{eq:exact-chart}.  The stable
+linear part becomes the matrix \(A\) in \cref{eq:q0-A}; every remaining
+term is divisible by \(\del\).  Differentiating the fixed-point equations
+\cref{eq:graph-transform} once at \(\del=0\) gives
+\begin{equation}
+ Q_1=F(\cE_{q_0,0};0,\nu,\eta),
+ \qquad H_1=-A^{-1}G(\cE_{q_0,0};0,\nu,\eta).
+\end{equation}
+Direct collection of the critical terms gives \cref{eq:Q1}; collection of
+the shifted transverse terms gives \cref{eq:G0}.  Since
+\[
+ -A^{-1}=\mat{1/2&0\\1/(2d_w)&1/d_w},
+\]
+differentiating with respect to \(\eta\) yields
+\cref{eq:H1-eta}.
+
+The singular orbit has \(X_0(s)=-s/(2\alpha)\), hence
+\[
+ X_0(s-\theta_0)-X_0(s-\theta_1)
+ =\frac{\theta_0-\theta_1}{2\alpha},
+\]
+which proves \cref{eq:delayed-canard-difference}.  The coefficient \(Q_1\)
+is independent of \(\eta\).  At the next order the only first
+\(\eta\)-derivative returning to the critical equation is the product of
+the critical variable with the transverse graph displacement:
+\[
+ \partial_\eta Q_{2,X}
+ =-2\alpha X\,\partial_\eta H_{1,\widehat Z}
+ =\alpha KX\Delta_0X.
+\]
+Evaluating on \(\gamma_0\) gives
+\cref{eq:transverse-return-coefficient}.  The \(\widehat W\) component
+does not enter this order, which explains the absence of \(d_w\).
+\end{proof}
+
+The mechanism can now be read directly from the equations:
+\[
+ \text{fixed critical delay measure}
+ \longrightarrow
+ \text{transverse delayed difference}
+ \longrightarrow
+ \partial_\eta H_{1,\widehat Z}
+ \longrightarrow
+ \partial_\eta Q_{2,X}.
+\]
+The remaining task is to show that the last quantity shifts an actual
+complete-history connection root.  That requires a one-sided selection that
+removes both the time-translation mode and the Gaussian normal mode.

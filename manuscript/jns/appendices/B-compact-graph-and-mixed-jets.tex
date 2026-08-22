@@ -1,0 +1,727 @@
+\section{Fixed-tube history graphs and mixed parameter jets}
+\label{app:compact-graph-jets}
+\label{app:compact-graph}
+
+This appendix proves the fixed-tube graph result used in
+\cref{sec:history-graph}.  The point requiring some care is that the stable
+generator is \(A/\del\), while delayed evaluation is performed along the
+flow of the unknown reduced vector field.  A fixed-parameter center-manifold
+theorem therefore does not give estimates that remain regular at
+\(\del=0\).  We instead use a derivative-free Lyapunov--Perron transform.
+Its zeroth-order contraction is uniform at the singular limit, and its
+mixed derivatives close on a finite triangular scale of Banach spaces.
+
+\subsection{Prepared form of the fold chart}
+\label{app:compact-graph-setting}
+
+Recall the shifts
+\begin{equation}
+\label{eq:app-stable-shifts}
+ \widehat Z=Z+\frac{\alpha}{2}X^2,
+ \qquad
+ \widehat W=W+\frac{\alpha}{2d_w}X^2,
+ \qquad
+ u=(X,Y)^T,
+ \qquad
+ h=(\widehat Z,\widehat W)^T.
+\end{equation}
+On a fixed compact flow tube, the exact equations obtained from
+\cref{eq:blowup-scaling} have the form
+\begin{equation}
+\label{eq:app-abstract-chart}
+\begin{aligned}
+ u'(s)&=q_0(u(s))
+ +\del F\!\left(u(s),h(s),
+       (u(s-\theta_j),h(s-\theta_j))_{j=0,1};
+       \del,\nu,\eta\right),\\
+ \del h'(s)&=Ah(s)
+ +\del G\!\left(u(s),h(s),
+       (u(s-\theta_j),h(s-\theta_j))_{j=0,1};
+       \del,\nu,\eta\right),
+\end{aligned}
+\end{equation}
+where
+\begin{equation}
+\label{eq:app-q0-A}
+ q_0(X,Y)=\vect{Y-\alpha X^2\\-X},
+ \qquad
+ A=\mat{-2&0\\1&-d_w}.
+\end{equation}
+The cancellations leading to the external factors \(\del\) in
+\cref{eq:app-abstract-chart} are exact.  Since \(d_w>0\), \(A\) is Hurwitz;
+we fix constants \(M_A\geq1\) and \(\beta>0\) such that
+\begin{equation}
+\label{eq:app-stable-semigroup}
+ \norm{\e^{Ar}}\leq M_A\e^{-\beta r},
+ \qquad r\geq0.
+\end{equation}
+This estimate also covers the non-diagonalizable case \(d_w=2\).
+
+Choose a smooth preparation which agrees with the polynomial chart on a
+neighborhood of the fixed tube.  Outside that neighborhood we require the
+prepared \(q_0,F,G\) to belong to \(C_b^{12}\), including their state and
+parameter derivatives, and require \(q_0\) to generate a complete
+two-sided flow.  We also assume that the prepared data extend to an open
+neighborhood of
+\begin{equation}
+\label{eq:app-parameter-box-star}
+ [-\del_*,\del_*]\times I_\nu\times[-\eta_*,\eta_*],
+\end{equation}
+where \(I_\nu\Subset\R\) is fixed.  Such a preparation is obtained by a
+standard compactly supported cutoff.  The extension to negative \(\del\)
+will be used only for Taylor's theorem; the RFDE interpretation is made for
+\(\del>0\).
+
+The following proposition is the fixed-tube statement needed in the main
+text.  Its constants may depend on the chosen preparation and on
+\(I_\nu\), but not on \((\del,\nu,\eta)\) in the smaller parameter box.
+
+\begin{proposition}[Fixed-tube special-flow graph]
+\label{prop:app-fixed-tube-graph}
+There are \(0<\del_0<\del_*\), \(0<\eta_0<\eta_*\), and \(C>0\) such that
+the following assertions hold for
+\[
+ (\del,\nu,\eta)\in
+ \Lambda_0:=[-\del_0,\del_0]\times I_\nu\times[-\eta_0,\eta_0].
+\]
+There is a unique pair \(Z=(Q,H)\) in a fixed \(C_b^1\) neighborhood of
+\((q_0,0)\) satisfying the graph transform in
+\cref{eq:app-graph-transform} below, and
+\begin{equation}
+\label{eq:app-C1-smallness}
+ \norm{Q-q_0}_{C_b^1}+\norm{H}_{C_b^1}\leq C\abs{\del}.
+\end{equation}
+For \(\del>0\), this pair satisfies the invariance equations
+\begin{equation}
+\label{eq:app-invariance-equations}
+\begin{aligned}
+ Q(u)&=q_0(u)+\del F(\cE_{Q,H}(u);\del,\nu,\eta),\\
+ \del DH(u)Q(u)&=AH(u)
+       +\del G(\cE_{Q,H}(u);\del,\nu,\eta),
+\end{aligned}
+\end{equation}
+where \(\cE_{Q,H}\) is defined in \cref{eq:app-history-evaluation}.
+Moreover,
+\begin{equation}
+\label{eq:app-mixed-jet-bound}
+ \max_{\substack{0\leq b\leq3\\0\leq i\leq1\\0\leq c\leq2}}
+ \norm{\partial_\del^b\partial_\nu^i\partial_\eta^c(Q,H)}
+       _{C_b^{\,9-b-i-c}}
+ \leq C.
+\end{equation}
+In particular, \(Q,H\) are \(C^3\) in the state variables, three times
+differentiable in \(\del\), once differentiable in \(\nu\), and twice
+differentiable in \(\eta\), with all the displayed rectangular mixed
+derivatives continuous also at \(\del=0\).
+
+Let \(\Phi_Q^s\) be the complete flow of \(Q\) and put
+\begin{equation}
+\label{eq:app-history-embedding}
+ \iota_{\del,\nu,\eta}(u)(\vartheta)
+ =\bigl(\Phi_Q^\vartheta u,
+        H(\Phi_Q^\vartheta u)\bigr),
+ \qquad -\theta_1\leq\vartheta\leq0.
+\end{equation}
+For \(\del>0\), this is a \(C^3\) injective embedding into
+\(C([ -\theta_1,0],\R^4)\).  If \(\mathcal S_s^\sharp\) denotes the
+semiflow of the prepared equation, then
+\begin{equation}
+\label{eq:app-semiconjugacy}
+ \mathcal S_s^\sharp\iota_{\del,\nu,\eta}(u)
+ =\iota_{\del,\nu,\eta}(\Phi_Q^s u),
+ \qquad s\geq0.
+\end{equation}
+Whenever the history segment on the right remains in the region where the
+preparation agrees with the exact fold chart, it is also an exact history
+segment of the unprepared equation.
+
+Finally, in \(C_b^3\), uniformly together with one \(\nu\)-derivative and
+two \(\eta\)-derivatives,
+\begin{equation}
+\label{eq:app-graph-expansion}
+\begin{aligned}
+ Q&=q_0+\del Q_1+\del^2Q_2+\del^3R_{3,Q},\\
+ H&=\del H_1+\del^2H_2+\del^3R_{3,H},
+\end{aligned}
+\qquad
+ \max_{\substack{0\leq i\leq1\\0\leq c\leq2}}
+ \norm{\partial_\nu^i\partial_\eta^c(R_{3,Q},R_{3,H})}_{C_b^3}
+ \leq C.
+\end{equation}
+If \(\phi_0^s\) is the flow of \(q_0\), then the first coefficients are
+\begin{equation}
+\label{eq:app-first-graph-coefficients}
+ Q_1(u)=F(\cE_0(u);0,\nu,\eta),
+ \qquad
+ H_1(u)=-A^{-1}G(\cE_0(u);0,\nu,\eta),
+\end{equation}
+where
+\begin{equation}
+\label{eq:app-E0}
+ \cE_0(u)=
+ \left(u,0,
+  (\phi_0^{-\theta_j}u,0)_{j=0,1}\right).
+\end{equation}
+\end{proposition}
+
+The proposition constructs one invariant special-flow graph.  It does not
+assert that every nearby RFDE solution lies on the graph, and no stable
+foliation of the full history space is needed for the connection argument.
+
+\subsection{A derivative-free Lyapunov--Perron transform}
+\label{app:compact-LP-transform}
+
+For a complete vector field \(Q\), let \(\Phi_Q^s\) denote its flow and set
+\begin{equation}
+\label{eq:app-history-evaluation}
+ \cE_{Q,H}(u)=
+ \left(u,H(u),
+   \bigl(\Phi_Q^{-\theta_j}u,
+         H(\Phi_Q^{-\theta_j}u)\bigr)_{j=0,1}\right).
+\end{equation}
+Define
+\begin{equation}
+\label{eq:app-graph-transform}
+\begin{aligned}
+ \cT_Q(Q,H)(u)
+ &=q_0(u)+\del F(\cE_{Q,H}(u);\del,\nu,\eta),\\
+ \cT_H(Q,H)(u)
+ &=\del\int_0^\infty \e^{Ar}
+ G\!\left(
+   \cE_{Q,H}(\Phi_Q^{-\del r}u);
+   \del,\nu,\eta\right)\dd r.
+\end{aligned}
+\end{equation}
+The second formula contains no derivative of the unknown \(H\).  Its
+integrand samples precisely the points
+\begin{equation}
+\label{eq:app-sampled-flow-points}
+ \Phi_Q^{-\del r}u,
+ \qquad
+ \Phi_Q^{-(\theta_j+\del r)}u,
+ \quad j=0,1.
+\end{equation}
+By \cref{eq:app-stable-semigroup}, the integral converges absolutely for
+bounded \(G\).
+
+Choose \(L>\Lip(q_0)\).  For fixed constants \(b_Q,b_H\), consider the
+closed subset of bounded Lipschitz pairs given by
+\begin{equation}
+\label{eq:app-Lipschitz-ball}
+\begin{aligned}
+ \norm{Q-q_0}_\infty+\Lip(Q-q_0)&\leq b_Q\del_0,\\
+ \norm{H}_\infty+\Lip(H)&\leq b_H\del_0,
+ \qquad \Lip(Q)\leq L.
+\end{aligned}
+\end{equation}
+It is complete in the uniform product norm.  Every \(Q\) in this set is
+bounded and globally Lipschitz, hence has a complete two-sided flow.
+For two such vector fields, Gronwall's inequality gives
+\begin{equation}
+\label{eq:app-flow-C0-difference}
+ \sup_u\abs{\Phi_Q^t u-\Phi_{\widetilde Q}^t u}
+ \leq \abs{t}\e^{L\abs{t}}
+       \norm{Q-\widetilde Q}_\infty,
+ \qquad t\in\R.
+\end{equation}
+
+The uniform bounds on the data immediately imply
+\begin{equation}
+\label{eq:app-transform-size}
+ \norm{\cT_Q(Q,H)-q_0}_\infty\leq C\abs{\del},
+ \qquad
+ \norm{\cT_H(Q,H)}_\infty
+ \leq \frac{M_A}{\beta}\norm{G}_\infty\abs{\del}.
+\end{equation}
+The Lipschitz estimate for a flow, together with
+\cref{eq:app-sampled-flow-points}, yields
+\begin{equation}
+\label{eq:app-transform-Lipschitz-size}
+\begin{aligned}
+ \Lip(\cT_Q-q_0)&\leq C\abs{\del},\\
+ \Lip(\cT_H)&\leq
+ C\abs{\del}\int_0^\infty
+       \e^{-(\beta-L\abs{\del})r}\dd r.
+\end{aligned}
+\end{equation}
+We first choose \(b_Q,b_H\) larger than the constants in these estimates
+and then decrease \(\del_0\) so that \(L\del_0<\beta/2\).  The transform
+then maps \cref{eq:app-Lipschitz-ball} into itself.
+
+For the difference of two pairs, each occurrence of a different flow in
+\cref{eq:app-history-evaluation} is bounded by
+\cref{eq:app-flow-C0-difference}.  In the integral component the resulting
+majorant is a constant multiple of
+\[
+ \abs{\del}\e^{-\beta r}
+ (1+\theta_1+\abs{\del}r)
+ \e^{L(\theta_1+\abs{\del}r)}.
+\]
+It is integrable uniformly for \(\abs{\del}\leq\del_0\).  Hence
+\begin{equation}
+\label{eq:app-C0-contraction}
+ \norm{\cT(Z)-\cT(\widetilde Z)}_{C^0}
+ \leq C\del_0\norm{Z-\widetilde Z}_{C^0}.
+\end{equation}
+After one more decrease of \(\del_0\), the right-hand coefficient is a
+number \(\kappa_0<1\).  Banach's fixed-point theorem gives a unique fixed
+point in \cref{eq:app-Lipschitz-ball}.  Applying
+\cref{eq:app-transform-size,eq:app-transform-Lipschitz-size} at that fixed
+point gives the sharper slice estimate \cref{eq:app-C1-smallness}.
+
+We next verify that the fixed point gives exact histories.  Let
+\(u(s)=\Phi_Q^s u_*\), \(h(s)=H(u(s))\), and abbreviate the \(G\)-forcing
+along this curve by \(g(s)\).  For \(\del>0\), the second fixed-point
+equation is equivalent, after the change of variables
+\(\tau=s-\del r\), to
+\begin{equation}
+\label{eq:app-stable-convolution}
+ h(s)=\int_{-\infty}^s
+       \e^{A(s-\tau)/\del}g(\tau)\dd\tau.
+\end{equation}
+The bounded continuous convolution is differentiable in \(s\), and
+\[
+ h'(s)=\del^{-1}Ah(s)+g(s).
+\]
+Together with the first fixed-point equation, this proves that
+\((u(s),h(s))\) solves \cref{eq:app-abstract-chart}.  Conversely, a bounded
+\(C^1\) pair in \cref{eq:app-Lipschitz-ball} satisfying
+\cref{eq:app-invariance-equations} can be integrated along the complete
+backward \(Q\)-orbit.  The boundary term is killed by
+\cref{eq:app-stable-semigroup}; letting the backward time tend to infinity
+recovers \cref{eq:app-graph-transform}.  Thus the fixed point is also unique
+among bounded \(C^1\) solutions of the invariance equations in the stated
+neighborhood.
+
+The history identity \cref{eq:app-semiconjugacy} follows by taking segments
+of this complete solution.  Evaluation at \(\vartheta=0\), followed by
+projection to the \(u\)-coordinates, is a continuous left inverse of
+\(\iota_{\del,\nu,\eta}\).  It follows that the history map is injective and
+a homeomorphism onto its image.  Once the spatial regularity proved below
+is available, it is \(C^3\); its differential is injective because the
+present \(u\)-component of that differential is the identity.  This proves
+all embedding and semiconjugacy assertions in
+\cref{prop:app-fixed-tube-graph}.
+
+\subsection{Triangular flow jets}
+\label{app:compact-flow-jets}
+\label{app:mixed-jets}
+
+It remains to establish parameter regularity without applying a same-order
+implicit-function theorem.  For a parameter-dependent map \(f\), write
+\begin{equation}
+\label{eq:app-jet-notation}
+ J_{a,b,i,c}f=D_u^a\partial_\del^b\partial_\nu^i\partial_\eta^c f,
+ \qquad
+ |(a,b,i,c)|=a+b+i+c,
+ \qquad
+ \wp(a,b,i,c)=b+i+c.
+\end{equation}
+Set
+\begin{equation}
+\label{eq:app-triangular-index-set}
+ \cI_k=
+ \left\{(a,b,i,c)\in\mathbb N_0^4:
+ b\leq3,\ i\leq1,\ c\leq2,\ a+b+i+c\leq k\right\}.
+\end{equation}
+The desired rectangular family
+\(0\leq a\leq3\), \(0\leq b\leq3\), \(0\leq i\leq1\), and
+\(0\leq c\leq2\) is contained in
+\(\cI_9\).  We shall construct bounded jets through \(\cI_{10}\) and prove
+convergence through \(\cI_9\); the last grade supplies the spatial reserve
+needed when two flow jets are compared.
+
+Order the indices first by total grade \(n=a+b+i+c\), and at equal total
+grade by increasing parameter grade \(p=b+i+c\).  Indices with the same
+\((n,p)\) form a block \(\cB_{n,p}\).  Thus, at a fixed total grade, jets
+with more spatial derivatives are available before jets with more parameter
+derivatives.
+
+For \(\gamma=(a,b,i,c)\), let
+\begin{equation}
+\label{eq:app-jet-spaces}
+ \cY_\gamma^e
+ =C_b\!\left(\R^2,
+     \mathcal L_{\rm sym}^a(\R^2;\R^e)\right),
+ \qquad
+ \widehat{\cY}_\gamma^e
+ =C(\Lambda_0;\cY_\gamma^e),
+\end{equation}
+with the supremum norm over state and parameters.  The common fiber for a
+block is
+\begin{equation}
+\label{eq:app-common-fiber}
+ \mathfrak F_{n,p}
+ =\prod_{\gamma\in\cB_{n,p}}
+   \left(\widehat{\cY}_\gamma^2
+         \times\widehat{\cY}_\gamma^2\right),
+\end{equation}
+where the two factors correspond to \(Q\) and \(H\).  This fiber is fixed
+throughout the iteration.
+
+For \(r\geq0\), introduce
+\begin{equation}
+\label{eq:app-flow-compositions}
+ \Psi_{j,r}[Q](u)=\Phi_Q^{-(\theta_j+\del r)}u,
+ \quad j=0,1,
+ \qquad
+ \Psi_{*,r}[Q](u)=\Phi_Q^{-\del r}u.
+\end{equation}
+
+\begin{lemma}[Triangular mixed jets of the flow]
+\label{lem:app-triangular-flow-jets}
+Fix \(k\leq10\) and suppose that a family \(Q\) has a common \(C_b^1\)
+bound and bounded jets in \(\cI_k\).  For every
+\(\gamma\in\cI_k\) there are constants \(C_\gamma,\Gamma_\gamma>0\)
+and an integer \(M_\gamma\) such that
+\begin{equation}
+\label{eq:app-flow-jet-bound}
+ \norm{J_\gamma\Psi_{j,r}[Q]}_\infty
+ \leq C_\gamma(1+r^{M_\gamma})
+ \e^{\Gamma_\gamma(\theta_1+\abs{\del}r)},
+ \qquad j\in\{*,0,1\}.
+\end{equation}
+Suppose, in addition, that \(Q,\widetilde Q\) have common bounds through
+the next spatial grade.  If \(d_{<\gamma}(Q,\widetilde Q)\) denotes the
+maximum difference of all jet blocks preceding the block of \(\gamma\),
+then
+\begin{align}
+\label{eq:app-flow-jet-difference}
+ &\norm{J_\gamma\Psi_{j,r}[Q]
+       -J_\gamma\Psi_{j,r}[\widetilde Q]}_\infty\notag\\
+ &\quad\leq C_\gamma(1+r^{M_\gamma})
+ \e^{\Gamma_\gamma(\theta_1+\abs{\del}r)}
+ \left(
+  \norm{J_\gamma Q-J_\gamma\widetilde Q}_\infty
+  +d_{<\gamma}(Q,\widetilde Q)
+ \right).
+\end{align}
+The same statements hold for \(H\circ\Psi_{j,r}[Q]\), with the current
+block of \((Q,H)\) on the right-hand side.
+\end{lemma}
+
+\begin{proof}
+First regard the terminal time \(t\) as independent of the parameters.
+The flow solves
+\[
+ \partial_t\Phi_Q^t(u)=Q(\Phi_Q^t(u)).
+\]
+Its first spatial variation satisfies
+\begin{equation}
+\label{eq:app-first-variation}
+ \partial_tD_u\Phi_Q^t
+ =DQ(\Phi_Q^t)D_u\Phi_Q^t,
+\end{equation}
+and hence is bounded by \(\e^{L\abs t}\).  At spatial order \(a\geq2\),
+the differentiated equation has the form
+\begin{align}
+\label{eq:app-higher-variation}
+ \partial_tD_u^a\Phi_Q^t
+ ={}&DQ(\Phi_Q^t)D_u^a\Phi_Q^t\notag\\
+ &+D^aQ(\Phi_Q^t)
+   [D_u\Phi_Q^t,\ldots,D_u\Phi_Q^t]
+   +\mathcal R_a.
+\end{align}
+Every term in \(\mathcal R_a\) contains only lower spatial derivatives.
+Induction and variation of constants give
+\cref{eq:app-flow-jet-bound} for pure spatial jets.
+
+For any parameter \(\lambda\in\{\del,\nu,\eta\}\),
+\begin{equation}
+\label{eq:app-parameter-variation}
+ \partial_t\partial_\lambda\Phi_Q^t
+ =DQ(\Phi_Q^t)\partial_\lambda\Phi_Q^t
+  +(\partial_\lambda Q)(\Phi_Q^t).
+\end{equation}
+After arbitrary mixed differentiation, the equation for
+\(J_\gamma\Phi_Q^t\) is linear in that jet.  In the inhomogeneity, the
+occurrence of \(J_\gamma Q\) is linear.  Every other vector-field jet of
+the same total grade has smaller parameter grade: this happens when a
+parameter derivative strikes the argument \(\Phi_Q^t\), creating an
+additional state slot on \(Q\).  Products containing two positive-grade
+jets contain only factors of smaller total grade.  This is precisely the
+block ordering introduced above.  Induction over those blocks and
+variation of constants prove the fixed-time estimate.
+
+We now substitute \(t=-(\theta_j+\del r)\).  Every \(\del\)-derivative
+which strikes the terminal time produces a factor \(r\) and a time
+derivative of the flow.  The latter is again expressed through the flow
+equation and already controlled jets.  This changes only the polynomial
+factor \(1+r^{M_\gamma}\), not the triangular highest-block structure.
+Subtracting the two variational systems proves
+\cref{eq:app-flow-jet-difference}; one additional spatial derivative
+controls the evaluation of a highest derivative of \(Q\) at two different
+orbits.  The ordinary Faà di Bruno formula applied to
+\(H\circ\Psi_{j,r}[Q]\) gives the last assertion.
+\end{proof}
+
+The exponential factor in \cref{eq:app-flow-jet-bound} is harmless in the
+stable integral.  Since only finitely many jets occur, we may decrease
+\(\del_0\) so that
+\begin{equation}
+\label{eq:app-integrability-choice}
+ \Gamma_{10}\del_0<\frac{\beta}{2},
+\end{equation}
+where \(\Gamma_{10}\) is the maximum of the exponents required through
+grade ten, including the reserve used to prove convergence through grade
+nine.  Every differentiated integrand is then dominated by
+\begin{equation}
+\label{eq:app-integrable-majorant}
+ C(1+r^M)\e^{-\beta r/2},
+\end{equation}
+uniformly on \(\Lambda_0\).  This justifies differentiation under the
+integral for every finite graph-transform iterate.
+
+\subsection{Invariant jet fibers and convergence}
+\label{app:compact-fiber-contraction}
+
+Start with \(Z_0=(q_0,0)\) and set \(Z_{k+1}=\cT(Z_k)\).  Each finite
+iterate is smooth.  Denote its block of jets by
+\begin{equation}
+\label{eq:app-block-jet}
+ \mathbf J_{n,p}Z_k
+ =(J_\gamma Z_k)_{\gamma\in\cB_{n,p}}
+ \in\mathfrak F_{n,p},
+\end{equation}
+and let
+\begin{equation}
+\label{eq:app-lower-block-distance}
+ d_{<n,p}(Z,\widetilde Z)
+ =\max_{\cB_{n',p'}\prec\cB_{n,p}}
+   \max_{\gamma\in\cB_{n',p'}}
+   \norm{J_\gamma Z-J_\gamma\widetilde Z}_\infty,
+\end{equation}
+with an empty maximum equal to zero.
+
+The next lemma isolates the highest block in the chain rule.  It is the
+finite-dimensional-in-order substitute for a same-order differentiability
+claim about the entire graph transform.
+
+\begin{lemma}[Highest-block recurrence]
+\label{lem:app-highest-block-recurrence}
+Assume that all blocks preceding \(\cB_{n,p}\subset\cI_{10}\) range in fixed
+bounded subsets of their common fibers.  Except for the first pure spatial
+block \(\cB_{1,0}\), differentiation of \cref{eq:app-graph-transform} has
+the affine form
+\begin{equation}
+\label{eq:app-affine-fiber-map}
+ \mathbf J_{n,p}\cT(Z)
+ =\mathbf b_{n,p}(\mathbf J_{<n,p}Z)
+  +\del\,\mathscr L_{n,p}(\mathbf J_{<n,p}Z)
+       [\mathbf J_{n,p}Z],
+\end{equation}
+where \(\mathscr L_{n,p}\) is a bounded linear map on
+\(\mathfrak F_{n,p}\).  On the stated bounded sets,
+\begin{equation}
+\label{eq:app-fiber-operator-bound}
+ \norm{\mathscr L_{n,p}}\leq C_{n,p}.
+\end{equation}
+For any two actual smooth jet families,
+\begin{equation}
+\label{eq:app-fiber-difference}
+\begin{aligned}
+ &\norm{\mathbf J_{n,p}\cT(Z)
+       -\mathbf J_{n,p}\cT(\widetilde Z)}\\
+ &\quad\leq C_{n,p}\abs{\del}
+       \norm{\mathbf J_{n,p}Z-
+              \mathbf J_{n,p}\widetilde Z}
+       +C_{n,p}d_{<n,p}(Z,\widetilde Z).
+\end{aligned}
+\end{equation}
+Estimate \cref{eq:app-fiber-difference} also holds for
+\(\cB_{1,0}\).
+\end{lemma}
+
+\begin{proof}
+Faà di Bruno's formula shows that, in a derivative of total grade \(n\),
+a factor carrying the full grade can occur only once.  If a parameter
+derivative enters a flow argument, the vector-field jet left outside has
+the same total grade but smaller parameter grade and is therefore in a
+preceding block.  The same triangular statement for the implicitly defined
+flow jets is \cref{lem:app-triangular-flow-jets}.
+
+For clarity, \(\mathscr L_{n,p}\) can be defined without invoking a
+derivative of the graph transform on a same-order Banach space.  Replace
+the current jet entries by an arbitrary
+\(U\in\mathfrak F_{n,p}\).  In
+\cref{eq:app-first-variation,eq:app-higher-variation,eq:app-parameter-variation},
+retain the terms linear in \(U\) and solve the resulting finite family of
+linear variational equations with zero initial values.  Substitute these
+top flow jets, together with the \(H\)-entries of \(U\), into the terms
+linear in the current block in the Faà di Bruno expansions of \(F\) and
+\(G\).  Applying the semigroup integral to the latter defines
+\(\mathscr L_{n,p}U\); setting \(U=0\) leaves
+\(\mathbf b_{n,p}\).  The estimates in
+\cref{lem:app-triangular-flow-jets,eq:app-integrable-majorant} prove
+\cref{eq:app-fiber-operator-bound}.
+
+Both components of \cref{eq:app-graph-transform} carry an external
+factor \(\del\).  If a \(\del\)-derivative removes that factor, then
+\begin{equation}
+\label{eq:app-Leibniz-external-delta}
+ \partial_\del^b(\del\mathcal F)
+ =\del\partial_\del^b\mathcal F
+  +b\partial_\del^{b-1}\mathcal F,
+\end{equation}
+and the second term has lower total grade.  Thus every occurrence of the
+current block retains the factor \(\del\).  Subtracting two affine formulas
+and using \cref{eq:app-flow-jet-difference} gives
+\cref{eq:app-fiber-difference}.
+
+For \(\cB_{1,0}\), the first variational equation contains \(DQ\) in its
+coefficient, so dependence on the current block need not be affine.
+Nevertheless, the difference of two first variational equations, followed
+by Gronwall's inequality, is uniformly Lipschitz on the invariant \(C_b^1\)
+ball.  One reserved spatial derivative controls evaluation at different
+orbits.  The external factor \(\del\) is still present, which proves
+\cref{eq:app-fiber-difference} for this block as well.
+\end{proof}
+
+\begin{lemma}[Uniform invariant jet balls]
+\label{lem:app-invariant-jet-balls}
+After decreasing \(\del_0\), there are radii \(R_{n,p}\), independent of
+the iteration number and of the point in \(\Lambda_0\), such that
+\begin{equation}
+\label{eq:app-invariant-jet-balls}
+ \norm{\mathbf J_{n,p}Z_k}_{\mathfrak F_{n,p}}
+ \leq R_{n,p}
+\end{equation}
+for every block in \(\cI_{10}\) and every \(k\geq0\).
+\end{lemma}
+
+\begin{proof}
+The order-zero block is bounded by the Lipschitz contraction ball, and the
+first pure spatial block is bounded by the invariant \(C_b^1\) estimate.
+Suppose the radii have been fixed for every preceding block.  The preceding
+lemma, \cref{eq:app-Leibniz-external-delta}, and the fixed derivatives of
+\(q_0\) give
+\begin{equation}
+\label{eq:app-invariant-recurrence}
+ \norm{\mathbf J_{n,p}Z_{k+1}}
+ \leq C_{n,p}\abs{\del}
+       \norm{\mathbf J_{n,p}Z_k}+B_{n,p},
+\end{equation}
+where \(B_{n,p}\) depends only on the already chosen lower-block radii and
+the prepared data.  All terms in the stable component are finite by
+\cref{eq:app-integrable-majorant}.  Choose \(\del_0\) so that
+\(C_{n,p}\del_0\leq1/2\) for the finitely many blocks, and then take
+\[
+ R_{n,p}\geq
+ 2B_{n,p}+\norm{\mathbf J_{n,p}Z_0}.
+\]
+Induction first over the ordered blocks and then over \(k\) proves
+\cref{eq:app-invariant-jet-balls}.
+\end{proof}
+
+\begin{lemma}[Convergence of the mixed jets]
+\label{lem:app-mixed-jet-convergence}
+For every block in \(\cI_9\), the sequence
+\(\mathbf J_{n,p}Z_k\) converges uniformly on
+\(\R^2\times\Lambda_0\).
+\end{lemma}
+
+\begin{proof}
+The order-zero block converges geometrically by
+\cref{eq:app-C0-contraction}.  Suppose that all preceding blocks converge
+geometrically.  The bound through \(\cI_{10}\) from
+\cref{lem:app-invariant-jet-balls} supplies the reserved derivative required
+in \cref{eq:app-flow-jet-difference}.  Applying
+\cref{eq:app-fiber-difference} to two consecutive iterates gives
+\begin{align}
+\label{eq:app-fiber-increment-recurrence}
+ \norm{\mathbf J_{n,p}Z_{k+1}-\mathbf J_{n,p}Z_k}
+ \leq{}&\kappa_{n,p}
+ \norm{\mathbf J_{n,p}Z_k-\mathbf J_{n,p}Z_{k-1}}\notag\\
+ &+C_{n,p}d_{<n,p}(Z_k,Z_{k-1}),
+\end{align}
+where \(\kappa_{n,p}\leq C_{n,p}\del_0<1\).  By induction the last term is
+bounded by \(Cq^k\) for some \(q<1\).  The scalar recurrence
+\[
+ a_{k+1}\leq\kappa a_k+Cq^k
+\]
+has a geometric bound at every rate strictly larger than
+\(\max\{\kappa,q\}\).  Thus the increments in the current fiber are
+summable.  The finite block induction proves the claim.
+\end{proof}
+
+Let \(Z=(Q,H)\) be the \(C^0\) fixed point constructed above.  The preceding
+lemma supplies uniformly convergent candidates for all its jets in
+\(\cI_9\).  We record why they are actual derivatives.  If
+\(f_k\to f\) and \(\partial_\lambda f_k\to g\) uniformly in one common
+fiber, then on every coordinate segment contained in the open parameter
+neighborhood,
+\begin{equation}
+\label{eq:app-strong-jet-closure}
+ f_k(u,\lambda+t)-f_k(u,\lambda)
+ =\int_0^t\partial_\lambda f_k(u,\lambda+r)\dd r.
+\end{equation}
+Passing to the limit gives the same identity for \(f,g\), hence
+\(\partial_\lambda f=g\).  The identical line-segment argument in \(u\)
+identifies spatial derivatives.  Iteration in the block order identifies
+every limiting jet as \(J_{a,b,i,c}Z\).  At the boundary of \(\Lambda_0\),
+the derivatives are the restrictions of those constructed on the open
+parameter neighborhood.  Consequently
+\[
+ \max_{\substack{0\leq b\leq3,\ 0\leq i\leq1\\0\leq c\leq2}}
+ \norm{\partial_\del^b\partial_\nu^i\partial_\eta^cZ}
+       _{C_b^{\,9-b-i-c}}<\infty,
+\]
+which is \cref{eq:app-mixed-jet-bound}.  This is strong convergence of
+derivatives in fixed Banach fibers; no compactness or weak-limit argument is
+used.
+
+\subsection{Taylor coefficients and the uniform remainder}
+\label{app:compact-Taylor-remainder}
+
+At \(\del=0\), the transform \cref{eq:app-graph-transform} is the constant
+map \(Z=(q_0,0)\), independently of \((\nu,\eta)\).  Define
+\begin{equation}
+\label{eq:app-Taylor-coefficients}
+ (Q_j,H_j)=\frac1{j!}
+ \partial_\del^j(Q,H)\big|_{\del=0},
+ \qquad j=1,2.
+\end{equation}
+By \cref{eq:app-mixed-jet-bound}, Taylor's theorem applies with values in
+\(C_b^3(\R^2,\R^4)\), also after at most one \(\nu\)-derivative and two
+\(\eta\)-derivatives.  For
+\(Z=(Q,H)\), \(Z_0=(q_0,0)\), and \(Z_j=(Q_j,H_j)\), the remainder is
+\begin{equation}
+\label{eq:app-integral-Taylor-remainder}
+ (R_{3,Q},R_{3,H})
+ =\frac12\int_0^1(1-t)^2
+   \partial_\del^3Z(t\del,\nu,\eta)\dd t.
+\end{equation}
+Applying \(\partial_\nu^i\partial_\eta^c\),
+\(0\leq i\leq1\), \(0\leq c\leq2\), and using
+\cref{eq:app-mixed-jet-bound} proves the uniform remainder in
+\cref{eq:app-graph-expansion}.
+
+Finally, differentiate \cref{eq:app-graph-transform} once at \(\del=0\).
+All derivatives of the inner arguments are multiplied by the vanishing
+external factor.  Therefore
+\[
+ Q_1=F(\cE_0;0,\nu,\eta),
+ \qquad
+ H_1=\left(\int_0^\infty\e^{Ar}\dd r\right)
+       G(\cE_0;0,\nu,\eta).
+\]
+Since \(A\) is Hurwitz,
+\(\int_0^\infty\e^{Ar}\dd r=-A^{-1}\), which gives
+\cref{eq:app-first-graph-coefficients}.  This completes the proof of
+\cref{prop:app-fixed-tube-graph}. \hfill\(\square\)
+
+\begin{remark}[Why one spatial reserve is necessary]
+\label{rem:app-spatial-reserve}
+The map \(Q\mapsto\Phi_Q^t\) loses one state derivative in a same-order
+vector-field norm.  Indeed, if
+\(V=D_Q\Phi_Q^t[\widehat Q]\), then
+\[
+ \dot V=DQ(\Phi_Q^t)V+\widehat Q(\Phi_Q^t),
+\]
+and three spatial derivatives of this equation contain a term involving
+\(D^4Q\).  Thus a \(C_b^3\)-to-\(C_b^3\) implicit-function argument would
+request a derivative absent from its domain.  The triangular scale above
+keeps that derivative in the bounded grade \(\cI_{10}\) while proving
+convergence only through \(\cI_9\); no infinite-dimensional smoothing or
+Nash--Moser argument is required for the finite jet family used here.
+\end{remark}

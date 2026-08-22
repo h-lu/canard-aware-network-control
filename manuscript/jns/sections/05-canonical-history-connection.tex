@@ -1,0 +1,412 @@
+\section{Canonical one-sided histories and the connection root}
+\label{sec:connection}
+
+The reduced RFDE dynamics on the history graph is a complete planar flow,
+but the singular canard still has two linear obstructions: translation
+along the orbit and a normally growing Gaussian mode.  We remove them by
+one common phase condition and opposite one-sided normal conditions.  This
+constructs the preparation-indexed histories used in
+\cref{thm:main} and turns the return coefficient
+\cref{eq:transverse-return-coefficient} into a root displacement.
+
+\subsection{An exact tangent--normal Green operator}
+
+Linearization of \(q_0\) along \(\gamma_0\) gives
+\begin{equation}
+\label{eq:L0}
+ L_0\xi=f,\qquad
+ L_0\vect{U\\V}=\vect{U'-sU-V\\V'+U}.
+\end{equation}
+\begin{samepage}
+Put
+\begin{equation}
+\label{eq:fundamental-modes}
+ E(s)=\e^{s^2/2},\qquad I(s)=\int_0^s\e^{t^2/2}\,\dd t,
+\end{equation}
+and
+\begin{equation}
+\label{eq:tau-n}
+ \tau(s)=\vect{-1\\s},
+ \qquad n(s)=\vect{I(s)\\E(s)-sI(s)}.
+\end{equation}
+\end{samepage}
+Both are homogeneous solutions of \cref{eq:L0}; \(\tau=2\alpha\gamma_0'\)
+is tangent and \(n\) is normal.  Since
+\(\det[\tau,n]=-E\), every solution can be written uniquely as
+\(\xi=a\tau+bn\), with
+\begin{equation}
+\label{eq:ab-coordinates}
+\begin{aligned}
+ a&=E^{-1}\bigl[-(E-sI)U+IV\bigr],\\
+ b&=E^{-1}(sU+V).
+\end{aligned}
+\end{equation}
+Variation of constants becomes
+\begin{equation}
+\label{eq:ab-variation}
+ a'=E^{-1}\bigl[-(E-sI)f_1+If_2\bigr]=:A_f,
+ \qquad
+ b'=E^{-1}(sf_1+f_2)=:B_f.
+\end{equation}
+
+On \(J_a=[-R,0]\) and \(J_r=[0,R]\), impose the common phase
+\(X(0)=0\).  At the linear level this is exactly \(a(0)=0\).  Impose
+separately \(b(-R)=\beta_a\) on the left and \(b(R)=\beta_r\) on the right.
+The corresponding Green operators are
+\begin{equation}
+\label{eq:one-sided-green}
+\begin{aligned}
+ a_a(s)&=-\int_s^0A_f(t)\,\dd t,&
+ b_a(s)&=\beta_a+\int_{-R}^sB_f(t)\,\dd t,\\
+ a_r(s)&= \int_0^sA_f(t)\,\dd t,&
+ b_r(s)&=\beta_r-\int_s^RB_f(t)\,\dd t.
+\end{aligned}
+\end{equation}
+
+For \(c\ge0\) and \(m\in\mathbb N_0\), let
+\begin{equation}
+\label{eq:tame-norms}
+ \norm{g}_{c,m,J}
+ =\sup_{s\in J}\e^{-c|s|}\langle s\rangle^{-m}|g(s)|,
+ \qquad
+ |\beta|_{c,m,R}
+ =\e^{R^2/2-cR}\langle R\rangle^{-m}|\beta|.
+\end{equation}
+
+\begin{lemma}[Uniform phase--normal Green estimate]
+\label{lem:green}
+For fixed \(c,m\), there are \(C>0\) and \(d_0\le4\), independent of
+\(R\ge1\), such that
+\begin{equation}
+\label{eq:green-bound}
+ \norm{\cG_R^\sigma(f,\beta_\sigma)}_{c,m+d_0,J_\sigma}
+ \le C\bigl(\norm{f}_{c,m,J_\sigma}+|\beta_\sigma|_{c,m,R}\bigr),
+ \qquad \sigma=a,r.
+\end{equation}
+The estimate holds componentwise for the finite rectangular family of
+\((\nu,\eta)\)-derivatives used below.
+\end{lemma}
+
+\begin{proof}
+Integration by parts gives
+\begin{equation}
+\label{eq:I-bounds}
+ |I(s)|\le CE(s)\langle s\rangle^{-1},
+ \qquad |E(s)-sI(s)|\le CE(s).
+\end{equation}
+Thus \(|A_f|\le C|f|\) and
+\(|B_f|\le CE^{-1}\langle s\rangle|f|\).  The tangent integrals in
+\cref{eq:one-sided-green} cost only polynomial weights.  For the normal
+integrals, splitting at \(|s|=1\) and integrating once more by parts gives
+\begin{align}
+ E(s)\int_{-R}^sE(t)^{-1}\e^{c|t|}\langle t\rangle^{m+1}\,\dd t
+ &\le C\e^{c|s|}\langle s\rangle^{m+2}, &&-R\le s\le0,
+ \label{eq:left-gaussian-tail}\\
+ E(s)\int_s^RE(t)^{-1}\e^{c|t|}\langle t\rangle^{m+1}\,\dd t
+ &\le C\e^{c|s|}\langle s\rangle^{m+2}, &&0\le s\le R.
+ \label{eq:right-gaussian-tail}
+\end{align}
+The normalized boundary factor in \cref{eq:tame-norms} cancels the largest
+value of \(E\).  Taking \(d_0=4\) also covers the compact middle interval.
+The kernels are parameter independent, so the same argument applies after
+the declared differentiations.
+\end{proof}
+
+The one-sided placement in \cref{eq:one-sided-green} is essential.  A
+two-sided unweighted fundamental-matrix estimate would introduce
+\(\e^{R^2/2}\), precisely the loss that would destroy the logarithmic
+matching argument.
+
+\subsection{Prepared traces and their exact RFDE lift}
+
+Define the first integral of the singular planar problem by
+\begin{equation}
+\label{eq:first-integral}
+ \mathscr H(X,Y)=\frac12\e^{-2\alpha Y}
+ \left(\alpha Y-\alpha^2X^2+\frac12\right).
+\end{equation}
+It is constant along \(q_0\), and
+\begin{equation}
+\label{eq:first-integral-gradient}
+ \nabla\mathscr H(\gamma_0(s))
+ =\frac{\alpha\e}{2}\e^{-s^2/2}(s,1)^T.
+\end{equation}
+Write \(S=S_\del\) and \(R=R_\del=S+B\).  The prepared reduced field equals the actual graph
+field on the shrinking retained tube and equals \(q_0\) near
+\(\gamma_0(\pm R)\).  It is the unique field defined by
+\cref{eq:prepared-planar-field}.  The one-sided problems are
+\begin{equation}
+\label{eq:trace-bvp}
+\begin{aligned}
+ z'&=Q^{\rm pr}_{\del,\nu,\eta}(z),\\
+ X^a(0)&=X^r(0)=0,\\
+ \mathscr H(z^a(-R))&=0,
+ &\mathscr H(z^r(R))&=0.
+\end{aligned}
+\end{equation}
+
+For the exact retained pieces, use the transition sections
+\begin{equation}
+\label{eq:transition-sections}
+ \Sigma_S^a:\quad
+ Y=\frac{S^2-2}{4\alpha},\ X>0,
+ \qquad
+ \Sigma_S^r:\quad
+ Y=\frac{S^2-2}{4\alpha},\ X<0.
+\end{equation}
+Let \(t_a<0<t_r\) be their unique hits by \(z^a\) and \(z^r\),
+respectively, and define
+\begin{equation}
+\label{eq:retained-intervals}
+ I_a=[t_a,0],\qquad I_r=[0,t_r].
+\end{equation}
+Existence, uniqueness, and the parameter estimates for these moving hits
+are proved in \cref{app:moving-hits}.
+The endpoint condition is exactly the nonlinear continuation of the
+no-incoming-normal condition.  Indeed, if
+\(z=\gamma_0+(U,V)=\gamma_0+a\tau+bn\) at an endpoint \(s\), then
+\begin{equation}
+\label{eq:nonlinear-boundary}
+ E(s)b=\alpha[-a+I(s)b]^2.
+\end{equation}
+
+\begin{theorem}[Canonical one-sided traces]
+\label{thm:canonical-traces}
+For the fixed admissible preparation in \cref{def:admissible-preparation},
+and after decreasing \(\del_0\), the problems
+\cref{eq:trace-bvp} have unique solutions in a tame neighborhood of
+\(\gamma_0\).  They possess the rectangular derivatives
+\(C_\nu^1C_\eta^2\), including the mixed derivatives, and for fixed
+\(c,m,C\), independent of \(\del\),
+\begin{equation}
+\label{eq:trace-estimates}
+\begin{aligned}
+ \norm{z^\sigma-\gamma_0}_{c,m,J_\sigma}
+ +\norm{\partial_\nu z^\sigma}_{c,m,J_\sigma}&\le C\del,\\
+ \norm{\partial_\eta z^\sigma}_{c,m,J_\sigma}
+ +\norm{\partial_{\eta\eta}z^\sigma}_{c,m,J_\sigma}&\le C\del^2,\\
+ \norm{\partial_\nu\partial_\eta z^\sigma}_{c,m,J_\sigma}
+ +\norm{\partial_\nu\partial_{\eta\eta}z^\sigma}_{c,m,J_\sigma}
+ &\le C\del^2,\qquad \sigma=a,r.
+\end{aligned}
+\end{equation}
+By the fixed enlarged target in \cref{def:admissible-preparation}, the
+current points on \(I_a\cup I_r\) lie in
+\(\abs{\chi}\le\widehat S_\del\) and in the shrinking
+normal tube.  All continuous delay backtracks used by
+\cref{eq:history-embedding} lie in the still larger nested uncut flow hull
+from \cref{def:admissible-preparation}.  Hence
+\begin{equation}
+\label{eq:lifted-traces}
+ \varphi^\sigma(s)=\iota_{\del,\nu,\eta}(z^\sigma(s))
+\end{equation}
+are exact complete-history solutions of \cref{eq:physical-model} on
+\(I_a\) and \(I_r\), respectively.  The right-hand trace is backward
+extendible there
+inside the finite-dimensional history graph.
+\end{theorem}
+
+\begin{proof}
+Write \(z=\gamma_0+\xi\).  The equation is
+\(L_0\xi=N_{\del,\nu,\eta}(s,\xi)\), where
+\begin{equation}
+\label{eq:N-bounds}
+ |N(s,0)|\le C\del\e^{c_0|s|}\langle s\rangle^{m_0},
+ \qquad
+ |D_\xi N(s,\xi)|\le
+ C\bigl(\del\e^{c_0|s|}\langle s\rangle^{m_0}+|\xi|\bigr).
+\end{equation}
+Equation \cref{eq:nonlinear-boundary} defines
+\(b=\mathcal B(a)\), with
+\(\mathcal B(0)=D\mathcal B(0)=0\), in the normalized boundary norm.
+Choose weights \(c>c_0\) and \(M>m_0+d_0+2\).  Combining
+\cref{lem:green,eq:N-bounds} gives a self-map of the ball
+\(\norm{\xi}_{c,M}\le C_0\del\), whose Lipschitz factor is
+\begin{equation}
+\label{eq:trace-contraction-factor}
+ \rho_{\del,S}=C\del\e^{c(S+B)}\langle S+B\rangle^M=o(1).
+\end{equation}
+The boundary graph has the same factor because its quadratic term contains
+\(E(R)^{-1}\).  Banach's theorem proves existence and uniqueness.
+
+Differentiating this fixed-point equation is legitimate for the finite
+parameter family furnished by \cref{thm:history-graph}.  The \(\nu\)-source
+is \(O(\del)\), the \(\eta\)-source is \(O(\del^2)\), and a second
+\(\eta\)-derivative contains only an \(O(\del^2)\) direct source plus
+products of already bounded lower derivatives.  The inverse of the
+linearized contraction has a uniform bound, proving
+\cref{eq:trace-estimates}; the detailed estimates are proved in
+\cref{app:green-gap}.
+
+In the canard coordinate \(d\), the exact identity
+\begin{equation}
+\label{eq:normal-bootstrap}
+ d(\gamma_0(s)+(U,V))=V+sU-\alpha U^2
+\end{equation}
+and \cref{eq:trace-estimates} give
+\(|d|\le C\del\e^{cS}\langle S\rangle^{m+1}
+=o(\del^{\kappa_0})\).  The same nested estimate holds for the depth-two
+backtracks.  Thus the retained trace never uses the artificial normal
+extension.  The moving-hit estimate in \cref{eq:hitting-time-bounds} and
+the construction at target \(\widehat S_\del\) place its current points in the
+enlarged uncut region; the nested construction places their delay
+backtracks in its outer flow hull.  Equations
+\cref{eq:history-embedding,eq:exact-semiconjugacy} then give the exact
+history lift \cref{eq:lifted-traces}; no backward RFDE initial-value problem
+is solved.
+\end{proof}
+
+\subsection{The normalized history gap}
+
+For the fixed preparation \(\cP\), define
+\begin{equation}
+\label{eq:canonical-gap}
+ \mathfrak d_\cP(\del,\nu,\eta)
+ =\frac{2}{\alpha\e}
+ \left[\mathscr H(z^a_\cP(0))-\mathscr H(z^r_\cP(0))\right].
+\end{equation}
+
+\begin{lemma}[Gap zero is complete-history equality]
+\label{lem:gap-history}
+For sufficiently small \(\del\),
+\begin{equation}
+\label{eq:gap-history-equivalence}
+ \mathfrak d_\cP=0
+ \quad\Longleftrightarrow\quad
+ z^a_\cP(0)=z^r_\cP(0)
+ \quad\Longleftrightarrow\quad
+ \iota(z^a_\cP(0))=\iota(z^r_\cP(0)).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Both central points satisfy \(X=0\).  If
+\(h(Y)=\mathscr H(0,Y)\) and \(Y_0=-1/(2\alpha)\), then
+\(h'(Y_0)=\alpha\e/2\ne0\).  The trace theorem places the two values in a
+common interval on which \(h\) is injective.  This proves equality of the
+current reduced states.  Present-time evaluation followed by projection to
+\(u\) is a left inverse of \(\iota\), proving the history equivalence.
+\end{proof}
+
+\begin{proposition}[Uniform gap expansion]
+\label{prop:gap-expansion}
+Let
+\begin{equation}
+\label{eq:nu0}
+ \nu_0=-\frac{11}{24\alpha},
+ \qquad
+ c_\perp=\frac{K(\theta_0-\theta_1)}{4\alpha}.
+\end{equation}
+Uniformly for \(\nu\) in a fixed neighborhood of \(\nu_0\) and
+\(|\eta|\le\eta_0\),
+\begin{equation}
+\label{eq:full-gap-expansion}
+\begin{aligned}
+ \frac{\mathfrak d_\cP}{\del}
+ &=\sqrt{2\pi}(\nu-\nu_0)+O(\del),\\
+ \partial_\nu\mathfrak d_\cP
+ &=\sqrt{2\pi}\,\del+O(\del^2),\\
+ \partial_\eta\mathfrak d_\cP
+ &=-c_\perp\sqrt{2\pi}\,\del^2
+   +O(\del^3+\del^2|\eta|),\\
+ \partial_{\eta\eta}\mathfrak d_\cP&=O(\del^2).
+\end{aligned}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Because both prepared endpoints lie on \(\mathscr H=0\), the fundamental
+theorem of calculus gives the exact two-piece identity
+\begin{equation}
+\label{eq:two-piece-gap}
+ \frac{\alpha\e}{2}\mathfrak d_\cP
+ =\int_{-R}^{0}\nabla\mathscr H(z^a)^T
+       (Q^{\rm pr}-q_0)(z^a)\,\dd s
+  +\int_{0}^{R}\nabla\mathscr H(z^r)^T
+       (Q^{\rm pr}-q_0)(z^r)\,\dd s.
+\end{equation}
+The prepared tails are supported outside the retained core; the Green
+formula weights their central contribution by
+\(O(\e^{-S^2/2+cS}\langle S\rangle^m)\).  After choosing \(p>p_*\), this
+and all differentiated endpoint terms are smaller than the remainders in
+\cref{eq:full-gap-expansion}.  On the retained core,
+\cref{eq:growing-graph-expansion,eq:trace-estimates} and the Gaussian
+gradient \cref{eq:first-integral-gradient} provide a common integrable
+majorant.  Hence the traces may be replaced by \(\gamma_0\) at the stated
+cost, and the finite integrals may be extended to \(\R\).
+
+The first graph coefficient on \(\gamma_0\) is
+\begin{equation}
+\label{eq:Q1-on-canard}
+ Q_{1,X}(\gamma_0(s))
+ =\frac{11s^3-12K(\theta_0+2\theta_1)}{72\alpha},
+ \qquad Q_{1,Y}(\gamma_0(s))=\nu.
+\end{equation}
+Pairing with \(\e^{-s^2/2}(s,1)^T\), the constant delay term is odd,
+whereas
+\[
+ \int_\R\e^{-s^2/2}\,\dd s=\sqrt{2\pi},
+ \qquad
+ \int_\R s^4\e^{-s^2/2}\,\dd s=3\sqrt{2\pi}.
+\]
+This gives the first line of \cref{eq:full-gap-expansion}.  Differentiating
+\cref{eq:two-piece-gap} with respect to \(\nu\) leaves at order \(\del\)
+only
+\(\del\nabla\mathscr H(\gamma_0)^T(0,1)\), proving the second line.
+
+Since \(Q_1\) is independent of \(\eta\), its differentiated trace term is
+\(O(\del^3)\).  The unique order-\(\del^2\) source is
+\(
+ \del^2\nabla\mathscr H(\gamma_0)^T\partial_\eta Q_2(\gamma_0)
+\).
+Using \cref{eq:transverse-return-coefficient}, its normalized pairing is
+\begin{equation}
+ -c_\perp\del^2\int_\R s^2\e^{-s^2/2}\,\dd s
+ =-c_\perp\sqrt{2\pi}\,\del^2.
+\end{equation}
+The trace replacement, \(R_Q\), and variation away from \(\eta=0\) give
+the three error terms displayed in the third line.  A second
+\(\eta\)-derivative contains an \(O(\del^2)\) direct source; all terms
+involving \(\partial_\eta z\) or
+\(\partial_{\eta\eta}z\) are of that order or smaller by
+\cref{eq:trace-estimates}.  This proves the final line.  Detailed endpoint
+and moving-hit estimates are in \cref{app:green-gap}.
+\end{proof}
+
+\subsection{Proof of the main theorem}
+
+\begin{proof}[Proof of \cref{thm:main}]
+Choose a compact \(\nu\)-interval centered at \(\nu_0\).  By
+\cref{prop:gap-expansion}, after reducing \(\del_0\),
+\begin{equation}
+\label{eq:gap-monotonicity}
+ \partial_\nu\mathfrak d_\cP
+ \ge\frac{\sqrt{2\pi}}2\del
+\end{equation}
+throughout a fixed neighborhood
+\(|\nu-\nu_0|\le c_0\).  The first line of
+\cref{eq:full-gap-expansion} gives opposite signs at its endpoints for
+small \(\del\).  Hence there is exactly one root
+\(\nu_{c,\cP}(\del,\eta)\) in that interval.  For every fixed
+\(0<\del\le\del_0\), the ordinary implicit-function theorem and
+\cref{eq:gap-monotonicity} make the root \(C^1\) in \(\eta\); no joint
+smoothness in \((\del,\eta)\) is asserted because the target-dependent
+cutoff was frozen before expanding in the dummy amplitude.
+
+The first line also gives \(\nu_{c,\cP}=\nu_0+O(\del)\), uniformly in
+\(\eta\).  Implicit differentiation and the remaining lines give
+\begin{equation}
+ \partial_\eta\nu_{c,\cP}
+ =-\frac{\partial_\eta\mathfrak d_\cP}
+         {\partial_\nu\mathfrak d_\cP}
+ =c_\perp\del+O(\del^2+\del|\eta|).
+\end{equation}
+Integrating from \(0\) to \(\eta\) and using
+\(\mu_{c,\cP}=\del^2\nu_{c,\cP}\) proves
+\cref{eq:main-law} with the claimed uniform remainder.
+
+At the root, \cref{lem:gap-history} identifies the two central complete
+histories.  Uniqueness for the autonomous planar \(Q\)-flow concatenates
+the two retained pieces into one local reduced orbit, and the exact
+semiconjugacy \cref{eq:exact-semiconjugacy} maps it to one local RFDE orbit.
+\end{proof}

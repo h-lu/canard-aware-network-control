@@ -1,0 +1,201 @@
+\section{Trace, endpoint, and gap estimates}
+\label{app:green-gap}
+
+This appendix supplies the quantitative estimates suppressed in
+\cref{thm:canonical-traces,prop:gap-expansion}.
+
+\subsection{The nonlinear Green contraction}
+
+Let \(d_0\) be the loss in \cref{lem:green}, choose \(c>c_0\) and
+\(M>m_0+d_0+2\), and define
+\[
+ \|\xi\|_\cX
+ =\sup_{J_\sigma}\e^{-c|s|}\langle s\rangle^{-M}|\xi(s)|,
+ \qquad
+ \|f\|_\cY
+ =\sup_{J_\sigma}\e^{-c|s|}
+   \langle s\rangle^{-(M-d_0)}|f(s)|.
+\]
+The Green operator is uniformly bounded from \(\cY\) to \(\cX\).
+On the ball \(\|\xi\|_\cX\le C_0\del\), the nonlinear source satisfies
+\begin{align}
+ \|N(\cdot,\xi)\|_\cY
+ &\le C\del+C\del^2\Lambda_R,\\
+ \|N(\cdot,\xi)-N(\cdot,\widetilde\xi)\|_\cY
+ &\le C\del\Lambda_R\|\xi-\widetilde\xi\|_\cX,
+ \label{eq:appendix-N-lipschitz}
+\end{align}
+where
+\[
+ \Lambda_R=\e^{cR}\langle R\rangle^{M+m_0+d_0}.
+\]
+For example, a quadratic term is bounded by
+\[
+ \e^{-c|s|}\langle s\rangle^{-(M-d_0)}
+ |\xi(s)|\,|\xi(s)-\widetilde\xi(s)|
+ \le C\del\e^{cR}\langle R\rangle^{M+d_0}
+       \|\xi-\widetilde\xi\|_\cX.
+\]
+
+At an endpoint, \cref{eq:nonlinear-boundary} and the implicit-function
+theorem give
+\[
+ |\mathcal B(a)|\le CE(R)^{-1}|a|^2,
+ \qquad
+ |\mathcal B(a)-\mathcal B(\widetilde a)|
+ \le CE(R)^{-1}(|a|+|\widetilde a|)|a-\widetilde a|.
+\]
+Multiplication by the normalized boundary weight produces the same
+\(C\del\Lambda_R\) Lipschitz factor.  Because
+\(R=S_\del+B\) and
+\(\del\e^{cS_\del}\langle S_\del\rangle^M=o(1)\),
+the combined nonlinear map is a strict contraction.  Parameter
+differentiation gives a uniformly invertible linearized map; the direct
+source orders \(O(\del)\) for \(\nu\) and \(O(\del^2)\) for \(\eta\)
+then yield \cref{eq:trace-estimates}.
+
+\subsection{Moving transition hits}
+\label{app:moving-hits}
+
+The auxiliary prepared endpoints are not physical transition sections.
+As in the main text, write \(S=S_\del\) and use the sections in
+\cref{eq:transition-sections}.  Let
+\(t_a<0<t_r\) be the unique hit times of the two canonical traces and set
+\(I_a=[t_a,0]\), \(I_r=[0,t_r]\), as in
+\cref{eq:retained-intervals}.
+Since
+\[
+ Y_0'(s)=\frac{s}{2\alpha},
+\]
+the trace estimates imply strict monotonicity on the unit neighborhoods of
+\(\pm S_\del\), and hence
+\begin{equation}
+\label{eq:hitting-time-bounds}
+ |t_a+S_\del|+|t_r-S_\del|
+ \le C\del\e^{cS_\del}\langle S_\del\rangle^m.
+\end{equation}
+There is no second hit: on the outer pieces the sign of \(X\) fixes the
+sign of \(Y'\), while the compact inner piece has bounded \(Y\) and the
+section height diverges.
+
+For a parameter \(\lambda\),
+\[
+ \partial_\lambda t
+ =-\frac{\partial_\lambda Y(t)}{Y'(t)},
+\]
+and
+\[
+ \partial_{\eta\eta}t
+ =-\frac{Y_{\eta\eta}+2Y_{s\eta}t_\eta+
+                   Y_{ss}t_\eta^2}{Y_s}\bigg|_{s=t}.
+\]
+Using \cref{eq:trace-estimates} and
+\(|Y'(t)|\ge S_\del/(4\alpha)\) gives the same bound as
+\cref{eq:hitting-time-bounds} for a \(\nu\)-derivative, and the bound with
+\(\del\) replaced by \(\del^2\) for every derivative containing
+\(\eta\).  Mixed \(\nu\)--\(\eta\) derivatives obey the latter estimate.
+
+\subsection{Gaussian suppression of the prepared boundary}
+
+Suppose a phase-compatible current-state error at one endpoint, together
+with its declared parameter derivatives, is bounded by
+\(A\e^{cR}\langle R\rangle^m\).  Formula
+\cref{eq:ab-coordinates} gives its normal coefficient as
+\[
+ |\beta|\le
+ CA\e^{-R^2/2+cR}\langle R\rangle^{m+1}.
+\]
+At the central section \(n(0)=(0,1)^T\), and the tangent coefficient has
+been removed by the common phase.  Therefore the contribution to the
+central trace and its Gaussian integral norm is at most
+\begin{equation}
+\label{eq:boundary-suppression}
+ CA\e^{-R^2/2+cR}\langle R\rangle^{m+2}.
+\end{equation}
+If two preparations agree on the retained tube but differ in the outer
+annulus, the difference forcing is supported outside \(|s|\le S\).  The
+tangent integral in \cref{eq:one-sided-green} vanishes at the central point,
+and its normal part has the same bound with \(R\) replaced by \(S\).
+The nonlinear resolvent changes only the constant.  Parameter
+differentiation preserves the support and one-sided structure.
+
+Because \(S_\del^2/2=p\log(1/\del)\), the right side of
+\cref{eq:boundary-suppression} is
+\[
+ A\del^p\e^{cS_\del}\langle S_\del\rangle^{m+2}
+ =A\del^{p-o(1)}.
+\]
+The tame exponents are fixed before \(p\) is chosen.  This is why the
+quantifier order in \cref{thm:main} is necessary.
+
+\subsection{Differentiating the gap}
+
+On either trace,
+\[
+ \frac{\dd}{\dd s}\mathscr H(z)
+ =\del A_1(z,\nu)+\del^2A_2(z,\nu,\eta)
+  +\del^3A_3(z,\del,\nu,\eta),
+\]
+where \(A_k=\nabla\mathscr H\cdot Q_k\) for \(k=1,2\), and
+\(A_3=\nabla\mathscr H\cdot R_{3,Q}\).  Splitting at zero and allowing
+the moving transition hits gives
+\begin{align}
+ \frac{\alpha\e}{2}\mathfrak d_\cP
+ ={}&\mathscr H(z^a(t_a))-\mathscr H(z^r(t_r))\notag\\
+ &+\int_{t_a}^{0}\frac{\dd}{\dd s}\mathscr H(z^a(s))\,\dd s
+  +\int_{0}^{t_r}\frac{\dd}{\dd s}\mathscr H(z^r(s))\,\dd s.
+ \label{eq:moving-gap-identity}
+\end{align}
+For the canonical prepared tails, the first line is not literally zero at
+the moving hits.  Using \(\mathscr H(z^a(-R))=
+\mathscr H(z^r(R))=0\), it equals
+\[
+ \int_{-R}^{t_a}\frac{\dd}{\dd s}\mathscr H(z^a(s))\,\dd s
+ +\int_{t_r}^{R}\frac{\dd}{\dd s}\mathscr H(z^r(s))\,\dd s.
+\]
+These are precisely the two prepared outer-annulus contributions, and
+\cref{eq:boundary-suppression} controls them and all declared derivatives.
+For a nonzero physical boundary mismatch the same estimate applies after
+adding its phase-compatible endpoint error.  Terms from differentiating the
+moving limits contain the same Gaussian endpoint factor and the hitting-time
+jets above.
+
+On the two integrals, the pointwise graph and trace estimates are dominated
+by
+\[
+ C\e^{-s^2/2+c|s|}\langle s\rangle^m,
+\]
+which is integrable on \(\R\).  Dominated differentiation is therefore
+uniform.  The leading \(\nu\)-source is
+\[
+ \frac{\alpha\e}{2}\del\e^{-s^2/2},
+\]
+while the leading \(\eta\)-source is
+\[
+ -\frac{\alpha\e}{2}c_\perp\del^2s^2\e^{-s^2/2}.
+\]
+Extending the integrals to the whole line costs
+\(O(\del^{p-o(1)})\).  The Gaussian moments then give
+\[
+ \int_\R\e^{-s^2/2}\,\dd s
+ =\int_\R s^2\e^{-s^2/2}\,\dd s=\sqrt{2\pi},
+\]
+which proves the two derivative coefficients in
+\cref{eq:full-gap-expansion}.  Twice differentiating the integrand shows
+that the direct \(Q_2\) source is \(O(\del^2)\), while every trace-derivative
+product is smaller by \cref{eq:trace-estimates}.  This proves the
+\(\eta\eta\)-bound.
+
+For completeness, a parameter derivative of the lifted complete history is
+not merely the derivative of the reduced trace.  It is
+\[
+ \partial_\lambda\varphi^\sigma
+ =D\iota_{\del,\nu,\eta}(z^\sigma)
+     \partial_\lambda z^\sigma
+  +\partial_\lambda\iota_{\del,\nu,\eta}(z^\sigma),
+ \qquad \lambda\in\{\nu,\eta\},
+\]
+with the ordinary Faà di Bruno terms at higher mixed order.  The
+logarithmic graph estimates control both terms and their declared mixed
+derivatives uniformly, which is the history-level estimate used in
+\cref{prop:gap-expansion}.

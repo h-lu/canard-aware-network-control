@@ -1,0 +1,67 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{mathtools,amssymb,amsthm,bm,mathrsfs}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathreplacing,positioning}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+
+\allowdisplaybreaks
+\setlist{nosep}
+\setlength{\emergencystretch}{2em}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\del}{\delta}
+\newcommand{\etaP}{\eta_{\!*}}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\e}{\mathrm e}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Ran}{\operatorname{Ran}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\vect}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\mat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+
+\definecolor{CriticalBlue}{RGB}{35,90,150}
+\definecolor{TransverseOrange}{RGB}{205,92,30}
+\definecolor{AttractGreen}{RGB}{35,120,75}
+\definecolor{RepelPurple}{RGB}{120,75,155}
+
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}

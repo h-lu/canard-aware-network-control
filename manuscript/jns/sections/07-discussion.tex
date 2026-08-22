@@ -1,0 +1,110 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What is new in the threshold law}
+
+The identity \cref{eq:projected-measure} is stronger than agreement of a
+few delay moments: the entire atomic measure seen by the critical mode is
+fixed.  A scalar reduction onto that mode is therefore identical along the
+\(\eta\)-family.  Nevertheless, \cref{eq:main-law} shows a nonzero
+connection displacement.  The missing information is the transverse
+measure \cref{eq:transverse-measure}.  It first generates the stable graph
+response \cref{eq:H1-eta}; the FitzHugh--Nagumo nonlinearity then returns
+that response to the critical field through
+\cref{eq:transverse-return-coefficient}.  The Gaussian gap pairing converts
+this vector-field return into a scalar root shift.
+
+This separates the result from two familiar observations.  First, the
+implicit-function step is not the contribution by itself; its derivative
+is meaningful only after a complete-history gap, a one-sided selection, and
+the coefficient with a controlled remainder have been constructed.
+Second, trajectory agreement in a projected observable would not suffice.
+The equivalence \cref{eq:gap-history-equivalence} uses local injectivity on
+the common phase section and the injective history embedding, so the root
+represents equality in the RFDE history space.
+
+\subsection{Relation to the 2026 delayed van der Pol expansion}
+
+The nearest comparison is \citet{zhang2026high}.  In their scalar delayed
+van der Pol equation, weak feedback and long physical delay are scaled as
+\(J=O(\eps)\) and \(\tau=O(\eps^{-1/2})\).  A nonlocal center-manifold
+reduction and nonlinear time transformation then produce high-order
+approximations of the critical parameter and canard curve.  Their scalar
+coefficient is an essential calibration for any network model that reduces
+exactly to one synchronous delayed oscillator.
+
+The present theorem neither repeats nor imports that scalar coefficient.
+It holds the complete critical projected delay operator fixed and varies a
+transverse organization that a scalar equation cannot represent.  The new
+proof obligation is accordingly at history level: a singular transverse
+block is removed uniformly, its mixed parameter jets are extended to a
+logarithmic tube, and two one-sided histories are matched.  If the present
+model were collapsed to a single oscillator with a uniform self-delay, the
+transverse mechanism would disappear and the genuinely new coefficient
+\cref{eq:transverse-return-coefficient} would vanish.
+
+\subsection{The scope of the canonical preparation}
+
+The exact root is indexed by \(\cP\).  This is not merely notation.  A
+retarded equation has a forward semiflow on history space, and a repelling
+one-sided trace cannot be obtained by reversing an arbitrary RFDE initial
+history.  Our construction instead chooses both traces relative to explicit
+tail levels and realizes their retained pieces in a complete planar flow
+inside the invariant history graph.
+
+There is, however, a quantitative transfer principle.  Suppose a separately
+constructed physical attracting/repelling history family enters the same
+uncut graph and, after the common phase is imposed, its boundary mismatch
+and the \(\nu,\eta\)-derivatives used here are bounded by
+\[
+ C\langle S_\del\rangle^m\e^{cS_\del}.
+\]
+Then the one-sided Green formulas make the corresponding gap and derivative
+errors
+\[
+ E_\del=O\left(\e^{-S_\del^2/2+cS_\del}
+                    \langle S_\del\rangle^{m'}\right)
+ =\del^{p-o(1)}.
+\]
+Since \(\partial_\nu\mathfrak d_\cP\ge c\del\), the root error in the
+unfolding coordinate is at most \(CE_\del/\del\), and the physical
+parameter error is at most \(C\del E_\del\).  If the same estimate holds
+for the \(\eta\)-derivative of the gap mismatch, the error in the
+\(\eta\)-displacement law is \(C\del E_\del|\eta|\), below the remainder
+in \cref{eq:main-law} for sufficiently large fixed \(p\).
+
+This statement remains conditional for an arbitrary outer Fenichel
+selection.  Fixed-parameter closeness is insufficient: without a
+parameter-coherent selection rule, an exponentially small boundary
+perturbation can have rapidly oscillating parameter derivatives.  A future
+outer Lyapunov--Perron construction would have to establish these
+full-history derivative bounds rather than infer them from current-state
+closeness.
+
+\subsection{Broader implications and next problems}
+
+The mechanism is not tied to the displayed matrices.  In a general
+multi-module system, the critical delay measure
+\(\ell^T\mathbb B(\dd\theta)r\) records only the direct critical channel.
+Unless every delay layer preserves the critical subspace and all nonlinear
+blocks respect the same decomposition, a transverse resolvent can feed back
+into the critical solvability condition.  The two-layer family here is a
+minimal positive example in which this information loss is exact and its
+first return can be calculated.
+
+Two extensions are mathematically distinct.  The first is to replace the
+local canonical selection by a global physical canard or pulse-onset
+selection.  That requires the outer full-history estimate just described.
+The second is to pass to a finite heterogeneous network.  There one must
+control all transverse delayed modes uniformly and cannot replace the
+relevant history operator by the spectral gap of a static adjacency matrix.
+Only after that transfer problem is solved would it be justified to combine
+the canard threshold with frequency and amplitude as three independently
+assigned control coordinates.
+
+Thus the present result supplies one deliberately narrow but reusable
+bridge: identical critical projected delay data need not imply identical
+nonhyperbolic thresholds, and the discrepancy can be obtained as a rigorous
+complete-history root law.  It leaves the biological interpretation of a
+global pulse threshold and the design of general network controllers as
+separate theorem problems rather than consequences of the local formula.

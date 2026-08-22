@@ -1,0 +1,260 @@
+\section{Proof of the logarithmic-tube estimates}
+\label{app:growing-tube}
+
+We prove the growing clauses of \cref{thm:history-graph}.  Throughout this
+appendix, a target \(\del\) is fixed,
+\(S=\widehat S_\del=S_\del+B_{\rm hit}\), and all cutoffs are frozen.
+Taylor differentiation is with respect to an independent amplitude
+\(\rho\in[-\del,\del]\); in particular, neither \(\widehat S_\del\) nor a
+cutoff profile is differentiated.
+
+\subsection{Canard flow and nested tubes}
+
+In the coordinates \cref{eq:canard-coordinates}, the singular flow is
+\cref{eq:canard-coordinate-flow}.  If a backward segment has fixed length
+\(0\le t\le T\), then its normal linear factor on \(d=0\) is
+\[
+ \exp\left(-\chi t+\frac{t^2}{2}\right).
+\]
+Consequently, for every fixed derivative order \(k\), there are
+\(C_{k,T},c_{k,T},m_k\) such that
+\begin{equation}
+\label{eq:fixed-flow-jet}
+ \bigl|D^k\phi_0^{-t}(\Gamma(\chi,d))\bigr|
+ \le C_{k,T}\langle\chi\rangle^{m_k}\e^{c_{k,T}|\chi|}
+\end{equation}
+while the segment remains in a fixed-width normal tube.  To see this,
+observe first that \(|\chi(t)|\le|\chi(0)|+C_T\); Gronwall proves the
+first-variation bound, and the higher variational equations have the same
+homogeneous part with polynomial sources in lower variations.
+
+Let \(J\) be the largest grade in the finite rectangular jet set.  Order
+the jet blocks as in \cref{app:mixed-jets} and denote their number by
+\(N_{\rm bl}\).  Take
+\[
+ D=2N_{\rm bl}+4,\qquad
+ 1>\kappa_0>\kappa_1>\cdots>\kappa_D>0,
+\]
+put \(T_*=\theta_1+1\), \(B_j=jT_*\), and use the outer buffer
+\[
+ B_*=B_D+T_*+2.
+\]
+Define
+\begin{equation}
+\label{eq:nested-tubes}
+ \cU_j(\del)=\left\{\Gamma(\chi,d):
+ |\chi|\le S+B_j,\ |d|\le\del^{\kappa_j}\right\}.
+\end{equation}
+The cutoff equals one on the fixed-width flow hull of
+\(|\chi|\le S+B_*\) and is supported in a twice larger longitudinal
+interval.  Its finite derivatives and those of the prepared polynomial
+data are bounded by polynomials \(P_g(S)\), \(g\le J+1\).  The cutoff
+field is complete.
+
+\subsection{Global contraction and the stable tail}
+
+For every fixed jet grade, \cref{eq:fixed-flow-jet} and the cutoff bounds
+give a global composition bound
+\begin{equation}
+\label{eq:global-Bg}
+ B_g(S)=P_g(S)\e^{C_gS}.
+\end{equation}
+Since
+\[
+ \del P_g(S)\e^{C_gS}\longrightarrow0,
+\]
+the order-zero transform and every highest jet block have contraction
+factor
+\begin{equation}
+\label{eq:growing-contraction}
+ q_\del\le\del P_J(S)\e^{C_JS}=o(1).
+\end{equation}
+The common-fiber argument in \cref{app:mixed-jets}, applied with these
+target-dependent radii, therefore gives a unique global fixed point for
+\(|\rho|\le\del\), its finite \(C_\rho^3C_\nu^1C_\eta^2\) jets, and the
+global bounds \cref{eq:global-Bg}.
+
+For the stable convolution, set
+\[
+ R_{{\rm tail},\del}=L\log(1/\del)
+\]
+and split the full integral in \cref{eq:graph-transform} at
+\(R_{{\rm tail},\del}\).  The undifferentiated tail is bounded by
+\[
+ \frac{M_A}{\beta}|\rho|\|G\|_\infty\del^{\beta L}.
+\]
+After any of the finitely many differentiations, flow jets add only a fixed
+power of \(r\), and half of the semigroup decay can be retained:
+write \(\mathscr D\) for any derivative in the required rectangular
+\((u,\rho,\nu,\eta)\)-jet family.  Then
+\begin{equation}
+\label{eq:stable-tail}
+ \bigl\|\mathscr D\cT_H^{>R_{{\rm tail},\del}}\bigr\|_\infty
+ \le P_J(S)\e^{C_JS}(1+R_{{\rm tail},\del})^{M_J}
+      \e^{-\beta R_{{\rm tail},\del}/2}.
+\end{equation}
+Choose \(L\) after \(J\) so that the tail is \(O(\del^6)\), three orders
+beyond the leading graph coefficient retained in the main theorem.  Since all
+prefactors in \cref{eq:stable-tail} are \(\del^{-o(1)}\), the tail is
+\(O(\del^6)\) for the entire rectangular family.  This splitting is only
+an estimate: the fixed point still uses the exact integral over
+\([0,\infty)\), so invariance is not truncated.
+
+For \(0\le r\le R_{{\rm tail},\del}\), the additional
+stable-convolution backtrack has
+length
+\[
+ |\rho|r\le\del R_{{\rm tail},\del}=o(1).
+\]
+After decreasing \(\del_0\), \cref{eq:fixed-flow-jet} and the gaps between
+the \(\kappa_j\) imply
+\begin{equation}
+\label{eq:nested-inclusion}
+ \del^{\kappa_j}P_J(S)\e^{C_JS}
+ +\del P_J(S)\e^{C_JS}
+ \le\frac12\del^{\kappa_{j+1}}.
+\end{equation}
+Thus a current or delayed evaluation starting in \(\cU_j\) lies in
+\(\cU_{j+1}\); at the terminal level it remains in the uncut buffer.
+
+\subsection{Local mixed-jet fibers}
+
+Let \(\cT_{\rho,S}\) denote the graph transform with every cutoff frozen at
+the target \(S\) and with the perturbation amplitude replaced by \(\rho\).
+Let \(q_{0,\del}^{\rm pr}\) be the complete singular preparation fixed by
+\(\cP\) at this target.
+
+For a jet tensor \(V\), define
+\[
+ \|V\|_{j;c,m}
+ =\sup_{u=\Gamma(\chi,d)\in\cU_j}
+ \frac{|V(u)|}{\langle\chi\rangle^m\e^{c|\chi|}}.
+\]
+Let \(Z_{n+1}=\cT_{\rho,S}Z_n\),
+\(Z_0=(q_{0,\del}^{\rm pr},0)\), and let
+\(\mathbf J_\ell\) denote the \(\ell\)-th ordered mixed-jet block.  The
+Faà di Bruno expansion of one graph-transform step has the exact
+highest-block structure
+\begin{equation}
+\label{eq:local-highest-block}
+ \mathbf J_\ell Z_{n+1}
+ =b_\ell(\mathbf J_{<\ell}Z_n)
+  +\rho\mathscr L_{\ell,n}[\mathbf J_\ell Z_n]
+  +E_{\ell,n}^{>R_{{\rm tail},\del}}.
+\end{equation}
+Here \(E_{\ell,n}^{>R_{{\rm tail},\del}}\) is the differentiated stable-tail
+term from \(r>R_{{\rm tail},\del}\).  The lower-block maps below are fixed
+finite polynomials,
+denoted \(\Pi_{\ell,h}\), with coefficients controlled by the prepared data.
+For the first pure spatial block, the current highest-block map is nonlinear
+rather than affine, but its difference estimate has the same factor
+\(|\rho|\).  If a \(\rho\)-derivative removes the displayed factor, the
+remaining graph jet has one lower \(\rho\)-grade and belongs to
+\(b_\ell\).  Every other factor in \(b_\ell\) is a lower graph jet or a
+flow jet evaluated one nested level farther out.
+
+Set
+\[
+ A_{\ell,j}^{(n)}
+ =\|\mathbf J_\ell Z_n\|_{j;c_\ell,m_\ell}.
+\]
+After enlarging the finite weights, \cref{eq:local-highest-block} gives
+\begin{equation}
+\label{eq:local-recurrence}
+ A_{\ell,j}^{(n+1)}
+ \le C_\ell+
+ C_\ell\sum_{h<\ell}\Pi_{\ell,h}
+      \bigl(A_{h,j+1}^{(n)}\bigr)
+ +|\rho|P_\ell(S)\e^{C_\ell S}B_\ell(S)
+ +C_\ell\del^6 .
+\end{equation}
+Induction over \(\ell\) proves
+\begin{equation}
+\label{eq:local-induction}
+ \sup_nA_{\ell,j}^{(n)}\le C_\ell,
+ \qquad 0\le j\le D-\ell.
+\end{equation}
+Indeed, the assertion is immediate for the zeroth block.  If it holds for
+\(h<\ell\), then \(j+1\le D-h\) bounds every lower-block term in
+\cref{eq:local-recurrence}; the sole global current-block term is
+\(o(1)\) by \cref{eq:growing-contraction}.  Since
+\(D>N_{\rm bl}\), the core \(j=0\) is covered for every required block.
+Global convergence of the jets implies convergence in each local seminorm,
+so \cref{eq:local-induction} passes to the fixed point.
+
+The induction closes because an \(S\)-dependent lower jet is always
+controlled in the next weighted local fiber, whereas the only use of a
+global current jet retains \(\rho\).  Infinite nesting in the exact fixed
+point is summed by the global contraction and does not create infinite atom
+depth in a finite Taylor coefficient.
+
+\subsection{Atom depth and the Taylor remainder}
+
+For a set \(\cU\), define the depth-\(d\) continuous flow hull
+\[
+ \mathfrak H^{[d]}(\cU)
+ =\{\phi_0^{-t}u:u\in\cU,\ 0\le t\le d\theta_1\}.
+\]
+At \(\rho=0\), one differentiation of the transform gives
+\[
+ Q_1=F(\cE_0;0,\nu,\eta),\qquad
+ H_1=-A^{-1}G(\cE_0;0,\nu,\eta),
+\]
+so \((Q_1,H_1)\) has depth one.  A second differentiation introduces at
+most one additional delayed evaluation, one first variation
+\[
+ \int_0^{\theta_j}
+ D\phi_0^{-(\theta_j-a)}
+ Q_1(\phi_0^{-a}u)\,\dd a,
+\]
+or a moment of the stable kernel.  Hence \((Q_2,H_2)\) depends only on
+\(\mathfrak H^{[2]}(\cU_0(\del))\).  The preparation equals the
+physical field on that hull; these coefficients are therefore independent
+of the admissible outer cutoff.
+
+Apply \cref{eq:local-induction} to
+\[
+ D_u^a\partial_\nu^i\partial_\eta^j
+ \partial_\rho^3(Q_{\rho,S},H_{\rho,S}),
+ \qquad a\le3,\quad i\le1,\quad j\le2.
+\]
+Taylor's integral formula in the fixed common fiber yields
+\begin{align}
+ Q_{\del,S}&=q_0+\del Q_1+\del^2Q_2+\del^3R_{3,Q},\\
+ H_{\del,S}&=\del H_1+\del^2H_2+\del^3R_{3,H},
+ \label{eq:appendix-growing-expansion}
+\end{align}
+where
+\begin{equation}
+\label{eq:appendix-growing-remainder}
+ \max_{a\le3,\ i\le1,\ j\le2}
+ \bigl|D_u^a\partial_\nu^i\partial_\eta^j
+      (R_{3,Q},R_{3,H})(\Gamma(\chi,d))\bigr|
+ \le C\langle\chi\rangle^m\e^{c|\chi|}
+\end{equation}
+on \cref{eq:core-tube}.  This is the enlarged target used by the moving-hit
+construction from the outset, not a second graph fixed point.  Because
+\(B_{\rm hit}\) is fixed in \(\cP\), every factor
+\(P(\widehat S_\del)\e^{C\widehat S_\del}\) is bounded by a constant times
+the corresponding factor with \(S_\del\), and
+\(\del P(\widehat S_\del)\e^{C\widehat S_\del}=o(1)\).  Hence the delayed
+evaluations from this enlarged current tube remain in the farther nested
+uncut hull with the same estimates.
+
+The Gaussian weight in
+\cref{eq:first-integral-gradient} makes
+\cref{eq:appendix-growing-remainder} integrable with no
+\(\del^{-o(1)}\) loss.
+
+Finally, extend the boundary state jets through degree three in the
+unscaled normal distance and multiply by a fixed-width cutoff.  No factor
+\(\del^{-\kappa_0}\) is generated.  The prepared planar field has the
+same rectangular bounds and equals the actual graph field on the shrinking
+tube.  With target \(\widehat S_\del\), the bootstrap
+\cref{eq:normal-bootstrap} puts the retained current points inside the
+shrinking normal component of the enlarged tube and their depth-two
+backtracks inside the nested uncut hull.  Therefore the full
+Lyapunov--Perron fixed point, rather than a truncated approximation, supplies
+the exact embedding \cref{eq:history-embedding} and semiconjugacy
+\cref{eq:exact-semiconjugacy} on every retained trace.  This completes the
+proof of the growing clauses of \cref{thm:history-graph}.

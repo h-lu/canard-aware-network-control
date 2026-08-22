@@ -1,16 +1,23 @@
-# Transverse delay organization and a canonical history-canard root
+# Long-delay shifts of local canard connections
 
-Research repository for one proof-first flagship paper:
+Research repository for the JNS manuscript:
 
-> **Transverse Delay Organization and a Canonical Local History-Canard Root
-> in a Two-Module FitzHugh--Nagumo RFDE**
+> **Long-Delay Shifts of Local Canard Connections in Retarded Fast--Slow
+> Systems**
 
-The current proof-first submission design is
-[docs/flagship-research-design.md](docs/flagship-research-design.md). It
-freezes a two-module canonical local history-connection theorem as the
-minimum publishable core. Its proof components and independent skeptical
-audit are complete. General finite-network transfer and three-coordinate
-control remain frozen and are not claims of this paper.
+The complete LaTeX manuscript, figures, appendices, cover letter, and
+submission checklist are in [manuscript/jns](manuscript/jns).  The supporting
+research design is [docs/flagship-research-design.md](docs/flagship-research-design.md).
+General finite-network transfer and three-coordinate control remain frozen
+and are not claims of this paper.
+
+Build and verify from the repository root with
+
+```sh
+python3 -m pip install -e '.[paper,test]'
+make -C manuscript/jns paper
+python3 -m pytest -q
+```
 
 ## Central question
 
@@ -55,7 +62,7 @@ For the fixed two-delay redistribution parameter \(\eta\), the component
 proofs assemble the canonical local root law
 
 \[
- \mu_c(\delta,\eta)-\mu_c(\delta,0)
+ \mu_{c,\mathcal P}(\delta,\eta)-\mu_{c,\mathcal P}(\delta,0)
  =\frac{K(\theta_0-\theta_1)}{4\alpha}\,\delta^3\eta
  +O(\delta^4|\eta|+\delta^3\eta^2),
  \qquad \delta=\sqrt\varepsilon,
@@ -99,7 +106,7 @@ open.
    complete-history map on a fixed compact fold tube. This avoids treating
    backward RFDE evolution as an initial-value problem. A triangular scale of
    common Banach fibers now proves the required
-   \(C_u^3C_{\delta,\eta}^{3,2}\) mixed regularity and an
+   \(C_u^3C_\delta^3C_\nu^1C_\eta^2\) rectangular mixed regularity and an
    \(O(\delta^3)\) fixed-tube graph remainder.
 3. **Actual local graph jet.** The proved
    mixed regularity promotes the invariance recursion to a Taylor coefficient
@@ -132,6 +139,12 @@ open.
 
 ## Repository map
 
+- `manuscript/jns/main.tex` -- JNS manuscript entry point;
+- `manuscript/jns/sections/` and `manuscript/jns/appendices/` -- self-contained
+  theorem, proof, numerical diagnostic, and technical estimates;
+- `manuscript/jns/figures/` -- deterministic vector-figure sources and PDFs;
+- `manuscript/jns/submission/` -- cover letter, editor suggestions, checklist,
+  and claim-boundary report;
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
 - `docs/flagship-research-design.md` -- proof-first main theorem, shortest dependency chain, stop/go gates, and paper architecture;
 - `docs/scope-and-theorems.md` -- frozen general-network future-work contract and its stop/go gates;

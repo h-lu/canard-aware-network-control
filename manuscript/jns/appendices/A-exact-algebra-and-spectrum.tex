@@ -1,0 +1,140 @@
+\section{Exact algebra in the prepared fold chart}
+\label{app:exact-algebra}
+
+This appendix records the finite-dimensional identities and the exact
+rescaling used in the proof.  No spectral assertion for the ambient RFDE
+generator is needed.
+
+\subsection{Modal projectors}
+
+With the notation of \cref{sec:model-main},
+\[
+ r=\vect{1\\2},\quad q=\vect{1\\-2},\quad
+ \ell=\vect{1/2\\1/4},\quad m=\vect{1/2\\-1/4}.
+\]
+Direct multiplication gives
+\[
+ \ell^Tr=m^Tq=1,\qquad \ell^Tq=m^Tr=0,
+\]
+and therefore
+\[
+ P=r\ell^T=\mat{1/2&1/4\\1&1/2},\qquad
+ P_\perp=qm^T=\mat{1/2&-1/4\\-1&1/2}.
+\]
+At \((v_*,w_*)\), the fast voltage derivative is
+\[
+ D_vF_{\rm FHN}(v_*,w_*)=\mat{-1&1/2\\2&-1}=-2P_\perp.
+\]
+Thus the critical and stable fast eigenvalues are \(0\) and \(-2\).
+The cubic terms have Hessian
+\[
+ D_v^2F_{\rm FHN}(v_*,w_*)[\xi,\zeta]
+ =\vect{-2s_*\xi_1\zeta_1\\0},
+\]
+so
+\[
+ \ell^TD_v^2F_{\rm FHN}(v_*,w_*)[r,r]=-s_*\ne0.
+\]
+Along \(v=v_*+rX\), the slow source is exactly
+\[
+ \vect{v_1-s_*-\mu\\v_2-2\mu}=r(X-\mu).
+\]
+These identities establish a one-dimensional nondegenerate fold and its
+unfolding before any asymptotic reduction.
+
+\subsection{Delay-layer identities}
+
+The four entries depending on \(\eta\) are
+\[
+ \frac16+\eta,\qquad \frac16-2\eta,\qquad
+ \frac13-\eta,\qquad \frac12+2\eta.
+\]
+Their strict positivity is equivalent to
+\(-1/6<\eta<1/12\).  Since \(Tr=q\) and \(\ell^Tq=0\),
+\begin{align*}
+ C_0^\eta r&=\frac13r+\eta q,&
+ C_1^\eta r&=\frac23r-\eta q,\\
+ \ell^TC_0^\eta r&=\frac13,&
+ \ell^TC_1^\eta r&=\frac23.
+\end{align*}
+It follows atom by atom that
+\[
+ \ell^T\mathbb B_\eta(\dd\theta)r
+ =\frac13\delta_{\theta_0}(\dd\theta)
+  +\frac23\delta_{\theta_1}(\dd\theta),
+\]
+whereas
+\[
+ P_\perp\mathbb B_\eta(\dd\theta)r
+ =\eta q\bigl[\delta_{\theta_0}(\dd\theta)
+              -\delta_{\theta_1}(\dd\theta)\bigr].
+\]
+Also \(Br=r\), so constant histories annihilate the delayed difference.
+
+\subsection{Exact anisotropic scaling}
+
+Let \(s=\del t\), \(\eps=\del^2\), and use
+\cref{eq:blowup-scaling}.  The modal coordinates are recovered exactly as
+\[
+ X=\del^{-1}\ell^T(v-v_*),\qquad
+ Z=\del^{-2}m^T(v-v_*),
+\]
+and similarly
+\[
+ Y=-\del^{-2}\ell^T(w-w_*),\qquad
+ W=\del^{-4}m^T(w-w_*).
+\]
+The physical delay \(\theta_j/\del\) becomes the fixed translation
+\(s\mapsto s-\theta_j\).  Taylor expansion is unnecessary because the local
+field is polynomial.  Projecting the exact substituted equations with
+\(\ell^T,m^T\) yields \cref{eq:exact-chart}.
+
+The recovery scaling \(W=O(1)\) in chart variables is forced.  Indeed, the
+fixed physical coupling gives
+\[
+ -d_wP_\perp(w-w_*)=-d_w\del^4qW,
+\]
+while the transverse component of the slow source is
+\(\del^4qZ\).  Division by the chart time factor therefore gives
+\(\del W'=Z-d_wW\), as in \cref{eq:exact-chart}.  An isotropic
+\(O(\del^2)\) recovery scaling would instead leave a singular
+\(-d_w/\del\) coefficient and obscure the invariant-graph balance.
+
+\subsection{Exact model fitting}
+
+Apply the shift \cref{eq:stable-shift}.  Because
+\[
+ \del\widehat Z'
+ =\del Z'+\alpha\del X X',
+ \qquad
+ \del\widehat W'
+ =\del W'+\frac{\alpha\del}{d_w}XX',
+\]
+substitution into \cref{eq:exact-chart} gives
+\[
+ q_0(X,Y)=\vect{Y-\alpha X^2\\-X},
+ \qquad
+ A=\mat{-2&0\\1&-d_w}.
+\]
+The singular constant terms in the stable equation cancel identically.
+Every remaining monomial in both shifted equations contains at least one
+factor of \(\del\).  Hence there are polynomial functions \(F,G\), with
+only the fixed translations \(\theta_0,\theta_1\), for which
+\cref{eq:special-flow-system} is an identity.
+
+For \(d_w>0\),
+\[
+ \det(\lambda I-A)=(\lambda+2)(\lambda+d_w),
+\]
+so there are \(M_A,\beta>0\) such that
+\(\|\e^{Ar}\|\le M_A\e^{-\beta r}\) for \(r\ge0\).  This is the only
+linear spectral estimate used in the special-flow graph proof.  It concerns
+the two shifted stable variables, not the full RFDE characteristic
+operator.
+
+Finally, direct collection at \(\del=0\) gives \cref{eq:Q1,eq:G0}.  The
+computer-algebra implementation constructs the physical vector field and
+delay matrices first, performs the scaling and projections, and verifies
+that all four projected residuals and both reconstructed vector residuals
+vanish identically.  The source file and exact tests are listed in
+\cref{app:reproducibility}.
