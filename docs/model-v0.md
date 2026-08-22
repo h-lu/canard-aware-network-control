@@ -57,3 +57,5 @@ Primes denote \(d/ds\). The symbolic test in `tests/test_symbolic_blowup.py` ver
 ## First derivation task
 
 Reproduce the leading center-manifold/history expansion in the same normalization as Zhang et al. (2026), then evaluate its contribution to the fixed-section splitting functional. Only after the coefficient is recovered for one oscillator should the calculation be lifted to the two-module network.
+
+The scalar recovery is now complete through \(O(\varepsilon^{3/2})\); see [leading delay-moment calibration](derivation-leading-moment.md). The remaining task is the controlled network lift.

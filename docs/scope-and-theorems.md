@@ -150,6 +150,17 @@ d_r=d_{r,0}
 
 The paper will report only moments whose coefficients and uniform remainders are proved. No numerical fit will be presented as a selection law.
 
+The scalar delayed van der Pol calibration is now derived independently:
+
+\[
+a_c=1-\frac18\varepsilon
++\frac{K\Theta}{8}\varepsilon^{3/2}
++O(\varepsilon^2).
+\tag{13}
+\]
+
+Thus \(K\Theta/8\) is established for one oscillator. Replacing \(\Theta\) by a projected network moment \(M_1\) remains a guarded hypothesis until transverse delayed modes and the observable normalization are controlled; see [the leading-moment derivation](derivation-leading-moment.md).
+
 **Proof route.** Expand the reduced history functional on the nonlocal center manifold and project it with the adjoint splitting functional. A direct short-delay Taylor expansion is not used because the scaled delay is \(O(1)\).
 
 **Falsifier.** A competing history functional at the same order that cannot be represented by finitely many weighted moments on the stated delay class.
@@ -164,7 +175,7 @@ Q(u)=\bigl(F(u),R_h(u),\Delta_c^h(u)\bigr),
 F=1/T,
 \qquad
 R_h=\bigl(\max h_N-\min h_N\bigr)^2.
-\tag{13}
+\tag{14}
 \]
 
 Squaring the observable amplitude avoids the square-root singularity of amplitude at a Hopf point. Use three physically distinct controls \(u=(u_{\rm lin},u_{\rm nl},u_{\rm delay})\), where the third changes a realizable weighted delay moment while preserving nonnegative delays and admissible weights.
@@ -173,7 +184,7 @@ Squaring the observable amplitude avoids the square-root singularity of amplitud
 
 \[
 \det D_uQ(u_0)\neq0,
-\tag{14}
+\tag{15}
 \]
 
 then every nearby target \((F_*,R_*,\Delta_{c,*}^{h})\) has a unique nearby control. A rank-deficient Jacobian is a local no-go certificate for independent assignment with that actuator set.
@@ -196,7 +207,7 @@ C_{\rm RK}h^p
 +|\widehat d_N(\widehat\mu_c^h)|
 +C_{\rm int}\mathcal E_{\rm int}
 \right).
-\tag{15}
+\tag{16}
 \]
 
 Here \(\mathcal E_{\rm int}\) collects demonstrated cross-terms rather than silently treating error sources as additive. For fold-local Runge--Kutta calculations, the chain-tree defect is tracked explicitly.

@@ -40,6 +40,7 @@ These are research targets, not established results. Precise candidate statement
 
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
 - `docs/scope-and-theorems.md` -- model, definitions, candidate theorem ladder, and stop/go gates;
+- `docs/derivation-leading-moment.md` -- proved scalar \(K\Theta/8\) calibration and guarded network-lift hypothesis;
 - `docs/sprint-01.md` -- first two-week execution plan linked to GitHub issues;
 - `manuscript/outline.md` -- single-paper narrative, figures, and evidence standard;
 - `references/references.bib` -- curated and deduplicated primary references;

@@ -27,11 +27,13 @@ Acceptance: full and reduced trajectories agree at roundoff for block-synchronou
 
 ### WP3 -- Delay-moment derivation ([#3](https://github.com/h-lu/canard-aware-network-control/issues/3))
 
-- [ ] Reproduce the published delayed van der Pol blow-up scaling.
-- [ ] Expand the translated history to the first three candidate orders.
+- [x] Reproduce the published delayed van der Pol blow-up scaling.
+- [x] Derive the first two parameter solvability conditions and translated-history correction.
 - [ ] Project each term onto the chosen observable splitting.
-- [ ] Identify the first nonzero weighted moment; record all cancellations.
-- [ ] Cross-check by symbolic algebra and high-precision continuation.
+- [x] Identify the scalar first-delay coefficient \(K\Theta/8\); record its cancellation mechanism.
+- [x] Derive \(Km_1/8\) for exact rank-one networks with row-equivalent delay measures.
+- [ ] Extend the moment law to distinct rank-\(r\) modules and exclude transverse terms.
+- [ ] Cross-check the network coefficient by symbolic algebra and high-precision continuation.
 
 Acceptance: coefficient and order agree across the two derivations, without regression fitting.
 
