@@ -467,3 +467,8 @@ paper does not lead with a generic implicit-function formula, a scalar
 \(K\Theta/8\) coefficient, or the number of model components. General network
 transfer and three-coordinate control appear as main claims only after their
 promotion gates have been passed.
+
+Execution is tracked in
+[the base-theorem issue](https://github.com/h-lu/canard-aware-network-control/issues/10)
+and
+[the flagship epic](https://github.com/h-lu/canard-aware-network-control/issues/9).

@@ -106,7 +106,7 @@ proof.
 
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
 - `docs/flagship-research-design.md` -- proof-first main theorem, shortest dependency chain, stop/go gates, and paper architecture;
-- `docs/scope-and-theorems.md` -- model, Lin-gap definition, main theorem specification, and stop/go gates;
+- `docs/scope-and-theorems.md` -- general-network promotion contract and its stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;
 - `docs/two-module-reference.md` -- frozen FHN benchmark and weak-only transverse obstruction;
@@ -126,6 +126,7 @@ proof.
 
 ## Project tracking
 
+- [Base-paper main theorem](https://github.com/h-lu/canard-aware-network-control/issues/10)
 - [Flagship-paper epic](https://github.com/h-lu/canard-aware-network-control/issues/9)
 - [Milestone: Flagship paper v1](https://github.com/h-lu/canard-aware-network-control/milestone/1)
 
