@@ -8,7 +8,9 @@ complete-history lift components are written. A theorem for an arbitrary
 physical outer Fenichel maximal canard is not claimed: transfer to a fixed
 physical selection remains conditional on parameter-coherent full-history
 boundary jets. General finite-\(N\) transfer and three-coordinate control are
-frozen outside this manuscript.
+outside this manuscript. They have been reopened only as the separate
+successor program in
+[general-network-canard-pulse-control-program.md](../docs/general-network-canard-pulse-control-program.md).
 
 ## Proof-first base paper
 

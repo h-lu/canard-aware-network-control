@@ -147,6 +147,7 @@ open.
   and claim-boundary report;
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
 - `docs/flagship-research-design.md` -- proof-first main theorem, shortest dependency chain, stop/go gates, and paper architecture;
+- [docs/general-network-canard-pulse-control-program.md](docs/general-network-canard-pulse-control-program.md) -- active successor program: arbitrary finite-\(N\) one-fold history graphs, vector-gap extension, physical pulse onset, and quantitative three-output control/no-go gates;
 - `docs/scope-and-theorems.md` -- frozen general-network future-work contract and its stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;
@@ -194,6 +195,13 @@ open.
 - [Base-paper main theorem](https://github.com/h-lu/canard-aware-network-control/issues/10)
 - [Flagship-paper epic](https://github.com/h-lu/canard-aware-network-control/issues/9)
 - [Milestone: Flagship paper v1](https://github.com/h-lu/canard-aware-network-control/milestone/1)
+- [Paper II: general finite-network canard response](https://github.com/h-lu/canard-aware-network-control/milestone/2)
+- [Paper III: physical canard to pulse onset](https://github.com/h-lu/canard-aware-network-control/milestone/3)
+- [Paper IV: biological pulse-coordinate control](https://github.com/h-lu/canard-aware-network-control/milestone/4)
+- [Paper II epic](https://github.com/h-lu/canard-aware-network-control/issues/4)
+- [Paper III physical-selection epic](https://github.com/h-lu/canard-aware-network-control/issues/11)
+- [Paper III pulse-event theorem](https://github.com/h-lu/canard-aware-network-control/issues/12)
+- [Paper IV control/conditioning epic](https://github.com/h-lu/canard-aware-network-control/issues/5)
 
 ## Frozen theorem route
 
@@ -212,5 +220,8 @@ gate remains open and conditional on parameter-coherent full-history boundary
 jets. The fixed-physical-delay variant remains only a documented fallback and
 is not an active theorem target.
 
-The full \(2N\)-state Lin transfer and three-coordinate control remain frozen
-and outside this paper.
+The general-network and pulse-control work has now been reopened as a
+separate successor program. It remains outside this paper. Its primary
+one-critical-mode proof route is a dimension-uniform invariant-history graph;
+the full \(2N\)-state Lin--Fredholm route is retained for multiple center
+directions and vector gaps.

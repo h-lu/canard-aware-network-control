@@ -1,6 +1,13 @@
 # Full-network augmented Lin operator for the dual-state scaffold
 
-Status: **proof-oriented specification.** The current-state projector
+Status: **secondary proof-oriented specification.** The active Paper II
+one-critical-mode route uses the dimension-uniform invariant-history graph in
+[general-network-canard-pulse-control-program.md](general-network-canard-pulse-control-program.md).
+The full Lin--Fredholm route here is retained for multiple center directions
+or networks without a normally slaved transverse graph. Its strict reference
+direct sum cannot by itself generate a first-order transverse return; that
+return is the graph Schur-complement term in the active program. The
+current-state projector
 decomposition and singular center count below are exact algebraic facts. The
 full RFDE operator decomposition remains conditional on compatible endpoint,
 phase, and jump maps. The RFDE center/solution

@@ -1,6 +1,11 @@
 # Frozen finite-network promotion specification
 
-Status: **future-work contract, not the current paper, 2026-08-22**. The correctly augmented
+Status: **historical future-work contract, not the current paper, 2026-08-22**.
+The active successor design is
+[general-network-canard-pulse-control-program.md](general-network-canard-pulse-control-program.md);
+it adopts a graph-first proof for one-critical-mode networks, adds the
+vector-gap and physical pulse-event layers, and retains the full Lin route
+for multiple centers. The correctly augmented
 \(\mathbb R^4\) reference-gap template, dual-scaffold \(2N\)-state operator
 contract, and concrete control benchmark are frozen, and exact/formal
 algebraic checks are executable. The actual endpoint bundles, model-specific
