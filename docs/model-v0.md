@@ -59,3 +59,10 @@ Primes denote \(d/ds\). The symbolic test in `tests/test_symbolic_blowup.py` ver
 Reproduce the leading center-manifold/history expansion in the same normalization as Zhang et al. (2026), then evaluate its contribution to the adjoint Lin-gap functional. Only after the coefficient is recovered for one oscillator should the calculation be lifted to the declared two-module network.
 
 The scalar coefficients are now reproduced formally through \(O(\varepsilon^{3/2})\); see [leading delay-moment calibration](derivation-leading-moment.md). A uniform remainder and a well-posed Lin-gap interpretation remain to be proved before this becomes a threshold theorem. Only then is the network transfer addressed.
+
+The same weak scaling is singular in transverse network modes: at the fold,
+all node modes share the leading canard operator. The exact mode equation,
+first-order cancellation, and formal second splitting coefficient are recorded
+in [the two-module feasibility audit](two-module-reference.md). Those
+calculations constrain the transfer theorem but do not alter the scalar
+calibration above.

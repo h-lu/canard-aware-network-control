@@ -6,25 +6,29 @@ Goal: decide whether one RFDE canard-root transfer theorem is viable before inve
 
 ## WP1 -- Define the scalar Lin gap ([#1](https://github.com/h-lu/canard-aware-network-control/issues/1))
 
-- [ ] Fix the blown-up history space, entry/exit data, matching section, and phase condition.
-- [ ] Write the RFDE Lin boundary-value operator.
-- [ ] Determine its Fredholm index after the phase condition.
+- [x] Fix the blown-up history space, entry/exit data, matching section, and phase condition.
+- [x] Write the full-history RFDE Lin boundary-value operator.
+- [x] Correct the required post-phase index to \(-1\) and define the index-zero jump augmentation.
 - [ ] Verify that the relevant cokernel is one-dimensional.
-- [ ] Define the adjoint gap and prove coordinate/complement independence.
-- [ ] Separate a geometric maximal-canard root from an output-event threshold.
+- [x] Define the adjoint gap and its normalization-independent root response.
+- [ ] Prove coordinate/complement independence for the frozen model and norms.
+- [x] Separate a geometric maximal-canard root from an output-event threshold.
+- [ ] Construct the backward-extendible repelling piece on the RFDE center/solution manifold.
 
 Acceptance: a mathematically defined scalar gap, not a projected difference between two sets.
 
 ## WP2 -- Build the exact reference and audit transverse modes ([#2](https://github.com/h-lu/canard-aware-network-control/issues/2))
 
-- [ ] Prove the common-row-measure synchronous RFDE closure.
-- [ ] Write the exact two-module delayed FHN reference system.
-- [ ] Derive the transverse delayed variational/Lin operator.
-- [ ] Construct or bound its Green/Fredholm inverse \(G_\perp(\varepsilon)\).
-- [ ] Test whether \(O(\varepsilon)\) coupling leaves additional fold-critical directions.
-- [ ] If the inverse grows too rapidly, restrict the residual scaling or reference class.
+- [x] Prove the common-row-measure synchronous RFDE closure by substitution.
+- [x] Write the exact two-module delayed FHN reference system.
+- [x] Derive the weak-only fold-scaled transverse variational operator.
+- [ ] Construct or bound its Green/Fredholm inverse \(G_\perp(\delta)\), \(\delta=\sqrt\varepsilon\).
+- [x] Show that \(O(\varepsilon)\) delayed coupling leaves repeated fold-critical directions at \(\varepsilon=0\).
+- [x] Verify zero first and nonzero formal second inner splitting coefficients for the symmetric whole-line diagnostic.
+- [x] Restrict the weak-only class to a negative control/narrow joint limit and freeze a scaffolded FHN control benchmark.
+- [ ] Prove the one-cokernel property and bound \(G_\perp(\delta)\) for the scaffolded Lin BVP.
 
-Acceptance: an explicit \(G_\perp(\varepsilon)\) estimate or a documented falsification that narrows Theorem A.
+Acceptance: an explicit \(G_\perp(\delta)\) estimate or a documented falsification that narrows Theorem A.
 
 ## WP3 -- Complete Proposition B ([#3](https://github.com/h-lu/canard-aware-network-control/issues/3))
 
@@ -42,7 +46,7 @@ Acceptance: a theorem-level remainder; symbolic coefficient agreement alone does
 
 - [ ] Choose a residual norm that controls delay translation on the strong history space.
 - [ ] Prove \(C^2\) dependence of the Lin problem on weights, delay measures, and node parameters.
-- [ ] Solve the range equation using \(G_\perp(\varepsilon)\).
+- [ ] Solve the range equation using \(G_\perp(\delta)\).
 - [ ] Derive the first-variation functional and quadratic remainder.
 - [ ] Transfer the simple root with an explicit \(m_\varepsilon\) denominator.
 - [ ] State the joint limit needed to resolve the \(O(\varepsilon^{3/2})\) moment term.
@@ -76,8 +80,8 @@ Acceptance: all four paper claims are resolved within a reproducible uncertainty
 
 | Date | Primary output | Decision |
 |---|---|---|
-| Aug 22--24 | Lin operator, phase condition, and scalar gap | definition gate |
-| Aug 25--27 | exact reference and transverse inverse audit | theorem feasibility gate |
+| Aug 22--24 | Lin operator, phase condition, and scalar gap | specification passed; Fredholm proof open |
+| Aug 25--27 | exact reference and transverse inverse audit | weak-only uniform gate failed; scaffolded reference frozen |
 | Aug 28--30 | first-moment uniform-remainder attempt | proposition gate |
 | Aug 31--Sep 2 | Lyapunov--Schmidt/root-transfer proof | main theorem gate |
 | Sep 3 | concrete FHN sensitivity pilot | corollary gate |

@@ -1,6 +1,6 @@
 # Flagship manuscript outline
 
-Working title: **Canard-Threshold Transfer in Weakly Delayed Slow--Fast Networks**
+Working title: **Canard-Threshold Transfer under Weak Delayed Feedback in Slow--Fast Networks**
 
 ## One-sentence target
 
@@ -10,7 +10,7 @@ For a finite weakly delayed slow--fast network near a controlled equitable refer
 
 1. **Theorem A -- RFDE Lin-gap transfer.** The geometric matching root is differentiable in the structural residual, with a first-variation formula and an explicit remainder depending on the transverse Green/Fredholm inverse bound.
 2. **Proposition B -- first weighted delay moment.** The common-row-measure van der Pol class calibrates the coefficient; for the exact two-module class, a mode-closure condition selects \(M_1^{(2)}\) and yields a uniform \(O(\varepsilon^2)\) remainder.
-3. **Corollary C -- concrete FHN control.** For one fixed two-module delayed FitzHugh--Nagumo system and the frozen linear, cubic, and delay-deformation actuators, the response map \((F,R_h,\Delta_c)\) has a proved singular-value lower bound on a nonempty admissible region.
+3. **Corollary C -- concrete FHN control.** For one fixed two-module delayed FitzHugh--Nagumo system and the frozen linear, cubic, and delay-deformation actuators, the response map \((F,R_h,S_c)\) has a proved singular-value lower bound on a nonempty admissible region.
 4. **Verification D.** Independent RFDE computations resolve the physical delay term, the network-transfer term, and the numerical error separately.
 
 Exact equitable closure is a supporting lemma. The inverse-function theorem and scalar root perturbation step are tools, not novelty claims.
@@ -26,14 +26,16 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
 
 2. **Reference RFDE and exact closure**
    - Weak-feedback/scaled-delay model and the fixed blown-up history interval.
+   - Fixed instantaneous transverse scaffold for the concrete FHN benchmark; it vanishes on the collective history.
    - Common-row-measure synchronous RFDE and the two-module FHN reference class.
    - Residual norm for weights, delay measures, and node heterogeneity.
    - Why adjacency spectral gap alone does not control the fold passage.
 
 3. **One-dimensional Lin matching problem**
    - Entry and exit data, matching section, and phase condition.
-   - Fredholm linearization, one-dimensional cokernel, and adjoint vector.
-   - Transverse inverse \(G_\perp(\varepsilon)\).
+   - Full-history jump and the center/solution-manifold construction of the backward-extendible repelling piece.
+   - Post-phase Fredholm index \(-1\), one-dimensional cokernel, and the index-zero scalar-jump augmentation.
+   - Transverse inverse \(G_\perp(\delta)\), \(\delta=\sqrt\varepsilon\).
    - Definition of the geometric Lin gap and its simple root.
    - Separate definition of experimental output-event thresholds.
 
@@ -46,15 +48,15 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
 
 5. **Theorem A: structural transfer to the finite network**
    - Differentiability of the RFDE Lin problem in the chosen residual norm.
-   - Lyapunov--Schmidt/range equation controlled by \(G_\perp(\varepsilon)\).
+   - Lyapunov--Schmidt/range equation controlled by \(G_\perp(\delta)\).
    - First-variation functional and quadratic remainder.
    - Root transfer through the explicit transversality denominator.
    - Joint limit needed to distinguish an \(O(\varepsilon^{3/2})\) physical effect.
 
 6. **Corollary C: two-module FHN three-coordinate control**
-   - Fix equations, observable, parameter box, periodic branch, and the linear, cubic, and delay-deformation actuators.
+   - Fix the scaffolded equations, asymmetric output, parameter box, periodic branch, and the linear, cubic, and common-delay-shift actuators.
    - Periodic-orbit sensitivities for frequency and squared peak-to-peak amplitude.
-   - Lin-root sensitivity for the safety margin.
+   - Lin-root sensitivity for the positive safety margin \(S_c=a_{\rm op}-a_c\).
    - Factor the Jacobian through its \((F,R_h)\) block and safety Schur complement.
    - Prove a singular-value lower bound and a quantitative local inverse radius.
    - Give a structural one-/two-actuator obstruction; a rank-zero at one point is not called a no-go result.
@@ -69,6 +71,7 @@ Exact equitable closure is a supporting lemma. The inverse-function theorem and 
    - What is proved, computationally enclosed, or only suggested.
    - Failure modes: multiple Lin gaps, rapidly growing \(G_\perp\), matrix-valued delay effects, peak switching, and actuator rank loss.
    - General rank-\(r\), graphons, strong delay, and nonnormal sparse networks remain future work.
+   - Weak-only identical modules form a singular multi-canard limit: the canonical inner first splitting cancels and the formal second coefficient predicts \(G_\perp=O(\varepsilon^{-1})\).
 
 ## Planned figures
 
