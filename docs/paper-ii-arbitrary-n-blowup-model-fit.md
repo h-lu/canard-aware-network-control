@@ -8,8 +8,13 @@ all estimates use the node maximum norm with constants independent of
 they give a dimension-uniform invariant complete-history graph on the
 logarithmic fold tube for the prepared lifted class.
 
-They do **not** give a complete-history gap inverse, a canard root, an outer
-slow-manifold selection, or a biological pulse theorem. The exact algebra is
+By themselves they do **not** give a complete-history gap inverse, a canard
+root, an outer slow-manifold selection, or a biological pulse theorem.  The
+compatible canonical root for this exact quotient is now supplied by the
+separate
+[selected-root lift theorem](paper-ii-selected-root-lift-and-symmetry-breaking.md),
+which uses equivariance and the proved two-module trace rather than silently
+assuming a new arbitrary-network Lin inverse. The exact algebra here is
 reproduced in
 [lifted_network_blowup.py](../src/canard_control/lifted_network_blowup.py);
 the tests compare its block-constant restriction with the already audited
@@ -440,11 +445,15 @@ uniform coordinate bounds. The abstract corollary applies. \(\square\)
 
 This closes the **blow-up/model-fitting and invariant-history part of Gate
 A** for the declared lifted family, including uniformly bounded balanced
-operator-TV residuals. It does not close the later gates:
+operator-TV residuals.  The companion selected-root theorem now closes the
+compatible canonical connection and the nonzero combined non-equitable
+tangent through the exact quotient.  This note alone does not close the
+later gates:
 
-1. no uniform complete-history Lin inverse or simple gap root is proved;
-2. no nonzero Melnikov coefficient is proved for the non-equitable
-   within-module family of Proposition 6.1;
+1. no uniform complete-history Lin inverse or simple gap root is proved for
+   a general residual or a network without the exact quotient;
+2. the pure within-module family of Proposition 6.1 has zero first response;
+   no nonzero quadratic or higher coefficient is proved;
 3. no local prepared history is identified with a physical outer maximal
    canard;
 4. no spike onset, pulse safety boundary, frequency, or amplitude control

@@ -5,8 +5,11 @@ below are proved.  Persistence of either fast channel on a fixed layer is a
 finite-time perturbation result.  The original backward-complete outer rule
 is disproved as a sufficient selection principle, and the repaired
 parameter-coherent Gate P3-A\(^*\) down to the logarithmic fold tube is open.
-Consequently this note does not relabel the preparation-indexed JNS root as a
-physical maximal canard.**
+The causal one-delay reset history and existence of a positive-\(\varepsilon\)
+reset-transition set are proved separately, but uniqueness of that set is
+the open signed-exchange Gate R-S.  Consequently this note does not relabel
+the preparation-indexed JNS root as a physical maximal canard or a reset
+pulse root.**
 
 The exact singular algebra and numerical falsifiers are in
 `src/canard_control/physical_pulse_bridge.py`; the regression tests are in
@@ -227,8 +230,8 @@ For a concrete fixed layer, take \(\rho_0=-1/2\).  The three critical
 coordinates are
 
 \[
- \xi^-=-1.8891168\ldots,qquad
- \xi^m=-0.8551591\ldots,qquad
+ \xi^-=-1.8891168\ldots,\qquad
+ \xi^m=-0.8551591\ldots,\qquad
  \xi^+=0.6580668\ldots.
 \tag{3.3}
 \]
@@ -377,12 +380,14 @@ uncontrolled \(e^{c/\delta^2}\), and must do so for the full history and its
 mixed parameter jets.  A characteristic-root count or current-state slow
 manifold does not provide this statement.
 
-For a biological pulse experiment there is a second, causal theorem target:
-hold or reset the network for at least one maximal physical delay, release it
-from the resulting declared complete history, and define the pulse/quiet
-boundary by shooting that history.  This removes the nonunique outer-family
-choice.  It proves an operational preparation-dependent threshold rather
-than an intrinsic intersection of arbitrary outer Fenichel curves.
+For a biological pulse experiment, the causal alternative is developed in
+`paper-iii-causal-reset-separator.md`.  A voltage hold of at least
+one maximal physical delay, together with a declared collective-recovery
+preset, produces an explicit released complete history and removes the
+nonunique outer-family choice.  Opposite pulse/quiet endpoint outcomes and a
+nonempty transition set are proved.  A voltage hold by itself does not erase
+collective recovery error, and the transition set is not yet proved to be a
+single basin boundary; that is the signed-exchange Gate R-S.
 
 ## 5. What can and cannot define an operational threshold
 
@@ -469,7 +474,7 @@ so the displayed action is finite.
 For example, the point \(H=-\xi=1\) on the saddle branch gives
 
 \[
- a_H=-0.1797305256\ldots,qquad
+ a_H=-0.1797305256\ldots,\qquad
  \mathcal A_H=0.7047846186\ldots.
 \tag{5.5}
 \]
@@ -589,20 +594,24 @@ channel whose threshold is exactly (5.2).
 
 The shortest honest Paper III chain is now:
 
-1. **Outer histories (open Gate P3-A\(^*\)).**  Construct the normalized,
-   common-graph-compatible attracting and repelling complete-history
-   selections with (4.3)--(4.3a), or explicitly adopt the causal
-   one-delay reset protocol for an operational pulse theorem.
-2. **Physical root transfer.**  Use the proved Gaussian trace-to-gap theorem
-   to obtain (4.4)--(4.5) and the physical maximal-canard response.
-3. **Exit inclination.**  Prove a signed normal coordinate
+1. **Choose the preparation.**  For an intrinsic physical maximal canard,
+   construct the normalized common-graph outer histories in open Gate
+   P3-A\(^*\).  For an operational theorem, use the proved causal released
+   history in `paper-iii-causal-reset-separator.md`.
+2. **Intrinsic physical root transfer.**  Under P3-A\(^*\), use the proved
+   Gaussian trace-to-gap theorem to obtain (4.4)--(4.5) and the physical
+   maximal-canard response.
+3. **Signed exchange.**  For the intrinsic route prove a signed normal
+   coordinate
    \[
    n_{\rm exit}=\Gamma_\delta d_{\rm phys}
                  +O(d_{\rm phys}^2),
    \qquad |\Gamma_\delta|\ge\Gamma_*>0,
    \tag{6.1}
    \]
-   with complete-history endpoint terms included.
+   with complete-history endpoint terms included.  For the reset route,
+   prove Gate R-S: a complete-history scalar whose sign selects the two
+   passage blocks and whose derivative along the reset curve is nonzero.
 4. **Two-channel exchange and separation.**  Use (6.1), the repelling action,
    and Theorem 3.1 to construct pulse and quiet isolating blocks.  A complete
    local basin-separation argument must cover every nonzero gap in the
@@ -637,6 +646,10 @@ with the Lin and numerical enclosure errors reported independently.
 | Original backward-complete outer selection | Disproved as sufficient | It leaves the repelling unstable coefficient and mixed jets undetermined |
 | Compatible attracting/repelling history selection to the logarithmic tube | Open Gate P3-A\(^*\) | Normalized curve-wise dichotomy, mixed strong-history jets, fixed-to-log trace estimate, and exact common-graph gluing |
 | Physical complete-history maximal canard | Conditional on Gate P3-A\(^*\) | Gaussian root transfer is already available |
+| Causal one-delay released history | Proved exactly | Explicit voltage-hold/recovery-preset history and exact memory-erasure identity |
+| Unknown collective recovery is erased by the hold | False | Its error is invariant; it must be preset, measured, or controlled |
+| Opposite reset outcomes and a nonempty transition set | Proved for small positive \(\varepsilon\) | Singular channel endpoints, finite-time persistence, and connectedness |
+| Unique reset separator/simple reset root | Open Gate R-S | Complete-history signed exchange, no third outcome, and one transverse reset-curve crossing |
 | Gap sign to channel sign | Open | Inclination/exchange estimate (6.1) through the repelling outer branch |
 | Channel threshold error | Exactly zero once the channel separator is proved | No exponential estimate is needed |
 | Amplitude-detector threshold error | Abstract quantitative chart implication proved; model chart open | Two-sided subexponential target/prefactor bounds, \(C^1\)-small normalized landing remainder, unique local peak branch, no peak switching, interval/DDE certification |

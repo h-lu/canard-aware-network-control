@@ -8,9 +8,13 @@ of positive integers \(n_1,n_2\), with constants independent of
 \(N=n_1+n_2\) where explicitly stated. The companion
 [arbitrary-\(N\) blow-up lemma](paper-ii-arbitrary-n-blowup-model-fit.md)
 now closes the special-flow model fit and invariant-history application for
-this class. Section 7 separates that result from the root and pulse gates
-which remain open. No claim from this note is inserted into the completed
-JNS manuscript.
+this class. The subsequent
+[selected-root lift theorem](paper-ii-selected-root-lift-and-symmetry-breaking.md)
+now closes the compatible canonical root and its dimension-uniform response
+for the exact quotient, and constructs a genuinely non-equitable combined
+tangent. Section 7 separates those results from the general residual and
+physical pulse gates which remain open. No claim from this note is inserted
+into the completed JNS manuscript.
 
 ## 1. Exact node class
 
@@ -472,9 +476,12 @@ by taking the maximum of two-by-two row sums.
 Equation (5.4) is the arbitrary-\(N\) replication of the **module-difference
 channel that already has a proved nonzero transverse return in the JNS base
 paper**. It leaves the complete critical projected delay measure unchanged.
-This is the only nonzero canard-return mechanism claimed at this stage; its
-coefficient is inherited on the exactly invariant block-constant subspace,
-not newly proved for a general non-equitable network.
+For compatible equivariant preparations, the selected-root lift theorem now
+proves that its coefficient is inherited exactly for every pair of module
+sizes.  That theorem also adds a within-module zero-average component to
+obtain a genuinely non-equitable tangent without changing the first root
+response.  It does not assert a nonzero first coefficient for the pure
+within-module component.
 
 ## 6. Operator-TV residuals and a conditionally positive non-equitable family
 
@@ -665,13 +672,15 @@ so it is not a Gate A uniform residual family.
 
 The residual (6.10) lives in a within-module zero-average direction. For the
 nodewise cubic (1.4), its first cross contraction with a block-constant
-critical state has zero module average. Therefore Proposition 6.1 proves
-**openness beyond equitability and, under (6.14), a dimension-uniform
-positive subfamily**,
-not a nonzero \(O(\delta^3)\) Melnikov coefficient. Such a coefficient could
-vanish at first order and must be calculated from the complete history graph.
-The established nonzero first-order return remains the lifted module
-direction (5.4).
+critical state has zero module average. The selected-root lift theorem makes
+the consequence sharp: for every relabeling-covariant canonical matcher its
+first gap and root derivatives vanish exactly by Reynolds averaging.  Thus
+Proposition 6.1 proves **openness beyond equitability and, under (6.14), a
+dimension-uniform positive subfamily**, but the pure direction cannot supply
+a nonzero first-order Melnikov coefficient.  A quadratic or higher pure
+response remains to be calculated.  The established nonzero first-order
+return remains the lifted module direction (5.4), including a combined
+non-equitable tangent obtained by adding any fixed multiple of (6.10).
 
 ## 7. Exact results versus later theorem targets
 
@@ -687,18 +696,27 @@ The following are now exact for the declared node class:
 5. exact maximum-norm lifting of the two delay layers and the known
    module-difference return direction;
 6. atomic maximum-norm operator-TV bounds and a non-equitable perturbation
-   family with a dimension-uniform positive subfamily under (6.14).
+   family with a dimension-uniform positive subfamily under (6.14);
+7. for compatible equivariant preparations, exact equality of the
+   arbitrary-size canonical selected gap/root with the two-module gap/root,
+   including the uniform \(\delta^3\eta\) coefficient;
+8. exact first-response nullity of the pure distributed within-module
+   breaker and a genuinely non-equitable combined tangent with nonzero
+   inherited response.
 
 The companion blow-up lemma proves the exact full-stable-fiber scaling,
 stable-variable shift, fixed-atom operator-TV representation, transformed
 \(C^{12}\) bounds, componentwise bounded preparation, RFDE well-posedness,
 and the dimension-uniform logarithmic invariant-history graph for this
-class. What remains open begins at the **connection and response gates**:
+class. The selected-root lift theorem closes the compatible canonical
+connection through the exact quotient. What remains open begins at the
+**general response and physical gates**:
 
-1. prove a uniform complete-history gap inverse and simple root, the
-   Schur--Melnikov derivative for a general non-equitable residual, and an
-   \(N\)-uniform remainder;
-2. identify the selected local histories with physical outer slow histories
+1. calculate a nonzero pure within-module quadratic/higher response, or prove
+   a root-response theorem for a general non-equitable operator-TV residual;
+2. prove a selected root for a network class without an exact two-module
+   quotient, such as the shared-resource Dobrushin class;
+3. identify the selected local histories with physical outer slow histories
    and then with biological pulse onset.
 
 Equation (4.5) is the singular stable-semigroup input used by the companion
@@ -706,7 +724,8 @@ model-fitting lemma.
 A full positive-\(\delta\) RFDE spectral dichotomy is neither established
 here nor required by the graph-first theorem; it would belong to the
 optional direct full-Lin route. Likewise, (6.2)--(6.4) give the correct
-residual topology without proving that a canard root responds nontrivially.
+residual topology without proving a nonzero response for every residual;
+the pure distributed breaker is in fact a first-response null direction.
 
 ## 8. Reproduction
 

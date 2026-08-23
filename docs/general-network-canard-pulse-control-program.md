@@ -43,15 +43,15 @@ They remain separate proof gates. Inserting all three chains into the current
 
 | Component | Current status | Remaining promotion gate |
 |---|---|---|
-| Dimension-uniform special-flow history graph | Proved at the abstract normal-form level, including Banach structural parameters and exact history lift | Selected one-sided trace/simple-root hypotheses for a concrete arbitrary-\(N\) family |
-| Lifted unequal-module network | Exact arbitrary-\(N\) blow-up and maximum-norm model fit proved | Non-equitable complete-history coefficient and root remainder |
-| Shared-resource Dobrushin class | Uniform transverse semigroup and fold chart proved | Explicit tame preparation and physical root response |
+| Dimension-uniform special-flow history graph | Proved abstractly; compatible canonical selected traces and a simple root are now proved for the exact unequal-module quotient | Selected root for a class without an exact two-module quotient |
+| Lifted unequal-module network | Exact arbitrary-\(N\) blow-up, canonical gap/root lift, uniform \(\delta^3\eta\) response, pure-breaker nullity, and a non-equitable nonzero combined tangent proved | Pure-breaker quadratic/higher coefficient and general non-equitable residual response |
+| Shared-resource Dobrushin class | Uniform transverse semigroup and fold chart proved; projection-neutral interior root terms cancel through physical order \(\delta^4\) | Explicit selected traces/endpoints and the next nonzero response order, or a heterogeneous-curvature witness |
 | Vector gap/codimension | Abstract Lyapunov--Schmidt theorem proved; independent recoveries have an exact \((N+1)\)-dimensional singular generalized center and \(N-1\) slow transverse roots | Compute the selected-history Fredholm index \(q_N\); the center count alone is not that index |
-| Schur--Melnikov response | Banach-scale response link and block/root calculus proved | Model-specific trace/endpoint factorization and nonzero arbitrary-\(N\) witness |
-| Physical outer continuation | Original backward-complete rule disproved as sufficient | Compatible normalized Gate P3-A\(^*\), or causal reset-history theorem |
-| Singular pulse/quiet geometry | Proved for the two-module fast layer | Positive-\(\varepsilon\) exit inclination and exact basin separation |
+| Schur--Melnikov response | Banach-scale response link and block/root calculus proved; the exact quotient supplies a nonzero arbitrary-\(N\) canonical witness | Model-specific factorization for a network without the quotient and a pure symmetry-breaking coefficient |
+| Physical outer continuation | Original backward-complete rule disproved as sufficient; causal released history and memory overwrite proved | Compatible normalized Gate P3-A\(^*\), or reset-to-canard factorization |
+| Singular pulse/quiet geometry | Fast-layer channels, fixed-fast-time RFDE passage cylinders, opposite reset outcomes, and a nonempty transition set proved | Signed reset separator Gate R-S and, separately, canard-to-reset exchange |
 | Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
-| Frequency--amplitude--safety conditioning | Abstract bounded-gain obstruction proved | Verify the physical canard-layer representation and periodic RFDE adjoints |
+| Frequency--amplitude--safety conditioning | Abstract bounded-gain obstruction and the periodic/event RFDE adjoint calculus proved | Certify the FHN periodic branch, extrema, physical separator, transverse Floquet stability, and response rank/no-go bound |
 
 ## 2. General network geometry
 
@@ -319,7 +319,9 @@ this formula, including the \(C_b^9\to C_b^8\to C_b^7\) response scale,
 complete-history extension/restriction, trace elimination, and endpoint
 chain rule, is proved abstractly in
 [banach-scale-history-schur-link.md](banach-scale-history-schur-link.md).
-Its concrete selected-trace hypotheses remain a Paper II model obligation.
+Its concrete selected-trace hypotheses are now verified for the compatible
+canonical unequal-module quotient.  They remain a Paper II obligation for a
+network class without that exact quotient and for arbitrary endpoint rules.
 
 ### 4.2 Schur--Melnikov functional
 
@@ -414,15 +416,16 @@ The abstract functional-analytic statement is now proved in
 [general-network-schur-melnikov-proof.md](general-network-schur-melnikov-proof.md):
 on the admissible projection-neutral Banach tangent space, one nonzero
 continuous linear response functional has a closed codimension-one kernel,
-and its complement is open and dense.  The two-module paper supplies one
-witness with
-\(\Pi_{\parallel,N}(\Delta\mathbb B)=0\) and
-\(\mathfrak M_N[\Delta\mathbb B]\ne0\) at \(N=2\). Paper II must still
-prove that the coefficient obtained from its complete trace problem is a
-continuous functional on the declared arbitrary-\(N\) perturbation space and
-construct a nonzero admissible witness there.  Uniform genericity additionally
-requires normalized witnesses bounded away from zero along the network
-family.
+and its complement is open and dense.  The
+[selected-root lift theorem](paper-ii-selected-root-lift-and-symmetry-breaking.md)
+now supplies, for every pair of positive module sizes, a projection-neutral
+non-equitable tangent with a nonzero canonical root derivative: the tangent
+is the lifted module-difference direction plus a distributed zero-mean
+breaker.  The latter is itself an exact first-response null direction by
+Reynolds averaging.  This closes the existence of a dimension-uniform witness
+for the exact quotient.  Paper II must still prove the model-specific
+factorization and construct a witness for a class without that quotient, or
+evaluate a nonzero quadratic/higher coefficient for the pure breaker.
 
 This converts the bespoke witness into an open constrained mechanism.
 Layerwise critical-mode closure kills the delayed source term only when the
@@ -439,11 +442,14 @@ fixed Hurwitz blocks with a common semigroup bound. Small operator-TV
 residuals may break equitability, perturb every edge, add fixed-support
 heterogeneous delays, and introduce fold-compatible node heterogeneity.
 
-This gives an open class of finite heterogeneous delayed networks near a
-nonuniform two-module simple-fold architecture. It is the minimum concrete
-family needed to prevent the abstract theorem from merely assuming all
-network difficulty away. A shared-slow-resource model on connected
-reversible graphs is the second, more biologically natural target.
+For compatible relabeling-covariant canonical selections, this quotient
+class now has an exact arbitrary-size root and a genuinely non-equitable
+nonzero tangent.  The pure zero-mean breaker has zero first response, and the
+proved finite-amplitude remainder is
+\(O(\delta^4|\eta|+\delta^3\eta^2+\delta^2\zeta^2)\); it must not be
+relabelled as a nonzero pure-breaker Melnikov law.  A shared-slow-resource
+model on connected reversible graphs remains the second, more biologically
+natural target and the required test without an exact two-module quotient.
 
 ## 5. Paper III: physical maximal canard and pulse onset
 
@@ -762,31 +768,40 @@ outer, event, Lin, numerical, and model errors.
 
 ### Paper II
 
-1. prove the original network-to-(GN) fitting lemma;
-2. prove the dimension-uniform history graph;
-3. derive (4.4)--(4.11), including endpoint/history terms;
-4. prove genericity on \(\ker\Pi_{\parallel,N}\);
-5. prove the vector-gap/codimension theorem or restrict the title to the
+1. extend the selected-root proof from the exact unequal-module quotient to
+   a network class without a two-module quotient;
+2. evaluate the pure-breaker quadratic/higher response or prove a general
+   non-equitable operator-TV response theorem;
+3. derive the model-specific form of (4.4)--(4.11), including
+   endpoint/history terms, for that non-quotient class;
+4. prove genericity there on \(\ker\Pi_{\parallel,N}\);
+5. compute the concrete vector-gap index or restrict the title to the
    one-critical-mode class;
-6. verify one nontrivial \(N\)-uniform graph family.
+6. retain the exact quotient theorem as the dimension-uniform nonzero witness
+   and regression class.
 
 ### Paper III
 
-1. prove the normalized compatible outer continuation P3-A\(^*\), including
-   its \(C^1_\mu C^2_u\) strong-history jets and exact common-graph gluing,
-   or adopt and analyze a one-delay causal history-reset protocol;
-2. prove the gap-to-exit map is transverse;
-3. prove the quiet/pulse global channels;
-4. prove the full exchange-and-basin separator that makes the channel
-   identity (5.2) a theorem;
+1. for the intrinsic route, prove normalized compatible outer continuation
+   P3-A\(^*\), including its \(C^1_\mu C^2_u\) strong-history jets and exact
+   common-graph gluing; for the operational route, retain the now-proved
+   one-delay causal release and memory-overwrite theorem;
+2. prove the signed reset separator Gate R-S (unique complete-history normal
+   coordinate, transverse reset crossing, and no third local outcome);
+3. if equality with the canard root is claimed, prove the reset-to-canard
+   factorization and its small preparation error separately;
+4. prove the full exchange-and-basin separator that makes the intrinsic
+   channel identity (5.2) a theorem;
 5. independently, if an amplitude-detector coordinate is used, verify the
    quantitative landing-chart hypotheses that yield (5.2a);
 6. enclose all three error layers in (5.4).
 
 ### Paper IV
 
-1. prove periodic-branch hyperbolicity and unique extrema;
-2. derive and independently check all three sensitivity rows;
+1. prove periodic-branch hyperbolicity and unique extrema on a nonempty FHN
+   parameter box;
+2. use the now-proved periodic/event adjoint formulas to enclose all three
+   FHN sensitivity rows, including the physical separator row;
 3. resolve the canard-conditioning alternative in Section 6.3;
 4. prove (6.5) or the structural no-go theorem;
 5. give a quantitative inverse/network-robustness radius;

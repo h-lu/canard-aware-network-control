@@ -341,3 +341,23 @@ Paper IV should prove exactly one of the following.
 The abstract result here supplies the second theorem once the amplitude
 layer and physical pulse coordinate are verified.  It does not prove those
 model-specific hypotheses.
+
+## 7. Periodic and separator response formulas now available
+
+The companion note
+[`paper-iv-periodic-rfde-adjoints.md`](paper-iv-periodic-rfde-adjoints.md)
+now proves the abstract periodic-RFDE derivative formulas needed to evaluate
+the rows in (1.3).  It gives the normalized periodic linearization, its
+advanced discrete-delay adjoint, the period and frequency derivatives, the
+unique-peak envelope theorem, a distributional amplitude adjoint with its
+jump and phase conditions, and a causal reset-to-landing adjoint for a
+physical separator.  It also specializes every periodic coefficient to the
+declared synchronous two-delay FHN equation and fixes the exact
+\(3\times3\) response target for \(u=(\kappa_1,\kappa_3,s)\).
+
+This closes the abstract sensitivity calculus, not the model theorem.  The
+periodic bordered inverse, unique extrema, physical separator, full-network
+transverse Floquet multipliers, and a boxwise response bound remain to be
+certified.  Consequently the status stated at the beginning of this note is
+unchanged: the delayed-network use of the conditioning result remains
+conditional on the Paper III bridge and on those periodic-orbit hypotheses.

@@ -529,21 +529,24 @@ makes every fixed algebraic coefficient, including the
 
 ### 6.2 A biological history-reset protocol
 
-If the target is an operational pulse threshold rather than an intrinsic
-maximal-canard intersection, a causal repair is cleaner.  Prescribe an
-outer holding/reset phase of at least one maximal physical delay
-\(\theta_1/\delta\), so that release occurs from one explicitly known
-complete history.  Make that reset history independent of the control, or
-give it declared \(C^1_\nu C^2_\eta\) bounds.  Then define the pulse
-threshold by shooting this fixed history to the two channel blocks of
-`paper-iii-physical-outer-pulse-bridge.md`.
+The causal alternative is now constructed in
+`paper-iii-causal-reset-separator.md`.  Its final hold lasts at
+least one maximal physical delay, clamps the voltage, presets the collective
+recovery coordinate, and lets the physical recovery equation generate the
+released history.  The resulting fixed-interval history is explicit,
+parameter smooth, and independent of pre-hold delayed voltage memory.  The
+same calculation proves that a voltage hold alone cannot erase an unknown
+collective recovery error; that error survives exactly, whereas transverse
+recovery error decays like \(e^{-D_wT_R}\).
 
-This protocol removes the nonunique outer-manifold choice.  Its theorem is
-about a pulse/quiet basin boundary for a fixed biological preparation, not
-about equality of two arbitrary Fenichel slow curves.  The local canard root
-can still approximate that event boundary after a separate exchange
-estimate, but exact common-history intersection is no longer asserted where
-it is not needed.
+For a reset path through the two singular fast channels, opposite
+positive-\(\varepsilon\) endpoint outcomes and a nonempty compact
+transition set are proved.  What remains open is the signed exchange Gate
+R-S: show that the transition set is one simply crossed complete-history
+separator and that its sign selects the two blocks arbitrarily close to the
+root.  Thus the causal construction removes the nonunique outer-manifold
+choice, but it does not yet identify a unique reset threshold with the
+preparation-indexed canard root.
 
 ## 7. Consequence for the current Paper III claim
 
@@ -557,9 +560,10 @@ the lack of a sufficiently clever norm:
 - exponential closeness to the local history graph does not imply exact
   history membership or a scalar-codimension intersection.
 
-The minimal theorem repair is to replace “choose the physical outer
+The intrinsic-canard repair is to replace “choose the physical outer
 selections” by the fully specified compatible Lyapunov--Perron boundary
-normalization in Gate P3-A$^*$.  The minimal biological repair is the
-history-reset shooting protocol.  Until one of these is adopted and its
-model-specific estimates are proved, the preparation-indexed local root
-must remain distinct from a physical outer maximal-canard or pulse root.
+normalization in Gate P3-A$^*$.  The causal reset repair is now exact through
+existence of a transition set, but its unique-boundary conclusion remains
+conditional on Gate R-S.  Until P3-A$^*$ or the corresponding reset
+exchange/root comparison is proved, the preparation-indexed local root must
+remain distinct from a physical outer maximal-canard or pulse root.
