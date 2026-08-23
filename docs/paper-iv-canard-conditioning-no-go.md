@@ -355,9 +355,11 @@ physical separator.  It also specializes every periodic coefficient to the
 declared synchronous two-delay FHN equation and fixes the exact
 \(3\times3\) response target for \(u=(\kappa_1,\kappa_3,s)\).
 
-This closes the abstract sensitivity calculus, not the model theorem.  The
-periodic bordered inverse, unique extrema, physical separator, full-network
-transverse Floquet multipliers, and a boxwise response bound remain to be
-certified.  Consequently the status stated at the beginning of this note is
-unchanged: the delayed-network use of the conditioning result remains
-conditional on the Paper III bridge and on those periodic-orbit hypotheses.
+This closes the abstract sensitivity calculus, not the model theorem.  A
+later MPFR-directed certificate now supplies the periodic bordered inverse,
+unique extrema, and a positive boxwise two-output response bound on a
+microscopic gain box.  The physical separator, full-network transverse
+Floquet multipliers, and second-sensitivity/target-radius bounds remain to be
+certified.  Consequently the delayed-network use of the conditioning result
+remains conditional on the Paper III bridge and on those remaining
+model-level hypotheses.

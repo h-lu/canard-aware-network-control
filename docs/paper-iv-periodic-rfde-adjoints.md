@@ -660,13 +660,16 @@ paper-iv-canard-conditioning-no-go.md.
 
 ### Minimal missing model certification
 
-Promoting (7.2) to a positive or negative Paper IV theorem requires all of
-the following:
+Promoting (7.2) to a positive or negative three-output Paper IV theorem uses
+the following ledger:
 
 1. a nonempty parameter box carrying a periodic branch and an enclosure of
-   the bordered inverse (2.6), including the advanced adjoint (2.2);
+   the bordered inverse (2.6): **supplied** by the later D1 certificate; an
+   advanced-adjoint enclosure is still needed only if that representation is
+   used instead of the already-certified direct sensitivity columns;
 2. unique nondegenerate maximum and minimum branches for \(V\), with a
-   uniform curvature bound and exclusion of peak switching;
+   uniform curvature bound and exclusion of peak switching: **supplied** by
+   the later D3 certificate;
 3. either Gate P3-A\(^*\) or the causal one-maximal-delay reset theorem,
    followed by the exit and two-channel separation theorem, so that
    \(\Gamma\) in (5.1) is a physical signed separator;
@@ -674,13 +677,17 @@ the following:
    reset-history or outer-history and endpoint terms;
 5. if biological attraction is claimed, a full-network transverse Floquet
    enclosure rather than hyperbolicity only in the synchronous restriction;
-6. discretization, delayed interpolation, orbit, adjoint, extrema, and
+6. discretization, delayed interpolation, orbit, response, extrema, and
    separator error bounds small enough to prove either (7.4) or the stated
-   conditioning inequality on the whole box.
+   conditioning inequality on the whole box.  The orbit, extrema, and
+   two-output response parts are now supplied on the microscopic box; the
+   separator and response-derivative Lipschitz parts remain open.
 
-No present test supplies these six items. Thus (7.2) is a derived response
-target, not a rank certificate. Neither hyperbolicity nor a nonzero
-model-level determinant is claimed here.
+The later parameter-box certificate supplies items 1--2 and a directed
+two-output rank bound, but no present test supplies the complete six-item
+three-output package. Thus (7.2) remains a derived three-row response target,
+not a biological-control rank certificate. Full Floquet hyperbolicity and a
+nonzero model-level three-output determinant are not claimed here.
 
 ## 8. Executable regression evidence
 

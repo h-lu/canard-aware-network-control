@@ -51,7 +51,7 @@ They remain separate proof gates. Inserting all three chains into the current
 | Physical outer continuation | Original backward-complete rule disproved as sufficient; causal released history and memory overwrite proved | Compatible normalized Gate P3-A\(^*\), or reset-to-canard factorization |
 | Singular pulse/quiet geometry | Unforced fast-layer channels and a nonempty transition set are proved; the physical lower fold has the ordinary drifting orientation and positive action \(\mathcal A_-\); exact ODE-subclass theorems disprove the fixed-layer shortcut, the all-offset geometric-sign inference, and capture of all late exits by fixed-reset-layer blocks; a collective-recovery clamp gives an exact fixed-\(\delta\) separator | Prove U-SF and the complete-history fold map; for U-CAP first replace the old targets by moving latched detectors, then certify a finite deadband or the global invariant/stable-set exclusions. The exact Airy shift and exact two-channel no-hit band do not by themselves decide the physical RFDE; the controlled separator remains a different operational threshold |
 | Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
-| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; raw reset-only block-triangular and calibrated-gap block-diagonal criteria are proved; the center FHN periodic RFDE orbit and phase-bordered inverse are validated, and its unit Floquet multiplier is algebraically simple with a directed local-arc exclusion | Exclude the remaining compact Bloch arc, continue the orbit with unique extrema over a parameter box, validate the two-by-two frequency--amplitude response, certify transverse stability, and validate the reset calibration chart there |
+| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; raw reset-only block-triangular and calibrated-gap block-diagonal criteria are proved; on a microscopic FHN gain box D1 continuation, D3 unique extrema, and the D4 response lower bound \(\beta_U\ge0.0162187\) are directed-certified; the center unit Floquet multiplier is algebraically simple with a directed local-arc exclusion | Exclude the remaining compact Bloch arc, certify transverse stability, validate the reset calibration chart/hardware range, and prove second-sensitivity Lipschitz and target-radius bounds |
 
 ## 2. General network geometry
 
@@ -913,10 +913,11 @@ If \(\sigma_{\min}(D_b(F,A))\ge\beta>0\) and
 bound for \(\sigma_{\min}(D\mathcal Q)\), an explicit inverse-norm bound,
 and, under a derivative Lipschitz estimate, a covered target ball. An exact
 cubic Hopf family verifies that the two-by-two condition is nonempty. For
-the declared synchronous FHN RFDE, the remaining task is a directed interval
-enclosure of the periodic branch, unique extrema, adjoints, and the
-two-by-two response. Ordinary floating-point SVD is only a candidate
-diagnostic and is not this certificate.
+the declared synchronous FHN RFDE, the directed parameter-box certificate
+now supplies the periodic branch, unique extrema, moving-delay sensitivities,
+and the two-by-two response with \(\beta_U\ge0.0162187\). Ordinary
+floating-point SVD remains only a precursor; the proved statement is tied to
+the microscopic MPFR-directed box.
 
 A sharper protocol-coordinate version is proved in
 [paper-iv-calibrated-reset-coordinate.md](paper-iv-calibrated-reset-coordinate.md).
@@ -983,9 +984,24 @@ The separate transfer theorem in
 [paper-iv-fredholm-monodromy-transfer.md](paper-iv-fredholm-monodromy-transfer.md)
 uses the exact moving-delay period column to prove algebraic simplicity of
 the autonomous unit multiplier and excludes a directed punctured arc about
-it. The remaining positive Bloch arc up to \(\pi\), extrema and continuation
-over a parameter box, and the two-by-two response certificate remain open,
-so issue 15 is not closed.
+it. The remaining positive Bloch arc up to \(\pi\) was not closed there.
+
+The parameter-box follow-up
+[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md)
+now proves D1 continuation, D3 unique nondegenerate voltage extrema, and the
+directed D4 response bound
+
+\[
+ \inf_{b\in U}\sigma_{\min}D_b(F,R_h)\ge0.0162187
+\]
+
+on the declared nonempty box of gain half-width \(10^{-12}\). Its analytic
+bridge proves a \(C^1\) derivative-domain branch without differentiating the
+raw shift on the unweighted Wiener space; its executable record separately
+encloses finite-center, finite-interval, and analytic-tail sensitivity
+residuals. This is a real but deliberately local response theorem. The
+remaining compact Bloch arc, second sensitivities, reset constants, and final
+target radius remain open, so issue 15 is not closed.
 
 ## 7. Stop/go gates
 
@@ -1037,21 +1053,20 @@ so issue 15 is not closed.
 
 ### Paper IV
 
-1. retain the proved center-orbit infinite RFDE radii certificate, including
-   its de-aliased finite--tail inverse and moving-delay nonlinear majorant;
-2. retain the proved simple unit multiplier/local Bloch exclusion, close the
-   remaining compact Bloch arc, and then promote the center orbit to a
-   hyperbolic periodic branch with unique extrema on a nonempty parameter
-   box;
-3. use the now-proved periodic adjoints to enclose the two-by-two FHN
-   frequency--amplitude block; for a raw reset actuator enclose the controlled
+1. retain the proved microscopic-box D1/D3/D4 certificate, including its
+   de-aliased finite--tail inverse, moving-delay majorants, unique extrema,
+   and \(\beta_U\ge0.0162187\);
+2. retain the proved simple unit multiplier/local Bloch exclusion and close
+   the remaining compact Bloch arc to promote the branch to full Floquet
+   hyperbolicity;
+3. for a raw reset actuator enclose the controlled
    separator constants \(C_\Gamma,g\), or for the calibrated route validate
    the local raw-preset/gap diffeomorphism and its usable half-width;
 4. retain the proved two-scale no-go for the original canard-layer outputs
    under its explicit root/layer hypotheses;
-5. instantiate either the proved raw reset-only block theorem or the exact
-   calibrated block-diagonal theorem with a directed interval bound
-   \(\beta_{\rm box}>0\);
+5. after the reset/calibration gate in item 3, instantiate either the proved
+   raw reset-only block theorem or the exact calibrated block-diagonal theorem
+   using the already-proved \(\beta_U\ge0.0162187\);
 6. enclose the derivative Lipschitz constant and apply the proved target-ball
    formula;
 7. demonstrate fixed frequency and amplitude while moving the proved
@@ -1087,10 +1102,11 @@ Required deliverables are:
 The earlier Runge--Kutta chain-tree theorem is only an ODE map--flow baseline.
 It does not certify delayed-history interpolation or an RFDE root.
 The floating FHN periodic JSON remains the response/centered-difference
-precursor for items 5--6. The separate directed JSON proves only the exact
-finite nodal root/inverse and encloses the full polynomial residual; it keeps
-every infinite-RFDE and issue-15 flag false and lists the missing cross/tail
-bounds explicitly.
+precursor. The finite directed JSON proves the exact nodal root/inverse and
+exposes the unresolved tail at that stage; the center infinite JSON closes
+the finite/tail orbit proof; and the parameter-box JSON now closes D1, D3,
+and the response part of D4 while deliberately keeping full Floquet,
+second-sensitivity, reset, target-radius, and issue-15 flags false.
 
 ## 9. Literature boundary and value
 

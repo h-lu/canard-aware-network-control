@@ -529,7 +529,7 @@ correct current ledger is:
 | Other multipliers on the local arc (5.11) | **Directed exclusion proved** |
 | Other multipliers with $\delta<|\varphi|\leq\pi$ | **Open: compact finite/tail cell gate (0.1), (6.2)--(6.3)** |
 | Full unit-circle exclusion / Floquet hyperbolicity | **Open** |
-| Parameter-box continuation, extrema, response block | **Open** |
+| Parameter-box continuation, extrema, response block | **Proved on the later microscopic-box certificate; \(\beta_U\ge0.0162187\)** |
 | Issue 15 | **Open** |
 
 Run the isolated checks with

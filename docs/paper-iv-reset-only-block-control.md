@@ -9,9 +9,11 @@ paper-iii-collective-clamp-separator.md for every sufficiently small fixed
 positive singular parameter under its stated hypotheses. A validated
 periodic branch, unique-extrema box, and interval enclosure of the
 two-by-two frequency--amplitude response for the declared synchronous FHN
-RFDE have **not** been produced. Thus the positive block criterion becomes
-an FHN three-output theorem only after one explicit two-by-two certificate
-is supplied.
+RFDE are now supplied on a microscopic gain box by
+[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md).
+Thus the positive block criterion has its periodic \(2\times2\) input; a
+model-level FHN three-output theorem still requires the reset constants and,
+for a target radius, a response-derivative Lipschitz bound.
 
 The constants below are evaluated by
 src/canard_control/operational_control_repair.py and checked in
@@ -526,7 +528,8 @@ No such \(\eta\) is asserted here.
 ## 6. The interval test required for synchronous FHN
 
 Validated continuation must enclose the periodic orbit, bordered inverse,
-unique extrema, and both adjoint rows. Suppose it gives
+unique extrema, and both response rows, obtained from adjoints or equivalent
+sensitivity columns. Suppose it gives
 
 \[
  B_{\rm FHN}\in\bar B+[-R_B,R_B],
@@ -575,17 +578,24 @@ floating_interval_candidate_diagnostic evaluates the analogous expression
 with ordinary NumPy floats only. Its positive output is a candidate for
 directed verification, not an interval certificate: it does not outward
 round the box endpoints, the midpoint singular value, or the Frobenius
-norm.
+norm.  That former gate is now closed by the independent MPFR-directed
+finite/tail proof in
+[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md),
+which gives \(\beta_U\ge0.0162187\) on its declared microscopic gain box.
 
-A rigorous declared-FHN implementation still needs:
+A rigorous declared-FHN implementation has now supplied the first three
+items below and still needs the last three:
 
 1. a periodic-orbit residual and inverse bound for the bordered RFDE BVP;
 2. exactly one maximum and minimum, with interval curvature bounded away
    from zero;
-3. interval period and amplitude adjoints, including moving-delay terms;
-4. a lower reset-transversality bound \(g\) and upper separator derivative
+3. a directed squared-range sensitivity/response enclosure, including all
+   moving-delay and moving-period terms;
+4. exclusion of the remaining compact Bloch arc if attraction of the
+   baseline orbit is part of the claim;
+5. a lower reset-transversality bound \(g\) and upper separator derivative
    bound \(G\); and
-5. a derivative Lipschitz bound \(L\) to claim a nonzero target radius.
+6. a derivative Lipschitz bound \(L\) to claim a nonzero target radius.
 
 Floating-point continuation can propose these enclosures, but cannot
 replace them.
@@ -603,14 +613,15 @@ replace them.
 | Positive full smallest-singular-value bound | Proved from \(\beta>0\) and finite \(\gamma\) | Formula (3.5) |
 | Nonzero local target radius | Proved when \(L\) is supplied | Theorem 4.1 |
 | Hopf frequency--amplitude nondegeneracy | Proved for the exact cubic family | Theorem 5.1 |
-| Declared synchronous FHN periodic branch and unique extrema | Open at validated-numerics level | Plots and unvalidated collocation do not suffice |
-| Declared FHN two-by-two response certificate | Open | Must prove (5.11) or (6.3) |
-| Declared FHN positive \(3\times3\) control theorem | Conditional | Follows from the clamped separator plus (2.6), (6.3), and, for a radius, (4.1) |
+| Declared synchronous FHN periodic branch and unique extrema | Proved on the microscopic gain box | Directed D1/D3 certificate; full Floquet hyperbolicity remains open |
+| Declared FHN two-by-two response certificate | Proved on the microscopic gain box | Directed \(\beta_U\ge0.0162187\) |
+| Declared FHN positive \(3\times3\) control theorem | Conditional | The periodic block is supplied; still needs the clamped reset constants in (2.6) and, for a radius, (4.1) |
 
 The old design could lose a singular direction when amplitude and safety
 both followed the same thin canard coordinate. The repaired protocol puts
 safety on an independent experimental coordinate whose derivative is
-exactly \(-1\). This removes that structural obstruction and leaves only
-the ordinary two-output periodic response to certify. It does not
-manufacture the missing FHN interval proof or rename the controlled
-separator as an unforced canard threshold.
+exactly \(-1\). This removes that structural obstruction.  The ordinary
+two-output periodic response is now certified on a microscopic box, but
+the reset transversality, response-Lipschitz/target-radius, hardware, and
+remaining Floquet gates are not thereby supplied.  Nor is the controlled
+separator renamed as an unforced canard threshold.

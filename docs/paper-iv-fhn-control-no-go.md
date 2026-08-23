@@ -520,11 +520,12 @@ and are not an interval certificate for a periodic branch.
 | Polynomial and canard-layer response bounds | Proved under \(\mathrm{(H_S)}\) and \(\mathrm{(H_A)}\) | The inequalities themselves need no orbit discretization |
 | Leading safety direction (4.2) for the physical pulse margin | Conditional | Paper III Gate R-S, simple crossing, and root identification |
 | One-coordinate amplitude layer with exponential width | Conditional | A global canard-explosion theorem for the declared RFDE branch |
-| Nonempty periodic branch and unique peak/trough box | Open | Validated periodic BVP and extrema enclosure |
+| Nonempty periodic branch and unique peak/trough box | Proved on the declared microscopic gain box | Directed D1/D3 certificate; full Floquet attraction remains open |
 | Positive \(3\times3\) inverse box inside the sharp layer | Ruled out under \(\mathrm{(H_S)}\)--\(\mathrm{(H_A)}\) in frozen or naturally scaled units | Only an exponentially growing shape response or a change of output/operating regime can evade the theorem |
 
 The negative theorem therefore advances Paper IV without pretending that the
-remaining Paper III separator or a periodic-orbit existence proof has already
-been completed.  Once those two model hypotheses are closed, no new matrix
-calculation is needed: Theorem 5.1 immediately transfers to the physical
-frequency--amplitude--pulse map.
+remaining Paper III separator has been completed.  The periodic-box
+existence/extrema seam is now closed by the later D1/D3 certificate, but full
+Floquet attraction and the physical separator are not.  Once those remaining
+model hypotheses are closed, no new matrix calculation is needed: Theorem
+5.1 immediately transfers to the physical frequency--amplitude--pulse map.

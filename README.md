@@ -180,7 +180,7 @@ open.
    exact block diagonal \(\operatorname{diag}(B,-1)\); this is a calibrated
    protocol coordinate, not a naturally decoupled raw actuator, and its raw
    command Jacobian must be bounded separately. The corresponding FHN
-   periodic package now supplies a reproducible Fourier-collocation orbit,
+   periodic package first supplied a reproducible Fourier-collocation orbit,
    derivative matrix, unique-extrema diagnostics, and a positive nine-sample
    floating response-box candidate. A separate MPFR-directed calculation
    proves the exact 97-node phase-fixed collocation root and finite bordered
@@ -189,9 +189,12 @@ open.
    validates the center RFDE orbit and its phase-bordered inverse. The
    Fredholm--monodromy transfer then proves that the autonomous unit
    multiplier is algebraically simple and gives a directed exclusion on a
-   punctured arc about it. Full exclusion on the remaining compact Bloch
-   arc, extrema and continuation on a parameter box, and the response-box
-   interval certificate remain open.
+   punctured arc about it. A new uniform finite/tail calculation now proves
+   a \(C^1\) periodic branch, one maximum and one minimum, and
+   \(\inf\sigma_{\min}D_b(F,R_h)\ge0.0162187\) on the declared microscopic
+   two-gain box. Full exclusion on the remaining compact Bloch arc,
+   second-sensitivity/Lipschitz bounds, reset constants, and the final target
+   radius remain open.
 8. **Numerical diagnostic.** Literal method-of-steps integration of one
    finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
@@ -236,21 +239,24 @@ open.
 - [docs/paper-iv-canard-conditioning-no-go.md](docs/paper-iv-canard-conditioning-no-go.md) -- exact row-cancellation bound showing when amplitude and pulse-safety coordinates become exponentially ill-conditioned inside a canard window; delayed-network applicability is conditional on Paper III;
 - [docs/paper-iv-periodic-rfde-adjoints.md](docs/paper-iv-periodic-rfde-adjoints.md) -- proved period/frequency, peak-envelope, distributional amplitude, and causal event adjoints for discrete-delay RFDEs, with exact synchronous-FHN specialization and an explicitly conditional three-row response target;
 - [docs/paper-iv-fhn-control-no-go.md](docs/paper-iv-fhn-control-no-go.md) -- full-network modal decomposition, size-uniform transverse Halanay theorem, and sharp two-scale inverse-conditioning no-go for the declared FHN outputs under explicit root/layer hypotheses;
-- [docs/paper-iv-reset-only-block-control.md](docs/paper-iv-reset-only-block-control.md) -- controlled complete-history threshold IFT, exact reset-only block-triangular response, singular-value and target-radius bounds, Hopf frequency--amplitude witness, and the still-open validated FHN box;
-- [docs/paper-iv-calibrated-reset-coordinate.md](docs/paper-iv-calibrated-reset-coordinate.md) -- exact local reparameterization of the raw reset preset by its complete-history gap, block-diagonal three-output response, and a quantitative product-neighborhood inverse; the raw-command Jacobian, physical implementation, and periodic response box remain explicit gates;
+- [docs/paper-iv-reset-only-block-control.md](docs/paper-iv-reset-only-block-control.md) -- controlled complete-history threshold IFT, exact reset-only block-triangular response, singular-value and target-radius bounds, Hopf frequency--amplitude witness, and integration with the now-proved microscopic FHN response box;
+- [docs/paper-iv-calibrated-reset-coordinate.md](docs/paper-iv-calibrated-reset-coordinate.md) -- exact local reparameterization of the raw reset preset by its complete-history gap, block-diagonal three-output response, and a quantitative product-neighborhood inverse; the periodic block is now supplied on a microscopic box, while the raw-command Jacobian and physical implementation remain gates;
 - [docs/paper-iv-fhn-periodic-box-candidate.md](docs/paper-iv-fhn-periodic-box-candidate.md) -- executable synchronous two-delay FHN periodic BVP, moving-delay sensitivities, extrema/invertibility diagnostics, positive finite-sample response-box candidate, and the direct interval plus ODE-persistence proof contracts; it is explicitly not a validated interval certificate;
 - [docs/paper-iv-directed-periodic-validation.md](docs/paper-iv-directed-periodic-validation.md) -- MPFR-directed proof of the exact 97-node finite collocation root and its bordered inverse, full finite Fourier-polynomial residual enclosure, tail-diagonal diagnostic, and explicit finite-stage refusal prior to the later infinite closure;
-- [docs/paper-iv-infinite-periodic-validation.md](docs/paper-iv-infinite-periodic-validation.md) -- weighted real-conjugate \(M=144\) coefficient inverse, all four finite/tail block bounds, moving-delay-aware nonlinear radii polynomial, and validated center periodic RFDE orbit/phase-bordered inverse; parameter-box Floquet, extrema, and response gates remain open;
+- [docs/paper-iv-infinite-periodic-validation.md](docs/paper-iv-infinite-periodic-validation.md) -- weighted real-conjugate \(M=144\) coefficient inverse, all four finite/tail block bounds, moving-delay-aware nonlinear radii polynomial, and validated center periodic RFDE orbit/phase-bordered inverse; the later parameter-box certificate builds on this center result;
 - [docs/paper-iv-fredholm-monodromy-transfer.md](docs/paper-iv-fredholm-monodromy-transfer.md) -- exact moving-delay phase-border to RFDE-monodromy theorem, algebraic simplicity of the center unit multiplier, directed local Bloch-arc exclusion, and the precise still-open compact outer-arc gate;
+- [docs/paper-iv-periodic-parameter-box.md](docs/paper-iv-periodic-parameter-box.md) -- MPFR-directed D1/D3/D4 proof on a nonempty microscopic two-gain box: a \(C^1\) periodic branch, unique extrema, auditable finite/tail sensitivity budgets, and response lower bound \(0.0162187\), with the remaining Floquet and second-sensitivity gates kept open;
 - `src/canard_control/fhn_periodic_candidate.py` -- odd-Fourier BVP/continuation, analytic period column, gain sensitivities, discrete-adjoint audit, sampled box, and ODE-persistence-route diagnostics;
 - `src/canard_control/directed_interval.py` and `src/canard_control/fhn_periodic_directed_validation.py` -- reusable MPFR real/complex interval arithmetic, exact finite nodal contraction, directed DFT/convolution residual bounds, inverse envelope, and machine-readable infinite-tail falsifier;
 - `src/canard_control/fhn_periodic_infinite_validation.py` -- weighted independent real-conjugate coefficient Jacobian, binary-accelerated directed inverse, finite/tail cross norms, tail inverse, and moving-delay correction-ball majorant;
+- `src/canard_control/fhn_periodic_parameter_box.py` -- uniform gain-box radii proof, RFDE-based extrema isolation, finite/tail sensitivity residual decomposition, and directed two-output response enclosure;
 - `src/canard_control/rfde_floquet_transfer.py` -- theorem-evidence binding, directed local Bloch exclusion, and a deliberately non-certifying bookkeeping contract for the still-missing outer-arc cells;
 - `experiments/fhn_periodic_box_candidate.py` with `experiments/requirements-fhn-periodic-candidate.txt` -- one-command candidate reproduction and exact NumPy/SciPy dependencies;
 - `experiments/results/fhn_periodic_box_candidate.json` -- machine-readable binary64 result and software/arithmetic provenance, with all validated-interval flags set to false;
 - `experiments/fhn_periodic_directed_validation.py` with `experiments/requirements-fhn-periodic-validation.txt` -- one-command directed finite validation and its declared gmpy2/NumPy/SciPy dependencies; the result JSON records the exact installed versions;
 - `experiments/results/fhn_periodic_directed_validation.json` -- tracked directed bounds, backend/provenance audit, finite theorem flags, stage-local missing infinite-tail bounds, and RFDE refusal flags;
 - `experiments/fhn_periodic_infinite_validation.py`, its requirements file, and `experiments/results/fhn_periodic_infinite_validation.json` -- one-command center-orbit infinite radii proof with remaining issue-15 flags kept false;
+- `experiments/fhn_periodic_parameter_box.py` and `experiments/results/fhn_periodic_parameter_box.json` -- one-command 160-bit D1/D3/D4 parameter-box certificate and tracked theorem-gate record;
 - `docs/scope-and-theorems.md` -- frozen general-network future-work contract and its stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;

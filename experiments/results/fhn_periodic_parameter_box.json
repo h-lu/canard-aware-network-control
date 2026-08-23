@@ -1,0 +1,180 @@
+{
+  "candidate_input": {
+    "binary_collocation_residual_inf": 1.1368683772161603e-13,
+    "binary_oversampled_residual_inf": 2.1776485725766292e-08,
+    "binary_spectral_tail_l1": 5.055186473754519e-09,
+    "claim_status": "diagnostic midpoint only",
+    "node_count": 129,
+    "period": 16.540387798180934
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_periodic_parameter_box.py"
+    ],
+    "binary_accelerators": "stored binary64 midpoint inverse and sensitivity candidates, each covered by directed residual/error bounds",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_periodic_parameter_box.py",
+    "generator": "experiments/fhn_periodic_parameter_box.py",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "numpy": "2.5.2",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "rounding": "MPFR RoundDown/RoundUp at every theorem endpoint",
+    "scipy": "1.18.0"
+  },
+  "scope": {
+    "d1_parameter_box_continuation": true,
+    "d3_unique_voltage_extrema": true,
+    "d4_directed_response_lower_bound": true,
+    "issue_15_closed": false,
+    "response_derivative_lipschitz": false
+  },
+  "validation": {
+    "all_d1_d3_d4_validated": true,
+    "continuation": {
+      "analytic_tail_inverse_l1_upper": "0.00109762029718548507426816388532768525541006652234988209",
+      "approximate_inverse_l1_upper": "19.3509441667412871144929950293370997978829164850096733",
+      "chosen_radius": "5e-9",
+      "coefficient_z1_upper": "24700.5221041623697682662590505262095540084127574399776",
+      "coefficient_z2_upper": "6695.08956268721016817923211062562279129303576316428063",
+      "coefficient_z3_upper": "761.978972469538082031532266905958658905910713248388181",
+      "cutoff": 144,
+      "derivative_variation_upper": "0.000123502610688189088003758921015804110789624166933192017",
+      "finite_from_tail_upper": "0.04541143603245858153739461613788685807028768027808394",
+      "finite_inverse_defect_upper": "3.99308560760057029512321159384472338735776489760667674e-09",
+      "finite_to_finite_upper": "3.99308560760057029512321159384472338735776489760667674e-09",
+      "full_point_defect_upper": "0.172407054284116850083202221211318050749629705691511833",
+      "global_preconditioner_l1_upper": "19.3509441667412871144929950293370997978829164850096733",
+      "parameter_box_bordered_inverse_validated": true,
+      "parameter_box_orbit_validated": true,
+      "precision_bits": 160,
+      "preconditioned_box_residual_upper": "1.16653085066251986513979898802989746192321412091424711e-09",
+      "radii_left_upper": "2.02918363513654506099582888869156673622531077021068384e-09",
+      "radii_margin_lower": "2.97081636486345493900417111130843326377468922978673973e-09",
+      "real_conjugate_dimension": 579,
+      "residual_support_half_bandwidth": 192,
+      "tail_from_finite_upper": "0.042914561003985442507119832852193909897022311143910106",
+      "tail_to_tail_upper": "0.126995618251658268545807605073431192679342025413385128",
+      "uniform_bordered_inverse_norm_upper": "23.3856903454031599021282567540224673284586776860761524",
+      "uniform_contraction_upper": "0.172530556894805039171205980132333854860419329858615413"
+    },
+    "d1_validated": true,
+    "d3_validated": true,
+    "d4_response_lower_bound_validated": true,
+    "extrema": {
+      "all_complement_cells_strict": true,
+      "complement_derivative_gap_lower": "0.0294363898904256012193396965439739765392771290022369539",
+      "derivative_error_upper": "1.52466446015588071011712908826014382973506279331107617e-06",
+      "extrema_validated": true,
+      "failure_reason": null,
+      "maximum_curvature_upper": "-48.8551634070936855919416772725458627092723167060249515",
+      "maximum_curvature_window_lower": "0.0961914062499999999999999999999999999999999999999144715",
+      "maximum_curvature_window_upper": "0.0983886718750000000000000000000000000000000000000855285",
+      "maximum_phase_lower": "0.0971789956092834472656249999999999999999999999999144715",
+      "maximum_phase_upper": "0.0971790552139282226562500000000000000000000000000855285",
+      "minimum_curvature_lower": "75.0004524561573873327859048864605951711590851496596018",
+      "minimum_curvature_window_lower": "0.797119140624999999999999999999999999999999999999315772",
+      "minimum_curvature_window_upper": "0.799316406250000000000000000000000000000000000000684228",
+      "minimum_phase_lower": "0.798113957047462463378906249999999999999999999999315772",
+      "minimum_phase_upper": "0.798114016652107238769531250000000000000000000000684228",
+      "phase_partition_count": 4096,
+      "root_refinement_denominator": 67108864
+    },
+    "gain_box": {
+      "half_width": "1e-12",
+      "kappa_1_lower": "0.199999999998999999999999999999999999999999999999627734",
+      "kappa_1_upper": "0.200000000001000000000000000000000000000000000000269632",
+      "kappa_3_lower": "0.249999999998999999999999999999999999999999999999764579",
+      "kappa_3_upper": "0.250000000001000000000000000000000000000000000000577534"
+    },
+    "issue_15_closed": false,
+    "remaining_gates": [
+      "directed exclusion of the remaining compact Bloch arc and full Floquet hyperbolicity",
+      "a directed Lipschitz bound for the response derivative (second sensitivities)",
+      "controlled-separator/reset constants and the final target-ball radius"
+    ],
+    "response": {
+      "control_order": [
+        "kappa_1",
+        "kappa_3"
+      ],
+      "derivative_lipschitz_bound_supplied": false,
+      "failure_reason": null,
+      "midpoint_binary64": [
+        [
+          0.03669982799550202,
+          0.13633946068777764
+        ],
+        [
+          -3.645615771771411,
+          -6.136337974459385
+        ]
+      ],
+      "midpoint_smallest_singular_value_lower": "0.0380780707316509809056500398064619174206299619483928191",
+      "output_order": [
+        "F",
+        "R_h"
+      ],
+      "response_box_validated": true,
+      "response_frobenius_radius_upper": "0.0218593433534335719551743066301903207196921001315106847",
+      "response_lower": [
+        [
+          "0.0366981398258313854490034868548344547282512049801199261",
+          "0.136332911897565798297843675312304348681036735830141534"
+        ],
+        [
+          "-3.65107245719071099216869237797010194120704246907989758",
+          "-6.15750528416164951895748967726420244053821764016047578"
+        ]
+      ],
+      "response_upper": [
+        [
+          "0.0367015161651746993140117241055483775692766993354033189",
+          "0.136346009477997410888197124853143223414150267350861889"
+        ],
+        [
+          "-3.64015904692264298457687924880479721032850750117222522",
+          "-6.1151709669117807602607235357332749449490407167465113"
+        ]
+      ],
+      "sensitivity_budgets": [
+        {
+          "analytic_tail_residual_upper": "2.89077415773395617492475905375449167215955474393081082e-23",
+          "base_preconditioned_residual_upper": "2.01796668523813228719063763248265146228635904451731142e-08",
+          "control": "kappa_1",
+          "exact_sensitivity_error_upper": "0.000461850864561416284043375487146026459846738439851977216",
+          "finite_interval_remainder_upper": "1.81433702424492226421550346899611025712348949259058394e-08",
+          "finite_preconditioned_residual_upper": "2.03629660993207132200976429530366280403815797433424936e-09",
+          "gain_forcing_variation_upper": "7.24634910988544401264729040635131913580535483609801224e-08",
+          "global_preconditioner_l1_upper": "19.3509441667412871144929950293370997978829164850096733",
+          "period_column_variation_upper": "1.7789578633193728109557241191094549195539837469702773e-05",
+          "preconditioned_variation_upper": "0.000382147298029435574131912633974756104181067802618062456",
+          "raw_variation_upper": "1.97482507693984759907647996013626537330197709501632544e-05",
+          "slow_equation_variation_upper": "1.17984572505906246091647367288543697942559129168831471e-08",
+          "state_jacobian_variation_upper": "1.87441018785530281647192076947573697632762401914529137e-06"
+        },
+        {
+          "analytic_tail_residual_upper": "1.09200262303602919241882678561090455160275295482182924e-22",
+          "base_preconditioned_residual_upper": "7.7939319379638568148974270846611158688455053795875235e-08",
+          "control": "kappa_3",
+          "exact_sensitivity_error_upper": "0.00179162447757531332956254920434415839940437865841974934",
+          "finite_interval_remainder_upper": "7.05104088480606411227621904190907541864691810133952504e-08",
+          "finite_preconditioned_residual_upper": "7.42891053157781782594977682460116261930731169198548857e-09",
+          "gain_forcing_variation_upper": "1.99764465209512013252013527599910876482334720793716696e-06",
+          "global_preconditioner_l1_upper": "19.3509441667412871144929950293370997978829164850096733",
+          "period_column_variation_upper": "6.60880905766018375793740350693724429644454322701098598e-05",
+          "preconditioned_variation_upper": "0.00148243656939350073953389268506165771453714373025337337",
+          "raw_variation_upper": "7.66079709919985843118716065080691682375980444062667987e-05",
+          "slow_equation_variation_upper": "4.5317301484830579006854750172504098446697248243832835e-08",
+          "state_jacobian_variation_upper": "8.47691846181679602097058141252511240988256767984139545e-06"
+        }
+      ],
+      "sensitivity_error_upper": [
+        "0.000461850864561416284043375487146026459846738439851977216",
+        "0.00179162447757531332956254920434415839940437865841974934"
+      ],
+      "smallest_singular_value_lower": "0.0162187273782174089504757331762715967009378618169248986"
+    }
+  }
+}

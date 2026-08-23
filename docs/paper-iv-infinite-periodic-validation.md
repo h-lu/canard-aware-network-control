@@ -390,8 +390,11 @@ later theorem in
 uses this certificate and the exact moving-delay period column to prove that
 the unit multiplier is algebraically simple and to exclude a punctured local
 Bloch arc. Multipliers on the remaining compact unit-circle arc are still
-unchecked. Unique extrema, parameter continuation, adjoints, and the
-\(2\times2\) response box also remain open. Consequently issue 15 is not
+unchecked.  This center-only stage did not supply unique extrema, parameter
+continuation, or the \(2\times2\) response box; the later
+[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md)
+closes those three gates on a microscopic box.  The compact Floquet arc and
+second-sensitivity/reset/target-radius gates remain open, so issue 15 is not
 closed.
 
 Run from the repository root:

@@ -427,4 +427,4 @@ and the missing-tail falsifier.
 | Infinite radii polynomial | Not evaluated here; negative in the later infinite note |
 | Synchronous FHN periodic RFDE orbit | Not validated here; validated at the center by the later infinite note |
 | Infinite RFDE bordered inverse | Not validated here; phase-bordered inverse validated at the center by the later infinite note |
-| Issue 15 | Open |
+| Issue 15 | Open; later D1/D3/D4 gates pass, while the compact Floquet arc and control-radius gates remain |

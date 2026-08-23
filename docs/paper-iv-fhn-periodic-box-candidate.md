@@ -531,6 +531,12 @@ binary64 \(\beta_{\rm cand}\) must never be renamed
 
 ## 10. Claim ledger
 
+This ledger records what the binary64 precursor itself proves.  The later
+[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md)
+closes D1, D3, and the response part of D4 on a smaller microscopic box; it
+does not retroactively turn the floating calculations below into interval
+proofs.
+
 | Claim | Status |
 |---|---|
 | Exact synchronous reduction (1.1) | Proved in the frozen reference model |
@@ -540,10 +546,10 @@ binary64 \(\beta_{\rm cand}\) must never be renamed
 | Two resolved simple extrema | Binary64 candidate; no interval complement signs |
 | Positive center response singular value | Binary64 candidate |
 | Positive nine-sample Weyl margin | Binary64 finite-sample candidate only |
-| Periodic branch for every point of (5.1) | Open at validated-numerics level |
-| Infinite RFDE bordered inverse | Open |
+| Periodic branch for every point of (5.1) | Open for this wider precursor box; proved later on the microscopic successor box |
+| Infinite RFDE bordered inverse | Not proved here; proved by the later finite/tail certificates |
 | Transverse stability of this orbit in the full FHN network | Open |
-| Directed interval \(2\times2\) response certificate | Open; contract D1--D4 specified |
+| Directed interval \(2\times2\) response certificate | Not proved here; later proved on the microscopic successor box with \(\beta_U\ge0.0162187\) |
 | Direct application of the published single-delay ODE theorem | No; multiple-term adaptation required |
 | Adapted ODE-persistence proof at (1.3) | Open; current diagnostics are unfavorable |
-| Positive reset-only \(3\times3\) FHN theorem | Conditional on this certificate and separator/reset bounds |
+| Positive reset-only \(3\times3\) FHN theorem | Periodic block later supplied; still conditional on separator/reset and target-radius bounds |
