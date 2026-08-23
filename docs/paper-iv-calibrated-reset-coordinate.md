@@ -6,9 +6,11 @@ the controlled collective-clamp separator, not to the open unforced canard or
 biological first-hit threshold. A model-level FHN control theorem still
 requires a validated laboratory implementation of the calibration map,
 second-sensitivity bounds for a target radius, and, if attraction is claimed,
-the remaining compact Floquet-arc exclusion.  The microscopic parameter-box
-periodic response gate itself is now proved in
-[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md).
+a stability index placing every nontrivial multiplier inside the unit disk.
+The microscopic parameter-box periodic response gate is proved in
+[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md), and
+the full synchronous unit-circle exclusion is proved in
+[paper-iv-full-floquet-parameter-box.md](paper-iv-full-floquet-parameter-box.md).
 
 The point of the construction is simple. A raw reset preset generally has a
 threshold \(a_c(b)\) that drifts with the two baseline controls \(b\).
@@ -272,5 +274,6 @@ diagnostics, not directed interval certificates.
 | Bounded raw-preset implementation of the calibrated command | **Conditional on fixed gap normalization, (1.7), and hardware-range containment** |
 | Calibrated coordinate for the declared clamped two-module protocol | **Proved implication of the fixed-\(\delta\) separator theorem** |
 | Parameter-box periodic FHN response lower bound | **Proved on the declared microscopic box; \(\beta_U\ge0.0162187\)** |
-| Full Floquet hyperbolicity and response-derivative Lipschitz bound | **Open; issue 15 remains open** |
+| Synchronous orbital Floquet hyperbolicity | **Proved uniformly on the microscopic gain box** |
+| Floquet attraction and response-derivative Lipschitz bound | **Open; issue 15 remains open** |
 | Unforced pulse threshold or maximal-canard identification | **Not asserted** |

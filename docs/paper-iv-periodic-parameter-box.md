@@ -616,7 +616,7 @@ values in that record.
 ## 6. Scope and remaining gates
 
 Even though D1, D3, and the response part of D4 are true, issue 15 remains
-open.  This certificate does not supply
+open.  This standalone certificate does not itself supply
 
 1. exclusion of the remaining compact Bloch arc, and hence full Floquet
    hyperbolicity;
@@ -624,6 +624,13 @@ open.  This certificate does not supply
    validated second sensitivity equations; or
 3. the independent controlled-separator/reset constants and final target
    ball.
+
+The first item is now supplied, with a fresh parameter-box local transfer,
+by
+[paper-iv-full-floquet-parameter-box.md](paper-iv-full-floquet-parameter-box.md).
+It is not retroactively inserted into this D1/D3/D4 record because the
+outer certificate has its own complex space, cutoff, phase cover, and
+evidence digest.  Items 2 and 3 remain open.
 
 The JSON flag `derivative_lipschitz_bound_supplied` is therefore forced to
 false, and `issue_15_closed` remains false.  An interval response enclosure

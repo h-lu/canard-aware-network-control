@@ -583,16 +583,17 @@ finite/tail proof in
 [paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md),
 which gives \(\beta_U\ge0.0162187\) on its declared microscopic gain box.
 
-A rigorous declared-FHN implementation has now supplied the first three
-items below and still needs the last three:
+A rigorous declared-FHN implementation has now supplied the first four
+items below, with the qualification in item 4, and still needs the last two:
 
 1. a periodic-orbit residual and inverse bound for the bordered RFDE BVP;
 2. exactly one maximum and minimum, with interval curvature bounded away
    from zero;
 3. a directed squared-range sensitivity/response enclosure, including all
    moving-delay and moving-period terms;
-4. exclusion of the remaining compact Bloch arc if attraction of the
-   baseline orbit is part of the claim;
+4. exclusion of every nontrivial unit-circle multiplier; if attraction of
+   the baseline orbit is part of the claim, a separate stable-index or
+   multiplier-count argument;
 5. a lower reset-transversality bound \(g\) and upper separator derivative
    bound \(G\); and
 6. a derivative Lipschitz bound \(L\) to claim a nonzero target radius.
@@ -613,7 +614,7 @@ replace them.
 | Positive full smallest-singular-value bound | Proved from \(\beta>0\) and finite \(\gamma\) | Formula (3.5) |
 | Nonzero local target radius | Proved when \(L\) is supplied | Theorem 4.1 |
 | Hopf frequency--amplitude nondegeneracy | Proved for the exact cubic family | Theorem 5.1 |
-| Declared synchronous FHN periodic branch and unique extrema | Proved on the microscopic gain box | Directed D1/D3 certificate; full Floquet hyperbolicity remains open |
+| Declared synchronous FHN periodic branch, unique extrema, and orbital Floquet hyperbolicity | Proved on the microscopic gain box | Directed D1/D3 certificate plus the 319-cell full-complex Bloch theorem; attraction is not inferred |
 | Declared FHN two-by-two response certificate | Proved on the microscopic gain box | Directed \(\beta_U\ge0.0162187\) |
 | Declared FHN positive \(3\times3\) control theorem | Conditional | The periodic block is supplied; still needs the clamped reset constants in (2.6) and, for a radius, (4.1) |
 
@@ -623,5 +624,5 @@ safety on an independent experimental coordinate whose derivative is
 exactly \(-1\). This removes that structural obstruction.  The ordinary
 two-output periodic response is now certified on a microscopic box, but
 the reset transversality, response-Lipschitz/target-radius, hardware, and
-remaining Floquet gates are not thereby supplied.  Nor is the controlled
+Floquet-attraction gates are not thereby supplied.  Nor is the controlled
 separator renamed as an unforced canard threshold.

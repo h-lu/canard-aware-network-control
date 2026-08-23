@@ -12,8 +12,13 @@ unit multipliers with Bloch phase
   7.705280328597522\times10^{-4}.
 \]
 
-**Full unit-circle exclusion is still open.**  The unresolved positive
-phases are
+This note originally left full unit-circle exclusion open.  The later
+parameter-box theorem
+[paper-iv-full-floquet-parameter-box.md](paper-iv-full-floquet-parameter-box.md)
+now proves complete unit-circle exclusion, uniformly on the microscopic
+gain box, with a fresh box-local estimate and 319 direct full-complex
+finite/tail cells.  The phases displayed below were unresolved at that
+earlier stage:
 
 \[
  7.705280328597522\times10^{-4}<\varphi\leq\pi.
@@ -28,7 +33,8 @@ to retain the already excluded endpoint and certify the compact Bloch arc
 \]
 
 because real conjugation covers the negative arc.  No parameter-box,
-extremum, or response claim is made here.  The isolated implementation and
+extremum, or response claim is proved *by this isolated transfer*.  The
+isolated implementation and
 tests are
 [rfde_floquet_transfer.py](../src/canard_control/rfde_floquet_transfer.py)
 and
@@ -325,8 +331,9 @@ $\tau_j/T$ contributions.  Theorem 2.1 therefore proves:
 > **Corollary 4.1 (center unit multiplier).**  The synchronous two-delay FHN
 > monodromy at (4.1) has multiplier $1$ with algebraic multiplicity one.
 
-This changes the center claim from open to proved.  It does not yet prove
-full Floquet hyperbolicity.
+This changes the center claim from open to proved.  At this stage it did not
+yet prove full Floquet hyperbolicity; the later parameter-box outer-arc
+theorem now supplies that missing conclusion.
 
 ## 5. A directed punctured neighborhood of 1
 
@@ -516,8 +523,9 @@ the bare-number bookkeeping contract passes.  Midpoint
 invertibility, a sampled singular-value plot, or cells evaluated only at
 the stored polynomial do not supply validated cells.
 
-No such directed outer-arc cells are supplied in this stage.  Therefore the
-correct current ledger is:
+No such directed outer-arc cells are supplied by the isolated checker in
+this file.  They are now supplied by the later full-complex parameter-box
+certificate.  The combined current ledger is:
 
 | Claim | Status |
 |---|---|
@@ -527,8 +535,8 @@ correct current ledger is:
 | Multiplier $1$ geometrically simple | **Proved** |
 | Multiplier $1$ algebraically simple | **Proved** |
 | Other multipliers on the local arc (5.11) | **Directed exclusion proved** |
-| Other multipliers with $\delta<|\varphi|\leq\pi$ | **Open: compact finite/tail cell gate (0.1), (6.2)--(6.3)** |
-| Full unit-circle exclusion / Floquet hyperbolicity | **Open** |
+| Other multipliers with $\delta<|\varphi|\leq\pi$ | **Directed exclusion proved on the microscopic box by the later box-local estimate together with 319 full-complex cells** |
+| Full unit-circle exclusion / synchronous orbital hyperbolicity | **Proved on the microscopic box** |
 | Parameter-box continuation, extrema, response block | **Proved on the later microscopic-box certificate; \(\beta_U\ge0.0162187\)** |
 | Issue 15 | **Open** |
 
@@ -558,8 +566,9 @@ PYTHONPATH=build/testdeps:src /usr/bin/python3 -m pytest -q \
    finite-dimensional spectrum.
 6. **Local versus global exclusion.**  Algebraic simplicity gives only an
    unspecified spectral neighborhood.  Equation (5.11) is the directed
-   quantitative neighborhood.  Neither statement is relabeled as the
-   missing outer-arc proof.
-7. **Center versus box.**  Every proved numerical statement here is at the
-   single center parameter.  None is promoted to the issue-15 parameter
-   box.
+   quantitative neighborhood.  The global conclusion is taken only from
+   the separate 319-cell outer-arc certificate.
+7. **Center versus box.**  Every numerical statement manufactured in this
+   isolated transfer is at the single center parameter.  Uniformity comes
+   from the later parameter-box local transfer and outer cells, not by
+   continuity from the center result.

@@ -51,7 +51,7 @@ They remain separate proof gates. Inserting all three chains into the current
 | Physical outer continuation | Original backward-complete rule disproved as sufficient; causal released history and memory overwrite proved | Compatible normalized Gate P3-A\(^*\), or reset-to-canard factorization |
 | Singular pulse/quiet geometry | Unforced fast-layer channels and a nonempty transition set are proved; the physical lower fold has the ordinary drifting orientation and positive action \(\mathcal A_-\); exact ODE-subclass theorems disprove the fixed-layer shortcut, the all-offset geometric-sign inference, and capture of all late exits by fixed-reset-layer blocks; a collective-recovery clamp gives an exact fixed-\(\delta\) separator | Prove U-SF and the complete-history fold map; for U-CAP first replace the old targets by moving latched detectors, then certify a finite deadband or the global invariant/stable-set exclusions. The exact Airy shift and exact two-channel no-hit band do not by themselves decide the physical RFDE; the controlled separator remains a different operational threshold |
 | Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
-| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; raw reset-only block-triangular and calibrated-gap block-diagonal criteria are proved; on a microscopic FHN gain box D1 continuation, D3 unique extrema, and the D4 response lower bound \(\beta_U\ge0.0162187\) are directed-certified; the center unit Floquet multiplier is algebraically simple with a directed local-arc exclusion | Exclude the remaining compact Bloch arc, certify transverse stability, validate the reset calibration chart/hardware range, and prove second-sensitivity Lipschitz and target-radius bounds |
+| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; raw reset-only block-triangular and calibrated-gap block-diagonal criteria are proved; on a microscopic FHN gain box D1 continuation, D3 unique extrema, the D4 response lower bound \(\beta_U\ge0.0162187\), and synchronous orbital Floquet hyperbolicity are directed-certified | Prove attraction or the needed stable index, certify transverse stability, validate the reset calibration chart/hardware range, and prove second-sensitivity Lipschitz and target-radius bounds |
 
 ## 2. General network geometry
 
@@ -984,7 +984,9 @@ The separate transfer theorem in
 [paper-iv-fredholm-monodromy-transfer.md](paper-iv-fredholm-monodromy-transfer.md)
 uses the exact moving-delay period column to prove algebraic simplicity of
 the autonomous unit multiplier and excludes a directed punctured arc about
-it. The remaining positive Bloch arc up to \(\pi\) was not closed there.
+it. The later full-complex parameter-box theorem validates 319 connected
+positive Bloch cells through directed \(\pi\), with
+\(\max q_I\le0.7026326\), and proves synchronous orbital hyperbolicity.
 
 The parameter-box follow-up
 [paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md)
@@ -1000,8 +1002,9 @@ bridge proves a \(C^1\) derivative-domain branch without differentiating the
 raw shift on the unweighted Wiener space; its executable record separately
 encloses finite-center, finite-interval, and analytic-tail sensitivity
 residuals. This is a real but deliberately local response theorem. The
-remaining compact Bloch arc, second sensitivities, reset constants, and final
-target radius remain open, so issue 15 is not closed.
+separate outer-arc certificate now closes the synchronous unit-circle gate.
+Attraction/stable-index information, second sensitivities, reset constants,
+and the final target radius remain open, so issue 15 is not closed.
 
 ## 7. Stop/go gates
 
@@ -1056,9 +1059,9 @@ target radius remain open, so issue 15 is not closed.
 1. retain the proved microscopic-box D1/D3/D4 certificate, including its
    de-aliased finite--tail inverse, moving-delay majorants, unique extrema,
    and \(\beta_U\ge0.0162187\);
-2. retain the proved simple unit multiplier/local Bloch exclusion and close
-   the remaining compact Bloch arc to promote the branch to full Floquet
-   hyperbolicity;
+2. retain the proved simple unit multiplier and 319-cell full-complex Bloch
+   exclusion; add a stable-index or multiplier-count theorem only if
+   attraction, rather than orbital hyperbolicity, is claimed;
 3. for a raw reset actuator enclose the controlled
    separator constants \(C_\Gamma,g\), or for the calibrated route validate
    the local raw-preset/gap diffeomorphism and its usable half-width;
