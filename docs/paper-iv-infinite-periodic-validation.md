@@ -384,12 +384,15 @@ Finally,
 
 ## 5. Boundary and reproduction
 
-The bordered inverse is not relabeled as full Floquet hyperbolicity. A
-separate Fredholm-to-monodromy transfer is retained before even calling the
-unit multiplier algebraically simple, and multipliers elsewhere on the unit
-circle remain unchecked. Unique extrema, parameter continuation, adjoints,
-and the \(2\times2\) response box also remain open. Consequently issue 15 is
-not closed.
+The bordered inverse is not relabeled as full Floquet hyperbolicity. The
+later theorem in
+[paper-iv-fredholm-monodromy-transfer.md](paper-iv-fredholm-monodromy-transfer.md)
+uses this certificate and the exact moving-delay period column to prove that
+the unit multiplier is algebraically simple and to exclude a punctured local
+Bloch arc. Multipliers on the remaining compact unit-circle arc are still
+unchecked. Unique extrema, parameter continuation, adjoints, and the
+\(2\times2\) response box also remain open. Consequently issue 15 is not
+closed.
 
 Run from the repository root:
 

@@ -51,7 +51,7 @@ They remain separate proof gates. Inserting all three chains into the current
 | Physical outer continuation | Original backward-complete rule disproved as sufficient; causal released history and memory overwrite proved | Compatible normalized Gate P3-A\(^*\), or reset-to-canard factorization |
 | Singular pulse/quiet geometry | Unforced fast-layer channels and a nonempty transition set are proved; the physical lower fold has the ordinary drifting orientation and positive action \(\mathcal A_-\); exact ODE-subclass theorems disprove the fixed-layer shortcut, the all-offset geometric-sign inference, and capture of all late exits by fixed-reset-layer blocks; a collective-recovery clamp gives an exact fixed-\(\delta\) separator | Prove U-SF and the complete-history fold map; for U-CAP first replace the old targets by moving latched detectors, then certify a finite deadband or the global invariant/stable-set exclusions. The exact Airy shift and exact two-channel no-hit band do not by themselves decide the physical RFDE; the controlled separator remains a different operational threshold |
 | Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
-| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; the reset-only criterion is proved; the center FHN periodic RFDE orbit and phase-bordered inverse now have a de-aliased finite/tail radii proof | Transfer the bordered result to Floquet hyperbolicity, continue it with unique extrema over a parameter box, validate the two-by-two frequency--amplitude response, and certify transverse stability there |
+| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; raw reset-only block-triangular and calibrated-gap block-diagonal criteria are proved; the center FHN periodic RFDE orbit and phase-bordered inverse are validated, and its unit Floquet multiplier is algebraically simple with a directed local-arc exclusion | Exclude the remaining compact Bloch arc, continue the orbit with unique extrema over a parameter box, validate the two-by-two frequency--amplitude response, certify transverse stability, and validate the reset calibration chart there |
 
 ## 2. General network geometry
 
@@ -918,6 +918,34 @@ enclosure of the periodic branch, unique extrema, adjoints, and the
 two-by-two response. Ordinary floating-point SVD is only a candidate
 diagnostic and is not this certificate.
 
+A sharper protocol-coordinate version is proved in
+[paper-iv-calibrated-reset-coordinate.md](paper-iv-calibrated-reset-coordinate.md).
+The local diffeomorphism
+
+\[
+ (a_{\rm op},b)\longmapsto
+ \bigl(G_b(\mathcal R(a_{\rm op},b)),b\bigr)
+ \tag{6.9a}
+\]
+
+uses the signed complete-history gap itself as a calibrated stimulus
+coordinate \(s\). In that coordinate the response is exactly
+
+\[
+ D\mathcal Q_{\rm cal}=\operatorname{diag}
+   \bigl(D_b(F,A),-1\bigr),
+ \tag{6.9b}
+\]
+
+so its smallest singular value is
+\(\min\{\sigma_{\min}(D_b(F,A)),1\}\). This removes the threshold-gradient
+penalty in calibrated coordinates but not the physical calibration cost:
+the raw preset realizing \(s\) depends on \(b\), and both the usable
+calibration half-width and the Jacobian of this command map must be
+validated. A small raw transversality derivative cannot be hidden by
+rescaling \(s\). If such feed-forward calibration is unavailable, (6.9)
+remains the correct raw-actuator theorem.
+
 The executable candidate in
 [paper-iv-fhn-periodic-box-candidate.md](paper-iv-fhn-periodic-box-candidate.md)
 provides a concrete stop/go point for this gate. At 129 odd Fourier nodes it
@@ -951,8 +979,13 @@ real-conjugate coefficient block, two finite--tail cross bounds, tail inverse,
 and moving-delay-aware
 nonlinear majorant give a negative radii polynomial at radius \(10^{-7}\).
 This proves the center periodic RFDE orbit and phase-bordered inverse only.
-Floquet transfer, extrema and continuation over a parameter box, and the
-two-by-two response certificate remain open, so issue 15 is not closed.
+The separate transfer theorem in
+[paper-iv-fredholm-monodromy-transfer.md](paper-iv-fredholm-monodromy-transfer.md)
+uses the exact moving-delay period column to prove algebraic simplicity of
+the autonomous unit multiplier and excludes a directed punctured arc about
+it. The remaining positive Bloch arc up to \(\pi\), extrema and continuation
+over a parameter box, and the two-by-two response certificate remain open,
+so issue 15 is not closed.
 
 ## 7. Stop/go gates
 
@@ -1006,15 +1039,19 @@ two-by-two response certificate remain open, so issue 15 is not closed.
 
 1. retain the proved center-orbit infinite RFDE radii certificate, including
    its de-aliased finite--tail inverse and moving-delay nonlinear majorant;
-2. promote that validated center orbit to periodic-branch hyperbolicity and
-   unique extrema on a nonempty parameter box;
+2. retain the proved simple unit multiplier/local Bloch exclusion, close the
+   remaining compact Bloch arc, and then promote the center orbit to a
+   hyperbolic periodic branch with unique extrema on a nonempty parameter
+   box;
 3. use the now-proved periodic adjoints to enclose the two-by-two FHN
-   frequency--amplitude block, and enclose the controlled separator constants
-   \(C_\Gamma,g\);
+   frequency--amplitude block; for a raw reset actuator enclose the controlled
+   separator constants \(C_\Gamma,g\), or for the calibrated route validate
+   the local raw-preset/gap diffeomorphism and its usable half-width;
 4. retain the proved two-scale no-go for the original canard-layer outputs
    under its explicit root/layer hypotheses;
-5. instantiate the proved reset-only block theorem with a directed interval
-   bound \(\beta_{\rm box}>0\);
+5. instantiate either the proved raw reset-only block theorem or the exact
+   calibrated block-diagonal theorem with a directed interval bound
+   \(\beta_{\rm box}>0\);
 6. enclose the derivative Lipschitz constant and apply the proved target-ball
    formula;
 7. demonstrate fixed frequency and amplitude while moving the proved
