@@ -49,9 +49,9 @@ They remain separate proof gates. Inserting all three chains into the current
 | Vector gap/codimension | Abstract Lyapunov--Schmidt theorem proved; independent recoveries have an exact \((N+1)\)-dimensional singular generalized center and \(N-1\) slow transverse roots | Compute the selected-history Fredholm index \(q_N\); the center count alone is not that index |
 | Schur--Melnikov response | Banach-scale response link and block/root calculus proved; both the exact quotient and a synchrony-quotient-free heterogeneous-curvature class supply nonzero arbitrary-\(N\) canonical witnesses | Pure-breaker higher response and arbitrary endpoint rules remain open |
 | Physical outer continuation | Original backward-complete rule disproved as sufficient; causal released history and memory overwrite proved | Compatible normalized Gate P3-A\(^*\), or reset-to-canard factorization |
-| Singular pulse/quiet geometry | Unforced fast-layer channels and a nonempty transition set are proved; an exact ODE-subclass counterexample disproves the local fixed-layer shortcut from a saddle separator to all-offset first-hit classification; a collective-recovery clamp gives an exact fixed-\(\delta\) complete-history separator | The physical FHN unforced separator is not disproved: prove U-SF for the geometric history separator and U-EX for drifting lower-fold exchange/capture; the controlled separator is a different operational threshold |
+| Singular pulse/quiet geometry | Unforced fast-layer channels and a nonempty transition set are proved; the physical lower fold has the ordinary drifting orientation and positive action \(\mathcal A_-\); exact ODE-subclass theorems disprove both the fixed-layer shortcut and the inference that the initial geometric sign classifies every exponentially small offset through the fold; a collective-recovery clamp gives an exact fixed-\(\delta\) separator | Prove U-SF for the geometric history coordinate, then a complete-history moving-tube/fold map and U-CAP capture/no-return; the exact Airy class has an exponentially displaced event root, while the physical displacement is conditional on a nonzero fold-offset factorization; the controlled separator remains a different operational threshold |
 | Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
-| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; the sharp two-scale no-go is conditional on hypotheses H\(_S\), H\(_A\), and the reset-only block-triangular positive criterion is proved | Certify the FHN periodic branch/extrema and its two-by-two frequency--amplitude interval response |
+| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; the sharp two-scale no-go is conditional on hypotheses H\(_S\), H\(_A\), and the reset-only block-triangular positive criterion is proved; a reproducible synchronous-FHN Fourier candidate now has residual, extrema, inverse, centered-difference, and finite-sample response diagnostics | Promote the floating candidate to a directed enclosure of the FHN periodic branch/extrema and its two-by-two frequency--amplitude response; then certify transverse stability at that operating box |
 
 ## 2. General network geometry
 
@@ -473,10 +473,13 @@ Paper III must construct, for the unprepared FHN-type RFDE:
    Paper II;
 3. a common complete-history invariant object, so zero gap is a physical
    slow-history intersection;
-4. a transverse local exit coordinate whose sign is the physical gap sign;
-5. two disjoint global first-hit channels, with regular quiet and pulse
-   sections used as witnesses after the channel has been selected;
-6. exclusion of competing roots, secondary bifurcations, and competing
+4. a moving slow-base tube whose signed side exits and lower-fold cap cover
+   every retained offset, including exponentially small ones;
+5. a complete-history lower-fold map with its own transverse event root;
+6. two disjoint global first-hit channels and a U-CAP capture/no-return
+   theorem, with regular quiet and pulse sections used as witnesses after the
+   fold side has been selected;
+7. exclusion of competing roots, secondary bifurcations, and competing
    returns on the parameter box.
 
 The singular two-module fast system now has a proved weighted-gradient,
@@ -497,9 +500,35 @@ the existing fixed-layer blocks do not classify every nonzero reset offset;
 it does not disprove a global separator for the physical FHN RFDE.  The
 correct replacement is Gate U-SF (outer selected saddle history, dominated
 long-delay trichotomy, complete-history stable foliation, and reset
-transversality), followed by Gate U-EX (signed drifting exchange through the
-lower fold, channel capture, and no competing return); see
+transversality), followed by the repaired Gate U-EX (moving-tube side/cap
+event and complete-history lower-fold map) and the separate U-CAP
+capture/no-return gate; see
 [paper-iii-unforced-separator-stop-go.md](paper-iii-unforced-separator-stop-go.md).
+Gate U-SF is now reduced further in
+[paper-iii-unforced-geometric-separator.md](paper-iii-unforced-geometric-separator.md).
+The singular repelling action from the right fold to \(\rho=-1/2\) is
+positive (numerically \(0.5607898753\ldots\)), so an outer mismatch is
+amplified by \(\exp(\mathcal A_R/\varepsilon)\).  Hence algebraic or merely
+\(e^{-c/\delta}\) overlap control cannot prove the tracker reaches the reset
+layer.  Exact common-history gluing, or an action-supercritical exponential
+residual, and a scaled-history strong-unstable domination estimate are the
+two remaining U-SF inputs.  Conditional on them, the complete-history
+center-stable sheet, a designed transverse reset, and its unique geometric
+intersection follow relative to the declared overflowing/terminal
+normalization, without making a pulse/quiet claim.
+Gate U-EX now has a sharper stop/go result in
+[paper-iii-unforced-lower-fold-exchange.md](paper-iii-unforced-lower-fold-exchange.md).
+The physical singular lower fold is an ordinary drifting saddle-node, and
+the reset-to-fold unstable action is positive (numerically
+\(\mathcal A_-(0)=0.2792680505\ldots\)). An exact Airy ODE-subclass
+calculation shows that exponentially small offsets on one side of the
+selected repelling trajectory split into both fold sides. In that exact model
+the fold-event root is nonzero and exponentially displaced from the geometric
+root; for the physical RFDE the same conclusion is conditional on the stated
+nonzero fold-offset factorization. Therefore the repaired intrinsic route uses
+moving slow-base side exits, a lower-fold cap and complete-history fold map,
+followed by a separate U-CAP capture/no-return theorem. It does not identify
+the geometric root with the biological boundary by sign alone.
 For a modified protocol that clamps only the
 collective recovery coordinate until a channel is reached,
 [paper-iii-collective-clamp-separator.md](paper-iii-collective-clamp-separator.md)
@@ -529,14 +558,23 @@ proved, there should be a unique physical maximal-canard parameter
 \tag{5.1}
 \]
 
-Under that target theorem, the **channel first-hit definition** would use the
-physical maximal canard itself as separator:
+The lower-fold audit shows that (5.1), even if proved with a deadband wider
+than all omitted exponential shifts, would not identify the exact event
+root. Let \(\mu_{\rm EX}\) denote the unique moving-tube/lower-fold event
+root after its complete-history transition theorem is proved. Only after
+U-CAP identifies its two fold sides with the biological blocks may the
+**channel first-hit definition** use
 
 \[
-\boxed{\mu_{\rm pulse}^{\rm channel}=\mu_{\rm can}
-\quad\text{(conditional target)}.}
+\boxed{\mu_{\rm pulse}^{\rm channel}=\mu_{\rm EX}
+\quad\text{(conditional on U-SF, the fold map, and U-CAP)}.}
 \tag{5.2}
 \]
+
+Under the nonzero fold-offset factorization,
+\(\mu_{\rm EX}\) is exponentially displaced from the geometric middle-history
+root. Equality with \(\mu_{\rm can}\) is an additional reset-to-canard and
+cancellation theorem, not a consequence of channel separation.
 
 A transverse finite-time section crossing cannot itself be an event-set
 boundary: by the implicit-function theorem it persists for nearby
@@ -565,21 +603,29 @@ a different action to (5.2a).  The precise abstract implication and the
 remaining model-specific landing obligations are stated in
 [paper-iii-physical-outer-pulse-bridge.md](paper-iii-physical-outer-pulse-bridge.md).
 
-For the smooth channel coordinate, the positive safety orientation is
+For the smooth channel coordinate, the positive safety orientation is,
+conditionally on the fold-event theorem and U-CAP,
 
 \[
 S_{\rm p}(u)
 =-\sigma_{\rm p}
-\bigl(\mu_{\rm op}-\mu_{\rm can}(u)\bigr).
+\bigl(\mu_{\rm op}-\mu_{\rm EX}(u)\bigr).
 \tag{5.3}
 \]
 
-Keep three errors separate:
+Keep the root-transfer and event errors separate:
 
 \[
 E_{\rm outer}=o(\varepsilon^{3/2}),\qquad
-E_{\rm event}^{\rm channel}=0
-\quad\text{or}\quad
+E_{\rm fold}=|\mu_{\rm EX}-\mu_{\rm geo}|,
+\quad \varepsilon\log E_{\rm fold}\to-\mathcal A_-,
+\]
+
+\[
+E_{\rm event}^{\rm channel}
+=|\mu_{\rm pulse}^{\rm channel}-\mu_{\rm EX}|=0
+\quad\text{after U-CAP},
+\qquad
 \varepsilon\log E_{\rm event}^{H}\to-\mathcal A_H,\qquad
 E_{\rm Lin/num}\ \text{independently enclosed}.
 \tag{5.4}
@@ -846,6 +892,20 @@ enclosure of the periodic branch, unique extrema, adjoints, and the
 two-by-two response. Ordinary floating-point SVD is only a candidate
 diagnostic and is not this certificate.
 
+The executable candidate in
+[paper-iv-fhn-periodic-box-candidate.md](paper-iv-fhn-periodic-box-candidate.md)
+provides a concrete stop/go point for this gate. At 129 odd Fourier nodes it
+has a positive center response singular value and a positive nine-sample
+floating Weyl margin; a 193-node rerun sharply reduces the off-grid residual.
+Its JSON record preserves the arithmetic and software provenance. These
+facts neither enclose the continuum between gain samples nor the Fourier
+tail, and the finite bordered inverse is not an RFDE operator inverse. The
+note therefore retains the label *candidate* and gives two honest proof
+routes: direct parametric RFDE validation, preferred at this point, and an
+adaptation of the Chebyshev ODE-persistence method for multiple constant
+delays. The latter is not a direct application of the published single-delay
+theorem and its six interval polynomial inequalities have not been verified.
+
 ## 7. Stop/go gates
 
 ### Paper II
@@ -867,14 +927,19 @@ diagnostic and is not this certificate.
 1. for the intrinsic unforced route, prove normalized compatible outer continuation
    P3-A\(^*\), including its \(C^1_\mu C^2_u\) strong-history jets and exact
    common-graph gluing;
-2. replace the old local R-S shortcut by Gate U-SF: continue the selected
-   middle-branch history, construct its dominated complete-history stable
-   foliation, and prove one transverse reset intersection;
-3. prove Gate U-EX: signed drifting exchange through the lower fold, channel
-   capture, and no competing return. Only U-SF plus U-EX identifies the
-   geometric separator with the unforced first-hit boundary; retain the
-   proved one-delay release/memory theorem and fixed-\(\delta\)
-   collective-clamp separator as a distinct operational branch;
+2. close Gate U-SF through its two remaining analytic inputs: prove exact
+   common-history outer continuation (or an action-supercritical residual
+   beyond the right-fold-to-reset action) and a scaled-history dominated
+   strong-unstable trichotomy. Then invoke the proved conditional foliation,
+   designed reset-transversality, and unique geometric-intersection theorem;
+3. replace the false all-offset sign form of U-EX by a complete-history
+   moving-tube and lower-fold-cap transition theorem, including the
+   exponentially displaced fold-event root; then prove U-CAP channel
+   capture and no competing return. Only after those steps may the fold
+   event, not automatically the geometric U-SF root, be identified with the
+   unforced first-hit boundary. Retain the proved one-delay release/memory
+   theorem and fixed-\(\delta\) collective-clamp separator as a distinct
+   operational branch;
 4. if equality with the canard root is claimed, prove the reset-to-canard
    factorization and its small preparation error separately;
 5. prove the full exchange-and-basin separator that makes the intrinsic
@@ -885,8 +950,9 @@ diagnostic and is not this certificate.
 
 ### Paper IV
 
-1. prove periodic-branch hyperbolicity and unique extrema on a nonempty FHN
-   parameter box;
+1. promote the executable FHN candidate by proving periodic-branch
+   hyperbolicity and unique extrema on a nonempty parameter box, including
+   the infinite Fourier tail and RFDE bordered inverse;
 2. use the now-proved periodic adjoints to enclose the two-by-two FHN
    frequency--amplitude block, and enclose the controlled separator constants
    \(C_\Gamma,g\);
@@ -928,6 +994,9 @@ Required deliverables are:
 
 The earlier Runge--Kutta chain-tree theorem is only an ODE map--flow baseline.
 It does not certify delayed-history interpolation or an RFDE root.
+The current FHN periodic JSON is the required floating precursor for items
+5--6: it records the exact dependencies and centered-difference audit, but
+all interval-validation flags remain false.
 
 ## 9. Literature boundary and value
 

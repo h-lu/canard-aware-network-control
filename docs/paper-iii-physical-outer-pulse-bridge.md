@@ -6,10 +6,15 @@ finite-time perturbation result.  The original backward-complete outer rule
 is disproved as a sufficient selection principle, and the repaired
 parameter-coherent Gate P3-A\(^*\) down to the logarithmic fold tube is open.
 The causal one-delay reset history and existence of a positive-\(\varepsilon\)
-reset-transition set are proved separately, but uniqueness of that set is
-the open signed-exchange Gate R-S.  Consequently this note does not relabel
-the preparation-indexed JNS root as a physical maximal canard or a reset
-pulse root.**
+reset-transition set are proved separately.  The former all-in-one Gate R-S
+now splits into the U-SF geometric-history gate, the repaired U-EX
+moving-tube/lower-fold event, and the U-CAP capture/no-return gate.  An exact
+Airy obstruction shows that an ordinary drifting fold can displace the
+lower-fold event root exponentially from the geometric middle-history root;
+the physical RFDE comparison remains conditional on its fold-map
+factorization.  Consequently this note does not relabel the preparation-indexed
+JNS root, the geometric root, the fold-event root, and the biological pulse
+root as one object.**
 
 The exact singular algebra and numerical falsifiers are in
 `src/canard_control/physical_pulse_bridge.py`; the regression tests are in
@@ -29,9 +34,11 @@ a local preparation.  Paper III has two separate tasks:
 There are two inequivalent meanings of *pulse threshold*.
 
 - A **channel threshold** classifies an orbit by which of two disjoint exit
-  channels it reaches first.  If the physical maximal canard is their common
-  separator, its threshold is the maximal-canard parameter itself; the event
-  error is exactly zero.
+  channels it reaches first.  Its event error is exactly zero relative to its
+  proved first-hit separator.  For the unforced reset route that separator is
+  the lower-fold event root \(\mu_{\rm EX}\) only after U-SF, the complete-history
+  fold map, and U-CAP are proved.  Equality with a geometric or maximal-canard
+  root is a separate theorem.
 - An **amplitude threshold** fixes an observable and a level.  An orbit need
   only shadow a finite portion of the repelling branch to reach that level.
   Its parameter is generally different from the maximal-canard parameter.
@@ -412,31 +419,55 @@ grazing and competing exits, and solve for the first parameter at which the
 section is crossed” is not a coherent local theorem.  One must choose one of
 the following definitions.
 
-### 5.1 Channel threshold
+### 5.1 Channel threshold: three roots that must not be identified
 
-Choose a declared one-parameter family of entry histories and two disjoint
-pulse and quiet exit blocks, and classify locally by the first block hit.
-Suppose Gate P3-A\(^*\) holds, the signed physical gap has a simple root, and an
-exchange-and-separation theorem proves that every nonzero gap in the
-declared parameter interval reaches exactly one of the two blocks, with its
-sign selecting the block.  Shrink to an open interval \(I_u\) on which the
-simple root is the only gap zero.  Then the relative boundary is
+Choose a declared one-parameter family of complete entry histories and two
+disjoint pulse and quiet exit blocks, and classify locally by the first block
+hit.  There are three different roots in the unforced construction.
+
+1. Gate U-SF, if closed, gives the **geometric middle-history root**
+   \(\mu_{\rm geo}\), the zero of a complete-history unstable coordinate on the
+   selected saddle tracker.
+2. The moving outer tube, lower-fold cap, and complete-history fold map in the
+   repaired Gate U-EX give the **fold-event root** \(\mu_{\rm EX}\), if their
+   conditional transition hypotheses are verified.
+3. Only Gate U-CAP can identify the two signed outer/fold exits with the
+   biological pulse and quiet first-hit blocks.
+
+The exact Airy ordinary-fold calculation in
+`paper-iii-unforced-lower-fold-exchange.md` shows that, for fixed positive
+\(\varepsilon\), the first two roots need not agree.  Under that note's
+uniform factorization hypotheses and a simple parameter pullback,
+
+\[
+ \varepsilon\log|\mu_{\rm EX}-\mu_{\rm geo}|
+ \longrightarrow-\mathcal A_-.
+\]
+
+Now suppose U-SF and the complete-history fold map hold, \(\mu_{\rm EX}\) is
+the unique transverse root in an open interval \(I_u\), and U-CAP proves that
+its two signs reach the two declared blocks first.  Then the relative boundary
+is
 
 \[
  \partial_{I_u}\{\mu\in I_u:\text{pulse block is reached first}\}
- =\{\mu_{\rm can}\}.
+ =\{\mu_{\rm EX}\}.
 \tag{5.1}
 \]
 
 For this definition,
 
 \[
- \boxed{\mu_{\rm pulse}^{\rm channel}-\mu_{\rm can}=0.}
+ \boxed{\mu_{\rm pulse}^{\rm channel}=\mu_{\rm EX}.}
 \tag{5.2}
 \]
 
-There is no detector error to estimate.  The uncertainty lies instead in
-proving the physical gap, the exchange map, and the two isolating blocks.
+Equation (5.2) is an exact event-definition identity relative to the proved
+fold-event separator.  It is not an assertion that
+\(\mu_{\rm EX}=\mu_{\rm geo}\) or \(\mu_{\rm EX}=\mu_{\rm can}\).  The latter
+comparisons require separate reset-to-canard factorization and, for exact
+equality across an ordinary fold, an additional cancellation not supplied by
+channel separation.
 
 ### 5.2 Fixed-observable amplitude threshold
 
@@ -601,33 +632,42 @@ The shortest honest Paper III chain is now:
 2. **Intrinsic physical root transfer.**  Under P3-A\(^*\), use the proved
    Gaussian trace-to-gap theorem to obtain (4.4)--(4.5) and the physical
    maximal-canard response.
-3. **Signed exchange.**  For the intrinsic route prove a signed normal
-   coordinate
+3. **Geometric middle-history coordinate.**  Close U-SF to construct the
+   complete-history saddle tracker, its stable foliation, and the simple
+   reset intersection \(\mu_{\rm geo}\).  Its sign may classify transverse
+   side exits before the lower-fold cap; it does not classify every
+   exponentially small offset through the fold.
+4. **Moving-tube and lower-fold event.**  Close the repaired U-EX hypotheses:
+   propagate the complete history to the moving side/cap event and prove the
+   cap-to-outgoing-section fold map.  Under its declared nonzero fold-offset
+   factorization this gives \(\mu_{\rm EX}\) with
    \[
-   n_{\rm exit}=\Gamma_\delta d_{\rm phys}
-                 +O(d_{\rm phys}^2),
-   \qquad |\Gamma_\delta|\ge\Gamma_*>0,
+   \varepsilon\log|\mu_{\rm EX}-\mu_{\rm geo}|
+   \longrightarrow-\mathcal A_-.
    \tag{6.1}
    \]
-   with complete-history endpoint terms included.  For the reset route,
-   prove Gate R-S: a complete-history scalar whose sign selects the two
-   passage blocks and whose derivative along the reset curve is nonzero.
-4. **Two-channel exchange and separation.**  Use (6.1), the repelling action,
-   and Theorem 3.1 to construct pulse and quiet isolating blocks.  A complete
-   local basin-separation argument must cover every nonzero gap in the
-   declared entry family; an estimate only away from an exponentially narrow
-   layer does not prove exact equality of the channel boundary.  Corollary
-   3.2 handles the fixed fast pieces once the exchange map reaches them.
-5. **Choose the event definition.**  Use (5.2) for a channel safety
-   coordinate, or prove the full quantitative chart hypotheses
-   (5.6)--(5.7) and use (5.8)--(5.9) for an amplitude safety coordinate.
+5. **Physical capture and no return.**  Close U-CAP by proving that each
+   signed outer side exit and lower-fold outgoing history reaches its declared
+   pulse or quiet block first.  The frozen weighted-gradient/cooperative fast
+   layer does not by itself prove this RFDE statement.
+6. **Choose the event definition.**  Only after step 5 use (5.2) for a
+   channel safety coordinate.  Alternatively, prove the full quantitative
+   chart hypotheses (5.6)--(5.7) and use (5.8)--(5.9) for an amplitude safety
+   coordinate.
 
 The errors must remain separate:
 
 \[
  E_{\rm outer}=o(\varepsilon^{3/2}),\qquad
- E_{\rm event}^{\rm channel}=0,
- \quad\hbox{or}\quad
+ E_{\rm fold}=|\mu_{\rm EX}-\mu_{\rm geo}|,
+ \quad \varepsilon\log E_{\rm fold}\to-\mathcal A_-,
+\]
+
+\[
+ E_{\rm event}^{\rm channel}
+ =|\mu_{\rm pulse}^{\rm channel}-\mu_{\rm EX}|=0
+ \quad\text{after U-CAP},
+ \qquad
  \varepsilon\log E_{\rm event}^{H}\to-\mathcal A_H,
 \tag{6.2}
 \]
@@ -649,9 +689,9 @@ with the Lin and numerical enclosure errors reported independently.
 | Causal one-delay released history | Proved exactly | Explicit voltage-hold/recovery-preset history and exact memory-erasure identity |
 | Unknown collective recovery is erased by the hold | False | Its error is invariant; it must be preset, measured, or controlled |
 | Opposite reset outcomes and a nonempty transition set | Proved for small positive \(\varepsilon\) | Singular channel endpoints, finite-time persistence, and connectedness |
-| Unique reset separator/simple reset root | Open Gate R-S | Complete-history signed exchange, no third outcome, and one transverse reset-curve crossing |
-| Gap sign to channel sign | Open | Inclination/exchange estimate (6.1) through the repelling outer branch |
-| Channel threshold error | Exactly zero once the channel separator is proved | No exponential estimate is needed |
+| Unique unforced reset separator/simple event root | Decomposed into U-SF, repaired U-EX, and U-CAP | U-SF gives only the geometric root; U-EX gives the conditional fold-event root; U-CAP is still open |
+| Geometric-gap sign classifies every channel outcome | False as an all-offset shortcut | Exact Airy ordinary-fold obstruction; replace by the moving tube, fold map, and U-CAP |
+| Channel threshold error | Exactly zero relative to \(\mu_{\rm EX}\) only after U-CAP | The conditional fold factorization gives an exponential comparison with \(\mu_{\rm geo}\); equality with \(\mu_{\rm can}\) is not asserted |
 | Amplitude-detector threshold error | Abstract quantitative chart implication proved; model chart open | Two-sided subexponential target/prefactor bounds, \(C^1\)-small normalized landing remainder, unique local peak branch, no peak switching, interval/DDE certification |
 
 The executable tests deliberately fail if the potential identity, fold

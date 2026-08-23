@@ -631,13 +631,16 @@ branch and item 1 excludes a third local outcome.  This proves (6.4).
 Equation (6.5) is then the definition of the first-channel boundary, not an
 asymptotic estimate. \(\square\)
 
-For the two-module RFDE, all objects before Gate R-S have now been
-constructed.  The remaining model-specific step is to propagate a signed
-normal coordinate through the positive-\(\varepsilon\) saddle slow-history
-passage for arbitrarily small nonzero coordinate, prove that no third
-outcome intervenes, and show that the reset curve crosses the resulting
-codimension-one separator once.  Finite-time persistence proves the sign
-away from the shrinking central layer but does not decide that layer.
+Gate R-S is an exact event-separator hypothesis, so (6.5) remains a
+definition-level tautology relative to its root \(a_R\).  The lower-fold Airy
+audit shows that its scalar \(g_\delta\) cannot be constructed merely by
+relabeling the initial U-SF geometric fiber coordinate: arbitrarily small
+offsets of one initial sign can reach both fold sides.  For the two-module
+RFDE, the model construction must instead pass through the moving outer tube
+and complete-history lower-fold score of the repaired Gate U-EX and then prove
+Gate U-CAP.  Finite-time persistence decides offsets away from the shrinking
+central layer but not that layer.  Nothing in Theorem 6.1 asserts
+\(a_R=a_{\rm geo}\) or equality with a maximal-canard root.
 
 ## 7. Relation to the canonical local canard root
 
@@ -751,13 +754,15 @@ proved by the reset construction.
 | Nonempty causal reset-transition set | Proved | Connectedness argument in Theorem 5.1 |
 | Unique reset separator and simple root | Conditional abstract theorem; model application open | Gate R-S |
 | Equality with the preparation-indexed canonical canard root | Not asserted | Requires (7.1) with a proved small \(e_\delta\) |
-| Channel-event correction after Gate R-S | Exactly zero | Equation (6.5) |
+| Channel-event correction after Gate R-S | Exactly zero relative to its event root \(a_R\) | Equation (6.5); no geometric/canard equality is asserted |
 | Amplitude-detector correction | Conditional | Requires the quantitative landing/peak chart |
 
 The causal protocol therefore closes the *selection* ambiguity: the
 released complete history is explicit.  It does not, by itself, close the
 positive-\(\varepsilon\) canard exchange or turn a topological transition
-set into a unique differentiable threshold.  Gate R-S is the single next
-model theorem for that reset separator.  Comparing it with a physical or
-canonical maximal-canard root remains the additional factorization problem
-in Section 7.
+set into a unique differentiable threshold.  Realizing the abstract Gate R-S
+for the physical RFDE now requires U-SF for the geometric history coordinate,
+the repaired moving-tube/complete-history fold map for its event root, and
+U-CAP for biological first-hit capture.  Comparing any resulting event root
+with a physical or canonical maximal-canard root remains the additional
+factorization problem in Section 7.

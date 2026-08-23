@@ -7,8 +7,9 @@ a unique codimension-one separator, and two signed unstable exits do not make
 fixed-layer passage blocks classify every nonzero reset offset when the slow
 layer drifts.  This does not disprove a global separator for the physical
 two-module RFDE.  It proves that such a theorem additionally needs the outer
-saddle-history continuation, a complete-history stable foliation, and a
-global drifting exchange/return result stated in Section 5.**
+saddle-history continuation, a complete-history stable foliation, a moving
+lower-fold event map, and a separate biological capture/no-return result
+stated in Section 5.**
 
 The executable identities are in
 `src/canard_control/unforced_separator_obstruction.py`, with regressions in
@@ -286,9 +287,9 @@ special-flow embedding.
 
 ## 5. The smallest new theorem package
 
-The following separates the geometric separator from the pulse/quiet event
-claim.  It is deliberately narrower than a full physical maximal-canard
-theorem.
+The following separates the geometric middle-history root, the lower-fold
+event root, and the pulse/quiet boundary.  It is deliberately narrower than a
+full physical maximal-canard theorem.
 
 > **Gate U-SF (unforced outer saddle history and stable fibers).**  Fix an
 > outer middle-branch section beyond the outgoing overlap of the right-fold
@@ -323,24 +324,35 @@ Items 1--4 would give, by the implicit-function theorem, a unique local
 \]
 
 This is the shortest credible route to uniqueness of a complete-history
-separator.  The inner graph is useful in item 1, but it does not prove the
-gate.
+geometric intersection.  The inner graph is useful in item 1, but it does not
+prove the gate or make (5.2) an event separator.
 
-To identify (5.2) with the boundary of the existing first-hit outcome sets,
-one further theorem is unavoidable.
+To obtain the boundary of the existing first-hit outcome sets, two further
+gates are unavoidable.
 
-> **Gate U-EX (drifting exchange and capture).**  Continue the saddle
-> tracker and its signed unstable fibers through the full middle-branch
-> passage, including the lower-fold chart.  Prove that every nonzero signed
-> fiber coordinate in the declared reset neighborhood has exactly one of the
-> two stated global outcomes, that its sign selects the outcome, and that no
-> later return creates a competing first hit.  The theorem must either:
+> **Gate U-EX (repaired moving-tube/lower-fold event).**  Continue the saddle
+> tracker and its signed unstable fibers through a moving slow-base tube.  Use
+> signed side exits and an \(O(\varepsilon^{2/3})\) lower-fold cap so every
+> retained offset has a finite one-passage event.  On cap histories construct
+> a \(C^1\) complete-history fold map to a fixed outgoing section and prove a
+> unique transverse root \(a_{\rm EX}\).  Under the uniform nonzero fold-offset
+> factorization, prove
+> \[
+>   \varepsilon\log|a_{\rm EX}-a_{\rm sep}|
+>   \longrightarrow-\mathcal A_-.
+> \tag{5.3}
+> \]
 >
-> - use moving channel tubes whose recovery coordinate follows the slow
->   base and then prove their equivalence to the biological pulse/quiet
->   event; or
-> - retain the fixed-layer blocks and prove the much stronger global return
->   and capture statement needed to overcome Proposition 3.1.
+> The exact Airy ordinary-fold model proves that the old demand that every
+> nonzero initial fiber sign select a fold side is false as a general
+> implication: offsets of one initial sign can reach both fold sides, and the
+> two roots differ for every fixed positive \(\varepsilon\).
+
+> **Gate U-CAP (biological capture and no return).**  Prove that every signed
+> outer side exit and signed lower-fold outgoing history reaches its declared
+> pulse or quiet detector block before the competing block, uniformly on the
+> control box.  This is the step that identifies \(a_{\rm EX}\), not
+> automatically \(a_{\rm sep}\), with the biological first-hit boundary.
 
 The lower-fold clause is not optional.  Offsets of order
 \(e^{-A/\varepsilon}\) can shadow the middle branch for an order-one slow
@@ -356,12 +368,16 @@ fixed-fast-time layer blocks into an all-offset classification.  The exact
 counterexample in Proposition 3.1 remains valid even after granting the
 desired low-dimensional saddle separator.
 
-**GO for a two-stage theorem.**
+**GO for a three-stage theorem.**
 
 1. Prove Gate U-SF and publish first the unique geometric complete-history
-   reset separator (5.2), explicitly without a pulse/quiet boundary claim.
-2. Prove Gate U-EX, preferably with slow-base-following exit tubes, and only
-   then identify the separator with the physical first-hit boundary.
+   reset intersection (5.2), explicitly without a pulse/quiet boundary claim.
+2. Prove the repaired Gate U-EX with slow-base-following side exits, a
+   lower-fold cap, and a complete-history fold map.  Its root
+   \(a_{\rm EX}\) is conditionally exponentially displaced from (5.2).
+3. Prove U-CAP, and only then identify \(a_{\rm EX}\) with the physical
+   first-hit boundary.  Equality with (5.2) would require a separate exact
+   cancellation theorem.
 
 The collective-recovery-clamped protocol avoids the drifting-exchange seam:
 it turns the singular saddle into an exact RFDE equilibrium and already has a
@@ -381,9 +397,10 @@ be relabelled as the unforced or canonical maximal-canard threshold.
 | Unique geometric reset intersection under Gate U-SF | Conditional, exact implication | Complete-history IFT using (5.1) |
 | Fixed-layer blocks classify every nonzero offset from local data | False as a logical implication | Proposition 3.1 |
 | Physical FHN unforced transition set is nonunique | Not asserted | Requires model-specific global dynamics |
-| Physical pulse/quiet boundary under Gate U-SF and U-EX | Conditional, exact implication | Outer stable fibers plus signed lower-fold exchange/capture |
+| Lower-fold event root under U-SF and repaired U-EX | Exact Airy roots are distinct; physical distinction is conditional | Moving tube, complete-history fold map, and nonzero fold-offset factorization |
+| Physical pulse/quiet boundary | Not asserted | Requires U-CAP; then it equals the fold-event root, not automatically the geometric root |
 
 The mathematical gain from this stop/go result is precise: it removes the
 false hope that one more local stable-manifold citation closes Paper III and
-locates the irreducible new analysis in an outer complete-history foliation
-and a drifting two-fold exchange theorem.
+locates the irreducible new analysis in an outer complete-history foliation,
+an ordinary-fold complete-history transition, and biological capture/no-return.
