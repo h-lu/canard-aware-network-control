@@ -517,7 +517,12 @@ Assume that:
    upper bound \(G_\perp(\delta)\), uniform in block multiplicity and in the
    admitted parameter wedge.
 
-Then the reference operator has the following index table.
+Then the reference operator has the following index table.  This is an index
+and invertibility criterion for the strict reference sum.  If the gap is
+critical-only, it cannot also produce a first-order response to purely
+transverse forcing: the exact zero is proved and the required perturbative
+off-diagonal mechanism is derived abstractly in
+[general-network-schur-melnikov-proof.md](general-network-schur-melnikov-proof.md).
 
 | block | multiplicity | kernel | cokernel | index |
 |---|---:|---:|---:|---:|

@@ -14,9 +14,11 @@ The program is complete only after three theorem chains are proved.
    a declared network class, construct a complete-history reduction, derive a
    topology-resolved canard response, prove its remainder, and verify the
    operator hypotheses for a nontrivial graph family.
-2. **Physical pulse bridge.** Prove that selected physical outer slow
-   histories enter the local fold problem and that the resulting maximal
-   canard separates subthreshold and large-pulse itineraries.
+2. **Physical pulse bridge.** Prove that a fully normalized compatible outer
+   continuation, or a declared causal history-reset protocol, enters the
+   local fold problem and that the resulting separator distinguishes
+   subthreshold and large-pulse itineraries.  Bounded backward completeness
+   alone is not a selection rule.
 3. **Biological pulse control.** Derive frequency, amplitude, and pulse-safety
    sensitivities and prove either a quantitative three-actuator inverse on a
    certified operating box or a sharp canard-conditioning no-go theorem.
@@ -36,6 +38,20 @@ This is one flagship program with three papers after the JNS base paper:
 Papers III and IV may be merged only after both theorem chains are complete.
 They remain separate proof gates. Inserting all three chains into the current
 41-page paper would hide independent hypotheses and overstate what it proves.
+
+### 1.1 Current theorem ledger
+
+| Component | Current status | Remaining promotion gate |
+|---|---|---|
+| Dimension-uniform special-flow history graph | Proved at the abstract normal-form level, including Banach structural parameters and exact history lift | Selected one-sided trace/simple-root hypotheses for a concrete arbitrary-\(N\) family |
+| Lifted unequal-module network | Exact arbitrary-\(N\) blow-up and maximum-norm model fit proved | Non-equitable complete-history coefficient and root remainder |
+| Shared-resource Dobrushin class | Uniform transverse semigroup and fold chart proved | Explicit tame preparation and physical root response |
+| Vector gap/codimension | Abstract Lyapunov--Schmidt theorem proved; independent recoveries have an exact \((N+1)\)-dimensional singular generalized center and \(N-1\) slow transverse roots | Compute the selected-history Fredholm index \(q_N\); the center count alone is not that index |
+| Schur--Melnikov response | Banach-scale response link and block/root calculus proved | Model-specific trace/endpoint factorization and nonzero arbitrary-\(N\) witness |
+| Physical outer continuation | Original backward-complete rule disproved as sufficient | Compatible normalized Gate P3-A\(^*\), or causal reset-history theorem |
+| Singular pulse/quiet geometry | Proved for the two-module fast layer | Positive-\(\varepsilon\) exit inclination and exact basin separation |
+| Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
+| Frequency--amplitude--safety conditioning | Abstract bounded-gain obstruction proved | Verify the physical canard-layer representation and periodic RFDE adjoints |
 
 ## 2. General network geometry
 
@@ -116,6 +132,16 @@ the canard set is a \(C^r\) submanifold of codimension \(q_N\) when
 safety coordinates requires at least \(q_N\) independent effective safety
 directions.
 
+For the standard voltage-coupled, independent-recovery model the current-
+state obstruction is now exact: the singular generalized center has
+dimension \(N+1\), consisting of one length-two fold chain and \(N-1\)
+recovery-center eigenvectors, and weak voltage delays preserve an
+\(N-1\)-root slow cluster.  This rules out a dimension-uniform
+two-dimensional normal graph without changing the model or imposing exact
+synchrony.  It does **not** by itself prove that the selected-history
+Fredholm cokernel has dimension \(N\); see
+[multiple-recovery-center-obstruction.md](multiple-recovery-center-obstruction.md).
+
 Paper II should prove the abstract vector-gap theorem and calculate the
 explicit topology response in the \(q_N=1\) class. A title using “one-critical
 mode networks” is required if the vector theorem cannot be completed.
@@ -179,12 +205,17 @@ The first result is
 =-
 \frac{D_{\mathcal R}D_N(\mu_{c,N},0)[\mathcal R]}
      {\partial_\mu D_N(\mu_{c,N},0)}
-+O\!\left(\frac{C_NG_N^2\|\mathcal R\|^2}{m_N}\right),
++O\!\left(C_{{\rm root},N}\|\mathcal R\|^2\right),
 \tag{4.2}
 \]
 
-where \(G_N\) is the complete transverse graph/range inverse. The novelty is
-the complete-history derivative, its topology decomposition, and the
+Here \(C_{{\rm root},N}\) contains the second-derivative bounds and all
+necessary inverse powers of the simple-root slope; it is not generally
+proportional to \(m_N^{-1}\). Lemma 4.1 of
+[general-network-schur-melnikov-proof.md](general-network-schur-melnikov-proof.md)
+gives the explicit bound
+\(\frac{M_N}{2m_N}(1+2B_N/m_N)^2\). The novelty is the
+complete-history derivative, its topology decomposition, and a
 dimension-controlled remainder, not the scalar implicit-function step.
 
 ### 4.1 Exact graph Schur complement
@@ -232,26 +263,63 @@ D_{\mathcal R}Q[\mathcal R]
 \tag{4.5}
 \]
 
-If \(\mathfrak m_{\delta,N}=D_QD_N\) is the phase-normal one-sided gap
-functional, the exact first derivative is
+Let the phase-normal one-sided gap before substitution of the graph be
+\(\mathscr D_N(Q,H;\nu,\mathcal R)\), and write
 
 \[
-\boxed{
+\begin{gathered}
+m_c=D_Q\mathscr D_N,\qquad m_\perp=D_H\mathscr D_N,\qquad
+\beta_N[\mathcal R]=D_{\mathcal R}\mathscr D_N[\mathcal R],\\
+\widehat m=m_c-m_\perp\mathsf D^{-1}\mathsf C.
+\end{gathered}
+\]
+
+The exact first derivative of the reduced gap is
+
+\[
+\begin{aligned}
 D_{\mathcal R}D_N[\mathcal R]
-=
--\mathfrak m_{\delta,N}\mathsf S^{-1}g_c[\mathcal R]
-+
-\mathfrak m_{\delta,N}\mathsf S^{-1}
-\mathsf B\mathsf D^{-1}g_\perp[\mathcal R].
-}
+={}&\beta_N[\mathcal R]
++m_cD_{\mathcal R}Q[\mathcal R]
++m_\perp D_{\mathcal R}H[\mathcal R].
+\end{aligned}
 \tag{4.6}
 \]
 
-These are the direct critical and transverse history-resolvent/nonlinear
-return terms. A strict critical/transverse direct sum would force the return
-block \(\mathsf B\) to vanish and therefore cannot serve as the general
-mechanism. This is why the older full-network direct-sum Lin specification is
-an extension route, not Paper II's principal proof.
+Equivalently, emphasizing the exact Schur split,
+
+\[
+\boxed{
+\begin{aligned}
+D_{\mathcal R}D_N[\mathcal R]
+={}&\beta_N[\mathcal R]
+-\widehat m\mathsf S^{-1}g_c[\mathcal R]\\
+&+(\widehat m\mathsf S^{-1}\mathsf B-m_\perp)
+\mathsf D^{-1}g_\perp[\mathcal R].
+\end{aligned}
+}
+\tag{4.6a}
+\]
+
+If the gap has no explicit structural dependence and factors through \(Q\),
+then \(\beta_N=m_\perp=0\), and (4.6) reduces to the shorter two-term formula
+previously recorded here.  In general, \(\beta_N\) and \(m_\perp\) retain
+the history, moving-section, and endpoint terms.  These are the direct
+critical and transverse history-resolvent/nonlinear-return contributions. A
+strict critical/transverse direct sum would force the return block
+\(\mathsf B\) to vanish and therefore cannot serve as the general mechanism
+when the gap is critical-only. This is why the older full-network direct-sum
+Lin specification is an extension route, not Paper II's principal proof.
+
+The Banach-space derivation, the full block inverse bound, and the precise
+direct-sum audit are proved in
+[general-network-schur-melnikov-proof.md](general-network-schur-melnikov-proof.md).
+The derivative-loss link from the triangular special-flow Picard jets to
+this formula, including the \(C_b^9\to C_b^8\to C_b^7\) response scale,
+complete-history extension/restriction, trace elimination, and endpoint
+chain rule, is proved abstractly in
+[banach-scale-history-schur-link.md](banach-scale-history-schur-link.md).
+Its concrete selected-trace hypotheses remain a Paper II model obligation.
 
 ### 4.2 Schur--Melnikov functional
 
@@ -274,7 +342,8 @@ h_{\mathcal R}
 \tag{4.8}
 \]
 
-and returns through the network nonlinearity. Define
+and returns through the network nonlinearity. Conditionally on the
+model-specific one-sided trace calculation, define
 
 \[
 \mathfrak M_N[\mathcal R]
@@ -284,18 +353,23 @@ and returns through the network nonlinearity. Define
 \psi(s)^\top
 D_{\mathcal R}Q_{2,N}(\gamma_0(s);\nu_0,0)
 [\mathcal R]\,ds
-+\mathfrak b_N[\mathcal R]
++\mathfrak b_N^{\rm num}[\mathcal R]
 }{
 \displaystyle\int_{-\infty}^{\infty}
 \psi(s)^\top\partial_\nu Q_{1,N}(\gamma_0(s))\,ds
++\mathfrak b_N^{\rm den}
 }.
 \tag{4.9}
 \]
 
-The term \(\mathfrak b_N\) contains derived history/endpoint contributions;
-it cannot be deleted by analogy with an ODE. Formula (4.5) is a nonlinear
-Schur complement: projection-invisible forcing enters the transverse RFDE
-range solve and returns before the critical adjoint pairing.
+The terms \(\mathfrak b_N^{\rm num}\) and
+\(\mathfrak b_N^{\rm den}\) contain the structural and unfolding
+history/endpoint contributions left after the graph response has been
+inserted. They cannot be deleted by analogy with an ODE. Formula (4.9) is a
+candidate coefficient until the one-sided trace problem proves this
+representation and evaluates both boundary terms. Formula (4.5) is a
+nonlinear Schur complement: projection-invisible forcing enters the
+transverse RFDE range solve and returns before the critical adjoint pairing.
 
 For directions preserving the fold, lower-order unfolding data, and the
 complete direct critical delay measure, prove
@@ -310,33 +384,45 @@ complete direct critical delay measure, prove
 \]
 
 General residuals may shift the fold or unfolding at lower orders; for them
-(4.2), not the special order (4.10), is the theorem. More explicitly, the
-weak-delay expansion should separate
+(4.2), not the special order (4.10), is the theorem.  Write
+\(a_{0,N}\ne0\) for the limiting derivative of the normalized gap with
+respect to the unfolding parameter, as in (5.8) of
+[general-network-schur-melnikov-proof.md](general-network-schur-melnikov-proof.md).
+Under the corresponding anisotropic jet bounds, the general weak-delay
+target must instead separate
 
 \[
 \mu_{c,N}(\mathcal R)-\mu_{c,N}(0)
-=-\frac{\delta^2}{\kappa_0}
+=-\frac{\delta^2}{a_{0,N}}
 \Lambda_{\parallel,N}[\mathcal R]
--\frac{\delta^3}{\kappa_0}
-\Lambda_{\perp,N}[\mathcal R]
-+O(\delta^3\|\mathcal R\|+\delta^2\|\mathcal R\|^2).
+-\frac{\delta^3}{a_{0,N}}
+\Lambda_{3,N}^{\rm full}[\mathcal R]
++O(\delta^4\|\mathcal R\|+\delta^2\|\mathcal R\|^2).
 \tag{4.11}
 \]
 
 Only a complete-measure identity eliminating
-\(\Lambda_{\parallel,N}\), including the required parameter jets, exposes the
-pure \(O(\delta^3)\) transverse law.
+\(\Lambda_{\parallel,N}\), including the required parameter jets, exposes an
+identifiable \(O(\delta^3)\) law. The full cubic functional contains direct,
+transverse-resolvent, trace, endpoint, and denominator-correction terms; it
+reduces to \(\Lambda_{\perp,N}\) only after the other contributions have been
+proved to vanish or remain fixed.
 
 ### 4.3 Genericity
 
-The two-module paper supplies one witness with
+The abstract functional-analytic statement is now proved in
+[general-network-schur-melnikov-proof.md](general-network-schur-melnikov-proof.md):
+on the admissible projection-neutral Banach tangent space, one nonzero
+continuous linear response functional has a closed codimension-one kernel,
+and its complement is open and dense.  The two-module paper supplies one
+witness with
 \(\Pi_{\parallel,N}(\Delta\mathbb B)=0\) and
-\(\mathfrak M_N[\Delta\mathbb B]\ne0\). Paper II must prove:
-
-> On the admissible projection-neutral space
-> \(\ker\Pi_{\parallel,N}\), the functional \(\mathfrak M_N\) is continuous.
-> If one admissible transverse-resolvent/nonlinear-return contraction is
-> nonzero, then \(\mathfrak M_N\ne0\) off a closed codimension-one kernel.
+\(\mathfrak M_N[\Delta\mathbb B]\ne0\) at \(N=2\). Paper II must still
+prove that the coefficient obtained from its complete trace problem is a
+continuous functional on the declared arbitrary-\(N\) perturbation space and
+construct a nonzero admissible witness there.  Uniform genericity additionally
+requires normalized witnesses bounded away from zero along the network
+family.
 
 This converts the bespoke witness into an open constrained mechanism.
 Layerwise critical-mode closure kills the delayed source term only when the
@@ -347,7 +433,7 @@ splitting. Scalar delay moments alone do not determine (4.9).
 
 The first scalable corollary should lift the nonuniform two-module
 architecture to arbitrary module sizes \(N=n_1+n_2\). Module averaging and
-replication operators satisfy \(A_NR_N=I_2\); the reference module subspace
+replication operators satisfy \(R_NS_N=I_2\); the reference module subspace
 reproduces the two-module dynamics, while within-module differences have
 fixed Hurwitz blocks with a common semigroup bound. Small operator-TV
 residuals may break equitability, perturb every edge, add fixed-support
@@ -370,10 +456,20 @@ Paper III must construct, for the unprepared FHN-type RFDE:
 3. a common complete-history invariant object, so zero gap is a physical
    slow-history intersection;
 4. a transverse local exit coordinate whose sign is the physical gap sign;
-5. two global channels, one crossing a quiet section and one crossing a
-   declared pulse section;
-6. exclusion of competing roots, grazing, secondary bifurcations, and peak
-   switching on the parameter box.
+5. two disjoint global first-hit channels, with regular quiet and pulse
+   sections used as witnesses after the channel has been selected;
+6. exclusion of competing roots, secondary bifurcations, and competing
+   returns on the parameter box.
+
+The singular two-module fast system now has a proved weighted-gradient,
+strongly cooperative two-channel geometry; see
+[paper-iii-physical-outer-pulse-bridge.md](paper-iii-physical-outer-pulse-bridge.md).
+The original backward-complete outer rule is now disproved as sufficient:
+it leaves the repelling unstable coefficient free and does not control mixed
+history jets.  The repaired compatible-selection Gate P3-A\(^*\), or the
+causal one-delay history-reset alternative, and the gap-to-channel exchange
+remain the real open gates; see
+[paper-iii-outer-selection-blocker-and-repair.md](paper-iii-outer-selection-blocker-and-repair.md).
 
 There is then a unique physical maximal-canard parameter
 \(\mu_{\mathrm{can},N}\) with the response (4.2), and constants
@@ -392,22 +488,47 @@ There is then a unique physical maximal-canard parameter
 \tag{5.1}
 \]
 
-This theorem permits the phrase *pulse threshold*. Inside the exponentially
-narrow layer, detector-dependent events remain output-event thresholds.
-For a fixed detector \(H_*\), prove the \(C^1\) estimate
+For the **channel first-hit definition**, the separator is the physical
+maximal canard itself:
 
 \[
-\|\mu_{\rm pulse}^{H_*}-\mu_{\rm can}\|_{C^1_u}
-\le Ce^{-\Lambda/\varepsilon}.
+\boxed{\mu_{\rm pulse}^{\rm channel}=\mu_{\rm can}.}
 \tag{5.2}
 \]
 
-The positive safety coordinate is fixed by the proved orientation:
+A transverse finite-time section crossing cannot itself be an event-set
+boundary: by the implicit-function theorem it persists for nearby
+parameters.  A fixed-observable amplitude detector must instead be defined
+by a peak condition
+\[
+ \max_{0\le t\le T_*(\varepsilon)}H(z(t;\mu))=H_*,
+\]
+where \(T_*(\varepsilon)=O(\varepsilon^{-1})\) in fast time covers a fixed
+slow-time detector interval.  The maximizing time must be unique, interior,
+and nondegenerate, with no peak switching.  A logarithmic
+displacement theorem additionally requires a local landing equation whose
+target, propagation prefactor, simple gap slope, and inverses have uniform
+two-sided subexponential bounds, together with a normalized remainder small
+in \(C^1\).  Under those quantitative hypotheses its honest displacement is
+\[
+ \varepsilon\log
+ |\mu_{\rm pulse}^{H_*}-\mu_{\rm can}|
+ \longrightarrow-\mathcal A_H,
+\tag{5.2a}
+\]
+and a \(C^1\) exponential upper bound follows only on a box with a uniform
+positive action and the stated derivative bounds.  A merely nonzero landing
+coefficient is insufficient: an exponentially small detector target can add
+a different action to (5.2a).  The precise abstract implication and the
+remaining model-specific landing obligations are stated in
+[paper-iii-physical-outer-pulse-bridge.md](paper-iii-physical-outer-pulse-bridge.md).
+
+For the smooth channel coordinate, the positive safety orientation is
 
 \[
 S_{\rm p}(u)
 =-\sigma_{\rm p}
-\bigl(\mu_{\rm op}-\mu_{\mathrm{pulse}}^{H_*}(u)\bigr).
+\bigl(\mu_{\rm op}-\mu_{\rm can}(u)\bigr).
 \tag{5.3}
 \]
 
@@ -415,7 +536,9 @@ Keep three errors separate:
 
 \[
 E_{\rm outer}=o(\varepsilon^{3/2}),\qquad
-E_{\rm event}\le Ce^{-\Lambda/\varepsilon},\qquad
+E_{\rm event}^{\rm channel}=0
+\quad\text{or}\quad
+\varepsilon\log E_{\rm event}^{H}\to-\mathcal A_H,\qquad
 E_{\rm Lin/num}\ \text{independently enclosed}.
 \tag{5.4}
 \]
@@ -426,8 +549,10 @@ E_{\rm Lin/num}\ \text{independently enclosed}.
 
 Use a delayed FHN neural network admitted by Papers II--III. Freeze voltage
 and recovery variables, a module-level observable \(h_N\), short- and
-long-conduction-delay synaptic layers, a hyperbolic periodic branch, and one
-pulse detector covered by (5.2).
+long-conduction-delay synaptic layers, a hyperbolic periodic branch, and the
+physical pulse/quiet channel separator covered by (5.2).  An
+amplitude-detector threshold is a different, generally grazing event and is
+used only after its peak/landing hypotheses have been proved.
 
 Use three independently realizable actuator directions:
 
@@ -478,7 +603,16 @@ dimensionless output
 \tag{6.2}
 \]
 
-with input and output scales frozen before computation. Let
+with positive input and output scales frozen before computation. Let
+
+\[
+ \sigma_{\rm sur}(M)
+ :=\inf_{\|y\|_2=1}\|M^\top y\|_2
+ =\lambda_{\min}(MM^\top)^{1/2}
+\]
+
+for every \(3\times m\) response matrix.  This is its row-surjectivity
+modulus and equals the usual smallest singular value when \(m=3\).  Now let
 
 \[
 A_{FA}=D_{(u_f,u_a)}(\widehat F,\widehat A_h)
@@ -501,7 +635,7 @@ The positive theorem must prove on a nonempty biological box \(U_*\)
 
 \[
 \inf_{u\in U_*}
-\sigma_{\min}\bigl(D_u\widehat{\mathcal Q}_\varepsilon(u)\bigr)
+\sigma_{\rm sur}\bigl(D_u\widehat{\mathcal Q}_\varepsilon(u)\bigr)
 \ge c_*>0,
 \tag{6.5}
 \]
@@ -534,7 +668,53 @@ D_uA_h\approx
 \]
 
 The amplitude and safety rows can therefore be asymptotically collinear.
-Paper IV must establish one of three honest outcomes:
+This mechanism now has an exact linear-algebra bound.  If \(f,a,s\) are the
+unscaled frequency, amplitude, and safety rows, then for every scalar \(c\),
+
+\[
+ \sigma_{\rm sur}\!\begin{pmatrix}f\\a\\s\end{pmatrix}
+ \le \frac{\|a-cs\|_2}{\sqrt{1+c^2}}.
+ \tag{6.7a}
+\]
+
+Indeed, multiply on the left by the unit vector
+\((0,1,-c)^\top/\sqrt{1+c^2}\).  Under the exact layer representation
+\(A_h=\mathscr A(S_{\rm p}/w_\varepsilon)+R_\varepsilon\), take
+\(c=\mathscr A'/w_\varepsilon\).  Suppose, uniformly for
+\(0<\varepsilon\le\varepsilon_0\) and on the declared operating boxes, that
+\(|\mathscr A'|\ge a_*>0\) and \(\|D_uR_\varepsilon\|\le C_R\), with
+\(a_*,C_R\) independent of \(\varepsilon\).  For the scaled outputs in
+(6.2), put \(\kappa_\varepsilon=\varepsilon^{3/2}\).  Their rows obey
+
+\[
+ \widehat a
+ =\frac{\kappa_\varepsilon\mathscr A'}{q_Aw_\varepsilon}
+   \widehat s+\frac{D_uR_\varepsilon}{q_A},
+\]
+
+and therefore
+
+\[
+ \sigma_{\rm sur}(D_u\widehat{\mathcal Q}_\varepsilon)
+ \le \frac{C_Rw_\varepsilon}{
+              \sqrt{q_A^2w_\varepsilon^2+
+                     a_*^2\kappa_\varepsilon^2}}
+ \le \frac{C_Rw_\varepsilon}{a_*\varepsilon^{3/2}}.
+ \tag{6.7b}
+\]
+
+Thus an exponentially narrow window rules out an
+\(\varepsilon\)-uniformly bounded family of linear right inverses unless a
+genuine shape response enters on the same large scale.  This is a necessary,
+not sufficient, escape condition: the sheared shape row must also remain
+quantitatively transverse to the frequency and safety rows.  Pointwise
+invertibility for each fixed \(\varepsilon>0\) may still hold.  The proof,
+determinant row-shear identity, and unit-sensitive interpretation are given in
+[paper-iv-canard-conditioning-no-go.md](paper-iv-canard-conditioning-no-go.md).
+The network application remains conditional on the physical outputs and the
+layer representation.
+
+Paper IV must therefore establish one of three honest outcomes:
 
 1. (6.5) holds on an operating box outside the sharp transition;
 2. a phase-fixed stimulus threshold replaces \(S_{\rm p}\) and is proved
@@ -545,24 +725,38 @@ Either a positive inverse or a sharp no-go theorem has mathematical value.
 
 ### 6.4 Structural no-go and robust inverse
 
-A no-go theorem must be neighborhood-wide: if actuator response functionals
-lie in a fixed two-dimensional subspace, or the safety row is a fixed
-combination of the frequency and amplitude rows throughout a neighborhood,
-then the three-output map has rank at most two. Rank loss at one point is not
-a theorem.
+A structural no-go theorem must be neighborhood-wide: if actuator response
+functionals lie in a fixed two-dimensional subspace, or the safety row is a
+fixed combination of the frequency and amplitude rows throughout a
+neighborhood, then its derivative has rank at most two there and no \(C^1\)
+local right inverse exists. Rank loss at one point is not a nonlinear
+reachability theorem.
 
 If
 
 \[
-\sigma_{\min}(D_u\widehat{\mathcal Q}(u_0))\ge c_*,
+\sigma_{\rm sur}(D_u\widehat{\mathcal Q}(u_0))\ge c_*,
 \qquad
 \sup_{B_r(u_0)}\|D_u^2\widehat{\mathcal Q}\|\le L_*,
 \tag{6.8}
 \]
 
-then \(r\le c_*/(2L_*)\) gives a certified local inverse and
-\(\|D\widehat{\mathcal Q}^{-1}\|\le2/c_*\). The commanded safety margin must
-exceed the sum of outer, event, Lin, numerical, and model errors.
+then choose \(r\le c_*/(2L_*)\), with the closed input ball contained in the
+operating box.  For exactly three actuator coordinates, every target with
+
+\[
+ \|\widehat y-\widehat{\mathcal Q}(u_0)\|
+ \le c_*r/2
+\]
+
+is handled by the standard Newton self-map on that ball, giving the unique
+local solution there and
+\(\|D\widehat{\mathcal Q}^{-1}\|\le2/c_*\).  With more than three actuators,
+one must first fix a three-dimensional actuator slice with invertible central
+response and replace \(c_*\) by the restricted response's lower bound; the
+conclusion is a local right section, not an inverse on the full actuator
+space.  The commanded safety margin must exceed the sum of
+outer, event, Lin, numerical, and model errors.
 
 ## 7. Stop/go gates
 
@@ -578,12 +772,16 @@ exceed the sum of outer, event, Lin, numerical, and model errors.
 
 ### Paper III
 
-1. construct physical outer history families and their \(C^1_\mu C^2_u\)
-   boundary jets;
+1. prove the normalized compatible outer continuation P3-A\(^*\), including
+   its \(C^1_\mu C^2_u\) strong-history jets and exact common-graph gluing,
+   or adopt and analyze a one-delay causal history-reset protocol;
 2. prove the gap-to-exit map is transverse;
 3. prove the quiet/pulse global channels;
-4. prove the operational event estimate (5.2);
-5. enclose all three error layers in (5.4).
+4. prove the full exchange-and-basin separator that makes the channel
+   identity (5.2) a theorem;
+5. independently, if an amplitude-detector coordinate is used, verify the
+   quantitative landing-chart hypotheses that yield (5.2a);
+6. enclose all three error layers in (5.4).
 
 ### Paper IV
 

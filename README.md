@@ -8,8 +8,8 @@ Research repository for the JNS manuscript:
 The complete LaTeX manuscript, figures, appendices, cover letter, and
 submission checklist are in [manuscript/jns](manuscript/jns).  The supporting
 research design is [docs/flagship-research-design.md](docs/flagship-research-design.md).
-General finite-network transfer and three-coordinate control remain frozen
-and are not claims of this paper.
+General finite-network transfer and three-coordinate control are an active
+successor program, but remain outside and are not claims of this paper.
 
 Build and verify from the repository root with
 
@@ -34,9 +34,9 @@ The first paper has one mathematical spine:
 3. construct phase-normal one-sided traces and prove that their simple gap
    root is equality of the two retained complete RFDE histories.
 
-The broader finite-network Lin transfer and frequency--amplitude--safety
-control programs remain in the repository as frozen future work. They are
-not assumptions, promotions, or parallel novelty claims of the base paper.
+The broader finite-network transfer and frequency--amplitude--safety control
+programs remain separate successors in the repository. They are not
+assumptions, promotions, or parallel novelty claims of the base paper.
 
 ## Base-paper scope
 
@@ -80,10 +80,13 @@ while its displayed expansion is uniform over the declared bounded
 preparation class.
 
 This is not an unconditional theorem for an arbitrarily selected physical
-outer Fenichel maximal canard. Such a physical selection inherits the same
-coefficient only under the separate, parameter-coherent full-history
-boundary-jet hypothesis in
-[docs/canonical-long-delay-theorem.md](docs/canonical-long-delay-theorem.md).
+outer Fenichel maximal canard. Backward completeness alone does not select
+one. Such a physical selection inherits the same coefficient only under the
+separate, parameter-coherent compatible-selection and full-history
+boundary-jet hypotheses in
+[docs/canonical-long-delay-theorem.md](docs/canonical-long-delay-theorem.md)
+and
+[docs/paper-iii-outer-selection-blocker-and-repair.md](docs/paper-iii-outer-selection-blocker-and-repair.md).
 
 The precise claim hierarchy and falsification gates are in
 [docs/flagship-research-design.md](docs/flagship-research-design.md). The
@@ -123,12 +126,14 @@ open.
    injective history lift then give the exact coefficient and remainder above.
    The assembled theorem and verification record are in
    [docs/canonical-long-delay-theorem.md](docs/canonical-long-delay-theorem.md).
-5. **Physical outer-selection Gate D (open).** No arbitrary outer Fenichel
-   family is identified with the canonical traces. The extension is
-   conditional on a fixed selection rule whose full-history boundary residual
-   and rectangular \(C_\nu^1C_\eta^2\) jets have the stated tame bounds. The
-   exact physical modal algebra is known; the parameter-coherent outer
-   Lyapunov--Perron estimate is not.
+5. **Physical outer-selection Gate D (repaired target open).** The original
+   rule is now disproved as sufficient: bounded backward completeness does
+   not select the repelling unstable coordinate, and exponential closeness
+   does not control rectangular \(C_\nu^1C_\eta^2\) history jets. Transfer
+   requires the open compatible-selection Gate P3-A\(^*\), with declared
+   curve-wise Lyapunov--Perron boundary coordinates and exact common-graph
+   normalization. A causal biological alternative is a one-maximal-delay
+   history-reset shooting protocol.
 6. **Numerical diagnostic.** Literal method-of-steps integration of one
    finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
@@ -148,6 +153,17 @@ open.
 - `docs/literature-map.md` -- primary-literature boundary and novelty audit;
 - `docs/flagship-research-design.md` -- proof-first main theorem, shortest dependency chain, stop/go gates, and paper architecture;
 - [docs/general-network-canard-pulse-control-program.md](docs/general-network-canard-pulse-control-program.md) -- active successor program: arbitrary finite-\(N\) one-fold history graphs, vector-gap extension, physical pulse onset, and quantitative three-output control/no-go gates;
+- [docs/dimension-uniform-special-flow-history-graph.md](docs/dimension-uniform-special-flow-history-graph.md) -- abstract dimension-uniform special-flow graph theorem with operator-TV delays, mixed jets, logarithmic fold tubes, and exact mild history embedding; network model fitting remains separate;
+- [docs/banach-scale-history-schur-link.md](docs/banach-scale-history-schur-link.md) -- three-level \(C_b^9\to C_b^8\to C_b^7\) graph-response theorem, complete-history extension/restriction, levelwise Schur formulas, and conditional trace/endpoint transfer without a false same-space \(C^2\) implicit-function theorem;
+- [docs/paper-ii-lifted-two-module-class.md](docs/paper-ii-lifted-two-module-class.md) -- exact arbitrary-size unequal-module lift, maximum-norm Gate A model-fitting audit (with weighted algebra retained only as a diagnostic), dimension-independent singular semigroup bound, and operator-TV non-equitable perturbation family;
+- [docs/paper-ii-arbitrary-n-blowup-model-fit.md](docs/paper-ii-arbitrary-n-blowup-model-fit.md) -- exact arbitrary-\(N\) anisotropic blow-up, full stable-fiber shift, true divisibility checks, and dimension-uniform prepared-data fit to the abstract history-graph theorem;
+- [docs/paper-ii-shared-resource-dobrushin-class.md](docs/paper-ii-shared-resource-dobrushin-class.md) -- a genuinely arbitrary-\(N\) one-slow-resource class with a uniform Dobrushin contraction; its prepared graph is conditional on the stated tame cutoff and its physical root response remains open;
+- [docs/general-network-schur-melnikov-proof.md](docs/general-network-schur-melnikov-proof.md) -- Gate C calculus: exact graph/gap Schur derivatives, a conditional projection-neutral cubic root theorem with explicit constants, codimension-one genericity once a nonzero witness is known, and the strict direct-sum audit;
+- [docs/general-network-vector-gap-codimension.md](docs/general-network-vector-gap-codimension.md) -- abstract complete-history vector-gap theorem, codimension-\(q\) canard locus, quantitative root bounds, and the robust actuator-count obstruction \(m\ge q\); network-specific index and rank remain open;
+- [docs/multiple-recovery-center-obstruction.md](docs/multiple-recovery-center-obstruction.md) -- exact \((N+1)\)-dimensional singular center and persistent \(N-1\) slow-root obstruction for standard independent recoveries; the full-history cokernel dimension remains open;
+- [docs/paper-iii-physical-outer-pulse-bridge.md](docs/paper-iii-physical-outer-pulse-bridge.md) -- proved singular two-channel geometry, the distinction between exact channel onset and detector-dependent amplitude onset, and the explicit outer-history, exchange, and landing gates;
+- [docs/paper-iii-outer-selection-blocker-and-repair.md](docs/paper-iii-outer-selection-blocker-and-repair.md) -- exact counterexample to backward-completeness as a selection rule, curve-restricted history equations, anchored flat-error estimate, repaired Gate P3-A\(^*\), and the causal reset alternative;
+- [docs/paper-iv-canard-conditioning-no-go.md](docs/paper-iv-canard-conditioning-no-go.md) -- exact row-cancellation bound showing when amplitude and pulse-safety coordinates become exponentially ill-conditioned inside a canard window; delayed-network applicability is conditional on Paper III;
 - `docs/scope-and-theorems.md` -- frozen general-network future-work contract and its stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;
@@ -180,6 +196,13 @@ open.
 - `src/canard_control/final_model_blowup.py` -- exact chart construction and scaling audit;
 - `src/canard_control/nonlocal_graph_jet.py` -- symbolic invariant-graph and mixed-jet calculation;
 - `src/canard_control/reduced_canard_root.py` -- conditional splitting and exact Gaussian-integral checks;
+- `src/canard_control/lifted_two_module_network.py` and `src/canard_control/lifted_network_blowup.py` -- exact arbitrary-size lifting and blow-up/model-fit audits;
+- `src/canard_control/shared_resource_markov.py` -- Dobrushin contraction and one-shared-resource network identities;
+- `src/canard_control/block_schur_response.py` -- exact block-response and projection-neutral Schur regressions;
+- `src/canard_control/physical_pulse_bridge.py` -- singular fast-channel, Sturm, section-orientation, and detector-action calculations;
+- `src/canard_control/outer_selection_coherence.py` -- exact outer-selection nonuniqueness, mixed-jet blow-up, and anchored-boundary suppression diagnostics;
+- `src/canard_control/canard_conditioning.py` -- response-row cancellation, determinant shear, and inverse-conditioning bounds;
+- `src/canard_control/multiple_recovery_center.py` -- exact fold-chain, recovery-center, slow-root, and conditional linear matching-count checks;
 - [src/canard_control/green_phase.py](src/canard_control/green_phase.py) -- executable tangent/normal frame and one-sided Green identities;
 - [src/canard_control/outer_modal_audit.py](src/canard_control/outer_modal_audit.py) -- exact physical modal equations, branch jets, and fast-gap audit;
 - `src/canard_control/exact_chart_threshold_diagnostic.py` -- literal method-of-steps integration and finite-section KS energy-gap root for the exact four-dimensional chart, explicitly diagnostic rather than a proof;

@@ -1,0 +1,726 @@
+# Paper II base class: arbitrary-size unequal two-module lifts
+
+Status: **exact finite-dimensional theorem and maximum-norm model audit,
+2026-08-23.** The statements through Section 6 are proved by the displayed
+algebra and reproduced in
+`src/canard_control/lifted_two_module_network.py`. They hold for every pair
+of positive integers \(n_1,n_2\), with constants independent of
+\(N=n_1+n_2\) where explicitly stated. The companion
+[arbitrary-\(N\) blow-up lemma](paper-ii-arbitrary-n-blowup-model-fit.md)
+now closes the special-flow model fit and invariant-history application for
+this class. Section 7 separates that result from the root and pulse gates
+which remain open. No claim from this note is inserted into the completed
+JNS manuscript.
+
+## 1. Exact node class
+
+Let \(C_1,C_2\) be nonempty modules of sizes \(n_1,n_2\). Define replication
+and averaging by
+
+\[
+ (Sz)_i=z_a\quad(i\in C_a),
+ \qquad
+ (Rx)_a=\frac1{n_a}\sum_{i\in C_a}x_i.
+ \tag{1.1}
+\]
+
+Then \(RS=I_2\), and \(Q=SR\) projects onto the block-constant vectors. The
+base two-module fast field is
+
+\[
+ F(z,y)=
+ \binom{z_1-z_1^3/3-y_1+(z_2-z_1)/2}
+       {z_2-z_2^3/3-y_2+2(z_1-z_2)}.
+ \tag{1.2}
+\]
+
+Set
+
+\[
+ \sigma=\sqrt{3/2},\quad
+ z_*=(\sigma,0)^\top,\quad y_*=(0,2\sigma)^\top,
+ \tag{1.3}
+\]
+
+and \(v_*=Sz_*\), \(w_*=Sy_*\). For \(D_v,D_w>0\), the nodewise fast field is
+
+\[
+ \mathcal F_{N,i}(v,w)=
+ \begin{cases}
+ v_i-v_i^3/3-w_i+\tfrac12[(Rv)_2-v_i],&i\in C_1,\\
+ v_i-v_i^3/3-w_i+2[(Rv)_1-v_i],&i\in C_2,
+ \end{cases}
+ -(D_v-1)[(I-Q)(v-v_*)]_i.
+ \tag{1.4}
+\]
+
+This is a nodewise-cubic network, not merely a nonlinear function of the two
+module averages. Nevertheless,
+
+\[
+ \mathcal F_N(Sz,Sy)=SF(z,y)
+ \tag{1.5}
+\]
+
+exactly. The slow field before multiplication by
+\(\varepsilon=\delta^2\) is
+
+\[
+ \mathcal G_{N,i}(v;\mu)=
+ \begin{cases}
+ v_i-\sigma-\mu,&i\in C_1,\\
+ v_i-2\mu,&i\in C_2,
+ \end{cases}
+ \tag{1.6}
+\]
+
+and the fixed recovery scaffold is
+
+\[
+ -D_w(I-P_c)(w-w_*).
+ \tag{1.7}
+\]
+
+The complete lifted RFDE model class is obtained by adding to (1.4)
+
+\[
+ \varepsilon K\left[
+ B_Nv(t)-A_{0,N}^{\eta}v(t-\theta_0/\delta)
+             -A_{1,N}^{\eta}v(t-\theta_1/\delta)
+ \right]
+ \tag{1.8}
+\]
+
+and using
+
+\[
+ \dot w=\varepsilon\mathcal G_N(v;\mu)
+        -D_w(I-P_c)(w-w_*).
+ \tag{1.9}
+\]
+
+Here \(A_{k,N}^{\eta}=SC_k^\eta R\) and \(B_N=SBR\), with the exact
+two-module layers from the base paper. Equations (1.4)--(1.9) declare the
+network class; an RFDE canard theorem is not inferred merely by declaring it.
+
+## 2. Exact weighted algebra, not the Gate A fitting norm
+
+Use the base critical biorthogonal pairs
+
+\[
+ r=(1,2)^\top,\qquad \ell=(1/2,1/4)^\top,
+ \qquad
+ q=(1,-2)^\top,\qquad \ell_\perp=(1/2,-1/4)^\top.
+ \tag{2.1}
+\]
+
+They become orthonormal for
+
+\[
+ W_2=\operatorname{diag}(1/2,1/8),
+ \tag{2.2}
+\]
+
+because \(W_2r=\ell\), \(W_2q=\ell_\perp\), and both weighted norms are
+one. Lift this metric to
+
+\[
+ W_N=\operatorname{diag}
+ \left(\frac1{2n_1}I_{n_1},\frac1{8n_2}I_{n_2}\right).
+ \tag{2.3}
+\]
+
+Then
+
+\[
+ S^\top W_N=W_2R.
+ \tag{2.4}
+\]
+
+Consequently \(S:(\mathbb R^2,W_2)\to(\mathbb R^N,W_N)\) is an isometry,
+\(R=S^*_{W}\) is a contraction, and \(Q=SR\) is an orthogonal projector.
+Define
+
+\[
+ r_N=Sr,\quad \ell_N=R^\top\ell,
+ \quad q_N=Sq,\quad \ell_{\perp,N}=R^\top\ell_\perp,
+ \tag{2.5}
+\]
+
+and
+
+\[
+ P_c=r_N\ell_N^\top,
+ \qquad P_m=q_N\ell_{\perp,N}^\top,
+ \qquad P_w=I-Q.
+ \tag{2.6}
+\]
+
+These are mutually \(W_N\)-orthogonal projectors and
+
+\[
+ I=P_c+P_m+P_w,qquad
+ \mathbb R^N=\operatorname{span}\{r_N\}
+ \mathbin{\widehat\oplus}_{W_N}\operatorname{span}\{q_N\}
+ \mathbin{\widehat\oplus}_{W_N}\ker R.
+ \tag{2.7}
+\]
+
+The point of (2.3) is algebraic. It makes the three projectors orthogonal and
+reduces the singular Jacobian to explicit two-by-two blocks without a factor
+depending on the module imbalance. It is therefore useful for exact spectrum
+and fold diagnostics.
+
+It is **not** the norm used to fit this node class to the dimension-uniform
+history-graph theorem. A fixed \(W_N\)-ball permits coordinate spikes: a
+vector supported at one node of \(C_1\) can have size \(\sqrt{2n_1}\) while
+its \(W_N\)-norm is one. On such a ball, the second derivative of the
+nodewise cubic grows like \(\sqrt{n_1}\). Thus weighted orthogonality alone
+does not verify a uniform Frechet \(C^{12}\) bound. Section 4 uses the
+nodewise maximum norm, for which fixed balls are fixed coordinatewise boxes.
+The \(W_N\) formulas remain exact diagnostics only.
+
+## 3. Exact simple-fold and center theorem
+
+### Theorem 3.1 -- arbitrary-\(N\) lifted simple fold
+
+For every \(n_1,n_2\ge1\) and \(D_v,D_w>0\), the system (1.4), (1.6), and
+(1.7) has the following exact properties at
+\((v_*,w_*,\mu)=(v_*,w_*,0)\).
+
+1. The equilibrium residual is zero.
+2. The voltage and recovery current-state Jacobians are
+   \[
+   A_{v,N}=-2P_m-D_vP_w,
+   \qquad A_{w,N}=-D_w(P_m+P_w).
+   \tag{3.1}
+   \]
+3. The critical kernel and adjoint kernel are generated by \(r_N\) and
+   \(\ell_N\), and
+   \[
+   \ell_N^\top D_v^2\mathcal F_N(v_*,w_*)[r_N,r_N]
+   =-\sigma\ne0.
+   \tag{3.2}
+   \]
+4. On the critical line,
+   \[
+   \mathcal G_N(v_*+r_NX;\mu)=r_N(X-\mu).
+   \tag{3.3}
+   \]
+5. At \(\varepsilon=0\), the state Jacobian in \((v,w)\) coordinates is
+   \[
+   J_{0,N}=\begin{pmatrix}A_{v,N}&-I\\0&A_{w,N}\end{pmatrix}.
+   \tag{3.4}
+   \]
+   Its critical restriction is one length-two Jordan block
+   \[
+   H_c=\begin{pmatrix}0&-1\\0&0\end{pmatrix};
+   \tag{3.5}
+   \]
+   its module-transverse and within-module block types are
+   \[
+   H_m=\begin{pmatrix}-2&-1\\0&-D_w\end{pmatrix},
+   \qquad
+   H_w=\begin{pmatrix}-D_v&-1\\0&-D_w\end{pmatrix}.
+   \tag{3.6}
+   \]
+   Therefore the generalized center has dimension two and the ordinary
+   kernel has dimension one, independently of \(N\).
+
+**Proof.** Equation (1.5) gives the base equilibrium and module restriction.
+Differentiating the nodewise cubics at \(v_i=\sigma\) in \(C_1\) and
+\(v_i=0\) in \(C_2\) gives the base matrix
+\(\left(\begin{smallmatrix}-1&1/2\\2&-1\end{smallmatrix}\right)
+=-2q\ell_\perp^\top\) on block-constant vectors. On \(\ker R\), the extra
+scaffold changes the natural rate \(-1\) to \(-D_v\). This proves (3.1).
+Only the module-one cubic contributes to the critical Hessian: its lifted
+vector is \(S(-2\sigma,0)^\top\), whose pairing with \(\ell_N\) is
+\(-\sigma\).
+Equation (3.3) follows entry by entry. Finally, the orthogonal decomposition
+(2.7) reduces (3.4) to (3.5)--(3.6). \(\square\)
+
+This is a **singular current-state simple-fold theorem**. It does not count
+the infinitely many characteristic roots of the positive-\(\delta\) RFDE.
+
+## 4. Gate A model-fitting audit in the node maximum norm
+
+Use
+
+\[
+ \|x\|_\infty=\max_i|x_i|,\qquad
+ \|(v,w)\|_{\max}=\max\{\|v\|_\infty,\|w\|_\infty\}.
+ \tag{4.1}
+\]
+
+This is the network norm used below and in the intended application of the
+abstract history-graph theorem. It turns a fixed network ball into a fixed
+coordinatewise box.
+
+### Proposition 4.1 -- uniformly conditioned splitting
+
+The induced maximum-norm operator constants are
+
+\[
+\begin{gathered}
+ \|S\|_\infty=\|R\|_\infty=\|Q\|_\infty=1,\\
+ \|P_c\|_\infty=\|P_m\|_\infty=\frac32,\\
+ \|P_w\|_\infty
+ =2\max_{a=1,2}\left(1-\frac1{n_a}\right)\le2,\\
+ \|I-P_c\|_\infty
+ =\max\left\{\frac74-\frac1{n_1},
+             \frac52-\frac1{n_2}\right\}\le\frac52 .
+ \tag{4.2}
+\end{gathered}
+\]
+
+Moreover, critical injection and extraction satisfy
+
+\[
+ \|a\mapsto r_Na\|=2,\qquad \|\ell_N^\top\|=\frac34.
+ \tag{4.3}
+\]
+
+Thus \(x\mapsto(\ell_N^\top x,(I-P_c)x)\), with a maximum product norm on
+the target, has norm at most \(5/2\), while
+\((a,h)\mapsto r_Na+h\) has norm at most \(3\). The critical/stable
+coordinate change and its inverse are therefore uniformly conditioned.
+
+**Proof.** The first three constants are maximum absolute row sums.
+The total absolute mass of \(\ell_N\), and of
+\(\ell_{\perp,N}\), is \(3/4\); the largest entries of \(r_N\) and \(q_N\)
+have magnitude two. This gives the two rank-one projector constants.
+For a row in a module of size \(n_a\), \(I-Q\) has absolute row sum
+\(2(1-1/n_a)\). Direct row sums of \(I-P_c\) give the last line of (4.2).
+The coordinate bounds follow from the triangle inequality. \(\square\)
+
+### Theorem 4.2 -- maximum-norm transverse semigroup
+
+Let \(J_{\perp,N}\) be (3.4) on the transverse product space with the norm
+(4.1), and put
+
+\[
+ \rho=\min\{2,D_v,D_w\},\qquad
+ \kappa=\rho/2,\qquad C_P=\frac72,
+ \qquad
+ M_\infty=C_P\left(1+\frac{2}{e\rho}\right).
+ \tag{4.4}
+\]
+
+Then, for all module sizes,
+
+\[
+ \boxed{
+ \|e^{J_{\perp,N}t}\|_{\max}
+ \le C_P(1+t)e^{-\rho t}
+ \le M_\infty e^{-\kappa t},\qquad t\ge0 .
+ }
+ \tag{4.5}
+\]
+
+**Proof.** On the transverse voltage space,
+
+\[
+ e^{A_{v,N}t}=e^{-2t}P_m+e^{-D_vt}P_w.
+\]
+
+If
+
+\[
+ K_a(t)=\int_0^t e^{-a(t-s)}e^{-D_ws}\,ds,
+\]
+
+then \(0\le K_a(t)\le te^{-\rho t}\) for \(a\in\{2,D_v\}\), and variation
+of constants gives
+
+\[
+\begin{aligned}
+ v(t)&=(e^{-2t}P_m+e^{-D_vt}P_w)v(0)\\
+ &\quad-(K_2(t)P_m+K_{D_v}(t)P_w)w(0),\\
+ w(t)&=e^{-D_wt}w(0).
+\end{aligned}
+\]
+
+Now \(\|P_m\|_\infty+\|P_w\|_\infty\le7/2=C_P\), which proves the first
+bound in (4.5). The second follows from
+\(te^{-\rho t/2}\le2/(e\rho)\). No orthogonality and no sum over
+within-module modes is used. \(\square\)
+
+For comparison, the exact weighted decomposition in Section 2 also yields
+
+\[
+ \|e^{J_{\perp,N}t}\|_{W_N\oplus W_N}
+ \le\left(1+\frac{2}{e\rho}\right)e^{-\rho t/2}.
+ \tag{4.6}
+\]
+
+Equation (4.6) is a useful sharper diagnostic, but (4.5) is the Gate A
+model-fitting estimate because it uses the same norm as the nonlinear jet
+bounds.
+
+### Proposition 4.3 -- nodewise cubic jets on a fixed box
+
+Fix \(L_v,L_w,L_\mu\ge0\) independently of \(N\), and consider
+
+\[
+ \|v-v_*\|_\infty\le L_v,\qquad
+ \|w-w_*\|_\infty\le L_w,\qquad |\mu|\le L_\mu.
+ \tag{4.7}
+\]
+
+Set
+
+\[
+ V=\sigma+L_v,\qquad W=2\sigma+L_w,\qquad
+ c_v=2|D_v-1|.
+\]
+
+In the maximum product norms for \((v,w)\) and \((v,\mu)\), respectively,
+the Frechet derivatives of (1.4) and (1.6) obey
+
+\[
+\begin{aligned}
+ \|\mathcal F_N\|_\infty
+ &\le 5V+\frac{V^3}{3}+W+c_vL_v,\\
+ \|D\mathcal F_N\|&\le6+V^2+c_v,\\
+ \|D^2\mathcal F_N\|&\le2V,\qquad
+ \|D^3\mathcal F_N\|\le2,\qquad
+ D^k\mathcal F_N=0\quad(k\ge4),\\
+ \|\mathcal G_N\|_\infty&\le L_v+2L_\mu,\qquad
+ \|D\mathcal G_N\|\le3,\qquad
+ D^k\mathcal G_N=0\quad(k\ge2).
+ \tag{4.8}
+\end{aligned}
+\]
+
+All constants are independent of \(N\). Indeed, averaging has maximum-norm
+one, the stronger cross-module coupling has norm four, \(P_w\) has norm at
+most two, and the higher derivatives are diagonal pointwise products from
+\(-v_i^3/3\). Composing these fields with the uniformly bounded coordinate
+maps (4.2)--(4.3) preserves uniform Frechet bounds through order twelve.
+
+Propositions 4.1 and 4.3 and Theorem 4.2 close the finite-dimensional norm
+scaling subchecks. The exact blown-up normal form, stable shift, bounded
+preparation, and application of the abstract invariant-history theorem are
+proved in
+[paper-ii-arbitrary-n-blowup-model-fit.md](paper-ii-arbitrary-n-blowup-model-fit.md).
+Neither document proves a canard root.
+
+## 5. Exact lifted delay algebra: the known return channel
+
+Let
+
+\[
+ C_0^\eta=C_0+\eta T,qquad
+ C_1^\eta=C_1-\eta T,qquad
+ T=\begin{pmatrix}1&0\\-2&0\end{pmatrix},
+ \tag{5.1}
+\]
+
+with \(C_0,C_1\) as in the JNS base model, and lift
+\(A_{k,N}^\eta=SC_k^\eta R\). Then
+
+\[
+ RA_{k,N}^\eta S=C_k^\eta,qquad
+ A_{k,N}^\eta S=SC_k^\eta,qquad
+ A_{0,N}^\eta+A_{1,N}^\eta=SBR.
+ \tag{5.2}
+\]
+
+Thus the lifted layers are exactly equitable. Moreover,
+
+\[
+ \ell_N^\top A_{0,N}^\eta r_N=1/3,qquad
+ \ell_N^\top A_{1,N}^\eta r_N=2/3,
+ \tag{5.3}
+\]
+
+while
+
+\[
+ \partial_\eta A_{0,N}^\eta r_N=q_N,qquad
+ \partial_\eta A_{1,N}^\eta r_N=-q_N.
+ \tag{5.4}
+\]
+
+The lift is also exact in the Gate A norm:
+
+\[
+ \|SC_k^\eta R\|_{\infty\to\infty}
+ =\|C_k^\eta\|_{\infty\to\infty},\qquad
+ \|SBR\|_{\infty\to\infty}=\|B\|_{\infty\to\infty}.
+ \tag{5.5}
+\]
+
+The upper bound follows from \(\|S\|=\|R\|=1\), and equality follows by
+testing a module-constant sign vector attaining the largest row sum of the
+two-by-two matrix. At \(\eta=0\),
+
+\[
+ \|A_{0,N}\|_\infty=\frac5{12},\qquad
+ \|A_{1,N}\|_\infty=\frac{11}{12},\qquad
+ \|B_N\|_\infty=\frac43.
+ \tag{5.6}
+\]
+
+Hence the sum of the two delayed-atom norms is \(4/3\), so the delay
+operator is bounded by \(4/3\); for distinct scaled delays its operator
+measure has total variation exactly \(4/3\). The whole balanced
+current-plus-delay operator is bounded by \(8/3\), uniformly in \(N\). On
+any fixed compact \(\eta\)-interval, (5.5) gives the analogous uniform bound
+by taking the maximum of two-by-two row sums.
+
+Equation (5.4) is the arbitrary-\(N\) replication of the **module-difference
+channel that already has a proved nonzero transverse return in the JNS base
+paper**. It leaves the complete critical projected delay measure unchanged.
+This is the only nonzero canard-return mechanism claimed at this stage; its
+coefficient is inherited on the exactly invariant block-constant subspace,
+not newly proved for a general non-equitable network.
+
+## 6. Operator-TV residuals and a conditionally positive non-equitable family
+
+For atomic residual layers \(E_k\) at pairwise distinct fixed scaled delays
+\(\theta_k\), set
+
+\[
+ \mathbb E_N=\sum_{k=1}^mE_k\delta_{\theta_k},
+ \qquad
+ \|\mathbb E_N\|_{\mathrm{TV},\infty}
+ =\sum_{k=1}^m\|E_k\|_{\infty\to\infty}.
+ \tag{6.1}
+\]
+
+On \(C([-\Theta_*,0],\mathbb R^N)\) with the nodewise maximum history norm,
+
+\[
+ \left\|\sum_kE_k\phi(-\theta_k)\right\|_\infty
+ \le \|\mathbb E_N\|_{\mathrm{TV},\infty}
+       \|\phi\|_{C,\infty}.
+ \tag{6.2}
+\]
+
+For the balanced feedback residual,
+
+\[
+ \mathcal R_E\phi=
+ \left(\sum_kE_k\right)\phi(0)-\sum_kE_k\phi(-\theta_k),
+ \tag{6.3}
+\]
+
+one has
+
+\[
+ \|\mathcal R_E\|
+ \le \|\mathbb E_N\|_{\mathrm{TV},\infty}
+     +\left\|\sum_kE_k\right\|_{\infty\to\infty}
+ \le2\|\mathbb E_N\|_{\mathrm{TV},\infty}.
+ \tag{6.4}
+\]
+
+If \(\sum_kE_k=0\), the first bound in (6.4) improves to the TV norm itself.
+These are the residual bounds used for Gate A model fitting. The executable
+audit also retains
+
+\[
+ \|E\|_{W_N\to W_N}
+ \le \|W_N^{1/2}EW_N^{-1/2}\|_F,
+ \tag{6.5}
+\]
+
+which is exact for rank-one residuals.
+
+This weighted-Frobenius calculation checks the exact Hilbert normalization
+used to construct the rank-one family below. It is not substituted for the
+maximum-norm TV estimate (6.2).
+
+### Proposition 6.1 -- uniformly small non-equitable residuals
+
+Assume a receiving module \(C_b\) has \(n_b\ge2\). Let
+\(m=\lfloor n_b/2\rfloor\), and define a zero-sum vector supported in \(C_b\)
+by
+
+\[
+ \widetilde u_i=
+ \begin{cases}
+ 1,&\text{for the first }m\text{ nodes of }C_b,\\
+ -m/(n_b-m),&\text{for the remaining nodes of }C_b.
+ \end{cases}
+ \tag{6.6}
+\]
+
+Normalize \(u=\widetilde u/\|\widetilde u\|_{W_N}\), and normalize the source
+module-average functional as
+
+\[
+ \rho_a=\sqrt{d_a}\,R_a,\qquad d_1=1/2,\quad d_2=1/8.
+ \tag{6.7}
+\]
+
+Then \(G=u\rho_a\) has rank one and
+
+\[
+ \|G\|_{W_N\to W_N}=1,\quad RG=0,\quad
+ \ell_N^\top G=0,\quad GS\ne0.
+ \tag{6.8}
+\]
+
+The same distributed vector has a dimension-uniform maximum-norm bound:
+
+\[
+ \|G\|_{\infty\to\infty}
+ =\sqrt{\frac{d_a(n_b-m)}{d_bm}}
+ \le\sqrt{\frac{2d_a}{d_b}}.
+ \tag{6.9}
+\]
+
+For any scalar \(\zeta\), take
+
+\[
+ E_0=\zeta G,qquad E_1=-\zeta G.
+ \tag{6.10}
+\]
+
+Then
+
+\[
+ RE_kS=0,qquad \ell_N^\top E_k=0,qquad E_0+E_1=0,
+ \tag{6.11}
+\]
+
+but
+
+\[
+ (I-Q)E_kS=E_kS\ne0\quad(\zeta\ne0).
+ \tag{6.12}
+\]
+
+Thus the reduced two-module layers, their direct critical projection, and
+the total current gain remain exactly fixed, while rowwise module
+equitability fails. Place \(E_0,E_1\) at distinct model delays
+\(\theta_0\ne\theta_1\). The exact residual TV bounds are
+
+\[
+ \|\mathbb E_N\|_{\mathrm{TV},W}=2|\zeta|,
+ \qquad
+ \|\mathbb E_N\|_{\mathrm{TV},\infty}
+ =2|\zeta|\sqrt{\frac{d_a(n_b-m)}{d_bm}}
+ \le2|\zeta|\sqrt{\frac{2d_a}{d_b}}.
+ \tag{6.13}
+\]
+
+Hence non-equitable layers occur arbitrarily close to the equitable class in
+the maximum-norm operator-TV topology used by Gate A (and also in the
+diagnostic weighted topology).
+
+There is also a size-uniform positive-layer subfamily, but it requires a
+hypothesis on **both complete base layers**. Assume
+
+\[
+ C_0^\eta>0\quad\hbox{and}\quad C_1^\eta>0
+ \quad\hbox{entrywise}.
+ \tag{6.14}
+\]
+
+For the declared matrices this is equivalent to
+\(-1/6<\eta<1/12\). Set
+
+\[
+ c_{ba}=\min\{(C_0^\eta)_{ba},(C_1^\eta)_{ba}\}>0,
+ \tag{6.15}
+\]
+
+Then every entry of \(A_{0,N}^\eta+E_0\) and
+\(A_{1,N}^\eta+E_1\) remains positive whenever
+
+\[
+ \boxed{
+ |\zeta|<c_{ba}\sqrt{\frac{d_b}{2d_a}}.
+ }
+ \tag{6.16}
+\]
+
+Indeed, the largest component of the normalized distributed \(u\) is at
+most \(\sqrt{2/d_b}\), while each component of \(\rho_a\) equals
+\(\sqrt{d_a}/n_a\); the base affected entries equal
+\((C_k^\eta)_{ba}/n_a\). The factor \(n_a^{-1}\) therefore cancels, and the
+bound is independent of both module sizes. All unaffected entries remain
+positive by (6.14). For the default \((b,a)=(2,1)\) at \(\eta=0\), (6.16)
+is
+
+\[
+ |\zeta|<\frac1{12\sqrt2}.
+ \tag{6.17}
+\]
+
+The weaker condition \(c_{ba}>0\) alone does not prove full positivity. For
+example, at \(\eta=-1/5\) and \((b,a)=(2,1)\), both affected entries are
+positive but \((C_0^\eta)_{11}=-1/30\) is negative and untouched by \(G\).
+The executable audit records the affected-entry radius separately and
+returns no full-layer positivity certificate in this case.
+
+The sparse first-two-node difference is retained in code only as a
+finite-size contrast. Its maximum-norm generator grows like \(n_b^{1/2}\),
+so it is not a Gate A uniform residual family.
+
+### Essential claim boundary
+
+The residual (6.10) lives in a within-module zero-average direction. For the
+nodewise cubic (1.4), its first cross contraction with a block-constant
+critical state has zero module average. Therefore Proposition 6.1 proves
+**openness beyond equitability and, under (6.14), a dimension-uniform
+positive subfamily**,
+not a nonzero \(O(\delta^3)\) Melnikov coefficient. Such a coefficient could
+vanish at first order and must be calculated from the complete history graph.
+The established nonzero first-order return remains the lifted module
+direction (5.4).
+
+## 7. Exact results versus later theorem targets
+
+The following are now exact for the declared node class:
+
+1. replication/averaging, exact weighted orthogonal algebra, and a uniformly
+   conditioned maximum-norm critical/transverse split;
+2. the nodewise nonlinear module restriction, simple-fold jet, and local
+   \(C^{12}\) maximum-norm bounds on every fixed coordinatewise box;
+3. exactly one length-two singular current-state Jordan chain;
+4. a dimension-independent singular transverse semigroup bound in the same
+   maximum-product norm;
+5. exact maximum-norm lifting of the two delay layers and the known
+   module-difference return direction;
+6. atomic maximum-norm operator-TV bounds and a non-equitable perturbation
+   family with a dimension-uniform positive subfamily under (6.14).
+
+The companion blow-up lemma proves the exact full-stable-fiber scaling,
+stable-variable shift, fixed-atom operator-TV representation, transformed
+\(C^{12}\) bounds, componentwise bounded preparation, RFDE well-posedness,
+and the dimension-uniform logarithmic invariant-history graph for this
+class. What remains open begins at the **connection and response gates**:
+
+1. prove a uniform complete-history gap inverse and simple root, the
+   Schur--Melnikov derivative for a general non-equitable residual, and an
+   \(N\)-uniform remainder;
+2. identify the selected local histories with physical outer slow histories
+   and then with biological pulse onset.
+
+Equation (4.5) is the singular stable-semigroup input used by the companion
+model-fitting lemma.
+A full positive-\(\delta\) RFDE spectral dichotomy is neither established
+here nor required by the graph-first theorem; it would belong to the
+optional direct full-Lin route. Likewise, (6.2)--(6.4) give the correct
+residual topology without proving that a canard root responds nontrivially.
+
+## 8. Reproduction
+
+Run
+
+```sh
+PYTHONPATH=build/testdeps:src python3 -m pytest -q \
+  tests/test_lifted_two_module_network.py
+```
+
+The test suite checks the exact identities for unequal sizes, the
+maximum-norm constants of \(S,R,Q,P_c,P_m,P_w\), local nodewise-cubic jet
+bounds, the maximum-product and diagnostic weighted semigroup estimates,
+exact maximum-norm delay-layer TV, the distributed breaker's uniform
+maximum-norm bound, and the full-layer positivity guard. The case
+\(\eta=-1/5\) is included as a negative control: positive affected entries
+must not certify a base layer with an untouched negative entry.
