@@ -1,0 +1,122 @@
+{
+  "backend_audit": {
+    "boundary": "Backend visibility is provenance, not a proof. The certificate uses only explicitly directed MPFR operations; mpmath presence is not treated as an Arb/FLINT substitute.",
+    "executables_visible": {
+      "arb": null,
+      "julia": null,
+      "sage": null
+    },
+    "python_modules_visible": {
+      "flint": false,
+      "gmpy2": true,
+      "interval": false,
+      "mpfi": false,
+      "mpmath": true,
+      "sage": false,
+      "sageall": false
+    },
+    "selected_backend": "gmpy2 MPFR directed rounding",
+    "shared_libraries_visible": {
+      "arb": null,
+      "flint": null,
+      "gmp": "libgmp.so.10",
+      "mpfi": null,
+      "mpfr": "libmpfr.so.6"
+    }
+  },
+  "candidate_input": {
+    "binary_collocation_residual_inf": 6.750155989720952e-14,
+    "binary_oversampled_residual_inf": 5.8214201343886884e-06,
+    "period": 16.54038779818094,
+    "spectral_tail_l1_diagnostic": 5.727362461509277e-07
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_periodic_directed_validation.py"
+    ],
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_periodic_directed_validation.py",
+    "generator": "experiments/fhn_periodic_directed_validation.py",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "node_count": 97,
+    "numpy": "2.5.2",
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+    "precision_bits": 160,
+    "python": "3.14.4",
+    "rounding": "MPFR RoundDown/RoundUp at every interval operation",
+    "scipy": "1.18.0"
+  },
+  "scope": {
+    "directed_full_polynomial_residual": true,
+    "exact_finite_bordered_inverse_proof": true,
+    "exact_finite_collocation_proof": true,
+    "infinite_dimensional_bordered_inverse_proof": false,
+    "infinite_dimensional_periodic_rfde_proof": false,
+    "issue_15_closed": false
+  },
+  "validation": {
+    "bordered_rfde_inverse_validated": false,
+    "falsifier": "The finite nodal radii inequality and directed Fourier residual do not couple the finite inverse to the correction tail. Supply finite-tail cross bounds and a nonlinear tail radii estimate before setting either RFDE validation flag true.",
+    "finite": {
+      "approximate_inverse_inf_upper": "20.3902508958242283387589938002199187159851196257801934",
+      "backend": "gmpy2 2.2.2 / MPFR MPFR 4.2.1",
+      "bordered_dimension": 195,
+      "contraction_radius": "7.14271176649145982858546671229869801279290540900214979e-12",
+      "exact_finite_bordered_inverse_validated": true,
+      "exact_finite_collocation_root_validated": true,
+      "failure_reason": null,
+      "floating_product_roundoff_upper": "4.31093367768633079854126176544788079171320716810934501e-10",
+      "ieee_binary64_product_model_checked": true,
+      "newton_image_bound_upper": "3.57135588165947811100804326542008635985768119406302074e-12",
+      "node_count": 97,
+      "point_inverse_defect_upper": "4.44159544761769350630311742392285527089008297085711297e-10",
+      "point_inverse_norm_upper": "20.3902509048807528982490845728830480567753742944684448",
+      "point_jacobian_enclosure_radius_inf_upper": "5.18741742366383779995884297404024987540173712856750324e-13",
+      "precision_bits": 160,
+      "radii_left_upper": "3.5713750424449667540444880293044067047673240298108664e-12",
+      "radii_margin_lower": "3.57133672404649307454097868299429130802558137918630498e-12",
+      "residual_inf_upper": "1.75150168573495347298489113191991612081372171761812618e-13",
+      "uniform_inverse_defect_upper": "2.68256456581824552418561116538386253534972549703000507e-06",
+      "uniform_inverse_norm_upper": "20.3903055941355013722030725592613814760337603184477307"
+    },
+    "finite_tail_coupling_bound_supplied": false,
+    "fourier": {
+      "linear_tail_wiener_bound_upper": "6.19211091500449699590756128491967197030864684352594217",
+      "maximum_coefficient_lower": "4.87696446298643847160053730387738636747598221147808316e-07",
+      "maximum_coefficient_upper": "4.87696446298643847160053730387738636848707448318838548e-07",
+      "node_count": 97,
+      "orbit_edge_coefficient_l1_upper": "1.43992530651950724066993789076201040082059059793192117e-08",
+      "original_half_bandwidth": 48,
+      "outside_collocation_band_l1_lower": "3.02044792130718047743972775890204967541355483053252989e-06",
+      "outside_collocation_band_l1_upper": "3.02044792130718047743972775890204967551972119088883587e-06",
+      "precision_bits": 160,
+      "residual_support_half_bandwidth": 144,
+      "tail_derivative_neumann_gate": true,
+      "tail_derivative_neumann_ratio_upper": "0.332666038252440363713811770297238378313510791890952993",
+      "unweighted_l1_lower": "6.04089591769856241358320996657155454421295831672406059e-06",
+      "unweighted_l1_upper": "6.0408959176985624135832099665715545497501026774244176e-06",
+      "weighted_l1_nu": "1.001",
+      "weighted_l1_upper": "6.34099073668884075897314789612977831492917339768038923e-06"
+    },
+    "infinite_radii_polynomial_evaluated": false,
+    "missing_infinite_bounds": [
+      "dealiased_finite_coefficient_inverse",
+      "finite_to_tail_cross_norm",
+      "tail_to_finite_cross_norm",
+      "phase_period_compatible_tail_inverse",
+      "correction_ball_jacobian_variation",
+      "quadratic_cubic_correction_tail"
+    ],
+    "nonlinear_correction_tail_bound_supplied": false,
+    "parameters": {
+      "epsilon": 0.2,
+      "kappa_1": 0.2,
+      "kappa_3": 0.25,
+      "theta_0": 4.0,
+      "theta_1": 5.0,
+      "unfolding": 0.6
+    },
+    "periodic_rfde_orbit_validated": false
+  }
+}

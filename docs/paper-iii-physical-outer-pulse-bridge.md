@@ -633,8 +633,9 @@ The shortest honest Paper III chain is now:
    Gaussian trace-to-gap theorem to obtain (4.4)--(4.5) and the physical
    maximal-canard response.
 3. **Geometric middle-history coordinate.**  Close U-SF to construct the
-   complete-history saddle tracker, its stable foliation, and the simple
-   reset intersection \(\mu_{\rm geo}\).  Its sign may classify transverse
+   complete-history saddle tracker, its selected codimension-one
+   relative-growth history graph and defining covector, and the simple reset
+   intersection \(\mu_{\rm geo}\).  Its sign may classify transverse
    side exits before the lower-fold cap; it does not classify every
    exponentially small offset through the fold.
 4. **Moving-tube and lower-fold event.**  Close the repaired U-EX hypotheses:
@@ -647,9 +648,13 @@ The shortest honest Paper III chain is now:
    \tag{6.1}
    \]
 5. **Physical capture and no return.**  Close U-CAP by proving that each
-   signed outer side exit and lower-fold outgoing history reaches its declared
-   pulse or quiet block first.  The frozen weighted-gradient/cooperative fast
-   layer does not by itself prove this RFDE statement.
+   signed outer side exit and lower-fold outgoing history reaches a valid
+   moving, latched pulse or quiet target first.  The old fixed-\(\rho_0\)
+   passage blocks do not cover late exits; the exact obstruction and the
+   finite-deadband/global-basin alternatives are in
+   `paper-iii-unforced-capture-no-return.md`.  The frozen
+   weighted-gradient/cooperative fast layer does not by itself prove this
+   RFDE statement.
 6. **Choose the event definition.**  Only after step 5 use (5.2) for a
    channel safety coordinate.  Alternatively, prove the full quantitative
    chart hypotheses (5.6)--(5.7) and use (5.8)--(5.9) for an amplitude safety
@@ -691,7 +696,10 @@ with the Lin and numerical enclosure errors reported independently.
 | Opposite reset outcomes and a nonempty transition set | Proved for small positive \(\varepsilon\) | Singular channel endpoints, finite-time persistence, and connectedness |
 | Unique unforced reset separator/simple event root | Decomposed into U-SF, repaired U-EX, and U-CAP | U-SF gives only the geometric root; U-EX gives the conditional fold-event root; U-CAP is still open |
 | Geometric-gap sign classifies every channel outcome | False as an all-offset shortcut | Exact Airy ordinary-fold obstruction; replace by the moving tube, fold map, and U-CAP |
-| Channel threshold error | Exactly zero relative to \(\mu_{\rm EX}\) only after U-CAP | The conditional fold factorization gives an exponential comparison with \(\mu_{\rm geo}\); equality with \(\mu_{\rm can}\) is not asserted |
+| Old fixed-\(\rho_0\) blocks capture every late exit | False as an implication | Physical detector-drift mismatch and exact two-channel no-hit counterexample |
+| Deadband U-CAP | Conditional finite-chain implication proved | Moving latched targets and full-history flux enclosures remain to be certified |
+| Exact U-CAP | Open global RFDE gate | Requires the two-basin invariant/stable-set exclusions, not a finite-time perturbation argument |
+| Channel threshold error | Exactly zero relative to \(\mu_{\rm EX}\) only after exact U-CAP | The conditional fold factorization gives an exponential comparison with \(\mu_{\rm geo}\); equality with \(\mu_{\rm can}\) is not asserted |
 | Amplitude-detector threshold error | Abstract quantitative chart implication proved; model chart open | Two-sided subexponential target/prefactor bounds, \(C^1\)-small normalized landing remainder, unique local peak branch, no peak switching, interval/DDE certification |
 
 The executable tests deliberately fail if the potential identity, fold

@@ -374,7 +374,7 @@ Assume Gate U-SF has supplied, for
 $\rho\in[\rho_c(\varepsilon),\rho_0]$,
 
 - a selected history $\Gamma^m_{\varepsilon,u}(\rho)$;
-- a $C^1$ complete-history unstable fiber coordinate
+- a $C^1$ complete-history relative-growth graph defining coordinate
   $G_{\varepsilon,u,\rho}(\phi)$, with $G=0$ on the selected middle
   history; and
 - a monotone current recovery coordinate along all retained histories.
@@ -634,9 +634,9 @@ The all-offset statement is singular for two reasons.
    (5.1).
 
 Thus an ordinary local RFDE stable-manifold theorem at one fixed
-$\varepsilon$ cannot prove (6.1)--(6.5). Uniformity requires a matched
-outer trichotomy, logarithmic amplification control, a complete-history
-fold blow-up, and uniform chart overlaps. Work on finite-dimensional
+$\varepsilon$ cannot prove (6.1)--(6.5). Uniformity requires U-OUT\({}^+\)
+tracker and relative-growth graph bounds, logarithmic amplification control,
+a complete-history fold blow-up, and uniform chart overlaps. Work on finite-dimensional
 entry--exit maps, for example
 [Hsu--Ruan](https://doi.org/10.1137/19M1295507), clarifies the action
 mechanism but does not include the present diverging physical delay.

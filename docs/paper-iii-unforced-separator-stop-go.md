@@ -7,8 +7,8 @@ a unique codimension-one separator, and two signed unstable exits do not make
 fixed-layer passage blocks classify every nonzero reset offset when the slow
 layer drifts.  This does not disprove a global separator for the physical
 two-module RFDE.  It proves that such a theorem additionally needs the outer
-saddle-history continuation, a complete-history stable foliation, a moving
-lower-fold event map, and a separate biological capture/no-return result
+saddle-history continuation with uniform mixed jets, a selected
+relative-growth history graph, a moving lower-fold event map, and a separate biological capture/no-return result
 stated in Section 5.**
 
 The executable identities are in
@@ -52,7 +52,8 @@ The reset layer \(\rho_0=-1/2\) is a fixed positive slow distance away.
 Thus present evaluation already proves that the reset histories are not in
 the domain of the existing fold graph for small \(\delta\).
 
-Second, a graph is not a foliation.  The map
+Second, the proved inner special-flow graph is not the outer relative-growth
+graph. The map
 
 \[
  \iota_{\delta,u}:z\longmapsto
@@ -102,15 +103,15 @@ This construction has two honest qualifications.
    preparations may move the exact finite-\(\delta\) tracker by a flat amount,
    even when every algebraic canard coefficient agrees.
 2. Forward continuation selects one history but does not construct the
-   codimension-one family of histories that shadow it.  That family requires
-   a nonautonomous RFDE exponential trichotomy and a stable-fiber theorem on
-   the outer middle branch.
+   codimension-one family selected by a forward growth condition. The direct
+   Lyapunov--Perron theorem now constructs that family as a relative-growth
+   graph, conditional on U-OUT\({}^+\); it does not construct stable fibers.
 
 The reset history itself is causal and unique, so there is no remaining
 choice of its past.  The selection problem here is different: one must prove
-that this explicitly prescribed curve in history space crosses the stable
-fiber of the selected saddle tracker, rather than comparing only their
-current voltage coordinates.
+that this explicitly prescribed curve in history space crosses the selected
+relative-growth graph of the saddle tracker, rather than comparing only
+their current voltage coordinates.
 
 ## 3. An exact counterexample to the fixed-layer shortcut
 
@@ -259,9 +260,10 @@ the transverse recovery direction is stable.  Since the delayed voltage
 operator is multiplied by \(\varepsilon=\delta^2\), a resolvent small-gain
 argument on the imaginary axis can preserve the one-dimensional unstable
 index independently of \(\tau_*\).  The corresponding calculation has
-already been carried out for the collective-clamped saddle.  Along an
-unforced moving tracker it must be upgraded from an equilibrium root count
-to a nonautonomous exponential trichotomy.
+already been carried out for the collective-clamped saddle. Along an
+unforced moving tracker, the direct forward relative-history-graph theorem
+replaces the stronger trichotomy once U-OUT\({}^+\) supplies the tracker
+jets.
 
 ### 4.2 Stable complement
 
@@ -279,11 +281,10 @@ hyperbolicity: the collective slow rate is order \(\delta^2\), so (4.1) is
 still faster on the slow scale.  It does rule out importing a stable-fiber
 theorem with constants based on a fixed negative spectral bound.
 
-A usable proof must work in the fixed scaled-history interval and establish
-domination of the strong unstable bundle over a center-stable complement.
-It must also control translation of old histories and the parameter jets of
-the fiber projection.  None of these properties is part of the proved
-special-flow embedding.
+A usable proof must work in the fixed scaled-history interval, assemble
+arbitrary old histories, and control the parameter jets of its scalar normal
+coordinate. The companion direct forward theorem proves this implication
+under U-OUT\({}^+\), without claiming a full trichotomy or stable foliation.
 
 ## 5. The smallest new theorem package
 
@@ -291,7 +292,7 @@ The following separates the geometric middle-history root, the lower-fold
 event root, and the pulse/quiet boundary.  It is deliberately narrower than a
 full physical maximal-canard theorem.
 
-> **Gate U-SF (unforced outer saddle history and stable fibers).**  Fix an
+> **Gate U-SF (unforced outer tracker and relative-growth graph).** Fix an
 > outer middle-branch section beyond the outgoing overlap of the right-fold
 > chart, the reset section \(\rho=\rho_0\), a compact control box, and the
 > scaled complete-history space.  Prove:
@@ -300,19 +301,19 @@ full physical maximal-canard theorem.
 >    fixed outer section and has a unique physical forward continuation
 >    \(\Gamma^m_{\delta,u}\) through the reset section, with every delayed
 >    backtrack in the declared uncut outer tube;
-> 2. the variational RFDE along \(\Gamma^m_{\delta,u}\) has a one-dimensional
->    strong unstable bundle and a dominated center-stable complement, with
->    estimates sufficient for a \(C^1\) nonautonomous stable foliation in the
->    scaled history space;
-> 3. a scalar complete-history fiber coordinate \(G_{\delta,u}\) defines
->    that foliation at \(\rho_0\), and the causal reset satisfies
+> 2. the finite tracker has the U-OUT\({}^+\) mixed jets; the selected future
+>    extension and direct forward Lyapunov--Perron theorem then give a
+>    codimension-one relative-growth graph in the scaled history space;
+> 3. a scalar complete-history graph coordinate \(G_{\delta,u}\) defines
+>    that graph at \(\rho_0\), and the causal reset satisfies
 >    \[
 >      \left|\partial_a
 >       G_{\delta,u}(\widehat\Phi^R_\delta(a,u))\right|\ge c_a>0;
 >    \tag{5.1}
 >    \]
-> 4. the continuation and fiber maps have the parameter regularity claimed
->    for the reset threshold, without using an ambient backward RFDE.
+> 4. the continuation and graph-coordinate maps have the parameter
+>    regularity claimed for the reset threshold, without using an ambient
+>    backward RFDE.
 
 Items 1--4 would give, by the implicit-function theorem, a unique local
 **geometric reset separator**
@@ -331,8 +332,8 @@ To obtain the boundary of the existing first-hit outcome sets, two further
 gates are unavoidable.
 
 > **Gate U-EX (repaired moving-tube/lower-fold event).**  Continue the saddle
-> tracker and its signed unstable fibers through a moving slow-base tube.  Use
-> signed side exits and an \(O(\varepsilon^{2/3})\) lower-fold cap so every
+> tracker and its signed reset-history offsets through a moving slow-base
+> tube.  Use signed side exits and an \(O(\varepsilon^{2/3})\) lower-fold cap so every
 > retained offset has a finite one-passage event.  On cap histories construct
 > a \(C^1\) complete-history fold map to a fixed outgoing section and prove a
 > unique transverse root \(a_{\rm EX}\).  Under the uniform nonzero fold-offset
@@ -348,11 +349,13 @@ gates are unavoidable.
 > implication: offsets of one initial sign can reach both fold sides, and the
 > two roots differ for every fixed positive \(\varepsilon\).
 
-> **Gate U-CAP (biological capture and no return).**  Prove that every signed
-> outer side exit and signed lower-fold outgoing history reaches its declared
-> pulse or quiet detector block before the competing block, uniformly on the
-> control box.  This is the step that identifies \(a_{\rm EX}\), not
-> automatically \(a_{\rm sep}\), with the biological first-hit boundary.
+> **Gate U-CAP (biological capture and no return).** Replace the invalid
+> fixed-\(\rho_0\) targets by moving, latched pulse and quiet detectors. For
+> a declared deadband, prove the complete-history isolating-chain flux
+> inequalities; for an exact all-offset boundary, additionally exclude every
+> competing invariant/stable set in the transition region. This is the step
+> that identifies \(a_{\rm EX}\), not automatically \(a_{\rm sep}\), with
+> the biological first-hit boundary.
 
 The lower-fold clause is not optional.  Offsets of order
 \(e^{-A/\varepsilon}\) can shadow the middle branch for an order-one slow
@@ -363,7 +366,8 @@ their eventual passage through \(\mathfrak f_-\).
 
 **STOP for the present unforced Gate R-S.**  The proved special-flow graph
 cannot be used to mark the gate closed.  It has the wrong outer domain, does
-not supply stable fibers for the causal reset histories, and cannot turn
+not supply the outer relative-growth graph for the causal reset histories,
+and cannot turn
 fixed-fast-time layer blocks into an all-offset classification.  The exact
 counterexample in Proposition 3.1 remains valid even after granting the
 desired low-dimensional saddle separator.
@@ -393,7 +397,8 @@ be relabelled as the unforced or canonical maximal-canard threshold.
 | The inner graph contains the reset layer \(\rho_0=-1/2\) | False for small \(\delta\) | Scale comparison (1.1)--(1.2) |
 | Forward direction from the reset saddle returns to \(\mathfrak f_0\) | False near the declared unfolding | Sign in (1.4); it moves toward \(\mathfrak f_-\) |
 | Forward continuation from the inner repelling history to \(\rho_0\) | Well posed for a given history; uniform outer theorem open | Requires long slow-time containment and parameter estimates |
-| Stable foliation assigning causal reset histories to that tracker | Open | Not contained in graph existence/uniqueness |
+| Relative-growth graph assigning a scalar coordinate to causal reset histories | Proved implication conditional on U-OUT\({}^+\) | Direct forward history-graph theorem |
+| Stable foliation inside that graph | Not asserted or needed | Weak long-delay modes need not have a uniform stable gap |
 | Unique geometric reset intersection under Gate U-SF | Conditional, exact implication | Complete-history IFT using (5.1) |
 | Fixed-layer blocks classify every nonzero offset from local data | False as a logical implication | Proposition 3.1 |
 | Physical FHN unforced transition set is nonunique | Not asserted | Requires model-specific global dynamics |
@@ -402,5 +407,5 @@ be relabelled as the unforced or canonical maximal-canard threshold.
 
 The mathematical gain from this stop/go result is precise: it removes the
 false hope that one more local stable-manifold citation closes Paper III and
-locates the irreducible new analysis in an outer complete-history foliation,
+locates the irreducible new analysis in outer action-supercritical matching,
 an ordinary-fold complete-history transition, and biological capture/no-return.

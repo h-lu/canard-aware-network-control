@@ -137,13 +137,21 @@ open.
    transition set. Its unforced separator is still open, but the old local
    shortcut is now known to be insufficient: even an exact saddle separator
    need not classify all offsets by fixed-layer first hits when recovery
-   drifts. The repaired route splits into an outer stable-foliation gate
-   U-SF, a repaired moving-tube/lower-fold event gate U-EX, and the separate
+   drifts. A separate sharp audit proves that the fixed-\(p\) logarithmic
+   fold estimate is action-subcritical for every fixed outer action and that
+   a value-residual terminal match does not by itself control parameter
+   jets. The repaired route splits into an outer U-OUT\({}^+\)
+   tracker/relative-growth-history-graph gate U-SF, a repaired
+   moving-tube/lower-fold event gate U-EX, and the separate
    U-CAP biological capture/no-return gate. An exact Airy model shows that the
    lower-fold event root can be exponentially displaced from the geometric
    root; the physical comparison requires the stated fold-map factorization,
    and neither root is identified with the canard root without an additional
-   theorem. A
+   theorem. The U-CAP audit further proves that the old fixed-reset-layer
+   blocks cannot classify all late exits: an exact two-channel ODE subclass
+   has a punctured no-hit set. The shortest unforced positive result is a
+   moving-detector deadband certificate; exact capture still requires a
+   global complete-history invariant-set exclusion. A
    modified protocol that clamps only the collective recovery coordinate now
    has, for every sufficiently small fixed positive \(\delta\), a proved
    codimension-one complete-history pulse/quiet separator. This is an
@@ -170,8 +178,13 @@ open.
    two-by-two frequency--amplitude block is certified. The corresponding FHN
    periodic package now supplies a reproducible Fourier-collocation orbit,
    derivative matrix, unique-extrema diagnostics, and a positive nine-sample
-   floating response-box candidate. The directed periodic-orbit and response
-   interval certificate remains open.
+   floating response-box candidate. A separate MPFR-directed calculation
+   proves the exact 97-node phase-fixed collocation root and finite bordered
+   inverse and encloses the complete residual of its trigonometric polynomial.
+   It also exposes aliased modes. A de-aliased finite/tail radii argument now
+   validates the center RFDE orbit and its phase-bordered inverse. Full
+   Floquet hyperbolicity, extrema and continuation on a parameter box, and
+   the response-box interval certificate remain open.
 8. **Numerical diagnostic.** Literal method-of-steps integration of one
    finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
@@ -206,17 +219,28 @@ open.
 - [docs/paper-iii-outer-selection-blocker-and-repair.md](docs/paper-iii-outer-selection-blocker-and-repair.md) -- exact counterexample to backward-completeness as a selection rule, curve-restricted history equations, anchored flat-error estimate, repaired Gate P3-A\(^*\), and the causal reset alternative;
 - [docs/paper-iii-causal-reset-separator.md](docs/paper-iii-causal-reset-separator.md) -- exact causal release history, voltage-memory overwrite and recovery non-erasure, fixed-fast-time pulse/quiet passage cylinders, and a proved nonempty reset-transition set; its former all-in-one R-S target is decomposed below;
 - [docs/paper-iii-unforced-separator-stop-go.md](docs/paper-iii-unforced-separator-stop-go.md) -- exact ODE-subclass obstruction to deriving an unforced first-hit boundary from a local saddle separator and fixed-layer blocks, plus the former U-EX target repaired into a U-SF geometric root, moving-tube/lower-fold event root, and U-CAP biological boundary; it does not disprove the physical FHN separator;
-- [docs/paper-iii-unforced-geometric-separator.md](docs/paper-iii-unforced-geometric-separator.md) -- Gate U-SF theorem package: exact middle-branch action obstruction, the narrow outer-tracker and dominated-history-trichotomy hypotheses, and the conditional unique selected geometric reset separator, explicitly without a pulse/quiet outcome claim;
+- [docs/paper-iii-u-out-terminal-matching.md](docs/paper-iii-u-out-terminal-matching.md) -- exact continuation-or-exit and terminal-transfer calculus, action-supercritical matching contract, and the still-open physical terminal BVP/common-leaf/jet obligations;
+- [docs/paper-iii-u-out-action-scale-closure-audit.md](docs/paper-iii-u-out-action-scale-closure-audit.md) -- proved fixed-logarithmic-chart versus fixed-action no-go, an exact complete-history ODE-subclass counterexample separating value closure from parameter-jet closure, and a robust sufficient terminal-root jet condition with its exact ratio bound;
+- [docs/paper-iii-strong-unstable-history-splitting.md](docs/paper-iii-strong-unstable-history-splitting.md) -- direct delay-length-uniform forward Lyapunov--Perron theorem for a selected codimension-one relative-growth history graph and its reset covector; its physical implication is conditional on U-OUT\({}^+\), and it does not claim a phase-space trichotomy or stable foliation;
+- [docs/paper-iii-unforced-geometric-separator.md](docs/paper-iii-unforced-geometric-separator.md) -- Gate U-SF theorem package: exact middle-branch action obstruction, the strengthened U-OUT\({}^+\) hypothesis, and the conditional unique selected geometric reset intersection, explicitly without a pulse/quiet outcome claim;
 - [docs/paper-iii-unforced-lower-fold-exchange.md](docs/paper-iii-unforced-lower-fold-exchange.md) -- Gate U-EX stop/go theorem: proved physical lower-fold orientation and reset-to-fold action, exact Airy all-offset sign obstruction, moving slow-base/fold event repair, and the still-open physical fold-map and separate U-CAP capture/no-return gates;
+- [docs/paper-iii-unforced-capture-no-return.md](docs/paper-iii-unforced-capture-no-return.md) -- Gate U-CAP stop/go theorem: physical fixed-layer detector mismatch, an exact two-attractor RFDE-subclass no-hit counterexample, a finite-deadband complete-history isolating-chain theorem, and the open global two-basin certificate;
 - [docs/paper-iii-collective-clamp-separator.md](docs/paper-iii-collective-clamp-separator.md) -- exact collective-recovery-clamped saddle, one-unstable-root criterion, fixed-\(\delta\) complete-history pulse/quiet separator, deadline deadband, and explicit separation from the open unforced U-SF/U-EX/U-CAP route;
 - [docs/paper-iv-canard-conditioning-no-go.md](docs/paper-iv-canard-conditioning-no-go.md) -- exact row-cancellation bound showing when amplitude and pulse-safety coordinates become exponentially ill-conditioned inside a canard window; delayed-network applicability is conditional on Paper III;
 - [docs/paper-iv-periodic-rfde-adjoints.md](docs/paper-iv-periodic-rfde-adjoints.md) -- proved period/frequency, peak-envelope, distributional amplitude, and causal event adjoints for discrete-delay RFDEs, with exact synchronous-FHN specialization and an explicitly conditional three-row response target;
 - [docs/paper-iv-fhn-control-no-go.md](docs/paper-iv-fhn-control-no-go.md) -- full-network modal decomposition, size-uniform transverse Halanay theorem, and sharp two-scale inverse-conditioning no-go for the declared FHN outputs under explicit root/layer hypotheses;
 - [docs/paper-iv-reset-only-block-control.md](docs/paper-iv-reset-only-block-control.md) -- controlled complete-history threshold IFT, exact reset-only block-triangular response, singular-value and target-radius bounds, Hopf frequency--amplitude witness, and the still-open validated FHN box;
 - [docs/paper-iv-fhn-periodic-box-candidate.md](docs/paper-iv-fhn-periodic-box-candidate.md) -- executable synchronous two-delay FHN periodic BVP, moving-delay sensitivities, extrema/invertibility diagnostics, positive finite-sample response-box candidate, and the direct interval plus ODE-persistence proof contracts; it is explicitly not a validated interval certificate;
+- [docs/paper-iv-directed-periodic-validation.md](docs/paper-iv-directed-periodic-validation.md) -- MPFR-directed proof of the exact 97-node finite collocation root and its bordered inverse, full finite Fourier-polynomial residual enclosure, tail-diagonal diagnostic, and explicit finite-stage refusal prior to the later infinite closure;
+- [docs/paper-iv-infinite-periodic-validation.md](docs/paper-iv-infinite-periodic-validation.md) -- weighted real-conjugate \(M=144\) coefficient inverse, all four finite/tail block bounds, moving-delay-aware nonlinear radii polynomial, and validated center periodic RFDE orbit/phase-bordered inverse; parameter-box Floquet, extrema, and response gates remain open;
 - `src/canard_control/fhn_periodic_candidate.py` -- odd-Fourier BVP/continuation, analytic period column, gain sensitivities, discrete-adjoint audit, sampled box, and ODE-persistence-route diagnostics;
+- `src/canard_control/directed_interval.py` and `src/canard_control/fhn_periodic_directed_validation.py` -- reusable MPFR real/complex interval arithmetic, exact finite nodal contraction, directed DFT/convolution residual bounds, inverse envelope, and machine-readable infinite-tail falsifier;
+- `src/canard_control/fhn_periodic_infinite_validation.py` -- weighted independent real-conjugate coefficient Jacobian, binary-accelerated directed inverse, finite/tail cross norms, tail inverse, and moving-delay correction-ball majorant;
 - `experiments/fhn_periodic_box_candidate.py` with `experiments/requirements-fhn-periodic-candidate.txt` -- one-command candidate reproduction and exact NumPy/SciPy dependencies;
 - `experiments/results/fhn_periodic_box_candidate.json` -- machine-readable binary64 result and software/arithmetic provenance, with all validated-interval flags set to false;
+- `experiments/fhn_periodic_directed_validation.py` with `experiments/requirements-fhn-periodic-validation.txt` -- one-command directed finite validation and its declared gmpy2/NumPy/SciPy dependencies; the result JSON records the exact installed versions;
+- `experiments/results/fhn_periodic_directed_validation.json` -- tracked directed bounds, backend/provenance audit, finite theorem flags, stage-local missing infinite-tail bounds, and RFDE refusal flags;
+- `experiments/fhn_periodic_infinite_validation.py`, its requirements file, and `experiments/results/fhn_periodic_infinite_validation.json` -- one-command center-orbit infinite radii proof with remaining issue-15 flags kept false;
 - `docs/scope-and-theorems.md` -- frozen general-network future-work contract and its stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;
@@ -257,8 +281,12 @@ open.
 - `src/canard_control/physical_pulse_bridge.py` -- singular fast-channel, Sturm, section-orientation, and detector-action calculations;
 - `src/canard_control/causal_reset_separator.py` -- exact causal reset, memory overwrite/non-erasure, endpoint-rank, and scalar root-transfer certificates;
 - `src/canard_control/unforced_separator_obstruction.py` -- exact drifting-saddle exit-time and fixed-layer miss identities that falsify the local shortcut to an unforced first-hit separator;
+- `src/canard_control/unforced_outer_tracker.py` -- causal continuation-or-exit, terminal-transfer, two-sided action-loss, and U-OUT matching-budget diagnostics;
+- `src/canard_control/u_out_action_scale.py` -- logarithmic fold-chart/action-scale comparison, required chart-power audit, and independent scalar root/parameter-jet budgets;
+- `src/canard_control/strong_unstable_history.py` -- exact delay-layer norm, delay-length-independent base-history coordinates, and forward Lyapunov--Perron contraction budgets;
 - `src/canard_control/unforced_geometric_separator.py` -- singular reset-layer action and unstable-vector audit, logarithmic outer-error propagation, weighted Green/strong-unstable domination ledgers, and scalar geometric-separator root bound;
 - `src/canard_control/unforced_lower_fold_exchange.py` -- exact rational lower-fold signs, physical middle-branch action, and underflow-safe Airy fold-boundary diagnostics;
+- `src/canard_control/unforced_capture_audit.py` -- physical detector-drift location, exact saturating two-channel fixed-layer miss threshold, and finite-deadband capture-time diagnostics;
 - `src/canard_control/clamped_reset_separator.py` -- collective-clamp equilibrium, unstable-index, deadline, and large-delay spectral diagnostics;
 - `src/canard_control/outer_selection_coherence.py` -- exact outer-selection nonuniqueness, mixed-jet blow-up, and anchored-boundary suppression diagnostics;
 - `src/canard_control/canard_conditioning.py` -- response-row cancellation, determinant shear, and inverse-conditioning bounds;
@@ -288,6 +316,7 @@ open.
 - [Paper III physical-selection epic](https://github.com/h-lu/canard-aware-network-control/issues/11)
 - [Paper III pulse-event theorem](https://github.com/h-lu/canard-aware-network-control/issues/12)
 - [Paper IV control/conditioning epic](https://github.com/h-lu/canard-aware-network-control/issues/5)
+- [Paper IV periodic FHN validation](https://github.com/h-lu/canard-aware-network-control/issues/15)
 
 ## Frozen theorem route
 

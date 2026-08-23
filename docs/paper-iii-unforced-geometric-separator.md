@@ -4,11 +4,15 @@ Status: **the canonical right-fold history has an exact causal forward
 continuation, and the singular middle branch, its positive repelling action,
 the scalar action-amplification law, and the singular reset transversality
 below are proved.  The full positive-\(\delta\) geometric-separator theorem
-is proved as an implication of two explicit model hypotheses: an exact (or
-action-supercritical) outer tracker and a dominated complete-history
-trichotomy.  Those two hypotheses have not yet been verified for the
-physical two-module RFDE.  Thus Gate U-SF is reduced to a precise theorem
-package but is not marked closed.  No pulse/quiet outcome is claimed here.**
+is proved as an implication of one strengthened model hypothesis:
+U-OUT\({}^+\), an exact outer tracker (possibly obtained by solving the
+action-supercritical terminal matching problem) with the
+finite-segment mixed jets needed by the direct relative-growth history-graph
+theorem.  U-OUT\({}^+\) has not yet been verified for the physical
+two-module RFDE.  A full complete-history trichotomy and stable foliation
+are neither assumed nor claimed.  Thus Gate U-SF is reduced to a precise
+conditional theorem package but is not marked closed.  No pulse/quiet
+outcome is claimed here.**
 
 The numerical action, unstable eigenvector pairing, logarithmic matching
 test, domination ledger, and reset-root bound are executable in
@@ -20,7 +24,8 @@ frozen JNS manuscript.
 ## 1. What U-SF must construct
 
 Let \(\bar u\) denote the compact tuple of controls other than the unfolding
-parameter.  Fix the declared preparation \(\mathcal P\), set
+parameter. Fix \(0<\theta_0<\theta_1\); the atom locations are not components
+of \(u\). Fix the declared preparation \(\mathcal P\), set
 \(\mu=\mu_{c,\mathcal P}(\delta,\bar u)\), and use \(u\) below as shorthand
 for this pulled-back physical parameter tuple.  Put
 
@@ -32,6 +37,11 @@ for this pulled-back physical parameter tuple.  Put
  \rho_R=-\frac12.
 \tag{1.1}
 \]
+
+In the companion relative-history theorem we take \(p:=u\): the unfolding
+coordinate has already been pulled back through the preparation-indexed
+root, while \(\delta\) and the atom locations remain fixed. The U-OUT-J
+\(C^1_u\) estimates include the resulting chain-rule derivatives.
 
 At the preparation-indexed simple root, the canonical local theorem gives
 one exact retained complete history on the outgoing middle side of the
@@ -274,14 +284,27 @@ narrower, one-sided object.
 > 5. the curve extends a fixed positive slow distance on both sides of
 >    \(\rho_R\), and a fixed parameter-coherent overflowing or terminal
 >    Lyapunov--Perron normalization is declared on the longer interval,
->    with local invariance required on its interior.
->    This normalization selects the center-stable sheet; no
->    preparation-independent finite-\(\delta\) sheet is asserted.
+>    with local invariance required on its interior.  This normalization
+>    selects the finite tracker; no
+>    preparation-independent finite-\(\delta\) graph is asserted.
 
-Exact equality in item 2 may be replaced by an action-supercritical
-complete-history matching estimate, but then its nonlinear propagation and
-parameter derivative bounds must be included explicitly.  An
-\(O(\delta^p)\) overlap estimate is not a substitute by Corollary 2.2.
+> **Gate U-OUT-J (finite tracker jets; open).** In addition to Gate U-OUT,
+> require the uniform finite-segment estimates (5.1) of the
+> [relative-history-graph theorem](paper-iii-strong-unstable-history-splitting.md),
+> including the \(C^1_u\) jets of the tracker and moving current frame, the
+> \(O(\delta)\) tracker perturbation, and the \(O(\delta^2)\) slow drift.
+> Write **U-OUT\({}^+\)** for U-OUT together with U-OUT-J.  The selected
+> future-extension lemma in that theorem converts these finite-segment data
+> into the auxiliary whole-future coefficients used by the direct
+> relative-growth graph; it is not a physical continuation past the retained
+> interval.
+
+The action-supercritical residual and inverse estimates of the terminal
+matching contract are a route to proving that an exact terminal zero exists
+and hence that item 2 holds. They do not replace item 2 by approximate
+equality. Until that exact common history has been obtained, Lemma 3.1 does
+not apply. In particular, an \(O(\delta^p)\) overlap estimate is not a
+substitute by Corollary 2.2.
 
 > **Lemma 3.1 (U-OUT gives the selected reset tracker).**  If Gate U-OUT
 > holds, then the forward orbit (1.3) remains on (3.3), hits \(\rho_R\)
@@ -304,7 +327,7 @@ give the last assertion. \(\square\)
 This lemma is constructive and causal.  Its open content is containment and
 exact outer matching, not forward uniqueness.
 
-## 4. The long-delay variational problem
+## 4. The relative-growth history graph
 
 Along the tracker, the variational RFDE has the form
 
@@ -319,11 +342,38 @@ On a compact singular middle segment away from both folds, the current
 fast voltage matrix has one positive and one negative eigenvalue;
 \(-D_w\) is the transverse recovery rate, and the tangent recovery mode is
 slow.  The delayed functional in (4.1) has norm \(O(\varepsilon)\),
-independently of \(\tau_k\), on the sup-history space.  These facts strongly
-suggest a one-dimensional strong-unstable bundle.  They are not themselves
-a nonautonomous complete-history trichotomy.
+independently of \(\tau_k\), on the sup-history space.
 
-Use the fixed scaled phase space
+The needed conclusion is supplied by the direct forward theorem in
+[paper-iii-strong-unstable-history-splitting.md](paper-iii-strong-unstable-history-splitting.md),
+not by an admissibility-to-dichotomy argument.  Under U-OUT\({}^+\), its
+Theorem 5.1 gives a selected, parameter-\(C^1\), codimension-one graph
+
+\[
+ W^{<\sigma}_{\delta,u}(r)
+ \subset C([ -\theta_*,0],\mathbb R^4)
+\tag{4.1a}
+\]
+
+of complete histories whose cutoff forward growth is below a fixed rate
+\(0<\sigma<\lambda_*\).  The defining function \(G_{\delta,u,r}\) has
+
+\[
+ D_\phi G_{\delta,u,r}(0)
+ =\Lambda_{0,u,r}+O_{C^1_u}(\delta),
+ \qquad D_\phi G_{\delta,u,r}(0)h^u_r=1.
+\tag{4.1b}
+\]
+
+Its constants are independent of the physical history length, and a fixed
+selected extension supplies the future normalization.  This is a
+relative-growth graph, not a stable foliation or a basin boundary.
+
+The stronger trichotomy below is retained only as a record of the former
+route.  It is **not a hypothesis of any theorem in this note and is not
+claimed for the physical RFDE.**
+
+For that unused stronger route, one would use the fixed scaled phase space
 
 \[
  \widehat{\mathcal X}
@@ -334,8 +384,7 @@ Use the fixed scaled phase space
 
 No derivative in \(\delta\) is requested.
 
-> **Gate U-TR (dominated long-delay trichotomy; open for the physical
-> tracker).**  Fix a compact middle-branch subinterval
+> **Former U-TR contract (not used and not asserted).**  Fix a compact middle-branch subinterval
 > \(J_R\Subset(\rho_-,0)\) that contains \(\rho_R\) in its interior and is
 > separated from both folds.  Along the restriction of a slightly extended
 > version of (3.3) to \(J_R\), prove a
@@ -388,7 +437,7 @@ center-stable gap in (4.4)--(4.5).
 
 The following abstract calculation makes the roughness input checkable.
 
-> **Lemma 4.1 (weighted Green roughness bound).**  Suppose a base
+> **Historical scalar Green budget.**  Suppose a base
 > complete-history evolution has a Green representation with
 > center-stable forward rate \(\alpha_0\), unstable backward rate
 > \(\beta_0>\alpha_0\), and common bound \(M\).  Let a perturbation be
@@ -436,11 +485,8 @@ The following abstract calculation makes the roughness input checkable.
 > \tag{4.5d}
 > \]
 >
-> Thus parameter control requires differentiated Green/projector bounds,
-> not only a derivative of the delayed atom.  Applying the criterion at two
-> weights strictly between \(\alpha_0\) and \(\beta_0\), together with the
-> standard Green characterization of a dichotomy, gives a perturbed
-> strong-unstable/center-stable splitting with rates between those weights.
+> Thus the scalar inverse has differentiated bounds.  No phase-space RFDE
+> projectors or dichotomy are inferred from this calculation here.
 
 **Proof.**  After conjugation by the weight \(e^{-\eta t}\), the
 center-stable part of the Green kernel has integral norm at most
@@ -454,20 +500,19 @@ inverse identity gives
  D_uR_\eta
  =R_\eta D_u(\mathcal G_\eta\mathcal B)R_\eta,
 \]
-which proves (4.5d).  The final claim is the usual Green-operator
-characterization applied at the two
-weights; the Banach-space roughness step is the standard one in
-[Ju--Wiggins](https://doi.org/10.1006/jmaa.2001.7496). \(\square\)
+which proves (4.5d). \(\square\)
 
 The executable Green budget evaluates (4.5a).  Its physical input is the
 **admissible** norm \(b\), not just the matrix norm of a frozen delay atom.
 Old-history translation must already be included in the base Green
 operator, and the sun--star/variation-of-constants insertion of the delayed
 functional must be bounded independently of \(\tau_*=\theta_*/\delta\).
-Establishing precisely that bound, together with the differentiated base
-Green/projector bounds in (4.5c), is the central linear task in U-TR.
+This historical calculation is not used below.  The direct forward graph
+theorem assembles arbitrary old histories explicitly and proves the
+codimension-one graph without a Perron-admissibility transfer.
 
-A checkable route to U-TR is a moving-coordinate roughness estimate.  Let
+A possible route to the unused stronger trichotomy would require a genuine
+phase-space roughness theorem.  At the scalar-budget level, let
 \(\lambda_*>0\) be a lower bound for the current strong-unstable rate on a
 fixed outer segment, let \(\alpha_0\ge0\) bound the unperturbed
 center-stable growth, and prove that the delayed and moving-frame terms
@@ -487,31 +532,37 @@ and domination reduces to
 \tag{4.7}
 \]
 
-The executable rate ledger checks (4.6)--(4.7) once a genuine RFDE
-roughness estimate supplies \(r_\delta\).  It does not manufacture that
-estimate from frozen eigenvalues.  The needed nonlinear invariant-manifold
-machinery is consistent with the RFDE moving-coordinate theory of
-[Magalhães](https://doi.org/10.1137/0518051); applying it here still
-requires the scaled-history hypotheses above.
+The executable rate ledger checks (4.6)--(4.7) but does not manufacture a
+phase-space estimate from frozen eigenvalues.  None of (4.2)--(4.7) is used
+in the geometric root proof.
 
-## 5. Complete-history center-stable foliation
+## 5. The selected complete-history graph
 
-The tracker segment must be extended through the reset layer before an
-invariant sheet is defined.  A finite-time orbit segment alone does not
-select a unique codimension-one manifold: a terminal boundary condition can
-change the sheet.  Gate U-OUT item 5 deliberately makes the overflowing or
-terminal normalization part of the selected data, and Gate U-TR supplies
-its normal splitting.  The sheet below is unique in that normalized graph
-class, not preparation independent.
+The tracker segment must be extended through the reset layer before the
+future-normalized graph is defined.  A finite-time orbit segment alone does
+not select a unique codimension-one object.  Gate U-OUT\({}^+\) fixes the
+finite tracker and its mixed jets; Lemma 4.1 of the companion graph note
+fixes the auxiliary future extension.  The graph below is unique relative
+to that selected extension, not preparation independent. In this section and
+below use tracker-centered coordinates
 
-> **Theorem 5.1 (center-stable history sheet under U-OUT and U-TR).**
-> Suppose Gates U-OUT and U-TR hold and the physical RFDE is \(C^2\) in
-> history and \(C^1\) in \(u\) on one common scaled-history neighborhood.
-> Then, after shrinking that neighborhood, the selected middle-history
-> curve has a parameter-\(C^1\) local center-stable manifold
+\[
+ \widetilde\phi
+ =\phi-\Gamma^m_{\delta,u}(\rho_R).
+\tag{5.0}
+\]
+
+Thus \(G_{\delta,u}\) denotes the translated defining function: \(G(0)=0\),
+and \(DG(0)\) is the ambient defining covector evaluated at the tracker.
+
+> **Theorem 5.1 (selected relative-growth history graph under
+> U-OUT\({}^+\)).** Suppose Gate U-OUT\({}^+\) holds and the physical RFDE
+> has the finite-evaluation \(C^2\)-history, \(C^1_u\)-parameter bounds of
+> the companion graph theorem. Then, after shrinking the neighborhood, the
+> selected middle-history curve has a parameter-\(C^1\) local graph
 >
 > \[
->  W^{cs}_{\delta,u,\mathrm{loc}}
+>  W^{<\sigma}_{\delta,u,\mathrm{loc}}
 >  \subset\widehat{\mathcal X}
 > \tag{5.1}
 > \]
@@ -521,36 +572,33 @@ class, not preparation independent.
 > defining function
 >
 > \[
->  G_{\delta,u}:\mathcal N\to\mathbb R,
+>  G_{\delta,u}:\mathcal N-\Gamma^m_{\delta,u}(\rho_R)\to\mathbb R,
 >  \qquad
->  G_{\delta,u}^{-1}(0)=W^{cs}_{\delta,u,\mathrm{loc}},
+>  G_{\delta,u}^{-1}(0)
+>  =W^{<\sigma}_{\delta,u,\mathrm{loc}}
+>    -\Gamma^m_{\delta,u}(\rho_R),
 > \tag{5.2}
 > \]
 >
-> with
-> \(D G_{\delta,u}\) nonzero on the strong unstable direction.  Normalize
-> \(G\) so that its derivative at the tracker is the normalized strong
-> unstable quotient covector.  For each
-> fixed \(\delta\), the sheet is foliated by the local stable fibers over
-> the selected history curve.  If the constants and parameter jets in
-> U-TR are uniform, the local product radius and the \(C^1_u\) norms in
-> (5.2) can be chosen uniformly.
+> with \(DG_{\delta,u}h^u=1\) and
+>
+> \[
+>  D_\phi G_{\delta,u}(0)
+>  =\Lambda_{0,u}+O_{C^1_u}(\delta).
+> \tag{5.3}
+> \]
+>
+> On a fixed radius \(r\), the deviation from the base covector is
+> \(O(\delta+r)\), uniformly in the physical history length.
 
-**Proof.**  Work in moving coordinates along the exact curve (3.3).  The
-invariant splitting (4.3) puts the linearized history evolution in
-strong-unstable, tangent, and stable blocks.  The gap (4.4)--(4.5) makes the
-Lyapunov--Perron graph transform for the center-stable graph a contraction;
-the \(C^2\) history bound makes its derivative transform a contraction as
-well.  This gives a \(C^1\) codimension-one graph over \(E^{cs}\).  Applying
-the fixed-\(\delta\) stable graph transform inside that graph produces the
-stable fibers over the one-dimensional base curve.  Parameter dependence
-follows by differentiating the contractions.  A normalized coordinate on
-the one-dimensional unstable quotient gives (5.2).  Uniform constants
-follow from the uniform versions of the same contraction estimates.
-\(\square\)
+**Proof.** Apply Theorems 1.1 and 5.1 of the companion
+[relative-history-graph note](paper-iii-strong-unstable-history-splitting.md)
+to the U-OUT\({}^+\) tracker and its selected extension.  Their explicit
+forward Lyapunov--Perron construction gives (5.1)--(5.3) directly for
+arbitrary old histories. \(\square\)
 
-This theorem uses the complete history splitting.  Replacing (5.2) by the
-sign of current voltage discards delayed endpoint terms and is not valid.
+No stable fibers are asserted. Replacing (5.2) by the sign of current
+voltage would discard delayed-history terms and is not valid.
 
 ## 6. A reset whose singular transversality is exact
 
@@ -631,13 +679,12 @@ The collective reset history and the tracker both have endpoint
 length \(O(1)\) contributes at most \(O(\delta)\).  These componentwise
 bounds prove (6.4).
 
-> **Lemma 6.1 (designed reset transversality).**  Suppose the normalized
-> unstable covectors furnished by U-TR converge on constant voltage
-> tangents to \(p_u^0\), uniformly on the parameter box.  Then
+> **Lemma 6.1 (designed reset transversality).** Under U-OUT\({}^+\), use
+> the defining covector furnished by Theorem 5.1. Then
 >
 > \[
 >  \left|D G_{\delta,u}
->   (\Gamma^m_{\delta,u}(\rho_R))
+>   (0)
 >   \partial_a\widehat{\mathcal R}_{\delta,u}(0)
 >  \right|\ge\frac12
 > \tag{6.5}
@@ -645,38 +692,41 @@ bounds prove (6.4).
 >
 > after reducing \(\delta_0\).
 
-**Proof.**  At \(\delta=0\), delayed feedback disappears and the reset
+**Proof.** At \(\delta=0\), delayed feedback disappears and the reset
 tangent in the fast voltage block is \(e_u^0\).  The limiting pairing is
-one by (6.1).  U-TR convergence of the normalized unstable covector and the
-\(C^1\) reset convergence make the left side of (6.5) tend uniformly to
-one. \(\square\)
+one by (6.1). Equation (5.3) and the \(C^1\) reset convergence make the left
+side of (6.5) tend uniformly to one. \(\square\)
 
-The singular pairing in (6.1) is proved and executable.  Its transfer to
-the physical complete-history covector is part of U-TR, just as in the
-clamped equilibrium proof.
+The singular pairing in (6.1) is proved and executable. Its transfer to the
+selected complete-history covector is the proved implication (5.3),
+conditional only on U-OUT\({}^+\).
 
 ## 7. The geometric separator theorem
 
-Define the scalar reset-to-sheet map
+Define the scalar reset-to-graph map
 
 \[
+ \widetilde{\mathcal R}_{\delta,u}(a)
+ :=\widehat{\mathcal R}_{\delta,u}(a)
+   -\Gamma^m_{\delta,u}(\rho_R),
+ \qquad
  g_{\delta,u}(a)
- =G_{\delta,u}(\widehat{\mathcal R}_{\delta,u}(a)).
+ =G_{\delta,u}(\widetilde{\mathcal R}_{\delta,u}(a)).
 \tag{7.1}
 \]
 
 > **Theorem 7.1 (unique selected unforced geometric reset separator,
-> conditional model theorem).**  Suppose Gates U-OUT and U-TR hold,
+> conditional model theorem).** Suppose Gate U-OUT\({}^+\) holds,
 > including the declared normalization and the
 > uniform history bounds used in (6.4), and use the designed reset
-> (6.2)--(6.3).  Then there are \(\delta_0,r,c_a,C>0\) such that, for
+> (6.2)--(6.3).  Then there are \(\delta_0,r_R,c_a,C>0\) such that, for
 > every \(0<\delta\le\delta_0\) and every declared parameter \(u\),
-> \(g_{\delta,u}\) has exactly one zero in \((-r,r)\):
+> \(g_{\delta,u}\) has exactly one zero in \((-r_R,r_R)\):
 >
 > \[
 >  a_{\rm sep}(\delta,u):
 >  \widehat{\mathcal R}_{\delta,u}(a_{\rm sep})
->  \in W^{cs}_{\delta,u,\mathrm{loc}}.
+>  \in W^{<\sigma}_{\delta,u,\mathrm{loc}}.
 > \tag{7.2}
 > \]
 >
@@ -700,10 +750,44 @@ Define the scalar reset-to-sheet map
 > \(\Gamma^m_{\delta,u}(\rho_R)\), then
 > \(a_{\rm sep}=0\) exactly.
 
-**Proof.**  Theorem 5.1 gives \(G\), while Lemma 6.1 gives a derivative
-bounded away from zero at the tracker.  The common \(C^1\) bounds preserve
-its sign on a fixed tube.  Since \(G(\Gamma^m)=0\), (6.4) and the mean-value
-bound give
+**Proof.** Theorem 5.1 gives \(G\), while Lemma 6.1 gives a derivative
+bounded away from zero at the tracker. The explicit reset family satisfies,
+for every sufficiently small reset-amplitude radius \(r_R\),
+
+\[
+ \sup_{|a|\le r_R}
+ \|\widetilde{\mathcal R}_{\delta,u}(a)\|_{\widehat{\mathcal X}}
+ \le C(\delta+r_R),
+ \qquad
+ \sup_{|a|\le r_R}
+ \|\partial_a\widehat{\mathcal R}_{\delta,u}(a)\|_{\widehat{\mathcal X}}
+ \le C_R,
+\tag{7.5}
+\]
+
+and its present voltage tangent converges uniformly to \(e_u^0\). Let
+\(C_G\) be the constant in (1.17) of the companion
+[relative-history-graph theorem](paper-iii-strong-unstable-history-splitting.md).
+First choose a complementary radius \(r_\psi\) so that
+\(C_G r_\psi C_R<1/8\). Next choose \(r_R\) small enough that, at
+\(\delta=0\), the limiting current pairing varies by less than \(1/8\), and
+then reduce \(\delta_0\) so that for every \(|a|\le r_R\)
+
+\[
+ \|\Pi^K_{0,u}\widetilde{\mathcal R}_{\delta,u}(a)\|
+ \le r_\psi,
+ \qquad
+ |\Lambda_{0,u}\widetilde{\mathcal R}_{\delta,u}(a)|\le r_u,
+ \qquad
+ C_G b_\delta C_R<\frac18,
+\tag{7.6}
+\]
+
+where \(r_u\) is a fixed unstable-coordinate cap. Hence the translated reset
+curve lies in the complete coordinate cylinder (1.16) of that companion
+theorem. Equations (1.17), (6.1), and (7.6) give one common derivative lower
+bound on the entire reset root tube, not only on the graph. Since \(G(0)=0\),
+(6.4) and the mean-value bound give
 
 \[
  |g_{\delta,u}(0)|\le L_Gd_{\delta,u}.
@@ -715,9 +799,9 @@ parameter-dependent implicit-function theorem gives \(C^1_u\) regularity.
 This proves (7.2)--(7.4).  Exact centering makes \(g(0)=0\), proving the
 last assertion. \(\square\)
 
-The theorem is deliberately geometric and selection indexed.  It says that
-one causal reset curve crosses one selected complete-history center-stable
-sheet once.  It
+The theorem is deliberately geometric and selection indexed. It says that
+one causal reset curve crosses one selected complete-history relative-growth
+graph once. It
 does **not** say that the two signs of \(g\) reach the pulse and quiet
 blocks.  Offsets of order \(e^{-A/\varepsilon}\) can shadow the middle
 branch to the lower fold.  The companion
@@ -741,26 +825,21 @@ The shortest route to closing U-SF is now explicit.
    \]
    and a nonlinear action estimate preserving the positive margin
    \(\chi\).
-2. **U-TR-A (scaled-history roughness).**  In moving modal coordinates,
-   prove the unperturbed current equation has a one-dimensional unstable
-   rate \(\lambda_*\), center-stable growth \(\alpha_0=O(\varepsilon)\),
-   and that the delayed/moving-frame perturbation has a roughness loss
-   \(r_\delta\) satisfying (4.7), including old-history translation and
-   \(C^1_u\) projector bounds.
-3. **U-SF-R (reset projection).**  Use the resulting unstable covector to
-   verify its convergence on the explicit tangent (6.2).  The limiting
-   value is already fixed to one by (6.1), so this step is a perturbation
-   estimate rather than a new genericity assumption.
+2. **U-OUT-J (finite tracker jets).** Prove the finite-segment
+   \(C^1_u\) bounds in (5.1), including the moving current frame and the
+   selected common-history interface. The selected-extension lemma then
+   supplies the future half-line used by the direct graph theorem.
 
 **STOP on declaring Gate U-SF proved for the physical RFDE.**  The exact
 action shows why the missing U-OUT estimate cannot be replaced by the
-existing algebraic retained-history bounds.  U-TR also needs an evolution
-splitting, not a frozen root count.
+existing algebraic retained-history bounds. The remaining unproved input is
+U-OUT\({}^+\), not a full RFDE trichotomy.
 
-**GO on the conditional theorem architecture.**  Once U-OUT-A and U-TR-A
-are supplied, Theorem 7.1 gives the unique geometric separator without any
-additional global pulse claim.  The repaired moving-tube/lower-fold map and
-Gate U-CAP remain separate.
+**GO on the conditional theorem architecture.** Once U-OUT-A and U-OUT-J
+are supplied, the proved direct history-graph implication and Theorem 7.1
+give the unique geometric separator without any additional global pulse
+claim. The repaired moving-tube/lower-fold map and Gate U-CAP remain
+separate.
 
 ## 9. Proof-status ledger
 
@@ -773,10 +852,10 @@ Gate U-CAP remain separate.
 | Algebraic overlap control is sufficient for the outer tracker | False as an implication | Proposition 2.1 and Corollary 2.2 |
 | Canonical physical orbit stays in the middle tube to \(\rho_R\) | Open | Gate U-OUT / exponential action matching |
 | One unstable frozen current eigenvalue on the middle branch | Proved at the singular level | Exact fast Jacobian signs |
-| Dominated nonautonomous complete-history trichotomy | Open | Gate U-TR; pointwise roots are insufficient |
-| Center-stable history sheet from U-OUT and U-TR | Proved conditional implication | Theorem 5.1 |
+| Full nonautonomous phase-space trichotomy and stable foliation | Not asserted or needed | Replaced by the direct relative-growth graph |
+| Relative-growth history graph from U-OUT\({}^+\) | Proved conditional implication | Theorem 5.1 and companion graph theorem |
 | Singular reset direction is transverse | Proved exactly | Positive eigenvectors and pairing (6.1) |
-| Positive-\(\delta\) complete-history reset transversality | Conditional on U-TR convergence | Lemma 6.1 |
+| Positive-\(\delta\) complete-history reset transversality | Proved implication conditional on U-OUT\({}^+\) | Lemma 6.1 and covector estimate (5.3) |
 | Unique geometric reset separator | Conditional model theorem | Theorem 7.1 |
 | Separator is the pulse/quiet first-hit boundary | Not asserted; equality need not hold in the exact Airy model and is undecided for the physical RFDE | Requires the repaired fold-event map followed by U-CAP; physical noncoincidence requires the nonzero fold-offset factorization |
 | Separator equals the canonical or physical maximal-canard root | Not asserted | Requires a separate reset-to-canard factorization |
@@ -784,6 +863,6 @@ Gate U-CAP remain separate.
 The new mathematical content is the action budget: reaching the biological
 reset layer is an exponentially stronger problem than matching on the
 logarithmic right-fold tube.  It also isolates a publishable intermediate
-result.  U-SF can yield a unique complete-history geometric separator before
+result. U-SF can yield a unique complete-history geometric separator before
 the much harder lower-fold outcome theorem is attempted, but only after the
-outer action and long-delay trichotomy are actually verified.
+outer action and finite-segment jet contract U-OUT\({}^+\) is verified.

@@ -1,0 +1,93 @@
+{
+  "candidate_input": {
+    "binary_collocation_residual_inf": 6.750155989720952e-14,
+    "binary_oversampled_residual_inf": 5.8214201343886884e-06,
+    "node_count": 97,
+    "period": 16.54038779818094
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_periodic_infinite_validation.py"
+    ],
+    "binary_accelerator": "stored binary64 midpoint inverse with directed Higham product/matvec error bounds",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_periodic_infinite_validation.py",
+    "generator": "experiments/fhn_periodic_infinite_validation.py",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "numpy": "2.5.2",
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "rounding": "MPFR RoundDown/RoundUp at every interval operation",
+    "scipy": "1.18.0"
+  },
+  "scope": {
+    "center_periodic_rfde_orbit": true,
+    "center_phase_bordered_rfde_inverse": true,
+    "frequency_amplitude_response_box": false,
+    "full_floquet_hyperbolicity": false,
+    "issue_15_closed": false,
+    "parameter_box_extrema": false,
+    "unit_multiplier_simple": false
+  },
+  "validation": {
+    "blocks": {
+      "finite_from_tail_upper": "0.0454114343180049864136118517790707329338670988114762308",
+      "finite_input_column_upper": "0.0429145618433464954613506137319558633053513710627145079",
+      "finite_to_finite_upper": "1.21232063469094025889888861830930470870271518156443969e-09",
+      "full_point_defect_upper": "0.172407051523385884576086857146222996036086777927499669",
+      "full_point_inverse_gate": true,
+      "tail_from_finite_upper": "0.042914560631025860770410354833067244996046662359977807",
+      "tail_input_column_upper": "0.172407051523385884576086857146222996036086777927499669",
+      "tail_to_tail_upper": "0.126995617205380898162475005367152263102219679116023439"
+    },
+    "bordered_rfde_inverse_validated": true,
+    "correction": {
+      "bordered_inverse_norm_upper": "23.4521963340623969416602276014103580935877226855279576",
+      "chosen_radius": "1e-7",
+      "coefficient_z1_upper": "24700.5221702643845328771340886931860836033382339709307",
+      "coefficient_z2_upper": "6695.08954624181130282733747176791618295012005348129824",
+      "coefficient_z3_upper": "761.978976575876507087449708457957287903003376420806626",
+      "contraction_upper": "0.174877103807363219253771660159242196449575982038511769",
+      "derivative_variation_upper": "0.00247005228397733467768480301301920041348920411086242491",
+      "maximum_radius": "1e-7",
+      "radii_left_upper": "4.13474580086561107903079851644497728064026086472271213e-08",
+      "radii_margin_lower": "5.86525419913438892096920148355502271935973913527009584e-08",
+      "radii_polynomial_evaluated": true,
+      "radii_polynomial_negative": true
+    },
+    "extrema_validated": false,
+    "finite": {
+      "ambient_complex_dimension": 579,
+      "ambient_complexification_used": false,
+      "approximate_inverse_l1_upper": "19.350944161239904012426508048405011124174354213282678",
+      "cutoff": 144,
+      "finite_inverse_defect_upper": "1.21232063469094025889888861830930470870271518156443969e-09",
+      "finite_inverse_norm_upper": "19.3509441846994529482903083310436700898362306756449118",
+      "finite_inverse_validated": true,
+      "finite_jacobian_distance_l1_upper": "6.1046554377435952198200514692088724137796282703382834e-14",
+      "floating_product_roundoff_upper": "1.21101813304008536238669640083068938070365848921784659e-09",
+      "ieee_binary64_product_model_checked": true,
+      "independent_coordinate_weights": "mode zero and period weight 1; each positive-mode real and imaginary coordinate weight 2",
+      "norm": "unweighted component Wiener l1 plus the period scalar",
+      "precision_bits": 160,
+      "preconditioned_residual_l1_upper": "2.38597476279197888649308191485255531614450104433681834e-08",
+      "real_conjugate_dimension": 579,
+      "residual_support_half_bandwidth": 144
+    },
+    "full_floquet_hyperbolicity_validated": false,
+    "issue_15_closed": false,
+    "parameters": {
+      "epsilon": 0.2,
+      "kappa_1": 0.2,
+      "kappa_3": 0.25,
+      "theta_0": 4.0,
+      "theta_1": 5.0,
+      "unfolding": 0.6
+    },
+    "periodic_rfde_orbit_validated": true,
+    "remaining_gate": "The center RFDE orbit and its phase-bordered inverse are validated. A separate Fredholm-to-monodromy transfer is still required before calling the unit Floquet multiplier simple; full Floquet hyperbolicity, extrema over a parameter box, and the 2x2 frequency-amplitude response certificate remain open.",
+    "response_box_validated": false,
+    "unit_multiplier_simple_validated": false
+  }
+}
