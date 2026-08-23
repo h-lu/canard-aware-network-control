@@ -43,15 +43,15 @@ They remain separate proof gates. Inserting all three chains into the current
 
 | Component | Current status | Remaining promotion gate |
 |---|---|---|
-| Dimension-uniform special-flow history graph | Proved abstractly; compatible canonical selected traces and a simple root are now proved for the exact unequal-module quotient | Selected root for a class without an exact two-module quotient |
+| Dimension-uniform special-flow history graph | Proved abstractly; a complete model fit, compatible traces, and a simple selected root are now proved for the heterogeneous-curvature Dobrushin class | Moving support and closing graph gaps remain outside the theorem |
 | Lifted unequal-module network | Exact arbitrary-\(N\) blow-up, canonical gap/root lift, uniform \(\delta^3\eta\) response, pure-breaker nullity, and a non-equitable nonzero combined tangent proved | Pure-breaker quadratic/higher coefficient and general non-equitable residual response |
-| Shared-resource Dobrushin class | Uniform transverse semigroup and fold chart proved; projection-neutral interior root terms cancel through physical order \(\delta^4\) | Explicit selected traces/endpoints and the next nonzero response order, or a heterogeneous-curvature witness |
+| Shared-resource Dobrushin class | Uniform transverse graph proved; homogeneous curvature gives an exact low-order cancellation, while heterogeneous curvature gives a nonzero, dimension-uniform selected-root resolvent coefficient | Physical outer selection and graph families with closing Dobrushin gap remain open |
 | Vector gap/codimension | Abstract Lyapunov--Schmidt theorem proved; independent recoveries have an exact \((N+1)\)-dimensional singular generalized center and \(N-1\) slow transverse roots | Compute the selected-history Fredholm index \(q_N\); the center count alone is not that index |
-| Schur--Melnikov response | Banach-scale response link and block/root calculus proved; the exact quotient supplies a nonzero arbitrary-\(N\) canonical witness | Model-specific factorization for a network without the quotient and a pure symmetry-breaking coefficient |
+| Schur--Melnikov response | Banach-scale response link and block/root calculus proved; both the exact quotient and a synchrony-quotient-free heterogeneous-curvature class supply nonzero arbitrary-\(N\) canonical witnesses | Pure-breaker higher response and arbitrary endpoint rules remain open |
 | Physical outer continuation | Original backward-complete rule disproved as sufficient; causal released history and memory overwrite proved | Compatible normalized Gate P3-A\(^*\), or reset-to-canard factorization |
-| Singular pulse/quiet geometry | Fast-layer channels, fixed-fast-time RFDE passage cylinders, opposite reset outcomes, and a nonempty transition set proved | Signed reset separator Gate R-S and, separately, canard-to-reset exchange |
+| Singular pulse/quiet geometry | Unforced fast-layer channels and a nonempty transition set are proved; an exact ODE-subclass counterexample disproves the local fixed-layer shortcut from a saddle separator to all-offset first-hit classification; a collective-recovery clamp gives an exact fixed-\(\delta\) complete-history separator | The physical FHN unforced separator is not disproved: prove U-SF for the geometric history separator and U-EX for drifting lower-fold exchange/capture; the controlled separator is a different operational threshold |
 | Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
-| Frequency--amplitude--safety conditioning | Abstract bounded-gain obstruction and the periodic/event RFDE adjoint calculus proved | Certify the FHN periodic branch, extrema, physical separator, transverse Floquet stability, and response rank/no-go bound |
+| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; the sharp two-scale no-go is conditional on hypotheses H\(_S\), H\(_A\), and the reset-only block-triangular positive criterion is proved | Certify the FHN periodic branch/extrema and its two-by-two frequency--amplitude interval response |
 
 ## 2. General network geometry
 
@@ -182,10 +182,14 @@ Its estimates depend on semigroup, projection, delay-measure, and
 nonlinearity bounds rather than the dimension itself. A full \(2N\) Lin BVP
 is reserved for weak transverse recovery or multiple center directions.
 
-Paper II must also prove a model-fitting lemma from an original node network
-to (GN), including \(r_N,\ell_N,A_N\), fold curvature, unfolding direction,
-and induced matrix delay measures. Without that lemma, (GN) is only a normal
-form assumption.
+Every Paper II network class must also prove a model-fitting lemma from its
+original node equations to (GN), including \(r_N,\ell_N,A_N\), fold
+curvature, unfolding direction, and induced matrix delay measures. This is
+now done, with dimension-independent constants, for the shared-resource
+Dobrushin class with heterogeneous fold curvature in
+[paper-ii-heterogeneous-curvature-selected-root.md](paper-ii-heterogeneous-curvature-selected-root.md).
+For any other graph architecture, (GN) remains only a normal-form assumption
+until the analogous lemma is supplied.
 
 ## 4. Paper II, Theorem B: root response
 
@@ -319,9 +323,10 @@ this formula, including the \(C_b^9\to C_b^8\to C_b^7\) response scale,
 complete-history extension/restriction, trace elimination, and endpoint
 chain rule, is proved abstractly in
 [banach-scale-history-schur-link.md](banach-scale-history-schur-link.md).
-Its concrete selected-trace hypotheses are now verified for the compatible
-canonical unequal-module quotient.  They remain a Paper II obligation for a
-network class without that exact quotient and for arbitrary endpoint rules.
+Its concrete selected-trace hypotheses are verified both for the compatible
+canonical unequal-module quotient and for the heterogeneous-curvature
+Dobrushin class. Arbitrary endpoint rules remain outside these canonical
+selection theorems.
 
 ### 4.2 Schur--Melnikov functional
 
@@ -422,10 +427,14 @@ now supplies, for every pair of positive module sizes, a projection-neutral
 non-equitable tangent with a nonzero canonical root derivative: the tangent
 is the lifted module-difference direction plus a distributed zero-mean
 breaker.  The latter is itself an exact first-response null direction by
-Reynolds averaging.  This closes the existence of a dimension-uniform witness
-for the exact quotient.  Paper II must still prove the model-specific
-factorization and construct a witness for a class without that quotient, or
-evaluate a nonzero quadratic/higher coefficient for the pure breaker.
+Reynolds averaging. This closes the existence of a dimension-uniform witness
+for the exact quotient. The heterogeneous-curvature theorem now closes the
+complementary case without a nontrivial synchrony quotient: its full-row
+neutral delay direction returns through
+\(\pi_N^T\operatorname{diag}(c_N)A_N^{-1}\), and its canonical one-sided
+trace calculation includes the history and endpoint terms. A pure
+within-module Reynolds breaker still has zero first response; its
+quadratic/higher coefficient remains open.
 
 This converts the bespoke witness into an open constrained mechanism.
 Layerwise critical-mode closure kills the delayed source term only when the
@@ -442,14 +451,17 @@ fixed Hurwitz blocks with a common semigroup bound. Small operator-TV
 residuals may break equitability, perturb every edge, add fixed-support
 heterogeneous delays, and introduce fold-compatible node heterogeneity.
 
-For compatible relabeling-covariant canonical selections, this quotient
-class now has an exact arbitrary-size root and a genuinely non-equitable
-nonzero tangent.  The pure zero-mean breaker has zero first response, and the
+For compatible relabeling-covariant canonical selections, the quotient class
+has an exact arbitrary-size root and a genuinely non-equitable nonzero
+tangent. The pure zero-mean breaker has zero first response, and the
 proved finite-amplitude remainder is
 \(O(\delta^4|\eta|+\delta^3\eta^2+\delta^2\zeta^2)\); it must not be
-relabelled as a nonzero pure-breaker Melnikov law.  A shared-slow-resource
-model on connected reversible graphs remains the second, more biologically
-natural target and the required test without an exact two-module quotient.
+relabelled as a nonzero pure-breaker Melnikov law. The second scalable
+corollary is now proved for a shared-slow-resource Dobrushin network with
+node-dependent fold curvature. Its normalized all-to-all family has no
+nontrivial synchrony polydiagonal, and its root coefficient is nonzero and
+independent of \(N\). The theorem still excludes closing graph gaps, moving
+delay atoms, and arbitrary physical outer selections.
 
 ## 5. Paper III: physical maximal canard and pulse onset
 
@@ -477,7 +489,30 @@ causal one-delay history-reset alternative, and the gap-to-channel exchange
 remain the real open gates; see
 [paper-iii-outer-selection-blocker-and-repair.md](paper-iii-outer-selection-blocker-and-repair.md).
 
-There is then a unique physical maximal-canard parameter
+The causal branch now splits into two mathematically different statements.
+For the **unforced** release, recovery drift through an exponentially thin
+saddle layer prevents a frozen-equilibrium stable-manifold argument.  An
+exact ODE-subclass counterexample proves that a local saddle separator and
+the existing fixed-layer blocks do not classify every nonzero reset offset;
+it does not disprove a global separator for the physical FHN RFDE.  The
+correct replacement is Gate U-SF (outer selected saddle history, dominated
+long-delay trichotomy, complete-history stable foliation, and reset
+transversality), followed by Gate U-EX (signed drifting exchange through the
+lower fold, channel capture, and no competing return); see
+[paper-iii-unforced-separator-stop-go.md](paper-iii-unforced-separator-stop-go.md).
+For a modified protocol that clamps only the
+collective recovery coordinate until a channel is reached,
+[paper-iii-collective-clamp-separator.md](paper-iii-collective-clamp-separator.md)
+proves an exact clamped saddle history, a delay-independent one-unstable-root
+criterion, and a unique local \(C^1\) complete-history separator for every
+sufficiently small fixed positive \(\delta\). A fixed deadline resolves only
+a declared deadband. This controlled separator is a valid operational pulse
+threshold, but it is not \(\mu_{\mathrm{can}}\) and supplies no
+reset-to-canard equality.
+
+The following is the still-conditional **intrinsic theorem target**, not a
+current conclusion. If the six outer-history and exchange items above are
+proved, there should be a unique physical maximal-canard parameter
 \(\mu_{\mathrm{can},N}\) with the response (4.2), and constants
 \(A_{\rm small}<A_{\rm pulse}\), \(c,C>0\), and
 \(\sigma_{\rm p}\in\{-1,1\}\) such that
@@ -494,11 +529,12 @@ There is then a unique physical maximal-canard parameter
 \tag{5.1}
 \]
 
-For the **channel first-hit definition**, the separator is the physical
-maximal canard itself:
+Under that target theorem, the **channel first-hit definition** would use the
+physical maximal canard itself as separator:
 
 \[
-\boxed{\mu_{\rm pulse}^{\rm channel}=\mu_{\rm can}.}
+\boxed{\mu_{\rm pulse}^{\rm channel}=\mu_{\rm can}
+\quad\text{(conditional target)}.}
 \tag{5.2}
 \]
 
@@ -586,6 +622,10 @@ A_h=\max_t h_N(z_u(t))-\min_t h_N(z_u(t)).
 
 Unique nondegenerate extrema and absence of peak switching are hypotheses.
 Squaring the amplitude does not repair an extrema switch.
+The proved adjoint and no-go packages use the squared range
+\(R_h=A_h^2\).  On a declared box with \(A_h\ge a_*>0\), this is a regular
+\(C^1\) reparametrization, so the corresponding rank and inverse statements
+are equivalent after the explicit row scaling \(D R_h=2A_hD A_h\).
 
 Derive all rows:
 
@@ -764,49 +804,100 @@ conclusion is a local right section, not an inverse on the full actuator
 space.  The commanded safety margin must exceed the sum of
 outer, event, Lin, numerical, and model errors.
 
+### 6.5 Proved no-go and reset-only repair
+
+The declared three-baseline-actuator design now has a model-specific negative
+theorem in
+[paper-iv-fhn-control-no-go.md](paper-iv-fhn-control-no-go.md). The full
+two-module network variational equation splits exactly into collective,
+module-difference, and within-module blocks; an explicit Halanay condition
+makes every noncollective multiplier stable uniformly in module size. Thus
+the control obstruction is not a transverse desynchronization. If the
+physical safety root has its declared \(C^1\)
+\(\varepsilon^{3/2}\) jet and the amplitude lies in a one-coordinate canard
+layer of width \(w_\varepsilon\), every right inverse grows at least like
+\(\varepsilon^{3/2}/w_\varepsilon\), even after natural safety scaling. The
+root and layer hypotheses remain conditional on Paper III/global branch
+geometry; the linear-algebra and transverse-stability implications are
+proved and sharp.
+
+A positive operational repair is proved in
+[paper-iv-reset-only-block-control.md](paper-iv-reset-only-block-control.md).
+Use two baseline controls \(b=(b_1,b_2)\) for frequency and amplitude, and a
+reset-only stimulus \(a_{\rm op}\) that is absent from the baseline RFDE.
+For the controlled complete-history threshold \(a_c(b)\),
+
+\[
+ D\mathcal Q=
+ \begin{pmatrix}
+  D_b(F,A)&0\\
+  D_ba_c&-1
+ \end{pmatrix}.
+ \tag{6.9}
+\]
+
+If \(\sigma_{\min}(D_b(F,A))\ge\beta>0\) and
+\(\|D_ba_c\|\le\gamma\), the theorem gives an explicit positive lower
+bound for \(\sigma_{\min}(D\mathcal Q)\), an explicit inverse-norm bound,
+and, under a derivative Lipschitz estimate, a covered target ball. An exact
+cubic Hopf family verifies that the two-by-two condition is nonempty. For
+the declared synchronous FHN RFDE, the remaining task is a directed interval
+enclosure of the periodic branch, unique extrema, adjoints, and the
+two-by-two response. Ordinary floating-point SVD is only a candidate
+diagnostic and is not this certificate.
+
 ## 7. Stop/go gates
 
 ### Paper II
 
-1. extend the selected-root proof from the exact unequal-module quotient to
-   a network class without a two-module quotient;
-2. evaluate the pure-breaker quadratic/higher response or prove a general
-   non-equitable operator-TV response theorem;
-3. derive the model-specific form of (4.4)--(4.11), including
-   endpoint/history terms, for that non-quotient class;
-4. prove genericity there on \(\ker\Pi_{\parallel,N}\);
-5. compute the concrete vector-gap index or restrict the title to the
+1. retain the now-proved heterogeneous-curvature Dobrushin theorem as the
+   synchrony-quotient-free one-critical-mode result, including its explicit
+   model fit, endpoint terms, genericity, and all-\(N\) nonzero witness;
+2. decide whether Paper II stops at this declared uniformly mixing graph
+   class or adds a sparse/closing-gap theorem with correspondingly
+   nonuniform constants;
+3. evaluate the pure-breaker quadratic/higher response only if a separate
+   arbitrary symmetry-breaking claim is retained;
+4. compute the concrete vector-gap index or restrict the title to the
    one-critical-mode class;
-6. retain the exact quotient theorem as the dimension-uniform nonzero witness
-   and regression class.
+5. retain the exact quotient theorem as an independent regression class.
 
 ### Paper III
 
-1. for the intrinsic route, prove normalized compatible outer continuation
+1. for the intrinsic unforced route, prove normalized compatible outer continuation
    P3-A\(^*\), including its \(C^1_\mu C^2_u\) strong-history jets and exact
-   common-graph gluing; for the operational route, retain the now-proved
-   one-delay causal release and memory-overwrite theorem;
-2. prove the signed reset separator Gate R-S (unique complete-history normal
-   coordinate, transverse reset crossing, and no third local outcome);
-3. if equality with the canard root is claimed, prove the reset-to-canard
+   common-graph gluing;
+2. replace the old local R-S shortcut by Gate U-SF: continue the selected
+   middle-branch history, construct its dominated complete-history stable
+   foliation, and prove one transverse reset intersection;
+3. prove Gate U-EX: signed drifting exchange through the lower fold, channel
+   capture, and no competing return. Only U-SF plus U-EX identifies the
+   geometric separator with the unforced first-hit boundary; retain the
+   proved one-delay release/memory theorem and fixed-\(\delta\)
+   collective-clamp separator as a distinct operational branch;
+4. if equality with the canard root is claimed, prove the reset-to-canard
    factorization and its small preparation error separately;
-4. prove the full exchange-and-basin separator that makes the intrinsic
+5. prove the full exchange-and-basin separator that makes the intrinsic
    channel identity (5.2) a theorem;
-5. independently, if an amplitude-detector coordinate is used, verify the
+6. independently, if an amplitude-detector coordinate is used, verify the
    quantitative landing-chart hypotheses that yield (5.2a);
-6. enclose all three error layers in (5.4).
+7. enclose all three error layers in (5.4).
 
 ### Paper IV
 
 1. prove periodic-branch hyperbolicity and unique extrema on a nonempty FHN
    parameter box;
-2. use the now-proved periodic/event adjoint formulas to enclose all three
-   FHN sensitivity rows, including the physical separator row;
-3. resolve the canard-conditioning alternative in Section 6.3;
-4. prove (6.5) or the structural no-go theorem;
-5. give a quantitative inverse/network-robustness radius;
-6. demonstrate fixed frequency and amplitude while moving a proved pulse
-   margin, if the positive theorem holds.
+2. use the now-proved periodic adjoints to enclose the two-by-two FHN
+   frequency--amplitude block, and enclose the controlled separator constants
+   \(C_\Gamma,g\);
+3. retain the proved two-scale no-go for the original canard-layer outputs
+   under its explicit root/layer hypotheses;
+4. instantiate the proved reset-only block theorem with a directed interval
+   bound \(\beta_{\rm box}>0\);
+5. enclose the derivative Lipschitz constant and apply the proved target-ball
+   formula;
+6. demonstrate fixed frequency and amplitude while moving the proved
+   controlled pulse margin. Do not relabel it as an unforced canard margin.
 
 ### Required falsifiers
 
@@ -871,7 +962,9 @@ The completed program's reusable mathematical chain is
 Until the corresponding gates pass, use:
 
 - **prepared local history-connection root** for the completed base theorem;
-- **general-network response target** for Sections 2--4;
+- **proved heterogeneous-curvature Dobrushin prepared-root response** for
+  that declared subclass in Sections 2--4, and **general-network response
+  target** for the remaining architectures;
 - **physical maximal-canard root** only after Paper III's outer-history proof;
 - **pulse-onset separator** only after (5.1)--(5.2);
 - **pulse-safety controllability** only after (6.5) and its error enclosure.

@@ -132,10 +132,39 @@ open.
    does not control rectangular \(C_\nu^1C_\eta^2\) history jets. Transfer
    requires the open compatible-selection Gate P3-A\(^*\), with declared
    curve-wise Lyapunov--Perron boundary coordinates and exact common-graph
-   normalization. The causal alternative now has an exact one-maximal-delay
-   released history and a proved nonempty pulse/quiet transition set; its
-   unique signed separator remains Gate R-S.
-6. **Numerical diagnostic.** Literal method-of-steps integration of one
+   normalization. The unforced causal alternative has an exact
+   one-maximal-delay released history and a proved nonempty pulse/quiet
+   transition set. Its unforced separator is still open, but the old local
+   shortcut is now known to be insufficient: even an exact saddle separator
+   need not classify all offsets by fixed-layer first hits when recovery
+   drifts. The repaired route splits into an outer stable-foliation gate
+   U-SF and a lower-fold exchange/capture gate U-EX. A
+   modified protocol that clamps only the collective recovery coordinate now
+   has, for every sufficiently small fixed positive \(\delta\), a proved
+   codimension-one complete-history pulse/quiet separator. This is an
+   operational controlled threshold, not the unforced canard root.
+6. **General-network successor theorem.** For arbitrary finite Markov
+   networks with a common Dobrushin gap, one shared recovery resource, and
+   heterogeneous fold curvature, a dimension-uniform history graph and
+   canonical selected root are proved without a nontrivial synchrony
+   quotient. Projection-neutral delay redistribution has the explicit
+   resolvent coefficient
+   \[
+   -\frac{K}{2\alpha^2}\,
+   \pi_N^T\operatorname{diag}(c_N)A_N^{-1}
+   P_{\perp,N}\dot M_{1,N}\mathbf1,
+   \]
+   and an all-\(N\) family realizes a common nonzero value. The exact root
+   remains preparation-indexed; physical outer selection is not inferred.
+7. **Pulse-control successor theorems.** A size-uniform Halanay estimate
+   separates transverse synchronization from output conditioning. Under the
+   declared physical-root and one-coordinate canard-layer hypotheses, the
+   original frequency--amplitude--safety response has an exponentially bad
+   right-inverse lower bound. A reset-only operational actuator instead gives
+   an exact block-triangular response and a quantitative inverse whenever the
+   two-by-two frequency--amplitude block is certified. The corresponding FHN
+   periodic-orbit interval certificate remains open.
+8. **Numerical diagnostic.** Literal method-of-steps integration of one
    finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
    \(-0.1969771\) to \(-0.2036174\), against the predicted
@@ -159,6 +188,7 @@ open.
 - [docs/paper-ii-lifted-two-module-class.md](docs/paper-ii-lifted-two-module-class.md) -- exact arbitrary-size unequal-module lift, maximum-norm Gate A model-fitting audit (with weighted algebra retained only as a diagnostic), dimension-independent singular semigroup bound, and operator-TV non-equitable perturbation family;
 - [docs/paper-ii-arbitrary-n-blowup-model-fit.md](docs/paper-ii-arbitrary-n-blowup-model-fit.md) -- exact arbitrary-\(N\) anisotropic blow-up, full stable-fiber shift, true divisibility checks, and dimension-uniform prepared-data fit to the abstract history-graph theorem;
 - [docs/paper-ii-selected-root-lift-and-symmetry-breaking.md](docs/paper-ii-selected-root-lift-and-symmetry-breaking.md) -- exact compatible-canonical selected-gap/root lift for arbitrary positive module sizes, uniform inherited root coefficient, Reynolds nullity of the pure within-module breaker, and a genuinely non-equitable nonzero combined tangent;
+- [docs/paper-ii-heterogeneous-curvature-selected-root.md](docs/paper-ii-heterogeneous-curvature-selected-root.md) -- dimension-uniform, synchrony-quotient-free canonical selected-root theorem for arbitrary finite Dobrushin networks, with an explicit nonzero topology-resolvent coefficient and all-\(N\) witness;
 - [docs/paper-ii-shared-resource-dobrushin-class.md](docs/paper-ii-shared-resource-dobrushin-class.md) -- a genuinely arbitrary-\(N\) one-slow-resource class with a uniform Dobrushin contraction; its prepared graph is conditional on the stated tame cutoff and its physical root response remains open;
 - [docs/shared-resource-order-three-cancellation.md](docs/shared-resource-order-three-cancellation.md) -- exact projection-neutral interior cancellation through the first two physical root orders in the homogeneous shared-resource class; endpoint/root consequences remain conditional;
 - [docs/general-network-schur-melnikov-proof.md](docs/general-network-schur-melnikov-proof.md) -- Gate C calculus: exact graph/gap Schur derivatives, a conditional projection-neutral cubic root theorem with explicit constants, codimension-one genericity once a nonzero witness is known, and the strict direct-sum audit;
@@ -166,9 +196,13 @@ open.
 - [docs/multiple-recovery-center-obstruction.md](docs/multiple-recovery-center-obstruction.md) -- exact \((N+1)\)-dimensional singular center and persistent \(N-1\) slow-root obstruction for standard independent recoveries; the full-history cokernel dimension remains open;
 - [docs/paper-iii-physical-outer-pulse-bridge.md](docs/paper-iii-physical-outer-pulse-bridge.md) -- proved singular two-channel geometry, the distinction between exact channel onset and detector-dependent amplitude onset, and the explicit outer-history, exchange, and landing gates;
 - [docs/paper-iii-outer-selection-blocker-and-repair.md](docs/paper-iii-outer-selection-blocker-and-repair.md) -- exact counterexample to backward-completeness as a selection rule, curve-restricted history equations, anchored flat-error estimate, repaired Gate P3-A\(^*\), and the causal reset alternative;
-- [docs/paper-iii-causal-reset-separator.md](docs/paper-iii-causal-reset-separator.md) -- exact causal release history, voltage-memory overwrite and recovery non-erasure, fixed-fast-time pulse/quiet passage cylinders, and a proved nonempty reset-transition set; the unique signed separator is Gate R-S;
+- [docs/paper-iii-causal-reset-separator.md](docs/paper-iii-causal-reset-separator.md) -- exact causal release history, voltage-memory overwrite and recovery non-erasure, fixed-fast-time pulse/quiet passage cylinders, and a proved nonempty reset-transition set; its former all-in-one R-S target is decomposed below;
+- [docs/paper-iii-unforced-separator-stop-go.md](docs/paper-iii-unforced-separator-stop-go.md) -- exact ODE-subclass obstruction to deriving an unforced first-hit boundary from a local saddle separator and fixed-layer blocks, plus the repaired U-SF geometric-separator and U-EX global-exchange gates; it does not disprove the physical FHN separator;
+- [docs/paper-iii-collective-clamp-separator.md](docs/paper-iii-collective-clamp-separator.md) -- exact collective-recovery-clamped saddle, one-unstable-root criterion, fixed-\(\delta\) complete-history pulse/quiet separator, deadline deadband, and explicit separation from the open unforced U-SF/U-EX route;
 - [docs/paper-iv-canard-conditioning-no-go.md](docs/paper-iv-canard-conditioning-no-go.md) -- exact row-cancellation bound showing when amplitude and pulse-safety coordinates become exponentially ill-conditioned inside a canard window; delayed-network applicability is conditional on Paper III;
 - [docs/paper-iv-periodic-rfde-adjoints.md](docs/paper-iv-periodic-rfde-adjoints.md) -- proved period/frequency, peak-envelope, distributional amplitude, and causal event adjoints for discrete-delay RFDEs, with exact synchronous-FHN specialization and an explicitly conditional three-row response target;
+- [docs/paper-iv-fhn-control-no-go.md](docs/paper-iv-fhn-control-no-go.md) -- full-network modal decomposition, size-uniform transverse Halanay theorem, and sharp two-scale inverse-conditioning no-go for the declared FHN outputs under explicit root/layer hypotheses;
+- [docs/paper-iv-reset-only-block-control.md](docs/paper-iv-reset-only-block-control.md) -- controlled complete-history threshold IFT, exact reset-only block-triangular response, singular-value and target-radius bounds, Hopf frequency--amplitude witness, and the still-open validated FHN box;
 - `docs/scope-and-theorems.md` -- frozen general-network future-work contract and its stop/go gates;
 - `docs/lin-gap-feasibility.md` -- \(\mathbb R^4\) reference full-history BVP template and correct Fredholm index bookkeeping;
 - `docs/full-network-lin-operator.md` -- dual-scaffold \(2N\)-state operator contract, transverse trace-index audit, modal theorem target, and voltage-only negative control;
@@ -204,12 +238,17 @@ open.
 - `src/canard_control/lifted_two_module_network.py`, `src/canard_control/lifted_network_blowup.py`, and `src/canard_control/lifted_selected_root_response.py` -- exact arbitrary-size lifting, blow-up/model-fit, Reynolds, and non-equitable response audits;
 - `src/canard_control/shared_resource_markov.py` -- Dobrushin contraction and one-shared-resource network identities;
 - `src/canard_control/shared_resource_response.py` -- exact constant-history cancellation audit for projection-neutral shared-resource directions;
+- `src/canard_control/heterogeneous_curvature_root.py` -- exact arbitrary-\(N\) curvature/resolvent root coefficient and normalized no-synchrony-quotient witness;
 - `src/canard_control/block_schur_response.py` -- exact block-response and projection-neutral Schur regressions;
 - `src/canard_control/physical_pulse_bridge.py` -- singular fast-channel, Sturm, section-orientation, and detector-action calculations;
 - `src/canard_control/causal_reset_separator.py` -- exact causal reset, memory overwrite/non-erasure, endpoint-rank, and scalar root-transfer certificates;
+- `src/canard_control/unforced_separator_obstruction.py` -- exact drifting-saddle exit-time and fixed-layer miss identities that falsify the local shortcut to an unforced first-hit separator;
+- `src/canard_control/clamped_reset_separator.py` -- collective-clamp equilibrium, unstable-index, deadline, and large-delay spectral diagnostics;
 - `src/canard_control/outer_selection_coherence.py` -- exact outer-selection nonuniqueness, mixed-jet blow-up, and anchored-boundary suppression diagnostics;
 - `src/canard_control/canard_conditioning.py` -- response-row cancellation, determinant shear, and inverse-conditioning bounds;
 - `src/canard_control/periodic_rfde_sensitivity.py` -- discrete retarded/advanced transpose, moving-delay, periodic-response, amplitude, and causal landing-adjoint regressions;
+- `src/canard_control/fhn_control_no_go.py` -- exact transverse mode decomposition, Halanay constants, response no-go bounds, and sharpness diagnostics;
+- `src/canard_control/operational_control_repair.py` -- reset-only block response, quantitative inverse radius, Hopf response, and floating interval-candidate diagnostics;
 - `src/canard_control/multiple_recovery_center.py` -- exact fold-chain, recovery-center, slow-root, and conditional linear matching-count checks;
 - [src/canard_control/green_phase.py](src/canard_control/green_phase.py) -- executable tangent/normal frame and one-sided Green identities;
 - [src/canard_control/outer_modal_audit.py](src/canard_control/outer_modal_audit.py) -- exact physical modal equations, branch jets, and fast-gap audit;
