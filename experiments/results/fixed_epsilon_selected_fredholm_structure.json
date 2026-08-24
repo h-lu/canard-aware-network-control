@@ -163,15 +163,15 @@
   },
   "manifest": {
     "arithmetic": "exact integer and SymPy block algebra; no selected charts, floating-point Fredholm matrix, or interval inverse",
-    "blueprint_note_sha256": "b0e10e37deb71ce9fb7bcde0b173694eb76d8b96ab631eb9d477ef6d11fb79ba",
+    "blueprint_note_sha256": "21c1f2d4cff893b5fdb9d3d3820abd6f9198869061800ed804b9506af38e0190",
     "blueprint_result_sha256": "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a",
     "blueprint_source_sha256": "03423f924baa23afc8a1c5093392f67836af7864cc37e1b47aa7f7c30c1f36c4",
     "candidate_note_sha256": "87b048dfffc7ce98477077a342ceb4c083cb3018afd5055d0f58425f9e154edf",
-    "candidate_result_sha256": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6",
-    "candidate_source_sha256": "282bfdcb26e082470894724eeffe4c094dff0a138cbb3bf956b4caef45eb482a",
+    "candidate_result_sha256": "a35c23f58cb80a83b5d14d303edccc160a66e402e9f042b18d0e992a2388dabd",
+    "candidate_source_sha256": "cd529596713c69d2042080a47805d751a0d1e4898cd94d38431d4457ef1a3cb4",
     "generator": "experiments/fixed_epsilon_selected_fredholm_structure.py",
     "generator_sha256": "0e00a89513eb50f6cedce8fb3acd193165bc5898d06579bb1e9293639c07a535",
     "proof_source": "src/canard_control/fixed_epsilon_selected_fredholm_structure.py",
-    "proof_source_sha256": "2741380ce30b2b99cfa41832bd57be2724eac236a424aba71877412cc0db4f08"
+    "proof_source_sha256": "96844da7785895bc5bc877655b497bdb07a74423271d026a1afdcf45d2084ce7"
   }
 }

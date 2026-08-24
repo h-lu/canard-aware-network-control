@@ -48,7 +48,12 @@ finite-network classes and a sharp reference-slice obstruction.
    The nonzero-eta stability theorem is in the
    [Floquet-box note](quadratic-period-lock-eta-floquet-stability.md).
    The [two-sided discrete candidate](fixed-epsilon-two-sided-candidate.md)
-   is numerical progress toward that blueprint, not its validation.
+   is numerical progress toward that blueprint, not its validation.  The
+   [sliding-window/\(W^{1,p}\) bridge](fixed-epsilon-sliding-window-w1p-bridge.md)
+   proves that a nonstationary history chart reduces locally to one orbit,
+   rejects the old \(W^{2,p}\to L^p\) principal scale by compactness, and
+   isolates independent trace selection as the remaining fixed-parameter
+   obstruction.
 5. A **same-plant controlled terminal-transfer theorem** first proves that
    the existing root, preparation/handoff and periodic-attraction modules fail
    four exact composition gates.  It then extends the controlled hold to the
@@ -788,14 +793,24 @@ operational qualifier.
    history satisfies the RFDE solution-manifold compatibility equation, but
    the prescribed template is not the selected attracting trace.  The raw
    194-coefficient endpoint ledger has two independent compatibility rows,
-   so its compatible level is 192-dimensional and cannot contain a rank-193
-   fixed-parameter chart.  An ambient 193-coordinate parameterization is
-   arithmetically possible only with explicit compatibility equations and
-   projected 192-row history matches.  Global strong-history multicell seams
-   remain to be realized.  Exact compatible counterexamples also show that
+   so its fixed-mesh compatible level is 192-dimensional and cannot contain
+   a rank-193 fixed-parameter chart.  That exact finite-dimensional result is
+   not the continuous \(W^{1,p}\) Fredholm count: endpoint derivative
+   compatibility is not continuous in \(W^{1,p}\), while the existing
+   continuous piecewise polynomials are already conforming there without
+   derivative seams.  The corrected first-order contract uses
+   \(W^{1,p}\) orbit/history spaces and \(L^p\) flow residuals; its natural
+   full 194-row history ledger is arithmetically \(775\)-by-\(774\).
+   The earlier \(W^{2,p}\to L^p\) branch scale is compact and cannot be the
+   desired Fredholm principal operator.  Exact compatible counterexamples
+   also show that
    the scalar exit observable \(G=0\) does not determine a complete history
    or the right flight, so it is not a backward-extendible repelling chart.
-   Hence the actual Fredholm endpoint operator remains unconstructed, and
+   A new equivalence theorem reduces the missing one-dimensional invariant
+   chart to one independently selected complete orbit plus a monotone phase;
+   using the connection-dependent right branch would make the terminal match
+   a circular identity.  Hence the actual selected trace pair and Fredholm
+   endpoint operator remain unconstructed, and
    neither this value nor the earlier shooting interval is a selected-root
    or sign enclosure.
 2. **Autonomous outer selection and capture.** Prove a parameter-coherent
@@ -853,7 +868,8 @@ authority.
 | Dobrushin full-network lift of the quadratic canonical root | **Proved uniformly on the canonical anisotropic zero-transverse graph; not arbitrary histories or a basin** |
 | Linear period-lock first moment implies a nonzero leading root response | **False by exact parity cancellation** |
 | Fixed-\(\varepsilon=1/5\) two-sided full-history BVP and advanced-adjoint contract | **Specified exactly; a compatible but unselected discrete surrogate is solved below, while the selected continuous endpoint charts, BVP, adjoint and interval enclosure remain open** |
-| Raw fixed-\(\varepsilon\) endpoint compatibility and Fredholm dimension audit | **Rank two and compatible dimension 192 proved; a rank-193 compatible immersion is impossible. The repaired 775-by-774 raw ledger is arithmetic only, and the global strong-history realization remains open** |
+| Raw fixed-\(\varepsilon\) endpoint compatibility and Fredholm dimension audit | **Rank two and fixed-mesh compatible dimension 192 proved; a rank-193 compatible immersion is impossible in that algebraic level. On the corrected continuous scale, \(C^0\) piecewise polynomials are \(W^{1,p}\)-conforming, compatibility is not a continuous row, and the natural full-history 775-by-774 ledger is arithmetic only** |
+| Sliding-window and weak-space Fredholm bridge | **Proved: every monotone selected complete orbit generates the required one-dimensional history chart; conversely, such a nonstationary invariant chart gives a local trajectory segment, and gives a complete orbit only with scalar-flow completeness. Fixed-phase parameter jets, the \(Y\)-phase clock conversion, the \(W^{1,p}\to L^p\) scale, and the abstract 1/1 trace-pair index-\(-1\) reduction are exact. Open: the frozen-target graph family, separately prepared planar trace field, finite-window gap row, independent selected orbit, actual trace-pair hypotheses, full adjoint and uniform inverse** |
 | Scalar \(G=0\) exit determines a one-dimensional repelling history chart | **False by exact same-current, same-\(G\), compatible-history counterexamples with different future derivatives** |
 | Fixed-section response candidates \([-0.350,-0.264]\) | **Binary64 diagnostic only; section drift prevents a selected-root or sign claim** |
 | Two-branch discrete full-history-matched response candidate \(-0.3463310348\) | **Computed with a compatible entry history, full discrete adjoint and mesh diagnostics; unselected entry/exit Fredholm charts prevent promotion** |

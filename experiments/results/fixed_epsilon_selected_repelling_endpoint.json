@@ -12,7 +12,7 @@
       "full_history_right_flight_endpoint_map_specified": true,
       "full_period_horizon_used": true,
       "invariant_chart_implies_local_backward_extension_validated": true,
-      "minimal_stop": "solve and interval-validate the selected invariant-history chart Gamma^r, its complete-history a/eta jets, and its composition with the right flight after resolving the 30 global-C1 derivative seams per represented 16-cell history block, every remaining flight/history-interface derivative join, and the endpoint compatibility rows in a fresh strong operator count",
+      "minimal_stop": "solve and interval-validate one independently tail-selected complete repelling orbit, a monotone history phase, its fixed-time a/eta jets and right-flight composition; generate Gamma^r by sliding windows, then prove the actual W1p/Lp closed trace-pair index, cokernel border and coefficient tails",
       "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
       "phase_gauge_specified": true,
       "physical_onset_validated": false,
@@ -27,7 +27,7 @@
       "selected_chart_parameter_a_derivative_validated": false,
       "selected_chart_parameter_eta_derivative_validated": false,
       "selected_chart_phase_transversality_validated": false,
-      "two_sided_candidate_result_sha256": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6"
+      "two_sided_candidate_result_sha256": "a35c23f58cb80a83b5d14d303edccc160a66e402e9f042b18d0e992a2388dabd"
     },
     "compatible_endpoint_count_audit": {
       "ambient_incoming_compatibility_rows": 2,
@@ -159,19 +159,19 @@
       "eta_vector_field_column": "partial_eta F=(1/5*((V(0)-1)^2-(V(-T_*)-1)^2),0)^T",
       "fixed_time_endpoint_derivative": "D R_+=End_{L_+}u-Gamma_xi dxi-Gamma_a da-Gamma_eta deta",
       "minimum_continuation_unknowns": [
-        "piecewise-Chebyshev coefficients of Gamma^r(xi,theta) on I_xi x [-T_*,0]",
-        "the scalar internal field q^r(xi) and one selected-anchor coordinate",
-        "the full-history jets Gamma_a and Gamma_eta with their scalar q_a and q_eta columns",
-        "an exact interval enclosure of T_* and a translation-closed mesh for 4*sqrt(5), 5*sqrt(5), and T_*",
+        "one complete repelling orbit z^r(t;a,eta), selected by a tail/outer residual independent of the Lin branches",
+        "one monotone full-history phase p(t)=chi(z^r_t), whose inverse generates Gamma^r by sliding windows",
+        "the fixed-time orbit jets z^r_a and z^r_eta, converted to fixed-phase full-history jets by inverse-phase chain rules",
+        "an exact interval enclosure of T_* and a translation-closed representation for 4*sqrt(5), 5*sqrt(5), and T_*",
         "the right-flight trace and either fixed L_+ or a transversal moving-hit variable"
       ],
       "minimum_validation_gates": [
-        "validate the nonlinear invariant-chart residual and a phase/anchor bordered inverse with coefficient tails",
-        "prove chart rank, injectivity, solution-manifold compatibility, and local backward scalar-flow retention",
+        "validate an independently selected complete-orbit residual and its tail/outer anchor with coefficient tails",
+        "prove phase monotonicity; the sliding-window theorem then gives chart rank, injectivity, compatibility, and local backward scalar-flow retention",
         "prove the anchor is the chosen repelling selection rather than an arbitrary invariant curve",
         "validate Gamma_a and Gamma_eta on the complete T_* horizon, including the older-history eta column",
         "compose the complete-history right-flight endpoint residual and validate its derivative",
-        "resolve raw, global-strong, and endpoint-compatible codomains before promoting the arithmetic 193+1 or 775x774 ledger to a Fredholm operator",
+        "use the fixed-parameter W1p-to-Lp orbit scale and prove the actual closed trace-pair index before promoting the arithmetic 193+1 or 775x774 ledger",
         "only then validate the two-sided one-cokernel BVP, adjoint, selected root, and root response"
       ],
       "moving_time_endpoint_derivative": "D R_+(theta)=u(L_++theta)+dot x^+(L_++theta)dL_+ - Gamma_xi(theta)dxi-Gamma_a(theta)da-Gamma_eta(theta)deta",
@@ -207,11 +207,11 @@
     },
     "parent_sha256": {
       "fixed_epsilon_bvp_result": "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a",
-      "two_sided_candidate_result": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6"
+      "two_sided_candidate_result": "a35c23f58cb80a83b5d14d303edccc160a66e402e9f042b18d0e992a2388dabd"
     },
     "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
     "proof_source": "src/canard_control/fixed_epsilon_selected_repelling_endpoint.py",
-    "proof_source_sha256": "086b4e556c18f1ca1ed7a04ff1f569047b51cf85c8590ed2f61bf6ed56bf9721",
+    "proof_source_sha256": "513bc9f88040108bcf8dc6bc352cc16335e403d26602816d9c1058100b9c5a21",
     "python": "3.14.4"
   }
 }

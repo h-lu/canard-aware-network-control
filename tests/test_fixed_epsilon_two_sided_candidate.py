@@ -162,12 +162,12 @@ def test_certificate_refuses_selected_trace_root_and_enclosure() -> None:
     assert not certificate.fixed_epsilon_selected_root_validated
     assert not certificate.rho_star_enclosed_away_from_zero
     assert not certificate.physical_onset_or_capture_validated
-    assert "ambient 193-coordinate" in certificate.minimal_failure
-    assert "effective compatible zero-fiber dimension 191" in (
+    assert "independently selected complete attracting/repelling traces" in (
         certificate.minimal_failure
     )
-    assert "775x774 is only the raw C0 template" in certificate.minimal_failure
-    assert "recount the resulting operator" in certificate.minimal_failure
+    assert "sliding windows of the selected orbit" in certificate.minimal_failure
+    assert "W1p-to-Lp first-order operator" in certificate.minimal_failure
+    assert "closed trace-pair index" in certificate.minimal_failure
 
 
 def test_faithful_next_count_and_backward_ivp_refusal_are_pinned() -> None:
@@ -195,8 +195,18 @@ def test_faithful_next_count_and_backward_ivp_refusal_are_pinned() -> None:
     assert next_step["ambient_repaired_ledger_arithmetic_only"]
     assert not next_step["selected_endpoint_operator_constructed"]
     assert not next_step["global_c1_or_w2_multicell_realization_validated"]
-    assert next_step["raw_194_row_history_equalities_are_not_faithful"]
-    assert next_step["terminal_repelling_chart_requires_collocation_continuation"]
+    assert not next_step["raw_194_row_history_equalities_are_not_faithful"]
+    assert next_step["raw_194_row_history_equalities_are_w1p_faithful"]
+    assert not next_step["terminal_repelling_chart_requires_collocation_continuation"]
+    assert next_step["terminal_repelling_orbit_requires_independent_selection"]
+    assert next_step["continuous_piecewise_polynomials_are_w1p_conforming"]
+    assert next_step["w1p_history_match_dimension"] == 194
+    assert next_step["w1p_explicit_compatibility_rows"] == 0
+    assert next_step["w1p_internal_derivative_seam_rows"] == 0
+    assert next_step["w1p_full_history_phase_fixed_residual_dimension"] == 775
+    assert next_step["w1p_full_history_phase_fixed_unknown_dimension"] == 774
+    assert next_step["w1p_ledger_is_arithmetic_only"]
+    assert next_step["selected_orbit_sliding_window_reduction_available"]
     assert next_step["backward_ivp_is_not_an_admissible_substitute"]
 
 

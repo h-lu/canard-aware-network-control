@@ -216,12 +216,11 @@ extended intervals
  \tag{14}
 \]
 
-Flight-time variation is pulled back to these fixed intervals by a declared
-smooth affine trivialization. For a quadratic parameter remainder use
+For the fixed-section first-order Fredholm operator use
 
 \[
- \mathcal W_{-,N}^{2,p}=W^{2,p}(I_-^r,\mathbb R^{2N}),\qquad
- \mathcal W_{+,N}^{2,p}=W^{2,p}(I_+^r,\mathbb R^{2N}),
+ \mathcal W_{-,N}^{1,p}=W^{1,p}(I_-^r,\mathbb R^{2N}),\qquad
+ \mathcal W_{+,N}^{1,p}=W^{1,p}(I_+^r,\mathbb R^{2N}),
  \tag{15}
 \]
 
@@ -232,9 +231,18 @@ and use
  \tag{16}
 \]
 
-as the complete-history jump space. A first-order theorem may use weaker
-orbit regularity, but moving point delays and a quadratic remainder require
-the corresponding twice differentiable composition result.
+as the complete-history jump space.  Continuous piecewise polynomials are
+conforming on this scale.  The branch derivative then maps
+\(W^{1,p}\to L^p\) with the required noncompact first-order principal part.
+The earlier \(W^{2,p}\to L^p\) choice would make the branch and fixed-history
+columns compact on bounded intervals and cannot be the desired Fredholm
+operator.
+
+Flight-time or point-delay variation is not inserted as an ordinary column
+on this base map.  It requires a declared \(W^{2,p}\to W^{1,p}\) strong
+level or a Banach-scale differentiability argument, after the fixed-section
+Fredholm operator has been constructed.  The same distinction applies to a
+quadratic remainder involving moving translations.
 
 ## 4. Center geometry and endpoint dimensions
 
@@ -333,8 +341,8 @@ independent Dirichlet conditions.
 Write the endpoint equations abstractly as
 
 \[
- B_{-,N}((u^-)_{-T_-},\alpha_-;\nu,\mathcal R_N)=0,\qquad
- B_{+,N}((u^+)_{T_+},\alpha_+;\nu,\mathcal R_N)=0.
+ B_{-,N}((u^-)_{-T_-^0},\alpha_-;\nu,\mathcal R_N)=0,\qquad
+ B_{+,N}((u^+)_{T_+^0},\alpha_+;\nu,\mathcal R_N)=0.
 \tag{23}
 \]
 
@@ -397,13 +405,13 @@ Let \(A_{-,N}\) and \(A_{+,N}\) be the split trace-coordinate spaces in
 
 \[
  \mathscr X_N
- =\mathcal W_{-,N}^{2,p}\times
- \mathcal W_{+,N}^{2,p}\times
- A_{-,N}\times A_{+,N}\times\mathbb R^2,
+ =\mathcal W_{-,N}^{1,p}\times
+ \mathcal W_{+,N}^{1,p}\times
+ A_{-,N}\times A_{+,N},
  \tag{24}
 \]
 
-where the last two coordinates are \(T_-,T_+\). Define
+for fixed flight sections \(T_-^0,T_+^0\). Define
 
 \[
 \begin{aligned}
@@ -427,7 +435,7 @@ space Fredholm index; endpoint coordinates may not be counted twice. Equation
 For
 
 \[
- z_N=(u^-,u^+,\alpha_-,\alpha_+,T_-,T_+)
+ z_N=(u^-,u^+,\alpha_-,\alpha_+)
  \tag{26}
 \]
 
@@ -438,8 +446,8 @@ set
  \begin{pmatrix}
   \dot u^--\mathcal F_{\delta,N}((u^-)_s;\nu,\mathcal R_N)\\
   \dot u^+-\mathcal F_{\delta,N}((u^+)_s;\nu,\mathcal R_N)\\
-  B_{-,N}((u^-)_{-T_-},\alpha_-;\nu,\mathcal R_N)\\
-  B_{+,N}((u^+)_{T_+},\alpha_+;\nu,\mathcal R_N)\\
+  B_{-,N}((u^-)_{-T_-^0},\alpha_-;\nu,\mathcal R_N)\\
+  B_{+,N}((u^+)_{T_+^0},\alpha_+;\nu,\mathcal R_N)\\
   \xi_c((u^-)_0)\\
   J_N(u^-,u^+)
  \end{pmatrix}.
@@ -498,8 +506,10 @@ No module-difference or within-module jump is left unresolved.
 
 Assume that:
 
-1. the RFDE solution manifold, orbit map, and endpoint maps are \(C^2\) on
-   the spaces above;
+1. the RFDE residual/orbit maps and the independently selected compatible
+   endpoint embeddings are \(C^2\) between the declared spaces (or on the
+   declared strong/Banach scale); no \(W^{1,p}\) solution-manifold
+   submanifold structure is assumed;
 2. the center/solution manifold and endpoint bundles satisfy Section 4;
 3. the collective post-phase block satisfies
 

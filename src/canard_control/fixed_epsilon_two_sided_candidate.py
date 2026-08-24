@@ -44,7 +44,7 @@ BLUEPRINT_RESULT_SHA256 = (
     "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a"
 )
 BLUEPRINT_NOTE_SHA256 = (
-    "b0e10e37deb71ce9fb7bcde0b173694eb76d8b96ab631eb9d477ef6d11fb79ba"
+    "21c1f2d4cff893b5fdb9d3d3820abd6f9198869061800ed804b9506af38e0190"
 )
 
 
@@ -944,16 +944,14 @@ def reference_two_sided_candidate_certificate(
         rho_star_enclosed_away_from_zero=False,
         physical_onset_or_capture_validated=False,
         minimal_failure=(
-            "replace the artificial full entry template and scalar G=0 exit "
-            "by an ambient 193-coordinate attracting parameterization with "
-            "two explicit compatibility rows (effective compatible zero-fiber "
-            "dimension 191) and a one-dimensional compatible, backward-"
-            "extendible repelling history chart; replace every raw 194-row "
-            "history equality by a 192-row projected equality plus the six "
-            "declared compatibility rows, realize the global strong-history "
-            "collocation seams, recount the resulting operator, and only "
-            "then validate its index-minus-one Fredholm derivative, jump "
-            "complement, and tails; 775x774 is only the raw C0 template"
+            "replace the connection-dependent entry template and scalar G=0 "
+            "exit by independently selected complete attracting/repelling "
+            "traces; generate the one-dimensional exit chart by sliding "
+            "windows of the selected orbit and use the fixed-parameter "
+            "W1p-to-Lp first-order operator with full 194-row history matches; "
+            "then prove the actual closed trace-pair index, jump complement, "
+            "uniform inverse, full dual-space adjoint, and coefficient tails; "
+            "the accurately solved square candidate remains the wrong endpoint problem"
         ),
     )
 
@@ -1026,8 +1024,18 @@ def reference_two_sided_candidate_payload() -> dict[str, Any]:
             "ambient_repaired_ledger_arithmetic_only": True,
             "selected_endpoint_operator_constructed": False,
             "global_c1_or_w2_multicell_realization_validated": False,
-            "raw_194_row_history_equalities_are_not_faithful": True,
-            "terminal_repelling_chart_requires_collocation_continuation": True,
+            "raw_194_row_history_equalities_are_not_faithful": False,
+            "raw_194_row_history_equalities_are_w1p_faithful": True,
+            "terminal_repelling_chart_requires_collocation_continuation": False,
+            "terminal_repelling_orbit_requires_independent_selection": True,
+            "continuous_piecewise_polynomials_are_w1p_conforming": True,
+            "w1p_history_match_dimension": 194,
+            "w1p_explicit_compatibility_rows": 0,
+            "w1p_internal_derivative_seam_rows": 0,
+            "w1p_full_history_phase_fixed_residual_dimension": 775,
+            "w1p_full_history_phase_fixed_unknown_dimension": 774,
+            "w1p_ledger_is_arithmetic_only": True,
+            "selected_orbit_sliding_window_reduction_available": True,
             "backward_ivp_is_not_an_admissible_substitute": True,
         },
         "scope": {

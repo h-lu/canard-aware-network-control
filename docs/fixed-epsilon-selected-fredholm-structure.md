@@ -8,16 +8,34 @@ two.  Hence the endpoint-compatible layer has dimension 192, and a
 codimension-one attracting trace inside that layer has dimension 191, not
 193.
 
-The previously advertised `775 x 774` shape can still be used, but only as
-an **ambient-coordinate ledger**: each of the three 194-row history
-equalities must be replaced by a 192-row projected equality, and six explicit
-endpoint-compatibility rows must be inserted.  This note proves that repaired
-\(C^0\) ambient algebra and the projection identity.  It is not yet a
+Within the fixed-mesh interpretation in which endpoint derivative
+compatibility is imposed explicitly, the previously advertised
+775-by-774 shape can still be used as an **ambient-coordinate ledger**:
+each of the three 194-row history equalities is replaced by a 192-row
+projected equality, and six explicit endpoint-compatibility rows are
+inserted.  This note proves that repaired \(C^0\) ambient algebra and the
+projection identity.  It is not yet a
 globally \(C^1\) or \(W^{2,p}\) collocation count: such a realization needs a
 different basis or explicit internal derivative-jump residuals and a fresh
 dimension audit.  The note also does not construct either selected endpoint
 chart, assemble the resulting rectangular matrix, or validate its rank,
 cokernel, border, tail, root, or response.
+
+**Continuous-scale correction.**  The later
+[sliding-window/\(W^{1,p}\) bridge](fixed-epsilon-sliding-window-w1p-bridge.md)
+shows that this projected-compatibility ledger is not the preferred
+continuous Fredholm realization.  Continuous piecewise polynomials are
+already conforming in \(W^{1,p}\); endpoint derivative compatibility is not
+a continuous row in that topology, and the old \(W^{2,p}\to L^p\) branch
+scale is compact.  When selected traces are generated intrinsically from
+complete orbits, the natural fixed-parameter ledger uses all three 194-row
+history equalities and no compatibility or derivative-seam rows:
+\[
+2(290)+193+1=774,\qquad 2(96)+3(194)+1=775.
+\]
+The projected \(192+2\) construction below remains a correct fixed-mesh
+algebraic identity and an admissible stronger-coordinate bookkeeping device,
+but it is superseded as the recommended \(W^{1,p}\to L^p\) route.
 
 The implementation is
 [fixed_epsilon_selected_fredholm_structure.py](../src/canard_control/fixed_epsilon_selected_fredholm_structure.py),
@@ -198,12 +216,18 @@ corresponding \(C^0\) ledger is
 \tag{2.5}
 \]
 
-Both ledgers have the intended formal index \(-1\).  Thus the endpoint-
+Both fixed-mesh ledgers have the intended formal index \(-1\).  Thus the endpoint-
 compatible \(C^0\) matrix is \(769\times768\), whereas the repaired ambient
 \(C^0\) matrix is \(775\times774\).  Neither is yet a \(W^{2,p}\) Fredholm
 discretization.  A globally \(C^1\) basis or added derivative-jump rows can
 change the raw matrix size; the analytic invariant eventually sought is the
 Fredholm index, not the number 775.
+
+For the preferred first-order scale, the same \(C^0\) basis is already a
+conforming \(W^{1,p}\) trial space.  Its full-history \(775\times774\)
+ledger is given in the correction above.  It still requires a selected
+closed trace pair and a uniform discrete inverse; neither arithmetic form
+proves those properties.
 
 ## 3. Conditional raw-template derivative, cokernel, and border
 

@@ -3,8 +3,11 @@
 The existing two-sided candidate ends its right flight with one scalar
 observable.  This module records two exact compatible-history witnesses
 showing that such an observable does not determine an RFDE endpoint, and it
-specifies the smallest invariant-history continuation problem that would
-produce the required one-dimensional backward-extendible repelling chart.
+specifies an invariant-history continuation problem that would produce the
+required one-dimensional backward-extendible repelling chart.  A later exact
+sliding-window reduction shows that the minimum realization is one
+independently selected complete orbit plus phase inversion, rather than a
+two-dimensional chart PDE.
 
 Nothing in this module constructs that chart or promotes the fixed-epsilon
 selected-root diagnostic.
@@ -24,7 +27,7 @@ FIXED_EPSILON_BVP_RESULT_SHA256 = (
     "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a"
 )
 TWO_SIDED_CANDIDATE_RESULT_SHA256 = (
-    "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6"
+    "a35c23f58cb80a83b5d14d303edccc160a66e402e9f042b18d0e992a2388dabd"
 )
 PROOF_SOURCE_RELATIVE_PATH = (
     "src/canard_control/fixed_epsilon_selected_repelling_endpoint.py"
@@ -594,19 +597,19 @@ def reference_selected_repelling_endpoint_contract(
             "nonzero crossing derivative; it is not the endpoint chart"
         ),
         minimum_continuation_unknowns=(
-            "piecewise-Chebyshev coefficients of Gamma^r(xi,theta) on I_xi x [-T_*,0]",
-            "the scalar internal field q^r(xi) and one selected-anchor coordinate",
-            "the full-history jets Gamma_a and Gamma_eta with their scalar q_a and q_eta columns",
-            "an exact interval enclosure of T_* and a translation-closed mesh for 4*sqrt(5), 5*sqrt(5), and T_*",
+            "one complete repelling orbit z^r(t;a,eta), selected by a tail/outer residual independent of the Lin branches",
+            "one monotone full-history phase p(t)=chi(z^r_t), whose inverse generates Gamma^r by sliding windows",
+            "the fixed-time orbit jets z^r_a and z^r_eta, converted to fixed-phase full-history jets by inverse-phase chain rules",
+            "an exact interval enclosure of T_* and a translation-closed representation for 4*sqrt(5), 5*sqrt(5), and T_*",
             "the right-flight trace and either fixed L_+ or a transversal moving-hit variable",
         ),
         minimum_validation_gates=(
-            "validate the nonlinear invariant-chart residual and a phase/anchor bordered inverse with coefficient tails",
-            "prove chart rank, injectivity, solution-manifold compatibility, and local backward scalar-flow retention",
+            "validate an independently selected complete-orbit residual and its tail/outer anchor with coefficient tails",
+            "prove phase monotonicity; the sliding-window theorem then gives chart rank, injectivity, compatibility, and local backward scalar-flow retention",
             "prove the anchor is the chosen repelling selection rather than an arbitrary invariant curve",
             "validate Gamma_a and Gamma_eta on the complete T_* horizon, including the older-history eta column",
             "compose the complete-history right-flight endpoint residual and validate its derivative",
-            "resolve raw, global-strong, and endpoint-compatible codomains before promoting the arithmetic 193+1 or 775x774 ledger to a Fredholm operator",
+            "use the fixed-parameter W1p-to-Lp orbit scale and prove the actual closed trace-pair index before promoting the arithmetic 193+1 or 775x774 ledger",
             "only then validate the two-sided one-cokernel BVP, adjoint, selected root, and root response",
         ),
     )
@@ -663,13 +666,11 @@ def reference_selected_repelling_endpoint_certificate(
         fixed_epsilon_root_response_validated=False,
         physical_onset_validated=False,
         minimal_stop=(
-            "solve and interval-validate the selected invariant-history "
-            "chart Gamma^r, its complete-history a/eta jets, and its "
-            "composition with the right flight after resolving the 30 "
-            "global-C1 derivative seams per represented 16-cell history "
-            "block, every remaining flight/history-interface derivative "
-            "join, and the endpoint compatibility rows in a fresh strong "
-            "operator count"
+            "solve and interval-validate one independently tail-selected "
+            "complete repelling orbit, a monotone history phase, its "
+            "fixed-time a/eta jets and right-flight composition; generate "
+            "Gamma^r by sliding windows, then prove the actual W1p/Lp "
+            "closed trace-pair index, cokernel border and coefficient tails"
         ),
     )
 
