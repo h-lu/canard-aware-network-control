@@ -349,7 +349,37 @@ open.
    those detector sides.  This does not exclude a different quiet attractor;
    it forces the biological repair to be an actually validated bistable
    slice, an explicitly semantic latch, or a declared hybrid switch.
-9. **Numerical diagnostic.** Literal method-of-steps integration of one
+9. **Fixed-amplitude causal-chart route.**  The attempt to continue the
+   singular \(\sigma\)-clock to \(\rho_*=1/\sqrt5\) now has an exact stopping
+   theorem for the proposed geometry: at the frozen target candidate \(\nu\),
+   an explicit zero of the shifted independent raw-slot transform lies
+   inside the radius-\(10^{-3}\) product tube, so no planar current-state
+   \(C^1\) phase can be strictly increasing there.  This is neither an RFDE
+   equilibrium nor a no-go for history-dependent phases or other tubes.  A
+   tapered phase still has a directed positive clock on the smaller
+   \(0\le\nu\le1/5\) raw-slot comparison box, but this is not an actual target
+   graph.  The replacement is an exact conditional prepared-chart theorem:
+   a sufficiently smooth embedded family \(\Psi(t,\lambda)\) of physical RFDE
+   solutions induces \(Q\circ\Psi=\partial_t\Psi\); after a compatible
+   complete extension it satisfies a local physical-history identity on a
+   smaller current image and has \(\mathcal L_Qt=1\),
+   \(\mathcal L_Q\lambda=0\).  A binary64 target chart has sampled
+   \(\det D\Psi\in[-3.02251,-0.114909]\), but global interval injectivity,
+   the target-centered collar, \(C^4\) preparation seam, trace pair,
+   Fredholm inverse and selected root remain open.
+10. **Autonomous biological-onset route.**  A leaky-recovery replacement
+   keeps the two delayed voltage channels and gives a unique quiet
+   equilibrium that is proved locally exponentially stable for every pair of
+   positive delays.  Binary64 continuation finds an attracting outer pulse
+   candidate, an index-one inner-cycle candidate, and a physical
+   finite-pulse bracket \(J\in[0.30,0.32]\).  Under directed periodic/Floquet,
+   history-space routing and pulse-transversality hypotheses, the exact
+   block-triangular theorem makes
+   \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) a local diffeomorphism whenever the
+   two-output response is nonsingular.  The periodic orbits, separator,
+   threshold, response determinant, finite-network basin lift and equality
+   of the canard root with physical onset are not yet proved.
+11. **Numerical diagnostic.** Literal method-of-steps integration of one
    finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
    \(-0.1969771\) to \(-0.2036174\), against the predicted
@@ -383,11 +413,14 @@ open.
 - [docs/fixed-epsilon-frozen-graph-operator.md](docs/fixed-epsilon-frozen-graph-operator.md) -- exact scalar two-dimensional nonlocal frozen-graph operator, explicit distinct graph/planar cutoff data, directed proof-native nesting radius, residual-variation row, and conditional C3 Seeley preparation rule; no graph fixed point, positive-amplitude hull, prepared trace, or root is validated;
 - [docs/fixed-epsilon-singular-reachable-hull.md](docs/fixed-epsilon-singular-reachable-hull.md) -- exact smooth first integral and Lambert-W branch geometry for the singular canard field, the asymmetric continuous backward delay hull, a fixed-width-tube obstruction, the perturbed J-barrier identity, and a preparation-indexed causal-slab restriction lemma; target clock/barrier bounds, left-tail propagation, the positive-amplitude hull, graph inverse, and fixed-epsilon root remain open;
 - [docs/fixed-epsilon-clocked-tail-graph-extension.md](docs/fixed-epsilon-clocked-tail-graph-extension.md) -- bounded complete pointwise clock-positive tail, exact parameter-independent incoming germ, an applied fixed-cutoff small-amplitude special-flow graph theorem with finite mixed jets and the prepared seed first jet, plus a preparation-indexed Volterra--Weissinger theorem; the graph at \(\rho_*=1/\sqrt5\), target clock/barriers, trace pair, fixed-epsilon root, network lift, and biological-control chain remain open;
+- [docs/fixed-epsilon-target-tilted-phase.md](docs/fixed-epsilon-target-tilted-phase.md) -- exact raw-slot reversal/stall algebra, the frozen-anchor radius-\(10^{-3}\) product-tube positive-clock no-go, and a separate directed tapered-phase comparison on \(0\le\nu\le1/5\); it is not an actual target causal phase;
+- [docs/fixed-epsilon-target-causal-tube-candidate.md](docs/fixed-epsilon-target-causal-tube-candidate.md) -- binary64 prepared target-amplitude solution tube and the exact conditional theorem that an embedded physical solution family induces a local fixed graph, unit intrinsic time clock and invariant transverse labels; interval embedding and \(C^4\) seam validation remain open;
 - [docs/fixed-epsilon-selected-attracting-endpoint-chart.md](docs/fixed-epsilon-selected-attracting-endpoint-chart.md) -- finite-mesh attracting-endpoint audit, now explicitly superseded at the continuous level by the sliding-window/\(W^{1,p}\) correction;
 - [docs/fixed-epsilon-selected-fredholm-structure.md](docs/fixed-epsilon-selected-fredholm-structure.md) -- earlier projected-history coordinate audit plus the corrected natural full-history \(W^{1,p}\) ledger, with actual trace-range closedness, cokernel and inverse still open;
 - [docs/fixed_epsilon_selected_repelling_endpoint.md](docs/fixed_epsilon_selected_repelling_endpoint.md) -- exact same-current, same-exit and compatible-history counterexamples, together with the superseding reduction from a history-chart PDE to one independently selected orbit;
 - [docs/quadratic-physical-onset-capture-stop-go.md](docs/quadratic-physical-onset-capture-stop-go.md) -- exact four-gate non-composition theorem plus a same-plant, arbitrary-finite-balanced controlled terminal transfer for an explicit strict small-\(|\eta|\) bound, with onset/basin/no-return claims refused;
 - [docs/quadratic-reference-slice-dual-basin-no-go.md](docs/quadratic-reference-slice-dual-basin-no-go.md) -- exact Rouché proof that the reference synchronous rest state is unstable on a nonzero \(\eta\)-box, periodic-orbit face-recurrence obstruction to permanent detector-side residence, and the separated autonomous-bistable, latch, and hybrid-switch repair contracts;
+- [docs/autonomous-leaky-recovery-bistable-rfde-proposal.md](docs/autonomous-leaky-recovery-bistable-rfde-proposal.md) -- exact delay-independent quiet-equilibrium stability for a leaky-recovery two-delay RFDE, binary64 outer/inner periodic and physical-pulse candidates, and a conditional autonomous frequency--amplitude--onset inverse theorem with history-space validation gates;
 - [docs/dimension-uniform-special-flow-history-graph.md](docs/dimension-uniform-special-flow-history-graph.md) -- abstract dimension-uniform special-flow graph theorem with operator-TV delays, mixed jets, logarithmic fold tubes, and exact mild history embedding; network model fitting remains separate;
 - [docs/banach-scale-history-schur-link.md](docs/banach-scale-history-schur-link.md) -- three-level \(C_b^9\to C_b^8\to C_b^7\) graph-response theorem, complete-history extension/restriction, levelwise Schur formulas, and conditional trace/endpoint transfer without a false same-space \(C^2\) implicit-function theorem;
 - [docs/paper-ii-lifted-two-module-class.md](docs/paper-ii-lifted-two-module-class.md) -- exact arbitrary-size unequal-module lift, maximum-norm Gate A model-fitting audit (with weighted algebra retained only as a diagnostic), dimension-independent singular semigroup bound, and operator-TV non-equitable perturbation family;
@@ -438,6 +471,8 @@ open.
 - [docs/paper-iv-synchronous-floquet-index-audit.md](docs/paper-iv-synchronous-floquet-index-audit.md) -- frozen refusal certificate that isolated the formerly missing stable-index anchor; the later right-half cover closes that gate without rewriting the audit;
 - [docs/paper-iv-synchronous-floquet-riesz-reduction.md](docs/paper-iv-synchronous-floquet-riesz-reduction.md) -- uniform right-half-strip tail inversion, finite analytic Schur reduction preserving analytic characteristic multiplicity, outer and local complex exclusions, and the remaining finite directed-winding gate;
 - [docs/paper-iv-synchronous-floquet-right-half-cover.md](docs/paper-iv-synchronous-floquet-right-half-cover.md) -- complete 32,046-leaf directed keyhole cover, exact zero winding deduced from zero-freedom, zero nontranslation unstable index, synchronous local attraction, and fixed-rank-one full-network attraction after the transverse theorem is composed;
+- [src/canard_control/fixed_epsilon_target_tilted_phase.py](src/canard_control/fixed_epsilon_target_tilted_phase.py) and [src/canard_control/fixed_epsilon_target_causal_tube_candidate.py](src/canard_control/fixed_epsilon_target_causal_tube_candidate.py) -- source-bound raw-slot no-go/comparison certificate and the separate prepared target-chart numerical/conditional-theorem ledger;
+- [src/canard_control/autonomous_leaky_recovery_bistable.py](src/canard_control/autonomous_leaky_recovery_bistable.py) -- exact equilibrium characteristic algebra, rational small-gain certificate and strict analytic/candidate/open claim partition for the autonomous replacement;
 - `src/canard_control/fhn_periodic_candidate.py` -- odd-Fourier BVP/continuation, analytic period column, gain sensitivities, discrete-adjoint audit, sampled box, and ODE-persistence-route diagnostics;
 - `src/canard_control/directed_interval.py` and `src/canard_control/fhn_periodic_directed_validation.py` -- reusable MPFR real/complex interval arithmetic, exact finite nodal contraction, directed DFT/convolution residual bounds, inverse envelope, and machine-readable infinite-tail falsifier;
 - `src/canard_control/fhn_periodic_infinite_validation.py` -- weighted independent real-conjugate coefficient Jacobian, binary-accelerated directed inverse, finite/tail cross norms, tail inverse, and moving-delay correction-ball majorant;
@@ -455,6 +490,7 @@ open.
 - [src/canard_control/fhn_periodic_transverse_halanay.py](src/canard_control/fhn_periodic_transverse_halanay.py), [src/canard_control/fhn_synchronous_floquet_riesz_reduction.py](src/canard_control/fhn_synchronous_floquet_riesz_reduction.py), and [src/canard_control/fhn_synchronous_floquet_right_half_cover.py](src/canard_control/fhn_synchronous_floquet_right_half_cover.py) -- fixed-topology transverse decay, the rigorous infinite-to-finite spectral reduction, and the complete directed stable-index/attraction certificate; the earlier index audit remains the frozen refusal baseline;
 - `experiments/fhn_periodic_box_candidate.py` with `experiments/requirements-fhn-periodic-candidate.txt` -- one-command candidate reproduction and exact NumPy/SciPy dependencies;
 - `experiments/results/fhn_periodic_box_candidate.json` -- machine-readable binary64 result and software/arithmetic provenance, with all validated-interval flags set to false;
+- [experiments/fixed_epsilon_target_tilted_phase.py](experiments/fixed_epsilon_target_tilted_phase.py), [experiments/fixed_epsilon_target_causal_tube_candidate.py](experiments/fixed_epsilon_target_causal_tube_candidate.py), and [experiments/autonomous_leaky_recovery_bistable_probe.py](experiments/autonomous_leaky_recovery_bistable_probe.py) -- one-command target-clock obstruction, prepared-chart candidate, and autonomous bistability/onset reproductions with strict machine-readable claim ledgers;
 - `experiments/fhn_periodic_directed_validation.py` with `experiments/requirements-fhn-periodic-validation.txt` -- one-command directed finite validation and its declared gmpy2/NumPy/SciPy dependencies; the result JSON records the exact installed versions;
 - `experiments/results/fhn_periodic_directed_validation.json` -- tracked directed bounds, backend/provenance audit, finite theorem flags, stage-local missing infinite-tail bounds, and RFDE refusal flags;
 - `experiments/fhn_periodic_infinite_validation.py`, its requirements file, and `experiments/results/fhn_periodic_infinite_validation.json` -- one-command center-orbit infinite radii proof with remaining issue-15 flags kept false;
@@ -545,6 +581,14 @@ open.
 - [Paper III pulse-event theorem](https://github.com/h-lu/canard-aware-network-control/issues/12)
 - [Paper IV control/conditioning epic](https://github.com/h-lu/canard-aware-network-control/issues/5)
 - [Paper IV periodic FHN validation](https://github.com/h-lu/canard-aware-network-control/issues/15)
+- [Fixed-epsilon selected root](https://github.com/h-lu/canard-aware-network-control/issues/16)
+- [Autonomous bistable slice](https://github.com/h-lu/canard-aware-network-control/issues/17)
+- [Same-plant canard-to-onset comparison](https://github.com/h-lu/canard-aware-network-control/issues/18)
+- [Target-amplitude interval causal graph](https://github.com/h-lu/canard-aware-network-control/issues/19)
+- [Leaky-recovery periodic/Floquet validation](https://github.com/h-lu/canard-aware-network-control/issues/20)
+- [History-space physical-pulse onset](https://github.com/h-lu/canard-aware-network-control/issues/21)
+- [Autonomous three-output target ball and network lift](https://github.com/h-lu/canard-aware-network-control/issues/22)
+- [Fixed-epsilon finite-network selected-root lift](https://github.com/h-lu/canard-aware-network-control/issues/23)
 
 ## Frozen theorem route
 

@@ -1,0 +1,213 @@
+{
+  "audit": {
+    "certificate": {
+      "central_stall_lies_in_comparison_box_proved": true,
+      "constant_affine_phase_no_go_on_nu_box_proved": true,
+      "core_phase_interval": [
+        -20,
+        20
+      ],
+      "declared_slot_tube_lies_in_unit_plateau_proved": true,
+      "endpoint_sturm_records": [
+        {
+          "negative_infinity_signs": [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "negative_infinity_variations": 4,
+          "parameter": "0/1",
+          "positive_infinity_signs": [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "positive_infinity_variations": 4,
+          "real_root_count": 0,
+          "sample_at_zero": "199/200 - 333*sqrt(5)/800",
+          "sequence_length": 9
+        },
+        {
+          "negative_infinity_signs": [
+            1,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "negative_infinity_variations": 4,
+          "parameter": "1/5",
+          "positive_infinity_signs": [
+            1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "positive_infinity_variations": 4,
+          "real_root_count": 0,
+          "sample_at_zero": "199/200 - 333*sqrt(5)/800",
+          "sequence_length": 9
+        }
+      ],
+      "gradient_squared_lower": "1/100",
+      "incoming_to_core_sigma_clock_on_slot_tube_proved": true,
+      "left_corridor_bracket_upper_at_x_lower": "-17981/250",
+      "left_corridor_derivative_upper_at_x_lower": "-1107/40",
+      "left_corridor_nominal_interval": [
+        -30,
+        -20
+      ],
+      "left_corridor_phase_speed_lower": "1/1",
+      "left_corridor_x_lower": 9,
+      "minimum_plateau_margin": "999/1000",
+      "no_go_comparison_nu_box": [
+        "1/10",
+        "1/4"
+      ],
+      "parent_clock_failure_and_small_rho_graph_replayed": true,
+      "partition_cells": 20000,
+      "precision_bits": 256,
+      "raw_clock_lower": "1/200",
+      "raw_normal_speed_formula": "sqrt(5)*nu/5 + sqrt(5)*s**4/120 + 27*sqrt(5)*s**3/1600 - 123*sqrt(5)*s**2/1600 + 333*sqrt(5)*s/1600",
+      "raw_sigma_speed_formula": "-sqrt(5)*s**3/60 - 27*sqrt(5)*s**2/800 + 123*sqrt(5)*s/800 - 333*sqrt(5)/800 + 1",
+      "raw_sigma_speed_has_three_simple_real_zeros_proved": true,
+      "raw_slot_product_tapered_clock_validated": true,
+      "raw_slot_product_tapered_phase_submersion_validated": true,
+      "raw_stall_locus_and_phase_no_go_proved": true,
+      "raw_tapered_phase_speed_formula": "S_*(s)+8*beta(s)*D_0(s)*D_nu(s)",
+      "reference_normal_speed_formula": "sqrt(5)*s**4/120 + 27*sqrt(5)*s**3/1600 - 123*sqrt(5)*s**2/1600 + 333*sqrt(5)*s/1600",
+      "sigma_speed_real_root_count": 3,
+      "sigma_speed_square_free": true,
+      "sigma_speed_sturm_sequence_length": 4,
+      "slot_tube_radius": "1/1000",
+      "stall_nu_enclosures": [
+        {
+          "lower": "4.6323242894349683045053759808217647990775021489568641325989284603175561589651518718",
+          "upper": "4.6323242916710362820051656772309384678087783843974824922104541845884534043759699175"
+        },
+        {
+          "lower": "0.21681434995642729597487763024896434400556975558561963102261512675109968841098656096",
+          "upper": "0.21681435107446128472477247845355117837120787330592881082837798888654831111625956415"
+        },
+        {
+          "lower": "-2.5851198155269604991156498160940724577963601685967415072145487124968492782839199524",
+          "upper": "-2.5851198132908925216158601196848987890650839331561231476030229882259520328732400854"
+        }
+      ],
+      "stall_phase_enclosures": [
+        {
+          "lower": "-4.1432768040000000000000000000000000000000000000000000000000000000000000000000716729",
+          "upper": "-4.1432768019999999999999999999999999999999999999999999999999999999999999999998839164"
+        },
+        {
+          "lower": "-0.19392465100000000000000000000000000000000000000000000000000000000000000000000350229",
+          "upper": "-0.19392464999999999999999999999999999999999999999999999999999999999999999999999598572"
+        },
+        {
+          "lower": "2.3122014529999999999999999999999999999999999999999999999999999999999999999999534854",
+          "upper": "2.3122014550000000000000000000000000000000000000000000000000000000000000000000376079"
+        }
+      ],
+      "taper_interval": [
+        -6,
+        -5
+      ],
+      "tapered_phase_formula": "vartheta(sigma,d)=sigma+8*beta(sigma)*D_0(sigma)*d",
+      "tapered_phase_matches_incoming_sigma_clock_proved": true,
+      "tapered_raw_clock_uniform_on_nu_box_proved": true,
+      "target_anchor_equilibrium_g_enclosure": {
+        "lower": "0.4992986312166938070851314962306221635342491722161170380549487704971427934905209249",
+        "upper": "0.49929863121669380708513149623062216353424917221611703805494877049714279349055546957"
+      },
+      "target_anchor_equilibrium_normal_enclosure": {
+        "lower": "0.00070136878330619291486850376937783646575082778388296194505122950285720650944884008053",
+        "upper": "0.00070136878330619291486850376937783646575082778388296194505122950285720650947476545371"
+      },
+      "target_anchor_equilibrium_normal_formula": "d_e=1/2-g_*(s_e)=S_*(s_e)/2",
+      "target_anchor_equilibrium_phase_enclosure": {
+        "lower": "-0.19011964258555936627088626236648117564772155192331201044192157944432722432274696815",
+        "upper": "-0.19011964258555936627088626236648117564772155192331201044192157944432722432273617294"
+      },
+      "target_anchor_equilibrium_phase_formula": "s_e=-2*nu_anchor/sqrt(5)",
+      "target_anchor_nu_decimal": "0.21256022233963731",
+      "target_anchor_nu_exact_rational": "21256022233963731/100000000000000000",
+      "target_anchor_product_tube_positive_clock_no_go_proved": true,
+      "target_anchor_raw_slot_equilibrium_algebra_proved": true,
+      "target_anchor_raw_slot_equilibrium_enclosed_256_bit": true,
+      "target_anchor_raw_slot_zero_lies_in_product_tube_proved": true,
+      "target_anchor_scope": "frozen numerical operating anchor interpreted as the exact written decimal; not a validated selected root",
+      "target_anchor_slot_fast_formula": "Q_X=d-1/2+g_*(s)",
+      "target_anchor_slot_g_formula": "sqrt(5)*s**3/120 + 27*sqrt(5)*s**2/1600 - 123*sqrt(5)*s/1600 + 333*sqrt(5)/1600",
+      "target_anchor_slot_slow_formula": "Q_Y=s/2+nu/sqrt(5)",
+      "target_biological_control_chain_validated": false,
+      "target_complete_history_root_validated": false,
+      "target_eta": 0,
+      "target_general_network_lift_validated": false,
+      "target_graph_candidate_computed": false,
+      "target_graph_fixed_point_validated": false,
+      "target_graph_transform_self_map_validated": false,
+      "target_nu_box": [
+        "0/1",
+        "1/5"
+      ],
+      "target_one_sided_traces_validated": false,
+      "target_raw_coordinate_algebra_proved": true,
+      "target_rho_squared": "1/5",
+      "target_slot_tube_invariant_under_backward_flows_validated": false,
+      "target_w1p_fredholm_inverse_validated": false,
+      "tilt_scale": 8,
+      "tube_clock_lower": "1/1000",
+      "worst_gradient_squared": {
+        "lower": "0.93648109241450593907325255773953030010390012676248834741399465516105512061592971208",
+        "upper": "1.1519315497142265914959979755938030332294332065708449859193386781722782127200534994"
+      },
+      "worst_gradient_squared_cell": 7534,
+      "worst_tube_phase_speed": {
+        "lower": "0.0011409071019661816122405482562768642567757919489277369000577087254348161179004057485",
+        "upper": "0.072906630745836956040590013568702921249538705908282345442331811744518200252990888242"
+      },
+      "worst_tube_phase_speed_cell": 9911
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact Sturm arithmetic over Q(sqrt(5)) and 256-bit MPFR-directed interval arithmetic on 20000 rational raw-slot product-tube cells and the frozen-decimal target-anchor equilibrium; no actual target causal phase, target graph, tube invariance, trace, Fredholm inverse, root, network lift, or biological-control validation",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_target_tilted_phase.py",
+    "generator": "experiments/fixed_epsilon_target_tilted_phase.py",
+    "generator_sha256": "c6ff2ba09536c118fe1387a8eb6216775b3e7d5a0985be65136aeb35dce0eef7",
+    "note": "docs/fixed-epsilon-target-tilted-phase.md",
+    "note_sha256": "8f4c3644c5bdf1481b280ac8e8364dce1b9ce88eb70749bbbcd9b2c3b994fecc",
+    "parent_claim_checks": {
+      "parent_leaves_target_clock_open": true,
+      "parent_leaves_target_graph_open": true,
+      "parent_proves_nonexplicit_small_rho_graph": true,
+      "parent_proves_raw_target_sigma_clock_failure": true
+    },
+    "parent_result": "experiments/results/fixed_epsilon_clocked_tail_graph_extension.json",
+    "parent_result_sha256": "826c8ddbd2e9794cec344456f09ccefc8d4d8d737950350859f1679691f1760e",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_target_tilted_phase.py",
+    "proof_source_sha256": "7ac4d95953f8633e0d253bed4d8a646e9ed55e4a0c9992cf0b16c98d9fb835f7",
+    "python": "3.14.4"
+  }
+}

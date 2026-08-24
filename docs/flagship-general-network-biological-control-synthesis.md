@@ -1,9 +1,11 @@
-# Finite-network canard-root transfer and bounded controlled-to-autonomous voltage excursions
+# Finite-network canard-root transfer and routes to autonomous pulse-onset control
 
 ## 1. What is proved, and what is not one theorem yet
 
-The successor program now contains six theorem blocks spanning genuine
-finite-network classes and a sharp reference-slice obstruction.
+The successor program now contains eight theorem or obstruction blocks
+spanning genuine finite-network classes, a fixed-amplitude causal-chart
+route, and an autonomous bistable replacement for the failed biological
+slice.
 
 1. A **selected complete-history canard-root theorem** applies to a
    uniformly Dobrushin family with one shared recovery resource. It proves a
@@ -72,6 +74,37 @@ finite-network classes and a sharp reference-slice obstruction.
    by that orbit is incompatible with permanent residence on the
    corresponding one-sided detector regions.  The theorem does not exclude
    another quiet attractor or prove global uniqueness.
+7. A **fixed-amplitude clock obstruction and prepared-chart theorem**
+   replaces the failed attempt to continue the singular \(\sigma\)-clock to
+   \(\rho_*=1/\sqrt5\).  At the frozen candidate value of \(\nu\), an
+   explicit zero tuple of the shifted independent raw-slot transform lies
+   inside the previously proposed radius-\(10^{-3}\) product tube;
+   consequently no planar current-state \(C^1\) phase can have a strictly
+   positive Lie derivative on that specified geometry.  This is not an RFDE
+   equilibrium and does not exclude a history-dependent phase or another
+   causal tube.
+   Conversely, any sufficiently smooth embedded family of exact prepared
+   RFDE solutions \(\Psi(t,\lambda)\) induces a local planar field
+   \(Q\circ\Psi=\partial_t\Psi\) whose backward flow shifts \(t\), satisfies
+   a local physical-history identity on a smaller current image after a
+   compatible complete extension, and has exact
+   intrinsic clock and first-integral identities
+   \(\mathcal L_Qt=1\), \(\mathcal L_Q\lambda=0\).  The implication is exact;
+   the present target-amplitude chart is only a binary64 candidate for its
+   hypotheses.
+8. An **autonomous leaky-recovery bistable candidate** keeps the two delayed
+   voltage channels and changes the recovery law to
+   \(w'=\varepsilon(v-a-w)\).  At the declared center, the unique quiet
+   equilibrium is proved locally exponentially stable for every pair of
+   positive delays by an exact small-gain/argument-principle estimate.  An
+   attracting outer periodic orbit, an index-one inner periodic-cycle
+   candidate,
+   a finite-duration physical-pulse onset bracket, and a nonsingular
+   \((a,\kappa_3)\mapsto(F,A)\) response are reproducible numerical
+   candidates.  They yield a precise conditional theorem for the local
+   control map \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\), but the two periodic
+   BVPs, Floquet indices, history-space separator and pulse transversality
+   remain to be validated.
 
 The two original principal results answer different questions in different recovery
 architectures. The policy composition removes that mismatch only for a
@@ -82,7 +115,12 @@ identifying a preparation-indexed local canard connection with an unforced
 biological pulse boundary.  The quadratic period lock removes the model-level
 obstruction for a small-\(\delta\) canonical full-network root on the retained
 Dobrushin graph and the center periodic orbit, but it does not supply the
-fixed-\(\varepsilon\) or event-level identification.
+fixed-\(\varepsilon\) or event-level identification.  The new prepared-chart
+route and leaky-recovery slice now give concrete objects on both sides of that
+gap: a plausible target-amplitude causal history graph and a plausible
+autonomous pulse separator.  Neither numerical object has yet been promoted
+to a theorem, and equality of their codimension-one roots is a separate
+comparison problem.
 
 The distinction is structural rather than terminological:
 
@@ -527,6 +565,75 @@ and validate a different parameter slice containing both a stable quiet
 attractor and the pulse attractor, together with trapping neighborhoods and
 terminal-history basin inclusions.
 
+### 4.4 A concrete autonomous replacement and its theorem gate
+
+The
+[leaky-recovery proposal](autonomous-leaky-recovery-bistable-rfde-proposal.md)
+implements the autonomous repair without a detector latch or post-event
+parameter switch.  It keeps the delayed voltage equation and replaces the
+recovery channel by
+
+\[
+ \dot w=\varepsilon(v-a-w),
+ \qquad
+ (\varepsilon,a,\kappa_1,\kappa_3)
+ =\left({1\over5},{1\over4},{1\over250},{1\over200}\right).
+\tag{4.13}
+\]
+
+Writing \(\alpha=(3/4)^{1/3}\), the only constant solution is
+
+\[
+ E_q=(\alpha,\alpha-1/4).
+\tag{4.14}
+\]
+
+An exact rational enclosure of \(\alpha\), followed by a scalar
+small-gain estimate for the characteristic determinant, proves that
+\(E_q\) has no characteristic root in
+\(\operatorname{Re}\lambda\ge0\) for **every** pair of positive delays.
+Thus this slice passes the quiet-attractor local spectral gate that the
+reference slice failed.
+
+Binary64 continuation at the same point finds an outer periodic candidate of
+period \(26.6044168026\) and voltage amplitude \(3.2860250879\), together
+with an inner periodic candidate of period \(18.1862099491\).  Finite
+monodromy discretizations consistently give zero and one nontranslation
+multipliers outside the unit disk, respectively.  Starting from the quiet
+history and applying a voltage current \(J\) only on \(0\le t\le1\) gives a
+numerical rest/pulse bracket \(J\in[0.30,0.32]\); the RFDE is autonomous for
+all \(t>1\).
+
+Let \(K_\xi(J)\) be the terminal history at \(t=1\), with
+\(\xi=(a,\kappa_3)\) and \(\varepsilon,\kappa_1\) and both physical delays
+fixed.  If directed periodic BVPs and Floquet indices produce a stable outer
+cycle \(\Gamma_p\) and an index-one inner cycle \(\Gamma_u\), if a
+   history-space isolating neighborhood routes the two sides of
+   \(W^s(\Gamma_u)\) to \(E_q\) and \(\Gamma_p\), and if the \(C^1\) map
+   \(K_\xi\) has a positively oriented transverse zero of a defining
+   function \(h(\xi,\phi)\) that is jointly \(C^1\) in parameter and history,
+   then a unique threshold \(J_c(\xi)\)
+   exists on a sufficiently small \(J\)-interval.  If in addition
+
+\[
+ \det D_{(a,\kappa_3)}(F,A_p)\ne0,
+\tag{4.15}
+\]
+
+then
+
+\[
+ (a,\kappa_3,J)\longmapsto
+ \bigl(F,A_p,J-J_c(a,\kappa_3)\bigr)
+\tag{4.16}
+\]
+
+is a local \(C^1\) diffeomorphism.  The centered-difference candidate for
+(4.15) has determinant \(1.11424778\) and smallest singular value
+\(0.0815861\), but these are not directed bounds.  Equations (4.15)--(4.16)
+are therefore a precise conditional biological-control theorem, not a
+validated onset result.
+
 ## 5. Frequency--amplitude--operational-safety controllability
 
 The row-mass identities in (3.4) make the synchronous history space
@@ -772,21 +879,27 @@ switching.
 
 ## 8. Remaining theorem gates
 
-Four gates remain before the word *biological* can be used without an
+Five gates remain before the word *biological* can be used without an
 operational qualifier.
 
-1. **Same-model canard/event comparison.** Relate a complete-history canard
-   root to the reset coordinate or detector root in one recovery
-   architecture by an input-independent outer/event map. The proved
-   root-linked reset policy does not do this because it injects the exact root
-   as offline control data. The exact compatibility audit additionally rules
-   out literal composition of the earlier root and periodic/control RFDEs and
-   the old two-atom linear redistribution.  The quadratic period-locked
-   common plant now has a proved small-\(\delta\) full-network canonical-graph
-   coefficient for the uniformly Dobrushin class.
-   The remaining gate is to validate its complete-history augmented BVP and
-   dynamic-adjoint ratio at \(\varepsilon=1/5\) and prove the
-   input-independent root/event factorization.  The current exact blueprint
+1. **Fixed-amplitude causal graph and selected root.**  The quadratic
+   period-locked common plant has a proved small-\(\delta\) full-network
+   canonical-graph coefficient for the uniformly Dobrushin class.  At
+   \(\varepsilon=1/5\), however, the old singular \(\sigma\)-clock cannot be
+   continued on the specified independent product geometry: an explicit
+   zero-vector raw-slot tuple lies inside its radius-\(10^{-3}\) tube, so
+   every planar current-state \(C^1\) phase has zero Lie derivative there.
+   This exact obstruction forces abandonment of that product tube; an
+   embedded prepared solution family and its intrinsic time provide one
+   viable replacement.  The present binary64 chart has a sampled nonvanishing
+   Jacobian, but interval global injectivity, a target-centered collar and
+   cutoff, and the regularity required for a \(C_b^3\) field remain open.
+   In particular, since \(Q\circ\Psi=\partial_t\Psi\), the intended
+   \(C^3\) field normally requires a \(C^4\) prepared chart; the seam-jet
+   count must include this one-derivative loss.
+
+   Once that graph exists, the remaining selected-root gate is to validate
+   the complete-history augmented BVP and dynamic-adjoint ratio.  The current exact blueprint
    includes the full-history jump and advanced adjoint.  An actual two-branch
    discrete solve now closes both flights, phase, and every represented jump
    node and gives \(\rho_N=-0.3463310348\) on its finest mesh.  Its entry
@@ -812,26 +925,32 @@ operational qualifier.
    a circular identity.  Hence the actual selected trace pair and Fredholm
    endpoint operator remain unconstructed, and
    neither this value nor the earlier shooting interval is a selected-root
-   or sign enclosure.
-2. **Autonomous outer selection and capture.** Prove a parameter-coherent
-   physical outer history, the lower-fold event map, two disjoint biological
-   destination blocks, and no later competing return. These are the open
-   U-SF, U-EX, and U-CAP obligations. The proved all-inputs-off terminal
-   corridors begin only after controlled preparation and handoff and stop at
-   the first excursion faces, so they do not close this gate.  The
-   [quadratic stop/go theorem](quadratic-physical-onset-capture-stop-go.md)
-   now preserves those finite corridors for an explicit small nonzero
-   \(\eta\) range after all additive inputs are switched off, but its
-   pre-release cancellation and manufactured history make it policy
-   dependent; it still proves neither onset nor basin containment.
-   The [reference-slice dual-basin no-go](quadratic-reference-slice-dual-basin-no-go.md)
-   further rules out the synchronous equilibrium as the quiet attractor and
-   rules out permanent detector-side residence for trajectories captured by
-   the validated periodic orbit.  Preserving an autonomous biological claim
-   now requires a new bistable parameter slice with directed trapping and
-   basin-containment certificates; a latch or post-event switch must instead
-   be stated as a semantic or hybrid repair.
-3. **Trajectory landing and broader-topology attraction.** The
+   or sign enclosure.  After the scalar certificate, the fixed-
+   \(\varepsilon\) Dobrushin/Fredholm lift is tracked separately in
+   [issue 23](https://github.com/h-lu/canard-aware-network-control/issues/23);
+   the small-\(\delta\) network theorem does not close that target gate.
+2. **Autonomous periodic separator and physical-pulse onset.**  The failed
+   reference slice is now replaced by the leaky-recovery candidate in
+   Section 4.4.  Its quiet equilibrium is rigorously stable for arbitrary
+   positive delays, but the outer and inner periodic orbits are still
+   binary64 candidates.  Validate both periodic BVPs, their complete
+   Floquet indices and simple extrema on one \((a,\kappa_3)\)-box.  Then
+   construct a history-space isolating neighborhood (not an unexplained
+   planar annulus), prove routing of its two sides into the quiet and pulse
+   basins, and enclose the terminal-history map of the finite physical pulse.
+   The acceptance condition is a unique transverse crossing
+   \(K_\xi(J_c)\in W^s(\Gamma_u)\) and a directed nonzero bound for
+   \(\det D_{(a,\kappa_3)}(F,A_p)\), not two long-time integrations or a
+   pointwise determinant.
+3. **Same-model canard/onset comparison.**  Even after gates 1--2, the
+   selected complete-history canard root and the physical pulse threshold
+   \(J_c\) are two different codimension-one objects.  Relate them in one
+   parameter-coherent leaky-recovery plant by an input-independent outer or
+   event map, including preparation, moving-delay, terminal-history and
+   adjoint terms.  A correlation or nearby numerical values do not prove
+   equality.  The existing root-linked reset policy also does not close this
+   gate because it injects the exact root as offline control data.
+4. **Trajectory landing and broader-topology attraction.** The
    [complete right-half cover](paper-iv-synchronous-floquet-right-half-cover.md)
    closes the synchronous stable-index gate.  The Dobrushin Halanay theorem
    proves local full-network attraction at \(\eta=0\) for every fixed finite
@@ -841,7 +960,7 @@ operational qualifier.
    Attraction for a joint gain--eta box, weaker/closing mixing gaps, and a
    proof that the controlled pulse enters the certified periodic basin remain
    open.
-4. **Robust reachability and hardware containment.** The open shutdown tube
+5. **Robust reachability and hardware containment.** The open shutdown tube
    covers bounded state/history/parameter errors and arbitrary-sign residual
    inputs after handoff.  It does not prove robust entrance reachability,
    delay uncertainty, measurement/model error, bandwidth, slew, energy or
@@ -870,6 +989,9 @@ authority.
 | Fixed-\(\varepsilon=1/5\) two-sided full-history BVP and advanced-adjoint contract | **Specified exactly; a compatible but unselected discrete surrogate is solved below, while the selected continuous endpoint charts, BVP, adjoint and interval enclosure remain open** |
 | Raw fixed-\(\varepsilon\) endpoint compatibility and Fredholm dimension audit | **Rank two and fixed-mesh compatible dimension 192 proved; a rank-193 compatible immersion is impossible in that algebraic level. On the corrected continuous scale, \(C^0\) piecewise polynomials are \(W^{1,p}\)-conforming, compatibility is not a continuous row, and the natural full-history 775-by-774 ledger is arithmetic only** |
 | Sliding-window and weak-space Fredholm bridge | **Proved: every monotone selected complete orbit generates the required one-dimensional history chart; conversely, such a nonstationary invariant chart gives a local trajectory segment, and gives a complete orbit only with scalar-flow completeness. Fixed-phase parameter jets, the \(Y\)-phase clock conversion, the \(W^{1,p}\to L^p\) scale, and the abstract 1/1 trace-pair index-\(-1\) reduction are exact. Open: the frozen-target graph family, separately prepared planar trace field, finite-window gap row, independent selected orbit, actual trace-pair hypotheses, full adjoint and uniform inverse** |
+| Strictly positive planar current-state \(C^1\) phase on the specified singular-centered radius-\(10^{-3}\) independent-slot product tube at the frozen candidate \(\nu\) | **Impossible: an explicit shifted raw-slot zero lies inside the tube, so every such phase Lie derivative vanishes there; this is not an RFDE equilibrium or a no-go for other tubes/history phases** |
+| Exact prepared embedding implies local physical graph fixed identity, unit intrinsic clock and invariant transverse labels | **Proved as a local conditional implication; it is preparation indexed and does not imply global or preparation-independent uniqueness** |
+| Present target-amplitude prepared causal chart satisfies the embedding and \(C^4\) hypotheses | **Not proved; binary64 determinant, boundary and refinement diagnostics only** |
 | Scalar \(G=0\) exit determines a one-dimensional repelling history chart | **False by exact same-current, same-\(G\), compatible-history counterexamples with different future derivatives** |
 | Fixed-section response candidates \([-0.350,-0.264]\) | **Binary64 diagnostic only; section drift prevents a selected-root or sign claim** |
 | Two-branch discrete full-history-matched response candidate \(-0.3463310348\) | **Computed with a compatible entry history, full discrete adjoint and mesh diagnostics; unselected entry/exit Fredholm charts prevent promotion** |
@@ -884,6 +1006,10 @@ authority.
 | Existing root/control/attraction modules compose to physical onset | **False as an implication: four literal theorem hypotheses do not match** |
 | Negative \(-1\) face is an autonomous monotone no-return face | **Disproved even on the exact synchronous leaf** |
 | Reference synchronous equilibrium supplies a quiet local basin | **False on the microscopic gain box for \(|\eta|\le10^{-3}\): two distinct Rouché disks each contain an open-right-half-plane characteristic root** |
+| Leaky-recovery replacement has a unique quiet equilibrium locally exponentially stable for arbitrary positive delays | **Proved at the declared center by exact rational enclosure and a delay-independent small-gain/argument-principle estimate** |
+| Leaky-recovery outer pulse and inner index-one periodic cycles | **Numerically supported; separator/routing, periodic BVP and Floquet validation remain open** |
+| Finite physical pulse has a unique transverse onset threshold \(J_c(a,\kappa_3)\) | **Conditional theorem with numerical bracket \([0.30,0.32]\); history-space separator, endpoint routing and transversality are open** |
+| Autonomous \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) local inverse | **Conditional on the onset theorem and a directed nonzero frequency--amplitude determinant; the current determinant is binary64 only** |
 | Capture by the validated periodic orbit permits permanent residence above \(+1,+3/2\) or below \(-1,-6/5\) | **False by the directed periodic range and asymptotic-phase recurrence** |
 | A different quiet attractor is absent, or the periodic orbit is globally unique | **Not proved** |
 | General balanced-topology synchronous-branch \((F,A,-r)\) target ball | **Proved as a staged invariant-branch statement** |
@@ -899,8 +1025,8 @@ authority.
 
 ## 10. Flagship-paper division
 
-A mathematically honest flagship submission can now be organized around the
-two principal mechanisms and their boundary theorems:
+A mathematically honest flagship submission can now be organized around one
+causal-history spine and one autonomous-onset application:
 
 1. introduce complete-history roots and balanced controlled events as two
    different RFDE objects;
@@ -910,24 +1036,27 @@ two principal mechanisms and their boundary theorems:
 4. prove the exact cross-model incompatibility and restricted linear
    obstruction, followed by the quadratic common-RFDE carrier, scalar
    small-\(\delta\) root theorem, and uniform Dobrushin zero-graph lift;
-5. formulate the fixed-\(\varepsilon\) augmented BVP/dynamic-adjoint
-   certificate and keep its nonzero enclosure as the next hard gate;
-6. prove bounded complete-history preparation, nonsynchronous first hits and
-   controlled excursions on balanced FHN networks;
-7. prove the quadratic stop/go theorem and its exact small-\(|\eta|\)
-   same-plant controlled terminal transfer;
-8. prove the reference-slice rest-instability and periodic face-recurrence
-   no-go, then state autonomous-bistable, latch, and hybrid-switch repairs as
-   non-interchangeable targets;
-9. prove the synchronized all-inputs-off terminal corridors, their robust
-   asynchronous open-cylinder extension, and the negative unit-face reversal
-   obstruction;
-10. establish the synchronous periodic branch, three-output target balls, and
-   complete right-half stable-index/attraction certificate;
-11. close with the missing fixed-\(\varepsilon\), intrinsic-event,
-   autonomous-onset/capture, weaker-mixing/nonzero-\(\eta\) attraction,
-   robust entrance-reachability and hardware problems.
+5. prove the target raw-slot equilibrium no-go, then replace the impossible
+   product-tube clock by the intrinsic-time prepared-chart theorem;
+6. interval-validate the target chart, its \(C^4\) preparation and curved
+   collar, then attach the \(W^{1,p}\) trace pair, bordered Fredholm inverse
+   and fixed-\(\varepsilon\) selected root;
+7. prove the reference-slice rest-instability no-go and the exact
+   delay-independent quiet-state stability of the leaky-recovery replacement;
+8. validate the replacement's outer/inner periodic BVPs and Floquet indices,
+   followed by the history-space separator and physical-pulse threshold;
+9. prove the block-triangular autonomous inverse
+   \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) on a directed target ball and lift
+   the transverse indices to the admitted Dobrushin network class;
+10. compare the selected canard root with the physical onset manifold through
+    an explicit outer/event factorization, keeping nearby but unequal roots
+    distinct; and
+11. place the earlier bounded preparation, controlled handoff and operational
+    target-ball theorems in a boundary-results section rather than using them
+    as substitutes for autonomous basin capture.
 
-This architecture supports a strong network-dynamics paper now. It does not
-support a title or abstract claiming that a general-network maximal canard
-has already been proved to organize biological action potentials.
+Items 1--5 and the exact quiet-state part of item 7 already support a strong
+network-dynamics development.  A title or abstract claiming that a
+general-network maximal canard organizes autonomous biological pulse onset
+requires the interval and basin gates in items 6, 8 and 10; those claims are
+not yet available.

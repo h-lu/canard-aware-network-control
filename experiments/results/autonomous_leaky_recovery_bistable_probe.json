@@ -1,0 +1,549 @@
+{
+  "audit": {
+    "claim_ledger": {
+      "a_kappa3_response_candidate_computed": true,
+      "binary64_diagnostics_promoted_to_proof": false,
+      "canard_root_equals_physical_onset_proved": false,
+      "constant_history_kick_substituted_for_physical_pulse": false,
+      "delay_independent_no_closed_right_half_plane_roots_proved": true,
+      "dimension_uniform_network_basin_radius_proved": false,
+      "epsilon_used_as_final_frequency_amplitude_control_coordinate": false,
+      "finite_duration_physical_pulse_unique_onset_validated": false,
+      "finite_duration_pulse_endpoint_candidates_computed": true,
+      "finite_monodromy_index_candidate_computed": true,
+      "finite_network_lift_proved": false,
+      "fixed_epsilon_leaky_canard_root_validated": false,
+      "frequency_amplitude_jacobian_invertibility_validated": false,
+      "history_space_separator_validated": false,
+      "inner_periodic_candidate_computed": true,
+      "inner_periodic_orbit_validated": false,
+      "local_exponential_equilibrium_stability_proved": true,
+      "outer_periodic_candidate_computed": true,
+      "outer_periodic_orbit_validated": false,
+      "planar_annulus_claimed_as_rfde_history_space_separator": false,
+      "post_pulse_vector_field_autonomous_by_definition": true,
+      "rfde_floquet_indices_validated": false,
+      "three_output_local_diffeomorphism_proved": false,
+      "unique_equilibrium_proved": true
+    },
+    "equilibrium_certificate": {
+      "alpha_interval": {
+        "lower_decimal": "0.90849999999999997",
+        "lower_fraction": "1817/2000",
+        "upper_decimal": "0.90859999999999996",
+        "upper_fraction": "4543/5000"
+      },
+      "audit_id": "autonomous-leaky-recovery-equilibrium-stability-v1",
+      "base_polynomial_hurwitz_proved": true,
+      "beta_formula": "beta=(epsilon-A)^2-2*epsilon*(1-A)-C^2",
+      "beta_interval": {
+        "lower_decimal": "-0.32986601236791313",
+        "lower_fraction": "-3298660123679131414281/10000000000000000000000",
+        "upper_decimal": "-0.32978374978892344",
+        "upper_fraction": "-3297837497889234385719/10000000000000000000000"
+      },
+      "beta_strictly_negative_proved": true,
+      "characteristic_determinant_formula": "Delta(lambda)=(lambda-A-C*E(lambda))*(lambda+epsilon)+epsilon",
+      "characteristic_zero_free_on_closed_right_half_plane_proved": true,
+      "cube_root_bracket_strict": true,
+      "current_coefficient_interval": {
+        "lower_decimal": "0.17362092325",
+        "lower_fraction": "694483693/4000000000",
+        "upper_decimal": "0.17380268811999999",
+        "upper_fraction": "4345067203/25000000000"
+      },
+      "d_polynomial_formula": "D(r)=r^2+beta*r+gamma",
+      "d_positive_on_nonnegative_axis_proved": true,
+      "delay_average_bounded_by_one_on_closed_right_half_plane_proved": true,
+      "effective_delay_gain_interval": {
+        "lower_decimal": "0.00082506188000000004",
+        "lower_fraction": "20626547/25000000000",
+        "upper_decimal": "0.00082511675000000002",
+        "upper_fraction": "3300467/4000000000"
+      },
+      "epsilon": "1/5",
+      "epsilon_minus_current_interval": {
+        "lower_decimal": "0.026197311880000001",
+        "lower_fraction": "654932797/25000000000",
+        "upper_decimal": "0.026379076750000001",
+        "upper_fraction": "105516307/4000000000"
+      },
+      "equilibrium_equation_formula": "alpha^3=3*a=3/4",
+      "equilibrium_recovery_formula": "w_e=alpha-1/4",
+      "equilibrium_voltage_formula": "alpha=(3/4)^(1/3)",
+      "four_gamma_minus_beta_squared_interval": {
+        "lower_decimal": "0.0004046246589056718",
+        "lower_fraction": "40462465890567178558525689010688749253039/100000000000000000000000000000000000000000000",
+        "upper_decimal": "0.00050695001724898972",
+        "upper_fraction": "50695001724898971367103196568952728853039/100000000000000000000000000000000000000000000"
+      },
+      "four_gamma_minus_beta_squared_strictly_positive_proved": true,
+      "gamma_formula": "gamma=epsilon^2*((1-A)^2-C^2)",
+      "gamma_interval": {
+        "lower_decimal": "0.027304052693603476",
+        "lower_fraction": "6826013173400868585719/250000000000000000000000",
+        "upper_decimal": "0.027316067910523063",
+        "upper_fraction": "6829016977630765614281/250000000000000000000000"
+      },
+      "gamma_strictly_positive_proved": true,
+      "kappa_1": "1/250",
+      "kappa_3": "1/200",
+      "local_exponential_equilibrium_stability_proved": true,
+      "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+      "one_minus_current_interval": {
+        "lower_decimal": "0.82619731188000001",
+        "lower_fraction": "20654932797/25000000000",
+        "upper_decimal": "0.82637907675",
+        "upper_fraction": "3305516307/4000000000"
+      },
+      "recovery_leak_b": "1",
+      "reference_polynomial_formula": "p(lambda)=(lambda-A)*(lambda+epsilon)+epsilon",
+      "right_half_plane_small_gain_strictly_below_one_proved": true,
+      "unfolding_a": "1/4",
+      "unique_real_equilibrium_proved": true
+    }
+  },
+  "claim_status": {
+    "a_kappa3_response_candidate_computed": true,
+    "binary64_diagnostics_promoted_to_proof": false,
+    "canard_root_equals_physical_onset_proved": false,
+    "constant_history_kick_substituted_for_physical_pulse": false,
+    "delay_independent_no_closed_right_half_plane_roots_proved": true,
+    "dimension_uniform_network_basin_radius_proved": false,
+    "epsilon_used_as_final_frequency_amplitude_control_coordinate": false,
+    "finite_duration_physical_pulse_unique_onset_validated": false,
+    "finite_duration_pulse_endpoint_candidates_computed": true,
+    "finite_monodromy_index_candidate_computed": true,
+    "finite_network_lift_proved": false,
+    "fixed_epsilon_leaky_canard_root_validated": false,
+    "frequency_amplitude_jacobian_invertibility_validated": false,
+    "history_space_separator_validated": false,
+    "inner_periodic_candidate_computed": true,
+    "inner_periodic_orbit_validated": false,
+    "local_exponential_equilibrium_stability_proved": true,
+    "outer_periodic_candidate_computed": true,
+    "outer_periodic_orbit_validated": false,
+    "planar_annulus_claimed_as_rfde_history_space_separator": false,
+    "post_pulse_vector_field_autonomous_by_definition": true,
+    "rfde_floquet_indices_validated": false,
+    "three_output_local_diffeomorphism_proved": false,
+    "unique_equilibrium_proved": true
+  },
+  "constant_history_kick_diagnostic": {
+    "candidate_onset_bracket": [
+      "0.29999999999999999",
+      "0.32000000000000001"
+    ],
+    "history_family": "Phi_I(theta)=(v_e+I,w_e), -tau_1<=theta<=0",
+    "pulse_endpoint": {
+      "classification": "pulse_candidate",
+      "final_time": "800",
+      "initial_voltage_kick": "0.32000000000000001",
+      "pulse_amplitude": "0",
+      "pulse_duration": "0",
+      "tail_voltage_amplitude": "3.2860211340410674",
+      "tail_voltage_maximum": "1.829393302806015",
+      "tail_voltage_minimum": "-1.4566278312350525"
+    },
+    "quiet_endpoint": {
+      "classification": "quiet_candidate",
+      "final_time": "800",
+      "initial_voltage_kick": "0.29999999999999999",
+      "pulse_amplitude": "0",
+      "pulse_duration": "0",
+      "tail_voltage_amplitude": "0.00022853141858092396",
+      "tail_voltage_maximum": "0.90866872329100412",
+      "tail_voltage_minimum": "0.9084401918724232"
+    },
+    "unique_threshold_validated": false
+  },
+  "finite_duration_physical_pulse_diagnostic": {
+    "candidate_onset_amplitude_bracket": [
+      "0.29999999999999999",
+      "0.32000000000000001"
+    ],
+    "post_pulse_vector_field_autonomous": true,
+    "protocol": "start at the equilibrium history, add u(t)=J to the voltage equation for 0<=t<=1, and set u(t)=0 for all t>1",
+    "subthreshold_endpoint": {
+      "classification": "quiet_candidate",
+      "final_time": "800",
+      "initial_voltage_kick": "0",
+      "pulse_amplitude": "0.29999999999999999",
+      "pulse_duration": "1",
+      "tail_voltage_amplitude": "0.00056351994425951624",
+      "tail_voltage_maximum": "0.90885642681918011",
+      "tail_voltage_minimum": "0.90829290687492059"
+    },
+    "suprathreshold_endpoint": {
+      "classification": "pulse_candidate",
+      "final_time": "800",
+      "initial_voltage_kick": "0",
+      "pulse_amplitude": "0.32000000000000001",
+      "pulse_duration": "1",
+      "tail_voltage_amplitude": "3.2860246973730454",
+      "tail_voltage_maximum": "1.8293929905219619",
+      "tail_voltage_minimum": "-1.4566317068510835"
+    },
+    "unique_threshold_validated": false
+  },
+  "frequency_amplitude_response_candidate": {
+    "centered_difference_step": "5.0000000000000002e-05",
+    "controls": [
+      "unfolding_a",
+      "kappa_3"
+    ],
+    "determinant": "1.1142477830665658",
+    "jacobian": [
+      [
+        "-0.36999533319252709",
+        "-0.29363660448943063"
+      ],
+      [
+        "-9.0642791801576195",
+        "-10.205133970453417"
+      ]
+    ],
+    "kappa_3_centered_difference_step": "5.0000000000000002e-05",
+    "outputs": [
+      "frequency",
+      "voltage_amplitude"
+    ],
+    "singular_values": [
+      "13.657319616859569",
+      "0.081586124827236525"
+    ]
+  },
+  "manifest": {
+    "arithmetic": "exact Fraction and SymPy equilibrium/characteristic algebra with a rational H-infinity small-gain margin; binary64 Fourier collocation, method-of-steps, monodromy, onset-bracket, and response diagnostics are explicitly non-directed",
+    "default_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src python3 experiments/autonomous_leaky_recovery_bistable_probe.py",
+    "generator": "experiments/autonomous_leaky_recovery_bistable_probe.py",
+    "generator_sha256": "1d5e96b1a658c8299b07518bf357b704622c1384e8a5b3a53677ec2c1b70c98b",
+    "note": "docs/autonomous-leaky-recovery-bistable-rfde-proposal.md",
+    "note_sha256": "251b45cbea6921bef3ce6aa93b27e0631915bfd748888f71d327d513393a4453",
+    "output_control_coordinates": [
+      "unfolding_a",
+      "kappa_3",
+      "pulse_amplitude_J"
+    ],
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/autonomous_leaky_recovery_bistable.py",
+    "proof_source_sha256": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+    "python": "3.14.4"
+  },
+  "model": {
+    "epsilon": "0.20000000000000001",
+    "equations": "v'=v-v^3/3-w+epsilon*kappa_1*((v_tau0+v_tau1)/2-v)+epsilon*kappa_3*(((v_tau0-1)^3+(v_tau1-1)^3)/2-(v-1)^3); w'=epsilon*(v-a-w)",
+    "kappa_1": "0.0040000000000000001",
+    "kappa_3": "0.0050000000000000001",
+    "recovery_leak_b": "1",
+    "tau_0": "8.9442719099991592",
+    "tau_1": "11.180339887498949",
+    "unfolding_a": "0.25"
+  },
+  "ode_diagnostic": {
+    "stable_cycle_period": "25.605959686165875",
+    "unstable_cycle_period": "18.043832148385469",
+    "unstable_cycle_poincare_derivative": "1.9228345236876887",
+    "unstable_cycle_section_recovery": "0.42279841729508072"
+  },
+  "proved_analytic_equilibrium_certificate": {
+    "alpha_interval": {
+      "lower_decimal": "0.90849999999999997",
+      "lower_fraction": "1817/2000",
+      "upper_decimal": "0.90859999999999996",
+      "upper_fraction": "4543/5000"
+    },
+    "audit_id": "autonomous-leaky-recovery-equilibrium-stability-v1",
+    "base_polynomial_hurwitz_proved": true,
+    "beta_formula": "beta=(epsilon-A)^2-2*epsilon*(1-A)-C^2",
+    "beta_interval": {
+      "lower_decimal": "-0.32986601236791313",
+      "lower_fraction": "-3298660123679131414281/10000000000000000000000",
+      "upper_decimal": "-0.32978374978892344",
+      "upper_fraction": "-3297837497889234385719/10000000000000000000000"
+    },
+    "beta_strictly_negative_proved": true,
+    "characteristic_determinant_formula": "Delta(lambda)=(lambda-A-C*E(lambda))*(lambda+epsilon)+epsilon",
+    "characteristic_zero_free_on_closed_right_half_plane_proved": true,
+    "cube_root_bracket_strict": true,
+    "current_coefficient_interval": {
+      "lower_decimal": "0.17362092325",
+      "lower_fraction": "694483693/4000000000",
+      "upper_decimal": "0.17380268811999999",
+      "upper_fraction": "4345067203/25000000000"
+    },
+    "d_polynomial_formula": "D(r)=r^2+beta*r+gamma",
+    "d_positive_on_nonnegative_axis_proved": true,
+    "delay_average_bounded_by_one_on_closed_right_half_plane_proved": true,
+    "effective_delay_gain_interval": {
+      "lower_decimal": "0.00082506188000000004",
+      "lower_fraction": "20626547/25000000000",
+      "upper_decimal": "0.00082511675000000002",
+      "upper_fraction": "3300467/4000000000"
+    },
+    "epsilon": "1/5",
+    "epsilon_minus_current_interval": {
+      "lower_decimal": "0.026197311880000001",
+      "lower_fraction": "654932797/25000000000",
+      "upper_decimal": "0.026379076750000001",
+      "upper_fraction": "105516307/4000000000"
+    },
+    "equilibrium_equation_formula": "alpha^3=3*a=3/4",
+    "equilibrium_recovery_formula": "w_e=alpha-1/4",
+    "equilibrium_voltage_formula": "alpha=(3/4)^(1/3)",
+    "four_gamma_minus_beta_squared_interval": {
+      "lower_decimal": "0.0004046246589056718",
+      "lower_fraction": "40462465890567178558525689010688749253039/100000000000000000000000000000000000000000000",
+      "upper_decimal": "0.00050695001724898972",
+      "upper_fraction": "50695001724898971367103196568952728853039/100000000000000000000000000000000000000000000"
+    },
+    "four_gamma_minus_beta_squared_strictly_positive_proved": true,
+    "gamma_formula": "gamma=epsilon^2*((1-A)^2-C^2)",
+    "gamma_interval": {
+      "lower_decimal": "0.027304052693603476",
+      "lower_fraction": "6826013173400868585719/250000000000000000000000",
+      "upper_decimal": "0.027316067910523063",
+      "upper_fraction": "6829016977630765614281/250000000000000000000000"
+    },
+    "gamma_strictly_positive_proved": true,
+    "kappa_1": "1/250",
+    "kappa_3": "1/200",
+    "local_exponential_equilibrium_stability_proved": true,
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "one_minus_current_interval": {
+      "lower_decimal": "0.82619731188000001",
+      "lower_fraction": "20654932797/25000000000",
+      "upper_decimal": "0.82637907675",
+      "upper_fraction": "3305516307/4000000000"
+    },
+    "recovery_leak_b": "1",
+    "reference_polynomial_formula": "p(lambda)=(lambda-A)*(lambda+epsilon)+epsilon",
+    "right_half_plane_small_gain_strictly_below_one_proved": true,
+    "unfolding_a": "1/4",
+    "unique_real_equilibrium_proved": true
+  },
+  "rfde_periodic_candidates": {
+    "inner_saddle_candidate": {
+      "bordered_smallest_singular_value": "0.057824946196169583",
+      "collocation_residual_inf": "1.2612133559741778e-13",
+      "frequency": "0.054986718112090903",
+      "monodromy_diagnostic": [
+        {
+          "history_steps": 77,
+          "leading_nontrivial_multipliers": [
+            {
+              "imag": "0",
+              "modulus": "2.0104586355279923",
+              "real": "2.0104586355279923"
+            },
+            {
+              "imag": "3.6397798437178771e-06",
+              "modulus": "5.2488832403106671e-06",
+              "real": "3.7819013683171686e-06"
+            },
+            {
+              "imag": "-3.6397798437178771e-06",
+              "modulus": "5.2488832403106671e-06",
+              "real": "3.7819013683171686e-06"
+            },
+            {
+              "imag": "2.449652822793405e-06",
+              "modulus": "2.7739702814167594e-06",
+              "real": "-1.3015806428968123e-06"
+            }
+          ],
+          "matrix_dimension": 79,
+          "neutral_error_from_one": "2.4327615477659492e-06",
+          "neutral_multiplier": [
+            "0.99999756723845223",
+            "0"
+          ],
+          "observed_nontrivial_outside_unit_disk_count": 1,
+          "step_count": 120
+        },
+        {
+          "history_steps": 114,
+          "leading_nontrivial_multipliers": [
+            {
+              "imag": "0",
+              "modulus": "2.0104546471308593",
+              "real": "2.0104546471308593"
+            },
+            {
+              "imag": "3.6397892391230975e-06",
+              "modulus": "5.2488784293024749e-06",
+              "real": "3.7818856487684179e-06"
+            },
+            {
+              "imag": "-3.6397892391230975e-06",
+              "modulus": "5.2488784293024749e-06",
+              "real": "3.7818856487684179e-06"
+            },
+            {
+              "imag": "2.4496153809823508e-06",
+              "modulus": "2.7739127231454355e-06",
+              "real": "-1.3015284402896529e-06"
+            }
+          ],
+          "matrix_dimension": 116,
+          "neutral_error_from_one": "4.7106890588288763e-07",
+          "neutral_multiplier": [
+            "0.99999952893109412",
+            "0"
+          ],
+          "observed_nontrivial_outside_unit_disk_count": 1,
+          "step_count": 180
+        },
+        {
+          "history_steps": 151,
+          "leading_nontrivial_multipliers": [
+            {
+              "imag": "0",
+              "modulus": "2.0104539939364137",
+              "real": "2.0104539939364137"
+            },
+            {
+              "imag": "3.63979031405255e-06",
+              "modulus": "5.2488775487385519e-06",
+              "real": "3.7818833920919438e-06"
+            },
+            {
+              "imag": "-3.63979031405255e-06",
+              "modulus": "5.2488775487385519e-06",
+              "real": "3.7818833920919438e-06"
+            },
+            {
+              "imag": "2.4496102790026219e-06",
+              "modulus": "2.7739037107967975e-06",
+              "real": "-1.3015188349681846e-06"
+            }
+          ],
+          "matrix_dimension": 153,
+          "neutral_error_from_one": "1.4702767248131465e-07",
+          "neutral_multiplier": [
+            "0.99999985297232752",
+            "0"
+          ],
+          "observed_nontrivial_outside_unit_disk_count": 1,
+          "step_count": 240
+        }
+      ],
+      "oversampled_residual_inf": "1.27675647831893e-13",
+      "period": "18.186209949127921",
+      "voltage_amplitude": "0.7706442668592921",
+      "voltage_maximum": "1.2442053953723342",
+      "voltage_minimum": "0.47356112851304211"
+    },
+    "outer_pulse": {
+      "bordered_smallest_singular_value": "0.097508654025259697",
+      "collocation_residual_inf": "8.9706020389712648e-14",
+      "frequency": "0.037587743697650527",
+      "monodromy_diagnostic": [
+        {
+          "history_steps": 54,
+          "leading_nontrivial_multipliers": [
+            {
+              "imag": "0",
+              "modulus": "0.0219520859155833",
+              "real": "-0.0219520859155833"
+            },
+            {
+              "imag": "0",
+              "modulus": "2.8684757112474956e-07",
+              "real": "-2.8684757112474956e-07"
+            },
+            {
+              "imag": "0",
+              "modulus": "2.5269652813870735e-07",
+              "real": "2.5269652813870735e-07"
+            },
+            {
+              "imag": "3.729577552744996e-08",
+              "modulus": "7.0751797442224694e-08",
+              "real": "6.0123555858845024e-08"
+            }
+          ],
+          "matrix_dimension": 56,
+          "neutral_error_from_one": "7.8447252007118884e-05",
+          "neutral_multiplier": [
+            "0.99992155274799288",
+            "0"
+          ],
+          "observed_nontrivial_outside_unit_disk_count": 0,
+          "step_count": 120
+        },
+        {
+          "history_steps": 79,
+          "leading_nontrivial_multipliers": [
+            {
+              "imag": "0",
+              "modulus": "0.021950848463723655",
+              "real": "-0.021950848463723655"
+            },
+            {
+              "imag": "0",
+              "modulus": "2.868427087246609e-07",
+              "real": "-2.868427087246609e-07"
+            },
+            {
+              "imag": "0",
+              "modulus": "2.5260061400134575e-07",
+              "real": "2.5260061400134575e-07"
+            },
+            {
+              "imag": "3.7300806930747737e-08",
+              "modulus": "7.0751782775853513e-08",
+              "real": "6.0120417233055228e-08"
+            }
+          ],
+          "matrix_dimension": 81,
+          "neutral_error_from_one": "1.5983433554911386e-05",
+          "neutral_multiplier": [
+            "0.99998401656644509",
+            "0"
+          ],
+          "observed_nontrivial_outside_unit_disk_count": 0,
+          "step_count": 180
+        },
+        {
+          "history_steps": 104,
+          "leading_nontrivial_multipliers": [
+            {
+              "imag": "0",
+              "modulus": "0.021950625612855386",
+              "real": "-0.021950625612855386"
+            },
+            {
+              "imag": "0",
+              "modulus": "2.8684195029545793e-07",
+              "real": "-2.8684195029545793e-07"
+            },
+            {
+              "imag": "0",
+              "modulus": "2.5258390698110189e-07",
+              "real": "2.5258390698110189e-07"
+            },
+            {
+              "imag": "3.7302197195407648e-08",
+              "modulus": "7.0751405706869889e-08",
+              "real": "6.0119110887412688e-08"
+            }
+          ],
+          "matrix_dimension": 106,
+          "neutral_error_from_one": "6.2188724894163272e-06",
+          "neutral_multiplier": [
+            "0.99999378112751058",
+            "0"
+          ],
+          "observed_nontrivial_outside_unit_disk_count": 0,
+          "step_count": 240
+        }
+      ],
+      "oversampled_residual_inf": "3.5086982240528641e-05",
+      "period": "26.604416802557541",
+      "voltage_amplitude": "3.2860250878949531",
+      "voltage_maximum": "1.8294016430365079",
+      "voltage_minimum": "-1.4566234448584452"
+    }
+  }
+}

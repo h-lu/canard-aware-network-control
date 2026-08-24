@@ -1,0 +1,173 @@
+{
+  "audit": {
+    "certificate": {
+      "actual_candidate_sigma_clock_changes_sign": true,
+      "anchor_scope": "finest two-sided binary64 candidate only; that parent explicitly does not construct selected attracting/repelling trace bundles",
+      "arithmetic": "binary64 SciPy DOP853 method of steps with dense output; sampled hull, Jacobian, boundary, cutoff, and residual diagnostics; no intervals, global injectivity proof, cutoff extension, target graph theorem, trace solve, Fredholm inverse, or root validation",
+      "audit_id": "fixed-epsilon-target-prepared-causal-tube-candidate-v1",
+      "candidate_time_clock_identity_is_algebraic_where_chart_invertible": true,
+      "causal_slot_time_order": [
+        "t-4<t",
+        "t-5<t",
+        "t-Theta_*<t"
+      ],
+      "conditional_c2_embedding_implies_complete_cb1_extension_proved": true,
+      "conditional_c4_embedding_implies_complete_cb3_extension_proved": true,
+      "conditional_complete_cutoff_extension": "choose chi in C_c^infinity(Omega), chi=1 on a neighborhood of Psi(K), and define Q_tilde=chi*Q0 on Omega and zero outside; then Q_tilde is complete C_b^1 for C2 Psi and complete C_b^3 for C4 Psi",
+      "conditional_embedding_hypothesis": "Psi is a C2 embedding on open U, hence Omega=Psi(U) is open and Q0=partial_t Psi composed with Psi^{-1} is C1 on Omega; Psi is an exact RFDE solution family on the smaller current rectangle",
+      "conditional_flow_shift_and_fixed_identity_proved": true,
+      "conditional_flow_shift_identity": "Phi_{Q_tilde}^{-tau}(Psi(t,lambda))=Psi(t-tau,lambda) only when the entire chart segment from t-tau to t lies in the chi=1 retained neighborhood",
+      "conditional_graph_fixed_identity": "T_phys(Q_tilde)(Psi(t,lambda))=partial_t Psi(t,lambda)=Q_tilde(Psi(t,lambda)) only on the smaller physical current image; no global fixed point is claimed",
+      "conditional_intrinsic_coordinate_identities": [
+        "D t_tube[Q_tilde]=1 on the retained agreement tube",
+        "D lambda_tube[Q_tilde]=0 on the retained agreement tube"
+      ],
+      "conditional_lambda_face_barriers": [
+        "J_-=lambda_tube+r",
+        "J_+=r-lambda_tube",
+        "D J_-[Q_tilde]=D J_+[Q_tilde]=0 on the retained agreement tube; locally invariant nonstrict faces, not a uniform strict barrier margin for nearby candidate fields"
+      ],
+      "conditional_lambda_faces_are_invariant_nonstrict_barriers_proved": true,
+      "conditional_local_graph_domain": "Psi:U->Omega=Psi(U), with U open and containing compactly the entire smaller segment rectangle K=[a-tau_max,b]x[-r,r]; the fixed identity is asserted only on the smaller current image Psi([a,b]x[-r,r])",
+      "conditional_prepared_embedding_local_graph_theorem_proved": true,
+      "conditional_regularities": "Psi in C^{k+1} implies Q0=partial_t Psi composed with Psi^{-1} is locally C^k; C2 gives Q0 in C1 and C4 gives Q0 in C3; the C4 case requires preparation/RFDE seam compatibility through total order four",
+      "conditional_time_clock_and_lambda_first_integral_proved": true,
+      "current_hull": {
+        "normal_maximum": "0.074650063655306687",
+        "normal_minimum": "-0.92790562271032639",
+        "phase_maximum": "3.3745474088349363",
+        "phase_minimum": "-3.0615792615749466"
+      },
+      "current_time_sample_count": 601,
+      "delay_4_hull": {
+        "normal_maximum": "-0.68000685394642346",
+        "normal_minimum": "-1.2408499632382757",
+        "phase_maximum": "-1.0768659893628194",
+        "phase_minimum": "-7.0615792615749466"
+      },
+      "delay_5_hull": {
+        "normal_maximum": "-0.74533763527621044",
+        "normal_minimum": "-1.3359097845310561",
+        "phase_maximum": "-2.0857813856367748",
+        "phase_minimum": "-8.0615792615749466"
+      },
+      "delay_theta_hull": {
+        "normal_maximum": "-0.89341745190351141",
+        "normal_minimum": "-1.5637763796601902",
+        "phase_maximum": "-4.4586655597630775",
+        "phase_minimum": "-10.458665559763078"
+      },
+      "extended_time_sample_count": 1001,
+      "first_order_compatible_transverse_preparation_constructed_exactly": true,
+      "fixed_epsilon_complete_history_root_validated": false,
+      "maximum_entry_compatibility_residual": "1.1102230246251565e-16",
+      "maximum_old_clocked_tail_operator_defect": "0.31196078021888507",
+      "maximum_sampled_chart_determinant": "-0.11490937642316638",
+      "maximum_sampled_dde_derivative_residual": "2.6321872459433848e-10",
+      "maximum_sampled_sigma_clock": "1.4053267001615291",
+      "maximum_sampled_time_clock_identity_residual": "8.8817841970012523e-16",
+      "maximum_sampled_time_gradient_norm": "6.6118954406808887",
+      "minimal_interval_gate": "replace point samples by interval/Taylor-model enclosures of the prepared history and method-of-steps flow; prove det D_Psi has one sign and the boundary has degree one; then construct a target-centered cutoff plateau containing every 4,5,Theta_* slot, close the parameterized compatibility seam through total order four, and bound its inverse chart, strict robust barriers, and Volterra constants",
+      "minimum_all_delayed_old_cutoff_weight": "0.3731681245554917",
+      "minimum_current_old_cutoff_weight": "1",
+      "minimum_sampled_absolute_chart_determinant": "0.11490937642316638",
+      "minimum_sampled_chart_determinant": "-3.0225082748203054",
+      "minimum_sampled_sigma_clock": "-0.83938109401167871",
+      "model_id": "fixed-epsilon-target-prepared-causal-tube-candidate",
+      "old_clocked_tail_delayed_plateau_containment_fails_on_candidate": true,
+      "phase_shift_anchor": "-0.061579261574946566",
+      "physical_time_interval": [
+        "-3",
+        "3"
+      ],
+      "preparation_endpoint_derivatives": [
+        "b'_-(0)=1",
+        "partial_t h_lambda(-3)=F_phys((h_lambda)_{-3}); C1 seam only"
+      ],
+      "preparation_endpoint_values": [
+        "b(0)=0",
+        "partial_lambda Y=1"
+      ],
+      "preparation_formula": "h_lambda(t)=h_0(t)+lambda*(b(t+3),1), b(r)=r*S(r+1) on -1<r<=0 and 0 on r<=-1",
+      "proposed_interval_chart": "validate Psi(t,lambda)=u(t,lambda) on [-3-Theta_*,3]x[-0.05,0.05], enclose det D_Psi away from zero and certify its boundary degree; freeze a plateau around this curved hull before applying the causal Volterra map",
+      "refinement_rows": [
+        {
+          "function_evaluations": 2284,
+          "maximum_state_change_to_next": "5.9191338497299739e-09",
+          "maximum_step": "0.040000000000000001"
+        },
+        {
+          "function_evaluations": 4504,
+          "maximum_state_change_to_next": "2.9087843245179101e-14",
+          "maximum_step": "0.02"
+        },
+        {
+          "function_evaluations": 9034,
+          "maximum_state_change_to_next": "0",
+          "maximum_step": "0.01"
+        }
+      ],
+      "refinement_stabilization_observed": true,
+      "retained_time_interval": [
+        "-10.397086298188132",
+        "3"
+      ],
+      "sampled_boundary_polygon_simple": true,
+      "sampled_boundary_signed_area": "0.61121437395620504",
+      "sampled_chart_jacobian_nonzero": true,
+      "sampled_current_tube_inside_old_uncut_plateau": true,
+      "sampled_delayed_slots_have_same_label_causal_representation": true,
+      "sigma_clock_negative_time_hull": [
+        "2.79",
+        "3"
+      ],
+      "strict_sampled_boundary_segment_intersections": 0,
+      "target_c4_chart_and_seam_compatibility_validated": false,
+      "target_candidate_class_self_map_validated": false,
+      "target_centered_global_cutoff_extension_constructed": false,
+      "target_chart_global_injectivity_proved": false,
+      "target_eta": "0",
+      "target_global_graph_fixed_point_validated": false,
+      "target_interval_flow_enclosure_validated": false,
+      "target_interval_slot_self_map_validated": false,
+      "target_j_barriers_validated": false,
+      "target_nu": "0.21256022233963731",
+      "target_old_clocked_tail_fixed_graph_validated": false,
+      "target_parameter_box_validated": false,
+      "target_prepared_local_causal_graph_candidate_computed": true,
+      "target_rho": "0.44721359549995793",
+      "target_strict_lambda_barrier_margin_validated": false,
+      "target_theta": "7.3970862981881309",
+      "target_trace_pair_fredholm_validated": false,
+      "target_uniform_chart_inverse_bound_validated": false,
+      "target_volterra_constants_validated": false,
+      "transverse_interval": [
+        "-0.050000000000000003",
+        "0.050000000000000003"
+      ],
+      "transverse_sample_count": 41
+    }
+  },
+  "manifest": {
+    "arithmetic": "binary64 SciPy DOP853 method of steps with dense output; sampled hull, Jacobian, boundary, cutoff, and residual diagnostics; no intervals, global injectivity proof, cutoff extension, target graph theorem, trace solve, Fredholm inverse, or root validation",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_target_causal_tube_candidate.py",
+    "generator": "experiments/fixed_epsilon_target_causal_tube_candidate.py",
+    "generator_sha256": "e52dfa63031a9022cd93f2aa9021ea9fd76fb3650d9ae96343f8e8f8ebecdc53",
+    "note": "docs/fixed-epsilon-target-causal-tube-candidate.md",
+    "note_sha256": "04efa64538a53272461426996047ad57a4662ccd4d25949c8044605a11ec1404",
+    "parent_claim_checks": {
+      "anchor_values_replayed_from_two_sided_parent": true,
+      "clocked_tail_parent_leaves_target_graph_and_clock_open": true,
+      "clocked_tail_parent_records_raw_sigma_clock_failure": true,
+      "two_sided_parent_supplies_only_a_nonselected_binary64_anchor": true
+    },
+    "parent_sha256": {
+      "fixed_epsilon_clocked_tail_graph_extension_result": "826c8ddbd2e9794cec344456f09ccefc8d4d8d737950350859f1679691f1760e",
+      "fixed_epsilon_two_sided_candidate_result": "a35c23f58cb80a83b5d14d303edccc160a66e402e9f042b18d0e992a2388dabd"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_target_causal_tube_candidate.py",
+    "proof_source_sha256": "10cf1ea27d7c60e786358adbcb98fbcff63551723f46299d626f02bdd630d928",
+    "python": "3.14.4"
+  }
+}
