@@ -1,0 +1,76 @@
+{
+  "certificate": {
+    "amplitude_lower": "2.94737622302543311589267704607213287465934506175704116",
+    "amplitude_upper": "2.94737869577245638555737941249143755810909328788192661",
+    "calibrated_safety_coordinate_transfer_conditional": true,
+    "calibrated_three_output_target_ball_validated": false,
+    "candidate_binary64_is_exact_orbit": false,
+    "candidate_binary64_is_exact_polynomial_data": true,
+    "candidate_source_sha256": "7437514175586665b1bf10831793427e42d8a9cbd736536444be4a98064a3c28",
+    "correction_norm_id": "real-conjugate component-Wiener coefficient norm plus |T|",
+    "exact_orbit_correction_radius": "5e-9",
+    "exact_orbit_in_wiener_correction_ball": true,
+    "frequency_amplitude_target_ball_validated": true,
+    "gain_half_width": "1e-12",
+    "maximum_phase_lower": "0.0971789956092834472656249999999999999999999999999144715",
+    "maximum_phase_upper": "0.0971790552139282226562500000000000000000000000000855285",
+    "minimum_phase_lower": "0.798113957047462463378906249999999999999999999999315772",
+    "minimum_phase_upper": "0.798114016652107238769531250000000000000000000000684228",
+    "parameter_center": [
+      "0.2",
+      "0.25"
+    ],
+    "physical_pulse_onset_validated": false,
+    "precision_bits": 160,
+    "reconstructed_validation_sha256": "7055281bee5ee61a117a1f53854d932dbcee57556706bc54d39e79ceafe176ff",
+    "squared_range_target_radius_lower": "1.62187273782174089504757331762715967009378618047942197e-14",
+    "target_ball_center": "exact (F,A)(0.2,0.25), with A>0; not a binary64 surrogate",
+    "target_ball_inverse_change": "Delta R_h = 2 A_c Delta A + (Delta A)^2",
+    "uniform_positive_amplitude_enclosure_validated": true,
+    "unique_voltage_extrema_on_gain_box": true,
+    "unsquared_amplitude_target_radius_lower": "2.75138166016477172021072951467987182906462947064987861e-15",
+    "voltage_maximum_lower": "1.93406327151920518409809759858497216615671825444576443",
+    "voltage_maximum_upper": "1.93406459386103160099698801611228051168771028922940805",
+    "voltage_minimum_lower": "-1.01331410191142478456039139637915704642138299865115011",
+    "voltage_minimum_upper": "-1.01331295150622793179457944748716070850262680731264519"
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_unsquared_amplitude_transfer.py"
+    ],
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_unsquared_amplitude_transfer.py",
+    "generator": "experiments/fhn_unsquared_amplitude_transfer.py",
+    "generator_sha256": "6dddd15da3f1148466b8c16093c65e6172a93afdf082f2c40e99eda82525ba0f",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "numpy": "2.5.2",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_periodic_candidate.py": "0fdad0e387ccfc98908466dff4c3f50fcc3741268d25e30a8d9fc00f93df62f0",
+      "src/canard_control/fhn_periodic_directed_validation.py": "4e4695f882e0723ceed08204c662b9e2f9808a0335aea6c83ba0773b150af635",
+      "src/canard_control/fhn_periodic_infinite_validation.py": "f69aa5eb802c09daae01256b86661d3b17672ba2e38dd7bb4ba6244297f805ab",
+      "src/canard_control/fhn_periodic_parameter_box.py": "ed581d2cba605db44faf724904aec8b846bef4c9857df6276e9f6cba1da3cf6c",
+      "src/canard_control/fhn_response_target_ball.py": "d76f9c0a94e9e6e77462153a2c25ff4a1c4ea5af35470655548d496f0fa0dfd1",
+      "src/canard_control/fhn_unsquared_amplitude_transfer.py": "d5117e2ad6bacec8e66f91608afe9913b1e4b286fb2c93454fe94b455a7966a0"
+    },
+    "python": "3.14.4",
+    "rounding": "MPFR RoundDown/RoundUp at every theorem endpoint"
+  },
+  "scope": {
+    "binary64_candidate_is_exact_orbit": false,
+    "calibrated_safety_coordinate_transfer": "conditional",
+    "calibrated_three_output_target_ball": false,
+    "frequency_unsquared_amplitude_target_ball": true,
+    "physical_pulse_onset": false,
+    "uniform_unsquared_amplitude_enclosure": true
+  },
+  "source_evidence": {
+    "candidate_result_sha256": "7437514175586665b1bf10831793427e42d8a9cbd736536444be4a98064a3c28",
+    "parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "parameter_validation_exact_replay": true,
+    "squared_target_ball_result_sha256": "dc17c3f845c3e317570c71af3acff670fb6955e2920ad2cea256507c1353dc05",
+    "squared_target_radius_exact_match": true
+  }
+}

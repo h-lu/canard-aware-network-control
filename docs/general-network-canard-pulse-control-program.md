@@ -1,6 +1,6 @@
 # General-network canards and biological pulse control
 
-Status: **research contract, 2026-08-23**. This document defines the work
+Status: **research contract, 2026-08-24**. This document defines the work
 needed to move beyond the completed two-module, preparation-indexed local
 history-connection theorem. None of the targets below is a claim of the JNS
 base paper. That paper is frozen and becomes the proved nonzero model case for
@@ -45,13 +45,19 @@ They remain separate proof gates. Inserting all three chains into the current
 |---|---|---|
 | Dimension-uniform special-flow history graph | Proved abstractly; a complete model fit, compatible traces, and a simple selected root are now proved for the heterogeneous-curvature Dobrushin class | Moving support and closing graph gaps remain outside the theorem |
 | Lifted unequal-module network | Exact arbitrary-\(N\) blow-up, canonical gap/root lift, uniform \(\delta^3\eta\) response, pure-breaker nullity, and a non-equitable nonzero combined tangent proved | Pure-breaker quadratic/higher coefficient and general non-equitable residual response |
-| Shared-resource Dobrushin class | Uniform transverse graph proved; homogeneous curvature gives an exact low-order cancellation, while heterogeneous curvature gives a nonzero, dimension-uniform selected-root resolvent coefficient | Physical outer selection and graph families with closing Dobrushin gap remain open |
+| Shared-resource Dobrushin class | Uniform transverse graph and a nonzero dimension-uniform selected-root resolvent coefficient are proved. A bounded one-RFDE reset policy transfers that coefficient to controlled detector latency, but uses the exact roots as offline data and is policy dependent | Input-independent physical outer/event comparison and graph families with closing Dobrushin gap remain open |
+| Root/periodic model compatibility | Exact two-module restriction audit proves that the earlier lifted selected-root and balanced periodic/control results use different RFDEs. The old linear redistribution is visible on the validated synchronous branch, while an all-history-invisible finite-atom linear direction cannot force its critical history | The nonlinear period-locked extension below supplies a common RFDE, a small-\(\delta\) root response, and a canonical full-network lift for a uniformly Dobrushin class; fixed-\(\varepsilon\) and intrinsic-event promotion remain open |
+| Quadratic period-locked common RFDE | Exact carrier algebra, center periodic-orbit and output invariance, qualitative three-parameter periodic IFT, the fixed-scaled-support scalar root law, and its dimension-uniform canonical zero-graph lift to every finite topology with a common Dobrushin gap are proved. The linear carrier's leading pairing is exactly zero. At the exact center gain pair, a full 32,046-leaf replay proves local full-network orbital attraction for \(|\eta|\le3\times10^{-6}\) and every fixed finite \(\tau(Q)\le1/4\) topology | Validate the complete-history root and dynamic-adjoint ratio at \(\varepsilon=1/5\), then prove an input-independent root/event comparison; a joint gain--eta box, arbitrary histories, closing-gap families, and basin uniqueness remain outside the theorem |
+| Fixed-\(\varepsilon\) quadratic root gate | The exact blueprint specifies the enlarged-history two-sided BVP, jump complement, advanced adjoint and radii polynomial. A later binary64 two-branch solve closes both flights, phase and the nodewise full-history jump; its solution-manifold-compatible entry, discrete adjoint and direct tangent give finest \(\rho_N=-0.3463310348\), with second-order mesh behavior | Replace the compatible but unselected entry template and scalar exit observable by the correct 193-dimensional attracting and one-dimensional backward-extendible repelling charts, then validate the 775-by-775 bordered inverse, continuous adjoint and tails; root-section spread \(0.10229\), response spread \(0.00607\), and wrong endpoint geometry forbid promotion |
 | Vector gap/codimension | Abstract Lyapunov--Schmidt theorem proved; independent recoveries have an exact \((N+1)\)-dimensional singular generalized center and \(N-1\) slow transverse roots | Compute the selected-history Fredholm index \(q_N\); the center count alone is not that index |
 | Schur--Melnikov response | Banach-scale response link and block/root calculus proved; both the exact quotient and a synchrony-quotient-free heterogeneous-curvature class supply nonzero arbitrary-\(N\) canonical witnesses | Pure-breaker higher response and arbitrary endpoint rules remain open |
 | Physical outer continuation | Original backward-complete rule disproved as sufficient; causal released history and memory overwrite proved | Compatible normalized Gate P3-A\(^*\), or reset-to-canard factorization |
 | Singular pulse/quiet geometry | Unforced fast-layer channels and a nonempty transition set are proved; the physical lower fold has the ordinary drifting orientation and positive action \(\mathcal A_-\); exact ODE-subclass theorems disprove the fixed-layer shortcut, the all-offset geometric-sign inference, and capture of all late exits by fixed-reset-layer blocks; a collective-recovery clamp gives an exact fixed-\(\delta\) separator | Prove U-SF and the complete-history fold map; for U-CAP first replace the old targets by moving latched detectors, then certify a finite deadband or the global invariant/stable-set exclusions. The exact Airy shift and exact two-channel no-hit band do not by themselves decide the physical RFDE; the controlled separator remains a different operational threshold |
+| Balanced-network controlled excursion | For every finite nonnegative balanced two-half-delay topology, bounded exact-model additive feedback prepares \(\Phi_r\), realizes the nodewise zero-recovery decision leaf, and forces nonsynchronous signed detector hits and finite excursions with per-node authority and deadlines independent of \(N\) and topology. At the two center histories, the exact synchronized handoff theorem closes all inputs; a robust extension proves finite terminal capture from explicit asynchronous open cylinders in the full RFDE history space under \(10^{-4}\) state/history errors, arbitrary-sign shutdown residuals below \(10^{-5}\), and declared parameter errors | Robust reachability of the entrance cylinders from the earlier controller, autonomous onset, delay uncertainty, permanent no-return/basin capture, bandwidth/slew/hardware containment, and equality with a selected canard root remain open |
+| Quadratic same-plant terminal transfer | An exact stop theorem proves that the root, controlled preparation/handoff and periodic basin modules fail four literal composition gates. A separate go theorem extends the hold to \(T_*\), cancels the carrier before release, closes all additive inputs at handoff, and absorbs the autonomous carrier into the robust residual for every admitted finite balanced topology when \(|\eta|<250000/12972264861\) | The result is policy-dependent finite terminal transfer; it does not prove selected onset, entrance reachability under perturbation, terminal-block basin containment, quiet capture, or permanent no-return |
+| Reference-slice pulse/quiet basin audit | Two exact Rouché disks prove that the unique synchronous equilibrium has at least two open-right-half-plane characteristic roots on the microscopic gain box for \(|\eta|\le10^{-3}\). The validated \(\eta=0\) periodic orbit recrosses \(+1,+3/2,-1\) and stays above \(-6/5\), excluding permanent detector-side residence after periodic capture | A different quiet attractor is neither found nor excluded. Preserving literal autonomous dual-basin biology requires a new bistable slice, directed trapping neighborhoods, and terminal-history basin inclusion; latch and post-event switching are separate semantic/hybrid targets |
 | Amplitude detector | Abstract quantitative local-chart implication proved | Model landing chart, unique peak branch, and derivative enclosures |
-| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; raw reset-only block-triangular and calibrated-gap block-diagonal criteria are proved; on a microscopic FHN gain box D1 continuation, D3 unique extrema, the D4 response lower bound \(\beta_U\ge0.0162187\), and synchronous orbital Floquet hyperbolicity are directed-certified | Prove attraction or the needed stable index, certify transverse stability, validate the reset calibration chart/hardware range, and prove second-sensitivity Lipschitz and target-radius bounds |
+| Frequency--amplitude--safety conditioning | Periodic/event adjoints and a full-network transverse stability criterion are proved; on a microscopic FHN gain box D1 continuation, D3 unique extrema, the D4 fixed-matrix response enclosure, a direct two-output target ball of radius at least \(1.6218727378\times10^{-14}\), and two unsquared-amplitude three-output balls of radius \(2.7513816601\times10^{-15}\) are directed-certified. A 32,046-leaf right-half cover proves zero synchronous nontranslation unstable index and local orbital attraction. The oscillation-norm theorem gives uniform transverse rate \(0.007\) and fixed-network local nonlinear attraction at \(\eta=0\) for every finite balanced topology with \(\tau(Q)\le1/4\); the quadratic eta-Floquet replay extends this at the exact gain pair to \(|\eta|\le3\times10^{-6}\) | Prove a same-model trajectory connection from onset into the local periodic basin, a joint gain--eta box, weaker/closing-gap topology results, autonomous biological capture, and robust hardware containment; second sensitivities remain optional for larger boxes |
 
 ## 2. General network geometry
 
@@ -463,6 +469,17 @@ nontrivial synchrony polydiagonal, and its root coefficient is nonzero and
 independent of \(N\). The theorem still excludes closing graph gaps, moving
 delay atoms, and arbitrary physical outer selections.
 
+A downstream policy-composition theorem in
+[same-model-shared-resource-root-detector-bridge.md](same-model-shared-resource-root-detector-bridge.md)
+keeps that shared-resource RFDE and scalar recovery coordinate fixed.  A
+bounded controller prepares a reset depth that explicitly contains the exact
+selected-root displacement and thereby obtains a nonzero, dimension-uniform
+detector-latency response with the same \(\delta^3\zeta\) scale.  This is an
+exact controlled transduction, but it uses the roots and model as offline
+data.  An added \(O(\delta^3\zeta)\) policy offset changes the latency
+coefficient while leaving the uncontrolled root unchanged.  Hence it is not
+an input-independent physical onset comparison and does not close Paper III.
+
 ## 5. Paper III: physical maximal canard and pulse onset
 
 The base paper's preparation-indexed root is not a biological threshold.
@@ -564,6 +581,46 @@ sufficiently small fixed positive \(\delta\). A fixed deadline resolves only
 a declared deadband. This controlled separator is a valid operational pulse
 threshold, but it is not \(\mu_{\mathrm{can}}\) and supplies no
 reset-to-canard equality.
+
+A second operational branch is now proved in
+[paper-iv-balanced-general-topology-bounded-control-chain.md](paper-iv-balanced-general-topology-bounded-control-chain.md).
+For every finite nonnegative topology satisfying the common row-mass and
+stationary-balance identities, bounded exact-model additive feedback prepares
+the complete constant history \(\Phi_r\) in finite time.  After voltage
+release, bounded nodewise recovery cancellation maintains \(w=0\), and a
+topology-independent weighted-mean comparison forces a nonsynchronous signed
+detector hit and a larger finite excursion.  The preparation and decision
+bounds are per-node \(\ell^\infty\) bounds independent of \(N\) and the admitted
+topology.  This result replaces neither the intrinsic outer-history problem
+nor U-CAP: it is a controlled voltage-excursion theorem, not an unforced
+biological basin or canard-root identification.
+
+The exact-center follow-up
+[paper-iv-autonomous-handoff-excursion.md](paper-iv-autonomous-handoff-excursion.md)
+removes every input from the final synchronized segment.  From
+\(\Phi_{1/2}\), cancellation closes at \(v=1\) and the baseline RFDE reaches
+\(v=3/2\); from \(\Phi_{-1/2}\), the \(-1\) detector is latched,
+cancellation continues to \(-28/25\), and the baseline reaches \(-6/5\).
+Both terminal hits occur before the shortest delayed layer changes, so exact
+rational first-step phase barriers apply.  Closing already at \(-1\) is
+proved to cause a reversal before \(-1.17\).  This is a finite autonomous
+handoff after controlled onset on the exact synchronous leaf, not autonomous
+onset, permanent no-return, asynchronous capture, or U-CAP.
+
+The robust follow-up
+[paper-iv-robust-handoff-tube.md](paper-iv-robust-handoff-tube.md)
+removes exact synchrony and exact shutdown from this final segment.  It uses
+strict open cylinders in
+\(C([ -\tau_1,0],\mathbb R^{2N})\), allows current-state and relevant remote
+voltage-history errors below \(10^{-4}\), arbitrary-sign residual voltage and
+recovery inputs below \(10^{-5}\), and nonzero errors in \(\varepsilon\) and
+\(a\).  A Dini--Gronwall tube of radius \(6\times10^{-4}\) leaves the
+componentwise speeds bounded by \(\dot v_i\ge0.131\) or
+\(\dot v_i\le-0.068\) until finite first entry into explicit terminal blocks,
+uniformly over every finite admitted balanced topology.  This is a robust
+**entrance-to-terminal** theorem.  It does not prove that the preceding
+bounded feedback robustly reaches the entrance cylinder, that the terminal
+block is invariant, or that either block is a biological basin.
 
 The following is the still-conditional **intrinsic theorem target**, not a
 current conclusion. If the listed outer-history and exchange items above are
@@ -681,6 +738,36 @@ Use three independently realizable actuator directions:
 The last is the topology-resolved safety actuator. A common delay shift is an
 alternative only if the physical architecture supports it; it is not a
 projection-invisible topology control.
+
+No current theorem realizes all three *physical* roles in this paragraph.
+The quadratic period-locked common RFDE now realizes a structural third
+column at the small-\(\delta\) canonical-root level while making the center
+periodic \((F,A)\) column exactly zero.  It does not yet realize the physical
+safety output \(S_{\rm p}\), because its root derivative has not been
+validated at \(\varepsilon=1/5\) and its selected root has not been identified
+with an input-independent event.  The
+[Dobrushin full-network lift](quadratic-period-lock-dobrushin-full-network.md)
+supplies the size-uniform canonical zero-graph theorem, while the
+[fixed-parameter BVP note](fixed-epsilon-quadratic-root-bvp.md) records the
+exact validation blueprint.  The
+[two-sided candidate](fixed-epsilon-two-sided-candidate.md) advances this to
+an actual full-jump discrete adjoint calculation but proves, through its
+endpoint-dimension audit, why it is still not a selected root.  The
+[physical-onset stop/go theorem](quadratic-physical-onset-capture-stop-go.md)
+then proves the exact failure of direct module composition and retains one
+controlled same-plant terminal transfer under its strict small-\(|\eta|\)
+bound.  The
+exact
+[root/periodic compatibility audit](paper-iv-root-periodic-model-compatibility.md)
+proves that the arbitrary-size selected-root plant is not the balanced
+dual-scaffold periodic/control plant. Its present redistribution direction
+acts nontrivially on the periodic synchronous vector. Conversely, within the
+restricted class of two distinct fixed delay atoms and linear layer
+redistribution, exact invisibility on every scalar synchronous history forces
+that direct critical action to vanish.  The nonlinear quadratic carrier is
+the proved escape from this restricted obstruction; Paper IV must validate
+its finite-\(\varepsilon\) complete-history response rather than import the
+incompatible old \(\eta\) coefficient into (6.1).
 
 On a phase-fixed hyperbolic periodic orbit \(z_u(t)\), define
 
@@ -919,6 +1006,14 @@ and the two-by-two response with \(\beta_U\ge0.0162187\). Ordinary
 floating-point SVD remains only a precursor; the proved statement is tied to
 the microscopic MPFR-directed box.
 
+For that microscopic FHN box, the later fixed-derivative-box theorem gives a
+stronger route than the generic Lipschitz hypothesis: all matrices
+\(D_b(F,R_h)\) lie within a radius \(r_B<s_0\) of one fixed invertible
+matrix \(B_0\). The nonlinear remainder is therefore \(r_B\)-Lipschitz, and
+the periodic response covers a directed output ball of radius at least
+\(1.6218727378\times10^{-14}\). No second sensitivity is used in this
+conclusion.
+
 A sharper protocol-coordinate version is proved in
 [paper-iv-calibrated-reset-coordinate.md](paper-iv-calibrated-reset-coordinate.md).
 The local diffeomorphism
@@ -1003,8 +1098,41 @@ raw shift on the unweighted Wiener space; its executable record separately
 encloses finite-center, finite-interval, and analytic-tail sensitivity
 residuals. This is a real but deliberately local response theorem. The
 separate outer-arc certificate now closes the synchronous unit-circle gate.
-Attraction/stable-index information, second sensitivities, reset constants,
-and the final target radius remain open, so issue 15 is not closed.
+The direct fixed-matrix inverse theorem now also closes the microscopic
+two-output target-radius gate.  Exact-orbit amplitude conversion and the
+independent reset coordinate then give two three-dimensional
+\((F,A,S_{\rm op})\) target balls.  The balanced-network theorem transfers
+these outputs to the invariant synchronous branch of every admitted topology
+and supplies, for the same parameter/reset triple, a bounded controlled
+excursion; this is parameter-linked, not a trajectory connection to the
+periodic branch.  At the two exact center resets, a separate synchronized
+   handoff theorem closes all inputs on the final excursion segment.  Its robust
+   open-cylinder extension covers asynchronous perturbations and bounded
+   shutdown residuals, but neither theorem lands on the periodic branch.  A
+   transverse Halanay estimate first proves uniform transverse decay for the
+   fixed rank-one topology.  A later weighted-oscillation theorem extends the
+   decay and fixed-network local attraction at \(\eta=0\) to every finite
+   balanced topology with \(\tau(Q)\le1/4\), at uniform transverse rate
+   \(0.007\) but without a topology-uniform nonlinear basin.  The logarithmic
+   Riesz reduction and a complete
+   32,046-leaf directed right-half cover now prove that the synchronous
+   nontranslation unstable index is zero and give local nonlinear orbital
+   attraction with asymptotic phase.  Composing the synchronous and
+   Dobrushin transverse blocks gives local full-network attraction for every
+   fixed finite admitted strongly mixing topology.  A
+   same-model onset-to-basin connection, robust entrance reachability and
+   hardware containment remain open. An exact
+   compatibility certificate proves that the earlier selected-root RFDE and
+   this periodic/control RFDE are not the same plant and that their old
+   parameter directions cannot be composed.  The quadratic period-locked
+   extension now provides a common dual-scaffold RFDE and a proved
+   small-\(\delta\) root column with zero center periodic column.  Its
+   Dobrushin lift proves canonical full-network uniqueness on the exact
+   anisotropic zero-transverse graph.  Thus the structural same-model
+   obstruction, the declared uniformly mixing full-network root gate, and
+   the stable-index gate are closed; fixed-\(\varepsilon\) root validation,
+   arbitrary-history/basin uniqueness, and the biological-trajectory gate
+   remain open.
 
 ## 7. Stop/go gates
 
@@ -1059,21 +1187,46 @@ and the final target radius remain open, so issue 15 is not closed.
 1. retain the proved microscopic-box D1/D3/D4 certificate, including its
    de-aliased finite--tail inverse, moving-delay majorants, unique extrema,
    and \(\beta_U\ge0.0162187\);
-2. retain the proved simple unit multiplier and 319-cell full-complex Bloch
-   exclusion; add a stable-index or multiplier-count theorem only if
-   attraction, rather than orbital hyperbolicity, is claimed;
-3. for a raw reset actuator enclose the controlled
-   separator constants \(C_\Gamma,g\), or for the calibrated route validate
-   the local raw-preset/gap diffeomorphism and its usable half-width;
-4. retain the proved two-scale no-go for the original canard-layer outputs
-   under its explicit root/layer hypotheses;
-5. after the reset/calibration gate in item 3, instantiate either the proved
-   raw reset-only block theorem or the exact calibrated block-diagonal theorem
-   using the already-proved \(\beta_U\ge0.0162187\);
-6. enclose the derivative Lipschitz constant and apply the proved target-ball
-   formula;
-7. demonstrate fixed frequency and amplitude while moving the proved
-   controlled pulse margin. Do not relabel it as an unforced canard margin.
+2. retain the proved simple unit multiplier, 319-cell full-complex Bloch
+   exclusion, and complete 32,046-leaf right-half zero-free cover.  Claim
+   synchronous local attraction only on the certified microscopic box.  For
+   full networks, compose with the Dobrushin transverse theorem on
+   \(\eta=0\) and \(\tau(Q)\le1/4\).  At the exact center gain pair, retain
+   the separately replayed quadratic carrier box
+   \(|\eta|\le3\times10^{-6}\).  Keep the uniform transverse rate but do not
+   infer a topology-uniform nonlinear basin or a joint gain--eta box;
+3. retain the proved fixed-matrix two-output target ball, exact unsquared-
+   amplitude transfer, and two \((F,A,S_{\rm op})\) target balls; compute
+   second sensitivities only to enlarge the box or quantify raw-coordinate
+   curvature;
+4. retain the balanced-general-topology bounded preparation, nodewise
+   decision control and signed excursion theorem as an exact-model staged
+   result.  State explicitly that its periodic outputs belong separately to
+   the invariant synchronous branch.  Retain the exact-center synchronized
+   all-inputs-off handoff corridors and the negative unit-face reversal as a
+   separate finite-horizon theorem, not a target-neighborhood or basin claim.
+   Retain the robust open-cylinder handoff as a separate entrance-to-terminal
+   theorem and prove robust entrance reachability before composing it with the
+   earlier controller.  Retain the quadratic stop/go successor separately:
+   its extended \(T_*\) hold, exact pre-release cancellation, and strict
+   \(|\eta|<250000/12972264861\) bound prove same-plant finite terminal
+   transfer, not input-independent onset or basin capture.  Retain the
+   reference-slice no-go separately: the synchronous rest is unstable for
+   \(|\eta|\le10^{-3}\), while convergence to the validated periodic orbit
+   forbids permanent residence on the four declared detector sides.  Do not
+   call a latched label a basin or hide a post-event parameter switch;
+5. use the quadratic period-locked common RFDE, not the incompatible old
+   two-atom \(\eta\)-direction.  Retain its proved uniform Dobrushin
+   canonical-graph lift.  Validate its selected complete-history BVP,
+   augmented inverse and dynamic adjoint at \(\varepsilon=1/5\); then add an
+   input-independent event comparison and a trajectory connection if a
+   canard-to-periodic pulse theorem is claimed;
+6. extend the present shutdown-residual and parameter tube to delay error,
+   measurement/model error, bandwidth, slew, energy and saturation margins
+   before making a hardware statement;
+7. retain the proved two-scale no-go for the original canard-layer outputs
+   under its explicit root/layer hypotheses, and do not relabel the controlled
+   operational margin as an unforced canard margin.
 
 ### Required falsifiers
 
@@ -1081,6 +1234,11 @@ and the final target radius remain open, so issue 15 is not closed.
 - use graph sequences whose RFDE transverse inverse grows with \(N\);
 - perturb inside and outside \(\ker\mathfrak M_N\);
 - preserve the projected delay measure while changing transverse layers;
+- attempt the proposed same-model actuator on arbitrary scalar synchronous
+  histories, not only at the equilibrium or one sampled orbit phase;
+- compare the exactly cancelling linear carrier with the quadratic carrier,
+  and vary the older-history extension to verify that the advertised root is
+  explicitly preparation indexed;
 - use trajectory-close reductions that predict the wrong root;
 - force an extrema switch;
 - compare two- and three-actuator families;
@@ -1107,9 +1265,45 @@ It does not certify delayed-history interpolation or an RFDE root.
 The floating FHN periodic JSON remains the response/centered-difference
 precursor. The finite directed JSON proves the exact nodal root/inverse and
 exposes the unresolved tail at that stage; the center infinite JSON closes
-the finite/tail orbit proof; and the parameter-box JSON now closes D1, D3,
-and the response part of D4 while deliberately keeping full Floquet,
-second-sensitivity, reset, target-radius, and issue-15 flags false.
+the finite/tail orbit proof; and the parameter-box JSON closes D1, D3, and
+the response part of D4 while retaining its stage-local later-gate flags.
+The separate Bloch and direct-target artifacts close synchronous orbital
+hyperbolicity and the microscopic frequency--squared-range target radius,
+respectively.  The amplitude, three-output, bounded-preparation,
+balanced-sign-cone and balanced-control-chain artifacts then close the
+unsquared-amplitude target balls and the exact-model controlled-excursion
+branch.  The shared-resource policy artifact records an exact root-linked
+latency transduction while forcing its input-independent-onset flags false.
+The autonomous-handoff artifact closes every input on two exact synchronized
+terminal corridors and records the negative unit-face reversal obstruction.
+The robust-handoff artifact upgrades that final segment to explicit
+asynchronous open RFDE entrance cylinders and bounded shutdown residuals while
+keeping entrance reachability, terminal invariance and biology flags false.
+The quadratic stop/go artifact proves four exact non-composition seams and,
+on a separate controlled branch, preserves both terminal transfers after
+release for \(|\eta|<250000/12972264861\); it forces every onset, basin,
+capture and permanent-no-return flag false.
+The reference-slice dual-basin artifact proves two open-right-half-plane
+equilibrium roots on the microscopic gain/\(\eta\) box and the periodic
+detector-face recurrence obstruction.  It explicitly leaves the existence
+or exclusion of a different quiet attractor, global uniqueness, and every
+bistable or switched repair open.
+The first transverse Halanay artifact proves fixed-rank-one transverse decay.
+The Dobrushin successor proves, on \(\eta=0\) and \(\tau(Q)\le1/4\), a uniform
+rate \(0.007\) for arbitrary finite admitted balanced topologies.  The Riesz
+and right-half-cover artifacts rigorously remove the infinite spectral tail,
+certify every dyadic keyhole leaf, prove exact zero winding and close the
+synchronous nontranslation stable-index/attraction gate.  Their composition
+with the Dobrushin artifact promotes local full-network attraction for each
+fixed finite strongly mixing topology, without a uniform nonlinear basin.
+The quadratic eta-Floquet successor replays every one of those base leaves,
+closes the period-length active-horizon bridge, and extends the exact-center
+full-network conclusion to \(|\eta|\le3\times10^{-6}\); it does not provide a
+joint gain--eta box.
+All corresponding records deliberately keep a same-trajectory
+onset-to-periodic connection, autonomous biological capture, joint-gain
+nonzero-\(\eta\) attraction, weaker/closing-gap topologies, robust hardware
+actuation and the relevant biological flags false.
 
 ## 9. Literature boundary and value
 

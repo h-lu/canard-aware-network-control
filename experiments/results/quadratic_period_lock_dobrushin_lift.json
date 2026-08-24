@@ -1,0 +1,106 @@
+{
+  "audit": {
+    "certificate": {
+      "admitted_topology_class": "every finite nonnegative balanced Q with tau(Q)<=1-gamma, gamma>0 common, and balanced half-mass B0,B1",
+      "arbitrary_balanced_topology_without_mixing_gap_covered": false,
+      "arbitrary_rfde_history_connection_unique_outside_graph_tube": false,
+      "balanced_delay_layer_operator_bounds_uniform": true,
+      "balanced_delay_layers_preserve_transverse_space": true,
+      "canonical_retained_transverse_graph_unique_and_zero": true,
+      "canonical_root_response": "a_c,N(delta,eta)-a_c,N(delta,0)=-(Theta_*/2)*delta^3*eta+O(delta^4*|eta|+delta^3*eta^2)",
+      "componentwise_polynomial_bounds_uniform": true,
+      "constants_uniform_in_network_size": true,
+      "critical_transverse_projectors_uniform_in_dimension": true,
+      "exact_non_rank_one_balanced_witness_validated": true,
+      "fixed_epsilon_one_fifth_root_response_validated": false,
+      "fixed_support_history_graph_model_fit_proved": true,
+      "fold_blowup": "v=1+delta*X*1+delta^2*z; w=2/3-delta^2*Y*1+delta^4*W",
+      "full_network_canonical_selected_root_unique_for_admitted_class": true,
+      "full_network_root_response_topology_independent": true,
+      "input_independent_physical_onset_identified": false,
+      "model_id": "balanced-dobrushin-dual-scaffold-fhn-quadratic-period-lock-full-network-canonical-root",
+      "pulse_quiet_basin_or_no_return_proved": false,
+      "semigroup_bound": "||exp(A_N t)|| <= (1+1/gamma)*exp(-2*gamma*t)",
+      "synchronous_zero_transverse_graph_exactly_invariant": true,
+      "transverse_block": "[[3*(Q-I),0],[I,2*(Q-I)]]|_(E x E)",
+      "transverse_block_semigroup_uniformly_exponentially_stable": true,
+      "transverse_norm": "max{osc(z),osc(W)} on ker(pi^T) x ker(pi^T)"
+    },
+    "exact_witness": {
+      "delay_layer_one": [
+        [
+          "1/12",
+          "1/6",
+          "1/4"
+        ],
+        [
+          "1/12",
+          "1/6",
+          "1/4"
+        ],
+        [
+          "1/12",
+          "1/6",
+          "1/4"
+        ]
+      ],
+      "delay_layer_zero": [
+        [
+          "3/16",
+          "1/8",
+          "3/16"
+        ],
+        [
+          "1/16",
+          "1/4",
+          "3/16"
+        ],
+        [
+          "1/16",
+          "1/8",
+          "5/16"
+        ]
+      ],
+      "dobrushin_coefficient": "1/4",
+      "layer_sum_differs_from_projector": true,
+      "layer_sum_differs_from_topology": true,
+      "non_rank_one": true,
+      "stationary_row": [
+        "1/6",
+        "1/3",
+        "1/2"
+      ],
+      "topology": [
+        [
+          "3/8",
+          "1/4",
+          "3/8"
+        ],
+        [
+          "1/8",
+          "1/2",
+          "3/8"
+        ],
+        [
+          "1/8",
+          "1/4",
+          "5/8"
+        ]
+      ]
+    },
+    "scope": {
+      "arbitrary_balanced_without_gap": false,
+      "arbitrary_history_global_uniqueness": false,
+      "biological_basin_no_return": false,
+      "fixed_epsilon_one_fifth": false,
+      "physical_onset": false,
+      "uniform_dobrushin_full_network_canonical_root": true
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact rational balance, Dobrushin, projector, and transverse-block identities",
+    "generator": "experiments/quadratic_period_lock_dobrushin_lift.py",
+    "proof_source": "src/canard_control/quadratic_period_lock_dobrushin_lift.py",
+    "proof_source_sha256": "ee6486352a7762c9cb9576a627722ce3482d66c2531703ce92cfbf35c484d564"
+  }
+}

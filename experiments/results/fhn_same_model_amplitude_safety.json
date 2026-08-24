@@ -1,0 +1,187 @@
+{
+  "certificate": {
+    "amplitude_result_sha256": "28e74d2316f7e9324f03874c3294d27d83708c9dbb3f4eefaf04925f55bbba60",
+    "amplitude_source_manifest_validated": true,
+    "biological_basin_capture_validated": false,
+    "bounded_additive_finite_time_preparation_validated": false,
+    "certified_full_network_instance_id": "rank-one-two-module-fhn-D3-E2",
+    "certified_output_ball_radius_lower": "2.75138166016477172021072951467987182906462947064987861E-15",
+    "exact_input_ball_radius": "1e-12",
+    "exact_reset_translation_validated": true,
+    "frequency_amplitude_operational_safety_target_ball_validated": true,
+    "general_topology_validated": false,
+    "input_order": [
+      "kappa_1",
+      "kappa_3",
+      "r"
+    ],
+    "issue_15_closed": false,
+    "map_definition": "Q_A(kappa_1,kappa_3,r)=(F,A,-r)",
+    "maximal_canard_onset_validated": false,
+    "noise_hardware_robustness_validated": false,
+    "norm_composition": {
+      "amplitude_lower": "2.94737622302543311589267704607213287465934506175704116",
+      "amplitude_output_radius_lower": "2.75138166016477172021072951467987182906462947064987861E-15",
+      "amplitude_upper": "2.94737869577245638555737941249143755810909328788192661",
+      "frequency_component_unchanged": true,
+      "inverse_coordinate_factor_upper": "5.89475739154491552249641898975459532694770125563568228462947064987861",
+      "precision_digits": 140,
+      "safety_component_unchanged": true,
+      "squared_ball_slack_lower": "1.27943199611133987476017461990222313665286200399504443913432638179070873034751203843922644679E-44",
+      "squared_output_radius_lower": "1.62187273782174089504757331762715967009378618047942197E-14",
+      "target_amplitude_positive_margin_lower": "2.94737622302543036451101688130041266392983038188521209537052935012139",
+      "three_dimensional_euclidean_norm_transfer_validated": true,
+      "transformed_three_norm_upper": "1.62187273782174089504757331762588023809767484060466179538009777686334713799600495556086567361820929126965248796156077355321E-14"
+    },
+    "norm_id": "three-dimensional-euclidean-inverse-amplitude-coordinate",
+    "output_order": [
+      "F",
+      "A=V_max-V_min",
+      "S_op=-r"
+    ],
+    "parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "parent_squared_output_ball_radius_lower": "1.62187273782174089504757331762715967009378618047942197E-14",
+    "periodic_attraction_validated": false,
+    "physical_finite_pulse_validated": false,
+    "pulse_and_quiet_operational_deadbands_validated": true,
+    "pulse_side_chart": {
+      "biological_outcome_claimed": false,
+      "chart_id": "pulse-side-positive-face-operational-chart",
+      "detector_face": "+1",
+      "face_deadband_lower": "0.499999999999",
+      "input_center": [
+        "0.2",
+        "0.25",
+        "0.5"
+      ],
+      "input_radius": "1E-12",
+      "output_center": "exact (F(0.2,0.25),A(0.2,0.25),-0.5)",
+      "reset_center": "0.5",
+      "reset_projection_does_not_cross_detector_face": true,
+      "reset_projection_does_not_cross_threshold": true,
+      "reset_projection_inside_declared_interval": true,
+      "reset_projection_lower": "0.499999999999",
+      "reset_projection_upper": "0.500000000001",
+      "safety_center": "-0.5",
+      "threshold_deadband_lower": "0.499999999999",
+      "unique_preimage_in_translated_input_ball": true
+    },
+    "quiet_side_chart": {
+      "biological_outcome_claimed": false,
+      "chart_id": "quiet-side-negative-face-operational-chart",
+      "detector_face": "-1",
+      "face_deadband_lower": "0.499999999999",
+      "input_center": [
+        "0.2",
+        "0.25",
+        "-0.5"
+      ],
+      "input_radius": "1E-12",
+      "output_center": "exact (F(0.2,0.25),A(0.2,0.25),0.5)",
+      "reset_center": "-0.5",
+      "reset_projection_does_not_cross_detector_face": true,
+      "reset_projection_does_not_cross_threshold": true,
+      "reset_projection_inside_declared_interval": true,
+      "reset_projection_lower": "-0.500000000001",
+      "reset_projection_upper": "-0.499999999999",
+      "safety_center": "0.5",
+      "threshold_deadband_lower": "0.499999999999",
+      "unique_preimage_in_translated_input_ball": true
+    },
+    "reset_interval": [
+      "-1",
+      "1"
+    ],
+    "same_model_staged_protocol_validated": true,
+    "separator_result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86",
+    "separator_source_manifest_validated": true,
+    "shared_parameter_box_validated": true,
+    "shared_squared_target_ball_validated": true,
+    "source_synchronous_model_id": "dual-scaffold-synchronous-fhn-two-delay",
+    "squared_target_ball_result_sha256": "dc17c3f845c3e317570c71af3acff670fb6955e2920ad2cea256507c1353dc05",
+    "three_dimensional_inverse_coordinate_validated": true,
+    "three_output_result_sha256": "afc03431d61d86c6bda8b56a73bdeea76b357e9a31a4a843d9f55cebbf666532",
+    "three_output_source_manifest_validated": true,
+    "translated_input_balls_contained_validated": true,
+    "unforced_onset_validated": false,
+    "unique_input_for_each_certified_target_validated": true
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_same_model_amplitude_safety.py"
+    ],
+    "arithmetic": "exact reset translation and directed Decimal upper/lower composition of the three-dimensional inverse amplitude map",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_same_model_amplitude_safety.py",
+    "generator": "experiments/fhn_same_model_amplitude_safety.py",
+    "generator_sha256": "b8f8b999bcf7fa9d7a6f8e50aad4f639d5f0923ee37c65b025e5aa3e65771634",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/fhn_same_model_amplitude_safety.py": "12dd47c223d4025dd0b59b88f0662301a339ed7c9394fa812069c9feeca762df"
+    },
+    "python": "3.14.4"
+  },
+  "scope": {
+    "biological_basin_capture": false,
+    "bounded_additive_finite_time_preparation": false,
+    "controlled_operational_first_hit_safety": true,
+    "frequency_unsquared_amplitude_operational_safety_target_ball": true,
+    "general_topology": false,
+    "issue_15_closed": false,
+    "maximal_canard_onset": false,
+    "noise_hardware_robustness": false,
+    "periodic_attraction": false,
+    "physical_finite_pulse": false,
+    "pulse_side_positive_face_deadband_chart": true,
+    "quiet_side_negative_face_deadband_chart": true,
+    "same_baseline_staged_protocol": true,
+    "unforced_onset": false
+  },
+  "source_evidence": {
+    "amplitude_parent_provenance": {
+      "generator": "experiments/fhn_unsquared_amplitude_transfer.py",
+      "generator_sha256": "6dddd15da3f1148466b8c16093c65e6172a93afdf082f2c40e99eda82525ba0f",
+      "proof_source_manifest": {
+        "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+        "src/canard_control/fhn_periodic_candidate.py": "0fdad0e387ccfc98908466dff4c3f50fcc3741268d25e30a8d9fc00f93df62f0",
+        "src/canard_control/fhn_periodic_directed_validation.py": "4e4695f882e0723ceed08204c662b9e2f9808a0335aea6c83ba0773b150af635",
+        "src/canard_control/fhn_periodic_infinite_validation.py": "f69aa5eb802c09daae01256b86661d3b17672ba2e38dd7bb4ba6244297f805ab",
+        "src/canard_control/fhn_periodic_parameter_box.py": "ed581d2cba605db44faf724904aec8b846bef4c9857df6276e9f6cba1da3cf6c",
+        "src/canard_control/fhn_response_target_ball.py": "d76f9c0a94e9e6e77462153a2c25ff4a1c4ea5af35470655548d496f0fa0dfd1",
+        "src/canard_control/fhn_unsquared_amplitude_transfer.py": "d5117e2ad6bacec8e66f91608afe9913b1e4b286fb2c93454fe94b455a7966a0"
+      },
+      "result_sha256": "28e74d2316f7e9324f03874c3294d27d83708c9dbb3f4eefaf04925f55bbba60"
+    },
+    "amplitude_result_sha256": "28e74d2316f7e9324f03874c3294d27d83708c9dbb3f4eefaf04925f55bbba60",
+    "certified_full_network_instance_id": "rank-one-two-module-fhn-D3-E2",
+    "inverse_amplitude_map": "(dF,dA,dS)->(dF,2*A_c*dA+dA^2,dS)",
+    "parameter_box_parent_provenance": {
+      "generator": "experiments/fhn_periodic_parameter_box.py",
+      "result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0"
+    },
+    "parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "recenter_identity": "Q_R(b,r0+u)-Q_R(b_c,r0)=(P(b)-P(b_c),-u)",
+    "separator_parent_provenance": {
+      "generator": "experiments/fhn_same_model_separator.py",
+      "generator_sha256": "f8c987ce9fa54c6668873d83c084ae01c41b2dbcf6e408354179c7ad9050a9b3",
+      "proof_source_manifest": {
+        "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+        "src/canard_control/fhn_periodic_candidate.py": "0fdad0e387ccfc98908466dff4c3f50fcc3741268d25e30a8d9fc00f93df62f0",
+        "src/canard_control/fhn_same_model_separator.py": "35e3139beedfb560772572507f8417416972c7fc6f4a2b9f80e1de4609f7ef8a"
+      },
+      "result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86"
+    },
+    "separator_result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86",
+    "source_synchronous_model_id": "dual-scaffold-synchronous-fhn-two-delay",
+    "squared_target_ball_result_sha256": "dc17c3f845c3e317570c71af3acff670fb6955e2920ad2cea256507c1353dc05",
+    "three_output_parent_provenance": {
+      "generator": "experiments/fhn_same_model_three_output.py",
+      "generator_sha256": "cb7e06719bc29fbedb9de877e79f0126a105a3ef9eaeffe05fbe553082730879",
+      "proof_source_manifest": {
+        "src/canard_control/fhn_same_model_three_output.py": "0931e94e6f705990cb35e124994b08f94edd4b1cb706e6e92a8f8ceb6c336ed4"
+      },
+      "result_sha256": "afc03431d61d86c6bda8b56a73bdeea76b357e9a31a4a843d9f55cebbf666532"
+    },
+    "three_output_result_sha256": "afc03431d61d86c6bda8b56a73bdeea76b357e9a31a4a843d9f55cebbf666532"
+  }
+}

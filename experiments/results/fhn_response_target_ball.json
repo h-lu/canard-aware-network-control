@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_response_target_ball.py"
+    ],
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_response_target_ball.py",
+    "generator": "experiments/fhn_response_target_ball.py",
+    "generator_sha256": "dbc7b3f16dd5d8276a7e5d1f9ecddee15518a9feb8e1b99b4c2e8a73a7582064",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_response_target_ball.py": "d76f9c0a94e9e6e77462153a2c25ff4a1c4ea5af35470655548d496f0fa0dfd1"
+    },
+    "python": "3.14.4",
+    "rounding": "MPFR RoundDown/RoundUp at every theorem endpoint"
+  },
+  "scope": {
+    "attraction": false,
+    "base_frequency_squared_range_target_ball": true,
+    "base_squared_range_target_ball_requires_second_sensitivities": false,
+    "calibrated_reset_transfer": "conditional",
+    "calibrated_three_output_target_ball": false,
+    "full_network_transverse_stability": false,
+    "issue_15_closed": false,
+    "physical_pulse_onset": false,
+    "same_model_periodic_separator_bridge": false,
+    "synchronous_orbital_hyperbolicity": true
+  },
+  "source_evidence": {
+    "companion_floquet": {
+      "attraction": false,
+      "full_network_transverse_stability": false,
+      "result_sha256": "c2f93b6cfe6a8e0df3b341476fbe45a83f6fecc0398dbb7340a5213a55357a31",
+      "synchronous_orbital_hyperbolicity": true
+    },
+    "parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0"
+  },
+  "target_ball": {
+    "base_frequency_squared_range_target_ball_validated": true,
+    "calibrated_reset_target_ball_validated": false,
+    "calibrated_reset_transfer_conditional": true,
+    "centered_input_ball_contained_in_gain_box": true,
+    "certified_input_ball_radius": "9.99999999999999999999999999999999999999999999998262014e-13",
+    "certified_output_ball_radius_lower": "1.62187273782174089504757331762715967009378618047942197e-14",
+    "control_order": [
+      "kappa_1",
+      "kappa_3"
+    ],
+    "fixed_inverse_contraction_margin_lower": "0.425933537770761969813175856306092612804836804666585679",
+    "fixed_inverse_contraction_upper": "0.574066462229238030186824143693907387195163195333072207",
+    "fixed_inverse_contraction_validated": true,
+    "gain_half_width": "1e-12",
+    "issue_15_closed": false,
+    "midpoint_matrix_binary64": [
+      [
+        0.03669982799550202,
+        0.13633946068777764
+      ],
+      [
+        -3.645615771771411,
+        -6.136337974459385
+      ]
+    ],
+    "norm_id": "euclidean-input-output-fixed-midpoint-inverse",
+    "output_order": [
+      "F",
+      "R_h"
+    ],
+    "parameter_center": [
+      "0.2",
+      "0.25"
+    ],
+    "physical_pulse_onset_validated": false,
+    "precision_bits": 160,
+    "recomputed_derivative_frobenius_radius_upper": "0.0218593433534335719551743066301903207196921001434632885",
+    "recomputed_midpoint_singular_value_lower": "0.0380780707316509809056500398064619174206299619483928191",
+    "recomputed_response_margin_lower": "0.0162187273782174089504757331762715967009378618048867663",
+    "recorded_derivative_frobenius_radius_upper": "0.0218593433534335719551743066301903207196921001315106847",
+    "recorded_midpoint_singular_value_lower": "0.0380780707316509809056500398064619174206299619483928191",
+    "recorded_response_margin_lower": "0.0162187273782174089504757331762715967009378618169248986",
+    "second_sensitivity_required_for_base_target_ball": false,
+    "second_sensitivity_validated": false,
+    "source_d1_branch_validated": true,
+    "source_d3_extrema_validated": true,
+    "source_d4_derivative_box_validated": true,
+    "source_record_consistent": true,
+    "source_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "target_ball_center": "exact P(0.2,0.25), not a binary64 surrogate"
+  }
+}

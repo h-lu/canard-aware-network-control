@@ -393,9 +393,11 @@ Bloch arc. Multipliers on the remaining compact unit-circle arc are still
 unchecked.  This center-only stage did not supply unique extrema, parameter
 continuation, or the \(2\times2\) response box; the later
 [paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md)
-closes those three gates on a microscopic box.  The compact Floquet arc and
-second-sensitivity/reset/target-radius gates remain open, so issue 15 is not
-closed.
+closes those three gates on a microscopic box. The still later full-complex
+Bloch certificate closes the compact Floquet arc, and the fixed-derivative-box
+inverse theorem closes the microscopic two-output target radius without
+second sensitivities. Reset, attraction, and full-network transverse gates
+remain open, so issue 15 is not closed.
 
 Run from the repository root:
 

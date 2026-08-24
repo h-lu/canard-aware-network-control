@@ -1,15 +1,16 @@
 # Phase borders, RFDE monodromy, and the unit Floquet multiplier
 
 Status: **the Fredholm-to-monodromy transfer and the center unit-multiplier
-claim are proved.**  Applied to the center orbit validated in
-[paper-iv-infinite-periodic-validation.md](paper-iv-infinite-periodic-validation.md),
+claim are proved.**  Applied to the center orbit validated on the
+microscopic gain box in
+[paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md),
 the result proves that the multiplier $1$ of the synchronous two-delay FHN
 monodromy is algebraically simple.  A directed estimate also excludes all
 unit multipliers with Bloch phase
 
 \[
   0<|\varphi|\leq
-  7.705280328597522\times10^{-4}.
+  7.727193541001087\times10^{-4}.
 \]
 
 This note originally left full unit-circle exclusion open.  The later
@@ -21,14 +22,14 @@ finite/tail cells.  The phases displayed below were unresolved at that
 earlier stage:
 
 \[
- 7.705280328597522\times10^{-4}<\varphi\leq\pi.
+ 7.727193541001087\times10^{-4}<\varphi\leq\pi.
 \]
 
 For a closed-cover validation it is sufficient, and technically preferable,
 to retain the already excluded endpoint and certify the compact Bloch arc
 
 \[
- [7.705280328597522\times10^{-4},\pi],
+ [7.727193541001087\times10^{-4},\pi],
 \tag{0.1}
 \]
 
@@ -39,9 +40,12 @@ tests are
 [rfde_floquet_transfer.py](../src/canard_control/rfde_floquet_transfer.py)
 and
 [test_rfde_floquet_transfer.py](../tests/test_rfde_floquet_transfer.py).
-The executable center transfer is bound to the exact binary candidate and
-the radius/inverse fields of the tracked e4dbe67 result by a SHA-256 evidence
-fingerprint; it refuses a different candidate or altered theorem bounds.
+The executable center transfer is bound to the exact stored 129-node
+binary64 polynomial, the tracked parameter-box validation, and the tracked
+exact-candidate replay by their complete SHA-256 digests.  It separately
+checks the exact polynomial fingerprint and the radius/inverse fields.  A
+fresh Newton solve is deliberately inadmissible evidence because its final
+binary64 bits can depend on the BLAS reduction tree.
 The frozen JNS manuscript is not modified or used as evidence.
 
 The standard history-space facts used below are the solution-process and
@@ -294,11 +298,12 @@ At
 \tag{4.1}
 \]
 
-the earlier infinite proof supplies a radius-$10^{-7}$ classical orbit
+the tracked parameter-box proof supplies a radius-$5\times10^{-9}$
+classical orbit
 and a phase-bordered inverse bound
 
 \[
- \|\mathcal B^{-1}\|\leq23.45219633406240.
+ \|\mathcal B^{-1}\|\leq23.38569034540316.
 \tag{4.2}
 \]
 
@@ -312,14 +317,14 @@ The coefficient of candidate mode $k=1$, minus the whole correction
 radius, gives
 
 \[
- |v_1|\geq0.6753571589344110>0,
+ |v_1|\geq0.6753572539344109>0,
 \tag{4.3}
 \]
 
 so the exact orbit is nonconstant.  Directed delay and period bounds give
 
 \[
- T\geq16.54038769818094
+ T\geq16.54038779318093
  >11.18033988749895\geq\max_j\tau_j.
 \tag{4.4}
 \]
@@ -409,9 +414,9 @@ state shift.  Combining it with the preceding scalar-rotation bounds gives
 with the directed bounds
 
 \[
- c_1\leq27.66929154675788,
+ c_1\leq27.66929027379773,
  \qquad
- c_2\leq337.6796828012269.
+ c_2\leq337.6794702769009.
 \tag{5.6}
 \]
 
@@ -464,7 +469,7 @@ margins.  It proves
 
 \[
  \boxed{
- 0<|\varphi|\leq7.705280328597522\times10^{-4}
+ 0<|\varphi|\leq7.727193541001087\times10^{-4}
  \Longrightarrow
  e^{i\varphi}\notin\sigma(M).}
 \tag{5.11}
@@ -474,12 +479,12 @@ The constants in (5.6) use the exact correction ball, not just the stored
 polynomial.  In particular, the orbit-tangent majorant is
 
 \[
- \|X'\|_\square\leq41.11902213912061,
+ \|X'\|_\square\leq41.11899893134650,
 \tag{5.12}
 \]
 
 and the delayed variational coefficient has Wiener norm at most
-$0.6626038756701235$.
+$0.6626038440431744$.
 
 ## 6. The exact remaining directed gate
 
@@ -529,8 +534,8 @@ certificate.  The combined current ledger is:
 
 | Claim | Status |
 |---|---|
-| Center RFDE orbit | **Proved** by the prior infinite radii theorem |
-| Center phase-bordered Fourier derivative | **Proved bijective** by the prior theorem |
+| Center RFDE orbit | **Proved** by the tracked parameter-box radii theorem |
+| Center phase-bordered Fourier derivative | **Proved bijective** by the tracked parameter-box theorem |
 | Fourier/BVP derivative to monodromy transfer | **Proved** by Theorem 2.1 and Section 3 |
 | Multiplier $1$ geometrically simple | **Proved** |
 | Multiplier $1$ algebraically simple | **Proved** |

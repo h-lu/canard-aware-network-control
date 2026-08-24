@@ -37,10 +37,26 @@ from canard_control.fhn_periodic_infinite_validation import (
 )
 
 
-# Binds this isolated transfer to the exact e4dbe67 center candidate and
-# the two theorem-bearing fields in the tracked infinite-validation result.
-_TRACKED_CENTER_EVIDENCE_FINGERPRINT = (
-    "59f180904de083639e39e0100486b90db5302d7391d9e23a21be4af4131bd6c2"
+# The transfer is bound to a stored binary64 Fourier polynomial and to the
+# tracked directed validation that places the exact center orbit in its
+# correction ball.  In particular, none of these identifiers is computed
+# by rerunning the floating Newton solver: its last bits depend on the BLAS
+# reduction tree and are not theorem-bearing data.
+_TRACKED_CENTER_CANDIDATE_RESULT_SHA256 = (
+    "7437514175586665b1bf10831793427e42d8a9cbd736536444be4a98064a3c28"
+)
+_TRACKED_CENTER_VALIDATION_RESULT_SHA256 = (
+    "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0"
+)
+_TRACKED_CENTER_REPLAY_RESULT_SHA256 = (
+    "28e74d2316f7e9324f03874c3294d27d83708c9dbb3f4eefaf04925f55bbba60"
+)
+_TRACKED_CENTER_CANDIDATE_FINGERPRINT = (
+    "2b56b5dff18c5aacd1450252824f5601ba3826f6de5d82eb2380853d3c518169"
+)
+_TRACKED_CENTER_CORRECTION_RADIUS = "5e-9"
+_TRACKED_CENTER_INVERSE_NORM_UPPER = (
+    "23.3856903454031599021282567540224673284586776860761524"
 )
 
 
@@ -49,8 +65,10 @@ class PhaseBorderedOrbitEvidence:
     """Validated inputs needed by the structural transfer theorem.
 
     The booleans are evidence hand-offs, not numerical heuristics.  For the
-    tracked center orbit they come from the infinite radii proof and the
-    exact differentiation of ``tau_j / T`` in its period column.
+    tracked center orbit they come from the parameter-box radii proof and
+    the exact differentiation of ``tau_j / T`` in its period column.  The
+    three result digests bind the stored polynomial, its directed
+    validation, and the exact-candidate replay that connects those two.
     """
 
     correction_radius: str
@@ -59,6 +77,9 @@ class PhaseBorderedOrbitEvidence:
     bordered_rfde_inverse_validated: bool
     moving_delay_period_column_validated: bool
     candidate_fingerprint: str
+    candidate_result_sha256: str
+    validation_result_sha256: str
+    candidate_validation_replay_sha256: str
 
 
 @dataclass(frozen=True)
@@ -198,20 +219,6 @@ def periodic_orbit_candidate_fingerprint(
     return digest.hexdigest()
 
 
-def _phase_bordered_evidence_fingerprint(
-    evidence: PhaseBorderedOrbitEvidence,
-) -> str:
-    values = (
-        evidence.correction_radius,
-        evidence.bordered_inverse_norm_upper,
-        str(int(evidence.periodic_rfde_orbit_validated)),
-        str(int(evidence.bordered_rfde_inverse_validated)),
-        str(int(evidence.moving_delay_period_column_validated)),
-        evidence.candidate_fingerprint,
-    )
-    return hashlib.sha256("\0".join(values).encode("ascii")).hexdigest()
-
-
 def validate_fhn_center_floquet_transfer(
     orbit: PeriodicOrbitCandidate,
     evidence: PhaseBorderedOrbitEvidence,
@@ -236,8 +243,26 @@ def validate_fhn_center_floquet_transfer(
     ):
         raise ValueError("the bordered evidence belongs to a different candidate")
     if (
-        _phase_bordered_evidence_fingerprint(evidence)
-        != _TRACKED_CENTER_EVIDENCE_FINGERPRINT
+        evidence.candidate_result_sha256
+        != _TRACKED_CENTER_CANDIDATE_RESULT_SHA256
+    ):
+        raise ValueError("the candidate is not the tracked theorem artifact")
+    if (
+        evidence.validation_result_sha256
+        != _TRACKED_CENTER_VALIDATION_RESULT_SHA256
+    ):
+        raise ValueError("the validation is not the tracked theorem artifact")
+    if (
+        evidence.candidate_validation_replay_sha256
+        != _TRACKED_CENTER_REPLAY_RESULT_SHA256
+    ):
+        raise ValueError("the candidate-validation replay is not tracked")
+    if evidence.candidate_fingerprint != _TRACKED_CENTER_CANDIDATE_FINGERPRINT:
+        raise ValueError("the candidate is not the tracked center polynomial")
+    if (
+        evidence.correction_radius != _TRACKED_CENTER_CORRECTION_RADIUS
+        or evidence.bordered_inverse_norm_upper
+        != _TRACKED_CENTER_INVERSE_NORM_UPPER
     ):
         raise ValueError("the evidence does not match the tracked center theorem")
     if orbit.parameters.kappa_1 < 0 or orbit.parameters.kappa_3 < 0:

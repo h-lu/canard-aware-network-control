@@ -540,8 +540,16 @@ does not supply
 
 1. a stability index proving attraction;
 2. the separate transverse-network Halanay hypothesis;
-3. a directed second-sensitivity bound for the response derivative; or
-4. the physical reset/separator constants and the final safe target radius.
+3. a directed second-sensitivity bound for response curvature or larger-box
+   robustness; or
+4. the physical reset/separator constants and a safe three-output hardware
+   range.
+
+The two-output target-radius gate is now closed downstream in
+[paper-iv-direct-response-target-ball.md](paper-iv-direct-response-target-ball.md):
+the common fixed-matrix derivative enclosure already validated on the gain
+box gives a contraction without a second-sensitivity estimate. This Floquet
+record remains logically separate from that inverse theorem.
 
 Consequently issue 15 remains open even though its synchronous Floquet
 subgate is now proved.

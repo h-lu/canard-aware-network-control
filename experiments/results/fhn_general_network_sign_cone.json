@@ -1,0 +1,138 @@
+{
+  "certificate": {
+    "arbitrary_finite_node_count_formula_validated": true,
+    "assumptions_id": "J>=1;0<=tau_j<infinity;D>=0;P>=0,P1=1;pi>0,pi^T*1=1,pi^T*P=pi^T;B_j>=0,B_j1=alpha_j1,pi^T*B_j=alpha_j*pi^T,sum(alpha_j)=1",
+    "asynchronous_frequency_amplitude_map_validated": false,
+    "biological_basin_validated": false,
+    "bounded_actuator_validated": false,
+    "declared_initial_mean_magnitude_lower": "0.06",
+    "detector_faces": [
+      "-1",
+      "1"
+    ],
+    "dobrushin_contraction_required": false,
+    "epsilon": "0.2",
+    "exact_balance_identities_validated_on_diverse_topologies": true,
+    "exact_fhn_polynomial_identities_validated": true,
+    "full_network_periodic_hyperbolicity_validated": false,
+    "general_topology_canard_root_equivalence_validated": false,
+    "general_topology_three_output_target_ball_validated": false,
+    "hardware_validated": false,
+    "irreducibility_or_unique_stationary_distribution_required": false,
+    "kappa_1_interval": [
+      "0.199999999998999999999999999999999999999999999999456677",
+      "0.2000000000010000000000000000000000000000000000006117458"
+    ],
+    "kappa_3_interval": [
+      "0.2499999999989999999999999999999999999999999999994224656",
+      "0.2500000000010000000000000000000000000000000000009196483"
+    ],
+    "model_id": "balanced-general-network-fhn-nodewise-recovery-clamped",
+    "negative_detector_deadline_upper": "10.16895439798665070214560551365587630590745188143446848",
+    "negative_detector_growth_lower": "0.2766666666650666666666666666666666666666666666635348367",
+    "negative_excursion_deadline_upper": "38.40682402081321193929299824780490405780298576531744953",
+    "negative_excursion_face": "-1.2",
+    "negative_excursion_growth_lower": "0.07799999999819199999999999999999999999999999999574747383",
+    "negative_finite_controlled_excursion_validated": true,
+    "negative_history_orthant_invariance_validated": true,
+    "nodewise_detector_first_hit_validated": true,
+    "nodewise_ideal_recovery_clamp_validated": true,
+    "positive_detector_deadline_upper": "5.902260244961031137243652536848575659808442962835976857",
+    "positive_detector_growth_lower": "0.4766666666658666666666666666666666666666666666646126692",
+    "positive_excursion_deadline_upper": "53.64793041518531822556111535054706952219400607031937024",
+    "positive_excursion_face": "1.5",
+    "positive_excursion_growth_lower": "0.05999999999919999999999999999999999999999999999887256099",
+    "positive_finite_controlled_excursion_validated": true,
+    "positive_history_orthant_invariance_validated": true,
+    "precision_bits": 160,
+    "rank_one_topology_required": false,
+    "reference_delay_weights": [
+      "0.5",
+      "0.5"
+    ],
+    "reference_scaled_delays": [
+      "4",
+      "5"
+    ],
+    "separator_result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86",
+    "staged_frequency_amplitude_reset_map_form_validated": true,
+    "strict_inward_orthant_boundary_validated": false,
+    "synchronized_scalar_restriction_form_validated": true,
+    "topology_independent_collective_growth_validated": true,
+    "transverse_attraction_validated": false,
+    "voltage_scaffold": "3"
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_general_network_sign_cone.py"
+    ],
+    "arithmetic": "exact SymPy identities and MPFR directed endpoints",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_general_network_sign_cone.py",
+    "generator": "experiments/fhn_general_network_sign_cone.py",
+    "generator_sha256": "db2ac95bb6a74f09d937d433aaed515524eb4c60089febbe0b73ff656c731049",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_general_network_sign_cone.py": "5846148f286c5c289727ede6de52085f3b65148ce496100b849c4f731771aa93",
+      "src/canard_control/fhn_same_model_separator.py": "35e3139beedfb560772572507f8417416972c7fc6f4a2b9f80e1de4609f7ef8a"
+    },
+    "python": "3.14.4"
+  },
+  "scope": {
+    "asynchronous_frequency_amplitude_map": false,
+    "balanced_general_topology_history_orthant_invariance": true,
+    "biological_basin": false,
+    "bounded_actuator": false,
+    "full_network_periodic_hyperbolicity": false,
+    "general_topology_canard_root_equivalence": false,
+    "general_topology_three_output_target_ball": false,
+    "hardware": false,
+    "staged_frequency_amplitude_reset_map_form": true,
+    "strict_inward_orthant_boundary": false,
+    "synchronized_scalar_restriction_form": true,
+    "topology_independent_finite_controlled_excursion": true,
+    "topology_independent_nodewise_detector_first_hit": true,
+    "transverse_attraction": false
+  },
+  "source_evidence": {
+    "balance_assumptions": "J>=1;0<=tau_j<infinity;D>=0;P>=0,P1=1;pi>0,pi^T*1=1,pi^T*P=pi^T;B_j>=0,B_j1=alpha_j1,pi^T*B_j=alpha_j*pi^T,sum(alpha_j)=1",
+    "decision_stage_recovery_control": "ideal nodewise state clamp w_i=0, stronger than a collective mean clamp",
+    "exact_reference_topologies": [
+      {
+        "delay_layer_count": 2,
+        "node_count": 1,
+        "scaffold_rank": 1
+      },
+      {
+        "delay_layer_count": 2,
+        "node_count": 3,
+        "scaffold_rank": 3
+      },
+      {
+        "delay_layer_count": 2,
+        "node_count": 4,
+        "scaffold_rank": 4
+      },
+      {
+        "delay_layer_count": 3,
+        "node_count": 5,
+        "scaffold_rank": 5
+      }
+    ],
+    "first_hit_deadline_formula": "log(H/abs(pi^T*v(0)))/c_sign(H)",
+    "orthant_boundary_interpretation": "RFDE quasipositivity gives closed-orthant invariance; strict inward pointing at every zero component is not claimed",
+    "reference_scalar_inheritance": "for alpha=(1/2,1/2) and scaled delays (4,5), the synchronous periodic RFDE has the tracked scalar form",
+    "separator_generator": "experiments/fhn_same_model_separator.py",
+    "separator_generator_sha256": "f8c987ce9fa54c6668873d83c084ae01c41b2dbcf6e408354179c7ad9050a9b3",
+    "separator_proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_periodic_candidate.py": "0fdad0e387ccfc98908466dff4c3f50fcc3741268d25e30a8d9fc00f93df62f0",
+      "src/canard_control/fhn_same_model_separator.py": "35e3139beedfb560772572507f8417416972c7fc6f4a2b9f80e1de4609f7ef8a"
+    },
+    "separator_result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86",
+    "staged_map_form": "Q_A(kappa_1,kappa_3,r)=(F,A,-r)"
+  }
+}

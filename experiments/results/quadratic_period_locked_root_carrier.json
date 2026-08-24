@@ -1,0 +1,159 @@
+{
+  "audit": {
+    "algebra": {
+      "baseline_gap_pairing": "sqrt(2)*sqrt(pi)*(nu + 1/8)",
+      "baseline_q1_fast_on_canard": "9*kappa_1/4 + s**3/24",
+      "baseline_q1_slow_on_canard": "nu",
+      "baseline_unfolding_root": "-1/8",
+      "collective_projector": [
+        [
+          "1/6",
+          "1/3",
+          "1/2"
+        ],
+        [
+          "1/6",
+          "1/3",
+          "1/2"
+        ],
+        [
+          "1/6",
+          "1/3",
+          "1/2"
+        ]
+      ],
+      "constant_history_action": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "fold_chart_quadratic_action": "delta**2*eta*(X(s)**2 - X(-Theta + s)**2)",
+      "fold_linearization_action": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "gaussian_adjoint_fast_component": "s*exp(-s**2/2)",
+      "inner_root_eta_coefficient": "-Theta*delta/2",
+      "linear_period_lock_history_difference": "-Theta/2",
+      "linear_period_lock_pairing": "0",
+      "periodic_history_action": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "physical_root_eta_coefficient": "-Theta*delta**3/2",
+      "projector_collective_residual": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "projector_idempotence_residual": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "pure_transverse_variation_action": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "quadratic_melnikov_integrand": "Theta*s*(-Theta + 2*s)*exp(-s**2/2)/4",
+      "quadratic_melnikov_pairing": "sqrt(2)*sqrt(pi)*Theta/2",
+      "reference_physical_coefficient": "-T_star/50",
+      "reference_scaled_delay": "T_star*delta_ref",
+      "singular_canard": "-s/2",
+      "singular_eta_q2_fast_jet": "Theta*(-Theta + 2*s)/4",
+      "singular_quadratic_history_difference": "Theta*(-Theta + 2*s)/4"
+    },
+    "certificate": {
+      "baseline_scaled_delays": [
+        "4",
+        "5"
+      ],
+      "canonical_history_horizon": "max{4,5,Theta_*} in fold time",
+      "canonical_root_center": "a_c(delta,0)=1-delta^2/8+O(delta^3)",
+      "canonical_root_response": "a_c(delta,eta)-a_c(delta,0)=-(Theta_*/2)*delta^3*eta+O(delta^4*|eta|+delta^3*eta^2)",
+      "center_periodic_frequency_amplitude_eta_column_zero": true,
+      "distinguished_periodic_orbit_preserved_for_every_eta": true,
+      "epsilon_family": "epsilon=delta^2",
+      "exact_balanced_carrier_identities_validated": true,
+      "fixed_epsilon_one_fifth_rho_nonzero_validated": false,
+      "fixed_physical_delay_asymptotic_coefficient_proved": false,
+      "fixed_scaled_support_canonical_root_response_proved": true,
+      "fold_state_and_fold_linearization_preserved": true,
+      "full_network_selected_root_unique_for_every_balanced_topology": false,
+      "linear_carrier_leading_pairing_nonzero": false,
+      "model_id": "balanced-general-topology-dual-scaffold-fhn-quadratic-period-locked-collective-delay",
+      "older_history_selection": "fixed enlarged-horizon canonical flow-hull preparation; no arbitrary inert extension at eta=0",
+      "physical_onset_identification_validated": false,
+      "pure_transverse_first_variation_zero": true,
+      "quadratic_carrier_leading_pairing_nonzero": true,
+      "quadratic_scaled_delay": "Theta_*",
+      "qualitative_three_parameter_periodic_branch_proved": true,
+      "quantitative_eta_periodic_box_validated": false,
+      "reference_delta": "1/sqrt(5)",
+      "reference_leading_rho_candidate": "-T_*/50",
+      "reference_leading_rho_candidate_is_rigorous_enclosure": false,
+      "reference_period_relation": "Theta_*=T_*/sqrt(5)",
+      "synchronous_response_coefficient_topology_independent": true,
+      "synchronous_root_lifts_to_every_balanced_topology": true
+    },
+    "model_id": "balanced-general-topology-dual-scaffold-fhn-quadratic-period-locked-collective-delay",
+    "schema_version": 1,
+    "scope": {
+      "fixed_epsilon_one_fifth_nonzero_rho": false,
+      "fixed_scaled_support_canonical_selected_root": true,
+      "full_network_root_for_arbitrary_balanced_topology": false,
+      "physical_onset": false
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact SymPy balanced-projector, fold-chart, Gaussian, and root-coefficient identities",
+    "generator": "experiments/quadratic_period_locked_root_carrier.py",
+    "proof_source": "src/canard_control/quadratic_period_locked_root_carrier.py",
+    "proof_source_sha256": "44f8c78d78b5057e8db0c25b41d578afb26b7a9fd11a7d1a5f7d17cf435d779b"
+  }
+}

@@ -12,8 +12,12 @@ two-by-two frequency--amplitude response for the declared synchronous FHN
 RFDE are now supplied on a microscopic gain box by
 [paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md).
 Thus the positive block criterion has its periodic \(2\times2\) input; a
-model-level FHN three-output theorem still requires the reset constants and,
-for a target radius, a response-derivative Lipschitz bound.
+model-level FHN three-output theorem still requires a same-model physical
+reset/separator. The periodic two-output target radius is now proved directly
+from a common fixed-matrix derivative enclosure, without a
+response-derivative Lipschitz bound, in
+[paper-iv-direct-response-target-ball.md](paper-iv-direct-response-target-ball.md).
+The general drifting-threshold theorem below retains its Lipschitz route.
 
 The constants below are evaluated by
 src/canard_control/operational_control_repair.py and checked in
@@ -596,7 +600,8 @@ items below, with the qualification in item 4, and still needs the last two:
    multiplier-count argument;
 5. a lower reset-transversality bound \(g\) and upper separator derivative
    bound \(G\); and
-6. a derivative Lipschitz bound \(L\) to claim a nonzero target radius.
+6. either a derivative Lipschitz bound \(L\), or a coherent fixed-matrix
+   derivative-defect bound, to claim a nonzero target radius.
 
 Floating-point continuation can propose these enclosures, but cannot
 replace them.
@@ -612,17 +617,19 @@ replace them.
 | Equality of \(a_c\) with a maximal-canard root | Not asserted | Needs a reset-to-canard factorization |
 | Block-triangular \(3\times3\) response | Proved exactly | Theorem 3.1 |
 | Positive full smallest-singular-value bound | Proved from \(\beta>0\) and finite \(\gamma\) | Formula (3.5) |
-| Nonzero local target radius | Proved when \(L\) is supplied | Theorem 4.1 |
+| Nonzero local target radius | Proved when \(L\) is supplied; also proved by the fixed-matrix defect route in the direct-target note | Theorem 4.1 and the fixed-derivative-box theorem |
 | Hopf frequency--amplitude nondegeneracy | Proved for the exact cubic family | Theorem 5.1 |
 | Declared synchronous FHN periodic branch, unique extrema, and orbital Floquet hyperbolicity | Proved on the microscopic gain box | Directed D1/D3 certificate plus the 319-cell full-complex Bloch theorem; attraction is not inferred |
 | Declared FHN two-by-two response certificate | Proved on the microscopic gain box | Directed \(\beta_U\ge0.0162187\) |
-| Declared FHN positive \(3\times3\) control theorem | Conditional | The periodic block is supplied; still needs the clamped reset constants in (2.6) and, for a radius, (4.1) |
+| Declared FHN positive \(3\times3\) control theorem | Conditional | The periodic block and its two-output target ball are supplied; a same-model clamped reset and its physical range remain necessary |
 
 The old design could lose a singular direction when amplitude and safety
 both followed the same thin canard coordinate. The repaired protocol puts
 safety on an independent experimental coordinate whose derivative is
 exactly \(-1\). This removes that structural obstruction.  The ordinary
 two-output periodic response is now certified on a microscopic box, but
-the reset transversality, response-Lipschitz/target-radius, hardware, and
-Floquet-attraction gates are not thereby supplied.  Nor is the controlled
-separator renamed as an unforced canard threshold.
+the same-model reset, hardware, and Floquet-attraction gates are not thereby
+supplied. A response Lipschitz bound remains useful for the general
+drifting-threshold route and for enlarging the box, but it is no longer a
+prerequisite for the proved microscopic two-output radius. Nor is the
+controlled separator renamed as an unforced canard threshold.

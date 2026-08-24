@@ -1,0 +1,80 @@
+{
+  "audit": {
+    "algebra": {
+      "actual_first_moment_scalar": "T*epsilon",
+      "clamped_zero_fast_residual": "0",
+      "clamped_zero_period_lock_action": "0",
+      "clamped_zero_recovery_residual": "0",
+      "dynamic_a_pairing_density": "epsilon*p_w",
+      "dynamic_eta_pairing_density": "epsilon*p_v*(-V + V_T)",
+      "normalized_root_derivative": "-m_eta/m_a",
+      "recovery_residual_a_column": "epsilon",
+      "recovery_residual_eta_column": "0",
+      "scaled_delay_shift": "T*delta",
+      "singular_canard_history_difference": "-T*delta/(2*alpha)",
+      "singular_fast_adjoint_integrand": "-T*delta**2*s*exp(-s**2/2)/(2*alpha)",
+      "singular_fast_adjoint_pairing": "0",
+      "singular_fast_forcing_coefficient": "-T*delta**2/(2*alpha)",
+      "voltage_residual_a_column": "0",
+      "voltage_residual_eta_column": "epsilon*(-V + V_T)"
+    },
+    "certificate": {
+      "a_residual_column": [
+        "0",
+        "epsilon"
+      ],
+      "actual_first_moment_scalar": "T_*/5",
+      "arbitrary_balanced_topology_full_root_validated": false,
+      "augmented_complete_history_bvp_inverse_validated": false,
+      "clamped_operational_threshold_supplies_nonzero_eta_column": false,
+      "clamped_zero_reset_equilibrium_for_all_eta_validated": true,
+      "dynamic_adjoint_with_endpoint_multipliers_validated": false,
+      "epsilon": "1/5",
+      "eta_residual_column": [
+        "-epsilon*(V(t)-V(t-T_*))",
+        "0"
+      ],
+      "exact_adjoint_ratio_theorem_validated": true,
+      "exact_root_response_formula": "rho_*=-m_eta/m_a",
+      "fixed_epsilon_one_fifth_overlap_validated": false,
+      "input_independent_physical_onset_comparison_validated": false,
+      "leading_singular_interior_pairing_nonzero": false,
+      "model_id": "balanced-general-topology-dual-scaffold-fhn-period-locked-collective-delay",
+      "nonzero_first_moment_validated": true,
+      "nonzero_moment_implies_nonzero_selected_root_response": false,
+      "nonzero_selected_root_eta_response_validated": false,
+      "required_denominator": "m_a=<Psi,F_a>, including interior, entry, exit, phase, and complete-history-jump columns",
+      "required_numerator": "m_eta=<Psi,F_eta>, including interior, entry, exit, phase, and complete-history-jump columns",
+      "residual_columns_validated": true,
+      "root_output": "preparation-indexed synchronous complete-history selected root a_c",
+      "same_extended_rfde_selected_root_validated": false,
+      "singular_interior_pairing": "0"
+    },
+    "model_id": "balanced-general-topology-dual-scaffold-fhn-period-locked-collective-delay",
+    "schema_version": 1,
+    "scope": {
+      "exact_banach_adjoint_ratio": true,
+      "exact_model_interior_columns": true,
+      "exact_singular_parity_cancellation": true,
+      "nonzero_rho_star": false,
+      "physical_onset": false,
+      "same_extended_rfde_selected_root": false
+    },
+    "validation_gates": [
+      "construct one fixed-epsilon synchronous selected-history Lin/trace BVP",
+      "validate its phase-fixed augmented inverse on the full delay horizon",
+      "validate the dynamic cokernel covector including endpoint multipliers",
+      "enclose m_a=<Psi,F_a> away from zero",
+      "enclose m_eta=<Psi,F_eta> away from zero",
+      "divide directed intervals to obtain rho_*=-m_eta/m_a",
+      "add a transverse trace inverse before promoting to a full-network root",
+      "prove an input-independent event zero-set comparison before calling it onset"
+    ]
+  },
+  "manifest": {
+    "arithmetic": "exact SymPy residual-column and Gaussian identities",
+    "generator": "experiments/dual_scaffold_root_adjoint_gate.py",
+    "proof_source": "src/canard_control/dual_scaffold_root_adjoint_gate.py",
+    "proof_source_sha256": "bfc1a3e973b169c589b7585d730d4469e20a84c385ee04ae0c9ed0ed31051e97"
+  }
+}

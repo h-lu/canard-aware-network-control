@@ -1,0 +1,437 @@
+{
+  "certificate": {
+    "assumptions_id": "literal-equation-comparison;two-fixed-distinct-delay-atoms;linear-delay-layer-redistribution;all-scalar-synchronous-histories",
+    "autonomous_handoff_result_sha256": "38f612771fd5f7e50ffd4f77103ea680b447fd11a7af25cc5ccea95b9bf606f2",
+    "autonomous_onset_validated": false,
+    "balanced_chain_result_sha256": "090e690808d9106152958c1338980fde686875a4113241c8c842683a43d1ebf9",
+    "balanced_control_and_autonomous_handoff_same_baseline_validated": true,
+    "balanced_synchronous_restriction_matches_periodic_scalar_rfde_validated": true,
+    "biological_basin_validated": false,
+    "canard_root_to_handoff_trajectory_link_validated": false,
+    "controlled_onset_to_autonomous_finite_excursion_in_balanced_model_inherited": true,
+    "landing_on_periodic_branch_validated": false,
+    "lifted_eta_invisible_on_validated_periodic_branch_validated": false,
+    "lifted_eta_nonzero_root_stable_forcing_validated": true,
+    "lifted_eta_preserves_periodic_synchrony_validated": false,
+    "lifted_eta_zero_root_critical_pairing_validated": true,
+    "lifted_root_layers_satisfy_balanced_two_half_delay_class_validated": false,
+    "lifted_selected_root_theorem_applies_to_dual_scaffold_periodic_model": false,
+    "model_id": "lifted-root-versus-dual-scaffold-periodic-compatibility-audit",
+    "periodic_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "periodic_branch_validated_in_eta_neighborhood": false,
+    "periodic_fold_voltage": [
+      "1",
+      "1"
+    ],
+    "periodic_model_doc_sha256": "b2128ac939bb8940aafe7397771c2e1e33e9b022e016be32dc31f4cdbe1ede95",
+    "periodic_model_id": "dual-scaffold-rank-one-two-module-fhn-two-delay",
+    "periodic_sync_right": [
+      "1",
+      "1"
+    ],
+    "root_class_doc_sha256": "b05fc49c6421121522d4b8dbc28d81892bbbe78c165aea1976bf40d58c658106",
+    "root_critical_right": [
+      "1",
+      "2"
+    ],
+    "root_eta_action_on_periodic_sync": [
+      "1",
+      "-2"
+    ],
+    "root_eta_action_on_root_critical": [
+      "1",
+      "-2"
+    ],
+    "root_eta_periodic_sync_pairing": "-1/2",
+    "root_fold_voltage": [
+      "sqrt(6)/2",
+      "0"
+    ],
+    "root_model_id": "unequal-two-module-lifted-selected-root-rfde",
+    "root_model_source_sha256": "a781eb6378f8db95243c5eabb175b5772270f49980715e126144cee12e981796",
+    "root_response_source_sha256": "32c8cfe6b365c6f78faf4387b2f00569da633ac4b6d34d2a92102de57573a58e",
+    "root_theorem_doc_sha256": "3f6d92487e7fb4f1602a5b07485b81315850c3ae5ea69d3b20a838ed29c257bb",
+    "same_delay_layers_validated": false,
+    "same_fold_state_validated": false,
+    "same_instantaneous_voltage_scaffold_validated": false,
+    "same_linear_current_compensator_validated": false,
+    "same_literal_rfde_validated": false,
+    "same_local_fhn_cubic_term_validated": true,
+    "same_nodewise_voltage_recovery_state_type_validated": true,
+    "same_recovery_scaffold_validated": false,
+    "same_slow_unfolding_field_validated": false,
+    "sync_invisible_two_atom_redistribution_annihilates_sync_critical_forcing_validated": true,
+    "three_input_three_output_parameter_linked_theorem_validated": false
+  },
+  "exact_audit": {
+    "current_linear_compensator_difference": [
+      [
+        "-1/2",
+        "1/4"
+      ],
+      [
+        "2/3",
+        "-1/3"
+      ]
+    ],
+    "fast_fold_jacobian_difference": [
+      [
+        "1/2",
+        "-1"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ]
+    ],
+    "fold_voltage_difference": [
+      [
+        "-1 + sqrt(6)/2"
+      ],
+      [
+        "-1"
+      ]
+    ],
+    "generic_redistribution_sync_action": [
+      [
+        "a + b"
+      ],
+      [
+        "c + d"
+      ]
+    ],
+    "generic_sync_invisible_substitution_action": [
+      [
+        "0"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "layer_0_difference": [
+      [
+        "-1/3",
+        "1/12"
+      ],
+      [
+        "1/6",
+        "-1/4"
+      ]
+    ],
+    "layer_1_difference": [
+      [
+        "1/3",
+        "-1/3"
+      ],
+      [
+        "0",
+        "5/12"
+      ]
+    ],
+    "periodic_current_linear_compensator": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "periodic_fast_fold_jacobian": [
+      [
+        "-3/2",
+        "3/2"
+      ],
+      [
+        "3/2",
+        "-3/2"
+      ]
+    ],
+    "periodic_fold_voltage": [
+      [
+        "1"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "periodic_layer_0": [
+      [
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ]
+    ],
+    "periodic_layer_1": [
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "0"
+      ]
+    ],
+    "periodic_recovery_scaffold": [
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "1",
+        "-1"
+      ]
+    ],
+    "periodic_sync_left": [
+      [
+        "1/2"
+      ],
+      [
+        "1/2"
+      ]
+    ],
+    "periodic_sync_right": [
+      [
+        "1"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "periodic_unfolding_column": [
+      [
+        "-1"
+      ],
+      [
+        "-1"
+      ]
+    ],
+    "recovery_scaffold_difference": [
+      [
+        "1/2",
+        "-3/4"
+      ],
+      [
+        "0",
+        "1/2"
+      ]
+    ],
+    "root_critical_left": [
+      [
+        "1/2"
+      ],
+      [
+        "1/4"
+      ]
+    ],
+    "root_critical_right": [
+      [
+        "1"
+      ],
+      [
+        "2"
+      ]
+    ],
+    "root_current_linear_compensator": [
+      [
+        "1/2",
+        "1/4"
+      ],
+      [
+        "2/3",
+        "2/3"
+      ]
+    ],
+    "root_eta_action_on_periodic_sync": [
+      [
+        "1"
+      ],
+      [
+        "-2"
+      ]
+    ],
+    "root_eta_action_on_root_critical": [
+      [
+        "1"
+      ],
+      [
+        "-2"
+      ]
+    ],
+    "root_eta_direction": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "-2",
+        "0"
+      ]
+    ],
+    "root_eta_has_nonzero_root_stable_forcing": true,
+    "root_eta_has_zero_root_critical_pairing": true,
+    "root_eta_is_invisible_on_periodic_sync_branch": false,
+    "root_eta_periodic_sync_pairing": "-1/2",
+    "root_eta_preserves_periodic_synchrony": false,
+    "root_eta_root_critical_pairing": "0",
+    "root_fast_fold_jacobian": [
+      [
+        "-1",
+        "1/2"
+      ],
+      [
+        "2",
+        "-1"
+      ]
+    ],
+    "root_fold_voltage": [
+      [
+        "sqrt(6)/2"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "root_layer_0": [
+      [
+        "1/6",
+        "1/12"
+      ],
+      [
+        "1/6",
+        "1/4"
+      ]
+    ],
+    "root_layer_0_half_left_balance_residual": [
+      [
+        "-1/12",
+        "-1/12"
+      ]
+    ],
+    "root_layer_0_half_row_mass_residual": [
+      [
+        "-1/4"
+      ],
+      [
+        "-1/12"
+      ]
+    ],
+    "root_layer_1": [
+      [
+        "1/3",
+        "1/6"
+      ],
+      [
+        "1/2",
+        "5/12"
+      ]
+    ],
+    "root_layer_1_half_left_balance_residual": [
+      [
+        "1/6",
+        "1/24"
+      ]
+    ],
+    "root_layer_1_half_row_mass_residual": [
+      [
+        "0"
+      ],
+      [
+        "5/12"
+      ]
+    ],
+    "root_recovery_scaffold": [
+      [
+        "-1/2",
+        "1/4"
+      ],
+      [
+        "1",
+        "-1/2"
+      ]
+    ],
+    "root_unfolding_column": [
+      [
+        "-1"
+      ],
+      [
+        "-2"
+      ]
+    ],
+    "unfolding_column_difference": [
+      [
+        "0"
+      ],
+      [
+        "-1"
+      ]
+    ]
+  },
+  "parent_claim_checks": {
+    "balanced_frequency_amplitude_outputs_validated": true,
+    "balanced_positive_and_negative_controlled_onset_validated": true,
+    "balanced_scalar_periodic_restriction_validated": true,
+    "balanced_synchronous_subspace_invariance_validated": true,
+    "handoff_pins_balanced_parent": true,
+    "handoff_positive_and_negative_autonomous_excursions_validated": true,
+    "handoff_rejects_autonomous_onset_and_periodic_landing": true,
+    "handoff_same_delayed_baseline_validated": true,
+    "periodic_box_orbit_and_response_validated": true,
+    "periodic_box_unique_extrema_validated": true
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_root_periodic_compatibility.py"
+    ],
+    "arithmetic": "exact SymPy comparison of folds, scaffolds, slow unfolding columns, two delay layers, balance residuals, and the lifted eta action on the root and periodic critical modes",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_root_periodic_compatibility.py",
+    "generator": "experiments/fhn_root_periodic_compatibility.py",
+    "generator_sha256": "b59b81e82d4f7aa68064e9fe7fe26bc979190cdafaf13a83740f51e59870b53f",
+    "parent_sha256": {
+      "autonomous_handoff_result": "38f612771fd5f7e50ffd4f77103ea680b447fd11a7af25cc5ccea95b9bf606f2",
+      "balanced_chain_result": "090e690808d9106152958c1338980fde686875a4113241c8c842683a43d1ebf9",
+      "periodic_box_result": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+      "periodic_model_doc": "b2128ac939bb8940aafe7397771c2e1e33e9b022e016be32dc31f4cdbe1ede95",
+      "root_class_doc": "b05fc49c6421121522d4b8dbc28d81892bbbe78c165aea1976bf40d58c658106",
+      "root_model_source": "a781eb6378f8db95243c5eabb175b5772270f49980715e126144cee12e981796",
+      "root_response_source": "32c8cfe6b365c6f78faf4387b2f00569da633ac4b6d34d2a92102de57573a58e",
+      "root_theorem_doc": "3f6d92487e7fb4f1602a5b07485b81315850c3ae5ea69d3b20a838ed29c257bb"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fhn_root_periodic_compatibility.py",
+    "proof_source_sha256": "de05bbbe1216ccff240423e06a665f2fd4f87085e8f9b8032bc9a58b718b2ccf",
+    "python": "3.14.4"
+  },
+  "scope": {
+    "autonomous_onset": false,
+    "balanced_control_and_autonomous_handoff_same_baseline": true,
+    "balanced_synchronous_restriction_matches_periodic_scalar_rfde": true,
+    "biological_basin": false,
+    "canard_root_to_handoff_trajectory_link": false,
+    "controlled_onset_to_autonomous_finite_excursion_in_balanced_model": true,
+    "landing_on_periodic_branch": false,
+    "lifted_eta_invisible_on_validated_periodic_branch": false,
+    "lifted_eta_nonzero_root_stable_forcing": true,
+    "lifted_eta_preserves_periodic_synchrony": false,
+    "lifted_eta_zero_root_critical_pairing": true,
+    "lifted_root_layers_satisfy_balanced_two_half_delay_class": false,
+    "lifted_selected_root_theorem_applies_to_dual_scaffold_periodic_model": false,
+    "periodic_branch_validated_in_eta_neighborhood": false,
+    "same_delay_layers": false,
+    "same_fold_state": false,
+    "same_instantaneous_voltage_scaffold": false,
+    "same_linear_current_compensator": false,
+    "same_literal_rfde": false,
+    "same_local_fhn_cubic_term": true,
+    "same_nodewise_voltage_recovery_state_type": true,
+    "same_recovery_scaffold": false,
+    "same_slow_unfolding_field": false,
+    "sync_invisible_redistribution_annihilates_sync_critical_forcing": true,
+    "three_input_three_output_parameter_linked_theorem": false
+  }
+}

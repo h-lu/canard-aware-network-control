@@ -1,0 +1,151 @@
+{
+  "certificate": {
+    "actuator_bandwidth_or_slew_rate_validated": false,
+    "arbitrary_finite_balanced_topology_validated": true,
+    "assumptions_id": "finite-N-balanced-two-half-delay-layer-FHN;open-full-RFDE-handoff-cylinder;declared-kappa-epsilon-a-box;bounded-L-infinity-post-handoff-input-residual;fixed-delays-and-balanced-topology",
+    "asynchronous_finite_horizon_tracking_tube_validated": true,
+    "autonomous_handoff_result_sha256": "38f612771fd5f7e50ffd4f77103ea680b447fd11a7af25cc5ccea95b9bf606f2",
+    "balanced_control_chain_result_sha256": "090e690808d9106152958c1338980fde686875a4113241c8c842683a43d1ebf9",
+    "biological_action_potential_validated": false,
+    "bounded_shutdown_residual_inputs_validated": true,
+    "common_forcing_upper": "0.000052",
+    "common_tracking_tube_radius": "0.0006",
+    "current_handoff_state_radius": "0.0001",
+    "declared_gain_perturbation_box_validated": true,
+    "delay_perturbations_validated": false,
+    "epsilon_and_unfolding_perturbations_validated": true,
+    "epsilon_open_interval": [
+      "0.199999",
+      "0.200001"
+    ],
+    "exact_rational_coefficient_audit_validated": true,
+    "exact_synchrony_required": false,
+    "exact_zero_input_after_handoff_required": false,
+    "full_rfde_open_handoff_cylinder_validated": true,
+    "gronwall_rate_upper": "1.05",
+    "hardware_validated": false,
+    "kappa_1_open_interval": [
+      "0.199999999998",
+      "0.200000000002"
+    ],
+    "kappa_3_open_interval": [
+      "0.249999999998",
+      "0.250000000002"
+    ],
+    "landing_on_periodic_branch_validated": false,
+    "minimum_delay_lower": "8.944271909999158785636694674925104941762473438424472008",
+    "model_id": "balanced-fhn-robust-finite-horizon-shutdown-tube",
+    "negative_capture_recovery_interval": [
+      "-0.1581073974086500000000000000000000000000000000002482193",
+      "0.0006"
+    ],
+    "negative_capture_voltage_interval": [
+      "-1.2006",
+      "-1.1994"
+    ],
+    "negative_component_velocity_magnitude_lower": "0.068",
+    "negative_componentwise_no_reversal_validated": true,
+    "negative_nominal_horizon_upper": "0.4444584011141191698086150978017082389825931513417759996",
+    "negative_robust_terminal_capture_validated": true,
+    "negative_tracking_error_upper": "0.0001889207819203155639160672374822448740135301440115884132",
+    "negative_tracking_slack_lower": "0.0004110792180796844360839327625177551259864698559884115868",
+    "nonnegative_delay_layer_max_norm_bound_validated": true,
+    "permanent_no_return_validated": false,
+    "positive_capture_recovery_interval": [
+      "-0.0006",
+      "0.1858127730287500000000000000000000000000000000002499532"
+    ],
+    "positive_capture_voltage_interval": [
+      "1.4994",
+      "1.5006"
+    ],
+    "positive_component_velocity_lower": "0.131",
+    "positive_componentwise_no_reversal_validated": true,
+    "positive_nominal_horizon_upper": "1.278339402787582773861681613826836042069901030142172264",
+    "positive_robust_terminal_capture_validated": true,
+    "positive_tracking_error_upper": "0.0005228040534029681427608666290366623487309941879054806624",
+    "positive_tracking_slack_lower": "0.0000771959465970318572391333709633376512690058120945193376",
+    "post_handoff_recovery_input_residual_bound": "0.00001",
+    "post_handoff_voltage_input_residual_bound": "0.00001",
+    "precision_bits": 160,
+    "quiet_or_pulse_basin_validated": false,
+    "remote_history_voltage_radius": "0.0001",
+    "remote_history_window_definition": "I_{j,sigma}=[-tau_j,H_sigma-tau_j], j=0,1",
+    "robust_history_preparation_validated": false,
+    "row_stochastic_scaffold_max_norm_dissipativity_validated": true,
+    "unfolding_open_interval": [
+      "0.599999",
+      "0.600001"
+    ],
+    "voltage_field_perturbation_upper": "0.006052"
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_robust_handoff_tube.py"
+    ],
+    "arithmetic": "exact rational coefficient domination plus MPFR-directed Gronwall exponentials",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_robust_handoff_tube.py",
+    "generator": "experiments/fhn_robust_handoff_tube.py",
+    "generator_sha256": "f7de7bd157b99a6ae9d73709bb08f712ab8b6210b10b29b5ad1a43bc363d2453",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "parent_result_manifest": {
+      "experiments/results/fhn_autonomous_handoff_excursion.json": "38f612771fd5f7e50ffd4f77103ea680b447fd11a7af25cc5ccea95b9bf606f2",
+      "experiments/results/fhn_balanced_control_chain.json": "090e690808d9106152958c1338980fde686875a4113241c8c842683a43d1ebf9"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_autonomous_handoff_excursion.py": "0e9d931a65b8fbc8f975058a9427ca0084ec750000c4a9f7480901e0de30a12c",
+      "src/canard_control/fhn_robust_handoff_tube.py": "99a6cd679ff4f4657015fd2086e932a36853cdebf2d99fabc2df598d9a206ece"
+    },
+    "python": "3.14.4"
+  },
+  "scope": {
+    "actuator_bandwidth_or_slew_rate": false,
+    "all_additive_inputs_exactly_zero_after_handoff": false,
+    "arbitrary_finite_balanced_topology": true,
+    "asynchronous_finite_horizon_tracking_tube": true,
+    "biological_action_potential": false,
+    "bounded_post_handoff_shutdown_residual": true,
+    "componentwise_no_reversal_until_capture": true,
+    "declared_nearby_fhn_parameter_family": true,
+    "delay_perturbations": false,
+    "full_rfde_open_handoff_cylinder": true,
+    "hardware": false,
+    "landing_on_periodic_branch": false,
+    "permanent_no_return": false,
+    "positive_and_negative_robust_terminal_capture": true,
+    "quiet_or_pulse_basin": false,
+    "robust_history_preparation": false
+  },
+  "source_evidence": {
+    "autonomous_handoff_generator": "experiments/fhn_autonomous_handoff_excursion.py",
+    "autonomous_handoff_generator_sha256": "b237760b02964a3750200a17ecbdbf6455d6515aeafb0d45d2f24b81bf5ad907",
+    "autonomous_handoff_result_sha256": "38f612771fd5f7e50ffd4f77103ea680b447fd11a7af25cc5ccea95b9bf606f2",
+    "balanced_control_chain_result_sha256": "090e690808d9106152958c1338980fde686875a4113241c8c842683a43d1ebf9",
+    "input_residual_norm": "arbitrary-sign measurable residuals with componentwise essential-supremum bounds",
+    "phase_space_norm": "max of the nodewise l-infinity voltage and recovery errors; remote voltage histories use the l-infinity sup norm",
+    "rational_audit": {
+      "absolute_voltage_coefficient_margin": "859/1000",
+      "common_forcing_upper": "13/250000",
+      "current_cubic_lipschitz_margin": "11801973/25000000",
+      "current_f_absolute_lipschitz_margin": "1204991/25000000",
+      "delayed_history_coefficient_margin": "624878124799999/62500000000000000",
+      "dini_rate_margin": "3/100",
+      "instantaneous_cubic_coefficient_margin": "4999624999399997/100000000000000000",
+      "instantaneous_linear_coefficient_margin": "499899999799999/500000000000000000",
+      "one_sided_f_margin": "470009/25000000",
+      "recovery_epsilon_coefficient_margin": "999/1000000",
+      "recovery_forcing_upper": "12201/1000000000",
+      "recovery_parameter_state_margin": "1/5",
+      "reference_parameter_coefficient_margin": "20874999992027/500000000000000",
+      "remote_history_cubic_lipschitz_margin": "24909997/100000000",
+      "voltage_field_perturbation_upper": "1513/250000",
+      "voltage_forcing_upper": "13/250000"
+    },
+    "remote_history_windows": "I_{j,sigma}=[-tau_j,H_sigma-tau_j] for both j=0,1",
+    "scaffold_dissipativity": "at an active signed l-infinity component, sign(e_i)*(P e-e_i)<=0 for every nonnegative row-stochastic P"
+  }
+}

@@ -1,6 +1,6 @@
 # Literature boundary and novelty audit
 
-Search date: **2026-08-22**. This is a targeted primary-literature boundary search, not a bibliometric systematic review. It covers four intersections: delayed canards, slow--fast networks and tipping, frequency--amplitude control, and DDE threshold numerics.
+Search date: **2026-08-24**. This is a targeted primary-literature boundary search, not a bibliometric systematic review. It covers five intersections: delayed canards, slow--fast networks and tipping, frequency--amplitude control, noninvasive delayed feedback and excitable pulses, and DDE threshold numerics.
 
 ## Executive conclusion
 
@@ -9,6 +9,8 @@ The ingredients are individually occupied:
 - delayed van der Pol/FitzHugh--Nagumo canards and high-order local thresholds;
 - spectral/module reduction of network dynamics and prediction of pulsatile tipping;
 - frequency--amplitude and phase--amplitude control;
+- noninvasive period-delayed feedback, including experimental continuation of
+  canard cycles and delayed control of excitable pulses;
 - convergence of DDE collocation, periodic BVP, and local bifurcation calculations.
 
 The search did **not** find a result showing that two delayed slow--fast
@@ -19,14 +21,19 @@ transverse organization of the delay layers changes. That is the base
 paper's defensible intersection. “Delay + network + oscillator control” is
 not a novelty claim.
 
-A broader gap also remains: no located result formulates a finite
-delayed-network canard as a one-dimensional RFDE Lin-matching root and
-transfers that root from an exact equitable reference system to a
-structurally perturbed finite network with an explicit first variation,
-transverse inverse bound, and second-order remainder. That problem is frozen
-as future work and is not a claim of the current paper. Likewise, the search
-did not find a threshold-specific DDE discretization theorem that separates
-Runge--Kutta, delayed-history interpolation, reduction, and root errors.
+The search also did not locate a result formulating a finite delayed-network
+canard as a one-dimensional complete-history RFDE matching root and proving a
+dimension-uniform transfer over a declared finite-network class.  The
+successor program now addresses part of that gap in two precise ways: a
+heterogeneous-curvature shared-resource Dobrushin response with an explicit
+topology resolvent, and a quadratic period-locked dual-scaffold root whose
+canonical zero-transverse graph lifts uniformly to every admitted finite
+Dobrushin topology.  Neither theorem covers arbitrary histories, closing-gap
+families, multiple unslaved recovery centers, or biological onset.  The
+frozen two-module JNS manuscript retains its narrower claim.  Likewise, the
+search did not find a threshold-specific DDE discretization theorem that
+separates Runge--Kutta, delayed-history interpolation, reduction, and root
+errors.
 
 ## Closest primary literature
 
@@ -82,6 +89,39 @@ Runge--Kutta, delayed-history interpolation, reduction, and root errors.
 | [Xu et al. (2026)](https://doi.org/10.1016/j.chaos.2026.118690) | A linear \(\theta\)-method preserves the DDE Bogdanov--Takens structure, but even the trapezoidal rule generally shifts its branches only with first-order accuracy. | Shows that bifurcation-type preservation and critical-parameter accuracy differ; does not treat a maximal-canard splitting root. |
 | [Lu (2026)](https://arxiv.org/abs/2608.04304) | For the exact fixed-step RK map of planar slow--fast ODEs, the local threshold functional selects the chain-tree order-three defect and gives a quantitative maximal-canard shift. | No DDE history interpolation, delay quadrature, center-manifold truncation, or network projection. |
 
+### E. Noninvasive delayed feedback and excitable pulses
+
+| Work | What it establishes | Boundary left for this project |
+|---|---|---|
+| [Pyragas (1992)](https://doi.org/10.1016/0375-9601(92)90745-8) | Introduces current-minus-one-period delayed feedback that vanishes on the distinguished periodic orbit. | Establishes the noninvasive control principle, not a complete-history canard-root response, a network theorem, or independent frequency--amplitude--threshold assignment. |
+| [Sieber & Krauskopf (2007)](https://doi.org/10.1142/S0218127407018646) | Embeds time-delayed difference feedback in control-based continuation and computes the canard family of the forced van der Pol system. | Uses noninvasive feedback to continue/stabilize periodic orbits; it does not prove that an orbit-annihilating channel shifts a selected RFDE canard root while leaving two periodic outputs fixed. |
+| [Jardón-Kojakhmetov & Kuehn (2022)](https://doi.org/10.1007/s10883-021-09553-2) | Designs blow-up-based feedback controllers that stabilize prescribed planar canard cycles. | No delayed finite network, complete-history Lin gap, or three-output inverse theorem. |
+| [Schneider, Schöll & Dahlem (2009)](https://doi.org/10.1063/1.3096411) | Studies onset and suppression of travelling pulses in an excitable FitzHugh--Nagumo reaction--diffusion model under nonlocal or time-delayed feedback. | Pulse-onset control is occupied, but not as a rigorous selected-history canard root with a quantified basin/event factorization and independent periodic outputs. |
+| [Schöll et al. (2009)](https://doi.org/10.1098/rsta.2008.0258) | Analyses delayed-feedback control of synchronization and oscillatory regimes in coupled FitzHugh--Nagumo neurosystems. | No canard-root transfer, full-history onset separator, or local surjectivity of frequency--amplitude--safety outputs. |
+
+The period-locked channel should therefore be positioned
+as a **Pyragas-type noninvasive carrier**, not as the invention of delayed
+difference feedback.  Its prospective new content is narrower and more
+mathematical: a fold-centered nonlinear difference that is exactly zero on a
+validated periodic orbit but has a nonzero selected canard-gap jet.  The
+linear difference does not supply that result; its first singular Melnikov
+candidate cancels by parity.  The quadratic carrier's exact model fit and
+fixed-scaled-support complete-history remainder are now proved for sufficiently
+small \(\delta\).  What remains a theorem target is the common operating value
+\(\varepsilon=1/5\) and the input-independent physical onset comparison.  A
+separate uniform Dobrushin zero-graph theorem now supplies canonical
+full-network root uniqueness in its anisotropic retained tube; it does not
+provide arbitrary-history or basin uniqueness.  At the exact center gain
+pair, a further full right-half replay proves that this same noninvasive
+carrier preserves local full-network periodic attraction on the explicit box
+\(|\eta|\le3\times10^{-6}\) for every finite
+\(\tau(Q)\le1/4\) topology.  This is a fixed-gain eta box, not a joint gain
+continuation or a pulse-basin theorem.  Thus the defensible novelty is
+the combination of orbit noninvasiveness, fold-linear invisibility, a nonzero
+preparation-indexed root jet, and its dimension-uniform lift to one genuine
+finite-network class, together with a rigorously nonempty stability-preserving
+actuator interval, not period-delayed feedback itself.
+
 ## Claims that must not appear
 
 The manuscript must not claim:
@@ -91,10 +131,12 @@ The manuscript must not claim:
 - the first delayed van der Pol/FitzHugh--Nagumo canard expansion;
 - the first delayed-network dimension reduction or oscillation threshold;
 - the first canard control, frequency--amplitude control, or collective phase--amplitude control;
+- the first noninvasive period-delayed feedback or delayed control of an
+  excitable pulse;
 - the first canard cascade or sequential recruitment phenomenon;
 - graphon convergence alone as evidence of canard-threshold convergence.
 
-## Precise current claim and frozen broader gap
+## Frozen base-paper claim and proved successor scope
 
 The current defensible claim is:
 
@@ -109,8 +151,7 @@ The preparation-indexed theorem, its exact scope, and its distinction from a
 physical outer maximal canard are stated in
 [canonical-long-delay-theorem.md](canonical-long-delay-theorem.md).
 
-For a distinct future finite-network project, an appropriate first-order
-target would be
+The successor finite-network project now proves the abstract transfer form
 
 \[
 d_N=d_0+D_{\mathcal R}d_0[\mathcal R_N]
@@ -121,7 +162,15 @@ d_N=d_0+D_{\mathcal R}d_0[\mathcal R_N]
 \frac{C_\varepsilon}{m_\varepsilon}\Delta_N.
 \]
 
-The residual should expose network weights, delay measures, and node heterogeneity in a norm compatible with delay translation. The decisive constant is a transverse RFDE Green/Fredholm inverse bound \(G_\perp(\varepsilon)\); an adjacency spectral gap alone is not a substitute. If a delay-moment term of order \(\varepsilon^{3/2}\) is claimed, the joint limit must make the transfer remainder smaller than that term.
+on declared one-critical-mode classes, and separately proves the exact
+quadratic canonical zero-graph lift with an \(N\)-uniform
+\(-\Theta_*\delta^3\eta/2\) coefficient.  The residuals expose network
+weights, delay measures, and node heterogeneity in norms compatible with
+delay translation.  The decisive inputs are transverse RFDE semigroup/graph
+bounds and complete-history simple-root estimates; an adjacency spectral gap
+alone is not accepted as evidence.  These results do not solve the
+multiple-center/vector-gap case, the fixed-\(\varepsilon=1/5\) selected root,
+or physical onset.
 
 ## Terminology correction
 

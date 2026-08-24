@@ -620,22 +620,29 @@ open.  This standalone certificate does not itself supply
 
 1. exclusion of the remaining compact Bloch arc, and hence full Floquet
    hyperbolicity;
-2. a directed Lipschitz bound for the response derivative, which requires
-   validated second sensitivity equations; or
-3. the independent controlled-separator/reset constants and final target
-   ball.
+2. a directed Lipschitz bound for the response derivative or validated
+   second sensitivities; or
+3. the independent controlled-separator/reset constants needed for a
+   physical three-output theorem.
 
 The first item is now supplied, with a fresh parameter-box local transfer,
 by
 [paper-iv-full-floquet-parameter-box.md](paper-iv-full-floquet-parameter-box.md).
 It is not retroactively inserted into this D1/D3/D4 record because the
 outer certificate has its own complex space, cutoff, phase cover, and
-evidence digest.  Items 2 and 3 remain open.
+evidence digest.  A second downstream theorem,
+[paper-iv-direct-response-target-ball.md](paper-iv-direct-response-target-ball.md),
+uses the common fixed midpoint matrix already present in D4 and its uniform
+derivative-family defect to prove a nonzero two-output target ball directly.
+Thus item 2 remains open but is not needed for that target ball. Item 3
+remains open.
 
 The JSON flag `derivative_lipschitz_bound_supplied` is therefore forced to
 false, and `issue_15_closed` remains false.  An interval response enclosure
 must not be divided by the box half-width and relabeled a Lipschitz bound;
-that inference is invalid without second-derivative control.
+that inference is invalid without second-derivative control. The downstream
+target-ball argument makes no such inference: it treats the radius about one
+fixed matrix as a uniform defect bound for the nonlinear remainder.
 
 ## 7. Reproduction and refusal
 

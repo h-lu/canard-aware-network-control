@@ -1,0 +1,152 @@
+{
+  "certificate": {
+    "biological_basin_beyond_channel_faces_validated": false,
+    "certified_full_network_instance_id": "rank-one-two-module-fhn-D3-E2",
+    "certified_output_ball_radius_lower": "1.62187273782174089504757331762715967009378618047942197E-14",
+    "decimal_composition": {
+      "parent_certified_input_radius_lower": "9.99999999999999999999999999999999999999999999998262014E-13",
+      "parent_contraction_margin_lower": "0.425933537770761969813175856306092612804836804666585679",
+      "parent_contraction_upper": "0.574066462229238030186824143693907387195163195333072207",
+      "parent_derivative_defect_upper": "0.0218593433534335719551743066301903207196921001434632885",
+      "parent_output_radius_lower": "1.62187273782174089504757331762715967009378618047942197E-14",
+      "parent_response_margin_lower": "0.0162187273782174089504757331762715967009378618048867663",
+      "parent_s0_lower": "0.0380780707316509809056500398064619174206299619483928191",
+      "precision_digits": 120,
+      "recomposed_contraction_margin_lower": "0.425933537770761969813175856306092612804836804668647521437575880194108097561508946521849519612028816620479954037150722500",
+      "recomposed_contraction_upper": "0.574066462229238030186824143693907387195163195331352478562424119805891902438491053478150480387971183379520045962849277500",
+      "recomposed_margin_lower": "0.0162187273782174089504757331762715967009378618049295306",
+      "recomposed_output_radius_lower": "1.62187273782174089504757331762715967009378618048585783788788414382877984823999044327361238093131720685853282E-14",
+      "selected_contraction_margin_lower": "0.425933537770761969813175856306092612804836804666585679",
+      "selected_contraction_upper": "0.574066462229238030186824143693907387195163195333072207",
+      "selected_margin_lower": "0.0162187273782174089504757331762715967009378618048867663",
+      "selected_output_radius_lower": "1.62187273782174089504757331762715967009378618047942197E-14"
+    },
+    "derivative_defect_block_transfer_validated": true,
+    "derivative_defect_frobenius_upper": "0.0218593433534335719551743066301903207196921001434632885",
+    "exact_block_diagonal_reset_column_validated": true,
+    "exact_input_ball_radius": "1e-12",
+    "fixed_inverse_contraction_margin_lower": "0.425933537770761969813175856306092612804836804666585679",
+    "fixed_inverse_contraction_upper": "0.574066462229238030186824143693907387195163195333072207",
+    "frequency_squared_range_operational_margin_target_ball_validated": true,
+    "general_topology_validated": false,
+    "input_center": [
+      "0.2",
+      "0.25",
+      "0"
+    ],
+    "input_order": [
+      "kappa_1",
+      "kappa_3",
+      "r"
+    ],
+    "issue_15_closed": false,
+    "map_definition": "Q_op(kappa_1,kappa_3,r)=(F,R_h,-r)",
+    "maximal_canard_onset_validated": false,
+    "midpoint_matrix_3d_binary64": [
+      [
+        0.03669982799550202,
+        0.13633946068777764,
+        0.0
+      ],
+      [
+        -3.645615771771411,
+        -6.136337974459385,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    ],
+    "midpoint_singular_value_block_transfer_validated": true,
+    "midpoint_singular_value_lower": "0.0380780707316509809056500398064619174206299619483928191",
+    "noise_hardware_robustness_validated": false,
+    "norm_id": "three-dimensional-euclidean-fixed-block-inverse",
+    "output_center": "exact (F(0.2,0.25),R_h(0.2,0.25),0)",
+    "output_order": [
+      "F",
+      "R_h",
+      "S_op=-r"
+    ],
+    "parent_certified_input_radius_lower": "9.99999999999999999999999999999999999999999999998262014E-13",
+    "periodic_attraction_validated": false,
+    "physical_finite_pulse_validated": false,
+    "reset_interval": [
+      "-1",
+      "1"
+    ],
+    "response_margin_lower": "0.0162187273782174089504757331762715967009378618048867663",
+    "same_baseline_staged_protocol_validated": true,
+    "separator_result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86",
+    "separator_source_manifest_validated": true,
+    "shared_gain_box_and_model_validated": true,
+    "shared_parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "source_synchronous_model_id": "dual-scaffold-synchronous-fhn-two-delay",
+    "target_ball_result_sha256": "dc17c3f845c3e317570c71af3acff670fb6955e2920ad2cea256507c1353dc05",
+    "target_source_manifest_validated": true,
+    "three_dimensional_input_ball_contained": true,
+    "unforced_onset_validated": false,
+    "unique_input_for_each_certified_target_validated": true,
+    "unsquared_amplitude_validated": false
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_same_model_three_output.py"
+    ],
+    "arithmetic": "exact block algebra and directed Decimal composition from public parent endpoints",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_same_model_three_output.py",
+    "generator": "experiments/fhn_same_model_three_output.py",
+    "generator_sha256": "cb7e06719bc29fbedb9de877e79f0126a105a3ef9eaeffe05fbe553082730879",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/fhn_same_model_three_output.py": "0931e94e6f705990cb35e124994b08f94edd4b1cb706e6e92a8f8ceb6c336ed4"
+    },
+    "python": "3.14.4"
+  },
+  "scope": {
+    "biological_basin_beyond_channel_faces": false,
+    "frequency_squared_range_operational_first_hit_margin_target_ball": true,
+    "general_topology": false,
+    "issue_15_closed": false,
+    "maximal_canard_onset": false,
+    "noise_hardware_robustness": false,
+    "periodic_attraction": false,
+    "physical_finite_pulse": false,
+    "same_baseline_staged_protocol": true,
+    "unforced_onset": false,
+    "unsquared_amplitude": false
+  },
+  "source_evidence": {
+    "certified_full_network_instance_id": "rank-one-two-module-fhn-D3-E2",
+    "separator_parent_provenance": {
+      "generator": "experiments/fhn_same_model_separator.py",
+      "generator_sha256": "f8c987ce9fa54c6668873d83c084ae01c41b2dbcf6e408354179c7ad9050a9b3",
+      "proof_source_manifest": {
+        "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+        "src/canard_control/fhn_periodic_candidate.py": "0fdad0e387ccfc98908466dff4c3f50fcc3741268d25e30a8d9fc00f93df62f0",
+        "src/canard_control/fhn_same_model_separator.py": "35e3139beedfb560772572507f8417416972c7fc6f4a2b9f80e1de4609f7ef8a"
+      },
+      "result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86"
+    },
+    "separator_result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86",
+    "shared_parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "source_synchronous_model_id": "dual-scaffold-synchronous-fhn-two-delay",
+    "staged_protocol": {
+      "baseline_stage": "compute (F,R_h) using only (kappa_1,kappa_3); reset r is absent from the periodic RFDE",
+      "decision_stage": "prepare constant synchronous history with reset r and use the collective recovery clamp until first hit",
+      "operational_margin": "S_op=-r because r_c=0 exactly"
+    },
+    "target_ball_result_sha256": "dc17c3f845c3e317570c71af3acff670fb6955e2920ad2cea256507c1353dc05",
+    "target_parent_provenance": {
+      "generator": "experiments/fhn_response_target_ball.py",
+      "generator_sha256": "dbc7b3f16dd5d8276a7e5d1f9ecddee15518a9feb8e1b99b4c2e8a73a7582064",
+      "proof_source_manifest": {
+        "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+        "src/canard_control/fhn_response_target_ball.py": "d76f9c0a94e9e6e77462153a2c25ff4a1c4ea5af35470655548d496f0fa0dfd1"
+      },
+      "result_sha256": "dc17c3f845c3e317570c71af3acff670fb6955e2920ad2cea256507c1353dc05"
+    }
+  }
+}

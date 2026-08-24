@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import replace
 from decimal import Decimal, localcontext
 import hashlib
+import inspect
 import json
 from pathlib import Path
 
@@ -31,12 +32,21 @@ from canard_control.fhn_bloch_outer_validation import (
 )
 from canard_control.fhn_periodic_candidate import solve_fhn_periodic_orbit
 from canard_control.fhn_periodic_infinite_validation import _build_base_sequences
+from canard_control.rfde_floquet_transfer import (
+    periodic_orbit_candidate_fingerprint,
+)
 
 
 _REPOSITORY = Path(__file__).resolve().parents[1]
 _RESULT = _REPOSITORY / "experiments/results/fhn_bloch_outer_validation.json"
 _EXPECTED_RESULT_SHA256 = (
     "c2f93b6cfe6a8e0df3b341476fbe45a83f6fecc0398dbb7340a5213a55357a31"
+)
+_LEGACY_RFDE_TRANSFER_SHA256 = (
+    "f058ade6187dd56e04e21f4d863775de02ce53d2e5007d368bb5315c8821b7f3"
+)
+_TRACKED_CANDIDATE_FINGERPRINT_FUNCTION_SHA256 = (
+    "76f4ab57d23099ac3f5e9be3748a8af7005fae58b9b6c2920f6dbd3d91dc28aa"
 )
 
 
@@ -190,7 +200,20 @@ def test_tracked_outer_arc_is_exactly_replayable_and_source_bound() -> None:
         "proof_source_sha256"
     ]
     for relative, digest in provenance["proof_source_manifest"].items():
-        assert hashlib.sha256((_REPOSITORY / relative).read_bytes()).hexdigest() == digest
+        if relative == "src/canard_control/rfde_floquet_transfer.py":
+            # This frozen computation imported only the candidate-fingerprint
+            # helper from the transfer module.  Its exact source is unchanged
+            # by the theorem-evidence refactor, so audit that semantic
+            # dependency instead of pretending the whole module is unchanged.
+            assert digest == _LEGACY_RFDE_TRANSFER_SHA256
+            source = inspect.getsource(periodic_orbit_candidate_fingerprint)
+            assert hashlib.sha256(source.encode("utf-8")).hexdigest() == (
+                _TRACKED_CANDIDATE_FINGERPRINT_FUNCTION_SHA256
+            )
+        else:
+            assert hashlib.sha256(
+                (_REPOSITORY / relative).read_bytes()
+            ).hexdigest() == digest
     blas = provenance["blas_thread_control"]
     assert blas["controlled"] and blas["after"] == 1
     assert len(blas["library_sha256"]) == 64

@@ -5,8 +5,10 @@ quantitative product-neighborhood inverse below are proved.** They apply to
 the controlled collective-clamp separator, not to the open unforced canard or
 biological first-hit threshold. A model-level FHN control theorem still
 requires a validated laboratory implementation of the calibration map,
-second-sensitivity bounds for a target radius, and, if attraction is claimed,
-a stability index placing every nontrivial multiplier inside the unit disk.
+a common same-model separator, and, if attraction is claimed, a stability
+index placing every nontrivial multiplier inside the unit disk. A direct
+two-output target radius is now proved without second sensitivities in
+[paper-iv-direct-response-target-ball.md](paper-iv-direct-response-target-ball.md).
 The microscopic parameter-box periodic response gate is proved in
 [paper-iv-periodic-parameter-box.md](paper-iv-periodic-parameter-box.md), and
 the full synchronous unit-circle exclusion is proved in
@@ -250,6 +252,43 @@ unique \(b\) for every two-output displacement of norm less than
 For a three-output target of norm less than (3.3), both requirements hold,
 and (2.2) gives the unique preimage. \(\square\)
 
+The Lipschitz hypothesis in Theorem 3.1 is one sufficient route, but it is
+not necessary when the whole derivative family is enclosed about one fixed
+matrix.
+
+> **Corollary 3.2 (fixed-derivative-box route).** Retain the domain
+> hypothesis (3.0). Suppose a fixed matrix \(B_0\) and directed constants
+> \(s_0,r_B\) satisfy
+>
+> \[
+>  \sigma_{\min}(B_0)\ge s_0>0,
+>  \qquad
+>  \sup_{b\in\overline B_{R_b}(b_0)}
+>      \|D_bP(b)-B_0\|_2\le r_B<s_0.
+> \tag{3.5}
+> \]
+>
+> Then the image of
+> \(B_{R_b}(b_0)\times(-R_s,R_s)\) under
+> \(\mathcal Q_{\rm cal}\) contains the Euclidean output ball of radius
+>
+> \[
+>  \rho_{\rm box}=\min\{(s_0-r_B)R_b,R_s\}
+> \tag{3.6}
+> \]
+>
+> about \(\mathcal Q_{\rm cal}(b_0,0)\), and every target in that ball has a
+> unique preimage in the product domain.
+
+**Proof.** Apply the fixed-derivative-box inverse theorem to \(P\), then set
+\(s\) equal to minus the third target displacement. \(\square\)
+
+For the validated FHN periodic block, (3.5) holds with
+\(R_b=10^{-12}\), and its two-output radius is at least
+\(1.6218727378\times10^{-14}\). This instantiates the periodic factor in
+(3.6). It does not instantiate a three-output FHN theorem until a quantified
+calibration chart for the same FHN network is supplied.
+
 Here \(R_s\) is measured in the declared, fixed normalization of the
 complete-history gap. The theorem certifies a target ball in calibrated
 command coordinates. A raw-preset target radius additionally requires
@@ -270,10 +309,10 @@ diagnostics, not directed interval certificates.
 |---|---|
 | Local raw-preset to signed-gap calibration | **Proved** under the jointly \(C^1\) separator/reset hypotheses |
 | Exact block-diagonal three-output response | **Proved** |
-| Quantitative product-neighborhood target ball | **Proved conditionally on supplied \(L,R_b,R_s\); not yet instantiated for FHN** |
+| Quantitative product-neighborhood target ball | **Proved by either the Lipschitz route or the fixed-derivative-box route; the FHN periodic factor is instantiated, while its same-model calibration width is open** |
 | Bounded raw-preset implementation of the calibrated command | **Conditional on fixed gap normalization, (1.7), and hardware-range containment** |
 | Calibrated coordinate for the declared clamped two-module protocol | **Proved implication of the fixed-\(\delta\) separator theorem** |
 | Parameter-box periodic FHN response lower bound | **Proved on the declared microscopic box; \(\beta_U\ge0.0162187\)** |
 | Synchronous orbital Floquet hyperbolicity | **Proved uniformly on the microscopic gain box** |
-| Floquet attraction and response-derivative Lipschitz bound | **Open; issue 15 remains open** |
+| Floquet attraction and response-derivative Lipschitz bound | **Open; neither is needed for the proved microscopic two-output target ball, and issue 15 remains open** |
 | Unforced pulse threshold or maximal-canard identification | **Not asserted** |

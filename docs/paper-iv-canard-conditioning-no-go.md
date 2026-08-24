@@ -358,8 +358,9 @@ declared synchronous two-delay FHN equation and fixes the exact
 This closes the abstract sensitivity calculus, not the model theorem.  A
 later MPFR-directed certificate now supplies the periodic bordered inverse,
 unique extrema, and a positive boxwise two-output response bound on a
-microscopic gain box.  The physical separator, full-network transverse
-Floquet multipliers, and second-sensitivity/target-radius bounds remain to be
-certified.  Consequently the delayed-network use of the conditioning result
-remains conditional on the Paper III bridge and on those remaining
-model-level hypotheses.
+microscopic gain box. A further fixed-matrix inverse certificate supplies a
+nonzero frequency--squared-range target ball without second sensitivities.
+The physical same-model separator, attraction, and full-network transverse
+Floquet stability remain to be certified. Consequently the delayed-network
+use of the conditioning result remains conditional on the Paper III bridge
+and on those remaining model-level hypotheses.

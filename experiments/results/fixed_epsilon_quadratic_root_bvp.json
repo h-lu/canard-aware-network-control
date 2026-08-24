@@ -1,0 +1,240 @@
+{
+  "audit": {
+    "bvp_contract": {
+      "a_pairing": "m_a=<Psi,partial_a F_BVP>, including every endpoint block",
+      "adjoint_normalization": "<Psi,e>=1 and Psi D_z F_BVP=0",
+      "augmented_operator": "(z_dot,d_dot)->D_z F_BVP z_dot-d_dot*e is an isomorphism",
+      "collocation_representation": "piecewise Chebyshev coefficients on a mesh closed under shifts by 4*sqrt(5), 5*sqrt(5), and T_*; weighted l1 tails",
+      "complete_history_jump": "J(theta)=x^-(theta)-x^+(theta), -h<=theta<=0",
+      "dynamic_adjoint": "-p'(t)=A_0(t)^T p(t)+sum_j 1_{t+tau_j in I} A_j(t+tau_j)^T p(t+tau_j), with entry, exit, phase, seam, and jump multipliers",
+      "entry_trace_equation": "B_-(x^-_{-L_-},xi_-;a,eta)=0 from one fixed enlarged-horizon attracting selection",
+      "eta_pairing": "m_eta=<Psi,partial_eta F_BVP>, including every endpoint block",
+      "exit_trace_equation": "B_+(x^+_{L_+},xi_+;a,eta)=0 from one fixed backward-extendible repelling selection",
+      "interval_newton_contract": "Y=||A F(x_bar)||, Z1=||I-A D F(x_bar)||, Z2(r)>=sup||A(D F(x)-D F(x_bar))||/r, and Y+(Z1-1)r+Z2(r)r^2<0",
+      "jump_complement": "solve F_BVP(z,a,eta)=d*e with e in the full jump slot",
+      "left_flow_equation": "x_-'(t)-F(x^-_t;a,eta)=0, -L_-<t<0",
+      "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+      "phase_equation": "c(x^-_0)=V^-(0)-1=0",
+      "physical_epsilon": "1/5",
+      "physical_horizon": "h=max{4*sqrt(5),5*sqrt(5),T_*}=T_*",
+      "required_validation_gates": [
+        "construct parameter-coherent entry and exit trace bundles on the enlarged horizon",
+        "validate a zero of the full nonlinear BVP",
+        "validate the phase-fixed augmented inverse with a tail bound",
+        "validate the advanced adjoint and all boundary multipliers",
+        "exclude zero from directed enclosures of m_a and m_eta",
+        "prove the zero-fiber implication and complete-history injectivity",
+        "bound second parameter derivatives on a nonempty eta neighborhood",
+        "compare the selected root with an input-independent onset event"
+      ],
+      "right_flow_equation": "x_+'(t)-F(x^+_t;a,eta)=0, 0<t<L_+",
+      "root_response": "rho_*=-m_eta/m_a",
+      "scaled_horizon": "Theta_h=max{4,5,T_*/sqrt(5)}=T_*/sqrt(5)",
+      "state_space": "C([-h,0],R^2) on the RFDE solution manifold",
+      "strong_left_domain": "W^{2,p}([-L_- - h,0],R^2) plus entry coordinates",
+      "strong_right_domain": "W^{2,p}([-h,L_+],R^2) plus exit coordinates"
+    },
+    "certificate": {
+      "arithmetic": "binary64 SciPy DOP853 shooting diagnostic; no intervals",
+      "asymptotic_leading_rho_candidate": "-0.33080775596361883",
+      "central_a_candidate": "1.0327891471932524",
+      "central_nu_candidate": "0.16394573596626213",
+      "central_rho_candidate": "-0.28095144610373257",
+      "central_section_half_width": "3",
+      "complete_history_jump_solved": false,
+      "delta": "0.44721359549995793",
+      "dynamic_adjoint_validated": false,
+      "endpoint_zero_fiber_implication_validated": false,
+      "epsilon": "0.2",
+      "exact_full_history_bvp_contract_specified": true,
+      "finite_section_shooting_diagnostic_computed": true,
+      "fixed_epsilon_nonzero_rho_validated": false,
+      "fixed_epsilon_selected_root_validated": false,
+      "interval_newton_or_radii_polynomial_validated": false,
+      "maximum_forward_finite_difference_disagreement": "1.2842904852927717e-06",
+      "maximum_gap_residual": "3.7804253505413499e-08",
+      "minimum_bracket_sign_margin": "0.018120387752297462",
+      "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+      "period_input": "16.540387798180941",
+      "phase_fixed_augmented_inverse_validated": false,
+      "physical_onset_identification_validated": false,
+      "prescribed_older_history_is_selected_attracting_trace": false,
+      "scaled_period_delay": "7.3970862981881309",
+      "section_a_spread": "0.025079360303726927",
+      "section_rho_max": "-0.26376233577351754",
+      "section_rho_min": "-0.34965378980780482",
+      "section_rho_spread": "0.085891454034287273",
+      "selected_repelling_trace_constructed": false
+    },
+    "exact_algebra": {
+      "a_residual_column": [
+        [
+          "0"
+        ],
+        [
+          "1/5"
+        ]
+      ],
+      "chart_fast_field": "-23*sqrt(5)*X**3/300 + X**2*eta/5 - X**2 - sqrt(5)*X/25 + sqrt(5)*X4**3/200 + sqrt(5)*X4/50 + sqrt(5)*X5**3/200 + sqrt(5)*X5/50 - XT**2*eta/5 + Y",
+      "chart_slow_field": "-X + sqrt(5)*nu/5",
+      "current_linearization": [
+        [
+          "-23*sqrt(5)*X**2/100 - 2*X - sqrt(5)/25",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "delay_4_linearization": [
+        [
+          "sqrt(5)*(3*X4**2 + 4)/200",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "delay_5_linearization": [
+        [
+          "sqrt(5)*(3*X5**2 + 4)/200",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "delta": "sqrt(5)/5",
+      "epsilon": "1/5",
+      "eta_residual_column": [
+        [
+          "-(V - 1)**2/5 + (VT - 1)**2/5"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "eta_vector_field_column": [
+        [
+          "X**2/5 - XT**2/5"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "normalized_energy_gap": "X**2/2 - Y/2 - 1/4",
+      "normalized_energy_gradient": [
+        [
+          "X"
+        ],
+        [
+          "-1/2"
+        ]
+      ],
+      "nu_vector_field_column": [
+        [
+          "0"
+        ],
+        [
+          "sqrt(5)/5"
+        ]
+      ],
+      "period_delay_linearization_at_eta_zero": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "physical_delay_0": "4*sqrt(5)",
+      "physical_delay_1": "5*sqrt(5)",
+      "root_response_from_gap": "-g_eta/(5*g_nu)",
+      "scaled_delay_0": "4",
+      "scaled_delay_1": "5",
+      "scaled_period_delay": "sqrt(5)*T_*/5"
+    },
+    "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+    "schema_version": 1,
+    "scope": {
+      "complete_history_bvp_solution": false,
+      "exact_validation_contract": true,
+      "fixed_epsilon_selected_root": false,
+      "interval_inverse": false,
+      "nonzero_rho_star": false,
+      "physical_onset": false,
+      "shooting_diagnostic": true,
+      "validated_dynamic_adjoint": false
+    },
+    "shooting_rows": [
+      {
+        "a_root": 1.0480850866942828,
+        "bracket_sign_margin": 0.018120387752297462,
+        "eta_difference_step": 0.001,
+        "finite_difference_rho": -0.3496550740982901,
+        "forward_finite_difference_disagreement": 1.2842904852927717e-06,
+        "forward_rho": -0.3496537898078048,
+        "function_evaluations": 51558,
+        "gap_eta_derivative": -3.4537767910590635,
+        "gap_nu_derivative": -1.9755408874346883,
+        "gap_residual": -1.942890293094024e-16,
+        "nu_root": 0.24042543347141446,
+        "root_bracket": [
+          0.125,
+          0.25
+        ],
+        "scalar_gap_inverse_norm": 0.506190485026375,
+        "section_half_width": 2.5
+      },
+      {
+        "a_root": 1.0327891471932524,
+        "bracket_sign_margin": 0.32113546689580924,
+        "eta_difference_step": 0.001,
+        "finite_difference_rho": -0.28095175033100717,
+        "forward_finite_difference_disagreement": 3.0422727459455956e-07,
+        "forward_rho": -0.28095144610373257,
+        "function_evaluations": 79074,
+        "gap_eta_derivative": -10.071755247276416,
+        "gap_nu_derivative": -7.169747931148027,
+        "gap_residual": 4.1112924176189836e-10,
+        "nu_root": 0.16394573596626213,
+        "root_bracket": [
+          0.125,
+          0.25
+        ],
+        "scalar_gap_inverse_norm": 0.1394749173336529,
+        "section_half_width": 3.0
+      },
+      {
+        "a_root": 1.0230057263905559,
+        "bracket_sign_margin": 0.22795529624679922,
+        "eta_difference_step": 0.001,
+        "finite_difference_rho": -0.2637625948005484,
+        "forward_finite_difference_disagreement": 2.59027030879988e-07,
+        "forward_rho": -0.26376233577351754,
+        "function_evaluations": 80828,
+        "gap_eta_derivative": -34.16166895251874,
+        "gap_nu_derivative": -25.90337157299974,
+        "gap_residual": 3.78042535054135e-08,
+        "nu_root": 0.1150286319527796,
+        "root_bracket": [
+          0.0,
+          0.125
+        ],
+        "scalar_gap_inverse_norm": 0.038605013142086315,
+        "section_half_width": 3.5
+      }
+    ]
+  },
+  "manifest": {
+    "arithmetic": "exact SymPy BVP contract plus binary64 SciPy shooting; no interval proof",
+    "generator": "experiments/fixed_epsilon_quadratic_root_bvp.py",
+    "proof_source": "src/canard_control/fixed_epsilon_quadratic_root_bvp.py",
+    "proof_source_sha256": "03423f924baa23afc8a1c5093392f67836af7864cc37e1b47aa7f7c30c1f36c4"
+  }
+}

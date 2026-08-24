@@ -2,12 +2,16 @@ from __future__ import annotations
 
 from dataclasses import replace
 from functools import cache
+import hashlib
 import json
 from pathlib import Path
 
+import numpy as np
 import pytest
 
-from canard_control.fhn_periodic_candidate import solve_fhn_periodic_orbit
+from canard_control.fhn_unsquared_amplitude_transfer import (
+    orbit_from_binary64_candidate_payload,
+)
 from canard_control.rfde_floquet_transfer import (
     DirectedBlochCell,
     PhaseBorderedOrbitEvidence,
@@ -17,33 +21,61 @@ from canard_control.rfde_floquet_transfer import (
 )
 
 
+_ROOT = Path(__file__).resolve().parents[1]
+_CANDIDATE_PATH = (
+    _ROOT / "experiments/results/fhn_periodic_box_candidate.json"
+)
+_VALIDATION_PATH = (
+    _ROOT / "experiments/results/fhn_periodic_parameter_box.json"
+)
+_REPLAY_PATH = (
+    _ROOT / "experiments/results/fhn_unsquared_amplitude_transfer.json"
+)
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def _tracked_center_evidence(orbit) -> PhaseBorderedOrbitEvidence:
-    path = (
-        Path(__file__).resolve().parents[1]
-        / "experiments/results/fhn_periodic_infinite_validation.json"
-    )
-    validation = json.loads(path.read_text(encoding="utf-8"))["validation"]
+    validation = json.loads(
+        _VALIDATION_PATH.read_text(encoding="utf-8")
+    )["validation"]["continuation"]
+    replay = json.loads(_REPLAY_PATH.read_text(encoding="utf-8"))[
+        "source_evidence"
+    ]
+    if (
+        replay["candidate_result_sha256"] != _sha256(_CANDIDATE_PATH)
+        or replay["parameter_box_result_sha256"]
+        != _sha256(_VALIDATION_PATH)
+        or replay["parameter_validation_exact_replay"] is not True
+    ):
+        raise ValueError("tracked candidate-validation replay is inconsistent")
     return PhaseBorderedOrbitEvidence(
-        correction_radius=validation["correction"]["chosen_radius"],
-        bordered_inverse_norm_upper=validation["correction"][
-            "bordered_inverse_norm_upper"
+        correction_radius=validation["chosen_radius"],
+        bordered_inverse_norm_upper=validation[
+            "uniform_bordered_inverse_norm_upper"
         ],
         periodic_rfde_orbit_validated=validation[
-            "periodic_rfde_orbit_validated"
+            "parameter_box_orbit_validated"
         ],
         bordered_rfde_inverse_validated=validation[
-            "bordered_rfde_inverse_validated"
+            "parameter_box_bordered_inverse_validated"
         ],
         # This is the exact source formula audited in the center proof, not
         # a flag inferred from the floating period column.
         moving_delay_period_column_validated=True,
         candidate_fingerprint=periodic_orbit_candidate_fingerprint(orbit),
+        candidate_result_sha256=_sha256(_CANDIDATE_PATH),
+        validation_result_sha256=_sha256(_VALIDATION_PATH),
+        candidate_validation_replay_sha256=_sha256(_REPLAY_PATH),
     )
 
 
 @cache
 def _center_orbit():
-    return solve_fhn_periodic_orbit(node_count=97)
+    payload = json.loads(_CANDIDATE_PATH.read_text(encoding="utf-8"))
+    return orbit_from_binary64_candidate_payload(payload)
 
 
 @cache
@@ -79,6 +111,27 @@ def test_center_bordered_inverse_proves_simple_unit_multiplier() -> None:
     assert not certificate.full_floquet_hyperbolicity_validated
 
 
+def test_center_proof_carrier_is_the_exact_tracked_binary_payload() -> None:
+    """The theorem entrance must not rerun a BLAS-dependent Newton solve."""
+
+    orbit = _center_orbit()
+    evidence = _tracked_center_evidence(orbit)
+
+    assert len(orbit.state) == 129
+    assert evidence.candidate_result_sha256 == (
+        "7437514175586665b1bf10831793427e42d8a9cbd736536444be4a98064a3c28"
+    )
+    assert evidence.validation_result_sha256 == (
+        "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0"
+    )
+    assert evidence.candidate_validation_replay_sha256 == (
+        "28e74d2316f7e9324f03874c3294d27d83708c9dbb3f4eefaf04925f55bbba60"
+    )
+    assert evidence.candidate_fingerprint == (
+        "2b56b5dff18c5aacd1450252824f5601ba3826f6de5d82eb2380853d3c518169"
+    )
+
+
 @pytest.mark.parametrize(
     ("field", "message"),
     (
@@ -100,19 +153,59 @@ def test_transfer_refuses_each_missing_theorem_seam(
     field: str,
     message: str,
 ) -> None:
-    orbit = solve_fhn_periodic_orbit(node_count=33)
+    orbit = _center_orbit()
     evidence = replace(_tracked_center_evidence(orbit), **{field: False})
     with pytest.raises(ValueError, match=message):
         validate_fhn_center_floquet_transfer(orbit, evidence, precision=80)
 
 
 def test_transfer_refuses_evidence_from_a_different_candidate() -> None:
-    orbit = solve_fhn_periodic_orbit(node_count=33)
-    evidence = replace(
-        _tracked_center_evidence(orbit),
-        candidate_fingerprint="0" * 64,
-    )
+    tracked = _center_orbit()
+    changed_state = np.array(tracked.state, copy=True)
+    changed_state[0, 0] = np.nextafter(changed_state[0, 0], np.inf)
+    orbit = replace(tracked, state=changed_state)
+    evidence = _tracked_center_evidence(tracked)
     with pytest.raises(ValueError, match="different candidate"):
+        validate_fhn_center_floquet_transfer(orbit, evidence, precision=80)
+
+
+def test_pair_consistency_cannot_promote_an_untracked_candidate() -> None:
+    tracked = _center_orbit()
+    changed_state = np.array(tracked.state, copy=True)
+    changed_state[0, 0] = np.nextafter(changed_state[0, 0], np.inf)
+    orbit = replace(tracked, state=changed_state)
+    evidence = _tracked_center_evidence(orbit)
+
+    with pytest.raises(ValueError, match="tracked center polynomial"):
+        validate_fhn_center_floquet_transfer(orbit, evidence, precision=80)
+
+
+@pytest.mark.parametrize(
+    ("field", "message"),
+    (
+        (
+            "candidate_result_sha256",
+            "candidate is not the tracked theorem artifact",
+        ),
+        (
+            "validation_result_sha256",
+            "validation is not the tracked theorem artifact",
+        ),
+        (
+            "candidate_validation_replay_sha256",
+            "candidate-validation replay is not tracked",
+        ),
+    ),
+)
+def test_transfer_refuses_an_untracked_theorem_artifact(
+    field: str,
+    message: str,
+) -> None:
+    orbit = _center_orbit()
+    evidence = replace(
+        _tracked_center_evidence(orbit), **{field: "0" * 64}
+    )
+    with pytest.raises(ValueError, match=message):
         validate_fhn_center_floquet_transfer(orbit, evidence, precision=80)
 
 

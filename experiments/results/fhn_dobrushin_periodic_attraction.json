@@ -1,0 +1,77 @@
+{
+  "certificate": {
+    "arbitrary_admitted_balanced_topology_covered": true,
+    "arbitrary_finite_network_size_covered": true,
+    "arbitrary_positive_dobrushin_gap_covered": false,
+    "balanced_delay_operator_bound_proved": true,
+    "biological_pulse_capture_validated": false,
+    "bounds": {
+      "current_coefficient_upper": "0.8295652173920941398865781421878852635779889294313747929",
+      "delayed_total_gain_upper": "0.9128836864233778194038236770051088529207536404034029522",
+      "dobrushin_gap_lower": "0.75",
+      "exponential_rate_candidate": "0.007",
+      "local_decay_lower": "0.9999999999999999999999999999999999999999999999979473167",
+      "maximum_active_delay_upper": "11.18033988749894848204586834365638117720309179811817116",
+      "precision_bits": 160,
+      "rate_exponential_upper": "1.081406359998910991036617629186513661288429743295050309",
+      "rate_residual_lower": "0.005801775562507711930814267303951807974802876856215296382",
+      "recovery_local_decay_lower": "0.9999999999999999999999999999999999999999999999986315445",
+      "recovery_weight": "2.5",
+      "voltage_local_decay_lower": "1.020434782607905860113421857812114736422011070566161987",
+      "zero_rate_margin_lower": "0.08711631357662218059617632299489114707924635959377460826"
+    },
+    "dobrushin_max_min_dini_bound_proved": true,
+    "enlarged_inert_horizon_adds_only_zero_multipliers_at_eta_zero": true,
+    "exact_non_rank_one_witness_validated": true,
+    "full_network_linear_orbital_attraction_validated": true,
+    "full_network_nonlinear_local_orbital_attraction_validated": true,
+    "global_synchronization_validated": false,
+    "halanay_condition": "min{3*gamma-g_upper-1/c, 2*gamma-c*epsilon}>beta",
+    "model_id": "balanced-dobrushin-dual-scaffold-fhn-quadratic-period-lock-periodic-attraction",
+    "nonzero_eta_full_network_attraction_validated": false,
+    "phase_space_norm": "max{osc(x), (5/2)*osc(y)} on ker(pi^T) x ker(pi^T), with the corresponding history supremum",
+    "quadratic_carrier_pure_transverse_derivative_zero": true,
+    "right_half_result_sha256": "6795e6f19f31ffb6bfcf9abd24efb1c5dde4dccf54d896d01298b3e8f9a0d1c3",
+    "synchronous_nonlinear_orbital_attraction_source_validated": true,
+    "synchronous_nontranslation_unstable_index_zero_source_validated": true,
+    "topology_class": "every finite nonnegative row-stochastic Q with positive stationary pi, tau(Q)<=1/4, and nonnegative balanced half-mass B0,B1",
+    "transverse_result_sha256": "ec4b3204695bf40d4309681b0f57d93e3e1e524ca3680cdce316aaee8ad015fb",
+    "transverse_space_invariant": true,
+    "uniform_nonlinear_basin_over_network_class": false,
+    "uniform_transverse_exponential_rate_validated": true,
+    "variational_recovery_equation": "y'=epsilon*x+2(Q-I)y",
+    "variational_voltage_equation": "x'=(g(t)I+3(Q-I))x-y+r0(t)B0*x_tau0+r1(t)B1*x_tau1"
+  },
+  "provenance": {
+    "arithmetic": "MPFR directed recomposition of the weighted Dobrushin-Halanay margin and rate residual; exact rational non-rank-one witness",
+    "default_command": "PYTHONPATH=src python3 experiments/fhn_dobrushin_periodic_attraction.py",
+    "generator": "experiments/fhn_dobrushin_periodic_attraction.py",
+    "generator_sha256": "48c718ff0a6371573fa80464ff83fc8cfd2fb693761599eb3fbb1cfa3848742e",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_dobrushin_periodic_attraction.py": "696e4d7267450405fc4bda417fa39ad923b27f579be17bbc6d262d3c4a613358",
+      "src/canard_control/fhn_periodic_transverse_halanay.py": "64f7572cd02fa27ec44ed816eee6ee80745902f4859e1c4843a37ccadc18417a",
+      "src/canard_control/fhn_synchronous_floquet_right_half_cover.py": "84114e04d65b153afcd4a888985eb619437412dee6100dba221ae34095be49c6",
+      "src/canard_control/quadratic_period_lock_dobrushin_lift.py": "ee6486352a7762c9cb9576a627722ce3482d66c2531703ce92cfbf35c484d564"
+    },
+    "python": "3.14.4"
+  },
+  "scope": {
+    "arbitrary_finite_admitted_balanced_topology": true,
+    "arbitrary_positive_dobrushin_gap": false,
+    "biological_pulse_capture": false,
+    "eta_zero_quadratic_period_locked_model": true,
+    "full_network_local_nonlinear_orbital_attraction": true,
+    "global_synchronization": false,
+    "nonzero_eta_full_network_attraction": false,
+    "uniform_dobrushin_gap_at_least_three_quarters": true,
+    "uniform_nonlinear_basin": false,
+    "uniform_transverse_rate": true
+  },
+  "source_evidence": {
+    "periodic_transverse_result_sha256": "ec4b3204695bf40d4309681b0f57d93e3e1e524ca3680cdce316aaee8ad015fb",
+    "synchronous_right_half_result_sha256": "6795e6f19f31ffb6bfcf9abd24efb1c5dde4dccf54d896d01298b3e8f9a0d1c3"
+  }
+}

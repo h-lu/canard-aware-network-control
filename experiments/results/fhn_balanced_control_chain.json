@@ -1,0 +1,187 @@
+{
+  "certificate": {
+    "action_potential_validated": false,
+    "amplitude_safety_result_sha256": "b9d00edd48c4ae5e61291dfd08fa13d6bb6775acf7f2683b69d3d2838130da36",
+    "arbitrary_finite_node_count_formula_validated": true,
+    "assumptions_id": "N>=1;P>=0,P1=1;pi>0,pi^T1=1,pi^TP=pi^T;B_l>=0,B_l1=(1/2)1,pi^TB_l=(1/2)pi^T,l=0,1;D=3,E=2,epsilon=1/5,a=3/5,tau=(4sqrt5,5sqrt5)",
+    "asynchronous_frequency_amplitude_outputs_validated": false,
+    "bandwidth_validated": false,
+    "biological_basin_validated": false,
+    "bounded_initial_data_cylinder_required": true,
+    "bounded_nodewise_recovery_cancellation_on_decision_tube_validated": true,
+    "bounded_preparation_result_sha256": "8681f800c42420207a94f505b3c8831c7409f3619cf640cbd24de580cd87f548",
+    "complete_history_preparation_time_upper": "14.4969646778543483311608010803270678611301803436710386",
+    "decision_recovery_input_authority_upper": "0.42000000000000000000000000000000000000000000000108108",
+    "decision_voltage_tube_abs_bound": "1.5",
+    "delay_0_infinity_norm": "1/2",
+    "delay_1_infinity_norm": "1/2",
+    "delay_norm_sum": "1",
+    "delay_row_masses": [
+      "1/2",
+      "1/2"
+    ],
+    "end_to_end_staged_control_chain_validated": true,
+    "energy_validated": false,
+    "epsilon": "1/5",
+    "exact_balanced_operator_identities_validated": true,
+    "exact_model_additive_preparation_validated": true,
+    "finite_time_exact_complete_history_preparation_validated": true,
+    "full_network_periodic_attraction_validated": false,
+    "general_sign_cone_result_sha256": "1dd606d7f4aec1ea857f1c53d4e60106fc2737089b67e989aa7b192fe3ca43fb",
+    "general_topology_canard_root_equivalence_validated": false,
+    "general_topology_synchronous_branch_three_output_balls_validated": true,
+    "hardware_validated": false,
+    "impulse_used": false,
+    "input_ball_radius": "1e-12",
+    "kappa_1_interval": [
+      "0.199999999998999999999999999999999999999999999999456677",
+      "0.2000000000010000000000000000000000000000000000006117458"
+    ],
+    "kappa_3_interval": [
+      "0.2499999999989999999999999999999999999999999999994224656",
+      "0.2500000000010000000000000000000000000000000000009196483"
+    ],
+    "map_definition": "Q_A(kappa_1,kappa_3,r)=(F_sync,A_sync,-r)",
+    "maximal_canard_onset_validated": false,
+    "maximum_delay_hold_time_upper": "11.1803398874989484820458683436563811772030917980743806",
+    "measurement_noise_validated": false,
+    "model_id": "balanced-general-topology-fhn-bounded-staged-control-chain",
+    "model_uncertainty_validated": false,
+    "negative_controlled_onset_validated": true,
+    "negative_detector_deadline_after_release_upper": "10.16895439798665070214560551365587630590745188143446848",
+    "negative_detector_deadline_from_start_upper": "24.66591907584099903330640659398294416703763222510550708",
+    "negative_detector_face": "-1",
+    "negative_excursion_deadline_after_release_upper": "38.40682402081321193929299824780490405780298576531744953",
+    "negative_excursion_deadline_from_start_upper": "52.90378869866756027045379932813197191893316610898848813",
+    "negative_excursion_face": "-1.2",
+    "negative_finite_controlled_excursion_validated": true,
+    "output_ball_radius_lower": "2.75138166016477172021072951467987182906462947064987861E-15",
+    "output_order": [
+      "F_sync",
+      "A_sync=V_max-V_min",
+      "S_op=-r"
+    ],
+    "positive_controlled_onset_validated": true,
+    "positive_detector_deadline_after_release_upper": "5.902260244961031137243652536848575659808442962835976857",
+    "positive_detector_deadline_from_start_upper": "20.399224922815379468404453617175643520938623306507015457",
+    "positive_detector_face": "1",
+    "positive_excursion_deadline_after_release_upper": "53.64793041518531822556111535054706952219400607031937024",
+    "positive_excursion_deadline_from_start_upper": "68.14489509303966655672191643087413738332418641399040884",
+    "positive_excursion_face": "1.5",
+    "positive_finite_controlled_excursion_validated": true,
+    "pulse_initial_mean_margin_over_sign_cone_lower": "0.439999999999",
+    "pulse_input_center": [
+      "0.2",
+      "0.25",
+      "0.5"
+    ],
+    "pulse_reset_projection": [
+      "0.499999999999",
+      "0.500000000001"
+    ],
+    "quiet_initial_mean_margin_over_sign_cone_lower": "0.439999999999",
+    "quiet_input_center": [
+      "0.2",
+      "0.25",
+      "-0.5"
+    ],
+    "quiet_reset_projection": [
+      "-0.500000000001",
+      "-0.499999999999"
+    ],
+    "recovery_current_sup_bound": "2",
+    "recovery_input_authority_upper": "9.93421356237309504880168872420969807856967187539843821",
+    "recovery_reaching_gain": "1",
+    "recovery_scaffold": "2",
+    "reset_abs_bound": "0.75",
+    "rfde_phase_space_compactness_validated": false,
+    "scaffold_infinity_norm": "1",
+    "scaffold_minus_identity_infinity_norm_upper": "2",
+    "scaled_delays": [
+      "4",
+      "5"
+    ],
+    "separator_result_sha256": "9e859f31c177638a70b3ca451fe743227308343792d77eeca286fca26afc8a86",
+    "settling_time_upper": "3.31662479035539984911493273667068668392708854559392111",
+    "sign_cone_initial_mean_lower": "0.06",
+    "slew_rate_validated": false,
+    "state_overwrite_used": false,
+    "synchronous_branch_frequency_amplitude_outputs_validated": true,
+    "synchronous_subspace_invariance_validated": true,
+    "topology_and_node_count_independent_authority_validated": true,
+    "topology_independent_synchronous_scalar_restriction_validated": true,
+    "transverse_attraction_validated": false,
+    "unfolding": "3/5",
+    "unforced_onset_validated": false,
+    "uniform_authority_on_unbounded_initial_data_validated": false,
+    "unique_preimage_for_each_target_validated": true,
+    "voltage_history_sup_bound": "2",
+    "voltage_input_authority_upper": "23.1849790618559665912241330350020100086302109395593948",
+    "voltage_preparation_feedback_closed_at_release": true,
+    "voltage_reaching_gain": "1",
+    "voltage_scaffold": "3"
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_balanced_control_chain.py"
+    ],
+    "arithmetic": "exact SymPy balance/cancellation/restriction identities, directed parent endpoints, and ceiling-rounded Decimal authority/deadline composition",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_balanced_control_chain.py",
+    "generator": "experiments/fhn_balanced_control_chain.py",
+    "generator_sha256": "681b61df939bc97dbe07c40aa8932832199b91128008352fa5b62513c5987f4a",
+    "parent_generator_manifest": {
+      "amplitude_safety": "b8f8b999bcf7fa9d7a6f8e50aad4f639d5f0923ee37c65b025e5aa3e65771634",
+      "bounded_preparation": "1c41a26d881480e09d7e7e8120f1706a3f7ee4de4b12eb1e65eec3db60192665",
+      "general_sign_cone": "db2ac95bb6a74f09d937d433aaed515524eb4c60089febbe0b73ff656c731049"
+    },
+    "parent_result_manifest": {
+      "experiments/results/fhn_bounded_additive_preparation.json": "8681f800c42420207a94f505b3c8831c7409f3619cf640cbd24de580cd87f548",
+      "experiments/results/fhn_general_network_sign_cone.json": "1dd606d7f4aec1ea857f1c53d4e60106fc2737089b67e989aa7b192fe3ca43fb",
+      "experiments/results/fhn_same_model_amplitude_safety.json": "b9d00edd48c4ae5e61291dfd08fa13d6bb6775acf7f2683b69d3d2838130da36"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fhn_balanced_control_chain.py",
+    "proof_source_manifest": {
+      "src/canard_control/fhn_balanced_control_chain.py": "cdcf5b375429b0f26ee6ec08e1cd1ea84a8286f7e4296b3f3955006a890230d8",
+      "src/canard_control/fhn_bounded_additive_preparation.py": "f7d4e7a3effdde7ac160255aed19bf2291208df79753a8eb7d6f4f21782c3dd1",
+      "src/canard_control/fhn_general_network_sign_cone.py": "5846148f286c5c289727ede6de52085f3b65148ce496100b849c4f731771aa93",
+      "src/canard_control/fhn_same_model_amplitude_safety.py": "12dd47c223d4025dd0b59b88f0662301a339ed7c9394fa812069c9feeca762df"
+    },
+    "proof_source_sha256": "cdcf5b375429b0f26ee6ec08e1cd1ea84a8286f7e4296b3f3955006a890230d8",
+    "python": "3.14.4"
+  },
+  "scope": {
+    "action_potential": false,
+    "asynchronous_frequency_amplitude_outputs": false,
+    "balanced_general_topology_bounded_additive_preparation_on_declared_bounded_initial_data_cylinder": true,
+    "balanced_general_topology_controlled_finite_excursion": true,
+    "balanced_general_topology_controlled_positive_and_negative_onset": true,
+    "bandwidth": false,
+    "biological_basin": false,
+    "bounded_mathematical_additive_actuator_on_declared_preparation_cylinder": true,
+    "bounded_nodewise_recovery_cancellation_on_declared_decision_tube": true,
+    "end_to_end_staged_control_chain": true,
+    "energy": false,
+    "exact_complete_history_phi_r_after_finite_preparation": true,
+    "full_network_periodic_attraction": false,
+    "general_topology_canard_root_equivalence": false,
+    "general_topology_synchronous_branch_frequency_amplitude_operational_safety_target_balls": true,
+    "hardware": false,
+    "maximal_canard_onset": false,
+    "measurement_noise": false,
+    "model_uncertainty": false,
+    "rfde_phase_space_compactness": false,
+    "slew_rate": false,
+    "topology_independent_synchronous_branch_frequency_amplitude_outputs": true,
+    "transverse_attraction": false,
+    "unforced_onset": false,
+    "uniform_authority_on_unbounded_initial_data": false,
+    "unique_preimage_in_each_translated_input_ball": true
+  },
+  "source_evidence": {
+    "amplitude_safety_result_sha256": "b9d00edd48c4ae5e61291dfd08fa13d6bb6775acf7f2683b69d3d2838130da36",
+    "bounded_preparation_result_sha256": "8681f800c42420207a94f505b3c8831c7409f3619cf640cbd24de580cd87f548",
+    "general_sign_cone_result_sha256": "1dd606d7f4aec1ea857f1c53d4e60106fc2737089b67e989aa7b192fe3ca43fb"
+  }
+}

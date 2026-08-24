@@ -1,0 +1,166 @@
+{
+  "certificate": {
+    "actuator_has_zero_transverse_projection_exact": true,
+    "arbitrary_two_module_sizes_linear_variational_transverse_decay_during_clamped_decision_validated": true,
+    "certified_full_network_instance_id": "rank-one-two-module-fhn-D3-E2",
+    "channel_faces": [
+      "-1",
+      "1"
+    ],
+    "collective_recovery_clamp_identity_exact": true,
+    "constant_history_delayed_actuation_vanishes_exactly": true,
+    "constant_history_scaffolds_vanish_exactly": true,
+    "control_order": [
+      "kappa_1",
+      "kappa_3"
+    ],
+    "controlled_clamped_complete_history_stable_manifold_validated": true,
+    "controlled_collective_recovery_leaf_invariant_exact": true,
+    "controlled_operational_onset_validated": true,
+    "decimal_precision_digits": 110,
+    "decimal_recomposed_halanay_margin_lower": "0.3599999999973999999999999999999999999999999999985599920",
+    "decimal_recomposed_halanay_rate_residual_lower": "0.07495108269966745042958921253309012629192168572398895923042677204239731984479953737355229781886448159929062406",
+    "decimal_recomposed_spectral_margin_lower": "0.6199999999983999999999999999999999999999999999991991064",
+    "epsilon": "1/5",
+    "full_network_collective_projection_exact": true,
+    "full_network_d3_e2_instance_fixed_by_this_certificate": true,
+    "gain_half_width": "1e-12",
+    "general_network_topology_validated": false,
+    "halanay_delayed_gain_upper": "0.6400000000026000000000000000000000000000000000029110986",
+    "halanay_local_decay_lower": "0.9999999999999999999999999999999999999999999999993157722",
+    "halanay_margin_lower": "0.3599999999973999999999999999999999999999999999974310153",
+    "halanay_rate_candidate": "0.03",
+    "halanay_rate_residual_lower": "0.07495108269966745042958921253309012629192168572188775416",
+    "halanay_weight": "1",
+    "issue_15_closed": false,
+    "kappa_1_interval": [
+      "0.199999999998999999999999999999999999999999999999456677",
+      "0.2000000000010000000000000000000000000000000000006117458"
+    ],
+    "kappa_3_interval": [
+      "0.2499999999989999999999999999999999999999999999994224656",
+      "0.2500000000010000000000000000000000000000000000009196483"
+    ],
+    "linearized_current_growth_interval": [
+      "0.8099999999991999999999999999999999999999999999980600405",
+      "0.8100000000008000000000000000000000000000000000011736244"
+    ],
+    "linearized_delayed_gain_interval": [
+      "0.1899999999991999999999999999999999999999999999993395464",
+      "0.1900000000008000000000000000000000000000000000009136178"
+    ],
+    "maximal_canard_onset_validated": false,
+    "negative_channel_capture_validated": true,
+    "negative_channel_growth_lower": "0.2766666666650666666666666666666666666666666666645611784",
+    "negative_cubic_secant_upper": "7",
+    "negative_hit_time_formula": "T_-(r) <= log(1/abs(r))/c_-, -1<r<0",
+    "no_imaginary_characteristic_roots_validated": true,
+    "nonlinear_transverse_synchronization_during_clamped_decision_validated": false,
+    "one_simple_rhp_characteristic_root_validated": true,
+    "output_order": [
+      "F",
+      "R_h"
+    ],
+    "periodic_full_network_transverse_stability_validated": false,
+    "periodic_orbit_attraction_validated": false,
+    "physical_collective_recovery_actuator_exact": true,
+    "physical_delay_upper": "11.18033988749894848204586834365638117720309179807438059",
+    "positive_channel_capture_validated": true,
+    "positive_channel_growth_lower": "0.4766666666658666666666666666666666666666666666649547831",
+    "positive_cubic_secant_upper": "3",
+    "positive_hit_time_formula": "T_+(r) <= log(1/r)/c_+, 0<r<1",
+    "precision_bits": 160,
+    "quantified_noisy_history_capture_validated": false,
+    "recovery_scaffold": "2",
+    "reset_family_complete_history_threshold_validated": true,
+    "reset_projection_lower": "0.8403361344532165807499474174247059177025716262714088742",
+    "reset_projection_transversality_validated": true,
+    "reset_voltage_interval": [
+      "-1",
+      "1"
+    ],
+    "same_synchronous_baseline_and_gain_box_validated": true,
+    "scaled_delays": [
+      "4",
+      "5"
+    ],
+    "source_periodic_artifact_certifies_full_network_scaffolds": false,
+    "source_periodic_branch_validated": true,
+    "source_response_derivative_box_validated": true,
+    "source_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "source_synchronous_model_id": "dual-scaffold-synchronous-fhn-two-delay",
+    "source_unique_extrema_validated": true,
+    "spectral_small_gain_margin_lower": "0.6199999999983999999999999999999999999999999999974885366",
+    "transverse_coefficient_upper": "3.200000000013000000000000000000000000000000000011818582",
+    "unfolding": "3/5",
+    "unforced_complete_history_stable_manifold_validated": false,
+    "unforced_onset_validated": false,
+    "voltage_scaffold": "3",
+    "zero_reset_is_exact_clamped_equilibrium": true
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_same_model_separator.py"
+    ],
+    "arithmetic": "exact symbolic identities and MPFR directed endpoints",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_same_model_separator.py",
+    "generator": "experiments/fhn_same_model_separator.py",
+    "generator_sha256": "f8c987ce9fa54c6668873d83c084ae01c41b2dbcf6e408354179c7ad9050a9b3",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_periodic_candidate.py": "0fdad0e387ccfc98908466dff4c3f50fcc3741268d25e30a8d9fc00f93df62f0",
+      "src/canard_control/fhn_same_model_separator.py": "35e3139beedfb560772572507f8417416972c7fc6f4a2b9f80e1de4609f7ef8a"
+    },
+    "python": "3.14.4"
+  },
+  "scope": {
+    "arbitrary_two_module_sizes_linear_variational_transverse_decay_during_clamped_decision": true,
+    "biological_pulse_or_quiet_basin_capture_beyond_channel_faces": false,
+    "controlled_clamped_complete_history_stable_manifold": true,
+    "controlled_operational_first_hit_onset": true,
+    "full_network_collective_clamp_exact": true,
+    "full_network_d3_e2_instance_fixed_by_separator_certificate": true,
+    "general_network_topology": false,
+    "issue_15_closed": false,
+    "maximal_canard_onset": false,
+    "nonlinear_transverse_synchronization_during_clamped_decision": false,
+    "periodic_full_network_transverse_stability": false,
+    "periodic_orbit_attraction": false,
+    "quantified_noisy_history_capture": false,
+    "reset_family_complete_history_threshold": true,
+    "same_synchronous_baseline_and_gain_box": true,
+    "source_periodic_artifact_certifies_full_network_scaffolds": false,
+    "unforced_complete_history_stable_manifold": false,
+    "unforced_onset": false
+  },
+  "source_evidence": {
+    "controlled_complete_history_phase_space": "X_cl={phi: pi*phi_w(theta)=0 for every history theta}",
+    "decision_protocol": "prepare v(theta)=r*1,w(theta)=0; release voltage; apply u_i^w=-epsilon*(pi*v-unfolding) so pi*w=0 until first hit",
+    "full_network_instance_fixed_by_separator_certificate": {
+      "collective_projection": "pi*x=(bar(x)_1+bar(x)_2)/2",
+      "instance_id": "rank-one-two-module-fhn-D3-E2",
+      "network_class": "rank-one two-module dual-scaffold",
+      "recovery_actuator": "u_i^w=-epsilon*(pi*v-unfolding)",
+      "recovery_scaffold": "2",
+      "voltage_scaffold": "3"
+    },
+    "parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "periodic_synchronous_parameters": {
+      "epsilon": "1/5",
+      "gain_center": [
+        "1/5",
+        "1/4"
+      ],
+      "theta_0": "4",
+      "theta_1": "5",
+      "unfolding": "3/5"
+    },
+    "reset_only_controller_absent_from_baseline_periodic_rfde": true,
+    "source_periodic_artifact_certifies_full_network_scaffolds": false,
+    "source_synchronous_model": "dual-scaffold-synchronous-fhn-two-delay"
+  }
+}

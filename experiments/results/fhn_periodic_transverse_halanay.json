@@ -1,0 +1,104 @@
+{
+  "certificate": {
+    "arbitrary_positive_module_sizes_formulaic_theorem": true,
+    "arbitrary_size_quantifier_from_enumeration": false,
+    "bloch_result_sha256": "c2f93b6cfe6a8e0df3b341476fbe45a83f6fecc0398dbb7340a5213a55357a31",
+    "current_coefficient_global_maximum_upper": "0.8295652173920941398865781421878852635779889294300063374",
+    "delayed_each_wiener_norm_upper": "0.4564418432116889097019118385025544264603768202010172483",
+    "delayed_total_gain_upper": "0.9128836864233778194038236770051088529207536404027187244",
+    "epsilon": "0.2",
+    "exact_rank_one_modal_decomposition_validated": true,
+    "full_network_attraction_validated": false,
+    "full_network_orbital_hyperbolicity_validated": true,
+    "full_node_audit_module_sizes": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ],
+    "gain_half_width": "1e-12",
+    "general_network_topology_validated": false,
+    "halanay_local_decay_lower": "1.170434782607905860113421857812114736422011070565888296",
+    "halanay_margin_lower": "0.2575510961845280407095981808070058835012574301614590022",
+    "halanay_rate_candidate": "0.02",
+    "halanay_rate_exponential_upper": "1.250579192188712285810351445928022782620335511276475983",
+    "halanay_rate_residual_lower": "0.008801439478304289668730401137295866821421657268435637754",
+    "instantaneous_scaffold_modal_action_validated": true,
+    "issue_15_closed": false,
+    "kappa_1_interval": [
+      "0.199999999998999999999999999999999999999999999999456677",
+      "0.2000000000010000000000000000000000000000000000006117458"
+    ],
+    "kappa_3_interval": [
+      "0.2499999999989999999999999999999999999999999999994224656",
+      "0.2500000000010000000000000000000000000000000000009196483"
+    ],
+    "max_norm_weight": "1",
+    "maximum_delay_upper": "11.18033988749894848204586834365638117720309179809627588",
+    "model_id": "dual-scaffold-rank-one-two-module-fhn-two-delay",
+    "nonlinear_synchronization_validated": false,
+    "parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "periodic_transverse_variational_decay_validated": true,
+    "physical_pulse_onset_validated": false,
+    "precision_bits": 160,
+    "recovery_local_decay_lower": "1.799999999999999999999999999999999999999999999998084162",
+    "recovery_scaffold": "2",
+    "representative_full_node_delay_layer_audits_validated": true,
+    "source_periodic_branch_validated": true,
+    "source_synchronous_orbital_hyperbolicity_validated": true,
+    "synchronous_attraction_validated": false,
+    "topology": "fixed rank-one two-module averaging with within/cross delays",
+    "voltage_local_decay_lower": "1.170434782607905860113421857812114736422011070567256752",
+    "voltage_scaffold": "3",
+    "within_module_delay_annihilation_validated": true
+  },
+  "provenance": {
+    "argv": [
+      "/usr/bin/python3",
+      "experiments/fhn_periodic_transverse_halanay.py"
+    ],
+    "arithmetic": "exact symbolic identities and MPFR directed endpoints",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fhn_periodic_transverse_halanay.py",
+    "generator": "experiments/fhn_periodic_transverse_halanay.py",
+    "generator_sha256": "39d8702b3e2eef853491d6a9ff48a2c0370897905bb32162b079bd494a537c86",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source_manifest": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_periodic_transverse_halanay.py": "64f7572cd02fa27ec44ed816eee6ee80745902f4859e1c4843a37ccadc18417a",
+      "src/canard_control/full_network_blocks.py": "d2185c9edb98bc65d38fe26f51897c6b102ff9510c104ae51aaaa3acb751dc03",
+      "src/canard_control/reference_fhn.py": "de6f62bd76d3ea7bc2d6c50ddc9273fab9b1636dedde6355181348cb469437c6"
+    },
+    "python": "3.14.4"
+  },
+  "scope": {
+    "arbitrary_positive_module_sizes_for_fixed_rank_one_topology": true,
+    "full_network_attraction": false,
+    "full_network_orbital_hyperbolicity": true,
+    "general_network_topology": false,
+    "issue_15_closed": false,
+    "nonlinear_synchronization": false,
+    "periodic_transverse_variational_decay": true,
+    "physical_pulse_onset": false,
+    "synchronous_attraction": false
+  },
+  "source_evidence": {
+    "bloch_result_sha256": "c2f93b6cfe6a8e0df3b341476fbe45a83f6fecc0398dbb7340a5213a55357a31",
+    "downstream_certificate_adds_fixed_topology_transverse_theorem": true,
+    "historical_bloch_scope_full_network_transverse_stability": false,
+    "parameter_box_result_sha256": "ff13b5352c2b4e9898a4044be63fd490a3e7bb4217445a6a062188c2457c22a0",
+    "voltage_and_recovery_scaffolds_newly_fixed_here": [
+      "3",
+      "2"
+    ]
+  }
+}
