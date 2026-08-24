@@ -91,7 +91,12 @@ slice.
    intrinsic clock and first-integral identities
    \(\mathcal L_Qt=1\), \(\mathcal L_Q\lambda=0\).  The implication is exact;
    the present target-amplitude chart is only a binary64 candidate for its
-   hypotheses.
+   hypotheses.  Its frozen-anchor incoming seam is now constructed exactly
+   through total order four.  A combined C4 state and analytic
+   label-variational replay retains positive sampled P-matrix margins, and a
+   Gale--Nikaido theorem reduces global univalence to a finite family of
+   scalar interval inequalities.  No outward-rounded history or physical
+   cell has yet been supplied, so neither embedding nor degree is promoted.
 8. An **autonomous leaky-recovery bistable candidate** keeps the two delayed
    voltage channels and changes the recovery law to
    \(w'=\varepsilon(v-a-w)\).  At the declared center, the unique quiet
@@ -104,7 +109,11 @@ slice.
    candidates.  They yield a precise conditional theorem for the local
    control map \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\), but the two periodic
    BVPs, Floquet indices, history-space separator and pulse transversality
-   remain to be validated.
+   remain to be validated.  The exact leaky/non-leaky Fourier mismatch and a
+   leaky-specific finite/tail prototype are now recorded; the current probe
+   does not store branch coefficients, so a replayable inner/outer artifact
+   is the first validation input rather than an implicit inheritance from the
+   old periodic theorem.
 
 The two original principal results answer different questions in different recovery
 architectures. The policy composition removes that mismatch only for a
@@ -892,11 +901,18 @@ operational qualifier.
    This exact obstruction forces abandonment of that product tube; an
    embedded prepared solution family and its intrinsic time provide one
    viable replacement.  The present binary64 chart has a sampled nonvanishing
-   Jacobian, but interval global injectivity, a target-centered collar and
-   cutoff, and the regularity required for a \(C_b^3\) field remain open.
-   In particular, since \(Q\circ\Psi=\partial_t\Psi\), the intended
-   \(C^3\) field normally requires a \(C^4\) prepared chart; the seam-jet
-   count must include this one-derivative loss.
+   Jacobian.  The required one-derivative loss has now been addressed at the
+   incoming seam: a compact degree-nine Hermite correction installs the
+   recursive RFDE time and mixed jets through total order four exactly.  The
+   C4 state and analytic label-variational equations have also been replayed
+   as one binary64 chart.  On the history and physical strips, fixed output
+   frames reduce injectivity to P-matrix inequalities; the sampled lower
+   margins are positive, and two scalar \(X\)-inequalities separate the
+   strips.  These facts replace the former general boundary-degree search by
+   a low-dimensional interval contract.  They do not yet provide any
+   outward-rounded cell, an enlarged target-centered collar, or the full
+   \(C_b^3\) graph field.  Thus interval global injectivity, cutoff and chart
+   validation remain open.
 
    Once that graph exists, the remaining selected-root gate is to validate
    the complete-history augmented BVP and dynamic-adjoint ratio.  The current exact blueprint
@@ -933,7 +949,13 @@ operational qualifier.
    reference slice is now replaced by the leaky-recovery candidate in
    Section 4.4.  Its quiet equilibrium is rigorously stable for arbitrary
    positive delays, but the outer and inner periodic orbits are still
-   binary64 candidates.  Validate both periodic BVPs, their complete
+   binary64 candidates.  The reusable real-conjugate Wiener, de-aliasing and
+   finite/tail architecture has now been separated from the nonreusable slow
+   row and Floquet artifacts.  In particular the leaky residual adds
+   \(T\varepsilon w\), its recovery diagonal adds \(T\varepsilon I\), and
+   its period column adds \(\varepsilon w\).  The current probe stores only
+   scalar summaries, not replayable branch coefficients.  Build those
+   artifacts, then validate both periodic BVPs, their complete
    Floquet indices and simple extrema on one \((a,\kappa_3)\)-box.  Then
    construct a history-space isolating neighborhood (not an unexplained
    planar annulus), prove routing of its two sides into the quiet and pulse
@@ -991,7 +1013,9 @@ authority.
 | Sliding-window and weak-space Fredholm bridge | **Proved: every monotone selected complete orbit generates the required one-dimensional history chart; conversely, such a nonstationary invariant chart gives a local trajectory segment, and gives a complete orbit only with scalar-flow completeness. Fixed-phase parameter jets, the \(Y\)-phase clock conversion, the \(W^{1,p}\to L^p\) scale, and the abstract 1/1 trace-pair index-\(-1\) reduction are exact. Open: the frozen-target graph family, separately prepared planar trace field, finite-window gap row, independent selected orbit, actual trace-pair hypotheses, full adjoint and uniform inverse** |
 | Strictly positive planar current-state \(C^1\) phase on the specified singular-centered radius-\(10^{-3}\) independent-slot product tube at the frozen candidate \(\nu\) | **Impossible: an explicit shifted raw-slot zero lies inside the tube, so every such phase Lie derivative vanishes there; this is not an RFDE equilibrium or a no-go for other tubes/history phases** |
 | Exact prepared embedding implies local physical graph fixed identity, unit intrinsic clock and invariant transverse labels | **Proved as a local conditional implication; it is preparation indexed and does not imply global or preparation-independent uniqueness** |
-| Present target-amplitude prepared causal chart satisfies the embedding and \(C^4\) hypotheses | **Not proved; binary64 determinant, boundary and refinement diagnostics only** |
+| Frozen-anchor incoming preparation satisfies RFDE time/mixed seam identities through total order four | **Proved exactly by a compact degree-nine Hermite construction; this is a seam theorem, not a chart or graph theorem** |
+| Target-chart global univalence reduces to fixed-frame P-matrix and cross-separation interval inequalities | **Proved as a conditional Gale--Nikaido reduction; the combined C4 state/analytic-variational replay has positive binary64 margins, but no outward-rounded cells or degree certificate** |
+| Present target-amplitude prepared causal chart satisfies the embedding and \(C^4\) hypotheses | **Not proved; the seam is exact and the combined chart is a strengthened binary64 candidate, while interval history/flow cells, collar and global embedding remain open** |
 | Scalar \(G=0\) exit determines a one-dimensional repelling history chart | **False by exact same-current, same-\(G\), compatible-history counterexamples with different future derivatives** |
 | Fixed-section response candidates \([-0.350,-0.264]\) | **Binary64 diagnostic only; section drift prevents a selected-root or sign claim** |
 | Two-branch discrete full-history-matched response candidate \(-0.3463310348\) | **Computed with a compatible entry history, full discrete adjoint and mesh diagnostics; unselected entry/exit Fredholm charts prevent promotion** |
@@ -1008,6 +1032,7 @@ authority.
 | Reference synchronous equilibrium supplies a quiet local basin | **False on the microscopic gain box for \(|\eta|\le10^{-3}\): two distinct Rouché disks each contain an open-right-half-plane characteristic root** |
 | Leaky-recovery replacement has a unique quiet equilibrium locally exponentially stable for arbitrary positive delays | **Proved at the declared center by exact rational enclosure and a delay-independent small-gain/argument-principle estimate** |
 | Leaky-recovery outer pulse and inner index-one periodic cycles | **Numerically supported; separator/routing, periodic BVP and Floquet validation remain open** |
+| Leaky periodic finite/tail validator reuses the old proof object without alteration | **False: the slow residual, recovery diagonal, period column, parameter box and every orbit-dependent Floquet artifact change; an audited prototype exists but no branch proof is promoted** |
 | Finite physical pulse has a unique transverse onset threshold \(J_c(a,\kappa_3)\) | **Conditional theorem with numerical bracket \([0.30,0.32]\); history-space separator, endpoint routing and transversality are open** |
 | Autonomous \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) local inverse | **Conditional on the onset theorem and a directed nonzero frequency--amplitude determinant; the current determinant is binary64 only** |
 | Capture by the validated periodic orbit permits permanent residence above \(+1,+3/2\) or below \(-1,-6/5\) | **False by the directed periodic range and asymptotic-phase recurrence** |

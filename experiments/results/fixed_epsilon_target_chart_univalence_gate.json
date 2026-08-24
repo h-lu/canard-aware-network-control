@@ -1,0 +1,135 @@
+{
+  "audit": {
+    "certificate": {
+      "arithmetic": "exact frozen-anchor C4 preparation and analytic lambda-history derivative plus conditional univalence algebra; binary64 SciPy DOP853 C4-state and true variational DDE sampling; strict future interval-cell schema, but no outward-rounded history or physical cells, Taylor-model flow proof, global target embedding, or target graph",
+      "audit_id": "fixed-epsilon-target-chart-p-matrix-univalence-gate-v1",
+      "binary64_c4_history_gate": {
+        "history_frame": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "history_frame_determinant": -1,
+        "history_time_sample_count": 1201,
+        "maximum_raw_chart_determinant": "-0.44999999999999996",
+        "minimum_lambda_principal_minor": "0.97691822736880018",
+        "minimum_oriented_determinant": "0.44999999999999996",
+        "minimum_raw_chart_determinant": "-0.91303840307576634",
+        "minimum_time_principal_minor": "0.36938890759680243",
+        "patch_width": "0.5",
+        "transverse_sample_count": 41
+      },
+      "binary64_physical_gate": {
+        "cross_split_time": "-2",
+        "entry_x": "1.5307896307874733",
+        "maximum_early_x_time_derivative": "-0.44999999999999996",
+        "maximum_late_physical_x": "1.0695567548283429",
+        "maximum_raw_chart_determinant": "-0.11479597480329445",
+        "maximum_variational_refinement_change": "5.907718758635383e-12",
+        "maximum_variational_to_centered_difference_change": "6.2157329896450619e-06",
+        "minimum_lambda_principal_minor": "1",
+        "minimum_late_entry_x_gap": "0.46123287595913043",
+        "minimum_oriented_determinant": "1.492347672442828",
+        "minimum_raw_chart_determinant": "-3.3610913993282585",
+        "minimum_time_principal_minor": "0.26089427467961634",
+        "physical_frame_determinant": -13,
+        "physical_time_frame": [
+          [
+            -7,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "physical_time_sample_count": 1201,
+        "transverse_sample_count": 41
+      },
+      "c4_history_interval_cell_count": 0,
+      "c4_history_p_matrix_interval_cover_validated": false,
+      "c4_history_p_matrix_interval_gate": [
+        "inf_cell -partial_t Psi_X > 0",
+        "inf_cell partial_lambda Psi_Y > 0",
+        "inf_cell -det D(Psi) > 0"
+      ],
+      "c4_prepared_history_lambda_derivative_derived_exactly": true,
+      "c4_state_dde_sampled_binary64": true,
+      "collar_interval_gate": "repeat every strict C4-history, physical and cross inequality on an enlarged closed time-label rectangle with a strictly larger label radius; its interior is the open embedding domain containing the retained target rectangle compactly",
+      "cross_interval_gate": [
+        "sup partial_t Psi_X < 0 on [-3,-2]xLambda",
+        "sup Psi_X < X_entry on [-2,3]xLambda"
+      ],
+      "degree_conclusion_if_gates_close": "Psi has local degree -1; for y in L_P Psi(int P), deg(L_P Psi,int P,y)=+1, and the glued chart is a one-to-one local diffeomorphism on the retained rectangle",
+      "exact_acceptance_contract": "accept the target embedding only after outward-rounded C4-history cells and a state-plus-variational method-of-steps cover verify both sets of three strict P-matrix margins and the two strict X-separation margins on an enlarged collar; binary64 samples and schema-valid decimal cells without solver provenance are insufficient",
+      "expanded_open_collar_interval_validated": false,
+      "expanded_strict_gate_implies_open_collar_proved_conditionally": true,
+      "interval_cell_count": 0,
+      "legacy_first_order_exact_history_gate": {
+        "determinant_lower": "7/20",
+        "first_principal_minor_lower": "7/20",
+        "history_frame": [
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "history_frame_determinant": -1,
+        "negative_x_time_derivative_lower": "7/20",
+        "negative_y_time_derivative_lower": "11/8",
+        "preparation_bump_derivative_absolute_upper": "3",
+        "second_principal_minor": "1",
+        "smooth_step_derivative_upper": "2",
+        "transverse_radius_upper": "1/20"
+      },
+      "legacy_first_order_history_p_matrix_proved_exactly": true,
+      "model_id": "fixed-epsilon-target-chart-p-matrix-univalence-gate",
+      "oriented_degree_one_conclusion_proved_conditionally": true,
+      "p_matrix_global_univalence_reduction_proved_conditionally": true,
+      "physical_cross_separation_interval_validated": false,
+      "physical_p_matrix_interval_cover_validated": false,
+      "physical_p_matrix_interval_gate": [
+        "inf_cell (-7,2).partial_t Psi > 0",
+        "inf_cell (3,1).partial_lambda Psi > 0",
+        "inf_cell det D(L_P Psi)=-13 det D(Psi) > 0"
+      ],
+      "piecewise_cross_separation_reduction_proved_conditionally": true,
+      "sampled_c4_history_p_matrix_margins_positive": true,
+      "sampled_cross_separation_margins_positive": true,
+      "sampled_physical_p_matrix_margins_positive": true,
+      "smooth_step_derivative_bound_proved_exactly": true,
+      "strict_interval_cell_schema_implemented": true,
+      "target_boundary_degree_validated": false,
+      "target_c4_chart_and_seam_compatibility_validated": false,
+      "target_chart_embedding_on_open_collar_proved": false,
+      "target_chart_global_injectivity_proved": false,
+      "target_global_graph_fixed_point_validated": false,
+      "true_lambda_variational_dde_sampled_binary64": true
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact frozen-anchor C4 preparation and analytic lambda-history derivative plus conditional univalence algebra; binary64 SciPy DOP853 C4-state and true variational DDE sampling; strict future interval-cell schema, but no outward-rounded history or physical cells, Taylor-model flow proof, global target embedding, or target graph",
+    "c4_seam_parent": "experiments/results/fixed_epsilon_target_c4_preparation_seam.json",
+    "c4_seam_parent_sha256": "5cc678e56a2d1c203d174a27617c28963082ba8e7cf9c6dc48f3f6de8bff840b",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_target_chart_univalence_gate.py",
+    "generator": "experiments/fixed_epsilon_target_chart_univalence_gate.py",
+    "generator_sha256": "2281905b6bea17097286669d7c496978bc464456786a6c18e28c4c7afc65cea3",
+    "note": "docs/fixed-epsilon-target-chart-univalence-gate.md",
+    "note_sha256": "506e2c1e5287f19670a42cfcb180d1850e8ad32964df25cbcdce41387fc4d1ed",
+    "parent": "experiments/results/fixed_epsilon_target_causal_tube_candidate.json",
+    "parent_sha256": "fb61c0576afb9a401f16947d47917fa03b4461a8889fbb04f3d450411c448ffd",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_target_chart_univalence_gate.py",
+    "proof_source_sha256": "84b9c7701078385ec4f8b3d7702a16f082b1bc1da4b1c02b270f3b87e9e89674",
+    "python": "3.14.4"
+  }
+}

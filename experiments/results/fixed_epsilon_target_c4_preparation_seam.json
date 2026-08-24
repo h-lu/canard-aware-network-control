@@ -1,0 +1,152 @@
+{
+  "audit": {
+    "certificate": {
+      "arithmetic": "exact SymPy algebra over Q(sqrt(5),lambda) for the frozen decimal anchor and degree-nine Hermite jets; binary64 preparation-strip sampling only; no interval RFDE flow, chart embedding, target graph, candidate-class self-map, trace solve, or complete-history root",
+      "audit_id": "fixed-epsilon-target-c4-preparation-seam-v1",
+      "conditional_c4_method_of_steps_continuation_from_prepared_history_proved": true,
+      "conditional_scope": "the method-of-steps solution is jointly C4 on any interval on which the polynomial RFDE solution exists",
+      "degree_nine_right_hermite_basis_proved_exactly": true,
+      "exact_endpoint_expression_sha256": "cf7b026465d4aa28caed3be692b30d2a71f2117c2a7fc34df2c87e699c776ff6",
+      "exact_endpoint_jet_parameter_degrees": [
+        1,
+        1,
+        1,
+        2,
+        3
+      ],
+      "exact_left_shape_jet_matrix": [
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "exact_mixed_scalar_zero_count": 20,
+      "exact_mixed_vector_identity_count": 10,
+      "exact_right_shape_jet_matrix": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "exact_scope": "the frozen-anchor incoming history and all time/mixed seam jets of total order at most four",
+      "frozen_phase_shift": "-30789630787473283/500000000000000000",
+      "frozen_target_eta": "0",
+      "frozen_target_nu": "21256022233963731/100000000000000000",
+      "frozen_target_rho": "sqrt(5)/5",
+      "frozen_target_theta": "73970862981881309/10000000000000000",
+      "incoming_time": "-3",
+      "minimum_delay": "4",
+      "model_id": "fixed-epsilon-target-c4-preparation-seam",
+      "open_scope": "interval continuation, full-chart C4 bounds and embedding, degree one, target graph, selected traces, and history root",
+      "parent_result_sha256": "fb61c0576afb9a401f16947d47917fa03b4461a8889fbb04f3d450411c448ffd",
+      "patch_width": "1/2",
+      "recursive_endpoint_formula": "a_{m+1}=m![s^m]F(sum_{j=0}^m a_j s^j/j!,sum_{j=0}^m b_{tau,j} s^j/j!), m=0,1,2,3",
+      "sampled_preparation_strip_jacobian_is_negative": true,
+      "sampled_strip_maximum_determinant": "-0.45000000006290003",
+      "sampled_strip_maximum_state_correction": "0.017367076012887672",
+      "sampled_strip_minimum_determinant": "-0.91304172225587521",
+      "sampled_strip_time_count": 201,
+      "sampled_strip_transverse_count": 21,
+      "seam_patch_is_supported_inside_last_half_unit": true,
+      "seam_patch_preserves_endpoint_curve_exactly": true,
+      "selected_trace_or_complete_history_root_validated": false,
+      "smootherstep_polynomial": "chi_9(u)=126*u^5-420*u^6+540*u^7-315*u^8+70*u^9",
+      "target_c4_chart_and_seam_compatibility_validated": false,
+      "target_c4_solution_chart_validated": false,
+      "target_candidate_class_self_map_validated": false,
+      "target_chart_global_injectivity_proved": false,
+      "target_frozen_anchor_c4_preparation_seam_constructed_exactly": true,
+      "target_frozen_anchor_incoming_history_is_joint_c4_proved_exactly": true,
+      "target_frozen_anchor_mixed_seam_identities_total_order_four_proved_exactly": true,
+      "target_frozen_anchor_time_jet_recursion_through_order_four_proved_exactly": true,
+      "target_global_graph_fixed_point_validated": false,
+      "target_interval_flow_enclosure_validated": false,
+      "transverse_interval": [
+        "-1/20",
+        "1/20"
+      ]
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact SymPy algebra over Q(sqrt(5),lambda) for the frozen decimal anchor and degree-nine Hermite jets; binary64 preparation-strip sampling only; no interval RFDE flow, chart embedding, target graph, candidate-class self-map, trace solve, or complete-history root",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_target_c4_preparation_seam.py",
+    "generator": "experiments/fixed_epsilon_target_c4_preparation_seam.py",
+    "generator_sha256": "29823ad66ac284cf78cd88c7178bef15bdc5bb35c85e5dae343e437edd52d04b",
+    "note": "docs/fixed-epsilon-target-c4-preparation-seam.md",
+    "note_sha256": "273d9b7a446de3461607eded8713f9c7507db864c72678ae3acbc529c4abe2b6",
+    "parent_claim_checks": {
+      "parent_constructed_only_first_order_preparation": true,
+      "parent_left_interval_flow_open": true,
+      "parent_left_target_c4_chart_and_seam_open": true,
+      "parent_left_target_graph_open": true
+    },
+    "parent_result": "experiments/results/fixed_epsilon_target_causal_tube_candidate.json",
+    "parent_result_sha256": "fb61c0576afb9a401f16947d47917fa03b4461a8889fbb04f3d450411c448ffd",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_target_c4_preparation_seam.py",
+    "proof_source_sha256": "c1ca5f198faa4662587e4065e59b4bad64f1d3ad7ba7e8fb1fade4f31b3d2c13",
+    "python": "3.14.4"
+  }
+}

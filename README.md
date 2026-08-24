@@ -364,9 +364,16 @@ open.
    complete extension it satisfies a local physical-history identity on a
    smaller current image and has \(\mathcal L_Qt=1\),
    \(\mathcal L_Q\lambda=0\).  A binary64 target chart has sampled
-   \(\det D\Psi\in[-3.02251,-0.114909]\), but global interval injectivity,
-   the target-centered collar, \(C^4\) preparation seam, trace pair,
-   Fredholm inverse and selected root remain open.
+   \(\det D\Psi\in[-3.02251,-0.114909]\).  The frozen-anchor incoming
+   preparation seam is now closed exactly through total time--label order
+   four by a degree-nine Hermite patch.  Replaying the same C4 history in the
+   state and analytic label-variational DDE preserves positive sampled
+   P-matrix and cross-separation margins.  A Gale--Nikaido reduction now
+   turns global univalence into six history/physical scalar interval margins
+   and two cross-separation margins, rather than a general boundary-polygon
+   proof.  No outward-rounded cell has yet been supplied, so global interval
+   injectivity, the target-centered collar, trace pair, Fredholm inverse and
+   selected root remain open.
 10. **Autonomous biological-onset route.**  A leaky-recovery replacement
    keeps the two delayed voltage channels and gives a unique quiet
    equilibrium that is proved locally exponentially stable for every pair of
@@ -378,7 +385,12 @@ open.
    \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) a local diffeomorphism whenever the
    two-output response is nonsingular.  The periodic orbits, separator,
    threshold, response determinant, finite-network basin lift and equality
-   of the canard root with physical onset are not yet proved.
+   of the canard root with physical onset are not yet proved.  A leaky-specific
+   finite/tail contract now isolates the exact slow-row, Jacobian, period-column
+   and tail changes that prevent reuse of the non-leaky validator.  Its
+   periodic-BVP architecture is reusable, but branch-specific coefficient
+   artifacts and both Floquet counts still have to be rebuilt; all proof flags
+   remain false.
 11. **Numerical diagnostic.** Literal method-of-steps integration of one
    finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
@@ -414,13 +426,16 @@ open.
 - [docs/fixed-epsilon-singular-reachable-hull.md](docs/fixed-epsilon-singular-reachable-hull.md) -- exact smooth first integral and Lambert-W branch geometry for the singular canard field, the asymmetric continuous backward delay hull, a fixed-width-tube obstruction, the perturbed J-barrier identity, and a preparation-indexed causal-slab restriction lemma; target clock/barrier bounds, left-tail propagation, the positive-amplitude hull, graph inverse, and fixed-epsilon root remain open;
 - [docs/fixed-epsilon-clocked-tail-graph-extension.md](docs/fixed-epsilon-clocked-tail-graph-extension.md) -- bounded complete pointwise clock-positive tail, exact parameter-independent incoming germ, an applied fixed-cutoff small-amplitude special-flow graph theorem with finite mixed jets and the prepared seed first jet, plus a preparation-indexed Volterra--Weissinger theorem; the graph at \(\rho_*=1/\sqrt5\), target clock/barriers, trace pair, fixed-epsilon root, network lift, and biological-control chain remain open;
 - [docs/fixed-epsilon-target-tilted-phase.md](docs/fixed-epsilon-target-tilted-phase.md) -- exact raw-slot reversal/stall algebra, the frozen-anchor radius-\(10^{-3}\) product-tube positive-clock no-go, and a separate directed tapered-phase comparison on \(0\le\nu\le1/5\); it is not an actual target causal phase;
-- [docs/fixed-epsilon-target-causal-tube-candidate.md](docs/fixed-epsilon-target-causal-tube-candidate.md) -- binary64 prepared target-amplitude solution tube and the exact conditional theorem that an embedded physical solution family induces a local fixed graph, unit intrinsic time clock and invariant transverse labels; interval embedding and \(C^4\) seam validation remain open;
+- [docs/fixed-epsilon-target-causal-tube-candidate.md](docs/fixed-epsilon-target-causal-tube-candidate.md) -- parent binary64 prepared target-amplitude solution tube and the exact conditional theorem that an embedded physical solution family induces a local fixed graph, unit intrinsic time clock and invariant transverse labels; the successor records below replace its first-order seam but leave interval embedding open;
+- [docs/fixed-epsilon-target-c4-preparation-seam.md](docs/fixed-epsilon-target-c4-preparation-seam.md) -- exact frozen-anchor fourth-order incoming seam with recursive RFDE time/mixed jets, while the interval solution chart and graph remain open;
+- [docs/fixed-epsilon-target-chart-univalence-gate.md](docs/fixed-epsilon-target-chart-univalence-gate.md) -- exact P-matrix/Gale--Nikaido univalence reduction and combined C4 state/analytic-variational binary64 replay, with every interval embedding and degree flag left false;
 - [docs/fixed-epsilon-selected-attracting-endpoint-chart.md](docs/fixed-epsilon-selected-attracting-endpoint-chart.md) -- finite-mesh attracting-endpoint audit, now explicitly superseded at the continuous level by the sliding-window/\(W^{1,p}\) correction;
 - [docs/fixed-epsilon-selected-fredholm-structure.md](docs/fixed-epsilon-selected-fredholm-structure.md) -- earlier projected-history coordinate audit plus the corrected natural full-history \(W^{1,p}\) ledger, with actual trace-range closedness, cokernel and inverse still open;
 - [docs/fixed_epsilon_selected_repelling_endpoint.md](docs/fixed_epsilon_selected_repelling_endpoint.md) -- exact same-current, same-exit and compatible-history counterexamples, together with the superseding reduction from a history-chart PDE to one independently selected orbit;
 - [docs/quadratic-physical-onset-capture-stop-go.md](docs/quadratic-physical-onset-capture-stop-go.md) -- exact four-gate non-composition theorem plus a same-plant, arbitrary-finite-balanced controlled terminal transfer for an explicit strict small-\(|\eta|\) bound, with onset/basin/no-return claims refused;
 - [docs/quadratic-reference-slice-dual-basin-no-go.md](docs/quadratic-reference-slice-dual-basin-no-go.md) -- exact Rouché proof that the reference synchronous rest state is unstable on a nonzero \(\eta\)-box, periodic-orbit face-recurrence obstruction to permanent detector-side residence, and the separated autonomous-bistable, latch, and hybrid-switch repair contracts;
 - [docs/autonomous-leaky-recovery-bistable-rfde-proposal.md](docs/autonomous-leaky-recovery-bistable-rfde-proposal.md) -- exact delay-independent quiet-equilibrium stability for a leaky-recovery two-delay RFDE, binary64 outer/inner periodic and physical-pulse candidates, and a conditional autonomous frequency--amplitude--onset inverse theorem with history-space validation gates;
+- [docs/leaky-periodic-finite-tail-floquet-contract.md](docs/leaky-periodic-finite-tail-floquet-contract.md) -- exact equation-level adaptation of the periodic finite/tail validator to leaky recovery, a directed but deliberately unpromoted radii prototype, and the branch-specific replay/Floquet gates still required;
 - [docs/dimension-uniform-special-flow-history-graph.md](docs/dimension-uniform-special-flow-history-graph.md) -- abstract dimension-uniform special-flow graph theorem with operator-TV delays, mixed jets, logarithmic fold tubes, and exact mild history embedding; network model fitting remains separate;
 - [docs/banach-scale-history-schur-link.md](docs/banach-scale-history-schur-link.md) -- three-level \(C_b^9\to C_b^8\to C_b^7\) graph-response theorem, complete-history extension/restriction, levelwise Schur formulas, and conditional trace/endpoint transfer without a false same-space \(C^2\) implicit-function theorem;
 - [docs/paper-ii-lifted-two-module-class.md](docs/paper-ii-lifted-two-module-class.md) -- exact arbitrary-size unequal-module lift, maximum-norm Gate A model-fitting audit (with weighted algebra retained only as a diagnostic), dimension-independent singular semigroup bound, and operator-TV non-equitable perturbation family;
