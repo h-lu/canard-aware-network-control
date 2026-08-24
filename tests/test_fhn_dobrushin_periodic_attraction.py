@@ -41,7 +41,7 @@ RESULT = (
 )
 NOTE = REPOSITORY / "docs/paper-iv-dobrushin-periodic-attraction.md"
 EXPECTED_RESULT_SHA256 = (
-    "20fb3f0259f7d2bf8d5ccd24303250661a405418ea733e5419de5f2f07ddea72"
+    "3123c6f2428deb60a0d24267209ddb0a9d52a514465df93dbc72af4ea06cb2ae"
 )
 
 

@@ -36,10 +36,10 @@ REPOSITORY = Path(__file__).resolve().parents[1]
 RESULT = REPOSITORY / "experiments/results/quadratic_physical_onset_stop_go.json"
 NOTE = REPOSITORY / "docs/quadratic-physical-onset-capture-stop-go.md"
 EXPECTED_RESULT_SHA256 = (
-    "4bc8ccf41fb0f2d2fd7e3152da59afa24810a5b0d8615a3847d1491f63ff55da"
+    "e3790df79c7eff219733dacd3721a4a4f29da0cd6c026c77c5c410e7385b70dc"
 )
 EXPECTED_NOTE_SHA256 = (
-    "8bf5e8f5e8f0906ea123c8bf9d7bff09c1f23f2b362bf3c10ad9faeec91534cb"
+    "a93e31f3718a80024aa1502283c59a0100f974989dea1ebdf938ec6ae2076c8e"
 )
 
 

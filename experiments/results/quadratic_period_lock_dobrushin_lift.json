@@ -101,6 +101,6 @@
     "arithmetic": "exact rational balance, Dobrushin, projector, and transverse-block identities",
     "generator": "experiments/quadratic_period_lock_dobrushin_lift.py",
     "proof_source": "src/canard_control/quadratic_period_lock_dobrushin_lift.py",
-    "proof_source_sha256": "ee6486352a7762c9cb9576a627722ce3482d66c2531703ce92cfbf35c484d564"
+    "proof_source_sha256": "c52a63f00fd0285db053cbf29488b014b6aba0639e4095887c7d570125ad19cd"
   }
 }

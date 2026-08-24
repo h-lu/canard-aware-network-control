@@ -360,4 +360,4 @@ fixed-\(\varepsilon\) root, physical-history,
 event-factorization, pulse/quiet capture, basin-containment, \(\eta\)-basin,
 permanent no-return, and biological-onset claim false.
 
-Proof-object SHA-256: `4bc8ccf41fb0f2d2fd7e3152da59afa24810a5b0d8615a3847d1491f63ff55da`.
+Proof-object SHA-256: `e3790df79c7eff219733dacd3721a4a4f29da0cd6c026c77c5c410e7385b70dc`.

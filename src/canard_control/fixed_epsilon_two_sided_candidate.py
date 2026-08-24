@@ -44,7 +44,7 @@ BLUEPRINT_RESULT_SHA256 = (
     "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a"
 )
 BLUEPRINT_NOTE_SHA256 = (
-    "f3a32e08104d28d06b4e3f7a83308126d318e2bc38026ab39cd0d65a389b9b63"
+    "b0e10e37deb71ce9fb7bcde0b173694eb76d8b96ab631eb9d477ef6d11fb79ba"
 )
 
 
@@ -945,10 +945,15 @@ def reference_two_sided_candidate_certificate(
         physical_onset_or_capture_validated=False,
         minimal_failure=(
             "replace the artificial full entry template and scalar G=0 exit "
-            "by a 193-dimensional attracting endpoint chart and a "
-            "one-dimensional terminal-collocation repelling chart on the "
-            "194-dimensional represented history; then validate the "
-            "775x774 Fredholm derivative, its jump complement, and tails"
+            "by an ambient 193-coordinate attracting parameterization with "
+            "two explicit compatibility rows (effective compatible zero-fiber "
+            "dimension 191) and a one-dimensional compatible, backward-"
+            "extendible repelling history chart; replace every raw 194-row "
+            "history equality by a 192-row projected equality plus the six "
+            "declared compatibility rows, realize the global strong-history "
+            "collocation seams, recount the resulting operator, and only "
+            "then validate its index-minus-one Fredholm derivative, jump "
+            "complement, and tails; 775x774 is only the raw C0 template"
         ),
     )
 
@@ -976,7 +981,7 @@ def reference_two_sided_candidate_payload() -> dict[str, Any]:
 
     primal, adjoint = _reference_finest_primal_adjoint()
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "model_id": MODEL_ID,
         "rows": [asdict(row) for row in reference_two_sided_candidate_rows()],
         "certificate": asdict(reference_two_sided_candidate_certificate()),
@@ -999,13 +1004,29 @@ def reference_two_sided_candidate_payload() -> dict[str, Any]:
         "faithful_next_discretization": {
             "section_half_widths": [3, 3],
             "scaled_history": _format(THETA_PERIOD_DIAGNOSTIC),
-            "history_dimension": 194,
-            "attracting_endpoint_chart_dimension": 193,
+            "raw_history_coefficient_dimension": 194,
+            "discrete_endpoint_compatibility_rank": 2,
+            "discrete_endpoint_compatible_level_dimension": 192,
+            "global_c1_internal_derivative_continuity_rows": 30,
+            "global_c1_history_dimension": 164,
+            "global_c1_endpoint_compatible_level_dimension": 162,
+            "ambient_attracting_coordinate_dimension": 193,
+            "attracting_compatibility_residual_rows": 2,
+            "effective_compatible_attracting_zero_fiber_dimension": 191,
             "repelling_endpoint_chart_dimension": 1,
+            "projected_history_match_dimension": 192,
+            "projected_history_match_blocks": 3,
+            "explicit_compatibility_residual_rows": 6,
             "phase_fixed_residual_dimension": 775,
             "phase_fixed_unknown_dimension": 774,
             "jump_complement_square_dimension": 775,
             "root_system_square_dimension": 776,
+            "raw_endpoint_compatible_intrinsic_residual_dimension": 769,
+            "raw_endpoint_compatible_intrinsic_unknown_dimension": 768,
+            "ambient_repaired_ledger_arithmetic_only": True,
+            "selected_endpoint_operator_constructed": False,
+            "global_c1_or_w2_multicell_realization_validated": False,
+            "raw_194_row_history_equalities_are_not_faithful": True,
             "terminal_repelling_chart_requires_collocation_continuation": True,
             "backward_ivp_is_not_an_admissible_substitute": True,
         },

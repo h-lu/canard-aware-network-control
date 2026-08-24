@@ -266,37 +266,61 @@ dependence.  Neither spread is an error bound for an unknown selected root.
 
 ## 5. Exact remaining obstruction
 
-For a faithful Chebyshev/Lobatto prototype with \(p=6\), 16 history cells,
-and 8 flight cells, one branch has 290 coefficients and the two-state
-history has dimension \(m_h=194\).  Within the stated
-one-incoming-normal/one-repelling-tangent design, the target endpoint charts
-have
+For the proposed Chebyshev/Lobatto ledger with \(p=6\), 16 history cells,
+and 8 flight cells, one branch has 290 raw coefficients and the two-state
+history has 194 raw coefficients.  The earlier shorthand treated 193
+attracting coordinates as a compatible history chart.  That interpretation
+is false: the two endpoint compatibility equations have exact rank two, so
+the discrete endpoint-compatible level has dimension 192.  A rank-193
+fixed-parameter immersion into that level cannot exist.
+
+There are two equivalent count-consistent formulations.  In the ambient
+formulation retain \(\xi_-\in\mathbb R^{193}\), but impose two explicit
+compatibility rows on its image; the admissible zero fibre then has effective
+dimension 191.  Replace each raw 194-row entry, exit, and seam equality by a
+192-row projected equality and add six compatibility rows.  The arithmetic
+is
 
 \[
- \dim\mathcal H_-^a=193,
- \qquad \dim\mathcal H_+^r=1.
+ \dim X_N=2(290)+193+1=774,
+ \qquad
+ \dim Y_N=2(96)+3(192)+6+1=775.
 \tag{5.1}
 \]
 
-Here \(\mathcal H_-^a\) is an attracting time tangent plus stable history
-fibres, while \(\mathcal H_+^r\) is a terminal-collocation continuation of
-the backward-extendible repelling trace.  An ambient backward RFDE initial
-value solve is ill posed and is not a substitute.
+In endpoint-compatible intrinsic coordinates for the same raw multicell
+ledger, the corresponding arithmetic is \(769\times768\).  The invariant
+object is the Fredholm index, not either matrix size.  Moreover, the
+194-coefficient space is only value-continuous: global \(C^1\) regularity
+adds 30 internal derivative-continuity conditions, leaving dimensions 164
+before and 162 after endpoint compatibility.  A \(W^{2,p}\) realization has
+to make the analogous strong seams explicit.  Thus (5.1) is a repaired raw
+arithmetic ledger, not an assembled strong-history collocation operator.
 
-With those charts, the phase-fixed unknown has dimension 774 and the
-residual dimension 775.  One must prove full column rank and a
-one-dimensional cokernel, freeze a jump-slot complement, and validate the
-resulting \(775\times775\) bordered inverse.  The direct root system
-\(\mathfrak F(z,\nu,\eta)=0\) has dimension 775.  In the gap-root formulation,
-the unknown is \((z,d,\nu)\) and the residual is
-\((\mathfrak F-de,d)=0\), which is the stated 776-dimensional square system.
-Coefficient tails and the interval uncertainty of \(T_*\) must also be
-included.
+The required exit object remains a one-dimensional compatible,
+backward-extendible history chart.  The scalar equation \(G=0\) has the
+opposite geometry: on the 194-dimensional raw history space it leaves a
+193-dimensional fibre.  Exact compatible histories with the same current
+state and \(G=0\) but different delayed values produce different future
+derivatives.  Hence it cannot substitute for the repelling chart.
 
-The present entry template supplies 194 artificial conditions, while
-\(G=0\) supplies only one exit condition.  It therefore has the wrong Fredholm endpoint geometry
-even though its square numerical residual is solved extremely accurately.
-This is the shortest precise reason the candidate cannot be promoted.
+If the repaired endpoint maps are constructed, one must still prove full
+column rank and a one-dimensional cokernel, freeze a jump-slot complement,
+and validate the resulting bordered inverse.  The ambient direct root system
+is 775-dimensional; the gap-root formulation
+\((\mathfrak F-de,d)=0\) in \((z,d,\nu)\) is 776-dimensional.  Coefficient
+tails and the interval uncertainty of \(T_*\) must also be included.
+
+The exact compatibility obstruction and repaired count are proved in
+[the attracting-endpoint audit](fixed-epsilon-selected-attracting-endpoint-chart.md)
+and [the Fredholm-structure audit](fixed-epsilon-selected-fredholm-structure.md).
+The failure of the scalar exit and the minimum invariant-chart problem are
+proved in
+[the repelling-endpoint audit](fixed_epsilon_selected_repelling_endpoint.md).
+The present entry template still supplies 194 artificial conditions, while
+\(G=0\) supplies only one exit condition.  Its accurately solved square
+residual therefore remains the wrong endpoint problem.  The actual Fredholm
+endpoint operator remains unconstructed.
 
 ## 6. Claim ledger
 
@@ -306,8 +330,11 @@ This is the shortest precise reason the candidate cannot be promoted.
 | Phase condition and full nodewise history jump | **Solved** |
 | Discrete full-residual adjoint candidate | **Computed** |
 | Mesh and section diagnostics | **Computed** |
+| Rank-two endpoint compatibility and raw-compatible dimension correction | **Proved exactly** |
+| Repaired ambient \(775\)-by-\(774\) arithmetic ledger | **Proved; operator not assembled** |
 | Selected attracting trace chart | **Open** |
 | Backward-extendible repelling trace chart | **Open** |
+| Global strong-history multicell realization | **Open** |
 | Correct one-cokernel Fredholm BVP | **Open** |
 | Continuous advanced adjoint and tails | **Open** |
 | Interval inverse / radii polynomial | **Open** |

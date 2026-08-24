@@ -46,7 +46,7 @@
     "arithmetic": "MPFR directed recomposition of the weighted Dobrushin-Halanay margin and rate residual; exact rational non-rank-one witness",
     "default_command": "PYTHONPATH=src python3 experiments/fhn_dobrushin_periodic_attraction.py",
     "generator": "experiments/fhn_dobrushin_periodic_attraction.py",
-    "generator_sha256": "48c718ff0a6371573fa80464ff83fc8cfd2fb693761599eb3fbb1cfa3848742e",
+    "generator_sha256": "1a8e8bf05647d9a8d1f3ce80d545577c53bcc716641993e6b74d2a085eb6c9f8",
     "gmpy2": "2.2.2",
     "mpfr": "MPFR 4.2.1",
     "proof_source_manifest": {
@@ -54,7 +54,7 @@
       "src/canard_control/fhn_dobrushin_periodic_attraction.py": "696e4d7267450405fc4bda417fa39ad923b27f579be17bbc6d262d3c4a613358",
       "src/canard_control/fhn_periodic_transverse_halanay.py": "64f7572cd02fa27ec44ed816eee6ee80745902f4859e1c4843a37ccadc18417a",
       "src/canard_control/fhn_synchronous_floquet_right_half_cover.py": "84114e04d65b153afcd4a888985eb619437412dee6100dba221ae34095be49c6",
-      "src/canard_control/quadratic_period_lock_dobrushin_lift.py": "ee6486352a7762c9cb9576a627722ce3482d66c2531703ce92cfbf35c484d564"
+      "src/canard_control/quadratic_period_lock_dobrushin_lift.py": "c52a63f00fd0285db053cbf29488b014b6aba0639e4095887c7d570125ad19cd"
     },
     "python": "3.14.4"
   },

@@ -786,10 +786,18 @@ operational qualifier.
    discrete solve now closes both flights, phase, and every represented jump
    node and gives \(\rho_N=-0.3463310348\) on its finest mesh.  Its entry
    history satisfies the RFDE solution-manifold compatibility equation, but
-   the prescribed template is not the selected attracting chart and the
-   scalar exit observable is not a backward-extendible repelling chart.
-   Hence its Fredholm endpoint geometry remains wrong, and neither this value
-   nor the earlier shooting interval is a selected-root or sign enclosure.
+   the prescribed template is not the selected attracting trace.  The raw
+   194-coefficient endpoint ledger has two independent compatibility rows,
+   so its compatible level is 192-dimensional and cannot contain a rank-193
+   fixed-parameter chart.  An ambient 193-coordinate parameterization is
+   arithmetically possible only with explicit compatibility equations and
+   projected 192-row history matches.  Global strong-history multicell seams
+   remain to be realized.  Exact compatible counterexamples also show that
+   the scalar exit observable \(G=0\) does not determine a complete history
+   or the right flight, so it is not a backward-extendible repelling chart.
+   Hence the actual Fredholm endpoint operator remains unconstructed, and
+   neither this value nor the earlier shooting interval is a selected-root
+   or sign enclosure.
 2. **Autonomous outer selection and capture.** Prove a parameter-coherent
    physical outer history, the lower-fold event map, two disjoint biological
    destination blocks, and no later competing return. These are the open
@@ -845,6 +853,8 @@ authority.
 | Dobrushin full-network lift of the quadratic canonical root | **Proved uniformly on the canonical anisotropic zero-transverse graph; not arbitrary histories or a basin** |
 | Linear period-lock first moment implies a nonzero leading root response | **False by exact parity cancellation** |
 | Fixed-\(\varepsilon=1/5\) two-sided full-history BVP and advanced-adjoint contract | **Specified exactly; a compatible but unselected discrete surrogate is solved below, while the selected continuous endpoint charts, BVP, adjoint and interval enclosure remain open** |
+| Raw fixed-\(\varepsilon\) endpoint compatibility and Fredholm dimension audit | **Rank two and compatible dimension 192 proved; a rank-193 compatible immersion is impossible. The repaired 775-by-774 raw ledger is arithmetic only, and the global strong-history realization remains open** |
+| Scalar \(G=0\) exit determines a one-dimensional repelling history chart | **False by exact same-current, same-\(G\), compatible-history counterexamples with different future derivatives** |
 | Fixed-section response candidates \([-0.350,-0.264]\) | **Binary64 diagnostic only; section drift prevents a selected-root or sign claim** |
 | Two-branch discrete full-history-matched response candidate \(-0.3463310348\) | **Computed with a compatible entry history, full discrete adjoint and mesh diagnostics; unselected entry/exit Fredholm charts prevent promotion** |
 | Quadratic-carrier root derivative is nonzero at \(\varepsilon=1/5\) | **Not proved; the value \(-T_*/50\) is only an asymptotic candidate** |

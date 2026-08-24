@@ -1,0 +1,293 @@
+{
+  "audit": {
+    "assumptions_id": "epsilon=1/5;delta=1/sqrt(5);p=6;16-uniform-history-cells;raw-continuous-piecewise-polynomial-history-coordinates;fixed-parameter-classical-solution-manifold-compatibility",
+    "audit_id": "fixed-epsilon-quadratic-selected-attracting-endpoint-audit",
+    "certificate": {
+      "advertised_193_dimensional_fixed_parameter_compatible_immersion_exists": false,
+      "algebraic_parameter_coherent_compatible_retraction_constructed": true,
+      "ambient_193_dimensional_parameterization_is_algebraically_admissible": true,
+      "assumptions_id": "epsilon=1/5;delta=1/sqrt(5);p=6;16-uniform-history-cells;raw-continuous-piecewise-polynomial-history-coordinates;fixed-parameter-classical-solution-manifold-compatibility",
+      "audit_id": "fixed-epsilon-quadratic-selected-attracting-endpoint-audit",
+      "blueprint_doc_sha256": "b0e10e37deb71ce9fb7bcde0b173694eb76d8b96ab631eb9d477ef6d11fb79ba",
+      "blueprint_result_sha256": "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a",
+      "blueprint_source_sha256": "03423f924baa23afc8a1c5093392f67836af7864cc37e1b47aa7f7c30c1f36c4",
+      "candidate_doc_sha256": "87b048dfffc7ce98477077a342ceb4c083cb3018afd5055d0f58425f9e154edf",
+      "candidate_result_sha256": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6",
+      "candidate_source_sha256": "282bfdcb26e082470894724eeffe4c094dff0a138cbb3bf956b4caef45eb482a",
+      "compatibility_residual_has_exact_rank_two": true,
+      "continuous_rfde_open_gate": "construct a selected invariant attracting history bundle on the enlarged horizon, normalize the eta-inert old extension, validate its parameter jets, and rederive the Fredholm count",
+      "continuous_rfde_selected_attracting_chart_constructed": false,
+      "continuous_rfde_selected_attracting_chart_nonexistence_proved": false,
+      "continuous_rfde_solution_manifold_smoothness_at_fixed_epsilon_validated": true,
+      "corrected_fredholm_dimension_ledger_validated": false,
+      "discrete_endpoint_compatible_level_dimension_192_derived_exactly": true,
+      "eta_zero_old_history_determines_eta_jet": false,
+      "finite_discrete_invariant_attracting_foliation_validated": false,
+      "finite_discrete_selected_attracting_chart_constructed": false,
+      "fixed_epsilon_selected_root_validated": false,
+      "later_phase_condition_repairs_endpoint_rank_mismatch": false,
+      "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+      "one_time_tangent_adds_dimension_outside_compatible_tangent": false,
+      "parameter_coherent_first_and_second_endpoint_jets_validated": false,
+      "precise_finite_dimensional_verdict": "no fixed-parameter C1 immersion of rank 193 can map the stated 194 raw history coefficients into the regular rank-two discrete endpoint-compatibility level; an ambient 193 chart is possible only with two explicit compatibility rows and has transverse effective dimension 191 in the repaired ledger",
+      "raw_history_dimension_194_derived_exactly": true,
+      "repaired_775_by_774_projected_compatibility_ledger_is_exact": true,
+      "repaired_ledger_selected_endpoint_operator_constructed": false
+    },
+    "exact_audits": {
+      "compatibility_algebra": {
+        "bump_increment": [
+          [
+            "alpha"
+          ],
+          [
+            "beta"
+          ]
+        ],
+        "bump_jacobian": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "chart_coordinate_identity": "D_phi C(Gamma)[partial_xi Gamma]=0 for every fixed-parameter chart coordinate xi",
+        "compatibility_after_two_bumps": [
+          [
+            "alpha + dx0 - eta*(x0**2 - x_theta**2)/5 + x0**2 - y0 - sqrt(5)*(-x0**3 + x4**3/2 + x5**3/2)/100 - sqrt(5)*(-x0**3/3 - x0/5 + x4/10 + x5/10)/5"
+          ],
+          [
+            "beta + dy0 - sqrt(5)*nu/5 + x0"
+          ]
+        ],
+        "compatibility_vector": [
+          [
+            "dx0 - eta*(x0**2 - x_theta**2)/5 + x0**2 - y0 - sqrt(5)*(-x0**3 + x4**3/2 + x5**3/2)/100 - sqrt(5)*(-x0**3/3 - x0/5 + x4/10 + x5/10)/5"
+          ],
+          [
+            "dy0 - sqrt(5)*nu/5 + x0"
+          ]
+        ],
+        "eta_jet_identity": "D_phi C(Gamma)[partial_eta Gamma]=-partial_eta C=(delta^2*(x0^2-x_theta^2),0)",
+        "exact_retraction_residual": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "nu_jet_identity": "D_phi C(Gamma)[partial_nu Gamma]=-partial_nu C=(0,delta)",
+        "partial_eta_compatibility": [
+          [
+            "-x0**2/5 + x_theta**2/5"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "partial_nu_compatibility": [
+          [
+            "0"
+          ],
+          [
+            "-sqrt(5)/5"
+          ]
+        ],
+        "second_parameter_jet_identity": "D_phi C Gamma_lm + D_phiphi C[Gamma_l,Gamma_m] + D_phi_l C Gamma_m + D_phi_m C Gamma_l + C_lm = 0",
+        "time_tangent_identity": "C(x_t)=0 along a C2 solution implies D_phi C(x_t)[dot{x}_t]=0"
+      },
+      "finite_history_dimension": {
+        "all_active_delays_outside_last_cell": true,
+        "bump_degree": 3,
+        "bump_derivative_at_current": "1",
+        "bump_derivative_at_left_join": "0",
+        "bump_value_at_current": "0",
+        "bump_value_at_left_join": "0",
+        "codimension_one_selection_inside_discrete_endpoint_level_dimension": 191,
+        "compatibility_direction_determinant": "1",
+        "compatibility_direction_matrix": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "compatibility_equation_dimension": 2,
+        "compatibility_rank": 2,
+        "compatible_level_is_discrete_endpoint_level_not_global_c1": true,
+        "discrete_endpoint_compatible_level_dimension": 192,
+        "global_c1_derivative_continuity_constraints": 30,
+        "global_c1_endpoint_compatible_level_dimension": 162,
+        "global_c1_history_dimension": 164,
+        "history_cells": 16,
+        "internal_cell_joins": 15,
+        "last_cell_width": "7397086298188131/16000000000000000",
+        "maximum_discrete_level_coordinates_beside_one_time_tangent": 191,
+        "normalized_last_cell_bump": "256000000000000000000000000000000*theta**3/54716885702842587288693469273161 + 32000000000000000*theta**2/7397086298188131 + theta",
+        "polynomial_degree": 6,
+        "proposed_attracting_chart_dimension": 193,
+        "proposed_dimension_excess": 1,
+        "proposed_fixed_parameter_immersion_possible": false,
+        "raw_history_dimension": 194,
+        "raw_history_internal_regularity": "C0 across internal cell joins; one-sided polynomial derivatives exist at the endpoint",
+        "scalar_history_dimension": 97,
+        "state_components": 2
+      },
+      "old_history_eta_jet": {
+        "base_eta_zero_future_current_trajectory_distinguishes_old_extensions": false,
+        "enlarged_history_semiflow_states_are_identical_before_old_tail_ages_out": false,
+        "eta_compatibility_column_difference": [
+          [
+            "1/5"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "eta_derivative_distinguishes_old_extensions": true,
+        "eta_field_column_difference": [
+          [
+            "-1/5"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "eta_zero_dynamics_selects_parameter_coherent_old_extension": false,
+        "first_cell_is_strictly_older_than_minus_five": true,
+        "first_cell_right_endpoint": "-22191258894564393/3200000000000000",
+        "first_cell_width": "7397086298188131/16000000000000000",
+        "normalized_first_cell_bump": "256000000000000000000000000000000*theta**2/54716885702842587288693469273161 + 160000000000000000*theta/2465695432729377 + 225",
+        "old_bump_derivative_at_first_join": "0",
+        "old_bump_history_compatibility_at_nu_eta_zero": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "old_bump_history_eta_field_column": [
+          [
+            "-1/5"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "old_bump_value_at_first_join": "0",
+        "old_bump_value_at_minus_horizon": "1",
+        "recent_active_horizon": "5",
+        "scaled_horizon": "7397086298188131/1000000000000000",
+        "zero_history_compatibility_at_nu_eta_zero": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ],
+        "zero_history_eta_field_column": [
+          [
+            "0"
+          ],
+          [
+            "0"
+          ]
+        ]
+      },
+      "repaired_bvp_ledger": {
+        "ambient_193_chart_is_not_a_compatible_193_immersion": true,
+        "ambient_attracting_chart_coordinates": 193,
+        "ambient_attracting_chart_fixed_parameter_dimension": 193,
+        "arithmetic_count_is_consistent": true,
+        "coefficients_per_branch": 290,
+        "compatibility_propagated_or_built_in": [
+          "Gamma_+ compatibility is a construction hypothesis",
+          "left-seam compatibility is propagated by the left forward flow",
+          "right-terminal compatibility is propagated by the right forward flow"
+        ],
+        "compatibility_rows_on_ambient_attracting_chart": 2,
+        "compatible_repelling_chart_coordinates": 1,
+        "explicit_compatibility_blocks": [
+          "C_N(Gamma_-(xi_-))",
+          "C_N(h^-_entry)",
+          "C_N(h^+_seam)"
+        ],
+        "explicit_compatibility_rows_total": 6,
+        "flight_cells": 8,
+        "flow_rows_per_branch": 96,
+        "history_cells": 16,
+        "phase_rows": 1,
+        "polynomial_degree": 6,
+        "projected_history_blocks": [
+          "entry",
+          "exit",
+          "seam"
+        ],
+        "projected_history_rows_per_block": 192,
+        "projected_history_rows_total": 576,
+        "residual_minus_unknown": 1,
+        "selected_invariant_endpoint_operator_constructed": false,
+        "state_components": 2,
+        "total_phase_fixed_residuals": 775,
+        "total_phase_fixed_unknowns": 774,
+        "transverse_effective_attracting_dimension": 191,
+        "two_branch_coefficients": 580
+      }
+    },
+    "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+    "schema_version": 1,
+    "scope": {
+      "ambient_193_chart_with_explicit_compatibility_rows": true,
+      "continuous_c1_compatibility_solution_manifold": true,
+      "continuous_rfde_selected_attracting_chart": false,
+      "continuous_rfde_selected_attracting_chart_nonexistence": false,
+      "corrected_fredholm_bvp": false,
+      "exact_192_dimensional_discrete_endpoint_compatibility_retraction": true,
+      "exact_finite_dimension_no_go_for_193_compatible_chart": true,
+      "finite_discrete_selected_attracting_chart": false,
+      "fixed_epsilon_selected_root": false,
+      "physical_onset_or_basin": false,
+      "repaired_775_by_774_arithmetic_ledger": true,
+      "repaired_selected_endpoint_operator": false
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact SymPy dimension, endpoint-compatibility rank, algebraic retraction, parameter-column, and old-history ambiguity identities",
+    "command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fixed_epsilon_selected_attracting_endpoint_chart.py",
+    "generator": "experiments/fixed_epsilon_selected_attracting_endpoint_chart.py",
+    "generator_sha256": "e8bcbb17e45b057d64896de2ec2bde00cdd7f8e0ce39ba16f39eb07e8d64f9ad",
+    "parent_claim_checks": {
+      "blueprint_refuses_fixed_epsilon_selected_root": true,
+      "blueprint_requires_parameter_coherent_endpoint_bundles": true,
+      "blueprint_requires_solution_manifold": true,
+      "candidate_declares_ambient_193_effective_191": true,
+      "candidate_declares_discrete_compatibility_192": true,
+      "candidate_declares_global_c1_dimensions": true,
+      "candidate_declares_phase_fixed_775_by_774": true,
+      "candidate_declares_raw_history_194": true,
+      "candidate_entry_template_is_compatible_but_unselected": true,
+      "candidate_refuses_selected_root": true,
+      "candidate_repaired_ledger_is_arithmetic_only": true,
+      "candidate_uses_repaired_schema": true
+    },
+    "parent_sha256": {
+      "blueprint_doc": "b0e10e37deb71ce9fb7bcde0b173694eb76d8b96ab631eb9d477ef6d11fb79ba",
+      "blueprint_result": "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a",
+      "blueprint_source": "03423f924baa23afc8a1c5093392f67836af7864cc37e1b47aa7f7c30c1f36c4",
+      "candidate_doc": "87b048dfffc7ce98477077a342ceb4c083cb3018afd5055d0f58425f9e154edf",
+      "candidate_result": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6",
+      "candidate_source": "282bfdcb26e082470894724eeffe4c094dff0a138cbb3bf956b4caef45eb482a"
+    },
+    "proof_source": "src/canard_control/fixed_epsilon_selected_attracting_endpoint_chart.py",
+    "proof_source_sha256": "2974ea4c05bc4f2ed4193a67501064cd9fbe67b67f71067372be5e0b1ca69812"
+  }
+}

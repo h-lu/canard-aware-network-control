@@ -28,7 +28,7 @@ RESULT = (
 )
 NOTE = REPOSITORY / "docs/quadratic-period-lock-eta-floquet-stability.md"
 EXPECTED_RESULT_SHA256 = (
-    "4e2c5774a33c14dadc40b98f0db1366b4c1f9ade36fd4547000fe1200cb8f0f2"
+    "6a7743a9c3ec17d93c423a9f6d65b4b0f83bd9602542ba0db835b1fa07584790"
 )
 
 

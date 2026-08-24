@@ -13,7 +13,7 @@
     "carrier_pencil": "Delta_eta L_s=-2*epsilon*T_*eta*M_(V_*-1)*(1-exp(-s)) on voltage; zero on recovery",
     "carrier_pencil_vanishes_at_translation": true,
     "centered_voltage_wiener_upper": "2.92712337524556553483716133719149384707213412688446588",
-    "dobrushin_attraction_result_sha256": "20fb3f0259f7d2bf8d5ccd24303250661a405418ea733e5419de5f2f07ddea72",
+    "dobrushin_attraction_result_sha256": "3123c6f2428deb60a0d24267209ddb0a9d52a514465df93dbc72af4ea06cb2ae",
     "dobrushin_transverse_rate_unchanged_on_eta_box": true,
     "epsilon": "0.2",
     "eta_budget_digest": "50c7f4e59c83037deb1f2fbf7071d7b19db040ffcf1676afcd7dcff86dcf9e00",
@@ -110,7 +110,7 @@
       "src/canard_control/fhn_periodic_infinite_validation.py": "f69aa5eb802c09daae01256b86661d3b17672ba2e38dd7bb4ba6244297f805ab",
       "src/canard_control/fhn_synchronous_floquet_riesz_reduction.py": "6ffc5a380d91cee264b10b84c1818f1c47a3ec549b0fa44b13792715b328297e",
       "src/canard_control/fhn_synchronous_floquet_right_half_cover.py": "84114e04d65b153afcd4a888985eb619437412dee6100dba221ae34095be49c6",
-      "src/canard_control/quadratic_period_lock_eta_floquet_box.py": "b58a7f11c2f136d7b67923d9a60305f49b58cac4a60f44d15c9bf8f0f53e29e5",
+      "src/canard_control/quadratic_period_lock_eta_floquet_box.py": "fd6f15519347813506b5c0aad48f6fd9e52ed14600adf9078b7be9ba1ab926d0",
       "src/canard_control/quadratic_period_locked_root_carrier.py": "44f8c78d78b5057e8db0c25b41d578afb26b7a9fd11a7d1a5f7d17cf435d779b"
     },
     "python": "3.14.4",
@@ -130,7 +130,7 @@
   "source_evidence": {
     "bloch_result_sha256": "c2f93b6cfe6a8e0df3b341476fbe45a83f6fecc0398dbb7340a5213a55357a31",
     "candidate_result_sha256": "7437514175586665b1bf10831793427e42d8a9cbd736536444be4a98064a3c28",
-    "dobrushin_attraction_result_sha256": "20fb3f0259f7d2bf8d5ccd24303250661a405418ea733e5419de5f2f07ddea72",
+    "dobrushin_attraction_result_sha256": "3123c6f2428deb60a0d24267209ddb0a9d52a514465df93dbc72af4ea06cb2ae",
     "quadratic_carrier_result_sha256": "4f80cd8ef53161e16886c06fdc52d99be774a9b1cf15d3e7ba534fe37925f7f8",
     "riesz_result_sha256": "b68483ae12421195a485e6c9af950d8d101cf04497565cf079fcf57ba57793f6",
     "right_half_result_sha256": "6795e6f19f31ffb6bfcf9abd24efb1c5dde4dccf54d896d01298b3e8f9a0d1c3"

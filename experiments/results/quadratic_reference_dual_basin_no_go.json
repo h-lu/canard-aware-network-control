@@ -18,7 +18,7 @@
     "model_id": "quadratic-dual-scaffold-reference-slice-dual-basin-no-go",
     "negative_detector_periodic_two_sided_crossing_validated": true,
     "negative_excursion_periodic_orbit_strictly_above_validated": true,
-    "periodic_attraction_result_sha256": "20fb3f0259f7d2bf8d5ccd24303250661a405418ea733e5419de5f2f07ddea72",
+    "periodic_attraction_result_sha256": "3123c6f2428deb60a0d24267209ddb0a9d52a514465df93dbc72af4ea06cb2ae",
     "periodic_capture_permanent_negative_detector_lower_side_validated": false,
     "periodic_capture_permanent_negative_excursion_lower_side_validated": false,
     "periodic_capture_permanent_positive_detector_upper_side_validated": false,
@@ -29,7 +29,7 @@
     "post_event_parameter_switch_capture_validated": false,
     "post_event_parameter_switch_contract_specified_validated": true,
     "post_event_parameter_switch_is_autonomous_dual_basin_validated": false,
-    "stop_go_result_sha256": "4bc8ccf41fb0f2d2fd7e3152da59afa24810a5b0d8615a3847d1491f63ff55da",
+    "stop_go_result_sha256": "e3790df79c7eff219733dacd3721a4a4f29da0cd6c026c77c5c410e7385b70dc",
     "synchronous_equilibrium_local_attractor_validated": false,
     "synchronous_equilibrium_quiet_basin_validated": false,
     "synchronous_floquet_result_sha256": "6795e6f19f31ffb6bfcf9abd24efb1c5dde4dccf54d896d01298b3e8f9a0d1c3",
@@ -139,13 +139,13 @@
     "parent_sha256": {
       "amplitude_result": "28e74d2316f7e9324f03874c3294d27d83708c9dbb3f4eefaf04925f55bbba60",
       "autonomous_handoff_result": "38f612771fd5f7e50ffd4f77103ea680b447fd11a7af25cc5ccea95b9bf606f2",
-      "periodic_attraction_result": "20fb3f0259f7d2bf8d5ccd24303250661a405418ea733e5419de5f2f07ddea72",
-      "stop_go_result": "4bc8ccf41fb0f2d2fd7e3152da59afa24810a5b0d8615a3847d1491f63ff55da",
+      "periodic_attraction_result": "3123c6f2428deb60a0d24267209ddb0a9d52a514465df93dbc72af4ea06cb2ae",
+      "stop_go_result": "e3790df79c7eff219733dacd3721a4a4f29da0cd6c026c77c5c410e7385b70dc",
       "synchronous_floquet_result": "6795e6f19f31ffb6bfcf9abd24efb1c5dde4dccf54d896d01298b3e8f9a0d1c3"
     },
     "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
     "proof_source": "src/canard_control/quadratic_reference_dual_basin_no_go.py",
-    "proof_source_sha256": "a1b173dc2d5ee44c3961bfa25c8eb29a3aff5cfadccf1e9f1e6f877f0f0897fb",
+    "proof_source_sha256": "a734728e47fb81d69368ac36ea163999312b13de09332a98ef5ec42e30d7bd58",
     "python": "3.14.4"
   },
   "scope": {

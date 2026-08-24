@@ -162,20 +162,40 @@ def test_certificate_refuses_selected_trace_root_and_enclosure() -> None:
     assert not certificate.fixed_epsilon_selected_root_validated
     assert not certificate.rho_star_enclosed_away_from_zero
     assert not certificate.physical_onset_or_capture_validated
-    assert "193-dimensional" in certificate.minimal_failure
-    assert "775x774" in certificate.minimal_failure
+    assert "ambient 193-coordinate" in certificate.minimal_failure
+    assert "effective compatible zero-fiber dimension 191" in (
+        certificate.minimal_failure
+    )
+    assert "775x774 is only the raw C0 template" in certificate.minimal_failure
+    assert "recount the resulting operator" in certificate.minimal_failure
 
 
 def test_faithful_next_count_and_backward_ivp_refusal_are_pinned() -> None:
     payload = reference_two_sided_candidate_payload()
     next_step = payload["faithful_next_discretization"]
-    assert next_step["history_dimension"] == 194
-    assert next_step["attracting_endpoint_chart_dimension"] == 193
+    assert next_step["raw_history_coefficient_dimension"] == 194
+    assert next_step["discrete_endpoint_compatibility_rank"] == 2
+    assert next_step["discrete_endpoint_compatible_level_dimension"] == 192
+    assert next_step["global_c1_internal_derivative_continuity_rows"] == 30
+    assert next_step["global_c1_history_dimension"] == 164
+    assert next_step["global_c1_endpoint_compatible_level_dimension"] == 162
+    assert next_step["ambient_attracting_coordinate_dimension"] == 193
+    assert next_step["attracting_compatibility_residual_rows"] == 2
+    assert next_step["effective_compatible_attracting_zero_fiber_dimension"] == 191
     assert next_step["repelling_endpoint_chart_dimension"] == 1
+    assert next_step["projected_history_match_dimension"] == 192
+    assert next_step["projected_history_match_blocks"] == 3
+    assert next_step["explicit_compatibility_residual_rows"] == 6
     assert next_step["phase_fixed_residual_dimension"] == 775
     assert next_step["phase_fixed_unknown_dimension"] == 774
     assert next_step["jump_complement_square_dimension"] == 775
     assert next_step["root_system_square_dimension"] == 776
+    assert next_step["raw_endpoint_compatible_intrinsic_residual_dimension"] == 769
+    assert next_step["raw_endpoint_compatible_intrinsic_unknown_dimension"] == 768
+    assert next_step["ambient_repaired_ledger_arithmetic_only"]
+    assert not next_step["selected_endpoint_operator_constructed"]
+    assert not next_step["global_c1_or_w2_multicell_realization_validated"]
+    assert next_step["raw_194_row_history_equalities_are_not_faithful"]
     assert next_step["terminal_repelling_chart_requires_collocation_continuation"]
     assert next_step["backward_ivp_is_not_an_admissible_substitute"]
 
@@ -253,6 +273,9 @@ def test_note_reports_candidate_convergence_adjoint_and_exact_refusal() -> None:
     assert "238 two-state history nodes, hence 476 scalar history" in text
     assert "second-order" in text
     assert "section spreads" in text
-    assert "wrong Fredholm endpoint geometry" in text
+    assert "The actual Fredholm endpoint operator remains unconstructed" in (
+        " ".join(text.split())
+    )
+    assert "global \\(C^1\\) regularity" in text
     assert "Fixed-\\(\\varepsilon\\) selected root | **Open**" in text
     assert "Enclosure \\(0\\notin\\rho_*\\) | **Open**" in text

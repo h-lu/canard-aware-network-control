@@ -1,0 +1,217 @@
+{
+  "audit": {
+    "certificate": {
+      "backward_extendible_selected_repelling_chart_constructed": false,
+      "eta_nonzero_period_atom_future_nonuniqueness_validated": true,
+      "eta_zero_baseline_delay_future_nonuniqueness_validated": true,
+      "exact_quadratic_rfde_used": true,
+      "fixed_epsilon_bvp_result_sha256": "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a",
+      "fixed_epsilon_root_response_validated": false,
+      "fixed_epsilon_selected_root_validated": false,
+      "full_history_parameter_sensitivity_equations_specified": true,
+      "full_history_right_flight_endpoint_map_specified": true,
+      "full_period_horizon_used": true,
+      "invariant_chart_implies_local_backward_extension_validated": true,
+      "minimal_stop": "solve and interval-validate the selected invariant-history chart Gamma^r, its complete-history a/eta jets, and its composition with the right flight after resolving the 30 global-C1 derivative seams per represented 16-cell history block, every remaining flight/history-interface derivative join, and the endpoint compatibility rows in a fresh strong operator count",
+      "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+      "phase_gauge_specified": true,
+      "physical_onset_validated": false,
+      "repaired_ambient_775_by_774_arithmetic_validated": true,
+      "repaired_ledger_strong_fredholm_operator_validated": false,
+      "required_chart_is_inside_solution_manifold": true,
+      "right_flight_to_selected_chart_validated": false,
+      "same_current_and_same_scalar_exit_compatible_histories_constructed": true,
+      "scalar_exit_observable_determines_complete_history_validated": false,
+      "scalar_exit_observable_determines_right_flight_validated": false,
+      "scalar_exit_observable_is_one_dimensional_repelling_chart_validated": false,
+      "selected_chart_parameter_a_derivative_validated": false,
+      "selected_chart_parameter_eta_derivative_validated": false,
+      "selected_chart_phase_transversality_validated": false,
+      "two_sided_candidate_result_sha256": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6"
+    },
+    "compatible_endpoint_count_audit": {
+      "ambient_incoming_compatibility_rows": 2,
+      "ambient_incoming_coordinate_dimension_reported_by_candidate": 193,
+      "ambient_repaired_775_by_774_ledger_is_arithmetic_only": true,
+      "candidate_193_plus_1_is_compatible_fredholm_count_validated": false,
+      "discrete_endpoint_compatible_level_dimension": 192,
+      "effective_discrete_incoming_zero_fiber_dimension": 191,
+      "endpoint_compatibility_codimension": 2,
+      "exact_interpretation": "the value-continuous 194-coefficient ledger has a 192-dimensional endpoint-compatible level, but global C1 continuity removes 30 more directions, leaving a 162-dimensional strong compatible level; scalar G=0 leaves fibers of dimensions 191 and 161 on those two levels, never the required one-dimensional curve; a raw equality against that curve has net codimension 193=30+2+161",
+      "exit_observable_transverse_at_witness": true,
+      "global_c1_endpoint_compatible_level_dimension": 162,
+      "global_c1_history_dimension": 164,
+      "global_c1_internal_derivative_continuity_codimension": 30,
+      "global_c1_or_w2_multicell_realization_validated": false,
+      "raw_endpoint_equalities": 194,
+      "raw_history_coefficient_dimension": 194,
+      "raw_net_endpoint_conditions": 193,
+      "repelling_chart_coordinates": 1,
+      "repelling_chart_dimension_inside_solution_manifold": 1,
+      "repelling_curve_codimension_in_raw_history_space": 193,
+      "repelling_curve_codimension_on_discrete_endpoint_level": 191,
+      "repelling_curve_codimension_on_global_c1_compatible_level": 161,
+      "scalar_current_exit_constraints": 1,
+      "scalar_exit_fiber_dimension_on_discrete_endpoint_level": 191,
+      "scalar_exit_fiber_dimension_on_global_c1_compatible_level": 161,
+      "scalar_exit_fiber_excess_over_repelling_curve_on_discrete_level": 190,
+      "scalar_exit_fiber_excess_over_repelling_curve_on_global_c1_level": 160,
+      "state_dimension": 2,
+      "unresolved_alternatives": [
+        "assemble the ambient 775-by-774 arithmetic with 192-row projected history blocks, six endpoint compatibility rows, and all global strong-history seam conditions without double counting",
+        "rebuild in intrinsic global-C1 or W2p compatible coordinates and prove the same Fredholm index independently of matrix size",
+        "prove the one-dimensional selected repelling embedding and its complement in whichever strong endpoint codomain is chosen"
+      ],
+      "value_continuous_history_dimension": 194
+    },
+    "compatible_history_fiber_audit": {
+      "base_current_state": [
+        [
+          "1"
+        ],
+        [
+          "1/2"
+        ]
+      ],
+      "base_recovery_history": "(Theta_star*(sqrt(5)*nu*s**3 + 9*sqrt(5)*nu*s**2 + 20*sqrt(5)*nu*s - 5*s**3 - 45*s**2 - 100*s + 50) + sqrt(5)*nu*s**4 + 9*sqrt(5)*nu*s**3 + 20*sqrt(5)*nu*s**2 - 5*s**4 - 45*s**3 - 100*s**2)/(100*Theta_star)",
+      "base_solution_manifold_compatibility_defect": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "base_voltage_history": "(Theta_star*(-15*s**3 - 2*sqrt(5)*s**3 - 135*s**2 - 18*sqrt(5)*s**2 - 300*s - 40*sqrt(5)*s + 600) - 15*s**4 - 2*sqrt(5)*s**4 - 135*s**3 - 18*sqrt(5)*s**3 - 300*s**2 - 40*sqrt(5)*s**2)/(600*Theta_star)",
+      "delay_4_fast_field_difference": "sqrt(5)*r*(r**2 + 3*r + 7)/200",
+      "delay_4_history_perturbation": "r*s*(250*Theta_star*s*(Theta_star*s + 5*Theta_star + s**2 + 5*s) + sqrt(5)*Theta_star*(Theta_star - 4)*(r**2*s**2 + 9*r**2*s + 20*r**2 + 3*r*s**2 + 27*r*s + 60*r + 7*s**2 + 63*s + 140) + sqrt(5)*s*(Theta_star - 4)*(r**2*s**2 + 9*r**2*s + 20*r**2 + 3*r*s**2 + 27*r*s + 60*r + 7*s**2 + 63*s + 140))/(4000*Theta_star*(Theta_star - 4))",
+      "delay_4_lagrange_polynomial": "-s*(Theta_star + s)*(s + 5)/(4*Theta_star - 16)",
+      "delay_4_perturbation_current_derivative": "sqrt(5)*r*(r**2 + 3*r + 7)/200",
+      "delay_4_perturbation_current_value": "0",
+      "delay_4_perturbation_delay_4_value": "r",
+      "delay_4_perturbation_delay_5_value": "0",
+      "delay_4_perturbation_period_delay_value": "0",
+      "delay_4_solution_manifold_compatibility_defect": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "delay_4_unit_witness_difference": "11*sqrt(5)/200",
+      "delta": "sqrt(5)/5",
+      "epsilon": "1/5",
+      "eta": "eta",
+      "exit_observable_at_base_current": "0",
+      "exit_observable_current_gradient_at_base": [
+        [
+          "1"
+        ],
+        [
+          "-1/2"
+        ]
+      ],
+      "history_variable": "s",
+      "nu": "nu",
+      "period_fast_field_difference": "-eta*r*(r + 2)/5",
+      "period_history_perturbation": "r*s*(-Theta_star**2*eta*(Theta_star**2 - 9*Theta_star + 20)*(r*s**2 + 9*r*s + 20*r + 2*s**2 + 18*s + 40) - Theta_star*eta*s*(Theta_star**2 - 9*Theta_star + 20)*(r*s**2 + 9*r*s + 20*r + 2*s**2 + 18*s + 40) + 100*s*(s**2 + 9*s + 20))/(100*Theta_star**2*(Theta_star**2 - 9*Theta_star + 20))",
+      "period_lagrange_polynomial": "-s*(s + 4)*(s + 5)/(Theta_star*(Theta_star - 5)*(Theta_star - 4))",
+      "period_perturbation_current_derivative": "-eta*r*(r + 2)/5",
+      "period_perturbation_current_value": "0",
+      "period_perturbation_delay_4_value": "0",
+      "period_perturbation_delay_5_value": "0",
+      "period_perturbation_period_delay_value": "r",
+      "period_solution_manifold_compatibility_defect": [
+        [
+          "0"
+        ],
+        [
+          "0"
+        ]
+      ],
+      "period_unit_witness_difference": "-3*eta/5",
+      "perturbation_amplitude": "r",
+      "scaled_period_delay": "Theta_star",
+      "solution_manifold_node_polynomial": "s*(Theta_star*(s**2 + 9*s + 20) + s**3 + 9*s**2 + 20*s)/(20*Theta_star)"
+    },
+    "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+    "schema_version": 1,
+    "scope": {
+      "backward_extendible_selected_repelling_chart": false,
+      "exact_compatible_history_counterexamples": true,
+      "fixed_epsilon_root_response": false,
+      "fixed_epsilon_selected_root": false,
+      "minimum_invariant_chart_contract": true,
+      "physical_onset": false,
+      "repaired_ambient_775_by_774_arithmetic": true,
+      "validated_chart_a_derivative": false,
+      "validated_chart_eta_derivative": false,
+      "validated_chart_phase": false,
+      "validated_right_flight_endpoint_composition": false,
+      "validated_strong_fredholm_endpoint_operator": false
+    },
+    "selected_repelling_endpoint_contract": {
+      "a_vector_field_column": "partial_a F=(0,-1/5)^T",
+      "backward_extension_identity": "if dot xi=q^r has a backward scalar flow, then z_t=Gamma^r(xi(t);a,eta) is an exact backward-extendible RFDE history without an ambient backward RFDE IVP",
+      "boundary_invariance_equation": "q^r partial_xi Gamma^r(0)=F(Gamma^r;a,eta)",
+      "chart_internal_flow": "dot xi=q^r(xi;a,eta)",
+      "eta_vector_field_column": "partial_eta F=(1/5*((V(0)-1)^2-(V(-T_*)-1)^2),0)^T",
+      "fixed_time_endpoint_derivative": "D R_+=End_{L_+}u-Gamma_xi dxi-Gamma_a da-Gamma_eta deta",
+      "minimum_continuation_unknowns": [
+        "piecewise-Chebyshev coefficients of Gamma^r(xi,theta) on I_xi x [-T_*,0]",
+        "the scalar internal field q^r(xi) and one selected-anchor coordinate",
+        "the full-history jets Gamma_a and Gamma_eta with their scalar q_a and q_eta columns",
+        "an exact interval enclosure of T_* and a translation-closed mesh for 4*sqrt(5), 5*sqrt(5), and T_*",
+        "the right-flight trace and either fixed L_+ or a transversal moving-hit variable"
+      ],
+      "minimum_validation_gates": [
+        "validate the nonlinear invariant-chart residual and a phase/anchor bordered inverse with coefficient tails",
+        "prove chart rank, injectivity, solution-manifold compatibility, and local backward scalar-flow retention",
+        "prove the anchor is the chosen repelling selection rather than an arbitrary invariant curve",
+        "validate Gamma_a and Gamma_eta on the complete T_* horizon, including the older-history eta column",
+        "compose the complete-history right-flight endpoint residual and validate its derivative",
+        "resolve raw, global-strong, and endpoint-compatible codomains before promoting the arithmetic 193+1 or 775x774 ledger to a Fredholm operator",
+        "only then validate the two-sided one-cokernel BVP, adjoint, selected root, and root response"
+      ],
+      "moving_time_endpoint_derivative": "D R_+(theta)=u(L_++theta)+dot x^+(L_++theta)dL_+ - Gamma_xi(theta)dxi-Gamma_a(theta)da-Gamma_eta(theta)deta",
+      "parameter_boundary_sensitivity": "q Gamma_{xi,lambda}(0)+q_lambda Gamma_xi(0)=D_phi F(Gamma) Gamma_lambda+F_lambda(Gamma)",
+      "parameter_phase_gauge": "chi(Gamma_lambda)=0 at fixed xi, plus the differentiated selected-anchor equation",
+      "parameter_shift_sensitivity": "q Gamma_{xi,lambda}+q_lambda Gamma_xi=partial_theta Gamma_lambda, lambda in {a,eta}",
+      "period_delay_parameter_convention": "T_* is the frozen plant delay under a and eta derivatives; varying T_* would add a translated-history derivative and requires a separate strong-space delay column",
+      "phase_coordinate": "chi(Gamma^r(xi;a,eta))=xi for one fixed bounded full-history functional chi",
+      "phase_transversality": "chi(partial_xi Gamma^r)=1 and the selected anchor removes the remaining autonomous translation/reparameterization",
+      "physical_a_to_scaled_nu_conversion": "a=1+(1/5)nu, hence Gamma_a=5 Gamma_nu at fixed epsilon within one coordinate representation; physical and fold components are related by D S_delta and the internal fields satisfy q_fold=q_phys/delta",
+      "physical_phase_space": "X_phys=C([-T_*,0],R^2); under s=delta*t its fold-time pullback is X_fold=C([-Theta_*,0],R^2), with S_delta(phi)(sigma)=((phi_V(sigma/delta)-1)/delta,(2/3-phi_W(sigma/delta))/delta^2)",
+      "right_flight_endpoint_residual": "R_+(x^+,L_+,xi,a,eta)=End_{L_+}x^+ - Gamma^r(xi;a,eta) in X_phys",
+      "scalar_hit_time_requirement": "a scalar section may define L_+ only after a directed nonzero crossing derivative; it is not the endpoint chart",
+      "scaled_eta_vector_field_column": "partial_eta F_fold=(1/5*(X(0)^2-X(-Theta_*)^2),0)^T",
+      "scaled_nu_vector_field_column": "partial_nu F_fold=(0,1/sqrt(5))^T",
+      "selected_chart": "Gamma^r:I_xi x P -> M^1_{a,eta}, with rank partial_xi Gamma^r=1",
+      "selection_condition": "one fixed nonlinear repelling-tail/outer-history anchor, continued coherently from a validated selected reference; invariance alone does not select a threshold",
+      "shift_invariance_equation": "q^r partial_xi Gamma^r(theta)=partial_theta Gamma^r(theta), -T_*<theta<0",
+      "strong_solution_manifold": "M^1_{a,eta}=M^1_phys={phi in C^1([-T_*,0]): phi'(0)=F_phys(phi;a,eta)}; equivalently M^1_fold_{nu,eta}={Phi in C^1([-Theta_*,0]): Phi'(0)=F_fold(Phi;nu,eta)}"
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact SymPy Hermite history identities, exact RFDE solution-manifold compatibility, and a declarative invariant-chart continuation contract; no interval chart solve",
+    "default_command": "PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/fixed_epsilon_selected_repelling_endpoint.py",
+    "generator": "experiments/fixed_epsilon_selected_repelling_endpoint.py",
+    "generator_sha256": "ebd39bb6d45c9b058d9e198667a68992fb1b053e05237fd371b92ed7486f77ca",
+    "parent_claim_checks": {
+      "candidate_has_scalar_exit_not_selected_bundle": true,
+      "candidate_refuses_backward_ivp_substitute": true,
+      "candidate_repaired_history_ledger_is_194_192_193_1": true,
+      "candidate_strong_history_seam_remains_open": true,
+      "parent_bvp_is_contract_not_solution": true
+    },
+    "parent_sha256": {
+      "fixed_epsilon_bvp_result": "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a",
+      "two_sided_candidate_result": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_selected_repelling_endpoint.py",
+    "proof_source_sha256": "086b4e556c18f1ca1ed7a04ff1f569047b51cf85c8590ed2f61bf6ed56bf9721",
+    "python": "3.14.4"
+  }
+}

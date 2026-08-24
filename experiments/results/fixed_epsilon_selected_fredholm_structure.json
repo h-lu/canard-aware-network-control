@@ -1,0 +1,177 @@
+{
+  "audit": {
+    "claim_ledger": {
+      "actual_775_by_774_derivative_constructed": false,
+      "ambient_repaired_775_by_774_ledger_defined": true,
+      "bordered_inverse_validated": false,
+      "coefficient_tail_bound_validated": false,
+      "compatibility_rank_two_structurally_proved": true,
+      "compatible_history_dimension_proved": true,
+      "continuous_advanced_adjoint_with_boundary_multipliers_validated": false,
+      "effective_attracting_trace_dimension_if_transverse": 191,
+      "entry_chart_compatibility_transversality_validated": false,
+      "exit_chart_compatibility_is_a_construction_hypothesis": true,
+      "full_column_rank_validated": false,
+      "global_c1_or_w2_realization_validated": false,
+      "internal_derivative_jump_rows_counted": false,
+      "jump_complement_frozen": false,
+      "one_dimensional_cokernel_validated": false,
+      "period_interval_propagated": false,
+      "raw_775_count_without_compatibility_is_valid": false,
+      "raw_history_space_is_only_c0_across_cell_joins": true,
+      "repaired_ledger_is_fredholm_invertibility_evidence": false,
+      "rho_star_enclosed_away_from_zero": false,
+      "selected_entry_chart_constructed": false,
+      "selected_exit_chart_constructed": false,
+      "selected_root_validated": false,
+      "terminal_compatibility_requires_right_inclusive_flow_collocation": true,
+      "three_projected_equalities_plus_compatibility_rows_defined": true,
+      "three_raw_194_history_equalities_are_retained": false,
+      "three_raw_equalities_are_simply_deleted": false
+    },
+    "compatibility_structure": {
+      "bubble_endpoint_values": [
+        "b(0)=0",
+        "b(1)=0"
+      ],
+      "bubble_right_derivative": "d b/d theta at u=1 equals 1",
+      "bubble_right_inverse_shape": [
+        194,
+        2
+      ],
+      "compatibility_jacobian_times_right_inverse_is_identity": true,
+      "compatibility_map": "C_N(phi)=partial_theta^- phi(0)-f(phi(0),phi(-4),phi(-5),phi(-Theta_*);nu,eta)",
+      "compatibility_rank_two_proved_for_every_frozen_history": true,
+      "delayed_samples_unchanged": true,
+      "endpoint_bubble": "b(u)=ell*u*(u-1), 0<=u<=1",
+      "history_coordinate_representation": "C0 only across cell joins; per component: 17 shared endpoint values plus 5 endpoint-zero bubble coefficients on each of 16 degree-6 cells; reorder the two last-cell ell*u*(u-1) coefficients as alpha_X,alpha_Y",
+      "last_cell_width_condition": "0<ell<min{4,5,Theta_*}",
+      "projection_shape": [
+        192,
+        194
+      ],
+      "projection_times_right_inverse_is_zero": true,
+      "retained_projection": "P_N=[I_192 0] in (r,alpha_X,alpha_Y) coordinates",
+      "stacked_coordinate_jacobian": "[P_N;DC_N]=[[I_192,0],[A(bar_phi),I_2]]",
+      "stacked_coordinate_jacobian_determinant": "1",
+      "stacked_coordinate_jacobian_inverse": "[[I_192,0],[-A(bar_phi),I_2]]"
+    },
+    "continuous_adjoint_contract": {
+      "definition": "the complete boundary/seam conditions are defined by L^*Psi=0 after the endpoint chart derivatives are fixed",
+      "full_covector": "Psi=(p_-,p_+,lambda_-,lambda_+,gamma,mu), including entry, exit, phase, seam, and jump multipliers",
+      "interior": "-p'(s)=A_0(s)^T p(s)+sum_{tau in {4,5,Theta}} 1_{s+tau in I} A_tau(s+tau)^T p(s+tau)",
+      "period_coefficient": "A_Theta,11(s)=-2*delta^2*eta*X(s-Theta), hence it vanishes at eta=0"
+    },
+    "dimension_ledger": {
+      "ambient_entry_chart_coordinates": 193,
+      "attracting_normal_codimension": 1,
+      "branch_state_coefficients": 290,
+      "compatibility_rank": 2,
+      "compatible_exit_chart_coordinates": 1,
+      "compatible_history_dimension": 192,
+      "effective_attracting_trace_dimension": 191,
+      "entry_chart_compatibility_rows": 2,
+      "flight_cells_per_branch": 8,
+      "flow_rows_per_branch": 96,
+      "gap_root_square_dimension": 776,
+      "history_cells": 16,
+      "jump_complement_square_dimension": 775,
+      "left_initial_compatibility_rows": 2,
+      "phase_fixed_residual_dimension": 775,
+      "phase_fixed_unknown_dimension": 774,
+      "phase_rows": 1,
+      "polynomial_degree": 6,
+      "projected_entry_rows": 192,
+      "projected_exit_rows": 192,
+      "projected_seam_rows": 192,
+      "raw_history_dimension": 194,
+      "right_initial_compatibility_rows": 2,
+      "scalar_history_dimension": 97,
+      "state_dimension": 2
+    },
+    "endpoint_logic": {
+      "entry": "projected equality plus compatibility of both the left initial history and the ambient entry chart",
+      "entry_transversality_hypothesis": "rank D(C_N o Gamma_-)=2, so the 193-coordinate ambient entry chart has a 191-dimensional compatible zero fiber",
+      "exit": "projected equality; right-terminal compatibility comes from right-inclusive flow and Gamma_+ must be constructed inside the compatibility manifold",
+      "seam": "projected equality plus right-initial compatibility; left terminal compatibility comes from right-inclusive flow"
+    },
+    "intrinsic_compatible_ledger": {
+      "attracting_chart_coordinates": 191,
+      "branch_coefficients_after_initial_compatibility": 288,
+      "exit_chart_coordinates": 1,
+      "flow_rows": 192,
+      "intended_fredholm_index_if_all_analytic_gates_hold": -1,
+      "phase_fixed_residual_dimension": 769,
+      "phase_fixed_unknown_dimension": 768,
+      "phase_rows": 1,
+      "relation_to_ambient_ledger": "endpoint-compatible C0 coordinate ledger only; a global C1/W2 realization still needs a different basis or derivative-jump rows and a fresh count",
+      "three_compatible_history_equalities": 576
+    },
+    "minimal_next_certificate": [
+      "choose a globally C1/W2 coefficient realization or add and recount internal derivative-jump residuals",
+      "construct Gamma_- and prove rank D(C_N o Gamma_-)=2",
+      "construct Gamma_+ inside C_N^{-1}(0)",
+      "assemble the resulting strong index-minus-one L_N with right-inclusive endpoint flow rows and a fresh dimension count",
+      "prove full column rank and a nonzero jump projection of the left null vector",
+      "freeze e_N and validate [L_N,-e_N] including coefficient tails",
+      "propagate the T_* interval through shifts, charts, and parameter columns",
+      "validate the continuous advanced adjoint and all boundary multipliers"
+    ],
+    "model_id": "synchronous-dual-scaffold-fhn-quadratic-period-lock",
+    "parameter_columns": {
+      "endpoint_requirement": "append parameter derivatives of both endpoint charts; on a moving domain also append the chosen trivialization columns",
+      "eta_interior_column": "R_eta=(-delta^2*(X^2-X_Theta^2),0)^T",
+      "eta_period_mixed_column_at_eta_zero": "partial_eta R_T|_{eta=0}=(-2*delta^3*X_Theta*X_Theta_prime,0)^T",
+      "nu_interior_column": "R_nu=(0,-delta)^T",
+      "physical_period_column": "R_T=delta*R_Theta=(-2*delta^3*eta*X_Theta*X_Theta_prime,0)^T",
+      "physical_period_column_at_eta_zero": "R_T|_{eta=0}=0",
+      "residual_convention": "R=x'-f",
+      "scaled_delay_column": "R_Theta=(-2*delta^2*eta*X_Theta*X_Theta_prime,0)^T"
+    },
+    "rectangular_operator_contract": {
+      "border": "conditional raw-template border B_N=[L_N,-e_N] in R^(775x775)",
+      "cokernel_gate": "solve L_N^T psi=0; economy-SVD's last positive-singular-value vector is not the missing left-null vector",
+      "column_rank_gate": "sigma_min(L_N)>0 with directed error bounds",
+      "gap_derivative": "d_lambda=psi^T F_lambda",
+      "jump_complement": "choose e_N in the 192-row projected jump slot with psi^T e_N nonzero",
+      "normalization": "L_N^T psi=0 and psi^T e_N=1",
+      "operator": "raw C0 ambient template L_N=D_z F_N in R^(775x774); nu,eta,d are excluded; the strong selected derivative requires a fresh realization and count",
+      "physical_response": "rho=delta^2*nu_eta=-delta^2*m_eta/m_nu",
+      "transpose_identity": "B_N^T psi=(0_774,-1)"
+    },
+    "repaired_residual_order": [
+      "left flow: 96",
+      "right flow: 96",
+      "left initial compatibility C_N(h_-): 2",
+      "entry chart compatibility C_N(Gamma_-(xi_-)): 2",
+      "right initial compatibility C_N(h_0^+): 2",
+      "projected entry P_N(h_--Gamma_-(xi_-)): 192",
+      "projected seam P_N(h_0^--h_0^+): 192",
+      "projected exit P_N(h_+-Gamma_+(xi_+)): 192",
+      "phase: 1"
+    ],
+    "schema_version": 1,
+    "scope": {
+      "actual_selected_fredholm_operator": false,
+      "continuous_fredholm_theorem": false,
+      "exact_discrete_compatibility_rank": true,
+      "exact_repaired_c0_ambient_algebra_ledger": true,
+      "global_c1_or_w2_collocation_ledger": false,
+      "rho_enclosure": false,
+      "selected_root": false
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact integer and SymPy block algebra; no selected charts, floating-point Fredholm matrix, or interval inverse",
+    "blueprint_note_sha256": "b0e10e37deb71ce9fb7bcde0b173694eb76d8b96ab631eb9d477ef6d11fb79ba",
+    "blueprint_result_sha256": "1af8aa46b31bb099a8f07e7646b656577d010dc413094ad3be0afb32c70c993a",
+    "blueprint_source_sha256": "03423f924baa23afc8a1c5093392f67836af7864cc37e1b47aa7f7c30c1f36c4",
+    "candidate_note_sha256": "87b048dfffc7ce98477077a342ceb4c083cb3018afd5055d0f58425f9e154edf",
+    "candidate_result_sha256": "b22c336c64f1e2187a013fd597e1a93624c8bf1ef83e5549abcc558ad684c5a6",
+    "candidate_source_sha256": "282bfdcb26e082470894724eeffe4c094dff0a138cbb3bf956b4caef45eb482a",
+    "generator": "experiments/fixed_epsilon_selected_fredholm_structure.py",
+    "generator_sha256": "0e00a89513eb50f6cedce8fb3acd193165bc5898d06579bb1e9293639c07a535",
+    "proof_source": "src/canard_control/fixed_epsilon_selected_fredholm_structure.py",
+    "proof_source_sha256": "2741380ce30b2b99cfa41832bd57be2724eac236a424aba71877412cc0db4f08"
+  }
+}

@@ -315,9 +315,16 @@ open.
    finite difference agree, with finest candidate
    \(\rho_N=-0.3463310348\).  Its entry history now satisfies the RFDE
    solution-manifold compatibility equation exactly, but it is still an
-   artificial full template rather than the selected attracting chart; the
-   backward-extendible repelling chart is still replaced by one scalar exit
-   observable.  Thus its Fredholm endpoint geometry is wrong.
+   artificial full template rather than the selected attracting trace.  A
+   new exact audit shows that the raw 194-coefficient history ledger has two
+   independent endpoint-compatibility equations and hence a 192-dimensional
+   compatible level; a rank-193 compatible chart is impossible.  An ambient
+   193-coordinate ledger can retain the old 775-by-774 arithmetic only by
+   using 192-row projected history matches and six explicit compatibility
+   rows, and it still omits the global strong-history multicell seams.
+   Separate compatible-history counterexamples prove that the scalar exit
+   observable determines neither the complete history nor the future right
+   flight.  Thus the actual Fredholm endpoint operator remains unconstructed.
    Parameter-coherent selected entry/exit bundles, the augmented inverse and
    continuous adjoint enclosure, and an input-independent onset comparison
    remain required.
@@ -371,6 +378,9 @@ open.
 - [docs/dual-scaffold-period-locked-root-adjoint-gate.md](docs/dual-scaffold-period-locked-root-adjoint-gate.md) -- normalization-invariant complete-history adjoint ratio, exact linear-carrier cancellation, and the executable fixed-\(\varepsilon\) validation contract for \(\rho_*\);
 - [docs/fixed-epsilon-quadratic-root-bvp.md](docs/fixed-epsilon-quadratic-root-bvp.md) -- exact \(\varepsilon=1/5\) two-sided full-history BVP/advanced-adjoint validation blueprint and a deliberately non-promoted finite-section shooting diagnostic;
 - [docs/fixed-epsilon-two-sided-candidate.md](docs/fixed-epsilon-two-sided-candidate.md) -- actual binary64 two-branch RFDE solve with phase, nodewise full-history jump and discrete adjoint, together with the explicit wrong-endpoint-geometry reason it is not a selected-root certificate;
+- [docs/fixed-epsilon-selected-attracting-endpoint-chart.md](docs/fixed-epsilon-selected-attracting-endpoint-chart.md) -- exact rank-two endpoint-compatibility audit, discrete/global-strong dimension obstruction, old-history jet no-go, and repaired raw endpoint ledger;
+- [docs/fixed-epsilon-selected-fredholm-structure.md](docs/fixed-epsilon-selected-fredholm-structure.md) -- concrete projected-history/compatibility coordinate algebra for the raw 775-by-774 ledger, with the actual selected operator, strong multicell realization, rank, cokernel and inverse explicitly left open;
+- [docs/fixed_epsilon_selected_repelling_endpoint.md](docs/fixed_epsilon_selected_repelling_endpoint.md) -- exact same-current, same-exit, compatible-history counterexamples and the minimum invariant one-dimensional backward-extendible history-chart problem;
 - [docs/quadratic-physical-onset-capture-stop-go.md](docs/quadratic-physical-onset-capture-stop-go.md) -- exact four-gate non-composition theorem plus a same-plant, arbitrary-finite-balanced controlled terminal transfer for an explicit strict small-\(|\eta|\) bound, with onset/basin/no-return claims refused;
 - [docs/quadratic-reference-slice-dual-basin-no-go.md](docs/quadratic-reference-slice-dual-basin-no-go.md) -- exact Rouché proof that the reference synchronous rest state is unstable on a nonzero \(\eta\)-box, periodic-orbit face-recurrence obstruction to permanent detector-side residence, and the separated autonomous-bistable, latch, and hybrid-switch repair contracts;
 - [docs/dimension-uniform-special-flow-history-graph.md](docs/dimension-uniform-special-flow-history-graph.md) -- abstract dimension-uniform special-flow graph theorem with operator-TV delays, mixed jets, logarithmic fold tubes, and exact mild history embedding; network model fitting remains separate;

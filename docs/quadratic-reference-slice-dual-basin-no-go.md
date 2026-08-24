@@ -323,4 +323,4 @@ quiet attractor, completion of any bistable or switched repair, promotion of
 an immutable label to a physical basin, and input-independent physical
 onset.
 
-Proof-object SHA-256: `0f0fe9255b8a3e59f0e4ea245a245d01bb6f1678a748476e00ee0214d38bd78c`.
+Proof-object SHA-256: `6e8bb5f3168d1355e0f2276208105d25802cc0ab68e1c36db9865b9d295436dd`.
