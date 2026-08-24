@@ -92,11 +92,13 @@ slice.
    \(\mathcal L_Qt=1\), \(\mathcal L_Q\lambda=0\).  The implication is exact;
    the present target-amplitude chart is only a binary64 candidate for its
    hypotheses.  Its frozen-anchor incoming seam is now constructed exactly
-   through total order four.  A combined C4 state and analytic
-   label-variational replay retains positive sampled P-matrix margins, and a
-   Gale--Nikaido theorem reduces global univalence to a finite family of
-   scalar interval inequalities.  No outward-rounded history or physical
-   cell has yet been supplied, so neither embedding nor degree is promoted.
+   through total order four.  Exact tensor Bernstein positivity over
+   \(\mathbb Q(\sqrt5)\) now proves all three P-matrix inequalities and
+   Gale--Nikaido global injectivity on the full retained incoming-history
+   rectangle.  The first full-label physical time cell is also enclosed by a
+   192-bit outward-rounded Picard--Taylor proof.  The remaining physical
+   method-of-steps cover, cross separation and enlarged collar are still
+   open, so neither the glued embedding nor degree is promoted.
 8. An **autonomous leaky-recovery bistable candidate** keeps the two delayed
    voltage channels and changes the recovery law to
    \(w'=\varepsilon(v-a-w)\).  At the declared center, the unique quiet
@@ -110,10 +112,13 @@ slice.
    control map \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\), but the two periodic
    BVPs, Floquet indices, history-space separator and pulse transversality
    remain to be validated.  The exact leaky/non-leaky Fourier mismatch and a
-   leaky-specific finite/tail prototype are now recorded; the current probe
-   does not store branch coefficients, so a replayable inner/outer artifact
-   is the first validation input rather than an implicit inheritance from the
-   old periodic theorem.
+   leaky-specific finite/tail prototype are now recorded.  A new source-hashed
+   inner artifact freezes all 129 state nodes and the phase border and gives a
+   closed directed-radii candidate with contraction below \(0.092\) and
+   positive margin above \(9.08\times10^{-6}\).  Because the leaky majorant
+   adaptation has not yet received an independent proof audit, this is not a
+   periodic-orbit proof; the outer artifact and both Floquet certificates are
+   still missing.
 
 The two original principal results answer different questions in different recovery
 architectures. The policy composition removes that mismatch only for a
@@ -953,9 +958,11 @@ operational qualifier.
    finite/tail architecture has now been separated from the nonreusable slow
    row and Floquet artifacts.  In particular the leaky residual adds
    \(T\varepsilon w\), its recovery diagonal adds \(T\varepsilon I\), and
-   its period column adds \(\varepsilon w\).  The current probe stores only
-   scalar summaries, not replayable branch coefficients.  Build those
-   artifacts, then validate both periodic BVPs, their complete
+   its period column adds \(\varepsilon w\).  The original probe stores only
+   scalar summaries, but the inner branch now has a separately source-hashed
+   129-node replay artifact and a closed, deliberately unpromoted directed
+   radii candidate.  Independently audit the changed majorants, build the
+   outer artifact, then validate both periodic BVPs and their complete
    Floquet indices and simple extrema on one \((a,\kappa_3)\)-box.  Then
    construct a history-space isolating neighborhood (not an unexplained
    planar annulus), prove routing of its two sides into the quiet and pulse

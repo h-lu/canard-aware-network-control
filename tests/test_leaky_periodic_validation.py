@@ -141,7 +141,11 @@ def test_reuse_audit_refuses_old_parameter_box_and_floquet_artifacts() -> None:
     audit = build_leaky_machinery_reuse_audit()
     assert not audit.old_nonleaky_validator_directly_applies
     assert not audit.parameter_box_coordinates_match
-    assert not audit.branch_specific_replay_artifacts_available
+    assert audit.branch_specific_replay_artifacts_available
+    assert audit.registered_branch_replay_artifacts == (
+        "inner_saddle_candidate",
+    )
+    assert audit.missing_branch_replay_artifacts == ("outer_pulse",)
     assert not audit.old_floquet_artifacts_transfer_to_leaky_orbits
     assert len(audit.exact_reusable_components) == 5
     assert len(audit.model_dependent_replacements) == 6

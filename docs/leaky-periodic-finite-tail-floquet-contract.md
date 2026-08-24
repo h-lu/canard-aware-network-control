@@ -1,7 +1,8 @@
 # Finite/tail and Floquet contract for the leaky periodic branches
 
-Status: **an exact equation-level incompatibility has been isolated and an
-executable leaky finite/tail prototype has been added; neither periodic orbit
+Status: **an exact equation-level incompatibility has been isolated, the
+inner branch is frozen in a source-hashed replay artifact, and its directed
+radii inequality closes as an unpromoted candidate; neither periodic orbit
 nor either Floquet index is promoted to a proof.**  This is the safe entry
 point for [issue 20](https://github.com/h-lu/canard-aware-network-control/issues/20).
 
@@ -9,13 +10,19 @@ The implementation is
 [leaky_periodic_validation.py](../src/canard_control/leaky_periodic_validation.py),
 with structural and refusal tests in
 [test_leaky_periodic_validation.py](../tests/test_leaky_periodic_validation.py).
+The inner replay contract is implemented in
+[leaky_periodic_branch_artifact.py](../src/canard_control/leaky_periodic_branch_artifact.py),
+with its tracked body in
+[autonomous_leaky_recovery_inner_branch_artifact.json](../experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json)
+and hostile replay tests in
+[test_leaky_periodic_branch_artifact.py](../tests/test_leaky_periodic_branch_artifact.py).
 The previously committed binary64 scalar orbit diagnostics and monodromy
 summaries remain in
 [autonomous_leaky_recovery_bistable_probe.json](../experiments/results/autonomous_leaky_recovery_bistable_probe.json).
 That record does not store replayable branch states or Fourier coefficients.
-A branch-specific candidate artifact with parameters, coefficients, and
-hashes is therefore required before the prototype can validate either
-129-node candidate.
+The separately tracked inner artifact now stores the complete 129-node
+binary64 polynomial, phase reference, parameters, diagnostics and source
+hashes.  The outer branch still requires the corresponding artifact.
 
 ## 1. The first incompatibility is an equation mismatch
 
@@ -143,10 +150,18 @@ For some declared \(r>0\), the radii inequality is
 \]
 
 The new source evaluates every endpoint in (3.2)--(3.4) with the existing
-directed backend.  For now, it records a negative radii polynomial only as a
-directed *candidate*.  The proof flags remain false until the changed
-majorants are independently audited and a branch-specific replay artifact is
-committed.
+directed backend.  On the source-hashed inner artifact, cutoff 192 and
+160-bit arithmetic give
+
+\[
+ Z_{\rm full}<0.031543,\qquad q<0.091563,
+ \qquad r-P(r)>9.08\times10^{-6}
+ \quad (r=10^{-5}).
+\]
+
+This is recorded only as a directed *candidate*.  The proof flags remain
+false until the changed majorants receive an independent mathematical audit;
+the existence of a replay artifact alone does not perform that audit.
 
 A 65-node outer-branch smoke calculation illustrates the numerical blocker:
 
@@ -240,14 +255,15 @@ contours but do not certify (5.1).
 layout, and the parameter columns (4.2)--(4.3).
 
 **Directed prototype:** MPFR endpoint evaluation of the leaky finite/tail
-radii quantities.  No completed result is committed and no proof flag is
-set.
+radii quantities.  The source-hashed inner candidate closes its numerical
+inequality, but the formula-adaptation and periodic-orbit proof flags remain
+false.
 
 **Floating-point evidence:** the two 129-node periodic candidates and their
 finite monodromy spectra.
 
-**Open:** branch-specific replay artifacts, both periodic-orbit proofs,
-their common parameter box, algebraic
+**Open:** the outer replay artifact, an independent audit of the leaky
+majorants, both periodic-orbit proofs, their common parameter box, algebraic
 simplicity of the neutral multipliers, unit-circle exclusion, and the two
 unstable-index counts.
 

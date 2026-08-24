@@ -1,0 +1,231 @@
+{
+  "audit": {
+    "certificate": {
+      "arithmetic": "192-bit MPFR interval algebra with explicit downward/upward rounding; strict rectangular Picard inclusion for wrapping; first-order integral Taylor enclosure with outward-rounded total-derivative remainder; a 256-bit nested recomputation audit; no binary64 flow values",
+      "audit_id": "fixed-epsilon-target-first-step-outward-cell-v1",
+      "binary64_flow_or_sampling_used": false,
+      "c4_history_interval_cover_validated": false,
+      "coordinate_order": [
+        "X",
+        "Y",
+        "partial_lambda X",
+        "partial_lambda Y"
+      ],
+      "cross_separation_interval_validated": false,
+      "delayed_history_regime": "for t in [-3,-2.99], t-4<=-6.99<-3.5; all active delayed slots lie in the exact unpatched history, delayed X is affine in t, and partial_lambda delayed X is identically zero",
+      "delayed_x_variations_identically_zero_on_cell_proved": true,
+      "directed_rounding_used_for_every_real_operation": true,
+      "exact_delayed_affine_remainder_and_frame_audit_verified": true,
+      "exact_reduction_to_first_step_ode_verified": true,
+      "exact_scope": "rigorous computer-assisted enclosure of exactly one physical time-label rectangle at the frozen decimal target anchor",
+      "expanded_open_collar_interval_validated": false,
+      "first_order_local_truncation_enclosure_validated": true,
+      "first_physical_p_matrix_cell_validated": true,
+      "full_first_method_step_cover_validated": false,
+      "full_physical_strip_interval_cover_validated": false,
+      "gmpy2_version": "2.2.2",
+      "local_truncation_method": "z(t)=z0+s f(t0,z0)+R2 with |R2_i| <= s^2 sup|d f_i/dt|/2, the total derivative being enclosed on B",
+      "model_id": "fixed-epsilon-target-first-step-outward-cell",
+      "mpfr_version": "MPFR 4.2.1",
+      "physical_frame_determinant": -13,
+      "physical_output_frame": [
+        [
+          -7,
+          2
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "primary_cell": {
+        "first_order_taylor_enclosure": [
+          {
+            "lower": "1.525261693272083433772822070169842945119853538926690816878414182387521",
+            "upper": "1.530817568302863132228779693580069344280709539450621077819057475728209"
+          },
+          {
+            "lower": "0.9683201056775199561331736514878000826321189251267732754558169034369206",
+            "upper": "1.082735027546117339014678792803127931474492201643188535675443339581865"
+          },
+          {
+            "lower": "-0.0002198470978285368949110833991511526619433425366878509521484763938454866",
+            "upper": "0.01021984709782853688877066531213695515136612628159213763540387477941025"
+          },
+          {
+            "lower": "0.9999497319746541435298210244442262961683809407986700534818963548713868",
+            "upper": "1.000050268025345856469443135706358175286633535782228164985620572435825"
+          }
+        ],
+        "initial_state_variation_box": [
+          {
+            "lower": "1.530789630787473282999999999999999999999999999999999999999631119285121",
+            "upper": "1.5307896307874732830000000000000000000000000000000000000005869744318"
+          },
+          {
+            "lower": "0.9827062156592921155725197493548271670407484120666140031928510029224414",
+            "upper": "1.082706215659292115572519749354827167040748412066614003200880186154549"
+          },
+          {
+            "lower": "0",
+            "upper": "0"
+          },
+          {
+            "lower": "0.9999999999999999999999999999999999999999999999999999999998406908088868",
+            "upper": "1.000000000000000000000000000000000000000000000000000000000318618382226"
+          }
+        ],
+        "label_cell": {
+          "lower": "-0.05000000000000000000000000000000000000000000000000000000001194818933349",
+          "upper": "0.05000000000000000000000000000000000000000000000000000000001194818933349"
+        },
+        "lambda_principal_minor": {
+          "lower": "0.9992901906811685328450877742467728381825509131886065006254510423713868",
+          "upper": "1.030709809318831467135755131642769040740731914627004577891951678667391"
+        },
+        "local_truncation_radius_upper": [
+          "2.793751538984922877969358006934428070953945062107781822154665317908102e-05",
+          "2.881188682522344215904344830076443374378957657453247443167764437943635e-05",
+          "0.0002198470978285368887706653121369551513661262815921376349154909846498853",
+          "5.026802534585646944313570635817528663353578222816498518933692399200733e-05"
+        ],
+        "oriented_determinant": {
+          "lower": "5.346255851448972849764225713273615967660594182625819926361540802705704",
+          "upper": "7.411409418203475720600832029465543201652794054345275032909058582123151"
+        },
+        "picard_image": [
+          {
+            "lower": "1.525027253422428594568191310339847113251242084685093505112808522782204",
+            "upper": "1.5307896307874732830000000000000000000000000000000000000005869744318"
+          },
+          {
+            "lower": "0.9683368138722199124038741806666595729189870198262305632443169149025654",
+            "upper": "1.082706215659292115572519749354827167040748412066614003200880186154549"
+          },
+          {
+            "lower": "-2.382564904887951073216169781732674520415196125559239787955023752600945e-323228497",
+            "upper": "0.01005360506917129388862714127163505732670715644563299703835137981163712"
+          },
+          {
+            "lower": "0.9998899999999999999999999999999999999999999999999999999997480620728059",
+            "upper": "1.000010000000000000000000000000000000000000000000000000000457383060054"
+          }
+        ],
+        "picard_left_gap_lower": [
+          "0.001027253422428594568191310339847113251242084685093505113366431037101346",
+          "0.001336813872219912403874180666659572918987019826230563244544734513475667",
+          "0.0009999999999999999999999999999999999999999999999999999999997660146255524",
+          "0.0008899999999999999999999999999999999999999999999999999999237838444129457"
+        ],
+        "picard_right_gap_lower": [
+          "0.001210369212526716999999999999999999999999999999999999999942895405460724",
+          "0.001293784340707884427480250645172832959251587933385996799555372641572944",
+          "0.0009463949308287061113728587283649426732928435543670029616514914876120897",
+          "0.0009900000000000000000000000000000000000000000000000000000368015183978486"
+        ],
+        "precision_bits": 192,
+        "raw_chart_determinant": {
+          "lower": "-0.5701084167848827477385255407281187078194456964880980794545184587493019",
+          "upper": "-0.4112504501114594499818635164056627667431226294327553789509857904795854"
+        },
+        "rectangular_wrapping_box": [
+          {
+            "lower": "1.523999999999999999999999999999999999999999999999999999999441780594339",
+            "upper": "1.532000000000000000000000000000000000000000000000000000000530180988025"
+          },
+          {
+            "lower": "0.9669999999999999999999999999999999999999999999999999999997718692383258",
+            "upper": "1.084000000000000000000000000000000000000000000000000000000435869946886"
+          },
+          {
+            "lower": "-0.001000000000000000000000000000000000000000000000000000000000388316153339",
+            "upper": "0.01100000000000000000000000000000000000000000000000000000000302687463115"
+          },
+          {
+            "lower": "0.998999999999999999999999999999999999999999999999999999999824122653011",
+            "upper": "1.001000000000000000000000000000000000000000000000000000000494495729216"
+          }
+        ],
+        "rho": {
+          "lower": "0.4472135954999579392818347337462552470881236719223051448539264403249527",
+          "upper": "0.4472135954999579392818347337462552470881236719223051448543247133027358"
+        },
+        "rhs_on_wrapping_box": [
+          {
+            "lower": "-0.5762377365044688431808689660152886748757915314906494886333517286198701",
+            "upper": "-0.4192117025715728793025985042278227937710518985576375757427559525435215"
+          },
+          {
+            "lower": "-1.436940178707220316864556868816759412176139224038343994779807955693286",
+            "upper": "-1.428940178707220316864556868816759412176139224038343994778400936917373"
+          },
+          {
+            "lower": "0.9510344239115767225101446012014369406221279098037032583557571524674152",
+            "upper": "1.005360506917129388862714127163505732670715644563299703786449109629726"
+          },
+          {
+            "lower": "-0.01100000000000000000000000000000000000000000000000000000000302687463115",
+            "upper": "0.001000000000000000000000000000000000000000000000000000000000388316153339"
+          }
+        ],
+        "time_cell": {
+          "lower": "-3.000000000000000000000000000000000000000000000000000000000637236764453",
+          "upper": "-2.989999999999999999999999999999999999999999999999999999998878463294563"
+        },
+        "time_principal_minor": {
+          "lower": "0.1101001091965242296101227217320233432773014496764900571298666111068587",
+          "upper": "1.127945156894880472179435221254662681720773716456805312409199312704396"
+        },
+        "total_rhs_time_derivative_on_wrapping_box": [
+          {
+            "lower": "-0.1472084216541360247512268005024416498510425217530795466591863966150422",
+            "upper": "0.5587503077969845755938716013868856141907890124215563644308171599220703"
+          },
+          {
+            "lower": "0.4192117025715728793025985042278227937710518985576375757427559525435215",
+            "upper": "0.5762377365044688431808689660152886748757915314906494886333517286198701"
+          },
+          {
+            "lower": "-4.396941956570737775413306242739103027322525631842752698308655989140747",
+            "upper": "-4.096152170638347685922980461439575921293731026378262984629201391388718"
+          },
+          {
+            "lower": "-1.005360506917129388862714127163505732670715644563299703786449109629726",
+            "upper": "-0.9510344239115767225101446012014369406221279098037032583557571524674152"
+          }
+        ]
+      },
+      "refinement_nested_in_primary": true,
+      "refinement_precision_bits": 256,
+      "remaining_gate": "continue a wrapping-controlled method of steps across the full physical strip, combine it with the independent C4-history and cross-separation covers on an enlarged label collar, and only then invoke the conditional Gale--Nikaido embedding theorem",
+      "serialized_decimal_bounds_reparsed_outward": true,
+      "state_and_true_lambda_variation_enclosed_together": true,
+      "strict_picard_inclusion_validated": true,
+      "target_chart_global_embedding_validated": false,
+      "target_global_graph_fixed_point_validated": false,
+      "wrapping_method": "strict interval Picard self-map in one rectangular four-coordinate box B; dependency loss is retained as wrapping"
+    }
+  },
+  "manifest": {
+    "arithmetic": "192-bit MPFR interval algebra with explicit downward/upward rounding; strict rectangular Picard inclusion for wrapping; first-order integral Taylor enclosure with outward-rounded total-derivative remainder; a 256-bit nested recomputation audit; no binary64 flow values",
+    "c4_seam_source": "src/canard_control/fixed_epsilon_target_c4_preparation_seam.py",
+    "c4_seam_source_sha256": "c1ca5f198faa4662587e4065e59b4bad64f1d3ad7ba7e8fb1fade4f31b3d2c13",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_target_first_step_interval.py",
+    "generator": "experiments/fixed_epsilon_target_first_step_interval.py",
+    "generator_sha256": "5e98b6420f583757e517f3f160ecd6815b5150b9f06f05e4dbdf9d236dee06e3",
+    "gmpy2": "2.2.2",
+    "interval_backend_source": "src/canard_control/directed_interval.py",
+    "interval_backend_source_sha256": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+    "mpfr": "MPFR 4.2.1",
+    "note": "docs/fixed-epsilon-target-first-step-interval.md",
+    "note_sha256": "518727968bcb08511f6e5264a1582c8f3171c4ccbb3bcc29410b908b832aaa06",
+    "physical_model_source": "src/canard_control/fixed_epsilon_frozen_graph_operator.py",
+    "physical_model_source_sha256": "ef9e4177b536e97d425a96fb4cbba3a0669cddc44ab0b8f544ccb440a2836651",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_target_first_step_interval.py",
+    "proof_source_sha256": "49f0c1508720df1a407545bd9c050dd393afc39fd1dfdb3b84f468e701edc011",
+    "python": "3.14.4",
+    "univalence_gate_source": "src/canard_control/fixed_epsilon_target_chart_univalence_gate.py",
+    "univalence_gate_source_sha256": "84b9c7701078385ec4f8b3d7702a16f082b1bc1da4b1c02b270f3b87e9e89674"
+  }
+}

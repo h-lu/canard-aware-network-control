@@ -73,6 +73,8 @@ class LeakyMachineryReuseAudit:
     model_dependent_replacements: tuple[str, ...]
     parameter_box_coordinates_match: bool
     branch_specific_replay_artifacts_available: bool
+    registered_branch_replay_artifacts: tuple[str, ...]
+    missing_branch_replay_artifacts: tuple[str, ...]
     old_floquet_artifacts_transfer_to_leaky_orbits: bool
     directed_outer_periodic_orbit_validated: bool
     directed_inner_periodic_orbit_validated: bool
@@ -133,7 +135,9 @@ def build_leaky_machinery_reuse_audit() -> LeakyMachineryReuseAudit:
             "both orbit-dependent Floquet operators, covers, and index counts",
         ),
         parameter_box_coordinates_match=False,
-        branch_specific_replay_artifacts_available=False,
+        branch_specific_replay_artifacts_available=True,
+        registered_branch_replay_artifacts=("inner_saddle_candidate",),
+        missing_branch_replay_artifacts=("outer_pulse",),
         old_floquet_artifacts_transfer_to_leaky_orbits=False,
         directed_outer_periodic_orbit_validated=False,
         directed_inner_periodic_orbit_validated=False,

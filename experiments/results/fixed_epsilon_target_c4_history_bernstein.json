@@ -1,0 +1,150 @@
+{
+  "audit": {
+    "certificate": {
+      "arithmetic": "exact symbolic algebra over Q(sqrt(5)); exact tensor-product Bernstein conversion and coefficient sign decisions on the unit box; no binary64 sample, interval-flow enclosure, physical-strip certificate, glued target embedding, fixed graph, selected trace, or history root",
+      "audit_id": "fixed-epsilon-target-c4-history-exact-bernstein-v1",
+      "exact_far_history_p_matrix_proved": true,
+      "exact_one_box_coefficient_lower_bounds_proved": true,
+      "exact_retained_c4_history_gale_nikaido_hypotheses_verified": true,
+      "exact_retained_c4_history_global_injectivity_proved": true,
+      "exact_retained_c4_history_negative_orientation_proved": true,
+      "exact_retained_c4_history_p_matrix_proved": true,
+      "exact_scope": "the frozen-anchor C4 incoming history on [-3-Theta_*,-3]x[-1/20,1/20], including global injectivity of that history chart",
+      "exact_tensor_bernstein_reconstruction_proved": true,
+      "expanded_target_embedding_collar_proved": false,
+      "far_history_exact_p_matrix_margins": [
+        "1/2",
+        "1",
+        "1/2"
+      ],
+      "far_history_relative_time_interval": [
+        "-73970862981881309/10000000000000000",
+        "-1/2"
+      ],
+      "frozen_c4_patch_is_bivariate_polynomial_over_q_sqrt5_proved": true,
+      "frozen_eta": "0",
+      "frozen_nu": "21256022233963731/100000000000000000",
+      "frozen_rho": "sqrt(5)/5",
+      "frozen_theta": "73970862981881309/10000000000000000",
+      "full_target_chart_global_injectivity_proved": false,
+      "history_output_frame": [
+        [
+          -1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "incoming_time": "-3",
+      "model_id": "fixed-epsilon-target-c4-history-exact-bernstein",
+      "open_scope": "validated physical state-plus-variation flow, physical P-matrix and cross separation, full glued embedding and collar, degree, target graph, selected traces, and complete-history root",
+      "parent_result_sha256": "5cc678e56a2d1c203d174a27617c28963082ba8e7cf9c6dc48f3f6de8bff840b",
+      "patch_exact_bernstein_margins": [
+        {
+          "accepted_unit_box_count": 1,
+          "coefficient_count": 52,
+          "coefficient_sha256": "ec5af56ffab7e062edb4f00903d2c301a435664fea42fe34a18befc6794bf012",
+          "degree_u": 12,
+          "degree_v": 3,
+          "every_coefficient_strictly_above_rational_bound": true,
+          "exact_reconstruction_identity_verified": true,
+          "minimum_coefficient_index": [
+            4,
+            0
+          ],
+          "minimum_coefficient_rational_part": "6406820432223841645657833828103602275161391988646570537965378147083801941001448586040344965513713/21120000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "minimum_coefficient_sqrt5_part": "-131040798856004665493897018517014613477987038461892419064173452498885058904662002735821916726542320641948281173217387/1408000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "quantity": "negative_x_time_derivative",
+          "strict_rational_lower_bound": "9/100",
+          "subdivision_depth": 0
+        },
+        {
+          "accepted_unit_box_count": 1,
+          "coefficient_count": 28,
+          "coefficient_sha256": "e92a58d22460811c2eafb7adc585d9857c8b86a7f0ffab30e27ba82cea3fba6e",
+          "degree_u": 13,
+          "degree_v": 1,
+          "every_coefficient_strictly_above_rational_bound": true,
+          "exact_reconstruction_identity_verified": true,
+          "minimum_coefficient_index": [
+            6,
+            0
+          ],
+          "minimum_coefficient_rational_part": "8162097553777742533352813062284605101447108494899549723081678593633254621364349/8448000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "minimum_coefficient_sqrt5_part": "-2782310788531126317007896284921162668023578606329751946107/1372800000000000000000000000000000000000000000000000000000000",
+          "quantity": "positive_y_transverse_derivative",
+          "strict_rational_lower_bound": "24/25",
+          "subdivision_depth": 0
+        },
+        {
+          "accepted_unit_box_count": 1,
+          "coefficient_count": 130,
+          "coefficient_sha256": "224b02c91027189e9363146cc2f490b6da5a6b87b492b4df6fb90dadd02b3c09",
+          "degree_u": 25,
+          "degree_v": 4,
+          "every_coefficient_strictly_above_rational_bound": true,
+          "exact_reconstruction_identity_verified": true,
+          "minimum_coefficient_index": [
+            7,
+            0
+          ],
+          "minimum_coefficient_rational_part": "386518261878562047538008309937940554708851040764507899306698350215334978983156268323445068554212590940965967641889522427791608534725847/809600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "minimum_coefficient_sqrt5_part": "-3705549328258761592032183222884643947215804064321707082412875947463466975964961618571969761155026652513735082953745245413387298885380549/153824000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "quantity": "negative_raw_jacobian_determinant",
+          "strict_rational_lower_bound": "2/5",
+          "subdivision_depth": 0
+        }
+      ],
+      "patch_relative_time_interval": [
+        "-1/2",
+        "0"
+      ],
+      "physical_cross_separation_validated": false,
+      "physical_p_matrix_validated": false,
+      "physical_state_variational_interval_flow_validated": false,
+      "retained_history_strict_rational_margins": [
+        "9/100",
+        "24/25",
+        "2/5"
+      ],
+      "retained_relative_time_interval": [
+        "-73970862981881309/10000000000000000",
+        "0"
+      ],
+      "selected_trace_or_complete_history_root_validated": false,
+      "target_boundary_degree_validated": false,
+      "target_global_graph_fixed_point_validated": false,
+      "total_exact_bernstein_coefficient_count": 210,
+      "transverse_interval": [
+        "-1/20",
+        "1/20"
+      ],
+      "unit_box_change": [
+        "u=2*r+1",
+        "v=10*lambda+1/2"
+      ]
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact symbolic algebra over Q(sqrt(5)); exact tensor-product Bernstein conversion and coefficient sign decisions on the unit box; no binary64 sample, interval-flow enclosure, physical-strip certificate, glued target embedding, fixed graph, selected trace, or history root",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_target_c4_history_bernstein.py",
+    "generator": "experiments/fixed_epsilon_target_c4_history_bernstein.py",
+    "generator_sha256": "4bb0bb6731fa94aeb7af6f9447b0e9f658034e599adf3a4e3a02feea0b381ced",
+    "note": "docs/fixed-epsilon-target-c4-history-bernstein.md",
+    "note_sha256": "afa77059046f4073ed907e6d6b2a64b1f768c2cdceaea1354f65abc97dfb8d0b",
+    "parent_claim_checks": {
+      "parent_exact_c4_seam_constructed": true,
+      "parent_left_full_chart_injectivity_open": true,
+      "parent_left_history_jacobian_at_sampling_only": true
+    },
+    "parent_result": "experiments/results/fixed_epsilon_target_c4_preparation_seam.json",
+    "parent_result_sha256": "5cc678e56a2d1c203d174a27617c28963082ba8e7cf9c6dc48f3f6de8bff840b",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_target_c4_history_bernstein.py",
+    "proof_source_sha256": "cf52a57e592fec84d40e4b864a25db6f4f753fdde8bdede6d3111904a7a40a8c",
+    "python": "3.14.4",
+    "sympy": "1.14.0"
+  }
+}
