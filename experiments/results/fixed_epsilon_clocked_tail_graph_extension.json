@@ -1,0 +1,203 @@
+{
+  "audit": {
+    "certificate": {
+      "active_slot_sets": [
+        "base/local/nu:{0}",
+        "linear-delay:{0,4,5}",
+        "cubic-delay:{0,4,5}",
+        "eta:{0,Theta_*}"
+      ],
+      "audit_id": "fixed-epsilon-clocked-tail-graph-extension-v1",
+      "biological_pulse_control_chain_validated": false,
+      "bounded_clock_profile_c_infinity": true,
+      "bounded_clock_profile_formula": "v_R=1[r<=1], c(r)+(1-c(r))/r[1<r<2], 1/r[r>=2], r=|sigma|/64",
+      "bounded_clock_profile_global_infimum": "inf_R v_R=0",
+      "bounded_clock_profile_has_no_global_positive_infimum": true,
+      "bounded_clock_profile_strictly_positive": true,
+      "bounded_clock_tail": "Q_v=(-v_R/2,sigma*v_R/2)",
+      "bounded_clock_tail_c_b_infinity": true,
+      "bounded_clock_tail_complete": true,
+      "bounded_clock_tail_coordinate_rhs": [
+        "sigma_dot=v_R",
+        "d_dot=0"
+      ],
+      "bounded_clock_tail_far_speed": "v_R=64/|sigma| for |sigma|>=128",
+      "bounded_clock_tail_preserves_normal_coordinate": true,
+      "bounded_clock_tail_unit_speed_on_cutoff_support": true,
+      "bounded_complete_field_neighborhood_available": true,
+      "bounded_tail_component_bounds": [
+        "1/2",
+        "64"
+      ],
+      "candidate_space": "bounded uniformly-Lipschitz full vector fields Q with Q=Q_v on w=0; fixed points have the explicit known Y component",
+      "causal_component_restriction": "a one-branch target tube may use d_-<d<d_+<1/2; the global |d|<=1 cutoff plateau is not itself one causal Lambert component",
+      "clocked_base_clock_positive_for_d_below_one_half": true,
+      "clocked_tail_x_transform": "-v0/2+w0*d-rho*w0*X^3/3+rho*w0*w4*w5*((X_4+X_5)/2-X)/5+rho^2*eta*w0*wTheta*(X^2-X_Theta^2)+rho^3*w0*w4*w5*((X_4^3+X_5^3)/2-X^3)/4",
+      "clocked_tail_y_transform": "sigma*v0/2+rho*nu*w0",
+      "cutoff_between_zero_and_one": true,
+      "declared_phase_interval": [
+        -21,
+        21
+      ],
+      "declared_phase_slot_hull_inside_unit_plateau": true,
+      "declared_single_slot_phase_hull": {
+        "lower": "-28.3970863004241960155492448103081882675790202920942079556261116625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000037202",
+        "upper": "21.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000238667"
+      },
+      "declared_window_canonical_phase_exact": true,
+      "delay_set": [
+        4,
+        5,
+        "Theta_*"
+      ],
+      "eta_zero_theta_slot_inactive": true,
+      "fixed_cutoff_small_rho_c3_rho_jets_proved": true,
+      "fixed_cutoff_small_rho_first_graph_jet": "partial_rho Q_rho|_0=Fhat_0(E_B); on gamma_0(s), s in [-21,21], this is (s^3/24+9/20,nu)",
+      "fixed_cutoff_small_rho_first_graph_jet_proved": true,
+      "fixed_cutoff_small_rho_graph_contract": "for fixed Theta_* and bounded (nu,eta), there exists non-explicit rho_0>0 and a unique C_b^3 special-flow fixed graph in the declared O(|rho|) contraction neighborhood",
+      "fixed_cutoff_small_rho_graph_exists": true,
+      "fixed_cutoff_small_rho_graph_unique_in_contraction_neighborhood": true,
+      "fixed_cutoff_small_rho_uniqueness_scope": "unique only in the theorem's contraction neighborhood, not among every bounded-Lipschitz fixed point",
+      "fixed_epsilon_complete_history_root_validated": false,
+      "fixed_exterior_affine_subspace_self_map_proved": true,
+      "fixed_exterior_germ_condition": "Q=Q_v on w=0; every delayed physical channel and rho*nu contains the current factor w0",
+      "flat_left_interface_all_order_matching": true,
+      "general_network_fixed_epsilon_lift_validated": false,
+      "incoming_positive_parameter_jets_zero": true,
+      "incoming_self_map_identity": "T(Q;rho,nu,eta)(Gamma(-30,d))=Q_v(Gamma(-30,d))",
+      "incoming_trace": [
+        "-1/2",
+        "-15"
+      ],
+      "incoming_trace_parameter_independent": true,
+      "incoming_trace_self_map_identity_proved": true,
+      "left_exterior_end": -30,
+      "left_plateau_margin_over_declared_slots": {
+        "lower": "0.6029136995758039844507551896918117324209797079057920443738883374999999999999999999999999999999999999999999999999999999999999999999999999999999999999999985918884",
+        "upper": "0.6029137040479399394503345825101590698835321788215066957420090435000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011838277"
+      },
+      "left_plateau_start": -29,
+      "left_preparation_independence_proved": false,
+      "longitudinal_cutoff_c_infinity": true,
+      "longitudinal_cutoff_formula": "a(sigma)=S(sigma+30)S(22-sigma)",
+      "longitudinal_step_formula": "S(z)=0[z<=0], exp(-1/z)/(exp(-1/z)+exp(-1/(1-z)))[0<z<1], 1[z>=1]",
+      "model_id": "quadratic-period-lock-fixed-epsilon-clocked-tail-graph",
+      "normal_cutoff_c_infinity": true,
+      "normal_cutoff_contract": "c(d)=1 for |d|<=1, c(d)=0 for |d|>=2",
+      "normal_plateau_radius": 1,
+      "normal_support_radius": 2,
+      "old_537_global_nesting_argument_reused": false,
+      "old_zero_exterior_clock_obstruction_removed_for_new_tail": true,
+      "order_zero_residual_inverse_on_range_bounded_conditionally": true,
+      "ordinary_global_contraction_not_required": true,
+      "physical_operator_recovered_when_all_active_slots_are_in_plateau": true,
+      "physical_uncut_x_transform": "Y-X^2+rho[-X^3/3+((X_4+X_5)/2-X)/5]+rho^2*eta[X^2-X_Theta^2]+rho^3[((X_4^3+X_5^3)/2-X^3)/4]",
+      "physical_uncut_y_transform": "-X+rho*nu",
+      "precision_bits": 512,
+      "preparation_index_retained": true,
+      "raw_constant_clock_germ": "Q_c=(-1/2,-X)",
+      "raw_constant_clock_germ_coordinate_rhs": [
+        "sigma_dot=1",
+        "d_dot=0"
+      ],
+      "raw_constant_clock_germ_identity_proved": true,
+      "raw_constant_clock_germ_unboundedness_recorded": true,
+      "raw_singular_slot_target_clock_failure_proved": true,
+      "raw_target_phase_three_clock_warning": "raw singular slots at rho=1/sqrt(5), eta=0, s=3 give sigma_dot=1-567/(160*sqrt(5))<0; this is not a target fixed-point evaluation",
+      "raw_target_phase_three_sigma_speed": {
+        "lower": "-0.5848131790529759473300018377132920318685382623746688570769984226847067060457942224599662119384619373846389198468609190586395034997018636008168327361368349835918",
+        "upper": "-0.5848131790529759473300018377132920318685382623746688570769984226847067060457942224599662119384619373846389198468609190586395034997018636008168327361368343869246"
+      },
+      "rho_zero_d_zero_orbit_complete": true,
+      "rho_zero_fixed_point_explicit_and_unique": true,
+      "rho_zero_graph_frechet_derivative_zero": true,
+      "right_exterior_start": 22,
+      "right_plateau_closed_margin": 0,
+      "right_plateau_end": 21,
+      "seed_equation_21_graph_field_and_jet_realized": true,
+      "seed_planar_preparation_rule": "Q_rho^pr=q0+chi_plan*(Q_rho-B); the pinned C3 Seeley extension is an optional equivalent strip-only construction",
+      "seed_planar_preparation_scope": "full-plane C3 compact perturbation of q0 for finite-window traces; not a special-flow fixed point and not claimed complete",
+      "seed_prepared_first_rho_jet": "partial_rho Q_rho^pr(gamma_0(s))|_0=chi_plan(s)*(s^3/24+9/20,nu)",
+      "seed_prepared_trace_field_global_completeness_claimed": false,
+      "singular_core_first_rho_transform_jet": [
+        "s^3/24+9/20",
+        "nu"
+      ],
+      "singular_first_rho_transform_jet_realized_by_extension": true,
+      "slow_unfolding_current_weighted": true,
+      "small_rho_global_uniqueness_outside_contraction_neighborhood_claimed": false,
+      "tail_clock_radius": 64,
+      "tail_far_field_start_radius": 128,
+      "tail_unit_clock_margin_after_left_delay": {
+        "lower": "26.6029136995758039844507551896918117324209797079057920443738883374999999999999999999999999999999999999999999999999999999999999999999999999999999999999999962798",
+        "upper": "26.60291370404793993945033458251015906988353217882150669574200904350000000000000000000000000000000000000000000000000000000000000000000000000000000000000000349591"
+      },
+      "target_candidate_self_map_validated": false,
+      "target_flow_lipschitz_bounds_validated": false,
+      "target_j_barriers_validated": false,
+      "target_localized_causal_graph_theorem_validated": false,
+      "target_loss_scale_c3_parameter_jets_validated": false,
+      "target_order_zero_fixed_point_validated": false,
+      "target_planar_preparation_validated": false,
+      "target_positive_amplitude_graph_candidate_computed": false,
+      "target_positive_amplitude_hull_validated": false,
+      "target_trace_pair_fredholm_validated": false,
+      "target_uniform_clock_bound_validated": false,
+      "target_volterra_constant_validated": false,
+      "termwise_active_slot_sets_exact": true,
+      "theta_interval": {
+        "lower": "7.397086295952060060549665417489840930116467821178493304257990956499999999999999999999999999999999999999999999999999999999999999999999999999999999999999998294088",
+        "upper": "7.397086300424196015549244810308188267579020292094207955626111662500000000000000000000000000000000000000000000000000000000000000000000000000000000000000001930195"
+      },
+      "theta_parent_endpoint_strings": [
+        "7.397086295952060060549665417489840930116467821178493304257990956499999999999999999999999999999999999999999999999999999999999999999999999999999999999999998890756",
+        "7.397086300424196015549244810308188267579020292094207955626111662500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000736861"
+      ],
+      "volterra_constant_formula": "C_V=(B_F/kappa)*sum_i A_i*exp(L_F*tau_i)",
+      "volterra_iterate_bound": "E_b(T^nq,T^np)<=(C_V*ell)^n/n!*E_b(q,p)",
+      "volterra_prefix_inequality": "E_s(Tq,Tp)<=C_V*integral_a^s E_xi(q,p)dxi",
+      "volterra_resolvent_bound": "gain_on_range<=exp(C_V*ell)",
+      "volterra_weissinger_uniqueness_theorem_proved_under_hypotheses": true,
+      "weak_delay_factorization": "T_rho=B+rho*Fhat_rho with Fhat_rho in C_b^infinity; all candidate-flow dependence is at delays 4,5,Theta_*>0",
+      "weak_delay_factorization_c_b_infinity_proved": true,
+      "zero_amplitude_coordinate_rhs": [
+        "v_R-2w*d",
+        "sigma*w*d"
+      ],
+      "zero_amplitude_fixed_point": [
+        "-v_R/2+w(sigma,d)*d",
+        "sigma*v_R/2"
+      ]
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact operator and canard-coordinate algebra, binary64 diagnostic cutoff/slot evaluators, and 512-bit MPFR-directed phase-slot containment; no computed target-amplitude candidate or interval flow, no target clock/barrier, target graph solve, trace solve, or root validation",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_clocked_tail_graph_extension.py",
+    "generator": "experiments/fixed_epsilon_clocked_tail_graph_extension.py",
+    "generator_sha256": "5709906d08b8bf202300116fb0fc32f53e81e6780741425428ff38f86e0e3cb7",
+    "note": "docs/fixed-epsilon-clocked-tail-graph-extension.md",
+    "note_sha256": "f59b3c725e958180a62dde760fc575357dd2024402f4eb78fc427bcf1e9444d0",
+    "parent_claim_checks": {
+      "frozen_parent_has_zero_exterior_and_open_graph_solve": true,
+      "frozen_parent_provides_conditional_seeley_preparation_rule": true,
+      "mixed_jet_parent_proves_fixed_cutoff_c3_graph_family": true,
+      "seed_parent_declares_same_first_jet_but_leaves_realization_open": true,
+      "seed_parent_recursive_upstream_evidence_replayed": true,
+      "seed_parent_self_hashes_and_condition_21_pinned": true,
+      "singular_parent_proves_zero_exterior_clock_failure_and_causal_lemma": true,
+      "special_flow_parent_requires_bounded_smooth_fields": true,
+      "theta_endpoints_replayed_exactly": true
+    },
+    "parent_sha256": {
+      "fixed_epsilon_frozen_graph_operator_result": "2c16c96153c056dd7880adacf3d0f9247a3cecd9f8b5369ffd403b826b3b43be",
+      "fixed_epsilon_singular_reachable_hull_result": "0bf501b77fa43761e34a8ad084b7630912bf56850f43e5c094e17dbc08a78431",
+      "fixed_window_prepared_gap_seed_result": "41d325ca4c06b2e1b8a6ffa4e3908737c7be3d34a937a8a852ef7d1195321f39",
+      "mixed_jet_graph_theorem_doc": "45e4f6d4a5e7b47b96c56b07dafb94ffc540c76e499b2204a1913b123eb61bb5",
+      "special_flow_graph_theorem_doc": "9c7d7073ef9b3d01bd69e9c559445be470c74622c993cf8051c7c0b21904657d"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_clocked_tail_graph_extension.py",
+    "proof_source_sha256": "841856a8226b1c45285e408f9d5c84b2f88f14bc839584e19ae2d65a9dce3162",
+    "python": "3.14.4"
+  }
+}
