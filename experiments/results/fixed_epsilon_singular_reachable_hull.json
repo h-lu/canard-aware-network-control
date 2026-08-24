@@ -1,0 +1,148 @@
+{
+  "audit": {
+    "certificate": {
+      "audit_id": "fixed-epsilon-singular-reachable-hull-v1",
+      "backward_barrier_sign_contract_proved": true,
+      "backward_moving_face_conditions": [
+        "-sigma_dot>=a'(r)",
+        "-sigma_dot<=b'(r)",
+        "-Jdot>=ell'(r)",
+        "-Jdot<=u'(r)"
+      ],
+      "backward_normal_factor_at_sigma_minus5_theta": {
+        "lower": "8794062728206786336270014366.477487867058445799601157656448800785310869285581129599823312697799941511118385718609575393822605969983989730817700478818648568843671",
+        "upper": "8794063215762436130482127699.584546522772046819429662965667053048935845893501608660589950531062516144941731518088839794218609345760666860783775364449214341966695"
+      },
+      "backward_static_lower_condition": "Jdot<=0",
+      "backward_static_upper_condition": "Jdot>=0",
+      "branch_and_maximal_interval_qualifications_recorded": true,
+      "canonical_tail_equivalence_proved": true,
+      "canonical_trace_integral_relation": "mathscrH=(e/2)J",
+      "causal_backward_crossing_bound": "slab_width/kappa",
+      "causal_clock_condition": "sigma_dot>=kappa>0",
+      "causal_left_germ_condition": "matched locally-Lipschitz extension and sigma_dot_Qminus>=0",
+      "causal_lower_component_ambiguity_excluded": true,
+      "causal_lower_component_condition": "J(sigma,-d*)<j_-(sigma)<j_+(sigma)<J(sigma,d*), d*<1/2",
+      "causal_slab_forward_substitution": "e_j<=(sum_{ell<j}P_jell*e_ell)/(1-lambda_j)",
+      "causal_slab_interface_conditions_recorded": true,
+      "causal_slab_restriction_lemma_proved": true,
+      "constant_width_backward_tube_refused": true,
+      "curved_barrier_lie_derivative": "Jdot-j'(sigma)*sigma_dot",
+      "delay_set": [
+        4,
+        5,
+        "Theta_*"
+      ],
+      "depth_one_left_endpoint": {
+        "lower": "-12.39708630042419601554924481030818826757902029209420795562611166250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000252686",
+        "upper": "-12.39708629595206006054966541748984093011646782117849330425799095649999999999999999999999999999999999999999999999999999999999999999999999999999999999999999769742"
+      },
+      "depth_two_exact_length": {
+        "lower": "24.79417259190412012109933083497968186023293564235698660851598191299999999999999999999999999999999999999999999999999999999999999999999999999999999999999999539484",
+        "upper": "24.79417260084839203109848962061637653515804058418841591125222332500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000505373"
+      },
+      "depth_two_left_endpoint": {
+        "lower": "-19.79417260084839203109848962061637653515804058418841591125222332500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000505373",
+        "upper": "-19.79417259190412012109933083497968186023293564235698660851598191299999999999999999999999999999999999999999999999999999999999999999999999999999999999999999539484"
+      },
+      "fixed_epsilon_complete_history_root_validated": false,
+      "fixed_target_localized_graph_theorem_proved": false,
+      "flow_time_integrand_formula": "1/(1+W_k(-2h*exp(sigma^2/2)))",
+      "flowbox_delay_translation_proved_conditionally": true,
+      "frozen_zero_exterior_clock_condition_fails": true,
+      "graph_fixed_point_inverse_validated": false,
+      "inherited_theta_contains_recomputed_theta": true,
+      "lambert_inverse_formula": "d_k=-(1/2)W_k(-2h*exp(sigma^2/2))",
+      "left_preparation_independence_proved": false,
+      "level_coordinate_condition_at_sigma_20_d0": {
+        "lower": "722597376812574925817747704218930569735687442852731928403269789123221909361473891661561.9265890625705574684020431014294181771106771193682264809830772732787053597",
+        "upper": "722597376812574925817747704218930569735687442852731928403269789123221909361473891661561.926589062570557468402043101429418177110677119368226480983077273278927912"
+      },
+      "lower_positive_level_cap_at_sigma_20": {
+        "lower": "2.5455354044750549516524270855918133637322102813159712154546376994380922377339533433175142023170411064339444718588201966632616475217188742010898160524922727566e-88",
+        "upper": "2.545535404475054951652427085591813363732210281315971215454637699438092237733953343317514202317041106433944471858820196663261647521718874201089816052492273881373e-88"
+      },
+      "maximum_positive_level_is_equilibrium": true,
+      "model_id": "quadratic-period-lock-fixed-epsilon-singular-reachable-hull",
+      "negative_level_uncut_flow_is_incomplete": true,
+      "perturbed_coordinate_rhs": [
+        "1-2d-2Delta_X",
+        "sigma*d+sigma*Delta_X+Delta_Y"
+      ],
+      "perturbed_first_integral_drift": "exp(-2d-sigma^2/2)*(sigma*Delta_X+(1-2d)*Delta_Y)",
+      "perturbed_first_integral_drift_identity_proved": true,
+      "positive_amplitude_barriers_instantiated": false,
+      "positive_amplitude_delta_bounds_validated": false,
+      "positive_amplitude_depth_two_hull_validated": false,
+      "positive_amplitude_graph_candidate_computed": false,
+      "positive_regular_levels_are_closed": true,
+      "positive_turning_phase_formula": "sqrt(-2*(1+log(2h)))",
+      "precision_bits": 512,
+      "prior_symmetric_depth_two_radius": {
+        "lower": "19.79417259190412012109933083497968186023293564235698660851598191299999999999999999999999999999999999999999999999999999999999999999999999999999999999999999539484",
+        "upper": "19.79417260084839203109848962061637653515804058418841591125222332500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000505373"
+      },
+      "prior_symmetric_interval_is_only_an_overbound": true,
+      "real_lambert_branch_classification_proved": true,
+      "reference_plateau_margin_over_exact_hull": {
+        "lower": "0.2058273991516079689015103793836234648419594158115840887477766749999999999999999999999999999999999999999999999999999999999999999999999999999999999999999973142978",
+        "upper": "0.2058274080958798789006691650203181397670643576430133914840180870000000000000000000000000000000000000000000000000000000000000000000000000000000000000000022371344"
+      },
+      "remote_cutoff_independence_or_decay_proved": false,
+      "retained_phase_interval": [
+        -5,
+        5
+      ],
+      "right_completion_independence_proved_under_lemma_hypotheses": true,
+      "singular_coordinate_rhs": [
+        "1-2d",
+        "sigma*d"
+      ],
+      "singular_depth_m_continuous_hull_formula_proved": true,
+      "singular_depth_two_asymmetric_hull_validated": true,
+      "singular_first_integral_identity_proved": true,
+      "singular_normal_variation_formula_proved": true,
+      "smooth_first_integral": "d*exp(-2d-sigma^2/2)",
+      "target_causal_slab_contractions_validated": false,
+      "target_uniform_clock_bound_validated": false,
+      "theta_exceeds_linear_center_period": true,
+      "theta_horizon": {
+        "lower": "7.397086295952060060549665417489840930116467821178493304257990956499999999999999999999999999999999999999999999999999999999999999999999999999999999999999998294088",
+        "upper": "7.397086300424196015549244810308188267579020292094207955626111662500000000000000000000000000000000000000000000000000000000000000000000000000000000000000001930195"
+      },
+      "theta_parent_endpoint_strings": [
+        "7.397086295952060060549665417489840930116467821178493304257990956499999999999999999999999999999999999999999999999999999999999999999999999999999999999999998890756",
+        "7.397086300424196015549244810308188267579020292094207955626111662500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000736861"
+      ],
+      "theta_recomputed_from_period": {
+        "lower": "7.3970862959520600605496654174898409301164678211784933042579909565499556718381538603089446183273641851363312754704088254358177169506784917274636004409896939533",
+        "upper": "7.397086300424196015549244810308188267579020292094207955626111662420683211457363259858813311643043117036428790036409999889774597703255882939150192065917268124546"
+      },
+      "weighted_left_tail_decay_validated": false,
+      "zero_level_is_complete_singular_canard": true
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact symbolic identities and 512-bit MPFR-directed horizon, hull, branch-threshold, and conditioning arithmetic; Lambert-W point evaluation is diagnostic only; no positive-amplitude flow, graph fixed point, inverse, trace, or root validation",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_singular_reachable_hull.py",
+    "generator": "experiments/fixed_epsilon_singular_reachable_hull.py",
+    "generator_sha256": "c401e406d1cf53f5bda7fdcbb86b3d74367dc62b71bb9e87cb5323d5247b15a7",
+    "note": "docs/fixed-epsilon-singular-reachable-hull.md",
+    "note_sha256": "9a34e223a3cbe3aeb0984aec78adad820c2a5db6ee85553a365099c9b3762dce",
+    "parent_claim_checks": {
+      "frozen_graph_parent_requires_positive_amplitude_hull": true,
+      "parent_theta_and_period_endpoints_replayed_exactly": true,
+      "seed_parent_uses_retained_segment_minus5_plus5": true,
+      "trace_parent_defines_canonical_first_integral": true
+    },
+    "parent_sha256": {
+      "fixed_epsilon_frozen_graph_operator_result": "2c16c96153c056dd7880adacf3d0f9247a3cecd9f8b5369ffd403b826b3b43be",
+      "fixed_window_prepared_gap_seed_result": "41d325ca4c06b2e1b8a6ffa4e3908737c7be3d34a937a8a852ef7d1195321f39",
+      "long_delay_selected_trace_doc": "2d04f6c1177960924094acb08e5d3adcb162222522abfd802670f75da4892448"
+    },
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_singular_reachable_hull.py",
+    "proof_source_sha256": "7a36ae725ffbe4a067991646eff59a503e9302e199aee4e7aa3b49db5cfe9989",
+    "python": "3.14.4"
+  }
+}
