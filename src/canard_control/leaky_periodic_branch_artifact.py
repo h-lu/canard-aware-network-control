@@ -1,10 +1,10 @@
 """Strict replay contract for leaky-recovery periodic branch candidates.
 
 The tracked artifacts governed by this module freeze *binary64
-trigonometric polynomials*.  They do not assert that either polynomial is
-an RFDE periodic orbit.  The directed radii output, when present, is the
-unpromoted prototype returned by :mod:`canard_control.leaky_periodic_validation`;
-in particular, every orbit and Floquet proof flag remains false.
+trigonometric polynomials*.  Such a polynomial alone is not an RFDE orbit.
+The nested directed calculation and the independent leaky-majorant audit
+together validate the registered inner phase-fixed RFDE orbit and its
+bordered derivative.  Floquet multiplicity and index flags remain false.
 
 The validator has three independent duties.
 
@@ -51,7 +51,7 @@ from canard_control.leaky_periodic_validation import (
 )
 
 
-SCHEMA_ID = "leaky-periodic-branch-binary64-artifact-v1"
+SCHEMA_ID = "leaky-periodic-branch-binary64-artifact-v2"
 SOURCE_RELATIVE_PATH = (
     "src/canard_control/leaky_periodic_branch_artifact.py"
 )
@@ -89,6 +89,7 @@ SOURCE_MANIFEST = (
     GENERATOR_RELATIVE_PATH,
     PARENT_PROBE_RELATIVE_PATH,
     LEAKY_VALIDATOR_RELATIVE_PATH,
+    "src/canard_control/leaky_periodic_majorant_audit.py",
     "src/canard_control/fhn_periodic_candidate.py",
     "src/canard_control/fhn_periodic_directed_validation.py",
     "src/canard_control/fhn_periodic_infinite_validation.py",
@@ -113,9 +114,10 @@ ARITHMETIC_SCOPE = (
     "binary64. The nested directed-radii prototype uses MPFR-directed "
     "interval endpoints around that exact binary64 polynomial and a NumPy "
     "midpoint inverse with a directed product-error bound. The leaky "
-    "majorant adaptation is not independently audited, so neither a closed "
-    "candidate inequality nor a finite bordered inverse is promoted to an "
-    "RFDE orbit or Floquet proof."
+    "majorant adaptation is independently audited. For the registered inner "
+    "artifact the negative radii polynomial validates a phase-fixed RFDE "
+    "orbit and its bordered derivative; no Floquet multiplicity or index is "
+    "inferred."
 )
 
 MODEL_VALUES = {
@@ -137,7 +139,7 @@ MODEL_VALUES = {
 # lock does not create a hash cycle.
 EXPECTED_ARTIFACT_SHA256 = {
     "inner_saddle_candidate": (
-        "7f091bcec62acefea422fda9ee5d69585c14dd9b81db8954ce8aeef307a1c23b"
+        "35c3737f8970c54cf28fa9911325e3785ea01c3e76c3d3efe531f344726e759a"
     ),
     "outer_pulse": None,
 }
@@ -146,9 +148,9 @@ CLAIM_STATUS = {
     "exact_binary64_polynomial_replay_artifact": True,
     "finite_collocation_residual_recomputed": True,
     "directed_radii_prototype_evaluated": True,
-    "directed_radii_formula_adaptation_independently_audited": False,
-    "periodic_rfde_orbit_validated": False,
-    "phase_bordered_rfde_inverse_validated": False,
+    "directed_radii_formula_adaptation_independently_audited": True,
+    "periodic_rfde_orbit_validated": True,
+    "phase_bordered_rfde_inverse_validated": True,
     "neutral_multiplier_algebraically_simple_validated": False,
     "nontranslation_unit_circle_exclusion_validated": False,
     "unstable_multiplier_count_validated": False,
@@ -551,13 +553,14 @@ def _validate_directed_payload(
         raise ValueError("directed prototype has missing or unknown fields")
     if payload.get("branch") != branch or payload.get("recovery_leak") != "1":
         raise ValueError("directed prototype branch or recovery leak changed")
+    if payload.get("formula_adaptation_independently_audited") is not True:
+        raise ValueError("directed formula audit is not registered")
     for name in (
-        "formula_adaptation_independently_audited",
         "periodic_rfde_orbit_validated",
         "phase_bordered_rfde_inverse_validated",
     ):
-        if payload.get(name) is not False:
-            raise ValueError(f"directed proof flag {name} was promoted")
+        if type(payload.get(name)) is not bool:
+            raise ValueError(f"directed proof flag {name} has wrong type")
     if type(payload.get("directed_radii_inequality_candidate_closed")) is not bool:
         raise ValueError("directed candidate closure flag has wrong type")
 
@@ -602,12 +605,27 @@ def _validate_directed_payload(
                 continue
             _finite_decimal_string(value, f"directed.{mapping_name}.{key}")
 
+    expected_floquet = {
+        "translation_identity_exact_for_validated_orbit": payload.get(
+            "periodic_rfde_orbit_validated"
+        ),
+        "phase_bordered_rfde_inverse_validated": payload.get(
+            "phase_bordered_rfde_inverse_validated"
+        ),
+        "geometric_translation_kernel_conditional_on_standard_bvp_identification": (
+            payload.get("periodic_rfde_orbit_validated")
+            and payload.get("phase_bordered_rfde_inverse_validated")
+        ),
+    }
     for name, value in floquet.items():
         if name == "required_next_certificates":
             if not isinstance(value, list) or len(value) != 3:
                 raise ValueError("Floquet next-certificate list changed")
+        elif name in expected_floquet:
+            if value is not expected_floquet[name]:
+                raise ValueError(f"Floquet contract flag {name} changed")
         elif value is not False:
-            raise ValueError(f"Floquet proof flag {name} was promoted")
+            raise ValueError(f"Floquet spectral proof flag {name} was promoted")
 
 
 def _metric_close(recomputed: float, stored: float, name: str) -> None:
@@ -682,6 +700,12 @@ def _validate_directed_gate_semantics(
         raise ValueError(f"{name} radii gate disagrees with its strict signs")
     if payload.get("directed_radii_inequality_candidate_closed") is not radii_gate:
         raise ValueError(f"{name} candidate-closure gate disagrees with its signs")
+    formula_gate = payload.get("formula_adaptation_independently_audited") is True
+    proof_gate = radii_gate and formula_gate
+    if payload.get("periodic_rfde_orbit_validated") is not proof_gate:
+        raise ValueError(f"{name} orbit proof gate disagrees with its premises")
+    if payload.get("phase_bordered_rfde_inverse_validated") is not proof_gate:
+        raise ValueError(f"{name} bordered-inverse gate disagrees with its premises")
     inverse_bound = correction.get("bordered_inverse_norm_upper")
     if (inverse_bound is not None) is not radii_gate:
         raise ValueError(f"{name} bordered-inverse bound has inconsistent presence")

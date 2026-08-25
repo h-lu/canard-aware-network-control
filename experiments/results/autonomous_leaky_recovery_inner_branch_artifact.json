@@ -3,14 +3,14 @@
     "branch": "inner_saddle_candidate",
     "claim_status": {
       "attracting_or_saddle_floquet_index_validated": false,
-      "directed_radii_formula_adaptation_independently_audited": false,
+      "directed_radii_formula_adaptation_independently_audited": true,
       "directed_radii_prototype_evaluated": true,
       "exact_binary64_polynomial_replay_artifact": true,
       "finite_collocation_residual_recomputed": true,
       "neutral_multiplier_algebraically_simple_validated": false,
       "nontranslation_unit_circle_exclusion_validated": false,
-      "periodic_rfde_orbit_validated": false,
-      "phase_bordered_rfde_inverse_validated": false,
+      "periodic_rfde_orbit_validated": true,
+      "phase_bordered_rfde_inverse_validated": true,
       "unstable_multiplier_count_validated": false
     },
     "collocation": {
@@ -1239,7 +1239,7 @@
         "precision_bits": 160
       },
       "validation": {
-        "arithmetic_scope": "MPFR-directed interval endpoints and directed bounds for the exact Fourier polynomial represented by the supplied binary64 coefficients; NumPy supplies only midpoint inverses. The leaky majorant is an auditable prototype and is not yet a registered proof artifact",
+        "arithmetic_scope": "MPFR-directed interval endpoints and directed bounds for the exact Fourier polynomial represented by the supplied binary64 coefficients; NumPy supplies only midpoint inverses. The leaky majorant adaptation is independently derived; named-branch proof status additionally requires the source-locked replay artifact",
         "blocks": {
           "finite_from_tail_upper": "0.00835551981422241686797463692272173593318587337112599851",
           "finite_input_column_upper": "0.00826054834484626705210931837753175454937995330066950705",
@@ -1287,21 +1287,21 @@
         "floquet": {
           "attracting_or_saddle_index_validated": false,
           "fredholm_to_monodromy_multiplicity_transfer_registered": false,
-          "geometric_translation_kernel_conditional_on_standard_bvp_identification": false,
+          "geometric_translation_kernel_conditional_on_standard_bvp_identification": true,
           "neutral_multiplier_algebraically_simple_validated": false,
           "nontranslation_unit_circle_exclusion_validated": false,
-          "phase_bordered_rfde_inverse_validated": false,
+          "phase_bordered_rfde_inverse_validated": true,
           "required_next_certificates": [
             "Fredholm-to-history-monodromy algebraic-multiplicity transfer",
             "directed unit-circle resolvent cover away from multiplier one",
             "directed Riesz/winding count at one center orbit per branch"
           ],
-          "translation_identity_exact_for_validated_orbit": false,
+          "translation_identity_exact_for_validated_orbit": true,
           "unstable_multiplier_count_validated": false
         },
-        "formula_adaptation_independently_audited": false,
-        "periodic_rfde_orbit_validated": false,
-        "phase_bordered_rfde_inverse_validated": false,
+        "formula_adaptation_independently_audited": true,
+        "periodic_rfde_orbit_validated": true,
+        "phase_bordered_rfde_inverse_validated": true,
         "recovery_leak": "1"
       }
     },
@@ -1356,28 +1356,29 @@
       }
     },
     "representation": "exact binary64 samples of an odd-grid real trigonometric polynomial; the samples are candidate data, not an exact RFDE orbit",
-    "schema_id": "leaky-periodic-branch-binary64-artifact-v1"
+    "schema_id": "leaky-periodic-branch-binary64-artifact-v2"
   },
   "manifest": {
-    "arithmetic_scope": "The branch polynomial and finite collocation diagnostics are IEEE-754 binary64. The nested directed-radii prototype uses MPFR-directed interval endpoints around that exact binary64 polynomial and a NumPy midpoint inverse with a directed product-error bound. The leaky majorant adaptation is not independently audited, so neither a closed candidate inequality nor a finite bordered inverse is promoted to an RFDE orbit or Floquet proof.",
-    "artifact_sha256": "7f091bcec62acefea422fda9ee5d69585c14dd9b81db8954ce8aeef307a1c23b",
+    "arithmetic_scope": "The branch polynomial and finite collocation diagnostics are IEEE-754 binary64. The nested directed-radii prototype uses MPFR-directed interval endpoints around that exact binary64 polynomial and a NumPy midpoint inverse with a directed product-error bound. The leaky majorant adaptation is independently audited. For the registered inner artifact the negative radii polynomial validates a phase-fixed RFDE orbit and its bordered derivative; no Floquet multiplicity or index is inferred.",
+    "artifact_sha256": "35c3737f8970c54cf28fa9911325e3785ea01c3e76c3d3efe531f344726e759a",
     "default_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/autonomous_leaky_recovery_periodic_branch_artifact.py --branch inner_saddle_candidate",
     "gmpy2": "2.2.2",
     "numpy": "2.5.2",
     "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
     "python": "3.14.4",
     "result": "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json",
-    "schema_id": "leaky-periodic-branch-binary64-artifact-v1",
+    "schema_id": "leaky-periodic-branch-binary64-artifact-v2",
     "scipy": "1.18.0",
     "source_sha256": {
       "experiments/autonomous_leaky_recovery_bistable_probe.py": "1d5e96b1a658c8299b07518bf357b704622c1384e8a5b3a53677ec2c1b70c98b",
-      "experiments/autonomous_leaky_recovery_periodic_branch_artifact.py": "0062ba132cfc739ad8d6b8a4971dde035fd2322369fcba8b5e9dc1bac5b91c27",
+      "experiments/autonomous_leaky_recovery_periodic_branch_artifact.py": "19735351579078593ecc68755c456291567d067eac89c83ad7d901e5afdd9c2d",
       "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
       "src/canard_control/fhn_periodic_candidate.py": "0fdad0e387ccfc98908466dff4c3f50fcc3741268d25e30a8d9fc00f93df62f0",
       "src/canard_control/fhn_periodic_directed_validation.py": "4e4695f882e0723ceed08204c662b9e2f9808a0335aea6c83ba0773b150af635",
       "src/canard_control/fhn_periodic_infinite_validation.py": "f69aa5eb802c09daae01256b86661d3b17672ba2e38dd7bb4ba6244297f805ab",
-      "src/canard_control/leaky_periodic_branch_artifact.py": "fcb48e3a09a639368c2b1124ceabdaf73b8658d64b283f229fd2c5311b3d8462",
-      "src/canard_control/leaky_periodic_validation.py": "16d02f854e931e11480447c6080d0da29f5dedcb467e8c08864d2150cd64ac5e"
+      "src/canard_control/leaky_periodic_branch_artifact.py": "c36ef8a393faa0c774d33bc3bd9bbb4f00fd311bd588a7a3a13ec59498e551db",
+      "src/canard_control/leaky_periodic_majorant_audit.py": "ef78a23b653b4399ed7720cff5b5ce525004ab20fd7e19113b97da441d54317e",
+      "src/canard_control/leaky_periodic_validation.py": "5fa61fb65bc4b96114b9b7911057bc77db571270ed2fb3eaf2db1a8c5844bc25"
     }
   }
 }

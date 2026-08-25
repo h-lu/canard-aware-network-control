@@ -1,0 +1,203 @@
+# The finite-pulse terminal-history curve is an oriented embedding
+
+Status: **proved exactly.**  For the autonomous leaky-recovery RFDE, the
+physical one-unit voltage pulse produces a jointly smooth curve of complete
+terminal histories, and its stimulus tangent has strictly positive voltage
+and recovery components on the part of the history created by the pulse.
+This closes the regularity and nondegeneracy of the terminal-history map
+itself.  It does not construct or orient the stable manifold of the inner
+periodic orbit, so it does not prove an onset threshold.
+
+## 1. Terminal histories produced before either delay returns
+
+Let
+
+\[
+ X=C([-\tau _1,0],\mathbb R^2),\qquad
+ \tau _0=4\sqrt5,\quad \tau _1=5\sqrt5,
+\]
+
+and consider
+
+\[
+\begin{aligned}
+ v'={}&v-\frac{v^3}{3}-w
+ +\varepsilon\kappa _1\left(\frac{v(t-\tau _0)+v(t-\tau _1)}2-v\right)\\
+ &+\varepsilon\kappa _3\left(
+ \frac{(v(t-\tau _0)-1)^3+(v(t-\tau _1)-1)^3}{2}
+ -(v-1)^3\right)+u_J(t),\\
+ w'={}&\varepsilon(v-a-w),
+\end{aligned}
+\tag{1.1}
+\]
+
+with
+
+\[
+ \varepsilon=\frac15,qquad a=\frac14,qquad
+ \kappa _1=\frac1{250},\qquad \kappa _3=\frac1{200}.
+\tag{1.2}
+\]
+
+Write \(\alpha=(3a)^{1/3}\).  The quiet equilibrium is
+\(E_q=(\alpha,\alpha-a)\).  Starting from its constant history, apply
+
+\[
+ u_J(t)=J\quad(0\le t\le1),
+ \qquad u_J(t)=0\quad(t>1).
+\tag{1.3}
+\]
+
+Both delays exceed one.  Consequently, throughout the forced interval both
+delayed voltage slots are exactly \(\alpha\), and the RFDE reduces to
+
+\[
+\begin{aligned}
+ v'={}&v-\frac{v^3}{3}-w
+ +\varepsilon\kappa _1(\alpha-v)
+ +\varepsilon\kappa _3\{(\alpha-1)^3-(v-1)^3\}+J,\\
+ w'={}&\varepsilon(v-a-w),
+ \qquad (v(0),w(0))=(\alpha,\alpha-a).
+\end{aligned}
+\tag{1.4}
+\]
+
+Let \(z_J(t)=(v_J(t),w_J(t))\) denote this solution.  The terminal history
+at release is
+
+\[
+ K(J)(\theta)=
+ \begin{cases}
+ E_q,&-\tau _1\le\theta\le-1,\\
+ z_J(1+\theta),&-1\le\theta\le0.
+ \end{cases}
+\tag{1.5}
+\]
+
+The two formulas agree at \(\theta=-1\).  Thus (1.5) is an element of
+\(X\), not a replacement by a constant kicked history.
+
+## 2. Exact orientation of the stimulus tangent
+
+Differentiate (1.4) with respect to \(J\) and put
+
+\[
+ p=\partial_Jv_J,\qquad q=\partial_Jw_J.
+\]
+
+Then
+
+\[
+\begin{aligned}
+ p'&=A(v_J)p-q+1,\\
+ q'&=\frac15(p-q),\\
+ p(0)&=q(0)=0,
+\end{aligned}
+\tag{2.1}
+\]
+
+where
+
+\[
+ A(v)=1-v^2-\frac1{5\cdot250}
+       -\frac3{5\cdot200}(v-1)^2\le1.
+\tag{2.2}
+\]
+
+The sign in (2.1) can be proved without integrating the RFDE.  Since
+\(p'(0)=1\), we have \(p>0\) initially.  Suppose that \(t_*\le1\) is its
+first later zero.  On \([0,t_*]\), variation of constants gives \(q\ge0\),
+and (2.1)--(2.2) imply
+
+\[
+ p'\le p+1,qquad 0\le p(t)\le e^t-1<2.
+\tag{2.3}
+\]
+
+Therefore
+
+\[
+ 0\le q(t)=\frac15\int_0^t e^{-(t-s)/5}p(s)\,ds<\frac25.
+\tag{2.4}
+\]
+
+At the alleged first zero,
+
+\[
+ p'(t_*)=1-q(t_*)>\frac35,
+\tag{2.5}
+\]
+
+which is incompatible with a first crossing from positive values to zero.
+Hence
+
+\[
+ p(t)>0,qquad q(t)>0,qquad 0<t\le1.
+\tag{2.6}
+\]
+
+This argument uses only \(\varepsilon=1/5\), nonnegative gains and pulse
+duration one.  In particular it is uniform for \(J\in[3/10,8/25]\).
+
+## 3. Complete-history consequence
+
+Standard smooth dependence for the finite-dimensional equation (1.4),
+together with \(a>0\), makes
+
+\[
+ (a,\kappa _3,J)\longmapsto K_{a,\kappa _3}(J)\in X
+\tag{3.1}
+\]
+
+jointly \(C^1\) on a neighborhood of the declared center; in fact it is
+smooth.  Its stimulus derivative is the continuous history
+
+\[
+ D_JK(J)(\theta)=
+ \begin{cases}
+ 0,&-\tau _1\le\theta\le-1,\\
+ (p(1+\theta),q(1+\theta)),&-1\le\theta\le0.
+ \end{cases}
+\tag{3.2}
+\]
+
+By (2.6), evaluation of the voltage at \(\theta=0\) gives
+
+\[
+ D_J\{\operatorname{ev}_{0,v}K(J)\}=p(1)>0.
+\tag{3.3}
+\]
+
+Thus \(J\mapsto K(J)\) is an oriented \(C^1\) immersion.  It is injective,
+because the mean-value theorem and (2.6) imply, whenever \(J_2>J_1\),
+
+\[
+ v_{J_2}(t)>v_{J_1}(t),\qquad
+ w_{J_2}(t)>w_{J_1}(t),\qquad 0<t\le1.
+\tag{3.4}
+\]
+
+On every compact stimulus interval it is therefore a topological embedding;
+the nonzero endpoint evaluation in (3.3) supplies the local \(C^1\)
+embedding property in the Banach space \(X\).
+
+## 4. What remains for physical onset
+
+Let \(h_\xi\) be a defining function for the local stable manifold of the
+inner periodic orbit.  The unresolved onset transversality is now the single
+history-space pairing
+
+\[
+ D_\phi h_{\xi_0}(K_{\xi_0}(J_c))
+ \bigl[D_JK_{\xi_0}(J_c)\bigr]\ne0.
+\tag{4.1}
+\]
+
+The present theorem proves that the second factor in (4.1) exists, is
+nonzero, and has a fixed positive componentwise orientation.  It says
+nothing about the sign or nonvanishing of the stable-manifold covector.
+That covector, the inner Floquet index, the two routed sides, the endpoint
+basin inclusions and uniqueness of \(J_c\) remain separate validation gates.
+
+The executable algebra and strict claim ledger are generated by
+`experiments/leaky_pulse_terminal_history.py`.

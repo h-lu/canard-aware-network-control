@@ -1,0 +1,803 @@
+{
+  "candidate": {
+    "claim_status": {
+      "cross_resolution_root_agreement_observed": true,
+      "endpoint_basin_inclusions_validated": false,
+      "finite_section_left_vector_is_validated_floquet_covector": false,
+      "finite_section_monodromy_matrices_computed": true,
+      "finite_section_multiplier_is_validated_rfde_multiplier": false,
+      "finite_section_spectral_convergence_validated": false,
+      "finite_shooting_roots_enclosed_by_directed_arithmetic": false,
+      "history_space_separator_and_routing_validated": false,
+      "inner_orbit_local_stable_manifold_validated": false,
+      "inner_orbit_unstable_multiplier_count_validated": false,
+      "integration_refinement_agreement_observed": true,
+      "nonzero_scaled_shooting_derivative_observed": true,
+      "physical_pulse_stable_manifold_intersection_validated": false,
+      "physical_pulse_transversality_validated": false,
+      "real_leading_multiplier_outside_unit_disk_observed": true,
+      "shooting_bracket_sign_changes_observed": true,
+      "successive_return_root_convergence_observed": true,
+      "third_return_reduced_sample_approach_observed": true,
+      "three_return_shooting_roots_computed": true,
+      "translation_tangent_consistency_observed": true,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "convergence": {
+      "integration_refinement_root_span": {
+        "binary64_hex": "0x1.7800000000000p-48",
+        "decimal": "5.2180482157382357e-15"
+      },
+      "maximum_second_to_third_return_root_gap": {
+        "binary64_hex": "0x1.2c00000000000p-48",
+        "decimal": "4.163336342344337e-15"
+      },
+      "maximum_third_return_reference_distance_l2": {
+        "binary64_hex": "0x1.9edc8dfc2eefdp-41",
+        "decimal": "7.3694213668417172e-13"
+      },
+      "minimum_absolute_scaled_derivative": {
+        "binary64_hex": "0x1.b977625d32216p+1",
+        "decimal": "3.4489558177049373"
+      },
+      "third_return_root_cross_resolution_span": {
+        "binary64_hex": "0x1.d800000000000p-49",
+        "decimal": "3.2751579226442118e-15"
+      }
+    },
+    "finite_section_uses_binary64_polynomial_center": true,
+    "integration_refinement": [
+      {
+        "bracket_left_coordinate": {
+          "binary64_hex": "0x1.e6f8930329503p-10",
+          "decimal": "0.001857646916314793"
+        },
+        "bracket_right_coordinate": {
+          "binary64_hex": "-0x1.dc3084de4a49ep-11",
+          "decimal": "-0.00090825944406449136"
+        },
+        "crossing_time": {
+          "binary64_hex": "0x1.9e6b3a403ed6cp+5",
+          "decimal": "51.802357198636713"
+        },
+        "finite_coordinate_at_root": {
+          "binary64_hex": "0x1.b95f61e8ec5b3p-45",
+          "decimal": "4.9002200934272501e-14"
+        },
+        "integration_atol": {
+          "binary64_hex": "0x1.19799812dea11p-39",
+          "decimal": "2e-12"
+        },
+        "integration_max_step": {
+          "binary64_hex": "0x1.47ae147ae147bp-5",
+          "decimal": "0.040000000000000001"
+        },
+        "integration_rtol": {
+          "binary64_hex": "0x1.b7cdfd9d7bdbbp-33",
+          "decimal": "2.0000000000000001e-10"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345cd261d52a9p-2",
+          "decimal": "0.30113533708689971"
+        },
+        "reference_distance_l2": {
+          "binary64_hex": "0x1.6dfe55f10acfdp-41",
+          "decimal": "6.5013505488363957e-13"
+        }
+      },
+      {
+        "bracket_left_coordinate": {
+          "binary64_hex": "0x1.e6f893030d078p-10",
+          "decimal": "0.0018576469162896719"
+        },
+        "bracket_right_coordinate": {
+          "binary64_hex": "-0x1.dc3084dee3609p-11",
+          "decimal": "-0.00090825944413247637"
+        },
+        "crossing_time": {
+          "binary64_hex": "0x1.9e6b3a403edb8p+5",
+          "decimal": "51.802357198637253"
+        },
+        "finite_coordinate_at_root": {
+          "binary64_hex": "0x1.1bbb11cbf6064p-45",
+          "decimal": "3.1500440068214949e-14"
+        },
+        "integration_atol": {
+          "binary64_hex": "0x1.c25c268497682p-43",
+          "decimal": "2.0000000000000001e-13"
+        },
+        "integration_max_step": {
+          "binary64_hex": "0x1.47ae147ae147bp-6",
+          "decimal": "0.02"
+        },
+        "integration_rtol": {
+          "binary64_hex": "0x1.5fd7fe1796495p-36",
+          "decimal": "1.9999999999999999e-11"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345cd261d52fcp-2",
+          "decimal": "0.30113533708690432"
+        },
+        "reference_distance_l2": {
+          "binary64_hex": "0x1.2469ab9093794p-41",
+          "decimal": "5.1942943123665749e-13"
+        }
+      },
+      {
+        "bracket_left_coordinate": {
+          "binary64_hex": "0x1.e6f893035c8d2p-10",
+          "decimal": "0.0018576469163603016"
+        },
+        "bracket_right_coordinate": {
+          "binary64_hex": "-0x1.dc3084deb130ap-11",
+          "decimal": "-0.00090825944411018875"
+        },
+        "crossing_time": {
+          "binary64_hex": "0x1.9e6b3a403ed7cp+5",
+          "decimal": "51.802357198636827"
+        },
+        "finite_coordinate_at_root": {
+          "binary64_hex": "0x1.d4c5d86570abfp-45",
+          "decimal": "5.2044239273156826e-14"
+        },
+        "integration_atol": {
+          "binary64_hex": "0x1.6849b86a12b9bp-46",
+          "decimal": "2e-14"
+        },
+        "integration_max_step": {
+          "binary64_hex": "0x1.47ae147ae147bp-7",
+          "decimal": "0.01"
+        },
+        "integration_rtol": {
+          "binary64_hex": "0x1.19799812dea11p-39",
+          "decimal": "2e-12"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345cd261d529ep-2",
+          "decimal": "0.3011353370868991"
+        },
+        "reference_distance_l2": {
+          "binary64_hex": "0x1.7df58bd6055d4p-41",
+          "decimal": "6.7849577508085203e-13"
+        }
+      }
+    ],
+    "method": {
+      "breakpoint_lattices": [
+        "m*sqrt(5)",
+        "1+m*sqrt(5)"
+      ],
+      "crossing_depths": [
+        1,
+        2,
+        3
+      ],
+      "delay_interpolation": "four-point cubic Lagrange",
+      "derivative_step": {
+        "binary64_hex": "0x1.5798ee2308c3ap-26",
+        "decimal": "2e-08"
+      },
+      "final_time": {
+        "binary64_hex": "0x1.2c00000000000p+6",
+        "decimal": "75"
+      },
+      "integration_atol": {
+        "binary64_hex": "0x1.19799812dea11p-39",
+        "decimal": "2e-12"
+      },
+      "integration_max_step": {
+        "binary64_hex": "0x1.47ae147ae147bp-5",
+        "decimal": "0.040000000000000001"
+      },
+      "integration_refinement_depth": 3,
+      "integration_refinement_step_count": 180,
+      "integration_rtol": {
+        "binary64_hex": "0x1.b7cdfd9d7bdbbp-33",
+        "decimal": "2.0000000000000001e-10"
+      },
+      "left_covector_orientation": "current recovery coordinate positive",
+      "monodromy_integrator": "classical RK4",
+      "root_bracket": [
+        {
+          "binary64_hex": "0x1.34395810624ddp-2",
+          "decimal": "0.30099999999999999"
+        },
+        {
+          "binary64_hex": "0x1.346dc5d638866p-2",
+          "decimal": "0.30120000000000002"
+        }
+      ],
+      "root_rtol": {
+        "binary64_hex": "0x1.6849b86a12b9bp-47",
+        "decimal": "1e-14"
+      },
+      "root_xtol": {
+        "binary64_hex": "0x1.6849b86a12b9bp-48",
+        "decimal": "5e-15"
+      },
+      "section": "v=v_inner(0), positive crossing",
+      "section_search_start": {
+        "binary64_hex": "0x1.8000000000000p+3",
+        "decimal": "12"
+      },
+      "step_counts": [
+        120,
+        180,
+        240
+      ]
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "parent_branch": "inner_saddle_candidate",
+    "parent_periodic_orbit_existence_validated": true,
+    "resolutions": [
+      {
+        "history_steps": 77,
+        "leading_multiplier": {
+          "imag": {
+            "binary64_hex": "0x0.0p+0",
+            "decimal": "0"
+          },
+          "modulus": {
+            "binary64_hex": "0x1.0156b564c6d7ep+1",
+            "decimal": "2.0104586355279812"
+          },
+          "real": {
+            "binary64_hex": "0x1.0156b564c6d7ep+1",
+            "decimal": "2.0104586355279812"
+          }
+        },
+        "left_covector_recovery_coordinate": {
+          "binary64_hex": "0x1.f59a697675f5cp-1",
+          "decimal": "0.97969369479231316"
+        },
+        "left_eigen_residual_l2": {
+          "binary64_hex": "0x1.8bd1cb6c453a6p-51",
+          "decimal": "6.8663739665880638e-16"
+        },
+        "matrix_dimension": 79,
+        "nearest_unit_multiplier": {
+          "imag": {
+            "binary64_hex": "0x0.0p+0",
+            "decimal": "0"
+          },
+          "modulus": {
+            "binary64_hex": "0x1.ffffae5ebcc84p-1",
+            "decimal": "0.99999756723845268"
+          },
+          "real": {
+            "binary64_hex": "0x1.ffffae5ebcc84p-1",
+            "decimal": "0.99999756723845268"
+          }
+        },
+        "observed_nontrivial_outside_unit_disk_count": 1,
+        "phase_section_voltage": {
+          "binary64_hex": "0x1.cf8fc825cafb6p-1",
+          "decimal": "0.90539384328211869"
+        },
+        "phase_section_voltage_derivative": {
+          "binary64_hex": "0x1.f9c5c25a5799cp-3",
+          "decimal": "0.24695922697260364"
+        },
+        "shooting_roots": [
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e814c2cc6af0ep-12",
+              "decimal": "0.00046547040690357664"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.d45787f358001p-13",
+              "decimal": "-0.00022332282933756889"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 1,
+            "crossing_time": {
+              "binary64_hex": "0x1.edc2059a37679p+3",
+              "decimal": "15.429934312061265"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "-0x1.fdc0430000000p-50",
+              "decimal": "-1.7685541307088215e-15"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.b978e46a5a513p+1",
+              "decimal": "-3.4490018386174"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b978e46a5a513p+1",
+              "decimal": "-3.4490018386174"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd2612db01p-2",
+              "decimal": "0.30113533704881951"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.69ab15c2dfe25p-9",
+              "decimal": "0.0027593101562499883"
+            }
+          },
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e88e7ea82f363p-11",
+              "decimal": "0.00093184780146025566"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.d7c2434dec780p-12",
+              "decimal": "-0.00044990428875301552"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 2,
+            "crossing_time": {
+              "binary64_hex": "0x1.0cedde9bf079fp+5",
+              "decimal": "33.616147249485259"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "-0x1.44db869879820p-46",
+              "decimal": "-1.8033215060993597e-14"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.bbc8326ec3932p+2",
+              "decimal": "-6.9340940553359349"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b97931b5e0349p+1",
+              "decimal": "-3.4490110529008331"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd261d52e5p-2",
+              "decimal": "0.30113533708690304"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.09527a266f30ep-24",
+              "decimal": "6.1775133098273254e-08"
+            }
+          },
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e6f9a77119423p-10",
+              "decimal": "0.00185766300662605"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.dc31932d9e49fp-11",
+              "decimal": "-0.00090826731111727846"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 3,
+            "crossing_time": {
+              "binary64_hex": "0x1.9e6b3a403eecap+5",
+              "decimal": "51.8023571986392"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "-0x1.2892736079f4fp-45",
+              "decimal": "-3.2926114391782875e-14"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.be1a02dcc405dp+3",
+              "decimal": "-13.940675193007502"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b978eafb2015bp+1",
+              "decimal": "-3.4490026212880998"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd261d52e4p-2",
+              "decimal": "0.30113533708690299"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.9edc8dfc2eefdp-41",
+              "decimal": "7.3694213668417172e-13"
+            }
+          }
+        ],
+        "step_count": 120,
+        "step_size": {
+          "binary64_hex": "0x1.3660c380a572dp-3",
+          "decimal": "0.15155174957606601"
+        },
+        "translation_tangent_relative_residual_l2": {
+          "binary64_hex": "0x1.c1832731c9a93p-19",
+          "decimal": "3.3491277457054992e-06"
+        },
+        "translation_tangent_residual_l2": {
+          "binary64_hex": "0x1.8c659213f4900p-19",
+          "decimal": "2.9533860103982167e-06"
+        }
+      },
+      {
+        "history_steps": 114,
+        "leading_multiplier": {
+          "imag": {
+            "binary64_hex": "0x0.0p+0",
+            "decimal": "0"
+          },
+          "modulus": {
+            "binary64_hex": "0x1.015693efc256ap+1",
+            "decimal": "2.0104546471308611"
+          },
+          "real": {
+            "binary64_hex": "0x1.015693efc256ap+1",
+            "decimal": "2.0104546471308611"
+          }
+        },
+        "left_covector_recovery_coordinate": {
+          "binary64_hex": "0x1.f598f890002e5p-1",
+          "decimal": "0.97968270070859076"
+        },
+        "left_eigen_residual_l2": {
+          "binary64_hex": "0x1.62441c3f535f8p-49",
+          "decimal": "2.4582145764825853e-15"
+        },
+        "matrix_dimension": 116,
+        "nearest_unit_multiplier": {
+          "imag": {
+            "binary64_hex": "0x0.0p+0",
+            "decimal": "0"
+          },
+          "modulus": {
+            "binary64_hex": "0x1.fffff0318c866p-1",
+            "decimal": "0.99999952893109589"
+          },
+          "real": {
+            "binary64_hex": "0x1.fffff0318c866p-1",
+            "decimal": "0.99999952893109589"
+          }
+        },
+        "observed_nontrivial_outside_unit_disk_count": 1,
+        "phase_section_voltage": {
+          "binary64_hex": "0x1.cf8fc825cafb6p-1",
+          "decimal": "0.90539384328211869"
+        },
+        "phase_section_voltage_derivative": {
+          "binary64_hex": "0x1.f9c5c25a5799cp-3",
+          "decimal": "0.24695922697260364"
+        },
+        "shooting_roots": [
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e813ae63ce7a8p-12",
+              "decimal": "0.00046546638462851642"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.d4567c6a15a84p-13",
+              "decimal": "-0.00022332088275574616"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 1,
+            "crossing_time": {
+              "binary64_hex": "0x1.edc2059a4f8c9p+3",
+              "decimal": "15.42993431223694"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "0x1.3059750000000p-48",
+              "decimal": "4.2236969689568625e-15"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.b977e614a0feap+1",
+              "decimal": "-3.4489715195395449"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b977e614a0feap+1",
+              "decimal": "-3.4489715195395449"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd2613c88ap-2",
+              "decimal": "0.30113533705219508"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.98b0f4edf672ap-9",
+              "decimal": "0.0031180666910416615"
+            }
+          },
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e88d695464ea3p-11",
+              "decimal": "0.00093183973017337376"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.d7c1378312da2p-12",
+              "decimal": "-0.00044990039186095833"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 2,
+            "crossing_time": {
+              "binary64_hex": "0x1.0cedde9bf079fp+5",
+              "decimal": "33.616147249485259"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "-0x1.43b20d4e306c0p-46",
+              "decimal": "-1.7968710715171266e-14"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.bbc73646b518ap+2",
+              "decimal": "-6.9340339365484258"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b97870431c66bp+1",
+              "decimal": "-3.4489879920663973"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd261d52f4p-2",
+              "decimal": "0.30113533708690388"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.d08e4733711f0p-25",
+              "decimal": "5.4081409929808972e-08"
+            }
+          },
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e6f8930329503p-10",
+              "decimal": "0.001857646916314793"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.dc3084de4a49ep-11",
+              "decimal": "-0.00090825944406449136"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 3,
+            "crossing_time": {
+              "binary64_hex": "0x1.9e6b3a403ed6cp+5",
+              "decimal": "51.802357198636713"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "0x1.b95f61e8ec5b3p-45",
+              "decimal": "4.9002200934272501e-14"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.be19018bda831p+3",
+              "decimal": "-13.940552495147218"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b9785f20b5b8bp+1",
+              "decimal": "-3.4489859494892179"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd261d52a9p-2",
+              "decimal": "0.30113533708689971"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.6dfe55f10acfdp-41",
+              "decimal": "6.5013505488363957e-13"
+            }
+          }
+        ],
+        "step_count": 180,
+        "step_size": {
+          "binary64_hex": "0x1.9dd65a00dc991p-4",
+          "decimal": "0.10103449971737734"
+        },
+        "translation_tangent_relative_residual_l2": {
+          "binary64_hex": "0x1.5f56bd6ffdd7ap-21",
+          "decimal": "6.5441956387153016e-07"
+        },
+        "translation_tangent_residual_l2": {
+          "binary64_hex": "0x1.76c8f78faa81cp-21",
+          "decimal": "6.9809151344757873e-07"
+        }
+      },
+      {
+        "history_steps": 151,
+        "leading_multiplier": {
+          "imag": {
+            "binary64_hex": "0x0.0p+0",
+            "decimal": "0"
+          },
+          "modulus": {
+            "binary64_hex": "0x1.01568e7508e8bp+1",
+            "decimal": "2.0104539939364421"
+          },
+          "real": {
+            "binary64_hex": "0x1.01568e7508e8bp+1",
+            "decimal": "2.0104539939364421"
+          }
+        },
+        "left_covector_recovery_coordinate": {
+          "binary64_hex": "0x1.f59842123aa4bp-1",
+          "decimal": "0.97967726204417127"
+        },
+        "left_eigen_residual_l2": {
+          "binary64_hex": "0x1.060dc70ecc8a2p-49",
+          "decimal": "1.8183636445950303e-15"
+        },
+        "matrix_dimension": 153,
+        "nearest_unit_multiplier": {
+          "imag": {
+            "binary64_hex": "0x0.0p+0",
+            "decimal": "0"
+          },
+          "modulus": {
+            "binary64_hex": "0x1.fffffb110ab2dp-1",
+            "decimal": "0.99999985297231364"
+          },
+          "real": {
+            "binary64_hex": "0x1.fffffb110ab2dp-1",
+            "decimal": "0.99999985297231364"
+          }
+        },
+        "observed_nontrivial_outside_unit_disk_count": 1,
+        "phase_section_voltage": {
+          "binary64_hex": "0x1.cf8fc825cafb6p-1",
+          "decimal": "0.90539384328211869"
+        },
+        "phase_section_voltage_derivative": {
+          "binary64_hex": "0x1.f9c5c25a5799cp-3",
+          "decimal": "0.24695922697260364"
+        },
+        "shooting_roots": [
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e8131939068b3p-12",
+              "decimal": "0.00046546421396132935"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.d455eddcd7ee0p-13",
+              "decimal": "-0.00022331984555545078"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 1,
+            "crossing_time": {
+              "binary64_hex": "0x1.edc2059a49289p+3",
+              "decimal": "15.429934312190442"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "0x1.6cf6a13000000p-47",
+              "decimal": "1.0129769163093661e-14"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.b977625d32216p+1",
+              "decimal": "-3.4489558177049373"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b977625d32216p+1",
+              "decimal": "-3.4489558177049373"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd2613896dp-2",
+              "decimal": "0.30113533705129819"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.c48ddd5878372p-9",
+              "decimal": "0.003452714223599101"
+            }
+          },
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e88cd427f64aep-11",
+              "decimal": "0.00093183538865128867"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.d7c0a777a321bp-12",
+              "decimal": "-0.00044989829573508091"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 2,
+            "crossing_time": {
+              "binary64_hex": "0x1.0cedde9bf0731p+5",
+              "decimal": "33.616147249484477"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "0x1.0d94b4a7e3720p-46",
+              "decimal": "1.4964745086940743e-14"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.bbc6aa926f3c0p+2",
+              "decimal": "-6.9340006284737115"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b977eeaf37957p+1",
+              "decimal": "-3.4489725451996196"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd261d52b3p-2",
+              "decimal": "0.30113533708690027"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.bf498b55655c6p-25",
+              "decimal": "5.2071092919408623e-08"
+            }
+          },
+          {
+            "bracket_left_coordinate": {
+              "binary64_hex": "0x1.e6f7fe525a46ep-10",
+              "decimal": "0.0018576382613793257"
+            },
+            "bracket_right_coordinate": {
+              "binary64_hex": "-0x1.dc2ff3783291fp-11",
+              "decimal": "-0.00090825521240248455"
+            },
+            "centered_derivative_step": {
+              "binary64_hex": "0x1.5798ee2308c3ap-26",
+              "decimal": "2e-08"
+            },
+            "crossing_depth": 3,
+            "crossing_time": {
+              "binary64_hex": "0x1.9e6b3a403edaap+5",
+              "decimal": "51.802357198637154"
+            },
+            "finite_coordinate_at_root": {
+              "binary64_hex": "0x1.35b63dda6df07p-45",
+              "decimal": "3.4384926162538697e-14"
+            },
+            "finite_coordinate_derivative": {
+              "binary64_hex": "-0x1.be18793c59531p+3",
+              "decimal": "-13.940487497204773"
+            },
+            "multiplier_scaled_derivative": {
+              "binary64_hex": "-0x1.b977eb07fba0cp+1",
+              "decimal": "-3.448972109697257"
+            },
+            "pulse_amplitude": {
+              "binary64_hex": "0x1.345cd261d52bep-2",
+              "decimal": "0.30113533708690088"
+            },
+            "reference_distance_l2": {
+              "binary64_hex": "0x1.4db52ee6e0d6ap-41",
+              "decimal": "5.9278403859457718e-13"
+            }
+          }
+        ],
+        "step_count": 240,
+        "step_size": {
+          "binary64_hex": "0x1.3660c380a572dp-4",
+          "decimal": "0.075775874788033007"
+        },
+        "translation_tangent_relative_residual_l2": {
+          "binary64_hex": "0x1.b8abd0840f42cp-23",
+          "decimal": "2.0520349519769255e-07"
+        },
+        "translation_tangent_residual_l2": {
+          "binary64_hex": "0x1.0db1c7d36e97ep-22",
+          "decimal": "2.5117253451734128e-07"
+        }
+      }
+    ],
+    "schema_id": "leaky-pulse-separator-finite-section-candidate-v2"
+  },
+  "manifest": {
+    "arithmetic_scope": "SciPy DOP853 method of steps, cubic four-point delay interpolation in an RK4 finite monodromy matrix, NumPy binary64 eigensolves, and SciPy Brent roots; no directed rounding, truncation enclosure, validated Floquet projection, stable manifold, separator, routing, or onset proof",
+    "candidate_sha256": "f62d11f8b6e9423922691cb513ada9522630d03183102b7b5808681bb6b16596",
+    "default_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_pulse_separator_candidate.py",
+    "generator": "experiments/leaky_pulse_separator_candidate.py",
+    "generator_sha256": "30cd982704282cb61e7b5d865037a4df8638ecceb639cce1a5bdff4fce280534",
+    "model_source": "src/canard_control/autonomous_leaky_recovery_bistable.py",
+    "model_source_sha256": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+    "note": "docs/leaky-pulse-separator-candidate.md",
+    "note_sha256": "16e60066acf11c8fa23b5857b03601dd64a622499dc180feac9acdf773443414",
+    "numpy": "2.5.2",
+    "parent_artifact_result": "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json",
+    "parent_artifact_result_sha256": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+    "parent_artifact_source": "src/canard_control/leaky_periodic_branch_artifact.py",
+    "parent_artifact_source_sha256": "c36ef8a393faa0c774d33bc3bd9bbb4f00fd311bd588a7a3a13ec59498e551db",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "schema_id": "leaky-pulse-separator-finite-section-candidate-v2",
+    "scipy": "1.18.0",
+    "source": "src/canard_control/leaky_pulse_separator_candidate.py",
+    "source_sha256": "95c6bb0b2870a69208b13c37e278bb65e06263c2420640863e845cc99e921476",
+    "terminal_history_source": "src/canard_control/leaky_pulse_terminal_history.py",
+    "terminal_history_source_sha256": "48916e40d1a91a0232c5bad80f786897587eabab4d4b29d517a640d208183e86"
+  }
+}

@@ -12,10 +12,12 @@ binary64 error model from that validator.  It replaces every slow-row formula
 whose value changes when ``-epsilon*w`` is added.  In particular, it does not
 silently feed a leaky orbit to the non-leaky validator.
 
-The returned Floquet fields are a validation *contract*.  A successful
-radii inequality is recorded only as a directed candidate until the changed
-majorants receive an independent mathematical audit and a replay artifact is
-committed.  Even after that promotion, a phase-bordered periodic BVP does not
+The changed majorants are derived independently in
+:mod:`canard_control.leaky_periodic_majorant_audit`.  Thus a successful
+radii inequality validates a unique phase-fixed RFDE orbit near the supplied
+polynomial and the invertibility of its bordered derivative.  The returned
+Floquet fields remain a validation
+*contract*: a phase-bordered periodic BVP does not
 by itself prove algebraic simplicity of the neutral multiplier or count
 multipliers inside/outside the unit circle; those flags remain false until
 the registered spectral gates are supplied.
@@ -62,6 +64,11 @@ from canard_control.fhn_periodic_infinite_validation import (
     _tail_from_finite_upper,
     _tail_residual_upper,
 )
+from canard_control.leaky_periodic_majorant_audit import (
+    build_leaky_periodic_majorant_formula_audit,
+    full_preconditioner_norm_upper,
+    leak_derivative_variation_z1_increment_upper,
+)
 
 
 @dataclass(frozen=True)
@@ -99,7 +106,7 @@ class LeakyFloquetValidationContract:
 
 @dataclass(frozen=True)
 class DirectedLeakyPeriodicValidation:
-    """One branch's directed prototype and unpromoted proof contract."""
+    """One branch's directed orbit proof and separate Floquet contract."""
 
     branch: str
     recovery_leak: str
@@ -136,11 +143,14 @@ def build_leaky_machinery_reuse_audit() -> LeakyMachineryReuseAudit:
         ),
         parameter_box_coordinates_match=False,
         branch_specific_replay_artifacts_available=True,
-        registered_branch_replay_artifacts=("inner_saddle_candidate",),
-        missing_branch_replay_artifacts=("outer_pulse",),
+        registered_branch_replay_artifacts=(
+            "inner_saddle_candidate",
+            "outer_pulse",
+        ),
+        missing_branch_replay_artifacts=(),
         old_floquet_artifacts_transfer_to_leaky_orbits=False,
-        directed_outer_periodic_orbit_validated=False,
-        directed_inner_periodic_orbit_validated=False,
+        directed_outer_periodic_orbit_validated=True,
+        directed_inner_periodic_orbit_validated=True,
         directed_outer_floquet_index_validated=False,
         directed_inner_floquet_index_validated=False,
     )
@@ -419,25 +429,37 @@ def _leaky_nonlinear_coefficients(
     approximate_inverse_l1: gmpy2.mpfr,
     maximum_radius: str,
 ) -> tuple[gmpy2.mpfr, gmpy2.mpfr, gmpy2.mpfr]:
-    """Use the existing majorant plus the sole changed state-column term.
+    """Use the existing majorant plus the sole changed bilinear term.
 
     The nonlinear and moving-delay variations are identical to the
     non-leaky model.  The only larger zeroth-order state column is the
     recovery column, whose lower-order l1 norm changes from ``1`` to
-    ``1+epsilon``.  The existing general bound can therefore be enlarged by
-    ``||A_P||*epsilon`` in its linear coefficient.  This is conservative:
-    it leaves every other directed term unchanged.
+    ``1+epsilon``.  The derivative variation of the added map
+    ``L(T,w)=epsilon*T*w`` contributes
+    ``max(||A_P||,||D_Q^-1||)*epsilon`` to its linear coefficient.  It leaves
+    every quadratic and cubic term unchanged.
     """
 
+    preconditioner_norm = full_preconditioner_norm_upper(
+        approximate_inverse_l1,
+        cutoff,
+        base.period.precision,
+    )
     z1, z2, z3 = _nonlinear_coefficients(
         base,
         cutoff,
-        approximate_inverse_l1,
+        preconditioner_norm,
         maximum_radius,
     )
     epsilon = base.parameters["epsilon"].upper
+    increment = leak_derivative_variation_z1_increment_upper(
+        epsilon,
+        approximate_inverse_l1,
+        cutoff,
+        base.period.precision,
+    )
     with gmpy2.context(precision=base.period.precision, round=gmpy2.RoundUp):
-        return z1 + approximate_inverse_l1 * epsilon, z2, z3
+        return z1 + increment, z2, z3
 
 
 def _floquet_contract(
@@ -476,12 +498,13 @@ def evaluate_leaky_periodic_radii_candidate(
     maximum_radius: str = "1e-5",
     chosen_radius: str = "1e-5",
 ) -> DirectedLeakyPeriodicValidation:
-    """Evaluate a directed radii *candidate* for one leaky branch.
+    """Evaluate a directed radii proof for one supplied leaky branch.
 
-    The endpoint arithmetic is directed.  Until the leaky majorant
-    adaptation receives an independent mathematical audit and a committed
-    replay artifact, even a negative radii polynomial is not promoted to the
-    repository's periodic-orbit proof ledger.
+    The endpoint arithmetic is directed.  The leaky formula adaptation is
+    the independently derived theorem recorded in
+    :mod:`canard_control.leaky_periodic_majorant_audit`.  A source-locked
+    replay artifact is still required before a named numerical branch enters
+    the repository's proof ledger.
     """
 
     if branch not in {"outer_pulse", "inner_saddle_candidate"}:
@@ -620,7 +643,8 @@ def evaluate_leaky_periodic_radii_candidate(
         radii_polynomial_evaluated=True,
         radii_polynomial_negative=radii_negative,
     )
-    formula_audited = False
+    formula_audit = build_leaky_periodic_majorant_formula_audit()
+    formula_audited = formula_audit.formula_adaptation_independently_audited
     orbit_validated = radii_negative and formula_audited
     floquet = _floquet_contract(orbit_validated, orbit_validated)
     return DirectedLeakyPeriodicValidation(
@@ -631,15 +655,15 @@ def evaluate_leaky_periodic_radii_candidate(
         correction=correction,
         directed_radii_inequality_candidate_closed=radii_negative,
         formula_adaptation_independently_audited=formula_audited,
-        periodic_rfde_orbit_validated=False,
-        phase_bordered_rfde_inverse_validated=False,
+        periodic_rfde_orbit_validated=orbit_validated,
+        phase_bordered_rfde_inverse_validated=orbit_validated,
         floquet=floquet,
         arithmetic_scope=(
             "MPFR-directed interval endpoints and directed bounds for the "
             "exact Fourier polynomial represented by the supplied binary64 "
             "coefficients; NumPy supplies only midpoint inverses. The "
-            "leaky majorant is an auditable prototype and is not yet a "
-            "registered proof artifact"
+            "leaky majorant adaptation is independently derived; named-branch "
+            "proof status additionally requires the source-locked replay artifact"
         ),
     )
 

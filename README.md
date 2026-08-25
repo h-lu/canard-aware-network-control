@@ -372,35 +372,42 @@ open.
    history rectangle is now closed exactly: all 210
    \(\mathbb Q(\sqrt5)\) Bernstein coefficients prove the three P-matrix
    bounds \(9/100,24/25,2/5\), hence negative orientation and global
-   injectivity by Gale--Nikaido.  A first full-label physical cell
-   \([-3,-2.99]\times[-1/20,1/20]\) is also enclosed by 192-bit
-   outward-rounded Picard--Taylor arithmetic, with strict P-matrix margins.
-   This proves that the interval route works on the actual target system; it
-   does not yet cover the remaining physical strip, cross separation or an
-   enlarged collar.  The glued embedding, trace pair, Fredholm inverse and
-   selected root therefore remain open.
+   injectivity by Gale--Nikaido.  The entire first physical method-of-steps
+   rectangle \([-3,1]\times[-1/20,1/20]\) is now enclosed on 8,000
+   time--label cells by 192-bit outward-rounded Picard--Bernstein arithmetic
+   and a separate same-kernel replay at 256-bit precision.  Its rigorous lower P-matrix margins
+   are $0.27854$, $0.99999994$, and $1.47290$; the last 1,000 cells use
+   the exact delayed C4 patch.  The second method step \((1,3]\), late cross
+   separation, and enlarged collar remain open.  The glued embedding, trace
+   pair, Fredholm inverse and selected root therefore remain open.
 10. **Autonomous biological-onset route.**  A leaky-recovery replacement
    keeps the two delayed voltage channels and gives a unique quiet
    equilibrium that is proved locally exponentially stable for every pair of
-   positive delays.  Binary64 continuation finds an attracting outer pulse
-   candidate, an index-one inner-cycle candidate, and a physical
-   finite-pulse bracket \(J\in[0.30,0.32]\).  Under directed periodic/Floquet,
+   positive delays.  Directed finite/tail radii arguments now validate both
+   a phase-fixed inner periodic RFDE orbit and a distinct phase-fixed outer
+   periodic RFDE orbit, together with their phase-bordered derivatives.  The
+   inner proof uses 129 nodes and cutoff 192; the formerly under-resolved
+   outer branch uses 257 nodes and cutoff 384.  Neither orbit has yet been
+   assigned a rigorous Floquet index.  Binary64 finite monodromy matrices
+   still indicate one and zero nontranslation unstable multipliers,
+   respectively.  Under directed Floquet,
    history-space routing and pulse-transversality hypotheses, the exact
    block-triangular theorem makes
    \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) a local diffeomorphism whenever the
-   two-output response is nonsingular.  The periodic orbits, separator,
-   threshold, response determinant, finite-network basin lift and equality
-   of the canard root with physical onset are not yet proved.  A leaky-specific
-   finite/tail contract now isolates the exact slow-row, Jacobian, period-column
-   and tail changes that prevent reuse of the non-leaky validator.  Its
-   periodic-BVP architecture is reusable.  The inner branch now has a
-   source-hashed 129-node replay artifact with oversampled defect
-   \(1.28\times10^{-13}\); its 192-mode, 160-bit directed-radii prototype
-   closes at radius \(10^{-5}\), with contraction below \(0.092\) and a
-   positive candidate margin above \(9.08\times10^{-6}\).  The changed
-   majorants still need an independent proof audit, the outer artifact is not
-   yet registered, and both Floquet counts remain open; every orbit and
-   Floquet proof flag therefore remains false.
+   two-output response is nonsingular.  The physical one-unit pulse has an
+   exact jointly smooth terminal-history map
+   $J\mapsto K(J)\in C([-5\sqrt5,0],\mathbb R^2)$; its stimulus tangent is
+   componentwise positive on the newly written part of the history, making
+   the pulse curve an oriented embedding.  A source-bound finite-section
+   shooting calculation then locates
+   $J_{\rm sep}^{\rm num}\simeq0.301135337086902$: third-return roots agree
+   over 120, 180, and 240 history meshes to $3.3\times10^{-15}$, an
+   independent DOP853 refinement ladder spans $5.3\times10^{-15}$, and the
+   multiplier-scaled derivative stays near $-3.449$.  These are numerical
+   stable-separator diagnostics, not a Floquet covector, stable-manifold,
+   routing, threshold, or onset proof.  The response determinant,
+   finite-network basin lift and equality of a canard root with physical
+   onset also remain open.
 11. **Numerical diagnostic.** Literal method-of-steps integration of one
    finite-section exact-chart diagnostic gives
    \([\nu_c(\delta,h)-\nu_c(\delta,-h)]/(2\delta h)\) converging from
@@ -440,14 +447,19 @@ open.
 - [docs/fixed-epsilon-target-c4-preparation-seam.md](docs/fixed-epsilon-target-c4-preparation-seam.md) -- exact frozen-anchor fourth-order incoming seam with recursive RFDE time/mixed jets, while the interval solution chart and graph remain open;
 - [docs/fixed-epsilon-target-chart-univalence-gate.md](docs/fixed-epsilon-target-chart-univalence-gate.md) -- exact P-matrix/Gale--Nikaido univalence reduction and combined C4 state/analytic-variational binary64 replay, with every interval embedding and degree flag left false;
 - [docs/fixed-epsilon-target-c4-history-bernstein.md](docs/fixed-epsilon-target-c4-history-bernstein.md) -- exact \(\mathbb Q(\sqrt5)\) Bernstein positivity and Gale--Nikaido global injectivity for the full retained incoming C4-history rectangle;
-- [docs/fixed-epsilon-target-first-step-interval.md](docs/fixed-epsilon-target-first-step-interval.md) -- first rigorous full-label physical Picard--Taylor cell with MPFR-directed wrapping and truncation bounds, while the rest of the method-of-steps cover remains open;
+- [docs/fixed-epsilon-target-first-step-interval.md](docs/fixed-epsilon-target-first-step-interval.md) -- first rigorous full-label physical Picard--Taylor cell and the local prototype subsequently extended by the full first-step cover;
+- [docs/fixed-epsilon-target-first-step-cover.md](docs/fixed-epsilon-target-first-step-cover.md) -- rigorous 8,000-cell Picard--Bernstein cover of the full first physical method step \([-3,1]\times[-1/20,1/20]\), including the delayed C4 patch and a separate same-kernel replay at 256-bit precision; the second method step and glued chart remain open;
 - [docs/fixed-epsilon-selected-attracting-endpoint-chart.md](docs/fixed-epsilon-selected-attracting-endpoint-chart.md) -- finite-mesh attracting-endpoint audit, now explicitly superseded at the continuous level by the sliding-window/\(W^{1,p}\) correction;
 - [docs/fixed-epsilon-selected-fredholm-structure.md](docs/fixed-epsilon-selected-fredholm-structure.md) -- earlier projected-history coordinate audit plus the corrected natural full-history \(W^{1,p}\) ledger, with actual trace-range closedness, cokernel and inverse still open;
 - [docs/fixed_epsilon_selected_repelling_endpoint.md](docs/fixed_epsilon_selected_repelling_endpoint.md) -- exact same-current, same-exit and compatible-history counterexamples, together with the superseding reduction from a history-chart PDE to one independently selected orbit;
 - [docs/quadratic-physical-onset-capture-stop-go.md](docs/quadratic-physical-onset-capture-stop-go.md) -- exact four-gate non-composition theorem plus a same-plant, arbitrary-finite-balanced controlled terminal transfer for an explicit strict small-\(|\eta|\) bound, with onset/basin/no-return claims refused;
 - [docs/quadratic-reference-slice-dual-basin-no-go.md](docs/quadratic-reference-slice-dual-basin-no-go.md) -- exact Rouché proof that the reference synchronous rest state is unstable on a nonzero \(\eta\)-box, periodic-orbit face-recurrence obstruction to permanent detector-side residence, and the separated autonomous-bistable, latch, and hybrid-switch repair contracts;
-- [docs/autonomous-leaky-recovery-bistable-rfde-proposal.md](docs/autonomous-leaky-recovery-bistable-rfde-proposal.md) -- exact delay-independent quiet-equilibrium stability for a leaky-recovery two-delay RFDE, binary64 outer/inner periodic and physical-pulse candidates, and a conditional autonomous frequency--amplitude--onset inverse theorem with history-space validation gates;
-- [docs/leaky-periodic-finite-tail-floquet-contract.md](docs/leaky-periodic-finite-tail-floquet-contract.md) -- exact equation-level adaptation of the periodic finite/tail validator to leaky recovery, a source-hashed inner replay artifact with a deliberately unpromoted closed radii candidate, and the remaining formula/Floquet gates;
+- [docs/autonomous-leaky-recovery-bistable-rfde-proposal.md](docs/autonomous-leaky-recovery-bistable-rfde-proposal.md) -- leaky-recovery two-delay RFDE and conditional autonomous frequency--amplitude--onset theorem; the quiet equilibrium, two center periodic orbits and oriented pulse-history curve are now proved, while Floquet, routing and onset remain open;
+- [docs/leaky-periodic-finite-tail-floquet-contract.md](docs/leaky-periodic-finite-tail-floquet-contract.md) -- equation-level finite/tail and Floquet contract for leaky recovery, including the terms that differ from the nonleaky validator and the remaining spectral gates;
+- [docs/leaky-periodic-majorant-audit.md](docs/leaky-periodic-majorant-audit.md) -- independent operator and majorant proof for the leaky recovery term, closing the inner periodic-orbit and phase-bordered-inverse radii theorem while leaving all Floquet claims open;
+- [docs/leaky-outer-high-resolution-artifact.md](docs/leaky-outer-high-resolution-artifact.md) -- 129/193/257/385-node outer resolution ladder and a 257-node, cutoff-384 directed-radii theorem for the outer phase-fixed periodic RFDE orbit, without an attraction claim;
+- [docs/leaky-pulse-terminal-history.md](docs/leaky-pulse-terminal-history.md) -- exact reduction of the one-unit physical pulse to a parameter ODE before either delay returns, with a jointly smooth, injective, positively oriented curve of complete terminal histories;
+- [docs/leaky-pulse-separator-candidate.md](docs/leaky-pulse-separator-candidate.md) -- source-bound three-mesh, three-return finite-section shooting candidate near $J=0.301135337086902$, with a separate integration-refinement ladder and every stable-manifold/onset flag kept false;
 - [docs/dimension-uniform-special-flow-history-graph.md](docs/dimension-uniform-special-flow-history-graph.md) -- abstract dimension-uniform special-flow graph theorem with operator-TV delays, mixed jets, logarithmic fold tubes, and exact mild history embedding; network model fitting remains separate;
 - [docs/banach-scale-history-schur-link.md](docs/banach-scale-history-schur-link.md) -- three-level \(C_b^9\to C_b^8\to C_b^7\) graph-response theorem, complete-history extension/restriction, levelwise Schur formulas, and conditional trace/endpoint transfer without a false same-space \(C^2\) implicit-function theorem;
 - [docs/paper-ii-lifted-two-module-class.md](docs/paper-ii-lifted-two-module-class.md) -- exact arbitrary-size unequal-module lift, maximum-norm Gate A model-fitting audit (with weighted algebra retained only as a diagnostic), dimension-independent singular semigroup bound, and operator-TV non-equitable perturbation family;
@@ -503,7 +515,9 @@ open.
 - `src/canard_control/fhn_periodic_candidate.py` -- odd-Fourier BVP/continuation, analytic period column, gain sensitivities, discrete-adjoint audit, sampled box, and ODE-persistence-route diagnostics;
 - `src/canard_control/directed_interval.py` and `src/canard_control/fhn_periodic_directed_validation.py` -- reusable MPFR real/complex interval arithmetic, exact finite nodal contraction, directed DFT/convolution residual bounds, inverse envelope, and machine-readable infinite-tail falsifier;
 - `src/canard_control/fhn_periodic_infinite_validation.py` -- weighted independent real-conjugate coefficient Jacobian, binary-accelerated directed inverse, finite/tail cross norms, tail inverse, and moving-delay correction-ball majorant;
-- [src/canard_control/leaky_periodic_branch_artifact.py](src/canard_control/leaky_periodic_branch_artifact.py) -- source-hashed inner leaky-branch polynomial replay, binary64 collocation recomputation, directed-radii candidate replay and strict refusal of orbit/Floquet promotion;
+- [src/canard_control/leaky_periodic_branch_artifact.py](src/canard_control/leaky_periodic_branch_artifact.py) -- source-hashed inner leaky-branch polynomial replay and independently audited directed-radii proof of a phase-fixed RFDE orbit and bordered inverse, with strict refusal of Floquet promotion;
+- [src/canard_control/leaky_outer_high_resolution.py](src/canard_control/leaky_outer_high_resolution.py) -- source-bound high-resolution outer polynomial ladder and directed finite/tail periodic-orbit proof contract;
+- [src/canard_control/leaky_pulse_terminal_history.py](src/canard_control/leaky_pulse_terminal_history.py) and [src/canard_control/leaky_pulse_separator_candidate.py](src/canard_control/leaky_pulse_separator_candidate.py) -- exact pulse-to-history orientation followed by a deliberately non-directed finite-section stable-separator target;
 - `src/canard_control/fhn_periodic_parameter_box.py` -- uniform gain-box radii proof, RFDE-based extrema isolation, finite/tail sensitivity residual decomposition, and directed two-output response enclosure;
 - `src/canard_control/rfde_floquet_transfer.py` -- theorem-evidence binding, directed local Bloch exclusion, and the historical deliberately non-certifying bare-cell bookkeeping contract;
 - `src/canard_control/fhn_bloch_outer_validation.py` -- parameter-box local transfer, arbitrary-complex Bloch symbols, directed binary-product audit, exact-orbit correction budgets, and all four finite/tail cell bounds;

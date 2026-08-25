@@ -1,9 +1,9 @@
 # Finite/tail and Floquet contract for the leaky periodic branches
 
-Status: **an exact equation-level incompatibility has been isolated, the
-inner branch is frozen in a source-hashed replay artifact, and its directed
-radii inequality closes as an unpromoted candidate; neither periodic orbit
-nor either Floquet index is promoted to a proof.**  This is the safe entry
+Status: **the equation-level incompatibility and all changed majorants have
+been independently audited; source-bound directed radii arguments now prove
+both the inner and outer phase-fixed periodic RFDE orbits and their
+phase-bordered inverses.  Neither Floquet index is promoted.**  This is the safe entry
 point for [issue 20](https://github.com/h-lu/canard-aware-network-control/issues/20).
 
 The implementation is
@@ -16,13 +16,20 @@ with its tracked body in
 [autonomous_leaky_recovery_inner_branch_artifact.json](../experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json)
 and hostile replay tests in
 [test_leaky_periodic_branch_artifact.py](../tests/test_leaky_periodic_branch_artifact.py).
+The independently generated high-resolution outer replay is implemented in
+[leaky_outer_high_resolution.py](../src/canard_control/leaky_outer_high_resolution.py),
+with its tracked body in
+[autonomous_leaky_recovery_outer_high_resolution.json](../experiments/results/autonomous_leaky_recovery_outer_high_resolution.json)
+and its resolution and claim audit in
+[leaky-outer-high-resolution-artifact.md](leaky-outer-high-resolution-artifact.md).
 The previously committed binary64 scalar orbit diagnostics and monodromy
 summaries remain in
 [autonomous_leaky_recovery_bistable_probe.json](../experiments/results/autonomous_leaky_recovery_bistable_probe.json).
 That record does not store replayable branch states or Fourier coefficients.
-The separately tracked inner artifact now stores the complete 129-node
-binary64 polynomial, phase reference, parameters, diagnostics and source
-hashes.  The outer branch still requires the corresponding artifact.
+The separately tracked inner artifact stores the complete 129-node binary64
+polynomial, phase reference, parameters, diagnostics and source hashes.  The
+outer artifact stores an independent 129--385 node resolution ladder and uses
+the 257-node polynomial for its directed proof.
 
 ## 1. The first incompatibility is an equation mismatch
 
@@ -67,8 +74,8 @@ These are exact identities.  They are not perturbative error terms.  Calling
 the old validator on either leaky candidate would certify a different RFDE.
 The tests evaluate the residual and period-column identities mode by mode,
 check the changed recovery diagonal, and separately exercise the changed
-majorants.  A full finite-matrix directional-difference audit remains a
-proof-promotion gate rather than a claim of the current unit tests.
+majorants.  The independent proof of the complete adaptation is recorded in
+[leaky-periodic-majorant-audit.md](leaky-periodic-majorant-audit.md).
 
 The old parameter-box theorem also has the wrong coordinates: it encloses
 \((\kappa _1,\kappa _3)\), whereas the biological response theorem requires
@@ -104,8 +111,9 @@ norm, the lower-order recovery input column changes from \(1\) to
 \tag{2.1}
 \]
 
-The prototype includes this term in the tail-to-tail bound and enlarges the
-correction-ball linear majorant conservatively.  It reuses none of the old
+The validator includes this term in the tail-to-tail bound and enlarges the
+correction-ball linear majorant by
+\(\varepsilon\max\{\|A_P\|,\|D_Q^{-1}\|\}\).  It reuses none of the old
 proof flags or stored Floquet artifacts.
 
 ## 3. Center finite/tail contract
@@ -159,11 +167,13 @@ directed backend.  On the source-hashed inner artifact, cutoff 192 and
  \quad (r=10^{-5}).
 \]
 
-This is recorded only as a directed *candidate*.  The proof flags remain
-false until the changed majorants receive an independent mathematical audit;
-the existence of a replay artifact alone does not perform that audit.
+Together with the independent derivation of every changed term, these strict
+inequalities validate a unique phase-fixed inner RFDE orbit in the declared
+Wiener ball and validate its phase-bordered derivative.  They do not determine
+any Floquet multiplier count.
 
-A 65-node outer-branch smoke calculation illustrates the numerical blocker:
+The original 65-node outer-branch smoke calculation exposed a resolution
+blocker:
 
 \[
  Y\approx4.49\times10^{-4},\qquad Z_0\approx0.3242,
@@ -172,15 +182,23 @@ A 65-node outer-branch smoke calculation illustrates the numerical blocker:
 \]
 
 At that resolution no radius can simultaneously dominate \(Y\) and keep the
-linear contraction term small.  This is diagnostic evidence only, but it
-agrees with the committed 129-node oversampled outer defect
-\(3.51\times10^{-5}\): the outer candidate needs higher Fourier resolution
-or a sharper norm/preconditioner.  The inner candidate has oversampled defect
-\(1.28\times10^{-13}\) and is the natural first branch to validate.
+linear contraction term small.  A fresh 129--385 node continuation ladder
+shows that the off-grid defect falls from \(3.51\times10^{-5}\) at 129 nodes
+to \(8.13\times10^{-12}\) at 257 nodes.  For the 257-node polynomial, cutoff
+384 and 160-bit arithmetic give
+
+\[
+ Y<2.571\times10^{-13},\qquad
+ Z_{\rm full}<0.081215,\qquad q(10^{-5})<0.242071,
+\]
+
+and a positive radii margin greater than \(7.579\times10^{-6}\).  These bounds
+validate a distinct phase-fixed outer RFDE orbit and its phase-bordered
+inverse.  They do not prove that the outer orbit is attracting.
 
 ## 4. Parameter-box contract
 
-After both center orbits are proved, continue them on one common rectangle
+With both center orbits proved, the next continuation gate is one common rectangle
 
 \[
  U=\{|a-\tfrac14|\le r_a,
@@ -252,23 +270,22 @@ contours but do not certify (5.1).
 ## 6. Claim ledger and recommended order
 
 **Exact now:** the identities (1.3)--(1.4), the changed Fourier Jacobian
-layout, and the parameter columns (4.2)--(4.3).
+layout, the finite/tail and nonlinear majorant adaptation, and the parameter
+columns (4.2)--(4.3).
 
-**Directed prototype:** MPFR endpoint evaluation of the leaky finite/tail
-radii quantities.  The source-hashed inner candidate closes its numerical
-inequality, but the formula-adaptation and periodic-orbit proof flags remain
-false.
+**Directed proof:** MPFR endpoint evaluation of the leaky finite/tail radii
+quantities validates distinct source-bound inner and outer periodic orbits
+and their phase-bordered derivatives.
 
-**Floating-point evidence:** the two 129-node periodic candidates and their
-finite monodromy spectra.
+**Floating-point evidence:** the finite monodromy spectra and their suggested
+zero/one nontranslation unstable-index split.
 
-**Open:** the outer replay artifact, an independent audit of the leaky
-majorants, both periodic-orbit proofs, their common parameter box, algebraic
-simplicity of the neutral multipliers, unit-circle exclusion, and the two
-unstable-index counts.
+**Open:** the common parameter box, algebraic simplicity of the neutral
+multipliers, unit-circle exclusion, the two unstable-index counts, directed
+extrema, and all stable-manifold and pulse-routing conclusions.
 
-The efficient order is: validate the spectrally clean inner center orbit;
-raise the outer Fourier resolution and validate the outer center orbit;
-build the common \((a,\kappa _3)\) box; then perform the two unit-circle
-covers and the two center Riesz counts.  Only after these steps should issue
-20 feed the history-space separator in issue 21.
+The efficient order is now: build the common \((a,\kappa _3)\) orbit and
+extrema box; perform the two unit-circle covers and Riesz counts; construct
+the inner stable covector/manifold; and validate the pulse intersection and
+two-sided routing.  The finite-section separator candidate can choose the
+center of that last proof, but cannot replace it.

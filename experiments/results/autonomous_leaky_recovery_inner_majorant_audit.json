@@ -1,0 +1,81 @@
+{
+  "certificate": {
+    "artifact": {
+      "body_sha256": "35c3737f8970c54cf28fa9911325e3785ea01c3e76c3d3efe531f344726e759a",
+      "file_sha256": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+      "result_relative_path": "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json"
+    },
+    "branch": "inner_saddle_candidate",
+    "claims": {
+      "formula_adaptation_independently_audited": true,
+      "inner_periodic_rfde_orbit_validated": true,
+      "inner_saddle_floquet_index_validated": false,
+      "neutral_multiplier_algebraically_simple_validated": false,
+      "nontranslation_unit_circle_exclusion_validated": false,
+      "outer_periodic_rfde_orbit_validated": false,
+      "phase_bordered_rfde_inverse_validated": true,
+      "unstable_multiplier_count_validated": false
+    },
+    "directed_radii": {
+      "bordered_inverse_norm_upper": "120.310184292034788290719619641584802558578302719741932",
+      "chosen_radius": "1e-5",
+      "coefficient_z1_upper": "6002.00420679169892134244669693693626401233464478725671",
+      "coefficient_z2_upper": "2002.04497948862446442456141865675492551894237043978648",
+      "coefficient_z3_upper": "139.864989241430012728619907423737501114936148431265483",
+      "contraction_upper": "0.0915628289423548673415785149902169030703558229515165461",
+      "full_point_defect_upper": "0.0315425866698000642764661755519770548473161871081937743",
+      "preconditioned_residual_l1_upper": "1.8989229764219066827554748359655203628011255085754935e-13",
+      "radii_margin_lower": "9.08437152068415368439354657455034737274440549035035577e-06"
+    },
+    "formula_audit": {
+      "audit_version": "leaky-periodic-majorant-audit-v1",
+      "directed_specialization": {
+        "analytic_tail_preconditioner_l1_upper": "0.000824637010838835936626340742862768715204454123008649872",
+        "cutoff": 192,
+        "epsilon_upper": "0.200000000000000000000000000000000000000000000000205268",
+        "finite_block_dominates_tail_block": true,
+        "finite_preconditioner_l1_upper": "109.29424346768001744207873894437014401472593805645995",
+        "full_preconditioner_l1_upper": "109.29424346768001744207873894437014401472593805645995",
+        "leak_z1_increment_upper": "21.8588486935360034884157477888740288029451876113051271",
+        "precision_bits": 160
+      },
+      "excluded_claims": [
+        "neutral Floquet multiplier algebraic simplicity",
+        "unit-circle exclusion away from one",
+        "unstable multiplier count or attracting/saddle index",
+        "outer-branch periodic orbit without its own replay artifact"
+      ],
+      "operator_identities": {
+        "added_derivative": "DL(v,w,T)[u]=(0,epsilon*(T*u_w+w*u_T),0)",
+        "added_derivative_variation": "(DL(x+h)-DL(x))[u]=(0,epsilon*(h_T*u_w+h_w*u_T),0)",
+        "added_operator": "L(v,w,T)=(0,epsilon*T*w,0)"
+      },
+      "proof_ledger": {
+        "finite_tail_cross_blocks_unchanged_proved": true,
+        "formula_adaptation_independently_audited": true,
+        "nonlinear_z1_increment_proved": true,
+        "old_nonlinear_and_delay_majorants_transfer_proved": true,
+        "recovery_period_column_proved": true,
+        "recovery_residual_identity_proved": true,
+        "recovery_state_columns_proved": true,
+        "recovery_tail_column_bound_proved": true
+      }
+    },
+    "schema_id": "leaky-periodic-inner-majorant-certificate-v1"
+  },
+  "manifest": {
+    "certificate_sha256": "60438a0fd458c20f57fe31afc82ce5bc62aa14228450edbda3d83df3d24e65ee",
+    "directed_replay_completed": true,
+    "schema_id": "leaky-periodic-inner-majorant-certificate-v1",
+    "source_sha256": {
+      "experiments/autonomous_leaky_recovery_inner_majorant_audit.py": "d6aea85b751e16259f8bd2f6c7d353c603148e038f204fe918e661fd9a106881",
+      "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_periodic_directed_validation.py": "4e4695f882e0723ceed08204c662b9e2f9808a0335aea6c83ba0773b150af635",
+      "src/canard_control/fhn_periodic_infinite_validation.py": "f69aa5eb802c09daae01256b86661d3b17672ba2e38dd7bb4ba6244297f805ab",
+      "src/canard_control/leaky_periodic_branch_artifact.py": "c36ef8a393faa0c774d33bc3bd9bbb4f00fd311bd588a7a3a13ec59498e551db",
+      "src/canard_control/leaky_periodic_majorant_audit.py": "ef78a23b653b4399ed7720cff5b5ce525004ab20fd7e19113b97da441d54317e",
+      "src/canard_control/leaky_periodic_validation.py": "5fa61fb65bc4b96114b9b7911057bc77db571270ed2fb3eaf2db1a8c5844bc25"
+    }
+  }
+}

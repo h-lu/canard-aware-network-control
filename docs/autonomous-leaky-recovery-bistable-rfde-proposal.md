@@ -1,10 +1,13 @@
-# An autonomous leaky-recovery RFDE candidate for physical pulse onset
+# An autonomous leaky-recovery RFDE program for physical pulse onset
 
-Status: **one equilibrium theorem proved; two periodic orbits, their Floquet
-indices, the physical-pulse onset surface, and the three-output inverse are
-numerical candidates.**  This note proposes a replacement for the reference
-slice whose synchronous rest state was proved unstable.  It does not promote
-the binary64 computations below to validated RFDE dynamics.
+Status: **the quiet equilibrium, two distinct phase-fixed periodic RFDE
+orbits and their bordered inverses, and the oriented pulse-to-history curve
+are proved.  The Floquet indices, stable separator, physical-pulse onset
+surface, and three-output inverse remain open.**  This note originated as a
+replacement proposal for the reference slice whose synchronous rest state was
+proved unstable.  Its older binary64 diagnostics are retained below with
+their original claim boundary; the later directed promotions are linked
+explicitly.
 
 The executable probe is
 [autonomous_leaky_recovery_bistable_probe.py](../experiments/autonomous_leaky_recovery_bistable_probe.py),
@@ -196,7 +199,7 @@ about the periodic or global dynamics.  Its strict margins also imply, by
 continuity, a non-explicit open parameter neighborhood on which the quiet
 equilibrium remains stable.
 
-## 3. Numerical bistability candidate
+## 3. Periodic branches: numerical discovery and directed promotion
 
 The zero-delay-gain ODE at the same \((a,\varepsilon)\) has two numerically
 resolved periodic orbits surrounding \(E_q\).  Its outer orbit has period
@@ -222,11 +225,22 @@ The finite monodromy discretizations at 120, 180, and 240 time steps show:
   \(1.47\times10^{-7}\).
 
 These are coherent convergence diagnostics, not directed Floquet counts.
-In particular, the outer collocation tail is visibly less resolved than the
-inner one; a radii-polynomial proof must enclose that tail rather than quote
-the nodal residual.
+The original outer collocation tail is visibly less resolved than the inner
+one; a radii-polynomial proof must enclose that tail rather than quote the
+nodal residual.
 
-### 3.1 A physical-pulse bracket
+That existence gate has subsequently been closed.  An independent audit of
+the leaky recovery majorants, followed by source-bound MPFR endpoint
+calculations, validates the 129-node inner polynomial at cutoff 192.  A fresh
+129/193/257/385-node outer ladder resolves the old aliasing defect and
+validates the 257-node outer polynomial at cutoff 384.  Both calculations
+prove a nearby phase-fixed periodic RFDE orbit and its bordered inverse.  See
+[the finite/tail contract](leaky-periodic-finite-tail-floquet-contract.md),
+[the majorant audit](leaky-periodic-majorant-audit.md), and
+[the outer high-resolution artifact](leaky-outer-high-resolution-artifact.md).
+They do not prove either Floquet index or either basin interpretation.
+
+### 3.1 The physical-pulse curve and its numerical separator target
 
 Start from the equilibrium history and apply a rectangular current to the
 voltage equation,
@@ -255,6 +269,20 @@ integration through \(t=800\) gives
 Thus \([0.30,0.32]\) is a numerical onset bracket for a finite physical
 stimulus.  It is not yet a proof of endpoint basin inclusion, a unique
 threshold, or monotonicity in \(J\).
+
+Because both delays exceed the pulse duration, delayed slots remain at the
+quiet equilibrium throughout \(0\le t\le1\).  The pulse stage therefore
+reduces exactly to a smooth parameter ODE.  Its stimulus variational equation
+proves that the complete terminal-history map
+\(J\mapsto K(J)\in C([-5\sqrt5,0],\mathbb R^2)\) is injective and positively
+oriented on the newly written history segment.  A separate three-mesh,
+three-return finite-section calculation finds
+\(J_{\rm sep}^{\rm num}\simeq0.301135337086902\), with multiplier-scaled
+derivative near \(-3.449\).  See
+[the terminal-history theorem](leaky-pulse-terminal-history.md) and
+[the separator candidate](leaky-pulse-separator-candidate.md).  The latter is
+not a directed Floquet covector, stable-manifold intersection, routing proof,
+or onset theorem.
 
 For comparison, the constant-history family
 
@@ -585,10 +613,12 @@ The work should be split into the following GitHub issues.
 
 1. **Leaky equilibrium certificate -- complete.**  Preserve the exact
    rational inequalities (2.9)--(2.11) and add hostile tests for every sign.
-2. **[Two directed periodic BVPs](https://github.com/h-lu/canard-aware-network-control/issues/20).**
-   Validate both 129-node candidates on a
-   common \((a,\kappa_3)\) box.  Acceptance requires two radii-polynomial
-   inequalities, disjoint orbit tubes, and directed simple extrema.
+2. **[Two directed periodic BVPs](https://github.com/h-lu/canard-aware-network-control/issues/20) -- center points complete.**
+   The source-bound 129-node inner and 257-node outer radii theorems validate
+   distinct center orbits and bordered inverses.  Continue both on a common
+   \((a,\kappa_3)\) box.  Acceptance for this remaining box gate requires two
+   uniform radii inequalities, disjoint orbit tubes, and directed simple
+   extrema.
 3. **[Two Floquet index counts](https://github.com/h-lu/canard-aware-network-control/issues/20).**
    Prove zero nontranslation unstable
    multipliers for \(\Gamma_p\) and exactly one for \(\Gamma_u\), including
@@ -626,19 +656,23 @@ The work should be split into the following GitHub issues.
 
 ## 8. Claim ledger
 
-**Proved now:** the unique synchronous equilibrium and its
-delay-independent local exponential stability at (1.2).
+**Proved now:** the unique synchronous equilibrium and its delay-independent
+local exponential stability at (1.2); distinct inner and outer phase-fixed
+periodic RFDE orbits and their bordered inverses at the center; and the
+smooth, injective, positively oriented physical pulse-to-history curve.
 
-**Numerically supported:** an attracting outer RFDE cycle, an inner RFDE
-cycle with one unstable multiplier, the physical-pulse bracket
+**Numerically supported:** the interpretation of the outer orbit as
+attracting and the inner orbit as having one unstable multiplier, a
+nondegenerate finite-section separator target near
+\(J=0.301135337086902\), the routed physical-pulse bracket
 \([0.30,0.32]\), and a nonsingular \((a,\kappa_3)\)-to-
 \((F,A_p)\) response.
 
 **Conditional theorem:** autonomous two-basin onset and the three-output
 local diffeomorphism, assuming the five validation blocks of Section 4.
 
-**Open:** directed periodic/Floquet proofs, unique basin separator, physical
-pulse-map transversality, a nonzero validated output-ball radius, the full
-finite-network basin lift, the fixed-
+**Open:** the common orbit/extrema box, directed Floquet index proofs, a unique
+basin separator, physical pulse-map transversality, a nonzero validated
+output-ball radius, the full finite-network basin lift, the fixed-
 \(\varepsilon\) leaky canard root, and its identification with physical
 onset.

@@ -5,8 +5,9 @@ The generator repeats the branch-specific ODE initialization and the same
 129-node gain continuation used by
 ``autonomous_leaky_recovery_bistable_probe.py``.  It then freezes the
 resulting binary64 trigonometric polynomial, its final phase reference, and
-the unpromoted directed-radii prototype.  It never changes an RFDE-orbit or
-Floquet proof flag to true.
+the directed finite/tail proof.  For the registered inner branch, the
+independently audited majorant promotes the periodic-orbit and bordered-BVP
+inverse flags, while every Floquet multiplicity and index flag stays false.
 """
 
 from __future__ import annotations
@@ -234,20 +235,25 @@ def build_artifact(branch: str) -> dict[str, object]:
         chosen_radius=DIRECTED_CHOSEN_RADIUS,
     )
     directed_payload = json.loads(json.dumps(asdict(directed)))
-    if directed_payload["formula_adaptation_independently_audited"] is not False:
-        raise AssertionError("directed formula audit flag was promoted")
+    if directed_payload["formula_adaptation_independently_audited"] is not True:
+        raise AssertionError("directed formula audit flag is not registered")
+    proof_gate = directed_payload["directed_radii_inequality_candidate_closed"]
     for name in (
         "periodic_rfde_orbit_validated",
         "phase_bordered_rfde_inverse_validated",
     ):
-        if directed_payload[name] is not False:
-            raise AssertionError(f"directed proof flag {name} was promoted")
-    if any(
-        value is not False
-        for name, value in directed_payload["floquet"].items()
-        if name != "required_next_certificates"
+        if directed_payload[name] is not proof_gate:
+            raise AssertionError(f"directed proof flag {name} changed")
+    floquet = directed_payload["floquet"]
+    for name in (
+        "fredholm_to_monodromy_multiplicity_transfer_registered",
+        "neutral_multiplier_algebraically_simple_validated",
+        "nontranslation_unit_circle_exclusion_validated",
+        "unstable_multiplier_count_validated",
+        "attracting_or_saddle_index_validated",
     ):
-        raise AssertionError("a directed Floquet proof flag was promoted")
+        if floquet[name] is not False:
+            raise AssertionError(f"Floquet spectral flag {name} was promoted")
 
     artifact = {
         "schema_id": SCHEMA_ID,

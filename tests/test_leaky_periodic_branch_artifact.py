@@ -30,7 +30,7 @@ from canard_control.fhn_periodic_candidate import odd_fourier_matrices
 REPOSITORY = Path(__file__).resolve().parents[1]
 RESULT = REPOSITORY / RESULT_RELATIVE_PATHS["inner_saddle_candidate"]
 EXPECTED_RESULT_SHA256 = (
-    "e978346a121c366473c3f826c03f3c187719e8bd05d2c3a848bd3651348f2043"
+    "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b"
 )
 
 
@@ -69,7 +69,7 @@ def test_inner_artifact_is_source_bound_and_replays_binary64_state() -> None:
         ).hexdigest()
 
 
-def test_inner_candidate_metrics_and_directed_margin_are_not_proof_flags() -> None:
+def test_inner_directed_margin_validates_orbit_but_not_floquet_index() -> None:
     payload = _payload()
     validate_leaky_periodic_branch_artifact(payload, REPOSITORY)
     artifact = payload["artifact"]
@@ -86,12 +86,23 @@ def test_inner_candidate_metrics_and_directed_margin_are_not_proof_flags() -> No
     assert float(directed["correction"]["radii_margin_lower"]) > 9.0e-6
 
     assert artifact["claim_status"] == CLAIM_STATUS
-    assert not directed["formula_adaptation_independently_audited"]
-    assert not directed["periodic_rfde_orbit_validated"]
-    assert not directed["phase_bordered_rfde_inverse_validated"]
-    for name, value in directed["floquet"].items():
-        if name != "required_next_certificates":
-            assert value is False
+    assert directed["formula_adaptation_independently_audited"]
+    assert directed["periodic_rfde_orbit_validated"]
+    assert directed["phase_bordered_rfde_inverse_validated"]
+    floquet = directed["floquet"]
+    assert floquet["translation_identity_exact_for_validated_orbit"]
+    assert floquet["phase_bordered_rfde_inverse_validated"]
+    assert floquet[
+        "geometric_translation_kernel_conditional_on_standard_bvp_identification"
+    ]
+    for name in (
+        "fredholm_to_monodromy_multiplicity_transfer_registered",
+        "neutral_multiplier_algebraically_simple_validated",
+        "nontranslation_unit_circle_exclusion_validated",
+        "unstable_multiplier_count_validated",
+        "attracting_or_saddle_index_validated",
+    ):
+        assert floquet[name] is False
 
 
 def test_stored_mapping_replays_the_leaky_not_nonleaky_collocation() -> None:
@@ -171,7 +182,16 @@ def test_directed_replay_requires_margin_after_defect_buffer() -> None:
     [
         (
             ("artifact", "claim_status", "periodic_rfde_orbit_validated"),
-            True,
+            False,
+        ),
+        (
+            (
+                "artifact",
+                "directed_radii_prototype",
+                "validation",
+                "formula_adaptation_independently_audited",
+            ),
+            False,
         ),
         (
             (
@@ -180,7 +200,7 @@ def test_directed_replay_requires_margin_after_defect_buffer() -> None:
                 "validation",
                 "periodic_rfde_orbit_validated",
             ),
-            True,
+            False,
         ),
         (
             (
