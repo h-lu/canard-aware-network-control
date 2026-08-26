@@ -1023,7 +1023,15 @@ def _symmetric_error(radius: gmpy2.mpfr, precision: int) -> DirectedInterval:
     raw = _mpfr_point(radius, precision) * _point("1.03125", precision) + _point(
         "1e-50", precision
     )
-    return DirectedInterval.from_bounds(-raw.upper, raw.upper, precision)
+    # Negating an MPFR value outside an explicit context can first round it at
+    # the process default (usually 53 bits), occasionally moving the negative
+    # endpoint inward.  Construct the symmetric box directly at the proof
+    # precision with directed endpoint rounding.
+    with gmpy2.context(precision=precision, round=gmpy2.RoundDown):
+        lower = -raw.upper
+    with gmpy2.context(precision=precision, round=gmpy2.RoundUp):
+        upper = gmpy2.mpfr(raw.upper)
+    return DirectedInterval(lower, upper, precision)
 
 
 def _strict_gaps(

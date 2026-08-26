@@ -7,12 +7,15 @@ from decimal import Decimal
 import json
 from pathlib import Path
 
+import gmpy2
 import pytest
 
 from canard_control.fixed_epsilon_target_first_step_interval import (
     FALSE_METHOD_FLAGS,
     OPEN_FLAGS,
     RIGOROUS_TRUE_FLAGS,
+    _closed,
+    _symmetric,
     build_target_first_step_interval_certificate,
     exact_first_step_delay_remainder_and_frame_defects,
     exact_first_step_reduction_defects,
@@ -64,6 +67,22 @@ def test_first_step_state_and_variation_reduction_matches_rfde_exactly() -> None
     defects = exact_first_step_delay_remainder_and_frame_defects()
     assert len(defects) == 16
     assert all(defect == 0 for defect in defects)
+
+
+def test_taylor_symmetric_box_uses_declared_precision_endpoints() -> None:
+    precision = 192
+    radius = _closed(
+        "1.23456789012345678901234567890123456789e-10",
+        "1.23456789012345678901234567890123456790e-10",
+        precision,
+    )
+    box = _symmetric(radius)
+    with gmpy2.context(precision=precision, round=gmpy2.RoundDown):
+        exact_lower = -radius.upper
+    assert box.lower.precision == precision
+    assert box.upper.precision == precision
+    assert box.lower == exact_lower
+    assert box.upper >= radius.upper
 
 
 def test_claim_ledger_keeps_one_cell_separate_from_the_open_cover() -> None:

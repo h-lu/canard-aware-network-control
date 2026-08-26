@@ -7,6 +7,7 @@ from decimal import Decimal
 import json
 from pathlib import Path
 
+import gmpy2
 import pytest
 
 from canard_control.fixed_epsilon_target_first_step_cover import (
@@ -14,6 +15,7 @@ from canard_control.fixed_epsilon_target_first_step_cover import (
     OPEN_FLAGS,
     RIGOROUS_TRUE_FLAGS,
     TargetFirstMethodStepCoverCertificate,
+    _symmetric_error,
     build_target_first_method_step_cover_certificate,
     exact_first_step_cover_defects,
     json_ready_target_first_method_step_cover,
@@ -46,6 +48,18 @@ def test_exact_patch_variation_hermite_and_frame_audit_is_zero() -> None:
     defects = exact_first_step_cover_defects()
     assert len(defects) == 14
     assert all(defect == 0 for defect in defects)
+
+
+def test_picard_symmetric_error_uses_declared_precision_endpoints() -> None:
+    precision = 192
+    with gmpy2.context(precision=precision, round=gmpy2.RoundUp):
+        radius = gmpy2.mpfr("1.23456789012345678901234567890123456789e-10")
+    box = _symmetric_error(radius, precision)
+    with gmpy2.context(precision=precision, round=gmpy2.RoundDown):
+        exact_lower = -box.upper
+    assert box.lower.precision == precision
+    assert box.upper.precision == precision
+    assert box.lower == exact_lower
 
 
 def test_complete_first_method_step_grid_closes(

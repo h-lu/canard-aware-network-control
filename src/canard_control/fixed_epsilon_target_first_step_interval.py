@@ -143,11 +143,15 @@ def _mpfr_point(value: gmpy2.mpfr, precision: int) -> DirectedInterval:
 def _symmetric(interval_radius: DirectedInterval) -> DirectedInterval:
     if interval_radius.lower < 0:
         raise ValueError("a Taylor radius must be nonnegative")
-    return DirectedInterval.from_bounds(
-        -interval_radius.upper,
-        interval_radius.upper,
-        interval_radius.precision,
-    )
+    precision = interval_radius.precision
+    # A raw MPFR unary negation uses the process-wide context, which may be
+    # only 53 bits and can move the negative endpoint inward.  Preserve the
+    # proof precision and direction before constructing the symmetric box.
+    with gmpy2.context(precision=precision, round=gmpy2.RoundDown):
+        lower = -interval_radius.upper
+    with gmpy2.context(precision=precision, round=gmpy2.RoundUp):
+        upper = gmpy2.mpfr(interval_radius.upper)
+    return DirectedInterval(lower, upper, precision)
 
 
 @dataclass(frozen=True)
