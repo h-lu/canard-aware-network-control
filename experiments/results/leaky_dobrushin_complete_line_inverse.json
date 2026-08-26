@@ -1,0 +1,80 @@
+{
+  "certificate": {
+    "bounded_complete_transverse_forced_solution_exists_uniquely": true,
+    "bounded_complete_transverse_green_inverse_uniform_in_network_size": true,
+    "bounded_complete_transverse_homogeneous_kernel_trivial": true,
+    "bounded_solution_norm": "sup_{t in R} ||z_t||_lambda on C_b(R,X_{N,lambda})",
+    "canonical_collective_transverse_lin_direct_sum_proved": true,
+    "canonical_lin_factorization": "L_N = L_collective direct_sum L_perp on the synchronized complete-line Lin realization with bounded-complete transverse trace",
+    "canonical_lin_hypotheses": [
+      "a scalar complete synchronous connection exists wholly in the declared voltage strip",
+      "the scalar phase-fixed Lin operator on its declared domain and range is Fredholm",
+      "pi^T*1=1 and the network Lin domain/range use the induced collective-transverse product splitting",
+      "phase, endpoint trace, cokernel normalization, and gap act only on the collective block; the transverse trace is the unique bounded-complete one",
+      "the varied parameter and any inhomogeneity used to define the scalar gap are synchronous"
+    ],
+    "collective_projection": "pi^T with pi^T*1=1; collective lift c -> c*1",
+    "complete_line_green_norm_upper": "10",
+    "complex_transverse_diameter_spaces_complete_for_each_finite_network": true,
+    "conditional_scalar_simple_root_data_transfer_exactly": true,
+    "delayed_gain_upper": "0.0195500000000000000000000000000000000000000000000901128",
+    "dimension_uniformity_scope": "rate and Green history-norm bound are uniform in N/topology in diameter norms; no N-uniform equivalence with Euclidean norms or nonlinear neighborhood is asserted",
+    "exponential_rate": "0.1",
+    "forced_history_comparison": "||z_t^S||_lambda <= integral_S^t exp(-lambda*(t-u)) max{diam f_v(u),3 diam f_w(u)} du",
+    "forced_weighted_history_comparison_proved": true,
+    "forcing_norm": "sup_t max{diam f_v(t),3 diam f_w(t)}",
+    "forcing_space": "C_b(R,E_{N,perp})",
+    "green_operator_mapping": "G_perp:C_b(R,E_{N,perp})->C_b(R,X_{N,lambda}); causal history-state component norm",
+    "homogeneous_history_contraction": "||U_perp(t,s)||_lambda <= exp(-lambda*(t-s)), t>=s",
+    "local_decay_lower": "0.167466666666666666666666666666666666666666666666121018",
+    "maximum_delay_upper": "11.1803398874989484820458683436563811772030917980743806",
+    "minimal_remaining_scalar_gate": "validate in this same leaky RFDE a scalar complete-history canard connection lying in |V-1|<=5/2, its phase-fixed Fredholm Lin realization, and a normalized nonzero scalar gap slope; the canonical synchronized network realization then transfers these data without an N-dependent diameter-norm estimate",
+    "model_id": "balanced-finite-network-leaky-recovery-two-delay-fhn",
+    "noncanonical_endpoint_trace_rules_covered": false,
+    "nonlinear_asynchronous_network_canard_persistence_validated": false,
+    "physical_pulse_onset_identified_with_canard_root": false,
+    "pullback_cauchy_bound": "for S1<S2<=t, ||z_t^{S1}-z_t^{S2}||_lambda <= exp(-lambda*(t-S2))*||f||_infinity/lambda",
+    "pullback_construction": "locally uniform limit as S->-infinity of the forced zero-history solution begun at S",
+    "pullback_uses_only_forward_rfde_evolution_proved": true,
+    "rate_residual_lower": "0.00766645053564001615697632078331576129168481219964730336",
+    "scalar_leaky_complete_history_canard_connection_validated": false,
+    "scalar_leaky_simple_canard_root_validated": false,
+    "schema_id": "leaky-dobrushin-complete-line-inverse-v1",
+    "stripwise_halanay_inequality_for_every_complete_synchronous_trajectory": true,
+    "topology_class": "every finite nonnegative row-stochastic Q with positive stationary pi and tau(Q)<=1/2; nonnegative B0,B1 with Bj*1=1/2*1 and pi^T*Bj=1/2*pi^T",
+    "transferred_data": [
+      "Fredholm index",
+      "kernel dimension",
+      "cokernel dimension",
+      "normalized scalar gap",
+      "simple-root location",
+      "simple-root slope and orientation"
+    ],
+    "transverse_current_space": "E_{N,perp}=ker(pi^T) x ker(pi^T), m(x,y)=max{diam x,3 diam y} over C",
+    "transverse_history_norm": "sup_{-r<=theta<=0} exp(lambda*theta) max{diam x(theta),3 diam y(theta)}",
+    "transverse_lin_operator_spaces": "L_perp:D_perp->C_b(R,E_{N,perp}), where D_perp is the bounded classical RFDE domain with graph norm; the number 10 bounds only the C_b(R,X_{N,lambda}) component of G_perp",
+    "transverse_space_completeness": "for each finite N, complex diameter is a norm on ker(pi^T); E_{N,perp}, X_{N,lambda}=C([-r,0],E_{N,perp}), and their bounded-continuous complete-line spaces are Banach",
+    "unconditional_full_network_canard_connection_validated": false,
+    "voltage_strip": "every complete synchronous V with sup_t |V(t)-1|<=5/2",
+    "weighted_history_evolution_contraction_uniform_in_network_size": true
+  },
+  "manifest": {
+    "arithmetic_scope": "exact complete-line pullback/uniqueness and collective-transverse direct-sum arguments, using the source-validated 160-bit directed Dobrushin-Halanay constants; no scalar leaky canard root, nonlinear network canard persistence, physical onset, or pulse threshold",
+    "certificate_sha256": "e36bf61c17c210cd651114ff0412dff0ddfa95916dc9ed6a4171624602418077",
+    "default_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_dobrushin_complete_line_inverse.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "python": "3.14.4"
+    },
+    "halanay_parent_result": "experiments/results/leaky_dobrushin_transverse_halanay.json",
+    "halanay_parent_result_sha256": "21e2e3d282e287f2246d2bc5c3d4dd92b6314e9b46c20d27737db7a94f7c0e25",
+    "result": "experiments/results/leaky_dobrushin_complete_line_inverse.json",
+    "schema_id": "leaky-dobrushin-complete-line-inverse-v1",
+    "source_sha256": {
+      "docs/leaky-dobrushin-complete-line-inverse.md": "dd30a78e46b016e0aae87462933c9e8eacd647cad99647b8c8b0ae98c1a320dd",
+      "experiments/leaky_dobrushin_complete_line_inverse.py": "db2090380b3368221eaa7b7de580e21443e817dbc99faa7b75179dddf382290d",
+      "src/canard_control/leaky_dobrushin_complete_line_inverse.py": "aee1be9bd0c9a60e9a9f4716c2b2b32e2eac8209d6df3d19f8f94929de7f0278"
+    }
+  }
+}

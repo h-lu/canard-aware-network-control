@@ -1,0 +1,143 @@
+{
+  "certificate": {
+    "accumulated_collective_forcing_bound": "integral_[t0,infinity) |R_coll(t)|dt <= (391/20000)*[delta0*(10+4*sqrt(5))+delta1*(10+5*sqrt(5))]*M0 +(703/40+27*sqrt(5)/800)*M0^2",
+    "closing_dobrushin_gap_families_covered": false,
+    "collective_parameter_gap_identity": "for a collective parameter/inhomogeneity (g_parallel,0), Psi_N(g_parallel,0)=psi(g_parallel); therefore the normalized root, slope, and orientation equal the scalar data",
+    "complete_line_green_norm_upper": "10",
+    "complete_line_quotient_green_bound_ten_proved": true,
+    "componentwise_pointwise_collective_forcing_bound": "|R_coll(t)| <= (391/20000)*[delta0*M(t-tau0)+delta1*M(t-tau1)] +(1403/400)*M(t)^2+(3/800)*[M(t-tau0)^2+M(t-tau1)^2]",
+    "componentwise_resolved_linear_accumulated_bound_proved": true,
+    "conditional_accumulated_collective_forcing_bound_proved": true,
+    "conditional_collective_simple_root_location_slope_orientation_exact": true,
+    "constants_uniform_in_finite_network_size_and_delay_topology_proved": true,
+    "corrected_full_cokernel_functional_formula_proved": true,
+    "delay_balance_components": "delta_j=(1/2)*||pi^T*B_j-(1/2)*pi^T||_1 and delta_B=delta0+delta1",
+    "delay_balance_defect": "delta_B=sum_{j=0,1} (1/2)*||pi^T*B_j-(1/2)*pi^T||_1",
+    "delay_balance_defect_range": "0<=delta_B<=1",
+    "delay_layer_left_balance_not_required_proved": true,
+    "delayed_history_residence_accounted_exactly": true,
+    "delta_b_only_accumulated_collective_forcing_bound": "integral_[t0,infinity) |R_coll(t)|dt <= [391*(2+sqrt(5))/4000]*delta_B*M0 +(56483/3200)*M0^2",
+    "delta_b_only_worst_accumulated_bound_proved": true,
+    "fixed_delays": "tau0=4*sqrt(5), tau1=5*sqrt(5)",
+    "fredholm_and_root_transfer_scope": "conditional on the same scalar phase-fixed complete-history Lin root and collective endpoint/phase/gap preparation used by the canonical transfer theorem",
+    "fredholm_index_kernel_and_cokernel_dimensions_transfer_proved": true,
+    "full_cokernel_functional": "Psi_N(y_parallel,y_perp)=psi(y_parallel-C_N*G_{perp,N}*y_perp), normalized by the same collective complement e_N=(e_parallel,0), so psi(e_parallel)=Psi_N(e_N)=1",
+    "heterogeneous_node_vector_fields_covered": false,
+    "imbalance_accumulated_coefficient_exact": "391/20000*[delta0*(10+4*sqrt(5))+delta1*(10+5*sqrt(5))]",
+    "imbalance_accumulated_delta_b_worst_exact": "391*(2+sqrt(5))/4000",
+    "imbalance_linear_coefficient_exact": "391/20000",
+    "lin_block_form": "L_N=[[L_parallel,C_N],[0,L_{perp,N}]]",
+    "linear_collective_imbalance_forcing_bound_proved": true,
+    "model_id": "finite-directed-leaky-recovery-two-delay-fhn",
+    "moving_delay_support_covered": false,
+    "network_class": "Q>=0, Q*1=1, tau(Q)<=1/2; pi is any stationary probability of Q; B_j>=0 and B_j*1=(1/2)*1; no identity pi^T*B_j=(1/2)*pi^T is required",
+    "nonbalanced_exact_witness": {
+      "B0": [
+        [
+          "0",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "0"
+        ]
+      ],
+      "B0_is_not_left_balanced": true,
+      "B1": [
+        [
+          "1/2",
+          "0"
+        ],
+        [
+          "1/2",
+          "0"
+        ]
+      ],
+      "B1_is_left_balanced": true,
+      "P_B0_one": [
+        "0",
+        "0"
+      ],
+      "Q": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "delay_balance_defect_delta0": "1/2",
+      "delay_balance_defect_delta1": "0",
+      "delay_balance_defect_delta_B": "1/2",
+      "dobrushin_tau_Q": "1/2",
+      "half_piT": [
+        "1/2",
+        "0"
+      ],
+      "piT_B0": [
+        "0",
+        "1/2"
+      ],
+      "piT_B0_P": [
+        "-1/2",
+        "1/2"
+      ],
+      "stationary_pi": [
+        "1",
+        "0"
+      ],
+      "strictly_upper_triangular_coupling_nonzero": true
+    },
+    "nonlinear_node_diameter_decay_unchanged_proved": true,
+    "physical_pulse_onset_or_two_sided_routing_validated": false,
+    "pointwise_collective_forcing_bound": "|R_coll(t)| <= (391/20000)*delta_B*H_M(t) +(703/200)*H_M(t)^2 while the voltage strip holds",
+    "quadratic_accumulated_coefficient_exact": "703/40+27*sqrt(5)/800",
+    "quadratic_accumulated_coefficient_rational_upper": "56483/3200",
+    "quadratic_collective_defect_bound_retained_proved": true,
+    "quadratic_componentwise_pointwise_coefficients_exact": "current=1403/400; each_delay=3/800",
+    "quadratic_pointwise_coefficient_exact": "703/200",
+    "quotient_halanay_statement": "the projection I-1*pi^T changes no diameter; row mass alone gives diam(B_j z)<=(1/2)diam(z), hence rate 1/10 and the source strict residual are unchanged",
+    "quotient_transverse_halanay_constants_unchanged_proved": true,
+    "quotient_transverse_norm": "max{diam z_v,3 diam z_w} on the quotient by span{1}, represented in ker(pi^T)",
+    "retained_history_diameter_envelope": "H_M(t)=sup_{t-r<=s<=t}M(s), with M0=sup_{t0-r<=s<=t0}M(s)",
+    "scalar_leaky_complete_history_canard_root_validated": false,
+    "schema_id": "leaky-dobrushin-upper-triangular-root-transfer-v2",
+    "signed_or_negative_coupling_covered": false,
+    "stationary_coordinate": "bar_x=pi^T*x and z=(I-1*pi^T)x; zero entries of pi are allowed and no pi_min enters the diameter estimates",
+    "strict_boundary": "the theorem removes common left balance only from the fixed nonnegative half-row-mass delay layers; strip invariance, the scalar leaky canard root, onset, routing, signed coupling, moving delays, and closing-gap families remain open",
+    "strictly_nonbalanced_delay_layer_witness_proved": true,
+    "synchronized_scalar_restriction_remains_exact_proved": true,
+    "topology_uniform_invariant_strip_or_basin_validated": false,
+    "triangular_reduction": "T_N(y_parallel,y_perp)=(y_parallel-C_N*G_{perp,N}*y_perp,y_perp), so T_N*L_N=L_parallel direct_sum L_{perp,N}",
+    "unconditional_network_canard_connection_validated": false,
+    "uniform_bounded_triangular_reduction_to_direct_sum_proved": true,
+    "uniform_off_diagonal_bound": "on complete-line sup norms, time translation has norm one, so ||C_N*G_{perp,N}|| <= (391/2000)*delta_B <= 391/2000",
+    "upper_triangular_complete_history_lin_factorization_proved": true
+  },
+  "manifest": {
+    "arithmetic_scope": "exact rational row-mass, triangular-Fredholm and stationary-measure oscillation calculus composed with the source-validated Dobrushin rate 1/10 and complete-line Green bound 10; the forward nonlinear forcing budget retains the exact 4*sqrt(5),5*sqrt(5) delayed-history residence; no scalar leaky canard root, stable-sheet onset, basin routing, signed coupling, moving delay support, or closing-gap theorem",
+    "certificate_sha256": "c4b72e1179a80fddd0d34d1e1d650402966350e3d0315d144d4c586df371c322",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_dobrushin_upper_triangular_transfer.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_dobrushin_collective_defect.json": "bd3d05a5136b6c6463717845bce0c69183d7cbb2f3e34c0608220768fb4383c3",
+      "experiments/results/leaky_dobrushin_complete_line_inverse.json": "c876027c4d9019281099ae6862803c635f29ebc26b57dc899f243fa80b323af7",
+      "experiments/results/leaky_dobrushin_nonlinear_synchronization.json": "db75ebbb297548019ade5d0f4fd63447b22b000a95f8540c25677b9b9ecb72c1",
+      "experiments/results/leaky_dobrushin_transverse_halanay.json": "21e2e3d282e287f2246d2bc5c3d4dd92b6314e9b46c20d27737db7a94f7c0e25"
+    },
+    "result": "experiments/results/leaky_dobrushin_upper_triangular_transfer.json",
+    "schema_id": "leaky-dobrushin-upper-triangular-root-transfer-v2",
+    "source_sha256": {
+      "docs/leaky-dobrushin-upper-triangular-root-transfer.md": "0f29cb65acd13ac155e4b734fef78ab70365a8c7f711cdfe1e70da84541581a7",
+      "experiments/leaky_dobrushin_upper_triangular_transfer.py": "17fb383a5d3a593ef4afa29b7fb08f380ecb8e4300e47f590a346bae9eaae1a0",
+      "src/canard_control/leaky_dobrushin_upper_triangular_transfer.py": "206e8e2ba068cbe16eeb08665056cc3378f088c9843af81bb6f22db096ff819c",
+      "tests/test_leaky_dobrushin_upper_triangular_transfer.py": "8e1df2cafb7d46466cd29bad25ca7499ea9c1479e5d87d517d5bdcab0524f0d1"
+    }
+  }
+}

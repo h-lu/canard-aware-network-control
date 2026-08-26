@@ -785,6 +785,150 @@ particular, (7.1) is a substantial one-step mixing hypothesis and excludes
 many sparse directed graph families; “general topology” here does not mean
 arbitrary topology.
 
+## 7A. A concrete complete-line transverse block for the leaky model
+
+The autonomous leaky-recovery model supplies a second, logically different
+finite-network instance.  It does not yet supply the scalar canard root, but
+it closes the complete-line transverse inverse required by the canonical
+synchronized Lin construction.
+
+Fix the leaky coefficients
+
+\[
+ \varepsilon=\frac15,\quad a=\frac14,\quad
+ \kappa_1=\frac1{250},\quad \kappa_3=\frac1{200},
+ \quad (\tau_0,\tau_1)=(4\sqrt5,5\sqrt5),
+ \qquad r=5\sqrt5.                                      \tag{7A.0}
+\]
+
+For every finite network, let \(Q,B_0,B_1\) satisfy
+
+\[
+ Q\mathbf1=\mathbf1,\quad \pi^TQ=\pi^T,\quad
+ \tau(Q)\le\frac12,
+ \qquad
+ B_j\mathbf1=\frac12\mathbf1,\quad
+ \pi^TB_j=\frac12\pi^T,                                 \tag{7A.1}
+\]
+
+with \(Q,B_j\ge0\) and strictly positive \(\pi\).  The collective line and
+\(\ker\pi^T\) are invariant for every current and delayed variational block;
+simultaneous diagonalization is not assumed.  On the complex transverse
+space use
+
+\[
+ m(x,y)=\max\{\operatorname{diam}x,
+                   3\operatorname{diam}y\},
+ \qquad
+ \|\phi\|_{1/10}=
+ \sup_{-r\le\theta\le0}e^{\theta/10}m(\phi(\theta)).     \tag{7A.2}
+\]
+
+For any complete synchronous trajectory \(V:\mathbb R\to\mathbb R\)
+satisfying
+
+\[
+ \sup_{t\in\mathbb R}|V(t)-1|\le\frac52,               \tag{7A.3}
+\]
+
+the directed Halanay constants give
+
+\[
+ \alpha-\frac1{10}-\beta e^{r/10}
+ >0.00766645053564.                                     \tag{7A.4}
+\]
+
+Hence the transverse evolution family satisfies
+
+\[
+ \|U_{\perp,N}(t,s)\|_{1/10}
+ \le e^{-(t-s)/10},\qquad t\ge s,                       \tag{7A.5}
+\]
+
+with constant one, independently of \(N\) and of the admitted topology.
+For every bounded complete transverse forcing, forward zero-history
+solutions begun at \(S\) form a Cauchy family as \(S\to-\infty\).  This
+constructs the unique bounded complete forced solution without inverting an
+RFDE semiflow backward and gives the causal Green bound
+
+\[
+ \boxed{\|G_{\perp,N}\|\le10.}                          \tag{7A.6}
+\]
+
+On its classical graph domain the transverse differential operator is
+therefore an isomorphism.  In the canonical synchronized Lin realization,
+where endpoint traces, phase, cokernel normalization, gap, parameter forcing,
+and inhomogeneity all act only on the collective block, one has the exact
+direct sum
+
+\[
+ \mathcal L_N=\mathcal L_\parallel\oplus
+                    \mathcal L_{\perp,N}.                \tag{7A.7}
+\]
+
+It follows that the full operator has the same Fredholm index, kernel and
+cokernel dimensions as the scalar block.  Extending the normalized scalar
+cokernel functional by zero gives
+
+\[
+ d_N(\nu)=d(\nu).                                       \tag{7A.8}
+\]
+
+Thus a separately proved simple scalar complete-history canard root transfers
+with exactly the same location, slope, and orientation to every network in
+(7A.1).  Unlike the abstract implication in Section 4.2, the transverse
+Green hypothesis in this canonical leaky realization is now verified with
+an explicit dimension-independent constant.
+
+The remaining condition is scalar, not a hidden network estimate: the leaky
+RFDE complete-history connection, its phase-fixed Fredholm realization, and
+the nonzero scalar gap slope have not yet been proved.  Equations
+(7A.5)--(7A.8) also do not treat independently chosen noncollective traces,
+asynchronous forcing, nonlinear persistence away from synchrony, or a
+topology-uniform nonlinear neighborhood.  The proof and source-bound record
+are in
+[the complete-line transverse inverse](leaky-dobrushin-complete-line-inverse.md).
+
+## 7B. A nonlinear stripwise synchronization theorem
+
+The leaky Dobrushin constants also control the true nonlinear network, not
+only its variational equation.  For a real node vector set
+
+\[
+ \operatorname{osc}z=\max_i z_i-\min_i z_i,
+ \qquad M=\max\{\operatorname{osc}v,3\operatorname{osc}w\}.
+\]
+
+The instantaneous scalar map has global one-sided slope
+
+\[
+ \frac{d}{ds}\left(s-\frac{s^3}{3}
+ -\varepsilon\kappa_1s-\varepsilon\kappa_3(s-1)^3\right)
+ \le1-\varepsilon\kappa_1=0.9992,
+\]
+
+the current cubic term is dissipative, and on
+\(|v_i-1|\le5/2\) the delayed cubic has Lipschitz constant at most
+\(75/4\).  The nonlinear maximum--minimum Dini calculation therefore gives
+the same Halanay inequality and the same strict residual (7A.4).  Hence,
+for every real network solution that remains in the declared strip,
+
+\[
+ M(t)\le e^{-(t-t_0)/10}
+ \sup_{t_0-r\le s\le t_0}M(s).                         \tag{7B.1}
+\]
+
+The constant and rate are uniform in every finite \(N\) and every admitted
+topology.  This is a nonlinear synchronization theorem: no transverse
+pattern can persist inside the strip.  It is stronger than the linear
+Green-block statement but weaker than a topology-uniform nonlinear basin.
+All nodes may still leave the strip together through the uncontrolled
+collective component.  Consequently (7B.1) does not yet prove asynchronous
+canard persistence or an asynchronous pulse threshold.
+
+The exact proof and source-bound claim ledger are in
+[the nonlinear synchronization certificate](leaky-dobrushin-nonlinear-synchronization.md).
+
 ## 8. General topology as an open class
 
 For fixed \(N\), augmented invertibility and a simple root are open under
@@ -905,6 +1049,11 @@ model-specific root hypotheses.  Its components and seams are as follows.
    contract.  Its Theorem 6.1 is a conditional direct-sum criterion whose
    assumptions include the still-unproved history-space endpoint,
    Fredholm, transverse-isomorphism, and uniform-inverse hypotheses.
+7. [The leaky complete-line transverse theorem](leaky-dobrushin-complete-line-inverse.md)
+   proves the transverse-isomorphism part of that direct-sum mechanism for
+   the canonical synchronized leaky network, uniformly over its finite
+   balanced Dobrushin class.  It leaves the scalar connection, scalar
+   Fredholm realization, and scalar simple root as explicit hypotheses.
 
 The older [finite-network promotion specification](scope-and-theorems.md)
 is a historical contract.  The active graph-first division of labor is in
@@ -924,6 +1073,7 @@ is a historical contract.  The active graph-first division of labor is in
 | Dual-scaffold current-state one-chain/stable-block algebra | **PROVED** | `full-network-lin-operator.md`, Lemma 2.1 | Does not imply an RFDE dichotomy or Lin inverse |
 | Dual-scaffold open general-topology neighborhood, Corollary 6.1 | **CONDITIONAL / OPEN** | hypotheses listed after Corollary 6.1 | No numerical \(\rho_*\) or full-history inverse is certified |
 | Shared-resource Dobrushin general-topology selected root | **PROVED for the declared uniformly mixing class** | `paper-ii-heterogeneous-curvature-selected-root.md`, Theorem 4.1 | Fixed support, canonical preparation, declared residual direction; not arbitrary topology or arbitrary variation of \(P_N\) |
+| Leaky canonical synchronized transverse complete-line inverse | **PROVED for every finite network in the declared balanced Dobrushin class** | `leaky-dobrushin-complete-line-inverse.md`, Sections 1--3 | \(\|G_{\perp,N}\|\le10\); scalar leaky connection/Fredholm root and asynchronous persistence remain open |
 | Moving point-delay version | **OPEN** | strong-space requirement (2.6) | Ordinary \(C^0\) operator norm is inadmissible |
 | Preparation-independent physical maximal canard | **OPEN** | requires outer selection | A prepared local root is not a physical threshold |
 | Biological pulse onset/event equivalence | **OPEN** | requires global channel/separator theorem | No conclusion from Theorem 5.1 alone |
