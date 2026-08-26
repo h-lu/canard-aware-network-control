@@ -1,0 +1,302 @@
+{
+  "audit": {
+    "certificate": {
+      "arithmetic": "192-bit MPFR outward-rounded interval polynomials; retained strict first-step Picard tubes inserted as delay-four and delay-five sources; exact C4 delay-five history polynomials before t=2; exact power-to-Bernstein convex-hull bounds; degree-eight coupled Taylor centers and nested Euclidean error balls propagated with the exact two-dimensional logarithmic norm for the state, central first variation and full-label second variation; exact mean-value reconstruction in the label; separate same-kernel 256-bit precision replay; binary64 RK4 values used only as nonclaim centers",
+      "audit_id": "fixed-epsilon-target-second-method-step-interval-cover-v1",
+      "delay_source_partition": [
+        "1<=t<=3: t-4 in the validated first-step solution [-3,-1]",
+        "1<=t<=2: t-5 in incoming history [-4,-3], split at the C4 patch onset t=3/2",
+        "2<=t<=3: t-5 in the validated first-step solution [-3,-2]"
+      ],
+      "exact_bernstein_convex_hull_range_theorem_used": true,
+      "exact_c4_regular_source_breakpoints_respected": true,
+      "exact_delay_landing_partition_verified": true,
+      "exact_label_mean_value_reconstruction_used": true,
+      "exact_scope": "the complete second method-of-steps P-matrix cover on [1,3]x[-1/20,1/20], composed with the pinned first-step result to cover [-3,3], and the late X_entry-X separation on [-2,3]",
+      "exact_symbolic_zero_defect_count": 16,
+      "exact_two_dimensional_log_norm_identity_verified": true,
+      "expanded_open_collar_interval_validated": false,
+      "full_physical_strip_interval_cover_validated": true,
+      "full_physical_time_interval": [
+        "-3",
+        "3"
+      ],
+      "independent_second_interval_kernel_replay_validated": false,
+      "label_cell_count": 20,
+      "label_interval": [
+        "-0.05",
+        "0.05"
+      ],
+      "label_step": "0.005",
+      "late_cross_separation_interval_validated": true,
+      "model_id": "fixed-epsilon-target-second-method-step-interval-cover",
+      "open_scope": "an enlarged label collar, the C4-history/physical gluing theorem on that collar, the target global graph, and the complete-history root",
+      "physical_cross_separation_interval_validated": true,
+      "physical_frame_determinant": -13,
+      "physical_output_frame": [
+        [
+          -7,
+          2
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "physical_time_interval": [
+        "1",
+        "3"
+      ],
+      "primary": {
+        "completed_label_cells": 20,
+        "completed_second_time_cells": 8000,
+        "delay_five_affine_history_cell_count": 2000,
+        "delay_five_c4_patch_cell_count": 2000,
+        "delay_five_previous_solution_cell_count": 4000,
+        "delay_four_previous_solution_cell_count": 8000,
+        "first_failure": null,
+        "maximum_central_error_radius": "0.004756947256151721982029818756489932631528335819020312448538268760182487",
+        "maximum_first_variation_error_radius": "0.08010821858018801291661057886225926320572170112223322851810360807160035",
+        "maximum_late_physical_x": "1.069557351820617308645251610847259469741835040623002057666536224335528",
+        "maximum_raw_determinant": "-0.1640334723273036194126891712166318413771366701126086347068583348914289",
+        "maximum_second_variation_error_radius": "4.533210024268770960065664396253799199860964401252416348279360689382926",
+        "minimum_central_picard_gap": "5.607595846825005642190274069713474108284162877300967053664050471565325e-07",
+        "minimum_first_variation_picard_gap": "4.711716493279576280725215744876866477405044078590665885490329996723106e-05",
+        "minimum_label_minor": "1.289030514144216712225835871235148003356251617226960194686607721012489",
+        "minimum_late_entry_x_gap": "0.4612322789668559743547483891527405302581649593769979423336524771184889",
+        "minimum_oriented_determinant": "2.132435140254947052364959225816213937902776711463912251188799907908571",
+        "minimum_replayed_first_step_picard_gap": "1.607763903797102665165741394002487401275747448859144342514117258640016e-13",
+        "minimum_second_variation_picard_gap": "0.004391092749280771781992946633622578300076369476119359062915906074620134",
+        "minimum_time_minor": "0.114299611181335905512849749674091420646177755216746123912484790400463",
+        "precision_bits": 192,
+        "proof_cell_digest_sha256": "98aea749226c61412d0ae264d3cb510833e86a0e5e43e6ea4bab528649ee2e71"
+      },
+      "refinement": {
+        "completed_label_cells": 20,
+        "completed_second_time_cells": 8000,
+        "delay_five_affine_history_cell_count": 2000,
+        "delay_five_c4_patch_cell_count": 2000,
+        "delay_five_previous_solution_cell_count": 4000,
+        "delay_four_previous_solution_cell_count": 8000,
+        "first_failure": null,
+        "maximum_central_error_radius": "0.004756947256151721982029818756489932631528335819009972540498887318212423493335532305",
+        "maximum_first_variation_error_radius": "0.080108218580188012916610578862259263205721701122140337490122858794206227893692190159",
+        "maximum_late_physical_x": "1.0695573518206173086452516108472594697418350406230020567369725451301653764321209981",
+        "maximum_raw_determinant": "-0.16403347232730361941268917121663184137713667011260982666388946261076751292293663859",
+        "maximum_second_variation_error_radius": "4.5332100242687709600656643962537991998609644012520353799623216623010392994595693438",
+        "minimum_central_picard_gap": "5.6075958468250056421902740697134741082841628772362744453613525128525250638781319787e-07",
+        "minimum_first_variation_picard_gap": "4.7117164932795762807252157448768664774050440785892208309463825838558535119430286625e-05",
+        "minimum_label_minor": "1.289030514144216712225835871235148003356251617226962733128513485785761878617243197",
+        "minimum_late_entry_x_gap": "0.46123227896685597435474838915274053025816495937699794326302745486983462356788061829",
+        "minimum_oriented_determinant": "2.1324351402549470523649592258162139379027767114639277466305630139399776679981611883",
+        "minimum_replayed_first_step_picard_gap": "1.6077639037971026651657413940024874012757474561704971425251243864251657191886996901e-13",
+        "minimum_second_variation_picard_gap": "0.0043910927492807717819929466336225783000763694761192938460240864437493806394911001941",
+        "minimum_time_minor": "0.11429961118133590551284974967409142064617775521695945249049272504412263849338644662",
+        "precision_bits": 256,
+        "proof_cell_digest_sha256": "e0ca3fa84d9178364b7ee8f4ad21a45179e2994d606a59468bcb14c3ca58983b"
+      },
+      "regularity_breakpoints": [
+        "1.5",
+        "2"
+      ],
+      "same_kernel_256_bit_precision_replay_validated": true,
+      "sampled_or_interpolated_history_used_as_claim_source": false,
+      "second_method_step_p_matrix_cover_validated": true,
+      "strict_first_step_tubes_replayed_as_delayed_sources": true,
+      "strict_second_step_first_variation_picard_inclusion_validated": true,
+      "strict_second_step_second_variation_picard_inclusion_validated": true,
+      "strict_second_step_state_picard_inclusion_validated": true,
+      "target_chart_global_embedding_validated": false,
+      "target_global_graph_fixed_point_validated": false,
+      "time_cell_count_per_label": 400,
+      "time_step": "0.005",
+      "total_second_step_cell_count": 8000
+    }
+  },
+  "manifest": {
+    "arithmetic": "192-bit MPFR outward-rounded interval polynomials; retained strict first-step Picard tubes inserted as delay-four and delay-five sources; exact C4 delay-five history polynomials before t=2; exact power-to-Bernstein convex-hull bounds; degree-eight coupled Taylor centers and nested Euclidean error balls propagated with the exact two-dimensional logarithmic norm for the state, central first variation and full-label second variation; exact mean-value reconstruction in the label; separate same-kernel 256-bit precision replay; binary64 RK4 values used only as nonclaim centers",
+    "c4_seam_source": "src/canard_control/fixed_epsilon_target_c4_preparation_seam.py",
+    "c4_seam_source_sha256": "c1ca5f198faa4662587e4065e59b4bad64f1d3ad7ba7e8fb1fade4f31b3d2c13",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/fixed_epsilon_target_second_step_cover.py",
+    "first_step_result": "experiments/results/fixed_epsilon_target_first_step_cover.json",
+    "first_step_result_sha256": "5228eafcb7b497d976c48e0ff78a277bbd13ec1ef7b72e685dbaa885e61c031a",
+    "first_step_source": "src/canard_control/fixed_epsilon_target_first_step_cover.py",
+    "first_step_source_sha256": "f46126d6856fbfc338b192962dab90653d9738c5b9839fffadfd0197c35ec24b",
+    "generator": "experiments/fixed_epsilon_target_second_step_cover.py",
+    "generator_sha256": "eaac3362bc48f8dbb551f02bee04090879cae531252f04f46b56768b78ef109a",
+    "gmpy2": "2.2.2",
+    "interval_backend_source": "src/canard_control/directed_interval.py",
+    "interval_backend_source_sha256": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+    "mpfr": "MPFR 4.2.1",
+    "note": "docs/fixed-epsilon-target-second-step-cover.md",
+    "note_sha256": "7515db10440e60439710c3b5ee97276f646c7bec6bf4ae8aa32c6f1286c2df9b",
+    "physical_model_source": "src/canard_control/fixed_epsilon_frozen_graph_operator.py",
+    "physical_model_source_sha256": "ef9e4177b536e97d425a96fb4cbba3a0669cddc44ab0b8f544ccb440a2836651",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "proof_source": "src/canard_control/fixed_epsilon_target_second_step_cover.py",
+    "proof_source_sha256": "1417ad4030af03fdaeba093249209759852230c28d39be1ba762b8a36f4830aa",
+    "python": "3.14.4",
+    "shards": [
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_00.json",
+        "sha256": "9572a8db5fab61d872ca5b58fc4b7e971d5e247c29f58fbf6d7048a20220882d"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_01.json",
+        "sha256": "4e98dc5e1f3360ed13596f9d29537f29366ee20ddf832aa1f08dd6b32e0a599c"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_02.json",
+        "sha256": "88a40157e518d5cdd5ac96202748e6856f3895af003ad861dc370e802300db81"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_03.json",
+        "sha256": "cfc74e2210e2c953ef137628a1937858e49570a89fc8099cf911249991e63b0b"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_04.json",
+        "sha256": "502a2196c8517672def61ec7ad39dd6032ae22541c4e870e0f68097530342020"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_05.json",
+        "sha256": "621ce9a210a03fdd287932e512dfcfdadf76447df9d9846c1cdfeba3dc69f79a"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_06.json",
+        "sha256": "5af5148153c06f0fdfdbbfdd79d285056ac5c8b56e3ada24546939640870bd4c"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_07.json",
+        "sha256": "93950e17aab6446c16b317b6be740d1938064ba6d9c8d71deb3a9e13f8fbd7cd"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_08.json",
+        "sha256": "722b9673bf3ad017715bce8f9acbdc883102befb501f16b15d6b64c63c70d676"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_09.json",
+        "sha256": "3db6cdea78596e75c675007ba433af07b8de27a24065abbbbbde0de38d25156f"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_10.json",
+        "sha256": "9b35451a25aea812881dd1efdf30ddf51226d241884abc72ae78df065ddf0002"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_11.json",
+        "sha256": "b0737d163e59c2b8cbe144b01806a192fa2e3eeb12520cac3527ec78b0b418fa"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_12.json",
+        "sha256": "d96515732c67c0b847b752e5ba6a7ca52a1b92409e56cef0a4fc0df1a4fe9e95"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_13.json",
+        "sha256": "f9c88d89a037bd79bc393dcf898f90de39e236dd2c2d27e19c06d4c8583e5c7d"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_14.json",
+        "sha256": "763afb9d886f28407c487b74680af332ccd7c24e2e18b5e0f79499d974702bc5"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_15.json",
+        "sha256": "b6804c91084a22d326063c120c7af7b72c23fa493d39584991cb29bddbd3abdb"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_16.json",
+        "sha256": "ecbde37b63fba4abe1dc0ae5853059367e6dcd6259c48cdf27834a3bb58cb716"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_17.json",
+        "sha256": "f47c88c1a101010e778761ffe8d932e1377ef4288a24a823073ad715e5ca9a96"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_18.json",
+        "sha256": "c63e84f66df15cbe345ac0b3cc7c5b4198075fb898d396e738ea5965b45b2074"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_192_label_19.json",
+        "sha256": "f92bb0706cae0fe9cb1139d18a4b4f65891f4a1f433725a08be1fa5352109f38"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_00.json",
+        "sha256": "754b40acf8be6839c047d93648904729ce8191474d15a648f394a1cf828c1b59"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_01.json",
+        "sha256": "75e046dbf9a3818e5fa1fd06066448cfa1d305c354dce37b0570a29c16a1f9da"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_02.json",
+        "sha256": "ccdec6b3571c0d26aefe024dd04f45311af99b5ca6d75a92c8b745ac8b92ab1d"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_03.json",
+        "sha256": "ce14dbb7feb0330439231172c19780c3cf02f6bda7c219637e84d9d4cdbb3e1e"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_04.json",
+        "sha256": "229c0dbcb60490b626fc9955f9eea86c837f89927f2ecbc5bddbb662150ea385"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_05.json",
+        "sha256": "566e4b1e28242943ab365d3c3231b2d50c52008b180c8f588047e8377f9902a3"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_06.json",
+        "sha256": "6397377e9871fd6ea70cc5ccdd469baa755788216a769e1d6c5d6d226ebe17ae"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_07.json",
+        "sha256": "09b5665a4dd20e8bdc41df3179043708cba053f5de7ed65cdfdd30c6276c99c3"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_08.json",
+        "sha256": "c037bbcffd8979a8032c8020598249c79d973d648a15d3fa0c1daac3f851ecf2"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_09.json",
+        "sha256": "dae9294f7242734e96e3342a56b90bc5b253115efdf7d898210f1438f6e491fd"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_10.json",
+        "sha256": "039b36c012cbdd62587a8b78a6d403d981745203e232f52b563d745919c41018"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_11.json",
+        "sha256": "0659d05389b62d7c98ce0ee3f9c26af06bb39ba8a67abe71e7233bc4476c08b4"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_12.json",
+        "sha256": "e1389f2feea370dca48188ebd3e288c941c09164a60d9a24b2a3af8ab2c8adb4"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_13.json",
+        "sha256": "9de71c6cee97ddc59317348db798f86ff01979061335f29ca848544a3320a40d"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_14.json",
+        "sha256": "36bc7f5a3cfb209efa3d671859f1a00a92a99ed5b90f6d968efed664db80df96"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_15.json",
+        "sha256": "a67ab1c5df78691dd21e7f4dc4752cb47e16d0ca8758155725c3b07b587a84b7"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_16.json",
+        "sha256": "7abe2e930aa83ed6d66a739e3c1adfc8f0996752f571097f7b57203c63bf132b"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_17.json",
+        "sha256": "1e66783389545e5e28f4682900ca4cc9fb754ee1dc5913a008f4a560643fe1c9"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_18.json",
+        "sha256": "4abb306cdccde34a37a0b318176584e34f31530abf23972367ea3604de9fde74"
+      },
+      {
+        "path": "experiments/results/fixed_epsilon_target_second_step_cover_shards/precision_256_label_19.json",
+        "sha256": "0c90c3013687e6fb381d5ef799fa6b33ddceae0c48a2011c86ae1e1ebf47d838"
+      }
+    ]
+  }
+}
