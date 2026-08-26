@@ -2,10 +2,55 @@
 
 ## 1. What is proved, and what is not one theorem yet
 
-The successor program now contains eight theorem or obstruction blocks
+The successor program now contains nine theorem or obstruction blocks
 spanning genuine finite-network classes, a fixed-amplitude causal-chart
 route, and an autonomous bistable replacement for the failed biological
 slice.
+
+**Current Floquet audit boundary (2026-08-25).**  A physical delayed
+coefficient admits two equivalent forms: unshifted coefficient plus
+output/row phase, or shifted coefficient plus input/column phase.  The legacy
+FHN 319-cell and 32,046-leaf sources use the first, physically correct form;
+the earlier blanket row-phase rejection is retracted.  Their frozen source
+manifests still validate, and an independent four-test operator oracle checks
+the equivalent shifted/input form and rejects both mixed conventions.  Their
+original claims are retained.  The root-transfer, finite-horizon control, orbit/response,
+history-basin and transverse estimates that do not use that tree retain
+their stated proof status.
+
+**Inner-return breakthrough checkpoint (2026-08-26).**  The formerly vague
+``nonlinear stable graph'' gap has been reduced to one explicit source-bound
+certificate chain.  First, a general finite-delay RFDE theorem proves that a
+common selected event window beginning after \(k\) maximum delays produces a
+\(C^k\) moving complete-history return under explicit initial-chart
+regularity, common solution/event-tube, endpoint-sign, positive-speed, and
+terminal-chart containment hypotheses; no no-earlier-hit premise is required
+for selected-branch smoothness.  A companion semiflow lemma proves that a
+direct bounded-positive-time selected return identifies the intrinsic
+periodic-orbit stable-set germ under explicit invariant phase-isolation,
+common intervening-flow, retained-domain, and recurrent-hit hypotheses,
+without first proving an identity \(Q=P^m\).  Second, the exact event-Hessian formula fixes the
+translation and projection order and shows that the center one-period branch
+does not automatically clear the arbitrary-(C)-history (C^2) gate.  The
+near-two-period center clears it by (14.010740123253945).  Third, the
+two-return graph majorant closes conditionally for the simultaneous six-block
+box
+\((1,10,1000,5,10,1000)\), with Perron bound below \(0.193086\).  After the
+proved physical-coordinate adapter, this would give endpoint margins greater
+than (0.0180540) and (0.0131604), and
+\(H'\subset[-260.794147,-243.205853]\).  Finally, a signed three-grid
+finite-section pilot preserving the full event correction and complete-
+history translation lies comfortably inside all six caps.  That pilot is not
+interval evidence.  Stage 4U now proves a common (C^2) selected hit on the
+explicit arbitrary-continuous-history closed scale
+\(1.2\times10^{-8}\) after the orbit-aware Stage 4V enlargement; Stage 4T
+proves (DQ_Y(Y_*)=A^2), and the fixed splitting/rates transfer is closed.
+The remaining inner proof gate is precisely enlargement to the preferred
+graph ball, six directed continuous-history Hessian enclosures, and
+graph-transform return-domain containment, together with either the direct-return stable-set bridge
+or \(Q=P^2\) on nested domains.  Once this chain closes, the unique selected
+crossing follows from already closed arithmetic; biological onset still
+additionally requires outer capture and two-sided routing.
 
 1. A **selected complete-history canard-root theorem** applies to a
    uniformly Dobrushin family with one shared recovery resource. It proves a
@@ -38,9 +83,11 @@ slice.
    balanced class with one common Dobrushin gap, the zero transverse history
    graph is the unique canonical retained graph and the same root law lifts
    with constants uniform in network size and topology.  At the exact center
-   gain pair, a separate 32,046-leaf replay proves that the same periodic
-   orbit remains locally orbitally attracting for every fixed finite
-   \(\tau(Q)\le1/4\) topology on \(|\eta|\le3\times10^{-6}\).  The
+   gain pair, a separate 32,046-leaf replay was intended to prove that the
+   same periodic orbit remains locally orbitally attracting for every fixed
+   finite \(\tau(Q)\le1/4\) topology on \(|\eta|\le3\times10^{-6}\).
+   That fixed-network Floquet conclusion is proved; it supplies neither a
+   topology-uniform nonlinear basin nor a global capture theorem.  The
    corresponding fixed-\(\varepsilon\) root derivative and physical event
    comparison remain open.  The proofs and the fixed-parameter validation
    contract are recorded
@@ -99,9 +146,16 @@ slice.
    \([-3,1]\times[-1/20,1/20]\) is now covered by 8,000 directed
    Picard--Bernstein cells at 192 bits and a separate same-kernel replay at
    256-bit precision,
-   including the delayed C4 patch on the last 1,000 cells.  The second method
-   step \((1,3]\), late cross separation and enlarged collar remain open, so
-   neither the glued embedding nor degree is promoted.
+   including the delayed C4 patch on the last 1,000 cells.  The complete
+   second method step \([1,3]\times[-1/20,1/20]\) is now also covered by
+   8,000 directed cells at 192 bits and a same-kernel 256-bit replay.  Its
+   strict P-matrix margins are at least \(0.1142996\), \(1.2890305\), and
+   \(2.1324351\).  Composing the two steps proves the physical P-matrix
+   inequalities on the full strip \([-3,3]\times[-1/20,1/20]\), and the
+   late estimate \(X_e-X>0.4612322\) closes both physical cross-separation
+   conditions.  The enlarged label collar, C4-history/physical gluing on
+   that collar, global target graph, traces, and fixed-
+   \(\varepsilon\) root remain open.
 8. An **autonomous leaky-recovery bistable theorem program** keeps the two delayed
    voltage channels and changes the recovery law to
    \(w'=\varepsilon(v-a-w)\).  At the declared center, the unique quiet
@@ -111,9 +165,24 @@ slice.
    phase-fixed inner periodic RFDE orbit and its phase-bordered derivative.
    A separate resolution ladder shows why the old 129-node outer candidate
    was inadequate and validates a distinct 257-node outer periodic RFDE orbit
-   at cutoff 384.  These are orbit-existence and bordered-inverse theorems;
-   the numerical interpretations “inner index one” and “outer attracting”
-   still require Floquet certificates.
+   at cutoff 384.  A directed continuation theorem now places both branches,
+   their bordered inverses, and their unique simple voltage maximum and
+   minimum on the same nonempty box
+   \(|a-1/4|,|\kappa_3-1/200|\le10^{-10}\).  The translation multiplier is
+   algebraically simple at the center, and an analytic tail/Schur theorem
+   reduces every remaining multiplier of modulus at least one to a finite
+   \(258\times258\) analytic determinant on the principal logarithmic
+   half-strip.  The center inner tree is now complete: the closed principal
+   right half-strip contains exactly the simple translation value and one
+   simple positive nontranslation value, while the complementary keyhole has
+   count zero.  Hence the center inner orbit has exactly one unstable
+   multiplier.  This is a center-only result.  Its continuation over the
+   common parameter box and the outer zero-unstable count remain open.
+   Corrected rectilinear-core calibrations show that a looser Neumann
+   threshold does not remove the narrow near-neutral workload; the next
+   declared route is a directed one-dimensional Grushin/pole subtraction
+   joined to the existing cover.  No such certificate has yet been issued,
+   so “outer attracting” is not promoted.
 
    For the physical one-unit current pulse, both delays remain in the quiet
    incoming history.  The pulse stage is therefore a parameter ODE, and the
@@ -124,11 +193,50 @@ slice.
    three-return shooting target
    $J_{\rm sep}^{\rm num}\simeq0.301135337086902$ on three history meshes,
    with multiplier-scaled derivative near $-3.449$ and an independent
-   integration refinement.  This does not validate the Floquet covector,
-   local stable manifold, separator, two-sided routing or onset threshold.
-   The nonsingular \((a,\kappa_3)\mapsto(F,A)\) response also remains a
-   numerical candidate, so the block-triangular control map
-   \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) is still conditional.
+   integration refinement.  Separately, a large Razumikhin sublevel is a
+   proved complete-history quiet basin.  A 7,728-cell directed
+   method-of-steps calculation proves that the physical pulse \(J=0.30\)
+   enters that basin at \(T=161\sqrt5\), with terminal Lyapunov value below
+   \(0.006047094<0.008\); a 256-bit, 10,304-cell replay gives the same
+   conclusion.  This proves one whole-history quiet-side capture, but it
+   does not validate a quantitative Floquet covector, the pulse-section
+   stable graph, separator, two-sided routing or onset threshold.  Separately,
+   the center inner Floquet count and exact reduced-history factorization do
+   prove a qualitative \(C^1\), codimension-one local stable manifold in the
+   full and reduced history spaces.
+
+   For the associated finite network, a complex-diameter Dobrushin estimate
+   proves transverse decay at rate \(1/10\) for every finite admitted
+   topology.  The same estimate has now been extended from forward decay to
+   a unique bounded complete forced solution, giving a topology- and
+   dimension-uniform transverse Green bound \(\|G_\perp\|\le10\).  Hence a
+   separately proved scalar simple canard root transfers exactly, with its
+   Fredholm index, root, slope and orientation, to the canonical synchronized
+   Lin realization.  Moreover, the cubic one-sided inequalities promote the
+   estimate to the true nonlinear network: every real solution that remains
+   in \(|v_i-1|\le5/2\) has node diameter decaying at the same rate \(1/10\),
+   uniformly in finite \(N\) and topology.  Its \(\pi\)-mean solves the scalar
+   leaky RFDE plus a quadratic defect satisfying
+   \(|R_{\rm coll}(t)|\le(703/200)\mathcal H_M(t)^2\), where
+   \(\mathcal H_M(t)=\sup_{t-r\le s\le t}M(s)\), and, conditionally on
+   strip residence, accumulated size at most
+   \((703/40+27\sqrt5/800)M_0^2\le(56483/3200)M_0^2\).  A strip-invariant scalar
+   routing tube, and hence a topology-uniform asynchronous threshold basin,
+   remains open.  The scalar leaky canard root itself also remains open.
+
+   The D4 directed-response certificate now has status **ACCEPT** on the common box.
+   The inner determinant is strictly negative,
+   \([-0.229823,-0.228398]\), and the outer determinant is strictly positive,
+   \([0.533847,1.694625]\).  For the flagship outer response, the certified
+   inverse Lipschitz constant is
+   \(22.044336699647400986\ldots<22.044336699647401\), and the branch-centered \((F,A)\) target radius is
+   at least \(4.5363124943378087\times10^{-12}\).  The smaller certified lower
+   bound \(4.0971263701603406\times10^{-13}\) is only the minimum of the two
+   distinct branch-centered radii, used when both branches must be tuned at a
+   common scale.  It is not the flagship outer radius.  The block-triangular
+   map \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) remains conditional because the
+   separator, \(J_c\), its parameter derivative, physical onset, safety and
+   outer capture are not proved by D4.
 
 The two original principal results answer different questions in different recovery
 architectures. The policy composition removes that mismatch only for a
@@ -141,11 +249,15 @@ obstruction for a small-\(\delta\) canonical full-network root on the retained
 Dobrushin graph and the center periodic orbit, but it does not supply the
 fixed-\(\varepsilon\) or event-level identification.  The new prepared-chart
 route and leaky-recovery slice now give proved intermediate objects on both
-sides of that gap: an exact incoming chart plus a rigorous first physical
-method step, two validated autonomous periodic RFDE orbits, and an exact
-oriented pulse-to-history curve.  The complete target graph and the
-autonomous stable separator remain unproved, and equality of their
-codimension-one roots is a separate comparison problem.
+sides of that gap: a rigorous full two-step physical strip and
+cross-separation, two validated autonomous periodic RFDE branches on a
+common box, an exact oriented pulse-to-history curve, a strict whole-history
+quiet-side pulse capture, a complete center-inner Floquet count, a directed
+   two-output response theorem, and a complete-line transverse inverse for
+   every admitted finite topology.  The collar/glued target graph, scalar
+   leaky canard root, outer zero-index and common-box Floquet continuation,
+   autonomous stable separator, outer-side capture, and equality of the two
+   codimension-one roots remain unproved.
 
 The distinction is structural rather than terminological:
 
@@ -623,9 +735,17 @@ reference slice failed.
 At the same point, independently audited directed radii arguments validate
 an outer phase-fixed periodic RFDE orbit of period near \(26.6044168026\) and
 an inner one of period near \(18.1862099491\), together with their bordered
-derivatives.  Finite monodromy discretizations consistently suggest zero and
-one nontranslation multipliers outside the unit disk, respectively, but the
-Floquet counts remain numerical.  Starting from the quiet history and
+derivatives.  For the center inner orbit, a complete analytic count on the
+closed principal right half-strip gives exactly two characteristic values:
+the simple translation value \(s=0\) and exactly one simple positive
+nontranslation value; the complementary keyhole count is zero.  Thus the
+center inner orbit has exactly one unstable multiplier.  Classical RFDE
+periodic-orbit theory and the exact reduced-history factorization then give a
+qualitative \(C^1\), codimension-one stable manifold in the full and reduced
+history spaces.  This count is not a common-box theorem and gives no
+quantitative graph radius or pulse-section defining function.  The outer
+zero-unstable count is still open, with only a running cover checkpoint.
+Starting from the quiet history and
 applying a voltage current \(J\) only on \(0\le t\le1\) gives an exact smooth,
 injective and positively oriented terminal-history curve.  A finite-section
 shooting calculation locates a nondegenerate separator target near
@@ -634,22 +754,29 @@ threshold is yet proved; the RFDE is autonomous for all \(t>1\).
 
 Let \(K_\xi(J)\) be the terminal history at \(t=1\), with
 \(\xi=(a,\kappa_3)\) and \(\varepsilon,\kappa_1\) and both physical delays
-fixed.  The center periodic BVPs are now validated.  If their continuation on
-a common parameter box and directed Floquet indices produce a stable outer
+fixed.  Both periodic BVPs, their bordered inverses and their simple extrema
+are validated on a common parameter box.  If the proved center inner index
+is continued over that box and the open outer count produces a stable outer
 cycle \(\Gamma_p\) and an index-one inner cycle \(\Gamma_u\), if a
    history-space isolating neighborhood routes the two sides of
    \(W^s(\Gamma_u)\) to \(E_q\) and \(\Gamma_p\), and if the \(C^1\) map
    \(K_\xi\) has a positively oriented transverse zero of a defining
    function \(h(\xi,\phi)\) that is jointly \(C^1\) in parameter and history,
    then a unique threshold \(J_c(\xi)\)
-   exists on a sufficiently small \(J\)-interval.  If in addition
+   exists on a sufficiently small \(J\)-interval.
+
+The already proved D4 response theorem gives, throughout the common box,
 
 \[
- \det D_{(a,\kappa_3)}(F,A_p)\ne0,
+ \det D_{(a,\kappa_3)}(F,A_u)
+ \in[-0.229823,-0.228398],
+ \qquad
+ \det D_{(a,\kappa_3)}(F,A_p)
+ \in[0.533847,1.694625].
 \tag{4.15}
 \]
 
-then
+Consequently, once the preceding \(C^1\) threshold exists,
 
 \[
  (a,\kappa_3,J)\longmapsto
@@ -657,11 +784,16 @@ then
 \tag{4.16}
 \]
 
-is a local \(C^1\) diffeomorphism.  The centered-difference candidate for
-(4.15) has determinant \(1.11424778\) and smallest singular value
-\(0.0815861\), but these are not directed bounds.  Equations (4.15)--(4.16)
-are therefore a precise conditional biological-control theorem, not a
-validated onset result.
+is a local \(C^1\) diffeomorphism.  The outer two-output parameter inverse has
+certified Lipschitz constant
+\(22.044336699647400986\ldots<22.044336699647401\), and its branch-centered
+target radius is at least \(4.5363124943378087\times10^{-12}\).  The common
+lower bound \(4.0971263701603406\times10^{-13}\) refers instead to the two
+distinct inner- and outer-centered response balls at one simultaneous scale.
+It must not replace the outer radius in (4.16).  Thus (4.15) is proved, while
+(4.16) remains a conditional biological-control theorem: \(J_c\),
+\(D_\xi J_c\), the three-output safety ball, separator, onset, routing and
+capture remain open.
 
 ## 5. Frequency--amplitude--operational-safety controllability
 
@@ -973,7 +1105,11 @@ operational qualifier.
    Section 4.4.  Its quiet equilibrium is rigorously stable for arbitrary
    positive delays.  Independently audited directed radii arguments now
    validate distinct inner and outer phase-fixed periodic RFDE orbits and
-   their phase-bordered inverses; their Floquet indices remain unproved.  The
+   their phase-bordered inverses.  At the center, the complete inner
+   closed-right-half-plane count proves exactly one nontranslation unstable
+   multiplier in addition to the simple translation multiplier, with zero
+   keyhole count.  This is not a common-box index theorem; the outer
+   zero-index and both parameter-box index statements remain open.  The
    reusable real-conjugate Wiener, de-aliasing and finite/tail architecture
    has been separated from the nonreusable slow row and Floquet artifacts.  In
    particular the leaky residual adds
@@ -984,16 +1120,18 @@ operational qualifier.
    a 257-node polynomial and cutoff 384.  The one-unit physical pulse also has
    an exact smooth, injective, positively oriented terminal-history curve, and
    a deliberately non-directed finite-section calculation supplies a sharply
-   converged separator target near \(J=0.301135337086902\).  Next prove the
-   complete Floquet indices and simple extrema on one
-   \((a,\kappa_3)\)-box, then construct a history-space isolating neighborhood
+   converged separator target near \(J=0.301135337086902\).  The simple
+   extrema are already proved on the common \((a,\kappa_3)\)-box.  Next
+   extend the inner count to that box and finish the outer zero-index cover,
+   then construct a history-space isolating neighborhood
    (not an unexplained planar annulus), validate its stable covector/manifold,
    and prove routing of the two pulse-curve sides into the quiet and periodic
    basins.
-   The acceptance condition is a unique transverse crossing
-   \(K_\xi(J_c)\in W^s(\Gamma_u)\) and a directed nonzero bound for
-   \(\det D_{(a,\kappa_3)}(F,A_p)\), not two long-time integrations or a
-   pointwise determinant.
+   The remaining acceptance condition is a unique transverse crossing
+   \(K_\xi(J_c)\in W^s(\Gamma_u)\) with two-sided routing and a quantitative
+   threshold derivative, not two long-time integrations.  The required
+   nonzero \(\det D_{(a,\kappa_3)}(F,A_p)\) is already supplied uniformly by
+   D4 and is not a remaining onset gate.
 3. **Same-model canard/onset comparison.**  Even after gates 1--2, the
    selected complete-history canard root and the physical pulse threshold
    \(J_c\) are two different codimension-one objects.  Relate them in one
@@ -1061,11 +1199,25 @@ authority.
 | Negative \(-1\) face is an autonomous monotone no-return face | **Disproved even on the exact synchronous leaf** |
 | Reference synchronous equilibrium supplies a quiet local basin | **False on the microscopic gain box for \(|\eta|\le10^{-3}\): two distinct Rouché disks each contain an open-right-half-plane characteristic root** |
 | Leaky-recovery replacement has a unique quiet equilibrium locally exponentially stable for arbitrary positive delays | **Proved at the declared center by exact rational enclosure and a delay-independent small-gain/argument-principle estimate** |
-| Leaky-recovery outer and inner phase-fixed periodic RFDE orbits | **Both orbit BVPs and phase-bordered inverses are validated by independently audited directed radii arguments; the outer/inner Floquet indices remain numerical only** |
+| Leaky-recovery outer and inner phase-fixed periodic RFDE orbits | **Both orbit BVPs, phase-bordered inverses and simple extrema are validated on the common box by independently audited directed radii arguments** |
+| Center-inner leaky Floquet count | **Proved: the closed principal right half-strip has exactly the simple translation value and one simple positive nontranslation value, with complementary keyhole count zero; hence exactly one unstable multiplier at the center only** |
+| Center-inner qualitative stable manifold | **Proved at the center: classical RFDE periodic-orbit theory plus the exact reduced-history factorization gives a \(C^1\), codimension-one local stable manifold in full history and a corresponding reduced stable sheet; no explicit graph radius or pulse-section crossing is included** |
+| Center-inner stable spectral gap and quantitative stable-graph route | **The center gap is proved: source-bound base and extension trees give \(\rho_s\le e^{-0.01}=0.9900498337\ldots<1\).  The Route-C projection audit rejects the old scalar \(C_N=10\) majorant.  Stage 4C/4D prove the atom-plus-density adjoint, Fourier reversal without conjugation, a summable continuous-history measure, nonzero normalization and nonzero recovery-history action.  Stage 4E propagates the physical-time second variation on 1042 delay-aligned cells and evaluates the same row after direct deflation, proving \(C^{uu}_{s,\mathrm{base}}\le7.905649079<12\) with total correlated action error \(1.50030\times10^{-6}\).  Stage 4G computes the exact sufficient uniform-inflation cap \(2408.441719\) and rigorously rejects the positive scalar \(P\)-majorant at cell 581.  Stage 4H proves that only four delay words survive and constructs the signed rank-one/event row before total variation; its small one-step norm remains sampled.  Stage 4I validates the five primitive residuals on 1042 cells, proves the unprojected physical-frame inflation no-go, and gives a mixed-norm primitive ingress \(1.46355\times10^{-3}\); the common complete-history signed density and continuous time supremum remain open.  Stage 4J now specifies the noncircular projected-residual closure \(K\le\widehat K/(1-\Delta)\), including history transport and the terminal event factor.  The uniform block, other five blocks, stable power, split-return tube and six-block graph remain open, so no quantitative stable graph or pulse onset is asserted** |
+| Explicit center-inner orbit section | **Proved at the center: the phase-zero voltage section has speed at least \(0.2067539137\ldots\) on a radius-\(0.01\) section ball, and the old binary64 voltage level has a unique nearby true-orbit crossing.  This is orbit-section admissibility only, not \(K(J)\pitchfork W^s\), pulse onset, or routing** |
+| Wide physical-pulse family at Route C | **The old zero-centered tube and its 30,000-shard fallback are rigorously rejected by derivative wrapping.  Stage 5B replaces them with one correlated scaled fourth-order Taylor--Bernstein model and proves the complete fixed-time family on all 1152 cells and \(J\in[0.30105,0.30120]\) at 192-bit precision.  The maximum joint coefficient error is \(8.57254\times10^{-19}\), the cubic degree-five through degree-twelve forcing is at most \(2.05948\times10^{-9}\), and the full-width fifth-order remainder has \(P\)-radius at most \(1.72064\times10^{-8}\).  Stage 5C then proves, on the same interval and using the corrected exact orbit-section level, a unique positive Route-C event in the common bracket, speed at least \(0.2133519018\), a fourth-order event-time graph with remainder \(10^{-4}\), and a continuous common-event \(Y\)-tube of radius at most \(0.008199932\).  Stage 5D directly encloses the first-variation equation on all 1152 cells, proves \(T_J\in[336.624302835,456.574093812]\), retains the complete-history translation term, and gives \(\|D_JK\|_Y\le142.200203\).  Its total-variation conclusion alone is only \(|f(D_JK)|\le1017.273043\).  Stage 5E fixes the physical real right gauge and rigorously propagates the correlated same-row action residual through 128 parameter shards and 512 history cells at 192-bit precision.  It proves uniformly that \(f_{\rm phys,J}(D_JK_J)\in[-258.746521015805,-245.253478984195]\subset(-\infty,0)\).  This closes signed transversality for the fixed Route-C functional, but not the stable-graph correction.  The third-crossing ordinal, quantitative stable graph, endpoint stable-gap signs, interval Newton, onset and routing remain open** |
+| Leaky outer zero-index and common-box Floquet indices | **Not proved.  The full bordered Grushin operator is directed-invertible on the declared local disk, but its scalar Rouch\'e step fails; an exact rational staircase still has a nonempty complement frontier.  For biological capture the active route is instead a direct phase-fixed complete-history return contraction.  Stage 2 proves on the exact stored shadow \(Q_{v,h}\le0.126907895\), \(Q_{w,h}\le0.002760008\), cancellation factor \(>40.73\), and discrete margin \(>0.873092105\).  Stage 3C compresses the exact continuous kernel to 21 delay words of depth at most two; Stage 3D reduces their ordered simplexes to eight one-dimensional \(F,G,H,L\) primitives.  Stage 3E proves degree-24, 1024-cell global exact-orbit multiplicative errors below \(0.0051\) for \(F,G\).  Cancellation-blind separate propagation gives unusable \(H,L\) bounds and is rejected.  Stage 3F proves the exact combined advanced-row architecture, strict instantaneous Green/boundary bounds and coefficient/phase-ratio budgets.  The first Stage-3G/3H global runs are audit-retracted: an endpoint check found that their 730+20 rectangle cover omitted a second nonempty terminal-clipped layer; the correct geometry is 730+40 rectangles and 12,320 local patches.  Their former residual, Green and row-size numbers are diagnostic until a corrected full replay.  Consequently \(E_v,E_w\), linear/nonlinear attraction and capture remain open.  The center-inner index has not been continued over the parameter box** |
+| Directed leaky D4 frequency--amplitude response | **ACCEPT on the common box: the inner determinant is negative, the outer determinant is positive, the flagship outer inverse Lipschitz certificate is \(22.044336699647400986\ldots<22.044336699647401\), and its branch-centered target radius is at least \(4.5363124943378087\times10^{-12}\); the smaller \(4.0971263701603406\times10^{-13}\) lower bound is only the simultaneous two-branch minimum** |
 | Leaky periodic finite/tail validator reuses the old proof object without alteration | **False: the slow residual, recovery diagonal, period column, parameter box and every orbit-dependent Floquet artifact change; the changed majorants are now independently proved and used by both orbit certificates** |
 | Physical one-unit pulse gives an oriented complete-history curve | **Proved exactly: $J\mapsto K(J)$ is jointly smooth, injective and has a componentwise positive stimulus tangent on the written history segment** |
-| Finite physical pulse has a unique transverse onset threshold \(J_c(a,\kappa_3)\) | **Not proved.  Three finite-section meshes and an integration-refinement ladder locate a nondegenerate candidate $J\simeq0.301135337086902$; the RFDE Floquet covector, stable manifold, endpoint routing and transversality certificate remain open** |
-| Autonomous \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) local inverse | **Conditional on the onset theorem and a directed nonzero frequency--amplitude determinant; the current determinant is binary64 only** |
+| Quiet-side local pulse interval | **Proved nonquantitatively: the strict complete-history capture at \(J=0.30\), openness of the Razumikhin basin and continuous dependence give an open quiet pulse interval around \(0.30\); no explicit endpoints follow** |
+| Outer local nonlinear history bounds | **Proved on the radius-\(0.01\) outer-orbit tube: \(\|R_F(\eta)\|\le3.50816330348\|\eta\|_X^2\) and \(\|D^2F\|\le7.02973994029\).  These are vector-field inputs, not a return-map or attraction theorem** |
+| Outer attraction and two-sided routing contract | **The weakest sufficient inequalities are proved and executable: \(K_o\rho_o^m+C_mr_o<1\), \(\delta_+=a(\delta,z)\delta\), overshoot-safe exit slabs, and complete-history quiet/outer attachment budgets.  Every missing outer power/projection/return constant, quantitative inner graph and exit-face Bernstein family remains null; no routing is promoted** |
+| Source-bound \(J=0.32\) outer attachment | **Proved as an ambient complete-history statement.  From the exact quiet history under the physical pulse \(u=8/25\) on \([0,1)\), a 2064-cell directed method-of-steps calculation isolates the third positive declared-section event in \([94.9619021653635192071,94.9619021653635201635]\).  A 241-cell continuous-history Bernstein comparison and the exact orbit/period correction give both reduced and full \(X\)-history distance at most \(2.637078616900037\times10^{-5}\) from the exact phase-zero outer-orbit history, strictly inside the ambient radius-\(10^{-4}\) ball by \(7.362921383099962\times10^{-5}\).  The pulse event and exact phase center are not asserted to lie on the same Poincar\'e section.  Outer capture still requires either an ambient attracting tube or a validated phase chart satisfying \(Q_{\rm phase}d_X<r_{\rm section}\), followed by a return self-map/contraction proof** |
+| Leaky finite-network transverse Green inverse | **Proved for every admitted finite balanced Dobrushin topology: rate (1/10) and complete-line inverse norm at most ten, uniformly in finite (N) and topology** |
+| Leaky nonlinear synchronization and collective defect | **Proved conditionally on voltage-strip residence: \(M(t)\le M_0e^{-(t-t_0)/10}\), \(|R_{\rm coll}(t)|\le(703/200)\mathcal H_M(t)^2\) with the sharper componentwise delayed formula, and accumulated collective defect at most \((703/40+27\sqrt5/800)M_0^2\le(56483/3200)M_0^2\); no invariant strip or asynchronous threshold basin follows yet** |
+| Leaky asynchronous routing and threshold transfer | **Proved as a conditional composition theorem: a scalar forced-route budget, strip margin and separate product-basin lift give the exact strict rational full-history budget \(R_0<\min\{d_{\rm strip},d_{\rm lift}\}\), \(L_0R_0+(56483/3200)R_0^2<\eta_{\rm route}\); uniform gap-response bounds give exactly one perturbed root in the declared local interval with \(|J_{c,N}-J_c|\le\epsilon_H/m_J\), but do not exclude roots outside it.  No required scalar/lift/gap constant or concrete radius is yet validated** |
+| Finite physical pulse has a unique transverse onset threshold \(J_c(a,\kappa_3)\) | **Not proved.  Three finite-section meshes and an integration-refinement ladder locate a nondegenerate candidate $J\simeq0.301135337086902$; only a qualitative center stable manifold is known, while its quantitative covector/graph, endpoint routing and pulse-section transversality certificate remain open** |
+| Autonomous \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) local inverse | **The outer two-output D4 block is directed-certified.  The biological-safety control contract now proves the exact block inverse, threshold-adapted product bijection, fixed-box radius and pulse-containment formulas, and network safety erosion.  The model-specific three-output radius remains null until the onset theorem, \(D_\xi J_c\), routing and asynchronous gap constants are validated** |
 | Capture by the validated periodic orbit permits permanent residence above \(+1,+3/2\) or below \(-1,-6/5\) | **False by the directed periodic range and asymptotic-phase recurrence** |
 | A different quiet attractor is absent, or the periodic orbit is globally unique | **Not proved** |
 | General balanced-topology synchronous-branch \((F,A,-r)\) target ball | **Proved as a staged invariant-branch statement** |
@@ -1099,12 +1251,14 @@ causal-history spine and one autonomous-onset application:
    and fixed-\(\varepsilon\) selected root;
 7. prove the reference-slice rest-instability no-go and the exact
    delay-independent quiet-state stability of the leaky-recovery replacement;
-8. use the now-validated outer/inner periodic BVPs to prove their Floquet
-   indices, then validate the stable covector, history-space separator and
-   physical-pulse threshold near the registered shooting target;
-9. prove the block-triangular autonomous inverse
-   \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) on a directed target ball and lift
-   the transverse indices to the admitted Dobrushin network class;
+8. extend the proved center-inner Floquet count to the common box, finish the
+   outer zero-index cover, then validate the stable covector, history-space
+   separator and physical-pulse threshold near the registered shooting
+   target;
+9. combine the proved outer D4 block with \(D_\xi J_c\) to obtain the
+   block-triangular autonomous inverse
+   \((a,\kappa_3,J)\mapsto(F,A,J-J_c)\) on a directed three-output target ball
+   and lift the transverse indices to the admitted Dobrushin network class;
 10. compare the selected canard root with the physical onset manifold through
     an explicit outer/event factorization, keeping nearby but unequal roots
     distinct; and
@@ -1113,8 +1267,9 @@ causal-history spine and one autonomous-onset application:
     as substitutes for autonomous basin capture.
 
 Items 1--5, the first method step of item 6, the exact quiet-state part of
-item 7, and the two periodic-orbit BVPs plus pulse-history orientation in item
-8 already support a strong network-dynamics development.  A title or abstract claiming that a
+item 7, and the two periodic-orbit BVPs, center-inner Floquet count, directed
+D4 response and pulse-history orientation in items 8--9 already support a
+strong network-dynamics development.  A title or abstract claiming that a
 general-network maximal canard organizes autonomous biological pulse onset
 requires the interval and basin gates in items 6, 8 and 10; those claims are
 not yet available.
