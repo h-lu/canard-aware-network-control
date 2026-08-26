@@ -1,0 +1,270 @@
+{
+  "certificate": {
+    "claim_status": {
+      "all_equal_width_shards_replayed": false,
+      "both_delay_breakpoint_families_preserved_in_runner": true,
+      "complete_history_route_c_family_ball_validated": false,
+      "exact_equal_width_partition_contract_registered": true,
+      "exact_wide_pulse_interval_registered": true,
+      "finite_section_endpoint_signs_registered_as_nonproof_diagnostic": true,
+      "full_wide_interval_first_J_variation_enclosure_validated": false,
+      "full_wide_interval_second_J_variation_enclosure_validated": false,
+      "full_wide_interval_state_family_enclosure_validated": false,
+      "full_width_directed_prefix_cells_closed": true,
+      "inner_local_stable_graph_validated": false,
+      "left_endpoint_stable_coordinate_positive_validated": false,
+      "one_exact_partition_shard_first_J_variation_majorant_closed": true,
+      "one_exact_partition_shard_second_J_variation_majorant_closed": true,
+      "one_exact_partition_shard_state_tube_closed_through_horizon": true,
+      "rfde_unstable_riesz_covector_validated": false,
+      "right_endpoint_stable_coordinate_negative_validated": false,
+      "route_c_event_time_first_J_variation_validated": false,
+      "route_c_event_time_second_J_variation_validated": false,
+      "route_c_exact_phase_zero_section_source_bound": true,
+      "stable_gap_strictly_monotone_on_wide_interval_validated": false,
+      "two_sided_basin_routing_validated": false,
+      "uniform_route_c_pulse_event_speed_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unique_route_c_pulse_event_validated": false
+    },
+    "directed_full_width_pilot": {
+      "P_to_Y_coordinate_norm_upper": "1.10971679070748192805603269414833162500898746439512605231499009",
+      "closed_cell_count": 730,
+      "completed": false,
+      "failure": {
+        "cell_key": [
+          0,
+          365,
+          1,
+          355
+        ],
+        "left_time": {
+          "exact": "0+(365/24)*sqrt(5)",
+          "index": 365,
+          "lower": "34.0068671578093016328895162119548260806594042190919537232666062",
+          "origin": 0,
+          "upper": "34.0068671578093016328895162119548260806594042190919537233073893"
+        },
+        "reason": "nonfinite_state_endpoint_bound",
+        "right_time": {
+          "exact": "1+(355/24)*sqrt(5)",
+          "index": 355,
+          "lower": "34.0751721671843892593856938499834609825591465692538180048108896",
+          "origin": 1,
+          "upper": "34.0751721671843892593856938499834609825591465692538180048516728"
+        }
+      },
+      "final_time_exact": "24*sqrt(5)",
+      "maximum_first_J_variation_P_norm_upper": "662223.864069742862805447633556382172198252049264806581257776381",
+      "maximum_second_J_variation_P_norm_upper": "590296802092.162929080070286710462402249198875074930094122569112",
+      "maximum_state_P_radius_upper": "49.886352315679819116387060785573693581654477079403113889523753",
+      "minimum_closed_cell_gap_lower": "1.3821933035993966872656080604398651839769001552443766451669611e-08",
+      "pulse_center": {
+        "binary64_decimal_diagnostic": "0.30112499999999998",
+        "denominator": "8000",
+        "numerator": "2409"
+      },
+      "pulse_half_width": {
+        "binary64_decimal_diagnostic": "7.4999999999999993e-05",
+        "denominator": "40000",
+        "numerator": "3"
+      },
+      "pulse_interval_lower": {
+        "binary64_decimal_diagnostic": "0.30104999999999998",
+        "denominator": "20000",
+        "numerator": "6021"
+      },
+      "pulse_interval_upper": {
+        "binary64_decimal_diagnostic": "0.30120000000000002",
+        "denominator": "2500",
+        "numerator": "753"
+      },
+      "remaining_cell_count": 422,
+      "requested_cell_count": 1152,
+      "state_tube_Y_coordinate_error_upper": "55.3597227918589682575973752731348941199875994419510272423788235"
+    },
+    "directed_partition_shard_pilot": {
+      "P_radius_cap": {
+        "binary64_decimal_diagnostic": "0.01",
+        "denominator": "100",
+        "numerator": "1"
+      },
+      "P_radius_cap_met": true,
+      "P_to_Y_coordinate_norm_upper": "1.10971679070748192805603269414833162500898746439512605231499009",
+      "closed_cell_count": 1152,
+      "completed": true,
+      "failure": null,
+      "final_time_exact": "24*sqrt(5)",
+      "maximum_first_J_variation_P_norm_upper": "3843900.69361988211933741450387872142061668656762029967635830712",
+      "maximum_second_J_variation_P_norm_upper": "25457510355636.239977570926106376501917847378011584012352103546",
+      "maximum_state_P_radius_upper": "0.00967763450655713248442689842238359734752220432356698230433256669",
+      "minimum_closed_cell_gap_lower": "6.22825611545693949918435639913196838966743547003402524426687322e-13",
+      "not_a_route_c_history_ball": true,
+      "partition_index_zero_based": 15000,
+      "pulse_center": {
+        "binary64_decimal_diagnostic": "0.30112500250000002",
+        "denominator": "400000000",
+        "numerator": "120450001"
+      },
+      "pulse_half_width": {
+        "binary64_decimal_diagnostic": "2.5000000000000001e-09",
+        "denominator": "400000000",
+        "numerator": "1"
+      },
+      "pulse_interval_lower": {
+        "binary64_decimal_diagnostic": "0.30112499999999998",
+        "denominator": "8000",
+        "numerator": "2409"
+      },
+      "pulse_interval_upper": {
+        "binary64_decimal_diagnostic": "0.301125005",
+        "denominator": "200000000",
+        "numerator": "60225001"
+      },
+      "remaining_cell_count": 0,
+      "requested_cell_count": 1152,
+      "state_tube_Y_coordinate_error_upper": "0.010739433506256566531943575373562617918690983019656125498361151"
+    },
+    "equal_width_shard_contract": {
+      "center_formula": "c_k=6021/20000+(2*k+1)/400000000, k=0,...,29999",
+      "exact_shard_count": 30000,
+      "partition_shards_remaining": 29999,
+      "partition_shards_replayed": 1,
+      "per_shard_acceptance_gate": "completed=true on all 1152 cells, finite first/second J-variation majorants, then independent event/history gates",
+      "pilot_partition_index_zero_based": 15000,
+      "shard_half_width": {
+        "binary64_decimal_diagnostic": "2.5000000000000001e-09",
+        "denominator": "400000000",
+        "numerator": "1"
+      },
+      "shard_width": {
+        "binary64_decimal_diagnostic": "5.0000000000000001e-09",
+        "denominator": "200000000",
+        "numerator": "1"
+      },
+      "state_tube_only_compute_estimate_is_not_a_family_proof": true
+    },
+    "event_and_complete_history_interface": {
+      "complete_history_family_radius": null,
+      "event_time_first_J_variation": null,
+      "event_time_second_J_variation": null,
+      "required_event_alignment": "solve h_C(z(tau(J),J))=0 on each shard and pull the whole history theta->z(tau(J)+theta,J), theta in [-5*sqrt(5),0]",
+      "route_c_event_bracket": null,
+      "unique_event_speed_lower": null
+    },
+    "method_diagnosis": {
+      "recommended_replacement": "cellwise parameter Taylor jets z0,...,z4 with only the highest-order remainder enclosed symmetrically; implicit event jets and a common-event complete-history pullback",
+      "state_sharding_alone_solves_event_or_history_alignment": false,
+      "state_sharding_is_computationally_executable": true,
+      "zero_centered_variation_majorant_is_structurally_usable": false
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "route_c_section_binding": {
+      "declared_section_ball_radius": "0.00999999999999999999999999999999999999999999999998246666",
+      "formula": "h_C(phi)=phi_v(0)-V_true(0)",
+      "physical_orbit_event_speed_lower": "0.246926966042201268440571312807745794383056108957168589",
+      "section_chart_projection_norm_upper": "2",
+      "these_orbit_section_constants_do_not_prove_a_pulse_crossing": true,
+      "uniform_orbit_ball_speed_lower": "0.206753913748020768886579840564112686146218775927720324",
+      "validated_orbit_section_voltage_lower": "0.905383843282120025506287674943450838327407828420353069",
+      "validated_orbit_section_voltage_upper": "0.905403843282120025506287674943450838327407845269557922"
+    },
+    "schema_id": "leaky-pulse-inner-route-c-family-contract-v1",
+    "stable_coordinate_interface": {
+      "definition": "H(J)=ell_u(y_u(J))-h_s(y_s(J))",
+      "finite_section_left_centered_derivative_observed": "-13.669800013463361",
+      "finite_section_left_coordinate_observed": "0.001178021721662874",
+      "finite_section_right_centered_derivative_observed": "-14.152591191031808",
+      "finite_section_right_coordinate_observed": "-0.00090825944406449136",
+      "finite_section_values_used_as_stable_coordinate_proof": false,
+      "left_endpoint_stable_coordinate": null,
+      "required_inputs": [
+        "validated RFDE unstable Riesz covector ell_u",
+        "validated local stable graph h_s and its derivative bounds",
+        "event-aligned complete-history family enclosure"
+      ],
+      "right_endpoint_stable_coordinate": null,
+      "uniform_stable_gap_derivative": null
+    },
+    "theorem_statement": "The unsplit interval J in [0.30105,0.30120] has a directed 730-cell prefix but loses symmetric-tube closure with 422 cells remaining. One exact member of a 30000-shard rational partition closes all 1152 cells, together with finite but unusably large first/second J-variation norm majorants. No Route-C pulse event, complete-history family ball, stable-coordinate sign, onset, or routing statement follows.",
+    "wide_interval": {
+      "center": {
+        "binary64_decimal_diagnostic": "0.30112499999999998",
+        "denominator": "8000",
+        "numerator": "2409"
+      },
+      "half_width": {
+        "binary64_decimal_diagnostic": "7.4999999999999993e-05",
+        "denominator": "40000",
+        "numerator": "3"
+      },
+      "lower": {
+        "binary64_decimal_diagnostic": "0.30104999999999998",
+        "denominator": "20000",
+        "numerator": "6021"
+      },
+      "upper": {
+        "binary64_decimal_diagnostic": "0.30120000000000002",
+        "denominator": "2500",
+        "numerator": "753"
+      }
+    },
+    "zero_width_variation_baseline": {
+      "P_to_Y_coordinate_norm_upper": "1.10971679070748192805603269414833162500898746439512605231499009",
+      "closed_cell_count": 1152,
+      "completed": true,
+      "failure": null,
+      "final_time_exact": "24*sqrt(5)",
+      "interpretation": "shrinking the parameter width to zero does not cure the large zero-centered first/second variation majorants",
+      "maximum_first_J_variation_P_norm_upper": "3816628.99636694066077277710518944120309501658312970132507389493",
+      "maximum_second_J_variation_P_norm_upper": "25099755906645.1941598568370611746626285976527023430408439114934",
+      "maximum_state_P_radius_upper": "4.80080494791187439146265428588627594576411734892807821603677894e-31",
+      "minimum_closed_cell_gap_lower": "3.10892591764754125596452713640319661914734038075409227739025505e-41",
+      "pulse_center": {
+        "binary64_decimal_diagnostic": "0.30112500250000002",
+        "denominator": "400000000",
+        "numerator": "120450001"
+      },
+      "pulse_half_width": {
+        "binary64_decimal_diagnostic": "0",
+        "denominator": "1",
+        "numerator": "0"
+      },
+      "pulse_interval_lower": {
+        "binary64_decimal_diagnostic": "0.30112500250000002",
+        "denominator": "400000000",
+        "numerator": "120450001"
+      },
+      "pulse_interval_upper": {
+        "binary64_decimal_diagnostic": "0.30112500250000002",
+        "denominator": "400000000",
+        "numerator": "120450001"
+      },
+      "remaining_cell_count": 0,
+      "requested_cell_count": 1152,
+      "state_tube_Y_coordinate_error_upper": "5.32753385960936519334677462289142903778207496533269688318153298e-31"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR on the exact Q(sqrt(5)) two-origin grid; degree-24 directed Taylor/Bernstein method of steps at rational pulse centers; symmetric state tubes and first/second J-variation P-norm majorants. The registered finite-section signs remain binary64 diagnostics and are not stable-coordinate evidence.",
+    "certificate_sha256": "698c802a07ea23d61e42f64520075604d17f2df535115bbf0cd6e5dee572169f",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_inner_route_c_family_contract.py",
+    "dependency_source_sha256": {
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_pulse_quiet_capture.py": "a1286c59f736d6036fdea1a4970ce4ac9fbb882aec769de48db1fb9366554a8f",
+      "src/canard_control/leaky_quiet_history_basin.py": "2cc124c69d2257e6223be2ae0c9aa5c30659ed8a271f5a1c6096c24a17fe43be"
+    },
+    "parent_sha256": {
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_pulse_separator_bracket_tradeoff.json": "afc4eaa10e85e0fca9236e019a184f381d41a01213423e38645eadd1720faa8c"
+    },
+    "result": "experiments/results/leaky_pulse_inner_route_c_family_contract.json",
+    "schema_id": "leaky-pulse-inner-route-c-family-contract-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-inner-route-c-family-contract.md": "1889c1ead93d8f68c18b21bad8a128d40f902d4ab7893bf54c6f1357d1c0d577",
+      "experiments/leaky_pulse_inner_route_c_family_contract.py": "6239c7ecc6c792188e4f19ced039655620866d4ed552d09752fed2d7ec75188d",
+      "src/canard_control/leaky_pulse_inner_route_c_family_contract.py": "27bc993b5fcdd8de0aa33427379d8fdfe565047cb394c03b835e64e5902965d7"
+    }
+  }
+}

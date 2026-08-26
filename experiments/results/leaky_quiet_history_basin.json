@@ -1,0 +1,142 @@
+{
+  "certificate": {
+    "current_coefficient_lower": {
+      "decimal": "0.17362092325",
+      "fraction": "694483693/4000000000"
+    },
+    "current_coefficient_upper": {
+      "decimal": "0.17380268811999999",
+      "fraction": "4345067203/25000000000"
+    },
+    "decay_rate": {
+      "decimal": "0.0001",
+      "fraction": "1/10000"
+    },
+    "decay_rate_margin_lower": {
+      "decimal": "0.00016327468435720343",
+      "fraction": "134750597/825300000000"
+    },
+    "delayed_linear_gain_upper": {
+      "decimal": "0.00082511675000000002",
+      "fraction": "3300467/4000000000"
+    },
+    "equilibrium_voltage_lower": {
+      "decimal": "0.90849999999999997",
+      "fraction": "1817/2000"
+    },
+    "equilibrium_voltage_upper": {
+      "decimal": "0.90859999999999996",
+      "fraction": "4543/5000"
+    },
+    "exact_perturbation_identity_proved": true,
+    "explicit_exponential_decay_rate_proved": true,
+    "explicit_history_ellipsoid_forward_invariant_proved": true,
+    "exponential_factor_upper": {
+      "decimal": "1.0011262670504317",
+      "fraction": "8000/7991"
+    },
+    "global_quiet_basin_validated": false,
+    "halanay_current_coefficient_lower": {
+      "decimal": "0.006875",
+      "fraction": "11/1600"
+    },
+    "halanay_eta_lower": {
+      "decimal": "0.0035709979365079365",
+      "fraction": "22497287/6300000000"
+    },
+    "halanay_history_coefficient_upper": {
+      "decimal": "0.0033040020634920635",
+      "fraction": "20815213/6300000000"
+    },
+    "halanay_strict_margin_lower": {
+      "decimal": "0.00026699587301587304",
+      "fraction": "841037/3150000000"
+    },
+    "history_space_separator_validated": false,
+    "initial_history_lyapunov_sublevel": {
+      "decimal": "2.0999999999999999e-05",
+      "fraction": "21/1000000"
+    },
+    "lyapunov_matrix": [
+      [
+        "2823/100",
+        "-1351/50"
+      ],
+      [
+        "-1351/50",
+        "13759/100"
+      ]
+    ],
+    "maximum_delay_upper": {
+      "decimal": "11.25",
+      "fraction": "45/4"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "nonlinear_current_gain_upper": {
+      "decimal": "0.00090920883333333333",
+      "fraction": "5455253/6000000000"
+    },
+    "nonlinear_each_delay_gain_upper": {
+      "decimal": "1.3775e-07",
+      "fraction": "551/4000000000"
+    },
+    "nonlinear_history_gain_proved": true,
+    "nonlinear_total_gain_upper": {
+      "decimal": "0.00090948433333333338",
+      "fraction": "2728453/3000000000"
+    },
+    "p_first_column_norm_upper": {
+      "decimal": "40",
+      "fraction": "40"
+    },
+    "p_lower": {
+      "decimal": "21",
+      "fraction": "21"
+    },
+    "p_minus_lower_identity_determinant": {
+      "decimal": "112.8653",
+      "fraction": "1128653/10000"
+    },
+    "p_upper": {
+      "decimal": "144",
+      "fraction": "144"
+    },
+    "perturbation_equation": "z'=A0*z+(C/2)*e1*(x_tau0+x_tau1)+e1*N; A0=[[A,-1],[1/5,-1/5]]",
+    "physical_pulse_onset_validated": false,
+    "pulse_J_030_enters_quiet_ball_validated": false,
+    "q_lower": {
+      "decimal": "0.98999999999999999",
+      "fraction": "99/100"
+    },
+    "q_minus_lower_identity_determinant_lower": {
+      "decimal": "1.3390216680197562e-05",
+      "fraction": "20922213562808689991/1562500000000000000000000"
+    },
+    "quiet_local_history_basin_validated": true,
+    "rational_lyapunov_matrix_positive_definite_proved": true,
+    "schema_id": "leaky-quiet-history-basin-razumikhin-v1",
+    "state_radius": {
+      "decimal": "0.001",
+      "fraction": "1/1000"
+    },
+    "strict_halanay_margin_proved": true,
+    "uniform_current_dissipation_proved": true,
+    "upper_identity_minus_p_determinant": {
+      "decimal": "12.0053",
+      "fraction": "120053/10000"
+    }
+  },
+  "manifest": {
+    "arithmetic": "exact Python Fraction signs; no floating-point value enters a theorem inequality",
+    "certificate_sha256": "6c825f750f151a51eba3011b117e1614c445707c21e9a95c51674411666cdd85",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_quiet_history_basin.py",
+    "result": "experiments/results/leaky_quiet_history_basin.json",
+    "schema_id": "leaky-quiet-history-basin-razumikhin-v1",
+    "source_sha256": {
+      "docs/leaky-quiet-history-basin.md": "c7e4f2736e210f2443177294043ceba5bf90a1dc288ccdadcb81ae0a89481586",
+      "experiments/leaky_quiet_history_basin.py": "10a0b4ffce17926c04bf62998fb44dea4c99d0780ee7d1e07b87bb004fb1de4b",
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/leaky_quiet_history_basin.py": "2cc124c69d2257e6223be2ae0c9aa5c30659ed8a271f5a1c6096c24a17fe43be"
+    }
+  }
+}

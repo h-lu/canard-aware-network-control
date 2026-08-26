@@ -1,0 +1,241 @@
+{
+  "certificate": {
+    "claim_status": {
+      "all_history_and_delay_seams_retained": true,
+      "asynchronous_network_safety_radius_validated": false,
+      "correlated_residual_formed_before_absolute_value": true,
+      "finite_fourier_row_and_neumann_tail_retained": true,
+      "frequency_amplitude_safety_radius_validated": false,
+      "full_parameter_interval_covered_without_sampling": true,
+      "interval_newton_strict_inclusion_validated": false,
+      "nonzero_route_c_test_component_source_bound": true,
+      "ordinal_third_crossing_validated": false,
+      "oriented_physical_functional_action_excludes_zero_validated": true,
+      "oriented_physical_functional_action_interval_validated": true,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "physical_real_eigencolumn_phase_oriented": true,
+      "quantitative_inner_stable_graph_validated": false,
+      "raw_complex_gauge_quotient_is_real_validated": false,
+      "raw_complex_quotient_not_promoted_to_real": true,
+      "recovery_atom_retained": true,
+      "same_adjoint_row_used_in_numerator_and_denominator": true,
+      "stable_gap_derivative_excludes_zero_validated": false,
+      "stable_gap_derivative_interval_validated": false,
+      "stable_gap_endpoint_signs_validated": false,
+      "stage5b_stage5c_stage5d_stage4d_stage4e_stage3_bytes_source_bound": true,
+      "stage5d_event_translation_retained": true,
+      "stored_grushin_eigencolumn_complex_gauge_acknowledged": true,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unique_stable_sheet_pulse_parameter_Jc_validated": false
+    },
+    "correlated_history_action": {
+      "center_c_star_exact": "-252",
+      "delay_and_history_seams_retained": true,
+      "density_delay_piece_count": 2,
+      "density_dictionary_count": 4,
+      "density_direct_and_omitted_dictionaries_kept_separate": true,
+      "event_translation_retained": true,
+      "exact_section_identities": {
+        "D_JK_v_at_zero": "0",
+        "Y_star_v_at_zero": "0",
+        "identity": "Y_star_v(0)=D_JK_v(0)-c_*q_phys_v(0)=0",
+        "q_phys_v_at_zero": "0",
+        "voltage_current_atom_action": "0"
+      },
+      "finite_parameter_sampling_used": false,
+      "finite_row_retained": true,
+      "guide_action_complex_box": {
+        "imag": {
+          "lower": "-0.00285263866999194029911970805825344944229992503134968180278528723",
+          "upper": "0.00252390360482143586743116307932704661816727410519445411484990686"
+        },
+        "real": {
+          "lower": "-0.000312272250379925471260225797996903429838567445504877348350861909",
+          "upper": "0.000277320775741663532077078142747547333579704094566185792848820633"
+        }
+      },
+      "history_subdivision_count": 512,
+      "history_subdivisions_per_delay_piece": 256,
+      "maximum_correlated_residual_Y_norm_upper": "5.39727039439879415876620097964663012311420075942563703709562492",
+      "maximum_recovery_translation_term_upper": "19.3203432459326161714297605054383327020540234325341491377072906",
+      "maximum_voltage_translation_term_upper": "101.096050349227061281651905275617038642012982611585487711444749",
+      "minimum_event_speed_lower": "0.245463430679048841771164907458994343235254854775497686793945344",
+      "named_error_budget": {
+        "common_measure_difference_components": {
+          "adjoint_density_basis_shift_upper": "7.252389320307969200637482570211622929166713538049478913281141241e-10",
+          "adjoint_fourier_tail_l1_error_upper": "2.022647363513237204252305931525380409262866577854924042040112159e-08",
+          "coverage_statement": "The imported Stage-4E history_measure_difference is the operator-norm difference between the exact complete atom-density measure and this same untrimmed finite-plus-Neumann-tail guide.  It includes finite-row, remaining tail, orbit/root/period covariance, density-basis, convolution and rounding terms.",
+          "density_convolution_rounding_guard_upper": "1.00000000000000000000000000000000000000000000000000000000037054e-08",
+          "finite_adjoint_l1_error_upper": "3.022758060374823555908259394733890044431169705912987311081301631e-07",
+          "finite_row_enclosure_covered": true,
+          "guide_exact_atom_density_difference_covered": true,
+          "neumann_tail_remainder_covered": true,
+          "periodic_orbit_and_advanced_covariance_covered": true
+        },
+        "coverage_ledger": {
+          "r_event": {
+            "joint_envelope": "r_joint_guide",
+            "relation": "nested: Stage-5C graph, speed division and translation"
+          },
+          "r_guide": {
+            "joint_envelope": "r_joint_guide",
+            "relation": "principal directed atom-density action box"
+          },
+          "r_orbit": {
+            "joint_envelope": "r_joint_measure",
+            "relation": "overlapping: orbit/root/period and covariance transfer"
+          },
+          "r_pulse": {
+            "joint_envelope": "r_joint_guide",
+            "relation": "nested: Stage-5B/5D exact pulse and sensitivity boxes"
+          },
+          "r_round": {
+            "joint_envelope": "r_joint_measure",
+            "relation": "overlapping: convolution and directed-rounding guard"
+          },
+          "r_row": {
+            "joint_envelope": "r_joint_measure",
+            "relation": "overlapping: finite Grushin-row enclosure"
+          },
+          "r_seam": {
+            "joint_envelope": "r_joint_guide",
+            "relation": "nested: exact release, delay, event and history cell cover"
+          },
+          "r_tail": {
+            "joint_envelope": "r_joint_measure",
+            "relation": "overlapping: complete Neumann-tail remainder"
+          }
+        },
+        "coverage_ledger_is_nested_or_overlapping_and_not_additive": true,
+        "joint_envelope_upper": {
+          "r_joint_guide": "0.00286967965806128418721686931126331911360264540775002431925895677",
+          "r_joint_measure": "1.8996080448326639079275755032450554830373345564167216107305374e-06"
+        },
+        "joint_sum_order": [
+          "r_joint_guide",
+          "r_joint_measure"
+        ],
+        "sum_identity": "r_A=r_joint_guide+r_joint_measure",
+        "total_numerator_radius_upper": "0.00287157926610611685112479688676656416908568274230644104087042569"
+      },
+      "neumann_tail_residual_history": [
+        4.337055848132226e-20,
+        4.555258721483579e-20,
+        4.557648592290038e-20,
+        4.557713888805039e-20,
+        4.557714754764424e-20,
+        4.557714770362646e-20,
+        4.557714770530103e-20,
+        4.557714770534789e-20,
+        4.557714770534756e-20,
+        4.557714770534758e-20
+      ],
+      "neumann_tail_retained": true,
+      "neumann_tail_step_count": 10,
+      "parameter_subdivision_count": 128,
+      "recovery_atom_retained": true,
+      "residual": "Y_*(J)=D_JK(J)-c_*q_phys",
+      "stage4e_complete_measure_difference_upper": "3.519571757612975063591229300836659318462252337968620799603103986e-07",
+      "voltage_current_atom_exactly_zero_after_section_and_q_section": true
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "oriented_action": {
+      "complex_disk_statement": "gamma*ell(D_JK)/ell(q_tilde) lies in the closed complex disk centered at c_* with the displayed quotient radius",
+      "numerator_residual_modulus_upper": "0.00287157926610611685112479688676656416908568274230644104087042569",
+      "physical_real_interval": {
+        "lower": "-258.746521015804618914787719270270463549410667463231127582770875",
+        "upper": "-245.253478984195381085212280729729536450589332536768872417269908"
+      },
+      "physical_real_interval_excludes_zero": true,
+      "quotient_radius_upper": "6.74652101580461891478771927027046354941066746323112758265872176",
+      "real_intersection_statement": "Reality and simplicity imply the exact disk member is real, so its intersection with R is the displayed interval.",
+      "same_row_denominator_modulus_lower": "0.000425638526787222946434328713168748354690114108470328413910887934"
+    },
+    "physical_phase_orientation": {
+      "diagnostic_only_not_error_evidence": true,
+      "diagnostic_phase_corrected_center_quotient": {
+        "imag": "-5.0093262871087063e-13",
+        "real": "-252.28724906681819"
+      },
+      "diagnostic_raw_center_quotient": {
+        "imag": "250.87769521391061",
+        "real": "26.631524287185137"
+      },
+      "f_phys_definition": "f_phys(y)=gamma*ell(y)/ell(q_tilde)",
+      "gamma_box": {
+        "imag": {
+          "lower": "0.99440764981120315150619461050582030869824653074633282578384759",
+          "upper": "0.99441815208651371046695229188126963254898250221700104757856651"
+        },
+        "real": {
+          "lower": "-0.105563125242352495737340341497088118811265760034975593595962015",
+          "upper": "-0.105557527010779890834362256215690483853982133442784358510501078"
+        }
+      },
+      "gamma_definition": "gamma=chi(q_tilde)/|chi(q_tilde)|",
+      "projection_identity": "q_phys*f_phys(y)=q_tilde*ell(y)/ell(q_tilde)",
+      "q_phys_definition": "q_phys=q_tilde/gamma",
+      "q_phys_reality_reason": "The RFDE is real and the unstable real root is geometrically simple.  q_tilde/chi(q_tilde) is fixed by conjugation, hence real; multiplication by |chi(q_tilde)| gives q_phys.",
+      "raw_complex_quotient_is_real": false,
+      "stored_object": "q_tilde is the exact complex-gauge Stage-3 Grushin eigencolumn",
+      "test_component_box": {
+        "imag": {
+          "lower": "0.0771208484811781401895374962220108816524088979349471628665724936",
+          "upper": "0.0771212374803078627312130969261028123895584940328262746334275064"
+        },
+        "real": {
+          "lower": "-0.00818685663963088335170207232235894956318134063621982932091008198",
+          "upper": "-0.00818646764050116081002647161826701882603174453834071755408991802"
+        }
+      },
+      "test_component_modulus_interval": {
+        "lower": "0.0775541328549665965227502852877885325118554626422865952411019154",
+        "upper": "0.0775545607435946383198576159400430838116016826315152601457651507"
+      },
+      "test_functional": "chi(y)=y_v(-3.1724)"
+    },
+    "schema_id": "leaky-pulse-oriented-adjoint-action-stage5e-v1",
+    "stable_gap_interface": {
+      "interval_newton_image": null,
+      "onset_or_routing_conclusion": null,
+      "oriented_fixed_functional_action_excludes_zero": true,
+      "oriented_fixed_functional_action_interval_available": true,
+      "pulse_parameter_Jc": null,
+      "quantitative_inner_stable_graph_available": false,
+      "stable_gap_derivative_interval": null,
+      "stable_gap_endpoint_intervals": null
+    },
+    "theorem_statement": "For every physical pulse amplitude in the exact Stage-5B interval, the physical-phase normalized fixed Route-C functional applied to the Stage-5D event-aligned derivative lies in the displayed real interval.  This uses the event translation and the common finite-plus-tail adjoint row.  No stable graph, stable-gap, Newton, onset, crossing ordinal, or routing conclusion follows."
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR; exact 128-shard cover of xi in [-1,1]; exact partition of both delay-history pieces into 256 cells each; Stage-5B time-parameter polynomial boxes with the Stage-5D first-variation comparison inserted after differentiation; Stage-5C event polynomial plus its 1e-4 remainder; full event translation; Stage-3 nonzero test component physical phase; and the common Stage-4E finite-row plus Neumann-tail atom-density guide with its certified complete-measure difference; no finite sampling, stable graph, stable gap, Newton, onset, or routing promotion",
+    "certificate_sha256": "7ecc4677b8e500596e931ea3ff79559d8f5c6daa9ccd915649e0f2e0a09e98a8",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_oriented_adjoint_action_stage5e.py",
+    "dependency_source_sha256": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_inner_stable_projection_stage3.py": "7b4aa14c0b039ed74ef85f0f9ba685909a88d2d9426dd210378bef796a179ed1",
+      "src/canard_control/leaky_pulse_event_aligned_derivative_stage5d.py": "ef92aff6afe38d46b8d9697be33fee74dc10e61adfa82df1b1ddb3a6abc1abc6",
+      "src/canard_control/leaky_pulse_parameter_jet_directed_enclosure.py": "aee82f2c265443aafff7eb8ee5d8468b86222df823013f5018967a21a2c928af",
+      "src/canard_control/leaky_pulse_route_c_event_stage5c.py": "383aed72cf1468da501e4ed3f5b8c63df35f6ffba04cd0ab21488233679bd0dc",
+      "src/canard_control/leaky_shared_yqq_deflation_stage4e.py": "36336b9636da1c7e6d9d3cf952155a81c432a05a02e63dfc73657a76ee3356f4"
+    },
+    "parent_sha256": {
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_pulse_event_aligned_derivative_stage5d.json": "e8be485b8b4711a0ae0b1f3ec875f704c509d9ba0abd5b2166a2384567ed654e",
+      "experiments/results/leaky_pulse_parameter_jet_directed_enclosure.json": "71276785fd803b663fc11de9489751ccd53dd8a408323a0bb140d0c9e7b7862b",
+      "experiments/results/leaky_pulse_route_c_event_stage5c.json": "f1f198d68cb736bc9b5a48a0bff3eb5a93d39ee3f0b8f7cb6f7e07779483128d",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568",
+      "experiments/results/leaky_shared_yqq_deflation_stage4e.json": "ccdd6023f911e97785ec6f8be97b84d725d6af9f5051e1da602380d225e47acc"
+    },
+    "result": "experiments/results/leaky_pulse_oriented_adjoint_action_stage5e.json",
+    "schema_id": "leaky-pulse-oriented-adjoint-action-stage5e-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-oriented-adjoint-action-stage5e-contract.md": "7a5d88e53f94d54d08779af1ec833cc8b095a5ddf8d1d68c5f62bb535a3ead89",
+      "docs/leaky-pulse-oriented-adjoint-action-stage5e.md": "c60af68e939fd7c2e539c026ecb8764b22dc2d7e9f0d2968b2af2b5b1791ed87",
+      "experiments/leaky_pulse_oriented_adjoint_action_stage5e.py": "4971c1bb935c3e28c63860dee0bf2074cac1dd03f16710d4d5555e0321f10260",
+      "src/canard_control/leaky_pulse_oriented_adjoint_action_stage5e.py": "cd32e87908c32977d025a1cd92821430a85f87cd2faea7f33e327b9dcf22fcdd",
+      "tests/test_leaky_pulse_oriented_adjoint_action_stage5e.py": "abaaf09697ee9134093cf02d7514478656ded1887df01f351fc576444797ac25"
+    }
+  }
+}

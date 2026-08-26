@@ -1,0 +1,131 @@
+{
+  "certificate": {
+    "branch": "inner_saddle_candidate_route_c",
+    "centered_chart": {
+      "centered_pulse_history": "kappa(J)=K(J)-X_* in Sigma",
+      "derivative_identity": "D_Jkappa(J)=D_JK(J)",
+      "event_history": "K(J) is the Stage-5C selected late-window event-aligned reduced history on the Route-C section",
+      "reference_history": "X_* is the exact validated inner periodic-orbit history at the Route-C phase-zero section",
+      "stable_sheet_gap": "H(J):=f_phys(kappa(J))-psi(P_s kappa(J)); the centered local stable sheet is H=0"
+    },
+    "claim_status": {
+      "asynchronous_network_safety_radius_validated": false,
+      "conditional_gap_derivative_strictly_negative_validated": true,
+      "conditional_graph_slope_gate_with_Lpsi_16_validated": true,
+      "frequency_amplitude_safety_radius_validated": false,
+      "interval_newton_strict_inclusion_validated": false,
+      "ordinal_third_crossing_validated": false,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "physical_phase_preserves_q_norm_validated": true,
+      "pulse_curve_contained_in_stable_graph_chart_validated": false,
+      "quantitative_inner_stable_graph_validated": false,
+      "route_c_q_phys_history_norm_upper_validated": true,
+      "stable_gap_endpoint_signs_validated": false,
+      "stable_projection_pulse_derivative_norm_upper_validated": true,
+      "two_sided_basin_routing_validated": false,
+      "unconditional_stable_gap_derivative_excludes_zero_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unique_stable_sheet_pulse_parameter_Jc_validated": false
+    },
+    "conditional_stable_gap_slope": {
+      "conditional_gap_derivative_interval": {
+        "lower": "-494.38777064344581684429268439849118579779001016259761314597835",
+        "upper": "-9.61222935655418315570731560150881420220998983740238685418223374"
+      },
+      "conditional_implication": "if every open antecedent holds for the selected Stage-5C event, then H'(J)<0 throughout the full physical pulse interval",
+      "conditional_negative_margin_lower": "9.61222935655418315570731560150881420220998983740238685418223374",
+      "derivative_identity": "H'(J)=f_phys(D_Jkappa)-Dpsi(P_s kappa)[P_sD_Jkappa]=f_phys(D_JK)-Dpsi(P_s kappa)[P_sD_JK]",
+      "graph_correction_norm_upper": "235.641249627641197929504965128220722248379342699366485563125908",
+      "maximum_admissible_graph_derivative_norm_lower": "16.6526687069767872491344045016683247639273187106538708573647017",
+      "open_antecedents": [
+        "a quantitative centered C1 stable graph psi exists in the identical Route-C chart and Grushin normalization",
+        "the ambient chart contains kappa(I_J) and the domain of psi contains P_s kappa(I_J)",
+        "sup_{J in I_J} ||Dpsi(P_s kappa(J))||, in the registered operator norm, is at most 16"
+      ],
+      "selected_graph_derivative_norm_upper": "16",
+      "stable_sheet_chart": "H(J):=f_phys(kappa(J))-psi(P_s kappa(J)); the centered local stable sheet is H=0",
+      "theorem_status": "PROVED conditional implication; a quantitative centered graph in this registered chart/normalization, chart/domain containment and its derivative bound remain OPEN"
+    },
+    "coordinate_compatibility": {
+      "forbidden_transfer": "the Lpsi=16 gate cannot be imported from a finite left row, a different scaling of q, or a different history norm",
+      "future_stage4_binding": "a future Stage-4 graph certificate must byte-bind this Grushin normalization, Sigma, P_s and the continuous Y norm",
+      "graph_derivative_norm": "||Dpsi|| is the operator norm from (P_s Sigma, inherited Y max norm) to the scalar coordinate defined by this same f_phys",
+      "normalization": "f_phys(q_phys)=1 exactly",
+      "pair": "q_phys and f_phys are the same Stage-3/4D Grushin right/left pair with the Stage-5E physical phase orientation",
+      "phase_norm_invariance": "q_phys=q_tilde/gamma and |gamma|=1, so the physical phase rotation does not change the exact Y norm",
+      "projection": "P_s=I-q_phys f_phys on Sigma"
+    },
+    "history_space": "Y=C([-tau_max,0],R) x R with ||(phi,w)||_Y=max(||phi||_infinity,|w|)",
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parameter_scope": {
+      "center_J0_exact": "2409/8000",
+      "half_width_h_exact": "3/40000",
+      "interval_exact": "I_J=[6021/20000,753/2500]",
+      "normalized_parameter": "J=J0+h*xi with xi in [-1,1]",
+      "parent_chain": "the interval is inherited from the pinned Stage-5B->Stage-5C->Stage-5D->Stage-5E chain"
+    },
+    "parent_action": {
+      "action_lower": "-258.746521015804618914787719270270463549410667463231127582770875",
+      "action_radius_upper": "6.74652101580461891478771927027046354941066746323112758265872176",
+      "action_upper": "-245.253478984195381085212280729729536450589332536768872417269908",
+      "center_c_star": "-252",
+      "correlated_residual_Y_norm_upper": "5.39727039439879415876620097964663012311420075942563703709562492"
+    },
+    "projection_identity": "P_s D_Jkappa=P_sD_JK=Y_*+q_phys(c_*-f_phys(D_JK)), where P_s=I-q_phys f_phys on Sigma, D_Jkappa=D_JK, and Y_*=D_JK-c_*q_phys",
+    "q_phys_norm_enclosure": {
+      "additional_transcription_guard_upper": "9.99999999999999979886647629255615367252843506129522666015253543e-13",
+      "maximum_section_guide_wiener_upper": "1.38298040920189145714386502363387765260102557004375432630050963",
+      "norm_transfer_reason": "unit-modulus phase rotation preserves the exact pointwise modulus; the common section-column error and an additional transcription guard are added before the norm bound",
+      "phase_rotation": "q_phys=q_tilde/gamma with |gamma|=1",
+      "positive_phase_wiener_guard_retained": true,
+      "q_phys_history_norm_upper": "1.38298060370245631841470282396581026559885598345994672569132122",
+      "recovery_section_guide_wiener_upper": "0.517259064904607257427559143320394872096900221871823688930646296",
+      "section_column_error_upper": "1.9449956486127083780035204596536857479804893955588340759281142e-07",
+      "voltage_section_guide_wiener_upper": "1.38298040920189145714386502363387765260102557004375432630050963"
+    },
+    "schema_id": "leaky-pulse-stable-gap-slope-bridge-stage5f-v2",
+    "section_tangent_space": "Sigma={y in Y:y_v(0)=0}, equipped with the inherited Y max norm; q_phys, D_JK and Y_* all belong to Sigma",
+    "selected_event_scope": {
+      "event": "the unique Route-C crossing in the late time window selected and validated by Stage 5C",
+      "finite_third_return_pilot_role": "the binary64 180-step third-return coordinate and its derivative use an unvalidated finite left row and are not evidence for this gate",
+      "local_graph_relation": "the event may be evaluated in the inner local Poincare graph only after kappa is proved to lie in the ambient chart and P_s kappa is proved to lie in the domain of psi",
+      "ordinal_third_crossing_validated": false
+    },
+    "stable_projection_derivative": {
+      "action_deviation_from_c_star_upper": "6.74652101580461891478771927027046354941066746323112758265872176",
+      "correlated_residual_Y_norm_upper": "5.39727039439879415876620097964663012311420075942563703709562492",
+      "formula": "||P_sD_Jkappa||_Y=||P_sD_JK||_Y <= ||Y_*||_Y + ||q_phys||_Y |c_*-f_phys(D_JK)|",
+      "q_phys_history_norm_upper": "1.38298060370245631841470282396581026559885598345994672569132122",
+      "stable_projection_pulse_derivative_norm_upper": "14.7275781017275748705940603205137951405237089187104053476902714"
+    },
+    "theorem_statement": "For the selected Stage-5C late-window Route-C event and the identical Stage-3/4D/5E Grushin pair on Sigma, the displayed source-bound norm implies that if the ambient chart contains kappa(I_J), the centered C1 stable graph is defined on P_s kappa(I_J), and sup||Dpsi||<=16, then H'(J)<0 on I_J.  A quantitative centered graph in this registered chart/normalization, chart/domain containment, event ordinal, endpoint signs, Newton root, onset and routing remain open."
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR replay of the source-bound Route-C section eigencolumn Wiener majorant, followed by outward interval evaluation of the exact rank-one projection identity and stable-gap slope gate",
+    "certificate_sha256": "e38f001e372372ef6186f16339d72c32302ad868441ef7eafbd0f533eb7c793b",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_pulse_stable_gap_slope_bridge_stage5f.py",
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "numpy": "2.5.2",
+    "omp_num_threads": "1",
+    "openblas_num_threads": "8",
+    "parent_sha256": {
+      "experiments/results/leaky_pulse_oriented_adjoint_action_stage5e.json": "187b8c6d614aa87c68442acb9f5d472233907c31f0df8a1c8d29dfc6941743be",
+      "experiments/results/leaky_shared_yqq_deflation_stage4e.json": "ccdd6023f911e97785ec6f8be97b84d725d6af9f5051e1da602380d225e47acc"
+    },
+    "precision_bits": 192,
+    "python": "3.14.4",
+    "result": "experiments/results/leaky_pulse_stable_gap_slope_bridge_stage5f.json",
+    "schema_id": "leaky-pulse-stable-gap-slope-bridge-stage5f-v2",
+    "scipy": "1.18.0",
+    "source_sha256": {
+      "docs/leaky-pulse-stable-gap-slope-bridge-stage5f.md": "3d2e9eeb9f6323d495b93458887a7fbbeb5837efb5fa19aa9e3588451d46f6af",
+      "experiments/leaky_pulse_stable_gap_slope_bridge_stage5f.py": "92c4ed54a9935a23b6de13ae88936c58677dc5155e2838f0ee9d0e6dac773ce8",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_pulse_oriented_adjoint_action_stage5e.py": "cd32e87908c32977d025a1cd92821430a85f87cd2faea7f33e327b9dcf22fcdd",
+      "src/canard_control/leaky_pulse_stable_gap_slope_bridge_stage5f.py": "fd350d76eea11d17243b0c4fcd9f39d8e5241b8c69be9aa0c137499a745ef853",
+      "src/canard_control/leaky_shared_yqq_deflation_stage4e.py": "36336b9636da1c7e6d9d3cf952155a81c432a05a02e63dfc73657a76ee3356f4",
+      "tests/test_leaky_pulse_stable_gap_slope_bridge_stage5f.py": "ccbde68fa890b777f7877544af3d5e9ca33fe1f5021acc3afb2f8abf7f943731"
+    }
+  }
+}

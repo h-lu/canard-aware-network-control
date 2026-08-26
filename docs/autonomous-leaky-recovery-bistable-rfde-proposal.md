@@ -1,9 +1,14 @@
 # An autonomous leaky-recovery RFDE program for physical pulse onset
 
-Status: **the quiet equilibrium, two distinct phase-fixed periodic RFDE
-orbits and their bordered inverses, and the oriented pulse-to-history curve
-are proved.  The Floquet indices, stable separator, physical-pulse onset
-surface, and three-output inverse remain open.**  This note originated as a
+Status: **the quiet equilibrium, two distinct periodic RFDE branches on one
+parameter box, their bordered inverses and simple extrema, the oriented
+pulse-to-history curve, one strict quiet-side complete-history capture, the
+center-inner one-unstable count and qualitative codimension-one stable
+manifold, the directed two-output response, and the arbitrary-finite-network
+transverse/collective estimates are proved.  The outer and common-box Floquet
+counts, quantitative pulse separator, outer-side capture, physical-pulse
+onset surface, three-output inverse, and same-model canard-root comparison
+remain open.**  This note originated as a
 replacement proposal for the reference slice whose synchronous rest state was
 proved unstable.  Its older binary64 diagnostics are retained below with
 their original claim boundary; the later directed promotions are linked
@@ -453,17 +458,17 @@ with nonnegative matrices and Dobrushin gap
 \]
 
 The synchronous restriction of (5.1) is exactly the scalar model (1.1).
-Consequently, if the scalar rest and two cycles are validated, they lift as
-synchronous network objects; the physical pulse lifts when the same stimulus
-is applied at every node.  There is also a candidate transverse estimate.  If
-an enclosed synchronous orbit satisfies
+Consequently the validated scalar rest and two cycles lift as synchronous
+network objects; the physical pulse lifts when the same stimulus is applied
+at every node.  The orbit sources and a directed tangent interpolation prove
+that the quiet state and both exact cycles satisfy
 
 \[
  |V(t)-1|\le\frac52,
 \tag{5.5}
 \]
 
-then
+It follows that
 
 \[
  \beta_d
@@ -505,15 +510,61 @@ where
 \tag{5.10}
 \]
 
-Conditional on both a rigorous matrix-measure derivation of (5.9) and a
-directed replacement of (5.5), Halanay gives dimension-independent
-transverse exponential decay.  The resulting target indices for every fixed
-admitted finite network are zero unstable directions at \(E_q\) and
-\(\Gamma_p\), and one collective unstable direction at \(\Gamma_u\).
+The complex-diameter Dobrushin calculation and directed constants now prove
+(5.9) and the stronger strict rate inequality
 
-This does not yet prove a dimension-uniform basin-tube radius.  That requires
-uniform nonlinear stable-manifold and isolating-block estimates, not only
-the linear Halanay margin.
+\[
+ \alpha-\frac1{10}-\beta_de^{\tau_1/10}>0.00766645.     \tag{5.11}
+\]
+
+Therefore every transverse history decays at rate \(1/10\), uniformly in
+network size and admitted topology.  A forward zero-history pullback for the
+forced equation additionally constructs the unique bounded complete
+transverse solution and gives
+
+\[
+ \|G_{\perp,N}\|\le10.                                  \tag{5.12}
+\]
+
+The same one-sided cubic inequalities also apply to node extrema of the
+nonlinear system.  For every real solution whose retained voltages remain in
+\(|v_i-1|\le5/2\),
+
+\[
+ M(t)\le M_0e^{-(t-t_0)/10},
+ \qquad M=\max\{\operatorname{osc}v,3\operatorname{osc}w\}. \tag{5.13}
+\]
+
+Moreover, with \(\bar v=\pi^Tv\) and \(\bar w=\pi^Tw\), the mean equation is
+exactly the scalar leaky RFDE plus one voltage defect.  Weighted first-order
+Taylor cancellation gives, with
+\(\mathcal H_M(t)=\sup_{t-r\le s\le t}M(s)\),
+
+\[
+\begin{aligned}
+ |R_{\rm coll}(t)|\le{}&\frac{1403}{400}M(t)^2
+  +\frac3{800}\{M(t-\tau_0)^2+M(t-\tau_1)^2\}\\
+ \le{}&\frac{703}{200}\mathcal H_M(t)^2,\\
+ \int_{t_0}^{\infty}|R_{\rm coll}(t)|\,dt
+ \le{}&\left(\frac{703}{40}+\frac{27\sqrt5}{800}\right)M_0^2
+ \le\frac{56483}{3200}M_0^2.                          \tag{5.14}
+\end{aligned}
+\]
+
+Equations (5.13)--(5.14) are uniform in finite network size and admitted
+topology, but conditional on strip residence.  They do not themselves prove
+an invariant strip, scalar routing tube, or asynchronous pulse threshold.
+The delayed terms in (5.14) cannot be replaced by the current \(M(t)\);
+\(27\sqrt5/800\) is their exact initial-history residence correction.
+
+For the canonical synchronized Lin realization, the full operator is the
+direct sum of the scalar collective block and this invertible transverse
+block.  Hence any separately proved scalar simple canard root transfers with
+the same Fredholm index, kernel and cokernel dimensions, root, slope, and
+orientation to every network in (5.3)--(5.4).  The scalar leaky canard root
+has not yet been proved.  Nor does (5.12) give the still-open scalar Floquet
+counts; equations (5.13)--(5.14) still require a strip-invariant scalar tube
+before they give a dimension-uniform asynchronous basin radius.
 
 ## 6. Canard compatibility of the leaky slice
 
@@ -613,35 +664,47 @@ The work should be split into the following GitHub issues.
 
 1. **Leaky equilibrium certificate -- complete.**  Preserve the exact
    rational inequalities (2.9)--(2.11) and add hostile tests for every sign.
-2. **[Two directed periodic BVPs](https://github.com/h-lu/canard-aware-network-control/issues/20) -- center points complete.**
-   The source-bound 129-node inner and 257-node outer radii theorems validate
-   distinct center orbits and bordered inverses.  Continue both on a common
-   \((a,\kappa_3)\) box.  Acceptance for this remaining box gate requires two
-   uniform radii inequalities, disjoint orbit tubes, and directed simple
-   extrema.
+2. **[Two directed periodic BVPs](https://github.com/h-lu/canard-aware-network-control/issues/20) -- common-box orbit/extrema gate complete.**
+   The source-bound 129-node inner and 257-node outer radii theorems now
+   continue to the common box
+   \(|a-1/4|,|\kappa_3-1/200|\le10^{-10}\), with uniformly invertible
+   bordered derivatives, disjoint orbit tubes, and one strict maximum and
+   minimum on each branch.
 3. **[Two Floquet index counts](https://github.com/h-lu/canard-aware-network-control/issues/20).**
-   Prove zero nontranslation unstable
-   multipliers for \(\Gamma_p\) and exactly one for \(\Gamma_u\), including
-   simplicity of the neutral multiplier and analytic-to-monodromy
-   multiplicity transfer.
+   The center-inner count is complete: the closed principal right half-strip
+   contains the simple translation value and exactly one simple positive
+   nontranslation value, with zero complementary keyhole count.  Hence
+   \(\Gamma_u\) has exactly one unstable multiplier at the center.  Classical
+   RFDE theory and exact reduced-history factorization then give a qualitative
+   \(C^1\), codimension-one stable manifold in full and reduced history.
+   The center-outer zero-index count and both common-box continuations remain
+   open; the outer tree has a resumable running checkpoint.
 4. **[Physical-pulse separator](https://github.com/h-lu/canard-aware-network-control/issues/21).**
-   In
-   \(C([-\tau _1,0],\mathbb R^2)\), construct the history-space Conley
-   block and local pulse-history tube of hypothesis 3, enclose the
-   terminal-history map \(K_\xi(J)\), exclude other complete invariant sets
-   in that same block, prove endpoint routing for \(J=0.30,0.32\), and
-   validate one transverse adjoint pairing at the crossing.  Acceptance is
-   a unique local \(C^1\) \(J_c(\xi)\), not merely two long integrations.
+   The future now factors exactly through voltage history plus current
+   recovery, and the full stable set is the inverse image of its reduced
+   counterpart.  A qualitative codimension-one stable manifold, a large
+   Razumikhin quiet basin, and the entire retained history generated by
+   \(J=0.30\) are certified.  Quantify the reduced Lyapunov--Perron stable
+   graph, enclose the entrance map, prove one unique transverse intersection,
+   attach its negative exit to the quiet basin and its positive exit to an
+   explicit outer attracting tube.  Acceptance is a unique local \(C^1\)
+   \(J_c(\xi)\), not merely endpoint integrations.
 5. **[Frequency--amplitude target ball](https://github.com/h-lu/canard-aware-network-control/issues/22).**
-   Enclose the matrix in (4.7), prove
-   its determinant stays away from zero, transfer squared range to
-   unsquared amplitude, and give a nonzero three-dimensional image radius
-   for (4.5).
-6. **[Dobrushin lift](https://github.com/h-lu/canard-aware-network-control/issues/22).**
-   Validate (5.5), formalize (5.9), and prove the two
-   attractors and one separator index for every fixed finite topology with
-   \(\gamma\ge1/2\).  Treat a dimension-uniform nonlinear basin radius as a
-   separate stronger gate.
+   The directed D4 certificate closes the two-output block on the common box:
+   both determinant signs are fixed, and the outer branch has inverse
+   Lipschitz constant below \(22.044336699647401\) and target radius at least
+   \(4.5363124943378087\times10^{-12}\).  After \(J_c\) exists, bound
+   \(D_\xi J_c\) and give a nonzero three-dimensional image radius for (4.5).
+6. **[Dobrushin lift](https://github.com/h-lu/canard-aware-network-control/issues/22) -- transverse linear and complete-line gates complete.**
+   Equations (5.5), (5.9), (5.11), and (5.12) are proved for every finite
+   topology with \(\gamma\ge1/2\).  The two attractor and one separator
+   indices reduce exactly to the scalar Floquet counts.  Nonlinear node
+   diameter decays at rate \(1/10\) while the solution stays in the voltage
+   strip.  The network mean is the scalar RFDE plus a quadratic forcing with
+   \(|R_{\rm coll}(t)|\le(703/200)\mathcal H_M(t)^2\) and accumulated
+   size at most
+   \((703/40+27\sqrt5/800)M_0^2\le(56483/3200)M_0^2\).  A strip-invariant scalar routing tube and a
+   dimension-uniform asynchronous threshold radius remain stronger gates.
 7. **[Leaky canard root and onset comparison](https://github.com/h-lu/canard-aware-network-control/issues/18).**
    First close the target graph in
    [#19](https://github.com/h-lu/canard-aware-network-control/issues/19)
@@ -658,21 +721,27 @@ The work should be split into the following GitHub issues.
 
 **Proved now:** the unique synchronous equilibrium and its delay-independent
 local exponential stability at (1.2); distinct inner and outer phase-fixed
-periodic RFDE orbits and their bordered inverses at the center; and the
-smooth, injective, positively oriented physical pulse-to-history curve.
+periodic RFDE branches, bordered inverses, and simple extrema on one common
+parameter box; the complete center-inner count with exactly one
+nontranslation unstable multiplier; the resulting qualitative \(C^1\),
+codimension-one stable manifold in full and reduced history; the directed D4
+frequency--amplitude inverse; the smooth, injective, positively oriented
+physical pulse-to-history curve; an explicit large quiet basin;
+complete-history capture for \(J=0.30\); exact reduced-history factorization;
+dimension-uniform transverse decay/complete-line inverse and stripwise
+nonlinear synchronization; and the uniform quadratic collective-defect
+bounds for every admitted finite network.
 
 **Numerically supported:** the interpretation of the outer orbit as
-attracting and the inner orbit as having one unstable multiplier, a
-nondegenerate finite-section separator target near
-\(J=0.301135337086902\), the routed physical-pulse bracket
-\([0.30,0.32]\), and a nonsingular \((a,\kappa_3)\)-to-
-\((F,A_p)\) response.
+attracting, a nondegenerate finite-section separator target near
+\(J=0.301135337086902\), and the outer-side behavior observed near
+\(J=0.32\).  These diagnostics are not an outer index or routed threshold.
 
 **Conditional theorem:** autonomous two-basin onset and the three-output
 local diffeomorphism, assuming the five validation blocks of Section 4.
 
-**Open:** the common orbit/extrema box, directed Floquet index proofs, a unique
-basin separator, physical pulse-map transversality, a nonzero validated
-output-ball radius, the full finite-network basin lift, the fixed-
-\(\varepsilon\) leaky canard root, and its identification with physical
-onset.
+**Open:** the outer and common-box Floquet counts, a quantitative stable
+graph and unique basin separator, physical pulse-map transversality, an outer
+attracting tube and outer-side capture, \(D_\xi J_c\) and the three-output
+target ball, a strip-invariant asynchronous network routing tube, the fixed-
+\(\varepsilon\) leaky canard root, and its identification with physical onset.

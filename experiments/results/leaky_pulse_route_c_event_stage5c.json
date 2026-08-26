@@ -1,0 +1,214 @@
+{
+  "certificate": {
+    "center_event": {
+      "J0_exact": "2409/8000",
+      "event_speed_at_center_bracket": {
+        "lower": "0.246792344137889366684582182479016520772068532247649639642751782",
+        "upper": "0.24683271978617769130469159847231533042664187658181381975770029"
+      },
+      "lower_gap": {
+        "lower": "-2.00000000001003405939528315301495965985347097699987451037356766e-05",
+        "upper": "-9.99999999999999979097786724034603561841116533938647568793857486e-17"
+      },
+      "physical_time_bracket": {
+        "lower": "51.7983061011021056487324056270695261876093682223844078407490595",
+        "upper": "51.79838713426454076564360012683512007271990052069555354887611"
+      },
+      "requested_endpoint_gap_margin_exact": "1/10000000000000000",
+      "scaled_time_bracket": {
+        "lower": "0.841726989272738361708065288098877087500706857564662072958559944",
+        "upper": "0.844985980848832056376162378805810455126093177340155735228532304"
+      },
+      "upper_gap": {
+        "lower": "1.00000000000000000000000000000000000000000072573874974904699002e-16",
+        "upper": "2.00000000001003405939528315322398179261312494138146335229156868e-05"
+      }
+    },
+    "claim_status": {
+      "center_implicit_event_time_jet_through_order_four_validated": true,
+      "center_parameter_event_bracket_validated": true,
+      "common_event_complete_history_jet_through_order_four_validated": false,
+      "common_event_complete_history_pullback_defined_in_Y": true,
+      "common_event_complete_history_tube_validated": true,
+      "declared_event_proved_to_be_the_third_post_release_crossing": false,
+      "inner_local_stable_graph_validated": false,
+      "interval_newton_onset_validated": false,
+      "one_and_only_one_route_c_event_in_declared_bracket_for_every_J_validated": true,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "route_c_exact_phase_zero_level_source_bound": true,
+      "stable_coordinate_endpoint_signs_validated": false,
+      "stable_gap_derivative_excludes_zero_validated": false,
+      "stable_sheet_inputs_kept_separate_from_event_certificate": true,
+      "stage5b_correlated_fixed_time_family_reused_without_state_sharding": true,
+      "two_sided_basin_routing_validated": false,
+      "uniform_J_derivative_tube_for_event_aligned_complete_history_validated": false,
+      "uniform_fourth_order_event_time_graph_remainder_validated": true,
+      "uniform_positive_event_speed_on_whole_event_bracket_validated": true,
+      "unique_physical_pulse_onset_validated": false,
+      "wide_parameter_event_bracket_endpoint_signs_validated": true
+    },
+    "common_event_complete_history": {
+      "Y_max_radius_upper": "0.00819993124842261744392761744249492657918561955934732431617329805",
+      "continuous_reference_family": "B_c(xi)=(theta->sum_{k=0}^4 b_{k,v}(T0+theta)xi^k, sum_{k=0}^4 b_{k,w}(T0)xi^k), where the exact coefficient solutions b_k are those enclosed by Stage-5B",
+      "exact_definition": "Y(xi)=(theta->v(T(xi)+theta,J0+h*xi), w(T(xi),J0+h*xi))",
+      "history_speed_cell_count": 243,
+      "inclusion": "||Y(xi)-B_c(xi)||_Y <= max(F_v*d_T+E_R5,v, F_w*d_T+E_R5,w), uniformly for xi in [-1,1]",
+      "maximum_recovery_speed_upper": "0.0543024484344460840742602134576523612184785343893673506266924045",
+      "maximum_voltage_speed_upper": "0.279199972359585210755085983706906600304258513452988752328974292",
+      "phase_space": "Y=C([-5*sqrt(5),0],R)xR",
+      "recovery_current_radius_upper": "0.00159483039829964694855585646620641308925217853730936975047300674",
+      "regularity_scope": "This is a continuous complete-history tube.  A uniform J-derivative tube and a fourth-order Y-valued jet are not claimed, because the Stage-5B state remainder alone does not bound its J derivative and propagated smoothness fronts must be handled cellwise.",
+      "voltage_history_radius_upper": "0.00819993124842261744392761744249492657918561955934732431617329805"
+    },
+    "implicit_event_time_jet": {
+      "normalization": "xi=(J-J0)/h and T(xi)=T0+sum_{k=1}^4 a_k xi^k+R_T(xi)",
+      "recurrence": "At each order m, compose the validated mixed factorial time/parameter series for g; isolate g_t*a_m and divide the remaining coefficient by the positive interval g_t.",
+      "rows": [
+        {
+          "conversion": "tau_1=1*a_1/h^1",
+          "order": 1,
+          "physical_J_derivative_tau_k": {
+            "lower": "387.584835734496653508879087698044471285086226706595666254544293",
+            "upper": "387.653489159341229764915120557405206426072737607643636791029714"
+          },
+          "scaled_xi_power_coefficient": {
+            "lower": "0.0290688626800872490131659315773533353463814670029946749690999982",
+            "upper": "0.0290740116869505922323686340418053904819554553205732727593187135"
+          }
+        },
+        {
+          "conversion": "tau_2=2*a_2/h^2",
+          "order": 2,
+          "physical_J_derivative_tau_k": {
+            "lower": "69631.3547663926403010766030328558074302544317664796505154855689",
+            "upper": "69733.5353925783834300525360211002057300702463057651659487642892"
+          },
+          "scaled_xi_power_coefficient": {
+            "lower": "0.000195838185280479300846777946029906958397590589343224017074962339",
+            "upper": "0.000196125568291626703397022757559344328615822567734964529230820489"
+          }
+        },
+        {
+          "conversion": "tau_3=6*a_3/h^3",
+          "order": 3,
+          "physical_J_derivative_tau_k": {
+            "lower": "27318906.5629194285232808048890727902383215201867099792742986518",
+            "upper": "27570259.8043324596044719420706905507781202199317386134309888857"
+          },
+          "scaled_xi_power_coefficient": {
+            "lower": "1.92086061770527231804318159376293056363198188812804541772558071e-06",
+            "upper": "1.93853389249212606593943342684542935158657796395037125686570097e-06"
+          }
+        },
+        {
+          "conversion": "tau_4=24*a_4/h^4",
+          "order": 4,
+          "physical_J_derivative_tau_k": {
+            "lower": "16759561970.0020147104359254903637221954354253507686009874590249",
+            "upper": "17435519645.7565733099681052643452209675522923058287190174002013"
+          },
+          "scaled_xi_power_coefficient": {
+            "lower": "2.2095125644045624862391112707022485316247875218298448567469937e-08",
+            "upper": "2.29862807829798573910712325262363752990191353641296588608085994e-08"
+          }
+        }
+      ]
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "parameter_interval_exact": "[6021/20000,753/2500]",
+    "route_c_section": {
+      "formula": "h_C(phi)=phi_v(0)-V_true(0)",
+      "phase_zero_voltage_level": {
+        "lower": "0.905383843282120025506287674943450838327407828420353068999752401",
+        "upper": "0.905403843282120025506287674943450838327407845269557922000191891"
+      }
+    },
+    "schema_id": "leaky-pulse-route-c-event-stage5c-v1",
+    "stable_sheet_interface": {
+      "event_output_supplied_to_next_stage": "a unique transverse event, T0 and tau_1,...,tau_4 intervals, a uniform event-time graph tube, and a continuous Y-history tube",
+      "interval_newton_image": null,
+      "quantitative_inner_stable_graph_available": false,
+      "stable_gap_derivative_interval": null,
+      "stable_gap_endpoint_intervals": null,
+      "stage4d_continuous_route_c_measure_available": true,
+      "stage4d_physical_time_correlated_Yqq_action_available": false
+    },
+    "theorem_statement": "For every physical pulse amplitude in the exact Stage-5B wide interval, the pulse trajectory has exactly one positive crossing of the exact inner-orbit phase-zero voltage section inside the declared late event bracket.  Its centre-parameter event time has the displayed four implicit derivatives, and the whole event graph is enclosed by the displayed fourth-order polynomial plus the proved uniform remainder.  Pulling the voltage history and current recovery to that graph gives the displayed continuous Y-tube.  No stable-sheet intersection, onset root, side routing, or capture conclusion follows from this event certificate.",
+    "uniform_event_bracket": {
+      "left_gap_for_all_J": {
+        "lower": "-0.0293862474991229450713761266604358851850579056270941469419486473",
+        "upper": "-0.0148360914962840529698642522566569182185878967634654484923338704"
+      },
+      "left_time": {
+        "lower": "51.7090719796826367294621410894107629445642995660165323737213051",
+        "upper": "51.7090719796826367294621410894107629445642995660165323737824798"
+      },
+      "left_time_exact": "555*sqrt(5)/24",
+      "ordinal_scope": "No count of earlier crossings is made, so the word third is not part of the proved conclusion.",
+      "right_gap_for_all_J": {
+        "lower": "0.0106255210740213523831833968690594307515352725924634472214698668",
+        "upper": "0.0248011396949042940152554657452750817583270450567935136348565719"
+      },
+      "right_time": {
+        "lower": "51.8705464881202155933087009636365343562740676811622102271295126",
+        "upper": "51.8705464881202155933087009636365343562740676811622102271804916"
+      },
+      "right_time_exact": "1+546*sqrt(5)/24",
+      "uniqueness_statement": "For every J in the declared interval, the exact pulse solution has one and only one positive Route-C crossing in this bracket.",
+      "validated_cell_count": 3,
+      "voltage_event_speed_on_whole_bracket": {
+        "lower": "0.213351901873463286891339163985473697827026675282880628193321097",
+        "upper": "0.279199972359585210755085983706906600304258513452988752328974292"
+      }
+    },
+    "uniform_event_time_model": {
+      "event_time_remainder_upper": "1/10000",
+      "maximum_time_displacement_from_center_upper": "0.0293693712982632858368223012000569093670630846537543985597787854",
+      "negative_graph_accepted_shard_count": 72,
+      "negative_graph_gap": {
+        "lower": "-4.8748399947269633279958400407614629835333366886392650363634689e-05",
+        "upper": "-6.44363825278577887588929175436503263858723106523283498864681839e-07"
+      },
+      "negative_graph_maximum_refinement_depth": 4,
+      "negative_graph_time_range": {
+        "lower": "51.76936925522003845438090662991820070534344531531031506721273",
+        "upper": "51.8275159889815864930248251781523800395316974561937350934186803"
+      },
+      "parameter_subdivision_count": 64,
+      "positive_graph_accepted_shard_count": 72,
+      "positive_graph_gap": {
+        "lower": "6.43422637905307538674418478492755280610271223478691348985906017e-07",
+        "upper": "4.87443706955853960297998764918226002557117636259335954407683208e-05"
+      },
+      "positive_graph_maximum_refinement_depth": 4,
+      "positive_graph_time_range": {
+        "lower": "51.769569255220038454380906629918200705343445315310315067204035",
+        "upper": "51.8277159889815864930248251781523800395316974561937350934099854"
+      },
+      "proof": "The exact gap is negative on T_hat(xi)-10^-4 and positive on T_hat(xi)+10^-4 on every Bernstein xi shard; the uniform positive speed traps the unique event between these graphs."
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR reuse of the source-bound Stage-5B 1152-cell correlated parameter enclosure; exact Route-C phase-zero voltage-level binding; cellwise Bernstein endpoint and vector-field bounds; recursive mixed time/parameter differential algebra at the centre event; and a subdivided Bernstein proof of a fourth-order event-time graph tube",
+    "certificate_sha256": "6fc2db81bfed3864aabafa0f46b76d3ca67db12ee54e483f0472c4923b66aa5e",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_route_c_event_stage5c.py",
+    "dependency_source_sha256": {
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_pulse_parameter_jet_directed_enclosure.py": "aee82f2c265443aafff7eb8ee5d8468b86222df823013f5018967a21a2c928af",
+      "src/canard_control/leaky_pulse_quiet_capture.py": "a1286c59f736d6036fdea1a4970ce4ac9fbb882aec769de48db1fb9366554a8f"
+    },
+    "parent_sha256": {
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_pulse_parameter_jet_directed_enclosure.json": "71276785fd803b663fc11de9489751ccd53dd8a408323a0bb140d0c9e7b7862b",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "result": "experiments/results/leaky_pulse_route_c_event_stage5c.json",
+    "schema_id": "leaky-pulse-route-c-event-stage5c-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-route-c-event-stage5c.md": "e9942bbc12f642837c33a3b7e276d61d15b097b99e0483a18dead0a08501bd5b",
+      "experiments/leaky_pulse_route_c_event_stage5c.py": "b734703f308703ea4266050692992339071320d8aa3b46d621e95a1a30e108dc",
+      "src/canard_control/leaky_pulse_route_c_event_stage5c.py": "383aed72cf1468da501e4ed3f5b8c63df35f6ffba04cd0ab21488233679bd0dc"
+    }
+  }
+}

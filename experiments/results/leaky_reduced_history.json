@@ -1,0 +1,57 @@
+{
+  "certificate": {
+    "compatible_history_range_invariant_after_one_delay_proved": true,
+    "compatible_lift_formula": "R(q,omega)(theta)=exp(-epsilon*theta)*[omega-epsilon*integral_theta^0 exp(epsilon*s)*(q(s)-a) ds]",
+    "derivative_lift_formula": "DR(q,omega)[h,eta](theta)=exp(-epsilon*theta)*[eta-epsilon*integral_theta^0 exp(epsilon*s)*h(s) ds]",
+    "exact_symbolic_zero_defect_count": 4,
+    "floquet_result_sha256": "5a3709ec792b29ed41533101245b13b3d35084ae508bdd1d420728200a5a5b16",
+    "full_history_space": "X=C([-r,0],R^2)",
+    "full_semiflow_factors_through_reduced_semiflow_proved": true,
+    "future_depends_only_on_voltage_history_and_current_recovery_proved": true,
+    "future_factorization_formula": "Phi_t=iota*Psi_t*pi for every t>=r",
+    "global_orbital_stable_set_pullback_equality_proved": true,
+    "inner_monodromy_nonzero_spectrum_reduction_proved": true,
+    "inner_period_lower": "18.1861999491279209928507043514400720596313476562263461",
+    "inner_reduced_dichotomy_validated": false,
+    "inner_stable_manifold_validated": false,
+    "local_stable_manifold_codimension_preserved_by_pullback_proved": true,
+    "maximum_delay": "5*sqrt(5)",
+    "model_id": "autonomous-leaky-recovery-two-delay-rfde",
+    "monodromy_factorization_formula": "M_X=D_iota*M_Y*pi when T>r",
+    "old_recovery_history_fiber_contributes_only_zero_spectrum_proved": true,
+    "old_recovery_history_flushed_after_one_maximum_delay_proved": true,
+    "outer_monodromy_nonzero_spectrum_reduction_proved": true,
+    "outer_period_lower": "26.6044068025574876423888781573623418807983398437263461",
+    "physical_pulse_stable_manifold_crossing_validated": false,
+    "physical_pulse_terminal_history_compatible_proved": true,
+    "projection_formula": "pi(phi_v,phi_w)=(phi_v,phi_w(0))",
+    "projection_has_continuous_split_right_inverse_proved": true,
+    "pulse_crossing_derivative_uses_only_reduced_terminal_derivative_proved": true,
+    "pulse_result_sha256": "db593b3675819f7b62180643ab983499e8e67790a0cacaf944ce099363a524c1",
+    "reduced_history_space": "Y=C([-r,0],R)xR",
+    "reduced_semiflow_formula": "pi*Phi_t=Psi_t*pi for every t>=0",
+    "schema_id": "leaky-reduced-history-factorization-v1",
+    "stable_set_pullback_formula": "W_X^s(Gamma_X)=pi^{-1}(W_Y^s(Gamma_Y))",
+    "terminal_crossing_derivative_formula": "d_J h_X(K(J))=Dh_Y(pi*K(J))[pi*D_J K(J)]",
+    "terminal_defining_function_formula": "h_X=h_Y*pi",
+    "two_sided_physical_onset_validated": false
+  },
+  "manifest": {
+    "arithmetic": "exact symbolic recovery-ODE identity and exact Banach-space semiflow factorization; parent theorem digests, source manifests, and evidence manifests are checked",
+    "certificate_sha256": "998e9c5d5590f127e43b8e60292a9ec305fccdc73297471d809165722b4a5882",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_reduced_history.py",
+    "parent_result_sha256": {
+      "experiments/results/leaky_floquet_transfer.json": "5a3709ec792b29ed41533101245b13b3d35084ae508bdd1d420728200a5a5b16",
+      "experiments/results/leaky_pulse_terminal_history.json": "db593b3675819f7b62180643ab983499e8e67790a0cacaf944ce099363a524c1"
+    },
+    "result": "experiments/results/leaky_reduced_history.json",
+    "schema_id": "leaky-reduced-history-factorization-v1",
+    "source_sha256": {
+      "docs/leaky-reduced-history-factorization.md": "0a44519ea14818c454391c2806441d455e8d6d120447ea558ce2eba2225756ae",
+      "experiments/leaky_reduced_history.py": "676c3ebeec5555cf85bdb4e39672854cc8bf13da03c73d350f57cd449d7e71c1",
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/leaky_pulse_terminal_history.py": "48916e40d1a91a0232c5bad80f786897587eabab4d4b29d517a640d208183e86",
+      "src/canard_control/leaky_reduced_history.py": "5e6c47e03e08d008b730f6b7ddb3e2a0b541f1ebf202008877fe6a3df4d57cbd"
+    }
+  }
+}

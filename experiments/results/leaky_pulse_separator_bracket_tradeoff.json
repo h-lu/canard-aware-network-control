@@ -1,0 +1,119 @@
+{
+  "certificate": {
+    "claim_status": {
+      "all_selected_brackets_have_observed_endpoint_sign_change": true,
+      "continuous_history_endpoint_tubes_validated": false,
+      "directed_endpoint_gap_enclosures_validated": false,
+      "directed_uniform_gap_derivative_validated": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "quantitative_inner_stable_graph_validated": false,
+      "recommended_endpoint_mesh_sup_distance_below_0_0017": true,
+      "recommended_gap_margin_exceeds_narrow_margin_by_factor_thirteen": true,
+      "registered_candidate_root_lies_in_every_selected_bracket": true,
+      "rfde_unstable_riesz_covector_validated": false,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "wide_dominated_row_is_pareto_dominated": true
+    },
+    "conditional_selection_rule": "a bracket may be used only after directed bounds prove that its entire return-history tube lies in the validated stable-graph ball, both exact endpoint gaps retain opposite signs, and the exact gap derivative has one strict sign on the whole bracket",
+    "finite_section_step_count": 180,
+    "interpretation": "if a future directed stable graph contains the recommended endpoint tubes, the wider bracket offers a substantially larger endpoint-error budget; these binary64 rows establish no premise of that conditional statement",
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "parent_branch": "inner_saddle_candidate",
+    "recommended_bracket_id": "wide_recommended",
+    "recommended_maximum_endpoint_reduced_mesh_sup_distance": "0.001658404983480577",
+    "recommended_minimum_endpoint_gap_margin": "0.00090825944406449136",
+    "recommended_to_narrow_gap_margin_ratio": "13.964897575881128",
+    "registered_candidate_root": "0.30113533708689971",
+    "rows": [
+      {
+        "bracket_id": "narrow",
+        "left_centered_derivative": "-13.92332034160369",
+        "left_coordinate": "7.4355936351062321e-05",
+        "left_reduced_mesh_sup_distance": "0.00010461038115089361",
+        "lower_amplitude": "0.30113000000000001",
+        "maximum_endpoint_reduced_mesh_sup_distance": "0.00010461038115089361",
+        "minimum_endpoint_gap_margin": "6.5038747268232925e-05",
+        "observed_endpoint_sign_change": true,
+        "pareto_dominated": false,
+        "registered_candidate_root_inside": true,
+        "right_centered_derivative": "-13.955640064221756",
+        "right_coordinate": "-6.5038747268232925e-05",
+        "right_reduced_mesh_sup_distance": "9.1494765305843995e-05",
+        "upper_amplitude": "0.30114000000000002"
+      },
+      {
+        "bracket_id": "medium",
+        "left_centered_derivative": "-13.827210510954536",
+        "left_coordinate": "0.00049061073593124535",
+        "left_reduced_mesh_sup_distance": "0.00069040030017358811",
+        "lower_amplitude": "0.30109999999999998",
+        "maximum_endpoint_reduced_mesh_sup_distance": "0.00069040030017358811",
+        "minimum_endpoint_gap_margin": "0.00048517199399769341",
+        "observed_endpoint_sign_change": true,
+        "pareto_dominated": false,
+        "registered_candidate_root_inside": true,
+        "right_centered_derivative": "-14.053459785676447",
+        "right_coordinate": "-0.00048517199399769341",
+        "right_reduced_mesh_sup_distance": "0.00068236106932767493",
+        "upper_amplitude": "0.30116999999999999"
+      },
+      {
+        "bracket_id": "wide_recommended",
+        "left_centered_derivative": "-13.669800013463361",
+        "left_coordinate": "0.001178021721662874",
+        "left_reduced_mesh_sup_distance": "0.001658404983480577",
+        "lower_amplitude": "0.30104999999999998",
+        "maximum_endpoint_reduced_mesh_sup_distance": "0.001658404983480577",
+        "minimum_endpoint_gap_margin": "0.00090825944406449136",
+        "observed_endpoint_sign_change": true,
+        "pareto_dominated": false,
+        "registered_candidate_root_inside": true,
+        "right_centered_derivative": "-14.152591191031808",
+        "right_coordinate": "-0.00090825944406449136",
+        "right_reduced_mesh_sup_distance": "0.0012770923019893021",
+        "upper_amplitude": "0.30120000000000002"
+      },
+      {
+        "bracket_id": "wide_dominated",
+        "left_centered_derivative": "-13.515760774556169",
+        "left_coordinate": "0.001857646916314793",
+        "left_reduced_mesh_sup_distance": "0.002616208027460265",
+        "lower_amplitude": "0.30099999999999999",
+        "maximum_endpoint_reduced_mesh_sup_distance": "0.002616208027460265",
+        "minimum_endpoint_gap_margin": "0.00090825944406449136",
+        "observed_endpoint_sign_change": true,
+        "pareto_dominated": true,
+        "registered_candidate_root_inside": true,
+        "right_centered_derivative": "-14.152591191031808",
+        "right_coordinate": "-0.00090825944406449136",
+        "right_reduced_mesh_sup_distance": "0.0012770923019893021",
+        "upper_amplitude": "0.30120000000000002"
+      }
+    ],
+    "schema_id": "leaky-pulse-separator-bracket-tradeoff-v1"
+  },
+  "manifest": {
+    "arithmetic_scope": "source-bound binary64 SciPy DOP853 method-of-steps trajectories and the 180-step finite-section left coordinate; no directed flow, continuous-history enclosure, RFDE adjoint covector, stable graph, separator, onset, or basin assertion",
+    "certificate_sha256": "aea369547f2750043a9b38aa2f492c739a4146046317da3330c4e31ecbc9a42b",
+    "default_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src:.venv/lib/python3.14/site-packages /usr/bin/python3 experiments/leaky_pulse_separator_bracket_tradeoff.py",
+    "environment": {
+      "numpy": "2.5.2",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_pulse_separator_bracket_tradeoff.json",
+    "schema_id": "leaky-pulse-separator-bracket-tradeoff-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-separator-bracket-tradeoff.md": "ed8d90c27c5a126cabcde249869a8f667556d1ff0fdb5ee755128a63ce8b3bc6",
+      "experiments/leaky_pulse_separator_bracket_tradeoff.py": "7b073019660d93fd392368c4278d859c86dc8c7b26912f80bc800c0b87469b48",
+      "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+      "experiments/results/leaky_pulse_separator_validation_target.json": "175a03bad09c81c9289ee5747d870113c6afcc22b1ec23942379c4c81bcda917",
+      "src/canard_control/leaky_periodic_branch_artifact.py": "c36ef8a393faa0c774d33bc3bd9bbb4f00fd311bd588a7a3a13ec59498e551db",
+      "src/canard_control/leaky_pulse_separator_bracket_tradeoff.py": "14ef0dbd90e7c412399350c1167f71d75507e94bb4360a9c8890792f9879dd29",
+      "src/canard_control/leaky_pulse_separator_candidate.py": "95c6bb0b2870a69208b13c37e278bb65e06263c2420640863e845cc99e921476",
+      "src/canard_control/leaky_pulse_separator_validation_target.py": "4d237aa573fd49045f58285bbb154ecb983040ffab44f1d6ca79307b1566a56a"
+    }
+  }
+}

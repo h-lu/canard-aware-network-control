@@ -1,0 +1,85 @@
+{
+  "certificate": {
+    "ambiguous_endpoint_cell_count": 2,
+    "angular_cell_count": 16384,
+    "decay_rate": "1/10000",
+    "decay_rate_margin_lower": "0.00212565148646532699660308159257062508011558672916267332",
+    "delayed_voltage_endpoint_reduction_proved": true,
+    "derivative_rate_lower": "0.002225651486465326996603081592570625080115586729164850019",
+    "directed_angular_cover_validated": true,
+    "equilibrium_cuberoot_enclosure_proved": true,
+    "equilibrium_voltage_lower": "0.9085602964160698294456058781636302512141052315693529004",
+    "equilibrium_voltage_upper": "0.9085602964160698294456058781636302512141052315714055837",
+    "exact_elliptic_boundary_parameterization_proved": true,
+    "exact_radial_reduction_proved": true,
+    "exact_symbolic_zero_defect_count": 6,
+    "exact_two_delayed_slot_reduction_proved": true,
+    "exponential_delay_factor_upper": "8000/7991",
+    "exponential_ratio_margin_lower": "0.00887373294956826429733450131397822550369165310871591592",
+    "first_maximum_razumikhin_argument_proved": true,
+    "global_quiet_basin_validated": false,
+    "history_space_separator_validated": false,
+    "history_sublevel": "1/125",
+    "large_history_ellipsoid_exponential_decay_proved": true,
+    "large_history_ellipsoid_forward_invariant_proved": true,
+    "large_quiet_history_basin_validated": true,
+    "lyapunov_matrix": [
+      [
+        "2823/100",
+        "-1351/50"
+      ],
+      [
+        "-1351/50",
+        "13759/100"
+      ]
+    ],
+    "maximizing_angular_cell": 6624,
+    "maximum_delay_upper": "45/4",
+    "maximum_normalized_derivative_upper": "-8.902605945861307986412326370282500320462346916666416085e-06",
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "physical_delays": [
+      "4*sqrt(5)",
+      "5*sqrt(5)"
+    ],
+    "physical_pulse_onset_validated": false,
+    "precision_bits": 160,
+    "previous_history_sublevel": "21/1000000",
+    "pulse_J_030_enters_large_quiet_ball_validated": false,
+    "razumikhin_ratio": "101/100",
+    "recovery_template_radius_lower": "0.007625205600356422877778962424091302619227321319915354151",
+    "recovery_template_radius_upper": "0.007625205600356422877778962424091302619227321319947427328",
+    "schema_id": "leaky-quiet-large-razumikhin-basin-v1",
+    "strict_normalized_derivative_margin_lower": "8.902605945861307986412326370282500320462346916666416085e-06",
+    "strict_razumikhin_derivative_margin_proved": true,
+    "sublevel_enlargement_factor": "8000/21",
+    "theorem_statement": "for delays (4*sqrt(5),5*sqrt(5)), if sup_{theta in [-5*sqrt(5),0]} (phi(theta)-E_q)^T P (phi(theta)-E_q)<=1/125, then V(z(t))<=exp(-t/10000)*sup_history V",
+    "voltage_template_radius_lower": "0.01868106844549155154903276571874885996138550177525144896",
+    "voltage_template_radius_upper": "0.01868106844549155154903276571874885996138550177540112378"
+  },
+  "manifest": {
+    "arithmetic": "exact rational/SymPy algebra and 160-bit outward-rounded MPFR; 16384-cell directed angular cover; exact degree-two Bernstein radial bound",
+    "certificate_sha256": "1d53d2c5600d64b1880529242024ab1515d71b2dbd1dbdbcc940e2c7295ce874",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_quiet_large_razumikhin_basin.py",
+    "generator": "experiments/leaky_quiet_large_razumikhin_basin.py",
+    "gmpy2": "2.2.2",
+    "interval_source": "src/canard_control/directed_interval.py",
+    "mpfr": "MPFR 4.2.1",
+    "note": "docs/leaky-quiet-large-razumikhin-basin.md",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "result": "experiments/results/leaky_quiet_large_razumikhin_basin.json",
+    "schema_id": "leaky-quiet-large-razumikhin-basin-v1",
+    "small_basin_result": "experiments/results/leaky_quiet_history_basin.json",
+    "small_basin_result_sha256": "5b5e9640101467d881c705f4c86d9c2fc42fba82b0b789d3882d13bf410ce0bc",
+    "small_basin_source": "src/canard_control/leaky_quiet_history_basin.py",
+    "source": "src/canard_control/leaky_quiet_large_razumikhin_basin.py",
+    "source_sha256": {
+      "generator": "1b9651214d2d4a354eaccb651655fd4dee862507ddb213d378f8fb26e988f94a",
+      "interval_source": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "note": "2aaf8c76e70964fd09e07b89b4a164c16c7de50fa90d98698a129460639097c1",
+      "small_basin_source": "2cc124c69d2257e6223be2ae0c9aa5c30659ed8a271f5a1c6096c24a17fe43be",
+      "source": "9e5449c4f6d5d2924dfd9135c7fe46d685c0a7c7bcfe113f1911b7e50bff97e6"
+    },
+    "sympy": "1.14.0"
+  }
+}

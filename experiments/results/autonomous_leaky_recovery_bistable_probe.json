@@ -219,7 +219,7 @@
     "generator": "experiments/autonomous_leaky_recovery_bistable_probe.py",
     "generator_sha256": "1d5e96b1a658c8299b07518bf357b704622c1384e8a5b3a53677ec2c1b70c98b",
     "note": "docs/autonomous-leaky-recovery-bistable-rfde-proposal.md",
-    "note_sha256": "251b45cbea6921bef3ce6aa93b27e0631915bfd748888f71d327d513393a4453",
+    "note_sha256": "c88fce76554892328ce7069e7327705fb9ad159f534a7ac90ee2a76d0c9dcb3e",
     "output_control_coordinates": [
       "unfolding_a",
       "kappa_3",

@@ -49,7 +49,7 @@ RESULT = (
 )
 NOTE = REPOSITORY / "docs/autonomous-leaky-recovery-bistable-rfde-proposal.md"
 EXPECTED_RESULT_SHA256 = (
-    "3361f43f0667ac7eafe25983d61ec999ca58baf0cabc807821088081ae78039b"
+    "d467456a006714f8603f4ad3a47c2961982d5e93ec57669bd20f5504838d0b3a"
 )
 
 

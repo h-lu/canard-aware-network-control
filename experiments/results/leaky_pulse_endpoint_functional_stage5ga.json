@@ -1,0 +1,256 @@
+{
+  "certificate": {
+    "branch": "inner_saddle_candidate_selected_route_c_event",
+    "branch_regularity": {
+      "Y_valued_regularity": "K:I_J->Y is continuously differentiable",
+      "event_switching_inside_window": false,
+      "event_window": "the common late Route-C window registered by Stage 5C",
+      "one_event_for_every_parameter": true,
+      "ordinal_third_crossing_validated": false,
+      "source_split": "Stage 5C proves one transverse event in the common window; Stage 5D proves the continuous Y-valued derivative of that event branch"
+    },
+    "claim_status": {
+      "asynchronous_network_safety_radius_validated": false,
+      "conditional_graph_height_target_admissible_validated": true,
+      "direct_512_segment_q_phys_Y_norm_validated": true,
+      "direct_q_norm_below_stage5f_registered_wiener_bound_validated": true,
+      "endpoint_functional_intervals_validated": true,
+      "endpoint_functional_signs_validated": true,
+      "endpoint_residuals_formed_before_norms": true,
+      "endpoint_stable_projection_norms_validated": true,
+      "exact_endpoint_shards_and_complete_histories_enclosed": true,
+      "finite_sampling_excluded_from_endpoint_proof": true,
+      "frequency_amplitude_safety_radius_validated": false,
+      "full_interval_stable_coordinate_graph_domain_containment_validated": false,
+      "global_affine_route_c_section_splitting_validated": true,
+      "identical_physical_phase_and_same_adjoint_row_used": true,
+      "interval_newton_strict_inclusion_validated": false,
+      "ordinal_third_crossing_validated": false,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "quantitative_inner_stable_graph_validated": false,
+      "recovery_atom_and_all_density_pieces_retained": true,
+      "selected_event_is_one_C1_branch_without_window_switching": true,
+      "stable_gap_endpoint_signs_validated": false,
+      "stage5b_stage3_stage4d_stage4e_stage5c_stage5d_stage5e_stage5f_source_bound": true,
+      "stage5f_conditional_derivative_interval_imported_without_renormalization": true,
+      "two_sided_basin_routing_validated": false,
+      "unconditional_stable_gap_derivative_excludes_zero_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unique_selected_event_stable_sheet_crossing_validated": false,
+      "voltage_atom_zero_by_exact_section_identities": true
+    },
+    "common_row_and_q_ledger": {
+      "denominator_modulus_lower": "0.000425638526787222946434328713168748354690114108470328413910887934",
+      "denominator_source": "Stage-5E same-row lower bound; it is no larger than the Stage-4E correlated lower bound",
+      "direct_q_norm_below_stage5f_bound": true,
+      "direct_q_norm_method": "192-bit termwise q_phys enclosure on all 512 history segments plus the current recovery coordinate",
+      "direct_q_phys_Y_norm_upper": "0.0862745804867627501249432936217907214002908601742418324042052094",
+      "history_measure_difference_source": "Stage-4E operator-norm difference between the exact complete measure and this same finite-plus-Neumann-tail guide",
+      "history_measure_difference_upper": "3.519571757612975063591229300836659318462252337968620799603103986e-07",
+      "physical_phase_gamma_box": {
+        "imag": {
+          "lower": "0.99440764981120315150619461050582030869824653074633282578384759",
+          "upper": "0.99441815208651371046695229188126963254898250221700104757856651"
+        },
+        "real": {
+          "lower": "-0.105563125242352495737340341497088118811265760034975593595962015",
+          "upper": "-0.105557527010779890834362256215690483853982133442784358510501078"
+        }
+      },
+      "same_exact_row_in_residual_and_denominator": true,
+      "same_physical_phase_as_stage5e_and_stage5f": true,
+      "stable_projection_uses_q_norm": "direct_q_phys_Y_norm_upper",
+      "stage4e_denominator_modulus_lower": "0.000425638526787222946434328713168748354690114108470328413911043509",
+      "stage5f_registered_q_phys_Y_norm_upper": "1.38298060370245631841470282396581026559885598345994672569132122"
+    },
+    "conditional_graph_height_target": {
+      "common_height_target_exact": "1/1000",
+      "conditional_implication": "under that future graph-height hypothesis, H(J_-)>0>H(J_+)",
+      "future_graph_height_hypothesis": "if a future quantitative graph in the identical registered chart satisfies |psi(P_s*kappa(J_sigma))|<=eta_target at both endpoints",
+      "left_conditional_stable_gap_margin_lower": "0.0186771873860742655069121846789084793914742929757038810725563123",
+      "quantitative_graph_supplied_here": false,
+      "right_conditional_stable_gap_margin_lower": "0.0137836699347620399513408509486291740991965209877010871545065543",
+      "stable_gap_endpoint_signs_claimed_here": false
+    },
+    "coordinate_registration": {
+      "ambient_chart_consequence": "the registered affine coordinates are global on Sigma; evaluating the local stable gap only requires P_s*kappa to lie in dom(psi)",
+      "centered_history": "kappa(J)=K(J)-X_* in Sigma",
+      "endpoint_gap_not_yet_defined": "H(J)=f_phys(kappa(J))-psi(P_s kappa(J)) requires a future quantitative graph psi",
+      "event_history": "K(J) is the unique Stage-5C selected late-window Route-C event-aligned complete history",
+      "global_affine_section_splitting": "C:Sigma->ker(f_phys)xR, C(kappa)=(P_s*kappa,f_phys(kappa))",
+      "global_affine_section_splitting_inverse": "C^{-1}(z,u)=z+q_phys*u",
+      "global_affine_section_splitting_is_bounded_linear_isomorphism": true,
+      "normalization": "f_phys(q_phys)=1 exactly",
+      "physical_column": "q=q_phys=q_tilde/gamma",
+      "physical_functional": "f=f_phys(y)=gamma*ell(y)/ell(q_tilde)",
+      "projection": "P_s=I-q_phys*f_phys on Sigma",
+      "reference_history": "X_* is the exact inner periodic-orbit history at the identical Route-C phase-zero section"
+    },
+    "endpoint_evaluation_contract": {
+      "binary64_midpoint_used_as_proof_data": false,
+      "centers_are_exact_decimal_rationals": true,
+      "delay_and_history_seams_retained": true,
+      "delay_piece_count": 2,
+      "density_dictionary_count": 4,
+      "direct_and_omitted_density_dictionaries_kept_separate": true,
+      "endpoint_quantifier": "for each sigma in {-1,+1}, every xi in the recorded one-sided positive-width shard is enclosed; in particular the exact xi=sigma endpoint is enclosed",
+      "endpoint_width_exact": "1/1073741824",
+      "event_time_remainder_retained": true,
+      "finite_history_sampling_used": false,
+      "finite_parameter_sampling_used": false,
+      "history_quantifier": "for every theta in [-5*sqrt(5),0], the complete voltage history and the current recovery coordinate are enclosed",
+      "history_subdivision_count": 512,
+      "history_subdivisions_per_delay_piece": 256,
+      "inner_orbit_uncertainty_retained": true,
+      "recovery_atom_retained": true,
+      "residual_formed_before_norm_or_absolute_value": true
+    },
+    "endpoints": [
+      {
+        "J_endpoint_exact": "6021/20000",
+        "chosen_residual_center_exact": "0.021366541445",
+        "common_measure_error_upper": "3.09378208187683654072738551339884299497975551893371018208635342e-09",
+        "event_time_interval": {
+          "lower": "51.7693260111616686877204426939314365656789440873230890599168194",
+          "upper": "51.7696124993051260613047502585813205858570951833128054696396049"
+        },
+        "exact_endpoint_included": true,
+        "functional_interval": {
+          "lower": "0.019677187386074265506912184678908479391474292975703881072567902",
+          "upper": "0.0230558955039257344930878153210915206085257070242961189274322108"
+        },
+        "functional_radius_upper": "0.00168935405892573449308781532109152060852570702429611892742499792",
+        "functional_sign": "positive",
+        "functional_sign_margin_lower": "0.019677187386074265506912184678908479391474292975703881072567902",
+        "name": "minus",
+        "numerator_modulus_upper": "7.19054172863165052943564179191634299580429758599785075203572467e-07",
+        "one_sided_width_exact": "1/1073741824",
+        "one_sided_xi_interval_exact": "[-1,-1073741823/1073741824]",
+        "residual_Y_norm_upper": "0.00879022305820263969949540709549582391325385317975461386656629979",
+        "residual_guide_action": {
+          "imag": {
+            "lower": "-7.07262145236545767297923854808797268561241962712634399485870587e-07",
+            "upper": "7.10386748567988795877698579803796912960994552729267390155002289e-07"
+          },
+          "real": {
+            "lower": "-8.88301471184190173744642530586343385033265577031782811423975407e-08",
+            "upper": "8.91624844129861677340274989537760441381632400330407651565352432e-08"
+          }
+        },
+        "stable_projection_Y_norm_upper": "0.00893597137093006732173549729328136296151241385525735614670445564",
+        "stable_projection_identity": "P_s*kappa=r_sigma+q_phys*(c_sigma-f_phys(kappa))",
+        "xi_endpoint_exact": "-1"
+      },
+      {
+        "J_endpoint_exact": "753/2500",
+        "chosen_residual_center_exact": "-0.016474080047",
+        "common_measure_error_upper": "3.09082621900283719800974875233378977518411410769910138423612755e-09",
+        "event_time_interval": {
+          "lower": "51.8274727448957740121530016026973039284604631444445365633190252",
+          "upper": "51.8277592330399562596852891141391441791961986841809611006957002"
+        },
+        "exact_endpoint_included": true,
+        "functional_interval": {
+          "lower": "-0.0181644901592379600486591490513708259008034790122989128454931127",
+          "upper": "-0.0147836699347620399513408509486291740991965209877010871545106764"
+        },
+        "functional_radius_upper": "0.00169041011223796004865914905137082590080347901229891284548312824",
+        "functional_sign": "negative",
+        "functional_sign_margin_lower": "0.0147836699347620399513408509486291740991965209877010871545106764",
+        "name": "plus",
+        "numerator_modulus_upper": "7.19503669839189505596519689951287944765094391792844248435275998e-07",
+        "one_sided_width_exact": "1/1073741824",
+        "one_sided_xi_interval_exact": "[1073741823/1073741824,1]",
+        "residual_Y_norm_upper": "0.00878182469874994295419168893593147616484420933274737062371635024",
+        "residual_guide_action": {
+          "imag": {
+            "lower": "-7.10846171447023294657137511001809951108909833297845456933291466e-07",
+            "upper": "7.08390514191525990549277416088745174340356798474729800743234407e-07"
+          },
+          "real": {
+            "lower": "-8.91351953106695227108312165342930158288865910669364537556304376e-08",
+            "upper": "8.88708774438974173755897615022685446687581864117520877305228284e-08"
+          }
+        },
+        "stable_projection_Y_norm_upper": "0.00892766412203385449251850007816594544982700776947463704958453032",
+        "stable_projection_identity": "P_s*kappa=r_sigma+q_phys*(c_sigma-f_phys(kappa))",
+        "xi_endpoint_exact": "1"
+      }
+    ],
+    "history_space": "Y=C([-5*sqrt(5),0],R) x R with ||(phi,w)||_Y=max(||phi||_infinity,|w|)",
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parameter_scope": {
+      "center_J0_exact": "2409/8000",
+      "endpoint_values_exact": {
+        "minus": "6021/20000",
+        "plus": "753/2500"
+      },
+      "half_width_h_exact": "3/40000",
+      "interval_exact": "I_J=[6021/20000,753/2500]",
+      "normalized_parameter": "J=J0+h*xi with xi in [-1,1]"
+    },
+    "schema_id": "leaky-pulse-endpoint-functional-stage5ga-v1",
+    "section_tangent_space": "Sigma={y in Y:y_v(0)=0}, with q_phys in Sigma and P_s=I-q_phys*f_phys",
+    "stage5f_bridge_interface": {
+      "conditional_derivative_interval_imported": {
+        "lower": "-494.38777064344581684429268439849118579779001016259761314597835",
+        "upper": "-9.61222935655418315570731560150881420220998983740238685418223374"
+      },
+      "derivative_status": "conditional only: a quantitative graph, full-interval stable-coordinate graph-domain containment and sup||Dpsi||<=16 remain open",
+      "same_history_space_and_projection": true
+    },
+    "theorem_statement": "For the two exact endpoints of the Stage-5C selected late-window Route-C event branch, the complete centered histories satisfy the displayed source-bound intervals f_phys(kappa(J_-))>0 and f_phys(kappa(J_+))<0.  The displayed complete-history bounds on P_s kappa(J_-) and P_s kappa(J_+) use a direct 512-segment q_phys norm proved below the registered Stage-5F Wiener bound.  If a future graph in the identical normalization has endpoint height at most 10^-3, these functional signs imply opposite stable-gap endpoint signs.  No graph, stable-gap sign, stable-sheet crossing, onset, routing, capture, or safety conclusion is asserted here.",
+    "voltage_atom_zero_identity": {
+      "atom_v_omitted_only_by_these_exact_identities": true,
+      "inner_section": "X_*v(0)=V_true(0) exactly",
+      "pulse_section": "K_v(J,0)=V_true(0) exactly",
+      "residual_section": "r_sigma,v(0)=0 exactly",
+      "unstable_column_section": "q_phys_v(0)=0 exactly",
+      "voltage_current_atom_action": "0"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR; exact one-sided endpoint shards containing xi=-1 and xi=+1; Stage-5C fourth-order event graph with its full remainder; 512 continuous-history cells over both delay pieces; exact residual centering before norms; the common Stage-4D/4E finite-plus-Neumann-tail atom-density row; Stage-5E physical phase; and a direct source-bound q_phys Y-norm checked below the registered Stage-5F Wiener bound",
+    "certificate_sha256": "4bd0671fa9abb155f8ddd75eb7a4d26ce4ebbc783c073420784bdf54a1dbbcfa",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_endpoint_functional_stage5ga.py",
+    "dependency_source_sha256": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_inner_stable_projection_stage3.py": "7b4aa14c0b039ed74ef85f0f9ba685909a88d2d9426dd210378bef796a179ed1",
+      "src/canard_control/leaky_pulse_event_aligned_derivative_stage5d.py": "ef92aff6afe38d46b8d9697be33fee74dc10e61adfa82df1b1ddb3a6abc1abc6",
+      "src/canard_control/leaky_pulse_oriented_adjoint_action_stage5e.py": "cd32e87908c32977d025a1cd92821430a85f87cd2faea7f33e327b9dcf22fcdd",
+      "src/canard_control/leaky_pulse_parameter_jet_directed_enclosure.py": "aee82f2c265443aafff7eb8ee5d8468b86222df823013f5018967a21a2c928af",
+      "src/canard_control/leaky_pulse_route_c_event_stage5c.py": "383aed72cf1468da501e4ed3f5b8c63df35f6ffba04cd0ab21488233679bd0dc",
+      "src/canard_control/leaky_pulse_stable_gap_slope_bridge_stage5f.py": "fd350d76eea11d17243b0c4fcd9f39d8e5241b8c69be9aa0c137499a745ef853",
+      "src/canard_control/leaky_route_c_adjoint_stage4d.py": "cabd09e9add4b68194e1e7f4c0ffb5934990acf953a3cb744ed2a4738d3b8369",
+      "src/canard_control/leaky_shared_yqq_deflation_stage4e.py": "36336b9636da1c7e6d9d3cf952155a81c432a05a02e63dfc73657a76ee3356f4"
+    },
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "numeric_core_sha256": "06f1ae1018185b0b137695f8be90c8a614bd99b21464b789127b98bbb2323d12",
+    "numpy": "2.5.2",
+    "omp_num_threads": "1",
+    "openblas_num_threads": "8",
+    "parent_sha256": {
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_pulse_event_aligned_derivative_stage5d.json": "e8be485b8b4711a0ae0b1f3ec875f704c509d9ba0abd5b2166a2384567ed654e",
+      "experiments/results/leaky_pulse_oriented_adjoint_action_stage5e.json": "187b8c6d614aa87c68442acb9f5d472233907c31f0df8a1c8d29dfc6941743be",
+      "experiments/results/leaky_pulse_parameter_jet_directed_enclosure.json": "71276785fd803b663fc11de9489751ccd53dd8a408323a0bb140d0c9e7b7862b",
+      "experiments/results/leaky_pulse_route_c_event_stage5c.json": "f1f198d68cb736bc9b5a48a0bff3eb5a93d39ee3f0b8f7cb6f7e07779483128d",
+      "experiments/results/leaky_pulse_stable_gap_slope_bridge_stage5f.json": "26acd6d9421a8bf60d5bb96fe4c68918b39f89a443973dd728fed17ccf48652b",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568",
+      "experiments/results/leaky_shared_yqq_deflation_stage4e.json": "ccdd6023f911e97785ec6f8be97b84d725d6af9f5051e1da602380d225e47acc"
+    },
+    "precision_bits": 192,
+    "python": "3.14.4",
+    "result": "experiments/results/leaky_pulse_endpoint_functional_stage5ga.json",
+    "schema_id": "leaky-pulse-endpoint-functional-stage5ga-v1",
+    "scipy": "1.18.0",
+    "source_sha256": {
+      "docs/leaky-pulse-centered-gap-stage5g-contract.md": "7ff4959d1e7b36a5a3d450ab9c813b692dcf4667ec7a72e4b18a9ccac86cad58",
+      "docs/leaky-pulse-endpoint-functional-stage5ga.md": "de3eef0c83606a2dffe16b754c80154034b854027ea01ca3871e36e11c5d08a7",
+      "experiments/leaky_pulse_endpoint_functional_stage5ga.py": "acc6a67e5f0784e380a2ea32d49f86b7515406ef3f18698c0e3b650fccf1d71c",
+      "src/canard_control/leaky_pulse_endpoint_functional_stage5ga.py": "38ebab3ccc0851d8e16ca23d53632e3fe11cde33eaaee59cc58ac2ab64fe91bc",
+      "tests/test_leaky_pulse_endpoint_functional_stage5ga.py": "eb15f9fca8fe30855c8cab64c65555834ac6958273843dde455cb122d94e775d"
+    }
+  }
+}

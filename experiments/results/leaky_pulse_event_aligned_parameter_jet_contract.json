@@ -1,0 +1,159 @@
+{
+  "contract": {
+    "claim_status": {
+      "common_event_complete_history_jet_validated": false,
+      "common_event_complete_history_pullback_registered": true,
+      "complete_history_remainder_validated": false,
+      "event_time_jet_through_order_four_validated": false,
+      "event_time_order_five_remainder_validated": false,
+      "factorial_parameter_jet_equations_z0_through_z4_registered": true,
+      "finite_section_coordinate_excluded_from_proof_inputs": true,
+      "implicit_route_c_event_jet_gate_registered": true,
+      "inner_local_stable_graph_validated": false,
+      "interval_newton_strict_inclusion_validated": false,
+      "interval_newton_uniqueness_gate_registered": true,
+      "order_five_remainder_tube_gate_registered": true,
+      "order_five_remainder_tube_validated": false,
+      "rfde_stable_coordinate_gap_registered": true,
+      "rfde_stable_projection_validated": false,
+      "rfde_unstable_riesz_covector_validated": false,
+      "stable_gap_derivative_excludes_zero_validated": false,
+      "stable_gap_endpoint_signs_validated": false,
+      "two_sided_basin_routing_validated": false,
+      "uniform_route_c_event_bracket_validated": false,
+      "uniform_route_c_event_speed_validated": false,
+      "unique_local_physical_pulse_onset_validated": false,
+      "z0_through_z4_directed_guides_validated": false
+    },
+    "common_event_history_pullback": {
+      "continuous_history_gate": "Bernstein bounds cover every theta cell continuously, split at all translated time-grid breakpoints; sampled histories are forbidden",
+      "definition": "Y(delta)=(theta->v(T(delta)+theta,J0+delta), w(T(delta),J0+delta)), theta in [-5*sqrt(5),0]",
+      "first_jet": "Y_1(theta)=z_1(t0+theta)+tau_1*dot(z_0)(t0+theta)",
+      "orders_three_and_four_rule": "obtain Y_k by the factorial Fa\u00e0-di-Bruno composition of the flow jet z(t,J) with the event jet T(delta), cellwise in theta",
+      "phase_space": "Y=C([-5*sqrt(5),0],R)xR",
+      "remainder_decomposition": "E_history=E_flow_jet+E_flow_remainder+F_tube*E_event_time+E_event_composition+E_section_center",
+      "second_jet": "Y_2(theta)=z_2+2*tau_1*dot(z_1)+tau_1^2*ddot(z_0)+tau_2*dot(z_0), evaluated at t0+theta"
+    },
+    "forbidden_substitutes": [
+      "binary64 finite-section endpoint coordinate",
+      "sampled history mesh norm",
+      "pointwise orbit speed without a pulse-history tube",
+      "Floquet eigenvalue without a validated RFDE Riesz splitting"
+    ],
+    "highest_order_remainder_tube": {
+      "acceptance_gate": "on every exact time cell, a directed fixed-point radius r has strictly positive closure gap r-r_endpoint; translated remainder sources use already closed cells",
+      "cell_inequality": "D^+||R_5||_P<=mu_P(T)||R_5(t)||_P+b_4(T)||R_5(t-tau4)||_P+b_5(T)||R_5(t-tau5)||_P+rho_5(T,h)+N_2(T,r)",
+      "definition": "R_5=z-sum_{k=0}^4 delta^k*z_k/k!, uniformly for |delta|<=h",
+      "residual_source": "substitute the degree-four parameter polynomial into the cubic RFDE; bound every parameter coefficient of degree at least five plus all time-Taylor truncation residuals by directed Bernstein arithmetic"
+    },
+    "implicit_event_jet": {
+      "event_graph": "T(delta)=t0+sum_{k=1}^4 tau_k*delta^k/k!+R_tau5(delta)",
+      "event_remainder_gate": "directed substitution of T(delta) into g gives an order-five residual; interval Newton in time and the uniform speed lower bound enclose R_tau5 and prove one event for every delta",
+      "first_derivative": "tau_1=-g_J/g_t",
+      "orders_three_and_four_rule": "for k=3,4, expand the factorial Taylor coefficient of g(T(delta),J0+delta); isolate its unique linear term g_t*tau_k and set tau_k=-(all remaining order-k terms)/g_t",
+      "second_derivative": "tau_2=-(g_JJ+2*g_tJ*tau_1+g_tt*tau_1^2)/g_t",
+      "section": "g(t,J)=h_C(z_t(J))=v(t,J)-V_true(0)",
+      "third_derivative": "tau_3=-(g_JJJ+3*g_tJJ*tau_1+3*g_ttJ*tau_1^2+g_ttt*tau_1^3+3*(g_tJ+g_tt*tau_1)*tau_2)/g_t",
+      "transversality": "a=partial_t g(t0,J0), with 0 notin a_interval"
+    },
+    "jet_equations": {
+      "breakpoint_rule": "the pulse release t=1 and both delay translates by 4*sqrt(5) and 5*sqrt(5) are exact cell boundaries for every coefficient",
+      "equations": {
+        "z0": "dot(z_0)=F(z_0,z_0[-tau4],z_0[-tau5])+J0*chi_[0,1)*e_v",
+        "z1": "dot(z_1)=L_t z_1+chi_[0,1)*e_v",
+        "z2": "dot(z_2)=L_t z_2+B_2[z_1,z_1]",
+        "z3": "dot(z_3)=L_t z_3+3*B_2[z_1,z_2]+B_3[z_1,z_1,z_1]",
+        "z4": "dot(z_4)=L_t z_4+4*B_2[z_1,z_3]+3*B_2[z_2,z_2]+6*B_3[z_1,z_1,z_2]"
+      },
+      "initial_history": "z_0 is the exact J-independent quiet history; z_k=0 on the initial history for k=1,...,4",
+      "lifted_linearization": "L_t q=A_0(t)q(t)+A_4(t)q(t-4*sqrt(5))+A_5(t)q(t-5*sqrt(5))",
+      "multilinear_derivatives": "B_m(t)[q_1,...,q_m]=D^m F evaluated along z_0, with current and each delayed slot retained separately; B_m=0 for m>=4",
+      "normalization": "z(t,J0+delta)=sum_{k=0}^4 delta^k*z_k(t)/k!+R_5(t,delta), z_k=partial_J^k z(t,J0)",
+      "parameter": "delta=J-J0"
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "numerical_inputs": {
+      "event": {
+        "lower_endpoint_sign": null,
+        "tau_1_interval": null,
+        "tau_2_interval": null,
+        "tau_3_interval": null,
+        "tau_4_interval": null,
+        "tau_order_five_remainder": null,
+        "time_bracket_lower": null,
+        "time_bracket_upper": null,
+        "uniform_speed_lower": null,
+        "upper_endpoint_sign": null
+      },
+      "history": {
+        "complete_history_radius": null,
+        "continuous_theta_cell_count": null,
+        "history_ball_margin": null,
+        "stable_chart_radius": null
+      },
+      "interval_newton": {
+        "derivative_interval": null,
+        "input_interval": null,
+        "midpoint_H_interval": null,
+        "newton_image": null,
+        "strict_interior_margin": null
+      },
+      "jet_flow": {
+        "cell_count": null,
+        "coefficient_guide_hash": null,
+        "maximum_order_five_remainder": null,
+        "maximum_z0_error": null,
+        "maximum_z1_error": null,
+        "maximum_z2_error": null,
+        "maximum_z3_error": null,
+        "maximum_z4_error": null,
+        "minimum_cell_closure_gap": null
+      },
+      "parameter_shard": {
+        "center_J0": null,
+        "half_width_h": null,
+        "shard_index": null
+      },
+      "stable_coordinate": {
+        "H_prime_interval": null,
+        "left_endpoint_H_interval": null,
+        "right_endpoint_H_interval": null,
+        "stable_graph_D1_upper": null,
+        "stable_graph_D2_upper": null,
+        "stable_graph_hash": null,
+        "stable_graph_radius": null,
+        "stable_projection_norm_upper": null,
+        "unstable_riesz_covector_hash": null
+      }
+    },
+    "route_c_section": "h_C(phi)=phi_v(0)-V_true(0)",
+    "schema_id": "leaky-pulse-event-aligned-parameter-jet-contract-v1",
+    "stable_gap_and_interval_newton": {
+      "acceptance_gate": "all histories lie in the validated stable-graph chart; 0 notin H'(I); the directed interval Newton image N(I) is a strict subset of int(I); endpoint H intervals have the declared opposite signs",
+      "conclusion_if_all_gates_close": "one and only one J_c in I satisfies H(J_c)=0; this is a local stable-sheet intersection, not two-sided basin routing",
+      "interval_newton": "N(I)=m-H(m)/H'(I), where m=mid(I)",
+      "splitting": "write the event history in validated coordinates y=(y_s,y_u) from the RFDE Riesz splitting",
+      "stable_gap": "H(J)=f_u*y_u(J)-h_s(y_s(J))",
+      "stable_gap_derivative": "H'(J)=f_u*D_J y_u-Dh_s(y_s)*D_J y_s, including event-time terms already present in the common-event history jet"
+    },
+    "stage": "Stage-5 event-aligned parameter-jet proof contract",
+    "target_interval_exact": "[6021/20000,753/2500]",
+    "theorem_statement": "This artifact fixes the equations and acceptance gates for an event-aligned fourth-order parameter-jet proof. It supplies no strict numerical constant, hence validates no jet tube, pulse event, complete-history family, stable-sheet intersection, physical onset, or two-sided routing."
+  },
+  "manifest": {
+    "arithmetic_scope": "source-bound Stage-5 proof schema for factorial-normalized parameter derivative jets z0,...,z4, a directed order-five remainder tube, an implicit Route-C event jet, a common-event complete-history pullback, the RFDE stable-coordinate gap, and an interval-Newton uniqueness gate; no strict numerical input is supplied by this contract",
+    "contract_sha256": "55565eb01d1953d89beebe7d325f5fafbf62bc0950cd923ff02f6351fc30fdfa",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_pulse_event_aligned_parameter_jet_contract.py",
+    "parent_sha256": {
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_pulse_inner_route_c_family_contract.json": "6821551f3fab7d4bbc073af20b83daf055482055a81db23664d31c017de81f7c"
+    },
+    "result": "experiments/results/leaky_pulse_event_aligned_parameter_jet_contract.json",
+    "schema_id": "leaky-pulse-event-aligned-parameter-jet-contract-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-event-aligned-parameter-jet-contract.md": "2eaccfb347e83b9a990189c1034a73c03da1c8006bc22b379ae9c0b7ded7e865",
+      "experiments/leaky_pulse_event_aligned_parameter_jet_contract.py": "662ff827e742377a9d4cab5dd4d6a70e4e3ac4fb3529127dca150ff7a00e8541",
+      "src/canard_control/leaky_pulse_event_aligned_parameter_jet_contract.py": "26985ff4066ffbb98278ea1eb5403110257c055e0b6274d2a197d6184f922e1d"
+    }
+  }
+}

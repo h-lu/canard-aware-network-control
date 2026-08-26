@@ -1,0 +1,216 @@
+{
+  "certificate": {
+    "arithmetic": {
+      "delay_five_initial_cell_count": 240,
+      "delay_five_translated_cell_count": 1824,
+      "delay_four_initial_cell_count": 192,
+      "delay_four_translated_cell_count": 1872,
+      "final_time_exact": "43*sqrt(5)",
+      "forced_cell_count": 21,
+      "grid_cell_count": 2064,
+      "grid_denominator": 24,
+      "maximum_current_logarithmic_norm_upper": "0.847047237788665958343025652393836935568006506969060753888995988",
+      "maximum_guide_residual_upper": "1.5650685442319176410025960665089073250824605073579722849487105e-27",
+      "maximum_p_error_radius_upper": "4.98383404643370535034506449026292467749808418014701475910684347e-22",
+      "minimum_cell_closure_gap_lower": "1.71510126967853081512728819852339747312674441523939569252423528e-40",
+      "minimum_current_logarithmic_norm_upper": "-0.00355430467671695515901099868184601900553266146972222829656262513",
+      "outer_taylor_degree": 24,
+      "precision_bits": 192,
+      "released_cell_count": 2043,
+      "taylor_degree": 24
+    },
+    "candidate_outer_history_comparison": {
+      "candidate_recovery_wiener_norm_upper": "1.74964157716972385424983463653737942067005440968025819155651598",
+      "candidate_voltage_wiener_norm_upper": "3.53691679882349134397308645973014447236317784848290248102667165",
+      "complete_flow_history_error_upper": "6.928770072424744853837476488114445535959e-23",
+      "complete_guide_history_distance_upper": "5.61878163985036392703347228790242221447541504097659033975936092e-06",
+      "complete_history_flow_error_validated": true,
+      "continuous_candidate_outer_history_bernstein_distance_validated": true,
+      "current_recovery_guide_distance_upper": "1.22216345893721126265503466336839946098664205623846352233784715e-07",
+      "history_cell_count": 241,
+      "history_delay_exact": "5*sqrt(5)",
+      "history_speed_upper_on_event_sweep": "0.964041736104131548129366910658702525594406056898098844795680506",
+      "maximum_outer_taylor_remainder_upper": "3.56330166644083517860200318859340807556693017708404000903959115e-30",
+      "maximum_recovery_flow_error_upper": "3.138471241621256145601535101640483859335e-23",
+      "maximum_voltage_flow_error_upper": "6.928770072424744853837476488114445535959e-23",
+      "outer_fourier_node_count": 257,
+      "outer_taylor_degree": 24,
+      "recovery_guide_history_distance_upper": "4.21899198403873812330533022420503195401494800538121565275978657e-06",
+      "reduced_flow_history_error_upper": "6.928770072424744853837476488114445535959e-23",
+      "reduced_guide_history_distance_upper": "5.61878163985036392703347228790242221447541504097659033975936092e-06",
+      "voltage_guide_history_distance_upper": "5.61878163985036392703347228790242221447541504097659033975936092e-06"
+    },
+    "claim_status": {
+      "all_section_crossing_cells_bernstein_isolated": true,
+      "all_section_crossings_monotone_and_unique": true,
+      "both_delay_breakpoint_families_preserved": true,
+      "complete_history_flow_error_validated": true,
+      "complete_signed_inner_exit_face_propagated": false,
+      "continuous_candidate_outer_history_bernstein_distance_validated": true,
+      "directed_method_of_steps_closed": true,
+      "exact_outer_orbit_and_period_correction_transferred": true,
+      "exact_quiet_initial_history_validated": true,
+      "frequency_amplitude_safety_control_theorem_validated": false,
+      "outer_attracting_tube_entry_validated": false,
+      "outer_attracting_tube_radius_validated": false,
+      "outer_basin_capture_validated": false,
+      "outer_stable_power_bound_validated": false,
+      "outer_stable_projection_norm_validated": false,
+      "outer_zero_index_validated": false,
+      "physical_J_032_pulse_and_release_validated": true,
+      "physical_pulse_Jc_validated": false,
+      "physical_pulse_stable_sheet_crossing_validated": false,
+      "pulse_event_and_outer_phase_zero_on_same_exact_section_validated": false,
+      "third_positive_section_event_bracket_validated": true,
+      "third_positive_section_event_time_error_validated": true,
+      "third_return_complete_history_ball_inclusion_validated": true,
+      "third_return_reduced_history_ball_inclusion_validated": true,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "event": {
+      "all_candidate_cells_monotone": true,
+      "all_candidate_crossings_unique": true,
+      "all_other_cells_excluded_by_bernstein": true,
+      "candidate_cell_count": 6,
+      "candidate_cells": [
+        {
+          "cell_index": 705,
+          "direction": -1,
+          "event_speed_lower": "0.2611661739857432662503811116039287298918",
+          "left_section_difference_upper": "0.00507546316144875584981324137076902802967106943653044155933445339",
+          "left_time_lower": "32.8639686793720031738307247794206863550288116244642415708347713",
+          "right_section_difference_lower": "-0.00153285856579486232560876606875418847144165458812617191682718074",
+          "right_time_upper": "32.8888331690594067846849293775891879629390950392861908611646078"
+        },
+        {
+          "cell_index": 896,
+          "direction": 1,
+          "event_speed_lower": "0.894354656899170492379243207091813165845013626624890059202159591",
+          "left_section_difference_upper": "-0.0156688979203791365772410224642242520950856435168416416190402697",
+          "left_time_lower": "41.7399355799960743329712418163171563948915427127484801863613699",
+          "right_section_difference_lower": "0.0479165413345283511559620012676058895725799589803034936330556754",
+          "right_time_upper": "41.808240589371161959467419454345791296791285062910344467966828"
+        },
+        {
+          "cell_index": 1276,
+          "direction": -1,
+          "event_speed_lower": "0.2569044322983560779682932206924306228757",
+          "left_section_difference_upper": "0.0152061457907116640187327315821827485135095199779869916634873659",
+          "left_time_lower": "59.4421404018694094295438666937730932587964380596730588368262646",
+          "right_section_difference_lower": "-0.00321527981090142596657309547922115050152908787115947790207272996",
+          "right_time_upper": "59.5104454112444970560400443318017281606961804098349231184419185"
+        },
+        {
+          "cell_index": 1466,
+          "direction": 1,
+          "event_speed_lower": "0.859943594646934815608215129786575305634061654327316631086323204",
+          "left_section_difference_upper": "-0.0573036722607445327747376570260072243057823031533319819187716791",
+          "left_time_lower": "68.2932428128060769778301791325010616907488857331353481620434183",
+          "right_section_difference_lower": "0.00381915700173637458264487719892515340822762543985047692098748931",
+          "right_time_upper": "68.3615478221811646043263567705296965926486280832972124436896596"
+        },
+        {
+          "cell_index": 1848,
+          "direction": -1,
+          "event_speed_lower": "0.2635278701348859331510254833119688555598",
+          "left_section_difference_upper": "0.00388604729435709440805430771188730639422915917725475705848738465",
+          "left_time_lower": "86.0886171337419033117531862461541350644638068450437403843824329",
+          "right_section_difference_lower": "-0.0150063532048656930315597484687124776867509171887732373454397036",
+          "right_time_upper": "86.1569221431169909382493638841827699663635491952056046660286742"
+        },
+        {
+          "cell_index": 2038,
+          "direction": 1,
+          "event_speed_lower": "0.890894105760456825333603041245963875748157225294487684363808803",
+          "left_section_difference_upper": "-0.0201693868625193773804649036249574844979698986524200893624766207",
+          "left_time_lower": "94.9397195446785708600394986848821034964162545185060297095995865",
+          "right_section_difference_lower": "0.0431678519924209871398732138782254458746413999335920689662139841",
+          "right_time_upper": "95.0080245540536584865356763229107383983159968686678939912662194"
+        }
+      ],
+      "candidate_section_voltage_binary64": {
+        "binary64_hex": "0x1.cb8b5dd1391f4p-5",
+        "decimal": "0.056096728550787761"
+      },
+      "crossing_directions": [
+        -1,
+        1,
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "positive_crossing_count_through_declared_event": 3,
+      "third_event_lower_sign_upper": "-4.5736839765110611674719090767195428698801924717991110266495528e-16",
+      "third_event_lower_time": "94.9619021653635192071796733171516743732342744653061936481817164",
+      "third_event_normalized_bracket": [
+        "0.324758328677411",
+        "0.324758328677425"
+      ],
+      "third_event_normalized_reference": "0.324758328677418",
+      "third_event_reference_time_lower": "94.9619021653635196853147389427650598464777406657505069463769841",
+      "third_event_reference_time_upper": "94.9619021653635196853147389427650598464777406657505069465401167",
+      "third_event_speed_lower": "0.890894105760456825333603041245963875748157225294487684363808803",
+      "third_event_time_error_upper": "4.7813506562561338547324346620044431329831761707488101427417766e-16",
+      "third_event_upper_sign_lower": "4.20320368338135787295231006365954572731988385869751988693773122e-16",
+      "third_event_upper_time": "94.9619021653635201634498045683784453197212068661948202447353843",
+      "third_positive_event_bracket_validated": true
+    },
+    "exact_outer_orbit_correction": {
+      "candidate_period": "26.604416802557488",
+      "coefficient_and_period_correction_radius_upper": "1.00000000000000000000000000000000000000000000000000000000035915e-05",
+      "exact_outer_orbit_and_period_correction_transferred": true,
+      "exact_outer_orbit_history_correction_upper": "2.07520045285086449867073387632118763860580494228728542883149519e-05",
+      "exact_period_lower": "26.6044068025574876423888781573623418807983398437499999999938075",
+      "exact_phase_tangent_norm_upper": "68.067806438861766592694457621688128936222429992073844800029827",
+      "formula": "E_orbit=R_A+||dz_*/dx||*tau_max*R_T/(T_bar*(T_bar-R_T))",
+      "maximum_history_delay_upper": "11.1803398874989484820458683436563811772030917980853282000043112",
+      "phase_shift_state_error_upper": "1.07520045285086449867073387632118763860580494228728542883089295e-05",
+      "physical_history_phase_mismatch_upper": "1.57960203083171965470514918946239594010595846926599310964166179e-07"
+    },
+    "history_ball": {
+      "E_section_upper": "1.80411241501587937818840146064758300790644632265963628900729116e-16",
+      "E_time_times_F_tube_upper": "4.60942158757979198794994379302964810315926961684101621955422335e-16",
+      "complete_design_ball_margin_lower": "7.362921383099962858911208263279490893183e-05",
+      "complete_history_distance_upper": "2.63707861690003623832880789119755816642759524561004715816284874e-05",
+      "declared_section_to_fourier_phase_zero_upper": "1.80411241501587937818840146064758300781250000000000000000035374e-16",
+      "design_history_ball_radius": "0.0001",
+      "error_decomposition": "E_guide+E_flow+E_orbit+E_time*F_tube+E_section",
+      "outer_attracting_tube_implication": "conditional only: the ambient history bound gives entry if a validated ambient orbital attracting tube contains that ball; a Poincare-section return theorem additionally needs a validated phase chart with Q_phase*E_history below the section radius",
+      "phase_center": "phase zero of the unique phase-fixed outer RFDE orbit validated in the bound parent",
+      "reduced_design_ball_margin_lower": "7.362921383099962858911208263279490893183e-05",
+      "reduced_history_distance_upper": "2.63707861690003623832880789119755816642759524561004715816284874e-05",
+      "same_exact_poincare_section_inferred_from_E_section": false
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "schema_id": "leaky-pulse-outer-third-return-enclosure-v1",
+    "theorem_statement": "For the exact quiet initial history and the physical pulse u(t)=8/25 on 0<=t<1, the third positive crossing of the exact binary64 voltage level bound by the old routing target is unique in the declared directed event bracket. At that event, the reduced and complete histories lie within the displayed directed radii of phase zero of the validated exact outer periodic orbit. No attracting tube or basin capture is inferred."
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR on the exact Q(sqrt(5)) two-origin grid; degree-24 directed Taylor method of steps; Bernstein exclusion and monotone counting of all candidate section crossings; degree-24 cellwise Taylor/Bernstein comparison with the exact binary64 Fourier center; and the source-validated Wiener orbit/period correction ball",
+    "certificate_sha256": "3d77a95e3a25d748e522751b4d3ff65b90e5e1f55bd0b5b63a0f905fba32aef3",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_pulse_outer_third_return_enclosure.py",
+    "dependency_source_sha256": {
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/fhn_periodic_directed_validation.py": "4e4695f882e0723ceed08204c662b9e2f9808a0335aea6c83ba0773b150af635",
+      "src/canard_control/fhn_periodic_infinite_validation.py": "f69aa5eb802c09daae01256b86661d3b17672ba2e38dd7bb4ba6244297f805ab",
+      "src/canard_control/leaky_floquet_transfer.py": "192bccf6674d1c00157f338c5a45485dfafee3947f095a5f85227afb4ae0f370",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_pulse_quiet_capture.py": "a1286c59f736d6036fdea1a4970ce4ac9fbb882aec769de48db1fb9366554a8f"
+    },
+    "parent_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_floquet_transfer.json": "5a3709ec792b29ed41533101245b13b3d35084ae508bdd1d420728200a5a5b16",
+      "experiments/results/leaky_outer_two_sided_routing_contract.json": "1f9920ab25eec017c6cf06d1cd6a0ce9a3c349ef20c400b86ca0e65d56ee8cab"
+    },
+    "result": "experiments/results/leaky_pulse_outer_third_return_enclosure.json",
+    "schema_id": "leaky-pulse-outer-third-return-enclosure-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-outer-third-return-enclosure.md": "c8c03626f764024a4e6d2e1119b823efc11ead1ca522108e3216ada1969b52e4",
+      "experiments/leaky_pulse_outer_third_return_enclosure.py": "fe6189390afe632b151b7352bde829c889698c5ca162a43a236f95d2615841fd",
+      "src/canard_control/leaky_pulse_outer_third_return_enclosure.py": "5f510a7f41e3f88017cc871bcdac6f0c92b4476255c9e8d935356862b0a29a03"
+    }
+  }
+}

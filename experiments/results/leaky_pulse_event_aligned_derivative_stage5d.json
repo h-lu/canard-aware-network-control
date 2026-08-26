@@ -1,0 +1,174 @@
+{
+  "certificate": {
+    "claim_status": {
+      "common_event_complete_history_jet_through_order_four_validated": false,
+      "continuous_event_aligned_complete_history_J_derivative_enclosed_in_Y": true,
+      "event_current_recovery_J_derivative_strictly_negative_validated": true,
+      "event_time_J_derivative_strictly_positive_validated": true,
+      "event_translation_term_retained_in_history_derivative": true,
+      "finite_parameter_sampling_excluded_from_proof": true,
+      "fixed_center_functional_action_excludes_zero_validated": false,
+      "fixed_center_functional_action_sign_validated": false,
+      "fixed_center_normalized_functional_action_modulus_enclosed": true,
+      "full_interval_event_time_first_J_derivative_enclosed": true,
+      "full_interval_fixed_time_first_J_variation_enclosed": true,
+      "inner_local_stable_graph_validated": false,
+      "interval_newton_strict_inclusion_validated": false,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "scaled_first_variation_error_equation_derived_exactly": true,
+      "scaled_first_variation_error_tube_closed_on_all_cells": true,
+      "section_current_voltage_J_derivative_is_exactly_zero": true,
+      "stable_coordinate_endpoint_signs_validated": false,
+      "stable_gap_derivative_excludes_zero_validated": false,
+      "stage4d_fixed_center_continuous_functional_source_bound": true,
+      "stage5b_and_stage5c_parent_bytes_source_bound": true,
+      "state_remainder_not_differentiated": true,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unique_stable_sheet_pulse_parameter_Jc_validated": false
+    },
+    "continuous_Y_derivative": {
+      "Y_norm_upper": "142.200202973026925740660265476108234493730240604449317469465124",
+      "continuity_statement": "For every J in the closed pulse interval, D_J K(J) exists in Y; the voltage-history derivative is continuous in theta.  Every value of that function and the current recovery derivative lie in the displayed directed intervals.",
+      "event_aligned_recovery_history_D_J_interval": {
+        "lower": "-57.5307672091431738753747411533782255094921617043794665100313156",
+        "upper": "32.2797338941564110056188779998473696344164288722866664997706628"
+      },
+      "event_aligned_voltage_history_D_J_interval": {
+        "lower": "-141.203570376115363644667772197491798230031375532293108727137952",
+        "upper": "142.200202973026925740660265476108234493730240604449317469465124"
+      },
+      "event_current_recovery_D_J_interval": {
+        "lower": "-17.3506564589570707426572833040771607610415496431671419278967884",
+        "upper": "-10.1427988612827774742521458949574489150773774079437336167976251"
+      },
+      "event_current_recovery_monotonicity": "D_J K_w<0 on the whole interval after event alignment",
+      "event_current_voltage_D_J_exact": "0",
+      "exact_chain_rule": "D_J K=(partial_J z+z_t*T_J) on the voltage history and current recovery coordinate",
+      "exact_history": "K(J)=(theta->v(T(J)+theta,J),w(T(J),J))",
+      "fixed_time_recovery_partial_J_interval": {
+        "lower": "-34.2608292907171446678584449069295981600304307184280560663432611",
+        "upper": "7.48664270841675181301982810177750026915320382771650672579133145"
+      },
+      "fixed_time_voltage_partial_J_interval": {
+        "lower": "-99.7566738470321499682151785239197449586572393078187141162874963",
+        "upper": "14.7247286005646030746086744933032341595219224758388060356562078"
+      },
+      "history_cell_count": 243,
+      "phase_space": "Y=C([-5*sqrt(5),0],R)xR",
+      "recovery_translation_z_t_times_T_J_interval": {
+        "lower": "-23.2699379184260292075162962464486273494617309859514104436931523",
+        "upper": "24.7930911857396591925990498980698693652632250445701597739716845"
+      },
+      "section_chain_rule_outer_box": {
+        "lower": "-25.5915160343073076773004063448653417010245219289140219747293403",
+        "upper": "33.4899783253687319319453120069074555302598003427775609197609345"
+      },
+      "voltage_translation_z_t_times_T_J_interval": {
+        "lower": "-41.4468965290832136764525936735720532713741362244743946108300646",
+        "upper": "127.475474372462322666051590982805000334208318128610511433770682"
+      }
+    },
+    "event_time_first_derivative": {
+      "T_J_interval": {
+        "lower": "336.624302834989073186235294109235816271165234911710183062360737",
+        "upper": "456.574093812176424277319526882829583107255067278028992254674676"
+      },
+      "T_xi_interval": {
+        "lower": "0.025246822712624180488967647058192686220337392618378263729685889",
+        "upper": "0.0342430570359132318207989645162122187330441300458521744190959329"
+      },
+      "event_graph_cell_intersection_count": 130,
+      "event_graph_parameter_subdivision_count": 128,
+      "event_scaled_voltage_variation_Wv": {
+        "lower": "-0.00730582134457356643181751972613804191171001247883073040844198572",
+        "upper": "-0.00704891220353201930505797092319231586029613883393747128854987479"
+      },
+      "event_time_range": {
+        "lower": "51.7693260111616686877204426939314365656789440873230890599168194",
+        "upper": "51.8277657969776419789827165943283368248524883210114981840302093"
+      },
+      "identity": "T_xi=-W_v(T(xi),xi)/v_t(T(xi),xi)",
+      "strict_monotonicity": "T_J>0 on the whole interval: increasing the physical pulse amplitude strictly delays the selected Route-C event",
+      "uniform_positive_voltage_speed": {
+        "lower": "0.213351901873463286891339163985473697827026675282880628193241443",
+        "upper": "0.279199972359585210755085983706906600304258513452988752329053947"
+      }
+    },
+    "fixed_center_route_c_functional_action": {
+      "current_recovery_atom_modulus_upper": "0.00808568464489882393732194746951018018495195393263777791000458663",
+      "functional": "the fixed Stage-4D Route-C atom-plus-density functional, normalized by its nonzero action on q",
+      "global_operator_norm_fallback_upper": "10404.2859014062548767449634730984489324086687542453918837520581",
+      "normalization_f_of_q_modulus_lower": "0.00030533175287105910206920010192949692754816394778499169599988163",
+      "normalized_action_modulus_upper": "1017.27304233412245408146029342050801918785851336769345330318693",
+      "oriented_interval": null,
+      "raw_action_modulus_upper": "0.310605761164352721101995909138401541160147730295974357066614536",
+      "raw_measure_norm_upper": "0.0223400444249056288439699517844611905590317557514648718000055294",
+      "sign_scope": "Stage 4D certifies atom and density moduli and total variation, not a common oriented signed coefficient enclosure suitable for a sign proof on this pulse family.  The rigorous output here is therefore a modulus disk containing zero, not a stable-gap slope.",
+      "voltage_current_atom_contribution": "exactly zero because D_J K_v(0)=0 on the fixed section",
+      "voltage_density_total_variation_upper": "0.00119770451162826191831952099175004773686543320396744368000052512"
+    },
+    "fixed_time_first_variation": {
+      "all_cells_closed": true,
+      "closed_cell_count": 1152,
+      "comparison": "C=partial_xi B=sum_{k=1}^4 k*b_k*xi^(k-1), E=W-C",
+      "differentiability_reason": "The RFDE vector field is polynomial in the current and delayed states and affine in J.  The exact quiet history is J-independent; the pulse-release seam is an exact grid boundary.  Standard piecewise RFDE parameter differentiation therefore gives W, and the displayed directed comparison encloses it continuously.",
+      "exact_error_equation": "E'=DF(z)E+(DF(z)-DF(B))C+partial_xi Tail_{>=5}(B)",
+      "maximum_linearization_mismatch_source_upper": "2.16292563885724327738783617298935587993153882870919656645142328e-10",
+      "maximum_physical_J_recovery_error_upper": "0.000110107431195752448599406626133092154363981618087822324362364815",
+      "maximum_physical_J_voltage_error_upper": "0.000243083022046936595018167784664674190990191680077918399650410304",
+      "maximum_scaled_P_error_radius_upper": "8.72889304579700603736955225242443866915258086386052532145778473e-08",
+      "maximum_scaled_recovery_error_upper": "8.25805733968143364495549695998191157729862135658667432717669262e-09",
+      "maximum_scaled_voltage_error_upper": "1.82312266535202446263625838498505643242643760058438799737798916e-08",
+      "maximum_tail_derivative_source_upper": "1.03210126933120027518514823592625082296865923780290431712863603e-08",
+      "maximum_total_source_upper": "1.04756984445248285120785292075421678542602228873209201118249484e-08",
+      "minimum_cell_closure_gap_lower": "2.78094958176748968504606651802903486796207096044744993085588125e-31",
+      "parameter_subdivision_count": 64,
+      "state_remainder_derivative_used": false
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "parameter_scaling": {
+      "center_J0_exact": "2409/8000",
+      "half_width_h_exact": "3/40000",
+      "interval_exact": "[6021/20000,753/2500]",
+      "normalized_parameter": "xi=(J-J0)/h in [-1,1]",
+      "scaled_variation": "W=partial_xi z=h*partial_J z"
+    },
+    "schema_id": "leaky-pulse-event-aligned-derivative-stage5d-v1",
+    "stable_gap_interface": {
+      "event_history_derivative_input_available": true,
+      "fixed_center_functional_action_modulus_available": true,
+      "interval_newton_image": null,
+      "oriented_functional_action_sign_available": false,
+      "pulse_parameter_Jc": null,
+      "quantitative_inner_stable_graph_available": false,
+      "stable_gap_derivative_interval": null,
+      "stable_gap_endpoint_intervals": null
+    },
+    "theorem_statement": "For every J in the exact Stage-5B interval, the event-aligned physical-pulse history K(J) at the unique Stage-5C Route-C event is continuously differentiable as a Y-valued map.  Its derivative is enclosed by the displayed fixed-time and translation-term intervals. The fixed Stage-4D normalized Route-C functional has the displayed action-modulus bound on D_J K.  No action sign, stable-sheet intersection, onset root, interval-Newton, side routing, or capture conclusion follows."
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR on the exact Stage-5B two-origin 1152-cell delay grid; 64-shard Bernstein retention of the normalized pulse parameter; a cellwise P-logarithmic-norm enclosure of the exact first variational equation relative to partial_xi B; Stage-5C interval event-graph and positive-speed division; a continuous complete-history chain-rule tube including z_t*T_J; and a Stage-4D atom-plus-density action modulus bound; no finite-sampling, stable-sheet, onset, Newton, or routing claim",
+    "certificate_sha256": "a8dd72534ec35213cad468d58202bd64049f4cb3743c986b15b0150335b152e3",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_event_aligned_derivative_stage5d.py",
+    "dependency_source_sha256": {
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_pulse_parameter_jet_directed_enclosure.py": "aee82f2c265443aafff7eb8ee5d8468b86222df823013f5018967a21a2c928af",
+      "src/canard_control/leaky_pulse_quiet_capture.py": "a1286c59f736d6036fdea1a4970ce4ac9fbb882aec769de48db1fb9366554a8f",
+      "src/canard_control/leaky_pulse_route_c_event_stage5c.py": "383aed72cf1468da501e4ed3f5b8c63df35f6ffba04cd0ab21488233679bd0dc"
+    },
+    "parent_sha256": {
+      "experiments/results/leaky_pulse_parameter_jet_directed_enclosure.json": "71276785fd803b663fc11de9489751ccd53dd8a408323a0bb140d0c9e7b7862b",
+      "experiments/results/leaky_pulse_route_c_event_stage5c.json": "f1f198d68cb736bc9b5a48a0bff3eb5a93d39ee3f0b8f7cb6f7e07779483128d",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "result": "experiments/results/leaky_pulse_event_aligned_derivative_stage5d.json",
+    "schema_id": "leaky-pulse-event-aligned-derivative-stage5d-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-event-aligned-derivative-stage5d.md": "8cc3af4b7d6b693f05ed67099709783712a369f2b8f9fc1fc25ab6bf68a9a053",
+      "experiments/leaky_pulse_event_aligned_derivative_stage5d.py": "bfd0b2662487b2295d2cd4706d609f4d7c0a6e938d5ddcad6079e49e7770ebca",
+      "src/canard_control/leaky_pulse_event_aligned_derivative_stage5d.py": "ef92aff6afe38d46b8d9697be33fee74dc10e61adfa82df1b1ddb3a6abc1abc6"
+    }
+  }
+}

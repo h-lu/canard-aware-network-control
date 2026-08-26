@@ -1,0 +1,401 @@
+{
+  "manifest": {
+    "arithmetic_scope": "binary64 finite-section/RK4 monodromy data and SciPy DOP853 method-of-steps trajectories sampled on the 180-step reduced-history mesh; no directed flow enclosure, continuous-history norm enclosure, RFDE Riesz covector, stable graph, separator, onset, or routing proof",
+    "default_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_pulse_separator_validation_target.py",
+    "generator": "experiments/leaky_pulse_separator_validation_target.py",
+    "generator_sha256": "6e8f035fe931b883ea8ff5ecf6bf6f408ea15ee7407808bbf10d62313b3fba2f",
+    "note": "docs/leaky-pulse-separator-validation-contract.md",
+    "note_sha256": "9590fcecdabb4fd54fa9c94b66bda9578d764cae63edecadefeb3e52da9cc1d1",
+    "numpy": "2.5.2",
+    "parent_candidate_result": "experiments/results/leaky_pulse_separator_candidate.json",
+    "parent_candidate_result_sha256": "9313ed2b07e285eedd30920853f69c1981c3a409339d316262e8621dfb8ffc85",
+    "parent_candidate_source": "src/canard_control/leaky_pulse_separator_candidate.py",
+    "parent_candidate_source_sha256": "95c6bb0b2870a69208b13c37e278bb65e06263c2420640863e845cc99e921476",
+    "parent_orbit_result": "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json",
+    "parent_orbit_result_sha256": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "schema_id": "leaky-pulse-separator-validation-target-v1",
+    "scipy": "1.18.0",
+    "source": "src/canard_control/leaky_pulse_separator_validation_target.py",
+    "source_sha256": "4d237aa573fd49045f58285bbb154ecb983040ffab44f1d6ca79307b1566a56a",
+    "target_sha256": "74c5d9dc03060ef0e8ddd02ebe803dc3a0a89d2e5c5b37addd378f9f17449d84"
+  },
+  "target": {
+    "claim_status": {
+      "continuous_reduced_history_tube_validated": false,
+      "directed_endpoint_gap_enclosures_validated": false,
+      "directed_uniform_gap_derivative_validated": false,
+      "inner_local_stable_graph_validated": false,
+      "narrow_third_return_sign_change_observed": true,
+      "physical_pulse_separator_crossing_validated": false,
+      "registered_root_strictly_inside_narrow_bracket_observed": true,
+      "rfde_unstable_riesz_covector_validated": false,
+      "sampled_coordinate_strictly_decreasing_observed": true,
+      "sampled_derivative_separated_from_zero_observed": true,
+      "sampled_endpoint_reduced_state_inside_target_radius_observed": true,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "derivative_step": {
+      "binary64_hex": "0x1.ad7f29abcaf48p-23",
+      "decimal": "1.9999999999999999e-07"
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "narrow_pulse_bracket": [
+      {
+        "binary64_hex": "0x1.345b6c3760bf6p-2",
+        "decimal": "0.30113000000000001"
+      },
+      {
+        "binary64_hex": "0x1.345e0b4e11dbdp-2",
+        "decimal": "0.30114000000000002"
+      }
+    ],
+    "observed_margins": {
+      "maximum_endpoint_sampled_reduced_sup_distance": {
+        "binary64_hex": "0x1.b6c48a9d89000p-14",
+        "decimal": "0.00010461038115089361"
+      },
+      "minimum_absolute_endpoint_coordinate": {
+        "binary64_hex": "0x1.10cad2b8276e4p-14",
+        "decimal": "6.5038747268232925e-05"
+      },
+      "minimum_sampled_derivative_magnitude": {
+        "binary64_hex": "0x1.bd8bd719dd6bbp+3",
+        "decimal": "13.92332034160369"
+      }
+    },
+    "parent_branch": "inner_saddle_candidate",
+    "registered_third_return_root": {
+      "binary64_hex": "0x1.345cd261d52a9p-2",
+      "decimal": "0.30113533708689971"
+    },
+    "requested_directed_certificate_bounds": {
+      "local_reduced_history_radius_lower": {
+        "binary64_hex": "0x1.a36e2eb1c432dp-13",
+        "decimal": "0.00020000000000000001"
+      },
+      "these_are_validation_targets_not_proved_bounds": true,
+      "total_endpoint_gap_error_upper": {
+        "binary64_hex": "0x1.f75104d551d69p-16",
+        "decimal": "3.0000000000000001e-05"
+      },
+      "total_gap_derivative_error_upper": {
+        "binary64_hex": "0x1.4000000000000p+2",
+        "decimal": "5"
+      }
+    },
+    "sample_rows": [
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.bd8bd719dd6bbp+3",
+          "decimal": "-13.92332034160369"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "0x1.3e361794f8000p-14",
+          "decimal": "7.5867485363811937e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345b6c3760bf6p-2",
+          "decimal": "0.30113000000000001"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.0764db2abcc7dp-10",
+          "decimal": "0.001004768254173865"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.b6c48a9d89000p-14",
+          "decimal": "0.00010461038115089361"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.b6c48a9d89000p-14",
+          "decimal": "0.00010461038115089361"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "0x1.37df14272db6ep-14",
+          "decimal": "7.4355936351062321e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e66fc20faafbp+5",
+          "decimal": "51.800285585069979"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.bdacdf9eb8464p+3",
+          "decimal": "-13.927352724074986"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "0x1.e76fc24f5c000p-15",
+          "decimal": "5.810696586194819e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345bc01a36e2fp-2",
+          "decimal": "0.30113125000000002"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.9377a58a71cb2p-11",
+          "decimal": "0.00076955293598581485"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.500c94b09f000p-14",
+          "decimal": "8.0120359379820538e-05"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.500c94b09f000p-14",
+          "decimal": "8.0120359379820538e-05"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "0x1.ddb99dffa534fp-15",
+          "decimal": "5.694926585168033e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e67fa6a84481p+5",
+          "decimal": "51.800770599519645"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.bdcdec2400746p+3",
+          "decimal": "-13.931387014690369"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "0x1.526848505c000p-15",
+          "decimal": "4.0341300180268824e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345c13fd0d068p-2",
+          "decimal": "0.30113250000000003"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.181c6bca68092p-11",
+          "decimal": "0.00053426937056501506"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.d29b11aa2c000p-15",
+          "decimal": "5.5623738562160518e-05"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.d29b11aa2c000p-15",
+          "decimal": "5.5623738562160518e-05"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "0x1.4baa4013201cep-15",
+          "decimal": "3.9537553811367165e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e68f8c2b4200p+5",
+          "decimal": "51.801255723115901"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.bdeefde1188ffp+3",
+          "decimal": "-13.935423793449898"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "0x1.7aab7f30d4000p-16",
+          "decimal": "2.2570485444461941e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345c67dfe32a1p-2",
+          "decimal": "0.30113375000000003"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.39700f91242eap-12",
+          "decimal": "0.00029891752007764219"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.050ecc1d54000p-15",
+          "decimal": "3.11205151130034e-05"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.050ecc1d54000p-15",
+          "decimal": "3.11205151130034e-05"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "0x1.732019f918838p-16",
+          "decimal": "2.2120797414600292e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e69f7298c1b0p+5",
+          "decimal": "51.801740955913715"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.be1013724c63ap+3",
+          "decimal": "-13.939462397803357"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "0x1.41c1345920000p-18",
+          "decimal": "4.7945187243714216e-06"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345cbbc2b94dap-2",
+          "decimal": "0.30113500000000004"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.0a53c18e18bcfp-14",
+          "decimal": "6.3497345963933085e-05"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.bba2b5bf10000p-18",
+          "decimal": "6.610685374275338e-06"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.bba2b5bf10000p-18",
+          "decimal": "6.610685374275338e-06"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "0x1.3b5819402e667p-18",
+          "decimal": "4.6989937915686846e-06"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e6af59f0e24bp+5",
+          "decimal": "51.802226297968978"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.be312df2597cbp+3",
+          "decimal": "-13.943503354395849"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "-0x1.b3c210ffb0000p-17",
+          "decimal": "-1.298660254123174e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345d0fa58f712p-2",
+          "decimal": "0.30113624999999999"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.68b11088bdb31p-13",
+          "decimal": "0.00017199118544627406"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.2c68a08388000p-16",
+          "decimal": "1.7905753806002345e-05"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.2c68a08388000p-16",
+          "decimal": "1.7905753806002345e-05"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "-0x1.ab137b2e425aap-17",
+          "decimal": "-1.2727859566757607e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e6bf4233bda6p+5",
+          "decimal": "51.80271174932868"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.be524d0b3e18ap+3",
+          "decimal": "-13.947546503027088"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "-0x1.02244290e6000p-15",
+          "decimal": "-3.0772881593310597e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345d63886594bp-2",
+          "decimal": "0.3011375"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.ab585d553affep-12",
+          "decimal": "0.00040754811682464076"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.63eb2b0ed8000p-15",
+          "decimal": "4.2428806515060202e-05"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.63eb2b0ed8000p-15",
+          "decimal": "4.2428806515060202e-05"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "-0x1.f9ff3539f5e0dp-16",
+          "decimal": "-3.0159765834840121e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e6cf2b617702p+5",
+          "decimal": "51.803197310056945"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.be73712dc378ep+3",
+          "decimal": "-13.951592053777656"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "-0x1.976315c21c000p-15",
+          "decimal": "-4.8564320892618973e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345db76b3bb84p-2",
+          "decimal": "0.30113875000000001"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.51354884347f8p-11",
+          "decimal": "0.00064317348053521874"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.18d81dab9e000p-14",
+          "decimal": "6.6958475764766767e-05"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.18d81dab9e000p-14",
+          "decimal": "6.6958475764766767e-05"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "-0x1.8f45319f81dd8p-15",
+          "decimal": "-4.7596727423434161e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e6df157a26c3p+5",
+          "decimal": "51.80368298019814"
+        }
+      },
+      {
+        "centered_difference_derivative": {
+          "binary64_hex": "-0x1.be949a78d28d9p+3",
+          "decimal": "-13.955640064221756"
+        },
+        "current_recovery_difference": {
+          "binary64_hex": "-0x1.16567fbcb6000p-14",
+          "decimal": "-6.6360923436703523e-05"
+        },
+        "pulse_amplitude": {
+          "binary64_hex": "0x1.345e0b4e11dbdp-2",
+          "decimal": "0.30114000000000002"
+        },
+        "sampled_reduced_l2_distance": {
+          "binary64_hex": "0x1.ccc79309d57e5p-11",
+          "decimal": "0.00087886731601360664"
+        },
+        "sampled_reduced_sup_distance": {
+          "binary64_hex": "0x1.7fc1c19567000p-14",
+          "decimal": "9.1494765305843995e-05"
+        },
+        "sampled_voltage_history_sup_distance": {
+          "binary64_hex": "0x1.7fc1c19567000p-14",
+          "decimal": "9.1494765305843995e-05"
+        },
+        "third_return_coordinate": {
+          "binary64_hex": "-0x1.10cad2b8276e4p-14",
+          "decimal": "-6.5038747268232925e-05"
+        },
+        "third_return_time": {
+          "binary64_hex": "0x1.9e6ef007dec89p+5",
+          "decimal": "51.804168759809791"
+        }
+      }
+    ],
+    "schema_id": "leaky-pulse-separator-validation-target-v1",
+    "selected_crossing_depth": 3,
+    "selected_section_step_count": 180
+  }
+}

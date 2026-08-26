@@ -1,0 +1,194 @@
+{
+  "certificate": {
+    "branch": "inner_saddle_candidate_selected_route_c_event",
+    "claim_status": {
+      "asynchronous_network_safety_radius_validated": false,
+      "banach_fundamental_theorem_argument_used_without_parameter_sampling": true,
+      "both_endpoint_stable_projection_norms_imported": true,
+      "conditional_gap_derivative_interval_with_Lpsi_16_arithmetic_validated": true,
+      "conditional_maximum_admissible_graph_derivative_arithmetic_validated": true,
+      "correlated_derivative_residual_and_functional_radius_imported": true,
+      "direct_complete_history_q_phys_norm_imported": true,
+      "event_translation_retained_in_derivative_parent": true,
+      "frequency_amplitude_safety_radius_validated": false,
+      "full_interval_stable_coordinate_in_future_graph_domain_validated": false,
+      "full_interval_stable_coordinate_radius_47_over_5000_validated": true,
+      "future_graph_domain_contains_radius_47_over_5000_ball_validated": false,
+      "graph_derivative_norm_16_validated": false,
+      "graph_height_endpoint_bounds_validated": false,
+      "identical_physical_grushin_normalization_validated": true,
+      "interval_newton_strict_inclusion_validated": false,
+      "ordinal_third_crossing_validated": false,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "quantitative_inner_stable_graph_validated": false,
+      "selected_event_is_one_C1_branch_on_full_interval": true,
+      "sharp_stable_projection_derivative_norm_validated": true,
+      "stable_gap_endpoint_signs_validated": false,
+      "stage5d_stage5e_stage5f_stage5ga_parent_bytes_source_bound": true,
+      "two_ended_cone_meeting_point_strictly_inside_interval_validated": true,
+      "two_sided_basin_routing_validated": false,
+      "unconditional_stable_gap_derivative_excludes_zero_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unique_selected_event_stable_sheet_crossing_validated": false
+    },
+    "conditional_graph_interface": {
+      "conditional_implication": "if a future quantitative stable graph in the identical coordinates has a stable domain containing that closed ball, then its full-interval stable-coordinate domain premise is satisfied",
+      "future_graph_domain_contains_ball_validated": false,
+      "proved_ball": "P_s*kappa(I_J) is contained in the closed inherited-Y ball in ker(f_phys) of radius 47/5000",
+      "quantitative_graph_supplied_here": false,
+      "selected_crossing_claimed_here": false,
+      "stable_gap_endpoint_signs_claimed_here": false
+    },
+    "conditional_stable_gap_slope": {
+      "conditional_gap_derivative_directed_interval": {
+        "lower": "-354.41569965232407717284131240170190437585547635546694055865365",
+        "upper": "-149.584300347675922827158687598298095624144523644533059441468699"
+      },
+      "conditional_gap_derivative_exact_interval": {
+        "lower": "-692218163383445463228205688284574031984092727256771368278244706681794098256297571927716904740055005556512669855854648679285517/1953125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "upper": "-292156836616554536771794311715425968015907272743228631721834947615080901743702428072283095259944994443487330144145351320714483/1953125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "conditional_implication": "if a future quantitative graph in the identical coordinates is defined on P_s*kappa(I_J) and satisfies sup||Dpsi||<=16, then H'(J) lies in the displayed negative interval for every J in I_J",
+      "conditional_negative_margin_lower": "149.584300347675922827158687598298095624144523644533059441468699",
+      "derivative_identity": "H'(J)=f_phys(D_JK)-Dpsi(P_s*kappa)[P_sD_JK]",
+      "graph_correction_norm_exact_fraction": "186853864524452066910260924084827032864150017367648072218145341447419098256297571927716904740055005556512669855854648679285517/1953125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "graph_derivative_norm_hypothesis_exact": "16",
+      "graph_derivative_norm_hypothesis_validated_here": false,
+      "maximum_admissible_graph_derivative_norm_directed_interval": {
+        "lower": "41.0169264508476731498561290859967755309395465007664375171227498",
+        "upper": "41.0169264508476731498561290859967755309395465007664375172043161"
+      },
+      "maximum_admissible_graph_derivative_norm_exact_fraction": "7664171218256105658912883772804048014080916641774027263039684625000000000000000000000000000000000000000000000000000000000000000/186853864524452066910260924084827032864150017367648072218145341447419098256297571927716904740055005556512669855854648679285517",
+      "maximum_admissible_graph_derivative_norm_lower": "41.0169264508476731498561290859967755309395465007664375171227498",
+      "parent_functional_action_interval": {
+        "lower": "-258.746521015804618914787719270270463549410667463231127582770875",
+        "upper": "-245.253478984195381085212280729729536450589332536768872417269908"
+      },
+      "quantitative_graph_supplied_here": false,
+      "unconditional_gap_derivative_claimed_here": false
+    },
+    "coordinate_registration": {
+      "centered_history": "kappa(J)=K(J)-X_* in Sigma",
+      "derivative_identity": "z'(J)=P_s*D_JK(J)",
+      "event_history": "K(J) is the unique Stage-5C selected late-window Route-C event-aligned complete history imported through Stage 5D",
+      "normalization": "f_phys(q_phys)=1 exactly",
+      "physical_column": "q=q_phys=q_tilde/gamma",
+      "physical_functional": "f=f_phys(y)=gamma*ell(y)/ell(q_tilde)",
+      "projection": "P_s=I-q_phys*f_phys on Sigma",
+      "reference_history": "X_* is fixed while J varies and is the exact inner periodic-orbit history at the identical Route-C phase-zero section",
+      "stable_coordinate": "z(J)=P_s*kappa(J) in ker(f_phys)"
+    },
+    "derivative_ledger": {
+      "bound_formula": "L_s=R_*+Q_*delta_f",
+      "correlated_residual_Y_norm_upper": "5.39727039439879415876620097964663012311420075942563703709562492",
+      "direct_q_norm_strictly_below_stage5f_coarse_bound": true,
+      "direct_q_phys_Y_norm_upper": "0.0862745804867627501249432936217907214002908601742418324042052094",
+      "functional_deviation_from_center_upper": "6.74652101580461891478771927027046354941066746323112758265872176",
+      "projection_identity": "P_sD_JK=Y_*+q_phys*(c_*-f_phys(D_JK))",
+      "q_norm_source": "Stage-5G-a direct 512-continuous-history-cell q_phys Y-norm",
+      "residual_center_exact": "-252",
+      "stable_projection_derivative_norm_directed_interval": {
+        "lower": "5.97932366478246614112834957071446505165280055576473831097737974",
+        "upper": "5.97932366478246614112834957071446505165280055576473831098375211"
+      },
+      "stable_projection_derivative_norm_exact_fraction": "186853864524452066910260924084827032864150017367648072218145341447419098256297571927716904740055005556512669855854648679285517/31250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "stable_projection_derivative_norm_upper": "5.97932366478246614112834957071446505165280055576473831098375211",
+      "stage5f_coarse_q_phys_Y_norm_upper": "1.38298060370245631841470282396581026559885598345994672569132122"
+    },
+    "endpoints": [
+      {
+        "J_endpoint_exact": "6021/20000",
+        "name": "minus",
+        "stable_projection_Y_norm_upper": "0.00893597137093006732173549729328136296151241385525735614670445564"
+      },
+      {
+        "J_endpoint_exact": "753/2500",
+        "name": "plus",
+        "stable_projection_Y_norm_upper": "0.00892766412203385449251850007816594544982700776947463704958453032"
+      }
+    ],
+    "history_space": "Y=C([-5*sqrt(5),0],R) x R with ||(phi,w)||_Y=max(||phi||_infinity,|w|)",
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parameter_scope": {
+      "center_J0_exact": "2409/8000",
+      "full_width_W_exact": "3/20000",
+      "half_width_h_exact": "3/40000",
+      "interval_exact": "I_J=[6021/20000,753/2500]",
+      "normalized_parameter": "J=J0+h*xi with xi in [-1,1]"
+    },
+    "parent_ingress": {
+      "stage5d_C1_selected_event_branch": true,
+      "stage5d_event_translation_retained": true,
+      "stage5e_correlated_residual_formed_before_norm": true,
+      "stage5e_same_physical_normalization": true,
+      "stage5f_projection_identity_imported_without_renormalization": true,
+      "stage5ga_direct_q_norm_and_both_endpoint_projections_imported": true
+    },
+    "schema_id": "leaky-pulse-stable-coordinate-cone-stage5gb-v1",
+    "section_tangent_space": "Sigma={y in Y:y_v(0)=0}, with q_phys in Sigma and P_s=I-q_phys*f_phys",
+    "theorem_statement": "For the single Stage-5D continuously differentiable selected Route-C event branch, in the identical Stage-5E/5F/5G-a physical Grushin coordinates and complete-history norm, the stable coordinate P_s(K(J)-X_*) lies in the closed Y-ball of radius 47/5000 for every J in I_J.  This uses the exact two-ended cone and the Stage-5G-a direct q_phys norm, not sampled interpolation.  The same arithmetic proves the conditional implication that a future graph with sup||Dpsi||<=16 has the displayed strictly negative stable-gap derivative interval.  A future graph must separately exist, contain the ball, and satisfy that derivative bound; no unconditional stable-gap sign or derivative, stable-sheet crossing, onset, routing, capture, or safety conclusion is asserted here.",
+    "two_ended_cone": {
+      "argument": "two-ended Banach-space fundamental theorem of calculus in the continuous complete-history Y norm",
+      "cone_radius_directed_interval": {
+        "lower": "0.00938026702134064586771162490352723908454367085404835197146057378",
+        "upper": "0.00938026702134064586771162490352723908454367085404835197147550902"
+      },
+      "cone_radius_exact_fraction": "11725333776675807334639531129409048855679588567560439964335052249342257294768892715783150714220165016669538009567563946037856551/1250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "cone_radius_formula": "E_cone=(E_-+E_++L_s*W)/2",
+      "cone_radius_strictly_below_target": true,
+      "cone_radius_upper": "0.00938026702134064586771162490352723908454367085404835197147550902",
+      "finite_parameter_sampling_used": false,
+      "full_interval_conclusion": "P_s*kappa(I_J) subset closed_B_Y(0,47/5000) intersect ker(f_phys)",
+      "interval_width_W_exact": "3/20000",
+      "left_cone": "||z(J)||_Y<=E_-+L_s*(J-J_-)",
+      "left_meeting_margin_lower": "7.43053354056461622104997877546669128823065785895582420768886593e-05",
+      "meeting_point_directed_interval": {
+        "lower": "7.43053354056461622104997877546669128823065785895582420768886593e-05",
+        "upper": "7.43053354056461622104997877546669128823065785895582420781138154e-05"
+      },
+      "meeting_point_exact_fraction": "555369563013223182470159512807345153789071248488744780954482699342257294768892715783150714220165016669538009567563946037856551/7474154580978082676410436963393081314566000694705922888725813657896763930251902877108676189602200222260506794234185947171420680000",
+      "meeting_point_formula": "x_*=(E_+-E_-+L_s*W)/(2*L_s)",
+      "meeting_point_strictly_inside_interval": true,
+      "right_cone": "||z(J)||_Y<=E_++L_s*(J_+-J)",
+      "right_meeting_margin_lower": "7.56946645943538377895002122453330871176934214104417579218744231e-05",
+      "target_margin_lower": "1.97329786593541322883750964727609154563291459516480285263938478e-05",
+      "target_radius_exact": "47/5000"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact rational arithmetic on the outward-decimal parent bounds; independent 192-bit directed serialization; the Stage-5E correlated complete-history residual and functional radius; the Stage-5G-a direct 512-cell q_phys Y-norm and both endpoint stable projections; and the two-ended Banach-space fundamental-theorem-of-calculus cone on the full exact pulse interval; no parameter sampling, stable graph, graph-domain, stable-gap, crossing, onset, routing, capture, or safety promotion",
+    "certificate_sha256": "9fd06db88ce1743a27d27bef86e2d16891c92c39f8adf7e60ae3d4d00f7ef813",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_stable_coordinate_cone_stage5gb.py",
+    "dependency_source_sha256": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_pulse_endpoint_functional_stage5ga.py": "38ebab3ccc0851d8e16ca23d53632e3fe11cde33eaaee59cc58ac2ab64fe91bc",
+      "src/canard_control/leaky_pulse_event_aligned_derivative_stage5d.py": "ef92aff6afe38d46b8d9697be33fee74dc10e61adfa82df1b1ddb3a6abc1abc6",
+      "src/canard_control/leaky_pulse_oriented_adjoint_action_stage5e.py": "cd32e87908c32977d025a1cd92821430a85f87cd2faea7f33e327b9dcf22fcdd",
+      "src/canard_control/leaky_pulse_stable_gap_slope_bridge_stage5f.py": "fd350d76eea11d17243b0c4fcd9f39d8e5241b8c69be9aa0c137499a745ef853"
+    },
+    "gmpy2": "2.2.2",
+    "mpfr": "MPFR 4.2.1",
+    "numeric_core_sha256": "acdf92f82b51866b89536fb45c4632f8da11f4ac54eabbffcdcc6c284ef741e5",
+    "numpy": "2.5.2",
+    "omp_num_threads": "1",
+    "openblas_num_threads": "8",
+    "parent_sha256": {
+      "experiments/results/leaky_pulse_endpoint_functional_stage5ga.json": "56e847fc804ced75e6c2fbf09ccbec1bdeabf505638e093c0939c2f2e584dd8c",
+      "experiments/results/leaky_pulse_event_aligned_derivative_stage5d.json": "e8be485b8b4711a0ae0b1f3ec875f704c509d9ba0abd5b2166a2384567ed654e",
+      "experiments/results/leaky_pulse_oriented_adjoint_action_stage5e.json": "187b8c6d614aa87c68442acb9f5d472233907c31f0df8a1c8d29dfc6941743be",
+      "experiments/results/leaky_pulse_stable_gap_slope_bridge_stage5f.json": "26acd6d9421a8bf60d5bb96fe4c68918b39f89a443973dd728fed17ccf48652b"
+    },
+    "precision_bits": 192,
+    "python": "3.14.4",
+    "result": "experiments/results/leaky_pulse_stable_coordinate_cone_stage5gb.json",
+    "schema_id": "leaky-pulse-stable-coordinate-cone-stage5gb-v1",
+    "scipy": "1.18.0",
+    "source_sha256": {
+      "docs/leaky-pulse-stable-coordinate-cone-stage5gb-contract.md": "40786ddb8becadf2326339084de4a79586a7a3cc50c1e72df6a7452094a2a396",
+      "docs/leaky-pulse-stable-coordinate-cone-stage5gb.md": "a4cbf6fbb483ee44368894eaf0f3d1d0dc176d2af0637fd5e65406ce6562baef",
+      "experiments/leaky_pulse_stable_coordinate_cone_stage5gb.py": "52453e7b49a473ad9006d306b4430a52cee69b1ca7342104e98f61023fc3720f",
+      "src/canard_control/leaky_pulse_stable_coordinate_cone_stage5gb.py": "abe73b2444e35b5daf0be8417f6c6fc2e35ba7003f11c4e3bba9d29b5f8629a6",
+      "tests/test_leaky_pulse_stable_coordinate_cone_stage5gb.py": "568664b058b734ee4d68cbdbcefcf66d01418802334bbd2c401f1e7aee0d3a50"
+    }
+  }
+}

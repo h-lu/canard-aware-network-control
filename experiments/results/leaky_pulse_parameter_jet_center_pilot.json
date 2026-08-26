@@ -1,0 +1,1529 @@
+{
+  "manifest": {
+    "arithmetic_scope": "binary64 SciPy DOP853 method of steps for the jointly propagated factorial parameter coefficients a_k=z_k/k!, k=0,...,4; three tolerance/max-step refinements sampled on a common two-origin mesh; the pointwise refinement hull is an observed envelope, not a directed flow or order-five remainder enclosure",
+    "default_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_parameter_jet_center_pilot.py",
+    "dependency_source_sha256": {
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35"
+    },
+    "environment": {
+      "numpy": "2.5.2",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "parent_sha256": {
+      "experiments/results/leaky_pulse_event_aligned_parameter_jet_contract.json": "12993314508d7b31de1ef7e5988b9dbd0798347eee73309d381774faa0d21646",
+      "experiments/results/leaky_pulse_inner_route_c_family_contract.json": "6821551f3fab7d4bbc073af20b83daf055482055a81db23664d31c017de81f7c"
+    },
+    "pilot_sha256": "33994d58d044e69ee39b16b20fa8e8c4e052b25fd7adcfdc1cd3abea0432997d",
+    "result": "experiments/results/leaky_pulse_parameter_jet_center_pilot.json",
+    "schema_id": "leaky-pulse-parameter-jet-center-pilot-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-parameter-jet-center-pilot.md": "c178bd0749409551db1758da2cb90b654b998e461c538c39df0fefccb8e93c88",
+      "experiments/leaky_pulse_parameter_jet_center_pilot.py": "499fe454863ba35af0e1611bafa44eb32229392eb62c70684e2f7d7df51d624d",
+      "src/canard_control/leaky_pulse_parameter_jet_center_pilot.py": "d5b4c846d2f36b3ae3dc4717e5b3745610c9f86d22d93b1fce8f1a0f9aadc97a"
+    }
+  },
+  "pilot": {
+    "center_amplitude_exact": {
+      "binary64": {
+        "binary64_hex": "0x1.345a1cac08312p-2",
+        "decimal": "0.30112499999999998"
+      },
+      "denominator": "8000",
+      "numerator": "2409"
+    },
+    "claim_status": {
+      "center_coefficient_guides_rigorously_enclosed": false,
+      "center_z0_through_z4_integrated_jointly": true,
+      "common_event_complete_history_jet_validated": false,
+      "common_two_origin_mesh_sampled": true,
+      "directed_rounding_used": false,
+      "event_time_jet_validated": false,
+      "factorial_parameter_correlation_preserved_in_state_vector": true,
+      "interval_newton_onset_validated": false,
+      "mesh_refinement_envelope_is_a_true_solution_enclosure": false,
+      "order_five_parameter_remainder_validated": false,
+      "pointwise_refinement_envelope_recorded": true,
+      "pulse_release_and_both_delay_breakpoint_families_preserved": true,
+      "rfde_stable_coordinate_validated": false,
+      "route_c_event_bracket_validated": false,
+      "route_c_event_speed_validated": false,
+      "three_solver_refinements_completed": true,
+      "two_sided_basin_routing_validated": false,
+      "uniform_wide_interval_parameter_jet_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "wide_endpoint_fourth_order_reconstruction_compared_with_direct_flows": true
+    },
+    "coefficient_guide": {
+      "fine_derivative_jet_mesh_digest": "14bb4653434bdb53a46689d71d9148f8e868c2840a4cc46fc5e4c0a234729233",
+      "fine_factorial_coefficient_mesh_digest": "34f8021f0709db0c22a3b0019f74ccc4f4fcde2dd70974b37b31c2c317a4fac1",
+      "landmarks": [
+        {
+          "fine_derivative_jets": [
+            [
+              {
+                "binary64_hex": "0x1.32756cb150adap+0",
+                "decimal": "1.1971042569063486"
+              },
+              {
+                "binary64_hex": "0x1.5f83ed4168a09p-1",
+                "decimal": "0.68655339644857449"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.ba13d7625a759p-1",
+                "decimal": "0.86343262744524474"
+              },
+              {
+                "binary64_hex": "0x1.69797e38b4113p-4",
+                "decimal": "0.088250630429005647"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.30135921e9bbep-1",
+                "decimal": "-0.59389761485078174"
+              },
+              {
+                "binary64_hex": "-0x1.f315343da1ec8p-6",
+                "decimal": "-0.030461598411902796"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.890833d8c5264p-2",
+                "decimal": "0.38382035265502723"
+              },
+              {
+                "binary64_hex": "0x1.39a0fcea9ceeep-7",
+                "decimal": "0.0095711932128561238"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.f9975b1575b02p-3",
+                "decimal": "0.24687071952094902"
+              },
+              {
+                "binary64_hex": "0x1.d0ba4d17700a4p-7",
+                "decimal": "0.014182365076408417"
+              }
+            ]
+          ],
+          "name": "pulse_release",
+          "refinement_envelope_lower": [
+            [
+              {
+                "binary64_hex": "0x1.32756cb150ad7p+0",
+                "decimal": "1.1971042569063479"
+              },
+              {
+                "binary64_hex": "0x1.5f83ed4168a09p-1",
+                "decimal": "0.68655339644857449"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.ba13d7625a755p-1",
+                "decimal": "0.86343262744524429"
+              },
+              {
+                "binary64_hex": "0x1.69797e38b4111p-4",
+                "decimal": "0.088250630429005619"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.30135921e9bbep-1",
+                "decimal": "-0.59389761485078174"
+              },
+              {
+                "binary64_hex": "-0x1.f315343da1ec8p-6",
+                "decimal": "-0.030461598411902796"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.890833d8c525ep-2",
+                "decimal": "0.3838203526550269"
+              },
+              {
+                "binary64_hex": "0x1.39a0fcea9ceeep-7",
+                "decimal": "0.0095711932128561238"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.f9975b1575abfp-3",
+                "decimal": "0.24687071952094716"
+              },
+              {
+                "binary64_hex": "0x1.d0ba4d1770096p-7",
+                "decimal": "0.014182365076408392"
+              }
+            ]
+          ],
+          "refinement_envelope_upper": [
+            [
+              {
+                "binary64_hex": "0x1.32756cb150adap+0",
+                "decimal": "1.1971042569063486"
+              },
+              {
+                "binary64_hex": "0x1.5f83ed4168a0bp-1",
+                "decimal": "0.68655339644857472"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.ba13d7625a75ap-1",
+                "decimal": "0.86343262744524485"
+              },
+              {
+                "binary64_hex": "0x1.69797e38b4113p-4",
+                "decimal": "0.088250630429005647"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.30135921e9bbcp-1",
+                "decimal": "-0.59389761485078152"
+              },
+              {
+                "binary64_hex": "-0x1.f315343da1ec1p-6",
+                "decimal": "-0.030461598411902772"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.890833d8c5264p-2",
+                "decimal": "0.38382035265502723"
+              },
+              {
+                "binary64_hex": "0x1.39a0fcea9cf0dp-7",
+                "decimal": "0.0095711932128561775"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.f9975b1575b02p-3",
+                "decimal": "0.24687071952094902"
+              },
+              {
+                "binary64_hex": "0x1.d0ba4d177015ap-7",
+                "decimal": "0.014182365076408732"
+              }
+            ]
+          ],
+          "time": {
+            "binary64_hex": "0x1.0000000000000p+0",
+            "decimal": "1"
+          }
+        },
+        {
+          "fine_derivative_jets": [
+            [
+              {
+                "binary64_hex": "0x1.2f4574a404586p-1",
+                "decimal": "0.59232677938614198"
+              },
+              {
+                "binary64_hex": "0x1.2bc251e077777p-1",
+                "decimal": "0.58546691765853509"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.4739aa0bc274ap+0",
+                "decimal": "-1.2782236365041677"
+              },
+              {
+                "binary64_hex": "-0x1.494ef6235301ep-2",
+                "decimal": "-0.32159027662851425"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.2f5652638affbp+1",
+                "decimal": "-2.3698218332337979"
+              },
+              {
+                "binary64_hex": "-0x1.cb2d9d4ea63dcp-2",
+                "decimal": "-0.44841619293725699"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.02054122347fap+3",
+                "decimal": "-8.0631414096896954"
+              },
+              {
+                "binary64_hex": "-0x1.418142539f6cep-4",
+                "decimal": "-0.078492411697847347"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.d4730ffebcc98p+1",
+                "decimal": "3.659761428245087"
+              },
+              {
+                "binary64_hex": "-0x1.2e5efa17fd22fp+2",
+                "decimal": "-4.7245469316735997"
+              }
+            ]
+          ],
+          "name": "delay_4",
+          "refinement_envelope_lower": [
+            [
+              {
+                "binary64_hex": "0x1.2f4574a40456ap-1",
+                "decimal": "0.59232677938613887"
+              },
+              {
+                "binary64_hex": "0x1.2bc251e077776p-1",
+                "decimal": "0.58546691765853498"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.4739aa0bc275cp+0",
+                "decimal": "-1.2782236365041717"
+              },
+              {
+                "binary64_hex": "-0x1.494ef62353020p-2",
+                "decimal": "-0.32159027662851436"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.2f5652638affbp+1",
+                "decimal": "-2.3698218332337979"
+              },
+              {
+                "binary64_hex": "-0x1.cb2d9d4ea63dcp-2",
+                "decimal": "-0.44841619293725699"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.02054122347fap+3",
+                "decimal": "-8.0631414096896954"
+              },
+              {
+                "binary64_hex": "-0x1.418142539f6cep-4",
+                "decimal": "-0.078492411697847347"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.d4730ffebcc98p+1",
+                "decimal": "3.659761428245087"
+              },
+              {
+                "binary64_hex": "-0x1.2e5efa17fd22fp+2",
+                "decimal": "-4.7245469316735997"
+              }
+            ]
+          ],
+          "refinement_envelope_upper": [
+            [
+              {
+                "binary64_hex": "0x1.2f4574a404591p-1",
+                "decimal": "0.5923267793861432"
+              },
+              {
+                "binary64_hex": "0x1.2bc251e077782p-1",
+                "decimal": "0.58546691765853631"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.4739aa0bc2717p+0",
+                "decimal": "-1.2782236365041564"
+              },
+              {
+                "binary64_hex": "-0x1.494ef62352feap-2",
+                "decimal": "-0.32159027662851136"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.2f5652638af78p+1",
+                "decimal": "-2.3698218332337397"
+              },
+              {
+                "binary64_hex": "-0x1.cb2d9d4ea633fp-2",
+                "decimal": "-0.44841619293724827"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.0205412234788p+3",
+                "decimal": "-8.0631414096894929"
+              },
+              {
+                "binary64_hex": "-0x1.418142539f108p-4",
+                "decimal": "-0.078492411697826836"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.d4730ffebd29ep+1",
+                "decimal": "3.6597614282457718"
+              },
+              {
+                "binary64_hex": "-0x1.2e5efa17fd1dap+2",
+                "decimal": "-4.7245469316735242"
+              }
+            ]
+          ],
+          "time": {
+            "binary64_hex": "0x1.1e3779b97f4a8p+3",
+            "decimal": "8.9442719099991592"
+          }
+        },
+        {
+          "fine_derivative_jets": [
+            [
+              {
+                "binary64_hex": "0x1.f0b3f0c69e316p-2",
+                "decimal": "0.48506141865031915"
+              },
+              {
+                "binary64_hex": "0x1.e61d95a7ae146p-2",
+                "decimal": "0.4747222312539815"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.ac18539d45282p+1",
+                "decimal": "-3.3444923894806502"
+              },
+              {
+                "binary64_hex": "-0x1.feae27af3058ep-1",
+                "decimal": "-0.99742244733367769"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.afe1a0558ec78p+4",
+                "decimal": "-26.992584547243013"
+              },
+              {
+                "binary64_hex": "-0x1.192eb156bab38p+2",
+                "decimal": "-4.3934748980489573"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.c6159db524045p+7",
+                "decimal": "-227.04221883835467"
+              },
+              {
+                "binary64_hex": "-0x1.a62e8acb01238p+4",
+                "decimal": "-26.386362832056165"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.0be68bf0bb20ep+10",
+                "decimal": "-1071.6022912814547"
+              },
+              {
+                "binary64_hex": "-0x1.78be0c1c5d9cap+6",
+                "decimal": "-94.185593074048626"
+              }
+            ]
+          ],
+          "name": "delay_5",
+          "refinement_envelope_lower": [
+            [
+              {
+                "binary64_hex": "0x1.f0b3f0c69e246p-2",
+                "decimal": "0.48506141865030761"
+              },
+              {
+                "binary64_hex": "0x1.e61d95a7ae11bp-2",
+                "decimal": "0.47472223125397911"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.ac18539d45336p+1",
+                "decimal": "-3.3444923894807301"
+              },
+              {
+                "binary64_hex": "-0x1.feae27af305eep-1",
+                "decimal": "-0.99742244733368834"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.afe1a0558ed11p+4",
+                "decimal": "-26.992584547243556"
+              },
+              {
+                "binary64_hex": "-0x1.192eb156bab71p+2",
+                "decimal": "-4.3934748980490079"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.c6159db52405ap+7",
+                "decimal": "-227.04221883835527"
+              },
+              {
+                "binary64_hex": "-0x1.a62e8acb01238p+4",
+                "decimal": "-26.386362832056165"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.0be68bf0bb20ep+10",
+                "decimal": "-1071.6022912814547"
+              },
+              {
+                "binary64_hex": "-0x1.78be0c1c5d9cap+6",
+                "decimal": "-94.185593074048626"
+              }
+            ]
+          ],
+          "refinement_envelope_upper": [
+            [
+              {
+                "binary64_hex": "0x1.f0b3f0c69e316p-2",
+                "decimal": "0.48506141865031915"
+              },
+              {
+                "binary64_hex": "0x1.e61d95a7ae155p-2",
+                "decimal": "0.47472223125398233"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.ac18539d4523bp+1",
+                "decimal": "-3.3444923894806187"
+              },
+              {
+                "binary64_hex": "-0x1.feae27af30536p-1",
+                "decimal": "-0.99742244733366792"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.afe1a0558ebe2p+4",
+                "decimal": "-26.99258454724248"
+              },
+              {
+                "binary64_hex": "-0x1.192eb156baad1p+2",
+                "decimal": "-4.3934748980488658"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.c6159db523f4fp+7",
+                "decimal": "-227.04221883834768"
+              },
+              {
+                "binary64_hex": "-0x1.a62e8acb01153p+4",
+                "decimal": "-26.386362832055351"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.0be68bf0bb01fp+10",
+                "decimal": "-1071.6022912813421"
+              },
+              {
+                "binary64_hex": "-0x1.78be0c1c5d760p+6",
+                "decimal": "-94.185593074039843"
+              }
+            ]
+          ],
+          "time": {
+            "binary64_hex": "0x1.65c55827df1d2p+3",
+            "decimal": "11.180339887498949"
+          }
+        },
+        {
+          "fine_derivative_jets": [
+            [
+              {
+                "binary64_hex": "0x1.42c916cbe0af6p-1",
+                "decimal": "0.63044043768635905"
+              },
+              {
+                "binary64_hex": "0x1.3a4e2c27b681fp-1",
+                "decimal": "0.61387765869881494"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.eee599ee2314cp+2",
+                "decimal": "7.7327637506062494"
+              },
+              {
+                "binary64_hex": "0x1.dae4fb8c14118p+2",
+                "decimal": "7.4202259891465232"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.8de7e434e6d21p+10",
+                "decimal": "1591.6233036283595"
+              },
+              {
+                "binary64_hex": "0x1.94eb47e3a0676p+9",
+                "decimal": "809.83813138324945"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.1fc9d6175888ep+18",
+                "decimal": "294695.3451749169"
+              },
+              {
+                "binary64_hex": "0x1.f2f59f5e0b90ap+16",
+                "decimal": "127733.6225287655"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.4932cbd1a2e7dp+26",
+                "decimal": "86297391.275567964"
+              },
+              {
+                "binary64_hex": "0x1.eec4b90114b84p+24",
+                "decimal": "32425145.004222408"
+              }
+            ]
+          ],
+          "name": "twenty_sqrt5",
+          "refinement_envelope_lower": [
+            [
+              {
+                "binary64_hex": "0x1.42c916cbe0af6p-1",
+                "decimal": "0.63044043768635905"
+              },
+              {
+                "binary64_hex": "0x1.3a4e2c27b6804p-1",
+                "decimal": "0.61387765869881195"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.eee599ee22bfdp+2",
+                "decimal": "7.7327637506050424"
+              },
+              {
+                "binary64_hex": "0x1.dae4fb8c13e23p+2",
+                "decimal": "7.4202259891458509"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.8de7e434e6877p+10",
+                "decimal": "1591.623303628088"
+              },
+              {
+                "binary64_hex": "0x1.94eb47e3a026ep+9",
+                "decimal": "809.83813138313212"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.1fc9d617583d4p+18",
+                "decimal": "294695.34517484647"
+              },
+              {
+                "binary64_hex": "0x1.f2f59f5e0b1ffp+16",
+                "decimal": "127733.62252873926"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.4932cbd1a26dap+26",
+                "decimal": "86297391.275538832"
+              },
+              {
+                "binary64_hex": "0x1.eec4b90114104p+24",
+                "decimal": "32425145.004212394"
+              }
+            ]
+          ],
+          "refinement_envelope_upper": [
+            [
+              {
+                "binary64_hex": "0x1.42c916cbe0c12p-1",
+                "decimal": "0.63044043768639058"
+              },
+              {
+                "binary64_hex": "0x1.3a4e2c27b690ap-1",
+                "decimal": "0.61387765869884103"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.eee599ee24817p+2",
+                "decimal": "7.732763750611432"
+              },
+              {
+                "binary64_hex": "0x1.dae4fb8c14c56p+2",
+                "decimal": "7.4202259891490794"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.8de7e434e7cc3p+10",
+                "decimal": "1591.6233036292695"
+              },
+              {
+                "binary64_hex": "0x1.94eb47e3a13f2p+9",
+                "decimal": "809.83813138364189"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.1fc9d61759aaap+18",
+                "decimal": "294695.34517518675"
+              },
+              {
+                "binary64_hex": "0x1.f2f59f5e0d43ep+16",
+                "decimal": "127733.62252886684"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "0x1.4932cbd1a4bb8p+26",
+                "decimal": "86297391.275679469"
+              },
+              {
+                "binary64_hex": "0x1.eec4b90117120p+24",
+                "decimal": "32425145.004258275"
+              }
+            ]
+          ],
+          "time": {
+            "binary64_hex": "0x1.65c55827df1d2p+5",
+            "decimal": "44.721359549995796"
+          }
+        },
+        {
+          "fine_derivative_jets": [
+            [
+              {
+                "binary64_hex": "0x1.39eaabcb365cep+0",
+                "decimal": "1.2262370463489449"
+              },
+              {
+                "binary64_hex": "0x1.19b1df72970bap-1",
+                "decimal": "0.55018518708995789"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.2d44814898503p+3",
+                "decimal": "-9.4146124284620836"
+              },
+              {
+                "binary64_hex": "-0x1.3d08564b1d694p+5",
+                "decimal": "-39.629070841631943"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.1e169a398fae2p+14",
+                "decimal": "-18309.650610203746"
+              },
+              {
+                "binary64_hex": "-0x1.6652050cceaa0p+13",
+                "decimal": "-11466.252465834201"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.ce5632fe11ff6p+23",
+                "decimal": "-15149849.49623106"
+              },
+              {
+                "binary64_hex": "-0x1.117d0d1c95fb4p+22",
+                "decimal": "-4480835.2779158838"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.93bfb7a99fcf8p+33",
+                "decimal": "-13547564883.24852"
+              },
+              {
+                "binary64_hex": "-0x1.042c7fca9f53bp+31",
+                "decimal": "-2182496229.3111854"
+              }
+            ]
+          ],
+          "name": "final",
+          "refinement_envelope_lower": [
+            [
+              {
+                "binary64_hex": "0x1.39eaabcb36537p+0",
+                "decimal": "1.2262370463489114"
+              },
+              {
+                "binary64_hex": "0x1.19b1df7296d34p-1",
+                "decimal": "0.55018518708985775"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.2d4481489efa0p+3",
+                "decimal": "-9.4146124285105657"
+              },
+              {
+                "binary64_hex": "-0x1.3d08564b1e526p+5",
+                "decimal": "-39.629070841658447"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.1e169a399232bp+14",
+                "decimal": "-18309.650610241264"
+              },
+              {
+                "binary64_hex": "-0x1.6652050ccff66p+13",
+                "decimal": "-11466.252465843874"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.ce5632fe16372p+23",
+                "decimal": "-15149849.49626324"
+              },
+              {
+                "binary64_hex": "-0x1.117d0d1c97234p+22",
+                "decimal": "-4480835.2779202946"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.93bfb7a9a3c4ep+33",
+                "decimal": "-13547564883.279446"
+              },
+              {
+                "binary64_hex": "-0x1.042c7fcaa0678p+31",
+                "decimal": "-2182496229.3132896"
+              }
+            ]
+          ],
+          "refinement_envelope_upper": [
+            [
+              {
+                "binary64_hex": "0x1.39eaabcb365ddp+0",
+                "decimal": "1.2262370463489483"
+              },
+              {
+                "binary64_hex": "0x1.19b1df729731fp-1",
+                "decimal": "0.55018518709002595"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.2d4481489466cp+3",
+                "decimal": "-9.414612428433621"
+              },
+              {
+                "binary64_hex": "-0x1.3d08564b1ca52p+5",
+                "decimal": "-39.629070841609646"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.1e169a398de76p+14",
+                "decimal": "-18309.650610177276"
+              },
+              {
+                "binary64_hex": "-0x1.6652050ccd676p+13",
+                "decimal": "-11466.252465824811"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.ce5632fe0eb40p+23",
+                "decimal": "-15149849.496205926"
+              },
+              {
+                "binary64_hex": "-0x1.117d0d1c94b33p+22",
+                "decimal": "-4480835.2779109953"
+              }
+            ],
+            [
+              {
+                "binary64_hex": "-0x1.93bfb7a99c77fp+33",
+                "decimal": "-13547564883.22241"
+              },
+              {
+                "binary64_hex": "-0x1.042c7fca9ddb6p+31",
+                "decimal": "-2182496229.3083143"
+              }
+            ]
+          ],
+          "time": {
+            "binary64_hex": "0x1.ad5336963eefcp+5",
+            "decimal": "53.665631459994955"
+          }
+        }
+      ],
+      "maximum_absolute_derivative_jet_by_order_component": [
+        {
+          "recovery": {
+            "binary64_hex": "0x1.7fc687a8a6291p-1",
+            "decimal": "0.74956153806404491"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.3e7f4a90c8ae0p+0",
+            "decimal": "1.2441298106647807"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.4d1821461e16dp+5",
+            "decimal": "41.636782214921233"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.8795601b9009cp+6",
+            "decimal": "97.895874434152972"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.6652050cceaa0p+13",
+            "decimal": "11466.252465834201"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.1860ee6737e94p+15",
+            "decimal": "35888.465631243918"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.117d0d1c95fb4p+22",
+            "decimal": "4480835.2779158838"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.28bc92d40442dp+24",
+            "decimal": "19446930.828190017"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.042c7fca9f53bp+31",
+            "decimal": "2182496229.3111854"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.aac80d770f84ep+33",
+            "decimal": "14320409326.121243"
+          }
+        }
+      ],
+      "maximum_absolute_factorial_coefficient_by_order_component": [
+        {
+          "recovery": {
+            "binary64_hex": "0x1.7fc687a8a6291p-1",
+            "decimal": "0.74956153806404491"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.3e7f4a90c8ae0p+0",
+            "decimal": "1.2441298106647807"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.4d1821461e16dp+5",
+            "decimal": "41.636782214921233"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.8795601b9009cp+6",
+            "decimal": "97.895874434152972"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.6652050cceaa0p+12",
+            "decimal": "5733.1262329171004"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.1860ee6737e94p+14",
+            "decimal": "17944.232815621959"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.6ca6bc261d4f0p+19",
+            "decimal": "746805.8796526473"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.8ba6191ab0591p+21",
+            "decimal": "3241155.1380316694"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.5ae5ffb8d46f9p+26",
+            "decimal": "90937342.887966052"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.1c855e4f5fadfp+29",
+            "decimal": "596683721.92171848"
+          }
+        }
+      ],
+      "maximum_absolute_wide_half_width_scaled_term_by_order_component": [
+        {
+          "recovery": {
+            "binary64_hex": "0x1.7fc687a8a6291p-1",
+            "decimal": "0.74956153806404491"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.3e7f4a90c8ae0p+0",
+            "decimal": "1.2441298106647807"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.994e64b045bddp-9",
+            "decimal": "0.0031227586661190924"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.e12d846edfb03p-8",
+            "decimal": "0.0073421905825614723"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.0e85d890c0818p-15",
+            "decimal": "3.2248835060158683e-05"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.a75b8983a0669p-14",
+            "decimal": "0.00010093630958787351"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.524aaf34baffcp-22",
+            "decimal": "3.150587304784605e-07"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.6f0c6c64340dep-20",
+            "decimal": "1.3673623238571101e-06"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.8b747fcd6af2fp-29",
+            "decimal": "2.8773143648145496e-09"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.4458ae5e1a1cap-26",
+            "decimal": "1.8879445888929367e-08"
+          }
+        }
+      ],
+      "orders": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "wide_scaled_term_formula": "max_t |a_k(t)|*(3/40000)^k"
+    },
+    "coefficient_normalization": "a_k=z_k/k!, and z(J0+delta)=sum_{k=0}^4 a_k*delta^k+R_5",
+    "common_sample_mesh": {
+      "cell_count": 1152,
+      "origins": [
+        "0",
+        "1"
+      ],
+      "point_count": 1153,
+      "spacing": "sqrt(5)/24",
+      "time_mesh_digest": "faf3abef827528609d3844f603aa35928c0916aa4843e9f8770b2d17194a15ee"
+    },
+    "joint_state_order": [
+      "a0_voltage",
+      "a0_recovery",
+      "a1_voltage",
+      "a1_recovery",
+      "a2_voltage",
+      "a2_recovery",
+      "a3_voltage",
+      "a3_recovery",
+      "a4_voltage",
+      "a4_recovery"
+    ],
+    "mesh_refinement_envelope": {
+      "adjacent_refinement_differences": [
+        {
+          "joint_maximum_absolute_difference": {
+            "binary64_hex": "0x1.d33c000000000p-5",
+            "decimal": "0.057035446166992188"
+          },
+          "joint_maximum_relative_difference": {
+            "binary64_hex": "0x1.e720c47d7caa8p-30",
+            "decimal": "1.7721613338008425e-09"
+          },
+          "left": "coarse",
+          "maximum_absolute_difference_by_order_component": [
+            {
+              "recovery": {
+                "binary64_hex": "0x1.8fa0000000000p-43",
+                "decimal": "1.7746915048633127e-13"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.d1e0000000000p-42",
+                "decimal": "4.1378012127779584e-13"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.ad40000000000p-35",
+                "decimal": "4.8800075092003681e-11"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.4e30000000000p-33",
+                "decimal": "1.5197088032437023e-10"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.4780000000000p-26",
+                "decimal": "1.9063008949160576e-08"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.61e0000000000p-24",
+                "decimal": "8.2392944023013115e-08"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.3808000000000p-17",
+                "decimal": "9.299255907535553e-06"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.fcf8000000000p-15",
+                "decimal": "6.0673803091049194e-05"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.4610000000000p-8",
+                "decimal": "0.0049753189086914062"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.d33c000000000p-5",
+                "decimal": "0.057035446166992188"
+              }
+            }
+          ],
+          "maximum_relative_difference_by_order_component": [
+            {
+              "recovery": {
+                "binary64_hex": "0x1.8fa0000000000p-43",
+                "decimal": "1.7746915048633127e-13"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.d1e0000000000p-42",
+                "decimal": "4.1378012127779584e-13"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.b594000000000p-38",
+                "decimal": "6.2183591609255018e-12"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.84a7000000000p-37",
+                "decimal": "1.1046163983507995e-11"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.e92e03bbba11ep-33",
+                "decimal": "2.2245319290312114e-10"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.2bc6182494576p-34",
+                "decimal": "6.8160672047097959e-11"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.0e07d14e48ea7p-32",
+                "decimal": "2.4559134317592305e-10"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.4e8090c83f138p-32",
+                "decimal": "3.0422798699986744e-10"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.e720c47d7caa8p-30",
+                "decimal": "1.7721613338008425e-09"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.7327f940c7e20p-33",
+                "decimal": "1.6878227463608376e-10"
+              }
+            }
+          ],
+          "right": "medium"
+        },
+        {
+          "joint_maximum_absolute_difference": {
+            "binary64_hex": "0x1.fab0000000000p-6",
+            "decimal": "0.030925750732421875"
+          },
+          "joint_maximum_relative_difference": {
+            "binary64_hex": "0x1.b486c642e944bp-30",
+            "decimal": "1.5880740201408223e-09"
+          },
+          "left": "medium",
+          "maximum_absolute_difference_by_order_component": [
+            {
+              "recovery": {
+                "binary64_hex": "0x1.d380000000000p-44",
+                "decimal": "1.0380585280245214e-13"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.1f60000000000p-42",
+                "decimal": "2.5524027336132349e-13"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.d240000000000p-36",
+                "decimal": "2.6503244043851737e-11"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.85a0000000000p-34",
+                "decimal": "8.8590468294569291e-11"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.4c60000000000p-27",
+                "decimal": "9.6733856480568647e-09"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.8e08000000000p-25",
+                "decimal": "4.6336936065927148e-08"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.2800000000000p-18",
+                "decimal": "4.4107437133789062e-06"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.1860000000000p-15",
+                "decimal": "3.3423304557800293e-05"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.13d0000000000p-9",
+                "decimal": "0.0021042823791503906"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.fab0000000000p-6",
+                "decimal": "0.030925750732421875"
+              }
+            }
+          ],
+          "maximum_relative_difference_by_order_component": [
+            {
+              "recovery": {
+                "binary64_hex": "0x1.d380000000000p-44",
+                "decimal": "1.0380585280245214e-13"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.1f60000000000p-42",
+                "decimal": "2.5524027336132349e-13"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.6af2000000000p-38",
+                "decimal": "5.1577631055010897e-12"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.5eca000000000p-37",
+                "decimal": "9.9700248057388308e-12"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.63268e74acdf0p-33",
+                "decimal": "1.6150379961001607e-10"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.1a6e2c0eb4358p-34",
+                "decimal": "6.4217228956099905e-11"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.7b9a5d4193a41p-33",
+                "decimal": "1.7262345203383122e-10"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.b87b97c62ceb6p-33",
+                "decimal": "2.0030837942582672e-10"
+              }
+            },
+            {
+              "recovery": {
+                "binary64_hex": "0x1.b486c642e944bp-30",
+                "decimal": "1.5880740201408223e-09"
+              },
+              "voltage": {
+                "binary64_hex": "0x1.ed54315fba52bp-34",
+                "decimal": "1.121700002810228e-10"
+              }
+            }
+          ],
+          "right": "fine"
+        }
+      ],
+      "definition": "pointwise componentwise min/max of the three binary64 refinement trajectories on the common mesh",
+      "lower_mesh_digest": "872b58fb7fc7738615cc59245ca607914e7fa786599847a2bfb94f04ec62cfe2",
+      "maximum_width_by_order_component": [
+        {
+          "recovery": {
+            "binary64_hex": "0x1.8fa0000000000p-43",
+            "decimal": "1.7746915048633127e-13"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.d1e0000000000p-42",
+            "decimal": "4.1378012127779584e-13"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.ad40000000000p-35",
+            "decimal": "4.8800075092003681e-11"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.4e30000000000p-33",
+            "decimal": "1.5197088032437023e-10"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.4780000000000p-26",
+            "decimal": "1.9063008949160576e-08"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.61e0000000000p-24",
+            "decimal": "8.2392944023013115e-08"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.3808000000000p-17",
+            "decimal": "9.299255907535553e-06"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.fcf8000000000p-15",
+            "decimal": "6.0673803091049194e-05"
+          }
+        },
+        {
+          "recovery": {
+            "binary64_hex": "0x1.4610000000000p-8",
+            "decimal": "0.0049753189086914062"
+          },
+          "voltage": {
+            "binary64_hex": "0x1.d33c000000000p-5",
+            "decimal": "0.057035446166992188"
+          }
+        }
+      ],
+      "rigorous_solution_enclosure": false,
+      "upper_mesh_digest": "e0e51e82c51b4c5a7e50b98f85c9ef3c2c4e3c2c0d4233ef914f0409c1736f8f"
+    },
+    "method_of_steps": {
+      "base_spacing": "sqrt(5)",
+      "breakpoint_origins": [
+        "0",
+        "1"
+      ],
+      "delays": [
+        "4*sqrt(5)",
+        "5*sqrt(5)"
+      ],
+      "final_time": {
+        "binary64_hex": "0x1.ad5336963eefcp+5",
+        "decimal": "53.665631459994955"
+      },
+      "final_time_exact": "24*sqrt(5)",
+      "pulse_release": "1",
+      "segment_breakpoint_count": 49
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "open_stage5_inputs": {
+      "common_event_complete_history_radius": null,
+      "directed_coefficient_error_radii": null,
+      "directed_order_five_remainder_radius": null,
+      "event_time_jet": null,
+      "interval_newton_image": null,
+      "route_c_event_bracket": null,
+      "stable_coordinate_gap": null,
+      "uniform_route_c_event_speed": null
+    },
+    "refinements": [
+      {
+        "atol": {
+          "binary64_hex": "0x1.5fd7fe1796495p-36",
+          "decimal": "1.9999999999999999e-11"
+        },
+        "max_step": {
+          "binary64_hex": "0x1.47ae147ae147bp-5",
+          "decimal": "0.040000000000000001"
+        },
+        "name": "coarse",
+        "rtol": {
+          "binary64_hex": "0x1.12e0be826d695p-29",
+          "decimal": "2.0000000000000001e-09"
+        }
+      },
+      {
+        "atol": {
+          "binary64_hex": "0x1.19799812dea11p-39",
+          "decimal": "2e-12"
+        },
+        "max_step": {
+          "binary64_hex": "0x1.47ae147ae147bp-6",
+          "decimal": "0.02"
+        },
+        "name": "medium",
+        "rtol": {
+          "binary64_hex": "0x1.b7cdfd9d7bdbbp-33",
+          "decimal": "2.0000000000000001e-10"
+        }
+      },
+      {
+        "atol": {
+          "binary64_hex": "0x1.c25c268497682p-43",
+          "decimal": "2.0000000000000001e-13"
+        },
+        "max_step": {
+          "binary64_hex": "0x1.47ae147ae147bp-7",
+          "decimal": "0.01"
+        },
+        "name": "fine",
+        "rtol": {
+          "binary64_hex": "0x1.5fd7fe1796495p-36",
+          "decimal": "1.9999999999999999e-11"
+        }
+      }
+    ],
+    "schema_id": "leaky-pulse-parameter-jet-center-pilot-v1",
+    "status": "binary64 jointly correlated coefficient-guide feasibility pilot; not a directed parameter-family or event certificate",
+    "wide_endpoint_reconstruction": {
+      "degree": 4,
+      "diagnostic_only_no_order_five_bound": true,
+      "half_width_exact": {
+        "denominator": "40000",
+        "numerator": "3"
+      },
+      "rows": [
+        {
+          "amplitude": {
+            "binary64_hex": "0x1.34467381d7dbfp-2",
+            "decimal": "0.30104999999999998"
+          },
+          "delta": {
+            "binary64_hex": "-0x1.3a92a30553261p-14",
+            "decimal": "-7.4999999999999993e-05"
+          },
+          "direct_mesh_digest": "717647bd37cdd26a7a1f8767155c7349f66cc372fb463886d82c964759947668",
+          "maximum_absolute_state_difference": {
+            "joint": {
+              "binary64_hex": "0x1.20d9000000000p-32",
+              "decimal": "2.6270541297890304e-10"
+            },
+            "recovery": {
+              "binary64_hex": "0x1.9347000000000p-36",
+              "decimal": "2.2923662967855307e-11"
+            },
+            "voltage": {
+              "binary64_hex": "0x1.20d9000000000p-32",
+              "decimal": "2.6270541297890304e-10"
+            }
+          },
+          "reconstructed_mesh_digest": "83af00e98a477765a64ec2c23b7414c7af8450cd96f9d5936368b1cb79510945",
+          "side": "lower",
+          "terminal_absolute_state_difference": {
+            "joint": {
+              "binary64_hex": "0x1.20d9000000000p-32",
+              "decimal": "2.6270541297890304e-10"
+            },
+            "recovery": {
+              "binary64_hex": "0x1.9347000000000p-36",
+              "decimal": "2.2923662967855307e-11"
+            },
+            "voltage": {
+              "binary64_hex": "0x1.20d9000000000p-32",
+              "decimal": "2.6270541297890304e-10"
+            }
+          }
+        },
+        {
+          "amplitude": {
+            "binary64_hex": "0x1.346dc5d638865p-2",
+            "decimal": "0.30119999999999997"
+          },
+          "delta": {
+            "binary64_hex": "0x1.3a92a30553261p-14",
+            "decimal": "7.4999999999999993e-05"
+          },
+          "direct_mesh_digest": "b86bf477622b942ef4497870e6962e4d77fdf4197cff9da912d18954f6b8e7f8",
+          "maximum_absolute_state_difference": {
+            "joint": {
+              "binary64_hex": "0x1.28a7000000000p-32",
+              "decimal": "2.6980373490914644e-10"
+            },
+            "recovery": {
+              "binary64_hex": "0x1.9320800000000p-36",
+              "decimal": "2.2915114250565694e-11"
+            },
+            "voltage": {
+              "binary64_hex": "0x1.28a7000000000p-32",
+              "decimal": "2.6980373490914644e-10"
+            }
+          },
+          "reconstructed_mesh_digest": "53b8476cc73c2736b54e6721a40627c54408f7775db2438c564c45c51cc837fa",
+          "side": "upper",
+          "terminal_absolute_state_difference": {
+            "joint": {
+              "binary64_hex": "0x1.28a7000000000p-32",
+              "decimal": "2.6980373490914644e-10"
+            },
+            "recovery": {
+              "binary64_hex": "0x1.9320800000000p-36",
+              "decimal": "2.2915114250565694e-11"
+            },
+            "voltage": {
+              "binary64_hex": "0x1.28a7000000000p-32",
+              "decimal": "2.6980373490914644e-10"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

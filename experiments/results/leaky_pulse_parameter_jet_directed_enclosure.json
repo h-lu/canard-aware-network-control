@@ -1,0 +1,191 @@
+{
+  "certificate": {
+    "arithmetic": {
+      "cubic_maximum_parameter_degree": 12,
+      "delays_exact": [
+        "4*sqrt(5)",
+        "5*sqrt(5)"
+      ],
+      "final_time_exact": "24*sqrt(5)",
+      "forced_cell_count": 21,
+      "grid_cell_count": 1152,
+      "grid_denominator": 24,
+      "parameter_degree": 4,
+      "precision_bits": 192,
+      "released_cell_count": 1131,
+      "time_taylor_degree": 16
+    },
+    "claim_status": {
+      "common_event_complete_history_jet_validated": false,
+      "continuous_time_coefficient_bernstein_envelopes_validated": true,
+      "cubic_parameter_degrees_five_through_twelve_bounded": true,
+      "directed_coefficient_time_guides_closed_on_all_cells": true,
+      "event_time_parameter_jet_validated": false,
+      "exact_two_origin_grid_and_delay_translation_validated": true,
+      "exact_wide_parameter_scaling_validated": true,
+      "fixed_time_wide_parameter_taylor_model_validated": true,
+      "full_width_order_five_remainder_tube_closed_on_all_cells": true,
+      "inner_local_stable_graph_validated": false,
+      "interval_newton_onset_validated": false,
+      "joint_scaled_coefficient_equations_b0_through_b4_validated": true,
+      "rfde_unstable_riesz_covector_validated": false,
+      "route_c_event_bracket_validated": false,
+      "route_c_event_speed_validated": false,
+      "stable_coordinate_endpoint_signs_validated": false,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "cubic_substitution_tail": {
+      "formula": "Tail_{>=5}[-V^3/3+epsilon*kappa3*(((D4-1)^3+(D5-1)^3)/2-(V-1)^3)]",
+      "included_parameter_degrees": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "linear_and_pulse_terms_have_no_degree_ge_5_tail": true,
+      "maximum_directed_P_tail_forcing_upper": "2.05947655131104812769011274066390868448708577981926564387691937e-09"
+    },
+    "event_interface": {
+      "common_event_complete_history_radius": null,
+      "event_time_parameter_jet": null,
+      "fixed_time_flow_jet_does_not_remove_event_alignment": true,
+      "interval_newton_image": null,
+      "route_c_event_bracket": null,
+      "stable_coordinate_gap": null,
+      "uniform_route_c_event_speed": null
+    },
+    "full_width_order_five_remainder": {
+      "all_cells_closed": true,
+      "closed_cell_count": 1152,
+      "definition": "R5(t,xi)=z(t,J0+h*xi)-sum_{k=0}^4 b_k(t)xi^k",
+      "final_endpoint_P_radius_upper": "1.71099501475267906692880610363089506394834097663133062680276127e-08",
+      "maximum_P_radius_upper": "1.72063447279505476999481472841809768729806867379305886202520604e-08",
+      "maximum_recovery_coordinate_error_upper": "1.62782360402683922065554379315259858512822811549811769523323957e-09",
+      "maximum_voltage_coordinate_error_upper": "3.59372911282162845748793717637935364138911739966176821437237278e-09",
+      "minimum_cell_closure_gap_lower": "5.3603188211381289710444170307548648363762436581147484196099828e-32",
+      "parameter_domain": "xi in [-1,1]",
+      "time_domain": "t in [0,24*sqrt(5)]"
+    },
+    "joint_coefficient_enclosure": {
+      "all_cells_closed": true,
+      "closed_cell_count": 1152,
+      "continuous_time_bernstein_envelopes": [
+        {
+          "maximum_derivative_jet_z_recovery_abs_upper": "0.749564295336258909272560839375478205447364940179937072531076903",
+          "maximum_derivative_jet_z_recovery_error_upper": "8.11013424795769153260514615582580168919522445649838676595379667e-20",
+          "maximum_derivative_jet_z_voltage_abs_upper": "1.24417692277897012538630801032611455537398848098223457602815181",
+          "maximum_derivative_jet_z_voltage_error_upper": "1.7904658393991903695119349910371052976983368867396267855888325e-19",
+          "maximum_factorial_coefficient_a_recovery_abs_upper": "0.749564295336258909272560839375478205447364940179937072531076903",
+          "maximum_factorial_coefficient_a_voltage_abs_upper": "1.24417692277897012538630801032611455537398848098223457602815181",
+          "maximum_scaled_b_recovery_abs_upper": "0.749564295336258909272560839375478205447364940179937072531076903",
+          "maximum_scaled_b_recovery_error_upper": "8.11013424795769153260514615582580168919522445649838676595379667e-20",
+          "maximum_scaled_b_voltage_abs_upper": "1.24417692277897012538630801032611455537398848098223457602815181",
+          "maximum_scaled_b_voltage_error_upper": "1.7904658393991903695119349910371052976983368867396267855888325e-19",
+          "order": 0,
+          "scaled_coefficient_definition": "b_0=h^0*partial_J^0z/1"
+        },
+        {
+          "maximum_derivative_jet_z_recovery_abs_upper": "41.6410816705018142352937351485767740051799008365758218673138606",
+          "maximum_derivative_jet_z_recovery_error_upper": "1.08135123306102553768068615411010689189269659419978490212748536e-15",
+          "maximum_derivative_jet_z_voltage_abs_upper": "97.8975919543731102921014185215156565486415004784654581477398629",
+          "maximum_derivative_jet_z_voltage_error_upper": "2.38728778586558715934924665471614039693111584898616904745261311e-15",
+          "maximum_factorial_coefficient_a_recovery_abs_upper": "41.6410816705018142352937351485767740051799008365758218673138606",
+          "maximum_factorial_coefficient_a_voltage_abs_upper": "97.8975919543731102921014185215156565486415004784654581477398629",
+          "maximum_scaled_b_recovery_abs_upper": "0.00312308112528763606764703013614325805038849256274318664004764841",
+          "maximum_scaled_b_recovery_error_upper": "8.11013424795769153260514615582580168919522445649838676595379667e-20",
+          "maximum_scaled_b_voltage_abs_upper": "0.00734231939657798327190760638911367424114811253588490936107900018",
+          "maximum_scaled_b_voltage_error_upper": "1.7904658393991903695119349910371052976983368867396267855888325e-19",
+          "order": 1,
+          "scaled_coefficient_definition": "b_1=h^1*partial_J^1z/1"
+        },
+        {
+          "maximum_derivative_jet_z_recovery_abs_upper": "11466.2524658287983384755679266692855894052476466906039737622618",
+          "maximum_derivative_jet_z_recovery_error_upper": "2.8836032881627347671484964109602850450471909178660930723396265e-11",
+          "maximum_derivative_jet_z_voltage_abs_upper": "35891.0740056274054162648112613679625441098416692612625357252615",
+          "maximum_derivative_jet_z_voltage_error_upper": "6.36610076230823242493132441257637439181630893062978412654166119e-11",
+          "maximum_factorial_coefficient_a_recovery_abs_upper": "5733.12623291439916923778396333464279470262382334530198688113092",
+          "maximum_factorial_coefficient_a_voltage_abs_upper": "17945.5370028137027081324056306839812720549208346306312678626308",
+          "maximum_scaled_b_recovery_abs_upper": "3.22488350601434953269625347937573657202022590063173236762015474e-05",
+          "maximum_scaled_b_recovery_error_upper": "8.11013424795769153260514615582580168919522445649838676595379667e-20",
+          "maximum_scaled_b_voltage_abs_upper": "0.000100943645640827077733244781672597394655308929694797300881680385",
+          "maximum_scaled_b_voltage_error_upper": "1.7904658393991903695119349910371052976983368867396267855888325e-19",
+          "order": 2,
+          "scaled_coefficient_definition": "b_2=h^2*partial_J^2z/2"
+        },
+        {
+          "maximum_derivative_jet_z_recovery_abs_upper": "4480835.27791411340667836442652729205623476566375589022175417374",
+          "maximum_derivative_jet_z_recovery_error_upper": "1.15344131526509390685939856438411401801887636714643722893626395e-06",
+          "maximum_derivative_jet_z_voltage_abs_upper": "19447632.6473765021905172819966656757219763490180695217244611652",
+          "maximum_derivative_jet_z_voltage_error_upper": "2.54644030492329296997252976503054975672652357225191365061665498e-06",
+          "maximum_factorial_coefficient_a_recovery_abs_upper": "746805.879652352234446394071087882009372460943959315036958973274",
+          "maximum_factorial_coefficient_a_voltage_abs_upper": "3241272.10789608369841954699944427928699605816967825362074285934",
+          "maximum_scaled_b_recovery_abs_upper": "3.15058730478336098907072498740200222704006960732836031216983558e-07",
+          "maximum_scaled_b_recovery_error_upper": "8.11013424795769153260514615582580168919522445649838676595379667e-20",
+          "maximum_scaled_b_voltage_abs_upper": "1.36741167051866031027074639039055532420146204033301324625057844e-06",
+          "maximum_scaled_b_voltage_error_upper": "1.7904658393991903695119349910371052976983368867396267855888325e-19",
+          "order": 3,
+          "scaled_coefficient_definition": "b_3=h^3*partial_J^3z/6"
+        },
+        {
+          "maximum_derivative_jet_z_recovery_abs_upper": "2182496229.37093070064181241111475915435427539009949758588301399",
+          "maximum_derivative_jet_z_recovery_error_upper": "0.0615168701474716750325012567671527476276734062478099855432669441",
+          "maximum_derivative_jet_z_voltage_abs_upper": "14320422240.4502687987970071345186002224035484550559350781055457",
+          "maximum_derivative_jet_z_voltage_error_upper": "0.135810149595908958398534920801629320358747923853435394699584129",
+          "maximum_factorial_coefficient_a_recovery_abs_upper": "90937342.8904554458600755171297816314314281412541457327451113281",
+          "maximum_factorial_coefficient_a_voltage_abs_upper": "596684260.018761199949875297271608342600147852293997294921121425",
+          "maximum_scaled_b_recovery_abs_upper": "2.87731436489331684166645190918449693201003103186945482513711278e-09",
+          "maximum_scaled_b_recovery_error_upper": "8.11013424795769153260514615582580168919522445649838676595379667e-20",
+          "maximum_scaled_b_voltage_abs_upper": "1.88794629146561160921640230777344827150828031389897581596030247e-08",
+          "maximum_scaled_b_voltage_error_upper": "1.7904658393991903695119349910371052976983368867396267855888325e-19",
+          "order": 4,
+          "scaled_coefficient_definition": "b_4=h^4*partial_J^4z/24"
+        }
+      ],
+      "maximum_block_P_logarithmic_norm_upper": "0.613876760668859534915991695318666277949247360945722532244941015",
+      "maximum_delay_five_block_operator_upper": "0.000906353883271695093347694072041996231979464159612928482593029178",
+      "maximum_delay_four_block_operator_upper": "0.000906353883271695093347694072041996231979464159612928482593029178",
+      "maximum_guide_residual_upper": "2.38848982952757502092940362125139196404171442351250456683812154e-24",
+      "maximum_joint_P_error_radius_upper": "8.57253607301895370503463594324042977740675565357247901735344919e-19",
+      "minimum_cell_closure_gap_lower": "4.68592201303106396274761492951915434070032196912928592384783231e-29",
+      "norm": "max_{k=0,...,4} ||(delta b_{k,v},delta b_{k,w})||_P"
+    },
+    "model_id": "autonomous-leaky-recovery-physical-pulse",
+    "parameter_scaling": {
+      "center_J0_exact": "2409/8000",
+      "half_width_h_exact": "3/40000",
+      "interval_exact": "[6021/20000,753/2500]",
+      "normalized_parameter": "xi=(J-J0)/h in [-1,1]",
+      "polynomial": "B(t,xi)=sum_{k=0}^4 b_k(t)xi^k, b_k=h^k partial_J^k z(t,J0)/k!"
+    },
+    "schema_id": "leaky-pulse-parameter-jet-directed-enclosure-v1",
+    "theorem_statement": "For the exact quiet initial history, every J in the exact interval [6021/20000,753/2500], and every 0<=t<=24*sqrt(5), the exact physical-pulse RFDE solution equals the displayed degree-four center-parameter polynomial with the directed uniform P-norm remainder bound recorded here. The scaled coefficient functions b0,...,b4 have the displayed continuous-time directed Bernstein envelopes. No Route-C event or onset conclusion is inferred."
+  },
+  "manifest": {
+    "arithmetic_scope": "192-bit outward MPFR on the exact Q(sqrt(5)) two-origin 1152-cell grid; degree-16 time-Taylor/Bernstein guides for the jointly scaled parameter coefficients b_k=h^k partial_J^k z/k!, k=0,...,4; block P-logarithmic norm validation of the triangular coefficient RFDE; directed cubic parameter convolution through degree twelve; and a cellwise full-width order-five remainder tube",
+    "certificate_sha256": "fc61ffde43cc02771932207c0a78630b3902ca646b5d06273d7b99b1d6b52954",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=.venv/lib/python3.14/site-packages:src /usr/bin/python3 experiments/leaky_pulse_parameter_jet_directed_enclosure.py",
+    "dependency_source_sha256": {
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_pulse_quiet_capture.py": "a1286c59f736d6036fdea1a4970ce4ac9fbb882aec769de48db1fb9366554a8f",
+      "src/canard_control/leaky_quiet_history_basin.py": "2cc124c69d2257e6223be2ae0c9aa5c30659ed8a271f5a1c6096c24a17fe43be"
+    },
+    "parent_sha256": {
+      "experiments/results/leaky_pulse_event_aligned_parameter_jet_contract.json": "12993314508d7b31de1ef7e5988b9dbd0798347eee73309d381774faa0d21646",
+      "experiments/results/leaky_pulse_inner_route_c_family_contract.json": "6821551f3fab7d4bbc073af20b83daf055482055a81db23664d31c017de81f7c",
+      "experiments/results/leaky_pulse_parameter_jet_center_pilot.json": "5743c16636e449c921cea45f1b8000c4a043200630d973f7cdfdecd20b740819"
+    },
+    "result": "experiments/results/leaky_pulse_parameter_jet_directed_enclosure.json",
+    "schema_id": "leaky-pulse-parameter-jet-directed-enclosure-v1",
+    "source_sha256": {
+      "docs/leaky-pulse-parameter-jet-directed-enclosure.md": "bed3083949415599a97db41cc46b0567d05f5bdf7b83693e605d16d380d05ca7",
+      "experiments/leaky_pulse_parameter_jet_directed_enclosure.py": "608c82615cb5efe1681d7a492d311d084145ee50b8b50a1ec3a1dd129b7ea305",
+      "src/canard_control/leaky_pulse_parameter_jet_directed_enclosure.py": "aee82f2c265443aafff7eb8ee5d8468b86222df823013f5018967a21a2c928af"
+    }
+  }
+}
