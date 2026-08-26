@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\input{preamble}
+
+\newcommand{\papertitle}{Canard-Root Transfer in Finite Retarded Networks
+and a Conditional Framework for Physical Pulse Thresholds}
+
+\title{\papertitle}
+\author{Haibo Lu\\
+  \small Shanghai Institute of Technology, Shanghai, China\\
+  \small \href{mailto:luhaibo1985@gmail.com}{luhaibo1985@gmail.com}\\
+  \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
+\date{}
+\hypersetup{
+  pdftitle={Canard-Root Transfer in Finite Retarded Networks and a Conditional Framework for Physical Pulse Thresholds},
+  pdfauthor={Haibo Lu},
+  pdfsubject={Canards, retarded networks, and physical pulse thresholds},
+  pdfkeywords={canard connection, retarded functional differential equation,
+    Dobrushin network, pulse threshold, stable manifold}
+}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\small\color{OpenRed}\textit{Research draft: the preferred-scale selected
+two-return domain, six numerical Hessian blocks, effective stable-sheet
+radius and slope, periodic-orbit stable-set identification, and two-sided
+routing gates identified below are not yet closed; no biological-onset or
+safety-coordinate theorem is claimed.}
+\end{center}
+
+\begin{abstract}
+We separate two codimension-one objects in delayed excitable networks: a
+phase-fixed complete-history canard root and a physical pulse threshold given
+by intersection with the stable sheet of an unstable periodic orbit.  For
+finite nonnegative Dobrushin networks, we prove network-size-independent
+transverse decay and a causal complete-line Green bound.  An exact row
+reduction and corrected full cokernel transfer any supplied scalar simple
+root through nonbalanced delayed layers.  A dimension-uniform one-gap theorem
+gives an explicit root radius and quadratic remainder, and a heterogeneous
+shared-resource family has a nonzero uniform response without a synchrony
+quotient.
+
+For finite-dimensional fixed-delay \(C^k\) RFDEs, a common event window
+beginning after \(k\) maximum delays yields a \(C^k\) complete-history hit
+under tube, endpoint-sign and positive-speed hypotheses.  In a two-delay
+leaky FitzHugh--Nagumo RFDE, an orbit-aware weighted-energy estimate proves a
+common \(C^2\) near-two-period selected hit for arbitrary continuous reduced
+histories on the explicit scale \(1.2\times10^{-8}\), improving a scalar
+comparison by about \(22\) decimal orders.  Its center derivative is \(A^2\)
+without a nonlinear one-period map; the two-step stable and unstable-inverse
+rates are at most \(0.01\) and \(0.302184\).  Finite sampling cannot recover
+the required Hessian uniformly on a \(C^0\) ball.  An exact stable-row
+quotient and split-projective signed-bimeasure residual theorem provide the
+appropriate continuous-history norm, while hyperbolicity gives a qualitative
+local \(C^2\) stable graph.  No effective graph radius or slope is obtained,
+and numerical ingress into the six Hessian caps remains zero.
+
+For a physical pulse interval, we validate a common event, its event-aligned
+derivative, opposite endpoint functional signs and stable-coordinate
+containment.  A preferred-scale stable graph, its identification with the
+periodic orbit's stable-set germ, and its pulse crossing remain open.
+Biological onset and frequency--amplitude--safety control additionally
+require outer capture, two-sided routing, parameter-uniform response and
+asynchronous network safety.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+canard connection; delay differential equation; finite network;
+Dobrushin contraction; physical pulse threshold; frequency--amplitude control
+
+\medskip
+\noindent\textbf{Mathematics Subject Classification (2020).}
+34K26; 34E17; 37G10; 92B20
+
+\input{sections/01-introduction}
+\input{sections/02-model-and-results}
+\input{sections/03-network-mechanism}
+\input{sections/04-pulse-and-control}
+\input{sections/05-scope-and-reproducibility}
+
+\section*{Acknowledgements}
+OpenAI Codex assisted with symbolic and validated numerical calculations,
+proof auditing, and textual organization.  The author assumes responsibility
+for all mathematical claims and for the final manuscript.
+
+\section*{Declarations}
+\paragraph{Funding.} No funding was received for conducting this study.
+\paragraph{Competing interests.} The author has no relevant financial or
+non-financial interests to disclose.
+\paragraph{Data and code availability.} Source-bound certificates and their
+reproduction code are maintained at
+\url{https://github.com/h-lu/canard-aware-network-control}.
+
+\bibliographystyle{plainnat}
+\bibliography{../../references/references}
+\end{document}

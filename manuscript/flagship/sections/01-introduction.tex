@@ -1,0 +1,136 @@
+\section{Introduction}\label{sec:introduction}
+
+Canard dynamics turn a small parameter displacement into a large change of
+orbit geometry.  In ordinary slow--fast systems this mechanism is organized
+locally near a loss of normal hyperbolicity
+\citep{krupa2001extending,krupa2001relaxation,wechselberger2012canards}.
+Delay equations add a more basic ambiguity: the state is a history, and a
+current-state projection can discard precisely the transverse delay response
+that later returns to the critical direction.  Delayed canards and delayed
+FitzHugh--Nagumo oscillations are by now well established
+\citep{campbell2009delay,krupa2016complex,krupa2016explosion}, but a local
+canard calculation does not automatically survive embedding into a large
+retarded network.
+
+A second threshold problem appears when the system is actuated.  A finite
+physical pulse generates a curve in the RFDE history space.  A selected
+pulse/stable-sheet threshold is a value at which that curve meets a declared
+codimension-one stable sheet.  It becomes a biological onset only after the
+two sides are proved to route to different attracting objects.  Neither
+notion is the same as a Lin-gap canard root, and a projected observable event
+is not by itself any of the three.  Our organizing principle is therefore to
+keep these objects separate while exposing the transverse mechanism common
+to them.
+
+\subsection{Three levels of generality}
+
+The paper distinguishes three statements.
+
+First, canonical synchrony gives an exact upper-triangular block
+decomposition, and the transverse complete inverse gives a bounded codomain
+row reduction to the scalar/transverse direct sum.  When all endpoint, phase,
+parameter, and gap data are collective, the corrected full cokernel
+transfers the scalar Fredholm data and gap without changing the root.
+
+Second, a one-gap structural theorem allows small network residuals that need
+not preserve exact synchrony.  Its constants are independent of the number
+of nodes, provided the critical projections, transverse estimates, history
+traces, model-fitting map, and simple-root bounds are uniform.  This is a
+local selected-root theorem, not a claim about arbitrary graph sequences.
+
+Third, a shared-resource heterogeneous-curvature class realizes the
+mechanism on finite directed Markov networks with a common Dobrushin gap and
+without a nontrivial synchrony quotient.  Fixed delay support and a declared
+row-neutral perturbation are essential.  Sparse or closing-gap families and
+arbitrary changes of the base topology are outside the proved scope.
+
+\subsection{Contributions and claim boundary}
+
+The theorem-level contributions currently assembled in this draft are:
+
+\begin{enumerate}[label=(\roman*)]
+\item a dimension- and topology-uniform transverse decay estimate and causal
+  complete-line Green bound for every finite leaky Dobrushin network with a
+  nonnegative row-stochastic current layer and fixed nonnegative half-row-mass
+  delay layers in the declared voltage strip, without common delay-layer
+  left balance;
+\item an exact upper-triangular canonical Lin factorization, bounded
+  invertible codomain row reduction to the scalar/transverse direct sum, and
+  corrected full cokernel, together with a general normalized one-gap
+  perturbation theorem having an explicit root radius and quadratic remainder;
+\item a synchrony-quotient-free shared-resource network whose selected
+  complete-history root has a nonzero, dimension-uniform topology-resolvent
+  coefficient;
+\item validated scalar leaky-recovery invariant objects: a stable quiet
+  equilibrium, two periodic RFDE branches, exactly one nontranslation
+  unstable multiplier for the center inner orbit, and a directed nonsingular
+  frequency--amplitude response, together with a continuous RFDE adjoint and
+  a correlated physical-time base-orbit \(uu\) stable-output bound, a direct
+  common-row terminal certificate for the selected phase-fixed inner linear
+  map with \(\|AP_s\|_{\Sigma_0\to Y}\le0.009896427481610001<0.1\), yielding
+  \(K_s=1\) at the registered rate \(\rho_s=0.1\), and an event-aware
+  signed-density proof that the phase-fixed outer linear return contracts
+  arbitrary reduced \(C^0\) section histories with norm at most \(0.550516\),
+  followed by a source-bound nonlinear local return and attracting tube with
+  section radius \(r_6=10^{-335}\), full complete-history tube radius
+  \(R_6=10^{-3}\), and return constant \(\Lambda_6\le0.561839\);
+\item a general eventual-smoothing theorem for selected complete-history
+  RFDE events, together with a model-specific common near-two-period event
+  tube on the explicit arbitrary-\(C^0\)-history scale
+  \(\lambda_0=1.2\times10^{-8}\), obtained from an orbit-aware weighted
+  energy estimate, the direct derivative identity
+  \(DQ_Y(Y_*)=A^2\), transferred two-step hyperbolic rates, and a finite-
+  sampling obstruction showing why nodal refinement alone cannot certify
+  the required Banach-space Hessian;
+\item a wide-parameter physical-pulse theorem with a unique transverse
+  Route--C event, a fourth-order event-time graph, and a continuous
+  complete-history tube on the whole parameter interval, together with a
+  direct event-aligned first-variation theorem retaining the moving-time
+  contribution and a fixed-center, physical-right-gauge-corrected normalized
+  action that has one strict sign throughout the pulse interval, together
+  with source-bound endpoint functional signs, a full-interval
+  stable-coordinate ball, and a strengthened conditional stable-gap slope
+  gate in the same section, history norm, and Grushin normalization;
+\item an event-aligned stable-sheet theorem and a block-triangular
+  frequency--amplitude--threshold-offset inverse, conditional on explicit
+  numerical graph and crossing inequalities; its interpretation as a safety
+  coordinate additionally requires the stated routing inequalities.
+\end{enumerate}
+
+Item (vii) is not promoted to a model theorem in the present research draft.
+The discrete stable-power input required by a future inner graph transform is
+now proved for the selected near-one-period phase-fixed linear map, with
+\(K_s=1\) and \(\rho_s=0.1\).  The selected two-period map is now defined and
+\(C^2\) on a microscopic nonzero scaled ball, and its center derivative,
+fixed splitting, and two-step rates are proved.  The remaining inner
+certificates are its enlargement to the preferred graph domain, return-domain
+containment there, all six uniform split-ball Hessian blocks, and a
+quantitative stable graph whose domain contains the certified
+radius-\(47/5000\) stable-coordinate ball,
+together with its derivative and endpoint-height bounds.  The stable-coordinate
+ball itself and the conditional strict-slope implication are proved;
+graph-adjusted endpoint signs and the selected crossing are not.  Entry of the
+\(J=0.32\) history into the microscopic outer return domain, outer-side
+attachment, and two-sided basin routing also remain open.  The proved Route--C
+event is a common history-space section, not an ordinal claim about the third
+post-release crossing.  A global outer Floquet count is useful but is not
+logically required if local attraction is proved directly.  Conversely, none
+of the network root results identifies the selected canard root with the
+physical pulse onset.
+
+Frequency--amplitude reduction and control of biological oscillators motivate
+the proposed final coordinate system
+\citep{wilson2016isostable,kotani2020nonlinear,qin2021coordinator,
+zhong2023modulating}.  Its third target coordinate is the signed offset from
+a selected history-space stable-sheet threshold, not an independently
+imposed detector variable.  Only the still-open uniform routing theorem would
+promote that offset to a biological safety margin.
+
+\subsection{Organization}
+
+\Cref{sec:model-results} introduces the scalar RFDE, finite network class,
+and theorem package.  Subsequent sections will supply the complete-line
+inverse, structural root transfer, validated scalar objects, physical-pulse
+separator, and network robustness.  Directed arithmetic, source manifests,
+and hostile mutation tests belong to the reproducibility appendices rather
+than to the mechanism-level argument.

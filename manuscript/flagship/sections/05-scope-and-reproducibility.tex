@@ -1,0 +1,759 @@
+\section{Claim ledger, reproducibility, and outlook}\label{sec:scope}
+
+\subsection{Four threshold and coordinate notions}
+
+The terminology of the paper is fixed by the following distinctions.
+\begin{enumerate}[label=(\alph*)]
+\item A \emph{selected canard root} is a zero of a normalized
+  complete-history Lin or graph--trace gap.  It depends on the declared
+  phase and preparation until a zero-fiber theorem identifies the selected
+  histories geometrically.
+\item A \emph{selected pulse/stable-sheet threshold} is a zero of
+  \cref{eq:stable-gap}.  It is defined by an actual physical pulse history,
+  the declared event branch and section, and the local stable manifold of the
+  inner periodic orbit.
+\item A \emph{biological onset} is a selected pulse/stable-sheet threshold
+  together with two-sided routing to the quiet and outer attracting objects.
+\item The signed offset \(S=J-J_c(\xi)\) is always a
+  \emph{selected-threshold target coordinate} once \(J_c\) has been proved.
+  It is a \emph{biological safety coordinate} only on a neighborhood where
+  the preceding onset and routing are uniform.
+\end{enumerate}
+There is no implication between (a) and (b) without a separate comparison
+theorem; (c) and the safety interpretation in (d) require the additional
+routing conclusion stated explicitly above.  In particular, a projected
+voltage event is neither a complete-history canard root nor a basin separator.
+
+\subsection{Evidence ledger}
+
+\small
+\begin{longtable}{@{}L{0.28\linewidth}L{0.15\linewidth}L{0.48\linewidth}@{}}
+\toprule
+Ingredient & Status & Evidence boundary\\
+\midrule
+\endfirsthead
+\toprule
+Ingredient & Status & Evidence boundary\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+Finite-network transverse decay and complete-line inverse
+& \proved{Proved}
+& Every finite nonnegative row-mass Dobrushin topology in
+  \cref{eq:row-mass-network}; rate \(1/10\), inverse bound \(10\), fixed
+  voltage strip.  No common delay-layer left balance is required.\\
+
+Canonical synchronized root transfer
+& \proved{Proved implication}
+& Exact upper-triangular factorization and the bounded invertible codomain
+  row reduction
+  \cref{eq:triangular-row-reduction}; the full cokernel is
+  \cref{eq:triangular-cokernel}, with
+  \(\|C_NG_{\perp,N}\|\le391\delta_B/2000\).  The scalar phase-fixed
+  complete-history root is a hypothesis, not supplied here.\\
+
+Dimension-uniform one-gap theorem
+& \proved{Proved implication}
+& Explicit radius and quadratic remainder under uniform range, trace,
+  fitting, regularity, and simple-root bounds.\\
+
+Shared-resource heterogeneous-curvature instance
+& \proved{Proved}
+& Arbitrary finite size, common Dobrushin gap, fixed-support row-neutral
+  direction, no nontrivial synchrony polydiagonal.\\
+
+Eventually smooth selected-event return
+& \proved{Proved, general RFDE theorem}
+& For \(X=C([-\tau_*,0],\R^d)\), finite \(d\), a \(C^k\) fixed-delay
+  functional and initial-section chart, a common solution/event tube, an
+  open \(C^k\) section-functional domain, and a selected window beginning
+  after \(k\tau_*\), strict endpoint signs and positive speed imply a unique
+  \(C^k\) event-hit map and, when it returns to the same chart, a \(C^k\)
+  section map.  No no-earlier-hit premise is needed; the sufficient threshold
+  is independent of finite network size.\\
+
+Direct selected-return stable-set identification
+& \proved{Proved, general semiflow lemma}
+& A bounded positive-time selected return of the same semiflow, with a common
+  intervening tube, a phase-isolating local section, invariant return domain,
+  and recurrent selected hits on stable flow orbits, identifies the intrinsic
+  periodic-orbit stable-set germ.  An identity \(Q=P^m\) and a first-return
+  label are sufficient but unnecessary.\\
+
+Nonlinear synchronization and collective defect
+& \proved{Proved in strip}
+& \(\exp(-t/10)\) diameter decay.  At \(\delta_B=0\), the pointwise
+  history-envelope constant is \(703/200\) and the accumulated constant is
+  \(703/40+27\sqrt5/800<56483/3200\).  Without left balance,
+  \cref{eq:collective-defect-resolved,eq:collective-defect-resolved-L1}
+  add the resolved linear imbalance.  No strip, scalar route, product lift,
+  basin, or onset follows.\\
+
+Inner one-unstable splitting, spectral gap, and adjoint
+& \proved{Proved}
+& One nontranslation unstable exponent, stable radius at most
+  \(e^{-0.01}\), continuous RFDE adjoint measure and nonzero normalization.\\
+
+Base-orbit correlated \(uu\) block
+& \proved{Proved}
+& Physical-time continuous-history second variation and same-row deflation;
+  \(C^{uu}_{s,\mathrm{base}}<7.905650<12\) in
+  \cref{eq:base-uu-bound}.  Not uniform on the split ball.\\
+
+Selected inner terminal stable row
+& \proved{Proved, discrete linear}
+& For \(A=\Pi_TU(T,0)|_{\Sigma_0}\) and \(P_s=\Id-qf\),
+  \(\|AP_s\|_{\Sigma_0\to Y}\le0.009896427481610001<0.1\).
+  Exact intertwining gives \(\|A_s^n\|_{E_s\to Y}\le0.1^n\) with
+  \(K_s=1\).  This is the selected phase-fixed map only, not a first-return
+  or nonlinear-tube result.\\
+
+Moving-event return Hessian
+& \proved{Proved analytic identity}
+& \Cref{prop:selected-return-hessian} includes both event-time derivatives,
+  translation of every complete-history coordinate, and exactly one moving
+  phase projection before the fixed stable/unstable output split.  It explains
+  why the current one-period argument does not establish \(C^2\) on an
+  arbitrary continuous-history ball; no non-\(C^2\) theorem is claimed.  It
+  supplies no model-specific full-ball event tube or Hessian cap.\\
+
+Near-two-period smoothing and signed Hessian pilot
+& \proved{Center gate proved}; \openclaim{pilot nonrigorous}
+& The exact center clears the two-delay \(C^2\) threshold by more than
+  \(14.010740\).  The source-bound
+  \(n_{\rm step}=120,180,240\) signed finite-section
+  pilot gives the heuristic envelope
+  \((2.36\!\times10^{-6},0.00873,32.118,0.597,0.578,158.532)\), entirely
+  inside the simultaneous wide box.  This is not a continuous-history error
+  bound or a Hessian certificate.\\
+
+Explicit common near-two-period event tube
+& \proved{Proved, microscopic scale}
+& On the full arbitrary-continuous-history ball
+  \(\lambda_0=9\times10^{-31}\), one common physical window has strict
+  endpoint signs, event speed greater than \(0.244880\), a unique selected
+  event, terminal local-section containment, and a \(C^2\) complete-history
+  hit.  The proof uses a strictly larger open scale
+  \(9.1\times10^{-31}\).  It is not a same-ball self-map, a preferred-scale
+  result, or an event-ordinal theorem.\\
+
+Orbit-aware enlarged near-two-period event tube
+& \proved{Proved, explicit scaled ball}
+& \Cref{prop:orbit-aware-two-period-event-tube} uses the exact weighted-energy
+  cancellation and a \(1042\)-cell, \(192\)-bit directed orbit integral to
+  prove the same selected \(C^2\) hit on the closed scale
+  \(1.2\times10^{-8}\), with a strictly larger open scale
+  \(1.25\times10^{-8}\) and sufficient-construction ceiling greater than
+  \(1.2770076307683837\times10^{-8}\).  This is about \(22\) decimal orders
+  larger than the scalar comparison, but it is not a preferred-scale
+  self-map, Hessian, graph, crossing, or onset theorem.\\
+
+Direct two-period derivative bridge
+& \proved{Proved}
+& For the direct reduced physical hit map,
+  \(DQ_Y(Y_*)=A^2\) by the periodic variational cocycle and exact removal of
+  the intermediate phase-tangent component.  In section coordinates the
+  derivative is \(J^{-1}A^2J\); in the compatible full history space it is
+  intertwined by the lift.  No nonlinear identity \(Q=P^2\) is used.\\
+
+Fixed two-step linear splitting and rates
+& \proved{Proved, linear}
+& For \(B=A^2\), the same complementary \(E_s\oplus E_u\) splitting and
+  exact intertwinings hold.  The model instance has
+  \(K_{s,2}=K_{u,2}=1\), \(\rho_{s,2}\le0.01\), and unstable
+  inverse/backward rate
+  \(\rho_{u,2}\le0.302183501335054\); the forward unstable multiplier still
+  has modulus greater than one.  A nonlinear identity \(Q=P^2\) requires the
+  nested domain \(D\cap P^{-1}(D)\), but is not necessary for a direct
+  selected return.\\
+
+Finite-sampling Hessian obstruction and atomic lift
+& \proved{Proved}
+& On the arbitrary \(C^0\)-history unit ball,
+  \(\|\Id-R_NS_N\|\ge1\) for every finite sampler and reconstruction.
+  Therefore the Stage--4Q mesh ladder cannot yield a Banach Hessian error
+  merely by refinement.  A rigorous upgrade must enclose a directed signed
+  atom--density/bimeasure residual, event quotient, exact continuous
+  \(q/f\) action, output-phase completion, and full-ball inflation.  The
+  atomic lift bound \(\|B_N\|\le\max_o\sum_{ij}|a_{oij}|\) is proved, but no
+  one of the six actual block bounds is promoted.\\
+
+Exact split quotient, residual implication, and local selected graph
+& \proved{Proved qualitative and analytic statements}
+& \Cref{prop:split-bimeasure-local-graph} proves the exact stable-row quotient
+  norm modulo \(\operatorname{span}\{\ell_0,\bar f\}\), the corresponding
+  split-projective signed-bimeasure bound, and the strict center-plus-residual
+  implication for all six Hessian blocks.  It also proves a local \(C^2\)
+  stable graph for the selected coordinate map on an unspecified
+  neighborhood.  Numerical ingress is \(0/6\): there is no effective radius,
+  graph height, or slope, no preferred-scale graph, and no identification
+  with the periodic orbit's stable-set germ.  Thus no pulse crossing or onset
+  follows.\\
+
+Two-return graph-closure arithmetic
+& \proved{Proved conditional implication}
+& Under a preferred-ball extension/return domain and the six caps
+  \((1,10,1000,5,10,1000)\), the split majorant has Perron bound below
+  \(0.193086\), unit-coordinate height below \(1.25886\times10^{-4}\), and
+  derivative below \(0.026559\).  After the proved physical normalization,
+  the conditional height is below \(0.001623187\), the endpoint margins
+  exceed \(0.0180540\) and \(0.0131604\), and
+  \(H'\subset[-260.794147,-243.205853]\).  The center derivative, fixed
+  splitting, and rates are proved; the preferred-domain and Hessian premises
+  are not.\\
+
+Quantitative inner stable graph
+& \openclaim{Open}
+& A qualitative local \(C^2\) stable graph for the selected coordinate map is
+  proved.  What remains open is an effective graph on the declared
+  anisotropic pulse scale: graph-transform return-domain containment and all
+  six directed continuous-history Hessian bounds in
+  \cref{eq:two-return-wide-box}.  Identifying that selected-map graph with
+  the periodic orbit's stable-set germ then requires either the direct-return
+  hypotheses of \cref{lem:direct-selected-stable-germ} or \(Q=P^2\) on nested
+  domains.  No-earlier-hit is needed only for a first-return or ordinal label,
+  not for the selected crossing or routing completion theorem.\\
+
+Wide physical-pulse parameter family
+& \proved{Proved at fixed time}
+& All \(1152\) cells and the full interval
+  \(J\in[0.30105,0.30120]\); fourth-order correlated jet and fifth-order
+  remainder \cref{eq:wide-jet-bounds}.\\
+
+Uniform Route--C event alignment
+& \proved{Proved}
+& Exactly one positive event in \cref{eq:route-c-bracket} for every
+  \(J\) in the full interval; speed \cref{eq:route-c-speed}, fourth-order
+  time graph \cref{eq:event-time-tube}, and continuous \(Y\)-history tube
+  \cref{eq:event-history-tube}.  No ordinal or stable-sheet claim.\\
+
+Event-aligned first pulse derivative
+& \proved{Proved}
+& Direct first-variation enclosure on all \(1152\) cells;
+  \(T_J\) in \cref{eq:TJ-bound}, the complete-history translation term,
+  and \(\|D_JK\|_Y\) in \cref{eq:DJK-bound}.  The fixed-functional result
+  \cref{eq:DJK-action-modulus} is only a modulus bound containing zero.\\
+
+Physical-phase oriented functional action
+& \proved{Proved}
+& The physical right gauge and same-row residual give
+  \(f_{\rm phys}(D_JK(J))\in[-258.746522,-245.253478]\) on the full pulse
+  interval; see \cref{thm:oriented-pulse-action}.  This is not a stable-gap
+  slope.\\
+
+Endpoint functional coordinates and full stable-coordinate cone
+& \proved{Proved}
+& Source-bound complete-history endpoint calculations give
+  \(f_{\rm phys}(\kappa(J_-))>0>f_{\rm phys}(\kappa(J_+))\), with
+  \(\|P_s\kappa(J_-)\|_Y\le0.008935972\) and
+  \(\|P_s\kappa(J_+)\|_Y\le0.008927665\).  The direct physical-column norm
+  and a two-ended Banach-space cone prove
+  \(P_s\kappa(I_J)\subset\overline B_Y(0,47/5000)\cap\ker f_{\rm phys}\).
+  These are functional signs and stable-coordinate containment, not
+  graph-adjusted stable-gap signs or graph-domain containment.\\
+
+Centered stable-gap slope bridge
+& \proved{Proved conditional implication}
+& In the identical \(Y/\Sigma\) norm, physically oriented Grushin pair, and
+  centered coordinate \(\kappa=K-X_*\),
+  \(\|P_sD_J\kappa\|_Y\le5.979324\).  A future graph whose stable domain
+  contains the certified radius-\(47/5000\) ball and whose derivative norm
+  is at most \(16\) would satisfy
+  \(H'\subset[-354.415700,-149.584300]\).  The sharper two-return wide-box
+  adapter would give \([-260.794147,-243.205853]\), but only after its
+  full-ball graph premises are proved.  Both implications are rigorous
+  arithmetic; the graph remains open.\\
+
+Selected pulse/stable-sheet threshold
+& \openclaim{Open}
+& The event history, first derivative, endpoint functional signs,
+  radius-\(47/5000\) stable-coordinate cone, and conditional centered slope
+  bridge are enclosed.  The remaining release chain is the source-bound
+  two-return map, its fixed splitting/rates and six-block graph theorem on
+  that ball, followed by direct-return stable-set identification or a nested-
+  domain \(Q=P^2\) identity.  The proved wide-box adapter then supplies
+  graph-adjusted endpoint signs and strict monotonicity, hence one unique
+  selected crossing; interval Newton is only an optional sharpening.\\
+
+Quiet-side capture
+& \proved{Proved anchor}
+& The complete history generated at \(J=0.30\) lies strictly in an explicit
+  quiet Razumikhin basin.\\
+
+Outer resolvent and center-guide combined rows
+& \proved{Proved v2}
+& Stage 3G covers all \(730+40\) rectangles and \(12{,}320\) patches and
+  proves the directed tensor residual and Green/boundary bootstrap.  Stage
+  3H proves strict center-guide phase-combined full-row bounds
+  \(41.482447\) in voltage and \(1.177738\) in recovery.  The incomplete v1
+  values remain withdrawn.\\
+
+Outer continuous-density transfer and \(C^0\) contraction
+& \proved{Proved linear}
+& Stage 3I covers all \(25{,}600\) event-aware density rectangles and proves
+  exact reduced-history row bounds \(0.550516\) in voltage and \(0.028281\)
+  in recovery.  Hence the phase-fixed linear return contracts arbitrary
+  reduced \(C^0\) section histories.  The auxiliary \(0.01\) closeness
+  target fails but is not the contraction gate.\\
+
+Nonlinear outer local return and attracting tube
+& \proved{Proved locally}
+& Stage 6A proves a \(C^2\) next-event map with no earlier local-section hit,
+  a nonlinear return contraction on the radius-\(10^{-335}\) reduced section
+  ball, and a compatible invariant complete-history return tube of radius
+  \(10^{-3}\).  Its return constant satisfies
+  \(\Lambda_6\le0.561839\).  This is a
+  microscopic local attraction theorem, not pulse capture.\\
+
+\(J=0.32\) entry, outer-side attachment, and capture
+& \openclaim{Open}
+& The ambient history lies within \(2.637079\times10^{-5}\) of the phase-zero
+  outer history, but it has not been placed on the exact section and lies far
+  outside the Stage-6A domain even under optimistic comparison.  The first
+  failed gate is ambient-to-section domain containment.  At that attachment
+  scale the nonlinear return budget requires
+  \(C_P<17044.784546<17044.785\).  Outer-side attachment, capture, routing,
+  and onset remain open.\\
+
+Outer frequency--amplitude response
+& \proved{Proved}
+& Directed determinant interval, inverse bound, and nonzero branch-centered
+  target ball \cref{eq:outer-response}.\\
+
+Three-output threshold target map
+& \openclaim{Conditional}
+& The block inverse and local root-erosion formulas are proved implications;
+  their model-specific \(J_c\), \(D_\xi J_c\), and asynchronous response
+  constants are not yet all validated.  The third output becomes a
+  biological safety coordinate only after uniform two-sided routing is
+  proved.\\
+\end{longtable}
+\normalsize
+
+\subsection{Source-bound validation}
+
+Every numerical statement promoted above is represented by four linked
+objects: a proof-oriented source module, a deterministic generator, a
+serialized result, and hostile regression tests.  The serialized manifest
+records hashes of its mathematical sources and parents.  Validation
+recomputes the certificate or verifies an independently regenerated copy,
+checks the parent hashes, and rejects mutation of an open flag to a proved
+flag.  Mesh refinement is never interpreted as interval error.  For Stage 4L
+the frozen source manifest additionally binds the design contract, theorem
+note, hostile test module, and directly used MPFR directed-interval
+implementation.
+
+The principal releases integrated in this revision are frozen at the following
+raw-result and canonical certificate, contract, design, pilot, bridge, or
+artifact SHA-256 values, according to each schema:
+\begin{verbatim}
+upper-triangular result:
+35daf49284a6e7a47da4f5a69df82061d2d44536f7270978e3e8fefffeb47e8b
+upper-triangular certificate:
+c4b72e1179a80fddd0d34d1e1d650402966350e3d0315d144d4c586df371c322
+Stage-3G-v2 result:
+52d2c4df0cea7b6d98d898669e45ef54bfed1799965b2cff92161e84bd78ce13
+Stage-3G-v2 certificate:
+efad1bceffcf44790a2c753d140b3f183faeb1a004b453dcd4de5f7c7b44489b
+Stage-3H-v2 result:
+c0c5b854236f8403dacbb0037c5c409ad5f980364571bdf60fa9981a2e287408
+Stage-3H-v2 certificate:
+07ff0895fbe439939afd851cf136d6c9677ecb9dbb3e2acb80e5d8598c14a132
+Stage-3I-v2 result:
+5fdb1a843070ceb5887f7384431f2414989afc3cb741abc7f19ed44a333d4970
+Stage-3I-v2 certificate:
+fa82997b4b685ec2791be4d1efa82a0b6e5ba3b358d3d18bfcdd295c55bc7a24
+Stage-4L result:
+672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e
+Stage-4L certificate:
+b27631b62d437bf12431d751d4dad79570a03fa9a66fc0115d90f49768e058fc
+Stage-4O result:
+dc0e3951cb529dbdca384ff548ab0d7cd7786fe02573741e80e9c945452b2a23
+Stage-4O contract:
+95a204d942eeadd13868700b7353a8eca19b751a4d86f4080212424fe5880c97
+Stage-4P result:
+860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542
+Stage-4P design:
+9f40702bd413aa65da12973cd4fcc9b62a68b41355c490db3a192241b3fdaeb8
+Stage-4Q result:
+e4481bca2d021517073216dab15ee91c43cf301822b15e337c1b5061e9aaf49a
+Stage-4Q pilot:
+475e36d7ff956da5750607d30a8dc7dca185473aaca00c7ea7a6d5cd1dcd3157
+Stage-4R result:
+4e68835bc3ba5fd44432d98a3b6b1d41506533d66f3353cd500df3e95da76418
+Stage-4R theorem:
+56f7291b08052c999a2b89a96c41b2319c1d190bd9a1bddda7a7f52488021e16
+Stage-4S-A result:
+b552c5c6fc8afce53ed047ad8264a9d428351d9f031dc566af60969307a1d91f
+Stage-4S-A certificate:
+4fa88882ec4de4b50d3cda93a6b74d65796ea3138e939c6cb0e26ffff644c70c
+Stage-4S-B result:
+28e7116d855ec1a7e2b169356dce4d4dfb130069b35616a5ed6416f6634522e5
+Stage-4S-B bridge:
+095c947e19259b0d8a081738aad27a3860e2addf0070f63d1d9f070eb6bbf175
+Stage-4S-C result:
+fde3e1d6fc8d55dbaf4f33ef4098e335f3c4febe39c2b9ac78d327ad688fbc70
+Stage-4S-C artifact:
+e374068f4c6dc1ea2c8c40ddac64c21453efb93ec98d8765a13f890caa444770
+Stage-4T result:
+6998c1ac89440f180ebe753d1aa41c36c8a849183794fdc38c52f2d8d54e94e1
+Stage-4T artifact:
+c08107e05bb3dc293fb94d41f9d9a20c66b26983459bd885127e70a1d34061a9
+Stage-4U result:
+5217451e8ea58c42c1ab6066cf953685788c4f3bf1197c206e1e21e624e4808f
+Stage-4U certificate:
+65d5cf77166c3846a5dd0ffdd58ebe21e3d520ee1e9f3d33d97280b266a6d58f
+Stage-4W result:
+4877002a8be5347425f193d4ca239e5532e35551bee8c61de40649467fd2909e
+Stage-4W artifact:
+2fc75c41bc0bb7e00a17320f7de8cb7a112395a67b0c31b62e879ec1fad804c0
+Stage-5F result:
+26acd6d9421a8bf60d5bb96fe4c68918b39f89a443973dd728fed17ccf48652b
+Stage-5F certificate:
+e38f001e372372ef6186f16339d72c32302ad868441ef7eafbd0f533eb7c793b
+Stage-5G-a result:
+56e847fc804ced75e6c2fbf09ccbec1bdeabf505638e093c0939c2f2e584dd8c
+Stage-5G-a certificate:
+4bd0671fa9abb155f8ddd75eb7a4d26ce4ebbc783c073420784bdf54a1dbbcfa
+Stage-5G-b result:
+a16e9159d462c6b8f58851c2181147940f27e1a404ee4c2fbeb8999440cf8b64
+Stage-5G-b certificate:
+9fd06db88ce1743a27d27bef86e2d16891c92c39f8adf7e60ae3d4d00f7ef813
+Stage-6A result:
+f199cdc2cba603ef9c4a0cb7e5e5383a85f749b05dfa1f99d83245580697caac
+Stage-6A certificate:
+a4afa5902d95fcbfa50477bae7c30b6998097fd823eab2ea3eee9c26cad0f144
+\end{verbatim}
+The delayed-network parent/child chain passed \(28+41=69\) tests, including
+temporary-repository warm-cache attacks that refresh the visible parent and
+child hashes after mutating a live parent source.  The Stage-3H-v2 release
+passed its \(18\)-test suite, including a fresh Stage-3G parent replay.
+Stage 3I passed all \(18\) tests, including a public cache-cleared fresh
+numerical replay.  Stage 4L passed all \(31\) tests, including a genuine fresh
+numerical replay.  Its hostile and regression checks reject separate norming
+of the two rank-one corrections, omission of a delay word or output row,
+center-period-only coverage, circular use of \(K_s\), inward rounding in the
+theorem note, incorrect recovery-inclusive rectangle arithmetic, and every
+promotion to first return, nonlinear tube, stable graph, crossing, onset,
+routing, or network safety.  Stage 4O freezes the analytic event-Hessian
+dependency order and, jointly with its parents, passed \(102\) tests.  The
+fail-closed Stage-4R-v2 theorem passed \(34\) direct tests, a fresh replay,
+and a \(66\)-test joint regression with Stage 4O.  Stage 4P passed all \(33\) tests,
+including a fresh replay and hostile rejection of missing physical
+normalization or proof promotion.  Stage 4Q passed all \(24\) tests and a
+fresh \(n_{\rm step}=120,180,240\) replay; all nineteen theorem flags remain
+false.  The repaired Stage--4S-A full/reduced-history event tube passed a
+\(147\)-test parent-chain regression.  Stage--4S-B's finite-sampling no-go and
+atomic bridge passed jointly with the replayed 4O--4Q chain in \(117\) tests;
+none of the six Hessian flags was promoted.  Stage--4S-C and Stage--4T passed
+an \(80\)-test direct chain and a \(145\)-test regression with their smoothing
+and terminal-row parents.  Stage--4U passed \(21\) direct tests and a
+\(166\)-test parent-chain/fresh-Stage--4L replay, for \(187\) passing tests in
+all, on its explicit \(9\times10^{-31}\) event tube.
+Stage--4V passed all \(7\) direct tests, including a fresh arithmetic replay,
+and a \(190\)-test eight-parent regression with the duplicate replay
+deselected.  Two independent frozen generations were byte-identical.  Its
+result, certificate, and numerical-core SHA--256 values are respectively
+\begin{verbatim}
+e371d5c80b0d9dafa2e4a3164650f96dfb6e6ed7d0ed170db438479db42d8ad0
+51336d8b7ae494e8923cf5c1714b0be7543bb0372ec3fd5410695e859e4c2d08
+7cda699176730596d1cfc0c1445b14d5f52840aa8a64b8e18d373618bd76ec4e
+\end{verbatim}
+An independent final replay additionally passed the Stage--4V suite and a
+\(151\)-test parent chain.  The exact-binary period denominator, true-delay
+phase drift, and the distinction between a failed preferred-ball diagnostic
+and a validated flow bound are part of the frozen certificate.
+Stage--4W passed all \(18\) direct tests, including a fresh replay and hostile
+checks that keep every numerical center block and residual unset.  It proves
+the exact stable quotient norm, split-projective residual implication, and
+qualitative local selected-map stable graph while retaining numerical ingress
+at \(0/6\) and every physical-crossing and onset flag as false.
+The Stage-5F release passed its \(20\)-test suite
+and an independent cold validator.  Its
+conditional graph-slope flag is kept distinct from every false graph, root,
+onset, routing, capture, and network-safety flag.
+The Stage-5G-a endpoint release passed its full \(26\)-test suite: \(25\)
+non-recompute tests and one fresh-recompute test of its proof-bearing numeric
+core.  Stage 5G-b passed its \(22\)-test suite and a separate
+fresh-interpreter replay.  The
+latter recomputes its exact-rational derivative, cone-intersection, radius,
+and conditional-slope arithmetic while normally validating Stages 5D, 5E,
+5F, and 5G-a.  Both releases keep graph, stable-gap, crossing, onset, routing,
+capture, and safety flags false.  Stage 6A passed all \(14\) tests, including
+a fresh directed recomputation.  Its local event, no-earlier-hit, nonlinear
+return, and complete-history tube flags are true, while \(J=0.32\) entry,
+outer capture, two-sided routing, onset, and safety flags remain false.
+
+The wide pulse-family certificate, for example, was regenerated at
+\(192\)-bit precision over all \(1152\) cells; the regenerated certificate
+agreed with the frozen one byte for byte.  The Route--C event certificate
+was independently recomputed and reproduced its certificate hash; a hostile
+test rejects the obsolete Fourier candidate voltage as an exact section
+level.  The event-aligned first-derivative certificate was regenerated twice,
+closes every first-variation cell, and has hostile tests for omission of the
+translation term or illicit differentiation of the Stage-5B remainder.  The
+Route--C adjoint certificate likewise has an independent replay of the
+Fourier tail and normalization.  A separate source-bound control
+contract binds the event certificate by both result and certificate hashes
+and exposes only its six event-side conclusions; hostile tests reject any
+stable-sheet-to-onset promotion.  The repository records exact commands,
+arithmetic scope, and claim ledgers.  These checks make the computation
+auditable, but they do not enlarge the scope of the theorem encoded by the
+certificate.
+
+The outer-resolvent audit illustrates why byte reproducibility alone is not
+a proof.  A later endpoint check found that the nominal \(12{,}000\)-patch
+cover contained only one of two physical terminal-clipped cells in each
+\(\delta\)-strip.  The affected Stage-3G result and every dependent
+Stage-3H claim were withdrawn publicly.  Their v2 replacements use the
+longer equation continuation on \(730\) ordinary and \(40\) clipped
+rectangles, hence \(12{,}320\) local patches, and have been independently
+replayed.  No withdrawn v1 residual, Green, or output-row number is used;
+the Stage-3G/3H-v2 parents themselves make no \(E_v,E_w\),
+\(C^0\)-contraction, or attraction claim.  Their separate Stage-3I child
+below closes the reduced-history linear contraction; Stage 6A is the
+separate nonlinear local-tube child.
+
+\subsection{Outer linear transfer and a microscopic nonlinear tube}
+
+The phase-fixed binary shadow of the outer return has
+\[
+ \norm{P}_{\infty}\le0.126907895,\qquad
+ \norm{P^2}_{\infty}\le0.002761,
+\]
+whereas the fixed-time and rank-one phase terms are separately of order
+\(2.58\).  The small return is therefore a signed cancellation, not a
+positive-kernel estimate.  A continuous Volterra shard has been validated
+through the first nonzero delayed-forcing boundary, but a direct global
+tiling would require approximately \(1.05\times10^6\) coarse tasks before
+adaptive children and second-delay faces.  The local uncorrected kernel
+masses are too large to serve as the transfer errors \(E_v,E_w\).
+
+The exact delay support gives a finite alternative.  Since
+\[
+ 3\tau_0-T>0.2283989174,
+\]
+all delay words of length at least three vanish on the return window.  The
+global continuous kernel is therefore an exact sum of only \(14\) history
+word integrals and \(7\) recovery-scalar word integrals, each of ordered
+dimension at most two.  This reduces the representation count by a factor
+greater than \(49\,914\).  The finite-word compression is rigorous and fixes
+the signed order of phase subtraction and cross-word summation before total
+variation; low-rank templates used only to design the quadrature remain
+diagnostic.
+
+The ordered two-simplex terms have now been reduced exactly to eight
+one-dimensional primitives \(F,G,H_0,H_1,L_{00},L_{01},L_{10},L_{11}\).
+A degree-\(24\), \(1024\)-cell relative-residual certificate closes \(F\)
+and \(G\) on the exact \(10^{-8}\) orbit/period ball:
+\begin{equation}
+ \eta\le0.005026008,\qquad
+ \norm{\widehat F^{-1}F-\Id}_\infty\le0.005038659,\qquad
+ \norm{G\widehat F-\Id}_\infty\le0.005064176.           \label{eq:outer-relative-residual}
+\end{equation}
+The determinant of every polynomial chart stays at least
+\(1.29906\times10^{-5}\) from zero.  This is the first global exact-orbit
+transfer step, but propagating the \(F/G\) error through \(H\) and \(L\)
+with separate absolute norms gives unusable bounds \(190.1\) and
+\(7.17\times10^6\).  Those numbers are a rigorous rejection of a
+cancellation-blind triangular estimate, not estimates of the return
+operator.
+
+The combined-row adjoint reduction now places every delay word, both
+history injections, and the phase subtraction inside one advanced row
+before total variation.  Its directed instantaneous calculation proves
+\[
+ \int\norm{G_{\rm inst}}_{\rm phase}
+ \le14977.452934,\qquad
+ \norm{G_{\rm inst}}_{\rm bdry}\le66623.270373,
+\]
+leaving positive delayed allowances \(45022.547066\) and \(3376.729627\)
+under the declared full targets.  It also proves full coefficient variation
+at most \(1.633190\times10^{-6}\) and phase-ratio transfer errors at most
+\(1.360127\times10^{-7}\) in voltage and \(2.904969\times10^{-8}\) in
+recovery.  These are architecture and instantaneous bounds, not the delayed
+signed-density residual.
+
+The corrected global tensor enclosure uses
+\[
+ S(\delta,\ell)=R(T-\delta,T-\delta-\ell),
+\]
+on a degree-\((10,24)\), cutoff-\(128\) Fourier--Taylor cover with
+\(4\)-by-\(4\) local patches.  The endpoint identity
+\[
+ \frac{T}{h}=47.5914275778\ldots
+\]
+shows that the physical domain contains both lag cells
+\(46-\text{delta-cell}\) and \(47-\text{delta-cell}\) at its terminal edge.
+The first implementation included only the former.  Its continuation length
+\(48h-T\) therefore covered the first clipped layer but not the second,
+which requires continuation through \(49h-T\).  The v2 construction performs
+that continuation and validates all \(12{,}320\) local patches.  Stage 3G
+gives strict exact-guide Green and boundary bounds \(71.896340\) and
+\(261.764130\), respectively.  Stage 3H then keeps the phase subtraction
+inside each output-specific row and proves center-guide full-row bounds
+\begin{equation}
+ \norm{p_v}\le41.482447,
+ \qquad \norm{p_w}\le1.177738.                         \label{eq:stage3h-row-sizes}
+\end{equation}
+These are not the transfer errors \(E_v,E_w\).  Stage 3I subsequently sums
+both delayed injection branches inside each continuous center-density cell
+before taking absolute values, covers all \(25{,}600\) rectangles and all
+lag-chart seams, and adds each candidate-to-guide and guide-to-exact cost
+once.  Its auxiliary \(0.01\) candidate-row excess target fails, but that
+target is not the contraction gate.  The certified exact row budgets are
+\begin{equation}
+ Q_v^{\rm exact}\le0.55051563144094195<1,
+ \qquad
+ Q_w^{\rm exact}\le0.028280815376548179<1.             \label{eq:stage3i-row-budgets}
+\end{equation}
+They prove contraction of the phase-fixed linear return on
+\(C([-\tau_1,0],\R)_v\times\R_{w(0)}\), restricted by \(h_v(0)=0\), for
+arbitrary continuous histories in the reduced norm.  These row budgets are
+the linear parent for the following local nonlinear result.
+
+\begin{theorem}[Microscopic nonlinear outer local return tube]
+\label{thm:outer-nonlinear-local-tube}
+Set
+\[
+ Y_o=C([-\tau_1,0],\R)_v\times\R_{w(0)},
+ \qquad \Sigma_o=\{h\in Y_o:h_v(0)=0\}.
+\]
+In coordinates centered at the exact outer phase-zero history, the ball
+\(\overline B_{\Sigma_o}(0,r_6)\), with
+\[
+ r_6=10^{-335},\qquad R_6=10^{-3},
+\]
+has a unique next positive local-section event, no earlier hit of the same
+local section disk, and a \(C^2\) return map \(P_o\).  The map is a strict
+contraction with
+\begin{equation}
+ \Lambda_6:=\operatorname{Lip}(P_o)
+ \le0.561838642158326<0.561839.                         \label{eq:stage6a-lipschitz}
+\end{equation}
+For every compatible complete history above this reduced ball whose old
+recovery trace is within radius \(R_6\), the intervening complete-history
+flow sweep remains in the full radius-\(R_6\) tube and returns to it.
+Consequently this forward tube is locally attracting under successive
+returns.
+\end{theorem}
+
+The source-bound proof covers the normalized phase circle by \(256\) cells.
+On the \(254\) middle cells, outward Fourier--Taylor--Bernstein arithmetic
+gives exact-orbit current-state separation greater than \(0.0912678\); on
+the two wrap cells the exact current-voltage speed exceeds \(0.8262423\).
+These inequalities provide the local event chart and exclude an earlier hit
+of that local disk.  The same-tube second-variation and event-time estimates
+give
+\[
+ C_P\le1.132302\times10^{333},
+ \qquad
+ Q_v^{\rm exact}+C_Pr_6
+ \le0.561838642158326<1.
+\]
+The flow-growth estimate keeps the radius-\(r_6\) reduced ball inside the
+radius-\(R_6\) complete-history tube, and the returned history window lies
+strictly after the initial time.  This closes complete-history invariance
+without using an effective inner stable graph.
+
+The directed \(J=0.32\) parent supplies only the ambient complete-history
+bound
+\[
+ d_{.32}\le d_{.32}^{\rm up}
+ :=2.637078616900037\times10^{-5};
+\]
+it does not place that history on the exact outer section.  Even the
+optimistic comparison \(d_{.32}<r_6\) fails by about \(330\) orders of
+magnitude.  Thus the first failed biological gate is
+\emph{ambient-to-section domain containment}, before any capture inference.
+At radius equal to the directed attachment bound, contraction would require
+\begin{equation}
+ C_P<\frac{1-Q_v^{\rm exact}}{d_{.32}^{\rm up}}
+ =17044.784545\ldots<17044.785.                       \label{eq:stage6b-cp-target}
+\end{equation}
+Theorem~\ref{thm:outer-nonlinear-local-tube} therefore proves neither
+\(J=0.32\) entry nor outer-side attachment, capture, routing, or onset.
+
+\subsection{Outlook}
+
+The finite-network root theorem and the physical-pulse program share a
+collective--transverse architecture but solve different problems.  The
+former shows that a simple selected history root survives arbitrary finite
+network size under a uniform mixing hypothesis.  The latter seeks a
+model-specific selected stable-sheet threshold and its two basin attachments.
+The endpoint functional signs, the full radius-\(47/5000\)
+stable-coordinate cone, and the discrete inner stable-power input are now
+proved.  The general eventual-smoothing theorem, exact moving-event Hessian,
+microscopic arbitrary-history event tube, direct identity
+\(DQ_Y(Y_*)=A^2\), fixed splitting and rates, exact split quotient and
+bimeasure residual theorem, qualitative local selected-map stable graph,
+six-block pilot, and conditional graph arithmetic now reduce the effective
+inner problem to one explicit certificate chain: enlargement of the selected
+near-two-period return to the preferred anisotropic graph ball,
+graph-transform return-domain containment, all six directed
+continuous-history Hessian blocks in the wide box
+\cref{eq:two-return-wide-box}, and either the direct-return stable-set
+hypotheses of \cref{lem:direct-selected-stable-germ} or a nested-domain
+identity \(Q=P^2\).  The residual theorem identifies the exact
+split-projective norm in which the missing six-block computation must close;
+its present numerical ingress is \(0/6\).  Once that chain closes, the already
+proved normalization adapter yields the graph-adjusted endpoint signs, strict
+slope, and unique selected crossing without a new graph-arithmetic idea.
+Remaining
+biological gates are
+entry of the \(J=0.32\) history into an outer return domain, outer-side
+attachment, and two-sided routing.  The next outer enlargement target
+(Stage 6B) is a signed intermediate-flow/second-variation kernel that keeps
+the event-time correction and kernel cancellation together before total
+variation, with \(r\ge2.64\times10^{-5}\) and
+\(C_P<17044.785\).  These are targets, not conclusions of Stage 6A.  Once
+the remaining gates are closed, the
+formulas in
+\cref{eq:block-control,eq:hardware-product,eq:safety-guard} give a rigorous
+local inverse from controls to frequency, voltage amplitude, and a
+network-robust biological safety margin.  Before routing is closed, the same
+formulas describe only a threshold-offset target coordinate and local
+network-gap side.
+
+\paragraph{Diagnostic inner nonlinear-tube target.}
+A source-bound Stage--4N feasibility pilot tests the preferred anisotropic
+ball \(\|x_s\|_Y\le0.0097\), \(|\widehat x_u|\le0.00025\).  Two disclosed
+cancellation-blind scalar Gronwall constructions miss their own containment
+tests by directed lower values \(11.971029\ldots\) and
+\(32.257662\ldots\) decimal orders, reported diagnostically as \(11.9710\)
+and \(32.2577\).  This does not lower-bound the true nonlinear flow.  The
+pilot identifies one sufficient future signed event-aligned target
+\(K_{\rm ret}<188.9122238810816\) (numerically \(188.9122238811\)), after all
+stable/unstable, event, and translation correlations are formed before the
+norm.  Its frozen result SHA-256 is
+\begin{verbatim}
+5e7214a2f5ba8ca22649c677a1d054b32342b5cc25966bd8e1da7600c605f1de
+\end{verbatim}
+The later split analysis proves that this ambient scalar target is not
+necessary for graph closure.  In particular, the Stage--4Q signed
+near-two-period pilot has ambient heuristic envelope \(339.1671\), so it
+fails that scalar route, while each of its six projected blocks lies far
+inside the simultaneous graph box \cref{eq:two-return-wide-box}.  Stage--4Q
+is still a nonrigorous finite-section diagnostic: its result SHA-256 is
+\begin{verbatim}
+e4481bca2d021517073216dab15ee91c43cf301822b15e337c1b5061e9aaf49a
+\end{verbatim}
+and all nineteen theorem flags remain false.  A \(C^2\) selected nonlinear
+hit and a qualitative local stable graph for its selected coordinate map
+exist.  The scalar event tube has scale \(9\times10^{-31}\), and the
+orbit-aware weighted-energy theorem enlarges its certified closed scale to
+\(1.2\times10^{-8}\).  This remains about eight decimal orders below the
+preferred ball, while
+preferred-ball event/return containment, the six numerical
+continuous-history Hessian blocks, an effective stable graph and its
+periodic-orbit stable-set identification, crossing, onset, routing, capture,
+and safety flags remain false.
+
+The resulting theorem will not say that every delayed network has a canard
+or that every pulse threshold is a canard.  It will say something both
+stronger and more precise: within a dimension-uniform finite-network class,
+a declared complete-history canard root has controlled structural response,
+and, once the remaining model-specific gates close, a separately validated
+physical pulse crosses a history-space stable sheet whose two routed sides
+form a basin boundary and hence an independent control coordinate.

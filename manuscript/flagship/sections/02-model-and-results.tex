@@ -1,0 +1,674 @@
+\section{Model, network class, and main results}\label{sec:model-results}
+
+\subsection{Scalar leaky-recovery RFDE}
+
+Let \(r=5\sqrt5\), \((\tau_0,\tau_1)=(4\sqrt5,5\sqrt5)\), and
+\(H(v)=(v-1)^3\).  The autonomous scalar model is
+\begin{align}
+ \dot v={}&v-\frac{v^3}{3}-w
+ +\eps\kappa_1\left\{\frac{v(t-\tau_0)+v(t-\tau_1)}2-v(t)\right\}
+ \notag\\
+ &+\eps\kappa_3\left\{
+ \frac{H(v(t-\tau_0))+H(v(t-\tau_1))}{2}-H(v(t))\right\},\label{eq:scalar-v}\\
+ \dot w={}&\eps(v-a-w).\label{eq:scalar-w}
+\end{align}
+The validated center is
+\begin{equation}
+ \eps=\frac15,\qquad a=\frac14,\qquad
+ \kappa_1=\frac1{250},\qquad \kappa_3=\frac1{200}.       \label{eq:center}
+\end{equation}
+A physical pulse of amplitude \(J\) adds
+\(J\mathbf1_{[0,1)}(t)\) to \cref{eq:scalar-v}; after release the vector
+field is exactly autonomous again.
+
+The full phase space is
+\(X=C([-r,0],\R^2)\).  Because the recovery equation has no delayed recovery
+slot, the positive-time semiflow factors through
+\begin{equation}
+ Y=C([-r,0],\R)\times\R,\qquad
+ \Pi_Y(\phi_v,\phi_w)=(\phi_v,\phi_w(0)).               \label{eq:reduced-space}
+\end{equation}
+This reduction preserves every nonzero Floquet multiplier and pulls stable
+sets back exactly; an obsolete recovery history is not an additional
+crossing coordinate.
+
+\subsection{Finite row-mass Dobrushin networks}
+
+For a finite network let \(Q,B_0,B_1\in\R^{N\times N}\) be nonnegative
+matrices and let \(\pi\) be any stationary probability vector satisfying
+\begin{equation}
+ Q\mathbf1=\mathbf1,\quad \pi^TQ=\pi^T,\quad
+ \pi^T\mathbf1=1,\quad
+ \tau(Q)\le\frac12,\qquad
+ B_j\mathbf1=\frac12\mathbf1.                           \label{eq:row-mass-network}
+\end{equation}
+Here \(\tau(Q)\) is the Dobrushin coefficient.  Zero entries of \(\pi\)
+are allowed, and no lower bound on \(\pi_{\min}\) enters the estimates.
+The row-mass identities preserve the collective line
+\(\Span\{\mathbf1\}\), but \(\Ker\pi^T\) need not be invariant under the
+delayed layers: no identity \(\pi^TB_j=\frac12\pi^T\) is assumed.
+Collective/quotient coordinates therefore produce an upper-triangular
+operator.  The former balanced direct sum is the special case
+\[
+ \delta_B=0,\qquad
+ \delta_B:=\delta_0+\delta_1,\qquad
+ \delta_j:=\frac12\norm{\pi^TB_j-\tfrac12\pi^T}_1,
+ \qquad 0\le\delta_B\le1.
+\]
+
+The finite leaky network to which the estimates below apply is, with
+\(f(s)=s-s^3/3\) and both \(f\) and \(H\) acting componentwise,
+\begin{align}
+ \dot v(t)={}&f(v(t))-w(t)+3(Q-\Id)v(t)\notag\\
+ &+\eps\kappa_1\{B_0v(t-\tau_0)+B_1v(t-\tau_1)-v(t)\}\notag\\
+ &+\eps\kappa_3\{B_0H(v(t-\tau_0))+B_1H(v(t-\tau_1))-H(v(t))\},
+                                                               \label{eq:leaky-network-v}\\
+ \dot w(t)={}&\eps\{v(t)-a\mathbf1-w(t)\}+2(Q-\Id)w(t).
+                                                               \label{eq:leaky-network-w}
+\end{align}
+Here \(v,w\in\R^N\), and all scalar constants are exactly those in
+\cref{eq:center}.  A collective physical pulse adds
+\(J\mathbf1_{[0,1)}(t)\mathbf1\) to
+\cref{eq:leaky-network-v}.  The row-mass identities imply that
+\(v=V\mathbf1\), \(w=W\mathbf1\) is invariant and that its restriction is
+exactly \cref{eq:scalar-v,eq:scalar-w}, including the two half-weighted
+delayed terms.  Thus the constants in the transverse theorem below refer to
+this RFDE, not to an unspecified network realization.
+
+Use the transverse history diameter norm
+\begin{equation}
+ \norm{\phi}_{1/10}
+ =\sup_{-r\le\theta\le0}e^{\theta/10}
+   \max\{\osc\phi_v(\theta),3\osc\phi_w(\theta)\}.      \label{eq:diameter-norm}
+\end{equation}
+
+\begin{theorem}[Complete-line transverse inverse]\label{thm:transverse}
+Along every complete synchronous leaky trajectory satisfying
+\(\sup_t\abs{V(t)-1}\le5/2\), every network satisfying
+\cref{eq:row-mass-network} has
+\begin{equation}
+ \norm{U_{\perp,N}(t,s)}_{1/10}\le e^{-(t-s)/10},
+ \qquad \norm{G_{\perp,N}}\le10.                       \label{eq:green-bound}
+\end{equation}
+The constants are independent of the finite network size and admitted
+topology.
+\end{theorem}
+
+The proof uses a directed Dobrushin--Halanay estimate and a forward pullback
+of zero-history forced solutions.  It never inverts an RFDE semiflow on the
+whole history space.
+
+\begin{corollary}[Upper-triangular canonical root transfer]
+\label{cor:canonical-transfer}
+Suppose a scalar phase-fixed Lin operator has Fredholm index \(-1\), a
+one-dimensional normalized cokernel, gap \(d(\nu)\), and a simple root
+\(d(\nu_c)=0\).  If all network endpoint, phase, parameter, and gap rows are
+collective, then
+\begin{equation}
+ \cL_N=
+ \begin{pmatrix}\cL_{\parallel}&C_N\\0&\cL_{\perp,N}\end{pmatrix},
+ \qquad
+ T_N\cL_N=\cL_{\parallel}\oplus\cL_{\perp,N},           \label{eq:lin-sum}
+\end{equation}
+where
+\[
+ T_N(y_\parallel,y_\perp)
+ =\bigl(y_\parallel-C_NG_{\perp,N}y_\perp,y_\perp\bigr),
+ \qquad
+ \norm{C_NG_{\perp,N}}\le\frac{391}{2000}\delta_B.
+\]
+If \(\psi\) is the normalized scalar cokernel, the full normalized
+cokernel is
+\begin{equation}
+ \Psi_N(y_\parallel,y_\perp)
+ =\psi\bigl(y_\parallel-C_NG_{\perp,N}y_\perp\bigr).    \label{eq:full-cokernel}
+\end{equation}
+For a collective parameter row \((g_\parallel,0)\), one has
+\(\Psi_N(g_\parallel,0)=\psi(g_\parallel)\).  Hence
+\(d_N(\nu)=d(\nu)\), and every admitted finite network has the same
+Fredholm index, root, slope, and orientation as the scalar problem.
+\end{corollary}
+
+For the leaky model, \cref{thm:transverse} verifies the network block of
+this corollary.  The result is conditional on the scalar phase-fixed
+complete-history root and the declared collective preparation.  The scalar
+leaky root itself, an invariant asynchronous voltage strip, and physical
+pulse onset remain separate open problems.
+
+\subsection{Uniform structural transfer}
+
+Let \(\widetilde d_N(\nu,\cR)\) be a normalized selected gap on a common
+parameter cylinder.  The residual norm is an operator norm controlling the
+instantaneous block, fixed-support delay measure, nonlinear jets, and trace
+preparation; it is not an unscaled Frobenius norm.
+
+\begin{theorem}[Dimension-uniform one-gap theorem]\label{thm:one-gap}
+Assume the graph--trace or augmented-Lin range problem is uniformly solvable,
+the model-fitting error is at most \(C_{\rm fit}\norm{\cR}\), and
+\(\widetilde d_N\) is jointly \(C^2\).  Suppose, uniformly in \(N\),
+\begin{equation}
+ \widetilde d_N(\nu_{0,N},0)=0,\qquad
+ \abs{a_N}:=\abs{\partial_\nu\widetilde d_N(\nu_{0,N},0)}\ge m_*>0,
+ \quad \norm{D_{\cR}\widetilde d_N}\le B_*,
+ \quad \norm{D^2\widetilde d_N}\le M_*.               \label{eq:root-bounds}
+\end{equation}
+Here \(B_*,M_*,C_{\rm fit}\ge0\).  If
+\(r_\nu,r_{\cR},\eta_*>0\) are respectively the common cylinder radii and
+the range-solve radius, set
+\begin{equation}
+ \rho_*=\min\left\{r_{\cR},\frac{m_*r_\nu}{2B_*},
+ \frac{m_*}{2M_*(1+2B_*/m_*)},
+ \frac{\eta_*}{C_{\rm fit}}\right\}.                   \label{eq:rho-star}
+\end{equation}
+Every quotient in \cref{eq:rho-star} whose nonnegative denominator is zero
+is, by convention, \(+\infty\); hence an identically absent error term
+imposes no artificial radius restriction.
+For every \(r=\norm{\cR_N}\le\rho_*\), there is exactly one root in
+\begin{equation}
+ \abs{\nu-\nu_{0,N}}\le\frac{2B_*}{m_*}r,              \label{eq:root-ball}
+\end{equation}
+and, with \(\ell_N=D_{\cR}\widetilde d_N(\nu_{0,N},0)\),
+\begin{equation}
+ \left|\nu_{c,N}(\cR_N)-\nu_{0,N}
+       +\frac{\ell_N[\cR_N]}{a_N}\right|
+ \le\frac{M_*}{2m_*}\left(1+\frac{2B_*}{m_*}\right)^2r^2. \label{eq:root-remainder}
+\end{equation}
+All constants are independent of the admitted finite network size.
+\end{theorem}
+
+The theorem concerns a selected complete-history root.  A zero-fiber
+implication is additionally required to call it a geometric canard, and a
+basin theorem is required to call anything a physical pulse threshold.
+
+\subsection{A synchrony-quotient-free instance}
+
+We next state a separate network result whose node fields are heterogeneous
+and whose slow recovery variable is shared.  For each \(N\ge2\), let
+\(P_N\ge0\) be row stochastic and let \(\pi_N\) be a strictly positive
+stationary probability vector.  For fixed \(D,\gamma>0\), assume
+\begin{equation}
+ P_N\mathbf1=\mathbf1,\qquad
+ \pi_N^TP_N=\pi_N^T,\qquad \pi_N^T\mathbf1=1,\qquad
+ \tau(P_N)\le1-\gamma.                                \label{eq:shared-markov}
+\end{equation}
+Set
+\begin{equation}
+ P_{c,N}=\mathbf1\pi_N^T,\qquad P_{\perp,N}=\Id-P_{c,N},\qquad
+ E_N=\Ker\pi_N^T,\qquad A_N=D(P_N-\Id)|_{E_N},       \label{eq:shared-splitting}
+\end{equation}
+and equip \(\R^N\) with
+\begin{equation}
+ \norm{x}_N=\abs{\pi_N^Tx}+\osc(x).                   \label{eq:shared-norm}
+\end{equation}
+Let the curvature vectors satisfy, with constants independent of \(N\),
+\begin{equation}
+ 0<c_-\le c_{i,N}\le c_+,\qquad \pi_N^Tc_N=\alpha>0. \label{eq:shared-curvature}
+\end{equation}
+Fix \(\beta>0\), \(K\ne0\), and finitely many delay locations
+\(0\le\theta_0<\cdots<\theta_m\le\Theta_*\).  For
+\begin{equation}
+ B_{k,N}(\zeta)=B_{k,N}+\zeta R_{k,N},\qquad
+ C_N(\zeta)=\sum_{k=0}^mB_{k,N}(\zeta),                \label{eq:shared-layers}
+\end{equation}
+assume the fixed-support operator bound and the atomwise full-row
+neutrality
+\begin{equation}
+ \sup_N\sum_{k=0}^m
+ \left(\norm{B_{k,N}}_{\cL(\R^N,\norm{\cdot}_N)}
+       +\norm{R_{k,N}}_{\cL(\R^N,\norm{\cdot}_N)}\right)<\infty,
+ \qquad \pi_N^TR_{k,N}=0.                             \label{eq:shared-layer-bounds}
+\end{equation}
+The latter is a row identity, not merely
+\(\pi_N^TR_{k,N}\mathbf1=0\).
+
+For \(\eps=\delta^2\), the RFDE is
+\begin{align}
+ \dot v(t)={}&\frac23\mathbf1-w(t)\mathbf1
+ -c_N\circ(v(t)-\mathbf1)^{\circ2}
+ -\frac\beta3(v(t)-\mathbf1)^{\circ3}+D(P_N-\Id)v(t)\notag\\
+ &+\delta^2K\left\{C_N(\zeta)v(t)
+ -\sum_{k=0}^mB_{k,N}(\zeta)
+       v\left(t-\frac{\theta_k}{\delta}\right)\right\},
+                                                               \label{eq:shared-rfde-v}\\
+ \dot w(t)={}&\delta^2\{\pi_N^Tv(t)-a\},             \label{eq:shared-rfde-w}
+\end{align}
+where \(v\in\R^N\), \(w\in\R\), and the powers and products are
+componentwise.  Its collective fold is
+\((v,w,a)=(\mathbf1,2/3,1)\).  Write
+\begin{equation}
+ a=1+\delta^2\nu,\qquad \mu=a-1=\delta^2\nu,\qquad
+ \dot M_{1,N}=\sum_{k=0}^m\theta_kR_{k,N},             \label{eq:shared-parameters}
+\end{equation}
+and define
+\begin{align}
+ g_N&=A_N^{-1}P_{\perp,N}c_N,\notag\\
+ \kappa_N&=\frac\beta3+2\pi_N^T\diag(c_N)g_N,\qquad
+ \nu_{0,N}=-\frac{3\kappa_N}{8\alpha^3},             \label{eq:shared-center}\\
+ r_N&=\frac{K}{2\alpha}\pi_N^T\diag(c_N)
+ A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.            \label{eq:shared-rn}
+\end{align}
+
+For completeness, we also fix the selection entering the theorem.  In the
+fold chart
+\[
+ s=\delta t,\qquad w=\frac23-\delta^2Y,\qquad
+ v=\mathbf1+\delta\mathbf1X
+       +\delta^2\{g_NX^2+h\},\qquad h\in E_N,
+\]
+the singular critical field is
+\(q_0(X,Y)=(Y-\alpha X^2,-X)\).  A uniformly admissible preparation rule
+\(\mathcal P=(\mathcal P_N)\) means that the same frozen graph cutoffs,
+planar joining cutoff, degree-three normal extension, phase buffer, and
+invariant-tail levels are used for every \(N\), with common derivative
+bounds; the preparation is independent of \((\nu,\zeta)\) and agrees with
+\cref{eq:shared-rfde-v,eq:shared-rfde-w} on the retained continuous
+depth-two \(q_0\)-flow hull of half-length
+\(S_\delta=\sqrt{2p\log(1/\delta)}\), for an exponent \(p>4\) fixed in the
+theorem below.  It selects attracting and repelling phase-fixed planar
+traces \(z^a_{N,\mathcal P_N}\) and
+\(z^r_{N,\mathcal P_N}\), with phase \(X(0)=0\).  Their normalized central
+gap is
+\begin{align}
+ \mathscr D_{N,\mathcal P_N}(\delta,\nu,\zeta)
+  &=\frac{2}{\alpha e}\left\{
+    \mathscr H_\alpha(z^a_{N,\mathcal P_N}(0))
+   -\mathscr H_\alpha(z^r_{N,\mathcal P_N}(0))\right\},
+                                                               \label{eq:shared-gap}\\
+ \mathscr H_\alpha(X,Y)
+  &=\frac12e^{-2\alpha Y}
+    \left(\alpha Y-\alpha^2X^2+\frac12\right).       \label{eq:shared-first-integral}
+\end{align}
+On the retained graph, a zero of \(\mathscr D_{N,\mathcal P_N}\) is
+equivalent to equality of the two selected complete RFDE histories.
+
+\begin{theorem}[Shared-resource network response]\label{thm:shared-resource}
+Assume \cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds}
+with all displayed bounds common in \(N\), and assume
+\begin{equation}
+ \inf_{N\ge2}\abs{r_N}>0.                              \label{eq:shared-nondegeneracy}
+\end{equation}
+Fix \(p>4\) sufficiently large, a compact interval \(I_\nu\) containing
+every \(\nu_{0,N}\) in its interior with one common positive boundary
+distance, and a class of uniformly admissible preparation rules with one
+set of bounds.  Then there exist
+\(\delta_0,\zeta_0,c_0,C>0\), independent of \(N\) and of the rule in
+that class, such that for every \(N\ge2\), every
+\(0<\delta<\delta_0\), every \(\abs\zeta<\zeta_0\), and every admitted
+\(\mathcal P\), the gap \(\mathscr D_{N,\mathcal P_N}/\delta\) has exactly
+one root in the local window
+\(\{\nu:\abs{\nu-\nu_{0,N}}<c_0\}\subset I_\nu\),
+\begin{equation}
+ \nu_{c,N,\mathcal P_N}(\delta,\zeta)\in I_\nu,
+ \qquad
+ \abs{\nu_{c,N,\mathcal P_N}(\delta,\zeta)-\nu_{0,N}}<c_0. \label{eq:shared-root}
+\end{equation}
+No assertion is made here about additional zeros elsewhere in \(I_\nu\).
+The selected attracting and repelling complete histories agree at this
+root.  With
+\(\mu_{c,N,\mathcal P_N}=\delta^2\nu_{c,N,\mathcal P_N}\),
+\begin{align}
+ &\left|\mu_{c,N,\mathcal P_N}(\delta,\zeta)
+       -\mu_{c,N,\mathcal P_N}(\delta,0)
+       -\mathscr C_N\delta^3\zeta\right|
+ \le C\{\delta^4\abs\zeta+\delta^3\zeta^2\},        \label{eq:shared-response}\\
+ &\mathscr C_N=-\frac{r_N}{\alpha}
+ =-\frac{K}{2\alpha^2}\pi_N^T\diag(c_N)
+ A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.             \label{eq:shared-coeff}
+\end{align}
+In particular,
+\(\inf_N\abs{\mathscr C_N}>0\).  The exact finite-\(\delta\) root may
+depend on \(\mathcal P_N\); its coefficient and the displayed remainder
+bound do not within the declared preparation class.
+\end{theorem}
+
+The nondegeneracy class is nonempty without a hidden synchrony quotient.
+Indeed, take \(\pi_N=N^{-1}\mathbf1\), \(P_N=P_{c,N}\), and
+\[
+ s_{i,N}=\frac{\sqrt3(2i-N-1)}{\sqrt{(N-1)(N+1)}},
+ \qquad c_N=\mathbf1+\sigma s_N,\qquad 0<\sigma<1/\sqrt3.
+\]
+These choices satisfy
+\[
+ \pi_N^Ts_N=0,\qquad \pi_N^Ts_N^{\circ2}=1,\qquad
+ \norm{s_N}_\infty<\sqrt3,\qquad \alpha=1.
+\]
+For two delays \(\theta_0<\theta_1\), set
+\[
+ B_{0,N}=B_{1,N}=bP_{c,N},\qquad
+ R_{0,N}=s_N\pi_N^T,\qquad R_{1,N}=-s_N\pi_N^T,
+ \qquad b>0.
+\]
+The layers remain entrywise positive for
+\(\abs\zeta<b/\sqrt3\), all entries of
+\(c_N\) are distinct, and
+\begin{equation}
+ \mathscr C_N=\frac{K\sigma(\theta_0-\theta_1)}{2D}\ne0
+                                                               \label{eq:shared-witness-coeff}
+\end{equation}
+for every \(N\ge2\).  The distinct curvatures destroy every nontrivial
+synchrony polydiagonal.
+
+This instance proves that the general root mechanism is not merely an
+arbitrary-size replication of a two-module quotient.  It does not cover
+moving delay atoms, arbitrary perturbations of the base topology, or graph
+families whose mixing gap closes, and it does not identify the
+preparation-indexed root with an independently selected physical outer
+canard.
+
+\subsection{Eventually smooth selected returns}
+
+The next result is independent of the preceding network reduction.  It
+isolates the regularity needed to turn a selected event into a moving
+\emph{complete-history} return.  This distinction matters because a
+fixed-time RFDE solution map may be smooth in its initial history while its
+joint dependence on time and an arbitrary continuous history is not yet
+smooth: before the translation part has cleared the initial interval,
+changing time moves an evaluation point in a merely continuous function.
+
+Let
+\begin{equation}
+ \mathcal X_{\tau_*}=C([-\tau_*,0],\R^d),\qquad
+ \dot x(t)=\mathcal F(x_t),
+ \qquad x_t(\theta)=x(t+\theta),                      \label{eq:general-rfde}
+\end{equation}
+where \(d<\infty\), \(\tau_*>0\), and
+\(\mathcal F\colon U\subset\mathcal X_{\tau_*}\to\R^d\) is \(C^r\).  This includes any
+finite network with finitely many constant delays bounded by \(\tau_*\).
+Write \(\Phi_t(\phi)=x_t(\phi)\).
+
+\begin{theorem}[Eventually smooth selected-event return]
+\label{thm:eventual-selected-return}
+Let \(1\le k\le r\), let \(\mathcal M\) be a Banach space,
+\(D\subset\mathcal M\) open, and let
+\(\iota\colon D\to U\subset\mathcal X_{\tau_*}\) be \(C^k\).  Suppose all
+solutions from \(\iota(D)\) exist in one common \(U\)-tube through \(T_+\).
+Let \(V\subset\mathcal X_{\tau_*}\) be open, let
+\(g\colon V\to\R\) be \(C^k\), and assume
+\(\Phi_t(\iota(u))\in V\) for \((t,u)\in I\times D\).  Put
+\[
+ \mathcal H(t,u)=g(\Phi_t(\iota(u))).
+\]
+Suppose a common interval \(I=[T_-,T_+]\) satisfies
+\begin{equation}
+ T_->k\tau_*,\qquad
+ \sup_{u\in D}\mathcal H(T_-,u)\le-\delta_-,\qquad
+ \inf_{u\in D}\mathcal H(T_+,u)\ge\delta_+,
+ \qquad
+ \partial_t\mathcal H\ge a_*>0                     \label{eq:eventual-return-gates}
+\end{equation}
+on \(I\times D\), for \(\delta_-,\delta_+,a_*>0\).  Then each
+\(u\in D\) has exactly one selected event
+\(T(u)\in(T_-,T_+)\), and the event time and ambient event-hit map
+\[
+ T\colon D\to\R,
+ \qquad \mathcal E(u)=\Phi_{T(u)}(\iota(u))
+       \colon D\to\mathcal X_{\tau_*}
+\]
+are \(C^k\).  The threshold \(k\tau_*\) is a uniform sufficient condition;
+no necessity or optimality is asserted.  It is independent of the number of
+nodes in any finite network, although concrete tube and derivative constants
+need not be.
+
+If \(\iota\) is a \(C^k\) chart of a local section \(\Sigma\), and
+\(\mathcal E(D_0)\subset\iota(D)\) for an open \(D_0\subset D\), then
+\begin{equation}
+ \mathcal Q=\iota^{-1}\circ\mathcal E\big|_{D_0}
+ \colon D_0\to D                                      \label{eq:induced-selected-return}
+\end{equation}
+is the induced \(C^k\) selected section-return map.
+\end{theorem}
+
+\begin{proof}
+On the common tube, repeated Fr\'echet differentiation of the Volterra
+equation gives, for every fixed time, the triangular initial-data
+variational hierarchy through order \(k\).  We record the additional joint
+smoothing step because it is essential here.  Inductively in \(j\), the
+mixed jets
+\[
+ \partial_t^aD_\phi^b x(t;\phi),
+ \qquad a+b\le j,
+\]
+exist after \((j-1)\tau_*\) and depend continuously on \((t,\phi)\) in the
+corresponding multilinear-operator norms.  For \(j=1\) this follows from the
+integral equation and the first variational equation.  If it holds through
+order \(j\), differentiating \(x'=\mathcal F(x_t)\) and the triangular
+variational equations once more expresses every order-\(j+1\) jet as a
+finite sum of continuous derivatives of \(\mathcal F\) applied to lower-order
+history jets.  After one further maximum delay, every argument segment lies
+in the already regularized interval.  The linear inhomogeneous variational
+equations and Gronwall's inequality give continuity in the multilinear-
+operator norms, completing the induction.
+
+The earliest physical time in \(\Phi_t(\phi)\) is \(t-\tau_*\).  Hence, for
+every total order \(j\le k\), the preceding jets define continuous
+\(\mathcal X_{\tau_*}\)-valued derivatives once \(t>j\tau_*\).  Therefore
+\((t,\phi)\mapsto\Phi_t(\phi)\) is jointly \(C^k\) for \(t>k\tau_*\), and
+\(\mathcal H\) is jointly \(C^k\) on \(I\times D\).  The endpoint signs and
+positive speed give existence and uniqueness in the declared window; the
+Banach implicit-function theorem gives \(T\in C^k\), and composition gives
+\(\mathcal E\in C^k\).  The last assertion follows by composing with the
+section chart inverse.  See also the fixed-time RFDE and Poincar\'e-map
+background in \citet[Chs.~VII.4 and XIV.3]{diekmann1995delay}.
+\end{proof}
+
+No exclusion of earlier hits is used in
+\cref{thm:eventual-selected-return}: it is needed only to call the branch a
+first return or to assign it an exact ordinal.  This separation also avoids
+an unnecessary algebraic restriction on a stable-manifold construction.
+
+\begin{lemma}[Direct selected return identifies the stable-set germ]
+\label{lem:direct-selected-stable-germ}
+Let \(\Phi\) be a continuous semiflow, \(\Gamma\) a periodic orbit through a
+transverse local section \(\Sigma\) at \(p\).  Choose a local section patch
+\(N\subset\Sigma\) with the phase-isolation property
+\begin{equation}
+ x_n\in N,\qquad \operatorname{dist}(x_n,\Gamma)\to0
+ \quad\Longrightarrow\quad x_n\to p.                 \label{eq:section-phase-isolation}
+\end{equation}
+Let \(\mathcal Q(x)=\Phi_{\Theta(x)}(x)\) be a selected local return of the
+same semiflow with
+\[
+ \mathcal Q\colon N\to N,\qquad \mathcal Q(p)=p,\qquad
+ \Theta(p)=mP,\qquad
+ 0<\Theta_-\le\Theta(x)\le\Theta_+<\infty.
+\]
+Suppose every intervening arc between successive iterates stays in one common
+flow tube.  Restrict both stable sets to points whose relevant iterates or
+flow arcs stay in these declared local domains, and assume that local
+flow-stable points in \(N\) have the selected hits recurrently defined in
+\(N\).  Then, as germs at \(p\),
+\begin{equation}
+ \operatorname{germ}_p W^s_N(\mathcal Q)
+ =\operatorname{germ}_p\bigl(N\cap W^s_{\rm tube}(\Gamma)\bigr).
+                                                               \label{eq:direct-return-stable-germ}
+\end{equation}
+Consequently, a direct near-\(mP\) selected return can construct the intrinsic
+periodic-orbit stable-sheet germ; an identity \(\mathcal Q=P^m\) and a
+first-return label are sufficient conveniences, not necessary hypotheses.
+If \(\mathcal Q\) is \(C^2\), \(p\) has the required hyperbolic splitting,
+and a local graph theorem applies, its stable graph represents this same
+intrinsic germ.
+\end{lemma}
+
+\begin{proof}
+Put
+\(t_n=\sum_{j=0}^{n-1}\Theta(\mathcal Q^j x)\).  If
+\(\mathcal Q^n(x)\to p\), then \(t_n\to\infty\) by the positive lower bound;
+joint continuity of \(\Phi_t\), uniformly for
+\(0\le t\le\Theta_+\), sends every intervening late-time arc to the
+corresponding arc of \(\Gamma\).  Conversely, convergence of the flow orbit
+to \(\Gamma\), together with recurrent selected hits in \(N\), gives
+\(\operatorname{dist}(\mathcal Q^n x,\Gamma)\to0\).  The phase-isolation
+property \cref{eq:section-phase-isolation} then gives
+\(\mathcal Q^n x\to p\).
+\end{proof}
+
+The theorem deliberately excludes state-dependent or neutral delays,
+infinite delays, infinite networks, and infinite-dimensional node states.
+It proves a reusable return-map mechanism, not a return tube or event window
+for the concrete leaky model.
+
+\subsection{Conditional physical-pulse and control theorem}
+
+Let \(\xi=(a,\kappa_3)\) range in a closed rectangle
+\(\Xi\subset\R^2\) about
+\(\xi_0=(1/4,1/200)\), with \(\eps,\kappa_1,\tau_0,\tau_1\) fixed as in
+\cref{eq:center}.  Write
+\begin{equation}
+ \bar v_q(a)=(3a)^{1/3},\qquad
+ E_q(\xi)(\theta)\equiv
+ \bigl(\bar v_q(a),\bar v_q(a)-a\bigr),
+ \quad -r\le\theta\le0,                               \label{eq:quiet-equilibrium}
+\end{equation}
+for the quiet equilibrium history in \(X\), and let
+\(\Phi_t^\xi\) be the autonomous post-release semiflow.  Let
+\(\Gamma_i(\xi)\) and \(\Gamma_o(\xi)\) be the inner and outer scalar
+periodic orbits, identified with their compact orbits of histories in
+\(X\), and set
+\begin{equation}
+ F(\xi)=T_o(\xi)^{-1},\qquad
+ A(\xi)=\max_tV_o(t;\xi)-\min_tV_o(t;\xi).             \label{eq:outer-observables}
+\end{equation}
+For a physical one-unit pulse of amplitude \(J\), applied from
+\(E_q(\xi)\), denote the history at release by \(R_\xi(J)\in X\).  On a
+phase section \(\Sigma_\xi\subset Y\) through
+\(\Gamma_i(\xi)\), let \(B_\xi(J)\) be the event-aligned entrance of the
+post-release orbit.  In section coordinates
+\((u,z)\in E^u_\xi\oplus E^s_\xi\), write the local stable sheet as
+\begin{equation}
+ W^s_{\rm loc}(\Gamma_i(\xi))\cap\Sigma_\xi
+   =\{(u,z):u=\psi_\xi(z)\},
+ \qquad H(\xi,J)=u_\xi(J)-\psi_\xi(z_\xi(J)),          \label{eq:pulse-gap}
+\end{equation}
+where \((u_\xi(J),z_\xi(J))\) are the coordinates of \(B_\xi(J)\).
+
+\begin{theorem}[Pulse threshold and safety coordinates: completion
+theorem]\label{thm:pulse-completion}
+Assume the following objects and estimates hold with common domains, radii,
+and strict constants for every \(\xi\in\Xi\).  The equilibrium
+\(E_q(\xi)\) and the phase-fixed branches
+\(\Gamma_i(\xi),\Gamma_o(\xi)\) are \(C^1\) in \(\xi\); the quiet
+equilibrium and outer cycle possess quantitative attraction tubes; and the
+outer voltage extrema are simple.  The inner section return has a
+one-dimensional unstable bundle and a stable complement, both \(C^1\) in
+\(\xi\), and \(\psi_\xi(z)\) in \cref{eq:pulse-gap} is jointly \(C^1\)
+in \((\xi,z)\) on one common graph domain.
+
+Assume also that \((\xi,J)\mapsto R_\xi(J)\) is \(C^1\) on
+\(\Xi\times I_J\), where \(I_J=[J_-,J_+]\), and that
+\(B_\xi(J)\) is one jointly \(C^1\), event-aligned entrance branch on this
+whole product: the section event does not switch branches, its speed is
+bounded away from zero, and every \(B_\xi(J)\) lies in the common domain of
+the signed-exit construction, while every stable coordinate \(z_\xi(J)\)
+lies in the common domain of \(\psi_\xi\).  Suppose, after fixing
+the orientation, that there are \(\eta_H,m_J>0\) such that
+\begin{equation}
+ H(\xi,J_-)\ge\eta_H,\qquad H(\xi,J_+)\le-\eta_H,
+ \qquad \partial_JH(\xi,J)\le-m_J<0,                 \label{eq:gap-crossing}
+\end{equation}
+for all \(\xi\in\Xi\) and \(J\in I_J\).  In particular, \(H\) is a
+jointly \(C^1\) function on this full product, rather than a collection of
+pointwise gaps.  Finally, assume the signed-exit
+dynamics sends the \(H>0\) side into a complete-history exit slab attached
+to the quiet attraction tube and the \(H<0\) side into a complete-history
+exit slab attached to the outer attraction tube, uniformly in \(\xi\),
+with no other local exit; histories on \(H=0\) lie on
+\(W^s_{\rm loc}(\Gamma_i(\xi))\).
+
+Then there is a unique \(C^1\) function
+\(J_c:\Xi\to(J_-,J_+)\) satisfying \(H(\xi,J_c(\xi))=0\), with
+\begin{equation}
+ D_\xi J_c(\xi)
+ =-\frac{D_\xi H(\xi,J_c(\xi))}
+          {\partial_JH(\xi,J_c(\xi))}.                 \label{eq:threshold-derivative}
+\end{equation}
+For every \((\xi,J)\in\Xi\times I_J\), the routing assertions mean the
+following asymptotic statements in the complete history space:
+\begin{equation}
+ \begin{aligned}
+ J<J_c(\xi)&\ \Longrightarrow\
+   \norm{\Phi_t^\xi R_\xi(J)-E_q(\xi)}_X\longrightarrow0,\\
+ J=J_c(\xi)&\ \Longrightarrow\
+   \operatorname{dist}_X(\Phi_t^\xi R_\xi(J),\Gamma_i(\xi))
+      \longrightarrow0,\\
+ J>J_c(\xi)&\ \Longrightarrow\
+   \operatorname{dist}_X(\Phi_t^\xi R_\xi(J),\Gamma_o(\xi))
+      \longrightarrow0
+ \end{aligned}
+ \qquad(t\to\infty).                                  \label{eq:routing}
+\end{equation}
+Define the signed intrinsic safety margin
+\(S(\xi,J)=J-J_c(\xi)\).  If
+\(\xi_*\in\operatorname{int}\Xi\) satisfies
+\(\det D_\xi(F,A)(\xi_*)\ne0\), then, for every
+\(J_*\in\operatorname{int}I_J\),
+\begin{equation}
+ \cQ(\xi,J)=(F(\xi),A(\xi),S(\xi,J))                 \label{eq:safety-map}
+\end{equation}
+is a local \(C^1\) diffeomorphism at \((\xi_*,J_*)\), and
+\begin{equation}
+ \det D\cQ(\xi_*,J_*)=\det D_\xi(F,A)(\xi_*).        \label{eq:safety-determinant}
+\end{equation}
+\end{theorem}
+
+The implication in \cref{thm:pulse-completion} is proved by a forward
+Lyapunov--Perron stable graph, graph-adjusted stable-gap endpoint signs plus
+strict gap monotonicity,
+two-sided routing, and the block-triangular inverse theorem.  Interval Newton
+may sharpen the resulting scalar root enclosure but is not needed for its
+existence or uniqueness.  The model-specific graph and routing premises are
+current release gates.  What is already proved
+at the center is the exact reduced-history factorization, strict quiet
+capture at \(J=0.30\), exactly one nontranslation unstable inner multiplier,
+an explicit stable spectral gap, a continuous Route--C adjoint history
+measure with nonzero normalization, a physical-time base-orbit correlated
+second-return bound \(C^{uu}_{s,\mathrm{base}}<7.905650<12\), directed outer \((F,A)\)
+nonsingularity, a rigorous fixed-time fourth-order pulse-parameter model
+with fifth-order remainder on \(J\in[0.30105,0.30120]\), and an ambient
+complete-history proximity bound at \(J=0.32\), not a section/domain
+attachment.  On that pulse interval a
+separate validated event theorem also gives a unique positive Route--C
+crossing in a common bracket, a fourth-order event-time graph, and a
+continuous common-event history tube; see \cref{thm:route-c-event}.  Its
+event-aligned complete-history first derivative, including the moving-time
+term, is also enclosed on the full interval in
+\cref{thm:event-first-derivative}.  After correcting the complex right
+eigenvector gauge, \cref{thm:oriented-pulse-action} proves that the fixed
+normalized Route--C functional has a strictly negative action on this
+derivative throughout the interval.  In the same continuous-history norm,
+Route--C section, physical Grushin normalization, and centered coordinate
+\(\kappa(J)=K(J)-X_*\), source-bound endpoint calculations prove
+\(f_{\rm phys}(\kappa(J_-))>0>f_{\rm phys}(\kappa(J_+))\).  The direct
+complete-history norm of the same \(q_{\rm phys}\) gives
+\(\|P_sD_J\kappa\|_Y\le5.979324\), and a two-ended cone proves
+\(P_s\kappa(I_J)\subset\overline B_Y(0,47/5000)\cap\ker f_{\rm phys}\).
+Conditional on a quantitative graph whose stable domain contains this ball
+and \(\sup\|D\psi\|\le16\), it gives
+\(H'(J)\in[-354.415700,-149.584300]\subset(-\infty,0)\) on the full pulse
+interval.  The general return theorem
+\cref{thm:eventual-selected-return} identifies the missing \(C^2\) adapter:
+the one-period center does not clear two maximum delays, whereas the
+near-two-period center does so with margin greater than \(14.010740\).
+\Cref{prop:explicit-two-period-event-tube} now proves a common \(C^2\)
+selected event and complete-history hit on the explicit arbitrary-
+continuous-history scale \(\lambda_0=9\times10^{-31}\), and the orbit-aware
+enlargement in \cref{prop:orbit-aware-two-period-event-tube} raises the
+proved closed scale to \(1.2\times10^{-8}\), while
+\cref{prop:direct-two-period-derivative} proves directly that its center
+derivative is \(A^2\).  For that route, the conditional six-block box in
+\cref{prop:two-return-graph-arithmetic} would give the sharper physical graph
+budgets and
+\(H'(J)\in[-260.794147,-243.205853]\), together with strict graph-adjusted
+endpoint margins.  Its signed finite-section pilot lies comfortably inside
+all six caps, but is not interval evidence.  Thus the functional endpoint
+signs, pulse ball containment, enlarged but still sub-preferred two-period
+event tube, center
+derivative, fixed-splitting/rate transfer, and conditional graph/crossing
+arithmetic are proved.  Enlargement of the return to the preferred graph
+ball, graph-transform domain containment, six directed continuous-history
+Hessian bounds, stable-set identification, the graph, selected crossing,
+onset, and routing remain open.  Interval Newton is only an optional later
+sharpening.
+Neither that observable event and derivative nor the preceding
+invariant-object facts
+imply \cref{eq:gap-crossing} or \cref{eq:routing}.
