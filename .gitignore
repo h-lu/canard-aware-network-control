@@ -18,3 +18,5 @@ results/raw/
 *.log
 *.out
 *.synctex.gz
+tmp/
+manuscript/**/main.pdf
