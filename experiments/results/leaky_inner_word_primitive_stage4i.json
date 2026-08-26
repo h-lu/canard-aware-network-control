@@ -1,0 +1,199 @@
+{
+  "artifact": {
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "binary_guide_is_exact_solution": false,
+      "continuous_output_phase_supremum_validated": false,
+      "exact_four_word_system_reused": true,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "intercell_guide_jumps_outward_added": true,
+      "k_s_equals_one_validated": false,
+      "phase_fixed_one_step_stable_map_norm_upper_validated": false,
+      "physical_delay_grid_alignment_validated": true,
+      "physical_pulse_separator_crossing_validated": false,
+      "primitive_coefficient_tails_added_before_norm": true,
+      "primitive_cubic_guides_constructed": true,
+      "primitive_error_budget_compared_with_stage4h_margin": true,
+      "primitive_error_tubes_propagated": true,
+      "primitive_residual_is_full_signed_density_residual": false,
+      "primitive_taylor_bernstein_residuals_192bit_validated": true,
+      "raw_physical_frame_gronwall_no_go_validated": true,
+      "signed_two_variable_density_integral_validated": false,
+      "split_return_tube_validated": false,
+      "stable_power_constant_numeric_upper_validated": false,
+      "stage4d_rank_one_uncertainty_fully_propagated": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "directed_primitive_error_tubes": {
+      "current_coefficient_model_error_upper": "1.00036910699577635653559625232220109403158403438283130526566402e-08",
+      "delayed_coefficient_each_model_error_upper": "1.00010070221702224292827725321379517264830383282969705760502712e-08",
+      "error_radius_norm_by_field": {
+        "C0": "maximum_entry_modulus",
+        "C00": "maximum_entry_modulus",
+        "C1": "maximum_entry_modulus",
+        "F": "matrix_infinity_norm",
+        "G": "matrix_infinity_norm"
+      },
+      "final_error_radius_upper": {
+        "C0": "1.73777977707896344219542144519620400690594809649070357880417362e-06",
+        "C00": "3.64818329285996310590681594883116673465218874630978381007129531e-11",
+        "C1": "1.43305971253940870294533152886086313045784064702829476684365997e-06",
+        "F": "0.000490486612952324670481590510369932426366307432932807013091482968",
+        "G": "0.000241252863983494682562536034264148293726104707660916623169129277"
+      },
+      "fundamental_error_method": "moving frame through the directed guide inverse defect; no raw physical-coordinate Gronwall exponential",
+      "maximum_error_radius_upper": {
+        "C0": "1.73777977707896344219542144519620400690594809649070357880417362e-06",
+        "C00": "3.64818329285996310590681594883116673465218874630978381007129531e-11",
+        "C1": "1.43305971253940870294533152886086313045784064702829476684365997e-06",
+        "F": "0.000492741405945827714776317914631180935251559701127518459069671809",
+        "G": "0.000242413492627828781222789751127215533770342799786171000303054875"
+      },
+      "maximum_guide_entry_upper": {
+        "C0": "0.00382252134421052774350483740045177325344675593280877971362219562",
+        "C00": "1.56468520756013667551784788100829870494123952084919437766122612e-08",
+        "C1": "0.0025262577458985196673935114120013167848810553550720214843756223",
+        "F": "8.3926090840216568437079485328252322536476034050186475118069274",
+        "G": "8.91294519587450714439228148059749893642826161036888758342321003"
+      },
+      "primitive_error_tubes_propagated": true,
+      "raw_physical_frame_gronwall_no_go": {
+        "final_error_radius_upper": {
+          "F": "30499784.0939053788964874541345426284948889570931162301488214567",
+          "G": "18999493.1415076833497632474160535193336365483160476773434331382"
+        },
+        "maximum_error_radius_upper": {
+          "F": "30499784.0939053788964874541345426284948889570931162301488214567",
+          "G": "18999493.1415076833497632474160535193336365483160476773434331382"
+        },
+        "mechanism": "the scalar physical-frame majorant retains the unstable growth that the final rank-one deflation must cancel",
+        "usable_for_signed_stable_certificate": false
+      },
+      "triangular_dependency_order": [
+        "F",
+        "G",
+        "C0",
+        "C1",
+        "C00"
+      ]
+    },
+    "directed_residual_certificate": {
+      "analytic_tails_and_trimmed_coefficients_added": true,
+      "binary_mesh_spread_used_as_error": false,
+      "cell_count": 1042,
+      "coefficient_taylor_degree": 24,
+      "cumulative_intercell_jump_log_upper": "1.76818231999930991687346066407715334708247482635042772173348995e-16",
+      "cumulative_moving_frame_log_budget_upper": "3.105035903105799231045322517097417858167e-05",
+      "cumulative_moving_frame_rate_upper": "3.10503590308811657611807487867511995299314117718942582559441248e-05",
+      "guide_degree": 3,
+      "intercell_guide_jumps_added": true,
+      "maximum_coefficient_modulus_upper": {
+        "current": "0.7741091545441982635367139664595015347004",
+        "delayed0": "0.0008157199242441430389952139456966051511699",
+        "delayed1": "0.0008157199242441430389952139456966051511699"
+      },
+      "maximum_coefficient_tail_upper": {
+        "current": "1.72725415400561314739834816150282348346e-08",
+        "delayed0": "2.991767541332302362845144681237352646264e-08",
+        "delayed1": "2.991767541332303024589634723659492543391e-08"
+      },
+      "maximum_guide_inverse_defect_infinity_upper": "1.548333972768510429296866270400256926365e-08",
+      "maximum_intercell_guide_jump_infinity_upper": {
+        "C0": "6.82920313723779648373835016172961331903934478759765625000215904e-21",
+        "C00": "2.06795153138256918717852173017490713391453027725219726562565889e-25",
+        "C1": "4.3675136342799861233210378941294038668274879455566406250013494e-22",
+        "F": "3.46944695195361418882384896278381347656250000000000000000110543e-18",
+        "G": "1.38777878078144567552953958511352539062500000000000000000044217e-17"
+      },
+      "maximum_intercell_guide_jump_max_entry_upper": {
+        "C0": "6.77626357803440271254658000543713569641113281250000000000215904e-21",
+        "C00": "2.06795153138256918717852173017490713391453027725219726562565889e-25",
+        "C1": "4.2351647362715016953416125033982098102569580078125000000013494e-22",
+        "F": "3.46944695195361418882384896278381347656250000000000000000110543e-18",
+        "G": "1.38777878078144567552953958511352539062500000000000000000044217e-17"
+      },
+      "maximum_residual_cell_index": {
+        "C0": 524,
+        "C00": 1040,
+        "C1": 654,
+        "F": 1035,
+        "G": 413
+      },
+      "maximum_residual_upper": {
+        "C0": "3.332695657635918667066187316000425155949e-07",
+        "C00": "3.067585403343584425672871394318247731392e-11",
+        "C1": "2.560530372272522413949736273808266417973e-07",
+        "F": "7.304261453868225847504080071315168964929e-07",
+        "G": "2.54959882397587521371968557679088540624e-07"
+      },
+      "precision_bits": 192
+    },
+    "guide_and_grid": {
+      "full_cells_plus_final_short_cell": 1042,
+      "guide_construction": "binary DOP853 centres enter only as cubic Hermite guide coefficients; validity comes from the directed residual",
+      "period": "18.186209949127921",
+      "primitive_fields": [
+        "F",
+        "G",
+        "C0",
+        "C1",
+        "C00"
+      ],
+      "regular_step": "0.017469281074217108",
+      "tau0_aligned_cell_count": 512,
+      "tau1_aligned_cell_count": 640
+    },
+    "induced_measure_error_diagnostic": {
+      "atom_error_upper": "0.000549095127377080027652632852003828527794558933624757940537649323",
+      "coarse_primitive_induced_event_measure_error_upper": "0.00146354618385726667084128817150869149027922088768764219992315805",
+      "coefficient_cap_used_for_diagnostic": "directed global Bernstein-plus-tail maxima of |b_0| and |b_1|",
+      "double_delay_density_tv_error_upper": "8.73635024705907380537504479924309400841400194461554434743424449e-06",
+      "double_delay_history_support_length_upper": "8.9442719099991592",
+      "event_projection_factor_upper": "2.0135805680204055",
+      "one_delay_density_tv_error_upper": "0.000169006180178702372102058859114271074316800512307907851869723839",
+      "primitive_error_norm_convention": "F and G errors use the matrix infinity norm; C0, C1 and C00 errors use maximum-entry modulus; every downstream dimension factor is explicit",
+      "status": "directed consequence of the primitive tubes, but deliberately coarse and not a signed stable-row certificate"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_signed_stable_flow_stage4h.json": "6577a7fcba9888b5126adcd894a361c9436b29a6f619b04f3d54ce5c3218fc15"
+    },
+    "schema_id": "leaky-inner-word-primitive-stage4i-v1",
+    "stable_power_ingress_status": {
+      "coarse_primitive_error_plus_sampled_center": "0.0055979679543276956",
+      "declared_rate_rho_s": "0.99502491687458405",
+      "k_s_equals_one_validated": false,
+      "next_exact_object": "Taylor--Bernstein cells for the common signed density S(t,theta), followed by outward absolute integration and a continuous t supremum",
+      "phase_fixed_one_step_stable_map_norm_upper": null,
+      "primitive_budget_below_stage4h_numerical_margin": true,
+      "primitive_budget_is_sufficient_for_full_stable_power_proof": false,
+      "reason_full_proof_remains_open": "the Stage-4H centre is a sampled Gauss total variation and not an outward two-variable signed-density integral or continuous output-phase supremum; the Stage-4D rank-one uncertainties have not yet been inserted into that common row",
+      "stable_power_constant_upper": null,
+      "stage4h_sampled_signed_center": "0.0041344217704704289"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact Stage-4H parent-byte and source binding; cubic Hermite guides on 1042 physical cells aligned with both delays; 192-bit outward MPFR Taylor--Bernstein residuals for F,G,C0,C1,C00; analytic coefficient tails and omitted Fourier coefficients added before norms; triangular cellwise error propagation including every outward intercell guide jump and validated orbit-coefficient error; explicit infinity/max-entry norm metadata; no directed signed two-variable density integral, output-time supremum, stable power, split tube, graph, separator, or onset theorem",
+    "artifact_sha256": "43be6582a20c7510afb91f4fbf4be95d8904bc2d6bf0d4d8b1e6249d37b95e06",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_word_primitive_stage4i.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "numpy": "2.5.2",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "8",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_signed_stable_flow_stage4h.json": "6577a7fcba9888b5126adcd894a361c9436b29a6f619b04f3d54ce5c3218fc15"
+    },
+    "result": "experiments/results/leaky_inner_word_primitive_stage4i.json",
+    "schema_id": "leaky-inner-word-primitive-stage4i-v1",
+    "source_sha256": {
+      "docs/leaky-inner-word-primitive-stage4i.md": "e2fd0c3d4c865e107e23d0d12ba1bbe6f28f346b36138b6af3a8e6b44f186a00",
+      "experiments/leaky_inner_word_primitive_stage4i.py": "f344b6f41da7b04456188dc7e36b81dc5b78a1283576f01bd00ba7767d384f64",
+      "src/canard_control/leaky_inner_word_primitive_stage4i.py": "4644404a6367d39bb7438dd38e565735871c039877e1f0ca24995e52fc76c789"
+    }
+  }
+}

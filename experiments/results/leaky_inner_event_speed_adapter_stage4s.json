@@ -1,0 +1,127 @@
+{
+  "certificate": {
+    "branch": "inner_saddle_candidate_selected_near_period_return",
+    "center_norm_and_event_row_registration": {
+      "center_identification": "X_* is the exact phase-zero Route-C reference history by the declared Route-C coordinate convention",
+      "center_identity_status": "DECLARED_ROUTE_C_DEFINITION",
+      "event_functional_norm_upper": "1",
+      "history_norm": "||(phi,w)||_Y=max(||phi||_infinity,|w|)",
+      "history_space": "Y=C([-tau_max,0],R)_v x R_w with the inherited max norm",
+      "no_finite_node_norm_substitution": true,
+      "same_voltage_current-history_row_after_center_identification": true,
+      "stage2_center": "the exact phase-zero Route-C history V_true",
+      "stage2_event_functional": "h_C(phi)=phi_v(0)-V_true(0)",
+      "stage4n_center": "X_* at the fixed Route-C return phase",
+      "stage4n_event_functional": "g(phi)=phi_v(0)-X_{*,v}(0), an affine complete-history row"
+    },
+    "claim_status": {
+      "asynchronous_network_safety_radius_validated": false,
+      "c2_selected_return_map_validated": false,
+      "common_event_window_validated": false,
+      "common_window_histories_lie_in_smaller_ball_validated": false,
+      "complete_returned_history_tube_validated": false,
+      "directed_event_speed_lower_on_smaller_ball_proved": true,
+      "directed_event_speed_lower_strictly_positive": true,
+      "endpoint_speed_gate_reduced_to_returned_history_containment": true,
+      "finite_history_nodes_cannot_supply_the_containment_premise": true,
+      "frequency_amplitude_safety_radius_validated": false,
+      "nonlinear_flow_family_on_full_anisotropic_ball_validated": false,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "preferred_b_declared_initial_ball_radius_sum_exact": true,
+      "preferred_b_fixed_unit_y_coordinate_triangle_proved": true,
+      "preferred_b_radius_strictly_inside_stage2_speed_ball_proved": true,
+      "quantitative_inner_stable_graph_validated": false,
+      "returned_histories_lie_in_smaller_ball_validated": false,
+      "same_model_and_route_c_event_row_registered": true,
+      "selected_pulse_stable_sheet_crossing_validated": false,
+      "six_projected_return_hessian_blocks_validated": false,
+      "stage2_and_stage4n_parent_bytes_and_claim_boundaries_validated": true,
+      "stage4n_declared_initial_domain_is_a_validated_return_domain": false,
+      "stage4n_speed_gate_reduced_to_common_window_history_containment": true,
+      "two_sided_basin_routing_validated": false,
+      "uniform_positive_event_speed_on_stage4n_window_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unique_selected_event_on_common_window_validated": false
+    },
+    "conditional_stage4n_discharge": {
+      "common_window_containment_premise": "for every declared initial history x and every t in [T_minus,T_plus], ||X_t(x)-X_*||_Y<=0.00995",
+      "common_window_containment_premise_validated": false,
+      "endpoint_speed_conclusion_if_returned_history_premise_holds": "Dg[F(R(x))]>=0.2069547790094916713843497979253308516874029625928539498445>0",
+      "logical_status": "PROVED_IMPLICATION_WITH_OPEN_CONTAINMENT_PREMISES",
+      "proved_conclusion_if_premise_holds": "inf_{x,t in [T_minus,T_plus]} Dg[F(X_t(x))] >= 0.2069547790094916713843497979253308516874029625928539498445 > 0",
+      "returned_history_containment_premise": "for every declared x, ||R(x)-X_*||_Y<=0.00995",
+      "returned_history_containment_premise_validated": false,
+      "stage4n_speed_claim_promoted_here": false,
+      "stage4n_uniform_event_speed_ingress_can_then_be_filled_with": "0.2069547790094916713843497979253308516874029625928539498445"
+    },
+    "directed_event_speed_adapter": {
+      "arithmetic_direction": "lower minus upper times exact nonnegative radius, rounded toward minus infinity",
+      "event_speed_variation_upper": "0.0399721870327095970562215148824149426956531463643146391555",
+      "formula": "a_*(R)=a_orbit_lower-L_F_upper*R",
+      "inherited_stage2_declared_ball_event_speed_lower": "0.206753913748020768886579840564112686146218775927720324",
+      "orbit_event_speed_lower": "0.246926966042201268440571312807745794383056108957168589",
+      "smaller_ball_bound_at_least_inherited_bound": true,
+      "smaller_ball_bound_strictly_positive": true,
+      "smaller_ball_event_speed_lower": "0.2069547790094916713843497979253308516874029625928539498445",
+      "smaller_complete_history_ball_radius": "0.00995",
+      "vector_field_lipschitz_upper": "4.01730522941804995539914722436331082368373330294619489"
+    },
+    "exact_radius_adapter": {
+      "coordinate_formula": "x-X_*=x_s+q_hat*x_u",
+      "preferred_b_declared_initial_ball_inside_stage2_ball": true,
+      "preferred_b_radius_sum_exact": "0.00995",
+      "stable_radius_R_s": "0.0097",
+      "stage2_declared_ball_radius_lower": "0.00999999999999999999999999999999999999999999999998246666",
+      "stage4n_return_domain_validated": false,
+      "strict_inclusion_slack_lower": "0.00004999999999999999999999999999999999999999999998246666",
+      "triangle_inequality": "||x-X_*||_Y<=||x_s||_Y+||q_hat||_Y*|x_u|",
+      "unit_unstable_radius_R_u_hat": "0.00025",
+      "unit_vector_normalization": "||q_hat||_Y=1"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_contract.json": "b64f5230bb870b889fdc341d5d5139ea4ccac6faa7752ff2a5682eb0206cf160",
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d"
+    },
+    "remaining_dependency_order": {
+      "next_single_shared_object": "one source-bound complete-history nonlinear flow tube on the full preferred-B initial ball through a common event window",
+      "sampled_trajectories_or_nodal_histories_sufficient": false,
+      "still_separate_after_tube": "no-earlier-admissible-return cover and six correlated continuous-history Hessian block bounds",
+      "what_that_object_can_discharge": "endpoint signs, the present speed premise, returned-history containment, and the domain for event-time derivatives"
+    },
+    "schema_id": "leaky-inner-event-speed-adapter-stage4s-v1",
+    "status": "PROVED_CONDITIONAL_IMPLICATION_SOURCE_BOUND",
+    "theorem_boundary": {
+      "forbidden_upgrade": "do not relabel this conditional implication as Stage-4N uniform-speed validation until the full continuous-history window containment is source-bound",
+      "not_proved_here": "the containment premises themselves, a common event window, a nonlinear returned-history tube, selected return, C2 map, Hessian blocks, stable graph, crossing, physical onset, routing, capture, or safety theorem",
+      "proved_here": "the preferred-B declared initial-radius inclusion and the conditional uniform positive Route-C event-speed theorem on any common window contained in the radius-0.00995 Y ball"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "normal validation and byte binding of the Stage-2 Route-C section-speed certificate and the open Stage-4N selected-return contract; exact-decimal preferred-B radius addition, strict radius inclusion, and directed a_orbit-L_F*R lower-bound arithmetic; a proved implication from a common complete-history tube containment to positive event speed; no nonlinear tube, common event window, returned-history containment, selected return, Hessian, graph, crossing, onset, routing, capture, or safety promotion",
+    "certificate_sha256": "c4c70bd4bf03b2cfd0c7c141ccf16b3f8449f7cc0a098da76b7002083f7cf846",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_event_speed_adapter_stage4s.py",
+    "dependency_source_sha256": {
+      "src/canard_control/leaky_inner_nonlinear_selected_return_tube_stage4n_contract.py": "839630ed867649ddec3c88d4e787853aa26e5c769b5c2ebe501e4abf53cae45f",
+      "src/canard_control/leaky_inner_stable_manifold_stage2_contract.py": "d80d9ab7d0b2d99adde6f2096bef29830091fa5b9c7df086cefadd363b45ce16"
+    },
+    "numeric_core_sha256": "92db607f11adf0981e731a9f049067a34cf04c4f4ba7a14cab8e629520cb9aa0",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_contract.json": "b64f5230bb870b889fdc341d5d5139ea4ccac6faa7752ff2a5682eb0206cf160",
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d"
+    },
+    "result": "experiments/results/leaky_inner_event_speed_adapter_stage4s.json",
+    "runtime": {
+      "arithmetic": "Decimal exact input parsing with ROUND_FLOOR lower-bound subtraction; normal parent validation and SHA-256 binding",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "schema_id": "leaky-inner-event-speed-adapter-stage4s-v1",
+    "source_sha256": {
+      "docs/leaky-inner-event-speed-adapter-stage4s.md": "83ac3cb9eb8b074423b17e2bacfa88562b8428225049aad659473b9302d0e3ed",
+      "experiments/leaky_inner_event_speed_adapter_stage4s.py": "745eabf736385d949bf50352b908dac82db2cd3f0136ab1af2303b223fc4fc7a",
+      "src/canard_control/leaky_inner_event_speed_adapter_stage4s.py": "a0ef8ef51f78b964546b1f680a5ad8b618bb610753e027e8d7a10214c1110581",
+      "tests/test_leaky_inner_event_speed_adapter_stage4s.py": "b8632d44d52e13e386608e9a605e4859d8f60e0f9792f5603609ae878df42885"
+    }
+  }
+}

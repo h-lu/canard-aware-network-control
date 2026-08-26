@@ -1,0 +1,161 @@
+{
+  "artifact": {
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "both_physical_delays_cell_aligned": true,
+      "complete_history_base_state_small_tube_validated": false,
+      "directed_scalar_mean_flow_attempt_completed": true,
+      "exact_uniform_inflation_budget_computed": true,
+      "full_history_lipschitz_error_decomposition_registered": true,
+      "graph_radius_1p7e_minus_3_validated": false,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "moving_f_covector_variation_validated": false,
+      "moving_fq_normalization_excludes_zero_validated": false,
+      "moving_q_covector_variation_validated": false,
+      "other_five_projected_return_hessian_blocks_validated": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "scalar_p_log_norm_route_closes_local_return_tube": false,
+      "scalar_route_first_failure_frozen": true,
+      "self_consistent_current_cell_radius_validated": true,
+      "signed_finite_delay_word_replacement_identified": true,
+      "six_projected_return_hessian_blocks_validated": false,
+      "split_return_tube_validated": false,
+      "stable_power_constant_numeric_upper_validated": false,
+      "stage4e_base_orbit_bound_source_bound": true,
+      "third_variation_correlated_p_tube_validated": false,
+      "uniform_event_time_variation_validated": false,
+      "uniform_split_ball_stable_output_uu_below_twelve_validated": false,
+      "uniform_uq_vqq_variation_validated": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "directed_scalar_mean_flow_attempt": {
+      "all_current_cells_self_closed": true,
+      "cell_count": 1042,
+      "first_local_ball_failure": {
+        "cell_index": 581,
+        "interpretation": "the scalar upper bound, not the exact trajectory, first ceases to certify containment in the local ball",
+        "left_time_lower": "10.14965230412013966199147319002804579213261604309082031249745105",
+        "local_section_ball_radius": "0.01",
+        "right_time_upper": "10.16712158519435676984343785989040043205022811889648437500254895",
+        "voltage_coordinate_radius_upper": "0.01005940115017829594723508535025757737457752227783203125"
+      },
+      "history_space": "Y=C([-tau_max,0],R) x R",
+      "initial_p_radius_upper": "0.02520705060097273657234325112912706064394772560213556582541788254",
+      "input_relation": "||delta phi||_Y <= ||delta phi||_split <= 0.0017",
+      "interval_precision_bits": 192,
+      "local_return_tube_gate_closes": false,
+      "maximum_fixed_point_iterations": 5,
+      "maximum_p_radius_cell_index": 1041,
+      "maximum_p_radius_upper": "10.30022743389362043924584101017040494668197081710053337352910201",
+      "maximum_voltage_coordinate_radius_upper": "2.151312657227955948968656230135820806026458740234375",
+      "mean_equation": "dot e=A_bar(t,e)e+B0_bar(t,e_tau0)e_v(t-tau0)+B1_bar(t,e_tau1)e_v(t-tau1), with each bar the exact segment mean between the base and perturbed histories",
+      "mesh_spread_used_as_error": false,
+      "norm": "P norm on current (voltage,recovery); voltage sup on delayed history",
+      "orbit_fourier_coefficient_error_upper": "2.002210599135765241060027707104554883441038803937317425152866451e-12",
+      "p_to_voltage_coordinate_factor_upper": "0.2088606946822271698490406458917949347734034808451051926254465429",
+      "period_binary64": "18.186209949127921",
+      "regular_step_binary64": "0.017469281074217108",
+      "returned_history_voltage_radius_upper": "2.151312657227955948968656230135820806026458740234375",
+      "row_digest_sha256": "62c495a8e6491548b751aa47546767da411adc66859b39cfd2ef09a9c7182ecb",
+      "tau0_aligned_cell_count": 512,
+      "tau1_aligned_cell_count": 640,
+      "taylor_degree_inherited_from_stage4e": 24
+    },
+    "downstream_status": {
+      "moving_f_total_variation_upper": null,
+      "moving_fq_modulus_lower": null,
+      "moving_q_variation_upper": null,
+      "other_five_hessian_blocks": null,
+      "physical_pulse_onset": false,
+      "quantitative_stable_graph": false,
+      "required_lipschitz_cap": "2408.441718672103298455595197580566769162095700025424205951612163",
+      "split_return_tube_history_radius_upper": null,
+      "stable_power_constant_upper": null,
+      "third_variation_correlated_p_tube": null,
+      "uniform_event_speed_lower": null,
+      "uniform_stable_output_uu_strictly_below_twelve": false,
+      "uniform_stable_output_uu_upper": null,
+      "validated_complete_history_lipschitz_upper": null
+    },
+    "exact_radius_budget": {
+      "cap_is_a_sufficient_threshold_not_a_validated_bound": true,
+      "guaranteed_increment_budget_lower": "4.094350921742575607374511835886963507575562690043221150113221904",
+      "required_lipschitz_cap_exact_fraction": "4094350921742575607374511835886963507575562690043221150115770851/1700000000000000000000000000000000000000000000000000000000000",
+      "required_lipschitz_cap_lower": "2408.441718672103298455595197580566769162095700025424205949002041",
+      "required_lipschitz_cap_upper": "2408.441718672103298455595197580566769162095700025424205951612163",
+      "split_ball_radius": "0.0017",
+      "stage4e_base_orbit_stable_output_uu_upper": "7.905649078257424392625488164113036492424437309956778849884229149",
+      "sufficient_gate": "if sup_{||x||_split<=0.0017} Lip_x(C_s^uu) is strictly below the registered cap, then C_s^uu(x)<=C_s,base^uu+0.0017*Lip_x(C_s^uu)<12",
+      "uniform_target": "12"
+    },
+    "frozen_minimal_failure": {
+      "failure_cell_index": 581,
+      "failure_reason": "the direct scalar P-log-norm majorant loses the local return-history ball before event and third-variation denominators can be invoked",
+      "first_unclosed_ingress": "complete-history base-state mean-flow tube inside the validated radius-0.01 local return domain",
+      "minimal_replacement": "construct the signed current-ODE fundamental propagator and the finite Volterra delay words, form U(t)P_s and the unstable contribution with shared q/f symbols, and take total variation only after the signed sums",
+      "nonzero_forward_delay_words_over_one_period": "empty, (tau0), (tau1), (tau0,tau0)",
+      "required_signed_ingress_parent": null,
+      "this_does_not_disprove_a_sharper_signed_bound": true,
+      "word_depth_reason": "2*tau0<T<tau0+tau1<3*tau0, so all other depth-two and all depth-three delay words vanish on [0,T]"
+    },
+    "full_history_lipschitz_decomposition": {
+      "exact_first_difference_identity": "D_x G[h]=D_x Y_qq[h]-D_x q[h]*alpha-q*D_x alpha[h]",
+      "exact_quotient_derivative": "D_x alpha[h]=((D_x f[h])(Y_qq)+f(D_x Y_qq[h]))/f(q)-f(Y_qq)*((D_x f[h])(q)+f(D_x q[h]))/f(q)^2",
+      "independent_triangle_bounds_on_quotient_terms_allowed": false,
+      "objects": {
+        "deflated_history": "G(x)=Y_qq(x)-q(x)*alpha(x)",
+        "event_corrected_second_history": "Y_qq=V_qq+2*dot(U_q)*tau_q+ddot(X)*tau_q^2+dot(X)*tau_qq, evaluated on every returned-history theta",
+        "quotient": "alpha(x)=f_x(Y_qq(x))/f_x(q(x))",
+        "stable_block": "C_s^uu(x)=||G(x)||_Y/||q(x)||_Y^2"
+      },
+      "required_evaluation_order": "form D_x(Y_qq-q*f(Y_qq)/f(q))[h] with shared symbols on every history cell before taking total variation or a history norm",
+      "required_lipschitz_pieces": {
+        "L_UV": "correlated tubes for D_x U_q[h], D_x V_qq[h], hence the third variation W_hqq, including moving q inputs",
+        "L_base_flow": "complete-history mean-flow tube for X_x-X_0 on [0,T]",
+        "L_event": "physical-time derivatives D_x tau_q[h] and D_x tau_qq[h] with a uniform positive event-speed denominator",
+        "L_f": "moving atom-plus-density left covector D_x f[h] in total variation",
+        "L_normalization": "uniform lower bound for |f_x(q(x))| and variation of ||q(x)||_Y^-2",
+        "L_q": "moving normalized Route-C right history D_x q[h]"
+      },
+      "stage4b_design_targets_used_as_bounds": false
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_shared_yqq_deflation_stage4e.json": "ccdd6023f911e97785ec6f8be97b84d725d6af9f5051e1da602380d225e47acc"
+    },
+    "schema_id": "leaky-uniform-uu-inflation-stage4g-v1"
+  },
+  "manifest": {
+    "arithmetic_scope": "exact Stage-4E parent-byte binding; exact-rational target-budget arithmetic; 192-bit outward MPFR complete-history RFDE mean-flow majorant on the Stage-4E 1042-cell physical grid; exact 512/640-cell delay translations; self-consistent current-cell P-radius closure; route-failure only, with no third-variation, event-jet, moving q/f, uniform Hessian block, stable graph, separator, or onset promotion",
+    "artifact_sha256": "a706f93dc0e14588c9cbd0ac38c5c117d202821c13495c43c04572a8ed1a2d3f",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_uniform_uu_inflation_stage4g.py",
+    "dependency_source_sha256": {
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/floquet_cover_arithmetic.py": "5fdd8eae881456a2aecb8a5211a9936abaa8fa1479099bcb205462c8f1296463",
+      "src/canard_control/leaky_floquet_inner_unstable_root.py": "d0be3c56f993da8b28bb75460e19be5a39cf03569848ca35c2c77915bf0f9d8e",
+      "src/canard_control/leaky_pulse_quiet_capture.py": "a1286c59f736d6036fdea1a4970ce4ac9fbb882aec769de48db1fb9366554a8f",
+      "src/canard_control/leaky_quiet_history_basin.py": "2cc124c69d2257e6223be2ae0c9aa5c30659ed8a271f5a1c6096c24a17fe43be",
+      "src/canard_control/leaky_shared_yqq_deflation_stage4e.py": "36336b9636da1c7e6d9d3cf952155a81c432a05a02e63dfc73657a76ee3356f4"
+    },
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "mpfr_precision_bits": 192,
+      "numpy": "2.5.2",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "8",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_shared_yqq_deflation_stage4e.json": "ccdd6023f911e97785ec6f8be97b84d725d6af9f5051e1da602380d225e47acc"
+    },
+    "result": "experiments/results/leaky_uniform_uu_inflation_stage4g.json",
+    "schema_id": "leaky-uniform-uu-inflation-stage4g-v1",
+    "source_sha256": {
+      "docs/leaky-uniform-uu-inflation-stage4g.md": "b58653ec2542696fca9f4483acfa1718c2a624a3681786e6209e20a3bc77f043",
+      "experiments/leaky_uniform_uu_inflation_stage4g.py": "956ec7ccc847b5efbdfbefa7c1857daafccac34942a38b4fb484a86290833437",
+      "src/canard_control/leaky_uniform_uu_inflation_stage4g.py": "b4cff276ab961f634ea19ea5c4ad8974c3ec780f3a973422736a7d36448fda08"
+    }
+  }
+}

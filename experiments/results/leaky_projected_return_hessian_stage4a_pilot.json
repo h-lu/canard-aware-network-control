@@ -1,0 +1,597 @@
+{
+  "artifact": {
+    "arithmetic_and_discretization": {
+      "delay_interpolation": "four-node cubic Lagrange",
+      "domain_norm": "nodal ambient l-infinity; stable inputs are precomposed with the finite-section stable projector",
+      "integrator": "fixed-step classical RK4",
+      "longdouble_bits": 128,
+      "longdouble_epsilon": "1.08420217248550443401e-19",
+      "operator_upper_meaning": "entrywise absolute row sums for the computed finite tensor only",
+      "orbit_representation": "direct long-double DFT of exact binary64 validated-orbit polynomial samples",
+      "section": "Route-C affine current-voltage perturbation zero at phase zero",
+      "state_arithmetic": "numpy.longdouble",
+      "step_counts": [
+        120,
+        180,
+        240
+      ]
+    },
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "continuous_history_discretization_error_validated": false,
+      "graph_radius_1p7e_minus_3_validated": false,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "largest_pilot_block_identified": true,
+      "matrix_majorant_pilot_promoted_to_proof": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "physical_time_first_and_second_event_formulas_executed": true,
+      "pilot_rows_are_outward_rounded": false,
+      "six_projected_finite_section_blocks_computed": true,
+      "six_projected_return_hessian_blocks_validated": false,
+      "source_bound_inner_orbit_polynomial_used": true,
+      "split_return_map_ball_validated": false,
+      "stable_power_constant_numeric_upper_validated": false,
+      "three_mesh_refinement_pilot_computed": true,
+      "unique_physical_pulse_onset_validated": false,
+      "validated_orbit_ball_propagated_through_variations": false
+    },
+    "mesh_rows": [
+      {
+        "base_event_speed": "0.246959226972607248651",
+        "base_orbit_field_vs_fourier_tangent_inf": "9.4471969852051584926e-14",
+        "eigensplit": {
+          "projector_idempotence_defect_inf": "1.09269731737642402823e-19",
+          "stable_projection_linf_norm": "2.40070789403545159502",
+          "unstable_covector_l1_norm": "1.4013222282912860539",
+          "unstable_left_residual_inf": "2.16840434497100886801e-19",
+          "unstable_multiplier": "2.01045325235066218994",
+          "unstable_projection_linf_norm": "1.4013222282912860539",
+          "unstable_right_residual_inf": "2.16840434497100886801e-19",
+          "unstable_vector_linf_norm": "1"
+        },
+        "evidence_status": "source-bound long-double finite-section pilot; not an interval or continuous-history operator bound",
+        "first_event_identity_defect_inf": "0",
+        "history_padding_steps": 77,
+        "largest_projected_hessian_block": {
+          "name": "unstable_output_uu_upper",
+          "value": "26.1933462882794607651"
+        },
+        "projected_hessian_block_pilot": {
+          "stable_output_ss_upper": "0.0227315337095386447996",
+          "stable_output_su_upper": "0.0793609081481947975512",
+          "stable_output_uu_upper": "7.96861169490806275917",
+          "unstable_output_ss_upper": "0.298462324388909405748",
+          "unstable_output_su_upper": "0.280974977856215557548",
+          "unstable_output_uu_upper": "26.1933462882794607651"
+        },
+        "return_hessian_symmetry_defect_inf": "2.03287907341032081376e-20",
+        "return_time_d1_ambient_linf_operator_norm": "32.2879861607147731206",
+        "return_time_d2_ambient_linf_bilinear_upper": "656.878519954133253123",
+        "second_event_identity_defect_inf": "3.38813178901720135627e-21",
+        "section_dimension": 78,
+        "stable_power_pilot": {
+          "all_powers_validated": false,
+          "finite_horizon_k_s_candidate": "1",
+          "finite_section_all_power_k_s_candidate": "1",
+          "finite_section_all_power_reason": "n=0 is the identity on E_s; the computed projected one-step restriction is below rho_s, so submultiplicativity gives K_s=1 for this finite-section map",
+          "finite_section_one_step_restriction_candidate": "0.00480284261375426690249",
+          "one_step_below_declared_rho": true,
+          "power_horizon": 12,
+          "rows": [
+            {
+              "power": 1,
+              "projected_power_linf_upper_binary": "0.00480284261375426690249",
+              "ratio_to_declared_rho_power": "0.00482685662670659723639"
+            },
+            {
+              "power": 2,
+              "projected_power_linf_upper_binary": "8.02008641600842417367e-09",
+              "ratio_to_declared_rho_power": "8.10048711065340088701e-09"
+            },
+            {
+              "power": 3,
+              "projected_power_linf_upper_binary": "1.12397995758840576969e-13",
+              "ratio_to_declared_rho_power": "1.14092395404198848548e-13"
+            },
+            {
+              "power": 4,
+              "projected_power_linf_upper_binary": "1.26508075193837055869e-18",
+              "ratio_to_declared_rho_power": "1.29057254839779985948e-18"
+            },
+            {
+              "power": 5,
+              "projected_power_linf_upper_binary": "5.58991046323267217759e-24",
+              "ratio_to_declared_rho_power": "5.73106151928405249897e-24"
+            },
+            {
+              "power": 6,
+              "projected_power_linf_upper_binary": "8.99407608101740837821e-30",
+              "ratio_to_declared_rho_power": "9.26729140638310596828e-30"
+            },
+            {
+              "power": 7,
+              "projected_power_linf_upper_binary": "1.04848191037371437352e-34",
+              "ratio_to_declared_rho_power": "1.08573352525886602589e-34"
+            },
+            {
+              "power": 8,
+              "projected_power_linf_upper_binary": "9.23824751717499576157e-40",
+              "ratio_to_declared_rho_power": "9.61430607585743250389e-40"
+            },
+            {
+              "power": 9,
+              "projected_power_linf_upper_binary": "4.30527893799905680842e-45",
+              "ratio_to_declared_rho_power": "4.50293510724043234851e-45"
+            },
+            {
+              "power": 10,
+              "projected_power_linf_upper_binary": "7.94890242049917431209e-51",
+              "ratio_to_declared_rho_power": "8.35540687579767693403e-51"
+            },
+            {
+              "power": 11,
+              "projected_power_linf_upper_binary": "7.24556426331481778915e-56",
+              "ratio_to_declared_rho_power": "7.65418040265460820822e-56"
+            },
+            {
+              "power": 12,
+              "projected_power_linf_upper_binary": "6.92763892379188190773e-61",
+              "ratio_to_declared_rho_power": "7.35491687487168272436e-61"
+            }
+          ]
+        },
+        "step_count": 120,
+        "step_size": "0.151551749576066013825"
+      },
+      {
+        "base_event_speed": "0.246959226972607248651",
+        "base_orbit_field_vs_fourier_tangent_inf": "9.4471969852051584926e-14",
+        "eigensplit": {
+          "projector_idempotence_defect_inf": "1.10434221094358069814e-19",
+          "stable_projection_linf_norm": "2.40090289330353989783",
+          "unstable_covector_l1_norm": "1.40134062940255565977",
+          "unstable_left_residual_inf": "2.16840434497100886801e-19",
+          "unstable_multiplier": "2.0104536030515753886",
+          "unstable_projection_linf_norm": "1.40134062940255565977",
+          "unstable_right_residual_inf": "0",
+          "unstable_vector_linf_norm": "1"
+        },
+        "evidence_status": "source-bound long-double finite-section pilot; not an interval or continuous-history operator bound",
+        "first_event_identity_defect_inf": "0",
+        "history_padding_steps": 114,
+        "largest_projected_hessian_block": {
+          "name": "unstable_output_uu_upper",
+          "value": "26.1945420635740902071"
+        },
+        "projected_hessian_block_pilot": {
+          "stable_output_ss_upper": "0.0214835542316377456351",
+          "stable_output_su_upper": "0.0843683132296034615782",
+          "stable_output_uu_upper": "7.48968476425499929405",
+          "unstable_output_ss_upper": "0.295425179233810619728",
+          "unstable_output_su_upper": "0.28184136862259090428",
+          "unstable_output_uu_upper": "26.1945420635740902071"
+        },
+        "return_hessian_symmetry_defect_inf": "1.69406589450860067814e-20",
+        "return_time_d1_ambient_linf_operator_norm": "32.2898471052662685565",
+        "return_time_d2_ambient_linf_bilinear_upper": "656.947346262257724447",
+        "second_event_identity_defect_inf": "3.38813178901720135627e-21",
+        "section_dimension": 115,
+        "stable_power_pilot": {
+          "all_powers_validated": false,
+          "finite_horizon_k_s_candidate": "1",
+          "finite_section_all_power_k_s_candidate": "1",
+          "finite_section_all_power_reason": "n=0 is the identity on E_s; the computed projected one-step restriction is below rho_s, so submultiplicativity gives K_s=1 for this finite-section map",
+          "finite_section_one_step_restriction_candidate": "0.00458835649794136265361",
+          "one_step_below_declared_rho": true,
+          "power_horizon": 12,
+          "rows": [
+            {
+              "power": 1,
+              "projected_power_linf_upper_binary": "0.00458835649794136265361",
+              "ratio_to_declared_rho_power": "0.00461129808925146017495"
+            },
+            {
+              "power": 2,
+              "projected_power_linf_upper_binary": "7.12886930096762698469e-09",
+              "ratio_to_declared_rho_power": "7.20033561867300615662e-09"
+            },
+            {
+              "power": 3,
+              "projected_power_linf_upper_binary": "9.42178951075435093782e-14",
+              "ratio_to_declared_rho_power": "9.5638229758342369784e-14"
+            },
+            {
+              "power": 4,
+              "projected_power_linf_upper_binary": "1.10722083538802852215e-18",
+              "ratio_to_declared_rho_power": "1.12953170220669155707e-18"
+            },
+            {
+              "power": 5,
+              "projected_power_linf_upper_binary": "5.06986674268766607796e-24",
+              "ratio_to_declared_rho_power": "5.19788615363835430841e-24"
+            },
+            {
+              "power": 6,
+              "projected_power_linf_upper_binary": "8.47463943737438151049e-30",
+              "ratio_to_declared_rho_power": "8.7320757043552695928e-30"
+            },
+            {
+              "power": 7,
+              "projected_power_linf_upper_binary": "8.88430680936956402674e-35",
+              "ratio_to_declared_rho_power": "9.1999582025978957531e-35"
+            },
+            {
+              "power": 8,
+              "projected_power_linf_upper_binary": "8.1060958315381243685e-40",
+              "ratio_to_declared_rho_power": "8.436068232611234881e-40"
+            },
+            {
+              "power": 9,
+              "projected_power_linf_upper_binary": "3.88438964777086443465e-45",
+              "ratio_to_declared_rho_power": "4.06272271019865612556e-45"
+            },
+            {
+              "power": 10,
+              "projected_power_linf_upper_binary": "7.57849195772505663494e-51",
+              "ratio_to_declared_rho_power": "7.96605373446978189088e-51"
+            },
+            {
+              "power": 11,
+              "projected_power_linf_upper_binary": "6.04578425180781819968e-56",
+              "ratio_to_declared_rho_power": "6.38673837635585041824e-56"
+            },
+            {
+              "power": 12,
+              "projected_power_linf_upper_binary": "6.05346449113187860211e-61",
+              "ratio_to_declared_rho_power": "6.42682573774971109872e-61"
+            }
+          ]
+        },
+        "step_count": 180,
+        "step_size": "0.101034499717377337924"
+      },
+      {
+        "base_event_speed": "0.246959226972607248651",
+        "base_orbit_field_vs_fourier_tangent_inf": "9.4471969852051584926e-14",
+        "eigensplit": {
+          "projector_idempotence_defect_inf": "1.09722251231497193525e-19",
+          "stable_projection_linf_norm": "2.40113693048834297983",
+          "unstable_covector_l1_norm": "1.40144409716419482415",
+          "unstable_left_residual_inf": "5.29395592033937711918e-23",
+          "unstable_multiplier": "2.01045366782227796776",
+          "unstable_projection_linf_norm": "1.40144409716419482415",
+          "unstable_right_residual_inf": "1.08420217248550443401e-19",
+          "unstable_vector_linf_norm": "1"
+        },
+        "evidence_status": "source-bound long-double finite-section pilot; not an interval or continuous-history operator bound",
+        "first_event_identity_defect_inf": "5.29395592033937711918e-23",
+        "history_padding_steps": 151,
+        "largest_projected_hessian_block": {
+          "name": "unstable_output_uu_upper",
+          "value": "26.1933671753838872576"
+        },
+        "projected_hessian_block_pilot": {
+          "stable_output_ss_upper": "0.0209909965960088894243",
+          "stable_output_su_upper": "0.0821704020407990481933",
+          "stable_output_uu_upper": "7.26111932801827375528",
+          "unstable_output_ss_upper": "0.295927280725486352431",
+          "unstable_output_su_upper": "0.282259621191064680179",
+          "unstable_output_uu_upper": "26.1933671753838872576"
+        },
+        "return_hessian_symmetry_defect_inf": "1.01643953670516040688e-20",
+        "return_time_d1_ambient_linf_operator_norm": "32.2907713739547332921",
+        "return_time_d2_ambient_linf_bilinear_upper": "657.001990933639604009",
+        "second_event_identity_defect_inf": "8.47032947254300339068e-22",
+        "section_dimension": 152,
+        "stable_power_pilot": {
+          "all_powers_validated": false,
+          "finite_horizon_k_s_candidate": "1",
+          "finite_section_all_power_k_s_candidate": "1",
+          "finite_section_all_power_reason": "n=0 is the identity on E_s; the computed projected one-step restriction is below rho_s, so submultiplicativity gives K_s=1 for this finite-section map",
+          "finite_section_one_step_restriction_candidate": "0.00448110906612215337264",
+          "one_step_below_declared_rho": true,
+          "power_horizon": 12,
+          "rows": [
+            {
+              "power": 1,
+              "projected_power_linf_upper_binary": "0.00448110906612215337264",
+              "ratio_to_declared_rho_power": "0.00450351442474175318181"
+            },
+            {
+              "power": 2,
+              "projected_power_linf_upper_binary": "6.92417576611016408721e-09",
+              "ratio_to_declared_rho_power": "6.99359004827150980088e-09"
+            },
+            {
+              "power": 3,
+              "projected_power_linf_upper_binary": "8.65302411508925305212e-14",
+              "ratio_to_declared_rho_power": "8.78346844279187266131e-14"
+            },
+            {
+              "power": 4,
+              "projected_power_linf_upper_binary": "1.03554356851325558185e-18",
+              "ratio_to_declared_rho_power": "1.05641011464713997746e-18"
+            },
+            {
+              "power": 5,
+              "projected_power_linf_upper_binary": "4.82124056181081574183e-24",
+              "ratio_to_declared_rho_power": "4.94298190297422976466e-24"
+            },
+            {
+              "power": 6,
+              "projected_power_linf_upper_binary": "8.20466198034916409185e-30",
+              "ratio_to_declared_rho_power": "8.4538970737911467068e-30"
+            },
+            {
+              "power": 7,
+              "projected_power_linf_upper_binary": "8.19823408214626698232e-35",
+              "ratio_to_declared_rho_power": "8.48950993130000520117e-35"
+            },
+            {
+              "power": 8,
+              "projected_power_linf_upper_binary": "7.59830534300265536896e-40",
+              "ratio_to_declared_rho_power": "7.90760726962957978263e-40"
+            },
+            {
+              "power": 9,
+              "projected_power_linf_upper_binary": "3.68402306458621117281e-45",
+              "ratio_to_declared_rho_power": "3.85315725933397575327e-45"
+            },
+            {
+              "power": 10,
+              "projected_power_linf_upper_binary": "7.35731412082022215936e-51",
+              "ratio_to_declared_rho_power": "7.73356493016858983859e-51"
+            },
+            {
+              "power": 11,
+              "projected_power_linf_upper_binary": "5.54845587562235646505e-56",
+              "ratio_to_declared_rho_power": "5.86136299186629528063e-56"
+            },
+            {
+              "power": 12,
+              "projected_power_linf_upper_binary": "5.66704066403316888342e-61",
+              "ratio_to_declared_rho_power": "6.01656833864942062118e-61"
+            }
+          ]
+        },
+        "step_count": 240,
+        "step_size": "0.0757758747880330069124"
+      }
+    ],
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "next_rigorous_certificate": {
+      "hessian_blocks": "propagate the validated orbit ball and first/second variation operators by outward-rounded method of steps, then apply split output coordinates before norms",
+      "minimal_missing_strict_fields": "one K_s upper, one split return-ball lower, and six projected D2P block uppers",
+      "return_ball": "enclose the first positive physical return, exclude earlier hits, and prove a uniform event-speed lower bound on a split ball",
+      "stable_power": "replace the finite-horizon projected powers by a directed continuous-history deflated resolvent or all-power bound"
+    },
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+      "experiments/results/leaky_projected_return_hessian_stage4_contract.json": "670fb21874fa26d953ee7bc2dc70f415c47ccc259690567fb20e5e00ea64fe13"
+    },
+    "pilot_sensitivity": {
+      "baseline_is_nonrigorous": true,
+      "common_six_block_threshold": {
+        "closing_multiplier_lower": "1.723749372359165015656795438",
+        "closing_perron_upper": "0.0846784960968514227369991002629827021639359514800539662442654349536642002194267072429974490352528",
+        "closing_self_map_slack_lower": {
+          "stable": "0.0000000000000000000000000000000224571332578529141639577607260422406511905580107751840207527205335523402558946748584713098470468",
+          "unstable": "0.000685775098215345404823844894577270447015793527972486665348596370798715458426617972683985001165221"
+        },
+        "failing_multiplier_upper": "1.723749372359165015656795439",
+        "first_failed_gates": [
+          "self_map"
+        ],
+        "scaled_block_value_at_closing_lower": null
+      },
+      "definition": "single-parameter supremum bracket for the exact Stage-4 evaluator: multiply only the named pilot block, hold all other pilot inputs fixed, and bisect between the last closing and first failing value",
+      "directed_priority": "stable_output_uu_upper first, then joint stable-output error; the largest absolute unstable_output_uu_upper block has much more isolated inflation headroom",
+      "isolated_block_thresholds": {
+        "stable_output_ss_upper": {
+          "closing_multiplier_lower": "131.1562717745896900201526792",
+          "closing_perron_upper": "0.692396462994844031485021585682174315697538037240727235724451504585571969689507462820408015132215",
+          "closing_self_map_slack_lower": {
+            "stable": "0.000000000000000000000000000000106128601998267969871613436708078892745555833460874269042005507682076097125996174399800737747939",
+            "unstable": "0.000691747697192668995090339938294964132235578845885896610035921567430484073940168111165439247232055"
+          },
+          "failing_multiplier_upper": "131.1562717745896900201526793",
+          "first_failed_gates": [
+            "self_map"
+          ],
+          "scaled_block_value_at_closing_lower": "2.946906923735322778405295973"
+        },
+        "stable_output_su_upper": {
+          "closing_multiplier_lower": "24.53297819011404652389964739",
+          "closing_perron_upper": "0.358528125484941848156910544294474889224000065111406545731346498975890302963030331586953540768080",
+          "closing_self_map_slack_lower": {
+            "stable": "0.0000000000000000000000000000000125245969968080445615350585141236255807216301479109782408963087985595701232470211467125029779019",
+            "unstable": "0.000691747697192668995090339938294964132235578845885896610035921567430484073940168111165439247232055"
+          },
+          "failing_multiplier_upper": "24.53297819011404652389964740",
+          "first_failed_gates": [
+            "self_map"
+          ],
+          "scaled_block_value_at_closing_lower": "2.177648602916089231225868553"
+        },
+        "stable_output_uu_upper": {
+          "closing_multiplier_lower": "1.751023001915925324993291240",
+          "closing_perron_upper": "0.0580398521201909401976116641923878271035270308944562186673681415052154121222517902402082483832884",
+          "closing_self_map_slack_lower": {
+            "stable": "0.0000000000000000000000000000000996172016663163579311918675373736213123371890610775027152043814706492515212183631974250822727549",
+            "unstable": "0.000691747697192668995090339938294964132235578845885896610035921567430484073940168111165439247232055"
+          },
+          "failing_multiplier_upper": "1.751023001915925324993291241",
+          "first_failed_gates": [
+            "self_map"
+          ],
+          "scaled_block_value_at_closing_lower": "13.91505697189666824171448158"
+        },
+        "unstable_output_ss_upper": {
+          "closing_multiplier_lower": "2037.161571054878994464199836",
+          "closing_perron_upper": "0.999999999999999999999999999855223904365526136566419660158970949961203087282745484833520992464809",
+          "closing_self_map_slack_lower": {
+            "stable": "0.000335895407517915042480560050999272324700513630987674412195056408983867610536361444633019330857960",
+            "unstable": "0.000322978964076532768897027478358188781779427361281378325356786480137813447571553905089069879636988"
+          },
+          "failing_multiplier_upper": "2037.161571054878994464199837",
+          "first_failed_gates": [
+            "contraction"
+          ],
+          "scaled_block_value_at_closing_lower": "604.8974078479542923515804944"
+        },
+        "unstable_output_su_upper": {
+          "closing_multiplier_lower": "1468.515075852294869980322512",
+          "closing_perron_upper": "0.999999999999999999999999999981976584740920883856403932435097557398530398454756023882201162478551",
+          "closing_self_map_slack_lower": {
+            "stable": "0.000335895407517915042480560050999272324700513630987674412195056408983867610536361444633019330857960",
+            "unstable": "0.000336991377916596715016056899677286716784640818511535991950204968311655371346964998556311641025690"
+          },
+          "failing_multiplier_upper": "1468.515075852294869980322513",
+          "first_failed_gates": [
+            "contraction"
+          ],
+          "scaled_block_value_at_closing_lower": "415.7309294280732009635514869"
+        },
+        "unstable_output_uu_upper": {
+          "closing_multiplier_lower": "44.65180825543417650822316138",
+          "closing_perron_upper": "0.999999999999999999999999999802277445796946618675567676747770767337734958130954342065783622773288",
+          "closing_self_map_slack_lower": {
+            "stable": "0.000335895407517915042480560050999272324700513630987674412195056408983867610536361444633019330857960",
+            "unstable": "0.000349977890960936869839768032671557047368418794224521250372278521487938292692681712765688284902661"
+          },
+          "failing_multiplier_upper": "44.65180825543417650822316139",
+          "first_failed_gates": [
+            "contraction"
+          ],
+          "scaled_block_value_at_closing_lower": "1169.738591325996383084557789"
+        }
+      },
+      "thresholds_are_theorem_tolerances": false,
+      "tightness_order": [
+        "stable_output_uu_upper",
+        "stable_output_su_upper",
+        "unstable_output_uu_upper",
+        "stable_output_ss_upper",
+        "unstable_output_su_upper",
+        "unstable_output_ss_upper"
+      ]
+    },
+    "refinement_pilot_envelope": {
+      "construction": "max(last two meshes)+2*last-mesh change+1e-15 for each block; this is a heuristic refinement envelope, not directed error",
+      "continuous_history_upper_bound": false,
+      "largest_block": {
+        "candidate_upper": "26.1968918399544961062",
+        "name": "unstable_output_uu_upper"
+      },
+      "last_mesh_absolute_changes": {
+        "stable_output_ss_upper": "0.000492557635628856210763",
+        "stable_output_su_upper": "0.0021979111888044133849",
+        "stable_output_uu_upper": "0.228565436236725538777",
+        "unstable_output_ss_upper": "0.000502101491675732702902",
+        "unstable_output_su_upper": "0.000418252568473775898639",
+        "unstable_output_uu_upper": "0.00117488819020294954498"
+      },
+      "projected_hessian_block_candidate_upper": {
+        "stable_output_ss_upper": "0.0224686695028964572574",
+        "stable_output_su_upper": "0.0887641356072132875488",
+        "stable_output_uu_upper": "7.94681563672845125978",
+        "unstable_output_ss_upper": "0.296931483708838817037",
+        "unstable_output_su_upper": "0.283096126328013231177",
+        "unstable_output_uu_upper": "26.1968918399544961062"
+      },
+      "split_return_ball_radius_candidate": "0.0017",
+      "split_return_ball_radius_validated": false,
+      "stable_power_finite_horizon_k_s_candidate": "1"
+    },
+    "schema_id": "leaky-projected-return-hessian-stage4a-pilot-v1",
+    "stage4_matrix_pilot_evaluation": {
+      "canonical_positive_weight_lower": {
+        "stable": "2.37651844598868279337441802774448247636379915993406564547044770861213454280533602070518778324637",
+        "unstable": "1.02471186431974996250803568357051154120661157951987796674922919798777429429707077652088440861756"
+      },
+      "canonical_positive_weight_upper": {
+        "stable": "2.37651844598868279337441802774448247636379915993406564547044770861213454280533602070518778324638",
+        "unstable": "1.02471186431974996250803568357051154120661157951987796674922919798777429429707077652088440861757"
+      },
+      "contraction_closes": true,
+      "derivative_lipschitz_matrix_upper": {
+        "m_ss": "0.0194348085208260587064476677709852270373864135356428940810473039404912561196215436460285627809448",
+        "m_su": "1.29824910920477693761776032890067160508798046355572611646977125441681931829665081012561825071877",
+        "m_us": "0.000603958991454235782763966767267116319516566126327691852149025270303245795073318735159290104244570",
+        "m_uu": "0.0227152094617253914807945094897208845847510601455415543942969140981837233208435127628031649023496"
+      },
+      "fixed_point_derivative_sequence_vector_upper": {
+        "stable": "1.02065512272115633960159717745631591433986035166802214522828703085375839685582745390412227450791",
+        "unstable": "0.000630761723204293209345497543944333434933344522680537635416159331455170500447551965589332627735780"
+      },
+      "formulas": {
+        "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+        "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+        "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+        "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+        "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+        "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+        "perron_gate": "rho(M)<1",
+        "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+      },
+      "graph_certificate_closes": true,
+      "graph_derivative_upper": "0.000630761723204293209345497543944333434933344522680537635416159331455170500447551965589332627735780",
+      "graph_height_upper": "0.00000824605105434240258551931793899739487412950094534245609366787966709387640589225294915442277204958",
+      "input_complete": true,
+      "input_order_conditions_hold": true,
+      "missing_inputs": [],
+      "nonlinear_value_vector_upper": {
+        "stable": "0.00000202033906067496808855896",
+        "unstable": "0.0000067648715310728802163614"
+      },
+      "perron_root_upper": "0.0491245986537813140345439629907296643068347626557352064430491669895840875085710162746102541601941",
+      "self_map_closes": true,
+      "self_map_image_vector_upper": {
+        "stable": "0.000664104592482084957519439949000727675299486369012325587804943591016132389463638555366980669142040",
+        "unstable": "0.00000825230280733100490966006170503586776442115411410338996407843256951592605983188883456075276794465"
+      },
+      "self_map_slack_vector_lower": {
+        "stable": "0.000335895407517915042480560050999272324700513630987674412195056408983867610536361444633019330857960",
+        "unstable": "0.000691747697192668995090339938294964132235578845885896610035921567430484073940168111165439247232055"
+      },
+      "split_ball_contains_graph_box": true,
+      "stable_kernel_coefficient_upper": "229.716190473015880574433106623681899726234334327787654143947525972559607853796949938814547245178",
+      "unstable_kernel_coefficient_upper": "1.21987576104379092905218435206178904327985403961806444731747799767278967880901090789504236637208",
+      "unstable_quadratic_kernel_coefficient_upper": "1.21895161149270391493257944662358136713088449226939497153314590799626340136124163953771780711736",
+      "weighted_row_sum_upper": "0.579216394601145841471429427973298758094261668898938478406270876401019075333453479428493209631648"
+    },
+    "strict_certificate_ingress": {
+      "pilot_values_promoted": false,
+      "stable_output_ss_upper": null,
+      "stable_output_su_upper": null,
+      "stable_output_uu_upper": null,
+      "stable_power_constant_upper": null,
+      "unstable_output_ss_upper": null,
+      "unstable_output_su_upper": null,
+      "unstable_output_uu_upper": null,
+      "validated_split_return_ball_radius_lower": null
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact-byte binding to the validated inner orbit and Stage-4 contract; numpy.longdouble fixed-step RK4 method of steps with cubic delayed interpolation; analytic first and second variational propagation; physical-time affine-event differentiation; long-double power iteration; three-mesh convergence diagnostics; no outward rounding, continuous-history truncation bound, orbit-ball propagation, interval return tube, or theorem promotion",
+    "artifact_sha256": "a601011c91199c13862770c9777c40845f94c5e72dfc9dde8fd32a0cc89fe6b8",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_projected_return_hessian_stage4a_pilot.py",
+    "environment": {
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+      "experiments/results/leaky_projected_return_hessian_stage4_contract.json": "670fb21874fa26d953ee7bc2dc70f415c47ccc259690567fb20e5e00ea64fe13"
+    },
+    "result": "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json",
+    "schema_id": "leaky-projected-return-hessian-stage4a-pilot-v1",
+    "source_sha256": {
+      "docs/leaky-projected-return-hessian-stage4a-pilot.md": "9396c250ad7ea586890b0ef6a68c9b6b120785c22116e0a1d44b767806b39854",
+      "experiments/leaky_projected_return_hessian_stage4a_pilot.py": "3a1ad1932e2a3007f715eb1543b18d60d0ab1cfefad085555a52716b93690db3",
+      "src/canard_control/leaky_projected_return_hessian_stage4a_pilot.py": "8b88cc4edf3b175855c0d49c9d2118886246e6b0cb588e343cbed814f619267c"
+    }
+  }
+}

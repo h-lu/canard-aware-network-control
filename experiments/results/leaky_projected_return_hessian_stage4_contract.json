@@ -1,0 +1,166 @@
+{
+  "contract": {
+    "adapted_norm_transfer_audit": {
+      "black_box_hessian_transfer": "C_split<=(p_s_old+p_u_old)*C_old",
+      "direct_six_block_route_avoids_global_equivalence_factor": true,
+      "old_to_split_equivalence": "||x||_old<=||x||_split<=(p_s_old+p_u_old)||x||_old",
+      "projection_isometry_alone_guarantees_improvement": false,
+      "section_or_quotient_coordinates_required": true
+    },
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "direct_split_coordinate_route_avoids_black_box_norm_transfer": true,
+      "graph_radius_1p7e_minus_3_validated": false,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "matrix_lyapunov_perron_contraction_validated": false,
+      "matrix_lyapunov_perron_self_map_validated": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "physical_time_second_return_variation_formula_registered": true,
+      "six_independent_projected_hessian_blocks_identified": true,
+      "six_projected_return_hessian_blocks_validated": false,
+      "split_return_map_ball_validated": false,
+      "stable_power_constant_numeric_upper_validated": false,
+      "two_by_two_positive_majorant_evaluator_registered": true,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "hessian_block_budget": {
+      "evidence_status": "open: no interval first/second-variational return enclosure has yet supplied the six projected block bounds",
+      "stable_output_ss_upper": null,
+      "stable_output_su_upper": null,
+      "stable_output_uu_upper": null,
+      "unstable_output_ss_upper": null,
+      "unstable_output_su_upper": null,
+      "unstable_output_uu_upper": null
+    },
+    "matrix_evaluation": {
+      "canonical_positive_weight_lower": null,
+      "canonical_positive_weight_upper": null,
+      "contraction_closes": false,
+      "derivative_lipschitz_matrix_upper": null,
+      "fixed_point_derivative_sequence_vector_upper": null,
+      "formulas": {
+        "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+        "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+        "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+        "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+        "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+        "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+        "perron_gate": "rho(M)<1",
+        "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+      },
+      "graph_certificate_closes": false,
+      "graph_derivative_upper": null,
+      "graph_height_upper": null,
+      "input_complete": false,
+      "input_order_conditions_hold": false,
+      "missing_inputs": [
+        "stable_power_constant_upper",
+        "validated_return_map_split_ball_radius_lower",
+        "hessian_blocks.stable_output_ss_upper",
+        "hessian_blocks.stable_output_su_upper",
+        "hessian_blocks.stable_output_uu_upper",
+        "hessian_blocks.unstable_output_ss_upper",
+        "hessian_blocks.unstable_output_su_upper",
+        "hessian_blocks.unstable_output_uu_upper"
+      ],
+      "nonlinear_value_vector_upper": null,
+      "perron_root_upper": null,
+      "self_map_closes": false,
+      "self_map_image_vector_upper": null,
+      "self_map_slack_vector_lower": null,
+      "split_ball_contains_graph_box": false,
+      "stable_kernel_coefficient_upper": null,
+      "unstable_kernel_coefficient_upper": null,
+      "unstable_quadratic_kernel_coefficient_upper": null,
+      "weighted_row_sum_upper": null
+    },
+    "matrix_input_budget": {
+      "evidence_status": "partial adapter: Stage-2 rates are validated; the stable power constant, split return ball, and Hessian blocks remain open",
+      "hessian_blocks": {
+        "evidence_status": "open: no interval first/second-variational return enclosure has yet supplied the six projected block bounds",
+        "stable_output_ss_upper": null,
+        "stable_output_su_upper": null,
+        "stable_output_uu_upper": null,
+        "unstable_output_ss_upper": null,
+        "unstable_output_su_upper": null,
+        "unstable_output_uu_upper": null
+      },
+      "sequence_weight_beta": "0.999378114609323003348369123573752284860754942578431701875",
+      "stable_graph_radius": "0.0010",
+      "stable_power_constant_upper": null,
+      "stable_power_rate_upper": "0.995024916874584026786952988590018278886039540627453615",
+      "stable_seed_radius": "0.0002",
+      "unstable_backward_power_constant_upper": "1",
+      "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934",
+      "unstable_graph_radius": "0.0007",
+      "validated_return_map_split_ball_radius_lower": null
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea"
+    },
+    "projected_propagator_certificate_interface": {
+      "acceptable_proof_engine": "directed method-of-steps, interval Taylor, or equivalent continuous-history enclosures with tail and event control",
+      "input_space": "the Route-C section split E_s direct-sum E_u, with E_u one dimensional and the declared split norm",
+      "insufficient_evidence": "finite sampled variational matrices, binary SVDs, or an old sup-norm C2 constant transferred by norm equivalence",
+      "projection_order": "apply the stable-history and unstable-scalar output coordinates before taking operator norms",
+      "required_domain": "one validated split return ball containing the entire graph box",
+      "required_event_traces": "tau_s,tau_u,W_ss,W_su,W_uu,tau_ss,tau_su,tau_uu",
+      "required_linear_outputs": "direct stable propagator powers K_s*rho_s^n; direct unstable backward powers K_u*rho_u^n; physical-time return traces of U_s,U_u,dot(U_s),dot(U_u)",
+      "required_projected_outputs": "Pi_s D2P(ss), Pi_s D2P(su), Pi_s D2P(uu), Pi_u D2P(ss), Pi_u D2P(su), Pi_u D2P(uu)",
+      "required_second_variations": "V_ss, V_su, V_uu"
+    },
+    "radius_design_target": {
+      "motivation": "a graph radius above 1.7e-3 would make the wider diagnostic third-return crossing bracket relevant",
+      "split_total_radius": "0.0017",
+      "stable_component_radius": "0.0010",
+      "unstable_component_radius": "0.0007",
+      "used_in_any_crossing_or_onset_claim": false,
+      "validated": false
+    },
+    "return_event_contract": {
+      "event_speed": "a=Dh_C[dot(X_T)]>0 uniformly on the return tube",
+      "first_return_time_variation": "tau_h=-Dh_C[U_h(T)]/a",
+      "history_segment_requirement": "all values, first variations, time derivatives, and second variations are enclosed as complete returned histories",
+      "return_hessian": "D2P[h,k]=W_hk+dot(X_T)*tau_hk",
+      "return_orientation": "first positive physical return near one period, with no earlier section hit on the validated tube",
+      "second_event_core": "W_hk=V_hk(T)+dot(U_h)(T)*tau_k+dot(U_k)(T)*tau_h+ddot(X_T)*tau_h*tau_k",
+      "second_return_time_variation": "tau_hk=-Dh_C[W_hk]/a",
+      "section": "affine Route-C history section h_C=0"
+    },
+    "schema_id": "leaky-projected-return-hessian-stage4-contract-v1",
+    "split_coordinate_norm": "||(x_s,x_u)||_split=||x_s||_Y+|x_u|, with x_s in E_s and x_u in the one-dimensional E_u coordinate",
+    "variational_equation_contract": {
+      "fast_current_voltage_hessian": "-2*v(t)-6*epsilon*kappa_3*(v(t)-1)",
+      "fast_current_voltage_third_derivative": "-2-6*epsilon*kappa_3",
+      "fast_delayed_voltage_hessian_each_delay": "3*epsilon*kappa_3*(v(t-tau_j)-1), j=0,1",
+      "fast_delayed_voltage_third_derivative_each_delay": "3*epsilon*kappa_3, j=0,1",
+      "first_variation": "dU_h/dt=DF(X_t) U_h,t with U_h,0=h",
+      "mixed_and_recovery_hessian_entries": "zero",
+      "second_variation": "dV_hk/dt=DF(X_t) V_hk,t+D2F(X_t)[U_h,t,U_k,t], with V_hk,0=0",
+      "time_orientation": "physical time on history segments; normalized Fourier phase derivatives cannot be substituted"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact rational evaluation of the two-by-two positive majorant from direct projected Hessian upper bounds; an integer square-root Perron upper bound; exact parent-byte and source-manifest binding; and an explicit physical-time first/second RFDE variational return contract",
+    "contract_sha256": "6be19c5d1e322b52cf89a7f856510893bafe4107d4ef25a1c68b1f43d36a73c0",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_projected_return_hessian_stage4_contract.py",
+    "environment": {
+      "arithmetic": "fractions.Fraction plus directed Decimal output",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea"
+    },
+    "result": "experiments/results/leaky_projected_return_hessian_stage4_contract.json",
+    "schema_id": "leaky-projected-return-hessian-stage4-contract-v1",
+    "source_sha256": {
+      "docs/leaky-projected-return-hessian-stage4-contract.md": "719343225099658bd2daaadfb65843ad2d6baae8e6303fb613a2c2fd9dfa7969",
+      "experiments/leaky_projected_return_hessian_stage4_contract.py": "363442f3ce471ede6aa7d01ad81b6cd708af3595d88b21f97a16fe89e3b27908",
+      "src/canard_control/leaky_projected_return_hessian_stage4_contract.py": "72cc89d87f49ed11038e21ea709a29401586b31178baa74963fab976af654438"
+    }
+  }
+}

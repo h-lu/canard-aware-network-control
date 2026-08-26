@@ -1,0 +1,247 @@
+{
+  "artifact": {
+    "actual_directed_evaluation": {
+      "input_complete": false,
+      "matrix_majorant_evaluation": null,
+      "missing_inputs": [
+        "stable_power_constant_upper",
+        "validated_split_return_ball_radius_lower",
+        "return_tube_history_radius_upper",
+        "first_positive_return_time_lower",
+        "first_positive_return_time_upper",
+        "uniform_event_speed_lower",
+        "stable_output_ss_upper",
+        "stable_output_su_upper",
+        "stable_output_uu_upper",
+        "unstable_output_ss_upper",
+        "unstable_output_su_upper",
+        "unstable_output_uu_upper",
+        "continuous_history_atom_density_kernel_validated",
+        "validated_orbit_ball_propagated",
+        "split_return_tube_validated",
+        "first_positive_return_and_no_earlier_hit_validated",
+        "physical_time_event_hessian_validated",
+        "stable_adjoint_deflation_validated",
+        "uniform_ball_block_bounds_validated"
+      ],
+      "numeric_order_conditions_hold": false,
+      "proof_flags_hold": false,
+      "return_tube_inside_validated_section_ball": false,
+      "stable_output_uu_target_met": false,
+      "strict_certificate_closes": false
+    },
+    "actual_directed_input_budget": {
+      "continuous_history_atom_density_kernel_validated": false,
+      "evidence_status": "open directed Stage-4B ingress",
+      "first_positive_return_and_no_earlier_hit_validated": false,
+      "first_positive_return_time_lower": null,
+      "first_positive_return_time_upper": null,
+      "physical_time_event_hessian_validated": false,
+      "return_tube_history_radius_upper": null,
+      "split_return_tube_validated": false,
+      "stable_adjoint_deflation_validated": false,
+      "stable_output_ss_upper": null,
+      "stable_output_su_upper": null,
+      "stable_output_uu_upper": null,
+      "stable_power_constant_upper": null,
+      "uniform_ball_block_bounds_validated": false,
+      "uniform_event_speed_lower": null,
+      "unstable_output_ss_upper": null,
+      "unstable_output_su_upper": null,
+      "unstable_output_uu_upper": null,
+      "validated_orbit_ball_propagated": false,
+      "validated_split_return_ball_radius_lower": null
+    },
+    "bottleneck_and_safe_target": {
+      "bottleneck_block": "stable_output_uu_upper",
+      "directed_design_target": "12",
+      "isolated_first_failure_ceiling_pilot": "13.91505697189666824171448158",
+      "stage4a_final_mesh_center": "7.26111932801827375528",
+      "stage4a_heuristic_envelope": "7.94681563672845125978",
+      "target_is_strictly_below_pilot_failure_ceiling": true,
+      "target_is_validated_bound": false,
+      "target_minus_final_mesh_center": "4.73888067198172624472",
+      "target_minus_heuristic_envelope": "4.05318436327154874022"
+    },
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "bottleneck_stable_output_uu_identified": true,
+      "continuous_history_atom_density_kernel_validated": false,
+      "continuous_history_kernel_certificate_interface_registered": true,
+      "design_targets_are_directed_bounds": false,
+      "graph_radius_1p7e_minus_3_validated": false,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "physical_time_event_correction_precedes_projection": true,
+      "safe_six_block_design_target_closes_matrix_pilot": true,
+      "six_projected_return_hessian_blocks_validated": false,
+      "split_return_tube_validated": false,
+      "stable_adjoint_deflation_validated": false,
+      "stable_deflation_precedes_history_norm": true,
+      "stable_output_uu_bound_below_twelve_validated": false,
+      "stable_power_constant_numeric_upper_validated": false,
+      "stage4b_strict_certificate_closes": false,
+      "unique_physical_pulse_onset_validated": false,
+      "validated_orbit_ball_propagated": false
+    },
+    "coarse_other_block_interface": {
+      "construction": "1.5 times each Stage-4A heuristic envelope, except round the bottleneck stable-output uu target upward to 12",
+      "design_perron_root_upper": "0.0738247790952749388500248787052106586972222449224113193279869834549448931006902394177550291364723",
+      "design_self_map_slack_lower": {
+        "stable": "0.0000993532501004961772634323562764531526967803551628909326787063983957514681507580741541215100509906",
+        "unstable": "0.000687621545789003492635509907442446198353368268828844915053882351145726110910252166748158870848083"
+      },
+      "design_weighted_row_sum_upper": "0.680126050197695759515077220182220989879530760883337584078707351322919785419368592730815030589153",
+      "simultaneous_safe_design_targets": {
+        "stable_output_ss_upper": "0.03370300425434468588610",
+        "stable_output_su_upper": "0.13314620341081993132320",
+        "stable_output_uu_upper": "12",
+        "unstable_output_ss_upper": "0.4453972255632582255555",
+        "unstable_output_su_upper": "0.4246441894920198467655",
+        "unstable_output_uu_upper": "39.29533775993174415930"
+      },
+      "targets_are_directed_bounds": false
+    },
+    "continuous_history_kernel_contract": {
+      "history_operator_representation": "current-state atoms plus absolutely continuous voltage-history density kernels on every method-of-steps cell",
+      "history_sup_operator_norm": "sum of current atom magnitudes and total variations of all history density kernels, plus the current-recovery atom",
+      "kernel_first_variation_equation": "dot(U)=A_0(X_t)U+A_1(X_t)U(t-tau_0)+A_2(X_t)U(t-tau_1)",
+      "moving_center_error_inequality": "r'<=mu_2(A_0)r+||A_1||r_tau0+||A_2||r_tau1+R_cell; use a pilot-centered moving frame when the raw mu_2 bound is too expansive",
+      "nodal_matrix_substitution_allowed": false,
+      "required_polynomial_enclosure": "outward MPFR interval Taylor or Bernstein enclosures of atoms, densities, delay seams, cell residuals, and total-variation integrals",
+      "two_dimensional_logarithmic_norm": "mu_2(A_0)=(a-epsilon+sqrt((a+epsilon)^2+(1-epsilon)^2))/2 for A_0=[[a,-1],[epsilon,-epsilon]]"
+    },
+    "design_target_matrix_evaluation": {
+      "canonical_positive_weight_lower": {
+        "stable": "3.12623144403613579583032782577052332119597658115825629378961174918290417222479891152232015648328",
+        "unstable": "1.03820680080220367407832424912247239390497258568752181467144914846518482711681028614582939352992"
+      },
+      "canonical_positive_weight_upper": {
+        "stable": "3.12623144403613579583032782577052332119597658115825629378961174918290417222479891152232015648329",
+        "unstable": "1.03820680080220367407832424912247239390497258568752181467144914846518482711681028614582939352993"
+      },
+      "contraction_closes": true,
+      "derivative_lipschitz_matrix_upper": {
+        "m_ss": "0.0291522127812390880596715016564778405560796203034643411215709559107368841794323154690428441714172",
+        "m_su": "1.96020183859681222487637683684373693435765667052964827645859463899680025645578790888959162246658",
+        "m_us": "0.000905938487181353674145950150900674479274849189491537778223537905454868692609978102738935156366855",
+        "m_uu": "0.0340728141925880872211917642345813268771265902183123315914453711472755849812652691442047473535244"
+      },
+      "fixed_point_derivative_sequence_vector_upper": {
+        "stable": "1.03198181479208561324274392905301159443246619719173076116894759700081014291263672036163320701539",
+        "unstable": "0.000967890807742328305378101290032613321827403621401733689428047174883922656491502311395918267274967"
+      },
+      "formulas": {
+        "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+        "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+        "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+        "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+        "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+        "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+        "perron_gate": "rho(M)<1",
+        "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+      },
+      "graph_certificate_closes": true,
+      "graph_derivative_upper": "0.000967890807742328305378101290032613321827403621401733689428047174883922656491502311395918267274967",
+      "graph_height_upper": "0.0000123690765815136038782789769084960923111942514180136841405018195006408146088383794237316341580744",
+      "input_complete": true,
+      "input_order_conditions_hold": true,
+      "missing_inputs": [],
+      "nonlinear_value_vector_upper": {
+        "stable": "0.00000305005384451474629486929",
+        "unstable": "0.0000101473072966093203245421"
+      },
+      "perron_root_upper": "0.0738247790952749388500248787052106586972222449224113193279869834549448931006902394177550291364723",
+      "self_map_closes": true,
+      "self_map_image_vector_upper": {
+        "stable": "0.000900646749899503822736567643723546847303219644837109067321293601604248531849241925845878489949010",
+        "unstable": "0.0000123784542109965073644900925575538016466317311711550849461176488542738890897478332518411291519170"
+      },
+      "self_map_slack_vector_lower": {
+        "stable": "0.0000993532501004961772634323562764531526967803551628909326787063983957514681507580741541215100509906",
+        "unstable": "0.000687621545789003492635509907442446198353368268828844915053882351145726110910252166748158870848083"
+      },
+      "split_ball_contains_graph_box": true,
+      "stable_kernel_coefficient_upper": "229.716190473015880574433106623681899726234334327787654143947525972559607853796949938814547245178",
+      "unstable_kernel_coefficient_upper": "1.21987576104379092905218435206178904327985403961806444731747799767278967880901090789504236637208",
+      "unstable_quadratic_kernel_coefficient_upper": "1.21895161149270391493257944662358136713088449226939497153314590799626340136124163953771780711736",
+      "weighted_row_sum_upper": "0.680126050197695759515077220182220989879530760883337584078707351322919785419368592730815030589153"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json": "b9308d01137559f5b88e42f7120b6eb01490aaa6bda3ac7b6eed2fd2ce5421c7"
+    },
+    "pilot_error_allocation": {
+      "final_mesh_center": "7.26111932801827375528",
+      "heuristic_mesh_envelope_consumption": "0.68569630871017750450",
+      "remaining_after_heuristic_envelope": "4.05318436327154874022",
+      "status": "design allocation only; no entry is a bound",
+      "suggested_caps_sum": "4.05",
+      "suggested_directed_error_caps": {
+        "center_rounding_and_polynomial_residual": "0.05",
+        "continuous_history_kernel_discretization": "1.25",
+        "physical_return_event_evaluation": "0.50",
+        "stable_adjoint_deflation": "1.00",
+        "uniform_split_ball_inflation": "1.00",
+        "validated_orbit_and_q_enclosures": "0.25"
+      },
+      "target": "12",
+      "total_error_allowance_from_center": "4.73888067198172624472"
+    },
+    "return_tube_and_event_contract": {
+      "event_core_qq": "W_qq=V_qq(T)+2*dot(U_q)(T)*tau_q+ddot(X_T)*tau_q^2",
+      "required_first_return_gate": "one positive-oriented event near one period and no earlier hit for every history in the split ball",
+      "required_tube_gate": "the full returned history tube from the split ball stays inside the validated 0.01 section ball throughout the event window",
+      "return_hessian_qq": "Y_qq=W_qq+dot(X_T)*tau_qq",
+      "stage2_uniform_event_speed_on_section_ball_lower": "0.206753913748020768886579840564112686146218775927720324",
+      "target_split_return_ball_radius": "0.0017",
+      "tau_q": "-Dh_C[U_q(T)]/Dh_C[dot(X_T)]",
+      "tau_qq": "-Dh_C[W_qq]/Dh_C[dot(X_T)]",
+      "time_coordinate": "physical time only",
+      "validated_section_ball_radius": "0.01"
+    },
+    "schema_id": "leaky-stable-output-uu-stage4b-contract-v1",
+    "stable_deflation_contract": {
+      "acceptable_left_certificate": "an adjoint Grushin eigencolumn with directed normalization and atom-plus-density action, or a direct bordered stable-deflation solve on Y_qq",
+      "global_projection_norm_transfer_allowed": false,
+      "left_adjoint_action_directed_upper_available": false,
+      "reason": "separate absolute bounds on Y_qq and the unstable scalar destroy the cancellation visible in the stable-output block",
+      "required_operation": "compute Pi_s Y_qq=Y_qq-q*f(Y_qq)/f(q) as a correlated history enclosure before taking the sup norm",
+      "right_eigenhistory_available": true
+    },
+    "unstable_uu_variational_contract": {
+      "fast_current_forcing": "(-2v-6*epsilon*kappa_3*(v-1))*U_q,v(t)^2",
+      "fast_delayed_forcing_each": "3*epsilon*kappa_3*(v(t-tau_j)-1)*U_q,v(t-tau_j)^2",
+      "first_variation": "dot(U_q)=DF(X_t)U_q,t with U_q,0=q",
+      "fixed_input": "the Stage-3 enclosed Route-C unstable section eigenhistory q, normalized to unit split unstable coordinate",
+      "recovery_forcing": "zero",
+      "second_variation": "dot(V_qq)=DF(X_t)V_qq,t+D2F(X_t)[U_q,t,U_q,t], V_qq,0=0",
+      "stage3_grushin_eigencolumn_error_upper": "2.96801376378405518145666494108098797960147079269216954e-08",
+      "uniform_ball_requirement": "X ranges over the complete split ball; coefficient, U_q, and V_qq enclosures must include this dependence, not only the orbit"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact parent-byte and source binding; exact Decimal ingress checks; the exact-rational Stage-4 positive-matrix evaluator; a conditional continuous-history atom-plus-density kernel certificate with directed method-of-steps residuals; physical-time event differentiation; and direct stable deflation before the history norm; no directed kernel, return tube, adjoint deflation, block bound, graph, or onset is supplied",
+    "artifact_sha256": "0b2d6c8200376b5ca301ca2ad075bc1dc7f61448acbef7eec4ad8da6744f79ff",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_stable_output_uu_stage4b_contract.py",
+    "environment": {
+      "arithmetic": "exact contract logic plus Stage-4 rational evaluator",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json": "b9308d01137559f5b88e42f7120b6eb01490aaa6bda3ac7b6eed2fd2ce5421c7"
+    },
+    "result": "experiments/results/leaky_stable_output_uu_stage4b_contract.json",
+    "schema_id": "leaky-stable-output-uu-stage4b-contract-v1",
+    "source_sha256": {
+      "docs/leaky-stable-output-uu-stage4b-contract.md": "37d90a8f3b6a261614af4a408a657117be1f172da8b538f0b310e483da4ed491",
+      "experiments/leaky_stable_output_uu_stage4b_contract.py": "732e76b937bbb26acdcf7241d5a00e009be78ddf767e0ec4ccace8643fede8dc",
+      "src/canard_control/leaky_stable_output_uu_stage4b_contract.py": "3a1419ae7bacfd93172f82b9f3b25ea337646cfe1c408bb7b96233124e3ea8cb"
+    }
+  }
+}

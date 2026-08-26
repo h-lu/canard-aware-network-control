@@ -1,0 +1,194 @@
+{
+  "artifact": {
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "adjoint_fourier_tail_wiener_l1_summable_validated": true,
+      "advanced_rfde_adjoint_recovered_from_fourier_row": true,
+      "bilinear_fourier_mode_reversal_identity_proved": true,
+      "continuous_periodic_adjoint_reconstructed": true,
+      "directed_f_of_q_modulus_lower_validated": true,
+      "directed_shared_action_on_physical_y_qq_available": false,
+      "graph_radius_1p7e_minus_3_validated": false,
+      "grushin_border_normalization_identity_proved": true,
+      "hermitian_conjugation_rejected": true,
+      "history_atom_density_measure_numeric_enclosed": true,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "mesh_refinement_is_interval_error": false,
+      "nonzero_recovery_history_action_shard_validated": true,
+      "physical_pulse_separator_crossing_validated": false,
+      "shared_y_qq_deflation_pilot_computed": true,
+      "six_projected_return_hessian_blocks_validated": false,
+      "stable_output_uu_below_twelve_validated": false,
+      "stage4b_strict_certificate_closes": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "continuous_history_measure_enclosure": {
+      "continuous_atom_density_measure_numeric_enclosed": true,
+      "current_recovery_atom_modulus_lower": "0.00706078559009284454599184232955932072516424012651623741",
+      "current_recovery_atom_modulus_upper": "0.00808568464489882393732194746951018018495195393263777791",
+      "current_voltage_atom_modulus_upper": "0.01305665526837854298832848332320096263721436861484495",
+      "fourier_reconstruction": "r_hat[n]=E_minus_state[-n] with no complex conjugation; z(T*theta)=exp(-s*theta)*r(theta)",
+      "normalized_history_measure_norm_upper": "73.1664630843022025700700732031936657173710929314407708",
+      "normalized_recovery_only_history_action_modulus_lower": "12.9099118871386672593964033862090703456131086937737444",
+      "recovery_adjoint_wiener_l1_upper": "0.11949995043702922110737822585544925217287328486059384",
+      "recovery_only_history_shard": "phi_v(theta)=0 and phi_w(0)=1, so f(phi) is exactly the current-recovery atom",
+      "unnormalized_history_measure_norm_upper": "0.0223400444249056288439699517844611905590317557514648718",
+      "voltage_adjoint_wiener_l1_upper": "0.0645227151067830344990982993889700997061511918313384009",
+      "voltage_history_density_total_variation_upper": "0.00119770451162826191831952099175004773686543320396744368"
+    },
+    "directed_shared_y_qq_contract": {
+      "contract_closes": false,
+      "correlated_stable_output_uu_upper": null,
+      "global_projection_norm_transfer_allowed": false,
+      "normalized_adjoint_action_on_y_qq_directed_enclosure": null,
+      "physical_return_y_qq_directed_enclosure": null,
+      "required_input": "one shared outward interval-polynomial enclosure of q, the physical-time event-corrected Y_qq history, and the adjoint atoms/densities on every history cell",
+      "required_output_expression": "Y_qq-q*f(Y_qq), evaluated cellwise before any absolute value or history sup norm",
+      "required_scalar_action": "integrate the same Y_qq enclosure against the normalized atom-plus-density measure without decorrelating symbols",
+      "separate_triangle_bound_allowed": false
+    },
+    "fourier_reversal_and_advanced_adjoint": {
+      "advanced_physical_adjoint": "-z'(t)=A_0(t)^Tz(t)+sum_j A_j(t+tau_j)^Tz(t+tau_j)",
+      "bilinear_pairing": "integral_0^1 r(theta)^T g(theta)dtheta=sum_k r_hat[-k]^T g_hat[k]",
+      "bilinear_transpose_delayed_operator": "multiplication by b_j followed by exp(-s alpha_j) and the advanced shift r(theta+alpha_j)",
+      "complex_conjugation_used": false,
+      "forward_delayed_operator": "exp(-(D+s)alpha_j) applied after multiplication by the unshifted delayed coefficient b_j",
+      "identity_status": "analytic coefficient identity; binary oracle diagnostic",
+      "oracle": {
+        "forward_vs_advanced_change_of_variables_error_binary64": "8.940560153363745e-19",
+        "fourier_vs_physical_bilinear_error_binary64": "1.3884562417838567e-18",
+        "hermitian_mutation_separation_binary64": "0.0053079564459324107"
+      },
+      "row_to_adjoint_coefficients": "r_hat[n]=E_minus_state[-n]"
+    },
+    "grushin_border_normalization": {
+      "averaged_history_pairing_identity": "E_minus L'(s_star) E_plus equals the phase average of the invariant RFDE bilinear history pairing, hence f(q)",
+      "boundary_affine_comparison_upper": "1.20797843486442089487278351241163434591475225234742348e-05",
+      "cauchy_argument": "the Rouch\u00e9 boundary comparison bounds the analytic remainder; Cauchy's estimate on the root-centered interior disk bounds the derivative remainder",
+      "cauchy_interior_radius_lower": "0.099999982909499986809261069283820688724517822264926013",
+      "directed_numeric_normalization_available": true,
+      "effective_derivative_difference_upper": "0.000120797864131401074798509931134860454452030678386360001",
+      "effective_hamiltonian_derivative": "E_minus_plus'(s_star)=-E_minus L'(s_star) E_plus",
+      "f_of_q_modulus_lower": "0.000305331752871059102069200101929496927548163947784991696",
+      "f_of_q_modulus_upper": "0.000546927481133861251666219964199217836452225304559382176",
+      "grushin_inverse_blocks": "[[E,E_plus],[E_minus,E_minus_plus]]",
+      "normalization_reciprocal_upper": "3275.12612296926045019063167273998260498",
+      "root_cokernel_normalization": "E_minus R_minus=1",
+      "root_kernel_normalization": "R_plus E_plus=1",
+      "root_offset_from_rouche_center_upper": "1.70905000131907389307161793112754821777349200357710723e-08"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_floquet_inner_unstable_root.json": "ab2876efc8a26df544f56257ab00b9fde0fea4ba043f4500f1450e0d0885fa2c",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json": "b9308d01137559f5b88e42f7120b6eb01490aaa6bda3ac7b6eed2fd2ce5421c7",
+      "experiments/results/leaky_route_c_adjoint_stage4c.json": "5ddd440449e0405bab4ca33818174a8e214d85fa695f603ea45ddef051ceaa29"
+    },
+    "schema_id": "leaky-route-c-adjoint-stage4d-v1",
+    "shared_y_qq_deflation_pilot": {
+      "last_two_mesh_stable_output_change": "0.228565436236725538777",
+      "mesh_change_is_interval_error": false,
+      "mesh_rows": [
+        {
+          "correlated_stable_output_linf": "7.96861169490806275917",
+          "evaluation_order": "form y_qq-right*(left@y_qq) first, then take l-infinity",
+          "evidence_status": "source-bound long-double finite-section pilot; not a directed continuous-history Y_qq enclosure",
+          "left_action_of_deflated_output_abs": "8.30092288309214332287e-20",
+          "left_eigen_residual_inf": "2.16840434497100886801e-19",
+          "raw_to_correlated_ratio": "3.90268436537095819716",
+          "raw_y_qq_linf": "31.0989762754298659786",
+          "section_dimension": 78,
+          "separate_triangle_upper": "57.2923225637093267437",
+          "step_count": 120,
+          "triangle_to_correlated_ratio": "7.18974957712132933807",
+          "unstable_reconstruction_linf": "26.1933462882794607651",
+          "unstable_scalar_f_n_y_qq": "-26.1933462882794607651"
+        },
+        {
+          "correlated_stable_output_linf": "7.48968476425499929405",
+          "evaluation_order": "form y_qq-right*(left@y_qq) first, then take l-infinity",
+          "evidence_status": "source-bound long-double finite-section pilot; not a directed continuous-history Y_qq enclosure",
+          "left_action_of_deflated_output_abs": "1.14857667647683125978e-18",
+          "left_eigen_residual_inf": "2.16840434497100886801e-19",
+          "raw_to_correlated_ratio": "4.10682435670274248452",
+          "raw_y_qq_linf": "30.7588198138678627913",
+          "section_dimension": 115,
+          "separate_triangle_upper": "56.9533618774419565511",
+          "step_count": 180,
+          "triangle_to_correlated_ratio": "7.60424018768527254508",
+          "unstable_reconstruction_linf": "26.1945420635740902071",
+          "unstable_scalar_f_n_y_qq": "-26.1945420635740902071"
+        },
+        {
+          "correlated_stable_output_linf": "7.26111932801827375528",
+          "evaluation_order": "form y_qq-right*(left@y_qq) first, then take l-infinity",
+          "evidence_status": "source-bound long-double finite-section pilot; not a directed continuous-history Y_qq enclosure",
+          "left_action_of_deflated_output_abs": "1.378969638130000952e-18",
+          "left_eigen_residual_inf": "5.29395592033937711918e-23",
+          "raw_to_correlated_ratio": "4.21280331271154917516",
+          "raw_y_qq_linf": "30.5896675590692446178",
+          "section_dimension": 152,
+          "separate_triangle_upper": "56.7830347344531318754",
+          "step_count": 240,
+          "triangle_to_correlated_ratio": "7.8201489562836483671",
+          "unstable_reconstruction_linf": "26.1933671753838872576",
+          "unstable_scalar_f_n_y_qq": "-26.1933671753838872576"
+        }
+      ],
+      "pilot_promoted_to_directed_y_qq_action": false
+    },
+    "stage4b_ingress_update": {
+      "action_on_actual_shared_y_qq_gate_closed": false,
+      "continuous_history_measure_action_gate_closed": true,
+      "directed_normalization_gate_closed": true,
+      "minimal_remaining_gate": "propagate the physical event-corrected Y_qq in the same interval-polynomial history representation and perform the normalized adjoint subtraction before taking the norm",
+      "nonzero_history_action_shard_closed": true,
+      "stable_output_uu_design_target": "12",
+      "stable_output_uu_directed_upper": null,
+      "stage4a_heuristic_envelope": "7.94681563672845125978",
+      "structural_obstruction_found": false
+    },
+    "summable_adjoint_tail_certificate": {
+      "complete_adjoint_split_wiener_l1_upper": "0.183510367153812284651983795072998648933503198367242208",
+      "exact_coefficient_sum_wiener_upper": "1.34526176808714825126929262210685300169638678473775819",
+      "finite_row_split_l1_upper": "0.172005052883402793926105280803177981007094226145220869",
+      "finite_to_tail_row_sum_upper": "24.4652129509692587090574504972943519460738880339667433",
+      "full_tail_split_l1_upper": "0.0115053142704094907258785142698206679264089722219785741",
+      "recovery_tail_from_voltage_factor_upper": "0.0445271096433715683321003064824958280308121963803865306",
+      "recovery_tail_split_l1_upper": "0.000512298389999970954492730171420702945521278324718765362",
+      "tail_inverse_row_sum_upper": "0.00273406150791240170614482464685453664113787770441875044",
+      "tail_l1_gain_from_finite_upper": "0.0668893970121250306144192994817550299392789098444801654",
+      "tail_row_contraction_upper": "0.104433459418267152812658415997065475115299332463031301",
+      "tail_row_fast_contraction_upper": "0.104433459418267152812658415997065475115299332463031301",
+      "tail_row_slow_contraction_upper": "0.0089054219556071992357124468816625324744523139237354647",
+      "tail_space": "row l1 under the matrix row-sum norm; the parent l-infinity cokernel solution agrees by uniqueness of the tail solve",
+      "tail_summability_validated": true
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact parent-byte and source binding; 160-bit outward MPFR row-sum tail contraction and Wiener-l1 reconstruction from the Stage-4C full Grushin row; analytic bilinear Fourier reversal, advanced-adjoint, Grushin derivative, and averaged RFDE history-pairing identities; a Cauchy derivative estimate from the validated Rouch\u00e9 boundary error; plus a source-bound long-double shared-deflation pilot in a fresh one-thread OpenBLAS subprocess; no directed physical Y_qq, return tube, stable-output uu bound, graph, separator, or onset theorem",
+    "artifact_sha256": "b3ae23544822b975011d319c467336e9bf29063bb37d619a4117807929f339c9",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_route_c_adjoint_stage4d.py",
+    "environment": {
+      "grushin_openblas_num_threads": "8",
+      "mpfr_precision_bits": 160,
+      "numpy": "2.5.2",
+      "pilot_openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_floquet_inner_unstable_root.json": "ab2876efc8a26df544f56257ab00b9fde0fea4ba043f4500f1450e0d0885fa2c",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json": "b9308d01137559f5b88e42f7120b6eb01490aaa6bda3ac7b6eed2fd2ce5421c7",
+      "experiments/results/leaky_route_c_adjoint_stage4c.json": "5ddd440449e0405bab4ca33818174a8e214d85fa695f603ea45ddef051ceaa29"
+    },
+    "result": "experiments/results/leaky_route_c_adjoint_stage4d.json",
+    "schema_id": "leaky-route-c-adjoint-stage4d-v1",
+    "source_sha256": {
+      "docs/leaky-route-c-adjoint-stage4d.md": "b09ea08da36aebc70ccbee0e0fb021bedc28f00bd3d72b443e9572733763dcf4",
+      "experiments/leaky_route_c_adjoint_stage4d.py": "349c77c1e973393f2729c6c645acc4f6ca7f0f8212759ee028e64e9eb419b721",
+      "src/canard_control/leaky_route_c_adjoint_stage4d.py": "cabd09e9add4b68194e1e7f4c0ffb5934990acf953a3cb744ed2a4738d3b8369"
+    }
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "artifact": {
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "continuous_output_phase_supremum_validated": false,
+      "dop853_roundoff_and_truncation_outward_enclosed": false,
+      "finite_node_pilot_not_promoted": true,
+      "fourier_orbit_q_and_adjoint_errors_propagated_through_all_words": false,
+      "gauss_legendre_total_variation_is_directed_upper": false,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "intermediate_stable_flow_norm_upper_validated": false,
+      "k_s_equals_one_validated": false,
+      "one_return_volterra_word_support_proved": true,
+      "phase_fixed_event_row_formed_before_total_variation": true,
+      "phase_fixed_one_step_stable_map_norm_upper_validated": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "rank_one_deflation_formed_before_total_variation": true,
+      "source_bound_signed_stable_flow_diagnostic_computed": true,
+      "split_return_tube_validated": false,
+      "split_tube_linear_budget_diagnostic_computed": true,
+      "stable_power_constant_numeric_upper_validated": false,
+      "stage3_route_c_unstable_history_used": true,
+      "stage4d_continuous_atom_density_row_used": true,
+      "uniform_split_ball_statement": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unstable_q_flow_diagnostic_computed_separately": true
+    },
+    "continuous_history_split": {
+      "history_space": "Sigma subset C([-tau1,0],R) x R with phi_v(0)=0 and max norm",
+      "phase_fixed_recovery_row": "S_w(T)-dot(w)(T)S_v(T)/dot(v)(T)",
+      "phase_fixed_voltage_row": "S_v(t)-dot(v)(t)S_v(T)/dot(v)(T), T-tau1<=t<=T",
+      "restricted_row_norm": "absolute current-recovery atom plus voltage-density total variation; the current-voltage atom vanishes on Sigma",
+      "stable_projection_identity": "U(t)P_s=U(t)-U(t)q*f/f(q), with the common atom-density row subtracted before total variation",
+      "stage4d_restricted_normalized_measure_norm_binary64": "18.072113195262752"
+    },
+    "directed_ingress_obstruction": {
+      "directed_error_budget_available": false,
+      "numerical_margin_is_large": true,
+      "required_continuous_operations": [
+        "Bernstein or monotonic enclosure of the density absolute integral on every support triangle",
+        "continuous output-phase supremum on [T-tau1,T]",
+        "outward residual bounds for F,C_0,C_1,C_00",
+        "parent orbit, q, adjoint-row and normalization uncertainty propagated in the same signed row"
+      ],
+      "sampled_center_margin_available_binary64": "0.99089049510411364",
+      "sampled_center_plus_total_directed_error_required_below": "0.99502491687458405",
+      "smallest_missing_object": "one common outward piecewise-polynomial enclosure of the signed two-variable density S(t,theta), including the four word primitives, Stage-3 q error and Stage-4D measure error",
+      "stable_power_ingress_closed": false,
+      "structural_obstruction_found": false
+    },
+    "exact_four_word_reduction": {
+      "current_resolvent_words": [
+        "empty",
+        "(0)",
+        "(1)",
+        "(0,0)"
+      ],
+      "density_formula": "K(t,theta)=sum_j F(t)a_j(theta+tau_j) plus F(t)[C_0(t)-C_0(theta+2*tau_0)]a_0(theta+tau_0) on the active (0,0) triangle",
+      "initial_voltage_density_words": [
+        "(0)",
+        "(1)",
+        "(0,0)"
+      ],
+      "period": "18.186209949127921",
+      "period_less_than_tau0_plus_tau1": true,
+      "period_less_than_three_tau0": true,
+      "period_minus_two_tau0": "0.29766612912960255",
+      "resolvent_formula": "R(t,0)=F(t)[I+C_0(t)+C_1(t)+C_00(t)]",
+      "tau0": "8.9442719099991592",
+      "tau1": "11.180339887498949",
+      "time_horizon": "0<=t<=T",
+      "word_support_status": "exact consequence of positive delays and the one-period horizon; not a numerical truncation"
+    },
+    "intermediate_signed_flow_diagnostic": {
+      "directed_upper": null,
+      "intermediate_stable_flow_norm_upper_validated": false,
+      "nested_current_state_rows": [
+        {
+          "sampled_argmax_time": "18.186209949127921",
+          "sampled_maximum": "0.037389500646448783",
+          "time_count": 17
+        },
+        {
+          "sampled_argmax_time": "18.186209949127921",
+          "sampled_maximum": "0.037389500646448783",
+          "time_count": 33
+        },
+        {
+          "sampled_argmax_time": "18.186209949127921",
+          "sampled_maximum": "0.037389500646448783",
+          "time_count": 65
+        }
+      ],
+      "sampled_current_state_argmax_time_binary64": "18.186209949127921",
+      "sampled_current_state_maximum_binary64": "0.037389500646448783",
+      "sampled_full_history_flow_maximum_on_one_return_binary64": "2.4015389134599019",
+      "sampled_initial_projection_voltage_argmax_history_time_binary64": "-3.1444705933590793",
+      "sampled_initial_projection_voltage_maximum_binary64": "2.4015389134599019"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_floquet_inner_strong_stable_gap.json": "e61792cd946103b33da8209cae1c3123baa07b14aa6ccef4ae63b1c9a14848cc",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "phase_fixed_one_step_diagnostic": {
+      "cancellation_factor_triangle_over_signed_binary64": "1363.0602749702268",
+      "declared_strong_rate_rho_s": "0.99502491687458405",
+      "directed_upper": null,
+      "k_s_equals_one_validated": false,
+      "nested_signed_voltage_rows": [
+        {
+          "sampled_argmax_time": "7.005870061628972",
+          "sampled_maximum": "0.0041344217704704289",
+          "time_count": 17
+        },
+        {
+          "sampled_argmax_time": "7.005870061628972",
+          "sampled_maximum": "0.0041344217704704289",
+          "time_count": 33
+        },
+        {
+          "sampled_argmax_time": "7.005870061628972",
+          "sampled_maximum": "0.0041344217704704289",
+          "time_count": 65
+        },
+        {
+          "sampled_argmax_time": "7.005870061628972",
+          "sampled_maximum": "0.0041344217704704289",
+          "time_count": 129
+        }
+      ],
+      "phase_fixed_one_step_stable_map_norm_upper_validated": false,
+      "recovery_event_row": {
+        "q_event_abs": "0.11307824785184845",
+        "rank_one_norm": "2.0435628951005822",
+        "raw_norm": "2.0435713317913993",
+        "separate_triangle_norm": "4.0871342268919815",
+        "signed_norm": "1.0547264160129806e-05"
+      },
+      "sampled_margin_to_declared_rho_s_binary64": "0.99089049510411364",
+      "sampled_phase_fixed_one_step_stable_map_norm_binary64": "0.0041344217704704289",
+      "sampled_phase_fixed_separate_triangle_norm_binary64": "5.6354660753003145",
+      "sampled_raw_voltage_maximum_binary64": "2.8177368962474234",
+      "sampled_separate_triangle_voltage_maximum_binary64": "5.6354660753003145",
+      "sampled_signed_voltage_argmax_time_binary64": "7.005870061628972",
+      "sampled_signed_voltage_maximum_binary64": "0.0041344217704704289"
+    },
+    "rank_one_identity_oracles": {
+      "f_q_direct_action_imag_binary64": "-2.6751460287463901e-08",
+      "f_q_direct_action_real_binary64": "-0.00042612962097774023",
+      "f_q_direct_vs_quadrature_abs_defect_binary64": "2.7449691541374221e-19",
+      "f_q_quadrature_action_imag_binary64": "-2.6751460287507262e-08",
+      "f_q_quadrature_action_real_binary64": "-0.00042612962097773996",
+      "oracle_status": "binary implementation oracles only; the exact finite-word and rank-one identities are analytic",
+      "word_reconstruction_rows": [
+        {
+          "time": "0",
+          "word_reconstruction_vs_direct_q_inf_error": "0"
+        },
+        {
+          "time": "7.005870061628972",
+          "word_reconstruction_vs_direct_q_inf_error": "4.1063887861652334e-12"
+        },
+        {
+          "time": "8.9442719099991592",
+          "word_reconstruction_vs_direct_q_inf_error": "1.7177572809682421e-11"
+        },
+        {
+          "time": "11.180339887498949",
+          "word_reconstruction_vs_direct_q_inf_error": "3.8034694329565013e-08"
+        },
+        {
+          "time": "17.888543819998318",
+          "word_reconstruction_vs_direct_q_inf_error": "3.1994433628423668e-06"
+        },
+        {
+          "time": "18.186209949127921",
+          "word_reconstruction_vs_direct_q_inf_error": "3.1364804608664306e-06"
+        }
+      ]
+    },
+    "schema_id": "leaky-inner-signed-stable-flow-stage4h-v1",
+    "source_bound_numerics": {
+      "atol": 2e-15,
+      "current_time_count": 65,
+      "evidence_status": "source-bound binary64 diagnostic; neither DOP853 nor Gauss--Legendre values are outward enclosures",
+      "finite_history_nodes_used_as_operator_bound": false,
+      "fundamental_max_step": 0.03,
+      "nested_mesh_spread_is_interval_error": false,
+      "ode_function_evaluations": {
+        "fundamental": 9122,
+        "word_0": 6977,
+        "word_00": 482,
+        "word_1": 5297
+      },
+      "output_time_count": 129,
+      "quadrature_max_panel_width": 0.08,
+      "quadrature_order_per_smooth_piece": 8,
+      "rtol": 5e-13,
+      "word_max_step": 0.02
+    },
+    "split_tube_linear_budget_diagnostic": {
+      "coordinate_normalization": "Stage-4E divides the q-q output by ||q^Sigma||_Y^2; therefore the Stage-4B unstable coordinate is represented by q^Sigma/||q^Sigma||_Y.  This row uses the sampled q norm only and remains diagnostic.",
+      "diagnostic_promoted_to_split_return_tube": false,
+      "sampled_linear_tube_inside_section_radius": true,
+      "sampled_linear_tube_total_binary64": "0.0066224930664879316",
+      "sampled_remaining_nonlinear_and_directed_error_margin_binary64": "0.0033775069335120686",
+      "sampled_stable_contribution_binary64": "0.0024015389134599018",
+      "sampled_unstable_contribution_binary64": "0.0042209541530280293",
+      "sampled_unstable_normalized_flow_ratio_binary64": "6.0299345043257562",
+      "stable_formula": "M_s*R_s",
+      "stable_split_radius": "0.001",
+      "unstable_formula": "(max_[0,T]||U(t)q^Sigma||_Y/||q^Sigma||_Y)*R_u",
+      "unstable_split_radius": "0.00069999999999999999",
+      "validated_section_radius": "0.01"
+    },
+    "unstable_q_flow_diagnostic": {
+      "exact_center_multiplier_exp_root_binary64": "2.010453704035426",
+      "sampled_event_expansion_ratio_binary64": "2.0104077871270642",
+      "sampled_event_q_norm_binary64": "0.15591586160791965",
+      "sampled_input_q_section_norm_binary64": "0.077554346240733735",
+      "sampled_raw_current_q_argmax_time_binary64": "17.617890888217673",
+      "sampled_raw_current_q_maximum_binary64": "0.46764762835742685",
+      "status": "separate source-bound scale diagnostic; not used as a stable-row triangle bound"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact parent-byte and source binding; exact finite Volterra-word support on the one-period horizon; source-bound binary64 DOP853 fundamental matrix and word primitives; direct Stage-4D atom-plus-density action; same-row rank-one deflation before Gauss--Legendre total variation; nested sampled time meshes only, with no outward ODE residual, bivariate density enclosure, continuous-time supremum, stable power, graph, split tube, separator, or onset theorem",
+    "artifact_sha256": "87fd975668c29261a78b90d83ae93dd53f6f99608f2c21cb52cf814c06186af1",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_signed_stable_flow_stage4h.py",
+    "environment": {
+      "numpy": "2.5.2",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "8",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_floquet_inner_strong_stable_gap.json": "e61792cd946103b33da8209cae1c3123baa07b14aa6ccef4ae63b1c9a14848cc",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "result": "experiments/results/leaky_inner_signed_stable_flow_stage4h.json",
+    "schema_id": "leaky-inner-signed-stable-flow-stage4h-v1",
+    "source_sha256": {
+      "docs/leaky-inner-signed-stable-flow-stage4h.md": "ad66020297bce57db1f4693ea60acdd4435c58b624ca57f6770ea9c94f297a9b",
+      "experiments/leaky_inner_signed_stable_flow_stage4h.py": "72991b24fa7ebafb1d8959639346cba225f66a8cfa05b5253c22e1ebc222440c",
+      "src/canard_control/leaky_inner_signed_stable_flow_stage4h.py": "a62eb05b7295a9e8a88d3c53607032ce6d7430d08fd7c4fafa1d1bda6ea3060d"
+    }
+  }
+}

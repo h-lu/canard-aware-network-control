@@ -1,0 +1,341 @@
+{
+  "contract": {
+    "anisotropic_domain": {
+      "base_history": "X_* on the fixed Route-C affine section",
+      "history_formula": "x=X_*+x_s+q_hat*x_u",
+      "norm": "||(x_s,x_u)||_split=||x_s||_Y+|x_u|",
+      "quantifiers": "all ||x_s||_Y<=R_s, |x_u|<=R_u_hat, all unit stable directions, and both signs of the unit unstable direction",
+      "split_radius_sum_exact": "0.00995",
+      "stable_radius_R_s": "0.0097",
+      "stable_seed_radius_r": "0.0094",
+      "unit_unstable_radius_R_u_hat": "0.00025",
+      "validated_return_domain": false
+    },
+    "branch": "inner_saddle_candidate_selected_near_period_return",
+    "cap_majorant_evaluation": {
+      "exact_evaluation": {
+        "canonical_positive_weight_lower": {
+          "stable": "1.05549171481628187655315683109591046989557493122267793651290551805426880064849602533774527777235",
+          "unstable": "1.23592130689994448543334467782367030893756683283858159784622715831588818715166936828577605348832"
+        },
+        "canonical_positive_weight_upper": {
+          "stable": "1.05549171481628187655315683109591046989557493122267793651290551805426880064849602533774527777236",
+          "unstable": "1.23592130689994448543334467782367030893756683283858159784622715831588818715166936828577605348833"
+        },
+        "contraction_closes": true,
+        "derivative_lipschitz_matrix_upper": {
+          "m_ss": "0.00353182234834524577101973607511945771752416935215023891543504833870430047783087009667740860095567",
+          "m_su": "0.0418828490943647882866757363129236581842426936326258473163684853872652516946327369707745305033893",
+          "m_us": "0.0476756434657933032665673754096183304551733461295570520691757348766192936711912422131856949828079",
+          "m_uu": "0.150171422069584990651055567681234591149506159723051336438040614313604406728880168932273910385330"
+        },
+        "fixed_point_derivative_sequence_vector_upper": {
+          "stable": "1.00591625926840295604682451970076253993256379564226699184945224734259470387456312549653289189687",
+          "unstable": "0.0564322101877488433263116701832285405871431596061116556142334649061008072800614052438638190391229"
+        },
+        "formulas": {
+          "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+          "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+          "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+          "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+          "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+          "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+          "perron_gate": "rho(M)<1",
+          "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+        },
+        "graph_certificate_closes": true,
+        "graph_derivative_upper": "0.0564322101877488433263116701832285405871431596061116556142334649061008072800614052438638190391229",
+        "graph_height_upper": "0.000249967789229056708771607970005839107610386453778655999504394221492740385100754150745613811429775",
+        "input_complete": true,
+        "input_order_conditions_hold": true,
+        "missing_inputs": [],
+        "nonlinear_value_vector_upper": {
+          "stable": "0.0000201259886041904094686996402844",
+          "unstable": "0.000204807037564775735048803978992"
+        },
+        "perron_root_upper": "0.162715379594464580489852823857552993149936527093276323406719742382361800361807179897182804626351",
+        "self_map_closes": true,
+        "self_map_image_vector_upper": {
+          "stable": "0.00942236469452627004052528018700344482720302255806200688965440604511612401377930881209023224802756",
+          "unstable": "0.000249998298567795644674233716696803226601278998693733119590257390940804125146387545850484859464785"
+        },
+        "self_map_slack_vector_lower": {
+          "stable": "0.000277635305473729959474719812996555172796977441937993110345593954883875986220691187909767751972441",
+          "unstable": "0.00000000170143220435532576628330319677339872100130626688040974260905919587485361245414951514053521560107"
+        },
+        "split_ball_contains_graph_box": true,
+        "stable_kernel_coefficient_upper": "1.11123458162018002000222246916324036004000444493832648072008000888987665296144016001777975330593",
+        "unstable_kernel_coefficient_upper": "1.22065287179756680804541610725815300705293546682395482988339456291143937648533780619100296618960",
+        "unstable_quadratic_kernel_coefficient_upper": "1.22050390553594952107337045920593970927779744659789962611357927424350815536156839091755940978677",
+        "weighted_row_sum_upper": "0.190886997078887468480350743608985846674055225894287907704495323587111580665460025256704975851138"
+      },
+      "input_budget": {
+        "evidence_status": "conditional preferred-B design budget; the stable rate, K_s, return ball, and six RFDE blocks are not theorem ingress here",
+        "hessian_blocks": {
+          "evidence_status": "exact Stage-4M design caps only; no value in this row is an RFDE Hessian bound",
+          "stable_output_ss_upper": "0.29737958147168548073886622",
+          "stable_output_su_upper": "1.17481996400215002469463264",
+          "stable_output_uu_upper": "105.178488996792070958566234",
+          "unstable_output_ss_upper": "3.9299772663315943951298061",
+          "unstable_output_su_upper": "3.7468621607891535185969481",
+          "unstable_output_uu_upper": "346.72372256934974231438886"
+        },
+        "sequence_weight_beta": "0.9999",
+        "stable_graph_radius": "0.0097",
+        "stable_power_constant_upper": "1",
+        "stable_power_rate_upper": "0.1",
+        "stable_seed_radius": "0.0094",
+        "unstable_backward_power_constant_upper": "1",
+        "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934",
+        "unstable_graph_radius": "0.00025",
+        "validated_return_map_split_ball_radius_lower": "0.00995"
+      },
+      "proof_interpretation": {
+        "all_six_caps_inserted_simultaneously": true,
+        "graph_certificate_closes": false,
+        "hessian_caps_are_certified_blocks": false,
+        "individual_caps_mixed_from_different_rows": false,
+        "raw_exact_majorant_closes": true,
+        "return_ball_is_validated_here": false,
+        "stable_power_constant_is_validated_here": false,
+        "stable_rate_is_validated_here": false,
+        "status": "CONDITIONAL_EXACT_DESIGN_ARITHMETIC_ONLY"
+      }
+    },
+    "claim_status": {
+      "all_six_caps_enter_one_common_majorant_replay": true,
+      "all_six_certified_blocks_strictly_below_common_caps_validated": false,
+      "all_six_projected_return_hessian_blocks_validated": false,
+      "asynchronous_network_safety_radius_validated": false,
+      "common_cap_majorant_closes_only_as_conditional_design_arithmetic": true,
+      "common_selected_event_window_validated": false,
+      "complete_history_moving_event_hessian_formula_registered": true,
+      "complete_returned_history_tube_validated": false,
+      "continuous_history_unit_y_normalization_adapter_validated": false,
+      "correlated_fixed_projection_before_norm_requirement_registered": true,
+      "first_missing_nonlinear_return_tube_parent_frozen": true,
+      "fixed_unit_y_splitting_interface_registered": true,
+      "frequency_amplitude_safety_radius_validated": false,
+      "majorant_with_certified_hessian_blocks_validated": false,
+      "no_earlier_section_hit_validated": false,
+      "nonlinear_selected_return_tube_on_full_anisotropic_ball_validated": false,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "preferred_b_anisotropic_geometry_registered": true,
+      "quantitative_inner_stable_graph_validated": false,
+      "selected_pulse_stable_sheet_crossing_validated": false,
+      "six_common_caps_computed_by_exact_rational_arithmetic": true,
+      "split_return_ball_validated_here": false,
+      "stable_output_ss_block_validated": false,
+      "stable_output_su_block_validated": false,
+      "stable_output_uu_block_validated": false,
+      "stable_power_rate_or_constant_validated_here": false,
+      "stage4k_parent_bytes_and_claim_boundary_validated": true,
+      "stage4l_numeric_result_excluded_from_parent_set": true,
+      "two_sided_basin_routing_validated": false,
+      "uniform_event_speed_lower_bound_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unstable_output_ss_block_validated": false,
+      "unstable_output_su_block_validated": false,
+      "unstable_output_uu_block_validated": false
+    },
+    "common_cap_ledger": {
+      "acceptance_rule": "one future certificate must prove all six upper bounds from the same nonlinear return tube, each strictly below its cap",
+      "caps_are_rfde_bounds": false,
+      "common_multiplier_exact": "13.2353",
+      "lower_probe_closes_conditionally": true,
+      "records": [
+        {
+          "block": "stable_output_ss_upper",
+          "common_multiplier_exact": "13.2353",
+          "heuristic_source_decimal_exact": "0.0224686695028964572574",
+          "strict_acceptance_inequality": "certified_stable_output_ss_upper < strict_cap_decimal_exact",
+          "strict_cap_decimal_exact": "0.29737958147168548073886622"
+        },
+        {
+          "block": "stable_output_su_upper",
+          "common_multiplier_exact": "13.2353",
+          "heuristic_source_decimal_exact": "0.0887641356072132875488",
+          "strict_acceptance_inequality": "certified_stable_output_su_upper < strict_cap_decimal_exact",
+          "strict_cap_decimal_exact": "1.17481996400215002469463264"
+        },
+        {
+          "block": "stable_output_uu_upper",
+          "common_multiplier_exact": "13.2353",
+          "heuristic_source_decimal_exact": "7.94681563672845125978",
+          "strict_acceptance_inequality": "certified_stable_output_uu_upper < strict_cap_decimal_exact",
+          "strict_cap_decimal_exact": "105.178488996792070958566234"
+        },
+        {
+          "block": "unstable_output_ss_upper",
+          "common_multiplier_exact": "13.2353",
+          "heuristic_source_decimal_exact": "0.296931483708838817037",
+          "strict_acceptance_inequality": "certified_unstable_output_ss_upper < strict_cap_decimal_exact",
+          "strict_cap_decimal_exact": "3.9299772663315943951298061"
+        },
+        {
+          "block": "unstable_output_su_upper",
+          "common_multiplier_exact": "13.2353",
+          "heuristic_source_decimal_exact": "0.283096126328013231177",
+          "strict_acceptance_inequality": "certified_unstable_output_su_upper < strict_cap_decimal_exact",
+          "strict_cap_decimal_exact": "3.7468621607891535185969481"
+        },
+        {
+          "block": "unstable_output_uu_upper",
+          "common_multiplier_exact": "13.2353",
+          "heuristic_source_decimal_exact": "26.1968918399544961062",
+          "strict_acceptance_inequality": "certified_unstable_output_uu_upper < strict_cap_decimal_exact",
+          "strict_cap_decimal_exact": "346.72372256934974231438886"
+        }
+      ],
+      "rejected_upper_probe_exact": "13.2354",
+      "upper_probe_fails_conditionally": true
+    },
+    "coordinate_registration": {
+      "fixed_projection": "P_s=I-q_hat*f_hat=I-q*f",
+      "history_space": "Y=C([-tau_max,0],R)_v x R_w with the inherited max norm",
+      "normalization": "||q_hat||_Y=1 and f_hat(q_hat)=1 exactly",
+      "normalization_transfer_validated_here": false,
+      "physical_pair": "q,f with f(q)=1 on Sigma_0",
+      "section_tangent_space": "Sigma_0={h in Y:h_v(0)=0}",
+      "stable_space": "E_s=ker(f_hat) in Sigma_0",
+      "unit_y_functional": "f_hat=||q||_Y*f",
+      "unit_y_vector": "q_hat=q/||q||_Y",
+      "unstable_coordinate": "x_u is the scalar coefficient of the fixed q_hat; no moving eigensplitting is permitted over the ball"
+    },
+    "correlated_projection_order": {
+      "event_correction_order": "insert T_h,T_k,T_hk and all translated-history terms before either stable deflation or unstable action",
+      "fixed_projection_over_ball": true,
+      "moving_projection_forbidden": true,
+      "stable_output": "form G_s(theta)=D2P(theta)-q_hat(theta)*f_hat(D2P) as one atom-density/history object, then take the inherited Y norm",
+      "triangle_of_separately_normed_terms_forbidden": true,
+      "unstable_output": "form the complete correlated atom-plus-density action f_hat(D2P), then take its absolute value"
+    },
+    "first_missing_parent": {
+      "blocking_reason": "without one source-bound nonlinear selected-event return family on the full ball, D2P(x) has no validated common domain over which any of the six operator suprema can be taken",
+      "common_selected_event_window": null,
+      "complete_returned_history_tube_radius_upper": null,
+      "full_anisotropic_ball": "||x_s||_Y<=0.0097 and |x_u_hat|<=0.00025",
+      "no_earlier_hit_margin_lower": null,
+      "nonlinear_flow_family_Y_tube_remainder_upper": null,
+      "required_parent_result_path": null,
+      "required_parent_result_sha256": null,
+      "required_parent_stage": "Stage-4N nonlinear selected-return tube",
+      "stage4l_can_substitute": false,
+      "uniform_event_speed_lower": null
+    },
+    "heuristic_source_boundary": {
+      "heuristic_row_enters_strict_numeric_ingress": false,
+      "source": "experiments/results/leaky_inner_stable_graph_enlargement_stage4k.json",
+      "stage4a_row_is_directed_continuous_history_bound": false,
+      "stage4a_row_is_finite_section_heuristic": true,
+      "use_here": "only to define six proof-design caps and replay exact preferred-B arithmetic"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "moving_event_return_hessian": {
+      "affine_event_row": "ell_0(y)=y_v(0)",
+      "complete_history_return_hessian": "D2P(x)[h,k](theta)=W_hk(theta)+dot X(T+theta)T_hk, for every theta in [-tau_max,0], with the recovery coordinate evaluated at theta=0",
+      "endpoint_only_correction_forbidden": true,
+      "event_speed": "a(x)=ell_0(dot X(T(x);x))>0",
+      "first_event_derivative": "T_h=-ell_0(U_h(T;x))/a(x)",
+      "history_core": "W_hk(theta)=V_hk(T+theta)+dot U_h(T+theta)T_k+dot U_k(T+theta)T_h+ddot X(T+theta)T_h*T_k",
+      "moving_event_terms_retained": true,
+      "second_event_derivative": "T_hk=-ell_0(W_hk(0))/a(x)",
+      "selected_event": "T(x) is the unique event in one common near-period window; first-positive status additionally requires no-earlier-hit"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_stable_graph_enlargement_stage4k.json": "57119dc28bfa841b4f1a9dcddc3af542783493da94862ed2f7336202b05e2f5c"
+    },
+    "physical_variational_system": {
+      "base_flow": "dX/dt=F(X_t), X_0=x in the anisotropic domain",
+      "current_voltage_hessian": "-2*v(t)-6*epsilon*kappa_3*(v(t)-1)",
+      "delayed_voltage_hessian_each_delay": "3*epsilon*kappa_3*(v(t-tau_j)-1), j=0,1",
+      "first_variation": "dU_h/dt=DF(X_t)U_h,t, U_h,0=h",
+      "mixed_and_recovery_hessian_entries": "zero",
+      "required_sectors": "U_s,U_u,V_ss,V_su,V_uu",
+      "second_variation": "dV_hk/dt=DF(X_t)V_hk,t+D2F(X_t)[U_h,t,U_k,t], V_hk,0=0",
+      "third_derivatives_for_uniformity": "current -2-6*epsilon*kappa_3; each delayed slot 3*epsilon*kappa_3",
+      "time_scale": "physical time, not normalized Fourier phase"
+    },
+    "required_uniform_error_ledger": {
+      "common_event_time_window": null,
+      "complete_returned_history_translation": null,
+      "continuous_base_and_direction_suprema": null,
+      "delay_activation_and_history_cell_seams": null,
+      "event_speed_and_tangent_correlation": null,
+      "event_speed_lower": null,
+      "evidence_status": "OPEN: no item may be filled from Stage-4A sampling or an unpublished Stage-4L numerical value",
+      "first_variation_stable_operator": null,
+      "first_variation_unit_unstable_column": null,
+      "no_earlier_hit_separation": null,
+      "nonlinear_base_history_tube": null,
+      "q_hat_f_hat_normalization_and_tails": null,
+      "second_variation_ss_operator": null,
+      "second_variation_su_operator": null,
+      "second_variation_uu_history": null,
+      "stable_deflation_common_row": null,
+      "time_derivative_and_acceleration_terms": null,
+      "unstable_functional_common_row": null
+    },
+    "schema_id": "leaky-inner-enlarged-return-hessian-stage4m-contract-v1",
+    "six_block_certificate_interface": {
+      "common_run_requirement": "all six blocks use one source-bound nonlinear flow/event tube and one fixed q_hat,f_hat,P_s normalization",
+      "forbidden_shortcuts": "four-block reduction, finite-node history norm, sampled base points, different cap rows, or separately normed projection terms",
+      "mixed_slot_symmetry": "D2P[h_s,q_hat]=D2P[q_hat,h_s]",
+      "stable_output_ss": "sup ||P_s D2P(x)[h_s,k_s]||_Y for unit h_s,k_s in E_s",
+      "stable_output_su": "sup ||P_s D2P(x)[h_s,q_hat]||_Y for unit h_s in E_s",
+      "stable_output_uu": "sup ||P_s D2P(x)[q_hat,q_hat]||_Y",
+      "uniform_base_domain": "the entire anisotropic domain above",
+      "unstable_output_ss": "sup |f_hat(D2P(x)[h_s,k_s])| for unit h_s,k_s in E_s",
+      "unstable_output_su": "sup |f_hat(D2P(x)[h_s,q_hat])| for unit h_s in E_s",
+      "unstable_output_uu": "sup |f_hat(D2P(x)[q_hat,q_hat])|"
+    },
+    "status": "NONCLOSING_CONTRACT",
+    "strict_numeric_ingress": {
+      "all_six_blocks_from_one_tube": false,
+      "all_six_strict_cap_tests_pass": false,
+      "directed_uniform_hessian_blocks": {
+        "stable_output_ss_upper": null,
+        "stable_output_su_upper": null,
+        "stable_output_uu_upper": null,
+        "unstable_output_ss_upper": null,
+        "unstable_output_su_upper": null,
+        "unstable_output_uu_upper": null
+      },
+      "evidence_status": "OPEN_NONCLOSING",
+      "majorant_with_certified_blocks": null,
+      "return_tube_parent": null,
+      "stage4l_numeric_parent": null
+    },
+    "theorem_boundary": {
+      "not_proved_here": "a nonlinear return map on the enlarged ball, any projected return-Hessian block, a stable graph, pulse/stable-sheet crossing, onset, routing, capture, or safety theorem",
+      "proved_here": "only the source-bound contract, six exact design caps, and their common conditional majorant replay",
+      "stage4l_dependency": "none; a discrete linear stable row cannot define or bound the nonlinear moving-event return family"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "normal validation and byte binding of Stage 4K; exact Fraction products of its six source-bound heuristic decimals with the common lower closing probe 13.2353; replay of all six caps in one exact-rational Stage-4 Lyapunov--Perron majorant; and a nonclosing complete-history moving-event return-Hessian interface; no Stage-4L numeric ingress, nonlinear return tube, projected Hessian block, graph, crossing, onset, routing, capture, or safety promotion",
+    "contract_sha256": "ec0a677f1ebdb3833afc01e4f4171d1a76ffd64301497c6e3734768604d0fec7",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_enlarged_return_hessian_stage4m_contract.py",
+    "dependency_source_sha256": {
+      "src/canard_control/leaky_inner_stable_graph_enlargement_stage4k.py": "185aa5946f91a4565a9adc1da3de2874b53982dee4eb4ac71345b86e8cda034b",
+      "src/canard_control/leaky_projected_return_hessian_stage4_contract.py": "72cc89d87f49ed11038e21ea709a29401586b31178baa74963fab976af654438"
+    },
+    "numeric_core_sha256": "307fc8151edfe97787ba666e1b6d26f9d848a57b6671c844aac3b91c8404de82",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_stable_graph_enlargement_stage4k.json": "57119dc28bfa841b4f1a9dcddc3af542783493da94862ed2f7336202b05e2f5c"
+    },
+    "result": "experiments/results/leaky_inner_enlarged_return_hessian_stage4m_contract.json",
+    "runtime": {
+      "arithmetic": "fractions.Fraction exact caps plus the Stage-4 exact-rational majorant evaluator",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "schema_id": "leaky-inner-enlarged-return-hessian-stage4m-contract-v1",
+    "source_sha256": {
+      "docs/leaky-inner-enlarged-return-hessian-stage4m-contract.md": "ac7e71d691204c8038b8833da34faa2fbf5fbafa8167486d1fac8b92ddd953f5",
+      "experiments/leaky_inner_enlarged_return_hessian_stage4m_contract.py": "9214b92677fff4527cf9bd74ec8b3d4b8853e13834e3c9522fd343bf5a32756a",
+      "src/canard_control/leaky_inner_enlarged_return_hessian_stage4m_contract.py": "e73fdfdfff7ef3ed92614279f177cbe958bd244c5122e1d354361cf197935805",
+      "tests/test_leaky_inner_enlarged_return_hessian_stage4m_contract.py": "bc40aa21e03b3a24d8b269a65d7756464c01c244183a7bd8b32ea7ce7b6116c6"
+    }
+  }
+}

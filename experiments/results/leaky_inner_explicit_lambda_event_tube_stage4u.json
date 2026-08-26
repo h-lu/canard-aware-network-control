@@ -1,0 +1,306 @@
+{
+  "certificate": {
+    "branch": "inner_saddle_candidate_selected_near_two_period_event",
+    "claim_status": {
+      "C2_selected_event_and_complete_history_hit_validated": true,
+      "Q_equals_P2_validated": false,
+      "all_delay_activation_faces_and_time_history_seams_covered": true,
+      "all_seven_parent_bytes_and_used_semantic_ingress_validated": true,
+      "ambient_w_open_theorem_and_coordinate_d_open_restriction_distinguished": true,
+      "asynchronous_network_safety_validated": false,
+      "biological_onset_or_control_validated": false,
+      "common_solution_existence_through_T_plus_validated": true,
+      "complete_returned_y_history_inside_local_patch_validated": true,
+      "complete_y_history_flow_tube_validated": true,
+      "continuous_history_unit_y_normalization_adapter_numerically_validated": false,
+      "coordinate_output_domain_d_out_registered": true,
+      "corrected_centered_voltage_hessian_semantics_inherited": true,
+      "exact_reduced_full_history_lift_and_projection_used": true,
+      "explicit_lambda_lower_bound_validated": true,
+      "first_positive_return_validated": false,
+      "frequency_amplitude_safety_radius_validated": false,
+      "full_x_sup_norm_tube_with_same_y_radius_validated": false,
+      "general_network_canard_theorem_validated": false,
+      "global_polynomial_full_x_field_and_affine_event_domains_registered": true,
+      "half_center_endpoint_margins_on_open_neighborhood_validated": true,
+      "induced_local_section_return_validated": true,
+      "initial_history_translation_before_delay_activation_retained": true,
+      "initial_scaled_ball_inside_local_section_patch": true,
+      "near_two_period_center_window_validated": true,
+      "no_earlier_admissible_return_validated": false,
+      "outer_or_quiet_capture_validated": false,
+      "physical_time_and_y_norm_preserved": true,
+      "preferred_lambda_one_ball_validated": false,
+      "quantitative_inner_stable_graph_validated": false,
+      "same_scaled_ball_self_map_validated": false,
+      "scaled_ball_contains_arbitrary_full_x_two_component_histories_validated": false,
+      "scaled_ball_includes_arbitrary_continuous_reduced_y_stable_histories": true,
+      "second_positive_oriented_event_validated": false,
+      "selected_pulse_stable_sheet_crossing_validated": false,
+      "six_projected_return_hessian_blocks_validated": false,
+      "stage4m_exact_section_splitting_semantics_validated": true,
+      "strict_stage4r_C2_smoothing_gate_validated": true,
+      "strictly_larger_open_y_neighborhood_validated": true,
+      "two_sided_routing_validated": false,
+      "uniform_positive_event_speed_on_open_neighborhood_validated": true,
+      "unique_selected_event_in_common_window_validated": true,
+      "unit_y_coordinate_triangle_used_exactly": true,
+      "unscaled_stage4n_nonlinear_tube_validated": false
+    },
+    "common_event_certificate": {
+      "advertised_half_center_speed_target": {
+        "lower": "0.1033769568740103844432899202820563430731093879638601619999999999999999999999979662769204538425319080416408102",
+        "upper": "0.10337695687401038444328992028205634307310938796386016200000000000000000000000120484012861425926642792358936035"
+      },
+      "advertised_half_gap_target": {
+        "lower": "0.00010337695687401038444328992028205634307310938796386016199999999999999999999999834579604641014136798459030665592",
+        "upper": "0.00010337695687401038444328992028205634307310938796386016200000000000000000000000150845542937929833528916252203692"
+      },
+      "common_window": "[36.3714198982518419857014087029605975287456728510309886259652862,36.3734198982598419857014087027996907097797177739690113740347138]",
+      "endpoint_gap_lower": {
+        "lower": "0.00010375123567965412105770766553289328726412527518430179787702808284324774915903747142548930577020467595984503701",
+        "upper": "0.00010375123567965412105770766553289328726412527518430179787702808284324774915938958083679320524589791833315745564"
+      },
+      "endpoint_margin_beyond_half_target": {
+        "lower": "3.742788056437366144177452508369441910158872204416358770280828432477491590380672916025010020911220009715153139e-07",
+        "upper": "3.7427880564373661441774525083694419101588722044163587702808284324774915938913071920422057430819853920228450156e-07"
+      },
+      "event_functional": "g_Y(y)=y_v(0)-Y_*,v(0), ||Dg_Y||=1",
+      "event_ordinal": null,
+      "event_speed_formula": "a_open=a_orbit_lower-L_F_upper*(center_displacement+flow_deviation)",
+      "existence_and_uniqueness": "endpoint signs give existence by continuity; the uniform positive physical speed gives strict monotonicity and one unique selected event in this window",
+      "left_endpoint_sign": "sup_(y in W_open) g_Y(Psi_Tminus(y)) <=-endpoint_gap_lower<0",
+      "orientation": "positive physical voltage-event orientation",
+      "right_endpoint_sign": "inf_(y in W_open) g_Y(Psi_Tplus(y)) >=endpoint_gap_lower>0",
+      "same_time_event_perturbation_upper": {
+        "lower": "0.0001030026780683666478288721750312193988820935007434185261229719171567522508406113276344769072461277902770763642",
+        "upper": "0.00010300267806836664782887217503121939888209350074341852612297191715675225084096132860619216061717616293557852883"
+      },
+      "speed_margin_beyond_half_target": {
+        "lower": "0.14150369342374159652392537624411124240767976631939748742087555023896996863239394107384637222800642194658224362",
+        "upper": "0.14150369342374159652392537624411124240767976631939748742087555023896996863240689532667901389494450147437644422"
+      },
+      "uniform_event_speed_lower": {
+        "lower": "0.24488065029775198096721529652616758548078915428325764942087555023896996863239514591397498648727284987017160396",
+        "upper": "0.24488065029775198096721529652616758548078915428325764942087555023896996863240594112466885454305458281000010446"
+      },
+      "window_y_radius_about_phase_zero_center": {
+        "lower": "0.00050937522234169854370670685839513074304124698947803676867056236263675944808127442459970074593745797184728982326",
+        "upper": "0.00050937522234169854370670685839513074304124698947803676867056236263675944808165394372565704477353452051313554394"
+      }
+    },
+    "complete_history_and_patch": {
+      "activation_and_seam_rule": "the single continuous integral majorant covers every t=tau_j activation face and every later method-of-steps/time-history seam; no time or history-node sampling is used",
+      "complete_returned_y_history_radius": {
+        "lower": "0.00050937522234169854370670685839513074304124698947803676867056236263675944808127442459970074593745797184728982326",
+        "upper": "0.00050937522234169854370670685839513074304124698947803676867056236263675944808165394372565704477353452051313554394"
+      },
+      "flow_tube_statement": "sup_(y in W_open,0<=t<=T_plus) ||Psi_t(y)-Psi_t(Y_*)||_Y<=flow_deviation_upper",
+      "initial_patch_margin": {
+        "lower": "0.0099999999999999999999999999999910449999999999999824666599999999999999999999997617651868249168318267439132267755",
+        "upper": "0.0099999999999999999999999999999910449999999999999824666600000000000000000000003015257215183196209133909046518005"
+      },
+      "initial_section_membership": "the direct Stage-4M parent gives E_s=ker(f_hat) in Sigma_0, q_hat in Sigma_0, and f_hat(q_hat)=1; hence j(D_open) is in W_open intersect Sigma_loc and every injected B_lambda history lies there",
+      "initial_translation_rule": "when s-tau_j<0 the delayed difference is the exact arbitrary initial-history translate and is bounded by rho_open; when s-tau_j>=0 it is bounded by M(s)",
+      "moving_event_history_bound": "||Psi_{T(y)}(y)-Y_*||_Y<=||Psi_{T(y)}(y)-Psi_{T(y)}(Y_*)||_Y+||Psi_{T(y)}(Y_*)-Y_*||_Y",
+      "physical_cover": "given initial histories cover [-tau_max,0], and the majorant covers [0,T_plus], hence in particular every complete returned-history time in [T_minus-tau_max,T_plus]",
+      "same_scaled_ball_self_map": false,
+      "terminal_patch": "Sigma_loc={y:g_Y(y)=0 and ||y-Y_*||_Y<R0}, R0=0.00999999999999999999999999999999999999999999999998246666",
+      "terminal_patch_margin": {
+        "lower": "0.0094906247776583014562932931416048692569587530105044298913294376373632405519180812490416389645239868120739037298",
+        "upper": "0.0094906247776583014562932931416048692569587530105044298913294376373632405519190258299773524194048884443088975235"
+      },
+      "terminal_section_membership": "the selected-event equation gives g_Y=0 and the complete-Y history bound gives strict local-patch containment"
+    },
+    "corrected_gronwall_bootstrap": {
+      "base_fast_jacobian_row_sum_upper": "1.775740624398391663912912818272402332500654193281917000423266567160452",
+      "beta_choice": "one half of the certified center endpoint gap",
+      "bootstrap_slack_beta_minus_deviation": {
+        "lower": "3.742788056437366144177452508369441910158872204416358770280828432477491590391215113968240544135568583766423158e-07",
+        "upper": "3.7427880564373661441774525083694419101588722044163587702808284324774915938807649940989752198576368179715749966e-07"
+      },
+      "bootstrap_y_radius_beta": {
+        "lower": "0.00010337695687401038444328992028205634307310938796386016199999999999999999999999834579604641014136798459030665592",
+        "upper": "0.00010337695687401038444328992028205634307310938796386016200000000000000000000000150845542937929833528916252203692"
+      },
+      "centered_strip_slack": {
+        "lower": "1.9698386665559046311676857014150592148962979232605896998379999999999999999999744570413590953938150473902546928",
+        "upper": "1.969838666555904631167685701415059214896297923260589699838000000000000000000043546389799850950818138205157096"
+      },
+      "centered_voltage_coordinate": "B=sup|v_*-1|",
+      "comparison_horizon": "all physical times 0<=t<=T_plus",
+      "complete_history_flow_gain": {
+        "lower": "11375854886340123455615680052.042564347240985227612626442428838384974570748314505243790453297370836637664879241",
+        "upper": "11375854886340123455615680052.04256434724098522761262644242883838497457074835265094173288911363255437412406519"
+      },
+      "continuation_argument": "the reduced polynomial finite-delay field is bounded on the resulting orbit-centered tube, so no finite maximal solution endpoint can occur before T_plus",
+      "corrected_hessian_row_at_beta": {
+        "lower": "3.0666846028895198820906163687529008596286485783983168652379439999999999999998953192822595279512776504869639794",
+        "upper": "3.0666846028895198820906163687529008596286485783983168652379440000000000000000680426533614168437853775242199874"
+      },
+      "corrected_hessian_row_formula": "H_beta=2*(1+B+beta)+12*epsilon*kappa3*(B+beta)",
+      "directed_integral_inequality": "M(t)<=rho_open+integral_0^t L_beta*M(s) ds",
+      "exact_orbit_centered_voltage_abs_upper": "0.530057956487221358447871008664658728760628967350762216",
+      "exit_time_argument": "if beta were first reached by T_plus, Gronwall would give M<=rho_open*exp(L_beta*T_plus)<beta, a contradiction",
+      "flow_row_formula": "L_beta=max(A0+H_beta*beta,2*epsilon)",
+      "flow_row_upper": {
+        "lower": "1.7760576489203307654713626122636345401247627821520023917325923481431712451823510675583161386496274105544779555",
+        "upper": "1.7760576489203307654713626122636345401247627821520023917325923481431712451824201569067568942066305013693803587"
+      },
+      "gain_formula": "G_beta=exp(L_beta*T_plus)",
+      "majorant_definition": "M(t)=max(||eta_v||_[-tau,0],|eta_w(0)|,sup_(0<=s<=t) max(|eta_v(s)|,|eta_w(s)|))",
+      "open_domain_flow_deviation": {
+        "lower": "0.0001030026780683666478288721750312193988820935007434185261229719171567522508406113276344769072461277902770763642",
+        "upper": "0.00010300267806836664782887217503121939888209350074341852612297191715675225084096132860619216061717616293557852883"
+      },
+      "periodic_coefficient_extension": "the source-bound A0 and B maxima cover one exact period and repeat on [0,T_plus] by exact periodicity of Y_*",
+      "strict_open_lambda_ceiling": {
+        "lower": "9.1330664910391684966034581319674130521749891199619694501408636573761846258494901864774078192883075720180319343e-31",
+        "upper": "9.1330664910391684966034581319674130521749891199619694501408636573761846258804200067552270261177342022128523858e-31"
+      }
+    },
+    "exact_center_window": {
+      "T_minus": "36.3714198982518419857014087029605975287456728510309886259652862",
+      "T_minus_minus_2_tau_max": {
+        "lower": "14.010740123253945021609672015647835174339489254915731383247298199999999999999407479442488352117136886455426655",
+        "upper": "14.010740123253945021609672015647835174339489254915731383247298200000000000000512909017540441029186339493865106"
+      },
+      "T_plus": "36.3734198982598419857014087027996907097797177739690113740347138",
+      "center_endpoint_gap_lower": "0.000206753913748020768886579840564112686146218775927720324",
+      "center_event_time": "T(Y_*)=2P exactly",
+      "center_patch_margin": {
+        "lower": "0.0095936274557266681041221653166360886558408465112478484174524095545199928027591364032095258767978596773185385618",
+        "upper": "0.0095936274557266681041221653166360886558408465112478484174524095545199928027596761637442192795869463243099635868"
+      },
+      "center_returned_history": "Psi_(2P)(Y_*)=Y_* exactly",
+      "center_uniform_event_speed_lower": "0.206753913748020768886579840564112686146218775927720324",
+      "center_window_y_displacement": {
+        "lower": "0.00040637254427333189587783468336391134415915348873461824254759044548000719724066625962460680784829748614242884006",
+        "upper": "0.0004063725442733318958778346833639113441591534887346182425475904454800071972406873440204932688947461832905313801"
+      },
+      "declared_local_section_patch_radius": "0.00999999999999999999999999999999999999999999999998246666",
+      "half_width_h": "0.001",
+      "maximum_phase_offset_from_2P": {
+        "lower": "0.001000000007999999999999999839093181034044922938022748069427599999999999999999969621354944736060427575670790108",
+        "upper": "0.0010000000079999999999999998390931810340449229380227480694276000000000000000000202239050722425719044488262362041"
+      },
+      "period_lower": "18.1862099491259209928507043514802987643728364255154943129826431",
+      "period_upper": "18.1862099491299209928507043513998453548898588869845056870173569",
+      "period_width": "0.0000000000039999999999999999195465905170224614690113740347138",
+      "physical_orbit_history_speed_upper": "0.406372541022351567699022207159846577899057680420522515",
+      "target_half_endpoint_gap": "0.000103376956874010384443289920282056343073109387963860162",
+      "tau_max_upper": "11.180339887498948482045868343656381177203091798057628621358994"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/finite_delay_eventually_smooth_selected_return_stage4r.json": "4e68835bc3ba5fd44432d98a3b6b1d41506533d66f3353cd500df3e95da76418",
+      "experiments/results/leaky_inner_enlarged_return_hessian_stage4m_contract.json": "1a7f89c4c61480a76149b88ae6a15fa40b11425f4d678615af3469b59f75100c",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_contract.json": "b64f5230bb870b889fdc341d5d5139ea4ccac6faa7752ff2a5682eb0206cf160",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.json": "5e7214a2f5ba8ca22649c677a1d054b32342b5cc25966bd8e1da7600c605f1de",
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_reduced_history.json": "4555fb765a5060a3767a7ea669deb2f4921b8d7410d7d4e15ad077e552da8870"
+    },
+    "reduced_full_bridge_and_regularity": {
+      "ambient_C2_event_time": "T_tilde:W_open->R is C2",
+      "ambient_C2_reduced_hit": "R_tilde_Y(y)=Psi_{T_tilde(y)}(y):W_open->Y is C2",
+      "compatible_lift": "R(q,omega)(theta)=exp(-epsilon*theta)*[omega-epsilon*integral_theta^0 exp(epsilon*s)*(q(s)-a) ds]",
+      "coordinate_C2_restriction": "T=T_tilde o j:D_open->R and R_Y=R_tilde_Y o j:D_open->Sigma_loc are C2",
+      "coordinate_output_domain": "D_out=chi(Sigma_loc)",
+      "full_event_functional": "g_X(phi)=phi_v(0)-Y_*,v(0)=g_Y(pi(phi)) is globally affine C-infinity; take the Stage-4R event domain V=X",
+      "full_field_regularity": "the model functional F:X->R^2 is a finite-evaluation polynomial, hence globally C-infinity; take the Stage-4R functional domain U=X",
+      "full_future_factorization": "Phi_t=iota*Psi_t*pi for every t>=r",
+      "full_phase_space": "X=C([-tau_max,0],R^2)",
+      "full_solution_domain_consequence": "the reduced common-existence proof and exact compatible lift place (t,Iota(y)) in the full-X maximal semiflow domain for 0<=t<=T_plus and y in W_open",
+      "full_x_same_radius_claimed": false,
+      "induced_return": "P_sel=chi o R_tilde_Y o j:D_open->D_out is a C2 selected local-section return; no D_out subset D_open or self-map assertion is made",
+      "reduced_projection": "pi(phi_v,phi_w)=(phi_v,phi_w(0))",
+      "semiflow_intertwining": "pi*Phi_t=Psi_t*pi for every t>=0",
+      "smoothing_gate": "T_minus>2*tau_max",
+      "smoothing_margin": {
+        "lower": "14.010740123253945021609672015647835174339489254915731383247298199999999999999407479442488352117136886455426655",
+        "upper": "14.010740123253945021609672015647835174339489254915731383247298200000000000000512909017540441029186339493865106"
+      },
+      "stage4r_application": "first apply Stage-4R with parameter domain W_open subset Y, initial parameterization Iota:W_open->X, U=V=X, and g_X=g_Y o pi; then compose the full hit with bounded pi and restrict through j:D_open->W_open intersect Sigma_loc",
+      "terminal_chart": "chi(y)=(P_s(y-Y_*),f_hat(y-Y_*)) on Sigma_loc is affine C-infinity with inverse j; D_out=chi(Sigma_loc) is open in M"
+    },
+    "scaled_domain": {
+      "ambient_open_history_neighborhood": "W_open={y in Y:||y-Y_*||_Y<0.00995*(9.1e-31)}",
+      "ambient_open_y_radius": {
+        "lower": "9.0544999999999999999999999999999999999999999999999999999999999999999999999996925108587089541814652066437210529e-33",
+        "upper": "9.0545000000000000000000000000000000000000000000000000000000000000000000000003312048347101767894517147011581492e-33"
+      },
+      "anisotropic_absorption": "||x_s+q_hat*x_u||_Y<=||x_s||_Y+|x_u|; B_(9e-31) is strictly inside D_diamond and hence D_open",
+      "arbitrary_continuous_reduced_y_stable_histories_included": true,
+      "arbitrary_full_x_two_component_histories_included": false,
+      "certified_closed_lambda_lower": "9e-31",
+      "closed_ball": "B_lambda={||x_s||_Y<=0.0097*lambda, |x_u|<=0.00025*lambda}",
+      "closed_ball_initial_y_radius": {
+        "lower": "8.9549999999999999999999999999999999999999999999999999999999999999999999999997578876271628206157774661440540928e-33",
+        "upper": "8.9550000000000000000000000000000000000000000000000000000000000000000000000002901326071638394557662228585850064e-33"
+      },
+      "coordinate_open_domain": "D_open=j^{-1}(W_open intersect Sigma_loc), open in M",
+      "coordinate_space": "M=E_s x R with E_s=ker(f_hat) in Sigma_0",
+      "explicit_coordinate_diamond_subset": "D_diamond={||x_s||_Y+|x_u|<0.00995*(9.1e-31)} is contained in D_open",
+      "fixed_coordinate_injection": "j(x_s,x_u)=Y_*+x_s+q_hat*x_u, x_s in ker(f_hat), q_hat in Sigma_0, ||q_hat||_Y=1, and f_hat(q_hat)=1 exactly",
+      "history_space": "Y=C([-tau_max,0],R)_v x R_w with ||(phi,w)||_Y=max(||phi||_infinity,|w|)",
+      "normalization_adapter_numerically_promoted": false,
+      "radius_sum": "0.00995",
+      "stable_radius_R_s": "0.0097",
+      "strict_open_domain_lambda": "9.1e-31",
+      "unit_unstable_radius_R_u_hat": "0.00025"
+    },
+    "schema_id": "leaky-inner-explicit-lambda-event-tube-stage4u-v2",
+    "status": "PROVED_EXPLICIT_SCALED_REDUCED_Y_BALL_EVENT_TUBE",
+    "theorem_boundary": {
+      "not_proved_here": "lambda=1, a same-ball self-map, a full-X tube with the same Y radius or a scaled ball of arbitrary full-X two-component histories, event ordinal or no-earlier-return statement, Q=P^2, any projected Hessian block, stable graph, pulse crossing, biological onset/control, routing, capture, safety radius, or general-network canard theorem",
+      "proved_here": "the explicit lower scale lambda_0=9e-31, a strictly larger ambient open reduced-history neighborhood W_open and its coordinate restriction D_open, common existence through the fixed near-two-period window, two endpoint signs retaining the registered half margins, uniform positive speed, one unique selected event, ambient and coordinate-restricted C2 event/hit maps, and initial/terminal local reduced-section containment with output domain D_out",
+      "stage4s_a_files_modified": false,
+      "stage4s_a_result_is_a_parent": false
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact-byte and semantic validation of corrected Stage-4N feasibility, Stage-4N coordinates, the exact Stage-4M section splitting, Stage-2 Route-C speed, Stage-4L true period and delays, the exact reduced-history factorization, and the formal Stage-4R C2 theorem; explicit registration of the global polynomial full-X functional and affine event functional; 256-bit outward MPFR scalar complete-history Gronwall bootstrap from t=0 through the near-two-period T_plus; directed endpoint sign, speed, initial/terminal patch, and smoothing margins; no Stage-4S-A parent and no downstream graph, onset, routing, capture, or safety claim",
+    "certificate_sha256": "65d5cf77166c3846a5dd0ffdd58ebe21e3d520ee1e9f3d33d97280b266a6d58f",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_explicit_lambda_event_tube_stage4u.py",
+    "dependency_source_sha256": {
+      "src/canard_control/autonomous_leaky_recovery_bistable.py": "398506f7ab66eb49599faf9731875bb2090bd45606f1996691c057d7fe38ce35",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/finite_delay_eventually_smooth_selected_return_stage4r.py": "b00f57a320ac9d918a40eaef90296eebd57e91a56f3c9c9b5e12587dedbc6039",
+      "src/canard_control/leaky_inner_enlarged_return_hessian_stage4m_contract.py": "e73fdfdfff7ef3ed92614279f177cbe958bd244c5122e1d354361cf197935805",
+      "src/canard_control/leaky_inner_nonlinear_selected_return_tube_stage4n_contract.py": "839630ed867649ddec3c88d4e787853aa26e5c769b5c2ebe501e4abf53cae45f",
+      "src/canard_control/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.py": "fb732ccbadfb246a8bde1ac3c9aacdf9d2eba938854a9c14e71f48bcc4b3089e",
+      "src/canard_control/leaky_inner_stable_manifold_stage2_contract.py": "d80d9ab7d0b2d99adde6f2096bef29830091fa5b9c7df086cefadd363b45ce16",
+      "src/canard_control/leaky_inner_terminal_stable_row_stage4l.py": "a203a52225f7319ca7197d349dab84d341c42162448bb539e163feac4ecb9390",
+      "src/canard_control/leaky_reduced_history.py": "5e6c47e03e08d008b730f6b7ddb3e2a0b541f1ebf202008877fe6a3df4d57cbd"
+    },
+    "numeric_core_sha256": "322dbd248b16c7075648e37e8932c731c90bd82d3b8be495ff30dd60670f6d8d",
+    "parent_result_sha256": {
+      "experiments/results/finite_delay_eventually_smooth_selected_return_stage4r.json": "4e68835bc3ba5fd44432d98a3b6b1d41506533d66f3353cd500df3e95da76418",
+      "experiments/results/leaky_inner_enlarged_return_hessian_stage4m_contract.json": "1a7f89c4c61480a76149b88ae6a15fa40b11425f4d678615af3469b59f75100c",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_contract.json": "b64f5230bb870b889fdc341d5d5139ea4ccac6faa7752ff2a5682eb0206cf160",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.json": "5e7214a2f5ba8ca22649c677a1d054b32342b5cc25966bd8e1da7600c605f1de",
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_reduced_history.json": "4555fb765a5060a3767a7ea669deb2f4921b8d7410d7d4e15ad077e552da8870"
+    },
+    "result": "experiments/results/leaky_inner_explicit_lambda_event_tube_stage4u.json",
+    "runtime": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "8",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "precision_bits": "256",
+      "python": "3.14.4"
+    },
+    "schema_id": "leaky-inner-explicit-lambda-event-tube-stage4u-v2",
+    "source_sha256": {
+      "docs/leaky-inner-explicit-lambda-event-tube-stage4u.md": "c88f0f65eec623130e6e500d66aa5e4c09ed1ef2aa8eeabb78d30bc78e26434e",
+      "experiments/leaky_inner_explicit_lambda_event_tube_stage4u.py": "0478bf53326f0a9faa0f44a2c51c1ea46e8c0236908b8e307e7be642d7834e73",
+      "src/canard_control/leaky_inner_explicit_lambda_event_tube_stage4u.py": "00285de39a3d11f94de2e404b305691395747a506e5f50a3b2608c15badbc240",
+      "tests/test_leaky_inner_explicit_lambda_event_tube_stage4u.py": "e1878754a168fe390eed3e319ad05ebcd2ea1ebfba1eff7d4d94139a31c52ba4"
+    },
+    "status": "PROVED_EXPLICIT_SCALED_REDUCED_Y_BALL_EVENT_TUBE"
+  }
+}

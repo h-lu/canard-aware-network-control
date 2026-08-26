@@ -1,0 +1,476 @@
+{
+  "certificate": {
+    "branch": "inner_saddle_candidate_selected_near_two_period_event",
+    "claim_status": {
+      "all_five_parent_results_byte_and_source_manifest_validated": true,
+      "all_six_continuous_history_hessian_block_numeric_bounds_validated": false,
+      "any_one_continuous_history_hessian_block_numeric_bound_validated": false,
+      "asynchronous_network_safety_validated": false,
+      "biological_capture_validated": false,
+      "complete_history_hessian_exists_and_is_continuous_locally_proved": true,
+      "complete_history_translation_before_projection_registered": true,
+      "complete_output_phase_interval_cover_validated": false,
+      "current_zero_of_six_numeric_block_ingress_audited": true,
+      "direct_selected_map_C2_on_qualitative_coordinate_neighborhood_imported": true,
+      "directed_base_orbit_and_field_jet_cover_validated": false,
+      "directed_first_variation_measure_residual_validated": false,
+      "directed_interval_residual_algorithm_registered": true,
+      "directed_second_variation_bimeasure_residual_validated": false,
+      "event_quotient_interval_residual_validated": false,
+      "exact_event_quotient_assembly_registered": true,
+      "exact_qhat_fhat_six_kernel_action_numerically_validated": false,
+      "finite_sampling_operator_norm_shortcut_rejected": true,
+      "fixed_qhat_fhat_output_action_before_norm_proved": true,
+      "full_ball_hessian_inflation_numerically_validated": false,
+      "global_same_ball_self_map_not_needed_for_local_graph_proved": true,
+      "moving_event_projection_applied_exactly_once_registered": true,
+      "numerical_preferred_lambda_lower_bound_imported": false,
+      "phase_section_stable_annihilator_quotient_identity_proved": true,
+      "preferred_lambda_one_ball_validated": false,
+      "preferred_scale_stable_graph_domain_validated": false,
+      "qualitative_local_selected_map_C2_stable_graph_proved": true,
+      "quantitative_inner_stable_graph_validated": false,
+      "same_preferred_scaled_ball_self_map_validated": false,
+      "selected_map_graph_identified_with_periodic_orbit_stable_set_germ": false,
+      "selected_pulse_stable_sheet_crossing_validated": false,
+      "six_block_center_plus_residual_implication_proved": true,
+      "some_unknown_small_preferred_shape_ball_has_finite_uniform_hessian_proved": true,
+      "split_projective_bimeasure_upper_bound_proved": true,
+      "stage4p_wide_box_entered_into_strict_numeric_ingress": false,
+      "stage4q_diagnostic_values_excluded_from_strict_ingress": true,
+      "strict_center_caps_imply_some_qualitative_full_ball_caps_proved": true,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "unstable_input_exact_qhat_action_identity_proved": true
+    },
+    "complete_history_event_hessian": {
+      "complete_history_meaning": "every voltage output phase theta in [-tau_max,0] is evaluated at T(x)+theta and the recovery output is evaluated at T(x)",
+      "correlation_rule": "assemble every term with one common outward enclosure of a and its inverse powers before any norm",
+      "equivalent_second_event_derivative": "T_hk=-ell_0(Z[h,k])/a",
+      "event_phase_projection": "D2 Q_Y=H=Z-a^(-1)*d tensor (ell_0 o Z)",
+      "event_time_first_derivative": "T_h=-n(h)/a",
+      "inverse_denominator_order": "powers through a^(-3) after expansion",
+      "moving_event_projection_count": 1,
+      "preprojection_bimeasure": "Z=V^T-a^(-1)*(dot_U^T tensor n+n tensor dot_U^T)+a^(-2)*e tensor n tensor n",
+      "proved_identity_source": "Stage-4O, now typed for the Stage-4T direct Q_Y",
+      "terminal_objects": "U^T,dot_U^T in L(Y,Y), V^T in Bil(Y,Y;Y), n=ell_0 o U^T, d=dot_X_T in Y, e=ddot_X_T in Y, a=ell_0(d)>0",
+      "translation_order": "form U^T,dot_U^T,V^T,d,e on the complete translated history first, then apply the event projection exactly once"
+    },
+    "current_numeric_ingress": {
+      "all_six_strict_acceptance_tests_pass": false,
+      "continuous_history_numeric_blocks_required": 6,
+      "continuous_history_numeric_blocks_validated": 0,
+      "directed_center_core_blocks": {
+        "stable_output_ss_upper": null,
+        "stable_output_su_upper": null,
+        "stable_output_uu_upper": null,
+        "unstable_output_ss_upper": null,
+        "unstable_output_su_upper": null,
+        "unstable_output_uu_upper": null
+      },
+      "directed_full_ball_block_residuals": {
+        "stable_output_ss_upper": {
+          "base_orbit_and_coefficient_error": null,
+          "continuous_qf_and_output_phase_completion": null,
+          "event_quotient_and_history_translation": null,
+          "first_variation_kernel_residual": null,
+          "full_ball_inflation_and_return_domain": null,
+          "second_variation_kernel_residual": null
+        },
+        "stable_output_su_upper": {
+          "base_orbit_and_coefficient_error": null,
+          "continuous_qf_and_output_phase_completion": null,
+          "event_quotient_and_history_translation": null,
+          "first_variation_kernel_residual": null,
+          "full_ball_inflation_and_return_domain": null,
+          "second_variation_kernel_residual": null
+        },
+        "stable_output_uu_upper": {
+          "base_orbit_and_coefficient_error": null,
+          "continuous_qf_and_output_phase_completion": null,
+          "event_quotient_and_history_translation": null,
+          "first_variation_kernel_residual": null,
+          "full_ball_inflation_and_return_domain": null,
+          "second_variation_kernel_residual": null
+        },
+        "unstable_output_ss_upper": {
+          "base_orbit_and_coefficient_error": null,
+          "continuous_qf_and_output_phase_completion": null,
+          "event_quotient_and_history_translation": null,
+          "first_variation_kernel_residual": null,
+          "full_ball_inflation_and_return_domain": null,
+          "second_variation_kernel_residual": null
+        },
+        "unstable_output_su_upper": {
+          "base_orbit_and_coefficient_error": null,
+          "continuous_qf_and_output_phase_completion": null,
+          "event_quotient_and_history_translation": null,
+          "first_variation_kernel_residual": null,
+          "full_ball_inflation_and_return_domain": null,
+          "second_variation_kernel_residual": null
+        },
+        "unstable_output_uu_upper": {
+          "base_orbit_and_coefficient_error": null,
+          "continuous_qf_and_output_phase_completion": null,
+          "event_quotient_and_history_translation": null,
+          "first_variation_kernel_residual": null,
+          "full_ball_inflation_and_return_domain": null,
+          "second_variation_kernel_residual": null
+        }
+      },
+      "explicit_preferred_shape_lambda_from_bound_parents": null,
+      "qualitative_C2_map_and_local_hessian": true,
+      "required_interval_fields_filled": 0,
+      "required_interval_fields_total": 37,
+      "stage4q_heuristic_envelope_diagnostic_only": {
+        "stable_output_ss_upper": "2.35229803733523688657e-06",
+        "stable_output_su_upper": "0.00872967925507364510274",
+        "stable_output_uu_upper": "32.1177872795057766098",
+        "unstable_output_ss_upper": "0.596927216155550555143",
+        "unstable_output_su_upper": "0.577595137453158491425",
+        "unstable_output_uu_upper": "158.531778725688866416"
+      },
+      "stage4q_values_enter_strict_ingress": false
+    },
+    "exact_output_split_action": {
+      "affine_chart_identity": "because j and chi are affine, D2Q_coord is obtained from D2Q_Y by the fixed input injection J and the displayed P_s/f_hat output actions, with no chart Hessian remainder",
+      "elementary_tensor": "y tensor mu tensor nu",
+      "output_phase_action": "evaluate the continuous atom-density f_hat on the entire completed output history, including its recovery atom and certified density/tail, before subtracting q_hat*f_hat",
+      "proved": true,
+      "raw_Ps_norm_upper_for_comparison_only": "22.8105001598406993275915906585555782087469568184444968669628504",
+      "raw_f_norm_upper_for_comparison_only": "21.8105001598406993275915906585555782087469568184444968669628504",
+      "raw_projection_factors_avoided": true,
+      "same_finite_adapter_may_replace_continuous_pair": false,
+      "stable_input": "replace each input measure norm by its exact quotient cost d_s",
+      "stable_output": "P_s(y tensor mu tensor nu)=(y-q_hat*f_hat(y)) tensor mu tensor nu",
+      "unstable_input": "evaluate each input measure on q_hat before absolute values",
+      "unstable_output": "f_hat(y tensor mu tensor nu)=f_hat(y)*mu tensor nu"
+    },
+    "full_ball_inflation_theorem": {
+      "block_map": "B_i(z)=O_o D2Q_coord(z)[I_a .,I_b .] for the fixed split",
+      "center_strict_caps_currently_validated": false,
+      "continuity": "each B_i is operator-norm continuous at 0 because Q_coord is C2 and every I_a,O_o is fixed and bounded",
+      "inflation_numeric_upper_currently_validated": false,
+      "lambda_numeric_lower_currently_validated": false,
+      "proof": "take the minimum of the six positive center headrooms and use continuity at 0; no compactness and no mesh argument is used",
+      "proved_qualitative_implication": true,
+      "qualitative_target_transfer": "if ||B_i(0)||<target_i for all six strict targets, then there exists lambda>0 such that sup_{z in B_lambda}||B_i(z)||<target_i simultaneously",
+      "quantitative_acceptance": "C_i+Delta_i(lambda)<cap_i, with both terms outward and source-bound",
+      "quantitative_inflation": "Delta_i(lambda)=sup_{z in B_lambda}N_i(D2Q_coord(z)-D2Q_coord(0))"
+    },
+    "minimal_missing_ingress": {
+      "decisive_missing_object": "one source-bound directed atom-density/projective-bimeasure enclosure of the center D2Q and its uniform residual on a numerically declared preferred-shape ball after the exact event and q/f actions",
+      "finite_mesh_refinement_would_close": false,
+      "not_missing_anymore": [
+        "a qualitative C2 selected near-two-period return",
+        "existence and local boundedness of its Banach Hessian",
+        "a qualitative C2 local stable graph for the selected map",
+        "the center derivative DQ_Y(Y_*)=A^2",
+        "the fixed center splitting and two-step rates",
+        "the correct analytic event-Hessian formula",
+        "the correct split-aware residual norm and acceptance implication"
+      ],
+      "still_missing": [
+        "outward center first-variation atom-density rows on every source cell",
+        "outward center ss,su,uu projective bimeasure rows on every output cell",
+        "correlated event quotient and full output phase completion",
+        "continuous q_hat/f_hat action with all tails on those six rows",
+        "uniform base-ball inflation with a numerical lambda and strict caps"
+      ]
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/direct_two_period_derivative_stage4t.json": "6998c1ac89440f180ebe753d1aa41c36c8a849183794fdc38c52f2d8d54e94e1",
+      "experiments/results/leaky_inner_event_aligned_return_hessian_stage4o_contract.json": "dc0e3951cb529dbdca384ff548ab0d7cd7786fe02573741e80e9c945452b2a23",
+      "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json": "860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542",
+      "experiments/results/leaky_inner_signed_second_variation_stage4q_pilot.json": "e4481bca2d021517073216dab15ee91c43cf301822b15e337c1b5061e9aaf49a",
+      "experiments/results/leaky_inner_stage4s_hessian_bridge.json": "28e7116d855ec1a7e2b169356dce4d4dfb130069b35616a5ed6416f6634522e5"
+    },
+    "parent_theorem_audit": {
+      "all_parent_bytes_and_source_manifests_validated": true,
+      "stage4o": "exact fixed-time, event-time, complete-history, and one-phase-projection D2 formulas; every numerical Hessian ingress null",
+      "stage4p": "six-block graph arithmetic and wide target box only; no continuous-history block supplied",
+      "stage4q": "signed finite-section diagnostic with all nineteen theorem flags false",
+      "stage4s_b": "finite-sampling no-go, atomic lift, projection factors, and six-block budgets; strict numerical ingress null",
+      "stage4t": "binds and types the Stage-4S-A/4R direct selected C2 map, then proves D Q_Y(Y_*)=A^2 and transfers the fixed center splitting/rates"
+    },
+    "phase_section_dual": {
+      "dual": "Y*=M(K) x R with ||(mu,c)||=||mu||_TV+|c|",
+      "extension_convention": "tilde_f is any Hahn-Banach extension of f_hat from Sigma_0 to Y; the quotient value below is extension independent",
+      "fixed_pair": "q_hat in Sigma_0, f_hat in Sigma_0*, ||q_hat||_Y=1, f_hat(q_hat)=1",
+      "history_space": "Y=C(K,R) x R, K=[-tau_max,0], with ||(phi,w)||_Y=max(||phi||_infinity,|w|)",
+      "phase_section": "Sigma_0=ker(ell_0), ell_0(phi,w)=phi(0)",
+      "stable_and_unstable": "E_s=ker(f_hat) inside Sigma_0 and E_u=span{q_hat}"
+    },
+    "qualitative_hessian_localization": {
+      "K_H_numeric_upper": null,
+      "existence_source": "the Stage-4S-A/4R direct selected map bound and typed by Stage-4T",
+      "hessian": "H(z)=D2 Q_coord(z) in Bil(E_s x R,E_s x R;E_s x R)",
+      "imported_map": "Q_coord:D->E_s x R is C2 on an open neighborhood D of 0, Q_coord(0)=0",
+      "lambda_H_equals_preferred_scale_one": false,
+      "lambda_H_numeric_lower": null,
+      "local_boundedness_conclusion": "there exist lambda_H>0 and K_H<infinity with B_lambda_H subset D and sup_{z in B_lambda_H}||H(z)||<=K_H",
+      "operator_norm_continuity": "for every epsilon>0 there is delta>0 such that ||z||<delta implies ||H(z)-H(0)||_bilinear<epsilon",
+      "preferred_shape_ball": "B_lambda={||x_s||_Y<=0.0097*lambda, |x_u|<=0.00025*lambda}",
+      "proved": true,
+      "reason": "operator-norm continuity at 0, not compactness of an infinite-dimensional closed ball",
+      "same_ball_self_map_claimed": false
+    },
+    "qualitative_local_stable_graph": {
+      "conclusion": "there are neighborhoods U_s of 0 in Z_s and U of 0 in Z and a C2 map psi:U_s->Z_u with psi(0)=0 and Dpsi(0)=0 such that W_sel^s,loc={x_s+psi(x_s)} is the local stable manifold of the selected coordinate map",
+      "coordinate_space": "Z=E_s x R with the pullback J norm and splitting Z=Z_s direct_sum Z_u",
+      "effective_domain_radius": null,
+      "effective_graph_height_or_slope": null,
+      "global_self_map_needed": false,
+      "linearization": "L=DQ_coord(0)=J^(-1)A^2J preserves Z_s and Z_u",
+      "local_characterization": "after shrinking U inside D intersect D_out, W_sel^s,loc consists of the points whose Q_coord iterates remain in U and converge to 0",
+      "local_map": "Q_coord:D->D_out, where D and D_out are open neighborhoods of 0 in the same Banach coordinate space and Q_coord(0)=0",
+      "nonlinear_remainder": "Q_coord(z)=Lz+N(z), N(0)=0 and DN(0)=0; C2 regularity makes sup_{||z||<r}||DN(z)|| arbitrarily small as r decreases",
+      "periodic_orbit_stable_set_germ_identified": false,
+      "physical_first_return_or_event_ordinal_used": false,
+      "proved": true,
+      "pulse_sheet_crossing_implied": false,
+      "reason_global_self_map_not_needed": "the local theorem uses Q_coord only while iterates remain in one smaller open neighborhood; it does not require Q_coord to map the entire anisotropic ball into itself",
+      "stable_power_bound": "||(L|Z_s)^n||<=0.01^n",
+      "theorem_invoked": "the local stable-manifold theorem for a C2 Banach-space map with a hyperbolic fixed point and invertible unstable block",
+      "unstable_inverse_power_bound": "||((L|Z_u)^(-1))^n||<=rho_u,2^n with rho_u,2<=0.3021835013350534687660493212683136997<1",
+      "why_periodic_germ_still_open": "identifying selected-map iterates with convergence to the periodic orbit along all intervening flow arcs still needs the Stage-4R recurrence/phase-isolation hypotheses"
+    },
+    "rigorous_interval_algorithm": {
+      "first_variation_defect": "R_U=dot(U_tilde)-DF(X_tilde)U_tilde with every delayed row and the affine initial trace included; propagate its signed measure TV bound by a validated retarded resolvent",
+      "forbidden": [
+        "mesh convergence as an error bound on an arbitrary C ball",
+        "binary64 Stage-4Q rows as outward intervals",
+        "separate absolute values before the event/output correlations",
+        "a finite q/f adapter in place of the continuous Grushin pair",
+        "a center calculation promoted to a full-ball bound"
+      ],
+      "minimally_sufficient": true,
+      "representation": "signed atoms plus interval polynomial/L1 densities for first variation rows, and projective signed bimeasures for second variation rows",
+      "second_variation_defect": "R_V=dot(V_tilde)-DF(X_tilde)V_tilde-D2F(X_tilde)[U_tilde,U_tilde]; propagate in projective bimeasure norm with zero affine initial second jet",
+      "steps": [
+        "fix one selected-event domain and partition physical source time and output phase at every delay activation, method-of-steps seam, event-window endpoint, and theta endpoint",
+        "enclose the nonlinear base tube and D1F,D2F,D3F on the whole anisotropic ball with outward interval Taylor/Picard remainders",
+        "propagate the current/delayed first-variation Riesz rows as signed atom-density measures for arbitrary stable inputs and for q_hat; bound the signed defect and initial trace in TV",
+        "assemble the ss,su,uu D2F sources before modulus and solve the Volterra second-variation equation in projective bimeasure norm; bound its signed differential/integral defect",
+        "form Z and H with the same positive event-speed enclosure, retaining n,dot_U,d,e and inverse powers of a in one correlated interval object",
+        "complete every theta output and the recovery coordinate, including left/right endpoints, short cells, and all seams; use interval polynomial remainders, not nodal interpolation",
+        "apply the continuous q_hat/f_hat pair to the correlated object, including normalization, atom, density, and tail errors; use the phase/stable quotient before absolute values",
+        "separate a directed center core from a uniform ball residual using D3F and the validated base/first/second-kernel defects",
+        "take the six split-projective norms once, allocate every residual to the frozen Stage-4S-B budget, and require six strict inequalities in one source-bound run"
+      ]
+    },
+    "schema_id": "leaky-inner-split-bimeasure-residual-stage4w-v1",
+    "six_block_residual_acceptance": {
+      "C_i_definition": "one outward split-projective bound for the signed center event Hessian after exact input and output actions",
+      "acceptance_inequality": "C_i + sum_{r in six residual categories} delta_{i,r} < cap_i for every one of the six blocks",
+      "all_six_one_correlated_run_required": true,
+      "blocks": {
+        "stable_output_ss_upper": {
+          "actual_directed_center_core_bound": null,
+          "actual_projected_residuals": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "directed_center_core_target": "0.0001",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.09999",
+            "continuous_qf_and_output_phase_completion": "0.09999",
+            "event_quotient_and_history_translation": "0.149985",
+            "first_variation_kernel_residual": "0.149985",
+            "full_ball_inflation_and_return_domain": "0.19998",
+            "second_variation_kernel_residual": "0.19998"
+          },
+          "stage4p_wide_cap": "1",
+          "strict_acceptance_validated": false,
+          "strict_unused_reserve": "0.09999"
+        },
+        "stable_output_su_upper": {
+          "actual_directed_center_core_bound": null,
+          "actual_projected_residuals": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "directed_center_core_target": "0.02",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.998",
+            "continuous_qf_and_output_phase_completion": "0.998",
+            "event_quotient_and_history_translation": "1.497",
+            "first_variation_kernel_residual": "1.497",
+            "full_ball_inflation_and_return_domain": "1.996",
+            "second_variation_kernel_residual": "1.996"
+          },
+          "stage4p_wide_cap": "10",
+          "strict_acceptance_validated": false,
+          "strict_unused_reserve": "0.998"
+        },
+        "stable_output_uu_upper": {
+          "actual_directed_center_core_bound": null,
+          "actual_projected_residuals": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "directed_center_core_target": "40",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "96",
+            "continuous_qf_and_output_phase_completion": "96",
+            "event_quotient_and_history_translation": "144",
+            "first_variation_kernel_residual": "144",
+            "full_ball_inflation_and_return_domain": "192",
+            "second_variation_kernel_residual": "192"
+          },
+          "stage4p_wide_cap": "1000",
+          "strict_acceptance_validated": false,
+          "strict_unused_reserve": "96"
+        },
+        "unstable_output_ss_upper": {
+          "actual_directed_center_core_bound": null,
+          "actual_projected_residuals": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "directed_center_core_target": "0.75",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.425",
+            "continuous_qf_and_output_phase_completion": "0.425",
+            "event_quotient_and_history_translation": "0.6375",
+            "first_variation_kernel_residual": "0.6375",
+            "full_ball_inflation_and_return_domain": "0.85",
+            "second_variation_kernel_residual": "0.85"
+          },
+          "stage4p_wide_cap": "5",
+          "strict_acceptance_validated": false,
+          "strict_unused_reserve": "0.425"
+        },
+        "unstable_output_su_upper": {
+          "actual_directed_center_core_bound": null,
+          "actual_projected_residuals": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "directed_center_core_target": "0.75",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.925",
+            "continuous_qf_and_output_phase_completion": "0.925",
+            "event_quotient_and_history_translation": "1.3875",
+            "first_variation_kernel_residual": "1.3875",
+            "full_ball_inflation_and_return_domain": "1.85",
+            "second_variation_kernel_residual": "1.85"
+          },
+          "stage4p_wide_cap": "10",
+          "strict_acceptance_validated": false,
+          "strict_unused_reserve": "0.925"
+        },
+        "unstable_output_uu_upper": {
+          "actual_directed_center_core_bound": null,
+          "actual_projected_residuals": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "directed_center_core_target": "180",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "82",
+            "continuous_qf_and_output_phase_completion": "82",
+            "event_quotient_and_history_translation": "123",
+            "first_variation_kernel_residual": "123",
+            "full_ball_inflation_and_return_domain": "164",
+            "second_variation_kernel_residual": "164"
+          },
+          "stage4p_wide_cap": "1000",
+          "strict_acceptance_validated": false,
+          "strict_unused_reserve": "82"
+        }
+      },
+      "delta_definition": "one outward split-projective norm of the corresponding true minus represented object, uniformly over the declared ball",
+      "direct_split_route_uses_raw_ambient_ceiling": false,
+      "implication": "the triangle inequality and the split-projective operator inequality imply all six continuous-history block bounds",
+      "proved_implication": true,
+      "simultaneous_raw_ambient_route_ceiling_for_comparison_only": "0.000075821898359165758130303777206169293987002640332774673434480774332024461564673227512507633949307981643787507878",
+      "strict_acceptance_currently_validated": false
+    },
+    "split_projective_bimeasure_theorem": {
+      "admissible_representation": "B=sum_or_Bochner_integral y_r tensor mu_r tensor nu_r with y_r in Sigma_0 and sum/integral ||y_r||||mu_r||||nu_r|| finite; mu_r,nu_r are signed atom-density measures including the recovery atom",
+      "input_costs": {
+        "stable": "d_s(mu)=dist(mu,span{ell_0,tilde_f}) in Y*",
+        "unstable": "d_u(mu)=|mu(q_hat)|"
+      },
+      "operator_inequality": "||O_o B[I_a .,I_b .]||_bilinear <= N_ab^o(B) for a,b,o in {s,u}",
+      "output_costs": {
+        "stable": "omega_s(y)=||y-q_hat*f_hat(y)||_Y",
+        "unstable": "omega_u(y)=|f_hat(y)|"
+      },
+      "proof": "apply the exact restriction/evaluation bounds to each signed rank-one term, apply P_s or f_hat to its output coefficient, sum, and take the infimum over projective representations",
+      "proved": true,
+      "scope": "a validated projective atom-density representation or a residual in this norm is required; finite nodal values alone do not establish membership or an error bound",
+      "split_projective_cost": "N_ab^o(B)=inf_rep sum/integral omega_o(y_r)*d_a(mu_r)*d_b(nu_r)",
+      "symmetry": "the su block may use a symmetric representation, but no factor of two is inserted unless it is present in that representation"
+    },
+    "stable_quotient_norm_theorem": {
+      "annihilator_identity": "E_s^perp=span{ell_0,tilde_f} because E_s=ker(ell_0) intersect ker(tilde_f)",
+      "coarse_projection_factor_necessary": false,
+      "gain": "current-phase atoms and f_hat multiples may be removed before total variation, while q_hat inputs are evaluated with sign",
+      "proof": "the restriction Y*->E_s* is a metric quotient with kernel E_s^perp; Hahn-Banach gives the reverse inequality and hence the exact distance formula",
+      "proved": true,
+      "stable_row_cost": "d_s(mu):=inf_{alpha,beta}||mu-alpha*ell_0-beta*tilde_f||_{Y*}",
+      "statement": "for every mu in Y*, ||mu|_{E_s}|| = inf_{alpha,beta in R} ||mu-alpha*ell_0-beta*tilde_f||_{Y*}",
+      "unstable_identity": "sup_{|c|<=1}|mu(c*q_hat)|=|mu(q_hat)|",
+      "unstable_row_cost": "d_u(mu):=|mu(q_hat)|"
+    },
+    "status": "PROVED_SPLIT_QUOTIENT_AND_RESIDUAL_THEOREM; QUALITATIVE_LOCAL_HESSIAN_AND_SELECTED_MAP_STABLE_GRAPH; NUMERICAL_INGRESS_OPEN",
+    "theorem_boundary": {
+      "conditional": "strict continuous-history six-block bounds follow if the listed directed center cores and residuals satisfy the frozen budgets",
+      "graph_or_onset_promoted": false,
+      "open": "every numerical center/block/residual value, an explicit useful ball, a quantitative graph, identification with the periodic-orbit stable-set germ, pulse crossing/onset, routing, capture, biological control, and network safety",
+      "proved": "qualitative existence/local boundedness of the complete-history Hessian, a qualitative local C2 stable graph for the selected map, the exact stable quotient and split-projective bounds, the exact event/output assembly order, the six-block residual implication, and the center-to-small-ball continuity implication"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact parent-byte and source-manifest validation; Banach-dual quotient identity for the fixed phase/stable section; projective signed atom-density/bimeasure inequalities; exact complete-history event Hessian algebra and fixed q_hat/f_hat output action; qualitative C2 center-to-ball localization; exact replay of the Stage-4S-B six-block budgets; no numerical kernel, interval, mesh, graph, or onset claim",
+    "artifact_sha256": "2fc75c41bc0bb7e00a17320f7de8cb7a112395a67b0c31b62e879ec1fad804c0",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_split_bimeasure_residual_stage4w.py",
+    "formal_core_sha256": "96526e1eb85218e602d28302ed005eed509c969a09943af603fd827eaf1073e3",
+    "parent_result_sha256": {
+      "experiments/results/direct_two_period_derivative_stage4t.json": "6998c1ac89440f180ebe753d1aa41c36c8a849183794fdc38c52f2d8d54e94e1",
+      "experiments/results/leaky_inner_event_aligned_return_hessian_stage4o_contract.json": "dc0e3951cb529dbdca384ff548ab0d7cd7786fe02573741e80e9c945452b2a23",
+      "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json": "860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542",
+      "experiments/results/leaky_inner_signed_second_variation_stage4q_pilot.json": "e4481bca2d021517073216dab15ee91c43cf301822b15e337c1b5061e9aaf49a",
+      "experiments/results/leaky_inner_stage4s_hessian_bridge.json": "28e7116d855ec1a7e2b169356dce4d4dfb130069b35616a5ed6416f6634522e5"
+    },
+    "result": "experiments/results/leaky_inner_split_bimeasure_residual_stage4w.json",
+    "runtime": {
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "schema_id": "leaky-inner-split-bimeasure-residual-stage4w-v1",
+    "source_sha256": {
+      "docs/leaky-inner-split-bimeasure-residual-stage4w.md": "77f9e3a6a4ad09b0ebe928b98301bc3ebfdc9c083d5f16823f496f85d686b080",
+      "experiments/leaky_inner_split_bimeasure_residual_stage4w.py": "19540fcb0d6cf5339c6cd999bd8fbf8df1022cdbf6b80102a9d62ca481a46fc0",
+      "src/canard_control/leaky_inner_split_bimeasure_residual_stage4w.py": "cfdb4b042f027b8975e7c2fd34da7a1b584078cb66c7aac1f74a094d21d6600c",
+      "tests/test_leaky_inner_split_bimeasure_residual_stage4w.py": "3fcb1bef6bbeb91585ba56136193349b290a6d683e29a7a71aac228494dfdb27"
+    }
+  }
+}

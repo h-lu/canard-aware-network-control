@@ -1,0 +1,605 @@
+{
+  "bridge": {
+    "atomic_bimeasure_lift": {
+      "coefficient_tensor": "A=(a_oij) at exact physical input nodes",
+      "continuous_output_completion": "if the exact bimeasure row is L_theta-Lipschitz on an endpoint-complete mesh of width Delta, sup_theta ||B(theta)|| <= max_nodes ||B(theta_j)|| + Delta*L_theta/2",
+      "difference_to_true_RFDE_Hessian_bounded_here": false,
+      "directed_coefficients_required": true,
+      "input_sampler_norm": "1",
+      "lift": "B_N(h,k)=R_out((sum_ij a_oij h(t_i)k(t_j))_o), with piecewise-linear R_out",
+      "operator_bound": "||B_N|| <= max_o sum_ij |a_oij|",
+      "piecewise_linear_output_reconstruction_norm": "1",
+      "proved_lemma": true,
+      "stage4q_coefficients_directed_here": false
+    },
+    "branch": "inner_saddle_candidate_selected_near_two_period_event",
+    "claim_status": {
+      "all_five_parent_results_byte_and_source_manifest_bound": true,
+      "all_six_complete_history_hessian_blocks_validated": false,
+      "asynchronous_network_safety_validated": false,
+      "biological_capture_validated": false,
+      "common_full_ball_two_return_event_window_validated": false,
+      "common_modulus_and_lipschitz_error_formulas_proved": true,
+      "complete_output_phase_and_history_seams_validated": false,
+      "continuous_history_projection_amplification_factors_proved": true,
+      "continuous_qf_action_on_all_six_kernels_validated": false,
+      "direct_projected_residual_route_identified_as_preferred": true,
+      "directed_base_orbit_and_coefficient_tube_validated": false,
+      "directed_finite_atomic_tensor_coefficients_enclosed": false,
+      "directed_first_variation_signed_kernel_residual_validated": false,
+      "directed_second_variation_signed_bimeasure_residual_validated": false,
+      "finite_atomic_bimeasure_lift_lemma_proved": true,
+      "finite_sampling_operator_norm_no_go_proved": true,
+      "full_ball_hessian_inflation_validated": false,
+      "interior_cubic_stencil_stability_constant_proved": true,
+      "one_sided_endpoint_stencil_stability_constant_proved": true,
+      "piecewise_linear_output_lift_norm_one_proved": true,
+      "quantitative_inner_stable_graph_validated": false,
+      "required_interval_quantity_ledger_registered": true,
+      "selected_pulse_stable_sheet_crossing_validated": false,
+      "six_block_wide_box_budget_arithmetic_proved": true,
+      "stage4p_wide_box_entered_into_strict_numeric_ingress": false,
+      "stage4q_all_theorem_flags_false_audited": true,
+      "stage4q_binary_tensor_outward_rounded": false,
+      "stage4q_finite_qf_adapter_equals_continuous_grushin_pair": false,
+      "stage4q_mesh_sequence_converges_in_operator_norm_on_arbitrary_C_ball": false,
+      "two_sided_basin_routing_validated": false,
+      "uniform_positive_event_speed_validated": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "continuous_projection_stability": {
+      "P_s_norm_upper": "22.8105001598406993275915906585555782087469568184444968669628504",
+      "block_amplification_factors": {
+        "stable_output_ss_upper": "11868.734751762042211550854406831399178829148995425233236372405921382028410503017675241280886633833849164937578",
+        "stable_output_su_upper": "520.31891754209256957310511896750281554828308968745774677466571542388179093242183818162152111052082398272784433",
+        "stable_output_uu_upper": "22.8105001598406993275915906585555782087469568184444968669628504",
+        "unstable_output_ss_upper": "11348.415834219949641977749287863896363280865905737775489597740205958146619570595837059659365523313025182209733",
+        "unstable_output_su_upper": "497.50841738225187024551352830894723733953613286901324990770286502388179093242183818162152111052082398272784433",
+        "unstable_output_uu_upper": "21.8105001598406993275915906585555782087469568184444968669628504"
+      },
+      "continuous_pair": "||q_hat||_Y=1, f_hat(q_hat)=1, P_s=I-q_hat*f_hat",
+      "direct_projected_residual_avoids_raw_factor_loss": true,
+      "factor_formulas": {
+        "stable_output_ss_upper": "||P_s||^3",
+        "stable_output_su_upper": "||P_s||^2",
+        "stable_output_uu_upper": "||P_s||",
+        "unstable_output_ss_upper": "||f_hat||*||P_s||^2",
+        "unstable_output_su_upper": "||f_hat||*||P_s||",
+        "unstable_output_uu_upper": "||f_hat||"
+      },
+      "raw_Hessian_remainder_rule": "if ||H-H_tilde||_bilinear<=eta before input/output projection, the six block errors are at most factor_i*eta",
+      "stage4d_continuous_atom_density_measure_enclosed": true,
+      "stage4d_normalized_history_measure_norm_upper": "73.1664630843022025700700732031936657173710929314407708",
+      "stage4d_raw_fourier_tail_split_l1_upper": "0.0115053142704094907258785142698206679264089722219785741",
+      "stage4l_exact_restricted_fhat_norm_upper": "21.8105001598406993275915906585555782087469568184444968669628504",
+      "tail_use_boundary": "these parent bounds validate existence/summability of the continuous output covector; an all-six kernel action and its correlated tail error still require the missing bimeasure rows"
+    },
+    "cubic_stencil_certificates": {
+      "application_boundary": "the constants prove stability and conditional error for a common modulus/Lipschitz class; the Stage-4M stable ball contains arbitrary continuous histories and supplies no such common modulus",
+      "interior_four_node": {
+        "common_Lipschitz_error_maximizer": "x=1/2",
+        "common_Lipschitz_error_polynomial_times_Delta_L": "(4/3)*x*(x-2)*(x-1)*(x+1)",
+        "evaluation_cell": "x in [0,1]",
+        "exact_common_Lipschitz_error_constant_times_Delta": "3/4",
+        "exact_lebesgue_constant": "5/4",
+        "lebesgue_maximizer": "x=1/2",
+        "lebesgue_polynomial_on_cell": "1+x-x^2",
+        "modulus_bound": "|h-I_3h| <= (5/4)*omega_h(2*Delta)",
+        "normalized_nodes": [
+          "-1",
+          "0",
+          "1",
+          "2"
+        ],
+        "stability_proved": true,
+        "uniform_C_ball_convergence_proved": false,
+        "weight_signs_on_open_cell": [
+          "-",
+          "+",
+          "+",
+          "-"
+        ]
+      },
+      "one_sided_right_endpoint": {
+        "common_Lipschitz_error_maximizer": "x=(-3+sqrt(5))/2",
+        "common_Lipschitz_error_polynomial_times_Delta_L": "-(4/3)*x*(x+1)*(x+2)*(x+3)",
+        "evaluation_cell": "x in [-1,0]",
+        "exact_common_Lipschitz_error_constant_times_Delta": "4/3",
+        "exact_lebesgue_constant": "(7+14*sqrt(7))/27",
+        "lebesgue_constant_directed_decimal": {
+          "lower": "1.6311303094408988247045415018870239244423566134501593527835808306968505",
+          "upper": "1.6311303094408988247045415018870239244423566134501593527835808306968506"
+        },
+        "lebesgue_maximizer": "x=(-4+sqrt(7))/3",
+        "lebesgue_polynomial_on_cell": "1-3*x-4*x^2-x^3",
+        "modulus_bound": "|h-I_3h| <= ((7+14*sqrt(7))/27)*omega_h(3*Delta)",
+        "normalized_nodes": [
+          "-3",
+          "-2",
+          "-1",
+          "0"
+        ],
+        "positive_time_nodes_used": false,
+        "stability_proved": true,
+        "uniform_C_ball_convergence_proved": false,
+        "weight_polynomials": [
+          "-x(x+1)(x+2)/6",
+          "x(x+1)(x+3)/2",
+          "-x(x+2)(x+3)/2",
+          "(x+1)(x+2)(x+3)/6"
+        ],
+        "weight_signs_on_open_cell": [
+          "+",
+          "-",
+          "+",
+          "+"
+        ]
+      }
+    },
+    "failure_gates": {
+      "all_release_gates_pass": false,
+      "gates": [
+        {
+          "failure_condition": "mesh convergence or nodal interpolation is used as an operator-norm estimate on the arbitrary C-history ball",
+          "id": "S1_sampling_blindness",
+          "triggered_by_current_stage4q": true
+        },
+        {
+          "failure_condition": "a Stage-4Q binary row or heuristic envelope is entered as an outward core bound",
+          "id": "S2_binary_not_outward",
+          "triggered_by_current_stage4q": true
+        },
+        {
+          "failure_condition": "any source time, delay slot, activation face, short cell, history seam, or output phase is absent",
+          "id": "S3_missing_signed_kernel_residual",
+          "triggered_by_current_stage4q": true
+        },
+        {
+          "failure_condition": "the full-ball common event window or positive denominator is missing, or event terms are divided/normed separately",
+          "id": "S4_event_denominator",
+          "triggered_by_current_stage4q": true
+        },
+        {
+          "failure_condition": "finite q/f quadrature replaces the exact continuous pair without a directed pair-and-tail error",
+          "id": "S5_coordinate_mismatch",
+          "triggered_by_current_stage4q": true
+        },
+        {
+          "failure_condition": "nodal output maxima are used without a continuous theta supremum or derivative/Bernstein completion",
+          "id": "S6_output_phase_completion",
+          "triggered_by_current_stage4q": true
+        },
+        {
+          "failure_condition": "a center-orbit kernel is promoted without a D3F-based or direct nonlinear-ball perturbation enclosure",
+          "id": "S7_full_ball_inflation",
+          "triggered_by_current_stage4q": true
+        },
+        {
+          "failure_condition": "rank-one/event/output terms are normed before their signed combination or the moving phase projection is applied twice",
+          "id": "S8_projection_order",
+          "triggered_by_current_stage4q": false
+        }
+      ],
+      "release_rule": "fail if any one of the following gates is triggered; all six blocks must be certified in one correlated source-bound run"
+    },
+    "finite_sampling_no_go": {
+      "bilinear_invisibility_witness": "B_*(h,k)=h(t_*)k(t_*)y_* has norm one but its action is undetermined by the nodal data",
+      "conclusion": "||I-R_N S_N||>=1 for every finite N",
+      "identity": "S_N h=0, hence (I-R_N S_N)h=h",
+      "mesh_refinement_alone_controls_arbitrary_C_ball": false,
+      "operator_norm_lower": "1",
+      "phase_space": "X=C(K) with the supremum norm, K a nontrivial compact interval",
+      "proved": true,
+      "reconstruction": "any bounded linear R_N:R^N->X",
+      "repair": "use a physical-coordinate signed atom-density bimeasure residual, or declare an equicontinuous/smoother domain with a common modulus",
+      "sampler": "S_N h=(h(t_1),...,h(t_N)) at any finite node set",
+      "witness": "choose t_* outside the nodes and h in C(K) with ||h||_infinity=1, h(t_j)=0 and h(t_*)=1"
+    },
+    "finite_section_audit": {
+      "stage4q_all_nineteen_theorem_flags_false": true,
+      "stage4q_binary_rows_are_outward_rounded": false,
+      "stage4q_direct_vs_composition_oracle_is_an_error_bound": false,
+      "stage4q_evidence_status": "DIAGNOSTIC_NONRIGOROUS_SOURCE_BOUND",
+      "stage4q_finite_section_adapter_is_validated": false,
+      "stage4q_mesh_counts": [
+        120,
+        180,
+        240
+      ],
+      "stage4q_mesh_envelope_is_an_error_bound": false,
+      "stage4q_signed_formation_order_is_structurally_correct": true,
+      "use_permitted_here": "allocation-scale diagnostic only; no value enters strict numeric ingress or a Banach Hessian inequality"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_event_aligned_return_hessian_stage4o_contract.json": "dc0e3951cb529dbdca384ff548ab0d7cd7786fe02573741e80e9c945452b2a23",
+      "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json": "860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542",
+      "experiments/results/leaky_inner_signed_second_variation_stage4q_pilot.json": "e4481bca2d021517073216dab15ee91c43cf301822b15e337c1b5061e9aaf49a",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "required_interval_quantities": {
+      "A_full_ball_domain_and_selected_event": {
+        "purpose": "required outward interval ingress",
+        "validated": false,
+        "values": {
+          "T2_minus_strictly_greater_than_2_tau_max": null,
+          "common_solution_tube_through_T2_plus": null,
+          "returned_split_ball_and_graph_domain_containment": null,
+          "strict_event_endpoint_signs": null,
+          "uniform_event_speed_lower_a_star": null
+        }
+      },
+      "B_base_orbit_and_field_jets": {
+        "purpose": "required outward interval ingress",
+        "validated": false,
+        "values": {
+          "D1F_current_and_every_delay_slot": null,
+          "D2F_current_and_every_delay_slot": null,
+          "D3F_full_ball_perturbation_bound": null,
+          "base_history_tube_all_source_and_output_times": null,
+          "delay_activation_faces_and_short_cells": null,
+          "dot_X_and_ddot_X_complete_history_rows": null
+        }
+      },
+      "C_first_variation_signed_measures": {
+        "purpose": "required outward interval ingress",
+        "validated": false,
+        "values": {
+          "initial_translation_atoms_at_physical_history_points": null,
+          "measure_residual_integrals_and_initial_trace_error": null,
+          "qhat_input_rows_every_source_time_and_delay_slot": null,
+          "stable_input_rows_every_source_time_and_delay_slot": null,
+          "time_cell_and_delay_seam_jumps": null
+        }
+      },
+      "D_second_variation_signed_bimeasures": {
+        "purpose": "required outward interval ingress",
+        "validated": false,
+        "values": {
+          "bilinear_symmetry_and_all_history_seams": null,
+          "bimeasure_residual_integrals": null,
+          "outward_rounding_and_quadrature_remainders": null,
+          "retarded_terminal_response_all_output_phases": null,
+          "ss_su_uu_quadratic_source_bimeasures": null
+        }
+      },
+      "E_event_quotient_and_translation": {
+        "purpose": "required outward interval ingress",
+        "validated": false,
+        "values": {
+          "T_h_T_k_T_hk_same_denominator_enclosures": null,
+          "common_positive_denominator_and_inverse_powers_through_a_minus_3": null,
+          "complete_theta_translation_before_one_phase_projection": null,
+          "event_identity_and_section_tangency_residuals": null,
+          "n_s_n_u_dot_U_and_ddot_X_correlated_rows": null
+        }
+      },
+      "F_continuous_qf_and_output_completion": {
+        "purpose": "required outward interval ingress",
+        "validated": false,
+        "values": {
+          "exact_fhat_atom_density_measure_and_tail": null,
+          "exact_qhat_complete_history_enclosure_and_normalization": null,
+          "fhat_qhat_pairing_error": null,
+          "left_endpoint_and_theta_zero_section_rows": null,
+          "output_phase_lipschitz_or_Bernstein_supremum_bound": null,
+          "qf_action_on_each_correlated_output_bimeasure": null
+        }
+      },
+      "G_full_ball_inflation": {
+        "purpose": "required outward interval ingress",
+        "validated": false,
+        "values": {
+          "center_to_ball_coefficient_change": null,
+          "center_to_ball_first_kernel_change": null,
+          "center_to_ball_second_kernel_change": null,
+          "event_time_and_denominator_change": null,
+          "uniform_projected_block_remainder_on_split_ball": null
+        }
+      }
+    },
+    "schema_id": "leaky-inner-stage4s-hessian-bridge-v1",
+    "status": "PROVED_BRIDGE_DESIGN_AND_SAMPLING_NO_GO; NO_BANACH_HESSIAN_BOUND",
+    "strict_numeric_ingress": {
+      "all_output_phase_cells_and_endpoints_covered": false,
+      "all_six_blocks_from_one_correlated_run": false,
+      "all_six_strict_budget_tests_pass": false,
+      "all_source_time_cells_and_delay_seams_covered": false,
+      "continuous_signed_kernel_residual_norms": {
+        "stable_output_ss_upper": null,
+        "stable_output_su_upper": null,
+        "stable_output_uu_upper": null,
+        "unstable_output_ss_upper": null,
+        "unstable_output_su_upper": null,
+        "unstable_output_uu_upper": null
+      },
+      "directed_banach_core_blocks": {
+        "stable_output_ss_upper": null,
+        "stable_output_su_upper": null,
+        "stable_output_uu_upper": null,
+        "unstable_output_ss_upper": null,
+        "unstable_output_su_upper": null,
+        "unstable_output_uu_upper": null
+      },
+      "directed_finite_atomic_tensor_coefficients": null,
+      "evidence_status": "OPEN_FAIL_CLOSED_AFTER_EXACT_BRIDGE_AUDIT",
+      "projected_error_contributions": {
+        "base_orbit_and_coefficient_error": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        },
+        "continuous_qf_and_output_phase_completion": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        },
+        "event_quotient_and_history_translation": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        },
+        "first_variation_kernel_residual": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        },
+        "full_ball_inflation_and_return_domain": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        },
+        "second_variation_kernel_residual": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        }
+      },
+      "uniform_full_ball_hessian_blocks": {
+        "stable_output_ss_upper": null,
+        "stable_output_su_upper": null,
+        "stable_output_uu_upper": null,
+        "unstable_output_ss_upper": null,
+        "unstable_output_su_upper": null,
+        "unstable_output_uu_upper": null
+      }
+    },
+    "theorem_boundary": {
+      "not_proved_here": "a directed lift of the Stage-4Q tensor, its distance to the RFDE Hessian, a common two-return event/return tube, any uniform Hessian block, stable graph, crossing, onset, routing, capture, or safety",
+      "preferred_next_certificate": "a physical-coordinate atom-density-bimeasure residual for U and V through two periods, with the event quotient and exact q/f outputs formed before total variation",
+      "proved_here": "the sampling no-go, atomic lift, stencil stability constants, exact projection factors, exact wide-box allocation, and complete future interval certificate interface",
+      "stage4q_status_preserved": "DIAGNOSTIC_NONRIGOROUS_SOURCE_BOUND",
+      "wide_box_status_preserved": "CONDITIONAL_ACCEPTANCE_DESIGN_ONLY"
+    },
+    "wide_box_error_budget": {
+      "all_six_strict_acceptance_tests_validated": false,
+      "blocks": {
+        "stable_output_ss_upper": {
+          "actual_directed_core_bound": null,
+          "actual_projected_error_contributions": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "independent_directed_banach_core_target": "0.0001",
+          "pilot_to_core_target_ratio_diagnostic_only": "0.0235229803733523688657",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.09999",
+            "continuous_qf_and_output_phase_completion": "0.09999",
+            "event_quotient_and_history_translation": "0.149985",
+            "first_variation_kernel_residual": "0.149985",
+            "full_ball_inflation_and_return_domain": "0.19998",
+            "second_variation_kernel_residual": "0.19998"
+          },
+          "raw_hessian_only_error_ceiling_if_it_consumes_all_six_allowances": "0.000075821898359165758130303777206169293987002640332774673434480774332024461564673227512507633949307981643787507878",
+          "raw_hessian_remainder_amplification_factor": "11868.734751762042211550854406831399178829148995425233236372405921382028410503017675241280886633833849164937578",
+          "residual_after_core_target": "0.9999",
+          "stage4p_wide_cap": "1",
+          "stage4q_heuristic_envelope_diagnostic_only": "0.00000235229803733523688657",
+          "strict_block_acceptance_validated": false,
+          "strict_unused_reserve": "0.09999",
+          "sum_identity": "core_target + six projected error allowances + reserve = wide_cap"
+        },
+        "stable_output_su_upper": {
+          "actual_directed_core_bound": null,
+          "actual_projected_error_contributions": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "independent_directed_banach_core_target": "0.02",
+          "pilot_to_core_target_ratio_diagnostic_only": "0.436483962753682255137",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.998",
+            "continuous_qf_and_output_phase_completion": "0.998",
+            "event_quotient_and_history_translation": "1.497",
+            "first_variation_kernel_residual": "1.497",
+            "full_ball_inflation_and_return_domain": "1.996",
+            "second_variation_kernel_residual": "1.996"
+          },
+          "raw_hessian_only_error_ceiling_if_it_consumes_all_six_allowances": "0.017262489786897624085789644961808585927795947332925308343928505545460096748431191513570730542859271238695741427",
+          "raw_hessian_remainder_amplification_factor": "520.31891754209256957310511896750281554828308968745774677466571542388179093242183818162152111052082398272784433",
+          "residual_after_core_target": "9.98",
+          "stage4p_wide_cap": "10",
+          "stage4q_heuristic_envelope_diagnostic_only": "0.00872967925507364510274",
+          "strict_block_acceptance_validated": false,
+          "strict_unused_reserve": "0.998",
+          "sum_identity": "core_target + six projected error allowances + reserve = wide_cap"
+        },
+        "stable_output_uu_upper": {
+          "actual_directed_core_bound": null,
+          "actual_projected_error_contributions": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "independent_directed_banach_core_target": "40",
+          "pilot_to_core_target_ratio_diagnostic_only": "0.802944681987644415245",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "96",
+            "continuous_qf_and_output_phase_completion": "96",
+            "event_quotient_and_history_translation": "144",
+            "first_variation_kernel_residual": "144",
+            "full_ball_inflation_and_return_domain": "192",
+            "second_variation_kernel_residual": "192"
+          },
+          "raw_hessian_only_error_ceiling_if_it_consumes_all_six_allowances": "37.877293086327217046768268671427689110930552389335773069416041445438184506025545239087911750159472501674291501",
+          "raw_hessian_remainder_amplification_factor": "22.8105001598406993275915906585555782087469568184444968669628504",
+          "residual_after_core_target": "960",
+          "stage4p_wide_cap": "1000",
+          "stage4q_heuristic_envelope_diagnostic_only": "32.1177872795057766098",
+          "strict_block_acceptance_validated": false,
+          "strict_unused_reserve": "96",
+          "sum_identity": "core_target + six projected error allowances + reserve = wide_cap"
+        },
+        "unstable_output_ss_upper": {
+          "actual_directed_core_bound": null,
+          "actual_projected_error_contributions": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "independent_directed_banach_core_target": "0.75",
+          "pilot_to_core_target_ratio_diagnostic_only": "0.79590295487406740685733333333333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.425",
+            "continuous_qf_and_output_phase_completion": "0.425",
+            "event_quotient_and_history_translation": "0.6375",
+            "first_variation_kernel_residual": "0.6375",
+            "full_ball_inflation_and_return_domain": "0.85",
+            "second_variation_kernel_residual": "0.85"
+          },
+          "raw_hessian_only_error_ceiling_if_it_consumes_all_six_allowances": "0.00033705144893141088387081168427890557108441000857258110340785284085354581386878696565631677134838749270274938785",
+          "raw_hessian_remainder_amplification_factor": "11348.415834219949641977749287863896363280865905737775489597740205958146619570595837059659365523313025182209733",
+          "residual_after_core_target": "4.25",
+          "stage4p_wide_cap": "5",
+          "stage4q_heuristic_envelope_diagnostic_only": "0.596927216155550555143",
+          "strict_block_acceptance_validated": false,
+          "strict_unused_reserve": "0.425",
+          "sum_identity": "core_target + six projected error allowances + reserve = wide_cap"
+        },
+        "unstable_output_su_upper": {
+          "actual_directed_core_bound": null,
+          "actual_projected_error_contributions": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "independent_directed_banach_core_target": "0.75",
+          "pilot_to_core_target_ratio_diagnostic_only": "0.77012684993754465523333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "0.925",
+            "continuous_qf_and_output_phase_completion": "0.925",
+            "event_quotient_and_history_translation": "1.3875",
+            "first_variation_kernel_residual": "1.3875",
+            "full_ball_inflation_and_return_domain": "1.85",
+            "second_variation_kernel_residual": "1.85"
+          },
+          "raw_hessian_only_error_ceiling_if_it_consumes_all_six_allowances": "0.016733385223518001712062699474131962798093492619757255896069440274886128379818420019139743657035989436757765993",
+          "raw_hessian_remainder_amplification_factor": "497.50841738225187024551352830894723733953613286901324990770286502388179093242183818162152111052082398272784433",
+          "residual_after_core_target": "9.25",
+          "stage4p_wide_cap": "10",
+          "stage4q_heuristic_envelope_diagnostic_only": "0.577595137453158491425",
+          "strict_block_acceptance_validated": false,
+          "strict_unused_reserve": "0.925",
+          "sum_identity": "core_target + six projected error allowances + reserve = wide_cap"
+        },
+        "unstable_output_uu_upper": {
+          "actual_directed_core_bound": null,
+          "actual_projected_error_contributions": {
+            "base_orbit_and_coefficient_error": null,
+            "continuous_qf_and_output_phase_completion": null,
+            "event_quotient_and_history_translation": null,
+            "first_variation_kernel_residual": null,
+            "full_ball_inflation_and_return_domain": null,
+            "second_variation_kernel_residual": null
+          },
+          "independent_directed_banach_core_target": "180",
+          "pilot_to_core_target_ratio_diagnostic_only": "0.88073210403160481342222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222",
+          "projected_error_allowances": {
+            "base_orbit_and_coefficient_error": "82",
+            "continuous_qf_and_output_phase_completion": "82",
+            "event_quotient_and_history_translation": "123",
+            "first_variation_kernel_residual": "123",
+            "full_ball_inflation_and_return_domain": "164",
+            "second_variation_kernel_residual": "164"
+          },
+          "raw_hessian_only_error_ceiling_if_it_consumes_all_six_allowances": "33.836913165286634262102823749866633223093179872002787226678664160815201547161804152877096490065127230835046669",
+          "raw_hessian_remainder_amplification_factor": "21.8105001598406993275915906585555782087469568184444968669628504",
+          "residual_after_core_target": "820",
+          "stage4p_wide_cap": "1000",
+          "stage4q_heuristic_envelope_diagnostic_only": "158.531778725688866416",
+          "strict_block_acceptance_validated": false,
+          "strict_unused_reserve": "82",
+          "sum_identity": "core_target + six projected error allowances + reserve = wide_cap"
+        }
+      },
+      "budget_role": "future acceptance design only; the Stage-4Q heuristic column is not an ingress value and cannot satisfy the directed core target",
+      "direct_projected_route_preferred": true,
+      "error_allowance_fraction_sum": "0.9",
+      "reason_direct_projected_route_preferred": "a raw ambient remainder is multiplied by up to ||P_s||^3; retaining the q/f correlations and enclosing each projected bimeasure directly uses the much larger blockwise allowances without this loss",
+      "reserve_fraction": "0.1",
+      "simultaneous_raw_hessian_only_error_ceiling": "0.000075821898359165758130303777206169293987002640332774673434480774332024461564673227512507633949307981643787507878"
+    }
+  },
+  "manifest": {
+    "arithmetic_core_sha256": "21d327e2a125ec745b5e9a896918de8fde7b7ff87115af94db4826a4de820e26",
+    "arithmetic_scope": "exact Decimal/Fraction-equivalent wide-box allocation arithmetic; exact finite-sampling no-go and atomic-bimeasure lift; symbolic cubic-stencil Lebesgue/Lipschitz constants; exact projection perturbation factors from the frozen Stage-4L continuous-history norm; byte and source-manifest binding of Stages 4D, 4L, 4O, 4P and 4Q; no outward enclosure of the Stage-4Q tensor and no continuous-history or full-ball Hessian claim",
+    "bridge_sha256": "095c947e19259b0d8a081738aad27a3860e2addf0070f63d1d9f070eb6bbf175",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_stage4s_hessian_bridge.py",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_event_aligned_return_hessian_stage4o_contract.json": "dc0e3951cb529dbdca384ff548ab0d7cd7786fe02573741e80e9c945452b2a23",
+      "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json": "860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542",
+      "experiments/results/leaky_inner_signed_second_variation_stage4q_pilot.json": "e4481bca2d021517073216dab15ee91c43cf301822b15e337c1b5061e9aaf49a",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "result": "experiments/results/leaky_inner_stage4s_hessian_bridge.json",
+    "runtime": {
+      "arithmetic": "decimal.Decimal at 110 digits plus exact symbolic identities",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "schema_id": "leaky-inner-stage4s-hessian-bridge-v1",
+    "source_sha256": {
+      "docs/leaky_inner_stage4s_hessian_bridge.md": "2527a66c100cc2f1228341ffd92794bbdc81c8f59363cb8987d74d6289cd5e86",
+      "experiments/leaky_inner_stage4s_hessian_bridge.py": "6aecb02ae9b0703b9c35fdc440850a9749ad6b83ee311fe94f0114355102c86e",
+      "src/canard_control/leaky_inner_stage4s_hessian_bridge.py": "a9dc573c5e6a8cad12baba2c089a1050273db863664f635806c4e370be381498",
+      "tests/test_leaky_inner_stage4s_hessian_bridge.py": "15292a7e606078f3d36bcd48407ae9c39912d2888dea5e85599fef0bc6d1246f"
+    }
+  }
+}

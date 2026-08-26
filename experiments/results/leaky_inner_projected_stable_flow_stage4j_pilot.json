@@ -1,0 +1,280 @@
+{
+  "artifact": {
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "analytic_double_projection_constraints_encoded": true,
+      "analytic_stable_residual_constraint_validated": false,
+      "common_projected_residual_formed_before_norm": true,
+      "common_signed_bivariate_density_integral_validated": false,
+      "complete_history_atoms_and_density_sampled": true,
+      "complete_history_khat_upper_validated": false,
+      "continuous_output_phase_supremum_validated": false,
+      "continuous_start_phase_supremum_validated": false,
+      "delay_activation_seams_pilot_computed": true,
+      "differential_residual_pilot_computed": true,
+      "fq_phase_invariance_sampled": true,
+      "general_start_four_word_formula_implemented": true,
+      "history_transport_boundary_pilot_computed": true,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "k_s_equals_one_validated": false,
+      "kint_upper_validated": false,
+      "ordinary_cell_seams_imported_from_stage4i": true,
+      "phase_fixed_one_step_stable_map_norm_upper_validated": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "pilot_history_quadrature_is_outward": false,
+      "preprojection_endpoint_delta_t_upper_validated": false,
+      "projected_initial_defect_sampled": true,
+      "projected_residual_delta_upper_validated": false,
+      "same_double_projected_object_used_for_khat_and_residual": true,
+      "split_return_tube_validated": false,
+      "stable_power_constant_numeric_upper_validated": false,
+      "stage4d_covector_transported_in_coherent_gauge": true,
+      "stage4j_directed_upgrade_numerically_supported": true,
+      "terminal_event_projection_only": true,
+      "terminal_event_row_error_upper_validated": false,
+      "unadvanced_translation_identity_block_included": true,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "common_projected_residual_pilot": {
+      "algebraic_constraint_status": "encoded exactly at formula level; a directed enclosure of the transported rows and normalization is still open",
+      "analytic_stable_constraint_validated": false,
+      "construction_order": "assemble the same complete raw operator A; form P_t A P_s for both Khat and the residual, retaining all correlated atom+density terms; only then take row norms",
+      "delay_activation_seams_included": true,
+      "differential_residual_rows": [
+        {
+          "sampled_integral": "1.861336138806169e-06",
+          "sampled_point_maximum": "4.1106209316368546e-07",
+          "start_phase": "0"
+        },
+        {
+          "sampled_integral": "1.7679090444179674e-06",
+          "sampled_point_maximum": "7.044634005390939e-07",
+          "start_phase": "4.5465524872819802"
+        },
+        {
+          "sampled_integral": "5.3128797970438616e-07",
+          "sampled_point_maximum": "7.0279757317917209e-07",
+          "start_phase": "9.0931049745639605"
+        },
+        {
+          "sampled_integral": "3.0153124884786463e-07",
+          "sampled_point_maximum": "2.2978063064699669e-07",
+          "start_phase": "13.639657461845941"
+        }
+      ],
+      "directed_delta_upper": null,
+      "double_projection_formula": "P_t A P_s",
+      "history_transport_boundary_included": true,
+      "ordinary_cell_seams_included": true,
+      "sampled_binary_inverse_boundary_defect_binary64": "3.086272909135865e-11",
+      "sampled_delay_activation_jump_proxy_binary64": "4.0373466588703695e-12",
+      "sampled_delay_activation_right_residual_binary64": "4.4343795963949618e-07",
+      "sampled_delta_argmax_start_phase": "0",
+      "sampled_delta_binary64": "1.8616889989214706e-06",
+      "sampled_delta_sum_includes_initial_boundary_activation_and_cell_seams": true,
+      "sampled_differential_integral_supremum_binary64": "1.861336138806169e-06",
+      "sampled_history_transport_boundary_argmax_phase": "4.5465524872819802",
+      "sampled_history_transport_boundary_defect_binary64": "3.8902146170279841e-11",
+      "sampled_ordinary_cell_seam_conversion_proxy_binary64": "6.4219319930260692e-13",
+      "sampled_point_residual_maximum_binary64": "7.044634005390939e-07",
+      "sampled_projected_initial_defect_argmax_phase": "4.5465524872819802",
+      "sampled_projected_initial_defect_binary64": "3.0927842927310576e-10",
+      "stage4i_maximum_cell_seam_infinity_upper": "1.3877787807814457e-17"
+    },
+    "complete_history_khat_pilot": {
+      "current_atoms_included": true,
+      "directed_khat_upper": null,
+      "sampled_argmax_block": "unadvanced_translation_identity",
+      "sampled_argmax_end_time": "7.9564668527434659",
+      "sampled_argmax_start_phase": "7.9564668527434659",
+      "sampled_khat_binary64": "17.25643838716222",
+      "unadvanced_formula": "1+|q_v(u)|*||f_s/f_s(q_s)|| for u<s, because the translated point atom is singular to the atom+density row",
+      "unadvanced_translation_identity_included": true
+    },
+    "general_start_four_word_identity": {
+      "active_words": [
+        "empty",
+        "(0)",
+        "(1)",
+        "(0,0)"
+      ],
+      "formula": "R(t,s)=F(t)[I+dC0+dC1+dC00-(C0(t)-C0(s+2*tau0))*C0(s+tau0)]G(s), with each difference active only after its exact delay threshold",
+      "period": "18.186209949127921",
+      "stage4h_s_zero_resolvent_oracle_binary64": "4.2793324439571734e-11",
+      "support_status": "analytic finite-word identity on t-s<=T; the oracle checks only the binary implementation",
+      "tau0": "8.9442719099991592",
+      "tau1": "11.180339887498949"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_signed_stable_flow_stage4h.json": "6577a7fcba9888b5126adcd894a361c9436b29a6f619b04f3d54ce5c3218fc15",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_inner_word_primitive_stage4i.json": "1248e9d95444f3cc12565c1e11b4bbeab3d4a9a7bb8922893e38b1ffa439f73e",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "pilot_discretization": {
+      "finite_history_nodes_promoted_to_operator_bound": false,
+      "flow_time_count_per_phase": 9,
+      "fq_phase_count": 9,
+      "history_integration": "binary64 trapezoidal pilot",
+      "history_node_count": 50,
+      "khat_start_phase_count": 17,
+      "output_history_count": 9,
+      "primitive_guide_cells": 1042,
+      "residual_start_phase_count": 5,
+      "residual_time_count_per_phase": 9,
+      "unadvanced_time_count": 65
+    },
+    "proof_upgrade_contract": {
+      "next_object": "192-bit bivariate Taylor--Bernstein cells for the complete projected guide and residual, including the unadvanced block",
+      "numerically_feasible": true,
+      "promotion_rule": "all continuous signed gates must be directed and terminal Ms_upper<rho_s before stable power or K_s=1 is true",
+      "required_directed_fields": [
+        "Khat",
+        "Delta",
+        "Kint=Khat/(1-Delta)",
+        "Delta_T",
+        "C_Pi,T",
+        "epsilon_Pi,T",
+        "terminal_Ms_upper"
+      ]
+    },
+    "schema_id": "leaky-inner-projected-stable-flow-stage4j-pilot-v1",
+    "terminal_event_budget_pilot": {
+      "directed_c_pi_t_upper": "2.0135805680204055",
+      "directed_epsilon_pi_t_upper": null,
+      "directed_kint_upper": null,
+      "directed_preprojection_delta_t_upper": null,
+      "directed_terminal_ms_upper": null,
+      "event_projection_location": "terminal_time_only",
+      "moving_pi_t_used": false,
+      "sampled_event_row_error_proxy_binary64": "1.4076817519509743e-06",
+      "sampled_kint_binary64": "17.256470513343537",
+      "sampled_preprojection_delta_t_binary64": "1.8616889989214706e-06",
+      "sampled_terminal_ms_proxy_binary64": "0.0042005181066427713",
+      "stage4h_sampled_terminal_signed_center_binary64": "0.0041344217704704289"
+    },
+    "transported_covector_oracles": {
+      "phase_zero_density_vs_stage4h_formula": "same p_v(theta+tau_j)b_j(theta+tau_j) formula",
+      "rows": [
+        {
+          "high_order_defect_from_phase_zero_direct_action": "1.197715366529871e-19",
+          "high_order_imag": "-2.6751460287514796e-08",
+          "high_order_real": "-0.00042612962097774012",
+          "phase": "0",
+          "pilot_trapezoid_imag": "-2.6750967036078917e-08",
+          "pilot_trapezoid_real": "-0.00042612176387217467",
+          "pilot_trapezoid_vs_high_order": "7.8571055809339578e-09",
+          "sampled_normalized_f_norm": "21.712741012108491"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "3.3874271121373114e-15",
+          "high_order_imag": "-2.6751460288071723e-08",
+          "high_order_real": "-0.00042612962098112766",
+          "phase": "2.2732762436409901",
+          "pilot_trapezoid_imag": "-2.6750186163128482e-08",
+          "pilot_trapezoid_real": "-0.00042610932517770858",
+          "pilot_trapezoid_vs_high_order": "2.0295803459068579e-08",
+          "sampled_normalized_f_norm": "21.164555215497636"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "1.4931903559327945e-14",
+          "high_order_imag": "-2.6751460289841642e-08",
+          "high_order_real": "-0.00042612962099267213",
+          "phase": "4.5465524872819802",
+          "pilot_trapezoid_imag": "-2.6747743703794282e-08",
+          "pilot_trapezoid_real": "-0.00042607041871411326",
+          "pilot_trapezoid_vs_high_order": "5.9202278675532862e-08",
+          "sampled_normalized_f_norm": "106.6828852473658"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "2.1388874874149937e-13",
+          "high_order_imag": "-2.6751460301321082e-08",
+          "high_order_real": "-0.00042612962119162898",
+          "phase": "6.8198287309229704",
+          "pilot_trapezoid_imag": "-2.6752689456666761e-08",
+          "pilot_trapezoid_real": "-0.00042614920066488202",
+          "pilot_trapezoid_vs_high_order": "1.9579473291628836e-08",
+          "sampled_normalized_f_norm": "177.60267518105775"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "6.0555206799581965e-13",
+          "high_order_imag": "-2.6751460325143252e-08",
+          "high_order_real": "-0.0004261296215832923",
+          "phase": "9.0931049745639605",
+          "pilot_trapezoid_imag": "-2.6751316492765411e-08",
+          "pilot_trapezoid_real": "-0.00042612733044718285",
+          "pilot_trapezoid_vs_high_order": "2.2911361139615523e-09",
+          "sampled_normalized_f_norm": "194.79788746002913"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "8.1555818050589022e-13",
+          "high_order_imag": "-2.6751460341492162e-08",
+          "high_order_real": "-0.00042612962179329841",
+          "phase": "11.36638121820495",
+          "pilot_trapezoid_imag": "-2.6749505526126788e-08",
+          "pilot_trapezoid_real": "-0.00042609848312940278",
+          "pilot_trapezoid_vs_high_order": "3.1138663956992369e-08",
+          "sampled_normalized_f_norm": "95.862244890333244"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "8.5257165007356305e-13",
+          "high_order_imag": "-2.6751460343033991e-08",
+          "high_order_real": "-0.00042612962183031188",
+          "phase": "13.639657461845941",
+          "pilot_trapezoid_imag": "-2.675122181284228e-08",
+          "pilot_trapezoid_real": "-0.00042612582223287024",
+          "pilot_trapezoid_vs_high_order": "3.7995974491242325e-09",
+          "sampled_normalized_f_norm": "23.03791468067584"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "8.2440510764733618e-13",
+          "high_order_imag": "-2.6751460342452483e-08",
+          "high_order_real": "-0.00042612962180214534",
+          "phase": "15.912933705486932",
+          "pilot_trapezoid_imag": "-2.6752195341507676e-08",
+          "pilot_trapezoid_real": "-0.00042614132975623122",
+          "pilot_trapezoid_vs_high_order": "1.1707954108952399e-08",
+          "sampled_normalized_f_norm": "7.6825570321744943"
+        },
+        {
+          "high_order_defect_from_phase_zero_direct_action": "5.9551452454529385e-13",
+          "high_order_imag": "-2.675146032879985e-08",
+          "high_order_real": "-0.00042612962157325475",
+          "phase": "18.186209949127921",
+          "pilot_trapezoid_imag": "-2.6750853063205276e-08",
+          "pilot_trapezoid_real": "-0.00042611994831225319",
+          "pilot_trapezoid_vs_high_order": "9.6732610206228672e-09",
+          "sampled_normalized_f_norm": "10.799966932601137"
+        }
+      ],
+      "transport_gauge": "p(t)=exp(-s_u*t/T)r(t/T), q(t)=U(t,0)q^Sigma; f_t(q_t) is invariant"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "exact parent-byte and source binding; exact general-start four-word resolvent identity; binary64 cubic-Hermite primitive guides; sampled complete-history atom+density rows including unadvanced translation; same-row projected differential residual; sampled history-boundary, delay-activation and cell-seam diagnostics; endpoint-only event projection; trapezoidal history integration and finite phase grids; no outward bivariate integration, continuous (s,t) supremum, directed Delta/Khat/Kint, stable power, graph, separator, or onset theorem",
+    "artifact_sha256": "b2f35d90f6948fdbc082d1e6226513199d31d78459e191a7abbdc228883d2383",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_projected_stable_flow_stage4j_pilot.py",
+    "environment": {
+      "numpy": "2.5.2",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "8",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_signed_stable_flow_stage4h.json": "6577a7fcba9888b5126adcd894a361c9436b29a6f619b04f3d54ce5c3218fc15",
+      "experiments/results/leaky_inner_stable_projection_stage3.json": "9ea776a6e627745ded7f7023523999bfbd29a0be4878172c76512d623146e2ea",
+      "experiments/results/leaky_inner_word_primitive_stage4i.json": "1248e9d95444f3cc12565c1e11b4bbeab3d4a9a7bb8922893e38b1ffa439f73e",
+      "experiments/results/leaky_route_c_adjoint_stage4d.json": "af51bcfc20000b804134c1d8b9cacc303013676c440a89f2ecb52faf0042d568"
+    },
+    "result": "experiments/results/leaky_inner_projected_stable_flow_stage4j_pilot.json",
+    "schema_id": "leaky-inner-projected-stable-flow-stage4j-pilot-v1",
+    "source_sha256": {
+      "docs/leaky-inner-projected-stable-flow-stage4j-contract.md": "bf2645f913d1dd4c81bcd15ecb759df4240314fbb408fd9567e82fb0992119b8",
+      "docs/leaky-inner-projected-stable-flow-stage4j-pilot.md": "279cd34f79da949799a15485e7f45b0ce5af3880c9605eb693480742082c175f",
+      "experiments/leaky_inner_projected_stable_flow_stage4j_pilot.py": "0867bdfce9216d58e733ed20233de38e7789b53b7a3305575138bdfc5e25cf53",
+      "src/canard_control/leaky_inner_projected_stable_flow_stage4j_pilot.py": "5cb8845bf51a588f3007c5147eef253c4c0c8298665c50419fe577fbfc4de9e6"
+    }
+  }
+}

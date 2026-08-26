@@ -1,0 +1,234 @@
+{
+  "certificate": {
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "a_commutes_with_fixed_projections_proved": true,
+      "a_preserves_fixed_es_and_eu_proved": true,
+      "b_equals_a_squared_preserves_same_fixed_splitting_proved": true,
+      "b_intertwining_relations_proved": true,
+      "b_stable_power_bound_is_squared_proved": true,
+      "b_unstable_inverse_power_formula_proved": true,
+      "common_tube_not_replaced_by_nested_domain_registered": true,
+      "direct_q_stage4r_route_registered": true,
+      "even_iterate_convergence_implies_odd_iterate_convergence_conditionally": true,
+      "fixed_derivative_splitting_not_promoted_to_nonlinear_invariance": true,
+      "model_common_intervening_flow_tube_validated": false,
+      "model_first_positive_return_validated": false,
+      "model_isolated_section_patch_validated": false,
+      "model_nested_composition_domain_validated": false,
+      "model_no_earlier_section_hit_validated": false,
+      "model_nonlinear_es_or_eu_invariance_validated": false,
+      "model_nonlinear_one_return_map_validated": false,
+      "model_nonlinear_two_return_map_validated": false,
+      "model_one_return_self_map_ball_validated": false,
+      "model_periodic_orbit_stable_set_germ_validated": false,
+      "model_pulse_graph_crossing_or_onset_validated": false,
+      "model_q_equals_p_squared_identity_validated": false,
+      "model_q_fixed_point_and_theta_p_equals_2p_validated": false,
+      "model_repeated_selected_hits_validated": false,
+      "model_routing_capture_or_network_safety_validated": false,
+      "model_same_semiflow_time_sum_validated": false,
+      "model_sharper_two_step_stable_one_step_bound_proved": true,
+      "model_two_return_c2_hessian_blocks_validated": false,
+      "model_two_return_hyperbolic_stable_graph_validated": false,
+      "model_two_return_self_map_ball_validated": false,
+      "model_two_step_stable_rate_0p01_with_k_one_proved": true,
+      "model_two_step_unstable_backward_rate_squared_proved": true,
+      "model_uniform_positive_return_time_bounds_validated": false,
+      "nonlinear_dq_equals_a_squared_chain_rule_registered": true,
+      "nonlinear_q_equals_p_squared_requires_nested_domain_registered": true,
+      "parent_bytes_and_semantics_validated": true,
+      "proved_conditional_open_ledger_fail_closed": true,
+      "q_equals_p_squared_sufficient_not_necessary_for_stable_germ_registered": true,
+      "rank_one_ps_and_pu_are_complementary_projections_proved": true,
+      "repeated_selected_hit_requirements_registered": true,
+      "same_semiflow_composition_time_sum_registered": true,
+      "selected_return_and_first_return_separated": true,
+      "sigma_equals_es_direct_sum_eu_proved": true,
+      "stage4l_exact_eigen_relations_consumed": true,
+      "stage4l_exact_intertwining_consumed": true
+    },
+    "common_tube_and_repeated_hit_audit": {
+      "nested_q_equals_p2_supplies_conditionally": [
+        "two defined selected-map legs",
+        "one named intermediate selected hit",
+        "the derivative identity DQ(p)=A^2",
+        "even/odd discrete convergence equivalence"
+      ],
+      "pure_algebra_supplies": [
+        "B=A^2",
+        "fixed derivative splitting and intertwining",
+        "squared stable forward powers",
+        "squared unstable backward powers"
+      ],
+      "requires_separate_ordinal_validation": [
+        "no earlier section hit",
+        "first-positive-return status",
+        "an m-th-return label if claimed"
+      ],
+      "stage4l_terminal_operator_norm_is_a_tube_bound": false,
+      "stage4l_terminal_operator_norm_proves_repeated_hits": false,
+      "still_requires_nonlinear_semiflow_validation": [
+        "one C1 or C2 selected one-return branch P",
+        "D_2 and an invariant Q-domain N",
+        "same-semiflow realization and uniform positive time bounds",
+        "one common tube covering both legs for every point",
+        "repeated composability for every Q iterate",
+        "section isolation at the periodic orbit"
+      ]
+    },
+    "formal_two_step_split_theorem": {
+      "fixed_invariance": "A(E_s) subset E_s, A(E_u) subset E_u, B(E_s) subset E_s, and B(E_u) subset E_u",
+      "one_step_intertwining": "AP_s=P_sA=P_sAP_s and AP_u=P_uA=mu P_u",
+      "projection_identities": "P_s^2=P_s, P_u^2=P_u, P_sP_u=P_uP_s=0, and P_s+P_u=I",
+      "projections_and_spaces": "P_u=q f, P_s=I-q f, E_u=span{q}=ran(P_u), E_s=ker(f)=ran(P_s), and Sigma=E_s direct_sum E_u",
+      "proof": "expand P_s=I-qf and P_u=qf, use f(q)=1 for idempotence, use Aq=mu q and fA=mu f for commutation, and then multiply the exact identities; the rate statements follow from B_s^n=A_s^(2n) and scalar multiplication on E_u",
+      "setting": "Sigma is a Banach space, A in L(Sigma), q in Sigma, f in Sigma*, f(q)=1, Aq=mu q, and fA=mu f",
+      "stable_rate_transfer": "if ||A_s^n||<=K_s*rho_s^n, then ||B_s^n||<=K_s*rho_s^(2n); when K_s=1 this is rate rho_s^2",
+      "stable_restriction": "A_s=A|E_s, B_s=B|E_s=A_s^2, and B_s^n=A_s^(2n)",
+      "two_step_definition": "B:=A^2 is the linear two-step operator; B is not named a nonlinear selected return",
+      "two_step_intertwining": "BP_s=P_sB=P_sBP_s=(AP_s)^2 and BP_u=P_uB=mu^2 P_u",
+      "unstable_inverse_formula": "if mu!=0, then B_u is invertible and ||(B_u)^(-n)||=|mu|^(-2n) for every n>=0 in any inherited norm on the one-dimensional E_u",
+      "unstable_rate_transfer": "if |mu|^(-1)<=rho_u<1, then ||(B_u)^(-n)||<=rho_u^(2n), with K_u=1 and backward rate rho_u^2",
+      "unstable_restriction": "B_u=B|E_u=mu^2 I_Eu"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "model_linear_instance": {
+      "fixed_splitting": "P_s=I-qf, P_u=qf, E_s=ker(f), E_u=span{q}",
+      "forward_backward_orientation": "the unstable forward multiplier of B has modulus |mu_u|^2>1; the number below one is the norm rate for backward powers, not a forward contraction rate",
+      "nonlinear_claim": false,
+      "one_return_stable_one_step_upper": "0.00989642748161000022244199598343033161524171712346077110775160712",
+      "one_return_stable_power": "||A_s^n||<=rho_term^n<=0.1^n with K_s=1",
+      "one_return_unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934",
+      "one_return_unstable_multiplier_modulus_lower": "1.81913372574167842375644213779457264168445028000790971",
+      "one_return_unstable_multiplier_modulus_upper": "2.22189495008307196905747671092766936323792280049007467",
+      "proved_object": "B=A^2 for the Stage-4L selected near-one-period phase-fixed discrete linear section operator",
+      "section": "Sigma_0={h in Y:h_v(0)=0}",
+      "stage4l_exact_relations": [
+        "Aq=mu_u q",
+        "fA=mu_u f",
+        "f(q)=1",
+        "AP_s=P_sA=P_sAP_s"
+      ],
+      "two_return_registered_stable_rate_upper": "0.01",
+      "two_return_sharper_stable_one_step_upper": "0.0000979392768987656512909542642292023934722690772595215680701268436008663590088133855053307238038569905570840746589878769428346944",
+      "two_return_stable_power": "||B_s^n||<=rho_term^(2n)<=0.01^n with K_s=1",
+      "two_return_unstable_backward_rate_upper": "0.302183501335053468766049321268313699617093109911449469063818668425607982682870864983343314167041012216402531488839876224555070910009877958313689944253533344086871769103550439695624961741628356",
+      "two_return_unstable_power": "||(B_u)^(-n)||<=rho_u,2^n, rho_u,2<=rho_u,1^2, K_u=1",
+      "unstable_multiplier_identification": "Stage 4L uses the physical section eigencolumn q=q^Sigma for mu_u; the source-bound Floquet audit has exactly one nontranslation unstable multiplier, so its modulus and inverse bounds apply to this scalar restriction"
+    },
+    "nested_domain_stable_set_bridge": {
+      "all_even_iterates_exist": "Q(N) subset N gives Q^n(x) in N subset D_2 for every n",
+      "all_odd_iterates_exist": "P(Q^n(x)) is defined and lies in D for every n because N subset D_2",
+      "convergence_equivalence": "Q^n(x)->p iff the full alternating P-orbit P^j(x)->p; the reverse is immediate, while the forward direction uses P(Q^n(x))->P(p)=p",
+      "does_not_supply": "event times, flow arcs, a common tube, an event ordinal, or absence of earlier section hits",
+      "model_hypotheses_validated": false,
+      "setting": "P is continuous at p with P(p)=p; N subset D_2; Q=P^2 maps N into N",
+      "stronger_same_patch_version": "to identify a conventional local stable set W_N^s(P), also require P(N) subset N; this is not supplied by Q(N) subset N"
+    },
+    "nonlinear_composition_bridge": {
+      "c2_graph_gate": "a stable graph for Q still requires a C2 self-map on a validated neighborhood, hyperbolicity, and the relevant quantitative nonlinear bounds",
+      "chain_rule": "DQ(p)=DP(p)DP(p)=A^2=B",
+      "composition": "Q=P o P is defined on D_2",
+      "derivative_only": "the fixed E_s direct_sum E_u splitting is invariant for DQ(p); it does not make affine E_s or E_u invariant under nonlinear Q",
+      "hypotheses": "D is an open section-coordinate neighborhood of p, P:D->Sigma is C1, P(p)=p, P(D) need not lie in D, and A=DP(p)",
+      "local_fixed_point_requirement": "p belongs to D_2 because P(p)=p belongs to D",
+      "model_hypotheses_validated": false,
+      "nested_domain": "D_2={x in D:P(x) in D}",
+      "openness": "D_2 is open when P is continuous and D is open",
+      "self_map_not_automatic": "Q:D_2->Sigma need not map D_2, or any chosen N, into itself"
+    },
+    "parent_result_sha256": {
+      "experiments/results/finite_delay_eventually_smooth_selected_return_stage4r.json": "4e68835bc3ba5fd44432d98a3b6b1d41506533d66f3353cd500df3e95da76418",
+      "experiments/results/leaky_inner_stable_manifold_stage1_contract.json": "3c400ec92f00d4c94313b6e0a5b514f60f21335f54cba41ad5ba8a4217e8f21b",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e"
+    },
+    "proved_conditional_open_ledger": {
+      "conditional": [
+        "Q=P^2 and DQ(p)=A^2 for a validated C1 selected self-composition",
+        "same-semiflow time addition and two selected legs",
+        "equality of discrete Q-stable and flow periodic-orbit stable germs",
+        "a C2 hyperbolic stable graph for Q"
+      ],
+      "open_model_specific": [
+        "nonlinear selected P or direct Q on an open/invariant section ball",
+        "nested-domain and repeated-hit closure",
+        "uniform return-time bounds and common intervening flow tube",
+        "section isolation, nonlinear Hessian blocks, and stable graph",
+        "no-earlier/first-return semantics, pulse crossing, onset, routing, and safety"
+      ],
+      "proved": [
+        "general fixed-splitting algebra for A and B=A^2",
+        "general stable and scalar inverse-unstable squared-rate transfer",
+        "model B stable rate 0.01 with K_s=1",
+        "model B scalar unstable backward rate at most the displayed square with K_u=1",
+        "conditional nested-domain chain-rule and discrete even/odd lemmas",
+        "exact audit of the Stage-4R stable-germ hypotheses"
+      ]
+    },
+    "same_semiflow_time_composition": {
+      "common_tube_gate": "to obtain one Q intervening tube G, prove every first leg from N and every second leg from P(N) stays in the same G",
+      "first_return_consequence": false,
+      "model_hypotheses_validated": false,
+      "one_return_hypotheses": "P(x)=Phi_{theta(x)}(x) on D for one selected branch of the same semiflow, theta:D->(0,infinity) is continuous, and both legs are defined on D_2",
+      "period_at_fixed_point": "if theta(p)=P_orbit, then Q(p)=p and Theta_2(p)=2*P_orbit",
+      "selected_hit_count": "the composition records the chosen intermediate hit P(x) and the terminal hit P^2(x), but does not exclude other earlier or intervening section hits",
+      "semigroup_requirement": "the identity uses the semiflow law and existence of the full concatenated trajectory; an abstract map composition is not enough",
+      "time_bounds": "if 0<theta_lower<=theta<=theta_upper on N union P(N), then 2*theta_lower<=Theta_2<=2*theta_upper",
+      "two_return_identity": "Q(x)=P(P(x))=Phi_{Theta_2(x)}(x), Theta_2(x)=theta(x)+theta(P(x))"
+    },
+    "schema_id": "leaky-inner-two-return-stage4s-split-bridge-v1",
+    "scope_boundary": {
+      "common_intervening_flow_tube": false,
+      "linear_two_step_fixed_splitting": true,
+      "linear_two_step_stable_rate": true,
+      "linear_two_step_unstable_backward_rate": true,
+      "nested_composition_domain": false,
+      "no_earlier_hit_or_first_return": false,
+      "nonlinear_selected_one_return": false,
+      "nonlinear_selected_two_return": false,
+      "periodic_orbit_stable_set_germ": false,
+      "pulse_crossing_onset_routing_or_safety": false,
+      "repeated_selected_hits": false,
+      "stable_graph": false
+    },
+    "stage4r_stable_germ_bridge": {
+      "conclusion_if_all_hypotheses_hold": "W_N^s(Q)=N intersect W_G^s(Gamma), hence equality of germs at p",
+      "direct_route": "on a local section patch N containing p, a continuous direct selected return Q:N->N of the same semiflow may be used without any identity Q=P^2",
+      "graph_role": "only a C2 hyperbolic stable-graph theorem for this same Q can identify its graph with the displayed periodic-orbit stable germ",
+      "model_hypotheses_validated": false,
+      "q_equals_p_squared_role": "a sufficient nested-domain construction of Q, not a necessary hypothesis and not a replacement for time/tube/isolation data",
+      "required_fixed_data": "Gamma compact P_orbit-periodic, p in Gamma, Q(p)=p, and Theta(p)=m*P_orbit (m=2 for a near-two-period return)",
+      "required_flow_data": "Q(x)=Phi_{Theta(x)}(x) and one common G contains every Phi_s(x), x in N, 0<=s<=Theta(x)",
+      "required_section_data": "closure(N) intersect Gamma={p}, or the equivalent sequential section-isolation property",
+      "required_time_data": "Theta:N->[Theta_lower,Theta_upper] is continuous and 0<Theta_lower<=Theta_upper<infinity"
+    },
+    "status": "PROVED_LINEAR_SPLIT_WITH_CONDITIONAL_NONLINEAR_BRIDGE"
+  },
+  "manifest": {
+    "arithmetic_scope": "exact parent-byte and semantic validation; symbolic rank-one projector algebra for B=A^2; exact finite-decimal squaring of already directed stable and one-dimensional inverse-unstable bounds; conditional Banach-space chain rule, nested-domain composition, same-semiflow time sum, and Stage-4R isolated-section stable-set-germ adapter",
+    "artifact_sha256": "e374068f4c6dc1ea2c8c40ddac64c21453efb93ec98d8765a13f890caa444770",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_two_return_stage4s_split_bridge.py",
+    "formal_core_sha256": "efeaea278ce03a5de22bae8444dc431e99b9e91409b685b8b0529787f90fe107",
+    "parent_result_sha256": {
+      "experiments/results/finite_delay_eventually_smooth_selected_return_stage4r.json": "4e68835bc3ba5fd44432d98a3b6b1d41506533d66f3353cd500df3e95da76418",
+      "experiments/results/leaky_inner_stable_manifold_stage1_contract.json": "3c400ec92f00d4c94313b6e0a5b514f60f21335f54cba41ad5ba8a4217e8f21b",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e"
+    },
+    "result": "experiments/results/leaky_inner_two_return_stage4s_split_bridge.json",
+    "runtime": {
+      "arithmetic": "symbolic identities plus exact finite-decimal products; no new floating-point enclosure",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "8",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "schema_id": "leaky-inner-two-return-stage4s-split-bridge-v1",
+    "source_sha256": {
+      "docs/leaky_inner_two_return_stage4s_split_bridge.md": "5872c5c65fb9fc32bc7f7da4968551cd6b2a6e39fe2be3fefc5bb830aa25923d",
+      "experiments/leaky_inner_two_return_stage4s_split_bridge.py": "b0d4670955615bbab3dd93c2fe919c82950ff9ca4265a2f4f23d78c56e36d359",
+      "src/canard_control/leaky_inner_two_return_stage4s_split_bridge.py": "178dcedb6277e6ac5531b8f2f70e096cb1a1f552dec5917f7745aa2df5e970fa",
+      "tests/test_leaky_inner_two_return_stage4s_split_bridge.py": "09d3c82a92f2c326eaa3c6a6f75ee3abc49ab459fb2ed8ebd0ba47906646957b"
+    }
+  }
+}

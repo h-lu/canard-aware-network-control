@@ -1,0 +1,710 @@
+{
+  "artifact": {
+    "branch": "inner_saddle_candidate",
+    "claim_status": {
+      "conditional_physical_scaling_premises_validated": false,
+      "conditional_unit_to_physical_scaling_interface_registered": true,
+      "cone_compatible_v2_design_registered": true,
+      "first_positive_return_and_no_earlier_hit_validated": false,
+      "graph_radius_0p0099_validated": false,
+      "hypothetical_stable_power_rate_validated": false,
+      "inner_local_stable_graph_quantitatively_validated": false,
+      "matrix_lyapunov_perron_contraction_validated": false,
+      "matrix_lyapunov_perron_self_map_validated": false,
+      "normalization_transfer_to_continuous_unit_y_coordinates_validated": false,
+      "numerical_closure_is_conditional_design_arithmetic_only": true,
+      "physical_graph_height_below_stage5ga_target_validated": false,
+      "physical_pulse_separator_crossing_validated": false,
+      "recommended_anisotropic_radius_design_registered": true,
+      "selected_pulse_stable_graph_intersection_validated": false,
+      "six_projected_return_hessian_blocks_validated": false,
+      "split_return_tube_validated": false,
+      "stable_power_constant_k_s_equals_one_validated": false,
+      "stable_seed_contains_full_pulse_interval_validated": false,
+      "stage4a_heuristic_blocks_are_directed_uniform_bounds": false,
+      "stage4a_heuristic_row_byte_bound": true,
+      "stage5ga_endpoint_stable_gap_signs_validated": false,
+      "stage5gb_endpoint_cone_bound_validated": false,
+      "status_is_diagnostic": true,
+      "strict_proof_ingress_kept_open": true,
+      "terminal_rate_sensitivity_is_separate_diagnostic": true,
+      "three_exact_rational_majorant_rows_computed": true,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "cone_compatibility_design_driver": {
+      "anticipated_source": "future Stage-5G-b two-endpoint cone certificate",
+      "cone_bound_is_directed_and_validated": false,
+      "entered_into_strict_proof_ingress": false,
+      "expected_numeric_margin": "0.0000197329",
+      "expected_stable_coordinate_upper": "0.0093802671",
+      "full_pulse_interval_seed_containment_validated": false,
+      "interpretation": "unbound design motivation only; Stage-4K neither proves the endpoint cone nor imports it as theorem evidence",
+      "stable_seed_radius_r": "0.0094",
+      "stage5gb_result_parent_bound": false,
+      "status": "DIAGNOSTIC",
+      "strict_expected_inequality_holds_numerically": true
+    },
+    "coordinate_convention": {
+      "conditional_unit_to_physical_scaling_interface": {
+        "box_radius_is_not_substituted_for_graph_height": true,
+        "conditional_physical_height_coarse_upper": "0.0004871",
+        "conditional_premises_validated": false,
+        "endpoint_stable_gap_signs_validated": false,
+        "formula": "|psi|<=H_graph_hat/alpha",
+        "interpretation": "future conditional coordinate conversion only; it does not prove a graph or either endpoint stable-gap sign",
+        "physical_height_target_claim": false,
+        "same_q_f_normalization_required": true,
+        "sensitivity_design_box_radius_R_u_hat": "0.00025",
+        "sensitivity_design_graph_height_upper": "0.0000377728935844380873530041585768118754558470837500707954491993716036267232477925170937740453831458",
+        "sensitivity_graph_self_map_validated": false,
+        "stage4e_alpha_parent_bound": false,
+        "stage5ga_target_parent_bound": false,
+        "unbound_stage4e_alpha_lower": "0.0775543158981",
+        "unbound_stage5ga_target_radius": "0.001"
+      },
+      "normalization_transfer_validated": false,
+      "physical_grushin_scaling_adapter_validated": false,
+      "proposed_fixed_splitting": "P_s=I-q_hat*f_hat",
+      "proposed_normalization": "f_hat(q_hat)=1",
+      "proposed_unstable_covector": "f_hat=||q||_Y*f",
+      "proposed_unstable_vector": "q_hat=q/||q||_Y",
+      "pulse_ambient_unstable_coordinate_is_graph_radius": false,
+      "stage4a_finite_section_normalization": "dominant right vector normalized in nodal l-infinity; used only as a heuristic proxy for the proposed unit-Y coordinate",
+      "unstable_radius_symbol": "R_u_hat"
+    },
+    "directed_upgrade_contract": {
+      "candidate_caps_are_directed_bounds": false,
+      "candidate_two_times_heuristic_caps": {
+        "stable_output_ss_upper": "0.0449373390057929145148",
+        "stable_output_su_upper": "0.1775282712144265750976",
+        "stable_output_uu_upper": "15.89363127345690251956",
+        "unstable_output_ss_upper": "0.593862967417677634074",
+        "unstable_output_su_upper": "0.566192252656026462354",
+        "unstable_output_uu_upper": "52.3937836799089922124"
+      },
+      "priority_block": "stable_output_ss_upper",
+      "projection_order": "form stable deflation and unstable scalar action before taking continuous-history operator norms",
+      "required_fixed_split_outputs": "all six fixed-projection complete-history blocks of D2P on the entire anisotropic graph box",
+      "required_pulse_adapter": "a separate source-bound Stage-5G-b parameter-sharded cone proof that the full pulse stable coordinate interval is contained in the seed radius",
+      "required_return_geometry": "a nonlinear moving-flow tube, a terminal event tube, one positive return, and exclusion of every earlier hit",
+      "required_stable_power": "a directed continuous-history signed stable row proving the all-power pair (rho_s,K_s), including K_s=1",
+      "secondary_priority_block": "unstable_output_ss_upper"
+    },
+    "exact_majorant_rows": [
+      {
+        "exact_majorant_evaluation": {
+          "canonical_positive_weight_lower": {
+            "stable": "1.32605145764674667242898423430302389596224838758533891676933880834678049296545080225081161798287",
+            "unstable": "1.00985050515048201876176776968989689265545686664762855903929321427708084956503603425828192498096"
+          },
+          "canonical_positive_weight_upper": {
+            "stable": "1.32605145764674667242898423430302389596224838758533891676933880834678049296545080225081161798288",
+            "unstable": "1.00985050515048201876176776968989689265545686664762855903929321427708084956503603425828192498097"
+          },
+          "contraction_closes": true,
+          "derivative_lipschitz_matrix_upper": {
+            "m_ss": "0.0465382905321592663065252655585634251262953099332677181887521881031127934812692648291439993159684",
+            "m_su": "0.261760813409504401654355221766572919659371622319508582853000893076113125835253913350629644056887",
+            "m_us": "0.00360553576131128741065720989694719284702373775400210265334515571840347682531387701638912717167379",
+            "m_uu": "0.00501993034884139049020045015779043637183068146607641643269020061208783192471429239972087727610281"
+          },
+          "fixed_point_derivative_sequence_vector_upper": {
+            "stable": "1.04985426150626237268046263313455020238851186888772239503608918780013738644455035073812527006882",
+            "unstable": "0.00380438483089717366816185106072460832476457247534570834887748446420936827981801746515265512172067"
+          },
+          "formulas": {
+            "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+            "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+            "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+            "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+            "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+            "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+            "perron_gate": "rho(M)<1",
+            "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+          },
+          "graph_certificate_closes": true,
+          "graph_derivative_upper": "0.00380438483089717366816185106072460832476457247534570834887748446420936827981801746515265512172067",
+          "graph_height_upper": "0.0000179707068970736427381765284688446795555424127853511194387425935426376167775747767901022296971729",
+          "input_complete": true,
+          "input_order_conditions_hold": true,
+          "missing_inputs": [],
+          "nonlinear_value_vector_upper": {
+            "stable": "0.000001154948915660922029310268",
+            "unstable": "0.00001472400605648395589846355"
+          },
+          "perron_root_upper": "0.0628564826739236146883555669242430750673551594736655884100917143823679755316016022302272730658944",
+          "self_map_closes": true,
+          "self_map_image_vector_upper": {
+            "stable": "0.00963690855846942597825865894505905327736664607472766291960564835343731115587816420873802853771547",
+            "unstable": "0.0000179729002772119074450082002438333655020632689189623185448757758213994060834215485411192014316878"
+          },
+          "self_map_slack_vector_lower": {
+            "stable": "0.000263091441530574021741341054940946722633353925272337080394351646562688844121835791261971462284534",
+            "unstable": "0.0000320270997227880925549917997561666344979367310810376814551242241786005939165784514588807985683122"
+          },
+          "split_ball_contains_graph_box": true,
+          "stable_kernel_coefficient_upper": "205.124707471459497699902026844328782499550316985253178775955802072532513254584390091313009495415",
+          "unstable_kernel_coefficient_upper": "1.22065287179756680804541610725815300705293546682395482988339456291143937648533780619100296618960",
+          "unstable_quadratic_kernel_coefficient_upper": "1.22050390553594952107337045920593970927779744659789962611357927424350815536156839091755940978677",
+          "weighted_row_sum_upper": "0.245881451859619397580261405629623557429854323465825448309009311962452455463044899231577239070484"
+        },
+        "input_hessian_blocks": {
+          "stable_output_ss_upper": "0.0224686695028964572574",
+          "stable_output_su_upper": "0.0887641356072132875488",
+          "stable_output_uu_upper": "7.94681563672845125978",
+          "unstable_output_ss_upper": "0.296931483708838817037",
+          "unstable_output_su_upper": "0.283096126328013231177",
+          "unstable_output_uu_upper": "26.1968918399544961062"
+        },
+        "matrix_input_budget": {
+          "evidence_status": "DIAGNOSTIC hypothetical complete budget; the stable power rate, K_s=1, the return ball, and all six Hessian blocks are unproved",
+          "hessian_blocks": {
+            "evidence_status": "DIAGNOSTIC Stage-4A finite-section heuristic blocks scaled simultaneously by 1; not directed bounds",
+            "stable_output_ss_upper": "0.0224686695028964572574",
+            "stable_output_su_upper": "0.0887641356072132875488",
+            "stable_output_uu_upper": "7.94681563672845125978",
+            "unstable_output_ss_upper": "0.296931483708838817037",
+            "unstable_output_su_upper": "0.283096126328013231177",
+            "unstable_output_uu_upper": "26.1968918399544961062"
+          },
+          "sequence_weight_beta": "0.9999",
+          "stable_graph_radius": "0.0099",
+          "stable_power_constant_upper": "1",
+          "stable_power_rate_upper": "0.995024916874584026786952988590018278886039540627453615",
+          "stable_seed_radius": "0.0094",
+          "unstable_backward_power_constant_upper": "1",
+          "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934",
+          "unstable_graph_radius": "0.00005",
+          "validated_return_map_split_ball_radius_lower": "0.00995"
+        },
+        "multiplier": "1",
+        "proof_interpretation": {
+          "arithmetic_status": "CLOSES_DIAGNOSTICALLY_UNDER_UNPROVED_INPUTS",
+          "hessian_blocks_are_directed_uniform_bounds": false,
+          "raw_evaluator_closes_numerically": true,
+          "return_ball_is_validated": false,
+          "stable_power_constant_is_validated": false,
+          "stable_power_rate_is_validated": false,
+          "strict_graph_certificate_closes": false
+        }
+      },
+      {
+        "exact_majorant_evaluation": {
+          "canonical_positive_weight_lower": {
+            "stable": "1.50381530374518702618562326499130138932219407801224688303824055987940001125029705826636837743636",
+            "unstable": "1.01578182076890952390689239836058334489199593008949015354787162630210606983819281830110464914781"
+          },
+          "canonical_positive_weight_upper": {
+            "stable": "1.50381530374518702618562326499130138932219407801224688303824055987940001125029705826636837743637",
+            "unstable": "1.01578182076890952390689239836058334489199593008949015354787162630210606983819281830110464914782"
+          },
+          "contraction_closes": true,
+          "derivative_lipschitz_matrix_upper": {
+            "m_ss": "0.0698074357982388994597878983378451376894429648999015772831282821546691902219038972437159989739526",
+            "m_su": "0.392641220114256602481532832649859379489057433479262874279501339614169688752880870025944466085330",
+            "m_us": "0.00540830364196693111598581484542078927053560663100315398001773357760521523797081552458369075751068",
+            "m_uu": "0.00752989552326208573530067523668565455774602219911462464903530091813174788707143859958131591415421"
+          },
+          "fixed_point_derivative_sequence_vector_upper": {
+            "stable": "1.07752474846194522248042736534240197241949106467325981117458600105822500240876436043597157732154",
+            "unstable": "0.00587179502448461902611976019367798145660322862262698000776984830364488827276881403208179077384909"
+          },
+          "formulas": {
+            "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+            "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+            "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+            "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+            "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+            "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+            "perron_gate": "rho(M)<1",
+            "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+          },
+          "graph_certificate_closes": true,
+          "graph_derivative_upper": "0.00587179502448461902611976019367798145660322862262698000776984830364488827276881403208179077384909",
+          "graph_height_upper": "0.0000269560603456104641072647927032670193333136191780266791581138903139564251663621651851533445457593",
+          "input_complete": true,
+          "input_order_conditions_hold": true,
+          "missing_inputs": [],
+          "nonlinear_value_vector_upper": {
+            "stable": "0.000001732423373491383043965402",
+            "unstable": "0.000022086009084725933847695325"
+          },
+          "perron_root_upper": "0.0942847240108854220325333503863646126010327392104983826151375715735519632974024033453409095988416",
+          "self_map_closes": true,
+          "self_map_image_vector_upper": {
+            "stable": "0.00975536283770413896738798841758857991604996911209149437940847253015596673381724631310704280657320",
+            "unstable": "0.0000269593504158178611675123003657500482530949033784434778173136637320991091251323228116788021475317"
+          },
+          "self_map_slack_vector_lower": {
+            "stable": "0.000144637162295861032612011582411420083950030887908505620591527469844033266182753686892957193426801",
+            "unstable": "0.0000230406495841821388324876996342499517469050966215565221826863362679008908748676771883211978524683"
+          },
+          "split_ball_contains_graph_box": true,
+          "stable_kernel_coefficient_upper": "205.124707471459497699902026844328782499550316985253178775955802072532513254584390091313009495415",
+          "unstable_kernel_coefficient_upper": "1.22065287179756680804541610725815300705293546682395482988339456291143937648533780619100296618960",
+          "unstable_quadratic_kernel_coefficient_upper": "1.22050390553594952107337045920593970927779744659789962611357927424350815536156839091755940978677",
+          "weighted_row_sum_upper": "0.335024721779633964839359013129109553386452164338183857838171683145624819272739275248984112912791"
+        },
+        "input_hessian_blocks": {
+          "stable_output_ss_upper": "0.03370300425434468588610",
+          "stable_output_su_upper": "0.13314620341081993132320",
+          "stable_output_uu_upper": "11.920223455092676889670",
+          "unstable_output_ss_upper": "0.4453972255632582255555",
+          "unstable_output_su_upper": "0.4246441894920198467655",
+          "unstable_output_uu_upper": "39.29533775993174415930"
+        },
+        "matrix_input_budget": {
+          "evidence_status": "DIAGNOSTIC hypothetical complete budget; the stable power rate, K_s=1, the return ball, and all six Hessian blocks are unproved",
+          "hessian_blocks": {
+            "evidence_status": "DIAGNOSTIC Stage-4A finite-section heuristic blocks scaled simultaneously by 1.5; not directed bounds",
+            "stable_output_ss_upper": "0.03370300425434468588610",
+            "stable_output_su_upper": "0.13314620341081993132320",
+            "stable_output_uu_upper": "11.920223455092676889670",
+            "unstable_output_ss_upper": "0.4453972255632582255555",
+            "unstable_output_su_upper": "0.4246441894920198467655",
+            "unstable_output_uu_upper": "39.29533775993174415930"
+          },
+          "sequence_weight_beta": "0.9999",
+          "stable_graph_radius": "0.0099",
+          "stable_power_constant_upper": "1",
+          "stable_power_rate_upper": "0.995024916874584026786952988590018278886039540627453615",
+          "stable_seed_radius": "0.0094",
+          "unstable_backward_power_constant_upper": "1",
+          "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934",
+          "unstable_graph_radius": "0.00005",
+          "validated_return_map_split_ball_radius_lower": "0.00995"
+        },
+        "multiplier": "1.5",
+        "proof_interpretation": {
+          "arithmetic_status": "CLOSES_DIAGNOSTICALLY_UNDER_UNPROVED_INPUTS",
+          "hessian_blocks_are_directed_uniform_bounds": false,
+          "raw_evaluator_closes_numerically": true,
+          "return_ball_is_validated": false,
+          "stable_power_constant_is_validated": false,
+          "stable_power_rate_is_validated": false,
+          "strict_graph_certificate_closes": false
+        }
+      },
+      {
+        "exact_majorant_evaluation": {
+          "canonical_positive_weight_lower": {
+            "stable": "1.69285142375936465001902004238444259833635343940526329100564389509983944361305436114714393957925",
+            "unstable": "1.02247275673873482590864916849416700139757925005776811658625154693913747247049250211860695252261"
+          },
+          "canonical_positive_weight_upper": {
+            "stable": "1.69285142375936465001902004238444259833635343940526329100564389509983944361305436114714393957926",
+            "unstable": "1.02247275673873482590864916849416700139757925005776811658625154693913747247049250211860695252262"
+          },
+          "contraction_closes": true,
+          "derivative_lipschitz_matrix_upper": {
+            "m_ss": "0.0930765810643185326130505311171268502525906198665354363775043762062255869625385296582879986319368",
+            "m_su": "0.523521626819008803308710443533145839318743244639017165706001786152226251670507826701259288113773",
+            "m_us": "0.00721107152262257482131441979389438569404747550800420530669031143680695365062775403277825434334757",
+            "m_uu": "0.0100398606976827809804009003155808727436613629321528328653804012241756638494285847994417545522057"
+          },
+          "fixed_point_derivative_sequence_vector_upper": {
+            "stable": "1.10728485059832838423593122930812887702995311411797387771596234020698602178668709374253780005820",
+            "unstable": "0.00806568864399761613032188474927176405478760684582437819690138103214334514219669326603862713797445"
+          },
+          "formulas": {
+            "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+            "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+            "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+            "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+            "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+            "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+            "perron_gate": "rho(M)<1",
+            "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+          },
+          "graph_certificate_closes": true,
+          "graph_derivative_upper": "0.00806568864399761613032188474927176405478760684582437819690138103214334514219669326603862713797445",
+          "graph_height_upper": "0.0000359414137941472854763530569376893591110848255707022388774851870852752335551495535802044593943458",
+          "input_complete": true,
+          "input_order_conditions_hold": true,
+          "missing_inputs": [],
+          "nonlinear_value_vector_upper": {
+            "stable": "0.000002309897831321844058620536",
+            "unstable": "0.0000294480121129679117969271"
+          },
+          "perron_root_upper": "0.125712965347847229376711133848486150134710318947331176820183428764735951063203204460454546131789",
+          "self_map_closes": true,
+          "self_map_image_vector_upper": {
+            "stable": "0.00987381711693885195651731789011810655473329214945532583921129670687462231175632841747605707543094",
+            "unstable": "0.0000359458005544238148900164004876667310041265378379246370897515516427988121668430970822384028633756"
+          },
+          "self_map_slack_vector_lower": {
+            "stable": "0.0000261828830611480434826821098818934452667078505446741607887032931253776882436715825239429245690688",
+            "unstable": "0.0000140541994455761851099835995123332689958734621620753629102484483572011878331569029177615971366244"
+          },
+          "split_ball_contains_graph_box": true,
+          "stable_kernel_coefficient_upper": "205.124707471459497699902026844328782499550316985253178775955802072532513254584390091313009495415",
+          "unstable_kernel_coefficient_upper": "1.22065287179756680804541610725815300705293546682395482988339456291143937648533780619100296618960",
+          "unstable_quadratic_kernel_coefficient_upper": "1.22050390553594952107337045920593970927779744659789962611357927424350815536156839091755940978677",
+          "weighted_row_sum_upper": "0.409280704753598066293066626781920063050329497031893914593927546715895959465534232110564550592550"
+        },
+        "input_hessian_blocks": {
+          "stable_output_ss_upper": "0.0449373390057929145148",
+          "stable_output_su_upper": "0.1775282712144265750976",
+          "stable_output_uu_upper": "15.89363127345690251956",
+          "unstable_output_ss_upper": "0.593862967417677634074",
+          "unstable_output_su_upper": "0.566192252656026462354",
+          "unstable_output_uu_upper": "52.3937836799089922124"
+        },
+        "matrix_input_budget": {
+          "evidence_status": "DIAGNOSTIC hypothetical complete budget; the stable power rate, K_s=1, the return ball, and all six Hessian blocks are unproved",
+          "hessian_blocks": {
+            "evidence_status": "DIAGNOSTIC Stage-4A finite-section heuristic blocks scaled simultaneously by 2; not directed bounds",
+            "stable_output_ss_upper": "0.0449373390057929145148",
+            "stable_output_su_upper": "0.1775282712144265750976",
+            "stable_output_uu_upper": "15.89363127345690251956",
+            "unstable_output_ss_upper": "0.593862967417677634074",
+            "unstable_output_su_upper": "0.566192252656026462354",
+            "unstable_output_uu_upper": "52.3937836799089922124"
+          },
+          "sequence_weight_beta": "0.9999",
+          "stable_graph_radius": "0.0099",
+          "stable_power_constant_upper": "1",
+          "stable_power_rate_upper": "0.995024916874584026786952988590018278886039540627453615",
+          "stable_seed_radius": "0.0094",
+          "unstable_backward_power_constant_upper": "1",
+          "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934",
+          "unstable_graph_radius": "0.00005",
+          "validated_return_map_split_ball_radius_lower": "0.00995"
+        },
+        "multiplier": "2",
+        "proof_interpretation": {
+          "arithmetic_status": "CLOSES_DIAGNOSTICALLY_UNDER_UNPROVED_INPUTS",
+          "hessian_blocks_are_directed_uniform_bounds": false,
+          "raw_evaluator_closes_numerically": true,
+          "return_ball_is_validated": false,
+          "stable_power_constant_is_validated": false,
+          "stable_power_rate_is_validated": false,
+          "strict_graph_certificate_closes": false
+        }
+      }
+    ],
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/leaky_projected_return_hessian_stage4_contract.json": "670fb21874fa26d953ee7bc2dc70f415c47ccc259690567fb20e5e00ea64fe13",
+      "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json": "b9308d01137559f5b88e42f7120b6eb01490aaa6bda3ac7b6eed2fd2ce5421c7"
+    },
+    "recommended_design": {
+      "design_values_are_validated": false,
+      "full_pulse_interval_seed_containment_validated": false,
+      "graph_box_split_radius_sum": "0.00995",
+      "hypothetical_return_map_split_ball_radius": "0.00995",
+      "sequence_weight_beta": "0.9999",
+      "stable_graph_radius_R_s": "0.0099",
+      "stable_power_constant_hypothesis": "1",
+      "stable_power_rate_is_hypothetical": true,
+      "stable_power_rate_upper": "0.995024916874584026786952988590018278886039540627453615",
+      "stable_seed_radius_r": "0.0094",
+      "unit_unstable_graph_radius_R_u_hat": "0.00005",
+      "unstable_backward_power_constant_upper": "1",
+      "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934"
+    },
+    "schema_id": "leaky-inner-stable-graph-enlargement-stage4k-diagnostic-v2",
+    "scope_boundary": {
+      "flagship_files_modified": false,
+      "full_pulse_containment_claim": false,
+      "pulse_crossing_claim": false,
+      "pulse_intersection_claim": false,
+      "pulse_onset_claim": false,
+      "raw_evaluator_field_meaning": "graph_certificate_closes means only that the exact algebraic majorant closes for the supplied complete numeric budget",
+      "reason": "the stable power pair, return ball/tube, six uniform Hessian blocks, and anticipated Stage-5G-b cone are hypothetical or unbound",
+      "stable_graph_claim": false,
+      "stage5g_files_modified": false,
+      "stage5gb_result_parent_bound": false,
+      "strict_implication_available": false
+    },
+    "stage4a_heuristic_ingress": {
+      "construction": "max(last two meshes)+2*last-mesh change+1e-15 for each block; this is a heuristic refinement envelope, not directed error",
+      "continuous_history_upper_bound": false,
+      "directed_uniform_bound": false,
+      "entered_into_strict_proof_ingress": false,
+      "six_block_candidate_upper": {
+        "stable_output_ss_upper": "0.0224686695028964572574",
+        "stable_output_su_upper": "0.0887641356072132875488",
+        "stable_output_uu_upper": "7.94681563672845125978",
+        "unstable_output_ss_upper": "0.296931483708838817037",
+        "unstable_output_su_upper": "0.283096126328013231177",
+        "unstable_output_uu_upper": "26.1968918399544961062"
+      },
+      "source": "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json"
+    },
+    "status": "DIAGNOSTIC",
+    "strict_proof_ingress": {
+      "directed_uniform_hessian_blocks": {
+        "stable_output_ss_upper": null,
+        "stable_output_su_upper": null,
+        "stable_output_uu_upper": null,
+        "unstable_output_ss_upper": null,
+        "unstable_output_su_upper": null,
+        "unstable_output_uu_upper": null
+      },
+      "evidence_status": "OPEN: the Stage-4K rows do not supply any strict theorem ingress",
+      "first_positive_return_and_no_earlier_hit_validated": false,
+      "full_pulse_interval_stable_seed_containment_validated": false,
+      "k_s_equals_one_validated": false,
+      "return_tube_history_radius_upper": null,
+      "split_return_tube_validated": false,
+      "stable_power_constant_upper": null,
+      "stable_power_rate_upper": null,
+      "validated_full_pulse_stable_coordinate_upper": null,
+      "validated_return_map_split_ball_radius_lower": null
+    },
+    "terminal_rate_sensitivity": {
+      "ceiling_lower_probe": {
+        "exact_majorant_evaluation": {
+          "canonical_positive_weight_lower": {
+            "stable": "1.05549171481628187655315683109591046989557493122267793651290551805426880064849602533774527777235",
+            "unstable": "1.23592130689994448543334467782367030893756683283858159784622715831588818715166936828577605348832"
+          },
+          "canonical_positive_weight_upper": {
+            "stable": "1.05549171481628187655315683109591046989557493122267793651290551805426880064849602533774527777236",
+            "unstable": "1.23592130689994448543334467782367030893756683283858159784622715831588818715166936828577605348833"
+          },
+          "contraction_closes": true,
+          "derivative_lipschitz_matrix_upper": {
+            "m_ss": "0.00353182234834524577101973607511945771752416935215023891543504833870430047783087009667740860095567",
+            "m_su": "0.0418828490943647882866757363129236581842426936326258473163684853872652516946327369707745305033893",
+            "m_us": "0.0476756434657933032665673754096183304551733461295570520691757348766192936711912422131856949828079",
+            "m_uu": "0.150171422069584990651055567681234591149506159723051336438040614313604406728880168932273910385330"
+          },
+          "fixed_point_derivative_sequence_vector_upper": {
+            "stable": "1.00591625926840295604682451970076253993256379564226699184945224734259470387456312549653289189687",
+            "unstable": "0.0564322101877488433263116701832285405871431596061116556142334649061008072800614052438638190391229"
+          },
+          "formulas": {
+            "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+            "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+            "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+            "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+            "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+            "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+            "perron_gate": "rho(M)<1",
+            "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+          },
+          "graph_certificate_closes": true,
+          "graph_derivative_upper": "0.0564322101877488433263116701832285405871431596061116556142334649061008072800614052438638190391229",
+          "graph_height_upper": "0.000249967789229056708771607970005839107610386453778655999504394221492740385100754150745613811429775",
+          "input_complete": true,
+          "input_order_conditions_hold": true,
+          "missing_inputs": [],
+          "nonlinear_value_vector_upper": {
+            "stable": "0.0000201259886041904094686996402844",
+            "unstable": "0.000204807037564775735048803978992"
+          },
+          "perron_root_upper": "0.162715379594464580489852823857552993149936527093276323406719742382361800361807179897182804626351",
+          "self_map_closes": true,
+          "self_map_image_vector_upper": {
+            "stable": "0.00942236469452627004052528018700344482720302255806200688965440604511612401377930881209023224802756",
+            "unstable": "0.000249998298567795644674233716696803226601278998693733119590257390940804125146387545850484859464785"
+          },
+          "self_map_slack_vector_lower": {
+            "stable": "0.000277635305473729959474719812996555172796977441937993110345593954883875986220691187909767751972441",
+            "unstable": "0.00000000170143220435532576628330319677339872100130626688040974260905919587485361245414951514053521560107"
+          },
+          "split_ball_contains_graph_box": true,
+          "stable_kernel_coefficient_upper": "1.11123458162018002000222246916324036004000444493832648072008000888987665296144016001777975330593",
+          "unstable_kernel_coefficient_upper": "1.22065287179756680804541610725815300705293546682395482988339456291143937648533780619100296618960",
+          "unstable_quadratic_kernel_coefficient_upper": "1.22050390553594952107337045920593970927779744659789962611357927424350815536156839091755940978677",
+          "weighted_row_sum_upper": "0.190886997078887468480350743608985846674055225894287907704495323587111580665460025256704975851138"
+        },
+        "multiplier": "13.2353"
+      },
+      "ceiling_upper_probe": {
+        "exact_majorant_evaluation": {
+          "canonical_positive_weight_lower": {
+            "stable": "1.05549222493719241761577966938891045884048627540833336737990644398853934420599477225488077787305",
+            "unstable": "1.23592343302129940462056030262972387108766415594826379862579515836007260386947935137757710294026"
+          },
+          "canonical_positive_weight_upper": {
+            "stable": "1.05549222493719241761577966938891045884048627540833336737990644398853934420599477225488077787306",
+            "unstable": "1.23592343302129940462056030262972387108766415594826379862579515836007260386947935137757710294027"
+          },
+          "contraction_closes": true,
+          "derivative_lipschitz_matrix_upper": {
+            "m_ss": "0.00353184903321335110482985764196021780197799755528392043560395599511056784087120791199022113568175",
+            "m_su": "0.0418831655424173021306255272185798422046894099344371596844093788198688743193688187576397377486388",
+            "m_us": "0.0476760036816060600103001700374349240974062775579805072009224212058666595736919123244957006925008",
+            "m_uu": "0.150172556697603015062974081470628720746803912748367899351887962243869029400120933253210589371906"
+          },
+          "fixed_point_derivative_sequence_vector_upper": {
+            "stable": "1.00591632537147102217547617816613813460079859495669231169981938246522931567685491422713184253117",
+            "unstable": "0.0564327156174607187280604699797137766115772587843929718342627674096801184709700354192490845135672"
+          },
+          "formulas": {
+            "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+            "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+            "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+            "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+            "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+            "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+            "perron_gate": "rho(M)<1",
+            "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+          },
+          "graph_certificate_closes": false,
+          "graph_derivative_upper": "0.0564327156174607187280604699797137766115772587843929718342627674096801184709700354192490845135672",
+          "graph_height_upper": "0.000249969677873735930675975620213767948204159246132843503044166681461320566436916540371468500132044",
+          "input_complete": true,
+          "input_order_conditions_hold": true,
+          "missing_inputs": [],
+          "nonlinear_value_vector_upper": {
+            "stable": "0.0000201261406671478353707152251192",
+            "unstable": "0.000204808584995038477682027621856"
+          },
+          "perron_root_upper": "0.162716608999008447758297738992259857013945275943148205995882109081585711884782570006813090171860",
+          "self_map_closes": false,
+          "self_map_image_vector_upper": {
+            "stable": "0.00942236486350388691562475300046582953661517946438493165907323035892876986331814646071785753972664",
+            "unstable": "0.000250000187442989767932827584865387971965770935249751447343459738128936927607420891430455472030117"
+          },
+          "self_map_slack_vector_lower": {
+            "stable": "0.000277635136496113084375246999534170463384820535615068340926769641071230136681853539282142460273363",
+            "unstable": "-0.000000000187442989767932827584865387971965770935249751447343459738128936927607420891430455472030116992706"
+          },
+          "split_ball_contains_graph_box": true,
+          "stable_kernel_coefficient_upper": "1.11123458162018002000222246916324036004000444493832648072008000888987665296144016001777975330593",
+          "unstable_kernel_coefficient_upper": "1.22065287179756680804541610725815300705293546682395482988339456291143937648533780619100296618960",
+          "unstable_quadratic_kernel_coefficient_upper": "1.22050390553594952107337045920593970927779744659789962611357927424350815536156839091755940978677",
+          "weighted_row_sum_upper": "0.190888388971287993684713912875022557238196516739039133985840095255019002666844788440269998200383"
+        },
+        "multiplier": "13.2354"
+      },
+      "design_label": "preferred_if_stage4l_proves_rho_term_at_most_0p1",
+      "entered_into_main_majorant_rows": false,
+      "entered_into_strict_proof_ingress": false,
+      "exact_majorant_evaluation": {
+        "canonical_positive_weight_lower": {
+          "stable": "1.00706036557570488137620459590105386615156967983696490484087594368672908966751429821732616120897",
+          "unstable": "1.03064311239987474157337887471593275133642343654663423685717715813824301979370991671782822515044"
+        },
+        "canonical_positive_weight_upper": {
+          "stable": "1.00706036557570488137620459590105386615156967983696490484087594368672908966751429821732616120898",
+          "unstable": "1.03064311239987474157337887471593275133642343654663423685717715813824301979370991671782822515045"
+        },
+        "contraction_closes": true,
+        "derivative_lipschitz_matrix_upper": {
+          "m_ss": "0.000533697362106676202431336815201689076564062673630403378153128125347260806756306256250694521613513",
+          "m_su": "0.00632896105027687899581811312368040893432603622624736081786865207245249472163573730414490498944328",
+          "m_us": "0.00720431625513487465589255633187284465862856846910263493372658494731805001340222620011419385776037",
+          "m_uu": "0.0226925603604882383702757878825919459550605063312582769469586052924534248152864187335797315339024"
+        },
+        "fixed_point_derivative_sequence_vector_upper": {
+          "stable": "1.00058068891414922572213753987702963472161447229811578156365908579197828901271806699178078672569",
+          "unstable": "0.00737587726169072604520227117081305155347258635827918631348409063094607893074293069442531818486666"
+        },
+        "formulas": {
+          "canonical_weight": "w=(I-M)^(-1)*(1,1), so M*w=w-(1,1)",
+          "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+          "graph_derivative": "(d_s,d_u)=(I-M)^(-1)*(K_s,0); ||Dh||<=d_u",
+          "graph_height": "||h||<=K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+          "majorant_matrix": "M=diag(K_s/(beta-rho_s),K_u*rho_u/(1-beta*rho_u))*L",
+          "nonlinear_value_vector": "Q_i=(C_i,ss*R_s^2)/2+C_i,su*R_s*R_u+(C_i,uu*R_u^2)/2",
+          "perron_gate": "rho(M)<1",
+          "self_map": "K_s*r+a_s*Q_s<=R_s and a_u*Q_u<=R_u"
+        },
+        "graph_certificate_closes": true,
+        "graph_derivative_upper": "0.00737587726169072604520227117081305155347258635827918631348409063094607893074293069442531818486666",
+        "graph_height_upper": "0.0000377728935844380873530041585768118754558470837500707954491993716036267232477925170937740453831458",
+        "input_complete": true,
+        "input_order_conditions_hold": true,
+        "missing_inputs": [],
+        "nonlinear_value_vector_upper": {
+          "stable": "0.000003041259148518040311696696",
+          "unstable": "0.00003094860525485266447285728"
+        },
+        "perron_root_upper": "0.0245880908773453688983026941372772801749769974376517832473339844782304595078021926057109101609108",
+        "self_map_closes": true,
+        "self_map_image_vector_upper": {
+          "stable": "0.00940337955233750198945626924769418824313812645849538837648627625291699077675297255250583398155351",
+          "unstable": "0.0000377775038824651718773633716949072898387311203665550640469437626560492206669115994122513066518756"
+        },
+        "self_map_slack_vector_lower": {
+          "stable": "0.000296620447662498010543730752305811756861873541504611623513723747083009223247027447494166018446494",
+          "unstable": "0.000212222496117534828122636628305092710161268879633444935953056237343950779333088400587748693348124"
+        },
+        "split_ball_contains_graph_box": true,
+        "stable_kernel_coefficient_upper": "1.11123458162018002000222246916324036004000444493832648072008000888987665296144016001777975330593",
+        "unstable_kernel_coefficient_upper": "1.22065287179756680804541610725815300705293546682395482988339456291143937648533780619100296618960",
+        "unstable_quadratic_kernel_coefficient_upper": "1.22050390553594952107337045920593970927779744659789962611357927424350815536156839091755940978677",
+        "weighted_row_sum_upper": "0.0297320304489510366816022994382134270042040909094101152744087011680801169652672730065947321283484"
+      },
+      "graph_box_split_radius_sum": "0.00995",
+      "hypothetical_return_map_split_ball_radius": "0.00995",
+      "input_hessian_blocks": {
+        "stable_output_ss_upper": "0.0449373390057929145148",
+        "stable_output_su_upper": "0.1775282712144265750976",
+        "stable_output_uu_upper": "15.89363127345690251956",
+        "unstable_output_ss_upper": "0.593862967417677634074",
+        "unstable_output_su_upper": "0.566192252656026462354",
+        "unstable_output_uu_upper": "52.3937836799089922124"
+      },
+      "limiting_block_family": "unstable-output C_u blocks",
+      "limiting_gate": "unstable_self_map",
+      "matrix_input_budget": {
+        "evidence_status": "DIAGNOSTIC hypothetical complete budget; the stable power rate, K_s=1, the return ball, and all six Hessian blocks are unproved",
+        "hessian_blocks": {
+          "evidence_status": "DIAGNOSTIC Stage-4A finite-section heuristic blocks scaled simultaneously by 2; not directed bounds",
+          "stable_output_ss_upper": "0.0449373390057929145148",
+          "stable_output_su_upper": "0.1775282712144265750976",
+          "stable_output_uu_upper": "15.89363127345690251956",
+          "unstable_output_ss_upper": "0.593862967417677634074",
+          "unstable_output_su_upper": "0.566192252656026462354",
+          "unstable_output_uu_upper": "52.3937836799089922124"
+        },
+        "sequence_weight_beta": "0.9999",
+        "stable_graph_radius": "0.0097",
+        "stable_power_constant_upper": "1",
+        "stable_power_rate_upper": "0.1",
+        "stable_seed_radius": "0.0094",
+        "unstable_backward_power_constant_upper": "1",
+        "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934",
+        "unstable_graph_radius": "0.00025",
+        "validated_return_map_split_ball_radius_lower": "0.00995"
+      },
+      "multiplier": "2",
+      "proof_interpretation": {
+        "arithmetic_status": "CLOSES_DIAGNOSTICALLY_UNDER_UNPROVED_INPUTS",
+        "hessian_blocks_are_directed_uniform_bounds": false,
+        "raw_evaluator_closes_numerically": true,
+        "return_ball_is_validated": false,
+        "stable_power_constant_is_validated": false,
+        "stable_power_rate_is_validated": false,
+        "strict_graph_certificate_closes": false
+      },
+      "simultaneous_multiplier_ceiling_estimate": "13.23539",
+      "source_hypothesis": "prospective Stage-4L terminal stable-row target; Stage-4K does not bind or validate a Stage-4L result",
+      "stable_graph_radius_R_s": "0.0097",
+      "stable_power_rate_hypothesis": "0.1",
+      "stable_seed_radius_r": "0.0094",
+      "status": "DIAGNOSTIC",
+      "unit_unstable_graph_radius_R_u_hat": "0.00025"
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "source-bound replay of the Stage-4A finite-section heuristic block row; exact decimal-to-Fraction ingress; the existing exact-rational Stage-4 two-by-two Lyapunov--Perron evaluator, including its integer-square-root Perron upper bound; and three simultaneous heuristic inflation rows; one isolated terminal-rate sensitivity row; no directed Hessian block, stable power rate or constant, Stage-5G-b cone, full-pulse containment, return tube, stable graph, pulse intersection, crossing, or onset is proved",
+    "artifact_sha256": "567aa3e20323f27c210dd2f79b1264b656d545221e0a448cf1873eb1a905c736",
+    "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_stable_graph_enlargement_stage4k.py",
+    "diagnostic_status": "DIAGNOSTIC",
+    "parent_result_sha256": {
+      "experiments/results/leaky_projected_return_hessian_stage4_contract.json": "670fb21874fa26d953ee7bc2dc70f415c47ccc259690567fb20e5e00ea64fe13",
+      "experiments/results/leaky_projected_return_hessian_stage4a_pilot.json": "b9308d01137559f5b88e42f7120b6eb01490aaa6bda3ac7b6eed2fd2ce5421c7"
+    },
+    "result": "experiments/results/leaky_inner_stable_graph_enlargement_stage4k.json",
+    "runtime": {
+      "arithmetic": "decimal strings parsed by fractions.Fraction; directed decimal serialization and integer-square-root Perron upper bound",
+      "installation": "fresh replay validation before fsync-backed atomic replacement",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "python_implementation": "CPython"
+    },
+    "schema_id": "leaky-inner-stable-graph-enlargement-stage4k-diagnostic-v2",
+    "source_sha256": {
+      "docs/leaky-inner-stable-graph-enlargement-stage4k.md": "1db57d28155e678a981bebb5425fc3be32560ca99c56b1d157244210eb2fcc40",
+      "experiments/leaky_inner_stable_graph_enlargement_stage4k.py": "b54da2c721ee0417019952f02ec815cd948b2a5d452cb1a28e7e15976f932595",
+      "src/canard_control/leaky_inner_stable_graph_enlargement_stage4k.py": "185aa5946f91a4565a9adc1da3de2874b53982dee4eb4ac71345b86e8cda034b"
+    }
+  }
+}

@@ -1,0 +1,1453 @@
+{
+  "design": {
+    "acceptance_decision": {
+      "breakthrough_assessment": "the graph-transform arithmetic has wide margins; a two-return map materially relaxes unstable graph caps and may unlock C2 smoothing, while the signed event/history certificate remains the genuine proof bottleneck",
+      "first_new_one_return_hard_gate": "source-bound signed event-aligned selected-return tube plus all six fixed-projection D2P blocks",
+      "first_new_two_return_hard_gate": "directed T2_minus>2*tau_max on the full ball, followed by a correlated complete-history D2(P^2) certificate",
+      "first_positive_return_can_be_deferred": true,
+      "one_return_arithmetic_design": "GO",
+      "one_return_theorem_release": "NO_GO",
+      "scalar_kret_route_can_be_replaced_by_direct_return_domain_proof": true,
+      "two_return_arithmetic_design": "GO_CONDITIONAL",
+      "two_return_theorem_release": "NO_GO"
+    },
+    "branch": "inner_saddle_candidate_selected_near_period_return",
+    "claim_status": {
+      "all_six_parent_results_byte_and_semantic_validated": true,
+      "asynchronous_network_safety_radius_validated": false,
+      "axis_frontiers_declared_nonmixable": true,
+      "common_selected_event_window_validated": false,
+      "complete_returned_history_tube_validated": false,
+      "exact_six_block_feasible_inequalities_registered": true,
+      "first_positive_return_validated": false,
+      "first_return_identification_separated_from_graph_closure": true,
+      "frequency_amplitude_safety_radius_validated": false,
+      "kret_and_six_projected_caps_declared_noninterchangeable": true,
+      "kret_declared_sufficient_not_necessary_for_graph_arithmetic": true,
+      "no_earlier_positive_hit_validated": false,
+      "one_and_two_return_hessian_ingress_kept_disjoint": true,
+      "one_return_axis_frontiers_computed_exactly": true,
+      "one_return_joint_reference_row_closes_arithmetically": true,
+      "one_return_kret_bound_validated": false,
+      "one_return_majorant_with_certified_blocks_validated": false,
+      "one_return_nonlinear_selected_map_on_full_ball_validated": false,
+      "one_return_six_projected_hessian_blocks_validated": false,
+      "outer_or_quiet_capture_from_both_sides_validated": false,
+      "preferred_b_geometry_registered": true,
+      "projected_caps_to_kret_pair_sum_implication_registered": true,
+      "quantitative_inner_stable_graph_validated": false,
+      "selected_pulse_stable_sheet_crossing_validated": false,
+      "selected_return_suffices_for_abstract_graph_registered": true,
+      "split_return_ball_validated": false,
+      "stage4l_sharp_stable_power_pair_imported": true,
+      "stage5gb_full_interval_seed_cone_imported": true,
+      "two_return_axis_frontiers_computed_exactly_conditionally": true,
+      "two_return_conservative_pilot_envelope_replayed": true,
+      "two_return_exact_orbit_smoothing_margin_positive": true,
+      "two_return_full_ball_smoothing_window_validated": false,
+      "two_return_joint_reference_row_closes_arithmetically_conditionally": true,
+      "two_return_kret_bound_validated": false,
+      "two_return_majorant_with_certified_blocks_validated": false,
+      "two_return_nonlinear_selected_map_on_full_ball_validated": false,
+      "two_return_recommended_wide_box_replayed": true,
+      "two_return_six_projected_hessian_blocks_validated": false,
+      "two_sided_basin_routing_validated": false,
+      "uniform_positive_event_speed_validated": false,
+      "unique_physical_pulse_onset_validated": false,
+      "wide_box_conditional_unique_crossing_arithmetic_closes": true
+    },
+    "exact_feasible_region": {
+      "component_derivative_bounds": "L_i,s=C_i,ss*R_s+C_i,su*R_u; L_i,u=C_i,su*R_s+C_i,uu*R_u",
+      "contraction_gates": "m_ss<1, m_uu<1, det(I-M)>0",
+      "graph_derivative": "d_u where (d_s,d_u)=(I-M)^(-1)(K_s,0)",
+      "graph_height": "K_u*rho_u*Q_u/(1-beta^2*rho_u)",
+      "kernel_coefficients": "a_s=K_s/(beta-rho_s), a_u=K_u*rho_u/(1-beta*rho_u)",
+      "matrix": "M=diag(a_s,a_u)*[[L_s,s,L_s,u],[L_u,s,L_u,u]]",
+      "perron_equivalence": "for nonnegative 2x2 M these gates imply rho(M)<1",
+      "quadratic_values": "Q_i=C_i,ss*R_s^2/2+C_i,su*R_s*R_u+C_i,uu*R_u^2/2",
+      "reason_no_unique_widest_vector": "all six caps trade against one another in Q_s,Q_u and det(I-M); axis frontiers are therefore deliberately nonmixable",
+      "return_domain_gate": "R_s+R_u<=R_return",
+      "stable_self_map": "K_s*r+a_s*Q_s<=R_s",
+      "unique_componentwise_widest_cap_vector_exists": false,
+      "unstable_self_map": "a_u*Q_u<=R_u"
+    },
+    "kret_coupling": {
+      "ambient_norm_may_replace_correlated_six_blocks": false,
+      "ambient_pilot_exceeds_one_return_stage4n_target_diagnostically": true,
+      "derivation": "D2P=P_sD2P+q_hat*f_hat(D2P), ||q_hat||_Y=1, followed by the split-input bilinear expansion",
+      "dominant_graph_self_map_contribution_in_reference_shape": "unstable_output_ss_upper because it is weighted by R_s^2/2",
+      "independent_ambient_hessian_pilot_approx": "337",
+      "kret_is_required_by_matrix_lyapunov_perron_arithmetic": false,
+      "kret_role": "one sufficient scalar route to prove nonlinear return-ball containment; it is not a necessary graph-transform input",
+      "one_return_conditional_target_lower": "188.9122238810816331205615313733900338195719669891783770252080661252411",
+      "one_return_joint_row_implies_conditional_target": true,
+      "one_return_joint_row_pair_sum_uu": "188.88298976101006482860136",
+      "projected_caps_imply_raw_bound_only_if_fixed_correlated_split_used": true,
+      "projected_to_raw_split_formula": "K_ret_from_caps=max(C_s,ss+C_u,ss, C_s,su+C_u,su, C_s,uu+C_u,uu)",
+      "raw_to_projected_converse": "a raw K_ret gives only C_s,ab<=||P_s||K_ret and C_u,ab<=||f_hat||K_ret",
+      "stage4m_common_13p2353_box_implies_stage4n_target": false,
+      "stage4m_common_13p2353_pair_sum_uu": "451.902211566141813272955094",
+      "stage4n_target_alone_implies_any_stage4m_cap": false,
+      "tight_family_for_graph_common_scaling": "unstable_output blocks",
+      "tight_family_for_triangle_kret": "stable_output_uu_upper+unstable_output_uu_upper",
+      "two_return_conditional_target_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722",
+      "two_return_conservative_pilot_pair_sum_implies_target": false,
+      "two_return_joint_row_implies_conditional_target": true,
+      "two_return_joint_row_pair_sum_uu": "178.5715901030518147240754",
+      "two_return_wide_box_graph_arithmetic_closes_despite_pair_sum_failure": true,
+      "two_return_wide_box_pair_sum_implies_target": false,
+      "what_graph_arithmetic_requires_instead": "a validated selected-map domain containing the split graph box and the six correlated projected Hessian blocks"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "one_return_design": {
+      "axis_frontiers_other_five_zero": [
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_ss_upper",
+          "combined_limiting_gate": "component_self_map",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "6.313127255936167497784406444998850048154479431670990937776055220831119142",
+          "combined_strict_lower_probe": "6.313127255936167497784406444998850048154479431670990937776055220831119141",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "102.06222397096804121418123752748140911183075081201435349404622607010309278350515463917525773195876288659793814",
+          "contraction_boundary_exact_fraction": "12375044656479874997219475050207120854809478535956740361153104911/121250000000000000000000000000000000000000000000000000000000000",
+          "graph_and_kret_axis_boundary_decimal_lower": "6.3131272559361674977844064449988500481544794316709909377760552208311191412477415240726963545541502816452332872",
+          "graph_and_kret_axis_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/5880625000000000000000000000000000000000000000000000000000000000",
+          "graph_boundary_decimal_lower": "6.3131272559361674977844064449988500481544794316709909377760552208311191412477415240726963545541502816452332872",
+          "graph_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/5880625000000000000000000000000000000000000000000000000000000000",
+          "kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "6.313127255936167497784406444998850048154479431670990937776055220831119142",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0618556701030927835051546391752577319587628865979381443298969072164948453681953290205039917587511",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000357473457494443600299426486753062220511942541654026451149214321767406472931001272286440581277076",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "6.3131272559361674977844064449988500481544794316709909377760552208311191412477415240726963545541502816452332872",
+          "self_map_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/5880625000000000000000000000000000000000000000000000000000000000",
+          "strict_lower_probe": "6.313127255936167497784406444998850048154479431670990937776055220831119141",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0618556701030927835051546391752577319587628865979381443298969072164948453583973845794299512871364",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000117726847897647362573885722043146091553170113675548976777171317326903714100333987807246820423405",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_su_upper",
+          "combined_limiting_gate": "component_self_map",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "122.474668765161649457017485032977690934196900974417224192855471284123711341",
+          "combined_strict_lower_probe": "122.47466876516164945701748503297769093419690097441722419285547128412371134",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "3960.01429007355999911023201606627867353903313150615691556899357152",
+          "contraction_boundary_exact_fraction": "12375044656479874997219475050207120854809478535956740361153104911/3125000000000000000000000000000000000000000000000000000000000",
+          "graph_and_kret_axis_boundary_decimal_lower": "122.47466876516164945701748503297769093419690097441722419285547128412371134020618556701030927835051546391752577",
+          "graph_and_kret_axis_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/303125000000000000000000000000000000000000000000000000000000000",
+          "graph_boundary_decimal_lower": "122.47466876516164945701748503297769093419690097441722419285547128412371134020618556701030927835051546391752577",
+          "graph_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/303125000000000000000000000000000000000000000000000000000000000",
+          "kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "122.474668765161649457017485032977690934196900974417224192855471284123711341",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0309278350515463917525773195876288659793814432989690721649484536082474226806128286007978268456570",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.00000000000000000000000000000000000000000000000000000000000000000000000000000194443742773892040287198640011202253316046734298954766448781455044435563829380460342299553251871",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "122.47466876516164945701748503297769093419690097441722419285547128412371134020618556701030927835051546391752577",
+          "self_map_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/303125000000000000000000000000000000000000000000000000000000000",
+          "strict_lower_probe": "122.47466876516164945701748503297769093419690097441722419285547128412371134",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0309278350515463917525773195876288659793814432989690721649484536082474226803603042595330319881411",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000505048682529589715031684779249875982639082426750531860905925857258274191764624572317661177277586",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_uu_upper",
+          "combined_limiting_gate": "triangle_reconstructed_K_ret",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "188.912223881081633120561531373390033819571966989178377025208066125241100001",
+          "combined_strict_lower_probe": "188.912223881081633120561531373390033819571966989178377025208066125241099999",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": null,
+          "contraction_boundary_exact_fraction": null,
+          "graph_and_kret_axis_boundary_decimal_lower": "188.9122238810816331205615313733900338195719669891783770252080661252411",
+          "graph_and_kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "graph_boundary_decimal_lower": "9504.034296176543997864556838559068816493679515614776597365584571648",
+          "graph_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/3906250000000000000000000000000000000000000000000000000000000",
+          "kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "9504.034296176543997864556838559068816493679515614776597365584571648000000001",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000000315655426580993571894802987031172489149426516719082413066203660786421369852890357698538235798492",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "9504.034296176543997864556838559068816493679515614776597365584571648",
+          "self_map_boundary_exact_fraction": "37125133969439624991658425150621362564428435607870221083459314733/3906250000000000000000000000000000000000000000000000000000000",
+          "strict_lower_probe": "9504.034296176543997864556838559068816493679515614776597365584571647999999999",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000000315655426580993571894802987031172489149426516719082413066203660786421369852890357698538235798491",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_ss_upper",
+          "combined_limiting_gate": "component_self_map",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "4.353457996289076542440440736500014038072325858262885056860452757997661814",
+          "combined_strict_lower_probe": "4.353457996289076542440440736500014038072325858262885056860452757997661813",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": null,
+          "contraction_boundary_exact_fraction": null,
+          "graph_and_kret_axis_boundary_decimal_lower": "4.3534579962890765424404407365000140380723258582628850568604527579976618131576150494207673504091691040187870496",
+          "graph_and_kret_axis_boundary_exact_fraction": "11258569314464071436533173838506824842373606660425167769610707370866382452696563403352780805964194835/2586121038508001837256913038373623063468481546795871516266283715321896339685529251682241932126870503",
+          "graph_boundary_decimal_lower": "4.3534579962890765424404407365000140380723258582628850568604527579976618131576150494207673504091691040187870496",
+          "graph_boundary_exact_fraction": "11258569314464071436533173838506824842373606660425167769610707370866382452696563403352780805964194835/2586121038508001837256913038373623063468481546795871516266283715321896339685529251682241932126870503",
+          "kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "4.353457996289076542440440736500014038072325858262885056860452757997661814",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.0515463917525773195876288659793814432989690721649484536082474226804123711439947367648118706397610",
+            "graph_height_upper": "0.000249969490453621365101846968421945999522117328258328669004096225802092097953254918970537717828793",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000483744733093375726028406209399051750107288840470990588422273616847188965363779209908232074259124"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "4.3534579962890765424404407365000140380723258582628850568604527579976618131576150494207673504091691040187870496",
+          "self_map_boundary_exact_fraction": "11258569314464071436533173838506824842373606660425167769610707370866382452696563403352780805964194835/2586121038508001837256913038373623063468481546795871516266283715321896339685529251682241932126870503",
+          "strict_lower_probe": "4.353457996289076542440440736500014038072325858262885056860452757997661813",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.0515463917525773195876288659793814432989690721649484536082474226804123711321544039083754726017205",
+            "graph_height_upper": "0.000249969490453621365101846968421945999522117328258328669004096225802092097895836312734598972609896",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000905114104437895788165597982605463320607646498963389612963693552744976893037479610143252711847688"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_su_upper",
+          "combined_limiting_gate": "component_self_map",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "84.457085128008084923344550288100272338603121650299970103092783505154639176",
+          "combined_strict_lower_probe": "84.457085128008084923344550288100272338603121650299970103092783505154639175",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "84.457085128008084923344550288100272338603121650299970103092783505154639175257731958762886597937880617964468762",
+          "contraction_boundary_exact_fraction": "2251713862892814287306634767701364968474721332085033553922141474173276490539312680670556161192838967/26661041634103111724298072560552815087303933472122386765631790879607178759644631460641669403369799",
+          "graph_and_kret_axis_boundary_decimal_lower": "84.457085128008084923344550288100272338603121650299970103092783505154639175257731958762886597937880617964468762",
+          "graph_and_kret_axis_boundary_exact_fraction": "2251713862892814287306634767701364968474721332085033553922141474173276490539312680670556161192838967/26661041634103111724298072560552815087303933472122386765631790879607178759644631460641669403369799",
+          "graph_boundary_decimal_lower": "84.457085128008084923344550288100272338603121650299970103092783505154639175257731958762886597937880617964468762",
+          "graph_boundary_exact_fraction": "2251713862892814287306634767701364968474721332085033553922141474173276490539312680670556161192838967/26661041634103111724298072560552815087303933472122386765631790879607178759644631460641669403369799",
+          "kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "84.457085128008084923344550288100272338603121650299970103092783505154639176",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": false,
+            "graph_derivative_upper": null,
+            "graph_height_upper": "0.000249969490453621365101846968421945999522117328258328669004096225802092097907083256224112747446587",
+            "perron_root_upper": "1.00000000000000000000000000000000000000000000000000000000000000000000000000878870067694248101794",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "-0.00000000000000000000000000000000000000000000000000000000000000000000000000000219717516923562025448252960232924675391633533714884762773854536977914492393759178261756521496019"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "84.457085128008084923344550288100272338603121650299970103092783505154639175257731958762886597937880617964468762",
+          "self_map_boundary_exact_fraction": "2251713862892814287306634767701364968474721332085033553922141474173276490539312680670556161192838967/26661041634103111724298072560552815087303933472122386765631790879607178759644631460641669403369799",
+          "strict_lower_probe": "84.457085128008084923344550288100272338603121650299970103092783505154639175",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "8445708512800808492343096697167390938720093552914717226825878252764386260.39943027567781521544592",
+            "graph_height_upper": "0.000249969490453621365101846968421945999522117328258328669004096225802092097904123534253188069857984",
+            "perron_root_upper": "0.999999999999999999999999999999999999999999999999999999999999999999999999996948367820506082979890",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000762908044873479255027604457771774288187033169899242834728686445281095564039352397395616978049571"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_uu_upper",
+          "combined_limiting_gate": "triangle_reconstructed_K_ret",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "188.912223881081633120561531373390033819571966989178377025208066125241100001",
+          "combined_strict_lower_probe": "188.912223881081633120561531373390033819571966989178377025208066125241099999",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "3276.9349029667136950257685511782905667378011200316388399999999999999999999999999999999999999999897679770213879",
+          "contraction_boundary_exact_fraction": "4503427725785628574613269535402729936949442664170067107844282948346552981078625361341112322385677934/1374280496603253181664849101059423458108450178975380761115040766990060760806424302094931412544835",
+          "graph_and_kret_axis_boundary_decimal_lower": "188.9122238810816331205615313733900338195719669891783770252080661252411",
+          "graph_and_kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "graph_boundary_decimal_lower": "3276.9349029667136950257685511782905667378011200316388399999999999999999999999999999999999999999897679770213879",
+          "graph_boundary_exact_fraction": "4503427725785628574613269535402729936949442664170067107844282948346552981078625361341112322385677934/1374280496603253181664849101059423458108450178975380761115040766990060760806424302094931412544835",
+          "kret_axis_boundary_exact_fraction": "1889122238810816331205615313733900338195719669891783770252080661252411/10000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "m_uu<1",
+          "rejecting_upper_probe": "3276.93490296671369502576855117829056673780112003163884",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": false,
+            "graph_derivative_upper": null,
+            "graph_height_upper": "0.000124984745226810682550923484210972999761058664129164334502048112901046048952443174597074019154328",
+            "perron_root_upper": "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.000124999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "6553.8698059334273900515371023565811334756022400632776799999999999999999999999999999999999999999795359540427759",
+          "self_map_boundary_exact_fraction": "9006855451571257149226539070805459873898885328340134215688565896693105962157250722682224644771355868/1374280496603253181664849101059423458108450178975380761115040766990060760806424302094931412544835",
+          "strict_lower_probe": "3276.934902966713695025768551178290566737801120031638839999999999999999999999",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0.000124984745226810682550923484210972999761058664129164334502048112901046048952405033850026020731794",
+            "perron_root_upper": "0.999999999999999999999999999999999999999999999999999999999999999999999999999694836782050608297992",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.000125000000000000000000000000000000000000000000000000000000000000000000000000038145402243673962751"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        }
+      ],
+      "common_scaling_frontier": {
+        "componentwise_caps_at_different_frontiers_may_be_mixed": false,
+        "graph_and_triangle_kret_common_multiplier_boundary_decimal_lower": "5.5328562081341498295722519004865257847500674599559401989296684437048826162189389448712539227768346729734563999",
+        "graph_lower_probe_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.0564022948455567964686951730314115062987992574760115469620805537861929450455831246144367571888916",
+          "graph_height_upper": "0.000249969490453621365101846968421945999522117328258328669004096225802092097892733155889836546302570",
+          "perron_root_upper": "0.161629884066043155996126328441083281395421400258795409776978202418197309825386944192694127342342",
+          "raw_graph_arithmetic_closes": true,
+          "self_map_closes": true,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000279670653585677463607014165532333190312860937633765070148731757687886570647839580010160182291415",
+            "unstable": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000121546766389940308001954605167884705748587687466891091931133379240456041633464067917627301682217"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "graph_only_common_multiplier_boundary_decimal_lower": "13.235390076475653282297749687331347391272664449861781602186679392567067469643487546282048166859002512326192467",
+        "graph_only_limiting_gate": "unstable_self_map",
+        "graph_upper_probe_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.0564022948455567964686951730314115062987992574760115469620805537861929450506313158641777911066480",
+          "graph_height_upper": "0.000249969490453621365101846968421945999522117328258328669004096225802092097911619602682055589979072",
+          "perron_root_upper": "0.161629884066043155996126328441083281395421400258795409776978202418197309837598891338348809235606",
+          "raw_graph_arithmetic_closes": false,
+          "self_map_closes": false,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000279670653585677463607014165532333190312860937633765070148731757687886570646303596083970084212968",
+            "unstable": "-0.00000000000000000000000000000000000000000000000000000000000000000000000000000673407530223855513848622533066517434450679143658842283035854340397900617010939291436292315771604"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "joint_limiting_gate": "uu_pair_sum_to_K_ret",
+        "shape_is_evidentiary": false,
+        "stable_self_map_multiplier_boundary_exact_fraction": "12375044656479874997219475050207120854809478535956740361153104911/63359565594125839827014500000000000000000000000000000000000000",
+        "triangle_kret_common_multiplier_boundary_decimal_lower": "5.5328562081341498295722519004865257847500674599559401989296684437048826162189389448712539227768346729734563999",
+        "unstable_self_map_multiplier_boundary_exact_fraction": "351830291077002232391661682453338276324175208138286492800334605339574451646767606354774400186381088593750000000000000000/26582540374260606704224512004949665830698862432327117308035643929249945633378561105846653051145372877510492945592847593"
+      },
+      "current_release_status": "NO_GO_MISSING_SELECTED_C2_MAP_TUBE_AND_SIX_BLOCKS",
+      "factor_two_baseline_is_evidence": false,
+      "joint_reference_row": {
+        "allocation_shape_is_a_directed_hessian_bound": false,
+        "allocation_shape_origin": "Stage-4A one-return finite-section heuristic ratios used only as a proof-engineering allocation shape",
+        "block_targets": {
+          "stable_output_ss_upper": "0.1242966796900232015479368",
+          "stable_output_su_upper": "0.4910431981791039067199616",
+          "stable_output_uu_upper": "43.96178410238179236910296",
+          "unstable_output_ss_upper": "1.642624967877296335848684",
+          "unstable_output_su_upper": "1.566087770846569194871164",
+          "unstable_output_uu_upper": "144.9212056586282724594984"
+        },
+        "certified_hessian_blocks_supplied": false,
+        "certified_kret_supplied": false,
+        "entered_into_strict_numeric_ingress": false,
+        "exact_majorant_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.0212974677284262082365837930718882207106940768394813129998774268840703943862706940432467461460342",
+          "graph_height_upper": "0.000104479823654555749618409502623461647510873033652695820212485461855631516503394102281379009529782",
+          "perron_root_upper": "0.0675564916097617002335388750145727431945051237824998872471599373299252293807703610146450822293942",
+          "raw_graph_arithmetic_closes": true,
+          "self_map_closes": true,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000291502936920316377430034190115631863245901990119865788613322796635107320541221205496600779328601",
+            "unstable": "0.000145507424261101334587212913891886436306069721066108692846153552493367855635322516025712885800912"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "kret_margin_lower": "0.0292341200715682919601713733900338195719669891783770252080661252411",
+        "kret_target_lower": "188.9122238810816331205615313733900338195719669891783770252080661252411",
+        "label": "one_return_joint_graph_and_triangle_tube_row",
+        "multiplier_exact": "5.532",
+        "pair_sum_reconstructed_kret_upper": "188.88298976101006482860136",
+        "pair_sums": {
+          "ss": "1.7669216475673195373966208",
+          "su": "2.0571309690256731015911256",
+          "uu": "188.88298976101006482860136"
+        },
+        "raw_graph_arithmetic_closes": true,
+        "stable_graph_validated": false,
+        "status": "CONDITIONAL_REFERENCE_ROW_ONLY",
+        "triangle_reconstructed_return_tube_arithmetic_closes": true,
+        "two_return_blocks_are_inferred_from_one_return_blocks": false,
+        "two_return_design": false
+      },
+      "map": "selected near-one-period phase-fixed return P",
+      "preferred_b_factor_two_baseline": {
+        "stable_output_ss_upper": "0.0449373390057929145148",
+        "stable_output_su_upper": "0.1775282712144265750976",
+        "stable_output_uu_upper": "15.89363127345690251956",
+        "unstable_output_ss_upper": "0.593862967417677634074",
+        "unstable_output_su_upper": "0.566192252656026462354",
+        "unstable_output_uu_upper": "52.3937836799089922124"
+      },
+      "rates_are_source_bound": true,
+      "stable_power_constant_upper": "1",
+      "stable_rate_upper": "0.00989642748161000022244199598343033161524171712346077110775160712",
+      "unstable_backward_power_constant_upper": "1",
+      "unstable_backward_rate_upper": "0.549712198641301272665939640423769383243380071590152304446016306796024304322569720837972565017934"
+    },
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_enlarged_return_hessian_stage4m_contract.json": "1a7f89c4c61480a76149b88ae6a15fa40b11425f4d678615af3469b59f75100c",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.json": "5e7214a2f5ba8ca22649c677a1d054b32342b5cc25966bd8e1da7600c605f1de",
+      "experiments/results/leaky_inner_stable_graph_enlargement_stage4k.json": "57119dc28bfa841b4f1a9dcddc3af542783493da94862ed2f7336202b05e2f5c",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_pulse_endpoint_functional_stage5ga.json": "56e847fc804ced75e6c2fbf09ccbec1bdeabf505638e093c0939c2f2e584dd8c",
+      "experiments/results/leaky_pulse_stable_coordinate_cone_stage5gb.json": "a16e9159d462c6b8f58851c2181147940f27e1a404ee4c2fbeb8999440cf8b64"
+    },
+    "preferred_b_geometry": {
+      "fixed_splitting": "x=X_*+x_s+q_hat*x_u, ||q_hat||_Y=1",
+      "geometry_is_a_registered_design": true,
+      "return_domain_validated": false,
+      "sequence_weight_beta": "0.9999",
+      "split_graph_box_radius_sum": "0.00995",
+      "split_norm": "||x_s||_Y+|x_u|",
+      "stable_graph_radius_R_s": "0.0097",
+      "stable_seed_radius_r": "0.0094",
+      "unit_unstable_graph_radius_R_u_hat": "0.00025"
+    },
+    "schema_id": "leaky-inner-graph-closure-arithmetic-stage4p-v1",
+    "selected_versus_first_return": {
+      "abstract_graph_requires": "one common C2 selected section map on the full graph box, a validated return domain, the invariant linear splitting, and six projected Hessian bounds in one normalization",
+      "abstract_graph_requires_first_positive_return": false,
+      "abstract_graph_requires_no_earlier_hit": false,
+      "conclusion": "stable-graph arithmetic can close before first-positive-return, but it cannot close before the selected C2 map itself exists",
+      "crossing_and_onset_pipeline_requires_first_return_semantics": true,
+      "current_selected_map_on_full_ball_validated": false,
+      "first_return_identification_requires_no_earlier_hit": true
+    },
+    "source_bound_parent_ingress": {
+      "stage4k_preferred_b_geometry_and_unstable_rate_chain_bound": true,
+      "stage4l_registered_power_pair": "K_s=1, rho_s=0.1",
+      "stage4l_selected_linear_map_only": true,
+      "stage4l_sharp_stable_rate_upper": "0.00989642748161000022244199598343033161524171712346077110775160712",
+      "stage4m_actual_six_blocks_validated": false,
+      "stage4m_six_block_interface_and_projection_order_bound": true,
+      "stage4n_actual_kret_validated": false,
+      "stage4n_one_return_kret_target_is_conditional_only": true,
+      "stage5ga_endpoint_functional_intervals_bound": true,
+      "stage5gb_seed_containment_strict": true,
+      "stage5gb_selected_pulse_stable_cone_bound": "47/5000"
+    },
+    "status": "NONCLOSING_SOURCE_BOUND_GRAPH_ARITHMETIC_DESIGN",
+    "strict_numeric_ingress": {
+      "evidence_status": "OPEN_FAIL_CLOSED",
+      "one_return": {
+        "actual_kret_upper": null,
+        "directed_uniform_hessian_blocks": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        },
+        "majorant_with_certified_blocks": null,
+        "selected_return_map_parent": null,
+        "stable_graph": null,
+        "stable_power_pair": {
+          "K_s": "1",
+          "rho_s": "0.00989642748161000022244199598343033161524171712346077110775160712"
+        },
+        "stable_seed_cone_radius_upper": "0.00938026702134064586771162490352723908454367085404835197147550902",
+        "validated_split_return_radius": null
+      },
+      "one_return_blocks_may_fill_two_return_slots": false,
+      "two_return": {
+        "actual_kret2_upper": null,
+        "conditional_linear_rate_pair_only": true,
+        "directed_uniform_D2P2_blocks": {
+          "stable_output_ss_upper": null,
+          "stable_output_su_upper": null,
+          "stable_output_uu_upper": null,
+          "unstable_output_ss_upper": null,
+          "unstable_output_su_upper": null,
+          "unstable_output_uu_upper": null
+        },
+        "full_ball_smoothing_event_window": null,
+        "majorant_with_certified_D2P2_blocks": null,
+        "selected_two_return_map_parent": null,
+        "stable_graph": null,
+        "validated_split_return_radius": null
+      }
+    },
+    "theorem_boundary": {
+      "flagship_files_modified": false,
+      "not_proved_here": "a nonlinear selected return on the full ball, a full-ball two-return smoothing window, K_ret, any D2P or D2(P^2) block, a stable graph, first return, crossing, onset, routing, capture, or safety theorem",
+      "proved_here": "source-bound parent identities, exact graph-closure formulas, nonmixable one-axis frontiers, conditional joint reference rows, K_ret coupling, and the exact-orbit one-versus-two-return smoothing audit"
+    },
+    "two_return_design": {
+      "axis_frontiers_other_five_zero": [
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_ss_upper",
+          "combined_limiting_gate": "component_self_map",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "6.312466787118716122861090445318312254224678499309172069295355510681262621",
+          "combined_strict_lower_probe": "6.31246678711871612286109044531831225422467849930917206929535551068126262",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "102.05154639175257731958762886597938144329896907216494845360824742268041237113402061855670103092783505154639175",
+          "contraction_boundary_exact_fraction": "9899/97",
+          "graph_and_kret_axis_boundary_decimal_lower": "6.3124667871187161228610904453183122542246784993091720692953555106812626208948878733127856307790413433946221702",
+          "graph_and_kret_axis_boundary_exact_fraction": "59394/9409",
+          "graph_boundary_decimal_lower": "6.3124667871187161228610904453183122542246784993091720692953555106812626208948878733127856307790413433946221702",
+          "graph_boundary_exact_fraction": "59394/9409",
+          "kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "6.312466787118716122861090445318312254224678499309172069295355510681262621",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0618556701030927835051546391752577319587628865979381443298969072164948453618547328012930599050410",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.00000000000000000000000000000000000000000000000000000000000000000000000000000499545408627134053944842913425598545307606828972623497322961915344984341852712395191433478129104",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "6.3124667871187161228610904453183122542246784993091720692953555106812626208948878733127856307790413433946221702",
+          "self_map_boundary_exact_fraction": "59394/9409",
+          "strict_lower_probe": "6.31246678711871612286109044531831225422467849930917206929535551068126262",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0618556701030927835051546391752577319587628865979381443298969072164948453520557632084048893827660",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000425295484392362864935852106273360945550055561167794726740074755025760177795736943125568239216082",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_su_upper",
+          "combined_limiting_gate": "component_self_map",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "122.461855670103092783505154639175257731958762886597938144329896907216494846",
+          "combined_strict_lower_probe": "122.461855670103092783505154639175257731958762886597938144329896907216494845",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "3959.6",
+          "contraction_boundary_exact_fraction": "19798/5",
+          "graph_and_kret_axis_boundary_decimal_lower": "122.46185567010309278350515463917525773195876288659793814432989690721649484536082474226804123711340206185567010",
+          "graph_and_kret_axis_boundary_exact_fraction": "59394/485",
+          "graph_boundary_decimal_lower": "122.46185567010309278350515463917525773195876288659793814432989690721649484536082474226804123711340206185567010",
+          "graph_boundary_exact_fraction": "59394/485",
+          "kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "122.461855670103092783505154639175257731958762886597938144329896907216494846",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0309278350515463917525773195876288659793814432989690721649484536082474226805737953328619052429539",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.00000000000000000000000000000000000000000000000000000000000000000000000000000156581472876048085665218708960501060713203353874128699868673603394282250732397211839579755530862",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "122.46185567010309278350515463917525773195876288659793814432989690721649484536082474226804123711340206185567010",
+          "self_map_boundary_exact_fraction": "59394/485",
+          "strict_lower_probe": "122.461855670103092783505154639175257731958762886597938144329896907216494845",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0.0309278350515463917525773195876288659793814432989690721649484536082474226803212445701586018789777",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000883927669461561773916557228002828568542276997676532983129609051419335286392564905546014748964541",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_uu_upper",
+          "combined_limiting_gate": "triangle_reconstructed_K_ret",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "178.632235666229401524178689252956765060835465607509882962035766001634944927",
+          "combined_strict_lower_probe": "178.632235666229401524178689252956765060835465607509882962035766001634944926",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": null,
+          "contraction_boundary_exact_fraction": null,
+          "graph_and_kret_axis_boundary_decimal_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722",
+          "graph_and_kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "graph_boundary_decimal_lower": "9503.04",
+          "graph_boundary_exact_fraction": "237576/25",
+          "kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "9503.040000000000000000000000000000000000000000000000000000000000000000000001",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000000315688453379129204970199010001010203050813213455904636832003232649762602283058894837862410344480",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "9503.04",
+          "self_map_boundary_exact_fraction": "237576/25",
+          "strict_lower_probe": "9503.039999999999999999999999999999999999999999999999999999999999999999999999",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000000315688453379129204970199010001010203050813213455904636832003232649762602283058894837862410344479",
+              "unstable": "0.00025"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_ss_upper",
+          "combined_limiting_gate": "component_self_map",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "12.272013562178765506804426836073169211253629516496552018358362654642595763",
+          "combined_strict_lower_probe": "12.272013562178765506804426836073169211253629516496552018358362654642595762",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": null,
+          "contraction_boundary_exact_fraction": null,
+          "graph_and_kret_axis_boundary_decimal_lower": "12.272013562178765506804426836073169211253629516496552018358362654642595762448301435494708398599696337566386552",
+          "graph_and_kret_axis_boundary_exact_fraction": "8723083962688500457260341045797664146910857492494270948538596418015432226442467776289437752054696148560238859553862597038342307463514037868526767809261150115594211475916998941854307509431822585445/710811141015379521904939515953390899924307267789207013605367462804136377265782992157069310749422220986032854694623598849209665548070735427443377171370373808628344118873826521774033816256745300401",
+          "graph_boundary_decimal_lower": "12.272013562178765506804426836073169211253629516496552018358362654642595762448301435494708398599696337566386552",
+          "graph_boundary_exact_fraction": "8723083962688500457260341045797664146910857492494270948538596418015432226442467776289437752054696148560238859553862597038342307463514037868526767809261150115594211475916998941854307509431822585445/710811141015379521904939515953390899924307267789207013605367462804136377265782992157069310749422220986032854694623598849209665548070735427443377171370373808628344118873826521774033816256745300401",
+          "kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "12.272013562178765506804426836073169211253629516496552018358362654642595763",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.0515463917525773195876288659793814432989690721649484536082474226804123711363379294194406115687687",
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926683542736451241677064550",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000112389576842869661085280707981078984367534211590206370721412108752969894825205172836694579957108"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "12.272013562178765506804426836073169211253629516496552018358362654642595762448301435494708398599696337566386552",
+          "self_map_boundary_exact_fraction": "8723083962688500457260341045797664146910857492494270948538596418015432226442467776289437752054696148560238859553862597038342307463514037868526767809261150115594211475916998941854307509431822585445/710811141015379521904939515953390899924307267789207013605367462804136377265782992157069310749422220986032854694623598849209665548070735427443377171370373808628344118873826521774033816256745300401",
+          "strict_lower_probe": "12.272013562178765506804426836073169211253629516496552018358362654642595762",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.0515463917525773195876288659793814432989690721649484536082474226804123711321376087881598060186586",
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926663172063397797436413133",
+            "perron_root_upper": "0",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000913259737742494080950624812040222680586167186924484192557871000250649300551144454422960462263013"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_su_upper",
+          "combined_limiting_gate": "triangle_reconstructed_K_ret",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "178.632235666229401524178689252956765060835465607509882962035766001634944927",
+          "combined_strict_lower_probe": "178.632235666229401524178689252956765060835465607509882962035766001634944926",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "238.07706310626805083200588061981948269832041262003310915615223550006635779149704784859734293283410894878789912",
+          "contraction_boundary_exact_fraction": "1744616792537700091452068209159532829382171498498854189707719283603086445288493555257887550410939229712047771910772519407668461492702807573705353561852230023118842295183399788370861501886364517089/7327949907375046617576696040756607215714507915352649624797602709320993580059618475846075368550744546247761388604366998445460469567739540489106981148148183594106640400761098162618905322234487633",
+          "graph_and_kret_axis_boundary_decimal_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722",
+          "graph_and_kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "graph_boundary_decimal_lower": "238.07706310626805083200588061981948269832041262003310915615223550006635779149704784859734293283410894878789912",
+          "graph_boundary_exact_fraction": "1744616792537700091452068209159532829382171498498854189707719283603086445288493555257887550410939229712047771910772519407668461492702807573705353561852230023118842295183399788370861501886364517089/7327949907375046617576696040756607215714507915352649624797602709320993580059618475846075368550744546247761388604366998445460469567739540489106981148148183594106640400761098162618905322234487633",
+          "kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "238.077063106268050832005880619819482698320412620033109156152235500066357792",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": false,
+            "graph_derivative_upper": null,
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926672832382577781303113805",
+            "perron_root_upper": "1.00000000000000000000000000000000000000000000000000000000000000000000000000211256029808364782299",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "-0.000000000000000000000000000000000000000000000000000000000000000000000000000000528140074520911955747140232705667639089815546221261516638984434390003844483094054567888990191319"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "238.07706310626805083200588061981948269832041262003310915615223550006635779149704784859734293283410894878789912",
+          "self_map_boundary_exact_fraction": "1744616792537700091452068209159532829382171498498854189707719283603086445288493555257887550410939229712047771910772519407668461492702807573705353561852230023118842295183399788370861501886364517089/7327949907375046617576696040756607215714507915352649624797602709320993580059618475846075368550744546247761388604366998445460469567739540489106981148148183594106640400761098162618905322234487633",
+          "strict_lower_probe": "238.077063106268050832005880619819482698320412620033109156152235500066357791",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "12344901599322975092156812568321033220340804989131785591892059086083768872.7247106699638524426091",
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926671782347884304795863731",
+            "perron_root_upper": "0.999999999999999999999999999999999999999999999999999999999999999999999999997912239666802842272879",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000521940083299289431780401979588668713622302651112010596645547569620484943559790575736186402506665"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "axis_frontier_is_simultaneously_mixable": false,
+          "axis_only_other_five_blocks_zero": true,
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_uu_upper",
+          "combined_limiting_gate": "triangle_reconstructed_K_ret",
+          "combined_lower_passes": true,
+          "combined_rejecting_upper_probe": "178.632235666229401524178689252956765060835465607509882962035766001634944927",
+          "combined_strict_lower_probe": "178.632235666229401524178689252956765060835465607509882962035766001634944926",
+          "combined_upper_fails": true,
+          "contraction_boundary_decimal_lower": "9237.3900485232003722818281680489959286948320096572846352587067374025746823100854565255769057939634272129704860",
+          "contraction_boundary_exact_fraction": "3489233585075400182904136418319065658764342996997708379415438567206172890576987110515775100821878459424095543821545038815336922985405615147410707123704460046237684590366799576741723003772729034178/377729376668816835957561651585392124521366387389311836329773335532009978353588581229179142708801265270503164361049845280693838637512347447892112430316916680108589711379438049619531202177035445",
+          "graph_and_kret_axis_boundary_decimal_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722",
+          "graph_and_kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "graph_boundary_decimal_lower": "9237.3900485232003722818281680489959286948320096572846352587067374025746823100854565255769057939634272129704860",
+          "graph_boundary_exact_fraction": "3489233585075400182904136418319065658764342996997708379415438567206172890576987110515775100821878459424095543821545038815336922985405615147410707123704460046237684590366799576741723003772729034178/377729376668816835957561651585392124521366387389311836329773335532009978353588581229179142708801265270503164361049845280693838637512347447892112430316916680108589711379438049619531202177035445",
+          "kret_axis_boundary_exact_fraction": "8842518955772938162198750341382926066467681591903748593974472961788431817519551100561375104773181842888706394799849964146250331875542274519/49501250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "limiting_graph_gate": "m_uu<1",
+          "rejecting_upper_probe": "9237.390048523200372281828168048995928694832009657284635258706737402574682311",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": false,
+            "graph_derivative_upper": null,
+            "graph_height_upper": "0.000124994587991288622888663154487434665618989119942633329916136017361702463336164507715454272241808",
+            "perron_root_upper": "1.00000000000000000000000000000000000000000000000000000000000000000000000000009900453154181835825",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.000124999999999999999999999999999999999999999999999999999999999999999999999999987624433557272705219"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "18474.780097046400744563656336097991857389664019314569270517413474805149364620170913051153811587926854425940972",
+          "self_map_boundary_exact_fraction": "6978467170150800365808272836638131317528685993995416758830877134412345781153974221031550201643756918848191087643090077630673845970811230294821414247408920092475369180733599153483446007545458068356/377729376668816835957561651585392124521366387389311836329773335532009978353588581229179142708801265270503164361049845280693838637512347447892112430316916680108589711379438049619531202177035445",
+          "strict_lower_probe": "9237.39004852320037228182816804899592869483200965728463525870673740257468231",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0",
+            "graph_height_upper": "0.000124994587991288622888663154487434665618989119942633329916136017361702463336150976340538337870028",
+            "perron_root_upper": "0.999999999999999999999999999999999999999999999999999999999999999999999999999990748845168601720356",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0003",
+              "unstable": "0.000125000000000000000000000000000000000000000000000000000000000000000000000000001156394353924784955"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        }
+      ],
+      "common_scaling_frontier": {
+        "componentwise_caps_at_different_frontiers_may_be_mixed": false,
+        "graph_and_triangle_kret_common_multiplier_boundary_decimal_lower": "5.2317761856476483174633948575527492815203832487516886589618661922992600760744685629905148198241909804848028070",
+        "graph_lower_probe_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.0569592517230079930277401624661503923518713670362382632586008077664321393616661058244682373761481",
+          "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926671281242673643872014741",
+          "perron_root_upper": "0.180090074992736710496506660600753522411941797323801602447167266879675136102569735998677048658120",
+          "raw_graph_arithmetic_closes": true,
+          "self_map_closes": true,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000242687372143801681259554030335328495220942607397060357423283988691904822099609795092076508780430",
+            "unstable": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000102306699078572385720958098196534596715650660448997785863867665734621648291062555435134137242165"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "graph_only_common_multiplier_boundary_decimal_lower": "37.309395578799146953680939321758192463814460536999906899656293614940621276152680044251344933171208723787912184",
+        "graph_only_limiting_gate": "unstable_self_map",
+        "graph_upper_probe_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.0569592517230079930277401624661503923518713670362382632586008077664321393634969011705420700592590",
+          "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926677981677566902560485581",
+          "perron_root_upper": "0.180090074992736710496506660600753522411941797323801602447167266879675136107396672275690120324427",
+          "raw_graph_arithmetic_closes": false,
+          "self_map_closes": false,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000242687372143801681259554030335328495220942607397060357423283988691904822098073650457003248697746",
+            "unstable": "-0.00000000000000000000000000000000000000000000000000000000000000000000000000000567765801752990498683137456150789585787292267262113282453517104140968239564099930091900363395638"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "joint_limiting_gate": "uu_pair_sum_to_K_ret",
+        "shape_is_evidentiary": false,
+        "stable_self_map_multiplier_boundary_exact_fraction": "24747500000000000000000000/126719131188251679654029",
+        "triangle_kret_common_multiplier_boundary_decimal_lower": "5.2317761856476483174633948575527492815203832487516886589618661922992600760744685629905148198241909804848028070",
+        "unstable_self_map_multiplier_boundary_exact_fraction": "272596373834015639289385657681177004590964296640445967141831138062982257076327118009044929751709254642507464361058206157448197108234813683391461494039410941112319108622406216932947109669744455795156250000000000000000/7306373357302978854449921448507307719873991752159343578257214462889784219577603779475159340816746371262440837396387163197068234786080095495905125689605560768486685956314306181540005492950029647400541823274086866431"
+      },
+      "composition_hessian_formula": "D2(P^2)(x)[h,k]=D2P(Px)[DP(x)h,DP(x)k]+DP(Px)D2P(x)[h,k]",
+      "conditional_linear_transfer": {
+        "formula_stable": "rho_s,2<=0.1^2=0.01",
+        "formula_unstable": "rho_u,2<=rho_u,1^2",
+        "power_constants": "K_s=K_u=1",
+        "requires_exact_invariant_splitting_and_intertwining_transfer": true,
+        "stable_rate_upper": "0.01",
+        "transfer_validated_here": false,
+        "unstable_backward_rate_upper": "0.30218350133505346876604932126831369961709310991144946906381866842560798268287086498334331416704101221640253148883987622455507091000987795831"
+      },
+      "conditional_return_tube_ledger": {
+        "conditional_two_return_forward_unstable_multiplier_upper": "4.041924176908247351204998634468295734129273632385005624102108152846272729921795597754499580907272628445174420800600143414998672497830901924",
+        "conditional_two_return_kret_target_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722",
+        "conditional_two_return_linear_image_upper": "0.0011074810442270618378012496586170739335323184080962514060255270382115681824804488994386248952268181571112936053",
+        "conditional_two_return_remainder_slack_lower": "0.0088425189557729381621987503413829260664676815919037485939744729617884318175195511005613751047731818428887063947",
+        "one_return_forward_unstable_multiplier_upper": "2.010453724139963225332464536254809486884274051917457538108958279070618"
+      },
+      "conservative_pilot_envelope_replay": {
+        "blocks": {
+          "stable_output_ss_upper": "0.000001",
+          "stable_output_su_upper": "0.00001",
+          "stable_output_uu_upper": "35",
+          "unstable_output_ss_upper": "0.7",
+          "unstable_output_su_upper": "0.7",
+          "unstable_output_uu_upper": "180"
+        },
+        "blocks_are_source_bound_continuous_history_bounds": false,
+        "conditional_kret_target_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722279437315514760398728400342453",
+        "entered_into_strict_numeric_ingress": false,
+        "exact_majorant_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.00308527689652545020776304477341512353702704874403960291501414268307516752935285516319149853358546",
+          "graph_height_upper": "0.0000174301429077127104513154725716547793348907554145764621150720769700202713496990423088054850238443",
+          "perron_root_upper": "0.0235579102609504723075534032210820555310216747343043996650559035850253867607971684971803105544664",
+          "raw_graph_arithmetic_closes": true,
+          "self_map_closes": true,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000298895018390746540054550964743913526618850388928174563087180523285180321244570158601878977674512",
+            "unstable": "0.000232569102402930149833594357025279911116670677973008851279111112870334756423142978182160721295808"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "label": "two_return_conservative_finite_section_pilot_envelope",
+        "pair_sum_implies_conditional_kret_target": false,
+        "pair_sum_reconstructed_kret_upper": "215",
+        "pair_sums": {
+          "ss": "0.700001",
+          "su": "0.70001",
+          "uu": "215"
+        },
+        "raw_graph_arithmetic_closes": true,
+        "return_domain_is_validated_by_this_row": false,
+        "role": "DIAGNOSTIC envelope around an independently reported N=180 P-composed-with-P finite-section pilot",
+        "stable_graph_validated": false
+      },
+      "current_release_status": "NO_GO_MISSING_FULL_BALL_SMOOTH_SELECTED_P2_MAP_AND_D2P2_BLOCKS",
+      "direct_or_correlated_composition_certificate_required": true,
+      "independently_reported_finite_section_pilot": {
+        "approximate_blocks": {
+          "stable_output_ss_upper": "0.0000000427",
+          "stable_output_su_upper": "0.000000520",
+          "stable_output_uu_upper": "30.2781",
+          "unstable_output_ss_upper": "0.59394",
+          "unstable_output_su_upper": "0.56667",
+          "unstable_output_uu_upper": "158.5393"
+        },
+        "entered_into_strict_numeric_ingress": false,
+        "source_bound_continuous_history_certificate": false,
+        "truncation_N": 180
+      },
+      "isolated_graph_frontiers_holding_conservative_pilot_envelope": [
+        {
+          "background_blocks": {
+            "stable_output_ss_upper": "0.000001",
+            "stable_output_su_upper": "0.00001",
+            "stable_output_uu_upper": "35",
+            "unstable_output_ss_upper": "0.7",
+            "unstable_output_su_upper": "0.7",
+            "unstable_output_uu_upper": "180"
+          },
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_ss_upper",
+          "contraction_boundary_decimal_lower": "102.04876306849915057346942237640051511129662531682183198990461226322440085336205532191642680617144246651311034",
+          "contraction_boundary_exact_fraction": "8441100367217154890133824459945607376298116930723249793966343069455760423930017967115534713463650285463131139802262638132838246173377936013619229471746494370647730505758414250573805763526168840533844723109/82716341809563686113803822704483418786526045852513859580483046033171021308935499225687204978244337340783459126093366357024468393801520013315055394981520183979569936784617803366776617308296058506251150000",
+          "frontiers_from_different_records_may_be_mixed": false,
+          "graph_boundary_decimal_lower": "6.2892172547560845998512062918482304176851950260388989265596769050908704431926878520565416090976724412796258901",
+          "graph_boundary_exact_fraction": "1183504903/188180000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "6.289217254756084599851206291848230417685195026038898926559676905090870444",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.00328790916094525992808823807346406953850378946576366905781658283753569687082648657046658789722081",
+            "graph_height_upper": "0.0000174301429077127104513154725716547793348907554145764621150720769700202713496990423088054850238443",
+            "perron_root_upper": "0.0622965095428798247706017309825435240787187887740986948082024413440496252783197044762250457133151",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000383675118698858470552581068794827760379836347105768259420143448833215476310738458430144459036267",
+              "unstable": "0.000232569102402930149833594357025279911116670677973008851279111112870334756423142978182160721295808"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "6.2892172547560845998512062918482304176851950260388989265596769050908704431926878520565416090976724412796258901",
+          "self_map_boundary_exact_fraction": "1183504903/188180000",
+          "strict_lower_probe": "6.289217254756084599851206291848230417685195026038898926559676905090870443",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.00328790916094525992808823807346406953850378946576366905781658283753569687079215151662934015394679",
+            "graph_height_upper": "0.0000174301429077127104513154725716547793348907554145764621150720769700202713496990423088054850238443",
+            "perron_root_upper": "0.0622965095428798247706017309825435240787187887740986948082024413440496252686823613671128975848137",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000915749065562177997777553288210930397009798969592888170522274977270431356702697242145671279927265",
+              "unstable": "0.000232569102402930149833594357025279911116670677973008851279111112870334756423142978182160721295808"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "background_blocks": {
+            "stable_output_ss_upper": "0.000001",
+            "stable_output_su_upper": "0.00001",
+            "stable_output_uu_upper": "35",
+            "unstable_output_ss_upper": "0.7",
+            "unstable_output_su_upper": "0.7",
+            "unstable_output_uu_upper": "180"
+          },
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_su_upper",
+          "contraction_boundary_decimal_lower": "3536.1905956319175517046339051302545110104615871837419157274394377547721403864062439217577249298217044393833916",
+          "contraction_boundary_exact_fraction": "168822006167428328641855977510153374682243210422457718482748191841339931062770866381373164943339114788622210408823991848982598035524371436438609878903624250559403977605020942930100495435449321205335727124977/47741206703045321058731768124594924753851363965369852206188564324759093321777245518781020864424633442844792160819316025254618059219662555576980226277685304708125139361098044750045829056058000278782000000",
+          "frontiers_from_different_records_may_be_mixed": false,
+          "graph_boundary_decimal_lower": "122.01080534226804123711340206185567010309278350515463917525773195876288659793814432989690721649484536082474226",
+          "graph_boundary_exact_fraction": "59175240591/485000000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "122.010805342268041237113402061855670103092783505154639175257731958762886598",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.00319553385752874251617710465499011065508131509199657173301834015829677638340553334354970346643887",
+            "graph_height_upper": "0.0000174301429077127104513154725716547793348907554145764621150720769700202713496990423088054850238443",
+            "perron_root_upper": "0.0870363251655341637109600664980009037373719870073512333867718033082887590073633170952076225373942",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.000000000000000000000000000000000000000000000000000000000000000000000000000000151530457621982018385695524800484897464390342458834225679361551671886049095868269522173956965351",
+              "unstable": "0.000232569102402930149833594357025279911116670677973008851279111112870334756423142978182160721295808"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "122.01080534226804123711340206185567010309278350515463917525773195876288659793814432989690721649484536082474226",
+          "self_map_boundary_exact_fraction": "59175240591/485000000",
+          "strict_lower_probe": "122.010805342268041237113402061855670103092783505154639175257731958762886597",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.00319553385752874251617710465499011065508131509199657173301834015829677638340459738409419463914361",
+            "graph_height_upper": "0.0000174301429077127104513154725716547793348907554145764621150720769700202713496990423088054850238443",
+            "perron_root_upper": "0.0870363251655341637109600664980009037373719870073512333867718033082887590069836919011617816037759",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000229821194060006061218304879280735427820992019395898575613698353369027174462066875441963834730780",
+              "unstable": "0.000232569102402930149833594357025279911116670677973008851279111112870334756423142978182160721295808"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "background_blocks": {
+            "stable_output_ss_upper": "0.000001",
+            "stable_output_su_upper": "0.00001",
+            "stable_output_uu_upper": "35",
+            "unstable_output_ss_upper": "0.7",
+            "unstable_output_su_upper": "0.7",
+            "unstable_output_uu_upper": "180"
+          },
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "stable_output_uu_upper",
+          "contraction_boundary_decimal_lower": "1283420.6191187206685626327583220958247835267589781472423006060659294452952917936064941315160708407962543812881",
+          "contraction_boundary_exact_fraction": "56275536579652044550870681550805484961517240896166123434564911434732584533934530155473388970934866015265980608606891995697034280001294607622313272706402337700245201365538041814882449331977188661845322695719/43848085141638487707406948388204269121521948136109282333947854699674158320545741137687212149446680210150908996245202873000543101837891666242809384619288744615938788995963100260000580386050864573750000",
+          "frontiers_from_different_records_may_be_mixed": false,
+          "graph_boundary_decimal_lower": "9503.03771856",
+          "graph_boundary_exact_fraction": "59393985741/6250000",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "9503.037718560000000000000000000000000000000000000000000000000000000000000001",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.00310820735800506835582277549247267266478532387447650239974311742866007154504968197246335771862034",
+            "graph_height_upper": "0.0000174301429077127104513154725716547793348907554145764621150720769700202713496990423088054850238443",
+            "perron_root_upper": "0.0970277022465908470373243045302838054874944603037651718914730502159016050566687981592499032726794",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000000315688453379129204970199010001010203050813213455904636832003232649762602283058894837862410344480",
+              "unstable": "0.000232569102402930149833594357025279911116670677973008851279111112870334756423142978182160721295808"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "9503.03771856",
+          "self_map_boundary_exact_fraction": "59393985741/6250000",
+          "strict_lower_probe": "9503.037718559999999999999999999999999999999999999999999999999999999999999999",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.00310820735800506835582277549247267266478532387447650239974311742866007154504967709270127045887332",
+            "graph_height_upper": "0.0000174301429077127104513154725716547793348907554145764621150720769700202713496990423088054850238443",
+            "perron_root_upper": "0.0970277022465908470373243045302838054874944603037651718914730502159016050566599221147031211437169",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.0000000000000000000000000000000000000000000000000000000000000000000000000000000315688453379129204970199010001010203050813213455904636832003232649762602283058894837862410344479",
+              "unstable": "0.000232569102402930149833594357025279911116670677973008851279111112870334756423142978182160721295808"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "background_blocks": {
+            "stable_output_ss_upper": "0.000001",
+            "stable_output_su_upper": "0.00001",
+            "stable_output_uu_upper": "35",
+            "unstable_output_ss_upper": "0.7",
+            "unstable_output_su_upper": "0.7",
+            "unstable_output_uu_upper": "180"
+          },
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_ss_upper",
+          "contraction_boundary_decimal_lower": "26329.659485979287260362898556431194212591238197050713173960588309656625207754670290882236362440743634547931333",
+          "contraction_boundary_exact_fraction": "56275498036363769566177533060835474324983650338247913690729783087829823106679088696173991642562331742623336067749630081399879182320159224358495127026937210180309495814999701270970836179561088802134369288409/2137342416689089109443933176537875550946728952220115780799754302467383265396630914888177218137658806729629939438096861999887610612775635000503784280782265894074724395025949424981239853445600784468346700",
+          "frontiers_from_different_records_may_be_mixed": false,
+          "graph_boundary_decimal_lower": "12.116364715330003683018689775811717409786948679000537564112427911311742324250830928533288481499048022123725271",
+          "graph_boundary_exact_fraction": "17224894056524408012016742476096605587277098555255883023355211616076213007565403361694822362310576515925016965425022194711254164253173342602078336156842650439980811098907923074241493640628337807209/1421622282030759043809879031906781799848614535578414027210734925608272754531565984314138621498844441972065709389247197698419331096141470854886754342740747617256688237747653043548067632513490600802",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "12.116364715330003683018689775811717409786948679000537564112427911311742325",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.0521616875797398708969549695572382854649679357804865514795745984683505780482782920929721999131350",
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926687565343586250647107097",
+            "perron_root_upper": "0.0352186036557473676102237875992517797366306786382711863582285667468552760421227520529484879612404",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000298895018390746540054550964743913526618850388928174563087180523285180321244570158601878977674512",
+              "unstable": "-0.0000000000000000000000000000000000000000000000000000000000000000000000000000152617389899156963724995624072684694539474739644746980751982427587021197261982072694529055825827"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "12.116364715330003683018689775811717409786948679000537564112427911311742324250830928533288481499048022123725271",
+          "self_map_boundary_exact_fraction": "17224894056524408012016742476096605587277098555255883023355211616076213007565403361694822362310576515925016965425022194711254164253173342602078336156842650439980811098907923074241493640628337807209/1421622282030759043809879031906781799848614535578414027210734925608272754531565984314138621498844441972065709389247197698419331096141470854886754342740747617256688237747653043548067632513490600802",
+          "strict_lower_probe": "12.116364715330003683018689775811717409786948679000537564112427911311742324",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.0521616875797398708969549695572382854649679357804865514795745984683505780439776499088327284887395",
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926667194670532806406455680",
+            "perron_root_upper": "0.0352186036557473676102237875992517797366306786382711863582285667468552760413494240897294623234135",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000298895018390746540054550964743913526618850388928174563087180523285180321244570158601878977674512",
+              "unstable": "0.00000000000000000000000000000000000000000000000000000000000000000000000000000510981607179621054553475651124165578866761906379078092252167811910136276183375455844615703575826"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "background_blocks": {
+            "stable_output_ss_upper": "0.000001",
+            "stable_output_su_upper": "0.00001",
+            "stable_output_uu_upper": "35",
+            "unstable_output_ss_upper": "0.7",
+            "unstable_output_su_upper": "0.7",
+            "unstable_output_uu_upper": "180"
+          },
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_su_upper",
+          "contraction_boundary_decimal_lower": "233.37853223682152786494285945115497443320994276643801543957987051102462400597888271797880225983814309766644727",
+          "contraction_boundary_exact_fraction": "5644329899919797585157428809050302081158562221663619902724206565394590062058330681743001078235162076045351855165616274395515703194652109984700226071528292140815934285075339640496277002349901833320566916145/24185300360841235396195111841588999926804941236405631079834627732543526027142251842348694834569339856413317837734190051239681564827259776143926619620322687710814191832887614084202958833620207374346816533",
+          "frontiers_from_different_records_may_be_mixed": false,
+          "graph_boundary_decimal_lower": "222.17747547740207145056258165074731774986680437261042874378110147944780109046612001354579654108153162920027026",
+          "graph_boundary_exact_fraction": "81405270542272510038364320130235772889465349678792308758406401935578345172268622510029239274206203091841526492863898626557394278864242448935406784924805821965299379076449468154480893175622679000393/366397495368752330878834802037830360785725395767632481239880135466049679002980923792303768427537227312388069430218349922273023478386977024455349057407409179705332020038054908130945266111724381650",
+          "limiting_graph_gate": "component_self_map",
+          "rejecting_upper_probe": "222.177475477402071450562581650747317749866804372610428743781101479447801091",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.573585165219103364275326510225824151133053674313562914846568939803388956581997105361369558590902",
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926672864857877579545606075",
+            "perron_root_upper": "0.952953031082644194523453410945824415173023348940406748833130276738205744550558214227726624482241",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": false,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000298895018390746540054550964743913526618850388928174563087180523285180321244570158601878977674512",
+              "unstable": "-0.000000000000000000000000000000000000000000000000000000000000000000000000000000560616780432876947113971435147760515977819201808888489214794702555276693597822445195850084810845"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "222.17747547740207145056258165074731774986680437261042874378110147944780109046612001354579654108153162920027026",
+          "self_map_boundary_exact_fraction": "81405270542272510038364320130235772889465349678792308758406401935578345172268622510029239274206203091841526492863898626557394278864242448935406784924805821965299379076449468154480893175622679000393/366397495368752330878834802037830360785725395767632481239880135466049679002980923792303768427537227312388069430218349922273023478386977024455349057407409179705332020038054908130945266111724381650",
+          "strict_lower_probe": "222.17747547740207145056258165074731774986680437261042874378110147944780109",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "0.573585165219103364275326510225824151133053674313562914846568939803388956528488538803648240680987",
+            "graph_height_upper": "0.000249989175982577245777326308974869331237978239885266659832272034723404926671814823184103038356002",
+            "perron_root_upper": "0.952953031082644194523453410945824415173023348940406748833130276738205744546357992983762883663944",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000298895018390746540054550964743913526618850388928174563087180523285180321244570158601878977674512",
+              "unstable": "0.000000000000000000000000000000000000000000000000000000000000000000000000000000489463377387324440413570777146575836734298995524383624069737301455212094445062185108225307887139"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        },
+        {
+          "background_blocks": {
+            "stable_output_ss_upper": "0.000001",
+            "stable_output_su_upper": "0.00001",
+            "stable_output_uu_upper": "35",
+            "unstable_output_ss_upper": "0.7",
+            "unstable_output_su_upper": "0.7",
+            "unstable_output_uu_upper": "180"
+          },
+          "background_semantics": "all five other blocks fixed at the row declared by the containing ledger",
+          "block": "unstable_output_uu_upper",
+          "contraction_boundary_decimal_lower": "9209.9837835414603654354516820142518842217768095650799265761151160997988666783398754494115465362430686472685217",
+          "contraction_boundary_exact_fraction": "57395744812740577375465396948278280356263737631129389191582937924677801890638397856468521145624005875790312265094617323512131416321156205497048064069401495109502971881832316845841038506693977042922244158719/6231905089269389842580414670368791912031944461933497677220637026998366401361593344083062372857613857398260768347743943975845307380144022683629387174782402862885157632828520774820495527946112007427792850",
+          "frontiers_from_different_records_may_be_mixed": false,
+          "graph_boundary_decimal_lower": "9209.9837835414603654354516820142518842217768095650799265761151160997988666783398754494115465362430686472685217",
+          "graph_boundary_exact_fraction": "57395744812740577375465396948278280356263737631129389191582937924677801890638397856468521145624005875790312265094617323512131416321156205497048064069401495109502971881832316845841038506693977042922244158719/6231905089269389842580414670368791912031944461933497677220637026998366401361593344083062372857613857398260768347743943975845307380144022683629387174782402862885157632828520774820495527946112007427792850",
+          "limiting_graph_gate": "det(I-M)>0",
+          "rejecting_upper_probe": "9209.983783541460365435451682014251884221776809565079926576115116099798866679",
+          "rejecting_upper_probe_metrics": {
+            "contraction_closes": false,
+            "graph_derivative_upper": null,
+            "graph_height_upper": "0.000139618238967619779117438403601835659103668998202463151643492890866287725243651478560873290396715",
+            "perron_root_upper": "1.00000000000000000000000000000000000000000000000000000000000000000000000000007146033121299320509",
+            "raw_graph_arithmetic_closes": false,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000298895018390746540054550964743913526618850388928174563087180523285180321244570158601878977674512",
+              "unstable": "0.000110375715849643088684655598500762285985613526602375802457501019090808132499610702529857339057449"
+            },
+            "split_ball_contains_graph_box": true
+          },
+          "self_map_boundary_decimal_lower": "17366.652097046400744563656336097991857389664019314569270517413474805149364620170913051153811587926854425940972",
+          "self_map_boundary_exact_fraction": "163997366786038442575307298969752847834176832546761835306560951691398265696524220342280559414803459759162973928150215866986728598727548693552090587105667396139499947026053130660866353388485603368976/9443234416720420898939041289634803113034159684732795908244333388300249458839714530729478567720031631762579109026246132017345965937808686197302810757922917002714742784485951240488280054425886125",
+          "strict_lower_probe": "9209.983783541460365435451682014251884221776809565079926576115116099798866678",
+          "strict_lower_probe_metrics": {
+            "contraction_closes": true,
+            "graph_derivative_upper": "81971205603688584875896833420651433404229572799453335548925328747711550673.2327971067900870943100",
+            "graph_height_upper": "0.000139618238967619779117438403601835659103668998202463151643492890866287725243637947185957356024936",
+            "perron_root_upper": "0.999999999999999999999999999999999999999999999999999999999999999999999999999963207530814505571611",
+            "raw_graph_arithmetic_closes": true,
+            "self_map_closes": true,
+            "self_map_slack_vector_lower": {
+              "stable": "0.000298895018390746540054550964743913526618850388928174563087180523285180321244570158601878977674512",
+              "unstable": "0.000110375715849643088684655598500762285985613526602375802457501019090808132499624234490653991137185"
+            },
+            "split_ball_contains_graph_box": true
+          }
+        }
+      ],
+      "joint_reference_row": {
+        "allocation_shape_is_a_directed_hessian_bound": false,
+        "allocation_shape_origin": "Stage-4A one-return finite-section heuristic ratios used only as a proof-engineering allocation shape",
+        "block_targets": {
+          "stable_output_ss_upper": "0.117511141500148471456202",
+          "stable_output_su_upper": "0.464236429225725493880224",
+          "stable_output_uu_upper": "41.5618457800898000886494",
+          "unstable_output_ss_upper": "1.55295165979722701310351",
+          "unstable_output_su_upper": "1.48059274069550919905571",
+          "unstable_output_uu_upper": "137.009744322962014635426"
+        },
+        "certified_hessian_blocks_supplied": false,
+        "certified_kret_supplied": false,
+        "entered_into_strict_numeric_ingress": false,
+        "exact_majorant_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.00683626625013067292705408382259133398217257532940435225954286886887625694442340019028382130092227",
+          "graph_height_upper": "0.0000350432744917429407024937159021460324830743414605100512936211791299142149283159660563327086561559",
+          "perron_root_upper": "0.0252448767287783648147867555907452648188596129729428285339514324257604160412073263816437319294355",
+          "raw_graph_arithmetic_closes": true,
+          "self_map_closes": true,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000291965963558566849767565552035559147388625113647843216486513789271643600363673098292756844125669",
+            "unstable": "0.000214955208206509261145665802507634945255096084880708891127000776535506648865175002006936095616642"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "kret_margin_lower": "0.060645563177586800103289252956765060835465607509882962035766001634944926028152835764250494142710393953817222794",
+        "kret_target_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722279437315514760398728400342453",
+        "label": "two_return_separate_conditional_reference_row",
+        "multiplier_exact": "5.23",
+        "pair_sum_reconstructed_kret_upper": "178.5715901030518147240754",
+        "pair_sums": {
+          "ss": "1.670462801297375484559712",
+          "su": "1.944829169921234692935934",
+          "uu": "178.5715901030518147240754"
+        },
+        "raw_graph_arithmetic_closes": true,
+        "stable_graph_validated": false,
+        "status": "CONDITIONAL_REFERENCE_ROW_ONLY",
+        "triangle_reconstructed_return_tube_arithmetic_closes": true,
+        "two_return_blocks_are_inferred_from_one_return_blocks": false,
+        "two_return_design": true
+      },
+      "map": "selected near-two-period phase-fixed return P2",
+      "one_return_block_caps_may_be_squared_or_reused": false,
+      "recommended_wide_proof_box": {
+        "blocks": {
+          "stable_output_ss_upper": "1",
+          "stable_output_su_upper": "10",
+          "stable_output_uu_upper": "1000",
+          "unstable_output_ss_upper": "5",
+          "unstable_output_su_upper": "10",
+          "unstable_output_uu_upper": "1000"
+        },
+        "blocks_are_source_bound_continuous_history_bounds": false,
+        "conditional_kret_target_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722279437315514760398728400342453",
+        "entered_into_strict_numeric_ingress": false,
+        "exact_majorant_metrics": {
+          "contraction_closes": true,
+          "graph_derivative_upper": "0.0265585571397111357173939624415935403078342404111115205070428165130243262155259685658380239508024",
+          "graph_height_upper": "0.000125885087117920647537106641908737907341782552489261736682176419166024330206718688210549874138151",
+          "perron_root_upper": "0.193085545806147794772052499358172614366210495504324075876398013803772078660264633932861429038588",
+          "raw_graph_arithmetic_closes": true,
+          "self_map_closes": true,
+          "self_map_slack_vector_lower": {
+            "stable": "0.000196408728154359026164259016062228507930093948883725628851399131225376300636427922012324477219921",
+            "unstable": "0.000124109462316586371798373315600300644889801829723828645305300797168680679214941181795813476889846"
+          },
+          "split_ball_contains_graph_box": true
+        },
+        "label": "two_return_recommended_wide_proof_box",
+        "pair_sum_implies_conditional_kret_target": false,
+        "pair_sum_reconstructed_kret_upper": "2000",
+        "pair_sums": {
+          "ss": "6",
+          "su": "20",
+          "uu": "2000"
+        },
+        "raw_graph_arithmetic_closes": true,
+        "return_domain_is_validated_by_this_row": false,
+        "role": "recommended simultaneous target box for a future source-bound continuous-history D2(P^2) certificate",
+        "stable_graph_validated": false
+      },
+      "smoothing_audit": {
+        "equivalent_condition": "T2_minus>2*tau_max",
+        "one_return_exact_orbit_margin_lower": "-4.1744698258719759712410323358324635900333471705997629297353449",
+        "required_full_ball_condition": "T2_minus-tau_max>tau_max",
+        "two_return_exact_orbit_center_passes": true,
+        "two_return_exact_orbit_margin_lower": "14.0117401232539450216096720156478351743394892549157313832472982",
+        "two_return_full_ball_event_window_passes": false
+      },
+      "wide_box_conditional_crossing_arithmetic": {
+        "adjusted_left_gap_margin_lower": "0.018054001291785738296838524537770274787026001695081450924600274056323702334491164124716136996595899404437391330",
+        "adjusted_right_gap_margin_lower": "0.013160483840473512741267190807490969494748229707078657006543048456323702334491164124716136996595899404437391330",
+        "alpha_lower": "0.07755431589814009159558816133905623670587617432483028449996809506",
+        "conditional_endpoint_signs_close": true,
+        "conditional_strict_negative_derivative_closes": true,
+        "conditional_unique_selected_crossing_arithmetic_closes": true,
+        "coordinate_warning": "the Lyapunov--Perron height and derivative are in unit-q_hat coordinates and may not be compared directly with f_phys values",
+        "direct_unit_to_physical_comparison_forbidden": true,
+        "future_graph_supplied": false,
+        "graph_derivative_correction_upper": "2.0476256849009291030160794833499775827047284015887733074200553408878666627080832545549262788150100384731639569",
+        "left_functional_lower": "0.019677187386074265506912184678908479391474292975703881072567902",
+        "normalization_adapter": "psi_phys=psi_hat/alpha and Dpsi_phys=Dpsi_hat/alpha, alpha=||q_phys||_Y",
+        "physical_gap_derivative_interval": {
+          "lower": "-260.79414670070554801780379875362044113211539586481990089019093034088786666270808325455492627881501003847316396",
+          "upper": "-243.20585329929445198219620124637955886788460413518009910984985265911213333729191674544507372118498996152683604"
+        },
+        "physical_graph_derivative_upper": "0.34245105294453462271936803861797356378429820827796298411957161246139467673837686141375993506873628524054317563",
+        "physical_graph_height_upper": "0.0016231860942885272100736601411382046044482912806224301479676279436762976655088358752838630034041005955626086697",
+        "physical_onset_validated": false,
+        "premises": "a future source-bound two-return graph for the identical fixed splitting, containing the Stage-5G-b cone, satisfying the wide box majorant, and transferred to the physical q_phys chart",
+        "registered_common_height_target_met": false,
+        "registered_target_is_only_a_sufficient_convenience": true,
+        "right_functional_upper": "-0.0147836699347620399513408509486291740991965209877010871545106764",
+        "routing_or_capture_validated": false,
+        "selected_crossing_validated": false,
+        "stable_projection_parameter_derivative_upper": "5.97932366478246614112834957071446505165280055576473831098375211",
+        "stage4e_q_norm_parent_sha256_via_stage5ga": "ccdd6023f911e97785ec6f8be97b84d725d6af9f5051e1da602380d225e47acc",
+        "stage5ga_registered_common_height_target": "0.001",
+        "stage5ga_result_sha256": "56e847fc804ced75e6c2fbf09ccbec1bdeabf505638e093c0939c2f2e584dd8c",
+        "unit_graph_derivative_upper": "0.0265585571397111357173939624415935403078342404111115205070428165130243262155259685658380239508024",
+        "unit_graph_height_upper": "0.000125885087117920647537106641908737907341782552489261736682176419166024330206718688210549874138151"
+      },
+      "wide_box_stage5gb_conditional_derivative_audit": {
+        "crossing_validated": false,
+        "endpoint_stable_gap_signs_validated": false,
+        "future_graph_derivative_threshold": "16",
+        "graph_exists": false,
+        "majorant_graph_derivative_upper": "0.0265585571397111357173939624415935403078342404111115205070428165130243262155259685658380239508024",
+        "strictly_below_threshold": true
+      }
+    }
+  },
+  "manifest": {
+    "arithmetic_scope": "byte and semantic binding of Stage 4K, final Stage 4L, Stage 4M, Stage 4N feasibility, Stage 5G-a, and Stage 5G-b; exact Fraction evaluation of one-return and conditional two-return matrix Lyapunov--Perron feasible regions, nonmixable axis frontiers, simultaneous reference rows, and split-output K_ret coupling; no nonlinear return, D2P or D2(P^2) block, stable graph, first return, crossing, onset, routing, capture, or safety promotion",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_inner_graph_closure_arithmetic_stage4p.py",
+    "dependency_source_sha256": {
+      "src/canard_control/leaky_inner_enlarged_return_hessian_stage4m_contract.py": "e73fdfdfff7ef3ed92614279f177cbe958bd244c5122e1d354361cf197935805",
+      "src/canard_control/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.py": "fb732ccbadfb246a8bde1ac3c9aacdf9d2eba938854a9c14e71f48bcc4b3089e",
+      "src/canard_control/leaky_inner_stable_graph_enlargement_stage4k.py": "185aa5946f91a4565a9adc1da3de2874b53982dee4eb4ac71345b86e8cda034b",
+      "src/canard_control/leaky_inner_terminal_stable_row_stage4l.py": "a203a52225f7319ca7197d349dab84d341c42162448bb539e163feac4ecb9390",
+      "src/canard_control/leaky_projected_return_hessian_stage4_contract.py": "72cc89d87f49ed11038e21ea709a29401586b31178baa74963fab976af654438",
+      "src/canard_control/leaky_pulse_endpoint_functional_stage5ga.py": "38ebab3ccc0851d8e16ca23d53632e3fe11cde33eaaee59cc58ac2ab64fe91bc",
+      "src/canard_control/leaky_pulse_stable_coordinate_cone_stage5gb.py": "abe73b2444e35b5daf0be8417f6c6fc2e35ba7003f11c4e3bba9d29b5f8629a6"
+    },
+    "design_sha256": "9f40702bd413aa65da12973cd4fcc9b62a68b41355c490db3a192241b3fdaeb8",
+    "numeric_core_sha256": "5ce5da0e68ac197ec89f60ed147cd95264ffc9e9437b730311b3b28b20eb8593",
+    "parent_result_sha256": {
+      "experiments/results/leaky_inner_enlarged_return_hessian_stage4m_contract.json": "1a7f89c4c61480a76149b88ae6a15fa40b11425f4d678615af3469b59f75100c",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.json": "5e7214a2f5ba8ca22649c677a1d054b32342b5cc25966bd8e1da7600c605f1de",
+      "experiments/results/leaky_inner_stable_graph_enlargement_stage4k.json": "57119dc28bfa841b4f1a9dcddc3af542783493da94862ed2f7336202b05e2f5c",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_pulse_endpoint_functional_stage5ga.json": "56e847fc804ced75e6c2fbf09ccbec1bdeabf505638e093c0939c2f2e584dd8c",
+      "experiments/results/leaky_pulse_stable_coordinate_cone_stage5gb.json": "a16e9159d462c6b8f58851c2181147940f27e1a404ee4c2fbeb8999440cf8b64"
+    },
+    "result": "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json",
+    "runtime": {
+      "arithmetic": "fractions.Fraction exact formulas, strict decimal-grid brackets, and the frozen Stage-4 integer-square-root Perron evaluator",
+      "installation": "fresh replay before fsync-backed atomic replacement",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "python_implementation": "CPython"
+    },
+    "schema_id": "leaky-inner-graph-closure-arithmetic-stage4p-v1",
+    "source_sha256": {
+      "docs/leaky-inner-graph-closure-arithmetic-stage4p.md": "dc345d60582f4062a9a6bc105fa4589d23f81c37e1d54a87bc5f01cdda38a47f",
+      "experiments/leaky_inner_graph_closure_arithmetic_stage4p.py": "5b8d5c50d10899df879086a124aba6e0c14d6d1a371f7cc84b6d8981019224cb",
+      "src/canard_control/leaky_inner_graph_closure_arithmetic_stage4p.py": "5d817f1261a59b564afd9fdb8f6b3d0d5ce0df0060d201de6ecd945f2df21d2a",
+      "tests/test_leaky_inner_graph_closure_arithmetic_stage4p.py": "11c3cf80c7e26ead94459fe1625d29ec2324c890ec66f49b98285b843edec858"
+    }
+  }
+}

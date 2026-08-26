@@ -1,0 +1,1314 @@
+{
+  "manifest": {
+    "arithmetic_scope": "exact parent-result and source-byte binding; numpy.longdouble fixed-step RK4 first/second physical variational equations with cubic delayed interpolation; fixed physical phase of the Stage-4L Grushin q,f pair; near-one- versus near-two-period full-history smoothing gate; Stage-4P two-return simultaneous design box and conditional K_ret target; signed moving-event correction and complete returned-history translation before fixed input/output projections and norms; direct two-period versus discrete composition oracle; no outward rounding, continuous-history operator error, uniform nonlinear tube, selected first return, certified Hessian block, graph, crossing, onset, routing, capture, or safety claim",
+    "default_command": "OPENBLAS_NUM_THREADS=8 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_inner_signed_second_variation_stage4q_pilot.py",
+    "dependency_source_sha256": {
+      "src/canard_control/leaky_inner_enlarged_return_hessian_stage4m_contract.py": "e73fdfdfff7ef3ed92614279f177cbe958bd244c5122e1d354361cf197935805",
+      "src/canard_control/leaky_inner_graph_closure_arithmetic_stage4p.py": "5d817f1261a59b564afd9fdb8f6b3d0d5ce0df0060d201de6ecd945f2df21d2a",
+      "src/canard_control/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.py": "fb732ccbadfb246a8bde1ac3c9aacdf9d2eba938854a9c14e71f48bcc4b3089e",
+      "src/canard_control/leaky_inner_signed_stable_flow_stage4h.py": "a62eb05b7295a9e8a88d3c53607032ce6d7430d08fd7c4fafa1d1bda6ea3060d",
+      "src/canard_control/leaky_inner_terminal_stable_row_stage4l.py": "a203a52225f7319ca7197d349dab84d341c42162448bb539e163feac4ecb9390",
+      "src/canard_control/leaky_inner_word_primitive_stage4i.py": "4644404a6367d39bb7438dd38e565735871c039877e1f0ca24995e52fc76c789",
+      "src/canard_control/leaky_projected_return_hessian_stage4a_pilot.py": "8b88cc4edf3b175855c0d49c9d2118886246e6b0cb588e343cbed814f619267c"
+    },
+    "numeric_core_sha256": "836513e07357eb3feb506cc57911b85d7afc82aaa7d773a1d5439a2b1c54f8c6",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+      "experiments/results/leaky_inner_enlarged_return_hessian_stage4m_contract.json": "1a7f89c4c61480a76149b88ae6a15fa40b11425f4d678615af3469b59f75100c",
+      "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json": "860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.json": "5e7214a2f5ba8ca22649c677a1d054b32342b5cc25966bd8e1da7600c605f1de",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_inner_word_primitive_stage4i.json": "1248e9d95444f3cc12565c1e11b4bbeab3d4a9a7bb8922893e38b1ffa439f73e"
+    },
+    "pilot_sha256": "475e36d7ff956da5750607d30a8dc7dca185473aaca00c7ea7a6d5cd1dcd3157",
+    "proof_status": "DIAGNOSTIC_NONRIGOROUS_SOURCE_BOUND",
+    "result": "experiments/results/leaky_inner_signed_second_variation_stage4q_pilot.json",
+    "runtime": {
+      "longdouble_bits": 128,
+      "numpy": "2.5.2",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "8",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4"
+    },
+    "schema_id": "leaky-inner-signed-second-variation-stage4q-pilot-v1",
+    "source_sha256": {
+      "docs/leaky-inner-signed-second-variation-stage4q-pilot.md": "cdcda55f8569b7052acdb412f139665d68d4ff9d646aa7bdfbe2e6c64694e235",
+      "experiments/leaky_inner_signed_second_variation_stage4q_pilot.py": "1bce0849ca035fa2eb0b8c15813c5c28d9a44db9b95da534f161bb4dfd283c41",
+      "src/canard_control/leaky_inner_signed_second_variation_stage4q_pilot.py": "1af01373b4bfe738a38db502be9f37a9a0740f0a8bc4dca21a3835cef33e63c4",
+      "tests/test_leaky_inner_signed_second_variation_stage4q_pilot.py": "5d9fd2d42c6abe8bc6c62a79711325ca99cbe65a79d7c2e0bd1621aca7cbdb34"
+    }
+  },
+  "pilot": {
+    "branch": "inner_saddle_candidate_selected_near_two_period_event",
+    "claim_status": {
+      "actual_signed_event_aligned_kret_upper_is_validated": false,
+      "all_stage4m_strict_caps_are_proved": false,
+      "binary_floating_rows_are_outward_rounded": false,
+      "biological_capture_is_validated": false,
+      "complete_returned_history_tube_is_validated": false,
+      "fixed_unit_y_grushin_discretization_error_is_validated": false,
+      "network_safety_is_validated": false,
+      "no_earlier_section_hit_is_validated": false,
+      "nonlinear_selected_return_tube_is_validated": false,
+      "one_period_map_is_c2_on_the_full_history_space": false,
+      "pulse_sheet_crossing_is_validated": false,
+      "quantitative_inner_stable_graph_is_validated": false,
+      "six_projected_hessian_blocks_are_validated": false,
+      "two_period_event_is_the_second_positive_oriented_hit": false,
+      "two_period_finite_section_tensor_is_a_continuous_history_operator_bound": false,
+      "two_period_selected_event_branch_exists_uniformly_on_a_ball": false,
+      "two_sided_basin_routing_is_validated": false,
+      "uniform_event_speed_lower_bound_is_validated": false,
+      "unique_physical_pulse_onset_is_validated": false
+    },
+    "diagnostic_checks": {
+      "direct_two_period_event_tensor_computed": true,
+      "discarded_endpoint_adapter_retained_only_as_audit": true,
+      "finite_section_pairing_identity_enforced": true,
+      "heuristic_refinement_envelope_computed": true,
+      "one_period_smoothing_gate_fails": true,
+      "one_sided_endpoint_adapter_used_for_primary_blocks": true,
+      "parent_bytes_validated": true,
+      "physical_grushin_phase_fixed": true,
+      "self_consistent_finite_eigensplit_retained_only_as_oracle": true,
+      "six_projected_blocks_computed_after_correlated_deflation": true,
+      "stage4p_two_return_wide_box_bound_and_used": true,
+      "two_period_center_smoothing_gate_passes": true,
+      "two_period_composition_oracle_computed": true
+    },
+    "fixed_grushin_coordinate": {
+      "complex_phase_imag": "0.99441290093684342466",
+      "complex_phase_real": "-0.105560326119104957998",
+      "continuous_f_discretization_is_validated": false,
+      "continuous_q_norm_finite_sample_candidate": "0.0775543468327375001836",
+      "continuous_q_norm_is_validated": false,
+      "fixed_projection": "Ps=I-qhat*fhat=I-q*f",
+      "normalized_recovery_functional_imag": "3.53705095806622382917e-15",
+      "normalized_recovery_functional_real": "17.7721395785537374934",
+      "physical_pair": "q_phys=q/phase, f_phys=phase*f with f_phys(q_phys)=1",
+      "physical_phase_anchor": "q_w(0) is positive real",
+      "q_norm_candidate_is_not_certified": true,
+      "q_norm_refined_local_maximizers": 8,
+      "q_norm_sample_count": 4097,
+      "quadrature_node_count": 1120,
+      "same_pair_used_for_every_mesh_and_both_return_horizons": true,
+      "sampled_rotated_f_max_imaginary_residual": "3.53705095806622382917e-15",
+      "sampled_rotated_q_max_imaginary_residual": "3.48456343622006887976e-16",
+      "source": "same Stage-4L/Stage-4D q,f on the phase-zero Route-C section",
+      "unit_pair": "qhat=q_phys/||q_phys||_Y, fhat=||q_phys||_Y*f_phys"
+    },
+    "mesh_rows": [
+      {
+        "delay_interpolation": "four-node cubic Lagrange",
+        "direct_two_period_vs_discrete_composition": {
+          "composed_two_period_summary": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "2.76378472079367385402e-06",
+                "pre_output_deflation_sector_norm": "0.600119696776027389262",
+                "separate_triangle_to_correlated_ratio": "434274.366190145839937",
+                "separately_triangularized_upper": "1.20024085790868184631"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00867189853577517849592",
+                "pre_output_deflation_sector_norm": "0.574290374123465285905",
+                "separate_triangle_to_correlated_ratio": "132.766444211346964721",
+                "separately_triangularized_upper": "1.15133713315645658248"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "32.214065124165088605",
+                "pre_output_deflation_sector_norm": "172.206903335970878288",
+                "separate_triangle_to_correlated_ratio": "10.2668964537898794731",
+                "separately_triangularized_upper": "330.738470985446781469"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "2.76378472079367385402e-06",
+              "stable_output_su_upper": "0.00867189853577517849592",
+              "stable_output_uu_upper": "32.214065124165088605",
+              "unstable_output_ss_upper": "0.600121161132654457049",
+              "unstable_output_su_upper": "0.577046759032991185556",
+              "unstable_output_uu_upper": "158.531567649475931603"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "339.19880977967943636"
+          },
+          "identity": "H2=H1[A1*.,A1*.]+A1*H1",
+          "oracle_is_directed_error_bound": false,
+          "projected_block_relative_defects": {
+            "stable_output_ss_upper": "0.0489674819791890564291",
+            "stable_output_su_upper": "1.84809449097373478085e-05",
+            "stable_output_uu_upper": "3.25082956374168920957e-06",
+            "unstable_output_ss_upper": "1.14909800639182421223e-06",
+            "unstable_output_su_upper": "1.54492565905603168625e-06",
+            "unstable_output_uu_upper": "2.23143578133566308696e-06"
+          },
+          "two_period_hessian_direct_vs_composed_linf_bilinear": "0.000820670322575000796804",
+          "two_period_hessian_direct_vs_composed_max_abs": "0.000792397983431281094369",
+          "two_period_jacobian_direct_vs_composed_max_abs": "8.95720596790373219109e-06"
+        },
+        "discarded_zero_nonsection_stencil_adapter_audit": {
+          "coordinate": {
+            "boundary_interpolation": "discarded_zero_nonsection_stencil",
+            "current_voltage_node_zero_on_sigma0": true,
+            "fhat_max_imaginary_discarded": "2.70682486192819652498e-16",
+            "fhat_nodal_l1": "1.40134317840935995747",
+            "finite_section_adapter_validated": false,
+            "pairing_after_discrete_correction": "1",
+            "pairing_before_discrete_correction": "0.999997658445762160895",
+            "pairing_identity_enforced_in_finite_section": true,
+            "positive_time_nodes_used": false,
+            "qhat_max_imaginary_discarded": "3.75904535585176098858e-15",
+            "qhat_nodal_linf": "0.999996917471411950196",
+            "relative_discrete_pairing_correction": "2.34155972075075595462e-06",
+            "section_dimension": 78
+          },
+          "reason_discarded": "a symmetric cubic stencil near theta=0 formally touches positive-time nodes that are not section-history coordinates",
+          "two_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "6.21031324032001098194e-07",
+                "pre_output_deflation_sector_norm": "0.600060538785625818825",
+                "separate_triangle_to_correlated_ratio": "1932466.90196598065086",
+                "separately_triangularized_upper": "1.20012247877595235046"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00110034355045253093297",
+                "pre_output_deflation_sector_norm": "0.561497080954599825375",
+                "separate_triangle_to_correlated_ratio": "1020.29740550929568599",
+                "separately_triangularized_upper": "1.12267766969560423007"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "32.2141700790599685433",
+                "pre_output_deflation_sector_norm": "172.207320444471974952",
+                "separate_triangle_to_correlated_ratio": "10.2668869250144325633",
+                "separately_triangularized_upper": "330.739241584891942694"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "6.21031324032001098194e-07",
+              "stable_output_su_upper": "0.00110034355045253093297",
+              "stable_output_uu_upper": "32.2141700790599685433",
+              "unstable_output_ss_upper": "0.600061939990326420613",
+              "unstable_output_su_upper": "0.561180588741004293674",
+              "unstable_output_uu_upper": "158.531921140419967742"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "339.199630447958327295"
+          },
+          "used_for_primary_acceptance": false
+        },
+        "fixed_grushin_discretization": {
+          "boundary_interpolation": "one_sided_four_node",
+          "current_voltage_node_zero_on_sigma0": true,
+          "fhat_max_imaginary_discarded": "2.70682486192819652498e-16",
+          "fhat_nodal_l1": "1.40140350708297001248",
+          "finite_section_adapter_validated": false,
+          "pairing_after_discrete_correction": "1",
+          "pairing_before_discrete_correction": "0.999999978969814740104",
+          "pairing_identity_enforced_in_finite_section": true,
+          "positive_time_nodes_used": false,
+          "qhat_max_imaginary_discarded": "3.75904535585176098858e-15",
+          "qhat_nodal_linf": "0.999996917471411950196",
+          "relative_discrete_pairing_correction": "2.10301857074546294513e-08",
+          "section_dimension": 78
+        },
+        "history_padding_steps": 77,
+        "integrator": "fixed-step classical RK4",
+        "one_period_formal_diagnostic": {
+          "eligible_for_full_history_c2_claim": false,
+          "event": {
+            "base_event_speed": "0.246959226972607248651",
+            "base_orbit_field_vs_fourier_tangent_inf": "9.4471969852051584926e-14",
+            "first_event_identity_defect_inf": "0",
+            "no_earlier_hit_validated": false,
+            "positive_orientation_at_base": true,
+            "return_hessian_symmetry_defect_inf": "2.03287907341032081376e-20",
+            "return_periods": 1,
+            "return_time_d1_ambient_linf_operator_norm": "32.2879861607147731206",
+            "return_time_d2_ambient_linf_bilinear_upper": "656.878519954133253123",
+            "second_event_identity_defect_inf": "3.38813178901720135627e-21",
+            "selected_event_exists_uniformly": false,
+            "selected_event_target_time": "18.1862099491279209929"
+          },
+          "evidence_status": "FORMAL_FINITE_SECTION_ONLY; P-tau_max<tau_max",
+          "full_history_c2_smoothing_gate": false,
+          "kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "0.0227499138417285480529",
+                "pre_output_deflation_sector_norm": "0.29848752454372712295",
+                "separate_triangle_to_correlated_ratio": "26.2413372245063420962",
+                "separately_triangularized_upper": "0.596988160949263435562"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.0799876418992989807188",
+                "pre_output_deflation_sector_norm": "0.282250606509858947835",
+                "separate_triangle_to_correlated_ratio": "7.01182448145344849877",
+                "separately_triangularized_upper": "0.560859305683236275542"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "7.96858917497550311992",
+                "pre_output_deflation_sector_norm": "31.0988192278877839669",
+                "separate_triangle_to_correlated_ratio": "7.1897418878818415422",
+                "separately_triangularized_upper": "57.2920993786431793637"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "0.0227499138417285480529",
+              "stable_output_su_upper": "0.0799876418992989807188",
+              "stable_output_uu_upper": "7.96858917497550311992",
+              "unstable_output_ss_upper": "0.298500636405536312612",
+              "unstable_output_su_upper": "0.278608699173377327707",
+              "unstable_output_uu_upper": "26.1932801507553989495"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "61.4979857288390832082"
+          }
+        },
+        "period_step_count": 120,
+        "section_dimension": 78,
+        "self_consistent_finite_eigensplit_oracle": {
+          "coordinate_difference_from_fixed_stage4l_adapter": {
+            "finite_eigensplit_replaces_stage4l_coordinate": false,
+            "fixed_fhat_vs_finite_eigen_fhat_l1": "0.000265713366873876705252",
+            "fixed_qhat_vs_finite_eigen_qhat_linf": "3.16395086063158900713e-06",
+            "fixed_vs_finite_unstable_projector_linf": "0.000269955864579866358297"
+          },
+          "eigensplit_is_continuous_history_grushin_pair": false,
+          "one_period_eigensplit": {
+            "projector_idempotence_defect_inf": "1.09269731737642402823e-19",
+            "stable_projection_linf_norm": "2.40070789403545159502",
+            "unstable_covector_l1_norm": "1.4013222282912860539",
+            "unstable_left_residual_inf": "2.16840434497100886801e-19",
+            "unstable_multiplier": "2.01045325235066218994",
+            "unstable_projection_linf_norm": "1.4013222282912860539",
+            "unstable_right_residual_inf": "2.16840434497100886801e-19",
+            "unstable_vector_linf_norm": "1"
+          },
+          "one_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "0.0227315337095386447996",
+                "pre_output_deflation_sector_norm": "0.298449951623412035318",
+                "separate_triangle_to_correlated_ratio": "26.2592169819955465471",
+                "separately_triangularized_upper": "0.596912276012321441065"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.0793609081481947975512",
+                "pre_output_deflation_sector_norm": "0.283829763258459433217",
+                "separate_triangle_to_correlated_ratio": "7.11691378405077479385",
+                "separately_triangularized_upper": "0.564804741114675046276"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "7.96861169490806275917",
+                "pre_output_deflation_sector_norm": "31.0989762754298659786",
+                "separate_triangle_to_correlated_ratio": "7.18974957712132933807",
+                "separately_triangularized_upper": "57.2923225637093267437"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "0.0227315337095386447996",
+              "stable_output_su_upper": "0.0793609081481947975512",
+              "stable_output_uu_upper": "7.96861169490806275917",
+              "unstable_output_ss_upper": "0.298462324388909405748",
+              "unstable_output_su_upper": "0.280974977856215557548",
+              "unstable_output_uu_upper": "26.1933462882794607651"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "61.4979857288390832082"
+          },
+          "two_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "1.88596038918803831293e-07",
+                "pre_output_deflation_sector_norm": "0.600045355713785588669",
+                "separate_triangle_to_correlated_ratio": "6363286.29214626550674",
+                "separately_triangularized_upper": "1.20009058920510791602"
+              },
+              "su": {
+                "correlated_stable_output_norm": "1.92450732659339322634e-06",
+                "pre_output_deflation_sector_norm": "0.564925008796164584979",
+                "separate_triangle_to_correlated_ratio": "587084.958838429418392",
+                "separately_triangularized_upper": "1.12984930461733812379"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "32.2142252365895345179",
+                "pre_output_deflation_sector_norm": "172.208190267834396536",
+                "separate_triangle_to_correlated_ratio": "10.2669087889449652806",
+                "separately_triangularized_upper": "330.74051221059380623"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "1.88596038918803831293e-07",
+              "stable_output_su_upper": "1.92450732659339322634e-06",
+              "stable_output_uu_upper": "32.2142252365895345179",
+              "unstable_output_ss_upper": "0.600045233491322438368",
+              "unstable_output_su_upper": "0.564924295821173538812",
+              "unstable_output_uu_upper": "158.532321942759438116"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "339.199630447958327295"
+          },
+          "used_for_primary_acceptance": false
+        },
+        "state_arithmetic": "numpy.longdouble",
+        "step_size": "0.151551749576066013825",
+        "total_two_period_step_count": 240,
+        "two_period_primary_diagnostic": {
+          "continuous_history_c2_bound": false,
+          "event": {
+            "base_event_speed": "0.246959226972607248651",
+            "base_orbit_field_vs_fourier_tangent_inf": "9.44719156419429606508e-14",
+            "first_event_identity_defect_inf": "0",
+            "no_earlier_hit_validated": false,
+            "positive_orientation_at_base": true,
+            "return_hessian_symmetry_defect_inf": "1.35525271560688054251e-19",
+            "return_periods": 2,
+            "return_time_d1_ambient_linf_operator_norm": "97.1423160053375625012",
+            "return_time_d2_ambient_linf_bilinear_upper": "4484.94174180281515874",
+            "second_event_identity_defect_inf": "1.35525271560688054251e-20",
+            "selected_event_exists_uniformly": false,
+            "selected_event_target_time": "36.3724198982558419857"
+          },
+          "evidence_status": "FINITE_SECTION_DIAGNOSTIC; centre smoothing gate only",
+          "full_history_c2_smoothing_gate_at_center": true,
+          "kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "2.90608855998464966092e-06",
+                "pre_output_deflation_sector_norm": "0.600120508713608891149",
+                "separate_triangle_to_correlated_ratio": "413009.56067609495949",
+                "separately_triangularized_upper": "1.20024235944508550489"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00867205880361618212937",
+                "pre_output_deflation_sector_norm": "0.574291929059113526179",
+                "separate_triangle_to_correlated_ratio": "132.764272667031121955",
+                "separately_triangularized_upper": "1.15133957958782651154"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "32.2141698469407984362",
+                "pre_output_deflation_sector_norm": "172.207320444471974952",
+                "separate_triangle_to_correlated_ratio": "10.2668870071521727283",
+                "separately_triangularized_upper": "330.7392418477497813"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "2.90608855998464966092e-06",
+              "stable_output_su_upper": "0.00867205880361618212937",
+              "stable_output_uu_upper": "32.2141698469407984362",
+              "unstable_output_ss_upper": "0.600121850731476724761",
+              "unstable_output_su_upper": "0.577047650528712985363",
+              "unstable_output_uu_upper": "158.53192140327783477"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "339.199630447958327295"
+          }
+        }
+      },
+      {
+        "delay_interpolation": "four-node cubic Lagrange",
+        "direct_two_period_vs_discrete_composition": {
+          "composed_two_period_summary": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "1.25315204276745739531e-06",
+                "pre_output_deflation_sector_norm": "0.593989256785935948457",
+                "separate_triangle_to_correlated_ratio": "948015.028414285974577",
+                "separately_triangularized_upper": "1.18800696943161154806"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00588762286302201356958",
+                "pre_output_deflation_sector_norm": "0.573312515506433140189",
+                "separate_triangle_to_correlated_ratio": "195.070933018292464567",
+                "separately_triangularized_upper": "1.14850408514953450378"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "30.2751904760148917717",
+                "pre_output_deflation_sector_norm": "171.095248659421969251",
+                "separate_triangle_to_correlated_ratio": "10.8876903275519048009",
+                "separately_triangularized_upper": "329.626898510498904216"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "1.25315204276745739531e-06",
+              "stable_output_su_upper": "0.00588762286302201356958",
+              "stable_output_uu_upper": "30.2751904760148917717",
+              "unstable_output_ss_upper": "0.594017712645675488581",
+              "unstable_output_su_upper": "0.575191569643101363596",
+              "unstable_output_uu_upper": "158.531649851076934965"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "337.061399354597881484"
+          },
+          "identity": "H2=H1[A1*.,A1*.]+A1*H1",
+          "oracle_is_directed_error_bound": false,
+          "projected_block_relative_defects": {
+            "stable_output_ss_upper": "0.0218849655346950826285",
+            "stable_output_su_upper": "4.54134267126851996028e-06",
+            "stable_output_uu_upper": "6.90071924826110468203e-07",
+            "unstable_output_ss_upper": "2.22030290006451800409e-07",
+            "unstable_output_su_upper": "3.00762026430804231101e-07",
+            "unstable_output_uu_upper": "4.2704108372406488834e-07"
+          },
+          "two_period_hessian_direct_vs_composed_linf_bilinear": "0.000159445193759074217146",
+          "two_period_hessian_direct_vs_composed_max_abs": "0.000153929355121568134379",
+          "two_period_jacobian_direct_vs_composed_max_abs": "1.74560687216367832475e-06"
+        },
+        "discarded_zero_nonsection_stencil_adapter_audit": {
+          "coordinate": {
+            "boundary_interpolation": "discarded_zero_nonsection_stencil",
+            "current_voltage_node_zero_on_sigma0": true,
+            "fhat_max_imaginary_discarded": "2.70682486192819652498e-16",
+            "fhat_nodal_l1": "1.40142024091937034136",
+            "finite_section_adapter_validated": false,
+            "pairing_after_discrete_correction": "1",
+            "pairing_before_discrete_correction": "0.999998969233146017821",
+            "pairing_identity_enforced_in_finite_section": true,
+            "positive_time_nodes_used": false,
+            "qhat_max_imaginary_discarded": "4.71548884876078929185e-15",
+            "qhat_nodal_linf": "0.999951944335813025511",
+            "relative_discrete_pairing_correction": "1.03076791647461248752e-06",
+            "section_dimension": 115
+          },
+          "reason_discarded": "a symmetric cubic stencil near theta=0 formally touches positive-time nodes that are not section-history coordinates",
+          "two_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "1.84221165561434277753e-07",
+                "pre_output_deflation_sector_norm": "0.593950137468182481904",
+                "separate_triangle_to_correlated_ratio": "6448383.55527839530259",
+                "separately_triangularized_upper": "1.18792873454057135163"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00116657256780536050696",
+                "pre_output_deflation_sector_norm": "0.564435025167125070666",
+                "separate_triangle_to_correlated_ratio": "967.529016965945743323",
+                "separately_triangularized_upper": "1.12869280974815966445"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "30.275211397373592348",
+                "pre_output_deflation_sector_norm": "171.095329687471291891",
+                "separate_triangle_to_correlated_ratio": "10.8876877151626274554",
+                "separately_triangularized_upper": "329.627047205136022967"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "1.84221165561434277753e-07",
+              "stable_output_su_upper": "0.00116657256780536050696",
+              "stable_output_uu_upper": "30.275211397373592348",
+              "unstable_output_ss_upper": "0.593978597072388980749",
+              "unstable_output_su_upper": "0.564257784581034482763",
+              "unstable_output_uu_upper": "158.531717517664731076"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "337.061558799169802114"
+          },
+          "used_for_primary_acceptance": false
+        },
+        "fixed_grushin_discretization": {
+          "boundary_interpolation": "one_sided_four_node",
+          "current_voltage_node_zero_on_sigma0": true,
+          "fhat_max_imaginary_discarded": "2.70682486192819652498e-16",
+          "fhat_nodal_l1": "1.40146094615859539978",
+          "finite_section_adapter_validated": false,
+          "pairing_after_discrete_correction": "1",
+          "pairing_before_discrete_correction": "0.999999995258165852441",
+          "pairing_identity_enforced_in_finite_section": true,
+          "positive_time_nodes_used": false,
+          "qhat_max_imaginary_discarded": "4.71548884876078929185e-15",
+          "qhat_nodal_linf": "0.999951944335813025511",
+          "relative_discrete_pairing_correction": "4.74183422464590637047e-09",
+          "section_dimension": 115
+        },
+        "history_padding_steps": 114,
+        "integrator": "fixed-step classical RK4",
+        "one_period_formal_diagnostic": {
+          "eligible_for_full_history_c2_claim": false,
+          "event": {
+            "base_event_speed": "0.246959226972607248651",
+            "base_orbit_field_vs_fourier_tangent_inf": "9.4471969852051584926e-14",
+            "first_event_identity_defect_inf": "0",
+            "no_earlier_hit_validated": false,
+            "positive_orientation_at_base": true,
+            "return_hessian_symmetry_defect_inf": "1.69406589450860067814e-20",
+            "return_periods": 1,
+            "return_time_d1_ambient_linf_operator_norm": "32.2898471052662685565",
+            "return_time_d2_ambient_linf_bilinear_upper": "656.947346262257724447",
+            "second_event_identity_defect_inf": "3.38813178901720135627e-21",
+            "selected_event_exists_uniformly": false,
+            "selected_event_target_time": "18.1862099491279209929"
+          },
+          "evidence_status": "FORMAL_FINITE_SECTION_ONLY; P-tau_max<tau_max",
+          "full_history_c2_smoothing_gate": false,
+          "kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "0.0214974454940761589006",
+                "pre_output_deflation_sector_norm": "0.295439200374860932996",
+                "separate_triangle_to_correlated_ratio": "27.4871648584949852534",
+                "separately_triangularized_upper": "0.590903828332181579874"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.0847832808153255040873",
+                "pre_output_deflation_sector_norm": "0.284640992131059256121",
+                "separate_triangle_to_correlated_ratio": "6.66338955621325190748",
+                "separately_triangularized_upper": "0.564944027926335246015"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "7.48897008411475706424",
+                "pre_output_deflation_sector_norm": "30.7558702425479175702",
+                "separate_triangle_to_correlated_ratio": "7.60440430092298935705",
+                "separately_triangularized_upper": "56.9491563171258619036"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "0.0214974454940761589006",
+              "stable_output_su_upper": "0.0847832808153255040873",
+              "stable_output_uu_upper": "7.48897008411475706424",
+              "unstable_output_ss_upper": "0.295464627957320646878",
+              "unstable_output_su_upper": "0.280303035795276045405",
+              "unstable_output_uu_upper": "26.1932860745779443334"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "60.8545109983175223078"
+          }
+        },
+        "period_step_count": 180,
+        "section_dimension": 115,
+        "self_consistent_finite_eigensplit_oracle": {
+          "coordinate_difference_from_fixed_stage4l_adapter": {
+            "finite_eigensplit_replaces_stage4l_coordinate": false,
+            "fixed_fhat_vs_finite_eigen_fhat_l1": "0.000254962160551217248243",
+            "fixed_qhat_vs_finite_eigen_qhat_linf": "4.80570009720317583603e-05",
+            "fixed_vs_finite_unstable_projector_linf": "0.000194603582881853061056"
+          },
+          "eigensplit_is_continuous_history_grushin_pair": false,
+          "one_period_eigensplit": {
+            "projector_idempotence_defect_inf": "1.10434221094358069814e-19",
+            "stable_projection_linf_norm": "2.40090289330353989783",
+            "unstable_covector_l1_norm": "1.40134062940255565977",
+            "unstable_left_residual_inf": "2.16840434497100886801e-19",
+            "unstable_multiplier": "2.0104536030515753886",
+            "unstable_projection_linf_norm": "1.40134062940255565977",
+            "unstable_right_residual_inf": "0",
+            "unstable_vector_linf_norm": "1"
+          },
+          "one_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "0.0214835542316377456351",
+                "pre_output_deflation_sector_norm": "0.295413909800104290682",
+                "separate_triangle_to_correlated_ratio": "27.5019246193358455344",
+                "separately_triangularized_upper": "0.590839089033914910409"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.0843683132296034615782",
+                "pre_output_deflation_sector_norm": "0.284948972074925532816",
+                "separate_triangle_to_correlated_ratio": "6.71804755838876932472",
+                "separately_triangularized_upper": "0.566790340697516437096"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "7.48968476425499929405",
+                "pre_output_deflation_sector_norm": "30.7588198138678627913",
+                "separate_triangle_to_correlated_ratio": "7.60424018768527254508",
+                "separately_triangularized_upper": "56.9533618774419565511"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "0.0214835542316377456351",
+              "stable_output_su_upper": "0.0843683132296034615782",
+              "stable_output_uu_upper": "7.48968476425499929405",
+              "unstable_output_ss_upper": "0.295425179233810619728",
+              "unstable_output_su_upper": "0.28184136862259090428",
+              "unstable_output_uu_upper": "26.1945420635740902071"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "60.8545109983175223078"
+          },
+          "two_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "6.92480075731286422755e-08",
+                "pre_output_deflation_sector_norm": "0.593938764979693112345",
+                "separate_triangle_to_correlated_ratio": "17153959.3425944745541",
+                "separately_triangularized_upper": "1.1878775064651230231"
+              },
+              "su": {
+                "correlated_stable_output_norm": "5.43138534568264935656e-07",
+                "pre_output_deflation_sector_norm": "0.56666601999846677451",
+                "separate_triangle_to_correlated_ratio": "2086635.04264176660217",
+                "separately_triangularized_upper": "1.13333189923923804976"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "30.2780934856285561807",
+                "pre_output_deflation_sector_norm": "171.111738231572019231",
+                "separate_triangle_to_correlated_ratio": "10.8874443392345057191",
+                "separately_triangularized_upper": "329.651057522919813891"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "6.92480075731286422755e-08",
+              "stable_output_su_upper": "5.43138534568264935656e-07",
+              "stable_output_uu_upper": "30.2780934856285561807",
+              "unstable_output_ss_upper": "0.59393874148542991076",
+              "unstable_output_su_upper": "0.566665879240771386272",
+              "unstable_output_uu_upper": "158.53931929134779466"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "337.061558799169802114"
+          },
+          "used_for_primary_acceptance": false
+        },
+        "state_arithmetic": "numpy.longdouble",
+        "step_size": "0.101034499717377337924",
+        "total_two_period_step_count": 360,
+        "two_period_primary_diagnostic": {
+          "continuous_history_c2_bound": false,
+          "event": {
+            "base_event_speed": "0.246959226972607248651",
+            "base_orbit_field_vs_fourier_tangent_inf": "9.44719156419429606508e-14",
+            "first_event_identity_defect_inf": "4.23516473627150169534e-22",
+            "no_earlier_hit_validated": false,
+            "positive_orientation_at_base": true,
+            "return_hessian_symmetry_defect_inf": "8.13151629364128325506e-20",
+            "return_periods": 2,
+            "return_time_d1_ambient_linf_operator_norm": "97.1474649603686373212",
+            "return_time_d2_ambient_linf_bilinear_upper": "4485.44665559592885984",
+            "second_event_identity_defect_inf": "8.47032947254300339068e-22",
+            "selected_event_exists_uniformly": false,
+            "selected_event_target_time": "36.3724198982558419857"
+          },
+          "evidence_status": "FINITE_SECTION_DIAGNOSTIC; centre smoothing gate only",
+          "full_history_c2_smoothing_gate_at_center": true,
+          "kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "1.28119086059494407962e-06",
+                "pre_output_deflation_sector_norm": "0.593989412285627849108",
+                "separate_triangle_to_correlated_ratio": "927267.976505534141324",
+                "separately_triangularized_upper": "1.18800725682125762894"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00588764960085637941573",
+                "pre_output_deflation_sector_norm": "0.57331282153285145764",
+                "separate_triangle_to_correlated_ratio": "195.070128494863695323",
+                "separately_triangularized_upper": "1.14850456417178681257"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "30.2752113680882750657",
+                "pre_output_deflation_sector_norm": "171.095329687471291891",
+                "separate_triangle_to_correlated_ratio": "10.8876877267832909979",
+                "separately_triangularized_upper": "329.627047238104694316"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "1.28119086059494407962e-06",
+              "stable_output_su_upper": "0.00588764960085637941573",
+              "stable_output_uu_upper": "30.2752113680882750657",
+              "unstable_output_ss_upper": "0.594017844535629779834",
+              "unstable_output_su_upper": "0.575191742638935465948",
+              "unstable_output_uu_upper": "158.531717550633402425"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "337.061558799169802114"
+          }
+        }
+      },
+      {
+        "delay_interpolation": "four-node cubic Lagrange",
+        "direct_two_period_vs_discrete_composition": {
+          "composed_two_period_summary": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "7.37018463700441456047e-07",
+                "pre_output_deflation_sector_norm": "0.594985795726387212135",
+                "separate_triangle_to_correlated_ratio": "1614577.44699911633506",
+                "separately_triangularized_upper": "1.18997338951266984353"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00446662581445388204987",
+                "pre_output_deflation_sector_norm": "0.572602346511857929201",
+                "separate_triangle_to_correlated_ratio": "256.702124757555509404",
+                "separately_triangularized_upper": "1.14659233706725838253"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "29.3539168974009605506",
+                "pre_output_deflation_sector_norm": "170.546232622659005074",
+                "separate_triangle_to_correlated_ratio": "11.2106980402950977549",
+                "separately_triangularized_upper": "329.077898636678128241"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "7.37018463700441456047e-07",
+              "stable_output_su_upper": "0.00446662581445388204987",
+              "stable_output_uu_upper": "29.3539168974009605506",
+              "unstable_output_ss_upper": "0.594987593786282631392",
+              "unstable_output_su_upper": "0.573989990555400453331",
+              "unstable_output_uu_upper": "158.531666014019094746"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "336.008740909773393923"
+          },
+          "identity": "H2=H1[A1*.,A1*.]+A1*H1",
+          "oracle_is_directed_error_bound": false,
+          "projected_block_relative_defects": {
+            "stable_output_ss_upper": "0.0115589829611575118512",
+            "stable_output_su_upper": "2.00582638133153230524e-06",
+            "stable_output_uu_upper": "2.21945750623980651756e-07",
+            "unstable_output_ss_upper": "6.93952584997258971932e-08",
+            "unstable_output_su_upper": "9.52567452242046501429e-08",
+            "unstable_output_uu_upper": "1.32144475196045667603e-07"
+          },
+          "two_period_hessian_direct_vs_composed_linf_bilinear": "4.95381191200435874625e-05",
+          "two_period_hessian_direct_vs_composed_max_abs": "4.78191008893291691351e-05",
+          "two_period_jacobian_direct_vs_composed_max_abs": "5.46924829259321648722e-07"
+        },
+        "discarded_zero_nonsection_stencil_adapter_audit": {
+          "coordinate": {
+            "boundary_interpolation": "discarded_zero_nonsection_stencil",
+            "current_voltage_node_zero_on_sigma0": true,
+            "fhat_max_imaginary_discarded": "2.70682486192819652498e-16",
+            "fhat_nodal_l1": "1.4014579461455562992",
+            "finite_section_adapter_validated": false,
+            "pairing_after_discrete_correction": "1",
+            "pairing_before_discrete_correction": "0.999999421789848352837",
+            "pairing_identity_enforced_in_finite_section": true,
+            "positive_time_nodes_used": false,
+            "qhat_max_imaginary_discarded": "4.51530300140773656275e-15",
+            "qhat_nodal_linf": "0.999996917471411950196",
+            "relative_discrete_pairing_correction": "5.78210485984538211102e-07",
+            "section_dimension": 152
+          },
+          "reason_discarded": "a symmetric cubic stencil near theta=0 formally touches positive-time nodes that are not section-history coordinates",
+          "two_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "1.08906238209059615335e-07",
+                "pre_output_deflation_sector_norm": "0.594956831154094811787",
+                "separate_triangle_to_correlated_ratio": "10926054.2791240122169",
+                "separately_triangularized_upper": "1.18991547000739483764"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.00109964903228687159616",
+                "pre_output_deflation_sector_norm": "0.565941561909517831808",
+                "separate_triangle_to_correlated_ratio": "1029.18336770128371427",
+                "separately_triangularized_upper": "1.13174049433846035662"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "29.3539234258442753855",
+                "pre_output_deflation_sector_norm": "170.546257795424509141",
+                "separate_triangle_to_correlated_ratio": "11.2106971177038481358",
+                "separately_triangularized_upper": "329.077944743411876516"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "1.08906238209059615335e-07",
+              "stable_output_su_upper": "0.00109964903228687159616",
+              "stable_output_uu_upper": "29.3539234258442753855",
+              "unstable_output_ss_upper": "0.594958638853300025851",
+              "unstable_output_su_upper": "0.565798932428942413786",
+              "unstable_output_uu_upper": "158.531686947987367375"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "336.00879044774472959"
+          },
+          "used_for_primary_acceptance": false
+        },
+        "fixed_grushin_discretization": {
+          "boundary_interpolation": "one_sided_four_node",
+          "current_voltage_node_zero_on_sigma0": true,
+          "fhat_max_imaginary_discarded": "2.70682486192819652498e-16",
+          "fhat_nodal_l1": "1.40148869897130423645",
+          "finite_section_adapter_validated": false,
+          "pairing_after_discrete_correction": "1",
+          "pairing_before_discrete_correction": "0.999999998420704083735",
+          "pairing_identity_enforced_in_finite_section": true,
+          "positive_time_nodes_used": false,
+          "qhat_max_imaginary_discarded": "4.51530300140773656275e-15",
+          "qhat_nodal_linf": "0.999996917471411950196",
+          "relative_discrete_pairing_correction": "1.57929590032749450623e-09",
+          "section_dimension": 152
+        },
+        "history_padding_steps": 151,
+        "integrator": "fixed-step classical RK4",
+        "one_period_formal_diagnostic": {
+          "eligible_for_full_history_c2_claim": false,
+          "event": {
+            "base_event_speed": "0.246959226972607248651",
+            "base_orbit_field_vs_fourier_tangent_inf": "9.4471969852051584926e-14",
+            "first_event_identity_defect_inf": "5.29395592033937711918e-23",
+            "no_earlier_hit_validated": false,
+            "positive_orientation_at_base": true,
+            "return_hessian_symmetry_defect_inf": "1.01643953670516040688e-20",
+            "return_periods": 1,
+            "return_time_d1_ambient_linf_operator_norm": "32.2907713739547332921",
+            "return_time_d2_ambient_linf_bilinear_upper": "657.001990933639604009",
+            "second_event_identity_defect_inf": "8.47032947254300339068e-22",
+            "selected_event_exists_uniformly": false,
+            "selected_event_target_time": "18.1862099491279209929"
+          },
+          "evidence_status": "FORMAL_FINITE_SECTION_ONLY; P-tau_max<tau_max",
+          "full_history_c2_smoothing_gate": false,
+          "kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "0.0210006853976893899383",
+                "pre_output_deflation_sector_norm": "0.295934178301190953242",
+                "separate_triangle_to_correlated_ratio": "28.1838979669112603688",
+                "separately_triangularized_upper": "0.591881174483680938536"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.0824942064387774454115",
+                "pre_output_deflation_sector_norm": "0.28440536584077247273",
+                "separate_triangle_to_correlated_ratio": "6.85544000749655602078",
+                "separately_triangularized_upper": "0.565534083207074989019"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "7.26107618844305058303",
+                "pre_output_deflation_sector_norm": "30.5894810948433146791",
+                "separate_triangle_to_correlated_ratio": "7.82015874176436387444",
+                "separately_triangularized_upper": "56.7827684296699928268"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "0.0210006853976893899383",
+              "stable_output_su_upper": "0.0824942064387774454115",
+              "stable_output_uu_upper": "7.26107618844305058303",
+              "unstable_output_ss_upper": "0.295946996182489929783",
+              "unstable_output_su_upper": "0.281128717366302460778",
+              "unstable_output_uu_upper": "26.1932873348266781477"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "60.5544424897632254101"
+          }
+        },
+        "period_step_count": 240,
+        "section_dimension": 152,
+        "self_consistent_finite_eigensplit_oracle": {
+          "coordinate_difference_from_fixed_stage4l_adapter": {
+            "finite_eigensplit_replaces_stage4l_coordinate": false,
+            "fixed_fhat_vs_finite_eigen_fhat_l1": "0.000153201775002641921945",
+            "fixed_qhat_vs_finite_eigen_qhat_linf": "3.08284847636139044957e-06",
+            "fixed_vs_finite_unstable_projector_linf": "0.000152207036958783650544"
+          },
+          "eigensplit_is_continuous_history_grushin_pair": false,
+          "one_period_eigensplit": {
+            "projector_idempotence_defect_inf": "1.09722251231497193525e-19",
+            "stable_projection_linf_norm": "2.40113693048834297983",
+            "unstable_covector_l1_norm": "1.40144409716419482415",
+            "unstable_left_residual_inf": "5.29395592033937711918e-23",
+            "unstable_multiplier": "2.01045366782227796776",
+            "unstable_projection_linf_norm": "1.40144409716419482415",
+            "unstable_right_residual_inf": "1.08420217248550443401e-19",
+            "unstable_vector_linf_norm": "1"
+          },
+          "one_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "0.0209909965960088894243",
+                "pre_output_deflation_sector_norm": "0.295915358738827405372",
+                "separate_triangle_to_correlated_ratio": "28.1950710037675591479",
+                "separately_triangularized_upper": "0.591842639464313813313"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.0821704020407990481933",
+                "pre_output_deflation_sector_norm": "0.284932095876847979454",
+                "separate_triangle_to_correlated_ratio": "6.90262798989704418062",
+                "separately_triangularized_upper": "0.567191717067912715144"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "7.26111932801827375528",
+                "pre_output_deflation_sector_norm": "30.5896675590692446178",
+                "separate_triangle_to_correlated_ratio": "7.8201489562836483671",
+                "separately_triangularized_upper": "56.7830347344531318754"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "0.0209909965960088894243",
+              "stable_output_su_upper": "0.0821704020407990481933",
+              "stable_output_uu_upper": "7.26111932801827375528",
+              "unstable_output_ss_upper": "0.295927280725486352431",
+              "unstable_output_su_upper": "0.282259621191064680179",
+              "unstable_output_uu_upper": "26.1933671753838872576"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "60.5544424897632254101"
+          },
+          "two_period_kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "4.869900482317506601e-08",
+                "pre_output_deflation_sector_norm": "0.594948129268508818512",
+                "separate_triangle_to_correlated_ratio": "24433687.2043385133147",
+                "separately_triangularized_upper": "1.18989625101203211344"
+              },
+              "su": {
+                "correlated_stable_output_norm": "5.01113260080323696455e-07",
+                "pre_output_deflation_sector_norm": "0.567506933879400099485",
+                "separate_triangle_to_correlated_ratio": "2264984.6115047391504",
+                "separately_triangularized_upper": "1.13501382270290518406"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "29.3540955676103791916",
+                "pre_output_deflation_sector_norm": "170.547297406221161964",
+                "separate_triangle_to_correlated_ratio": "11.2106832532872076058",
+                "separately_triangularized_upper": "329.079467595201947461"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "4.869900482317506601e-08",
+              "stable_output_su_upper": "5.01113260080323696455e-07",
+              "stable_output_uu_upper": "29.3540955676103791916",
+              "unstable_output_ss_upper": "0.594948121743523294924",
+              "unstable_output_su_upper": "0.567506888823505195596",
+              "unstable_output_uu_upper": "158.532170188980785497"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "336.00879044774472959"
+          },
+          "used_for_primary_acceptance": false
+        },
+        "state_arithmetic": "numpy.longdouble",
+        "step_size": "0.0757758747880330069124",
+        "total_two_period_step_count": 480,
+        "two_period_primary_diagnostic": {
+          "continuous_history_c2_bound": false,
+          "event": {
+            "base_event_speed": "0.246959226972607248651",
+            "base_orbit_field_vs_fourier_tangent_inf": "9.44719156419429606508e-14",
+            "first_event_identity_defect_inf": "0",
+            "no_earlier_hit_validated": false,
+            "positive_orientation_at_base": true,
+            "return_hessian_symmetry_defect_inf": "8.13151629364128325506e-20",
+            "return_periods": 2,
+            "return_time_d1_ambient_linf_operator_norm": "97.1504215893368296975",
+            "return_time_d2_ambient_linf_bilinear_upper": "4485.76225227079157776",
+            "second_event_identity_defect_inf": "6.77626357803440271255e-21",
+            "selected_event_exists_uniformly": false,
+            "selected_event_target_time": "36.3724198982558419857"
+          },
+          "evidence_status": "FINITE_SECTION_DIAGNOSTIC; centre smoothing gate only",
+          "full_history_c2_smoothing_gate_at_center": true,
+          "kernel_and_blocks": {
+            "all_linear_combinations_formed_before_norm": true,
+            "finite_section_only": true,
+            "output_deflation_cancellation": {
+              "ss": {
+                "correlated_stable_output_norm": "7.45637272225297637342e-07",
+                "pre_output_deflation_sector_norm": "0.59498584466612036703",
+                "separate_triangle_to_correlated_ratio": "1595914.69480909733102",
+                "separately_triangularized_upper": "1.18997347974172362761"
+              },
+              "su": {
+                "correlated_stable_output_norm": "0.0044666347737477470059",
+                "pre_output_deflation_sector_norm": "0.572602443283354745063",
+                "separate_triangle_to_correlated_ratio": "256.701643764154425753",
+                "separately_triangularized_upper": "1.14659248851517858725"
+              },
+              "uu": {
+                "correlated_stable_output_norm": "29.35392341237952607",
+                "pre_output_deflation_sector_norm": "170.546257795424509141",
+                "separate_triangle_to_correlated_ratio": "11.2106971233612711103",
+                "separately_triangularized_upper": "329.07794475853017957"
+              }
+            },
+            "projected_hessian_blocks": {
+              "stable_output_ss_upper": "7.45637272225297637342e-07",
+              "stable_output_su_upper": "0.0044666347737477470059",
+              "stable_output_uu_upper": "29.35392341237952607",
+              "unstable_output_ss_upper": "0.594987635075603371604",
+              "unstable_output_su_upper": "0.573990045231823953209",
+              "unstable_output_uu_upper": "158.531686963105670429"
+            },
+            "signed_event_aligned_ambient_kret_candidate": "336.00879044774472959"
+          }
+        }
+      }
+    ],
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_inner_branch_artifact.json": "bee1da065d213c3c33d724ced1dba37c5914934515c1128588919bed34abe69b",
+      "experiments/results/leaky_inner_enlarged_return_hessian_stage4m_contract.json": "1a7f89c4c61480a76149b88ae6a15fa40b11425f4d678615af3469b59f75100c",
+      "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json": "860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542",
+      "experiments/results/leaky_inner_nonlinear_selected_return_tube_stage4n_feasibility.json": "5e7214a2f5ba8ca22649c677a1d054b32342b5cc25966bd8e1da7600c605f1de",
+      "experiments/results/leaky_inner_terminal_stable_row_stage4l.json": "672f92c7c456a54f39afab7d2a5f92b783311cc0ee5341a4d2e72a588039017e",
+      "experiments/results/leaky_inner_word_primitive_stage4i.json": "1248e9d95444f3cc12565c1e11b4bbeab3d4a9a7bb8922893e38b1ffa439f73e"
+    },
+    "refinement_and_acceptance": {
+      "all_six_block_diagnostic_tests_pass": true,
+      "ambient_kret_is_required_for_stage4p_graph_arithmetic": false,
+      "any_diagnostic_test_is_a_theorem": false,
+      "cap_source": "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json",
+      "construction": "max(last two meshes)+2*absolute last-mesh change+1e-18; heuristic only, not directed error",
+      "coordinate_oracle_mesh_trends": {
+        "stable_output_ss_upper": {
+          "discarded_zero_nonsection_adapter_mesh_series": [
+            "6.21031324032001098194e-07",
+            "1.84221165561434277753e-07",
+            "1.08906238209059615335e-07"
+          ],
+          "final_fixed_minus_finite_absolute": "6.96938267402122597801e-07",
+          "finite_eigensplit_used_for_acceptance": false,
+          "fixed_stage4l_adapter_mesh_series": [
+            "2.90608855998464966092e-06",
+            "1.28119086059494407962e-06",
+            "7.45637272225297637342e-07"
+          ],
+          "self_consistent_finite_eigensplit_mesh_series": [
+            "1.88596038918803831293e-07",
+            "6.92480075731286422755e-08",
+            "4.869900482317506601e-08"
+          ]
+        },
+        "stable_output_su_upper": {
+          "discarded_zero_nonsection_adapter_mesh_series": [
+            "0.00110034355045253093297",
+            "0.00116657256780536050696",
+            "0.00109964903228687159616"
+          ],
+          "final_fixed_minus_finite_absolute": "0.0044661336604876668982",
+          "finite_eigensplit_used_for_acceptance": false,
+          "fixed_stage4l_adapter_mesh_series": [
+            "0.00867205880361618212937",
+            "0.00588764960085637941573",
+            "0.0044666347737477470059"
+          ],
+          "self_consistent_finite_eigensplit_mesh_series": [
+            "1.92450732659339322634e-06",
+            "5.43138534568264935656e-07",
+            "5.01113260080323696455e-07"
+          ]
+        },
+        "stable_output_uu_upper": {
+          "discarded_zero_nonsection_adapter_mesh_series": [
+            "32.2141700790599685433",
+            "30.275211397373592348",
+            "29.3539234258442753855"
+          ],
+          "final_fixed_minus_finite_absolute": "0.000172155230853121565815",
+          "finite_eigensplit_used_for_acceptance": false,
+          "fixed_stage4l_adapter_mesh_series": [
+            "32.2141698469407984362",
+            "30.2752113680882750657",
+            "29.35392341237952607"
+          ],
+          "self_consistent_finite_eigensplit_mesh_series": [
+            "32.2142252365895345179",
+            "30.2780934856285561807",
+            "29.3540955676103791916"
+          ]
+        },
+        "unstable_output_ss_upper": {
+          "discarded_zero_nonsection_adapter_mesh_series": [
+            "0.600061939990326420613",
+            "0.593978597072388980749",
+            "0.594958638853300025851"
+          ],
+          "final_fixed_minus_finite_absolute": "3.9513332080076679631e-05",
+          "finite_eigensplit_used_for_acceptance": false,
+          "fixed_stage4l_adapter_mesh_series": [
+            "0.600121850731476724761",
+            "0.594017844535629779834",
+            "0.594987635075603371604"
+          ],
+          "self_consistent_finite_eigensplit_mesh_series": [
+            "0.600045233491322438368",
+            "0.59393874148542991076",
+            "0.594948121743523294924"
+          ]
+        },
+        "unstable_output_su_upper": {
+          "discarded_zero_nonsection_adapter_mesh_series": [
+            "0.561180588741004293674",
+            "0.564257784581034482763",
+            "0.565798932428942413786"
+          ],
+          "final_fixed_minus_finite_absolute": "0.00648315640831875761307",
+          "finite_eigensplit_used_for_acceptance": false,
+          "fixed_stage4l_adapter_mesh_series": [
+            "0.577047650528712985363",
+            "0.575191742638935465948",
+            "0.573990045231823953209"
+          ],
+          "self_consistent_finite_eigensplit_mesh_series": [
+            "0.564924295821173538812",
+            "0.566665879240771386272",
+            "0.567506888823505195596"
+          ]
+        },
+        "unstable_output_uu_upper": {
+          "discarded_zero_nonsection_adapter_mesh_series": [
+            "158.531921140419967742",
+            "158.531717517664731076",
+            "158.531686947987367375"
+          ],
+          "final_fixed_minus_finite_absolute": "0.00048322587511506753799",
+          "finite_eigensplit_used_for_acceptance": false,
+          "fixed_stage4l_adapter_mesh_series": [
+            "158.53192140327783477",
+            "158.531717550633402425",
+            "158.531686963105670429"
+          ],
+          "self_consistent_finite_eigensplit_mesh_series": [
+            "158.532321942759438116",
+            "158.53931929134779466",
+            "158.532170188980785497"
+          ]
+        }
+      },
+      "envelope_to_cap_ratios": {
+        "stable_output_ss_upper": "2.35229803733523688657e-06",
+        "stable_output_su_upper": "0.000872967925507364531958",
+        "stable_output_uu_upper": "0.0321177872795057745003",
+        "unstable_output_ss_upper": "0.119385443231110111029",
+        "unstable_output_su_upper": "0.0577595137453158491425",
+        "unstable_output_uu_upper": "0.158531778725688854426"
+      },
+      "exceeded_diagnostic_targets": [
+        "signed_event_aligned_ambient_K_ret"
+      ],
+      "kret_diagnostic_test_passes": false,
+      "kret_envelope_to_target_ratio": "1.89868919367804678267",
+      "kret_target_from_stage4p_two_return_conditional_lower": "178.63223566622940152417868925295676506083546560750988296203576600163494492602815283576425049414271039395381722279437315514760398728400342453",
+      "largest_exceeded_target": {
+        "name": "signed_event_aligned_ambient_K_ret",
+        "ratio": "1.89868919367804678267"
+      },
+      "last_mesh_absolute_block_changes": {
+        "stable_output_ss_upper": "5.35553588369646442276e-07",
+        "stable_output_su_upper": "0.00142101482710863240982",
+        "stable_output_uu_upper": "0.921287955708748995676",
+        "unstable_output_ss_upper": "0.000969790539973591769751",
+        "unstable_output_su_upper": "0.00120169740711151273871",
+        "unstable_output_uu_upper": "3.0587527731995578506e-05"
+      },
+      "last_mesh_absolute_kret_change": "1.05276835142507252385",
+      "legacy_one_return_kret_target_from_stage4n": "188.9122238810816331205615313733900338195719669891783770252080661252411",
+      "legacy_stage4n_kret_diagnostic_test_passes": false,
+      "legacy_stage4n_kret_envelope_to_target_ratio": "1.79536870899112521727",
+      "stage4m_legacy_all_six_tests_pass": true,
+      "stage4m_legacy_envelope_to_cap_ratios": {
+        "stable_output_ss_upper": "7.91008591004828998962e-06",
+        "stable_output_su_upper": "0.00743065280005547265652",
+        "stable_output_uu_upper": "0.305364600555208198784",
+        "unstable_output_ss_upper": "0.151890755518987369266",
+        "unstable_output_su_upper": "0.154154359746051350388",
+        "unstable_output_uu_upper": "0.457227955303751154581"
+      },
+      "stage4m_legacy_six_block_diagnostic_tests": {
+        "stable_output_ss_upper": true,
+        "stable_output_su_upper": true,
+        "stable_output_uu_upper": true,
+        "unstable_output_ss_upper": true,
+        "unstable_output_su_upper": true,
+        "unstable_output_uu_upper": true
+      },
+      "stage4m_legacy_strict_caps": {
+        "stable_output_ss_upper": "0.29737958147168548073886622",
+        "stable_output_su_upper": "1.17481996400215002469463264",
+        "stable_output_uu_upper": "105.178488996792070958566234",
+        "unstable_output_ss_upper": "3.9299772663315943951298061",
+        "unstable_output_su_upper": "3.7468621607891535185969481",
+        "unstable_output_uu_upper": "346.72372256934974231438886"
+      },
+      "stage4p_recommended_wide_simultaneous_box": {
+        "stable_output_ss_upper": "1",
+        "stable_output_su_upper": "10",
+        "stable_output_uu_upper": "1000",
+        "unstable_output_ss_upper": "5",
+        "unstable_output_su_upper": "10",
+        "unstable_output_uu_upper": "1000"
+      },
+      "stage4p_two_return_design": {
+        "box_entered_into_strict_numeric_ingress": false,
+        "box_is_a_directed_hessian_bound": false,
+        "box_label": "two_return_recommended_wide_proof_box",
+        "kret_is_required_by_matrix_lyapunov_perron_arithmetic": false,
+        "pair_sum_implies_conditional_kret_target": false,
+        "result_path": "experiments/results/leaky_inner_graph_closure_arithmetic_stage4p.json",
+        "result_sha256": "860a51d51648919f74bd7bd4e8230a629f7864b2bdcccf490aab5ff9e8e6b542",
+        "scalar_kret_is_only_a_sufficient_return_domain_route": true,
+        "simultaneous_box_graph_arithmetic_closes_conditionally": true
+      },
+      "strict_six_block_diagnostic_tests": {
+        "stable_output_ss_upper": true,
+        "stable_output_su_upper": true,
+        "stable_output_uu_upper": true,
+        "unstable_output_ss_upper": true,
+        "unstable_output_su_upper": true,
+        "unstable_output_uu_upper": true
+      },
+      "two_period_ambient_kret_heuristic_envelope": "339.167095502019947162",
+      "two_period_projected_block_heuristic_envelope": {
+        "stable_output_ss_upper": "2.35229803733523688657e-06",
+        "stable_output_su_upper": "0.00872967925507364510274",
+        "stable_output_uu_upper": "32.1177872795057766098",
+        "unstable_output_ss_upper": "0.596927216155550555143",
+        "unstable_output_su_upper": "0.577595137453158491425",
+        "unstable_output_uu_upper": "158.531778725688866416"
+      }
+    },
+    "schema_id": "leaky-inner-signed-second-variation-stage4q-pilot-v1",
+    "selected_branch_and_smoothing": {
+      "centre_period": "18.1862099491279209929",
+      "full_history_c2_smoothing_condition": "T-tau_max>tau_max",
+      "one_period_gate_passes": false,
+      "one_period_smoothing_margin_P_minus_2tau_max": "-4.17446982586997705766",
+      "one_period_target": "18.1862099491279209929",
+      "one_period_usage": "formal finite-section diagnostic only",
+      "primary_branch_is_proved_selected_second_hit": false,
+      "primary_selected_branch": "near-two-period positive-oriented event",
+      "smoothing_gate_is_operator_error_bound": false,
+      "tau_max": "11.1803398874989490253",
+      "two_period_center_gate_passes": true,
+      "two_period_smoothing_margin_2P_minus_2tau_max": "14.0117401232579439352",
+      "two_period_target": "36.3724198982558419857"
+    },
+    "signed_formation_order": {
+      "finite_section_norm_only": true,
+      "input_stable_deflation": "H[Ps*.,Ps*.]",
+      "moving_event_history_formula": "V(T+theta)+dotU(T+theta)T_h+dotU(T+theta)T_k+ddotX(T+theta)T_hT_k+dotX(T+theta)T_hk",
+      "norm_before_all_signed_combinations": false,
+      "order": [
+        "propagate_signed_physical_first_and_second_variations",
+        "form_terminal_moving_event_time_derivatives",
+        "translate_every_returned_history_coordinate_at_the_common_event",
+        "contract_inputs_with_fixed_Ps_or_qhat",
+        "apply_fixed_fhat_to_each_correlated_output_sector",
+        "subtract_qhat_times_the_same_unstable_output_sector",
+        "take_finite_section_linf_and_l1_tensor_norms"
+      ],
+      "stable_output": "sector-qhat*fhat(sector)",
+      "unstable_action": "fhat applied to the already correlated sector"
+    },
+    "status": "DIAGNOSTIC_NONRIGOROUS_SOURCE_BOUND",
+    "theorem_boundary": {
+      "biological_boundary": "no pulse capture, routing, onset, or network conclusion follows",
+      "domain_boundary": "centre orbit only; no supremum over the Stage-4M anisotropic ball",
+      "event_boundary": "no common event window, uniform speed lower bound, or no-earlier-hit proof is supplied",
+      "one_period_row": "not a C2 map on the full history space because P-tau_max<tau_max",
+      "result_status": "DIAGNOSTIC_NONRIGOROUS_SOURCE_BOUND",
+      "two_period_row": "centre smoothing gate passes, but the finite-section tensor has no outward integration, interpolation, orbit, q/f, or history truncation error bound"
+    }
+  }
+}
