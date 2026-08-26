@@ -1,0 +1,131 @@
+{
+  "calibration": {
+    "branch": "outer_pulse",
+    "calibration_is_not_a_theorem_artifact": true,
+    "coefficient_support_half_bandwidth": 256,
+    "correction_radius": "1e-8",
+    "finite_cutoff": 64,
+    "local_ownership": {
+      "complement_descendants_always_use_full_neumann": true,
+      "local_leaf_count_required": 1,
+      "local_path": "",
+      "local_root_id": "neutral_core",
+      "neutral_core_size": "0.002",
+      "superseded_circular_shortcut_rejected": true
+    },
+    "nonclaim_binary64_grushin_diagnostic": {
+      "border_scales": {
+        "domain_row": "5",
+        "range_column": "20"
+      },
+      "candidate_effective_slope_modulus": "0.0002668116536905084",
+      "candidate_effective_slope_real": "-0.000257730263094708",
+      "candidate_effective_slope_imag": "0.00006901862089462813",
+      "finite_bordered_condition_number": "217.75898900315937",
+      "finite_bordered_inverse_l1": "1.4446097795243704",
+      "finite_smallest_singular_value": "4.901512671559178e-13",
+      "finite_second_smallest_singular_value": "1.9215934817858218",
+      "rigorous_or_directed": false
+    },
+    "precision_bits": 160,
+    "proposed_next_route": {
+      "complete_fixed_border_grushin_inverse_on_local_disk": false,
+      "directed_factorization_E_minus_plus_equals_s_times_g": false,
+      "directed_nonvanishing_of_g": false,
+      "method": "neutral-pole-subtracted complete Grushin plus scalar Rouche, followed by the existing full-operator complement cover",
+      "parameter_box_sensitivity_required_separately": true
+    },
+    "runs": [
+      {
+        "acceptance_threshold": "0.999",
+        "accepted_leaf_count": 81,
+        "accepted_normalized_area_fraction": "11015222313663341997236498994520819654483717674297556270661003/2210699297508887586176857317195162929523018594075475467995637717401600",
+        "leaf_partition_sha256": "d8289fb134260139907615354e8f0b38ee8d46f19d85e2992eade2a67ce43a50",
+        "local_disk_leaf_count": 1,
+        "maximum_contraction_upper": "0.886904715619145873886765691632618931264100044229465219",
+        "maximum_depth": 43,
+        "neumann_leaf_count": 80,
+        "pending_cell_count": 41,
+        "processed_cell_count": 200
+      },
+      {
+        "acceptance_threshold": "0.9999",
+        "accepted_leaf_count": 81,
+        "accepted_normalized_area_fraction": "11015222313663341997236498994520819654483717674297556270661003/2210699297508887586176857317195162929523018594075475467995637717401600",
+        "local_disk_leaf_count": 1,
+        "maximum_contraction_upper": "0.886904715619145873886765691632618931264100044229465219",
+        "maximum_depth": 43,
+        "neumann_leaf_count": 80,
+        "pending_cell_count": 41,
+        "processed_cell_count": 200
+      },
+      {
+        "acceptance_threshold": "0.999",
+        "accepted_leaf_count": 2482,
+        "accepted_normalized_area_decimal": "5.3091928946732448077985811550050264502956139293829407598141827196318525400445247e-9",
+        "accepted_normalized_area_fraction": "117370290025933196980268128978182452504491821815798263873910107/22106992975088875861768573171951629295230185940754754679956377174016000",
+        "checkpoint_file_sha256": "7a388464888e010181c76612ead88c858943a1726fed1e3d1d53b582973632ed",
+        "checkpoint_sha256": "fd967589f9ce5bd65a8de3774b82b6fe29c8e8db07cc6defcff464794ff28b41",
+        "leaf_partition_sha256": "d876e00360aa7a04d7bbda06d488f3eb0dcae245055466b80530abd2a4a1c6bb",
+        "local_disk_leaf_count": 1,
+        "maximum_contraction_upper": "0.998771419337714838226306638700685054987963403454085246",
+        "maximum_depth": 43,
+        "minimum_contraction_margin_lower": "0.001228580662285161773693361299314945012036596545914754",
+        "neumann_leaf_count": 2481,
+        "pending_cell_count": 39,
+        "processed_cell_count": 5000
+      },
+      {
+        "acceptance_threshold": "0.9999",
+        "accepted_leaf_count": 2482,
+        "accepted_normalized_area_decimal": "5.3103297541686767710947226304440981055690514293829407598141827196318525400445247e-9",
+        "accepted_normalized_area_fraction": "469581690283249497907255010885333908290385875634680836848945443/88427971900355503447074292687806517180920743763019018719825508696064000",
+        "checkpoint_file_sha256": "042c8106c308fb7df7ba2595606e0f2de0a7c68f4a9cfe296be85b1ba8ed75e8",
+        "checkpoint_sha256": "21fff8da491291ae76b51f3be54b09765677e0bf87e001d65890442dc41cca24",
+        "leaf_partition_sha256": "16e0d4a44bd2b7429a9c3c0d06ec6e208fb28057c96a1f43becbb978b759fe08",
+        "local_disk_leaf_count": 1,
+        "maximum_contraction_upper": "0.999849840273601801872008056629953458282474189301600238",
+        "maximum_depth": 43,
+        "minimum_contraction_margin_lower": "0.000150159726398198127991943370046541717525810698399762",
+        "neumann_leaf_count": 2481,
+        "pending_cell_count": 39,
+        "processed_cell_count": 5000
+      }
+    ],
+    "schema_id": "leaky-floquet-outer-right-half-cover-calibration-v1",
+    "threshold_comparison": {
+      "accepted_count_changed_at_5000": false,
+      "accepted_normalized_area_ratio_09999_over_0999": "1.0002141303806408283664035025212475139845016638406295801899522120083348530999694",
+      "accepted_normalized_area_relative_gain_percent": "0.0214130380640828366403502521247513984501663840629580189952212008334853099969400",
+      "brute_force_300000_run_started": false,
+      "conclusion": "relaxing the Neumann acceptance threshold is not an effective closing mechanism",
+      "pending_count_changed_at_5000": false
+    }
+  },
+  "claim_ledger": {
+    "biological_pulse_control_theorem_validated": false,
+    "center_parameter_outer_floquet_count_validated": false,
+    "complete_nontranslation_right_half_strip_zero_free_validated": false,
+    "history_space_separator_validated": false,
+    "outer_attracting_floquet_index_validated": false,
+    "outer_directed_nontranslation_right_half_zero_count": null,
+    "outer_nonlinear_attracting_block_validated": false,
+    "outer_nontrivial_unit_circle_exclusion_validated": false,
+    "outer_quantitative_semigroup_bound_validated": false,
+    "outer_quantitative_stable_tube_validated": false,
+    "parameter_box_uniform_outer_floquet_count_validated": false,
+    "physical_pulse_onset_validated": false
+  },
+  "manifest": {
+    "calibration_note": "docs/leaky-floquet-outer-right-half-cover-calibration.md",
+    "calibration_note_sha256": "fc91e0bf3260d4d16b0e8554891c522f99af6a166943374567aad073fd2f2bac",
+    "engine_source": "src/canard_control/leaky_floquet_outer_right_half_cover.py",
+    "engine_source_sha256": "5040c17c6f3c4745926be84922ee7848f6ab89d9ff6efdf193945f06fbd656f9",
+    "outer_orbit_result": "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json",
+    "outer_orbit_result_sha256": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+    "riesz_result": "experiments/results/leaky_floquet_riesz_reduction.json",
+    "riesz_result_sha256": "5185f8f39cd8f87052a50b072af2bfee591d8cd626301bd9a9470134c14df55c",
+    "shared_arithmetic_source": "src/canard_control/floquet_cover_arithmetic.py",
+    "shared_arithmetic_source_sha256": "5fdd8eae881456a2aecb8a5211a9936abaa8fa1479099bcb205462c8f1296463"
+  }
+}
