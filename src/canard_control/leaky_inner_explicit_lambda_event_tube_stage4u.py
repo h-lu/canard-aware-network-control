@@ -677,7 +677,7 @@ def build_stage4u_certificate(repository: Path) -> Stage4UCertificate:
             "strict_open_lambda_ceiling": _record(lambda_ceiling),
             "centered_strip_slack": _record(strip_slack),
             "majorant_definition": (
-                "M(t)=max(||eta_v||_[-tau,0],|eta_w(0)|,"
+                "M(t)=max(||eta_v||_[-tau,0],|eta_w(0)|," 
                 "sup_(0<=s<=t) max(|eta_v(s)|,|eta_w(s)|))"
             ),
             "directed_integral_inequality": (

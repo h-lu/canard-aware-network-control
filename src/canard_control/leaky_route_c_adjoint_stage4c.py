@@ -473,7 +473,7 @@ def _pilot_subprocess(repository: Path) -> dict[str, Any]:
         "import json,sys; from pathlib import Path; "
         "from canard_control.leaky_route_c_adjoint_stage4c import "
         "_build_discrete_history_action_pilot; "
-        "print(json.dumps(_build_discrete_history_action_pilot("
+        "print(json.dumps(_build_discrete_history_action_pilot(" 
         "Path(sys.argv[1])),sort_keys=True,separators=(',',':'),allow_nan=False))"
     )
     completed = subprocess.run(

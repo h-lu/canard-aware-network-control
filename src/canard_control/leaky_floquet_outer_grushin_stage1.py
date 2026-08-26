@@ -396,8 +396,8 @@ def _build_result_in_pinned_binary_blas_subprocess(
         "import json,sys; from pathlib import Path; "
         "from canard_control.leaky_floquet_outer_grushin_stage1 import "
         "build_leaky_outer_grushin_stage1_result; "
-        "print(json.dumps(build_leaky_outer_grushin_stage1_result("
-        "Path(sys.argv[1])),sort_keys=True,separators=(',',':'),"
+        "print(json.dumps(build_leaky_outer_grushin_stage1_result(" 
+        "Path(sys.argv[1])),sort_keys=True,separators=(',',':')," 
         "allow_nan=False))"
     )
     completed = subprocess.run(

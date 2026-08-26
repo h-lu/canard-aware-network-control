@@ -57,7 +57,7 @@ preferred anisotropic shape
 
 $$
 \mathcal B_\lambda=
-\{(x_s,x_u):\|x_s\|_Y\le 0.0097\lambda,
+\{(x_s,x_u):\|x_s\|_Y\le 0.0097\lambda,\ 
                  |x_u|\le0.00025\lambda\},
 $$
 

@@ -101,3 +101,4 @@ bounds, nonlinear attraction, a history separator, and biological pulse
 control.  In particular, these calibrations neither establish a spectral
 gap to the left of the imaginary axis nor provide the resolvent/semigroup
 constants and nonlinear history remainder needed for an attracting tube.
+

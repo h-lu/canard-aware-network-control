@@ -90,7 +90,7 @@
   "manifest": {
     "arithmetic_scope": "exact rational composition of validated parent decimals and exact block-triangular, product-target, pulse-containment, and safety-erosion inequalities, plus source-bound transcription of exactly six Stage-5C event-side outputs; no stable-sheet, onset, routing, capture, or event-aligned J_c data are inserted",
     "async_parent": "experiments/results/leaky_dobrushin_async_routing_transfer.json",
-    "async_parent_sha256": "adfd08c543f14d7203dfe33eb6154da73f8672ad251886bbe4cdd21235e3a53c",
+    "async_parent_sha256": "8df524d7bc4ca6d8fd799fe0a928b4d25b49d633d6c9635d0f300c0509f61bd4",
     "certificate_sha256": "5dd486d461b511a5c9d80595d5df30fd3bebc6687a3e30d6d6de63d3ebc30add",
     "default_command": "PYTHONPATH=src /usr/bin/python3 experiments/leaky_biological_safety_control_contract.py",
     "generator": "experiments/leaky_biological_safety_control_contract.py",

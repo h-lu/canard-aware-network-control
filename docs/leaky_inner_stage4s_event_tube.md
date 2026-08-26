@@ -147,7 +147,7 @@ the speed margin.  The bridge above gives \(C^2\) maps
 Now define the reduced local section patch
 
 \[
-\Sigma_{\rm loc}=\{y:g_Y(y)=0,
+\Sigma_{\rm loc}=\{y:g_Y(y)=0,\ 
 \|y-Y_*\|_Y<R_{\rm sec}\},
 \]
 

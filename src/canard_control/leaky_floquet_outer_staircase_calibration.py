@@ -561,8 +561,8 @@ def _subprocess_result(repository: Path) -> dict[str, Any]:
     program = (
         "import json,sys; from pathlib import Path; "
         "from canard_control.leaky_floquet_outer_staircase_calibration import "
-        "build_outer_staircase_result; print(json.dumps("
-        "build_outer_staircase_result(Path(sys.argv[1])),sort_keys=True,"
+        "build_outer_staircase_result; print(json.dumps(" 
+        "build_outer_staircase_result(Path(sys.argv[1])),sort_keys=True," 
         "separators=(',',':'),allow_nan=False))"
     )
     completed = subprocess.run(
