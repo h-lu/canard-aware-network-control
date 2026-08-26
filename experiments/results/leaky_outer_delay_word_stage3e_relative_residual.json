@@ -1,0 +1,155 @@
+{
+  "certificate": {
+    "arithmetic_scope": "160-bit outward MPFR Fourier-Taylor coefficient and tail arithmetic; degree-24 source-replayed binary64 guide coefficients treated as exact dyadic constants; same-cell signed matrix-polynomial residual, determinant, interface-jump and multiplicative-error propagation",
+    "binary_blas_thread_count": 1,
+    "branch": "outer_pulse",
+    "claim_status": {
+      "abstract_H_L_majorant_promoted_to_signed_kernel_transfer": false,
+      "abstract_H_L_triangular_majorant_validated": true,
+      "all_chart_interface_jumps_directed": true,
+      "arbitrary_c0_linear_return_contraction_validated": false,
+      "binary_H_L_guides_transferred_to_exact_primitives": false,
+      "continuous_signed_density_total_variation_validated": false,
+      "degree24_fundamental_chart_constructed": true,
+      "exact_orbit_and_period_ball_included": true,
+      "fourier_taylor_remainder_directed": true,
+      "multiplicative_F_error_propagator_validated": true,
+      "multiplicative_G_error_propagator_validated": true,
+      "nonlinear_phase_chart_validated_on_ambient_tube": false,
+      "omitted_fourier_tail_directed": true,
+      "outer_nonlinear_return_contraction_validated": false,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "physical_pulse_onset_validated": false,
+      "polynomial_determinant_nonvanishing_validated": true,
+      "recovery_shadow_transfer_error_validated": false,
+      "relative_residual_numerator_signed_before_norm": true,
+      "retained_fourier_taylor_coefficients_directed": true,
+      "same_cell_matrix_correlation_retained": true,
+      "stage3d_primitive_parent_validated": true,
+      "voltage_shadow_transfer_error_validated": false
+    },
+    "conclusion": "the exact-orbit F/G obstruction is closed by a same-cell relative residual and a strict multiplicative propagator; a rigorous but deliberately cancellation-blind triangular H/L majorant is also given. The binary H/L guides and the complete signed density tensor are not yet transferred, so E_voltage,E_recovery and C0 contraction remain open",
+    "fundamental_certificate": {
+      "F_right_relative_error_upper": "0.00503865862831876715961325806592135117056866600126623399190125",
+      "G_left_relative_error_upper": "0.00506417527878252331883873724857365214874066378647834227633281",
+      "central_polynomial_residual_exponent_upper": "1.08639756657568636658908821008478763137538704800480737545063e-12",
+      "chart_interfaces_included": true,
+      "coefficient_taylor_degree": 12,
+      "coefficient_taylor_remainder_exponent_upper": "4.46366247645477957695012615675430532069419492227106360961238e-20",
+      "coefficient_taylor_remainder_upper": "5.44485026136140851798729759019206039134383528047351890595807e-25",
+      "determinant_nonvanishing_on_every_cell": true,
+      "exact_orbit_ball_exponent_upper": "0.00486926400807709086000491408287281710155931736492134225327223",
+      "exact_orbit_coefficient_variation_upper": "5.93960980179398683938771038697818545035866844003168513591871e-08",
+      "exact_period_ball_exponent_upper": "0.000143072425171784422087257499258786801401087377453853383718463",
+      "exact_period_matrix_variation_upper": "4.64305977744638232678298009078920445004801004056093657884136e-08",
+      "fundamental_polynomial_degree": 24,
+      "interface_jump_log_exponent_upper": "4.23811216003914648539250654590912793372872195236419518043057e-07",
+      "maximum_Fhat_inf_norm_upper": "2.53970076861347028158839238613815767473891760213096385427755",
+      "maximum_Ghat_inf_norm_upper": "25969.6942527594810504376011057054219864360140808268124435559",
+      "maximum_interface_relative_jump_upper": "1.51397315230322669688777229826338899502223990013245198269992e-08",
+      "maximum_polynomial_condition_upper": "50484.9821015453547012018824025338672266813787561651843490995",
+      "minimum_polynomial_determinant_abs_lower": "1.29906647245566424655330290834117122501537634553700475792939e-05",
+      "omitted_fourier_tail_exponent_upper": "1.32468225133666574709473291996531076620839502262223185603844e-05",
+      "omitted_fourier_wiener_tail_upper": "1.61586960045865238666737902555865859989778437841442942181342e-10",
+      "phase_cell_count": 1024,
+      "retained_fourier_cutoff": 96,
+      "retained_fourier_mode_count": 193,
+      "source_replayed_binary_guide_is_nonclaim_center": true,
+      "total_multiplicative_exponent_upper": "0.00502600706806464346542396929312273190300191076371925953470152"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_outer_delay_word_stage3d_primitives.json": "11197f7f64289bd239f6167deedae66e54bc7805eaf84d08762ddc843c7372bf"
+    },
+    "precision_bits": 160,
+    "relative_residual_identity": {
+      "F_error": "||Fhat^{-1}F_exact-I|| <= exp(eta)-1",
+      "G_error": "||G_exact Fhat-I|| <= (exp(eta)-1)/(2-exp(eta))",
+      "cell_equation": "d_y Y=-Fhat^{-1}(d_y Fhat-h A_exact Fhat)Y",
+      "factorization": "F_exact=Fhat Y",
+      "flow_factor": "exp(integral ||relative residual|| dy)",
+      "interface_factor": "1+||Fhat_plus^{-1}(Fhat_minus-Fhat_plus)||",
+      "same_cell_numerator": "adj(Fhat)(d_y Fhat-h A_exact Fhat)"
+    },
+    "schema_id": "leaky-outer-delay-word-stage3e-relative-residual-v1",
+    "signed_kernel_frontier": {
+      "current_partition_degree": [
+        1024,
+        24
+      ],
+      "dominant_FG_error_source": "exact 1e-8 orbit ball, not polynomial residual",
+      "first_remaining_object": "a piecewise polynomial H/L guide residual inserted into the complete signed 21-term density tensor before row total variation",
+      "more_partitioning_of_F_alone_is_not_the_next_bottleneck": true,
+      "next_partition_degree": [
+        1024,
+        24
+      ],
+      "next_precision_bits": 192,
+      "required_ordering": "sum words, both injection branches and phase subtraction as one polynomial row; only then integrate absolute value",
+      "required_recovery_error_target": "E_recovery < 0.9972399927438704453544963998",
+      "required_voltage_error_target": "E_voltage < 0.8730921051856016985675559066",
+      "why_uniform_triangular_bounds_fail": "separate sup norms pay the maximum Fhat/Ghat condition and destroy cross-word, cross-injection and phase cancellation"
+    },
+    "transfer_errors": {
+      "E_phase": "0.737274478109754544137168592381773727825919506548820214838649",
+      "E_recovery": null,
+      "E_voltage": null
+    },
+    "transfer_gate": {
+      "arbitrary_c0_linear_contraction_closes": false,
+      "binary_H_L_transfer_validated": false,
+      "exact_F_G_transfer_validated": true,
+      "linear_return_gate_evaluated": false,
+      "nonlinear_outer_attraction_closes": false
+    },
+    "triangular_primitive_propagation": {
+      "C_exact_uniform_upper": "712.462318807016921103346082972793289274094643050080097956457",
+      "C_transfer_error_upper": "7.14372045448309279551678325940615573636768678268970408042947",
+      "Chat_uniform_upper": "705.318598352533828307829299713387133537726956265917935724061",
+      "H_exact_uniform_upper": "18954.6444927830936977729752694235072854119062346036461848942",
+      "H_transfer_error_upper": "190.05451656346081061285777135319618309897765761657759018249",
+      "Hhat_uniform_upper": "18764.5899762196328871601174980703111023129285769290898707502",
+      "L_exact_uniform_upper": "359278547.847792463355038112453552748697951662446534496929312",
+      "L_transfer_error_upper": "7168710.87215014063338051402588574168487984613886753200141298",
+      "Lhat_uniform_upper": "352109836.975642322721657598427667007013071816305284981746301",
+      "binary_stage3d_H_L_guides_transferred": false,
+      "center_delayed_coefficient_upper": "0.0106938958173237469761094704935062105111798324628268374139911",
+      "definition": "Chat_j=Ghat Bbar_j Fhat_shift; Hhat_j is its exact-period phase primitive and Lhat_jk is the corresponding triangular second primitive",
+      "exact_F_uniform_upper": "2.55249745380459234842001785325139393814894982270764883428303",
+      "exact_G_uniform_upper": "26101.2093363918461889892333059779658806318637963066423358983",
+      "exact_delayed_coefficient_variation_upper": "9.65968523256489539927676113167680512820252498685634356755253e-11",
+      "norm": "matrix infinity norm, uniform in normalized phase and delay id",
+      "signed_word_cancellation_retained": false,
+      "triangular_majorant_validated": true,
+      "usable_as_E_voltage_or_E_recovery": false
+    }
+  },
+  "manifest": {
+    "certificate_sha256": "b3d8acc79d1e27668973bf66d38aae932b2bdb0feed0a18beacddd00f9a9e7c4",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_delay_word_stage3e_relative_residual.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_delay_word_stage3e_relative_residual.json",
+    "schema_id": "leaky-outer-delay-word-stage3e-relative-residual-v1",
+    "source_sha256": {
+      "docs/leaky-outer-delay-word-stage3e-relative-residual.md": "70f3570059649f13b4a9da1f343d4bdbaf9a9e2701e04cc62915a0875a7bb7c5",
+      "experiments/leaky_outer_delay_word_stage3e_relative_residual.py": "e9050300c611314d748852b439ffff76a07cd1c37942816cbffc6564a64f1309",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_outer_delay_word_stage3d_primitives.py": "d28b196902ab4a682b4de5c60a505540b4e252495fb8327d4fa8b0523babe839",
+      "src/canard_control/leaky_outer_delay_word_stage3e_relative_residual.py": "a9f4564e8628cdae60a6b2d72ed2b8bb4b8378e42450e36b9c6b06e24e19d7f2",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_outer_phase_fixed_return_stage1.py": "c3a9788d0f98dfc4c8e7673e4bd90754170be0be940826729cf828d21901aad8",
+      "src/canard_control/leaky_periodic_validation.py": "5fa61fb65bc4b96114b9b7911057bc77db571270ed2fb3eaf2db1a8c5844bc25",
+      "src/canard_control/leaky_pulse_separator_candidate.py": "95c6bb0b2870a69208b13c37e278bb65e06263c2420640863e845cc99e921476"
+    }
+  }
+}

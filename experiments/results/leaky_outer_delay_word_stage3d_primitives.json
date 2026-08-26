@@ -1,0 +1,220 @@
+{
+  "certificate": {
+    "arithmetic_scope": "exact finite-word/primitive algebra; source-bound DOP853 continuous-density guides and resolution comparison; 160-bit outward MPFR Wiener coefficient, orbit-residual, tangent, phase-projection and coarse logarithmic-growth arithmetic",
+    "binary_blas_thread_count": 1,
+    "branch": "outer_pulse",
+    "claim_status": {
+      "all_words_have_length_at_most_two": true,
+      "arbitrary_c0_linear_return_contraction_validated": false,
+      "binary_fundamental_inverse_consistency_recomputed": true,
+      "binary_primitive_pilot_promoted_to_exact_orbit_kernel": false,
+      "binary_primitive_resolution_ladder_recomputed": true,
+      "coarse_directed_logarithmic_growth_failure_recomputed": true,
+      "continuous_center_density_pilot_uses_no_input_history_interpolation": true,
+      "continuous_linear_phase_projection_norm_validated": true,
+      "continuous_signed_density_total_variation_validated": false,
+      "cross_word_and_cross_injection_signed_sum_precedes_absolute_value": true,
+      "directed_bernstein_frontier_registered": true,
+      "duffy_primitive_guides_directedly_transferred_to_exact_F_H_L": false,
+      "duffy_two_simplex_collapsed_to_one_dimensional_primitives": true,
+      "exact_orbit_vector_field_tangent_transfer_validated": true,
+      "linearized_ambient_projection_radius_gate_validated": true,
+      "nonlinear_phase_chart_validated_on_ambient_tube": false,
+      "one_word_primitive_identity_registered": true,
+      "outer_nonlinear_return_contraction_validated": false,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "phase_chart_continuous_transfer_error_validated": true,
+      "physical_pulse_onset_validated": false,
+      "recovery_shadow_transfer_error_validated": false,
+      "stage3c_finite_word_parent_validated": true,
+      "two_word_primitive_identity_registered": true,
+      "voltage_shadow_transfer_error_validated": false
+    },
+    "coarse_directed_failure": {
+      "accumulated_logarithmic_exponent_upper": "26.5588509987999421746905429459560598172897725651580171280788",
+      "failure_reason": "an absolute logarithmic-norm wrapper discards the signed phase and delay-word cancellation; it is rigorous but unusable",
+      "full_period_growth_upper": "342264955859.447760704260929086070176147498164936375578544004",
+      "growth_exceeds_stage2_linear_margin": true,
+      "maximum_mu_infinity_upper": "1.99656901435352834586279311330374939342868062231600161626467",
+      "not_used_as_transfer_error": true,
+      "phase_partition_count": 512
+    },
+    "conclusion": "the 21 Duffy word terms collapse exactly to one-dimensional F,G,H,L primitives and an independent continuous phase-projection bound now supplies E_phase; the center continuous-density pilot agrees with Stage-2, but exact-orbit Bernstein residuals for the signed F-H-L tensor remain absent, so E_voltage,E_recovery and C0 contraction remain open",
+    "continuous_phase_projection": {
+      "ambient_complete_history_distance_upper": "2.63707861690003623832880789119755816642759524561355566410524e-05",
+      "continuous_linear_phase_projection_validated": true,
+      "continuous_projection_norm_upper": "2.67630423492132919960802282789084996904013655733990990445473",
+      "declared_section_radius": "0.0001",
+      "exact_phase_speed_lower": "0.917825366703812304214040845302748949103924106912073678625762",
+      "fast_field_transfer_error_upper": "4.66448728118937889177119060839348568674144864159406163309172e-08",
+      "guide_phase_speed_interval": {
+        "lower": "0.917825413348685116107829763014655033038780974326721160083972",
+        "upper": "0.917825413348685116107829763014655033038782607079596044285904"
+      },
+      "guide_recovery_speed_wiener_upper": "0.445926784129820982227372044723932652526991783079677089467765",
+      "guide_voltage_speed_wiener_upper": "1.5385545024789496880866672289791058962411145224959313238936",
+      "linear_projected_distance_upper": "7.05762467023004847080476389193314133854630617218306468821313e-05",
+      "linear_projection_radius_margin_lower": "2.94237532976995152919523610806685866145369382781535503965203e-05",
+      "nonlinear_phase_chart_on_ambient_tube_validated": false,
+      "norm": "Y->Y norm of I-q tensor ell, ell(h)=h_v(0)/q_v(0); bounded by 1+max{sup|q_v|,sup|q_w|}/q_v(0)",
+      "orbit_tangent_transfer": "q_exact=f(X_exact); compare with Xbar'/Tbar by the validated periodic residual and a Wiener mean-value bound on the RFDE field",
+      "phase_chart_continuous_transfer_error_upper": "0.737274478109754544137168592381773727825919506548820214838649",
+      "slow_field_transfer_error_upper": "4.00005751885026234293294361651121022200135457032853237962051e-09",
+      "stage2_phase_shadow_upper": "1.93902975681157465547085423550907624121421705079040546185029"
+    },
+    "directed_bernstein_frontier": {
+      "current_reached_degree": 0,
+      "current_reached_partition": 512,
+      "failure_is_numerical_not_structural": true,
+      "first_unvalidated_object": "piecewise polynomial relative-residual enclosure for F and the induced triangular H_j,L_jk primitives on the exact 1e-8 orbit ball",
+      "recovery_error_target": "E_recovery < 0.9972399927438704453544963998",
+      "requested_partition_ladder": [
+        256,
+        512,
+        1024
+      ],
+      "requested_taylor_bernstein_degree_ladder": [
+        12,
+        16,
+        20,
+        24
+      ],
+      "required_correlation": "retain F(t){sum_word I_word(t,s)}G(s) and phase subtraction as one tensor polynomial; separate word norms are forbidden",
+      "validated_algebra": "Duffy word integrals reduced to the F,G,H,L primitive identities before any interval absolute value",
+      "voltage_error_target": "E_voltage < 0.8730921051856016985675559066"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_outer_delay_word_stage3c_compression.json": "5e3abaaccbc7a9c4aa4ded0f3ec785f48df67d5371c198066415159eab78979a",
+      "experiments/results/leaky_outer_signed_kernel_stage2.json": "f4742db560c5de29072adfb0b963d5a21e993fed5a949a2180dcc6d0b355011f",
+      "experiments/results/leaky_pulse_outer_third_return_enclosure.json": "7a01c2a8ec6b5421c090836f4962e595027d78be3381d490c4b6eb56d3beb13d"
+    },
+    "pilot_cross_resolution": {
+      "recovery_norm_absolute_difference_binary64": "1.870569582606077e-08",
+      "status": "binary64 diagnostic only; not a directed error bound",
+      "voltage_norm_absolute_difference_binary64": "0.00011150876464144366"
+    },
+    "pilot_levels": [
+      {
+        "center_recovery_return_norm_binary64": {
+          "binary64_hex": "0x1.6a91f4721e68bp-9",
+          "decimal": "0.0027661906142924567"
+        },
+        "center_voltage_maximizing_relative_time_binary64": {
+          "binary64_hex": "-0x1.a1663c2e844cbp+2",
+          "decimal": "-6.5218649343743875"
+        },
+        "center_voltage_return_norm_binary64": {
+          "binary64_hex": "0x1.03ed6027310e2p-3",
+          "decimal": "0.12691760177234018"
+        },
+        "continuous_history_density_evaluated_without_input_sampling": true,
+        "diagnostic_only": true,
+        "first_primitive_nfev": 22013,
+        "fundamental_inverse_consistency_max_binary64": {
+          "binary64_hex": "0x1.e800000000000p-34",
+          "decimal": "1.1095835361629725e-10"
+        },
+        "fundamental_nfev": 9992,
+        "history_quadrature_node_count": 401,
+        "level_id": "coarse",
+        "maximum_step_binary64": {
+          "binary64_hex": "0x1.47ae147ae147bp-5",
+          "decimal": "0.040000000000000001"
+        },
+        "output_time_node_count": 61,
+        "second_primitive_nfev": 20621,
+        "signed_sum_before_absolute_quadrature": true
+      },
+      {
+        "center_recovery_return_norm_binary64": {
+          "binary64_hex": "0x1.6a9153c3dbd0ap-9",
+          "decimal": "0.0027661719085966307"
+        },
+        "center_voltage_maximizing_relative_time_binary64": {
+          "binary64_hex": "-0x1.a75cb962619e3p+2",
+          "decimal": "-6.615034433436878"
+        },
+        "center_voltage_return_norm_binary64": {
+          "binary64_hex": "0x1.0427d69b2ba20p-3",
+          "decimal": "0.12702911053698163"
+        },
+        "continuous_history_density_evaluated_without_input_sampling": true,
+        "diagnostic_only": true,
+        "first_primitive_nfev": 42005,
+        "fundamental_inverse_consistency_max_binary64": {
+          "binary64_hex": "0x1.4080000000000p-32",
+          "decimal": "2.914930519182235e-10"
+        },
+        "fundamental_nfev": 19967,
+        "history_quadrature_node_count": 801,
+        "level_id": "fine",
+        "maximum_step_binary64": {
+          "binary64_hex": "0x1.47ae147ae147bp-6",
+          "decimal": "0.02"
+        },
+        "output_time_node_count": 121,
+        "second_primitive_nfev": 40466,
+        "signed_sum_before_absolute_quadrature": true
+      }
+    ],
+    "precision_bits": 160,
+    "primitive_identity": {
+      "conjugated_delay": "C_j(r)=G(r) B_j(r) F(r-tau_j)",
+      "duffy_reduction": "the ordered two-simplex is integrated exactly by H and L; only one-dimensional primitive ODEs remain",
+      "empty_word": "R_empty(t,s)=F(t)G(s)",
+      "first_primitive": "H_j'=C_j, H_j(t)=0 for t<=tau_j",
+      "fundamental": "F'=A F, F(0)=I, G=F^{-1}",
+      "maximum_primitive_delay_depth": 2,
+      "one_word": "R_j(t,s)=F(t)[H_j(t)-H_j(s+tau_j)]G(s)",
+      "second_primitive": "L_jk'=C_j(r) H_k(r-tau_j), L_jk(t)=0 for t<=tau_j+tau_k",
+      "signed_ordering": "sum all seven words and both history injections, subtract the phase row, and only then integrate absolute value",
+      "two_word": "R_jk(t,s)=F(t){L_jk(t)-L_jk(a)-[H_j(t)-H_j(a)]H_k(s+tau_k)}G(s), a=s+tau_j+tau_k"
+    },
+    "schema_id": "leaky-outer-delay-word-stage3d-primitives-v1",
+    "transfer_errors": {
+      "E_phase": "0.737274478109754544137168592381773727825919506548820214838649",
+      "E_recovery": null,
+      "E_voltage": null
+    },
+    "transfer_gate": {
+      "arbitrary_c0_linear_contraction_closes": false,
+      "continuous_phase_projection_norm_upper": "2.67630423492132919960802282789084996904013655733990990445473",
+      "continuous_recovery_row_norm_upper": null,
+      "continuous_voltage_row_norm_upper": null,
+      "linear_return_gate_evaluated": false,
+      "linearized_ambient_projection_gate_closes": true,
+      "nonlinear_ambient_phase_chart_gate_closes": false,
+      "stage2_recovery_shadow_upper": "0.00276000725612955464550360015048688249560182127695331507926743",
+      "stage2_voltage_shadow_upper": "0.126907894814398301432444093360163292946571080032215902723539"
+    }
+  },
+  "manifest": {
+    "certificate_sha256": "1fcff5eee70af708b12532055e1c2ad2bc6c2aace0458890ccd564ed939987d5",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_delay_word_stage3d_primitives.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_delay_word_stage3d_primitives.json",
+    "schema_id": "leaky-outer-delay-word-stage3d-primitives-v1",
+    "source_sha256": {
+      "docs/leaky-outer-delay-word-stage3d-primitives.md": "f90862ded0a7587b1479f8122cd91126cc5a54cec104f88b11df98634841a661",
+      "experiments/leaky_outer_delay_word_stage3d_primitives.py": "4584b5d62bbccfee3448488977af671b61b73df755d9ab90a1845e5b892a005d",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_outer_continuous_kernel_stage3_shard.py": "581330cb71d594049df34db95b80b4c0811b9bbba13cc9125a2df8053008f2e9",
+      "src/canard_control/leaky_outer_delay_word_stage3c_compression.py": "9247a64037d23ba9455a7ded1dabde3c592a6a7cb40c73b84546113174c28bc1",
+      "src/canard_control/leaky_outer_delay_word_stage3d_primitives.py": "d28b196902ab4a682b4de5c60a505540b4e252495fb8327d4fa8b0523babe839",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_outer_phase_fixed_return_stage1.py": "c3a9788d0f98dfc4c8e7673e4bd90754170be0be940826729cf828d21901aad8",
+      "src/canard_control/leaky_pulse_separator_candidate.py": "95c6bb0b2870a69208b13c37e278bb65e06263c2420640863e845cc99e921476"
+    }
+  }
+}

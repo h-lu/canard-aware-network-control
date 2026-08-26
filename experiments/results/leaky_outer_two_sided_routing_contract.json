@@ -1,0 +1,465 @@
+{
+  "contract": {
+    "claim_status": {
+      "center_outer_zero_index_validated": false,
+      "frequency_amplitude_safety_control_theorem_validated": false,
+      "inner_quantitative_stable_graph_validated": false,
+      "inner_signed_exit_factor_validated": false,
+      "large_quiet_razumikhin_history_basin_validated": true,
+      "narrow_candidate_pulse_bracket_source_bound_observed": true,
+      "nonexplicit_open_quiet_history_neighborhood_of_J_030_proved": true,
+      "nonexplicit_open_quiet_pulse_interval_around_J_030_proved": true,
+      "outer_inner_exit_face_attachment_validated": false,
+      "outer_local_vector_field_quadratic_remainder_validated": true,
+      "outer_local_vector_field_second_derivative_bound_validated": true,
+      "outer_neutral_multiplier_algebraically_simple_validated": true,
+      "outer_periodic_rfde_orbit_validated": true,
+      "outer_quantitative_attracting_tube_validated": false,
+      "outer_stable_power_bound_validated": false,
+      "outer_stable_riesz_projection_norm_validated": false,
+      "physical_pulse_Jc_validated": false,
+      "physical_pulse_stable_sheet_crossing_validated": false,
+      "physical_pulse_terminal_history_curve_oriented_c1_validated": true,
+      "pulse_J_030_complete_history_quiet_capture_validated": true,
+      "pulse_J_032_outer_attachment_target_source_bound_observed": true,
+      "qualitative_inner_codimension_one_stable_manifold_validated": true,
+      "quiet_inner_exit_face_attachment_validated": false,
+      "reduced_history_future_factorization_validated": true,
+      "two_sided_basin_routing_validated": false,
+      "unique_physical_pulse_onset_validated": false
+    },
+    "method_of_steps_family_contract": {
+      "causal_cell_error_inequality": "D+R_i<=mu_i R_i+b_i0 R_delay0+b_i1 R_delay1+E_residual_i",
+      "initial_object": "each complete bounded signed exit slab, not a sampled orbit and not a terminal point",
+      "outer_terminal_test": "opposite event signs plus positive section speed, followed by Q_section*(E_guide+E_flow+E_orbit+E_time F+E_section)<r_outer",
+      "point_samples_are_basin_evidence": false,
+      "quiet_terminal_test": "sqrt(B_P)+E_P<1/sqrt(125) over every cell in the complete retained history",
+      "uniform_family_requirement": "time and every exit-face parameter are enclosed on each cell; power-polynomial residuals and terminal targets use outward tensor Bernstein convex-hull bounds; any finite head carries a rigorous function-space tail radius obtained directly or after a proved smoothing step"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "outer_attachment_actual_budget": {
+      "continuous_guide_to_candidate_orbit_upper": null,
+      "continuous_history_bernstein_distance_validated": false,
+      "directed_method_of_steps_family_tube_validated": false,
+      "event_time_error_upper": null,
+      "evidence_status": "actual_outer_exit_face_and_tube_missing",
+      "exact_outer_orbit_correction_upper": "1e-5",
+      "history_speed_upper_on_event_tube": null,
+      "initial_set_is_complete_signed_inner_exit_face": false,
+      "method_of_steps_history_error_upper": null,
+      "outer_attracting_tube_validated": false,
+      "outer_section_ball_radius_lower": null,
+      "outer_section_event_bracket_validated": false,
+      "outer_section_event_speed_lower": null,
+      "section_chart_projection_norm_upper": null,
+      "section_reference_and_phase_error_upper": null
+    },
+    "outer_attachment_actual_evaluation": {
+      "event_history_error_formula": "E_raw=E_guide+E_flow+E_orbit+E_time*F_tube+E_section",
+      "input_complete": false,
+      "missing_inputs": [
+        "outer_section_event_speed_lower",
+        "continuous_guide_to_candidate_orbit_upper",
+        "method_of_steps_history_error_upper",
+        "event_time_error_upper",
+        "history_speed_upper_on_event_tube",
+        "section_reference_and_phase_error_upper",
+        "section_chart_projection_norm_upper",
+        "outer_section_ball_radius_lower"
+      ],
+      "outer_exit_face_attachment_closes": false,
+      "outer_section_entry_inequality_closes": false,
+      "outer_section_entry_margin_lower": null,
+      "projected_section_error_upper": null,
+      "raw_event_history_error_upper": null,
+      "sufficient_inequality": "Q_section*E_raw < r_outer"
+    },
+    "outer_attachment_requested_budget_not_evidence": {
+      "continuous_guide_to_candidate_orbit_upper": "0.00001",
+      "continuous_history_bernstein_distance_validated": false,
+      "directed_method_of_steps_family_tube_validated": false,
+      "event_time_error_upper": "0.000001",
+      "evidence_status": "requested_directed_budget_not_evidence",
+      "exact_outer_orbit_correction_upper": "1e-5",
+      "history_speed_upper_on_event_tube": "3",
+      "initial_set_is_complete_signed_inner_exit_face": false,
+      "method_of_steps_history_error_upper": "0.000005",
+      "outer_attracting_tube_validated": false,
+      "outer_section_ball_radius_lower": "0.0001",
+      "outer_section_event_bracket_validated": false,
+      "outer_section_event_speed_lower": "0.5",
+      "section_chart_projection_norm_upper": "2",
+      "section_reference_and_phase_error_upper": "0.000005"
+    },
+    "outer_attachment_requested_evaluation_not_evidence": {
+      "event_history_error_formula": "E_raw=E_guide+E_flow+E_orbit+E_time*F_tube+E_section",
+      "input_complete": true,
+      "missing_inputs": [],
+      "outer_exit_face_attachment_closes": false,
+      "outer_section_entry_inequality_closes": true,
+      "outer_section_entry_margin_lower": "0.000034",
+      "projected_section_error_upper": "0.000066",
+      "raw_event_history_error_upper": "0.000033",
+      "sufficient_inequality": "Q_section*E_raw < r_outer"
+    },
+    "outer_attracting_tube_actual_budget": {
+      "chosen_section_radius": null,
+      "evidence_status": "actual_parents_incomplete",
+      "interreturn_flow_lipschitz_upper": null,
+      "interreturn_flow_tube_validated": false,
+      "m_return_nonlinear_derivative_coefficient_upper": null,
+      "neutral_multiplier_algebraically_simple_validated": true,
+      "outer_zero_index_validated": false,
+      "phase_chart_projection_norm_upper": null,
+      "reduced_phase_section_and_return_map_validated": false,
+      "return_iterate_count": null,
+      "stable_power_constant_upper": null,
+      "stable_riesz_projection_norm_upper": null,
+      "stable_spectral_radius_upper": null,
+      "validated_return_map_domain_radius_lower": null
+    },
+    "outer_attracting_tube_actual_evaluation": {
+      "conclusion": "the flow sweep of the section ball is a local orbital attracting tube, with contraction sampled every m returns",
+      "domain_contains_chosen_ball": false,
+      "input_complete": false,
+      "linear_m_return_norm_upper": null,
+      "linear_power_formula": "q_m=K_s*rho_s^m",
+      "m_return_lipschitz_upper": null,
+      "missing_artifacts": [
+        "outer_zero_index",
+        "reduced_phase_section_and_return_map",
+        "interreturn_flow_tube"
+      ],
+      "missing_inputs": [
+        "stable_spectral_radius_upper",
+        "stable_power_constant_upper",
+        "stable_riesz_projection_norm_upper",
+        "phase_chart_projection_norm_upper",
+        "return_iterate_count",
+        "m_return_nonlinear_derivative_coefficient_upper",
+        "chosen_section_radius",
+        "validated_return_map_domain_radius_lower",
+        "interreturn_flow_lipschitz_upper"
+      ],
+      "nonlinear_contraction_formula": "Lambda_o=q_m+C_m*r_o",
+      "outer_attracting_tube_closes": false,
+      "strict_contraction_inequality_holds": false,
+      "sufficient_inequality": "validated phase/return tube, r_o<=R_domain, and K_s*rho_s^m+C_m*r_o<1"
+    },
+    "outer_local_vector_field_evidence": {
+      "declared_local_history_radius": "0.01",
+      "declared_tube_remains_inside_proved_voltage_strip": true,
+      "epsilon_times_kappa3": "0.001",
+      "exact_outer_centered_voltage_abs_upper": "2.48987074566984019874080339113733822446646980787465026",
+      "exact_outer_physical_history_speed_upper": "2.55851622417374827415880002537285763757097085223362908165582095734322982234512333090878678496842",
+      "history_norm": "max{sup|delta v|,sup|delta w|} on X",
+      "outer_return_map_c2_bound_inferred_from_field_bound_alone": false,
+      "proved_strip_radius": "2.5",
+      "quadratic_remainder_formula": "C_R(r)=1+B+r/3+2*epsilon*kappa3*(3*B+r), ||F(Gamma+eta)-F(Gamma)-DF(Gamma)eta||<=C_R(r)||eta||_X^2",
+      "quadratic_vector_field_remainder_coefficient_upper": "3.50816330347719257326658154481749558714660196005523149489333333333333333333333333333333333333334",
+      "quadratic_vector_field_remainder_validated": true,
+      "second_derivative_formula": "B_2(r)=2*(1+B+r)+12*epsilon*kappa3*(B+r)",
+      "strict_outer_orbit_strip_margin_lower": "0.010129254330159801259196608862661775533530192128075958",
+      "vector_field_second_derivative_bound_validated": true,
+      "vector_field_second_derivative_norm_upper": "7.02973994028771847986649642296832450762653725344379632312"
+    },
+    "parent_evidence": {
+      "candidate_bracket_is_directed_separator_enclosure": false,
+      "candidate_pulse_bracket": [
+        "0.30113",
+        "0.30114"
+      ],
+      "center_outer_zero_index_validated": false,
+      "inner_unstable_multiplier_modulus_lower": "1.81913372574167842375644213779457264168445028000790971",
+      "inner_unstable_multiplier_modulus_upper": "2.22189495008307196905747671092766936323792280049007467",
+      "outer_finite_schur_reduction_validated": true,
+      "outer_neutral_multiplier_algebraically_simple_validated": true,
+      "outer_periodic_rfde_orbit_validated": true,
+      "outer_stable_projection_or_power_constants_validated": false,
+      "physical_pulse_crossing_validated": false,
+      "physical_pulse_curve_oriented_c1_validated": true,
+      "pulse_J_030_quiet_capture_validated": true,
+      "qualitative_inner_stable_manifold_validated": true,
+      "quantitative_inner_stable_graph_validated": false,
+      "quiet_history_basin_validated": true,
+      "reduced_history_factorization_validated": true,
+      "two_sided_routing_validated": false,
+      "unique_onset_validated": false
+    },
+    "phase_spaces": {
+      "factorization": "Phi_t=iota*Psi_t*pi for t>=5*sqrt(5)",
+      "full": "X=C([-5*sqrt(5),0],R^2)",
+      "full_norm": "max{sup|phi_v|,sup|phi_w|}",
+      "projection": "pi(phi_v,phi_w)=(phi_v,phi_w(0)), ||pi||=1",
+      "reduced": "Y=C([-5*sqrt(5),0],R)xR",
+      "reduced_norm": "max{sup|phi_v|,|omega|}"
+    },
+    "proof_spine": "quantitative inner graph and exact pulse crossing -> signed factor expands each nonzero gap to one complete bounded exit slab -> directed method of steps attaches the negative slab to the quiet sublevel and the positive slab to a proved outer section contraction ball -> the crossing is the unique local biological onset",
+    "pulse_J_032_outer_attachment_target": {
+      "candidate_outer_section_voltage": {
+        "binary64_hex": "0x1.cb8b5dd1391f4p-5",
+        "decimal": "0.056096728550787761"
+      },
+      "candidate_outer_section_voltage_derivative": {
+        "binary64_hex": "0x1.d5ed366b8a66ap-1",
+        "decimal": "0.91782541334869205"
+      },
+      "continuous_history_distance_validated": false,
+      "cross_refinement_crossing_time_spread": {
+        "binary64_hex": "0x1.2800000000000p-40",
+        "decimal": "1.0516032489249483e-12"
+      },
+      "cross_refinement_dense_distance_spread": {
+        "binary64_hex": "0x1.a000000000000p-48",
+        "decimal": "5.773159728050814e-15"
+      },
+      "crossing_depth": 3,
+      "dense_history_sample_count": 4097,
+      "directed_method_of_steps_error_validated": false,
+      "final_time": {
+        "binary64_hex": "0x1.9000000000000p+6",
+        "decimal": "100"
+      },
+      "maximum_observed_dense_reduced_sup_distance": {
+        "binary64_hex": "0x1.7910b84300000p-18",
+        "decimal": "5.6187109889194176e-06"
+      },
+      "outer_attracting_tube_entry_validated": false,
+      "outer_basin_capture_validated": false,
+      "pulse_amplitude": {
+        "binary64_hex": "0x1.47ae147ae147bp-2",
+        "decimal": "0.32000000000000001"
+      },
+      "rows": [
+        {
+          "current_recovery_distance": {
+            "binary64_hex": "0x1.067525c400000p-23",
+            "decimal": "1.222163473757476e-07"
+          },
+          "dense_sample_reduced_sup_distance": {
+            "binary64_hex": "0x1.7910b83c80000p-18",
+            "decimal": "5.6187109831462578e-06"
+          },
+          "dense_sample_voltage_history_sup_distance": {
+            "binary64_hex": "0x1.7910b83c80000p-18",
+            "decimal": "5.6187109831462578e-06"
+          },
+          "finite_mesh_reduced_l2_distance": {
+            "binary64_hex": "0x1.9b95999f44ba1p-16",
+            "decimal": "2.4532340487114596e-05"
+          },
+          "finite_mesh_reduced_sup_distance": {
+            "binary64_hex": "0x1.779686f580000p-18",
+            "decimal": "5.5966972829502026e-06"
+          },
+          "integration_atol": {
+            "binary64_hex": "0x1.19799812dea11p-39",
+            "decimal": "2e-12"
+          },
+          "integration_max_step": {
+            "binary64_hex": "0x1.47ae147ae147bp-5",
+            "decimal": "0.040000000000000001"
+          },
+          "integration_rtol": {
+            "binary64_hex": "0x1.b7cdfd9d7bdbbp-33",
+            "decimal": "2.0000000000000001e-10"
+          },
+          "third_positive_crossing_time": {
+            "binary64_hex": "0x1.7bd8fce198be4p+6",
+            "decimal": "94.961902165363028"
+          }
+        },
+        {
+          "current_recovery_distance": {
+            "binary64_hex": "0x1.0675254000000p-23",
+            "decimal": "1.2221634371201162e-07"
+          },
+          "dense_sample_reduced_sup_distance": {
+            "binary64_hex": "0x1.7910b83cc0000p-18",
+            "decimal": "5.6187109833683024e-06"
+          },
+          "dense_sample_voltage_history_sup_distance": {
+            "binary64_hex": "0x1.7910b83cc0000p-18",
+            "decimal": "5.6187109833683024e-06"
+          },
+          "finite_mesh_reduced_l2_distance": {
+            "binary64_hex": "0x1.9b95999462d95p-16",
+            "decimal": "2.4532340448452773e-05"
+          },
+          "finite_mesh_reduced_sup_distance": {
+            "binary64_hex": "0x1.779686f540000p-18",
+            "decimal": "5.596697282728158e-06"
+          },
+          "integration_atol": {
+            "binary64_hex": "0x1.c25c268497682p-43",
+            "decimal": "2.0000000000000001e-13"
+          },
+          "integration_max_step": {
+            "binary64_hex": "0x1.47ae147ae147bp-6",
+            "decimal": "0.02"
+          },
+          "integration_rtol": {
+            "binary64_hex": "0x1.5fd7fe1796495p-36",
+            "decimal": "1.9999999999999999e-11"
+          },
+          "third_positive_crossing_time": {
+            "binary64_hex": "0x1.7bd8fce198be1p+6",
+            "decimal": "94.961902165362986"
+          }
+        },
+        {
+          "current_recovery_distance": {
+            "binary64_hex": "0x1.067525c000000p-23",
+            "decimal": "1.222163472647253e-07"
+          },
+          "dense_sample_reduced_sup_distance": {
+            "binary64_hex": "0x1.7910b84300000p-18",
+            "decimal": "5.6187109889194176e-06"
+          },
+          "dense_sample_voltage_history_sup_distance": {
+            "binary64_hex": "0x1.7910b84300000p-18",
+            "decimal": "5.6187109889194176e-06"
+          },
+          "finite_mesh_reduced_l2_distance": {
+            "binary64_hex": "0x1.9b9599a5b43b1p-16",
+            "decimal": "2.4532340509978305e-05"
+          },
+          "finite_mesh_reduced_sup_distance": {
+            "binary64_hex": "0x1.779686fc00000p-18",
+            "decimal": "5.5966972887233624e-06"
+          },
+          "integration_atol": {
+            "binary64_hex": "0x1.6849b86a12b9bp-46",
+            "decimal": "2e-14"
+          },
+          "integration_max_step": {
+            "binary64_hex": "0x1.47ae147ae147bp-7",
+            "decimal": "0.01"
+          },
+          "integration_rtol": {
+            "binary64_hex": "0x1.19799812dea11p-39",
+            "decimal": "2e-12"
+          },
+          "third_positive_crossing_time": {
+            "binary64_hex": "0x1.7bd8fce198c2bp+6",
+            "decimal": "94.961902165364037"
+          }
+        }
+      ],
+      "section_step_count": 180,
+      "status": "source_bound_binary64_target_not_history_enclosure"
+    },
+    "quiet_J_030_anchor_budget": {
+      "complete_retained_history_bernstein_bound_validated": true,
+      "directed_method_of_steps_family_tube_validated": true,
+      "evidence_status": "proved_single_history_J_3_over_10_anchor",
+      "initial_set_is_complete_signed_inner_exit_face": false,
+      "quiet_p_norm_threshold_lower": "0.08944271909999158785636694674925104941762473438446102897080520171",
+      "retained_guide_lyapunov_upper": "0.006047093919315058370317088390149024801866283098886104338883544529",
+      "retained_p_norm_error_upper": "6.023351683001268684539736210941449079609940621431271208690044765e-20"
+    },
+    "quiet_J_030_anchor_evaluation": {
+      "input_complete": true,
+      "missing_inputs": [],
+      "quiet_exit_face_attachment_closes": false,
+      "quiet_target_inequality_closes": true,
+      "quiet_target_margin_lower": "0.0116796564075084787154735658044999482851389232285571970375720151170613392796570856791970682187267",
+      "retained_total_p_norm_upper": "0.0777630626924831091408933809447511011324858111559038319332331865929386607203429143208029317812733",
+      "sufficient_inequality": "sqrt(sup_Bernstein (z_hat-E_q)^T P (z_hat-E_q))+E_P < 1/sqrt(125) on the entire retained history"
+    },
+    "quiet_exit_face_actual_budget": {
+      "complete_retained_history_bernstein_bound_validated": false,
+      "directed_method_of_steps_family_tube_validated": false,
+      "evidence_status": "actual_quiet_exit_face_family_missing",
+      "initial_set_is_complete_signed_inner_exit_face": false,
+      "quiet_p_norm_threshold_lower": "0.08944271909999158785636694674925104941762473438446102897080520171",
+      "retained_guide_lyapunov_upper": null,
+      "retained_p_norm_error_upper": null
+    },
+    "quiet_exit_face_actual_evaluation": {
+      "input_complete": false,
+      "missing_inputs": [
+        "retained_guide_lyapunov_upper",
+        "retained_p_norm_error_upper"
+      ],
+      "quiet_exit_face_attachment_closes": false,
+      "quiet_target_inequality_closes": false,
+      "quiet_target_margin_lower": null,
+      "retained_total_p_norm_upper": null,
+      "sufficient_inequality": "sqrt(sup_Bernstein (z_hat-E_q)^T P (z_hat-E_q))+E_P < 1/sqrt(125) on the entire retained history"
+    },
+    "schema_id": "leaky-outer-two-sided-routing-contract-v1",
+    "signed_inner_exit_actual_budget": {
+      "evidence_status": "actual_parents_incomplete",
+      "graph_straightened_return_map_cylinder_validated": false,
+      "quantitative_inner_stable_graph_validated": false,
+      "signed_exit_gap": null,
+      "signed_gap_factor_deviation_upper": null,
+      "stable_coordinate_radius": null,
+      "stable_row_contraction_upper": null,
+      "stable_row_gap_coupling_upper": null,
+      "unstable_multiplier_modulus_lower": "1.81913372574167842375644213779457264168445028000790971",
+      "unstable_multiplier_modulus_upper": "2.22189495008307196905747671092766936323792280049007467",
+      "validated_coordinate_gap_radius_lower": null
+    },
+    "signed_inner_exit_actual_evaluation": {
+      "coordinate_chart_contains_exit_slab": false,
+      "exact_factor_identity": "delta(P(u,z))=a(delta,z)*delta, delta=u-h(z), from invariance of u=h(z) and the scalar mean-value formula",
+      "exit_slab": "d_exit<=+/-delta<=M_delta*d_exit, ||z||<=r_z, with the sign fixed by delta_0",
+      "exit_slab_gap_upper": null,
+      "first_exit_bound": "n_exit<=ceil(log(d_exit/|delta_0|)/log(m_delta)) for 0<|delta_0|<d_exit",
+      "input_complete": false,
+      "missing_artifacts": [
+        "quantitative_inner_stable_graph",
+        "graph_straightened_return_map_cylinder"
+      ],
+      "missing_inputs": [
+        "signed_gap_factor_deviation_upper",
+        "stable_row_contraction_upper",
+        "stable_row_gap_coupling_upper",
+        "stable_coordinate_radius",
+        "signed_exit_gap",
+        "validated_coordinate_gap_radius_lower"
+      ],
+      "signed_exit_closes": false,
+      "signed_expansion_margin_lower": null,
+      "signed_factor_lower": null,
+      "signed_factor_upper": null,
+      "stable_coordinate_confinement_holds": false,
+      "stable_row_image_radius_upper": null
+    },
+    "smallest_missing_artifacts": [
+      "outer compact-keyhole zero count and a stable history resolvent/power bound",
+      "outer phase-section return tube and m-return nonlinear derivative bound",
+      "inner Riesz covector, quantitative stable graph, and graph-straightened cylinder",
+      "directed pulse-gap endpoint signs and uniform derivative on [0.30113,0.30114]",
+      "two tensor-Bernstein method-of-steps families starting from the complete exit slabs"
+    ]
+  },
+  "manifest": {
+    "arithmetic_scope": "exact parent-byte and source-manifest binding; 96-digit outward Decimal evaluation of sufficient history-space inequalities; exact polynomial Taylor remainder algebra around the directed outer-orbit strip; and a source-bound but non-directed binary64 J=0.32 third-return target",
+    "contract_sha256": "99f5e643d4189a1782873d6b9fd2c32a3ed991fb80bb4c0f0d13267512acffb1",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=src /usr/bin/python3 experiments/leaky_outer_two_sided_routing_contract.py",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_dobrushin_transverse_halanay.json": "21e2e3d282e287f2246d2bc5c3d4dd92b6314e9b46c20d27737db7a94f7c0e25",
+      "experiments/results/leaky_floquet_outer_right_half_cover_calibration.json": "dd84499297d7808cd8b787f1d84f9eae235aadf992f60a3117c7050bbd1e6bd8",
+      "experiments/results/leaky_floquet_riesz_reduction.json": "5185f8f39cd8f87052a50b072af2bfee591d8cd626301bd9a9470134c14df55c",
+      "experiments/results/leaky_floquet_transfer.json": "5a3709ec792b29ed41533101245b13b3d35084ae508bdd1d420728200a5a5b16",
+      "experiments/results/leaky_inner_stable_manifold_stage1_contract.json": "3c400ec92f00d4c94313b6e0a5b514f60f21335f54cba41ad5ba8a4217e8f21b",
+      "experiments/results/leaky_inner_stable_manifold_stage2_contract.json": "eafa4d07b0558d9d4ce7423969379fa51875fcabce55af89a2378261fdb1e18d",
+      "experiments/results/leaky_pulse_quiet_capture.json": "e930be63d80d4aac2cddb896d7ac1b2582a91690dc9649981848ea88e1e05723",
+      "experiments/results/leaky_pulse_separator_validation_target.json": "175a03bad09c81c9289ee5747d870113c6afcc22b1ec23942379c4c81bcda917",
+      "experiments/results/leaky_pulse_terminal_history.json": "db593b3675819f7b62180643ab983499e8e67790a0cacaf944ce099363a524c1",
+      "experiments/results/leaky_quiet_large_razumikhin_basin.json": "eab26b970511676f9048c17a49f013c0b7f2833a3a132204168e05f9735d0cba",
+      "experiments/results/leaky_reduced_history.json": "4555fb765a5060a3767a7ea669deb2f4921b8d7410d7d4e15ad077e552da8870"
+    },
+    "result": "experiments/results/leaky_outer_two_sided_routing_contract.json",
+    "schema_id": "leaky-outer-two-sided-routing-contract-v1",
+    "source_sha256": {
+      "docs/leaky-outer-two-sided-routing-contract.md": "f696fd2be50719df787f4ae1d51fd892632d8899e8a3b6cde638798e6f9493b8",
+      "experiments/leaky_outer_two_sided_routing_contract.py": "0a0888d70d440961cde516420f871e0d1a45fd07bd5caf1c100e8e72992882fb",
+      "src/canard_control/leaky_outer_two_sided_routing_contract.py": "0e4aaf12ed532ea8bed754206624eaab18c1786c5090c8c16337e356c57029f0"
+    }
+  }
+}

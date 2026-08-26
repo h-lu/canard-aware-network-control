@@ -1,0 +1,299 @@
+{
+  "certificate": {
+    "ambient_to_section_budget": {
+      "ambient_complete_history_distance_upper": null,
+      "ambient_distance_to_exact_phase_zero_orbit_validated": false,
+      "evidence_status": "open: a pulse artifact must bound ambient complete-history distance to the exact phase-zero orbit, and the nonlinear phase chart must transport that distance to the section",
+      "nonlinear_phase_chart_validated_on_ambient_tube": false,
+      "phase_chart_lipschitz_upper": null,
+      "validated_section_radius": "0.0001"
+    },
+    "ambient_to_section_evaluation": {
+      "input_complete": false,
+      "missing_numeric_inputs": [
+        "ambient_complete_history_distance_upper",
+        "phase_chart_lipschitz_upper"
+      ],
+      "missing_proof_inputs": [
+        "ambient_distance_to_exact_phase_zero_orbit_validated",
+        "nonlinear_phase_chart_validated_on_ambient_tube"
+      ],
+      "projected_section_distance_upper": null,
+      "pulse_to_section_entry_closes": false,
+      "strict_section_entry_inequality": "Q_phase*d_ambient < r_section",
+      "strict_section_entry_inequality_holds": false
+    },
+    "arithmetic_scope": "source-bound binary64 RK4/cubic-interpolation finite-section pilot; exact algebraic phase projection using the stored Fourier-orbit tangent; and an executable Decimal evaluator for future directed matrix-measure kernel and nonlinear return bounds.  No finite-to-C0 promotion occurs",
+    "branch": "outer_pulse",
+    "claim_status": {
+      "ambient_pulse_distance_promoted_directly_to_section_distance": false,
+      "arbitrary_continuous_history_operator_norm_validated": false,
+      "binary64_finite_section_promoted_to_continuous_history_proof": false,
+      "continuous_history_induced_norm_total_variation_identity_registered": true,
+      "directed_matrix_measure_kernel_enclosed": false,
+      "four_level_binary64_phase_fixed_pilot_computed": true,
+      "matrix_measure_kernel_recurrence_registered": true,
+      "nonlinear_phase_fixed_return_contraction_validated": false,
+      "outer_exact_periodic_orbit_parent_validated": true,
+      "outer_exact_translation_identity_parent_validated": true,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "phase_fixed_outer_return_derivative_contraction_validated": false,
+      "physical_current_voltage_phase_row_normalized": true,
+      "physical_pulse_onset_validated": false,
+      "pulse_to_outer_section_entry_validated": false,
+      "rank_one_return_time_measure_correction_registered": true,
+      "second_variational_kernel_bound_validated": false,
+      "unique_first_return_on_radius_1e_minus_4_tube_validated": false
+    },
+    "conclusion": "the four finite sections expose a large contraction margin, but the continuous-history signed-kernel and nonlinear bounds remain open; no outer attraction claim is promoted",
+    "evaluation": {
+      "direct_outer_return_contraction_closes": false,
+      "input_complete": false,
+      "linear_phase_fixed_return_norm_upper": null,
+      "missing_numeric_inputs": [
+        "phase_fixed_voltage_history_row_norm_upper",
+        "phase_fixed_recovery_row_norm_upper",
+        "return_derivative_lipschitz_upper",
+        "validated_section_tube_radius_lower"
+      ],
+      "missing_proof_inputs": [
+        "directed_kernel_recurrence_validated",
+        "arbitrary_c0_input_covered_by_measure_representation",
+        "corrected_signed_measure_total_variation_validated",
+        "unique_first_positive_return_and_event_speed_validated",
+        "second_variational_return_kernel_validated"
+      ],
+      "nonlinear_derivative_increment_upper": null,
+      "phase_fixed_return_lipschitz_upper": null,
+      "section_tube_contains_chosen_ball": false,
+      "single_strict_inequality": "max(Q_voltage_history,Q_recovery)+C_DP*0.0001 < 1",
+      "single_strict_inequality_holds": false
+    },
+    "finite_section_pilot": [
+      {
+        "algebraic_phase_projection_tangent_residual_inf_binary64": {
+          "binary64_hex": "0x1.0000000000000p-53",
+          "decimal": "1.1102230246251565e-16"
+        },
+        "fixed_time_section_input_inf_norm_binary64": {
+          "binary64_hex": "0x1.5ee654350edcbp+1",
+          "decimal": "2.7414040812561544"
+        },
+        "history_step_count": 54,
+        "matrix_dimension": 56,
+        "phase_fixed_one_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.0193b708c487ep-3",
+          "decimal": "0.12577002521044628"
+        },
+        "phase_fixed_spectral_radius_binary64": {
+          "binary64_hex": "0x1.67afd3f373ebdp-6",
+          "decimal": "0.021953541739832206"
+        },
+        "phase_fixed_two_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.69e1085313d97p-9",
+          "decimal": "0.0027609179174203457"
+        },
+        "physical_step_binary64": {
+          "binary64_hex": "0x1.c60c787bbe13ap-3",
+          "decimal": "0.22170347335464574"
+        },
+        "rank_one_phase_correction_inf_norm_binary64": {
+          "binary64_hex": "0x1.5ee654350edcap+1",
+          "decimal": "2.741404081256154"
+        },
+        "step_count": 120,
+        "stored_orbit_current_voltage_speed_binary64": {
+          "binary64_hex": "0x1.d5ed366b8a66ap-1",
+          "decimal": "0.91782541334869205"
+        },
+        "stored_translation_monodromy_residual_inf_binary64": {
+          "binary64_hex": "0x1.291db18a9e000p-14",
+          "decimal": "7.0837972239945479e-05"
+        }
+      },
+      {
+        "algebraic_phase_projection_tangent_residual_inf_binary64": {
+          "binary64_hex": "0x1.0000000000000p-53",
+          "decimal": "1.1102230246251565e-16"
+        },
+        "fixed_time_section_input_inf_norm_binary64": {
+          "binary64_hex": "0x1.5fa68b55d39fbp+1",
+          "decimal": "2.7472700280261484"
+        },
+        "history_step_count": 79,
+        "matrix_dimension": 81,
+        "phase_fixed_one_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.024155cc92f49p-3",
+          "decimal": "0.12610117941437185"
+        },
+        "phase_fixed_spectral_radius_binary64": {
+          "binary64_hex": "0x1.67a5a80c027e1p-6",
+          "decimal": "0.021951116665185458"
+        },
+        "phase_fixed_two_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.6acc568148464p-9",
+          "decimal": "0.0027679305645880604"
+        },
+        "physical_step_binary64": {
+          "binary64_hex": "0x1.2eb2fafd29626p-3",
+          "decimal": "0.14780231556976381"
+        },
+        "rank_one_phase_correction_inf_norm_binary64": {
+          "binary64_hex": "0x1.5fa68b55d39fap+1",
+          "decimal": "2.7472700280261479"
+        },
+        "step_count": 180,
+        "stored_orbit_current_voltage_speed_binary64": {
+          "binary64_hex": "0x1.d5ed366b8a66ap-1",
+          "decimal": "0.91782541334869205"
+        },
+        "stored_translation_monodromy_residual_inf_binary64": {
+          "binary64_hex": "0x1.e5114b8260000p-17",
+          "decimal": "1.4456139756147124e-05"
+        }
+      },
+      {
+        "algebraic_phase_projection_tangent_residual_inf_binary64": {
+          "binary64_hex": "0x1.0000000000000p-53",
+          "decimal": "1.1102230246251565e-16"
+        },
+        "fixed_time_section_input_inf_norm_binary64": {
+          "binary64_hex": "0x1.5ffecdf3f876dp+1",
+          "decimal": "2.7499635163557543"
+        },
+        "history_step_count": 104,
+        "matrix_dimension": 106,
+        "phase_fixed_one_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.0366cdd2f1c84p-3",
+          "decimal": "0.1266609268188611"
+        },
+        "phase_fixed_spectral_radius_binary64": {
+          "binary64_hex": "0x1.67a3d951a967ep-6",
+          "decimal": "0.02195068571622593"
+        },
+        "phase_fixed_two_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.6c671aa4b08abp-9",
+          "decimal": "0.0027801723502714668"
+        },
+        "physical_step_binary64": {
+          "binary64_hex": "0x1.c60c787bbe13ap-4",
+          "decimal": "0.11085173667732287"
+        },
+        "rank_one_phase_correction_inf_norm_binary64": {
+          "binary64_hex": "0x1.5ffecdf3f876dp+1",
+          "decimal": "2.7499635163557543"
+        },
+        "step_count": 240,
+        "stored_orbit_current_voltage_speed_binary64": {
+          "binary64_hex": "0x1.d5ed366b8a66ap-1",
+          "decimal": "0.91782541334869205"
+        },
+        "stored_translation_monodromy_residual_inf_binary64": {
+          "binary64_hex": "0x1.7c0187f120000p-18",
+          "decimal": "5.6625303709312291e-06"
+        }
+      },
+      {
+        "algebraic_phase_projection_tangent_residual_inf_binary64": {
+          "binary64_hex": "0x1.0000000000000p-53",
+          "decimal": "1.1102230246251565e-16"
+        },
+        "fixed_time_section_input_inf_norm_binary64": {
+          "binary64_hex": "0x1.6051ab5242de4p+1",
+          "decimal": "2.7524923469224962"
+        },
+        "history_step_count": 155,
+        "matrix_dimension": 157,
+        "phase_fixed_one_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.03e8494ea809ap-3",
+          "decimal": "0.12690789481439851"
+        },
+        "phase_fixed_spectral_radius_binary64": {
+          "binary64_hex": "0x1.67a32099a6047p-6",
+          "decimal": "0.021950513683435948"
+        },
+        "phase_fixed_two_return_inf_norm_binary64": {
+          "binary64_hex": "0x1.6d1c335930b02p-9",
+          "decimal": "0.0027855694466735201"
+        },
+        "physical_step_binary64": {
+          "binary64_hex": "0x1.2eb2fafd29626p-4",
+          "decimal": "0.073901157784881905"
+        },
+        "rank_one_phase_correction_inf_norm_binary64": {
+          "binary64_hex": "0x1.6051ab5242de3p+1",
+          "decimal": "2.7524923469224958"
+        },
+        "step_count": 360,
+        "stored_orbit_current_voltage_speed_binary64": {
+          "binary64_hex": "0x1.d5ed366b8a66ap-1",
+          "decimal": "0.91782541334869205"
+        },
+        "stored_translation_monodromy_residual_inf_binary64": {
+          "binary64_hex": "0x1.1f9d7ec780000p-20",
+          "decimal": "1.0714501729180981e-06"
+        }
+      }
+    ],
+    "finite_section_pilot_scope": "binary64 sampled-input RK4 matrices only; spectral radii and row norms are diagnostics and do not bound the C0-history operator",
+    "input_budget": {
+      "arbitrary_c0_input_covered_by_measure_representation": false,
+      "chosen_section_radius": "0.0001",
+      "corrected_signed_measure_total_variation_validated": false,
+      "directed_kernel_recurrence_validated": false,
+      "evidence_status": "open: finite matrices strongly suggest contraction, but no directed signed-kernel total-variation or second-return-variation enclosure has been supplied",
+      "phase_fixed_recovery_row_norm_upper": null,
+      "phase_fixed_voltage_history_row_norm_upper": null,
+      "return_derivative_lipschitz_upper": null,
+      "second_variational_return_kernel_validated": false,
+      "unique_first_positive_return_and_event_speed_validated": false,
+      "validated_section_tube_radius_lower": null
+    },
+    "matrix_measure_kernel_contract": {
+      "arbitrary_continuous_input_guard": "no nodal interpolation of h_v is allowed; dual signed-measure total variation must cover every h_v in C0",
+      "directed_engine": "interval-Taylor or Bernstein method of steps for the signed densities and atoms; prove total variation cellwise after phase subtraction, with coefficient and quadrature remainders",
+      "initial_measures": "mu_theta=Dirac_theta for -r<=theta<=0; nu_0=0; alpha_v(theta)=0 for theta<=0, alpha_w(0)=1",
+      "input_representation": "u(t)=alpha_v(t)*h_w(0)+integral h_v(theta) dmu_t(theta); w(t)=alpha_w(t)*h_w(0)+integral h_v(theta) dnu_t(theta)",
+      "measure_recurrence": "mu_dot=a(t)mu-nu+b0(t)mu_(t-tau0)+b1(t)mu_(t-tau1); nu_dot=epsilon*(mu-nu), with the identical scalar recurrence for alpha",
+      "nonlinear_increment": "a second-variational matrix-measure enclosure supplies ||DP(z)-DP(0)|| <= C_DP*||z|| on the radius-1e-4 tube",
+      "phase_chart_norm": "the same normalized event row and rank-one correction must also enclose Q_phase, the Lipschitz norm of the ambient-to-section phase chart; it is not inferred from a pulse voltage event",
+      "phase_corrected_recovery_row": "nu_T-q_w(0)*mu_T/q_v(0), and the same signed subtraction for the h_w(0) scalar coefficient",
+      "phase_corrected_voltage_row": "mu_(T+theta)-q_v(theta)*mu_T/q_v(0), and the same signed subtraction for the h_w(0) scalar coefficient",
+      "physical_coefficients": "a=1-V_o^2-epsilon*(kappa1+3*kappa3*(V_o-1)^2); bj=epsilon/2*(kappa1+3*kappa3*(V_o(t-tauj)-1)^2)",
+      "recovery_output_norm": "Q_recovery=the corrected current-recovery row norm",
+      "row_norm_identity": "operator row norm = total variation of the corrected signed history measure modulo Dirac_0 plus absolute scalar coefficient",
+      "section_quotient": "drop the Dirac mass at theta=0 exactly because every input direction satisfies h_v(0)=0",
+      "voltage_output_norm": "Q_voltage_history=sup over returned theta in [-r,0] of the row norm"
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "nested_exact_orbit_radius": "1e-8",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_floquet_outer_grushin_stage1.json": "5ca82a8c3e25ef0749e29142e9e19f49f21d219794b881ad3c9fb9011de0e524"
+    },
+    "phase_section": "h_v(0)=0; ell(h)=h_v(0)/dot(V_o)(0), ell(q)=1; phase projection I-q tensor ell",
+    "reduced_history_space": "Y=C([-5*sqrt(5),0],R) x R with max{sup|h_v|,|h_w(0)|}",
+    "schema_id": "leaky-outer-phase-fixed-return-stage1-v1"
+  },
+  "manifest": {
+    "certificate_sha256": "1fe15f492cdca32ddb876b944474892481a022cbcfaa8f0208d2060dc068abdb",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_phase_fixed_return_stage1.py",
+    "environment": {
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_phase_fixed_return_stage1.json",
+    "schema_id": "leaky-outer-phase-fixed-return-stage1-v1",
+    "source_sha256": {
+      "docs/leaky-outer-phase-fixed-return-stage1.md": "31000d84821c1f6b67b970a91cea74e7512549fd0b6a52c3d2816c2e38409f2d",
+      "experiments/leaky_outer_phase_fixed_return_stage1.py": "b085eca8cb4d17ab460ef8aec3a8c1f3a19b74881eefcf53aac754f2374957b8",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_outer_phase_fixed_return_stage1.py": "c3a9788d0f98dfc4c8e7673e4bd90754170be0be940826729cf828d21901aad8",
+      "src/canard_control/leaky_pulse_separator_candidate.py": "95c6bb0b2870a69208b13c37e278bb65e06263c2420640863e845cc99e921476"
+    }
+  }
+}

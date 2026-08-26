@@ -1,0 +1,166 @@
+{
+  "certificate": {
+    "arithmetic_scope": "160-by-160 event-aware method-of-steps cell cover; exact-dyadic Stage-3G candidate coefficients; exact rational local Chebyshev-to-Bernstein restriction; 192-bit Arb one-sided chart unions, Fourier boxes, signed cross-injection sums, absolute cell integration and transfer ledger",
+    "branch": "outer_pulse",
+    "candidate_continuous_rows": {
+      "both_injection_branches_summed_before_absolute_value": true,
+      "phase_subtraction_inside_each_density_interval": true,
+      "recovery_history_density_TV_upper": "0.027974741262425825",
+      "recovery_recovery_atom_upper": "0.00019359870162732247",
+      "recovery_total_row_upper": "0.028168339964053147",
+      "voltage_history_density_TV_upper": "0.40417016220594282",
+      "voltage_recovery_atom_upper": "0.16756944415573716",
+      "voltage_total_maximizer": {
+        "atom_lag_chart_count": 1,
+        "delta_cell": 0,
+        "delta_subcell": 0
+      },
+      "voltage_total_row_upper": "0.54852850220403304"
+    },
+    "cell_geometry": {
+      "all_requested_lag_intervals_in_domain": true,
+      "delay_binary64_hex": [
+        "0x1.1e3779b97f4a8p+3",
+        "0x1.65c55827df1d2p+3"
+      ],
+      "delay_mesh_widths": [
+        16,
+        20
+      ],
+      "delta_history_rectangle_count": 25600,
+      "delta_subinterval_count": 160,
+      "history_subinterval_count": 160,
+      "lag_domain_lower_mesh": "0",
+      "lag_domain_upper_rule": "48-delta_cell",
+      "lag_seam_endpoint_convention": "TV cells use a lower-open/upper-closed endpoint convention: an integer lower lag endpoint uses its right chart, while an integer upper lag endpoint unions the adjacent left and right charts; a physical domain endpoint uses its sole incident chart",
+      "maximum_lag_chart_multiplicity": 16,
+      "mesh_cell_count_per_axis": 20,
+      "mesh_width_binary64_hex": "0x1.1e3779b97f4a8p-1",
+      "period_binary64_hex": "0x1.a9abb0f402326p+4",
+      "point_samples_used_as_proof": false,
+      "recovery_history_subinterval_count": 160,
+      "recovery_seam_subinterval_count": 20,
+      "requested_lag_interval_count": 92900,
+      "seam_union_rectangle_count": 8800,
+      "subcells_per_mesh_cell": 8
+    },
+    "claim_status": {
+      "all_25600_delta_history_rectangles_covered": true,
+      "all_lag_chart_seams_covered_by_one_sided_unions": true,
+      "arbitrary_c0_linear_return_contraction_validated": true,
+      "both_history_injections_summed_before_absolute_value": true,
+      "candidate_resolvent_ranges_tensor_bernstein_192_bit": true,
+      "candidate_row_excess_is_one_sided_norm_slack": true,
+      "candidate_to_guide_and_guide_to_exact_costs_counted_once": true,
+      "continuous_center_signed_density_TV_reserve_validated": false,
+      "continuous_signed_density_total_variation_validated": true,
+      "linear_return_gate_evaluated": true,
+      "nonlinear_phase_chart_validated_on_ambient_tube": false,
+      "outer_nonlinear_return_contraction_validated": false,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "phase_subtraction_precedes_density_absolute_value": true,
+      "physical_pulse_onset_validated": false,
+      "recovery_exact_row_budget_validated": true,
+      "recovery_scalar_atom_kept_separate_from_density": true,
+      "stage2_discrete_shadow_parent_digest_validated": true,
+      "stage3f_exact_defect_parent_digest_validated": true,
+      "stage3g_parent_source_manifest_validated": true,
+      "stage3g_residual_green_parent_digest_validated": true,
+      "stage3h_parent_source_manifest_validated": true,
+      "stage3h_strict_row_size_parent_digest_validated": true,
+      "strict_exact_arb_center_transfer_target_comparison": true,
+      "voltage_exact_row_budget_validated": true
+    },
+    "conclusion": "the event-aware continuous signed-density cell integral misses the auxiliary 0.01 candidate-row excess target, but the actual exact reduced-history row budgets are both strictly below one and prove arbitrary-C0 reduced-history linear return contraction; nonlinear phase charts, attraction, capture and physical onset remain separate",
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_outer_combined_row_stage3h_size.json": "c0c5b854236f8403dacbb0037c5c409ad5f980364571bdf60fa9981a2e287408",
+      "experiments/results/leaky_outer_resolvent_stage3g_tensor.json": "52d2c4df0cea7b6d98d898669e45ef54bfed1799965b2cff92161e84bd78ce13",
+      "experiments/results/leaky_outer_signed_kernel_stage2.json": "f4742db560c5de29072adfb0b963d5a21e993fed5a949a2180dcc6d0b355011f",
+      "experiments/results/leaky_outer_signed_row_stage3f_adjoint.json": "d09832c47370dee6588cc0ee7396ca6fe75c1f283785a799682f302427344eee"
+    },
+    "precision_bits": 192,
+    "row_scope": "binary center candidate continuous reduced-history rows followed by once-only candidate-to-guide and guide-to-exact-orbit transfer costs",
+    "schema_id": "leaky-outer-signed-density-stage3i-tv-v2",
+    "transfer_errors": {
+      "E_phase": "0.737274478109754544137168592381773727825919506548820214838649",
+      "E_recovery": "0.025520808120418625",
+      "E_voltage": "0.42360773662654355"
+    },
+    "transfer_gate": {
+      "arbitrary_c0_linear_contraction_closes": true,
+      "continuous_center_signed_density_TV_reserve_validated": false,
+      "continuous_signed_density_total_variation_validated": true,
+      "linear_return_gate_evaluated": true,
+      "nonlinear_outer_attraction_closes": false,
+      "strict_combined_row_uniform_sizes_validated": true
+    },
+    "transfer_ledger": {
+      "arbitrary_c0_linear_contraction_closes": true,
+      "candidate_row_excess_semantics": "Q_candidate_continuous <= Q_stage2_shadow + E_center, where E_center is max(0,Q_candidate_upper-Q_stage2_shadow_upper), not an operator-difference norm",
+      "candidate_row_excess_target": "0.01",
+      "candidate_row_excess_target_closes": false,
+      "recovery_candidate_row_excess_over_shadow_upper": "0.025408332707923597",
+      "rows": {
+        "recovery": {
+          "E_row_upper": "0.025520808120418625",
+          "candidate_residual_and_atom_transfer_upper": "6.3320962835281878e-05",
+          "candidate_row_excess_over_stage2_shadow_upper": "0.025408332707923597",
+          "direct_delayed_coefficient_transfer_upper": "6.083478923997075e-10",
+          "orbit_coefficient_transfer_upper": "3.991318035605623e-05",
+          "phase_ratio_boundary_transfer_upper": "9.2406609557944595e-06",
+          "stage2_shadow_plus_E_upper": "0.028280815376548179",
+          "strictly_below_one": true
+        },
+        "voltage": {
+          "E_row_upper": "0.42360773662654355",
+          "candidate_residual_and_atom_transfer_upper": "0.00011405322876622232",
+          "candidate_row_excess_over_stage2_shadow_upper": "0.4216206073896348",
+          "direct_delayed_coefficient_transfer_upper": "2.8767784383694914e-08",
+          "orbit_coefficient_transfer_upper": "0.0018297818164292815",
+          "phase_ratio_boundary_transfer_upper": "4.3265423928803106e-05",
+          "stage2_shadow_plus_E_upper": "0.55051563144094195",
+          "strictly_below_one": true
+        }
+      },
+      "strict_exact_arb_target_comparison": true,
+      "total_row_budget_semantics": "Q_exact_row <= Q_stage2_shadow + E_row; total E_row is a row-budget slack, not ||L_exact-L_shadow||; only its named Stage-3F/3G transfer components bound operator perturbations",
+      "voltage_candidate_row_excess_over_shadow_upper": "0.4216206073896348"
+    }
+  },
+  "manifest": {
+    "certificate_sha256": "fa82997b4b685ec2791be4d1efa82a0b6e5ba3b358d3d18bfcdd295c55bc7a24",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_signed_density_stage3i_tv.py",
+    "environment": {
+      "arb_precision_bits": 192,
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "mpfr_directed_precision_bits": 192,
+      "numpy": "2.5.2",
+      "omp_num_threads": "1",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "python_flint": "0.9.0",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_signed_density_stage3i_tv.json",
+    "schema_id": "leaky-outer-signed-density-stage3i-tv-v2",
+    "source_sha256": {
+      "docs/leaky-outer-signed-density-stage3i-tv.md": "faa75b96fbbab34be8b00f40d80ca18eac208b62294f9fd5462ca61df5e21d3f",
+      "experiments/leaky_outer_signed_density_stage3i_tv.py": "aa07518e8aeb35a4d99ff0423bb057a914dfb510fcbb83527cfada8d477ed1c9",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_outer_combined_row_stage3h_size.py": "0a26045d0a410cf4ad56b4a8c2364ba53b20abcd25680f9d546b0b1aeb9ee811",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_outer_resolvent_stage3g_tensor.py": "47c48dcda16e38b3f08c551ebd6e8900831e4bc2c281a5a938daf0e94c17af11",
+      "src/canard_control/leaky_outer_signed_density_stage3i_tv.py": "e27bc4ab9faf4e473879fadde63278da830df868fbaf84adb790b8743ad0d605",
+      "src/canard_control/leaky_outer_signed_kernel_stage2.py": "e31034dd870cad82eb80cc840b0d9046c7d50cc21882349228edff8e0dba7111",
+      "src/canard_control/leaky_outer_signed_row_stage3f_adjoint.py": "fd2426aef3803b9808bf99b28ba4185d268a93cd049fb128141ad54804038cb3",
+      "src/canard_control/leaky_periodic_validation.py": "5fa61fb65bc4b96114b9b7911057bc77db571270ed2fb3eaf2db1a8c5844bc25",
+      "src/canard_control/leaky_pulse_separator_candidate.py": "95c6bb0b2870a69208b13c37e278bb65e06263c2420640863e845cc99e921476",
+      "tests/test_leaky_outer_signed_density_stage3i_tv.py": "2447139367f05548c466ec56eefc0f89a6f437079aa64be3f2b28beca4b1b3d0"
+    }
+  }
+}

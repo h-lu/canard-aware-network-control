@@ -1,0 +1,225 @@
+{
+  "certificate": {
+    "arithmetic_scope": "exact advanced-row/kernel identities; 160-bit outward MPFR reuse and replay of the 1024-cell degree-24 F/G charts; exact orbit, period, delayed-coefficient and phase-ratio defect budgets; source-bound binary64 full-DDE adjoint/Green diagnostics kept nonclaim",
+    "binary_blas_thread_count": 1,
+    "branch": "outer_pulse",
+    "center_signed_row_diagnostic": {
+      "adjoint_node_count": 2001,
+      "all_words_injections_and_phase_combined_inside_p": true,
+      "center_recovery_signed_row_norm_binary64": {
+        "binary64_hex": "0x1.6a9153c3dbd0ap-9",
+        "decimal": "0.0027661719085966307"
+      },
+      "center_voltage_signed_row_norm_binary64": {
+        "binary64_hex": "0x1.0427d69b2ba20p-3",
+        "decimal": "0.12702911053698163"
+      },
+      "diagnostic_only": true,
+      "full_DDE_boundary_propagator_max_binary64": {
+        "binary64_hex": "0x1.05bb08735b472p+8",
+        "decimal": "261.73059769609893"
+      },
+      "full_DDE_green_phase_integral_max_binary64": {
+        "binary64_hex": "0x1.08c57402e872bp+6",
+        "decimal": "66.192825360715389"
+      },
+      "output_time_count": 65,
+      "recovery_combined_p_phase_integral_binary64": {
+        "binary64_hex": "0x1.fd0d29553e04fp-3",
+        "decimal": "0.2485602597369074"
+      },
+      "recovery_combined_p_uniform_max_binary64": {
+        "binary64_hex": "0x1.253a6511b8b16p+0",
+        "decimal": "1.1454222839608454"
+      },
+      "recovery_combined_p_voltage_component_max_binary64": {
+        "binary64_hex": "0x1.c4db36a6d0b8ep-3",
+        "decimal": "0.22112124153690299"
+      },
+      "voltage_combined_p_phase_integral_max_binary64": {
+        "binary64_hex": "0x1.8ce5759e9db68p+2",
+        "decimal": "6.2015050934777278"
+      },
+      "voltage_combined_p_uniform_max_binary64": {
+        "binary64_hex": "0x1.4703cbb242944p+4",
+        "decimal": "20.438426681831757"
+      },
+      "voltage_combined_p_voltage_component_max_binary64": {
+        "binary64_hex": "0x1.7133a853cb2e8p+2",
+        "decimal": "5.7687779253289833"
+      },
+      "voltage_p_maximizing_relative_time_binary64": {
+        "binary64_hex": "-0x1.a8da58af58f28p+2",
+        "decimal": "-6.6383268082024998"
+      }
+    },
+    "claim_status": {
+      "advanced_combined_row_identity_registered": true,
+      "all_delay_words_combined_inside_advanced_row": true,
+      "arbitrary_c0_linear_return_contraction_validated": false,
+      "binary_center_signed_row_pilot_promoted_to_exact_kernel": false,
+      "binary_center_signed_row_pilot_recomputed": true,
+      "both_history_injections_combined_before_total_variation": true,
+      "combined_row_bernstein_tensor_residual_validated": false,
+      "continuous_signed_density_total_variation_validated": false,
+      "current_voltage_dirac_killed_on_linear_phase_section": true,
+      "delayed_advanced_boundary_bound_validated": false,
+      "delayed_advanced_green_integral_bound_validated": false,
+      "exact_coefficient_defect_budget_validated": true,
+      "exact_phase_ratio_transfer_bound_validated": true,
+      "full_advanced_residual_targets_computed": true,
+      "history_density_recovered_from_combined_row": true,
+      "nonlinear_phase_chart_validated_on_ambient_tube": false,
+      "outer_nonlinear_return_contraction_validated": false,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "phase_subtraction_combined_before_total_variation": true,
+      "physical_pulse_onset_validated": false,
+      "recovery_atom_recovered_from_combined_row": true,
+      "recovery_shadow_transfer_error_validated": false,
+      "stage3d_phase_and_primitive_parent_digest_validated": true,
+      "stage3e_F_G_parent_digest_validated": true,
+      "strict_instantaneous_boundary_bound_validated": true,
+      "strict_instantaneous_green_integral_bound_validated": true,
+      "voltage_shadow_transfer_error_validated": false
+    },
+    "combined_advanced_row_identity": {
+      "advanced_equation": "-p'(u)=p(u)A(u)+sum_{j:u+tau_j<=terminal} p(u+tau_j)B_j(u+tau_j), with the combined terminal jumps",
+      "current_voltage_atom": "p(0)e_v h_v(0), killed exactly because h_v(0)=0 on the linear phase section",
+      "history_density": "k(theta)=sum_{j:theta>=-tau_j} p(theta+tau_j)B_j(theta+tau_j)e_v",
+      "ordering": "delay words, both injection branches and phase subtraction are inside p before density total variation",
+      "recovery_atom": "c=p(0)e_w",
+      "recovery_row": "p_w(u)=[e_w^T-q_w(0)e_v^T/q_v(0)]R(T,u)",
+      "voltage_row": "p_sigma(u)=e_v^T R(T+sigma,u)1_{u<=T+sigma}-[q_v(sigma)/q_v(0)]e_v^T R(T,u)"
+    },
+    "conclusion": "the 21-term representation is compressed to two combined advanced rows, and the instantaneous Green/phase/coefficient parts now have strict source-bound budgets. Binary center diagnostics show ample scale separation, but the delayed Green correction and the two combined Bernstein row residuals remain unvalidated; therefore E_voltage,E_recovery and C0 contraction remain open",
+    "exact_defect_budget": {
+      "center_delayed_coefficient_upper": "0.0106938958173237469761094704935062105111798324628268374139911",
+      "coefficient_defect_budget_validated": true,
+      "current_normalized_matrix_variation_upper": "1.62662914648325572622208127704340904992812971777795411640499e-06",
+      "current_physical_coefficient_variation_upper": "5.93960980179398683938771038697818545035866844003576345121121e-08",
+      "delay_phase_shift_upper": "1.57960143768869340263734768004110799005899007075714537068333e-10",
+      "delay_sum_upper": "20.124611797498107267682563018581486118965565236553590816134",
+      "delayed_orbit_variation_upper": "9.65968523256489539927676113167680512820252498685634356755253e-11",
+      "delayed_physical_coefficient_variation_upper": "1.19274265496917326624626706737274702277509944827730555488607e-10",
+      "delayed_shift_variation_upper": "2.26774131712683726318590954205066509954846949590277242708575e-11",
+      "exact_history_density_lift_factor_upper": "1.21521050432687743314728872474215522629373439420366932367845",
+      "full_advanced_operator_variation_upper": "1.63318946894818546673699517750372205349646014337668091327532e-06",
+      "full_period_matrix_variation_upper": "4.64305977744638232678298009078920445004801004056909320942636e-08",
+      "normalization": "normalized phase x in [0,1]",
+      "one_delayed_normalized_matrix_variation_upper": "3.28016123246487025745695023015650178416521279892497954122291e-09",
+      "phase_ratio_transfer_validated": true,
+      "rank_one_advanced_operator_variation_upper": "1.58675887117372164346916537659583000899598004297066371595766e-06",
+      "recovery_phase_ratio_transfer_error_upper": "2.90496823989163751827284221468095166664796528390765999970842e-08",
+      "voltage_phase_ratio_transfer_error_upper": "1.36012654289419340821122468559381210281295252461124697243161e-07"
+    },
+    "instantaneous_green": {
+      "F_exact_uniform_upper": "2.55249745380459234842001785325139393814894982270764883428303",
+      "Fhat_uniform_upper": "2.53970076861347028158839238613815767473891760213643767640382",
+      "G_exact_phase_integral_upper": "5867.76410326613456795110914800180014713316747250837511768771",
+      "G_exact_uniform_upper": "26101.2093363918461889892333059779658806318637963066423358983",
+      "Ghat_phase_integral_upper": "5838.19844303827352553361445760866195915793946432783365299288",
+      "Ghat_uniform_upper": "25969.6942527594810504376011057054219864360140808492332189851",
+      "delayed_green_part_included": false,
+      "directed_polynomial_replay_validated": true,
+      "fundamental_polynomial_degree": 24,
+      "instantaneous_boundary_propagator_upper": "66623.2703723608409239327859439217703653415218158371662950533",
+      "instantaneous_green_phase_integral_upper": "14977.4529331127955656720408917507758284565052412598890400186",
+      "minimum_replayed_determinant_abs_lower": "1.29906647245566424655330290834117122501537634553700475792939e-05",
+      "phase_cell_count": 1024
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_outer_delay_word_stage3d_primitives.json": "11197f7f64289bd239f6167deedae66e54bc7805eaf84d08762ddc843c7372bf",
+      "experiments/results/leaky_outer_delay_word_stage3e_relative_residual.json": "ffc8382c22422af711a0e4517d6ea0b9a7f474ffcaa1fb10a4120136d3002391",
+      "experiments/results/leaky_outer_signed_kernel_stage2.json": "f4742db560c5de29072adfb0b963d5a21e993fed5a949a2180dcc6d0b355011f"
+    },
+    "precision_bits": 160,
+    "residual_closure_targets": {
+      "delayed_boundary_allowance_after_strict_instantaneous_part_lower": "3376.7296276391590760672140560782296346584781840703480063013",
+      "delayed_green_allowance_after_strict_instantaneous_part_lower": "45022.547066887204434327959108249224171543494758695269409123",
+      "full_advanced_boundary_target": "70000",
+      "full_advanced_green_target": "60000",
+      "full_targets_validated": false,
+      "next_certificate": "degree-24/192-bit tensor Bernstein residual for the two combined advanced rows, plus delayed Green and boundary corrections below the displayed allowances",
+      "no_separate_H_or_L_absolute_budget_used": true,
+      "rows": {
+        "recovery": {
+          "budget_closes_if_targets_are_proved": true,
+          "combined_p_uniform_binary64_diagnostic": "1.14542228396084544428390472603496164083480834961074345553157",
+          "combined_p_voltage_component_binary64_diagnostic": "0.221121241536902990443280714316642843186855316162280431941446",
+          "diagnostic_inputs_promoted": false,
+          "direct_delayed_density_cost_diagnostic": "5.30767994128987255656356629112591940716259703947232559993024e-10",
+          "maximum_full_green_allowed_by_orbit_defect_diagnostic": "2005621.86473193467106258715967275097427732161119076339045632",
+          "orbit_coefficient_row_residual_diagnostic": "4.04048732962121739333355060257435624811641334349696087538939e-07",
+          "orbit_cost_at_green_target_diagnostic": "0.0294602558733321470677029413870907287348214626008727505410929",
+          "phase_boundary_cost_at_target_diagnostic": "0.00247110354389659480691707787437717469639597700498589280383681",
+          "remaining_residual_budget_lower_diagnostic": "0.955308632795873709350889124931688584960588798399413372037774",
+          "required_combined_p_bernstein_residual_upper": "1.31021008211389802721761680503047374765756596535807913848753e-05",
+          "reserved_center_TV_transfer": "0.01",
+          "stage2_shadow_upper": "0.00276000725612955464550360015048688249560182127695331507926743",
+          "strict_margin_below_one_lower": "0.997239992743870445354496399849513117504398178722202091272343"
+        },
+        "voltage": {
+          "budget_closes_if_targets_are_proved": true,
+          "combined_p_uniform_binary64_diagnostic": "20.4384266818317570368890301324427127838134765625218952885051",
+          "combined_p_voltage_component_binary64_diagnostic": "5.76877792532898325816859141923487186431884765625547382212627",
+          "diagnostic_inputs_promoted": false,
+          "direct_delayed_density_cost_diagnostic": "1.38470762316674427012579900537165008853193403397193456480141e-08",
+          "maximum_full_green_allowed_by_orbit_defect_diagnostic": "69360.1633795548923637057303219059609348894411143875201676263",
+          "orbit_coefficient_row_residual_diagnostic": "1.01026279172539009626786444414707198261281253673915936274187e-05",
+          "orbit_cost_at_green_target_diagnostic": "0.736609173981174261987413726408992728300353751541612556167993",
+          "phase_boundary_cost_at_target_diagnostic": "0.0115698804349717754435381280715710235966171367405878564337252",
+          "remaining_residual_budget_lower_diagnostic": "0.114913036922379429469161350901282901439957146366443749929219",
+          "required_combined_p_bernstein_residual_upper": "1.57603746447248128534003349791174352731178582621493206808834e-06",
+          "reserved_center_TV_transfer": "0.01",
+          "stage2_shadow_upper": "0.126907894814398301432444093360163292946571080032215902723539",
+          "strict_margin_below_one_lower": "0.873092105185601698567555906639836707053428919966928812569231"
+        }
+      },
+      "strict_instantaneous_boundary_upper": "66623.2703723608409239327859439217703653415218158371662950533",
+      "strict_instantaneous_green_upper": "14977.4529331127955656720408917507758284565052412598890400186"
+    },
+    "schema_id": "leaky-outer-signed-row-stage3f-adjoint-v1",
+    "transfer_errors": {
+      "E_phase": "0.737274478109754544137168592381773727825919506548820214838649",
+      "E_recovery": null,
+      "E_voltage": null
+    },
+    "transfer_gate": {
+      "arbitrary_c0_linear_contraction_closes": false,
+      "combined_row_residual_validated": false,
+      "delayed_green_part_validated": false,
+      "instantaneous_green_part_validated": true,
+      "linear_return_gate_evaluated": false,
+      "nonlinear_outer_attraction_closes": false
+    }
+  },
+  "manifest": {
+    "certificate_sha256": "ec28c9fefaeb6d892ae69e1e6026285fb157d3bccf0f0e8de5610d0ca7f81ff0",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_signed_row_stage3f_adjoint.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_signed_row_stage3f_adjoint.json",
+    "schema_id": "leaky-outer-signed-row-stage3f-adjoint-v1",
+    "source_sha256": {
+      "docs/leaky-outer-signed-row-stage3f-adjoint.md": "789fdfc4b8e0fcf810ecb220c18c2147cf79a7a3fdf77c425ba57fb67358bf26",
+      "experiments/leaky_outer_signed_row_stage3f_adjoint.py": "5773904ddd156364509cb304de28b92d6f02bbd7980e45866dbd0c2737b5fba5",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_outer_delay_word_stage3d_primitives.py": "d28b196902ab4a682b4de5c60a505540b4e252495fb8327d4fa8b0523babe839",
+      "src/canard_control/leaky_outer_delay_word_stage3e_relative_residual.py": "a9f4564e8628cdae60a6b2d72ed2b8bb4b8378e42450e36b9c6b06e24e19d7f2",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_outer_signed_kernel_stage2.py": "e31034dd870cad82eb80cc840b0d9046c7d50cc21882349228edff8e0dba7111",
+      "src/canard_control/leaky_outer_signed_row_stage3f_adjoint.py": "fd2426aef3803b9808bf99b28ba4185d268a93cd049fb128141ad54804038cb3",
+      "src/canard_control/leaky_periodic_validation.py": "5fa61fb65bc4b96114b9b7911057bc77db571270ed2fb3eaf2db1a8c5844bc25"
+    }
+  }
+}

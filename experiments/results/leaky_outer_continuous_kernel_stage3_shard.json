@@ -1,0 +1,379 @@
+{
+  "certificate": {
+    "arithmetic_scope": "160-bit outward MPFR Fourier-phase, exact-orbit/period ball, coefficient, Gronwall invariant-path, interval Picard integral, and Volterra density injection arithmetic; exact source and parent binding",
+    "binary_blas_thread_count": 1,
+    "branch": "outer_pulse",
+    "claim_status": {
+      "all_method_of_steps_depths_continuously_propagated": false,
+      "all_theta_cells_continuously_propagated": false,
+      "arbitrary_c0_linear_return_contraction_validated": false,
+      "delayed_resolvent_feedback_exactly_zero_on_initial_cell": true,
+      "exact_period_uncertainty_included": true,
+      "exact_voltage_wiener_evaluation_error_included": true,
+      "gronwall_invariant_path_box_validated": true,
+      "initial_shard_promoted_to_full_period_kernel": false,
+      "interval_picard_endpoint_matrix_validated": true,
+      "minimum_delay_exceeds_local_elapsed_cell": true,
+      "nested_exact_outer_orbit_radius_parent_validated": true,
+      "outer_nonlinear_return_contraction_validated": false,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "phase_chart_shadow_transfer_error_validated": false,
+      "physical_pulse_onset_validated": false,
+      "physical_unshifted_variational_coefficient_enclosed": true,
+      "recovery_shadow_transfer_error_validated": false,
+      "returned_phase_subtracted_density_tv_validated": false,
+      "stage3_shard_is_composable": true,
+      "two_delay_ac_density_injection_boxes_validated": true,
+      "voltage_shadow_transfer_error_validated": false
+    },
+    "composition_contract": {
+      "density_injection_rule": "multiply the resolvent shard by B_j(s)e_v, retaining the theta-cell parameter enclosure",
+      "method_of_steps_rule": "a delayed forcing is exactly zero before t-s reaches its delay; afterward it must be read only from validated predecessor shards",
+      "next_cell_current_term": "A(t)*R(t,s)",
+      "next_cell_delayed_forcing": "sum_j B_j(t)*R(t-tau_j,s), using already validated earlier cells",
+      "phase_subtraction_rule": "after propagation to returned time, subtract signed q-row kernels cellwise before absolute-value integration",
+      "shard_digest_requirement": "every shard records exact parameter/time cells, coefficient boxes, predecessor ids, endpoint boxes, and source hashes",
+      "state": "a 2x2 endpoint resolvent interval box for each injection parameter cell, plus delayed endpoint boxes addressed by tau_j",
+      "step_evaluator": "directed_picard_matrix_step(current_matrix,A_box,forcing_box,h)"
+    },
+    "conclusion": "two exact continuous AC-density injection shards now close with directed orbit/period uncertainty and composable endpoint boxes; the global returned kernel and E_voltage/E_recovery remain open",
+    "exact_orbit_radius": "1e-8",
+    "exact_period_interval": {
+      "lower": "26.6044167925574876423888781573623418807983398437166955075542",
+      "upper": "26.6044168125574876423888781573623418807983398437833044924458"
+    },
+    "global_transfer_budget": {
+      "full_period_density_propagation_complete": false,
+      "phase_chart_shadow_transfer_error_upper": null,
+      "recovery_shadow_transfer_error_upper": null,
+      "required_returned_time_domain": "[T-5*sqrt(5),T]",
+      "required_theta_domain": "[-5*sqrt(5),0]",
+      "returned_total_variation_accumulation_complete": false,
+      "single_remaining_linear_inequality": "max(Qv_shadow+E_voltage,Qw_shadow+E_recovery)<1",
+      "stage2_linear_gate_re_evaluated": false,
+      "validated_elapsed_time_upper": "0.001",
+      "validated_theta_cell_count": 1,
+      "voltage_shadow_transfer_error_upper": null
+    },
+    "injection_shards": [
+      {
+        "composable_endpoint_interface_validated": true,
+        "current_coefficient_matrix": [
+          [
+            {
+              "lower": "-0.0934420537603174162470480200667306746477991542137353484542288",
+              "upper": "-0.0883383129214646679049649343382149035272927014553856233505573"
+            },
+            {
+              "lower": "-1.00000000000000000000000000000000000000000000000136845553157",
+              "upper": "-0.999999999999999999999999999999999999999999999999315772234216"
+            }
+          ],
+          [
+            {
+              "lower": "0.199999999999999999999999999999999999999999999999692097505397",
+              "upper": "0.200000000000000000000000000000000000000000000000205268329735"
+            },
+            {
+              "lower": "-0.200000000000000000000000000000000000000000000000205268329735",
+              "upper": "-0.199999999999999999999999999999999999999999999999692097505397"
+            }
+          ]
+        ],
+        "delay_id": "tau_0",
+        "delay_interval": {
+          "lower": "8.94427190999915878563669467492510494176247343842447200793831",
+          "upper": "8.94427190999915878563669467492510494176247343846826258494846"
+        },
+        "delayed_feedback_zero_on_cell": true,
+        "delayed_injection_coefficient": {
+          "lower": "0.00173607163264275136251835168128245886139815423516811798023004",
+          "upper": "0.00173938809824583130835258157252004066793780225225113625175762"
+        },
+        "delayed_resolvent_feedback_matrix": [
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ],
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ]
+        ],
+        "endpoint_density_inf_norm_upper": "0.00173923651583281260685733742445182052609099164404728596150981",
+        "endpoint_density_vector": [
+          {
+            "lower": "0.0017359073325988550527613991991051833003346967732601748208388",
+            "upper": "0.00173923651583281260685733742445182052609099164404728596150981"
+          },
+          {
+            "lower": "3.46454178312191569489193581636303463573156348982398277566528e-07",
+            "upper": "3.48639219997663636052459899558912945092546209502677339485025e-07"
+          }
+        ],
+        "endpoint_resolvent_inf_norm_upper": "1.00091404994748069247452934619454031687863461313877804458465",
+        "endpoint_resolvent_matrix": [
+          [
+            {
+              "lower": "0.999905361022663447089076063315124268237022499648661658139416",
+              "upper": "0.999912853023904456979852457529731315790304911941632569125664"
+            },
+            {
+              "lower": "-0.00100119692357623549467688866480900108832970119591333092763359",
+              "upper": "-0.000998803076423764505413551858360278884946328158741016669336342"
+            }
+          ],
+          [
+            {
+              "lower": "0.000199562144670723315577454096556158869510214235573752104314497",
+              "upper": "0.0002004378553292766844225459034438411304897857644262682086973"
+            },
+            {
+              "lower": "0.999799562144670723315577454096556158869510214234759707889285",
+              "upper": "0.99980043785532927668442254590344384113048978576537056907732"
+            }
+          ]
+        ],
+        "exact_ac_density_injection_validated": true,
+        "exact_voltage_cell": {
+          "lower": "1.04284840938791456015955391135327325583346087872153304404641",
+          "upper": "1.04529225558934870718624779559986969509639535676329158548805"
+        },
+        "initial_dirac_jump_is_identity": true,
+        "injection_time_cell": {
+          "lower": "8.94327190999915878563669467492510494176247343842377135870615",
+          "upper": "8.94427190999915878563669467492510494176247343846826258494846"
+        },
+        "interval_picard_endpoint_validated": true,
+        "invariant_path_matrix": [
+          [
+            {
+              "lower": "0.998905361676808288984991124337398105126339942216188941179529",
+              "upper": "1.00109463832319171109772064155660375757526876434717851610665"
+            },
+            {
+              "lower": "-0.00109463832319171101500887566260189487366005778312816743704255",
+              "upper": "0.00109463832319171109772064155660375757526876434493072098546483"
+            }
+          ],
+          [
+            {
+              "lower": "-0.00109463832319171101500887566260189487366005778312816743704255",
+              "upper": "0.00109463832319171109772064155660375757526876434493072098546483"
+            },
+            {
+              "lower": "0.998905361676808288984991124337398105126339942216188941179529",
+              "upper": "1.00109463832319171109772064155660375757526876434717851610665"
+            }
+          ]
+        ],
+        "minimum_delay_minus_elapsed_lower": "8.94327190999915878563669467492510494176247343842377135870615",
+        "normalized_phase_cell": {
+          "lower": "0.336157412245092560550754906817025162130155780055152124126161",
+          "upper": "0.336232587985224091690981694042385318534765016589501932540563"
+        },
+        "path_expansion_radius_upper": "0.00109463832319171109772064155660375757526876434493072098546483",
+        "propagated_time_cell": {
+          "lower": "8.94327190999915878563669467492510494176247343842377135870615",
+          "upper": "8.94527190999915878563669467492510494176247343846896323418063"
+        },
+        "theta_cell": {
+          "lower": "-0.0010000000000000000000000000000000000000000000000017212604733",
+          "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+        }
+      },
+      {
+        "composable_endpoint_interface_validated": true,
+        "current_coefficient_matrix": [
+          [
+            {
+              "lower": "0.308598811655957760617646402072512410594579779150424708577795",
+              "upper": "0.312966324378675377680124002706736574180196063491114515787068"
+            },
+            {
+              "lower": "-1.00000000000000000000000000000000000000000000000136845553157",
+              "upper": "-0.999999999999999999999999999999999999999999999999315772234216"
+            }
+          ],
+          [
+            {
+              "lower": "0.199999999999999999999999999999999999999999999999692097505397",
+              "upper": "0.200000000000000000000000000000000000000000000000205268329735"
+            },
+            {
+              "lower": "-0.200000000000000000000000000000000000000000000000205268329735",
+              "upper": "-0.199999999999999999999999999999999999999999999999692097505397"
+            }
+          ]
+        ],
+        "delay_id": "tau_1",
+        "delay_interval": {
+          "lower": "11.1803398874989484820458683436563811772030917980305900099229",
+          "upper": "11.1803398874989484820458683436563811772030917980853282311856"
+        },
+        "delayed_feedback_zero_on_cell": true,
+        "delayed_injection_coefficient": {
+          "lower": "0.00173607163264275136251835168128245886139815423516811798023004",
+          "upper": "0.00173938809824583130835258157252004066793780225225113625175762"
+        },
+        "delayed_resolvent_feedback_matrix": [
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ],
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ]
+        ],
+        "endpoint_density_inf_norm_upper": "0.00173993547058246344774921430436428082210123309458923656378429",
+        "endpoint_density_vector": [
+          {
+            "lower": "0.00173660439554178419747804951952880629668674312383012856092436",
+            "upper": "0.00173993547058246344774921430436428082210123309458923656378429"
+          },
+          {
+            "lower": "3.4630136719411315690842783528292614035857420786899042186013e-07",
+            "upper": "3.48792323035042696252969155307043933082003005193954988116905e-07"
+          }
+        ],
+        "endpoint_resolvent_inf_norm_upper": "1.00131641861528391409814207095397770726032418529539965555048",
+        "endpoint_resolvent_matrix": [
+          [
+            {
+              "lower": "1.00030687840813447981318200499716327592858137631925913604538",
+              "upper": "1.00031469246983129473790696212617963718293363485582332353722"
+            },
+            {
+              "lower": "-0.00100172614545261936023510882779807007739055043829206857005903",
+              "upper": "-0.000998273854547380639773161876527099391246561210247030305919194"
+            }
+          ],
+          [
+            {
+              "lower": "0.000199474123465143339352746849744168894750128196195604764052347",
+              "upper": "0.000200525876534856660647253150255831105249871803804248501165069"
+            },
+            {
+              "lower": "0.999799474123465143339352746849744168894750128195143684489825",
+              "upper": "0.99980052587653485666064725315025583110524987180498659247678"
+            }
+          ]
+        ],
+        "exact_ac_density_injection_validated": true,
+        "exact_voltage_cell": {
+          "lower": "0.828340487482874629278226146124014030264012248636219433721415",
+          "upper": "0.830970990696624371647186091347385110211496127022872589783484"
+        },
+        "initial_dirac_jump_is_identity": true,
+        "injection_time_cell": {
+          "lower": "11.1793398874989484820458683436563811772030917980298893606907",
+          "upper": "11.1803398874989484820458683436563811772030917980853282311856"
+        },
+        "interval_picard_endpoint_validated": true,
+        "invariant_path_matrix": [
+          [
+            {
+              "lower": "0.998685308662858348387886264774238043173681944608004126726404",
+              "upper": "1.00131469133714165162415201605339356942304096362855438649183"
+            },
+            {
+              "lower": "-0.00131469133714165161211373522576195682631805539131298189016755",
+              "upper": "0.00131469133714165162415201605339356942304096362689326322451242"
+            }
+          ],
+          [
+            {
+              "lower": "-0.00131469133714165161211373522576195682631805539131298189016755",
+              "upper": "0.00131469133714165162415201605339356942304096362689326322451242"
+            },
+            {
+              "lower": "0.998685308662858348387886264774238043173681944608004126726404",
+              "upper": "1.00131469133714165162415201605339356942304096362855438649183"
+            }
+          ]
+        ],
+        "minimum_delay_minus_elapsed_lower": "8.94327190999915878563669467492510494176247343842377135870615",
+        "normalized_phase_cell": {
+          "lower": "0.42020616224228658124288214398262539509414555186326789028726",
+          "upper": "0.420281338045602169866907205728693138908168387906460207531131"
+        },
+        "path_expansion_radius_upper": "0.00131469133714165162415201605339356942304096362689326322451242",
+        "propagated_time_cell": {
+          "lower": "11.1793398874989484820458683436563811772030917980298893606907",
+          "upper": "11.1813398874989484820458683436563811772030917980860288804177"
+        },
+        "theta_cell": {
+          "lower": "-0.0010000000000000000000000000000000000000000000000017212604733",
+          "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+        }
+      }
+    ],
+    "local_elapsed_time": "0.001",
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_floquet_outer_grushin_stage1.json": "5ca82a8c3e25ef0749e29142e9e19f49f21d219794b881ad3c9fb9011de0e524",
+      "experiments/results/leaky_outer_signed_kernel_stage2.json": "f4742db560c5de29072adfb0b963d5a21e993fed5a949a2180dcc6d0b355011f"
+    },
+    "precision_bits": 160,
+    "schema_id": "leaky-outer-continuous-kernel-stage3-shard-v1",
+    "stored_period_interval": {
+      "lower": "26.6044168025574876423888781573623418807983398437281047114949",
+      "upper": "26.6044168025574876423888781573623418807983398437718952885051"
+    },
+    "theta_cell": {
+      "lower": "-0.0010000000000000000000000000000000000000000000000017212604733",
+      "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+    }
+  },
+  "manifest": {
+    "certificate_sha256": "3e2d12a25b7b4b687f391b94159bc9bab8c212bebf6825f429b2d03b668ffc93",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_continuous_kernel_stage3_shard.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_continuous_kernel_stage3_shard.json",
+    "schema_id": "leaky-outer-continuous-kernel-stage3-shard-v1",
+    "source_sha256": {
+      "docs/leaky-outer-continuous-kernel-stage3-shard.md": "65c2b63ecb221065a08d1a78f44b569dfb3dd8b1da1eb89873a524e4ab8c5f47",
+      "experiments/leaky_outer_continuous_kernel_stage3_shard.py": "d3b469467ab43108ac72527a77e04b16e3a91bf0cd21487a66c0792be590f0bc",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_outer_continuous_kernel_stage3_shard.py": "581330cb71d594049df34db95b80b4c0811b9bbba13cc9125a2df8053008f2e9",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_outer_signed_kernel_stage2.py": "e31034dd870cad82eb80cc840b0d9046c7d50cc21882349228edff8e0dba7111",
+      "src/canard_control/leaky_periodic_validation.py": "5fa61fb65bc4b96114b9b7911057bc77db571270ed2fb3eaf2db1a8c5844bc25"
+    }
+  }
+}

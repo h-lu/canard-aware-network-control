@@ -1,0 +1,160 @@
+{
+  "certificate": {
+    "arithmetic_scope": "output-specific signed row algebra; exact-dyadic Stage-3G candidate coefficients; 192-bit Arb Chebyshev/power/Bernstein transforms; 192-bit outward Fourier-Taylor phase-ratio patches; one-sided event charts bounded on full-patch supersets; strict Stage-3G resolvent error",
+    "branch": "outer_pulse",
+    "chart_geometry": {
+      "event_seam_patch_count": 3080,
+      "event_triangle_enclosure": "each one-sided polynomial is bounded on its full local square, a superset of the corresponding physical seam triangle",
+      "local_patch_count": 12320,
+      "one_sided_voltage_row_evaluation_count": 15200,
+      "ordinary_rectangle_count": 730,
+      "recovery_one_dimensional_patch_count": 192,
+      "terminal_clipped_rectangle_count": 40,
+      "terminal_line_one_sided_event_patch_count": 80,
+      "two_sided_event_seam_patch_count": 3000
+    },
+    "claim_status": {
+      "all_40_terminal_clipped_rectangles_consumed": true,
+      "all_730_ordinary_resolvent_rectangles_consumed": true,
+      "arbitrary_c0_linear_return_contraction_validated": false,
+      "candidate_coefficients_treated_as_exact_dyadics": true,
+      "continuous_center_signed_density_TV_reserve_validated": false,
+      "continuous_signed_density_total_variation_validated": false,
+      "delta_plus_lag_event_seams_split_into_one_sided_charts": true,
+      "direct_center_guide_phase_combined_recovery_row_uniform_bound_validated": true,
+      "direct_center_guide_phase_combined_voltage_component_bounds_validated": true,
+      "direct_center_guide_phase_combined_voltage_row_uniform_bound_validated": true,
+      "event_triangles_bounded_by_valid_full_patch_supersets": true,
+      "fourier_phase_ratio_tail_and_taylor_remainders_included": true,
+      "nonlinear_phase_chart_validated_on_ambient_tube": false,
+      "outer_nonlinear_return_contraction_validated": false,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "output_specific_recovery_signed_row_formed_before_norm": true,
+      "output_specific_voltage_signed_row_formed_before_norm": true,
+      "phase_ratio_centered_inside_each_signed_row_patch": true,
+      "physical_pulse_onset_validated": false,
+      "recovery_shadow_transfer_error_validated": false,
+      "row_size_bernstein_arithmetic_outward_192_bit": true,
+      "stage2_discrete_shadow_parent_digest_validated": true,
+      "stage3f_transfer_budget_parent_digest_validated": true,
+      "stage3g_parent_source_manifest_validated": true,
+      "stage3g_residual_green_parent_digest_validated": true,
+      "strict_stage3g_resolvent_candidate_error_consumed": true,
+      "voltage_shadow_transfer_error_validated": false
+    },
+    "combined_row_size": {
+      "ratio_radius_paid_after_signed_center_subtraction": true,
+      "recovery_combined_p_uniform_upper": "1.177737076443893",
+      "recovery_combined_p_voltage_component_upper": "0.25344150879808108",
+      "recovery_uniform_maximizer": {
+        "lag_cell": 0,
+        "lag_patch_center": "-3/4"
+      },
+      "signed_center_subtraction_precedes_row_norm": true,
+      "stage3g_resolvent_candidate_row_error_semantics": "||S_guide-S_hat||_row",
+      "stage3g_resolvent_candidate_row_error_upper": "0.028212121359545143",
+      "voltage_combined_p_uniform_upper": "41.48244645265838",
+      "voltage_combined_p_voltage_component_upper": "11.984837574141023",
+      "voltage_uniform_maximizer": {
+        "delta_cell": 11,
+        "delta_patch_center": "-1/4",
+        "event_seam_patch": true,
+        "lag_cell": 16,
+        "lag_patch_center": "1/4",
+        "q_cell": 28,
+        "terminal_clipped_cell": false,
+        "terminal_side": "upper"
+      }
+    },
+    "conclusion": "the voltage and recovery center-guide phase-combined advanced rows now have strict output-specific 192-bit Bernstein sizes, with phase ratios centered inside each signed row and event seams kept one-sided.  Exact-orbit phase and coefficient effects remain in the transfer frontier.  The remaining minimal linear gap is the directed center signed-density cell integral that must validate the reserved 0.01 transfer from the Stage-2 discrete shadow; E_voltage,E_recovery and arbitrary-C0 contraction therefore remain open here",
+    "linear_transfer_frontier": {
+      "conditional_only_until_center_TV_cell_integral_is_validated": true,
+      "continuous_center_TV_reserve_validated": false,
+      "rows": {
+        "recovery": {
+          "center_TV_transfer_reserve_not_yet_validated": "0.01",
+          "combined_residual_and_atom_cost_upper": "6.3320962835281878e-05",
+          "conditional_contraction_below_one": true,
+          "conditional_total_if_center_TV_reserve_is_validated": "0.012872482668624582",
+          "direct_delayed_density_cost_upper": "6.083478923997075e-10",
+          "orbit_coefficient_row_residual_upper": "4.5683359888944735e-07",
+          "orbit_cost_at_strict_stage3g_green_upper": "3.991318035605623e-05",
+          "phase_ratio_boundary_cost_at_strict_stage3g_boundary_upper": "9.2406609557944595e-06",
+          "stage2_shadow_upper": "0.0027600072561295552"
+        },
+        "voltage": {
+          "center_TV_transfer_reserve_not_yet_validated": "0.01",
+          "combined_residual_and_atom_cost_upper": "0.00011405322876622232",
+          "conditional_contraction_below_one": true,
+          "conditional_total_if_center_TV_reserve_is_validated": "0.13889502405130702",
+          "direct_delayed_density_cost_upper": "2.8767784383694914e-08",
+          "orbit_coefficient_row_residual_upper": "2.0943102126288531e-05",
+          "orbit_cost_at_strict_stage3g_green_upper": "0.0018297818164292815",
+          "phase_ratio_boundary_cost_at_strict_stage3g_boundary_upper": "4.3265423928803106e-05",
+          "stage2_shadow_upper": "0.12690789481439832"
+        }
+      },
+      "strict_sizes_validated": true
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_outer_resolvent_stage3g_tensor.json": "52d2c4df0cea7b6d98d898669e45ef54bfed1799965b2cff92161e84bd78ce13",
+      "experiments/results/leaky_outer_signed_kernel_stage2.json": "f4742db560c5de29072adfb0b963d5a21e993fed5a949a2180dcc6d0b355011f",
+      "experiments/results/leaky_outer_signed_row_stage3f_adjoint.json": "d09832c47370dee6588cc0ee7396ca6fe75c1f283785a799682f302427344eee"
+    },
+    "phase_ratio_enclosures": {
+      "fourier_cutoff": 128,
+      "recovery_ratio_absolute_upper": "0.14542228396113979",
+      "recovery_ratio_center_binary64_hex": "0x1.29d3288dc81cap-3",
+      "recovery_ratio_radius_upper": "2.2767646494048974e-15",
+      "taylor_degree": 24,
+      "voltage_local_ratio_radius_maximum_upper": "0.057739161867433449",
+      "voltage_ratio_absolute_maximum_upper": "1.0000000000000002"
+    },
+    "precision_bits": 192,
+    "row_scope": "center binary-orbit phase ratios applied to the exact guide resolvent; exact-orbit phase and coefficient transfer is recorded only in the linear frontier",
+    "schema_id": "leaky-outer-combined-row-stage3h-size-v2",
+    "transfer_errors": {
+      "E_phase": "0.737274478109754544137168592381773727825919506548820214838649",
+      "E_recovery": null,
+      "E_voltage": null
+    },
+    "transfer_gate": {
+      "arbitrary_c0_linear_contraction_closes": false,
+      "continuous_center_signed_density_TV_reserve_validated": false,
+      "linear_return_gate_evaluated": false,
+      "nonlinear_outer_attraction_closes": false,
+      "strict_combined_row_uniform_sizes_validated": true
+    }
+  },
+  "manifest": {
+    "certificate_sha256": "07ff0895fbe439939afd851cf136d6c9677ecb9dbb3e2acb80e5d8598c14a132",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_combined_row_stage3h_size.py",
+    "environment": {
+      "arb_precision_bits": 192,
+      "gmpy2": "2.2.2",
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "python_flint": "0.9.0",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_combined_row_stage3h_size.json",
+    "schema_id": "leaky-outer-combined-row-stage3h-size-v2",
+    "source_sha256": {
+      "docs/leaky-outer-combined-row-stage3h-size.md": "fbdd9ac68ab2aab7b6838e7a868de074b0467ca048454e0953066bd2aae20369",
+      "experiments/leaky_outer_combined_row_stage3h_size.py": "0fa4c23dd97eb6225a918d139897d0ffc9535089b0e6dbf8c69025fd6f5ca10c",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_outer_combined_row_stage3h_size.py": "0a26045d0a410cf4ad56b4a8c2364ba53b20abcd25680f9d546b0b1aeb9ee811",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2",
+      "src/canard_control/leaky_outer_resolvent_stage3g_tensor.py": "47c48dcda16e38b3f08c551ebd6e8900831e4bc2c281a5a938daf0e94c17af11",
+      "src/canard_control/leaky_outer_signed_kernel_stage2.py": "e31034dd870cad82eb80cc840b0d9046c7d50cc21882349228edff8e0dba7111",
+      "src/canard_control/leaky_outer_signed_row_stage3f_adjoint.py": "fd2426aef3803b9808bf99b28ba4185d268a93cd049fb128141ad54804038cb3",
+      "src/canard_control/leaky_periodic_validation.py": "5fa61fb65bc4b96114b9b7911057bc77db571270ed2fb3eaf2db1a8c5844bc25",
+      "tests/test_leaky_outer_combined_row_stage3h_size.py": "626a0f6c857e653755d40ebc247793bfb5e2840b0659b8165636022c07909057"
+    }
+  }
+}

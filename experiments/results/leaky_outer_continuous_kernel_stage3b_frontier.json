@@ -1,0 +1,516 @@
+{
+  "certificate": {
+    "adaptive_subdivision_rule": {
+      "coefficient_condition": "h*||A||_infinity <= 1/32",
+      "delay_alignment": "force tile faces at u=tau0 and u=tau1; never let a cell straddle a newly active delayed predecessor without an explicit uncertainty bridge",
+      "failure_is_not_rejection": "the coarse box remains rigorous; failure means only that its width cannot contribute to E_voltage/E_recovery",
+      "path_condition": "Picard path expansion <= max(1,||X_in||_infinity)/32",
+      "predecessor_rule": "every nonzero delayed forcing may reference only an already validated shard digest at elapsed coordinate u-tau_j",
+      "theta_condition": "bisect theta until the exact-voltage cell width is <=1e-3",
+      "trigger": "bisect a tile whenever endpoint inf norm or maximum entry width exceeds 1e6; a theorem-quality run must use a much smaller target tied to the remaining 0.873 linear margin"
+    },
+    "arithmetic_scope": "160-bit outward MPFR exact-orbit coefficient cells; infinity logarithmic norm accumulation; directed delay-uncertainty bridge; composable interval Picard cells with the first nonzero delayed-resolvent forcing; and exact source/parent binding",
+    "binary_blas_thread_count": 1,
+    "branch": "outer_pulse",
+    "branch_sweeps": [
+      {
+        "accumulated_logarithmic_exponent_upper": "16.4935471228388543668075509942211020673956984501011192268308",
+        "boundary_density_inf_norm_upper": "25319.3759026242201690590141589730660664014878947529625679454",
+        "coarse_boundary_matrix": [
+          [
+            {
+              "lower": "-14556484.5063380338251590728759765625000000000000114794370197",
+              "upper": "14556484.5063380332143975915409086523864597365069357835584992"
+            },
+            {
+              "lower": "-14556484.5063380338251590728759765625000000000000114794370197",
+              "upper": "14556484.5063380332143975915409086523864597365069357835584992"
+            }
+          ],
+          [
+            {
+              "lower": "-14556484.5063380338251590728759765625000000000000114794370197",
+              "upper": "14556484.5063380332143975915409086523864597365069357835584992"
+            },
+            {
+              "lower": "-14556484.5063380338251590728759765625000000000000114794370197",
+              "upper": "14556484.5063380332143975915409086523864597365069357835584992"
+            }
+          ]
+        ],
+        "coarse_bridge_not_usable_as_shadow_transfer_error": true,
+        "coarse_preboundary_tile_count": 18,
+        "coarse_tile_ledger_sha256": "138e4f3c1882533b59d01f13d758a0e1e52f62b04cab4d7e9d40b1aa58748e70",
+        "delayed_crossing_endpoint_density_inf_norm_upper": "25370.1181492336004168824936600974288768222076787194085732586",
+        "delayed_crossing_endpoint_density_vector": [
+          {
+            "lower": "-25370.1181492321998256561473785122195898418124198121119593632",
+            "upper": "25370.1181492336004168824936600974288768222076787194085732586"
+          },
+          {
+            "lower": "-25329.5441658340907049146439557858924591161517252106736282391",
+            "upper": "25329.5441658340896425633924545753255379298146257352492626767"
+          }
+        ],
+        "delayed_crossing_endpoint_matrix": [
+          [
+            {
+              "lower": "-14585656.9760468653546303545686507570555904978257064838440345",
+              "upper": "14585656.9760476705752868364512453761554496999266683899229428"
+            },
+            {
+              "lower": "-14585656.9760472681089633164827710969639348020337107563374671",
+              "upper": "14585656.9760472674982042118949115657579987522826746913247232"
+            }
+          ],
+          [
+            {
+              "lower": "-14562330.391577862787060703696949944145510209183364052788541",
+              "upper": "14562330.3915778621762992223618820340319699456902883569100205"
+            },
+            {
+              "lower": "-14562330.391577862787060703696949944145510209183364052788541",
+              "upper": "14562330.3915778621762992223618820340319699456902883569100205"
+            }
+          ]
+        ],
+        "delayed_crossing_endpoint_norm_upper": "29171313.9520949386842501529340164731193845019603791462604099",
+        "delayed_crossing_invariant_path_matrix": [
+          [
+            {
+              "lower": "-14614713.0995724050590069964528083801269531250000114794370197",
+              "upper": "14614713.0995724044491471084140998474240927917514561972087201"
+            },
+            {
+              "lower": "-14614713.0995724050590069964528083801269531250000114794370197",
+              "upper": "14614713.0995724044491471084140998474240927917514561972087201"
+            }
+          ],
+          [
+            {
+              "lower": "-14614713.0995724050590069964528083801269531250000114794370197",
+              "upper": "14614713.0995724044491471084140998474240927917514561972087201"
+            },
+            {
+              "lower": "-14614713.0995724050590069964528083801269531250000114794370197",
+              "upper": "14614713.0995724044491471084140998474240927917514561972087201"
+            }
+          ]
+        ],
+        "delayed_crossing_path_density_inf_norm_upper": "25420.658024673684291337254431681098452173660359677819154667",
+        "delayed_crossing_path_expansion_upper": "58228.5932343712347495168731911950376330552445194719776528555",
+        "elapsed_frontier_upper": "8.94527190999915878563669467492510494176247343846896323418063",
+        "failure_step_norm_child_width_upper": "0.0156250000000000000000000000000000000000000000000213821176807",
+        "failure_step_norm_minimum_dyadic_depth": 5,
+        "first_delayed_coefficient_matrix": [
+          [
+            {
+              "lower": "0.000402753979280611486918031572729314643858979477578055858516604",
+              "upper": "0.000403077082624556333810397450947643994698417408810328641138568"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ],
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ]
+        ],
+        "first_delayed_crossing_elapsed_cell": {
+          "lower": "8.94427190999915878563669467492510494176247343844636729644339",
+          "upper": "8.94527190999915878563669467492510494176247343846896323418063"
+        },
+        "first_delayed_current_coefficient_matrix": [
+          [
+            {
+              "lower": "0.996012193033188428712871846950651281483005421444818410812159",
+              "upper": "0.996102797945952606389879974382396270733842466182986230080788"
+            },
+            {
+              "lower": "-1.00000000000000000000000000000000000000000000000136845553157",
+              "upper": "-0.999999999999999999999999999999999999999999999999315772234216"
+            }
+          ],
+          [
+            {
+              "lower": "0.199999999999999999999999999999999999999999999999692097505397",
+              "upper": "0.200000000000000000000000000000000000000000000000205268329735"
+            },
+            {
+              "lower": "-0.200000000000000000000000000000000000000000000000205268329735",
+              "upper": "-0.199999999999999999999999999999999999999999999999692097505397"
+            }
+          ]
+        ],
+        "first_delayed_forcing_inf_norm_lower_witness": "0.000402313109340072969239410332503671794023489967752624313336974",
+        "first_delayed_forcing_inf_norm_upper": "0.000403959529868238636078071909139275504599904334403273807906713",
+        "first_delayed_forcing_matrix": [
+          [
+            {
+              "lower": "0.000402313109340072969239410332503671794023489967752624313336974",
+              "upper": "0.000403518306246397484944234680043459749649160871606801224522641"
+            },
+            {
+              "lower": "-4.41223621841151100498011800536205560672714331883286843073192e-07",
+              "upper": "4.41223621841151133837229095815754950743462796258227132298697e-07"
+            }
+          ],
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ]
+        ],
+        "first_delayed_resolvent_path_matrix": [
+          [
+            {
+              "lower": "0.998905361676808288984991124337398105126339942216188941179529",
+              "upper": "1.00109463832319171109772064155660375757526876437044226014329"
+            },
+            {
+              "lower": "-0.00109463832319171101500887566260189487366005778312816743704255",
+              "upper": "0.00109463832319171109772064155660375757526876436896021211154871"
+            }
+          ],
+          [
+            {
+              "lower": "-0.00109463832319171101500887566260189487366005778312816743704255",
+              "upper": "0.00109463832319171109772064155660375757526876436896021211154871"
+            },
+            {
+              "lower": "0.998905361676808288984991124337398105126339942216188941179529",
+              "upper": "1.00109463832319171109772064155660375757526876437044226014329"
+            }
+          ]
+        ],
+        "first_nonzero_delayed_forcing_tile_validated": true,
+        "homogeneous_boundary_growth_upper": "14556484.5063380332143975915409086523864597365062814556483735",
+        "injection_delay_id": "tau_0",
+        "injection_time_band": {
+          "lower": "8.94327190999915878563669467492510494176247343842377135870615",
+          "upper": "8.94427190999915878563669467492510494176247343846826258494846"
+        },
+        "remaining_elapsed_tiles_to_latest_return": 18,
+        "tau0_uncertainty_width_upper": "2.18952885050752667331832747389049395512540928418505216623742e-47",
+        "theta_band": {
+          "lower": "-0.0010000000000000000000000000000000000000000000000017212604733",
+          "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+        },
+        "tight_picard_accepted_path_expansion_sum_upper": "182490.271577245983139997692529414892337792189613769143097696",
+        "tight_picard_accepted_tile_count": 8,
+        "tight_picard_failed_attempt_path_expansion_upper": "936026.101929126996024254267334834969894598038271047494182354",
+        "tight_picard_failure_coefficient_inf_norm_upper": "1.89044194819788208438663648724845972701365231983589845090423",
+        "tight_picard_failure_elapsed_cell": {
+          "lower": "3.99999999999999999999999999999999999999999999999726308893687",
+          "upper": "4.50000000000000000000000000000000000000000000000547382212627"
+        },
+        "tight_picard_failure_endpoint_norm_upper": "2366778.00187563930490013093665380189568625358167908609484489",
+        "tight_picard_failure_endpoint_width_upper": "2366766.87992658846589258684056715018816499380762866612396297",
+        "tight_picard_failure_tile_index": 8,
+        "uncertainty_bridge_growth_upper": "14556484.5063380332143975915409086523864597365069357835584992",
+        "uncertainty_predecessor_growth_upper": "1.00000000000000000000000000000000000000000000002189528850508",
+        "uncorrected_output_diagonal_tile_mass_upper": "25.4206580246736842913372544316810984521736603596981379823997"
+      },
+      {
+        "accumulated_logarithmic_exponent_upper": "17.0067596537585570069438607375813701093550968361138563645606",
+        "boundary_density_inf_norm_upper": "42299.8051431342895640964274081651884665661432996676627391264",
+        "coarse_boundary_matrix": [
+          [
+            {
+              "lower": "-24318784.9714468792080879211425781250000000000000229588740395",
+              "upper": "24318784.9714468788075038001619058889486341704639625008756699"
+            },
+            {
+              "lower": "-24318784.9714468792080879211425781250000000000000229588740395",
+              "upper": "24318784.9714468788075038001619058889486341704639625008756699"
+            }
+          ],
+          [
+            {
+              "lower": "-24318784.9714468792080879211425781250000000000000229588740395",
+              "upper": "24318784.9714468788075038001619058889486341704639625008756699"
+            },
+            {
+              "lower": "-24318784.9714468792080879211425781250000000000000229588740395",
+              "upper": "24318784.9714468788075038001619058889486341704639625008756699"
+            }
+          ]
+        ],
+        "coarse_bridge_not_usable_as_shadow_transfer_error": true,
+        "coarse_preboundary_tile_count": 18,
+        "coarse_tile_ledger_sha256": "d77da4f120c3a83a98f1fc0febe73999f1bcc07d4cb44cb0f8e8576232aa36f9",
+        "delayed_crossing_endpoint_density_inf_norm_upper": "42360.0508294179409540524230680689652232203874383395841617427",
+        "delayed_crossing_endpoint_density_vector": [
+          {
+            "lower": "-42360.0508294163987108985964385924539010951635219855353834559",
+            "upper": "42360.0508294179409540524230680689652232203874383395841617427"
+          },
+          {
+            "lower": "-42316.7731933397520024797711287450831658425633305337609019754",
+            "upper": "42316.7731933397513057085187486955891731028449819058596496712"
+          }
+        ],
+        "delayed_crossing_endpoint_matrix": [
+          [
+            {
+              "lower": "-24353421.1094904050198296754403174479748729704076647889632405",
+              "upper": "24353421.1094912916782789208835674979954910264073137787407956"
+            },
+            {
+              "lower": "-24353421.1094908478778059591251771922939989766548454962324498",
+              "upper": "24353421.1094908474777965644578847541111548680760709837773524"
+            }
+          ],
+          [
+            {
+              "lower": "-24328540.1550212488264724114588977481632611758990195348245362",
+              "upper": "24328540.1550212484258882904782255121118953463629590768261666"
+            },
+            {
+              "lower": "-24328540.1550212488264724114588977481632611758990195348245362",
+              "upper": "24328540.1550212484258882904782255121118953463629590768261666"
+            }
+          ]
+        ],
+        "delayed_crossing_endpoint_norm_upper": "48706842.2189821395560848800087446902894900030621822338472849",
+        "delayed_crossing_invariant_path_matrix": [
+          [
+            {
+              "lower": "-24387958.9359240461635636165738105773925781250000229588740395",
+              "upper": "24387958.9359240457588879650243052389133013698906309965930116"
+            },
+            {
+              "lower": "-24387958.9359240461635636165738105773925781250000229588740395",
+              "upper": "24387958.9359240457588879650243052389133013698906309965930116"
+            }
+          ],
+          [
+            {
+              "lower": "-24387958.9359240461635636165738105773925781250000229588740395",
+              "upper": "24387958.9359240457588879650243052389133013698906309965930116"
+            },
+            {
+              "lower": "-24387958.9359240461635636165738105773925781250000229588740395",
+              "upper": "24387958.9359240457588879650243052389133013698906309965930116"
+            }
+          ]
+        ],
+        "delayed_crossing_path_density_inf_norm_upper": "42420.1255136543543821723573035451605503360600446059603497965",
+        "delayed_crossing_path_expansion_upper": "69173.9644771669513841648623993499646671994266513662449137886",
+        "elapsed_frontier_upper": "8.94527190999915878563669467492510494176247343846896323418063",
+        "failure_step_norm_child_width_upper": "0.0156250000000000000000000000000000000000000000000213821176807",
+        "failure_step_norm_minimum_dyadic_depth": 5,
+        "first_delayed_coefficient_matrix": [
+          [
+            {
+              "lower": "0.000442856208979120967083740469840601059739366597018464025206263",
+              "upper": "0.000444200482356425682743884336158331244758451059076046497213822"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ],
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ]
+        ],
+        "first_delayed_crossing_elapsed_cell": {
+          "lower": "8.94427190999915878563669467492510494176247343844636729644339",
+          "upper": "8.94527190999915878563669467492510494176247343846896323418063"
+        },
+        "first_delayed_current_coefficient_matrix": [
+          [
+            {
+              "lower": "-0.420214710668067735591697154707148387435008469254156092827619",
+              "upper": "-0.414986440234017603875629535447815820047351251431682885641268"
+            },
+            {
+              "lower": "-1.00000000000000000000000000000000000000000000000136845553157",
+              "upper": "-0.999999999999999999999999999999999999999999999999315772234216"
+            }
+          ],
+          [
+            {
+              "lower": "0.199999999999999999999999999999999999999999999999692097505397",
+              "upper": "0.200000000000000000000000000000000000000000000000205268329735"
+            },
+            {
+              "lower": "-0.200000000000000000000000000000000000000000000000205268329735",
+              "upper": "-0.199999999999999999999999999999999999999999999999692097505397"
+            }
+          ]
+        ],
+        "first_delayed_forcing_inf_norm_lower_witness": "0.000442273989757576723838503944381106576323709210418821880020119",
+        "first_delayed_forcing_inf_norm_upper": "0.00044536845540864195456620951970936460003680994612748511181482",
+        "first_delayed_forcing_matrix": [
+          [
+            {
+              "lower": "0.000442273989757576723838503944381106576323709210418821880020119",
+              "upper": "0.000444784468882533818655046927933847922397630502601765804514321"
+            },
+            {
+              "lower": "-5.8398652610813590581518162514060394222664554746806235182277e-07",
+              "upper": "5.83986526108135911162591775516677639179443525466125487140623e-07"
+            }
+          ],
+          [
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            },
+            {
+              "lower": "-2.38256490488795107321616978173267452041519612555923978795502e-323228497",
+              "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+            }
+          ]
+        ],
+        "first_delayed_resolvent_path_matrix": [
+          [
+            {
+              "lower": "0.998685308662858348387886264774238043173681944608004126726404",
+              "upper": "1.00131469133714165162415201605339356942304096365729195265475"
+            },
+            {
+              "lower": "-0.00131469133714165161211373522576195682631805539131298189016755",
+              "upper": "0.00131469133714165162415201605339356942304096365574041274053749"
+            }
+          ],
+          [
+            {
+              "lower": "-0.00131469133714165161211373522576195682631805539131298189016755",
+              "upper": "0.00131469133714165162415201605339356942304096365574041274053749"
+            },
+            {
+              "lower": "0.998685308662858348387886264774238043173681944608004126726404",
+              "upper": "1.00131469133714165162415201605339356942304096365729195265475"
+            }
+          ]
+        ],
+        "first_nonzero_delayed_forcing_tile_validated": true,
+        "homogeneous_boundary_growth_upper": "24318784.9714468788075038001619058889486341704635951588910379",
+        "injection_delay_id": "tau_1",
+        "injection_time_band": {
+          "lower": "11.1793398874989484820458683436563811772030917980298893606907",
+          "upper": "11.1803398874989484820458683436563811772030917980853282311856"
+        },
+        "remaining_elapsed_tiles_to_latest_return": 13,
+        "tau0_uncertainty_width_upper": "2.18952885050752667331832747389049395512540928418505216623742e-47",
+        "theta_band": {
+          "lower": "-0.0010000000000000000000000000000000000000000000000017212604733",
+          "upper": "2.38256490488795107321616978173267452041519612555923978795502e-323228497"
+        },
+        "tight_picard_accepted_path_expansion_sum_upper": "147971.592674474020127521167595273925579147246265820191370999",
+        "tight_picard_accepted_tile_count": 7,
+        "tight_picard_failed_attempt_path_expansion_upper": "849525.29189661474378396549986195663481136198305402784361805",
+        "tight_picard_failure_coefficient_inf_norm_upper": "1.96956719575298176463263154265983331647883797569334832231721",
+        "tight_picard_failure_elapsed_cell": {
+          "lower": "3.49999999999999999999999999999999999999999999999726308893687",
+          "upper": "4.00000000000000000000000000000000000000000000000547382212627"
+        },
+        "tight_picard_failure_endpoint_norm_upper": "2184652.1252517651467496948846768674902529285923598964750517",
+        "tight_picard_failure_endpoint_width_upper": "2184624.73564330605803433428122568702040951914792365750980588",
+        "tight_picard_failure_tile_index": 7,
+        "uncertainty_bridge_growth_upper": "24318784.9714468788075038001619058889486341704639625008756699",
+        "uncertainty_predecessor_growth_upper": "1.00000000000000000000000000000000000000000000003010602169448",
+        "uncorrected_output_diagonal_tile_mass_upper": "42.4201255136543543821723573035451605503360600446539548221996"
+      }
+    ],
+    "claim_status": {
+      "adaptive_dyadic_subdivision_rule_registered": true,
+      "all_elapsed_tiles_to_return_window_validated": false,
+      "all_theta_bands_tiled": false,
+      "arbitrary_c0_linear_return_contraction_validated": false,
+      "both_injection_branches_tiled_to_first_delay_boundary": true,
+      "coarse_boundary_box_promoted_to_sharp_transfer_bound": false,
+      "directed_tau0_uncertainty_bridge_validated": true,
+      "first_delayed_resolvent_forcing_enclosed_nonzero": true,
+      "first_nonzero_delayed_forcing_picard_tile_validated": true,
+      "outer_nonlinear_return_contraction_validated": false,
+      "outer_pulse_capture_validated": false,
+      "outer_quantitative_attracting_tube_validated": false,
+      "phase_chart_shadow_transfer_error_validated": false,
+      "physical_pulse_onset_validated": false,
+      "preboundary_logarithmic_norm_growth_validated": true,
+      "recovery_shadow_transfer_error_validated": false,
+      "remaining_tile_counts_registered": true,
+      "returned_phase_subtracted_density_tv_validated": false,
+      "tight_picard_failure_frontier_registered": true,
+      "tight_picard_sweep_reaches_tau0_without_failure": false,
+      "uncorrected_per_branch_output_diagonal_tile_mass_upper_computed": true,
+      "voltage_shadow_transfer_error_validated": false
+    },
+    "coarse_elapsed_tile_width": "0.5",
+    "conclusion": "both injection branches now cross the first delayed-resolvent boundary with a rigorously nonzero forcing tile; coarse growth boxes expose, rather than hide, the wrapping frontier, so global shadow-transfer errors and C0 contraction remain open",
+    "delayed_crossing_tile_width": "0.001",
+    "exact_orbit_radius": "1e-8",
+    "global_frontier": {
+      "both_branches_cross_tau0": true,
+      "current_band_remaining_elapsed_tile_count": 31,
+      "nominal_coarse_remaining_2d_tile_count_before_tau1_alignment": 1048203,
+      "phase_chart_shadow_transfer_error_upper": null,
+      "phase_subtracted_tv_complete": false,
+      "recovery_shadow_transfer_error_upper": null,
+      "remaining_theta_band_count": 11180,
+      "returned_time_window_reached": false,
+      "single_remaining_linear_inequality": "max(Qv_shadow+E_voltage,Qw_shadow+E_recovery)<1",
+      "stage2_linear_gate_re_evaluated": false,
+      "tau1_alignment_and_adaptive_child_tiles_not_in_nominal_count": true,
+      "total_theta_band_count_at_width_1e_minus_3": 11181,
+      "unstarted_branch_theta_chain_count": 22360,
+      "validated_theta_band_count": 1,
+      "voltage_shadow_transfer_error_upper": null
+    },
+    "model_id": "autonomous-leaky-recovery-two-delay-fhn-bistable-proposal",
+    "parent_result_sha256": {
+      "experiments/results/autonomous_leaky_recovery_outer_high_resolution.json": "d888916fed919f1515dd31ab851b2229816ea373365fa0221b1e345580f165a7",
+      "experiments/results/leaky_outer_continuous_kernel_stage3_shard.json": "b8dc1027cdf3a952ee3bdef9605b4feab3c9188fee106d4e734733219de657fe"
+    },
+    "precision_bits": 160,
+    "schema_id": "leaky-outer-continuous-kernel-stage3b-frontier-v1",
+    "theta_band_width": "0.0010000000000000000000000000000000000000000000000017212604733"
+  },
+  "manifest": {
+    "certificate_sha256": "bf16928d4aa6f4c8c6bd91f2874495c8086e6a748fc3e4847a19fd3cac5ba86c",
+    "default_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONPATH=build/testdeps:src /usr/bin/python3 experiments/leaky_outer_continuous_kernel_stage3b_frontier.py",
+    "environment": {
+      "gmpy2": "2.2.2",
+      "mpfr": "MPFR 4.2.1",
+      "numpy": "2.5.2",
+      "openblas_num_threads": "1",
+      "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+      "python": "3.14.4",
+      "scipy": "1.18.0"
+    },
+    "result": "experiments/results/leaky_outer_continuous_kernel_stage3b_frontier.json",
+    "schema_id": "leaky-outer-continuous-kernel-stage3b-frontier-v1",
+    "source_sha256": {
+      "docs/leaky-outer-continuous-kernel-stage3b-frontier.md": "8ca93b25d346455f9d59aa744bd7a1de68bf2d286a00cb4a5bd48394a553e1c7",
+      "experiments/leaky_outer_continuous_kernel_stage3b_frontier.py": "7be58bfc820a78c40335de224da154c19850b3dd899936766368d8b1ece98910",
+      "src/canard_control/directed_interval.py": "1494ff9cdb89f93d2f462a10fd1c2f4e714677ddf2caa75c7842aef6531ab029",
+      "src/canard_control/leaky_outer_continuous_kernel_stage3_shard.py": "581330cb71d594049df34db95b80b4c0811b9bbba13cc9125a2df8053008f2e9",
+      "src/canard_control/leaky_outer_continuous_kernel_stage3b_frontier.py": "4006e319f30e4e520ae657eb5933d29904ec9a85da023bc3a286afc3eb47df7b",
+      "src/canard_control/leaky_outer_high_resolution.py": "787c6cda005e36d4b0c06a90d5ac0cdf81b13a61a07c5ee833adbdcb6eb414c2"
+    }
+  }
+}
