@@ -1,5 +1,12 @@
 # Flagship successor manuscript
 
+Integration status (2026-08-27): **frozen research ledger, not a submission
+manuscript.**  The active paper workspaces are
+`../network-root-transfer`, `../pulse-threshold`, and
+`../rfde-methods-notes`; see `../README.md` for their mathematical boundaries
+and release policy.  This directory is preserved as the provenance record for
+the split and should not be edited into a recombined submission.
+
 This directory is the theorem-facing LaTeX draft for the finite-network and
 physical-pulse successor paper.  It is deliberately separate from
 `manuscript/jns`, which is the completed two-module complete-history paper.

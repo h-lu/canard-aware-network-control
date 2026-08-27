@@ -6,11 +6,21 @@ Research repository for the JNS manuscript:
 > Systems**
 
 The original complete LaTeX manuscript, figures, appendices, cover letter,
-and submission checklist are in [manuscript/jns](manuscript/jns).  The active
-JNS-targeted successor draft is in
-[manuscript/flagship](manuscript/flagship); it contains the general finite-
-network theorems and keeps the still-conditional biological-control gates
-explicit.  The supporting research design is
+and submission checklist are in [manuscript/jns](manuscript/jns).  The former
+integrated successor draft is retained in
+[manuscript/flagship](manuscript/flagship) as a research ledger, not as a
+submission manuscript.  Its active descendants are split by proof spine:
+
+- [network-root-transfer](manuscript/network-root-transfer), the first
+  publication target;
+- [pulse-threshold](manuscript/pulse-threshold), the still-open model-specific
+  stable-sheet program;
+- [rfde-methods-notes](manuscript/rfde-methods-notes), whose independent
+  novelty remains to be established.
+
+The workspace, branch, and eventual public-release policy is recorded in
+[manuscript/README.md](manuscript/README.md).  The supporting integrated
+research design remains in
 [docs/flagship-research-design.md](docs/flagship-research-design.md).
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
