@@ -21,6 +21,9 @@ upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag
 `paper-a-before-hidden-response-refocus`.
 
+The acceptance criteria, theorem labels, proof locations, and exact scope
+boundaries are indexed in [`CLAIM-MAP.md`](CLAIM-MAP.md).
+
 Build with:
 
 ```bash
