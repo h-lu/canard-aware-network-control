@@ -24,6 +24,11 @@ pre-refocus source is preserved by the Git tag
 The acceptance criteria, theorem labels, proof locations, and exact scope
 boundaries are indexed in [`CLAIM-MAP.md`](CLAIM-MAP.md).
 
+The current proof-strengthened build is 44 pages.  It includes the reusable
+uniform range-to-root theorem, the complete special-flow history-graph proof,
+and the exact six-part finite-section gap bridge; these are theorem-level
+arguments rather than formal coefficient calculations.
+
 Build with:
 
 ```bash
