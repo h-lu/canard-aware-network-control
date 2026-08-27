@@ -5,17 +5,21 @@ in heterogeneous finite retarded networks.  It is independent of the physical
 pulse-threshold program in `../pulse-threshold/`.  The integrated source draft
 remains frozen in `../flagship/` as a provenance ledger.
 
-The principal theorem is the heterogeneous shared-resource result: for a
-common Dobrushin gap, fixed delay support, an atomwise row-neutral structural
-direction, and one canonical preparation datum fixed across the family, it
-constructs a unique local selected complete-history root with a nonzero
-response coefficient uniform in network size.  The exact finite-parameter
-root is not claimed to be preparation independent or to be a physical outer
-canard.
+The principal theorem concerns a projection-invisible perturbation of a
+heterogeneous shared-resource network.  Atomwise stationary-row neutrality
+makes the projected RFDE right-hand side identical at every full history, yet
+the selected complete-history root moves through a transverse-resolvent and
+curvature-return mechanism.  The manuscript proves a network-size-uniform
+response expansion, classifies zero leading-response directions, gives a robust
+non-synchrony witness with an asynchronous root orbit, and shows that the
+leading response increment is shared by any two fixed canonical
+preparations.
 
-Supporting results give a complete-line transverse inverse for the leaky
-network and an exact upper-triangular transfer of any supplied scalar simple
-Lin root.  The leaky scalar root itself is not constructed in this paper.
+The exact finite-parameter baseline root is not claimed to be preparation
+independent or to be a physical outer canard.  The former leaky-network and
+upper-triangular Lin-transfer companion has been removed from this paper; the
+pre-refocus source is preserved by the Git tag
+`paper-a-before-hidden-response-refocus`.
 
 Build with:
 

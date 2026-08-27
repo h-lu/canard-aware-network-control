@@ -1,8 +1,8 @@
 \documentclass[11pt]{article}
 \input{preamble}
 
-\newcommand{\papertitle}{Selected Complete-History Roots in Heterogeneous
-Retarded Networks: Uniform Existence and Structural Response}
+\newcommand{\papertitle}{Projection-Invisible Response of Selected
+Complete-History Roots in Heterogeneous Shared-Resource Delay Networks}
 
 \title{\papertitle}
 \author{Haibo Lu\\
@@ -11,49 +11,56 @@ Retarded Networks: Uniform Existence and Structural Response}
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={Selected Complete-History Roots in Heterogeneous Retarded Networks: Uniform Existence and Structural Response},
+  pdftitle={Projection-Invisible Response of Selected Complete-History Roots in Heterogeneous Shared-Resource Delay Networks},
   pdfauthor={Haibo Lu},
-  pdfsubject={Selected history roots in finite retarded Dobrushin networks},
-  pdfkeywords={canard matching, retarded functional differential equation,
-    Dobrushin network, Lin method, complete-history root}
+  pdfsubject={Projection-invisible response of selected roots in finite retarded networks},
+  pdfkeywords={complete-history root, projection non-identifiability,
+    retarded functional differential equation, Dobrushin network,
+    transverse response}
 }
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Near a fold of a retarded equation, equality of present states does not imply
-equality of the histories seen by the delayed vector field.  We therefore
-select attracting and repelling one-sided traces on a common invariant
-history graph and call a parameter value a complete-history root when those
-traces agree on a fixed phase section.
+A stationary projection can erase a perturbation of a delayed network at
+every full history without erasing its effect on a complete-history matching
+problem.  We prove this phenomenon for a shared-resource RFDE on finite
+directed Markov networks.  At a fold, attracting and repelling one-sided
+traces are selected on one invariant history graph; a complete-history root
+is the parameter at which the two histories, rather than only their present
+states, agree on a phase section.
 
-For a shared-resource family on finite directed Markov networks, we prove
-existence and local uniqueness of this root with constants independent of
-network size.  The hypotheses are a common Dobrushin gap, fixed delay
-support, uniformly bounded heterogeneous curvatures, and a canonical trace
-preparation fixed across the network family.  Under an atomwise
-stationary-row-neutral redistribution of the delayed layers, the root has an
-explicit nonzero leading response and a quadratic remainder uniform in
-network size.  The direct collective response cancels: the perturbation first
-creates a transverse displacement through the Markov resolvent, and
-heterogeneous curvature then returns that displacement to the scalar matching
-gap.  An explicit family with pairwise distinct curvatures shows that this
-mechanism does not arise from a nontrivial synchrony quotient.
+For atomwise stationary-row-neutral changes of the delayed layers, the
+stationary-projected vector-field functional is exactly independent of the
+structural parameter.  Nevertheless, we construct a locally unique selected
+root and prove
+\[
+ \mu^{\rm can}_{c,N}(\delta,\zeta)
+ -\mu^{\rm can}_{c,N}(\delta,0)
+ =\mathscr C_N\delta^3\zeta
+  +O(\delta^4|\zeta|+\delta^3\zeta^2),
+\]
+with constants independent of network size.  The perturbation creates a
+transverse displacement through the Markov resolvent, and heterogeneous
+curvature returns it to the scalar matching gap.
 
-A companion result gives network-size-independent transverse decay and a
-causal complete-line Green bound for a leaky delayed FitzHugh--Nagumo
-network.  A bounded upper-triangular row reduction then transfers any
-supplied scalar simple Lin root through delayed layers that need not share a
-left stationary measure.  The constructed shared-resource root is selected
-by the fixed canonical preparation; it is not identified here with a
-preparation-independent physical canard, and the companion scalar root is
-not constructed.
+For each fixed network, nonzero leading-response directions are the complement
+of a codimension-one hyperplane precisely when node curvatures are heterogeneous;
+a pure delay-redistribution witness reduces the coefficient to a stationary
+curvature variance.  An explicit family has a response bounded away from zero
+on a dimension-uniform neighborhood, no nontrivial synchrony polydiagonal,
+and a quantitatively asynchronous root orbit.  The leading response increment
+is the same for any two fixed canonical preparations, although their baseline
+roots need not agree.  Thus the result is a projection non-identifiability
+theorem for a selected complete-history object, not a claim of preparation-
+independent canard selection.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
-canard matching; retarded functional differential equation; finite network;
-Dobrushin contraction; Lin method; complete-history root
+complete-history root; projection non-identifiability; retarded functional
+differential equation; finite network; Dobrushin contraction; transverse
+response
 
 \medskip
 \noindent\textbf{Mathematics Subject Classification (2020).}
@@ -78,10 +85,10 @@ mathematical claim and for the final manuscript.
 \paragraph{Funding.} No funding was received for conducting this study.
 \paragraph{Competing interests.} The author has no relevant financial or
 non-financial interests to disclose.
-\paragraph{Data and code availability.} Development sources are currently
-maintained in a private research repository.  A paper-specific public archive,
-including an immutable version and exact verification instructions, will be
-released before submission.
+\paragraph{Data and code availability.} Development sources, figure code,
+and build instructions are publicly available at
+\url{https://github.com/h-lu/canard-aware-network-control}.  A paper-specific
+immutable archive will be released before submission.
 
 \begingroup
 \small

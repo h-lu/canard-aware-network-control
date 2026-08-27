@@ -1,212 +1,9 @@
-\section{Network classes and main results}\label{sec:model-results}
+\section{Shared-resource networks and main results}\label{sec:model-results}
 
-\subsection{Scalar leaky-recovery RFDE}
+\subsection{Network class and fold scaling}
 
-Let \(r=5\sqrt5\), \((\tau_0,\tau_1)=(4\sqrt5,5\sqrt5)\), and
-\(H(v)=(v-1)^3\).  The autonomous scalar model is
-\begin{align}
- \dot v={}&v-\frac{v^3}{3}-w
- +\eps\kappa_1\left\{\frac{v(t-\tau_0)+v(t-\tau_1)}2-v(t)\right\}
- \notag\\
- &+\eps\kappa_3\left\{
- \frac{H(v(t-\tau_0))+H(v(t-\tau_1))}{2}-H(v(t))\right\},\label{eq:scalar-v}\\
- \dot w={}&\eps(v-a-w).\label{eq:scalar-w}
-\end{align}
-The validated center is
-\begin{equation}
- \eps=\frac15,\qquad a=\frac14,\qquad
- \kappa_1=\frac1{250},\qquad \kappa_3=\frac1{200}.       \label{eq:center}
-\end{equation}
-The full phase space is
-\(X=C([-r,0],\R^2)\).  Because the recovery equation has no delayed recovery
-slot, the positive-time semiflow factors through
-\begin{equation}
- Y=C([-r,0],\R)\times\R,\qquad
- \Pi_Y(\phi_v,\phi_w)=(\phi_v,\phi_w(0)).               \label{eq:reduced-space}
-\end{equation}
-This reduction preserves every nonzero Floquet multiplier and pulls stable
-sets back exactly; an obsolete recovery history is not an additional
-crossing coordinate.
-
-\subsection{Finite row-mass Dobrushin networks}
-
-For a finite network let \(Q,B_0,B_1\in\R^{N\times N}\) be nonnegative
-matrices and let \(\pi\) be any stationary probability vector satisfying
-\begin{equation}
- Q\mathbf1=\mathbf1,\quad \pi^TQ=\pi^T,\quad
- \pi^T\mathbf1=1,\quad
- \tau(Q)\le\frac12,\qquad
- B_j\mathbf1=\frac12\mathbf1.                           \label{eq:row-mass-network}
-\end{equation}
-Here \(\tau(Q)\) is the Dobrushin coefficient.  Zero entries of \(\pi\)
-are allowed, and no lower bound on \(\pi_{\min}\) enters the estimates.
-The row-mass identities preserve the collective line
-\(\Span\{\mathbf1\}\), but \(\Ker\pi^T\) need not be invariant under the
-delayed layers: no identity \(\pi^TB_j=\frac12\pi^T\) is assumed.
-Collective/quotient coordinates therefore produce an upper-triangular
-operator.  The former balanced direct sum is the special case
-\[
- \delta_B=0,\qquad
- \delta_B:=\delta_0+\delta_1,\qquad
- \delta_j:=\frac12\norm{\pi^TB_j-\tfrac12\pi^T}_1,
- \qquad 0\le\delta_B\le1.
-\]
-
-The finite leaky network to which the estimates below apply is, with
-\(f(s)=s-s^3/3\) and both \(f\) and \(H\) acting componentwise,
-\begin{align}
- \dot v(t)={}&f(v(t))-w(t)+3(Q-\Id)v(t)\notag\\
- &+\eps\kappa_1\{B_0v(t-\tau_0)+B_1v(t-\tau_1)-v(t)\}\notag\\
- &+\eps\kappa_3\{B_0H(v(t-\tau_0))+B_1H(v(t-\tau_1))-H(v(t))\},
-                                                               \label{eq:leaky-network-v}\\
- \dot w(t)={}&\eps\{v(t)-a\mathbf1-w(t)\}+2(Q-\Id)w(t).
-                                                               \label{eq:leaky-network-w}
-\end{align}
-Here \(v,w\in\R^N\), and all scalar constants are exactly those in
-\cref{eq:center}.  The row-mass identities imply that
-\(v=V\mathbf1\), \(w=W\mathbf1\) is invariant and that its restriction is
-exactly \cref{eq:scalar-v,eq:scalar-w}, including the two half-weighted
-delayed terms.  Thus the constants in the transverse theorem below refer to
-this RFDE, not to an unspecified network realization.
-
-Put \(P_\perp=\Id-\mathbf1\pi^T\) and
-\[
- E_{N,\perp}=\Ker\pi^T\times\Ker\pi^T,
- \qquad
- m_N(x,y)=\max\{\operatorname{diam}x,3\operatorname{diam}y\}.
-\]
-For a complete synchronous trajectory \((V,W)\), the quotient variational
-equation on \(E_{N,\perp}\) is
-\begin{align}
- \dot x_\perp(t)={}&
- \{f'(V(t))-\eps\kappa_1-\eps\kappa_3H'(V(t))\}x_\perp(t)
- +3(Q-\Id)x_\perp(t)-y_\perp(t)\notag\\
- &+\eps\sum_{j=0}^1
- \{\kappa_1+\kappa_3H'(V(t-\tau_j))\}
- P_\perp B_jx_\perp(t-\tau_j),
-                                                        \label{eq:transverse-variational}\\
- \dot y_\perp(t)={}&\eps x_\perp(t)
- +\{2(Q-\Id)-\eps\Id\}y_\perp(t).                    \label{eq:transverse-recovery}
-\end{align}
-The projection on the delayed terms is essential when
-\(\pi^TB_j\ne\tfrac12\pi^T\).  Define
-\(X_{N,1/10}=C([-r,0],E_{N,\perp})\) with the transverse history diameter
-norm
-\begin{equation}
- \norm{\phi}_{1/10}
- =\sup_{-r\le\theta\le0}e^{\theta/10}
-   m_N(\phi_v(\theta),\phi_w(\theta)).                  \label{eq:diameter-norm}
-\end{equation}
-Let \(U_{\perp,N}(t,s)\) denote the evolution family of
-\cref{eq:transverse-variational,eq:transverse-recovery} on this space.  For
-\(F\in C_b(\R,E_{N,\perp})\), set
-\(\norm F_{\perp,\infty}=\sup_t m_N(F_v(t),F_w(t))\).
-Let \(L_{\perp,N}\) be the differential operator obtained by moving the
-right-hand side of
-\cref{eq:transverse-variational,eq:transverse-recovery} to the left, and set
-\begin{align}
- \mathscr Y_{\perp,N}&=C_b(\R,E_{N,\perp}),\notag\\
- \mathscr X_{\perp,N}
- &=\{z\in C_b^1(\R,E_{N,\perp}):
-          L_{\perp,N}z\in\mathscr Y_{\perp,N}\},
-                                                               \label{eq:transverse-operator-spaces}\\
- \norm z_{\mathscr X_{\perp,N}}
- &=\sup_{t\in\R}\norm{z_t}_{1/10}
-   +\norm{L_{\perp,N}z}_{\perp,\infty}.
-\end{align}
-
-\begin{theorem}[Complete-line transverse inverse]\label{thm:transverse}
-Along every complete synchronous leaky trajectory satisfying
-\(\sup_t\abs{V(t)-1}\le5/2\), every network satisfying
-\cref{eq:row-mass-network} admits a unique bounded complete solution of the
-forced transverse equation for every \(F\in C_b(\R,E_{N,\perp})\).  The
-resulting causal Green operator
-\[
- G_{\perp,N}:C_b(\R,E_{N,\perp})
- \longrightarrow\mathscr X_{\perp,N}
-\]
-and the evolution family satisfy
-\begin{align}
- \norm{U_{\perp,N}(t,s)}_{1/10}
- &\le e^{-(t-s)/10},\qquad t\ge s,\notag\\
- \sup_t\norm{(G_{\perp,N}F)_t}_{1/10}
- &\le10\norm F_{\perp,\infty},\qquad
- \norm{G_{\perp,N}}_{\mathscr Y_{\perp,N}
-      \to\mathscr X_{\perp,N}}\le11.                \label{eq:green-bound}
-\end{align}
-The constants are independent of the finite network size and admitted
-topology.
-\end{theorem}
-
-The proof uses a directed Dobrushin--Halanay estimate and a forward pullback
-of zero-history forced solutions.  It never inverts an RFDE semiflow on the
-whole history space.
-
-We separate the algebraic transfer from its leaky realization.  By
-\cref{thm:transverse},
-\(\cL_{\perp,N}:=L_{\perp,N}:\mathscr X_{\perp,N}
-\to\mathscr Y_{\perp,N}\) is an isomorphism with inverse
-\(G_{\perp,N}\); in the graph norm,
-\(\norm{G_{\perp,N}}\le11\).
-
-\begin{corollary}[Abstract upper-triangular root transfer]
-\label{cor:canonical-transfer}
-Let \(\mathscr X_\parallel,\mathscr Y_\parallel\) be Banach spaces, suppose
-\(\cL_\parallel:\mathscr X_\parallel\to\mathscr Y_\parallel\) has
-Fredholm index \(-1\) and one-dimensional cokernel spanned by
-\(\psi\in\mathscr Y_\parallel^*\), normalized by
-\(\psi(e_\parallel)=1\), and let
-\(\Gamma_N\in\mathcal L(\mathscr X_{\perp,N},\mathscr Y_\parallel)\).
-Define the bounded block operator
-\[
- \cL_N:
- \mathscr X_\parallel\oplus\mathscr X_{\perp,N}
- \longrightarrow
- \mathscr Y_\parallel\oplus\mathscr Y_{\perp,N},
- \qquad
- \cL_N=
- \begin{pmatrix}\cL_{\parallel}&\Gamma_N\\0&\cL_{\perp,N}\end{pmatrix}.
-\]
-Let \(g_\parallel(\nu)\in\mathscr Y_\parallel\) define
-\(d(\nu)=\psi(g_\parallel(\nu))\), and assume that \(d\) has a simple root
-\(d(\nu_c)=0\).  Then
-\begin{equation}
- T_N\cL_N=\cL_{\parallel}\oplus\cL_{\perp,N},           \label{eq:lin-sum}
-\end{equation}
-where
-\[
- T_N(y_\parallel,y_\perp)
- =\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp,y_\perp\bigr).
-\]
-The full cokernel functional, normalized by
-\(e_N=(e_\parallel,0)\), is
-\begin{equation}
- \Psi_N(y_\parallel,y_\perp)
- =\psi\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp\bigr). \label{eq:full-cokernel}
-\end{equation}
-For the collective residual \((g_\parallel(\nu),0)\), one has
-\(\Psi_N(g_\parallel(\nu),0)=d(\nu)\).  Hence
-\(\cL_N\) has the same Fredholm index as \(\cL_\parallel\), while
-\(d_N(\nu)=d(\nu)\) has the same root, slope, and orientation as the scalar
-gap.
-\end{corollary}
-
-For a fixed scalar phase, endpoint, parameter, and gap realization, the leaky
-network has precisely this block form, with all scalar data lifted
-collectively and
-\[
- \norm{\Gamma_NG_{\perp,N}}
- \le\frac{391}{2000}\delta_B.
-\]
-Thus \cref{thm:transverse} verifies the network block of the corollary.  The
-result remains conditional on the scalar phase-fixed complete-history root
-and the declared collective preparation.  The scalar leaky root itself and
-an invariant asynchronous voltage strip are separate open problems.
-
-\subsection{Shared-resource networks without a synchrony quotient}
-
-We next state a separate network result whose node fields are heterogeneous
-and whose slow recovery variable is shared.  For each \(N\ge2\), let
+We consider a shared-resource RFDE whose node fields are heterogeneous and
+whose slow recovery variable is shared.  For each \(N\ge2\), let
 \(P_N\ge0\) be row stochastic and let \(\pi_N\) be a strictly positive
 stationary probability vector.  For fixed \(D,\gamma>0\), assume
 \begin{equation}
@@ -259,10 +56,56 @@ where \(v\in\R^N\), \(w\in\R\), and the powers and products are
 componentwise.  Its collective fold is
 \((v,w,a)=(\mathbf1,2/3,1)\).  Write
 \begin{equation}
- a=1+\delta^2\nu,\qquad \mu=a-1=\delta^2\nu,\qquad
- \dot M_{1,N}=\sum_{k=0}^m\theta_kR_{k,N},             \label{eq:shared-parameters}
+ \begin{gathered}
+  a=1+\delta^2\nu,\qquad \mu=a-1=\delta^2\nu,\\
+  M_{1,N}(\zeta)=\sum_{k=0}^m\theta_kB_{k,N}(\zeta),\qquad
+  \dot M_{1,N}:=\partial_\zeta M_{1,N}(0)
+  =\sum_{k=0}^m\theta_kR_{k,N}.
+ \end{gathered}                                       \label{eq:shared-parameters}
 \end{equation}
-and define
+For fixed \(\delta\), let
+\[
+ \mathcal H_{N,\delta}
+ =C([-\theta_m/\delta,0];\R^N)\times\R
+\]
+be the phase space and denote the right-hand side of
+\cref{eq:shared-rfde-v,eq:shared-rfde-w} by
+\(\mathcal F_{N,\delta,\nu,\zeta}:\mathcal H_{N,\delta}
+\to\R^N\times\R\).  The stationary output projection is
+\[
+ \Pi_N(x,y)=(\pi_N^Tx,y).
+\]
+
+\begin{proposition}[Exact stationary-projection blindness]
+\label[proposition]{prop:projection-blindness}
+For every full history
+\(\Phi=(\phi,\omega)\in\mathcal H_{N,\delta}\) and every admitted parameter
+value,
+\begin{equation}
+ \Pi_N\mathcal F_{N,\delta,\nu,\zeta}(\Phi)
+ =\Pi_N\mathcal F_{N,\delta,\nu,0}(\Phi).              \label{eq:projection-blindness}
+\end{equation}
+Equivalently,
+\(\partial_\zeta(\Pi_N\mathcal F_{N,\delta,\nu,\zeta})=0\)
+as an identity of maps on the full history space.
+\end{proposition}
+
+\begin{proof}
+The \(\zeta\)-dependent part of the voltage field is
+\[
+ \delta^2K\sum_{k=0}^mR_{k,N}
+ \{\phi(0)-\phi(-\theta_k/\delta)\}.
+\]
+Left multiplication by \(\pi_N^T\) annihilates every summand by
+\cref{eq:shared-layer-bounds}; the resource equation has no \(\zeta\)-term.
+\end{proof}
+
+\Cref{eq:projection-blindness} compares the projected right-hand side at the
+same full vector history.  It does not close an autonomous equation for
+\(\pi_N^T v\): heterogeneous nonlinearities can return a transverse history
+to the stationary output.
+
+Define
 \begin{align}
  g_N&=A_N^{-1}P_{\perp,N}c_N,\notag\\
  \kappa_N&=\frac\beta3+2\pi_N^T\diag(c_N)g_N,\qquad
@@ -270,6 +113,17 @@ and define
  r_N&=\frac{K}{2\alpha}\pi_N^T\diag(c_N)
  A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.            \label{eq:shared-rn}
 \end{align}
+For a row-neutral delay direction
+\(\mathbf R=(R_0,\ldots,R_m)\), put
+\begin{equation}
+ \Lambda_N(\mathbf R)
+ =-\frac{K}{2\alpha^2}\pi_N^T\diag(c_N)
+ A_N^{-1}P_{\perp,N}
+ \left(\sum_{k=0}^m\theta_kR_k\right)\mathbf1.
+                                                               \label{eq:response-functional}
+\end{equation}
+Thus the direction appearing in \cref{eq:shared-layers} has
+\(\mathscr C_N=\Lambda_N(\mathbf R_N)=-r_N/\alpha\).
 
 We now fix the selection entering the theorem.  In the fold chart
 \[
@@ -284,45 +138,65 @@ the singular critical field is
                     \frac{s^2-2}{4\alpha}\right).
 \]
 
-\begin{definition}[Canonical preparation datum]\label{def:canonical-preparation}
-Fix \(p>4\), sufficiently large for the finite tame losses below, and
-\(B>2\Theta_*+2\).  A canonical preparation datum
+\begin{definition}[Admissible canonical preparation datum]
+\label[definition]{def:canonical-preparation}
+Put
 \[
- \mathbf p_{\rm can}
- =(p,B,\chi_{\rm graph},\chi_{\rm plan},
-   \sigma_h,\mathcal E_{\rm nor},h_*)
+ \chi=-2\alpha X,\qquad
+ d=Y-\alpha X^2+\frac1{2\alpha},
 \]
-consists of fixed graph-cutoff profiles, a planar joining cutoff, a
-componentwise stable saturation, a degree-three normal extension operator,
-and a common stable radius.  These objects and their required derivatives
-through order twelve are fixed once and for all.
-
-For each \(N\ge2\) and target \(0<\delta<1\), put
+and denote the inverse coordinate map by \(\Gamma(\chi,d)\).  Fix
+\(p>4\), \(B>2\Theta_*+2\), \(0<\kappa<1\), and positive constants
+\(h_*,C_{\rm prep},c_{\rm prep}\), \(M_{\rm prep}\in\mathbb N\), and
 \[
- S_\delta=\sqrt{2p\log(1/\delta)},\qquad R_\delta=S_\delta+B.
+ 0<b_0<\min\left\{1,\frac{B-2\Theta_*-2}{4}\right\}.
 \]
-The datum generates a target-frozen preparation
-\(\mathcal P^{\rm can}_{N,\delta}\).  It depends on \(N\) through the
-physical coefficients, \(P_{\perp,N}\), \(A_N\), and \(g_N\), and on
-\(\delta\) through \(S_\delta\) and \(R_\delta\), but its cutoff operators
-are independent of \((\nu,\zeta)\).  Parameter derivatives are always taken
-with the target-\(\delta\) preparation held fixed.
-
-Let \(\mathcal U^{\rm pl}_{\rm ret}(\delta)\) be the shrinking planar
-tubular neighborhood of
-\(\gamma_0([-S_\delta-1,S_\delta+1])\), and let
-\[
+For each \(0<\delta<1\), set
+\begin{align*}
+ S_\delta&=\sqrt{2p\log(1/\delta)},&
+ R_\delta&=S_\delta+B,\\
+ \mathcal U^{\rm pl}_{\rm ret}(\delta)
+ &=\{\Gamma(\chi,d):|\chi|<S_\delta+1,
+                       |d|<\delta^\kappa\},\\
  \mathfrak H^{[2]}_\delta
- =\{\Phi_{q_0}^{-t}u:
+ &=\{\Phi_{q_0}^{-t}u:
        u\in\mathcal U^{\rm pl}_{\rm ret}(\delta),\
        0\le t\le2\Theta_*\}.
-\]
-The graph preparation agrees with the transformed physical RFDE on an open
-fixed-buffer neighborhood of this continuous depth-two flow hull for every
-current and delayed stable slot with \(\|h\|_N\le h_*\).  The planar
-preparation agrees with the exact reduced graph field on the retained tube
-and equals \(q_0\) near \(\gamma_0(\pm R_\delta)\).  The selected traces
-satisfy
+\end{align*}
+
+An admissible canonical preparation datum \(\mathbf p_{\rm can}\) is a pair
+of fixed, parameter-independent extension rules
+\((\mathfrak P_{\rm gr},\mathfrak P_{\rm pl})\), together with the constants
+above, satisfying the following properties for every \(N\) and target
+\(\delta\).
+
+First, \(\mathfrak P_{\rm gr}\) maps the exact chart field
+\cref{eq:shared-exact-X,eq:shared-exact-h} to a globally bounded
+\(C^{12}\) field with complete planar flow.  It is exactly the physical
+chart field on the open \(b_0\)-neighborhood of
+\(\mathfrak H^{[2]}_\delta\), for all current and delayed stable slots with
+\(\|h\|_N<h_*\).  On its range, all state derivatives and the mixed
+\((\rho,\nu,\zeta)\)-derivatives used below,
+\begin{equation}
+ D_u^a\partial_\rho^b\partial_\nu^i\partial_\zeta^j,
+ \qquad a+b+i+j\le12,\qquad b\le3,\qquad i\le2,\qquad j\le2,
+                                                               \label{eq:preparation-derivative-list}
+\end{equation}
+are bounded in the product norms by
+\(C_{\rm prep}\langle R_\delta\rangle^{M_{\rm prep}}
+e^{c_{\rm prep}R_\delta}\).  Here \(\rho\) is the dummy chart amplitude
+introduced in the graph proof.  The rule uses the same scalar cutoff and
+stable-saturation profiles for every \(N\), applies the saturation
+componentwise followed by \(P_{\perp,N}\), and is independent of
+\((\nu,\zeta)\).
+
+Second, after the invariant graph has been constructed,
+\(\mathfrak P_{\rm pl}\) maps its exact reduced field to a globally bounded,
+globally Lipschitz \(C^{12}\) planar field.  It agrees with that reduced
+field on \(\mathcal U^{\rm pl}_{\rm ret}(\delta)\), equals \(q_0\) on the
+\(b_0\)-balls about \(\gamma_0(\pm R_\delta)\), and obeys the same derivative
+bound.  Both extension rules are held fixed when parameter derivatives are
+taken.  The selected traces are the solutions with
 \[
  \mathscr H_\alpha(z^{a,\rm can}_N(-R_\delta))=0,
  \quad
@@ -331,6 +205,51 @@ satisfy
  X^{a,\rm can}_N(0)=X^{r,\rm can}_N(0)=0.
 \]
 \end{definition}
+
+\begin{lemma}[Existence of admissible preparations]
+\label[lemma]{lem:preparation-existence}
+For every choice of \(p,B,\kappa,b_0,h_*\) satisfying
+\cref{def:canonical-preparation}, admissible extension rules exist after
+choosing \(C_{\rm prep},c_{\rm prep},M_{\rm prep}\) sufficiently large.
+\end{lemma}
+
+\begin{proof}
+Choose a fixed scalar plateau \(\eta\in C^\infty(\R;[0,1])\), equal to one
+on \([-1,1]\) and zero off \((-2,2)\), and a fixed smooth saturation
+\(s_{h_*}:\R\to[-2h_*,2h_*]\) equal to the identity on
+\([-h_*,h_*]\).  Apply \(s_{h_*}\) componentwise to every stable slot and
+then apply \(P_{\perp,N}\).  The product estimate
+\cref{eq:shared-products} makes all derivatives of this operation
+dimension independent.
+
+In the \((\chi,d)\)-coordinates, the closure of
+\(\mathfrak H^{[2]}_\delta\) is compact.  The singular flow is taken only for
+\(0\le t\le2\Theta_*\); its variational equations on
+\(|\chi|\le S_\delta+1\), \(|d|\le\delta^\kappa\) have derivatives bounded by
+\begin{equation}
+ C\langle R_\delta\rangle^M e^{cR_\delta}.             \label{eq:preparation-flow-bound}
+\end{equation}
+Smooth plateau functions, obtained from \(\eta\) in finitely many flow-box
+charts, can therefore be chosen equal to one on the \(b_0\)-neighborhood of
+that hull and supported in its \(2b_0\)-neighborhood, with the same type of
+derivative bound.  Multiplying the exact polynomial chart field by these
+plateaus after the stable saturation gives a globally bounded \(C^{12}\)
+graph preparation which agrees with the physical field on the required set.
+The construction uses only the target \(\delta\), not \((\nu,\zeta)\).
+
+The inequality imposed on \(b_0\) separates the retained tube, its depth-two
+backtracks, and the two endpoint balls.  A smooth partition of unity in
+\((\chi,d)\) can therefore blend the exact reduced graph field on the
+retained tube with \(q_0\) on those balls and with a bounded cutoff field
+outside.  Extending the finite normal Taylor jet before blending preserves
+the required derivatives across the joins.  Repeated chain rules, the
+polynomial form of \cref{eq:shared-exact-X,eq:shared-exact-h}, and
+\cref{eq:preparation-flow-bound} give the majorant in
+\cref{def:canonical-preparation} after increasing its three constants.  The
+resulting planar field is globally bounded and Lipschitz, hence complete.
+The scalar plateaus, saturation, and partition rule are the same for all
+\(N\), completing the construction.
+\end{proof}
 
 The normalized central gap of these traces is
 \begin{align}
@@ -346,19 +265,17 @@ The normalized central gap of these traces is
 On the retained graph, a zero of \(\mathscr D^{\rm can}_N\) is
 equivalent to equality of the two selected complete RFDE histories.
 
-\begin{theorem}[Main theorem: shared-resource network response]
+\begin{theorem}[Uniform complete-history root and hidden response]
 \label{thm:shared-resource}
 Assume \cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds}
-with all displayed bounds common in \(N\), and assume
-\begin{equation}
- \inf_{N\ge2}\abs{r_N}>0.                              \label{eq:shared-nondegeneracy}
-\end{equation}
-Fix a compact interval \(I_\nu\) containing every \(\nu_{0,N}\) in its
+with all displayed bounds common in \(N\).  Fix a compact interval
+\(I_\nu\) containing every \(\nu_{0,N}\) in its
 interior with one common positive boundary distance, and one canonical
 preparation datum \(\mathbf p_{\rm can}\) as in
 \cref{def:canonical-preparation}.  Then there
 exist \(\delta_0,\zeta_0,c_0,C>0\), depending only on the common model
-bounds, that boundary distance, and \(\mathbf p_{\rm can}\), but independent
+bounds, \(I_\nu\), its stated boundary distance, and
+\(\mathbf p_{\rm can}\), but independent
 of \(N\), such that for every \(N\ge2\), every
 \(0<\delta<\delta_0\), and every \(\abs\zeta<\zeta_0\), the gap
 \(\mathscr D^{\rm can}_N/\delta\) has exactly one root in the local window
@@ -370,7 +287,8 @@ of \(N\), such that for every \(N\ge2\), every
 \end{equation}
 No assertion is made here about additional zeros elsewhere in \(I_\nu\).
 The selected attracting and repelling complete histories agree at this
-root.  With
+root.  The map \(\zeta\mapsto\nu^{\rm can}_{c,N}(\delta,\zeta)\) is
+twice continuously differentiable on the common parameter box.  With
 \(\mu^{\rm can}_{c,N}=\delta^2\nu^{\rm can}_{c,N}\),
 \begin{align}
  &\left|\mu^{\rm can}_{c,N}(\delta,\zeta)
@@ -378,17 +296,119 @@ root.  With
        -\mathscr C_N\delta^3\zeta\right|
  \le C\{\delta^4\abs\zeta+\delta^3\zeta^2\},        \label{eq:shared-response}\\
  &\mathscr C_N=-\frac{r_N}{\alpha}
- =-\frac{K}{2\alpha^2}\pi_N^T\diag(c_N)
- A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.             \label{eq:shared-coeff}
+ =\Lambda_N(\mathbf R_N).                              \label{eq:shared-coeff}
 \end{align}
-In particular,
-\(\inf_N\abs{\mathscr C_N}>0\).  The exact finite-\(\delta\) root is the
-object selected by \(\mathbf p_{\rm can}\).  No uniform comparison with
-other graph preparations is asserted.
+At \(\zeta=0\),
+\begin{equation}
+ \left|\delta^{-3}\partial_\zeta
+ \mu^{\rm can}_{c,N}(\delta,0)-\mathscr C_N\right|
+ \le C\delta.                                          \label{eq:shared-response-derivative}
+\end{equation}
+Consequently, if \(c_*:=\inf_N|\mathscr C_N|>0\), then, after decreasing
+\(\delta_0\),
+\(|\partial_\zeta\mu^{\rm can}_{c,N}(\delta,0)|
+\ge(c_*/2)\delta^3\) for every \(N\).  The exact finite-\(\delta\) root is
+the object selected by \(\mathbf p_{\rm can}\).
 \end{theorem}
 
+\begin{corollary}[Projection non-identifiability]
+\label[corollary]{cor:projection-nonidentifiability}
+Suppose \(c_*=\inf_N|\mathscr C_N|>0\).  There are common
+\(\widehat\delta,\widehat\zeta>0\) such that, whenever
+\(0<\delta<\widehat\delta\) and
+\(0<|\zeta|<\widehat\zeta\),
+\begin{equation}
+ \operatorname{sgn}(\mathscr C_N\zeta)
+ \{\mu^{\rm can}_{c,N}(\delta,\zeta)
+       -\mu^{\rm can}_{c,N}(\delta,0)\}
+ \ge\frac{c_*}{2}\delta^3|\zeta|                     \label{eq:root-separation}
+\end{equation}
+for every \(N\).  For every common \(\nu\), the two \(\nu\)-parametrized
+systems have exactly the same stationary-projected vector-field functional by
+\cref{prop:projection-blindness}, while the roots of their matching problems
+differ.  In particular, no rule whose only input is the projected functional
+family
+\(\nu\mapsto\Pi_N\mathcal F_{N,\delta,\nu,\zeta}\) can determine the selected
+root throughout this class.
+\end{corollary}
+
+\begin{theorem}[Classification of leading hidden-response directions]
+\label{thm:response-directions}
+For fixed \(N\), define
+\begin{align*}
+ \mathfrak T_N^{\rm sr}
+ &=\{\mathbf R=(R_0,\ldots,R_m),\ R_k\in\R^{N\times N}:
+       \pi_N^TR_k=0
+       \text{ for every }k\},\\
+ \mathfrak T_N^{\rm red}
+ &=\{\mathbf R\in\mathfrak T_N^{\rm sr}:\textstyle\sum_kR_k=0\},
+ \qquad
+ \|\mathbf R\|_{\mathfrak T_N}=\sum_k
+ \|R_k\|_{\mathcal L(\R^N,\|\cdot\|_N)}.
+\end{align*}
+The functional \(\Lambda_N\) in \cref{eq:response-functional} is bounded,
+with the network-size-independent estimate
+\begin{equation}
+ |\Lambda_N(\mathbf R)|
+ \le \frac{|K|c_+\Theta_*}{2\alpha^2D\gamma}
+       \|\mathbf R\|_{\mathfrak T_N}.                 \label{eq:response-functional-bound}
+\end{equation}
+If at least one delay location is positive, the restriction of \(\Lambda_N\)
+to \(\mathfrak T_N^{\rm sr}\) is nonzero if and only if
+\(c_N\ne\alpha\mathbf1\).  If two delay locations are distinct, the same
+equivalence holds on the pure-redistribution space
+\(\mathfrak T_N^{\rm red}\).  Whenever the restriction is nonzero, its
+zero set is a closed codimension-one hyperplane, so the nonzero-response
+directions are open and dense in the corresponding finite-dimensional
+direction space.
+
+More explicitly, for distinct \(\theta_j,\theta_\ell\), set
+\(z_N=c_N-\alpha\mathbf1\), \(u_N=A_Nz_N\), and
+\begin{equation}
+ R_j=\frac{u_N\pi_N^T}{\theta_j-\theta_\ell},\qquad
+ R_\ell=-R_j,\qquad R_k=0\quad(k\notin\{j,\ell\}).  \label{eq:variance-witness}
+\end{equation}
+Then \(\mathbf R\in\mathfrak T_N^{\rm red}\) and
+\begin{equation}
+ \Lambda_N(\mathbf R)
+ =-\frac{K}{2\alpha^2}
+   \left\{\pi_N^T(c_N^{\circ2})-\alpha^2\right\}.    \label{eq:variance-response}
+\end{equation}
+Hence heterogeneity, measured by the stationary weighted variance of the
+node curvatures, is exactly the obstruction to a nonzero leading-order
+projection-invisible response in this tangent class.
+\end{theorem}
+
+\begin{corollary}[Leading response is preparation universal]
+\label[corollary]{cor:preparation-universality}
+Fix two canonical preparation data \(\mathbf p_1,\mathbf p_2\) satisfying
+\cref{def:canonical-preparation}, and let
+\(\mu^{(j)}_{c,N}\) be their selected roots.  On a common parameter box,
+with a constant independent of \(N\),
+\begin{align}
+ &\left|\{\mu^{(1)}_{c,N}(\delta,\zeta)
+             -\mu^{(1)}_{c,N}(\delta,0)\}
+          -\{\mu^{(2)}_{c,N}(\delta,\zeta)
+             -\mu^{(2)}_{c,N}(\delta,0)\}\right|\notag\\
+ &\hspace{35mm}\le
+ C_{12}\{\delta^4|\zeta|+\delta^3\zeta^2\}.          \label{eq:preparation-comparison}
+\end{align}
+In particular, for \(\zeta\ne0\), each normalized response differs from the
+same physical coefficient \(\mathscr C_N\):
+\begin{equation}
+ \left|\frac{\mu^{(j)}_{c,N}(\delta,\zeta)
+                 -\mu^{(j)}_{c,N}(\delta,0)}{\delta^3\zeta}
+       -\mathscr C_N\right|
+ \le C_{12}(\delta+|\zeta|),\qquad j=1,2.              \label{eq:normalized-preparation-response}
+\end{equation}
+Here \(C_{12}\) may depend on the two fixed preparation data but is
+independent of \(N\).  This compares response
+increments from the two preparation-specific baselines; it does not assert
+equality of the two finite-\(\delta\) baseline roots.
+\end{corollary}
+
 The nondegeneracy class is nonempty without a hidden synchrony quotient.
-Indeed, take \(\pi_N=N^{-1}\mathbf1\), \(P_N=P_{c,N}\), and
+Take \(\pi_N=N^{-1}\mathbf1\), \(P_N=P_{c,N}\), and
 \[
  s_{i,N}=\frac{\sqrt3(2i-N-1)}{\sqrt{(N-1)(N+1)}},
  \qquad c_N=\mathbf1+\sigma s_N,\qquad 0<\sigma<1/\sqrt3.
@@ -414,9 +434,49 @@ The layers remain entrywise positive for
 for every \(N\ge2\).  The distinct curvatures destroy every nontrivial
 synchrony polydiagonal.
 
-This instance proves that the general root mechanism is not merely an
-arbitrary-size replication of a two-module quotient.  It does not cover
-moving delay atoms, arbitrary perturbations of the base topology, or graph
-families whose mixing gap closes, and it does not identify the
-canonically selected root with an independently selected physical outer
-canard.
+\begin{corollary}[Robust response coefficient and an asynchronous witness orbit]
+\label[corollary]{cor:robust-asynchronous}
+Let \(\mathbf R_N^*\) denote the two-layer direction above, put
+\(\Delta\theta=\theta_1-\theta_0\), and define
+\begin{equation}
+ \rho_*=\frac{\sigma\Delta\theta}
+ {2(1+\sigma\sqrt3)\theta_1}.                          \label{eq:robust-radius}
+\end{equation}
+Every sequence \(\widetilde{\mathbf R}_N\in\mathfrak T_N^{\rm sr}\)
+satisfying
+\[
+ \sup_{N\ge2}\|\widetilde{\mathbf R}_N-\mathbf R_N^*\|_{\mathfrak T_N}
+ <\rho_*
+\]
+has
+\begin{equation}
+ \inf_{N\ge2}|\Lambda_N(\widetilde{\mathbf R}_N)|
+ \ge\frac{|K|\sigma\Delta\theta}{4D}.                 \label{eq:robust-response}
+\end{equation}
+The constants in \cref{thm:shared-resource} may be chosen uniformly over this
+ball, because it supplies one common operator bound.  This operator-norm ball
+need not preserve entrywise positivity of the perturbed layers; positivity is
+not an assumption of \cref{thm:shared-resource}.
+
+For the reference direction \(\mathbf R_N^*\), let
+\(v^{\rm can}_{c,N}\) be the voltage component of the matched selected root
+orbit.  Uniformly in \(N\) and in the common \(\zeta\)-interval,
+\begin{equation}
+ \left\|\delta^{-2}P_{\perp,N}
+ v^{\rm can}_{c,N}(-\delta^{-1})
+       +\frac{\sigma}{4D}s_N\right\|_N\le C_a\delta.  \label{eq:asynchronous-profile}
+\end{equation}
+After decreasing \(\delta_0\), this gives the genuine asynchronous lower
+bound
+\begin{equation}
+ \osc\!\left(P_{\perp,N}v^{\rm can}_{c,N}(-\delta^{-1})\right)
+ \ge\frac{\sigma}{4D}\delta^2                         \label{eq:asynchronous-lower}
+\end{equation}
+for every \(N\ge2\).  The response is therefore both robust in the
+dimension-uniform direction norm and realized on a root orbit outside the
+collective subspace.
+\end{corollary}
+
+This instance is not an arbitrary-size replication of a lower-dimensional
+quotient.  It realizes the projection-blind response on heterogeneous root
+orbits with a quantitative transverse amplitude.

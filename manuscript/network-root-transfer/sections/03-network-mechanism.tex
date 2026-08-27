@@ -1,144 +1,12 @@
-\section{The collective--transverse mechanism}\label{sec:network-mechanism}
+\section{The hidden transverse-response mechanism}\label{sec:network-mechanism}
 
-This section isolates the mechanism behind
-\cref{thm:transverse,cor:canonical-transfer,thm:shared-resource}.  The point is not
-that a synchronous orbit can be copied into \(N\) nodes; that observation
-alone gives no uniform inverse and no control of nonsynchronous histories.
-The useful fact is that the collective RFDE and every transverse network
-direction admit estimates in norms whose constants do not grow with \(N\).
-
-\subsection{Diameter contraction and the delay margin}
-
-Write a variational solution along a complete synchronous trajectory as
-\[
- (x,y)=(X\mathbf1,Y\mathbf1)+(x_\perp,y_\perp),
- \qquad \pi^Tx_\perp=\pi^Ty_\perp=0.
-\]
-For a complex vector \(z\), put
-\(\operatorname{diam} z=\max_{i,k}|z_i-z_k|\).  This is a norm on
-\(\Ker\pi^T\).  The Dobrushin identities imply
-\begin{equation}
- \operatorname{diam}(Qz)\le\tau(Q)\operatorname{diam} z,\qquad
- \operatorname{diam}(B_jz)\le\frac12\operatorname{diam} z.
-                                                               \label{eq:dobrushin-diam}
-\end{equation}
-No eigenbasis, reversibility, or simultaneous diagonalization is used.
-
-Let
-\[
- M(t)=\max\{\operatorname{diam} x_\perp(t),
-             3\operatorname{diam} y_\perp(t)\}.
-\]
-On the strip \(|V(t)-1|\le5/2\), the current and delayed coefficients in
-the leaky model give
-\begin{align}
- \alpha_v&\ge 3(1-\tau(Q))-(1-\eps\kappa_1)-\frac13
-          >0.16746,\\
- \alpha_w&\ge2(1-\tau(Q))+\eps-3\eps\ge0.6,\\
- \beta&\le\eps\{\kappa_1+3\kappa_3(5/2)^2\}=0.01955.
-                                                               \label{eq:halanay-data}
-\end{align}
-Consequently
-\begin{equation}
- D^+M(t)\le-\alpha M(t)
-       +\beta\sup_{t-r\le s\le t}M(s),\qquad
- \alpha=\min\{\alpha_v,\alpha_w\}.                     \label{eq:halanay}
-\end{equation}
-The directed residual
-\begin{equation}
- \alpha-\frac1{10}-\beta e^{r/10}
- >0.0076664505356400                                    \label{eq:delay-margin}
-\end{equation}
-is strict.  A first-crossing argument for
-\(e^{t/10}M(t)\) proves
-\[
- \norm{U_{\perp,N}(t,s)}_{1/10}\le e^{-(t-s)/10}.
-\]
-This proves \cref{eq:green-bound}'s homogeneous part in a norm adapted to
-node oscillation.  It deliberately avoids a dimension-dependent
-equivalence with a Euclidean product norm.
-
-\subsection{A causal complete-line inverse}
-
-The inverse in \cref{thm:transverse} is obtained without evolving an RFDE
-backwards.  Given a bounded transverse forcing \(f\), let \(z^S\) be the
-forward solution with zero retained history at time \(S\).  The forced
-version of the same first-crossing argument gives
-\begin{equation}
- \norm{z_t^S}_{1/10}
- \le\int_S^t e^{-(t-u)/10}\norm{f(u)}_\perp\,\dd u
- \le10\norm{f}_{\perp,\infty}.                         \label{eq:forced-pullback}
-\end{equation}
-If \(S_1<S_2<t\), the two solutions differ homogeneously after \(S_2\);
-hence
-\[
- \norm{z_t^{S_1}-z_t^{S_2}}_{1/10}
- \le10e^{-(t-S_2)/10}\norm f_{\perp,\infty}.
-\]
-The pullback limit \(S\to-\infty\) is therefore a unique bounded complete
-solution and defines \(G_{\perp,N}\).  This proves
-the history-component bound (10) in \cref{eq:green-bound}; the equation
-adds the forcing term and gives the graph-norm bound (11).  The construction is causal and remains valid
-for nonperiodic complete synchronous trajectories as long as the voltage
-strip holds.
-
-\subsection{Exact upper-triangular transfer}
-
-For the canonical synchronized Lin realization, all endpoint, phase, and
-gap rows are collective.  Row mass makes the collective line invariant, but
-without delay-layer left balance a transverse history can feed the
-collective equation.  Thus the complete-history operator has the exact block
-form
-\[
- \cL_N=
- \begin{pmatrix}\cL_\parallel&\Gamma_N\\0&\cL_{\perp,N}\end{pmatrix},
-\]
-not in general a direct sum.  Since
-\(\cL_{\perp,N}^{-1}=G_{\perp,N}\), the bounded codomain row operation
-\begin{equation}
- T_N(y_\parallel,y_\perp)
- =\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp,y_\perp\bigr)
- \quad\hbox{satisfies}\quad
- T_N\cL_N=\cL_\parallel\oplus\cL_{\perp,N}.            \label{eq:triangular-row-reduction}
-\end{equation}
-Consequently the Fredholm index and kernel/cokernel dimensions are inherited
-from the scalar block.  If \(\psi\) spans the scalar cokernel, normalized by
-the collective complement \(e_N=(e_\parallel,0)\), then the full functional
-is
-\begin{equation}
- \Psi_N(y_\parallel,y_\perp)
- =\psi\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp\bigr). \label{eq:triangular-cokernel}
-\end{equation}
-For a collective parameter or inhomogeneity
-\((g_\parallel,0)\), \(\Psi_N(g_\parallel,0)=\psi(g_\parallel)\).
-The normalized root, slope, and orientation are therefore exactly the scalar
-ones whenever the scalar phase-fixed complete-history root and collective
-preparation are supplied.
-
-The triangular correction is uniform.  With
-\[
- \delta_j=\frac12\norm{\pi^TB_j-\tfrac12\pi^T}_1,
- \qquad \delta_B=\delta_0+\delta_1,
-\]
-oscillation duality and the complete-line Green bound give
-\begin{equation}
- \norm{\Gamma_NG_{\perp,N}}
- \le\frac{391}{2000}\delta_B\le\frac{391}{2000}.       \label{eq:triangular-row-bound}
-\end{equation}
-No delayed-history residence factor appears here: on complete-line sup
-norms, a fixed time translation has norm one.  This is a statement about
-complete-history matching.  Replacing the history jump by a current-state
-projection would discard the delayed transverse correction in
-\cref{eq:triangular-cokernel}.
-
-\subsection{The shared-resource history graph and selected traces}
+\subsection{Invariant histories and the transverse-return mechanism}
 \label{subsec:shared-proof}
 
-We now prove the analytic steps used in \cref{thm:shared-resource}.  This
-result has a different role from the preceding triangular transfer: it
-constructs its own canonically selected planar histories for a heterogeneous
-shared-resource network.  In particular, the graph and trace problems below
-are not additional unstated hypotheses of the theorem.  The two endpoint
+We prove the analytic steps used in \cref{thm:shared-resource}.  The graph
+and trace problems below are part of the theorem, not additional hypotheses.
+They construct the canonically selected planar histories for the heterogeneous
+shared-resource network.  The two endpoint
 levels are exactly \(\mathscr H_\alpha=0\), as fixed in
 \cref{def:canonical-preparation}; arbitrary outer levels, outer RFDE slow
 manifolds, or alternative graph preparations are not included.
@@ -235,8 +103,9 @@ Along the singular orbit, let
 \]
 We specify the spaces used for the receding one-sided trace problems.  Put
 \(R=R_\delta\), \(J_a=[-R,0]\), and \(J_r=[0,R]\).  Fix a Green loss
-\(d_0\le4\), and choose \(c>c_0\) and \(M>m_0+d_0+2\), where
-\(c_0,m_0\) dominate the finite tame losses of the prepared field.  For
+\(d_0\le4\), and choose \(c>c_{\rm loss}\) and
+\(M>m_{\rm loss}+d_0+2\), where \(c_{\rm loss},m_{\rm loss}\) dominate the
+finite tame losses of the prepared field.  For
 \(\sigma\in\{a,r\}\), define
 \begin{align}
  \norm{\xi}_{\mathcal X_\sigma}
@@ -267,7 +136,7 @@ continuously into this pairing space with a constant independent of \(R\);
 the nonlinear trace fixed point is not taken in the Gaussian \(L^1\) norm.
 
 \begin{lemma}[Uniform graph and trace range]
-\label{lem:shared-graph-trace}
+\label[lemma]{lem:shared-graph-trace}
 Fix the common bounds in \cref{thm:shared-resource} and one datum
 \(\mathbf p_{\rm can}\) from \cref{def:canonical-preparation}.  There are
 \(\delta_*,\zeta_*,C,c,C_{\rm jet},C_{\rm tr}>0\) and an integer \(M\),
@@ -279,13 +148,19 @@ For \(0<\delta<\delta_*\), \(\nu\in I_\nu\), and
 \(S_\delta=\sqrt{2p\log(1/\delta)}\).  On a buffered tube about
 \(\gamma_0([-S_\delta,S_\delta])\), the exact system
 \cref{eq:shared-exact-X,eq:shared-exact-h} has an injective invariant
-complete-history graph.  Its reduced field has the expansion
+complete-history graph \(h=H_{N,\delta,\nu,\zeta}(X,Y)\).  On every fixed
+compact subset of the fold chart,
+\begin{equation}
+ \sup_{N,\nu,\zeta}\|H_{N,\delta,\nu,\zeta}\|_N\le C_K\delta.
+                                                               \label{eq:shared-graph-local-size}
+\end{equation}
+Its reduced field has the expansion
 \begin{equation}
  Q_{N,\delta,\nu,\zeta}
  =q_0+\delta q_{1,N}+\delta^2q_{2,N}
        +\delta^3\mathcal R_{3,N},                     \label{eq:shared-graph-expansion}
 \end{equation}
-and, for the finite derivative list \(a\le3\), \(i\le1\), \(j\le2\),
+and, for the finite derivative list \(a\le3\), \(i\le2\), \(j\le2\),
 \begin{equation}
  \abs{D_u^a\partial_\nu^i\partial_\zeta^j
        \mathcal R_{3,N}(\gamma_0(s)+\xi)}
@@ -313,6 +188,8 @@ In the tame weighted norms used in the proof,
   +\norm{\partial_{\zeta\zeta}z^\sigma}_{\mathcal X_\sigma}&\le C\delta^2,
  &\sigma&\in\{a,r\}.                                  \label{eq:shared-trace-jets}
 \end{align}
+Moreover,
+\(\|\partial_{\nu\nu}z^\sigma\|_{\mathcal X_\sigma}\le C\delta^2\).
 The same \(O(\delta^2)\) estimate holds for the mixed derivatives obtained
 by applying one additional \(\nu\)-derivative to a \(\zeta\)-derivative.
 \end{lemma}
@@ -320,13 +197,9 @@ by applying one additional \(\nu\)-derivative to a \(\zeta\)-derivative.
 \begin{proof}
 We include the construction because it is the range bridge between the
 finite-dimensional coefficient calculation and the complete-history root.
-In the coordinates
-\[
- \chi=-2\alpha X,
- \qquad d=Y-\alpha X^2+\frac1{2\alpha},
-\]
-write \(\Gamma(\chi,d)\) for the inverse coordinate map.  We
-use the datum \(\mathbf p_{\rm can}\) to prepare \(q_0\) by the fixed
+Use the coordinates \((\chi,d)\) and inverse map \(\Gamma\) from
+\cref{def:canonical-preparation}.  We use the datum \(\mathbf p_{\rm can}\)
+to prepare \(q_0\) by the fixed
 target-frozen cutoff and every current and delayed stable slot by the fixed
 componentwise saturation followed by \(P_{\perp,N}\).  The agreement region
 is the fixed-buffer neighborhood of \(\mathfrak H^{[2]}_\delta\) from
@@ -334,12 +207,14 @@ is the fixed-buffer neighborhood of \(\mathfrak H^{[2]}_\delta\) from
 that, for
 \[
  \mathcal I_k=\{(a,b,i,j)\in\mathbb N_0^4:
- b\le3,\ i\le1,\ j\le2,\ a+b+i+j\le k\},
+ b\le3,\ i\le2,\ j\le2,\ a+b+i+j\le k\},
  \qquad k\le12,
 \]
 all \(D_u^a\partial_\rho^b\partial_\nu^i\partial_\zeta^j\) derivatives of
-the prepared graph data are bounded, without a factor of \(N\), by a
-polynomial \(P_{12}(R_\delta)\).  The preparation equals the transformed
+the prepared graph data are bounded, without a factor of \(N\), by the
+declared majorant
+\(C_{\rm prep}\langle R_\delta\rangle^{M_{\rm prep}}
+e^{c_{\rm prep}R_\delta}\).  The preparation equals the transformed
 physical RFDE on the common stable ball containing the retained flow hull.
 
 For a bounded planar field \(Q\) and a graph \(H:\R^2\to E_N\), let
@@ -498,7 +373,14 @@ declared depth-two uncut hull.  Finally,
 the fixed-point identity in \cref{eq:shared-TH}, split at any time, is the
 mild stable equation.  Present-time evaluation is a left inverse, so the
 resulting complete-history map is injective and its retained histories solve
-the unprepared RFDE exactly.
+the unprepared RFDE exactly.  On a fixed compact chart set the prepared
+coefficients in \(G_N\) are uniformly bounded, and splitting the stable
+convolution as above gives
+\[
+ \|H(u)\|_N
+ \le C\delta\int_0^\infty e^{-D\gamma r/2}\,\dd r;
+\]
+this is \cref{eq:shared-graph-local-size}.
 
 For the trace solve, repeat the graph construction with the frozen target
 \(S_\delta+B\).  Extend its reduced field in the normal coordinate by one
@@ -608,7 +490,9 @@ Thus \(\mathcal K_\sigma\) has a unique fixed point and
 trace--phase--normalized-endpoint residual has inverse norm at most
 \(2C_G\).  The \(\nu\)-source is \(O(\delta)\); atomwise row neutrality
 makes the first \(\zeta\)-source \(O(\delta^2)\).
-Differentiating the same fixed-point equation proves
+The field is affine in \(\nu\), so a second \(\nu\)-derivative contains two
+first-derivative factors and is \(O(\delta^2)\).  Differentiating the same
+fixed-point equation proves
 \cref{eq:shared-trace-jets} and the stated mixed bounds.
 
 The graph and trace constructions are therefore solved in sequence; no
@@ -716,8 +600,10 @@ canonical preparation are bounded, with the same parameter derivatives, by
        \langle S_\delta\rangle^M
  =C\delta^{p-o(1)}.                                   \label{eq:shared-gaussian-tail}
 \end{equation}
-Choosing the fixed \(p\) after the finite tame losses makes this smaller
-than the algebraic remainders below.  The pairings in
+Because \(p>4\), the subalgebraic factor in
+\cref{eq:shared-gaussian-tail} gives
+\(\delta^{p-o(1)}=o(\delta^4)\); hence the tail is smaller than the
+algebraic remainders below.  The pairings in
 \cref{eq:shared-leading-gap,eq:shared-melnikov} therefore yield, uniformly
 in \(N\) and on the common parameter box,
 \begin{align}
@@ -730,7 +616,10 @@ in \(N\) and on the common parameter box,
  &=\delta^2\sqrt{2\pi}\frac{r_N}{\alpha}
        +O(\delta^3+\delta^2|\zeta|),                 \label{eq:shared-gap-zeta}\\
  \partial_{\zeta\zeta}\mathscr D^{\rm can}_N
- &=O(\delta^2).                                       \label{eq:shared-gap-zz}
+ &=O(\delta^2),                                       \label{eq:shared-gap-zz}\\
+ |\partial_{\nu\nu}\mathscr D^{\rm can}_N|
+  +|\partial_{\nu\zeta}\mathscr D^{\rm can}_N|
+ &\le C\delta^2.                                      \label{eq:shared-gap-mixed}
 \end{align}
 Thus the graph, trace, endpoint, and remainder estimates needed for the
 root are all part of the same uniform construction.
@@ -749,22 +638,78 @@ in \cref{eq:shared-root}.  Along that root,
 Integrating \cref{eq:shared-root-derivative} from \(0\) to \(\zeta\) and
 multiplying by \(\delta^2\) gives
 \cref{eq:shared-response,eq:shared-coeff}, with a constant independent of
-\(N\) (and allowed to depend on \(\mathbf p_{\rm can}\)).  On the section \(X=0\), the map
+\(N\) (and allowed to depend on \(\mathbf p_{\rm can}\)).  Evaluation of
+\cref{eq:shared-root-derivative} at \(\zeta=0\) gives
+\cref{eq:shared-response-derivative}.  The twice differentiated trace and
+gap estimates in \cref{lem:shared-graph-trace}, followed by the implicit-
+function theorem, give the asserted \(C^2\) root dependence.  On the section
+\(X=0\), the map
 \(Y\mapsto\mathscr H_\alpha(0,Y)\) has derivative \(\alpha e/2\ne0\) at
 the singular crossing.  Hence a zero of the gap is equality of the two
 reduced current states.  Injectivity of the history graph in
 \cref{lem:shared-graph-trace} then makes it equality of the two retained
-complete RFDE histories.  The common value of \(\alpha\) and
-\cref{eq:shared-nondegeneracy} also give
-\(\inf_N|\mathscr C_N|=\alpha^{-1}\inf_N|r_N|>0\), as asserted.
+complete RFDE histories.
 This completes the proof of \cref{thm:shared-resource}.
 \end{proof}
 
-\subsubsection{A uniform nonzero family without a synchrony quotient}
+\begin{proof}[Proof of \cref{cor:projection-nonidentifiability}]
+The error in \cref{eq:shared-response} is at most
+\(C\delta^3|\zeta|(\delta+|\zeta|)\).  Choose the common parameter box so
+that \(C(\delta+|\zeta|)\le c_*/2\); then
+\cref{eq:root-separation} follows.  The projected fields remain identical by
+\cref{eq:projection-blindness}, which proves the non-identifiability claim.
+\end{proof}
 
-It remains to verify that the nondegeneracy hypothesis is nonempty without
-replicating a lower-dimensional synchrony class.  Use the explicit profile
-stated after \cref{thm:shared-resource}.  Direct summation gives
+\begin{proof}[Proof of \cref{thm:response-directions}]
+Since \(\|\mathbf1\|_N=1\), \(\|P_{\perp,N}\|\le1\), and
+\(\|A_N^{-1}\|\le(D\gamma)^{-1}\),
+\[
+ \left\|A_N^{-1}P_{\perp,N}
+       \left(\sum_k\theta_kR_k\right)\mathbf1\right\|_N
+ \le\frac{\Theta_*}{D\gamma}\sum_k\|R_k\|.
+\]
+For \(x\in E_N\),
+\(|\pi_N^T\diag(c_N)x|\le c_+\|x\|_N\), proving
+\cref{eq:response-functional-bound}.
+
+Let \(z_N=c_N-\alpha\mathbf1\in E_N\).  If \(z_N=0\), then
+\(\pi_N^T\diag(c_N)x=\alpha\pi_N^Tx=0\) for every \(x\in E_N\), so
+\(\Lambda_N\) vanishes on both direction spaces.  Conversely,
+\begin{equation}
+ \pi_N^T\diag(c_N)z_N
+ =\pi_N^T(c_N^{\circ2})-\alpha^2>0                    \label{eq:positive-curvature-variance}
+\end{equation}
+whenever \(z_N\ne0\), because \(\pi_N\) is strictly positive.  If
+\(\theta_j>0\), the row-neutral choice
+\(R_j=(A_Nz_N)\pi_N^T/\theta_j\), with all other layers zero, makes the
+argument of \(A_N^{-1}\) in \cref{eq:response-functional} equal to
+\(A_Nz_N\).  Thus the restriction to \(\mathfrak T_N^{\rm sr}\) is
+nonzero.  With two distinct delays, the choice in
+\cref{eq:variance-witness} is row neutral, has zero layer sum, and satisfies
+\[
+ \left(\sum_k\theta_kR_k\right)\mathbf1=A_Nz_N.
+\]
+This proves \cref{eq:variance-response} and nontriviality on
+\(\mathfrak T_N^{\rm red}\).  The kernel of a nonzero linear functional on
+the finite-dimensional matrix direction space is a closed codimension-one
+hyperplane; its complement is open and dense.
+\end{proof}
+
+\begin{proof}[Proof of \cref{cor:preparation-universality}]
+Apply \cref{thm:shared-resource} to each of the two fixed data and intersect
+their parameter boxes.  Both expansions have the same coefficient
+\(\mathscr C_N=\Lambda_N(\mathbf R_N)\), because this coefficient contains
+only the physical low-order jets.  Subtracting the two instances of
+\cref{eq:shared-response} proves \cref{eq:preparation-comparison}; dividing
+each instance by \(\delta^3\zeta\) gives the normalized estimate.  The
+argument deliberately subtracts each preparation's own \(\zeta=0\) root and
+therefore makes no statement about the two baselines.
+\end{proof}
+
+\subsubsection{A robust nonzero family and its asynchronous root orbit}
+
+We verify the robust and asynchronous claims for the explicit profile stated
+after \cref{cor:preparation-universality}.  Direct summation gives
 \begin{equation}
  \pi_N^Ts_N=0,\qquad \pi_N^Ts_N^{\circ2}=1,\qquad
  \norm{s_N}_\infty
@@ -803,26 +748,62 @@ tangent to that polydiagonal.  Since all curvatures are distinct, only the
 singleton partition survives.  Thus \cref{eq:constant-witness} is a genuine
 transverse heterogeneous-network response and not a lifted two-node root.
 
+\begin{proof}[Proof of \cref{cor:robust-asynchronous}]
+For this family \(\alpha=\gamma=1\), \(\Theta_*=\theta_1\), and the common
+curvature bound may be taken as \(c_+=1+\sigma\sqrt3\).  Hence
+\cref{eq:response-functional-bound} gives
+\[
+ |\Lambda_N(\widetilde{\mathbf R}_N)
+       -\Lambda_N(\mathbf R_N^*)|
+ \le \frac{|K|(1+\sigma\sqrt3)\theta_1}{2D}
+       \|\widetilde{\mathbf R}_N-\mathbf R_N^*\|_{\mathfrak T_N}.
+\]
+Together with
+\(|\Lambda_N(\mathbf R_N^*)|=|K|\sigma\Delta\theta/(2D)\), the radius in
+\cref{eq:robust-radius} proves \cref{eq:robust-response}.
+
+Decrease \(\delta_0\) first so that \(S_\delta>1\).  At the fixed attracting
+slow time \(s=-1\), the point \(z^{a,\rm can}_{c,N}(-1)\) lies in one fixed
+compact subset of the retained chart.  Define
+\(h^{a,\rm can}_{c,N}(-1)
+=H_{N,\delta,\nu,\zeta}(z^{a,\rm can}_{c,N}(-1))\).
+The trace estimate in \cref{eq:shared-trace-jets} and the local graph estimate
+\cref{eq:shared-graph-local-size} give
+\[
+ X^{a,\rm can}_{c,N}(-1)=\frac12+O(\delta),
+ \qquad \|h^{a,\rm can}_{c,N}(-1)\|_N\le C\delta,
+\]
+uniformly in \(N\), \(\nu\), and \(\zeta\).  Since
+\(g_N=-(\sigma/D)s_N\), and \(s=\delta t\), the exact chart relation yields
+\begin{align*}
+ \delta^{-2}P_{\perp,N}v^{\rm can}_{c,N}(-\delta^{-1})
+ &=g_N\{X^{a,\rm can}_{c,N}(-1)\}^2
+      +h^{a,\rm can}_{c,N}(-1)\\
+ &=-\frac{\sigma}{4D}s_N+\eta_N(\delta),
+ \qquad \|\eta_N(\delta)\|_N\le C_a\delta,
+\end{align*}
+which is \cref{eq:asynchronous-profile}.  Finally,
+\[
+ \osc(s_N)=2\sqrt{\frac{3(N-1)}{N+1}}\ge2.
+\]
+Both \(s_N\) and \(P_{\perp,N}v^{\rm can}_{c,N}\) belong to \(E_N\), on
+which \(\|\cdot\|_N=\osc(\cdot)\).  The reverse triangle inequality and a
+further common decrease of \(\delta_0\), chosen so that
+\(C_a\delta\le\sigma/(4D)\), give \cref{eq:asynchronous-lower}.
+\end{proof}
+
 \subsection{Scope of the network theorem}
 
-The leaky transverse and triangular-transfer theorem allows arbitrary finite
-size, a nonnegative row-stochastic current layer with
-\(\tau(Q)\le1/2\), and fixed nonnegative delayed layers of row mass \(1/2\).
-It does not require common delay-layer left balance.  It remains conditional
-on the scalar phase-fixed root and collective preparation, and it does not
-include signed coupling, moving delay support, closing Dobrushin gaps,
-heterogeneous node vector fields, an invariant asynchronous strip, or
-a preparation-independent scalar root.
-
-The separate shared-resource structural-root theorem allows heterogeneous
+The shared-resource structural-root theorem allows heterogeneous
 curvature under a common Dobrushin gap, fixed delay support, an atomwise
 row-neutral structural direction, and the fixed canonical preparation datum
 in \cref{def:canonical-preparation}.  The graph and selected-trace
 constructions are proved in \cref{lem:shared-graph-trace}; they are not extra
 hypotheses.  The exact finite-\(\delta\) root remains selection dependent.
-The theorem does not
-cover order-one changes of the base generator, moving delay atoms, a closing
-mixing gap, comparison of arbitrary graph preparations, a
-preparation-independent root, or identification with an independently
-selected physical outer canard.  These are mathematical boundaries, not
-numerical omissions.
+The response increment, but not the baseline root, has the preparation-
+universal leading coefficient in \cref{cor:preparation-universality}.  The
+theory does not cover order-one changes of the base generator, moving delay
+atoms, a closing mixing gap, infinite networks, comparison of arbitrary
+preparations, a preparation-independent root, or identification with an
+independently selected physical outer canard.  These are mathematical
+boundaries, not numerical omissions.
