@@ -1,0 +1,860 @@
+\section{The selected inner return and its stable sheet}\label{sec:inner-return}
+\subsection{The inner section and its stable sheet}
+
+Fix the phase-zero voltage section through the inner periodic orbit
+\(\Gamma_i\).  The exact orbit crosses this section with speed bounded below
+by \(0.2067539137\).  After removing the translation multiplier, the
+section return has one simple real unstable multiplier and a stable
+complement.  The validated characteristic root satisfies
+\begin{equation}
+ 0.6983604100<s_u<0.6983604300,                         \label{eq:inner-unstable-root}
+\end{equation}
+while the stable spectral radius is at most \(e^{-0.01}\).
+
+Let \(q\) be the unstable right column and let \(\widetilde f\) be the raw
+left functional supplied by the bordered problem.  Once
+\(\widetilde f(q)\ne0\), put
+\(f=\widetilde f/\widetilde f(q)\).  Write the section coordinates as
+\[
+ u=f(\phi),\qquad s=\phi-qf(\phi).
+\]
+A forward Lyapunov--Perron construction seeks the local stable sheet in the
+form
+\begin{equation}
+ u=\psi(s),\qquad \psi(0)=D\psi(0)=0.                  \label{eq:stable-graph}
+\end{equation}
+The graph transform is estimated in six directed blocks corresponding to
+stable and unstable inputs and outputs.  Its difficult term is the stable
+part of the second return variation in two unstable directions,
+\[
+ Y_{qq}-qf(Y_{qq}).
+\]
+Bounding \(Y_{qq}\) and \(qf(Y_{qq})\) separately loses the cancellation and
+does not close the graph radius.
+
+\subsection{The continuous RFDE adjoint functional}
+
+For a discrete-delay variational equation
+\[
+ \dot z(t)=A_0(t)z(t)+\sum_j A_j(t)z(t-\tau_j),
+\]
+the periodic advanced adjoint carries a current atom and an absolutely
+continuous history density.  Its bilinear history pairing, not a Hermitian
+inner product, defines the raw section functional \(\widetilde f\).  The Fourier
+cokernel-to-history reconstruction has the exact reversal
+\begin{equation}
+ \widehat r_n=E_{-,-n},                                \label{eq:fourier-reversal}
+\end{equation}
+with no complex conjugation.  This distinction is essential for the
+annihilation of the neutral tangent.
+
+The directed tail solve proves
+\begin{equation}
+ \text{tail contraction}<0.104433459418,\qquad
+ \norm{r_{\rm tail}}_{\ell^1}<0.01150531427,\qquad
+ \norm r_{\ell^1}<0.1835103672.                        \label{eq:adjoint-tail}
+\end{equation}
+The Grushin border derivative and the phase-averaged RFDE bilinear identity
+then give the directed normalization
+\begin{equation}
+ 0.000305331752871<\abs{\widetilde f(q)}
+ <0.000546927481134.                                   \label{eq:fq-bound}
+\end{equation}
+Thus the Fourier cokernel, continuous periodic adjoint, and Route--C
+history functional can be normalized to the same object \(f\).  A recovery-only
+history shard has normalized action greater than \(12.9099\), which also
+rules out any current-voltage-only projection.
+
+For a \(240\)-step finite-section diagnostic, performing the correlated
+deflation before taking the norm gives
+\begin{equation}
+ \norm{Y_{qq}-qf_N(Y_{qq})}_\infty=7.26112<12,          \label{eq:yqq-pilot}
+\end{equation}
+whereas the separate triangle estimate is \(56.7830\).  This is strong
+evidence for the required correlation, but \cref{eq:yqq-pilot} itself is
+not interval evidence.
+
+\begin{proposition}[Base-orbit correlated \(uu\) block]\label{prop:base-uu}
+Let \(q^\Sigma\) be the physical Route--C section unstable direction and
+let \(Y_{qq}\) be the physical-time second returned variation at the
+validated center inner orbit.  Then
+\begin{align}
+ \norm{V_{qq}-\widehat V_{qq}}_P
+   &\le0.00808459995104,\notag\\
+ \abs{\widetilde f(q^\Sigma)}
+   &\ge4.2563852678\times10^{-4},\notag\\
+ \norm{Y_{qq}-q^\Sigma
+       \widetilde f(Y_{qq})/\widetilde f(q^\Sigma)}_Y
+   &\le0.0475498854764,\notag\\
+ \norm{q^\Sigma}_Y&\ge0.0775543158981.                 \label{eq:directed-base-uu}
+\end{align}
+Consequently the normalized stable-output block satisfies
+\begin{equation}
+ C^{uu}_{s,\mathrm{base}}
+ \le\frac{0.0475498854764}{(0.0775543158981)^2}
+ <7.905649079<12.                                     \label{eq:base-uu-bound}
+\end{equation}
+\end{proposition}
+
+The proof uses \(1042\) physical method-of-steps cells with both delays
+aligned and a degree-\(24\), \(192\)-bit Taylor--Bernstein residual.  It
+defines the quotient through the same-row identity
+\[
+ \frac{\widetilde f(Y_{qq})}{\widetilde f(q^\Sigma)}-c
+ =\frac{\widetilde f(Y_{qq}-cq^\Sigma)}
+        {\widetilde f(q^\Sigma)}
+\]
+and applies the adjoint error only after the center history has been
+deflated.  A direct atom--density action on the polynomial guide, the
+advanced covariance \(e^sT\), continuous voltage/recovery source residuals,
+all cell seams, the density-product variation, and the normalization defect
+give a total correlated action error at most
+\(1.500297667\times10^{-6}\).  In particular, no exact inhomogeneous
+adjoint identity is silently assigned to the approximate Fourier row.
+
+\Cref{prop:base-uu} closes the former covector/cancellation bottleneck only
+at one periodic base orbit.  Its uniform split-ball inflation and the other
+five blocks---hence all six uniform split-ball Hessian blocks---the split
+nonlinear return tube, and the first-positive-return/no-earlier-hit enclosure
+remain unvalidated.  The discrete stable-power constant is supplied separately
+by \cref{prop:inner-terminal-stable-row}.  Accordingly, the six-block
+quantitative stable graph \cref{eq:stable-graph} remains open; a qualitative
+local stable graph for the selected coordinate map is proved below in
+\cref{prop:split-bimeasure-local-graph}.
+
+The exact inflation budget shows what a uniform proof must achieve.  Since
+the base value leaves margin \(4.0943509217\), it is sufficient to prove a
+split-ball Lipschitz constant strictly below
+\[
+ L_{uu}^{\rm req}=2408.4417186722.
+\]
+A source-bound \(192\)-bit scalar \(P\)-logarithmic-norm attempt closes the
+self-consistent enclosure on all \(1042\) physical cells, but first loses
+the radius-\(0.01\) local section ball on cell \(581\), where its voltage
+radius is already \(0.010059402\); its period-end bound is \(2.151313\).
+Thus this positive scalar majorant is rigorously rejected as the uniform
+inflation route.  It does not rule out a correlated bound.  Indeed,
+\[
+ 2\tau_0<T<\tau_0+\tau_1<3\tau_0
+\]
+reduces the signed linear ingress to only the four Volterra words
+\(\varnothing,(\tau_0),(\tau_1),(\tau_0,\tau_0)\).  The required replacement
+is to form \(U(t)P_s=U(t)-U(t)qf/f(q)\) across those words before taking
+total variation.
+
+\begin{proposition}[Primitive ingress and physical-frame obstruction]
+\label{prop:inner-primitive-ingress}
+On the \(1042\)-cell delay-aligned physical grid, the degree-\(24\),
+\(192\)-bit Taylor--Bernstein residuals of the five primitives
+\(F,G,C_0,C_1,C_{00}\) are bounded above respectively by
+\[
+ 7.30427\times10^{-7},\quad
+ 2.54960\times10^{-7},\quad
+ 3.33270\times10^{-7},\quad
+ 2.56054\times10^{-7},\quad
+ 3.06759\times10^{-11}.
+\]
+After every Hermite seam and coefficient tail is included, the moving-frame
+maximum error radii are at most
+\[
+ 4.92742\times10^{-4},\quad
+ 2.42414\times10^{-4},\quad
+ 1.73778\times10^{-6},\quad
+ 1.43306\times10^{-6},\quad
+ 3.64819\times10^{-11}.
+\]
+The resulting directed primitive ingress into the event-row estimate is at
+most
+\begin{equation}
+ 1.463546184\times10^{-3}.                             \label{eq:primitive-ingress}
+\end{equation}
+By contrast, the declared unprojected scalar physical-frame Gronwall
+propagation returns \(F\)- and \(G\)-error radii larger than
+\(3.04997\times10^7\) and \(1.89994\times10^7\), respectively, and
+therefore cannot certify the stable row.
+\end{proposition}
+
+\begin{proposition}[Selected terminal stable row]
+\label{prop:inner-terminal-stable-row}
+Let
+\[
+ Y=C([-\tau_{\max},0],\mathbb R)\times\mathbb R,
+ \qquad \Sigma_0=\{h\in Y:h_v(0)=0\},
+\]
+and set
+\[
+ A=\Pi_TU(T,0)|_{\Sigma_0},\qquad
+ f=\widetilde f/\widetilde f(q^\Sigma),\qquad
+ P_s=\Id-q^\Sigma f,\qquad E_s=\ker f.
+\]
+Here \(\Pi_Ty=y-\dot X_Ty_v(0)/\dot v(T)\) is the terminal section
+projection.
+For the selected near-one-period phase-fixed linear map,
+\begin{equation}
+ \norm{AP_s}_{\Sigma_0\to Y}
+ \le0.009896427481610001<0.1.                 \label{eq:inner-terminal-stable-row}
+\end{equation}
+Moreover,
+\[
+ AP_s=P_sA=P_sAP_s,
+ \qquad AP_s(\Sigma_0)\subset E_s.
+\]
+Consequently, for \(A_s=A|_{E_s}\),
+\begin{equation}
+ \norm{A_s^n}_{E_s\to Y}\le0.1^n,
+ \qquad K_s=1\quad(n\ge1).                   \label{eq:inner-stable-power}
+\end{equation}
+\end{proposition}
+
+The certificate forms the common signed row
+\(R_\theta\Pi_TU(T,0)(\Id-q^\Sigma f)\) before every modulus.  The exact
+section quotient removes the current-voltage \(\delta_0\) atom, while the
+current-recovery atom remains active.  The true-period enclosure gives
+\(T>\tau_{\max}\), so the complete returned history lies after time zero and
+has no unadvanced identity block.  Its only method-of-steps words are
+\(\varnothing,(\tau_0),(\tau_1),(\tau_0,\tau_0)\).  The continuous calculation
+covers \(641\) returned-history phase rows plus one recovery-output row against
+\(640\) input-history cells, hence \((641+1)\times640=410{,}880\) support
+rectangles.  The independently outward-rounded ledger is
+\begin{align*}
+ E_{\rm ctr}&\le0.004362999710080374,
+ &E_{\rm bin}&\le0.000010000000000001,\\
+ E_{\rm 4I}&\le0.001463546183857267,
+ &E_{\rm rank}&\le0.004059226965383500,\\
+ E_{\rm ratio}&\le6.506172913144082\times10^{-7},
+ &E_T&\le4.004997545987388\times10^{-9}.
+\end{align*}
+The displayed terms sum to at most \(0.009896427481610003\); the unrounded
+directed calculation gives the sharper bound in
+\cref{eq:inner-terminal-stable-row}.  The certified primitive tubes enter only
+through their direct algebraic image: neither the unknown terminal norm nor
+\(K_s\) is used in its own estimate.
+
+\Cref{prop:inner-primitive-ingress} is therefore only the primitive parent
+budget.
+\Cref{prop:inner-terminal-stable-row} supplies the missing common terminal
+row, true-\(T_+\) coverage, section quotient, and continuous output-phase
+supremum, and thereby closes the discrete one-step stable-map norm.
+
+A stronger intermediate-time stable-flow certificate could instead be
+obtained without assuming the stable-flow constant that it is meant to prove.
+Let \(U_s(t,s)=U(t,s)P_s(s)\), and let
+\(\widehat U_s\) be one common signed polynomial guide whose initial defect
+and complete method-of-steps residual lie in the exact transported stable
+bundle.  The latter includes the differential residual, history-transport
+boundary, delay activations, and cell seams.  The complete-history norm also
+retains the unadvanced translation/identity block; it is not only a norm of
+the propagated density.  For \(\alpha\ge0\), put
+\begin{align*}
+ K&=\sup_{s\le t}e^{\alpha(t-s)}\norm{U_s(t,s)},&
+ \widehat K&=\sup_{s\le t}e^{\alpha(t-s)}
+                    \norm{\widehat U_s(t,s)},\\
+ \Delta&=\sup_s\norm{D_s}
+ +\sup_{s\le t}\int_s^t e^{\alpha(r-s)}
+                    \norm{R(r,s)}\,dr .
+\end{align*}
+Duhamel's formula remains in the stable bundle and yields
+\begin{equation}
+ K\le\widehat K+K\Delta,\qquad
+ \Delta<1\Longrightarrow
+ K\le K_{\rm int}:=\frac{\widehat K}{1-\Delta}.       \label{eq:projected-radii}
+\end{equation}
+Let \(\widehat M_s\) be the corresponding terminal event-corrected row, let
+\(C_{\Pi,T}\) bound the exact event correction, let \(\Delta_T\) be the
+preprojection endpoint residual budget, and let \(\varepsilon_{\Pi,T}\)
+contain the remaining event-row and speed-denominator errors.  Then
+\begin{equation}
+ \norm{M_s}\le\norm{\widehat M_s}
+                 +C_{\Pi,T}K_{\rm int}\Delta_T
+                 +\varepsilon_{\Pi,T}.
+                                                               \label{eq:stable-terminal-radii}
+\end{equation}
+The event projection cannot be assigned norm one; its sampled factor is
+about \(2.01358\).  A strict right side below \(\rho_s<1\) would provide the
+corresponding intermediate-time stable-flow estimate.  The exact projection
+is essential: propagating the five primitives separately violates the
+stable-residual premise and recovers the rejected unstable growth.  The phase
+correction is applied only at the terminal section; a moving \(\Pi_t\) would
+add a derivative term to the residual equation.  This route is not used by
+\cref{prop:inner-terminal-stable-row}, whose fixed-start terminal calculation
+already proves the discrete power estimate.  At present the common full
+\((s,t)\) projected residual, \(\Delta\), and
+\(C_{\Pi,T},\Delta_T,\varepsilon_{\Pi,T}\) remain unvalidated.  Thus
+\cref{eq:projected-radii,eq:stable-terminal-radii} are an optional route toward
+intermediate-flow, nonlinear-tube, or no-earlier-hit control, not a
+prerequisite for \(K_s=1\).
+
+\subsection{Eventually smooth event Hessian and two-return graph budget}
+
+The discrete estimate in \cref{prop:inner-terminal-stable-row} does not by
+itself make the moving complete-history return \(C^2\) on a ball of arbitrary
+continuous histories.  We first record the exact event-aligned Hessian, so
+that the remaining analytic and numerical gates are explicit.
+
+Let \(S_t(x)\) be the fixed-time complete-history solution map, let \(T(x)\)
+be a selected crossing of the phase section, and put
+\[
+ a(x)=\dot v_x(T(x)),\qquad \ell_0(y)=y_v(0).
+\]
+For initial directions \(h,k\), let \(U_h\) and \(V_{hk}\) be the first and
+second fixed-time variations, with \(V_{hk,0}=0\), and use the superscript
+\(T\) for the complete segment translated to the selected event.  Set
+\begin{align}
+ n_h&=\ell_0(U_h^T),&
+ T_h&=-\frac{n_h}{a},                                      \label{eq:event-hessian-first}\\
+ Z_{hk}&=V_{hk}^T-
+ \frac{\dot U_h^Tn_k+\dot U_k^Tn_h}{a}
+ +\frac{\ddot X_Tn_hn_k}{a^2},&
+ T_{hk}&=-\frac{\ell_0(Z_{hk})}{a}.                       \label{eq:event-hessian-second}
+\end{align}
+Define the moving event projection
+\begin{equation}
+ \Pi_x y=y-\dot X_T\frac{\ell_0(y)}{a(x)}.                 \label{eq:moving-event-projection}
+\end{equation}
+
+\begin{proposition}[Selected-return Hessian]
+\label{prop:selected-return-hessian}
+On any common \(C^2\) selected-event tube on which \(a(x)>0\), the moving
+complete-history return \(P(x)=S_{T(x)}(x)\) satisfies
+\begin{equation}
+ DP(x)h=\Pi_xU_h^T,\qquad
+ D^2P(x)[h,k]=\Pi_xZ_{hk}.                              \label{eq:selected-return-hessian}
+\end{equation}
+The phase projection in \cref{eq:selected-return-hessian} is applied exactly
+once.  It precedes the fixed spectral deflation \(P_s\) or the fixed
+unstable row \(\widehat f\); those two projections are not interchangeable.
+\end{proposition}
+
+\begin{proof}
+Differentiate the scalar event identity twice to obtain
+\cref{eq:event-hessian-first,eq:event-hessian-second}, including every
+terminal-history translation term.  Substitution into the second derivative
+of \(S_{T(x)}(x)\) gives \cref{eq:selected-return-hessian}.  In particular,
+\(\ell_0(DP\,h)=\ell_0(D^2P[h,k])=0\), which also checks that no event
+correction has been duplicated.
+\end{proof}
+
+For the one-period center return, \(T>\tau_{\max}\) removes the unadvanced
+identity block from the \emph{linear} output, but \(T<2\tau_{\max}\).  The
+old one-period argument therefore does not satisfy the \(C^2\) complete-
+segment condition in \cref{thm:eventual-selected-return}.  The selected
+near-two-period center does: the frozen orbit intervals give
+\begin{equation}
+ T_- -2\tau_{\max,+}>14.010740123253945.                \label{eq:two-return-smoothing-margin}
+\end{equation}
+This proves the center-orbit margin.  The next proposition closes the common
+full-ball event inequality on an explicit, deliberately microscopic scale.
+
+\begin{proposition}[Explicit common near-two-period event tube]
+\label{prop:explicit-two-period-event-tube}
+Let
+\[
+ B_\lambda=\{(x_s,x_u):\norm{x_s}_Y\le0.0097\lambda,
+                    \ \abs{x_u}\le0.00025\lambda\},
+ \qquad \lambda_0=9\times10^{-31}.
+\]
+There is an open reduced-history neighborhood \(W_{\rm open}\subset Y\) and
+an open coordinate restriction \(D_{\rm open}\) containing
+\(B_{\lambda_0}\) on which every injected history, including every
+continuous reduced stable history
+satisfying the displayed norm bound, has one unique positively oriented
+voltage event in the common physical-time window
+\begin{equation}
+ I_2=[36.3714198982518419857,\;36.3734198982598419858].
+                                                               \label{eq:explicit-two-period-window}
+\end{equation}
+The event time and the complete reduced-history hit are \(C^2\); the initial
+history and the hit both lie in the fixed radius-\(0.01\) local phase-zero
+section patch.  Uniformly on the larger open comparison scale
+\(9.1\times10^{-31}\), the endpoint gap is greater than
+\(1.03751\times10^{-4}\), the event speed is greater than
+\(0.244880\), the returned-history radius is less than
+\(5.09376\times10^{-4}\), and
+\(T_--2\tau_{\max}>14.010740\).
+
+Writing \(\chi\) for the fixed section chart, the induced map has type
+\(P_{\rm sel}:D_{\rm open}\to D_{\rm out}\), where
+\(D_{\rm out}=\chi(\Sigma_{\rm loc})\).  No containment
+\(D_{\rm out}\subset D_{\rm open}\) is asserted.
+
+At the center, \(T(Y_*)=2P\) and the hit is exactly \(Y_*\).  The result is
+neither a self-map of \(B_{\lambda_0}\), nor a certificate at \(\lambda=1\),
+nor an event-ordinal statement.
+\end{proposition}
+
+\begin{proof}
+Write \(B=\sup_t\abs{v_*(t)-1}\).  On an orbit-centered tube of radius
+\(\beta\), the corrected fast-field row gives
+\[
+ H_\beta=2(1+B+\beta)+12\varepsilon\kappa_3(B+\beta),\qquad
+ L_\beta=\max\{A_0+H_\beta\beta,2\varepsilon\}.
+\]
+Choose \(\beta\) to be half the certified center endpoint gap and propagate
+the single complete-history majorant
+\[
+ M(t)\le\rho_{\rm open}+\int_0^tL_\beta M(s)\,ds
+ \qquad(0\le t\le T_+).
+\]
+It retains the arbitrary initial-history translates before each delay
+activates and covers all later method-of-steps seams.  Directed evaluation
+gives
+\(0.00995(9.1\times10^{-31})e^{L_\beta T_+}<\beta\); the corresponding
+open-scale ceiling is greater than \(9.13306649\times10^{-31}\).  A first-exit
+argument therefore proves the common flow tube.  The center endpoint signs
+and the Lipschitz perturbation bound give the stated strict signs and speed,
+so the selected zero is unique in \(I_2\).  The complete-history estimate
+also gives terminal section-patch containment.  Finally, apply
+\cref{thm:eventual-selected-return} first with the affine compatible lift
+\(\mathcal I:W_{\rm open}\to X\), the global polynomial RFDE field, and
+\(g_X=g_Y\circ\pi\).  Projection gives the ambient reduced \(C^2\) hit, and
+restriction through the section injection \(j:D_{\rm open}\to
+W_{\rm open}\cap\Sigma_{\rm loc}\) gives the stated coordinate map.  The
+strict margin in \cref{eq:two-return-smoothing-margin} supplies the required
+joint smoothing.
+\end{proof}
+
+The preceding scalar comparison is correct but extremely cancellation blind.
+The recovery equation supplies a weighted energy in which the two
+instantaneous voltage--recovery cross terms cancel exactly.  Exploiting that
+identity enlarges the same selected-event domain by more than twenty decimal
+orders.
+
+\begin{proposition}[Orbit-aware enlarged near-two-period event tube]
+\label{prop:orbit-aware-two-period-event-tube}
+With the same anisotropic balls \(B_\lambda\) and the same physical window
+\cref{eq:explicit-two-period-window}, every history in
+\begin{equation}
+ B_{1.2\times10^{-8}}
+\end{equation}
+has one unique positively oriented selected voltage event.  The conclusion
+holds on the strictly larger open scale \(1.25\times10^{-8}\); the event time
+and complete reduced-history hit are \(C^2\), and the hit remains in the
+declared radius-\(0.01\) terminal section patch.  Uniformly on that open
+scale, the endpoint gap is greater than \(1.05563\times10^{-4}\) and the
+event speed is greater than \(0.206347\).
+
+The sufficient construction has scale ceiling
+\begin{equation}
+ \lambda_{\rm en}>1.2770076307683837\times10^{-8}.
+                                                               \label{eq:orbit-aware-lambda-ceiling}
+\end{equation}
+It proves neither the preferred scale \(\lambda=1\), a same-ball self-map,
+an event ordinal, any one of the six Hessian caps, nor a pulse crossing.
+\end{proposition}
+
+\begin{proof}
+Let \(x=\eta_v(t)\) and \(y=\eta_w(t)\) be the difference from the exact
+periodic orbit and set
+\[
+ z(t)^2=x(t)^2+\varepsilon^{-1}y(t)^2.
+\]
+If \(a(t)\) is the current variational coefficient and \(b_0(t),b_1(t)\)
+are the two delayed coefficients, then
+\begin{equation}
+ \frac12\frac{d}{dt}z^2
+ =a(t)x^2-y^2+\sum_{j=0}^1b_j(t)x(t)x(t-\tau_j)+x(t)N(t).  \label{eq:weighted-energy-cancellation}
+\end{equation}
+The terms \(-xy+yx\) have cancelled exactly.  For the complete-history
+running envelope \(Z\), including the untranslated initial voltage history
+before each delay activates, this gives at every increasing-envelope time
+\[
+ D^+Z(t)\le\left[r(t)+\frac12H_\beta Z(t)\right]Z(t),
+ \qquad
+ r(t)=\max\{0,\max(a(t),-\varepsilon)+|b_0(t)|+|b_1(t)|\}.
+\]
+Here \(H_\beta\) is the corrected polynomial Hessian row in the proof of
+\cref{prop:explicit-two-period-event-tube}.
+
+On the \(1042\) delay-aligned cells, \(192\)-bit Taylor--Bernstein
+arithmetic gives
+\begin{equation}
+ \int_0^{P_{\rm bin}}r(t)\,dt
+ \le6.353397548471557,
+ \qquad \sup r(t)\le0.774979654297297.                \label{eq:orbit-aware-rate}
+\end{equation}
+The enclosure uses the exact binary interval for \(P_{\rm bin}\), rescales
+by the directed true-period interval, and adds the phase drift between the
+exact delays \(4\sqrt5,5\sqrt5\) and their binary centers before bounding
+the delayed coefficients.  Thus neither decimal round-tripping nor a mesh
+maximum is used as exact data.
+
+For a reduced-\(Y\) initial radius \(\rho\),
+\(Z(0)\le\sqrt{1+\varepsilon^{-1}}\rho=\sqrt6\rho\).
+Choose \(\beta\) as half the center endpoint gap.  On a hypothetical first
+exit through \(Z=\beta\), integration of the preceding Dini inequality over
+two true periods and the remaining window gives a complete-history gain at
+most \(332147.926240866\).  At the open scale \(1.25\times10^{-8}\), the
+resulting deviation is at most
+\[
+1.011906217152045\times10^{-4}<
+1.033769568740104\times10^{-4}=\beta,
+\]
+a contradiction.  The polynomial
+field is bounded on this closed tube, so continuation through \(T_+\) also
+holds.  The endpoint signs, speed and terminal patch follow from the same
+deviation bound, and \cref{thm:eventual-selected-return} supplies the stated
+\(C^2\) event and complete-history hit.
+\end{proof}
+
+\begin{proposition}[Direct two-period derivative]
+\label{prop:direct-two-period-derivative}
+Let \(Q_Y\) be the direct selected hit map supplied by
+\cref{prop:explicit-two-period-event-tube} on the reduced physical section,
+and let
+\[
+ A=\Pi U_Y(P,0)|_{\Sigma_0}
+\]
+be the proved one-period phase-fixed derivative.  Then
+\begin{equation}
+ Q_Y(Y_*)=Y_*,\qquad DQ_Y(Y_*)=A^2.                    \label{eq:direct-two-period-derivative}
+\end{equation}
+This conclusion does not require a nonlinear one-period return or an
+identity \(Q=P^2\).  If \(J(x_s,x_u)=x_s+\widehat qx_u\) is the section
+coordinate isomorphism, then
+\begin{equation}
+ DQ_{\rm coord}(0)=J^{-1}A^2J.                         \label{eq:two-period-coordinate-conjugacy}
+\end{equation}
+For the compatible full-history lift \(\mathcal I\), the correctly typed
+identity is
+\begin{equation}
+ DQ_X(\mathcal I(Y_*))D\mathcal I=D\mathcal I\,A^2,   \label{eq:two-period-full-intertwining}
+\end{equation}
+not \(DQ_X=A^2\).
+\end{proposition}
+
+\begin{proof}
+Put \(M=U_Y(P,0)\) and
+\(\Pi=I-v\ell/a\), where \(v\) is the phase tangent,
+\(\ell=Dg\), and \(a=\ell(v)\).  Periodicity and the forward variational
+cocycle give \(U_Y(2P,0)=M^2\) and \(Mv=v\).  Direct differentiation of the
+selected event gives \(DQ_Y(Y_*)=\Pi M^2|_{\Sigma_0}\).  Since
+\((I-\Pi)y=v\ell(y)/a\) and \(\Pi Mv=0\),
+\[
+ (\Pi M|_{\Sigma_0})^2=\Pi M\Pi M|_{\Sigma_0}
+ =\Pi M^2|_{\Sigma_0}.
+\]
+The chart chain rule and the exact lift/projection factorization give
+\cref{eq:two-period-coordinate-conjugacy,eq:two-period-full-intertwining}.
+\end{proof}
+
+The two-return route is also quantitatively favorable.  Use the fixed unit
+pair
+\[
+ \widehat q=q/\norm{q}_Y,\qquad
+ \widehat f=\norm{q}_Y f,\qquad P_s=\Id-\widehat q\widehat f,
+\]
+the split radii \(R_s=0.0097\), \(R_u=0.00025\), and the desired graph radius
+\(r=0.0094\).  For output \(i\in\{s,u\}\), let
+\(C_{i,ss},C_{i,su},C_{i,uu}\) bound the six projected blocks of
+\(D^2\mathcal Q\), with the event projection formed before \(P_s\) or
+\(\widehat f\).
+
+\begin{proposition}[Fixed two-step linear splitting]
+\label{prop:inner-two-step-splitting}
+Let \(A\in\mathcal L(\Sigma_0)\), \(q\in\Sigma_0\), and
+\(f\in\Sigma_0^*\) satisfy
+\[
+ Aq=\mu_uq,\qquad fA=\mu_uf,\qquad f(q)=1,
+\]
+and put \(P_u=qf\), \(P_s=\Id-qf\), \(E_u=\operatorname{span}\{q\}\),
+and \(E_s=\ker f\).  Then these are complementary projections,
+\(\Sigma_0=E_s\oplus E_u\), and both spaces are invariant under \(A\).
+For the linear two-step operator \(B=A^2\),
+\begin{equation}
+ BP_s=P_sB=P_sBP_s=(AP_s)^2,
+ \qquad BP_u=P_uB=\mu_u^2P_u.                         \label{eq:two-step-intertwining}
+\end{equation}
+If
+\(\|A_s^n\|\le K_s\rho_{s,1}^n\)
+and
+\(\|(A_u)^{-n}\|\le K_u\rho_{u,1}^n\), then
+\begin{equation}
+ \|B_s^n\|\le K_s(\rho_{s,1}^2)^n,
+ \qquad
+ \|(B_u)^{-n}\|\le K_u(\rho_{u,1}^2)^n.              \label{eq:two-step-rates}
+\end{equation}
+For the source-bound inner-orbit operator of
+\cref{prop:inner-terminal-stable-row}, this gives
+\begin{equation}
+ K_{s,2}=1,\quad \rho_{s,2}\le0.01,
+ \qquad
+ K_{u,2}=1,\quad
+ \rho_{u,2}\le
+ 0.302183501335053468766049321269.                    \label{eq:model-two-step-rates}
+\end{equation}
+The last number is an inverse/backward unstable rate; the forward multiplier
+has modulus \(\abs{\mu_u}^2>1\).
+\end{proposition}
+
+\begin{proof}
+The normalization \(f(q)=1\) proves the complementary-projection identities.
+The two eigen-relations give
+\(AP_s=P_sA=P_sAP_s\) and \(AP_u=P_uA=\mu_uP_u\).
+Squaring gives \cref{eq:two-step-intertwining}, while
+\(B_s^n=A_s^{2n}\) and, on the one-dimensional unstable space,
+\((B_u)^{-n}=\mu_u^{-2n}\Id\), proving
+\cref{eq:two-step-rates}.  The numerical values use the proved
+\(K_s=1\), \(\rho_{s,1}\le0.1\) and the source-bound
+\(\rho_{u,1}\le0.549712198641301273\ldots\).
+\end{proof}
+
+This proposition is linear.  If a nonlinear selected map
+\(P:D\to\Sigma_0\) is used to define \(\mathcal Q=P\circ P\), its correct
+domain is \(D_2=D\cap P^{-1}(D)\); only there does the chain rule give
+\(D\mathcal Q(0)=A^2\).  Conversely, a direct near-two-period selected map
+has derivative \(A^2\) by \cref{prop:direct-two-period-derivative}, without
+first being represented as \(P^2\).  Neither route turns
+linear invariance into nonlinear invariance of \(E_s\) or \(E_u\).
+
+\begin{proposition}[Conditional two-return graph arithmetic]
+\label{prop:two-return-graph-arithmetic}
+Suppose the direct selected near-two-period map extends from the microscopic
+domain in \cref{prop:explicit-two-period-event-tube} to the declared split
+ball, is \(C^2\) there, and returns that ball to the graph-transform domain.
+Identify its coordinates with \(\Sigma_0\) through \(J\) and use the pullback
+norm \(\norm{z}_J=\norm{Jz}_Y\).  Then
+\cref{prop:direct-two-period-derivative,prop:inner-two-step-splitting} supply
+\(D\mathcal Q(0)=B=A^2\),
+\(K_{s,2}=K_{u,2}=1\) and the stable forward and unstable inverse/backward
+rates
+\[
+ \rho_{s,2}\le0.01,\qquad
+ \rho_{u,2}\le(0.549712198641302)^2,
+\]
+Take graph weight \(\beta=0.9999\), and suppose the map has the six uniform
+Hessian bounds
+\begin{equation}
+ (C_{s,ss},C_{s,su},C_{s,uu},C_{u,ss},C_{u,su},C_{u,uu})
+ \le(1,10,1000,5,10,1000).                            \label{eq:two-return-wide-box}
+\end{equation}
+Then the exact split Lyapunov--Perron majorant has Perron bound
+less than \(0.193086\), stable and unstable self-map slacks greater than
+\(1.96408\times10^{-4}\) and \(1.24109\times10^{-4}\), respectively, and
+the unit-\(\widehat q\) graph budgets
+\begin{equation}
+ \norm{\widehat\psi}\le1.25886\times10^{-4},
+ \qquad \norm{D\widehat\psi}\le0.026559.              \label{eq:two-return-graph-budgets}
+\end{equation}
+Thus the graph-transform arithmetic closes under the displayed premises.
+The preferred-ball extension, return-domain containment, and six Hessian
+bounds remain premises; the center derivative, splitting, and rates do not.
+\end{proposition}
+
+A source-bound but nonrigorous signed finite-section pilot preserves the
+moving-event quotient, translates the entire returned history at the same
+event time, applies the fixed-center \(\widehat q/\widehat f\) pair, and
+only then takes the six tensor norms.  The primary
+\(n_{\rm step}=240\) row is
+approximately
+\[
+ (7.45637\!\times\!10^{-7},\,4.46663\!\times\!10^{-3},\,29.353924,
+   0.594988,\,0.573991,\,158.531687),
+\]
+and the disclosed last-two-mesh heuristic envelope is
+\begin{equation}
+ (2.35230\!\times\!10^{-6},\,0.00872968,\,32.117788,
+   0.596928,\,0.577596,\,158.531779).                  \label{eq:two-return-pilot-envelope}
+\end{equation}
+All six entries lie well inside \cref{eq:two-return-wide-box}.  The adapter
+at the current-history endpoint is a one-sided four-node stencil; an earlier
+zero-future convention is retained only as a discarded audit.  Neither mesh
+convergence nor the heuristic envelope is an interval error bound, so
+\cref{eq:two-return-pilot-envelope} is design evidence and not a hypothesis
+verification.
+
+The obstruction is not merely that three meshes are too few.
+
+\begin{lemma}[Finite-sampling obstruction on an arbitrary \(C^0\) ball]
+\label{lem:finite-sampling-obstruction}
+Let \(K\) be a nontrivial compact interval,
+\(X=C(K)\) with the supremum norm, and let
+\(S_Nh=(h(t_1),\ldots,h(t_N))\) sample any finite node set.  For every
+bounded linear reconstruction \(R_N:\R^N\to X\),
+\begin{equation}
+ \norm{\Id-R_NS_N}_{\mathcal L(X)}\ge1.                \label{eq:sampling-no-go}
+\end{equation}
+Moreover, nodal data cannot determine all unit bilinear forms on \(X\): for
+any off-grid \(t_*\), the form
+\(B_*(h,k)=h(t_*)k(t_*)y_*\), with \(\norm{y_*}=1\), is invisible to inputs
+whose sampled values vanish.
+\end{lemma}
+
+\begin{proof}
+Choose \(t_*\notin\{t_1,\ldots,t_N\}\) and a continuous spike \(h\) with
+\(\norm h_\infty=1\), \(h(t_j)=0\), and \(h(t_*)=1\).  Then \(S_Nh=0\), so
+\((\Id-R_NS_N)h=h\), which proves \cref{eq:sampling-no-go}.  Applying the
+same spike in both slots proves the bilinear assertion.
+\end{proof}
+
+Consequently, the finite-section grid trend cannot be promoted by mesh refinement
+alone to an operator-norm bound on the arbitrary continuous-history ball.
+A strict route must instead interpret directed tensor coefficients as
+physical evaluation atoms and bound the signed atom--density/bimeasure
+residual to the true RFDE Hessian.  If \(A=(a_{oij})\) is such a directed
+finite tensor and the output reconstruction has norm one, its atomic lift
+satisfies
+\begin{equation}
+ \norm{B_N}\le\max_o\sum_{i,j}\abs{a_{oij}}.           \label{eq:atomic-bimeasure-lift}
+\end{equation}
+This makes the row-\(\ell^1\) shape of the pilot appropriate, but supplies no
+residual bound.  The frozen continuous splitting gives
+\(\norm{\widehat f}\le21.810501\) and
+\(\norm{P_s}\le22.810501\); hence an ambient Hessian error can be amplified
+by as much as \(\norm{P_s}^3\).  The resulting simultaneous raw-error design
+ceiling is \(7.58219\times10^{-5}\).  Direct enclosure of each already
+projected signed bimeasure is therefore the preferred rigorous route; all six
+actual block slots remain open.
+
+The preceding obstruction leaves intact the continuous dual structure of the
+RFDE.  The next result both identifies the exact split norm needed by a
+validated residual calculation and records the qualitative stable manifold
+that follows without a numerical Hessian cap.
+
+\begin{proposition}[Split quotient, bimeasure residual, and local selected graph]
+\label{prop:split-bimeasure-local-graph}
+Let \(\ell_0(\phi,w)=\phi(0)\), choose a Hahn--Banach extension
+\(\bar f\in Y^*\) of \(\widehat f\in\Sigma_0^*\), and write
+\[
+ E_s=\ker\ell_0\cap\ker\bar f,
+ \qquad E_u=\operatorname{span}\{\widehat q\}.
+\]
+For every \(\mu\in Y^*\), restriction to the stable input space has the
+exact quotient norm
+\begin{equation}
+ \norm{\mu|_{E_s}}
+ =\inf_{\alpha,\beta\in\R}
+   \norm{\mu-\alpha\ell_0-\beta\bar f}_{Y^*},
+ \qquad
+ \sup_{|c|\le1}|\mu(c\widehat q)|=|\mu(\widehat q)|.    \label{eq:stable-quotient-cost}
+\end{equation}
+Here \(Y^*=\mathcal M([-\tau_{\max},0])\times\R\), with the total-variation
+plus recovery-atom norm, and the quotient value is independent of the chosen
+extension \(\bar f\).
+Denote the two input costs in \cref{eq:stable-quotient-cost} by
+\(d_s(\mu)\) and \(d_u(\mu)\), respectively, and put
+\[
+ \omega_s(y)=\norm{y-\widehat q\widehat f(y)}_Y,
+ \qquad \omega_u(y)=|\widehat f(y)|.
+\]
+Here \(I_s:E_s\hookrightarrow\Sigma_0\) and
+\(I_u:\R\to\Sigma_0\), \(I_uc=c\widehat q\), are the input injections,
+while \(O_s=P_s\) and \(O_u=\widehat f\) are the output maps.  For each
+\((o,a,b)\in\{s,u\}^3\), let
+\(B_i(z)=O_oD^2Q_Y(Y_*+Jz)[I_a\,\cdot,I_b\,\cdot]\), with the affine
+section charts understood and the two mixed-input orders identified, giving
+the six directed blocks indexed by \(i\).
+If a signed atom--density bimeasure has an absolutely summable or
+Bochner-integrable representation
+\(\mathcal B=\sum_r y_r\otimes\mu_r\otimes\nu_r\), with
+\(y_r\in\Sigma_0\), define
+\[
+ \mathcal N_{ab}^{o}(\mathcal B)
+ =\inf_{\mathcal B=\sum_r y_r\otimes\mu_r\otimes\nu_r}
+   \sum_r\omega_o(y_r)d_a(\mu_r)d_b(\nu_r),
+ \qquad a,b,o\in\{s,u\}.
+\]
+Then
+\begin{equation}
+ \norm{O_o\mathcal B[I_a\,\cdot,I_b\,\cdot]}_{\rm bil}
+ \le \mathcal N_{ab}^{o}(\mathcal B).                 \label{eq:split-projective-bound}
+\end{equation}
+Consequently, if \(C_i\) is an outward split-projective center bound and
+\(\delta_{i,r}\) are outward residuals for the base tube and coefficients,
+first and second variations, event quotient and history translation,
+continuous \(q/f\) output action, and full-ball inflation/return domain, then
+\begin{equation}
+ C_i+\sum_r\delta_{i,r}<\operatorname{cap}_i
+ \quad(i=1,\ldots,6)
+ \quad\Longrightarrow\quad
+ \sup_{z\in B_\lambda}\norm{B_i(z)}<\operatorname{cap}_i
+ \quad(i=1,\ldots,6).                                 \label{eq:six-block-residual-implication}
+\end{equation}
+
+Finally, the selected coordinate map
+\(Q_{\rm coord}:D\to E_s\times\R\) supplied by
+\cref{prop:explicit-two-period-event-tube} has a qualitative local
+\(C^2\) stable graph.  More precisely, there are neighborhoods \(U_s\) of
+zero in \(E_s\) and \(U\) of zero in \(E_s\times\R\), and a \(C^2\) map
+\(\psi:U_s\to\R\) with \(\psi(0)=D\psi(0)=0\), whose graph consists of
+the points whose selected-map iterates remain in \(U\) and converge to zero.
+This conclusion has no effective domain radius, graph height, or slope.  It
+does not identify the graph with the periodic orbit's stable-set germ and
+implies neither a pulse crossing nor biological onset.
+\end{proposition}
+
+\begin{proof}
+The restriction \(Y^*\to E_s^*\) is the metric quotient by
+\(E_s^\perp=\operatorname{span}\{\ell_0,\bar f\}\); Hahn--Banach gives
+equality in \cref{eq:stable-quotient-cost}.  Apply these exact input costs
+and the fixed output split term by term in a signed projective
+representation, then take its infimum, to obtain
+\cref{eq:split-projective-bound}.  The triangle inequality gives
+\cref{eq:six-block-residual-implication}.
+
+For the last assertion,
+\cref{prop:direct-two-period-derivative,prop:inner-two-step-splitting} give
+the hyperbolic linearization
+\(DQ_{\rm coord}(0)=J^{-1}A^2J\), with stable rate at most \(0.01\) and
+unstable inverse rate at most \(0.302184\).  Since \(Q_{\rm coord}\) is
+\(C^2\) on an open neighborhood, the derivative of its nonlinear remainder
+is arbitrarily small after that neighborhood is shrunk.  The local stable-
+manifold theorem for Banach-space maps gives the asserted \(C^2\) graph,
+without requiring a self-map of the full anisotropic ball.
+\end{proof}
+
+The quotient formula removes phase atoms and multiples of \(\bar f\) before
+total variation is taken, while the unstable input is evaluated on
+\(\widehat q\) with its sign retained.  Thus
+\cref{eq:six-block-residual-implication} is sharper than multiplying an
+ambient residual by powers of \(\norm{P_s}\), but it supplies no numerical
+ingress by itself.  At present the center values and every listed residual
+are unset: zero of the six numerical Hessian caps in
+\cref{eq:two-return-wide-box} has been proved.  The local stable graph above
+therefore cannot be assigned the preferred radius \(R_s=0.0097\), the pulse
+radius \(0.0094\), or either quantitative budget in
+\cref{eq:two-return-graph-budgets}.
+
+The wide box has the cancellation-blind pair-sum bound \(2000\), so it
+violates the older sufficient scalar target \(K_{\rm ret}<188.912224\) while
+still closing the correlated split majorant.  Hence that scalar target is not
+a necessary graph-transform input; a source-bound direct return-domain proof
+may replace it.
+
+There is one indispensable normalization adapter downstream.  The graph
+budgets in \cref{eq:two-return-graph-budgets} use the unit-
+\(\widehat q\) coordinate, whereas the pulse endpoint intervals use the
+physical right column.  From the proved lower bound
+\(\alpha_q=\norm{q_{\rm phys}}_Y\ge
+\alpha_{q,-}=0.07755431589814009\), the conditional
+physical bounds are
+\begin{equation}
+ \norm{\psi_{\rm phys}}\le0.001623186095,\qquad
+ \norm{D\psi_{\rm phys}}\le0.3424510530.              \label{eq:physical-graph-adapter}
+\end{equation}
+The height in \cref{eq:physical-graph-adapter} exceeds the older convenient
+target \(0.001\); that target was sufficient but not maximal.  Direct use of
+the endpoint-specific intervals gives the strict margins below.
+Combining these with the proved pulse endpoint and derivative enclosures
+would give
+\begin{equation}
+ \begin{aligned}
+ H(J_-)&>0.01805400129,&
+ H(J_+)&<-0.01316048384,\\
+ H'(I_J)&\subset[-260.79414671,-243.20585329].
+ \end{aligned}                                        \label{eq:wide-box-conditional-crossing}
+\end{equation}
+Accordingly, once the proved microscopic event/return tube is enlarged to the
+declared graph ball, its graph-transform return domain and
+\cref{eq:two-return-wide-box} are certified in the identical chart, and once
+either the direct selected-return hypotheses of
+\cref{lem:direct-selected-stable-germ} or an identity \(\mathcal Q=P^2\) on
+nested domains is verified, a unique \emph{selected} stable-sheet crossing
+follows with large strict margin.  The center derivative, fixed splitting,
+intertwinings, and linear rates are already proved.  The preferred-domain
+quantitative stable graph, crossing, stable-set identification, two-sided
+routing, and biological onset remain unproved.  The qualitative selected-map
+stable graph in \cref{prop:split-bimeasure-local-graph} does not close any of
+these gates.  A no-earlier-hit theorem is needed only for a first-return or
+ordinal label.
+
+

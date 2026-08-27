@@ -1,0 +1,536 @@
+\section{The physical pulse curve and the conditional crossing}\label{sec:pulse-crossing}
+\subsection{A correlated wide-parameter pulse family}
+
+Let
+\[
+ J_0=\frac{2409}{8000},\qquad
+ h=\frac3{40000},\qquad J=J_0+h\zeta,\quad -1\le\zeta\le1.
+\]
+For the pulse solution \(z(t,J)\), propagate the scaled coefficients
+\begin{equation}
+ b_k(t)=\frac{h^k}{k!}\partial_J^kz(t,J_0),
+ \qquad 0\le k\le4,                                    \label{eq:scaled-jet}
+\end{equation}
+as one correlated system.  Because the vector field is cubic, coefficient
+products are exact finite convolutions; the degree-five through degree-twelve
+terms form the forcing for the remainder
+\begin{equation}
+ R_5(t,\zeta)=z(t,J_0+h\zeta)-\sum_{k=0}^4b_k(t)\zeta^k.
+                                                               \label{eq:R5}
+\end{equation}
+This scaled representation retains the cancellation that is destroyed by
+independent derivative boxes.
+
+The \(192\)-bit directed Taylor--Bernstein computation covers all \(1152\)
+time cells on \(0\le t\le24\sqrt5\).  With time degree \(16\), every
+coefficient guide and every remainder tube closes.  The certified maxima
+are
+\begin{align}
+ \max\norm{\text{coefficient error}}_P
+   &\le8.5725360731\times10^{-19},\\
+ \max\norm{\text{degree }5\text{--}12\text{ forcing}}_P
+   &\le2.0594765514\times10^{-9},\\
+ \max\norm{R_5}_P
+   &\le1.7206344728\times10^{-8},                       \label{eq:wide-jet-bounds}\\
+ \max\abs{(R_5)_v}
+   &\le3.5937291129\times10^{-9}.
+\end{align}
+The complete computation has been independently regenerated from its fixed
+inputs.  Hence the wide fixed-time parameter family is proved.  These bounds
+do not yet include a moving event time.
+
+\subsection{Event alignment and the scalar crossing}
+
+Let \(g(t,\xi,J)\) define a transverse event and suppose
+\begin{equation}
+ g(\tau(\xi,J),\xi,J)=0,\qquad
+ \abs{\partial_tg}\ge\sigma>0.                         \label{eq:event-speed}
+\end{equation}
+The implicit-function theorem gives
+\begin{equation}
+ \partial_J\tau=-\frac{\partial_Jg}{\partial_tg}.       \label{eq:event-first-jet}
+\end{equation}
+Higher event jets follow recursively by differentiating
+\(g(\tau(\xi,J),\xi,J)=0\).  If
+\(z_t(\theta)=z(t+\theta)\), the common-event retained reduced history is
+\begin{equation}
+ \begin{split}
+ B_\xi(J):=K_\xi(J):=\Pi_Yz_{\tau(\xi,J)}
+   =\bigl(&\theta\longmapsto
+       v(\tau(\xi,J)+\theta,\xi,J),\\
+          &w(\tau(\xi,J),\xi,J)\bigr)\in Y,
+ \qquad-r\le\theta\le0.                                \label{eq:event-history}
+ \end{split}
+\end{equation}
+Thus \(B_\xi\) is the notation used in the completion theorem, while
+\(K_\xi\) is retained below for compatibility with the certified
+event-alignment chain; neither denotes the release history \(R_\xi\).
+Its two reduced components have derivatives
+\begin{align*}
+ \partial_JK_{\xi,v}(J)(\theta)
+ &=v_J(\tau+\theta,\xi,J)
+   +\dot v(\tau+\theta,\xi,J)\partial_J\tau,
+   &&-r\le\theta\le0,\\
+ \partial_JK_{\xi,w}(J)
+ &=w_J(\tau,\xi,J)+\dot w(\tau,\xi,J)\partial_J\tau.
+\end{align*}
+Thus event alignment is a history translation problem and cannot be
+replaced by an endpoint correction.
+
+For the physical pulse family in \cref{eq:scaled-jet}, let
+\(h_C(\phi)=\phi_v(0)-V_i(0)\), where the exact phase-zero inner-orbit
+voltage is source-bound by
+\begin{equation}
+ 0.9053838432821200<V_i(0)<0.9054038432821201.          \label{eq:route-c-level}
+\end{equation}
+The wider Fourier candidate section used during orbit discovery is not used
+as a theorem input.
+
+\begin{theorem}[Uniform Route--C event alignment]\label{thm:route-c-event}
+For every
+\(J\in[6021/20000,753/2500]=[0.30105,0.30120]\), the exact pulse solution
+has exactly one positive crossing of \(h_C=0\) in
+\begin{equation}
+ I_C=\left[\frac{555\sqrt5}{24},
+               1+\frac{546\sqrt5}{24}\right].         \label{eq:route-c-bracket}
+\end{equation}
+On the whole parameter--time box its event speed satisfies
+\begin{equation}
+ 0.2133519018734632<\dot v<0.2791999723595853.          \label{eq:route-c-speed}
+\end{equation}
+Writing \(J=J_0+h\zeta\), the event time has a fourth-order polynomial
+\(\widehat T_4(\zeta)\) such that
+\begin{equation}
+ \abs{T(\zeta)-\widehat T_4(\zeta)}\le10^{-4},
+ \qquad -1\le\zeta\le1.                              \label{eq:event-time-tube}
+\end{equation}
+At \(J_0\),
+\begin{equation}
+ 51.79830610110210<T(0)<51.79838713426455.             \label{eq:center-event-time}
+\end{equation}
+The scaled coefficients
+\(\widehat T_4(\zeta)=T_0+\sum_{k=1}^4a_k\zeta^k\) satisfy
+\begin{align}
+ a_1&\in[2.9068862680,2.9074011687]\times10^{-2},&
+ a_2&\in[1.9583818528,1.9612556829]\times10^{-4},\notag\\
+ a_3&\in[1.9208606177,1.9385338925]\times10^{-6},&
+ a_4&\in[2.2095125644,2.2986280783]\times10^{-8}.       \label{eq:event-time-coefficients}
+\end{align}
+Moreover the translated histories
+\(\mathcal K(\zeta)=(v(T(\zeta)+\cdot,J),w(T(\zeta),J))\in Y\) obey
+\begin{equation}
+ \norm{\mathcal K(\zeta)-B_c(\zeta)}_Y
+ \le0.008199931248423,                                 \label{eq:event-history-tube}
+\end{equation}
+where the continuous fourth-order fixed-time reference family is
+\[
+ B_c(\zeta)=
+ \left(\theta\longmapsto\sum_{k=0}^4b_{k,v}(T_0+\theta)\zeta^k,\,
+                   \sum_{k=0}^4b_{k,w}(T_0)\zeta^k\right).
+\]
+\end{theorem}
+
+The proof combines the source-bound fixed-time family with cellwise
+Bernstein endpoint and vector-field bounds.  The gap is uniformly negative
+at \(\widehat T_4-10^{-4}\), with upper bound
+\(-6.4436\times10^{-7}\), and uniformly positive at
+\(\widehat T_4+10^{-4}\), with lower bound
+\(6.4342\times10^{-7}\).  The positive speed then gives existence and
+uniqueness.  This proves neither that the event is the third post-release
+crossing nor that \(\mathcal K(\zeta)\) lies on the inner stable sheet.  A
+fourth-order \(Y\)-valued history jet is not claimed.  The first derivative,
+including the moving-event contribution, is certified next.
+
+\begin{theorem}[Event-aligned first pulse derivative]
+\label{thm:event-first-derivative}
+Put \(K(J)=\mathcal K((J-J_0)/h)\).  The map
+\[
+ K:[0.30105,0.30120]\longrightarrow Y
+\]
+is continuously differentiable.  If \(W=\partial_\zeta z\),
+\(C=\partial_\zeta\sum_{k=0}^4b_k\zeta^k\), and \(E=W-C\), the directed
+comparison for \(E\) closes on all \(1152\) cells with maximum weighted
+radius
+\begin{equation}
+ 8.7288930458\times10^{-8}.                            \label{eq:stage5d-radius}
+\end{equation}
+The event derivative satisfies
+\begin{equation}
+ T_J\in[336.6243028349,456.5740938122].                \label{eq:TJ-bound}
+\end{equation}
+On the complete event history,
+\begin{align}
+ D_JK_v(0)&=0,\notag\\
+ D_JK_w&\in[-17.350656459,-10.142798861],\notag\\
+ \norm{D_JK}_Y&\le142.200202974.                       \label{eq:DJK-bound}
+\end{align}
+For the fixed center Route--C functional from
+\cref{eq:fourier-reversal,eq:fq-bound}, the presently directed consequence
+is only
+\begin{equation}
+ \abs{f(D_JK)}\le1017.273043.                          \label{eq:DJK-action-modulus}
+\end{equation}
+No sign or exclusion of zero is asserted in
+\cref{eq:DJK-action-modulus}.
+\end{theorem}
+
+The proof does not differentiate the fixed-time remainder bound.  The exact
+error equation is
+\[
+ E'=DF(z)E+\{DF(z)-DF(B)\}C
+       +\partial_\zeta\operatorname{Tail}_{\ge5}(B),
+ \qquad B=\sum_{k=0}^4b_k\zeta^k.
+\]
+The state remainder enters only through the correlated linearization
+difference.  A \(192\)-bit Taylor--Bernstein comparison on \(64\) parameter
+shards closes every fixed-time cell.  The event identity
+\[
+ T_\zeta=-W_v(T,\zeta)/\dot v(T,\zeta)
+\]
+is then evaluated on \(128\) parameter shards, and the history chain rule
+retains \(z_tT_J\) on the entire translated window.  Finally,
+\cref{eq:DJK-action-modulus} uses the validated density total variation and
+atom moduli.  This last operation deliberately loses orientation.
+
+\begin{lemma}[Phase-invariant oriented quotient]
+\label{lem:phase-invariant-quotient}
+Let \(\ell\) be a nonzero complex representative of the left eigenspace of
+the simple real unstable multiplier, and let \(q,y\in Y\) be real with
+\(\ell(q)\ne0\).  Suppose one common directed computation gives
+\[
+ \abs{\ell(y)-a_0}\le r_a,
+ \qquad \abs{\ell(q)-b_0}\le r_b<\abs{b_0}.
+\]
+With \(c_0=a_0/b_0\), the normalized action is real and obeys
+\begin{equation}
+ \frac{\ell(y)}{\ell(q)}
+ \in[\Re c_0-r_c,\Re c_0+r_c],
+ \qquad
+ r_c=\frac{r_a+\abs{c_0}r_b}{\abs{b_0}-r_b}.          \label{eq:oriented-quotient}
+\end{equation}
+Equivalently, for any real \(c\), if the same row gives
+\(\abs{\ell(y-cq)}\le r\) and \(\abs{\ell(q)}\ge b_->0\), then
+\begin{equation}
+ \frac{\ell(y)}{\ell(q)}
+ \in[c-r/b_-,c+r/b_-].                                \label{eq:same-row-residual-quotient}
+\end{equation}
+\end{lemma}
+
+Indeed the quotient is invariant under every nonzero complex rescaling of
+\(\ell\).  Reality and simplicity imply that conjugation changes \(\ell\)
+only by such a rescaling, so its action ratio on real histories is real.
+The disk estimate in \cref{eq:oriented-quotient} follows by writing the
+difference from \(a_0/b_0\) over the common denominator.
+\Cref{eq:same-row-residual-quotient} follows from
+\[
+ \frac{\ell(y)}{\ell(q)}-c
+ =\frac{\ell(y-cq)}{\ell(q)}.
+\]
+\Cref{eq:same-row-residual-quotient} is the preferred correlated form: choose
+a source-bound center \(c\), form \(D_JK-cq\) as one complete-history object,
+apply the same Fourier row and tail enclosure, and divide only after the
+correlated residual action has been bounded.  This is the first-variation
+analogue of the successful same-row deflation in
+\cref{prop:base-uu}.
+
+\begin{lemma}[Physical right-gauge correction]
+\label{lem:right-gauge}
+Let \(\widetilde q\) be a complex Grushin-normalized right eigencolumn for a
+simple real multiplier of a real return operator.  Choose a real evaluation
+\(\chi\) with \(\chi(\widetilde q)\ne0\), and orient the physical unstable
+history by
+\[
+ \gamma=\frac{\chi(\widetilde q)}
+               {\abs{\chi(\widetilde q)}}\in\mathbb S^1,
+ \qquad
+ q=\gamma^{-1}\widetilde q .
+\]
+Then \(q\) is real and \(\chi(q)>0\).  For any raw left representative
+\(\ell\) with \(\ell(\widetilde q)\ne0\), the real normalized unstable
+functional and stable projection on real histories are
+\begin{equation}
+ f(y)=\gamma\frac{\ell(y)}{\ell(\widetilde q)},
+ \qquad
+ qf(y)=\widetilde q\frac{\ell(y)}{\ell(\widetilde q)}. \label{eq:right-gauge}
+\end{equation}
+In particular, the second expression is independent of both complex
+left- and right-eigenvector phase gauges.
+\end{lemma}
+
+To prove the lemma, reality and simplicity imply
+\(\widetilde q=\eta q_{\mathbb R}\) for a real eigenhistory
+\(q_{\mathbb R}\) and some \(\eta\ne0\).  Orienting
+\(q_{\mathbb R}\) by \(\chi(q_{\mathbb R})>0\) shows that
+\(\gamma=\eta/\abs{\eta}\), so \(\gamma^{-1}\widetilde q\) is real.
+The identities in \cref{eq:right-gauge} then follow by normalization.
+
+\Cref{lem:right-gauge} is not optional in the executable certificate.  The
+stored Grushin eigencolumn carries a nontrivial complex phase even though
+the exact multiplier is real.  Dividing \(\ell(D_JK)\) directly by
+\(\ell(\widetilde q)\) therefore produces a complex, right-gauge-dependent
+number; it is not the oriented action in
+\cref{lem:phase-invariant-quotient}.  The correlated residual must first use
+the physical real history \(q=\gamma^{-1}\widetilde q\), or equivalently
+insert the factor \(\gamma\) in \cref{eq:right-gauge}.  This correction moves
+the diagnostic center from the recovery-atom shard near \(-14\) to the
+normalized physical value near \(-252\).
+
+\begin{theorem}[Fixed-center physical-phase action of the event derivative]
+\label{thm:oriented-pulse-action}
+Let \(q_{\rm phys}\) and \(f_{\rm phys}\) be the fixed center Grushin pair
+oriented by \cref{lem:right-gauge}, with
+\(f_{\rm phys}(q_{\rm phys})=1\).  For every
+\(J\in[0.30105,0.30120]\),
+\begin{equation}
+ f_{\rm phys}(D_JK(J))\in
+ [-258.746521015805,-245.253478984195]\subset(-\infty,0).
+ \label{eq:oriented-pulse-action}
+\end{equation}
+The enclosure is uniform on the full pulse interval and contains the
+event-time translation term.  It is an action of the fixed normalized
+Route--C functional, not yet a stable-sheet-gap derivative.
+\end{theorem}
+
+The source-bound calculation takes \(c_*=-252\), forms the complete history
+\(Y_*(J)=D_JK(J)-c_*q_{\rm phys}\), and keeps the recovery atom and both
+delayed-density pieces in one directed action.  The current voltage atom
+vanishes exactly because \(D_JK_v(0)=(q_{\rm phys})_v(0)=0\).  On \(128\)
+pulse-parameter shards and \(512\) exact history cells, the two additive
+joint acceptance envelopes give
+\begin{align}
+ r_{\rm guide}&\le0.002869679658061285,\notag\\
+ r_{\rm measure}&\le1.899608044833\times10^{-6},\notag\\
+ r_A&\le0.002871579266106117.                         \label{eq:stage5e-budget}
+\end{align}
+The same-row denominator satisfies
+\begin{equation}
+ |\ell(q_{\rm phys})|\ge0.0004256385267872229.       \label{eq:stage5e-denominator}
+\end{equation}
+Thus \cref{eq:same-row-residual-quotient} gives radius at most
+\(6.746521015805\) about \(c_*\), proving
+\cref{eq:oriented-pulse-action}.  All arithmetic is outward at \(192\) bits;
+the finite row, Neumann tail, orbit covariance, density-basis transfer,
+convolution rounding, pulse remainder, event graph, and seams are covered
+before the final division.
+
+The executable biological-control contract imports exactly six outputs from
+\cref{thm:route-c-event}: the section level, pulse interval, unique declared-
+bracket event, speed interval, time-graph remainder, and common-event
+\(Y\)-tube.  Its fields for \(J_c\), stable-gap signs, physical onset,
+routing, and capture remain null or false; its optional interval-Newton
+enclosure is likewise absent.  Event alignment therefore becomes a proved
+input to the control chain without silently promoting its next implication.
+
+Once the graph \(\psi_\xi\) and normalized functional \(f_\xi\) are
+available, let \(\phi_{i,\xi}^{\Sigma}\) be the inner-orbit base history on
+the phase section and define the signed stable-sheet gap
+\begin{equation}
+ H(\xi,J)
+ =f_\xi(K_\xi(J)-\phi_{i,\xi}^{\Sigma})
+  -\psi_\xi\!\left[
+   (\Id-q_\xi f_\xi)
+   (K_\xi(J)-\phi_{i,\xi}^{\Sigma})\right].           \label{eq:stable-gap}
+\end{equation}
+For each fixed \(\xi\), the pair \((q_\xi,f_\xi)\) in this formula is held
+fixed as \(J\) varies.
+If \([F_J]\) encloses the oriented quotient
+\(f_\xi(D_JK_\xi)\), \(\norm{D\psi_\xi}\le L_\psi\), and
+\(\norm{(\Id-q_\xi f_\xi)D_JK_\xi}\le M_s\), then the exact correlated
+derivative satisfies
+\begin{equation}
+\partial_JH(\xi,J)
+\in[F_J]+[-L_\psi M_s,L_\psi M_s].                  \label{eq:gap-slope-budget}
+\end{equation}
+The oriented action and graph correction enter this estimate separately; the
+norm in \cref{eq:DJK-bound} alone gives no slope.
+
+At the center parameter, fix the exact reduced history space and Route--C
+section
+\[
+ Y=C([-\tau_{\max},0],\mathbb R)\times\mathbb R,
+ \qquad \Sigma=\{y\in Y:y_v(0)=0\},
+\]
+with the inherited max norm.  Let \(q_{\rm phys}\) and
+\(f_{\rm phys}\) be the same fixed physically oriented Grushin pair used in
+\cref{thm:oriented-pulse-action}, put
+\(P_s=\Id-q_{\rm phys}f_{\rm phys}\), and set
+\(\kappa(J)=K(J)-X_*\), where \(X_*\) is the inner-orbit reference history
+on this section.  Thus the center specialization of \cref{eq:stable-gap} is
+\(H(J)=f_{\rm phys}(\kappa(J))-\psi(P_s\kappa(J))\).
+
+\begin{lemma}[Global affine splitting of the Route--C section]
+\label{lem:route-c-affine-splitting}
+Let \(q\in\Sigma\) and \(f\in\Sigma^*\) satisfy \(f(q)=1\), and put
+\(P_s=\Id-qf\).  Then \(\operatorname{ran}P_s=\ker f\), and
+\begin{equation}
+ \mathcal C\colon\Sigma\longrightarrow\ker f\times\R,
+ \qquad
+ \mathcal C(y)=(P_sy,f(y))                              \label{eq:route-c-affine-chart}
+\end{equation}
+is a bounded linear isomorphism with inverse
+\((z,u)\mapsto z+qu\).  Hence subtraction of \(X_*\) gives global
+coordinates on the affine section \(X_*+\Sigma\).  If
+\(\psi\colon D_s\subset\ker f\to\R\) represents the local stable sheet as
+\begin{equation}
+ X_*+\{z+q\psi(z):z\in D_s\},                          \label{eq:centered-stable-sheet}
+\end{equation}
+then, for every section history \(K\) with
+\(P_s(K-X_*)\in D_s\),
+\begin{equation}
+ K\text{ belongs to this graph}
+ \quad\Longleftrightarrow\quad
+ f(K-X_*)-\psi(P_s(K-X_*))=0.                          \label{eq:affine-gap-equivalence}
+\end{equation}
+In particular, no additional numerical containment condition for an
+ambient Route--C chart is required; only containment of the stable
+coordinate in \(D_s\) is needed.
+\end{lemma}
+
+Indeed, \(f(P_sy)=0\) and \(y=P_sy+qf(y)\).  These identities prove both the
+range statement and the two inverse relations in \cref{eq:route-c-affine-chart};
+\cref{eq:affine-gap-equivalence} then follows from uniqueness of the split
+coordinates.  This global affine coordinate statement does not enlarge the
+local domain \(D_s\) on which the stable graph has been constructed.
+
+\begin{theorem}[Centered endpoint coordinates, stable cone, and conditional slope]
+\label{thm:conditional-stable-gap-slope}
+On \(I_J=[J_-,J_+]=[0.30105,0.30120]\), source-bound complete-history
+endpoint calculations give
+\begin{equation}
+ \begin{aligned}
+ f_{\rm phys}(\kappa(J_-))&\in
+   F_-:=[0.019677187,0.023055896],\\
+ f_{\rm phys}(\kappa(J_+))&\in
+   F_+:=[-0.018164491,-0.014783669],\\
+ \norm{P_s\kappa(J_-)}_Y&\le0.008935972,
+ &\norm{P_s\kappa(J_+)}_Y&\le0.008927665.
+ \end{aligned}                                        \label{eq:stage5ga-endpoints}
+\end{equation}
+The direct norm of the same physical unstable column and the correlated
+projection identity give
+\begin{equation}
+ \norm{q_{\rm phys}}_Y\le0.086274581,
+ \qquad
+ \sup_{J\in I_J}\norm{P_sD_J\kappa(J)}_Y\le5.979324. \label{eq:stage5gb-projection}
+\end{equation}
+A two-ended Banach-space cone, using both bounds in
+\cref{eq:stage5ga-endpoints}, then proves
+\begin{equation}
+ P_s\kappa(I_J)
+ \subset \overline B_Y\!\left(0,\frac{47}{5000}\right)
+             \cap\ker f_{\rm phys}.                   \label{eq:stage5gb-cone}
+\end{equation}
+\Cref{prop:inner-terminal-stable-row} supplies the discrete stable-power input
+\(K_s=1,\rho_s=0.1\) for a future graph transform.  It supplies neither the
+nonlinear return tube nor any of the six uniform Hessian blocks.
+If a quantitative centered \(C^1\) graph
+\(\psi\colon D_s\subset\ker f_{\rm phys}\to\R\) is
+constructed using this same \(Y,\Sigma,q_{\rm phys},f_{\rm phys},P_s\), if
+\begin{equation}
+ \overline B_Y\!\left(0,\frac{47}{5000}\right)
+      \cap\ker f_{\rm phys}\subset D_s,
+ \qquad
+ \sup_{J\in I_J}\norm{D\psi(P_s\kappa(J))}\le16,     \label{eq:stage5gb-gate}
+\end{equation}
+then
+\begin{equation}
+ H'(J)\in[-354.415700,-149.584300]\subset(-\infty,0)
+ \qquad(J\in I_J).                                    \label{eq:stage5gb-slope}
+\end{equation}
+The corresponding maximum admissible graph-derivative norm in this budget is
+strictly larger than \(41.016926\).
+\end{theorem}
+
+For completeness, put \(z(J)=P_s\kappa(J)\) and
+\(W=J_+-J_-=3/20000\).  From \cref{eq:stage5gb-projection}, the fundamental
+theorem of calculus gives
+\[
+ \norm{z(J)}_Y\le
+ \min\{E_-+5.979324(J-J_-),
+        E_++5.979324(J_+-J)\},
+\]
+where \(E_-=0.008935972\) and \(E_+=0.008927665\) are the directed endpoint
+bounds above.  The exact-rational
+intersection of these two affine cones lies strictly inside \(I_J\), and its
+directed maximum is at most
+\(0.009380268<47/5000\), proving \cref{eq:stage5gb-cone}.  Combining
+\cref{eq:gap-slope-budget,eq:stage5gb-projection} with
+\cref{eq:oriented-pulse-action} proves the conditional interval
+\cref{eq:stage5gb-slope}.  Thus the endpoint functional signs, the
+full-interval stable-coordinate ball, and this conditional slope arithmetic
+are proved.  The theorem does not supply the graph, either condition in
+\cref{eq:stage5gb-gate}, endpoint graph heights, graph-adjusted stable-gap
+signs, a selected crossing, onset, routing, or capture.
+
+\begin{proposition}[Completion of the selected center-parameter crossing]
+\label{prop:selected-center-crossing}
+Let \(I_J=[J_-,J_+]=[0.30105,0.30120]\), and let
+\(K\in C^1(I_J,X_*+\Sigma)\) be the single selected Route--C event branch enclosed in
+\cref{thm:route-c-event,thm:event-first-derivative}.  Suppose a quantitative
+centered \(C^1\) stable graph
+\(\psi\colon D_s\subset\ker f_{\rm phys}\to\R\) is constructed in the identical
+\(Y,\Sigma,q_{\rm phys},f_{\rm phys},P_s\) normalization and
+\begin{equation}
+ \overline B_Y\!\left(0,\frac{47}{5000}\right)
+       \cap\ker f_{\rm phys}\subset D_s,
+ \qquad
+ \sup_{J\in I_J}\norm{D\psi(P_s\kappa(J))}\le16.     \label{eq:center-crossing-graph-data}
+\end{equation}
+Let \(F_-,F_+\) be the proved functional intervals in
+\cref{eq:stage5ga-endpoints}.  Assume graph-height bounds
+\(\eta_-,\eta_+\ge0\) such that
+\begin{equation}
+ \begin{aligned}
+ \abs{\psi(P_s\kappa(J_-))}&\le\eta_-,\\
+ \abs{\psi(P_s\kappa(J_+))}&\le\eta_+,
+ \end{aligned}                                        \label{eq:center-crossing-endpoint-data}
+\end{equation}
+and that the graph-adjusted margins are strict:
+\begin{equation}
+ \inf F_- -\eta_->0,
+ \qquad
+ \sup F_+ +\eta_+<0.                                  \label{eq:center-crossing-margins}
+\end{equation}
+Then there is a unique
+\begin{equation}
+ J_c^{\rm sel}\in(J_-,J_+)
+ \quad\text{such that}\quad
+ H(J_c^{\rm sel})=0,                                  \label{eq:selected-center-root}
+\end{equation}
+and \(K(J_c^{\rm sel})\) lies on the local stable sheet in
+\cref{eq:centered-stable-sheet}.  Moreover the intersection is transverse,
+with \(H'(J_c^{\rm sel})\le-149.584300<0\).
+\end{proposition}
+
+To prove the proposition,
+\cref{eq:stage5ga-endpoints,eq:center-crossing-endpoint-data,eq:center-crossing-margins}
+give
+\(H(J_-)>0>H(J_+)\).  The gap is continuous,
+so the intermediate value theorem gives a zero.  Conditions
+\cref{eq:center-crossing-graph-data} and
+\cref{thm:conditional-stable-gap-slope} make \(H\) strictly decreasing on
+all of \(I_J\), proving uniqueness and transversality; the stable-sheet
+statement follows from the affine splitting lemma above.  Interval Newton
+may subsequently replace \(I_J\) by a smaller certified enclosure of
+\(J_c^{\rm sel}\), but it is not needed for either existence or uniqueness.
+
+The conclusion of the proposition is one scalar at the center parameter
+\(\xi_0=(1/4,1/200)\); it does not define a \(C^1\) function
+\(J_c(\xi)\).  Such a function requires a common parameter neighborhood on
+which \(K_\xi(J),X_{*,\xi},q_\xi,f_\xi,P_{s,\xi}\), and \(\psi_\xi\) are jointly
+\(C^1\) in compatible stable-bundle coordinates, together with uniform
+stable-coordinate domain containment, endpoint margins, and a bound
+\(\partial_JH(\xi,J)\le-m_J<0\).  Under those additional hypotheses the
+implicit-function theorem gives
+\begin{equation}
+ D_\xi J_c=-\frac{D_\xi H}{\partial_JH}.               \label{eq:Jc-derivative}
+\end{equation}
+None of these parameter-uniform graph and crossing hypotheses is supplied by
+the center-parameter proposition.  Even that proposition proves a selected
+stable-sheet intersection, not a biological onset.
+To obtain the latter, invariant exit cones must carry the two local sides to
+compact exit faces, and finite-time enclosures must attach those faces to the
+quiet and outer attraction tubes.  The strict quiet capture at \(J=0.30\)
+supplies one anchor; the corresponding outer-side tube is not yet complete.
+
+

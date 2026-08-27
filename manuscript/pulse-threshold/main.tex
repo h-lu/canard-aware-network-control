@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\input{preamble}
+
+\newcommand{\papertitle}{Validated Return-Map Ingredients for a Physical Pulse Threshold in a Delayed FitzHugh--Nagumo Equation}
+
+\title{\papertitle}
+\author{Haibo Lu\\
+  \small Shanghai Institute of Technology, Shanghai, China\\
+  \small \href{mailto:luhaibo1985@gmail.com}{luhaibo1985@gmail.com}\\
+  \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
+\date{}
+\hypersetup{
+  pdftitle={\papertitle},
+  pdfauthor={Haibo Lu},
+  pdfsubject={Stable-sheet pulse thresholds in a delayed FitzHugh--Nagumo equation},
+  pdfkeywords={delay differential equation, FitzHugh--Nagumo equation, pulse threshold, stable manifold, computer-assisted proof}
+}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\small\color{OpenRed}\textit{Research working draft.  The preferred-scale
+quantitative stable graph, its stable-set identification, the selected pulse
+crossing, and two-sided basin routing are not yet proved.}
+\end{center}
+
+\begin{abstract}
+A finite pulse applied to a delay equation produces a curve in an
+infinite-dimensional history space.  A physical threshold is therefore not a
+current-state voltage event: it is an intersection of that pulse curve with a
+codimension-one stable sheet, and it becomes a biological onset only when the
+two sides are routed to different attractors.  We develop and validate the
+return-map ingredients for this construction in a two-delay leaky
+FitzHugh--Nagumo equation.  A selected complete-history event is proved to be
+\(C^2\) on an explicit ball of arbitrary continuous histories of radius
+\(1.2\times10^{-8}\).  Its center derivative is the square of the one-return
+linear map, with two-step stable and unstable-inverse rates at most \(0.01\)
+and \(0.302184\).  A continuous RFDE adjoint, an exact stable-row quotient,
+and a signed-bimeasure residual formulate the six Hessian estimates needed by
+a quantitative graph transform.  For pulse amplitudes
+\(J\in[0.30105,0.30120]\), we validate a common event branch, its
+event-aligned derivative, opposite endpoint functional signs, and containment
+of all stable coordinates in an explicit ball.  These results give a strict
+crossing implication conditional on the still-missing preferred-scale stable
+graph.  A microscopic nonlinear outer return proves local attraction but does
+not yet capture the post-pulse history.  Thus this paper establishes a
+checkable route to a stable-sheet pulse threshold while explicitly leaving
+the graph, crossing, and two-sided routing as open gates.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+delay differential equation; FitzHugh--Nagumo equation; pulse threshold;
+stable manifold; validated numerics
+
+\medskip
+\noindent\textbf{Mathematics Subject Classification (2020).}
+34K26; 37G10; 65G20; 92B20
+
+\input{sections/01-introduction}
+\input{sections/02-model-and-threshold}
+\input{sections/03-selected-return-tools}
+\input{sections/04-inner-return}
+\input{sections/05-pulse-crossing}
+\input{sections/06-outer-return}
+\input{sections/07-discussion}
+
+\section*{Acknowledgements}
+OpenAI Codex assisted with symbolic and validated numerical calculations,
+proof auditing, and textual organization.  The author assumes responsibility
+for all mathematical claims and for the final manuscript.
+
+\section*{Declarations}
+\paragraph{Funding.} No funding was received for conducting this study.
+\paragraph{Competing interests.} The author has no relevant financial or
+non-financial interests to disclose.
+\paragraph{Data and code availability.} Development sources and source-bound
+certificates are currently maintained in a private research repository.  A
+paper-specific public archive, including an immutable version and exact
+verification instructions, will be released before submission.
+
+\begingroup
+\small
+\bibliographystyle{plainnat}
+\bibliography{../../references/references}
+\endgroup
+\end{document}

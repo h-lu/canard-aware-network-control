@@ -1,0 +1,226 @@
+\section{Selected complete-history returns and threshold completion}\label{sec:return-tools}
+The first result isolates the regularity needed to turn a selected event into a moving
+\emph{complete-history} return.  This distinction matters because a
+fixed-time RFDE solution map may be smooth in its initial history while its
+joint dependence on time and an arbitrary continuous history is not yet
+smooth: before the translation part has cleared the initial interval,
+changing time moves an evaluation point in a merely continuous function.
+
+Let
+\begin{equation}
+ \mathcal X_{\tau_*}=C([-\tau_*,0],\R^d),\qquad
+ \dot x(t)=\mathcal F(x_t),
+ \qquad x_t(\theta)=x(t+\theta),                      \label{eq:general-rfde}
+\end{equation}
+where \(d<\infty\), \(\tau_*>0\), and
+\(\mathcal F\colon U\subset\mathcal X_{\tau_*}\to\R^d\) is \(C^r\).
+Write \(\Phi_t(\phi)=x_t(\phi)\).
+
+\begin{theorem}[Eventually smooth selected-event return]
+\label{thm:eventual-selected-return}
+Let \(1\le k\le r\), let \(\mathcal M\) be a Banach space,
+\(D\subset\mathcal M\) open, and let
+\(\iota\colon D\to U\subset\mathcal X_{\tau_*}\) be \(C^k\).  Suppose all
+solutions from \(\iota(D)\) exist in one common \(U\)-tube through \(T_+\).
+Let \(V\subset\mathcal X_{\tau_*}\) be open, let
+\(g\colon V\to\R\) be \(C^k\), and assume
+\(\Phi_t(\iota(u))\in V\) for \((t,u)\in I\times D\).  Put
+\[
+ \mathcal H(t,u)=g(\Phi_t(\iota(u))).
+\]
+Suppose a common interval \(I=[T_-,T_+]\) satisfies
+\begin{equation}
+ T_->k\tau_*,\qquad
+ \sup_{u\in D}\mathcal H(T_-,u)\le-\delta_-,\qquad
+ \inf_{u\in D}\mathcal H(T_+,u)\ge\delta_+,
+ \qquad
+ \partial_t\mathcal H\ge a_*>0                     \label{eq:eventual-return-gates}
+\end{equation}
+on \(I\times D\), for \(\delta_-,\delta_+,a_*>0\).  Then each
+\(u\in D\) has exactly one selected event
+\(T(u)\in(T_-,T_+)\), and the event time and ambient event-hit map
+\[
+ T\colon D\to\R,
+ \qquad \mathcal E(u)=\Phi_{T(u)}(\iota(u))
+       \colon D\to\mathcal X_{\tau_*}
+\]
+are \(C^k\).  The threshold \(k\tau_*\) is a uniform sufficient condition;
+no necessity or optimality is asserted.
+
+If \(\iota\) is a \(C^k\) chart of a local section \(\Sigma\), and
+\(\mathcal E(D_0)\subset\iota(D)\) for an open \(D_0\subset D\), then
+\begin{equation}
+ \mathcal Q=\iota^{-1}\circ\mathcal E\big|_{D_0}
+ \colon D_0\to D                                      \label{eq:induced-selected-return}
+\end{equation}
+is the induced \(C^k\) selected section-return map.
+\end{theorem}
+
+\begin{proof}
+On the common tube, repeated Fr\'echet differentiation of the Volterra
+equation gives, for every fixed time, the triangular initial-data
+variational hierarchy through order \(k\).  We record the additional joint
+smoothing step because it is essential here.  Inductively in \(j\), the
+mixed jets
+\[
+ \partial_t^aD_\phi^b x(t;\phi),
+ \qquad a+b\le j,
+\]
+exist after \((j-1)\tau_*\) and depend continuously on \((t,\phi)\) in the
+corresponding multilinear-operator norms.  For \(j=1\) this follows from the
+integral equation and the first variational equation.  If it holds through
+order \(j\), differentiating \(x'=\mathcal F(x_t)\) and the triangular
+variational equations once more expresses every order-\(j+1\) jet as a
+finite sum of continuous derivatives of \(\mathcal F\) applied to lower-order
+history jets.  After one further maximum delay, every argument segment lies
+in the already regularized interval.  The linear inhomogeneous variational
+equations and Gronwall's inequality give continuity in the multilinear-
+operator norms, completing the induction.
+
+The earliest physical time in \(\Phi_t(\phi)\) is \(t-\tau_*\).  Hence, for
+every total order \(j\le k\), the preceding jets define continuous
+\(\mathcal X_{\tau_*}\)-valued derivatives once \(t>j\tau_*\).  Therefore
+\((t,\phi)\mapsto\Phi_t(\phi)\) is jointly \(C^k\) for \(t>k\tau_*\), and
+\(\mathcal H\) is jointly \(C^k\) on \(I\times D\).  The endpoint signs and
+positive speed give existence and uniqueness in the declared window; the
+Banach implicit-function theorem gives \(T\in C^k\), and composition gives
+\(\mathcal E\in C^k\).  The last assertion follows by composing with the
+section chart inverse.  See also the fixed-time RFDE and Poincar\'e-map
+background in \citet[Chs.~VII.4 and XIV.3]{diekmann1995delay}.
+\end{proof}
+
+We now state the exact implication that would turn the remaining model
+estimates into a physical threshold.  It is deliberately conditional: the
+hypotheses involving the effective stable graph and the two attraction tubes
+have not yet been verified for \cref{eq:scalar-v,eq:scalar-w}.
+
+Let \(\xi=(a,\kappa_3)\) range in a closed rectangle
+\(\Xi\subset\R^2\) about \(\xi_0=(1/4,1/200)\), with the other parameters
+fixed as in \cref{eq:center}.  Denote the quiet equilibrium, inner and outer
+periodic orbits, pulse release history, and event-aligned section entrance by
+\(E_q(\xi)\), \(\Gamma_i(\xi)\), \(\Gamma_o(\xi)\), \(R_\xi(J)\), and
+\(B_\xi(J)\), respectively.  In section coordinates
+\((u,z)\in E^u_\xi\oplus E^s_\xi\), write
+\begin{equation}
+ W^s_{\rm loc}(\Gamma_i(\xi))\cap\Sigma_\xi
+ =\{(u,z):u=\psi_\xi(z)\},
+ \qquad
+ H(\xi,J)=u_\xi(J)-\psi_\xi(z_\xi(J)).                 \label{eq:parametric-pulse-gap}
+\end{equation}
+
+\begin{theorem}[Conditional pulse-threshold completion]
+\label{thm:pulse-completion}
+Assume the following objects and estimates hold with common domains, radii,
+and strict constants for every \(\xi\in\Xi\).  The equilibrium
+\(E_q(\xi)\) and phase-fixed branches \(\Gamma_i(\xi),\Gamma_o(\xi)\) are
+\(C^1\) in \(\xi\), and the quiet equilibrium and outer cycle possess
+quantitative attraction tubes.  The inner section return has a
+one-dimensional unstable bundle and a stable complement, both \(C^1\) in
+\(\xi\), and \(\psi_\xi\) is jointly \(C^1\) in \((\xi,z)\) on one common
+graph domain.
+
+Assume also that \((\xi,J)\mapsto R_\xi(J)\) and the event branch
+\(B_\xi(J)\) are jointly \(C^1\) on
+\(\Xi\times I_J\), where \(I_J=[J_-,J_+]\).  The event does not switch
+branches, its speed is bounded away from zero, and every stable coordinate
+lies in the common domain of \(\psi_\xi\).  Suppose, after fixing the
+orientation, that there are \(\eta_H,m_J>0\) such that
+\begin{equation}
+ H(\xi,J_-)\ge\eta_H,
+ \qquad H(\xi,J_+)\le-\eta_H,
+ \qquad \partial_JH(\xi,J)\le-m_J<0                   \label{eq:gap-crossing}
+\end{equation}
+on the whole product.  Finally, suppose the signed-exit dynamics sends the
+\(H>0\) side into a complete-history exit slab attached to the quiet
+attraction tube and the \(H<0\) side into one attached to the outer
+attraction tube, uniformly in \(\xi\), with no other local exit; histories on
+\(H=0\) lie on \(W^s_{\rm loc}(\Gamma_i(\xi))\).
+
+Then there is a unique \(C^1\) function
+\(J_c:\Xi\to(J_-,J_+)\) satisfying \(H(\xi,J_c(\xi))=0\), with
+\begin{equation}
+ D_\xi J_c(\xi)
+ =-\frac{D_\xi H(\xi,J_c(\xi))}
+          {\partial_JH(\xi,J_c(\xi))}.                 \label{eq:threshold-derivative}
+\end{equation}
+Moreover, in the complete history space,
+\begin{equation}
+ \begin{aligned}
+ J<J_c(\xi)&\Longrightarrow
+   \norm{\Phi_t^\xi R_\xi(J)-E_q(\xi)}_X\longrightarrow0,\\
+ J=J_c(\xi)&\Longrightarrow
+   \operatorname{dist}_X(\Phi_t^\xi R_\xi(J),\Gamma_i(\xi))
+      \longrightarrow0,\\
+ J>J_c(\xi)&\Longrightarrow
+   \operatorname{dist}_X(\Phi_t^\xi R_\xi(J),\Gamma_o(\xi))
+      \longrightarrow0
+ \end{aligned}
+ \qquad(t\to\infty).                                  \label{eq:routing}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The endpoint signs and strict derivative give one and only one zero for each
+\(\xi\).  The implicit-function theorem yields the stated parameter
+dependence and derivative.  The stable graph identifies the zero with the
+local stable sheet, while the signed-exit and attraction-tube assumptions give
+the three asymptotic alternatives in \cref{eq:routing}.
+\end{proof}
+
+For the concrete center parameter, the event branch and several unadjusted
+functional signs are proved below.  The common quantitative graph,
+graph-adjusted endpoint signs, selected crossing, and routing assumptions of
+\cref{thm:pulse-completion} remain open.
+
+No exclusion of earlier hits is used in
+\cref{thm:eventual-selected-return}: it is needed only to call the branch a
+first return or to assign it an exact ordinal.  This separation also avoids
+an unnecessary algebraic restriction on a stable-manifold construction.
+
+\begin{lemma}[Direct selected return identifies the stable-set germ]
+\label{lem:direct-selected-stable-germ}
+Let \(\Phi\) be a continuous semiflow, \(\Gamma\) a periodic orbit through a
+transverse local section \(\Sigma\) at \(p\).  Choose a local section patch
+\(N\subset\Sigma\) with the phase-isolation property
+\begin{equation}
+ x_n\in N,\qquad \operatorname{dist}(x_n,\Gamma)\to0
+ \quad\Longrightarrow\quad x_n\to p.                 \label{eq:section-phase-isolation}
+\end{equation}
+Let \(\mathcal Q(x)=\Phi_{\Theta(x)}(x)\) be a selected local return of the
+same semiflow with
+\[
+ \mathcal Q\colon N\to N,\qquad \mathcal Q(p)=p,\qquad
+ \Theta(p)=mP,\qquad
+ 0<\Theta_-\le\Theta(x)\le\Theta_+<\infty.
+\]
+Suppose every intervening arc between successive iterates stays in one common
+flow tube.  Restrict both stable sets to points whose relevant iterates or
+flow arcs stay in these declared local domains, and assume that local
+flow-stable points in \(N\) have the selected hits recurrently defined in
+\(N\).  Then, as germs at \(p\),
+\begin{equation}
+ \operatorname{germ}_p W^s_N(\mathcal Q)
+ =\operatorname{germ}_p\bigl(N\cap W^s_{\rm tube}(\Gamma)\bigr).
+                                                               \label{eq:direct-return-stable-germ}
+\end{equation}
+Consequently, a direct near-\(mP\) selected return can construct the intrinsic
+periodic-orbit stable-sheet germ; an identity \(\mathcal Q=P^m\) and a
+first-return label are sufficient conveniences, not necessary hypotheses.
+If \(\mathcal Q\) is \(C^2\), \(p\) has the required hyperbolic splitting,
+and a local graph theorem applies, its stable graph represents this same
+intrinsic germ.
+\end{lemma}
+
+\begin{proof}
+Put
+\(t_n=\sum_{j=0}^{n-1}\Theta(\mathcal Q^j x)\).  If
+\(\mathcal Q^n(x)\to p\), then \(t_n\to\infty\) by the positive lower bound;
+joint continuity of \(\Phi_t\), uniformly for
+\(0\le t\le\Theta_+\), sends every intervening late-time arc to the
+corresponding arc of \(\Gamma\).  Conversely, convergence of the flow orbit
+to \(\Gamma\), together with recurrent selected hits in \(N\), gives
+\(\operatorname{dist}(\mathcal Q^n x,\Gamma)\to0\).  The phase-isolation
+property \cref{eq:section-phase-isolation} then gives
+\(\mathcal Q^n x\to p\).
+\end{proof}
+

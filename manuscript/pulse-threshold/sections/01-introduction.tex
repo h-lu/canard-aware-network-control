@@ -1,0 +1,65 @@
+\section{Introduction}\label{sec:introduction}
+
+A pulse threshold in a delay equation is an intersection problem in a space
+of histories.  Starting from a quiet equilibrium, a one-unit forcing pulse of
+amplitude \(J\) produces a release history and, after autonomous evolution, a
+curve on a transverse section.  If an unstable periodic orbit has one
+unstable section direction, its local stable set is a codimension-one sheet.
+The threshold sought here is the value of \(J\) at which the event-aligned
+pulse curve crosses that sheet.
+
+This geometric definition separates three statements that are often conflated.
+A transverse voltage event merely selects a common section.  A
+pulse/stable-sheet intersection is a local invariant-manifold statement.  It
+becomes an onset between two observable regimes only after trajectories on
+the two sides are proved to enter different attraction tubes.  The present
+paper proves neither the final intersection nor this two-sided routing; it
+organizes and validates the return-map estimates that reduce the remaining
+work to explicit inequalities.
+
+Delayed FitzHugh--Nagumo oscillations and delayed canards have been studied by
+\citet{campbell2009delay,krupa2016complex,krupa2016explosion}; broader
+slow--fast geometry is surveyed in
+\citet{wechselberger2012canards,desroches2012mixed}.  Standard RFDE theory
+provides semiflows and local Poincar\'e maps
+\citep{hale1993introduction,diekmann1995delay}, while collocation and
+pseudospectral methods provide effective numerical access to periodic
+solutions and their spectra
+\citep{engelborghs2001collocation,engelborghs2002ddebiftool,
+ando2020collocation,dewolff2021pseudospectral}.  The obstruction addressed
+here is more specific: a graph-transform proof on a ball of arbitrary
+continuous histories needs event-aligned first and second derivatives in the
+complete-history norm.  Finite sampling alone cannot supply that operator
+bound, and separately norming the unstable direction and its adjoint
+deflation destroys the cancellation that makes the stable block small.
+
+The proved mechanism has four parts.  First, a selected event whose window
+begins after two maximum delays gives a \(C^2\) complete-history return.
+Second, a correlated adjoint quotient and a signed-bimeasure residual retain
+the cancellations required by the stable output.  Third, a direct
+two-period calculation transfers the hyperbolic splitting and proves the
+stable and unstable-inverse rates without assuming that the nonlinear map is
+the square of a one-period return.  Fourth, a source-bound pulse calculation
+gives one common event branch, its moving-time derivative, opposite endpoint
+functional signs, and an explicit stable-coordinate ball.
+
+These ingredients do not yet form a threshold theorem for the concrete model.
+The selected return is currently proved only on a ball smaller than the
+preferred graph domain; none of the six full-ball Hessian caps has been
+validated.  Consequently the available stable graph is qualitative, its
+identification with the periodic-orbit stable set has not been checked on the
+needed domain, and the pulse crossing remains conditional.  On the outer
+side, a local attracting return exists on a microscopic section ball, but the
+post-pulse history has not been attached to it.  Stating these boundaries at
+the outset is part of the mathematical result: a section event, a stable-sheet
+crossing, and a routed onset are different objects.
+
+\paragraph{Organization.}
+\Cref{sec:model} defines the RFDE and the pulse-threshold geometry.
+\Cref{sec:return-tools} gives the general selected-return and stable-set
+lemmas and a conditional completion theorem.  The model-specific inner
+return and graph estimates occupy \cref{sec:inner-return}; the physical pulse
+event and conditional crossing are treated in \cref{sec:pulse-crossing}.
+\Cref{sec:outer-return} records the outer local return and the unresolved
+attachment, and \cref{sec:discussion} collects the exact remaining gates.
+

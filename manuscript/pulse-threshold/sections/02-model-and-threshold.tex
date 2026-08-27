@@ -1,0 +1,70 @@
+\section{The delayed FitzHugh--Nagumo pulse problem}\label{sec:model}
+
+Let
+\[
+ r=\tau_{\max}=\tau_1=5\sqrt5,
+ \qquad \tau_0=4\sqrt5,
+ \qquad G_3(v)=(v-1)^3.
+\]
+The autonomous post-release equation is
+\begin{align}
+ \dot v={}&v-\frac{v^3}{3}-w
+ +\eps\kappa_1\left\{\frac{v(t-\tau_0)+v(t-\tau_1)}2-v(t)\right\}
+ \notag\\
+ &+\eps\kappa_3\left\{
+ \frac{G_3(v(t-\tau_0))+G_3(v(t-\tau_1))}{2}-G_3(v(t))\right\},
+ \label{eq:scalar-v}\\
+ \dot w={}&\eps(v-a-w).\label{eq:scalar-w}
+\end{align}
+The validated center is
+\begin{equation}
+ \eps=\frac15,\qquad a=\frac14,\qquad
+ \kappa_1=\frac1{250},\qquad \kappa_3=\frac1{200}.       \label{eq:center}
+\end{equation}
+A physical pulse of amplitude \(J\) adds
+\(J\mathbf1_{[0,1)}(t)\) to \cref{eq:scalar-v}; after release the vector
+field is exactly autonomous again.
+
+The full phase space is \(X=C([-r,0],\R^2)\).  Since the recovery equation has
+no delayed recovery slot, the positive-time semiflow factors through
+\begin{equation}
+ Y=C([-r,0],\R)\times\R,
+ \qquad
+ \Pi_Y(\phi_v,\phi_w)=(\phi_v,\phi_w(0)).               \label{eq:reduced-space}
+\end{equation}
+This reduction preserves every nonzero Floquet multiplier and pulls stable
+sets back exactly.  We use the max norm on \(Y\).
+
+Write
+\begin{equation}
+ \bar v_q=(3a)^{1/3},\qquad
+ E_q(\theta)\equiv(\bar v_q,\bar v_q-a),
+ \quad-r\le\theta\le0,                                  \label{eq:quiet-equilibrium}
+\end{equation}
+for the quiet equilibrium history, and let \(\Phi_t\) denote the autonomous
+post-release semiflow.  The validated inner and outer periodic orbits are
+denoted by \(\Gamma_i\) and \(\Gamma_o\).  For a one-unit pulse starting at
+\(E_q\), let \(R(J)\in X\) be the release history.
+
+Fix the phase-zero section \(\Sigma\subset Y\) through the inner orbit.  The
+physical pulse is followed to a declared transverse event on this section;
+its reduced event history is denoted by \(K(J)\).  In a splitting
+\(Y=E^u\oplus E^s\) with one-dimensional unstable coordinate \(u\), write a
+local stable graph as
+\begin{equation}
+ W^s_{\rm loc}(\Gamma_i)\cap\Sigma
+ =\{(u,z):u=\psi(z)\},
+ \qquad H(J)=u(J)-\psi(z(J)).                            \label{eq:pulse-gap}
+\end{equation}
+
+\begin{definition}[Selected pulse threshold and routed onset]
+A value \(J_c\) is a selected pulse/stable-sheet threshold on a declared
+event branch if \(K(J_c)\) belongs to the graph in
+\cref{eq:pulse-gap}.  It is a routed onset only if the two local sides are
+proved to enter the attraction tubes of \(E_q\) and \(\Gamma_o\), respectively.
+\end{definition}
+
+This definition contains no canard-root assertion and no current-state event
+criterion.  All later signs refer to the complete event history in the same
+section, norm, and adjoint normalization.
+

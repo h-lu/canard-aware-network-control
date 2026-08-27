@@ -1,0 +1,166 @@
+\section{An outer local return and the routing boundary}\label{sec:outer-return}
+
+This section records the outer attracting object needed by the routing side of
+\cref{thm:pulse-completion}.  It is a model-specific local tool, not a proof
+that a post-pulse history enters the outer basin.
+
+\subsection{Outer linear transfer and a microscopic nonlinear tube}
+
+The phase-fixed binary shadow of the outer return has
+\[
+ \norm{P}_{\infty}\le0.126907895,\qquad
+ \norm{P^2}_{\infty}\le0.002761,
+\]
+whereas the fixed-time and rank-one phase terms are separately of order
+\(2.58\).  The small return is therefore a signed cancellation, not a
+positive-kernel estimate.  A continuous Volterra shard has been validated
+through the first nonzero delayed-forcing boundary, but a direct global
+tiling would require approximately \(1.05\times10^6\) coarse tasks before
+adaptive children and second-delay faces.  The local uncorrected kernel
+masses are too large to serve as the transfer errors \(E_v,E_w\).
+
+The exact delay support gives a finite alternative.  Since
+\[
+ 3\tau_0-T>0.2283989174,
+\]
+all delay words of length at least three vanish on the return window.  The
+global continuous kernel is therefore an exact sum of only \(14\) history
+word integrals and \(7\) recovery-scalar word integrals, each of ordered
+dimension at most two.  This reduces the representation count by a factor
+greater than \(49\,914\).  The finite-word compression is rigorous and fixes
+the signed order of phase subtraction and cross-word summation before total
+variation; low-rank templates used only to design the quadrature remain
+diagnostic.
+
+The ordered two-simplex terms have now been reduced exactly to eight
+one-dimensional primitives \(F,G,H_0,H_1,L_{00},L_{01},L_{10},L_{11}\).
+A degree-\(24\), \(1024\)-cell relative-residual certificate closes \(F\)
+and \(G\) on the exact \(10^{-8}\) orbit/period ball:
+\begin{equation}
+ \eta\le0.005026008,\qquad
+ \norm{\widehat F^{-1}F-\Id}_\infty\le0.005038659,\qquad
+ \norm{G\widehat F-\Id}_\infty\le0.005064176.           \label{eq:outer-relative-residual}
+\end{equation}
+The determinant of every polynomial chart stays at least
+\(1.29906\times10^{-5}\) from zero.  This is the first global exact-orbit
+transfer step, but propagating the \(F/G\) error through \(H\) and \(L\)
+with separate absolute norms gives unusable bounds \(190.1\) and
+\(7.17\times10^6\).  Those numbers are a rigorous rejection of a
+cancellation-blind triangular estimate, not estimates of the return
+operator.
+
+The combined-row adjoint reduction now places every delay word, both
+history injections, and the phase subtraction inside one advanced row
+before total variation.  Its directed instantaneous calculation proves
+\[
+ \int\norm{G_{\rm inst}}_{\rm phase}
+ \le14977.452934,\qquad
+ \norm{G_{\rm inst}}_{\rm bdry}\le66623.270373,
+\]
+leaving positive delayed allowances \(45022.547066\) and \(3376.729627\)
+under the declared full targets.  It also proves full coefficient variation
+at most \(1.633190\times10^{-6}\) and phase-ratio transfer errors at most
+\(1.360127\times10^{-7}\) in voltage and \(2.904969\times10^{-8}\) in
+recovery.  These are architecture and instantaneous bounds, not the delayed
+signed-density residual.
+
+The corrected global tensor enclosure uses
+\[
+ S(\delta,\ell)=R(T-\delta,T-\delta-\ell),
+\]
+on a degree-\((10,24)\), cutoff-\(128\) Fourier--Taylor cover with
+\(4\)-by-\(4\) local patches.  The endpoint identity
+\[
+ \frac{T}{h}=47.5914275778\ldots
+\]
+shows that the physical domain contains both lag cells
+\(46-\text{delta-cell}\) and \(47-\text{delta-cell}\) at its terminal edge.
+The first implementation included only the former.  Its continuation length
+\(48h-T\) therefore covered the first clipped layer but not the second,
+which requires continuation through \(49h-T\).  The v2 construction performs
+that continuation and validates all \(12{,}320\) local patches.  The tensor enclosure
+gives strict exact-guide Green and boundary bounds \(71.896340\) and
+\(261.764130\), respectively.  The combined-row evaluation then keeps the phase subtraction
+inside each output-specific row and proves center-guide full-row bounds
+\begin{equation}
+ \norm{p_v}\le41.482447,
+ \qquad \norm{p_w}\le1.177738.                         \label{eq:stage3h-row-sizes}
+\end{equation}
+These are not the transfer errors \(E_v,E_w\).  The continuous-density transfer subsequently sums
+both delayed injection branches inside each continuous center-density cell
+before taking absolute values, covers all \(25{,}600\) rectangles and all
+lag-chart seams, and adds each candidate-to-guide and guide-to-exact cost
+once.  Its auxiliary \(0.01\) candidate-row excess target fails, but that
+target is not the contraction gate.  The certified exact row budgets are
+\begin{equation}
+ Q_v^{\rm exact}\le0.55051563144094195<1,
+ \qquad
+ Q_w^{\rm exact}\le0.028280815376548179<1.             \label{eq:stage3i-row-budgets}
+\end{equation}
+They prove contraction of the phase-fixed linear return on
+\(C([-\tau_1,0],\R)_v\times\R_{w(0)}\), restricted by \(h_v(0)=0\), for
+arbitrary continuous histories in the reduced norm.  These row budgets are
+the linear parent for the following local nonlinear result.
+
+\begin{theorem}[Microscopic nonlinear outer local return tube]
+\label{thm:outer-nonlinear-local-tube}
+Set
+\[
+ Y_o=C([-\tau_1,0],\R)_v\times\R_{w(0)},
+ \qquad \Sigma_o=\{h\in Y_o:h_v(0)=0\}.
+\]
+In coordinates centered at the exact outer phase-zero history, the ball
+\(\overline B_{\Sigma_o}(0,r_6)\), with
+\[
+ r_6=10^{-335},\qquad R_6=10^{-3},
+\]
+has a unique next positive local-section event, no earlier hit of the same
+local section disk, and a \(C^2\) return map \(P_o\).  The map is a strict
+contraction with
+\begin{equation}
+ \Lambda_6:=\operatorname{Lip}(P_o)
+ \le0.561838642158326<0.561839.                         \label{eq:stage6a-lipschitz}
+\end{equation}
+For every compatible complete history above this reduced ball whose old
+recovery trace is within radius \(R_6\), the intervening complete-history
+flow sweep remains in the full radius-\(R_6\) tube and returns to it.
+Consequently this forward tube is locally attracting under successive
+returns.
+\end{theorem}
+
+The source-bound proof covers the normalized phase circle by \(256\) cells.
+On the \(254\) middle cells, outward Fourier--Taylor--Bernstein arithmetic
+gives exact-orbit current-state separation greater than \(0.0912678\); on
+the two wrap cells the exact current-voltage speed exceeds \(0.8262423\).
+These inequalities provide the local event chart and exclude an earlier hit
+of that local disk.  The same-tube second-variation and event-time estimates
+give
+\[
+ C_P\le1.132302\times10^{333},
+ \qquad
+ Q_v^{\rm exact}+C_Pr_6
+ \le0.561838642158326<1.
+\]
+The flow-growth estimate keeps the radius-\(r_6\) reduced ball inside the
+radius-\(R_6\) complete-history tube, and the returned history window lies
+strictly after the initial time.  This closes complete-history invariance
+without using an effective inner stable graph.
+
+The directed \(J=0.32\) parent supplies only the ambient complete-history
+bound
+\[
+ d_{.32}\le d_{.32}^{\rm up}
+ :=2.637078616900037\times10^{-5};
+\]
+it does not place that history on the exact outer section.  Even the
+optimistic comparison \(d_{.32}<r_6\) fails by about \(330\) orders of
+magnitude.  Thus the first failed biological gate is
+\emph{ambient-to-section domain containment}, before any capture inference.
+At radius equal to the directed attachment bound, contraction would require
+\begin{equation}
+ C_P<\frac{1-Q_v^{\rm exact}}{d_{.32}^{\rm up}}
+ =17044.784545\ldots<17044.785.                       \label{eq:stage6b-cp-target}
+\end{equation}
+Theorem~\ref{thm:outer-nonlinear-local-tube} therefore proves neither
+\(J=0.32\) entry nor outer-side attachment, capture, routing, or onset.
+
