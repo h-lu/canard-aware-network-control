@@ -1,0 +1,1001 @@
+\section{The special-flow history graph in full detail}
+\label{subsec:invariant-history-details}
+
+This subsection isolates the invariant-history part of
+\cref{lem:shared-graph-trace}.  It does not address the two one-sided trace
+problems.  The purpose is to specify the Banach spaces, the prepared
+nonlinearities, the contraction, and the finite mixed prolongation without
+appealing to a same-regularity implicit-function theorem.
+
+The preparation in \cref{def:canonical-preparation} contains a tame-flow
+condition in addition to its global derivative majorant.  We state that
+condition in operator form below and verify it for the explicit cutoff in
+the \((\chi,d)\)-coordinates.  The distinction is essential:
+the global derivative bound alone would yield a factor
+\(\delta A_\delta\exp(\Theta_*A_\delta)\), which need not tend to zero when
+\(A_\delta=P(R_\delta)e^{cR_\delta}\).
+
+\subsection{Prepared normal form and fixed history observations}
+
+For the exact algebra in the first display, write
+\(U_{XY}=\R^2\), with elements \(u=(X,Y)\), and retain the stable space
+\(E_N=\ker\pi_N^T\) with the norm in \cref{eq:shared-norm}.  For current and
+delayed states \(x_k=(u_k,h_k)\), \(0\leq k\leq m\), set
+\begin{align}
+ W_N(u_k,h_k)&=g_NX_k^2+h_k,\notag\\
+ \mathscr L^X_{N,\zeta}[x_0,\ldots,x_m]
+ &=\sum_{k=0}^m(B_{k,N}+\zeta R_{k,N})
+       \mathbf1(X_0-X_k),\notag\\
+ \mathscr L^W_{N,\zeta}[x_0,\ldots,x_m]
+ &=\sum_{k=0}^m(B_{k,N}+\zeta R_{k,N})
+       \{W_N(u_0,h_0)-W_N(u_k,h_k)\}.                 \label{eq:invdet-delay-polynomials}
+\end{align}
+The unprepared nonlinearities obtained from
+\cref{eq:shared-exact-X,eq:shared-exact-h}, after eliminating the occurrence
+of \(X'\) in the stable equation, are
+\begin{align}
+ F^{X,\natural}_N={}&-2X_0\pi_N^T\diag(c_N)W_N(u_0,h_0)
+ -\frac\beta3X_0^3+K\pi_N^T\mathscr L^X_{N,\zeta}\notag\\
+ &+\rho\{-\pi_N^T\diag(c_N)W_N(u_0,h_0)^{\circ2}
+             +K\pi_N^T\mathscr L^W_{N,\zeta}\}\notag\\
+ &-\rho^2\beta X_0\pi_N^TW_N(u_0,h_0)^{\circ2}
+ -\frac{\rho^3\beta}{3}\pi_N^TW_N(u_0,h_0)^{\circ3},\notag\\
+ F^{Y,\natural}_N={}&\nu,                              \label{eq:invdet-raw-F}\\
+ G_N^\natural={}&P_{\perp,N}\{-2X_0\diag(c_N)W_N(u_0,h_0)
+                    +K\mathscr L^X_{N,\zeta}\}\notag\\
+ &-2g_NX_0\{Y_0-\alpha X_0^2+\rho F_N^{X,\natural}\}\notag\\
+ &+\rho P_{\perp,N}\{-\diag(c_N)W_N(u_0,h_0)^{\circ2}
+                  -\beta X_0^2W_N(u_0,h_0)
+                  +K\mathscr L^W_{N,\zeta}\}\notag\\
+ &-\rho^2\beta X_0P_{\perp,N}W_N(u_0,h_0)^{\circ2}
+ -\frac{\rho^3\beta}{3}P_{\perp,N}W_N(u_0,h_0)^{\circ3}.       \label{eq:invdet-raw-G}
+\end{align}
+Thus, at \(\rho=\delta>0\), the exact chart has the form
+\begin{equation}
+ u'=q_0(u)+\rho F_N^\natural,
+ \qquad
+ \rho h'=A_Nh+\rho G_N^\natural.                     \label{eq:invdet-raw-normal-form}
+\end{equation}
+The factors \(\rho\) in both equations are exact, not formal Taylor
+factors.
+
+The graph transform itself is carried out in the \((\chi,d)\)-coordinates,
+not in the \((X,Y)\)-norm.  Let
+\[
+ \mathcal K(X,Y)=
+ \left(-2\alpha X,\,
+       Y-\alpha X^2+\frac1{2\alpha}\right)=(\chi,d),
+\]
+put \(U=\R^2_{\chi d}\), \(X_N=U\times E_N\), and use the maximum product
+norm.  Conjugating \cref{eq:invdet-raw-normal-form} by \(\mathcal K\)
+preserves its exact form
+\[
+ u'=q_0^{\chi d}(u)+\rho\widehat F_N^\natural,\qquad
+ \rho h'=A_Nh+\rho\widehat G_N^\natural,
+ \qquad
+ q_0^{\chi d}(\chi,d)=(1-2\alpha d,\chi d).
+\]
+Indeed, the difference between the transformed full reduced field and
+\(D\mathcal K\,q_0\) still contains the external factor \(\rho\).
+Derivatives of \(\mathcal K\) and \(\mathcal K^{-1}\) have only polynomial
+growth on the logarithmic tube and are therefore absorbed in the tame
+polynomial factors below.  From this point through the graph construction,
+\(u\), \(Q\), and their norms refer to the \((\chi,d)\)-coordinates.
+The final pointwise estimates are pulled back to \((X,Y)\).
+
+Fix a target \(\delta\), freeze the graph preparation from
+\cref{def:canonical-preparation}, and denote the resulting globally bounded
+maps by
+\begin{align}
+ q_{0,\delta}&:U\longrightarrow U,\notag\\
+ F_{N,\delta}&:X_N^{m+2}\times[-\delta,\delta]
+          \times I_\nu\times[-\zeta_*,\zeta_*]\longrightarrow U,\notag\\
+ G_{N,\delta}&:X_N^{m+2}\times[-\delta,\delta]
+          \times I_\nu\times[-\zeta_*,\zeta_*]\longrightarrow E_N.
+                                                               \label{eq:invdet-prepared-data}
+\end{align}
+They agree with the \(\mathcal K\)-conjugates of
+\cref{eq:invdet-raw-F,eq:invdet-raw-G} on the uncut set.
+The products in \cref{eq:shared-products}, the layer bound in
+\cref{eq:shared-layer-bounds}, and the fixed number of atoms imply that all
+the derivatives listed in \cref{eq:preparation-derivative-list} are bounded
+in the displayed product norms without a factor depending on \(N\).  Write
+\begin{equation}
+ A_\delta=C_A\langle R_\delta\rangle^{M_A}e^{c_AR_\delta}          \label{eq:invdet-prepared-majorant}
+\end{equation}
+for one common majorant.  Since
+\(R_\delta=O(\sqrt{\log(1/\delta)})\), for every fixed \(a>0\) and
+\(k\in\mathbb N\),
+\begin{equation}
+ \delta^a A_\delta^k\longrightarrow0.                           \label{eq:invdet-subpower}
+\end{equation}
+
+The history observation is kept independent of \(\zeta\).  For a complete
+vector field \(Q\) and a map \(H:U\to E_N\), define
+\begin{align}
+ \mathcal I_{Q,H}(u)(\vartheta)
+ &=\bigl(\Phi_Q^\vartheta u,H(\Phi_Q^\vartheta u)\bigr),
+       &&-\Theta_*\leq\vartheta\leq0,\label{eq:invdet-history-lift}\\
+ \mathcal E_{Q,H}(u)
+ &=\bigl(\mathcal I_{Q,H}(u)(0),
+          \mathcal I_{Q,H}(u)(-\theta_0),\ldots,
+          \mathcal I_{Q,H}(u)(-\theta_m)\bigr).       \label{eq:invdet-history-evaluation}
+\end{align}
+This is the atomic operator \(\mathbf M_N\) of
+\cref{eq:shared-evaluation-TV} written as a tuple.  Its norm is at most
+\(m+2\), uniformly in \(N\).  All \(\zeta\)-dependence remains in the
+matrices in \cref{eq:invdet-delay-polynomials}; consequently no moving
+Dirac mass is differentiated.  Moreover, the delay expressions are
+differences, so the unbounded affine anchor \(u\mapsto(u,0)\) cancels.
+
+The following tame-flow property is the exact input used below.
+
+\begin{definition}[Tame frozen preparation]
+\label[definition]{def:invdet-tame-preparation}
+The frozen preparation is called tame through grade eleven if there are a
+polynomial \(P_*\), constants \(C_*,c_*,\Gamma_*>0\), and an integer
+\(M_*\), independent of \(N\) and \(\delta\), such that the order-zero
+estimate below holds for every vector field \(Q\) in the graph ball defined
+in \cref{eq:invdet-graph-ball}.  At positive grade, it is required
+inductively for every smooth Picard iterate whose preceding graph jets lie
+in the invariant balls already constructed:
+\begin{equation}
+ \|\mathscr J\Phi_Q^{\vartheta-\rho r}\|_
+ {C_b(U;\mathcal L_{\rm multi})}
+ \leq \mathfrak B_\delta(1+r^{M_*})
+       e^{\Gamma_*(1+R_\delta)|\rho|r},               \label{eq:invdet-tame-flow}
+\end{equation}
+for \(-\Theta_*\leq\vartheta\leq0\), \(r\geq0\),
+\(|\rho|\leq\delta\), and every state--parameter flow jet
+\(\mathscr J\) of total grade at most eleven.  The same estimate, multiplied
+by the current-block difference plus preceding-block differences, holds for
+two Picard iterates in the corresponding common jet fibers, where
+\begin{equation}
+ \mathfrak B_\delta=P_*(R_\delta)e^{c_*R_\delta}.       \label{eq:invdet-tame-envelope}
+\end{equation}
+\end{definition}
+
+This property is obtained by a concrete admissible choice.  Let
+\(\omega\in C_c^\infty(\R)\) equal one on \([-1,1]\) and vanish off
+\((-2,2)\).  Choose fixed \(B_*>2\Theta_*+B+3\) and \(d_*>0\) so that,
+for all sufficiently small \(\delta\), the fixed \(b_0\)-neighborhood of
+the depth-two hull in \cref{def:canonical-preparation} is contained in
+\[
+ |\chi|<R_\delta+B_*,\qquad |d|<d_*.
+\]
+Such a \(d_*\) exists because the normal multiplier over a fixed
+depth-two singular-flow interval is \(e^{O(R_\delta)}\), while
+\(\delta^\kappa e^{O(R_\delta)}=o(1)\).  In the
+\((\chi,d)\)-coordinates take
+\begin{equation}
+ \Xi_\delta(\chi,d)
+ =\omega\!\left(\frac{\chi}{R_\delta+B_*}\right)
+  \omega\!\left(\frac d{d_*}\right),
+ \qquad
+ q_{0,\delta}^{\chi d}
+ =\Xi_\delta(\chi,d)\binom{1-2\alpha d}{\chi d}.       \label{eq:invdet-explicit-q0-preparation}
+\end{equation}
+The Lipschitz estimate below is in the \((\chi,d)\)-norm:
+\begin{equation}
+ \operatorname{Lip}(q_{0,\delta})\leq C(1+R_\delta).  \label{eq:invdet-q0-lipschitz}
+\end{equation}
+Indeed, on the support of \(\Xi_\delta\),
+\[
+ |\chi|\leq2(R_\delta+B_*),\qquad |d|\leq2d_*,
+\]
+and hence
+\[
+ |q_0^{\chi d}|\leq C(1+R_\delta),\qquad
+ \|Dq_0^{\chi d}\|
+ =\left\|\begin{pmatrix}0&-2\alpha\\ d&\chi\end{pmatrix}\right\|
+ \leq C(1+R_\delta).
+\]
+Moreover,
+\[
+ |\partial_\chi\Xi_\delta|\leq C(1+R_\delta)^{-1},
+ \qquad
+ |\partial_d\Xi_\delta|\leq C.
+\]
+The product rule therefore gives
+\[
+ \|D(\Xi_\delta q_0^{\chi d})\|
+ \leq \|D\Xi_\delta\|\,|q_0^{\chi d}|
+       +\|Dq_0^{\chi d}\|
+ \leq C(1+R_\delta),
+\]
+which proves \cref{eq:invdet-q0-lipschitz}.  Higher derivatives are bounded
+by polynomials in \(R_\delta\).  This estimate is not asserted for the
+conjugated field in the Euclidean \((X,Y)\)-norm; converting back on the
+retained tube costs polynomial factors in \(R_\delta\), already allowed in
+\cref{eq:invdet-tame-envelope}.
+
+For \(Q\) in the graph ball, its defining Lipschitz constraint
+and \cref{eq:invdet-subpower} give
+\begin{equation}
+ \operatorname{Lip}(Q)
+ \leq C(1+R_\delta)+b_{\rm gr,1}\delta\mathfrak B_\delta
+ \leq C'(1+R_\delta).                                 \label{eq:invdet-Q-lipschitz}
+\end{equation}
+The ordinary flow variational equations, successively differentiated
+through grade eleven in the block order used below, then prove
+\cref{eq:invdet-tame-flow}.  The state derivative of the perturbation in
+\(Q\) retains \(\rho\), whereas a \(\rho\)-parameter derivative which
+removes that factor is bounded by \(A_\delta\) and belongs to the prescribed
+tame envelope.  Fixed-time flow factors are bounded by
+\(P(R_\delta)e^{cR_\delta}\), and substitution of the terminal time
+\(\vartheta-\rho r\) introduces only powers of \(r\) and the last
+exponential in \cref{eq:invdet-tame-flow}.  This is a joint induction with
+the invariant jet balls, not a smoothness assertion for arbitrary \(C^1\)
+fields.  Thus
+\cref{eq:invdet-explicit-q0-preparation}, together with the slotwise
+preparation already required in \cref{def:canonical-preparation}, is a
+sufficient concrete realization of
+\cref{def:invdet-tame-preparation}.
+
+\begin{remark}[Why the tame-flow clause is explicit]
+\label[remark]{rem:invdet-missing-flow-hypothesis}
+The bound in \cref{eq:preparation-derivative-list} permits
+\(\operatorname{Lip}(q_{0,\delta})\) to be as large as \(A_\delta\).
+Gronwall would then give \(e^{\Theta_*A_\delta}\) for a fixed delay
+evaluation, and \cref{eq:invdet-subpower} does not control
+\(\delta A_\delta e^{\Theta_*A_\delta}\).  This is why
+\cref{def:canonical-preparation} includes the explicit singular cutoff and
+requires \cref{eq:invdet-tame-flow}; its derivative majorant is not being
+used as a substitute for flow control.
+\end{remark}
+
+\subsection{The order-zero graph transform}
+
+For one target \(\delta\), put
+\[
+ \Lambda_\delta=[-\delta,\delta]_\rho\times I_\nu
+                    \times[-\zeta_*,\zeta_*]
+\]
+and define
+\[
+ \mathfrak Z_N^0=C_b(U;U)\times C_b(U;E_N),
+ \qquad
+ \|(Q,H)\|_0=\max\{\|Q\|_\infty,\|H\|_\infty\}.
+\]
+The parameter-dependent pairs belong to
+\(C(\Lambda_\delta;\mathfrak Z_N^0)\).  For fixed positive constants
+\(b_{\rm gr,0},b_{\rm gr,1}\), to be chosen below, let
+\begin{equation}
+\begin{split}
+ \mathbb B_{N,\delta}=\{(Q,H):{}&
+ \sup_{\Lambda_\delta}\|(Q-q_{0,\delta},H)\|_0
+       \leq b_{\rm gr,0}\delta A_\delta,\\
+ &\sup_{\Lambda_\delta}
+   \max\{\operatorname{Lip}(Q-q_{0,\delta}),
+          \operatorname{Lip}(H)\}
+       \leq b_{\rm gr,1}\delta\mathfrak B_\delta\}.
+                                                               \label{eq:invdet-graph-ball}
+\end{split}
+\end{equation}
+It is closed, hence complete, in the uniform metric.  Every \(Q\) in this
+ball is globally bounded and Lipschitz and therefore has a complete
+two-sided flow.
+
+Define the special-flow transform by
+\begin{align}
+ \mathcal T_{Q,N}(Q,H)(u)
+ &=q_{0,\delta}(u)+\rho F_{N,\delta}
+       (\mathcal E_{Q,H}(u);\rho,\nu,\zeta),
+                                                               \label{eq:invdet-TQ}\\
+ \mathcal T_{H,N}(Q,H)(u)
+ &=\rho\int_0^\infty e^{A_Nr}G_{N,\delta}
+       (\mathcal E_{Q,H}(\Phi_Q^{-\rho r}u);
+            \rho,\nu,\zeta)\,\dd r.               \label{eq:invdet-TH}
+\end{align}
+For \(\rho<0\), this is only an auxiliary fixed-point equation for Taylor
+expansion.  Its RFDE interpretation is used only at \(\rho=\delta>0\).
+
+\begin{lemma}[Self-mapping and contraction]
+\label[lemma]{lem:invdet-C0-contraction}
+Assume the frozen preparation is tame through grade eleven.  There is
+\(\delta_0>0\), independent of \(N\), such that for
+\(0<\delta<\delta_0\) the transform
+\cref{eq:invdet-TQ,eq:invdet-TH} maps
+\(\mathbb B_{N,\delta}\) into itself and is a contraction in the uniform
+metric, with contraction factor at most \(1/2\).
+\end{lemma}
+
+\begin{proof}
+Let \(Z=(Q,H)\) and \(\widetilde Z=(\widetilde Q,\widetilde H)\) be in the
+ball.  The first flow variation with respect to the vector field gives,
+for a fixed time \(t\),
+\begin{equation}
+ \sup_u|\Phi_Q^tu-\Phi_{\widetilde Q}^tu|
+ \leq C\mathfrak B_\delta(1+|t|)e^{C(1+R_\delta)|t|}
+       \|Q-\widetilde Q\|_\infty.                    \label{eq:invdet-flow-difference}
+\end{equation}
+This is also the grade-zero difference case of
+\cref{eq:invdet-tame-flow}.  Combining it with the Lipschitz bound for
+\(H\), and using the maximum norm on the fixed tuple in
+\cref{eq:invdet-history-evaluation}, yields
+\begin{align}
+ \|\mathcal E_Z-\mathcal E_{\widetilde Z}\|_\infty
+ &\leq C\mathfrak B_\delta\|Z-\widetilde Z\|_0,
+                                                               \label{eq:invdet-E-difference}\\
+ \|\mathcal E_Z(\Phi_Q^{-\rho r}\cdot)
+       -\mathcal E_{\widetilde Z}
+          (\Phi_{\widetilde Q}^{-\rho r}\cdot)\|_\infty
+ &\leq C\mathfrak B_\delta(1+r^{M_*})
+       e^{\Gamma_*(1+R_\delta)|\rho|r}
+       \|Z-\widetilde Z\|_0.                         \label{eq:invdet-shifted-E-difference}
+\end{align}
+All constants are independent of \(N\); the only delay factor is the fixed
+number \(m+2\).
+
+Let \(a_*=D\gamma\).  After increasing the polynomial and exponential
+constants in \(\mathfrak B_\delta\), the Lipschitz bounds for the prepared
+nonlinearities and \cref{eq:poisson-bound} give
+\begin{align}
+ \|\mathcal T_{Q,N}(Z)-\mathcal T_{Q,N}(\widetilde Z)\|_\infty
+ &\leq C\delta\mathfrak B_\delta\|Z-\widetilde Z\|_0,
+                                                               \label{eq:invdet-TQ-difference}\\
+ \|\mathcal T_{H,N}(Z)-\mathcal T_{H,N}(\widetilde Z)\|_\infty
+ &\leq C\delta\mathfrak B_\delta
+ \int_0^\infty(1+r^{M_*})
+ e^{-\{a_*-\Gamma_*(1+R_\delta)\delta\}r}\,\dd r
+ \|Z-\widetilde Z\|_0.                              \label{eq:invdet-TH-difference}
+\end{align}
+By \cref{eq:invdet-subpower}, after decreasing \(\delta_0\),
+\begin{equation}
+ \Gamma_*(1+R_\delta)\delta\leq a_*/2,
+ \qquad
+ q_\delta:=C\delta\mathfrak B_\delta
+ \left(1+\int_0^\infty(1+r^{M_*})e^{-a_*r/2}\,\dd r\right)
+ \leq\frac12.                                        \label{eq:invdet-contraction-factor}
+\end{equation}
+This proves contraction.
+
+For self-mapping, boundedness of the prepared data gives
+\begin{equation}
+ \|\mathcal T_{Q,N}(Z)-q_{0,\delta}\|_\infty
+ \leq\delta A_\delta,
+ \qquad
+ \|\mathcal T_{H,N}(Z)\|_\infty
+ \leq\frac{\delta A_\delta}{a_*}.                    \label{eq:invdet-transform-size}
+\end{equation}
+The state version of \cref{eq:invdet-tame-flow}, with
+\cref{eq:poisson-bound}, similarly gives
+\begin{equation}
+ \max\{\operatorname{Lip}(\mathcal T_{Q,N}-q_{0,\delta}),
+          \operatorname{Lip}(\mathcal T_{H,N})\}
+ \leq C\delta\mathfrak B_\delta.                    \label{eq:invdet-transform-Lipschitz}
+\end{equation}
+Choose \(b_{\rm gr,0}>\max\{1,a_*^{-1}\}\), then
+\(b_{\rm gr,1}>C\), and decrease
+\(\delta_0\) once more if necessary.  Equations
+\cref{eq:invdet-transform-size,eq:invdet-transform-Lipschitz} make the ball
+invariant.
+\end{proof}
+
+Banach's theorem now gives a unique fixed point
+\begin{equation}
+ Z_{N,\rho,\nu,\zeta}=(Q_{N,\rho,\nu,\zeta},
+                       H_{N,\rho,\nu,\zeta})          \label{eq:invdet-fixed-graph}
+\end{equation}
+in the declared ball, simultaneously and continuously on
+\(\Lambda_\delta\).  Uniqueness is asserted in this ball, not among all
+invariant graphs of the RFDE.
+
+\subsection{Finite mixed-jet prolongation}
+
+For a parameter-dependent map \(f\), write
+\begin{equation}
+ J_{a,b,i,j}f
+ =D_u^a\partial_\rho^b\partial_\nu^i\partial_\zeta^jf,
+ \qquad n=a+b+i+j,
+ \qquad p=b+i+j.                                     \label{eq:invdet-jet-notation}
+\end{equation}
+Let
+\begin{equation}
+ \mathcal I_k=\{(a,b,i,j)\in\mathbb N_0^4:
+ b\leq3,\ i\leq2,\ j\leq2,\ a+b+i+j\leq k\}.     \label{eq:invdet-index-set}
+\end{equation}
+Order the indices first by increasing total grade \(n\) and, at equal
+total grade, by increasing parameter grade \(p\).  Thus a derivative which
+gains one state slot and loses one parameter derivative belongs to an
+earlier block.  We bound the Picard jets through \(\mathcal I_{11}\) and
+prove their convergence through \(\mathcal I_{10}\).  The last grade is
+the single spatial reserve used when a highest derivative is evaluated on
+two different flows.
+
+For \(\eta=(a,b,i,j)\), the common Banach fiber is
+\begin{equation}
+ \mathfrak F_{\eta,N}
+ =C\!\left(\Lambda_\delta;
+ C_b\!\left(U;
+ \mathcal L_{\rm sym}^a
+   (U;U\times E_N)\right)\right),                    \label{eq:invdet-jet-fiber}
+\end{equation}
+with the supremum operator norm.  If several indices have the same
+\((n,p)\), take their finite maximum product.  The fibers vary with \(N\),
+but every estimate below uses their operator norms and has the same scalar
+constant.
+
+We spell out the flow induction.  With terminal time independent of the
+parameters, a first parameter variation satisfies
+\begin{equation}
+ \frac{\dd}{\dd t}\partial_\lambda\Phi_Q^t
+ =DQ(\Phi_Q^t)\partial_\lambda\Phi_Q^t
+  +(\partial_\lambda Q)(\Phi_Q^t),
+ \qquad \partial_\lambda\Phi_Q^0=0.                 \label{eq:invdet-first-flow-parameter}
+\end{equation}
+For \(a\geq2\), the pure state variation has the exact partition form
+\begin{equation}
+ \frac{\dd}{\dd t}D_u^a\Phi_Q^t
+ =DQ(\Phi_Q^t)D_u^a\Phi_Q^t
+ +\sum_{\substack{\mathcal P\text{ a partition of }\{1,\ldots,a\}\\
+                   |\mathcal P|\geq2}}
+ D^{|\mathcal P|}Q(\Phi_Q^t)
+   \bigl[D_u^{|B|}\Phi_Q^t:B\in\mathcal P\bigr].   \label{eq:invdet-flow-partitions}
+\end{equation}
+After arbitrary mixed differentiation, the current flow jet occurs linearly
+on the left.  The current jet of \(Q\) also occurs linearly.  If a parameter
+derivative hits the argument of a vector-field jet, that vector-field jet
+gains one state slot and loses one parameter derivative and is therefore in
+an earlier block.  A product containing two positive-grade jets contains
+only strictly lower total grades.  Finally, substituting
+\(t=\vartheta-\rho r\) converts each derivative of the terminal time into a
+factor \(r\) and a time derivative
+\(\partial_t\Phi_Q^t=Q(\Phi_Q^t)\).  These formulas prove, by variation of
+constants, the bound \cref{eq:invdet-tame-flow}; subtracting two such
+systems uses the reserved state grade and gives its difference version.
+
+Start Picard iteration at \(Z_N^{(0)}=(q_{0,\delta},0)\) and put
+\(Z_N^{(k+1)}=\mathcal T_N(Z_N^{(k)})\).  Each finite iterate is smooth.
+The following lemma is the precise triangular replacement for the phrase
+``differentiate the same estimate.''
+
+\begin{lemma}[Highest-block equation]
+\label[lemma]{lem:invdet-highest-block}
+Suppose all blocks preceding \((n,p)\subset\mathcal I_{11}\) range in
+fixed bounded subsets of their common fibers.  Then the current block has
+the form
+\begin{equation}
+ \mathbf J_{n,p}\mathcal T_N(Z)
+ =\mathbf b_{n,p}(\mathbf J_{<n,p}Z)
+  +\rho\mathscr L_{n,p}(\mathbf J_{<n,p}Z)
+        [\mathbf J_{n,p}Z],                           \label{eq:invdet-highest-block-form}
+\end{equation}
+except that the first pure spatial block need only satisfy the corresponding
+difference estimate.  There is one common tame bound
+\begin{align}
+ \|\rho\mathscr L_{n,p}\|&\leq\eta_\delta,
+                                                               \label{eq:invdet-diagonal-small}\\
+ \|\mathbf J_{n,p}\mathcal T_N(Z)
+       -\mathbf J_{n,p}\mathcal T_N(\widetilde Z)\|
+ &\leq \eta_\delta
+       \|\mathbf J_{n,p}Z-\mathbf J_{n,p}\widetilde Z\|
+       +C_{n,p,\delta}d_{<n,p}(Z,\widetilde Z),       \label{eq:invdet-highest-block-difference}
+\end{align}
+where
+\begin{equation}
+ \eta_\delta\leq C\delta\mathfrak B_\delta
+ \int_0^\infty(1+r^{M_*})e^{-a_*r/2}\,\dd r=o(1)    \label{eq:invdet-jet-smallness}
+\end{equation}
+uniformly in \(N\).  The coefficient \(C_{n,p,\delta}\) is independent of
+\(N\), though it may have the tame target dependence
+\(P(R_\delta)e^{cR_\delta}\).
+\end{lemma}
+
+\begin{proof}
+Apply the finite Fa\`a di Bruno formula to
+\cref{eq:invdet-TQ,eq:invdet-TH}, using
+\cref{eq:invdet-first-flow-parameter,eq:invdet-flow-partitions} for every
+flow factor.  A factor carrying the full grade occurs at most once.  The
+ordering in \cref{eq:invdet-index-set} places every same-total-grade term
+created by differentiating a flow argument in an earlier block.  Terms with
+two positive-grade factors use lower total grades.
+
+More concretely, replace every occurrence of the current graph jet in these
+formulas by an arbitrary element \(V\) of the current common fiber.  Retain
+the terms linear in \(V\) in the variational equations
+\cref{eq:invdet-first-flow-parameter,eq:invdet-flow-partitions}, solve them
+with zero initial value, substitute the resulting flow jets and the stable
+component of \(V\) in the terms linear in \(V\) in the Fa\`a di Bruno
+expansion, and finally apply the stable semigroup integral.  This defines
+\(\mathscr L_{n,p}V\).  Setting \(V=0\) defines
+\(\mathbf b_{n,p}\).
+
+Both components of the transform have an external factor \(\rho\).  If a
+\(\rho\)-derivative strikes it, then
+\begin{equation}
+ \partial_\rho^b(\rho\mathcal F)
+ =\rho\partial_\rho^b\mathcal F
+   +b\partial_\rho^{b-1}\mathcal F,                  \label{eq:invdet-rho-Leibniz}
+\end{equation}
+and the second term belongs to a lower block.  Hence every current-block
+term retains \(\rho\).  The tame-flow difference estimate and
+\(\|e^{A_Nr}\|\leq e^{-a_*r}\) now give
+\cref{eq:invdet-diagonal-small,eq:invdet-highest-block-difference}.  The
+first pure spatial block is not affine because its first variational
+equation contains \(DQ\) in the coefficient, but subtraction of the two
+linear variational equations gives exactly the same difference estimate.
+No coordinate sum over \(E_N\) occurs.
+\end{proof}
+
+\begin{proposition}[Existence and closure of the mixed jets]
+\label[proposition]{prop:invdet-mixed-jets}
+After decreasing \(\delta_0\), all Picard jets in \(\mathcal I_{11}\) lie
+in invariant balls, and those in \(\mathcal I_{10}\) converge strongly in
+their common fibers.  Their limits are the genuine mixed derivatives of
+\cref{eq:invdet-fixed-graph}.  In particular, all rectangular derivatives
+with
+\begin{equation}
+ 0\leq a\leq3,\qquad 0\leq b\leq3,\qquad
+ 0\leq i\leq2,\qquad 0\leq j\leq2                \label{eq:invdet-required-rectangle}
+\end{equation}
+exist and are continuous.
+\end{proposition}
+
+\begin{proof}
+Proceed through the finite ordered block list.  Once the radii of all lower
+blocks have been fixed, \cref{eq:invdet-highest-block-form} gives
+\begin{equation}
+ \|\mathbf J_{n,p}Z_N^{(k+1)}\|
+ \leq B_{n,p,\delta}
+      +\eta_\delta\|\mathbf J_{n,p}Z_N^{(k)}\|.       \label{eq:invdet-invariant-jet-recurrence}
+\end{equation}
+Choose \(\delta_0\) so that the finitely many occurrences of
+\(\eta_\delta\) are at most \(1/2\), and take the current radius larger than
+\(2B_{n,p,\delta}+\|\mathbf J_{n,p}Z_N^{(0)}\|\).  This constructs invariant
+balls through grade eleven, with radii independent of \(N\).
+
+For consecutive iterates, suppose every preceding block converges
+geometrically.  Equation \cref{eq:invdet-highest-block-difference} gives
+\begin{equation}
+ a_{k+1}\leq\eta_\delta a_k+Cq^k,
+ \qquad \max\{\eta_\delta,q\}<1.                    \label{eq:invdet-jet-increment-recurrence}
+\end{equation}
+The increments are summable at every rate larger than
+\(\max\{\eta_\delta,q\}\).  Induction proves strong convergence through
+grade ten; grade eleven supplies the reserved derivative used in the
+difference estimate.
+
+It remains to identify the limits as derivatives.  If
+\(f_k\to f\) and \(\partial_\lambda f_k\to g\) uniformly in a common fiber,
+then on every line segment contained in the open parameter cylinder,
+\begin{equation}
+ f_k(\lambda+t)-f_k(\lambda)
+ =\int_0^t\partial_\lambda f_k(\lambda+r)\,\dd r.     \label{eq:invdet-line-segment}
+\end{equation}
+Passing to the limit proves \(\partial_\lambda f=g\).  The same fundamental
+theorem of calculus argument on state line segments identifies state
+derivatives.  Repeating this in the block order proves that every limiting
+jet is the derivative claimed in \cref{eq:invdet-required-rectangle}.
+This is strong convergence in fixed Banach fibers; neither compactness nor
+a weak-limit argument is used.
+\end{proof}
+
+For completeness, the inverse statement in \cref{lem:shared-graph-trace}
+requires a declared norm on the whole prolongation.  Enumerate the finite
+blocks by \(\ell=0,\ldots,L\).  Let \(C_{\ell k,\delta}\) bound the strict
+lower-block coefficient from block \(k\) to block \(\ell\), and define
+recursively
+\begin{equation}
+ w_{0,\delta}=1,\qquad
+ w_{\ell,\delta}
+ =1+4\sum_{k<\ell}C_{\ell k,\delta}w_{k,\delta},
+ \qquad
+ \|V\|_{\rm pr,\delta}
+ =\max_{0\leq\ell\leq L}
+     w_{\ell,\delta}^{-1}\|V_\ell\|.                \label{eq:invdet-prolonged-norm}
+\end{equation}
+The weights may depend tamely on the frozen target \(\delta\), but not on
+\(N\).  Each diagonal residual block is
+\(I-\rho\mathscr L_\ell\); hence, by
+\cref{eq:invdet-diagonal-small},
+\begin{equation}
+ \|(I-\rho\mathscr L_\ell)^{-1}\|\leq2.             \label{eq:invdet-diagonal-inverse}
+\end{equation}
+Solving the lower-triangular residual system in order and using
+\(\sum_{k<\ell}C_{\ell k,\delta}w_{k,\delta}/w_{\ell,\delta}\leq1/4\)
+gives
+\begin{equation}
+ \|V\|_{\rm pr,\delta}\leq4\|F\|_{\rm pr,\delta}.  \label{eq:invdet-prolonged-inverse}
+\end{equation}
+Thus the full finite prolonged inverse is uniform in \(N\) and \(\delta\)
+in the explicit scaled norm \cref{eq:invdet-prolonged-norm}.  An unweighted
+product norm need not have a \(\delta\)-independent inverse bound, because
+the strict lower-block coefficients can have the tame size
+\(P(R_\delta)e^{cR_\delta}\).
+
+Taylor's integral identity in the dummy amplitude is now legitimate.  Put
+\begin{equation}
+ \widehat Z_{j,N,\nu,\zeta}
+ =\frac1{j!}\partial_\rho^jZ_{N,\rho,\nu,\zeta}\big|_{\rho=0},
+ \qquad j=1,2.
+\end{equation}
+Since \(Z_{N,0,\nu,\zeta}=(q_{0,\delta},0)\),
+\begin{equation}
+ Z_{N,\delta,\nu,\zeta}
+ =(q_{0,\delta},0)+\delta\widehat Z_{1,N,\nu,\zeta}
+  +\delta^2\widehat Z_{2,N,\nu,\zeta}
+  +\delta^3\widehat{\mathcal R}_{3,N},               \label{eq:invdet-Taylor}
+\end{equation}
+where
+\begin{equation}
+ \widehat{\mathcal R}_{3,N}
+ =\frac12\int_0^1(1-t)^2
+      \partial_\rho^3Z_{N,t\delta,\nu,\zeta}\,\dd t.             \label{eq:invdet-Taylor-remainder}
+\end{equation}
+
+We now define, rather than identify implicitly, the coefficients used in
+the main text.  For a vector field \(\widehat V\) in the
+\((\chi,d)\)-coordinates, set
+\begin{equation}
+ (\mathcal P_{\mathcal K}\widehat V)(X,Y)
+ =D\mathcal K^{-1}(\mathcal K(X,Y))\,
+        \widehat V(\mathcal K(X,Y)).                  \label{eq:invdet-vector-field-pullback}
+\end{equation}
+In particular, the reduced vector field and graph used in the main text are
+\begin{equation}
+ Q^{XY}_{N,\rho,\nu,\zeta}
+ =\mathcal P_{\mathcal K}Q_{N,\rho,\nu,\zeta},
+ \qquad
+ H^{XY}_{N,\rho,\nu,\zeta}
+ =H_{N,\rho,\nu,\zeta}\circ\mathcal K.                \label{eq:invdet-full-graph-pullback}
+\end{equation}
+Write
+\[
+ \widehat Z_{\ell,N}=(\widehat q_{\ell,N},\widehat H_{\ell,N}),
+ \qquad
+ \widehat{\mathcal R}_{3,N}
+   =(\widehat{\mathcal R}^{\,Q}_{3,N},
+      \widehat{\mathcal R}^{\,H}_{3,N}).
+\]
+The pulled-back coefficients are
+\begin{align}
+ q_{\ell,N}&=\mathcal P_{\mathcal K}\widehat q_{\ell,N},
+ &H_{\ell,N}&=\widehat H_{\ell,N}\circ\mathcal K,
+ \qquad \ell=1,2,\notag\\
+ \mathcal R_{3,N}
+ &=\mathcal P_{\mathcal K}\widehat{\mathcal R}^{\,Q}_{3,N},
+ &\mathcal R^{\,H}_{3,N}
+ &=\widehat{\mathcal R}^{\,H}_{3,N}\circ\mathcal K.   \label{eq:invdet-coefficient-pullbacks}
+\end{align}
+Because \(\mathcal K\) is independent of
+\((\rho,\nu,\zeta)\), it commutes with all parameter differentiations and
+with the integral Taylor formula.  On the retained set
+\(q_{0,\delta}=q_0^{\chi d}\), and
+\(\mathcal P_{\mathcal K}q_0^{\chi d}=q_0\).  Applying
+\(\mathcal P_{\mathcal K}\) to the first component of
+\cref{eq:invdet-Taylor} therefore gives the exact main-text expansion
+\[
+ Q^{XY}_{N,\delta,\nu,\zeta}
+ =q_0+\delta q_{1,N}+\delta^2q_{2,N}
+       +\delta^3\mathcal R_{3,N},
+\]
+which is \cref{eq:shared-graph-expansion}.  Since
+\(\mathcal K,\mathcal K^{-1}\) are polynomial of degree at most two, the
+state derivatives through the finite order used here lose only a
+polynomial factor in \(R_\delta\); the weights
+\(\langle s\rangle^Me^{c|s|}\) absorb this loss.
+
+\begin{proposition}[Growing-tube coefficient envelope]
+\label[proposition]{prop:invdet-coefficient-envelope}
+There are \(C,c>0\) and an integer \(M\), independent of \(N\) and
+\(\delta\), such that, for \(\ell=1,2\), the reduced coefficients after
+conversion back to the \((X,Y)\)-coordinates satisfy
+\begin{equation}
+ \left|D_u^a\partial_\nu^i\partial_\zeta^j
+ q_{\ell,N}(\gamma_0(s)+\xi,\nu,\zeta)\right|
+ \leq C e^{c|s|}\langle s\rangle^M,                  \label{eq:invdet-coefficient-envelope}
+\end{equation}
+whenever \(0\leq a\leq3\), \(0\leq i,j\leq2\),
+\(|s|\leq S_\delta+1\), \(\nu\in I_\nu\),
+\(|\zeta|\leq\zeta_*\), and
+\[
+ |\xi|\leq C_0\delta e^{c_0|s|}\langle s\rangle^{M_0}.
+\]
+After increasing \(C,c,M\), the same bound holds for the stable
+coefficients \(H_{1,N},H_{2,N}\).  Moreover,
+\begin{equation}
+ \partial_\zeta q_{1,N}=0.                            \label{eq:invdet-q1-zeta-zero}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Differentiate the fixed-point equations at \(\rho=0\).  Since
+\(Z_{N,0,\nu,\zeta}=(q_{0,\delta},0)\), the first two reduced coefficients
+in the \((\chi,d)\)-coordinates are, without a formal substitution,
+\begin{align}
+ \widehat q_{1,N}
+ &=F_{N,\delta}(\mathcal E_{q_{0,\delta},0};
+                       0,\nu,\zeta),\notag\\
+ \widehat q_{2,N}
+ &=\left.
+   \left\{\partial_\rho F_{N,\delta}(\mathcal E_Z;\rho,\nu,\zeta)
+   +D_{\mathcal E}F_{N,\delta}(\mathcal E_Z;\rho,\nu,\zeta)
+          [\partial_\rho\mathcal E_Z]\right\}
+   \right|_{\rho=0}.                                  \label{eq:invdet-q1-q2-formulas}
+\end{align}
+Here \(\partial_\rho\mathcal E_Z|_{\rho=0}\) is obtained from one
+finite-time flow variation \cref{eq:invdet-first-flow-parameter} and
+\(\widehat H_{1,N}\).  The stable formulas in the graph coordinates are
+\begin{align}
+ \widehat H_{1,N}(u)
+ &=\int_0^\infty e^{A_Nr}
+ G_{N,\delta}(\mathcal E_{q_{0,\delta},0}(u);
+                         0,\nu,\zeta)\,\dd r,\notag\\
+ \widehat H_{2,N}(u)
+ &=\left.\partial_\rho
+ \int_0^\infty e^{A_Nr}
+ G_{N,\delta}\bigl(
+   \mathcal E_Z(\Phi_Q^{-\rho r}u);
+   \rho,\nu,\zeta\bigr)\,\dd r\right|_{\rho=0}.        \label{eq:invdet-H1-H2-formulas}
+\end{align}
+In the second line, differentiating the base shift contributes
+\(-r q_{0,\delta}(u)\); every other new term contains \(Z_{1,N}\), one
+fixed-time flow variation, or one derivative of the prepared data.
+
+Equations \cref{eq:invdet-q1-q2-formulas,eq:invdet-H1-H2-formulas} show
+that the first coefficient samples one fixed-delay backtrack and the second
+samples at most a sum of two delays.  The factors \(r^k\), \(k=0,1\), in
+the stable formulas are controlled by
+\cref{eq:invdet-semigroup-moments}.  State and parameter differentiation
+does not enlarge this delay depth: the atoms are fixed, and the
+corresponding flow variations remain on the intervening finite singular
+flow segments.
+
+For \(|s|\leq S_\delta+1\), all of these points belong to the continuous
+depth-two uncut hull in \cref{def:canonical-preparation}.  The raw
+polynomials \cref{eq:invdet-raw-F,eq:invdet-raw-G}, the singular flow
+variational equations, and \cref{eq:shared-products} therefore bound each
+factor by \(P(\langle s\rangle)e^{c|s|}\), uniformly in \(N\).  The finite
+Fa\`a di Bruno sums created by at most three state and two derivatives in
+each parameter only multiply finitely many such weights; increasing
+\(c\) and \(M\) absorbs every product.  The semigroup moments are uniform
+by \cref{eq:invdet-semigroup-moments}.  The chain rule for
+\(\mathcal K^{-1}\) introduces only further polynomial factors in
+\(\langle s\rangle\), so the same envelope holds in \((X,Y)\).  This proves
+\cref{eq:invdet-coefficient-envelope}.
+
+Finally, before conjugation, at \(\rho=0\), the only possible direct
+\(\zeta\)-dependence of the reduced \((X,Y)\)-formula is
+\[
+ K\pi_N^T\sum_{k=0}^mR_{k,N}\mathbf1(X_0-X_k),
+\]
+which vanishes because \(\pi_N^TR_{k,N}=0\) for every \(k\).
+The base graph and singular flow are independent of \(\zeta\).  Thus the
+unconjugated first coefficient has zero \(\zeta\)-derivative.  Since
+\(\mathcal K\) is parameter independent, its push-forward and the pullback
+in \cref{eq:invdet-vector-field-pullback} preserve this zero, proving
+\cref{eq:invdet-q1-zeta-zero}.
+\end{proof}
+
+We record the local tame bound used in the main proof.  Split the stable
+integral after every derivative at
+\(L\log(1/\delta)\).  By choosing \(L\) after the finite jet grade, its tail
+is bounded by
+\begin{equation}
+ C\mathfrak B_\delta
+ \{1+L\log(1/\delta)\}^{M_*}
+ e^{-a_*L\log(1/\delta)/2}=O(\delta^6).              \label{eq:invdet-convolution-tail}
+\end{equation}
+On the finite part, the additional base-flow displacement is at most
+\(\delta L\log(1/\delta)=o(1)\).  Let \(L_J\) be the number of ordered
+blocks and choose fixed buffers
+\[
+ 0=C_0<C_1<\cdots<C_{L_J},\qquad
+ C_{\ell+1}-C_\ell>2\Theta_*+2.
+\]
+At block \(\ell\), take the weighted supremum on the core interval and use
+the successive fixed buffers for the already known lower blocks.  Every
+current or delayed flow evaluation of a lower block, and every finite
+convolution shift, then lands in its assigned outer domain.  The weights
+\(W_{c,m}(s)=e^{c|s|}\langle s\rangle^m\) obey
+\[
+ W_{c,m}(s+t)\leq C_TW_{c,m}(s),\qquad |t|\leq2\Theta_*+2,
+\]
+with \(C_T\) independent of \(s,N,\delta\).
+
+For points a fixed buffer away from \(\pm S_\delta\), all the sampled
+points lie in the uncut physical hull; the polynomial chart and its
+singular variational equations give \(CW_{c,m}(s)\).  In the complementary
+endpoint strips, \(R_\delta-|s|\) is bounded, so the global tame majorant
+\(P(R_\delta)e^{cR_\delta}\) is bounded by \(CW_{c',m'}(s)\).
+The global invariant radius of every block obtained from
+\cref{eq:invdet-invariant-jet-recurrence} has the tame size
+\[
+ R_{\ell,\delta}^{\rm glob}\leq P_\ell(R_\delta)e^{c_\ell R_\delta}.
+\]
+This follows by the same finite induction because every source radius has
+that form and \((1-\eta_\delta)^{-1}\leq2\).  After division by the
+appropriate local weight, the explicit highest-block formula
+\cref{eq:invdet-highest-block-form} therefore becomes
+\begin{equation}
+ \|\mathbf J_\ell Z\|_{\ell;W}
+ \leq B_{\ell;W}
+   +\eta_\delta R_{\ell,\delta}^{\rm glob}
+   +\sum_{k<\ell}C_{\ell k}\|\mathbf J_k Z\|_{\ell+1;W},          \label{eq:invdet-local-block-recurrence}
+\end{equation}
+where \(B_{\ell;W}\) and \(C_{\ell k}\) are independent of \(N,\delta\),
+and
+\[
+ \eta_\delta R_{\ell,\delta}^{\rm glob}
+ =\delta P(R_\delta)e^{cR_\delta}=o(1)
+\]
+after increasing the fixed polynomial and exponential constants.
+The tail
+\cref{eq:invdet-convolution-tail} is absorbed in \(B_{\ell;W}\).
+Induction in \(\ell\), starting with the order-zero graph bound, gives one
+uniform radius for every required local weighted block.  Applying this to
+the integral Taylor remainder
+\cref{eq:invdet-Taylor-remainder}, then applying the pullback
+\cref{eq:invdet-coefficient-pullbacks} and absorbing its polynomial
+coordinate loss, proves
+\begin{equation}
+ |D_u^a\partial_\nu^i\partial_\zeta^j
+       \mathcal R_{3,N}(\gamma_0(s)+\xi)|
+ \leq C\langle s\rangle^Me^{c|s|},
+ \qquad a\leq3,\quad i,j\leq2,                     \label{eq:invdet-local-remainder}
+\end{equation}
+on a nested retained tube.  This also makes explicit why a global
+\(C_b^3\) remainder estimate independent of \(\delta\) is neither claimed
+nor needed.
+
+The same split gives the fixed-compact graph size asserted in
+\cref{lem:shared-graph-trace}.  On a fixed compact \(K\subset U\), the
+finite part of the stable integrand remains in one fixed physical
+neighborhood and is bounded independently of \(\delta\); its integral is
+therefore \(O(\delta)\).  The complementary tail is bounded by
+\(\delta A_\delta O(\delta^6)=o(\delta)\).  Consequently
+\begin{equation}
+ \sup_{N,\nu,\zeta}\sup_{u\in K}
+       \|H_{N,\delta,\nu,\zeta}(u)\|_N
+ \leq C_K\delta.                                      \label{eq:invdet-fixed-compact-size}
+\end{equation}
+
+At \(\rho=0\), one differentiation of
+\cref{eq:invdet-history-evaluation} samples at most one fixed-delay
+backtrack.  A second differentiation samples at most a sum of two delays
+and a variational integral along the intervening singular-flow segment.
+For the stable component, the only additional terms are the moments
+\begin{equation}
+ \left\|\int_0^\infty r^ke^{A_Nr}\,\dd r\right\|
+ \leq\frac{k!}{(D\gamma)^{k+1}},
+ \qquad k=0,1.                                      \label{eq:invdet-semigroup-moments}
+\end{equation}
+Consequently \(Z_{1,N}\) and \(Z_{2,N}\) depend only on the physical data
+on the declared depth-one and depth-two hulls, respectively.  The full
+fixed point still uses the untruncated integral in
+\cref{eq:invdet-TH}; the split in
+\cref{eq:invdet-convolution-tail} is only an estimate.
+
+\subsection{Exact and injective complete histories}
+
+Fix the physical value \(\rho=\delta>0\) and suppress the parameters.  For
+\(u_*\in U\), let
+\begin{equation}
+ u(s)=\Phi_Q^su_*,\qquad h(s)=H(u(s)),\qquad
+ g(s)=G_{N,\delta}(\mathcal E_{Q,H}(u(s));
+                         \delta,\nu,\zeta).
+\end{equation}
+Changing variables \(\tau=s-\delta r\) in the stable fixed-point equation
+gives the exact identity
+\begin{equation}
+ h(s)=\int_{-\infty}^s
+ e^{A_N(s-\tau)/\delta}g(\tau)\,\dd\tau.             \label{eq:invdet-stable-complete-convolution}
+\end{equation}
+For \(s\geq s_0\), split this integral at \(s_0\) and use the semigroup
+law:
+\begin{equation}
+ h(s)=e^{A_N(s-s_0)/\delta}h(s_0)
+ +\int_{s_0}^s e^{A_N(s-\tau)/\delta}g(\tau)\,\dd\tau.            \label{eq:invdet-mild-stable-equation}
+\end{equation}
+This is precisely the mild stable equation associated with
+\cref{eq:invdet-raw-normal-form}; no differentiation of the convolution is
+needed.  The first fixed-point equation supplies the classical reduced
+equation, with the complete graph history
+\cref{eq:invdet-history-lift}.  Uniqueness for the finite-dimensional
+retarded equation therefore yields the semiconjugacy
+\begin{equation}
+ \mathcal S_{N,\nu,\zeta}^s\mathcal I_{Q,H}(u)
+ =\mathcal I_{Q,H}(\Phi_Q^su),
+ \qquad s\geq0,                                      \label{eq:invdet-semiconjugacy}
+\end{equation}
+for the prepared RFDE.
+
+Define present-state restriction by
+\begin{equation}
+ \mathcal R_N(\Psi)=\pi_U\Psi(0).
+\end{equation}
+Then
+\begin{equation}
+ \mathcal R_N\mathcal I_{Q,H}(u)=u,\qquad
+ D\mathcal R_ND\mathcal I_{Q,H}(u)=\Id_U.            \label{eq:invdet-left-inverse}
+\end{equation}
+Hence \(\mathcal I_{Q,H}\) is injective, a homeomorphism onto its image,
+and, by \cref{prop:invdet-mixed-jets}, a \(C^3\) injective immersion.  Thus
+it is a \(C^3\) embedding into
+\(C([ -\Theta_*,0];X_N)\).  Equality of two lifted histories is equivalent
+to equality of their reduced present states; it is not merely an equality
+after stationary projection.
+
+To return to the phase space \(\mathcal H_{N,\delta}\) in
+\cref{sec:model-results}, use the pointwise inverse fold chart together
+with the time reparametrization
+\(\vartheta=\delta\theta_{\rm phys}\).  This gives a continuous injective
+map from the slow history interval \([-\Theta_*,0]\) onto the original
+history interval \([-\Theta_*/\delta,0]\).  Consequently the embedding and
+history-equality statements above are statements about the full original
+RFDE histories, not only about their slow-coordinate representatives.
+
+Finally, let \(J\) be a retained interval of a graph orbit.  If
+\begin{equation}
+ \{\Phi_Q^{s+\vartheta}u_*:
+          s\in J,\ -\Theta_*\leq\vartheta\leq0\}
+\end{equation}
+lies in the planar agreement region and all corresponding values of \(H\)
+lie in the stable agreement ball \(\|h\|_N<h_*\), then every current and
+delayed slot in the prepared right-hand side equals its unprepared
+counterpart.  Equation \cref{eq:invdet-semiconjugacy} is therefore an exact
+semiconjugacy for the physical RFDE on that retained segment.  In the
+application to the selected traces, the identity
+\[
+ d(\gamma_0(s)+(U,V))=V+sU-\alpha U^2
+\]
+and the trace bound in \cref{eq:shared-trace-jets} give
+\[
+ |d|\leq C\delta e^{cS_\delta}\langle S_\delta\rangle^{M+1}
+       =o(\delta^\kappa).
+\]
+The same bound holds after the finitely many retained delay backtracks.
+Together with \(\|H\|_N\leq C\delta A_\delta=o(1)<h_*\), this verifies the
+agreement criterion and proves the exact retained-history assertion.
+
+\begin{lemma}[Precise relation with \cref{lem:shared-graph-trace}]
+\label[lemma]{lem:invdet-to-main-lemma}
+Assume
+\cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds} and fix a
+preparation satisfying \cref{def:canonical-preparation}, including its
+tame-flow clause \cref{def:invdet-tame-preparation}.  Then the following clauses of
+\cref{lem:shared-graph-trace} follow from this subsection:
+\begin{enumerate}[label=\textup{(\roman*)}]
+ \item the existence, local uniqueness, invariance, and injectivity of the
+ complete-history graph;
+ \item the expansion \cref{eq:shared-graph-expansion}, the fixed-compact
+ graph size, the coefficient envelope
+ \cref{eq:invdet-coefficient-envelope}, and the local remainder estimate
+ \cref{eq:shared-graph-remainder};
+ \item the finite block-lower-triangular mixed prolongation through the
+ derivative rectangle displayed in that lemma, with diagonal inverse bound
+ two and full inverse bound four in the declared scaled norm
+ \cref{eq:invdet-prolonged-norm};
+ \item the exact-history assertion for every retained trace segment which
+ satisfies the bootstrap furnished by \cref{eq:shared-trace-jets}.
+\end{enumerate}
+The one-sided trace existence, the endpoint normalization, the trace
+linear isomorphisms, and the estimates in
+\cref{eq:shared-trace-jets} are not proved here; they remain the separate
+finite-dimensional trace argument beginning with
+\cref{eq:shared-trace-operator}.
+
+The explicit tame-flow clause excludes the uncontrolled fixed-delay flow
+factor described in \cref{rem:invdet-missing-flow-hypothesis}.  Likewise, a uniform bound for
+the full prolonged inverse is justified in the scaled norm
+\cref{eq:invdet-prolonged-norm}, not in an undeclared unweighted product
+norm.
+\end{lemma}
+
+\begin{proof}
+The semigroup constants are \(1\) and \(D\gamma\) by
+\cref{eq:poisson-bound}; the observation norm is at most \(m+2\) by
+\cref{eq:shared-evaluation-TV}; and all nonlinear operator bounds are
+dimension independent by \cref{eq:shared-products}.  Therefore
+\cref{lem:invdet-C0-contraction} applies with constants independent of
+\(N\).  The mixed-jet, coefficient, and Taylor assertions are
+\cref{prop:invdet-mixed-jets,prop:invdet-coefficient-envelope,%
+eq:invdet-Taylor,eq:invdet-local-remainder,%
+eq:invdet-fixed-compact-size}, and the prolonged inverse is
+\cref{eq:invdet-diagonal-inverse,eq:invdet-prolonged-inverse}.  Finally,
+\cref{eq:invdet-mild-stable-equation,eq:invdet-left-inverse} give the exact
+injective history lift, while the last bootstrap paragraph gives physical
+agreement on the retained pieces.  These are precisely the four listed
+clauses and no trace statement.
+\end{proof}

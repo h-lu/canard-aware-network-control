@@ -167,13 +167,14 @@ For each \(0<\delta<1\), set
 An admissible fixed preparation datum \(\mathbf p_{\rm can}\) is a pair
 of fixed, parameter-independent extension rules
 \((\mathfrak P_{\rm gr},\mathfrak P_{\rm pl})\), together with the constants
-above, satisfying the following properties for every \(N\) and target
-\(\delta\).
+above and a target threshold \(\delta_{\rm prep}>0\), satisfying the following
+properties for every \(N\) and \(0<\delta<\delta_{\rm prep}\).
 
 First, \(\mathfrak P_{\rm gr}\) maps the exact chart field
 \cref{eq:shared-exact-X,eq:shared-exact-h} to a globally bounded
 \(C^{12}\) field with complete planar flow.  It is exactly the physical
-chart field on the open \(b_0\)-neighborhood of
+chart field on the open \(b_0\)-neighborhood, measured in the
+\((\chi,d)\)-coordinates and the stable norm, of
 \(\mathfrak H^{[2]}_\delta\), for all current and delayed stable slots with
 \(\|h\|_N<h_*\).  On its range, all state derivatives and the mixed
 \((\rho,\nu,\zeta)\)-derivatives used below,
@@ -190,13 +191,39 @@ stable-saturation profiles for every \(N\), applies the saturation
 componentwise followed by \(P_{\perp,N}\), and is independent of
 \((\nu,\zeta)\).
 
+The singular planar part of this rule is fixed explicitly as follows.  Choose
+one \(\omega\in C_c^\infty(\R;[0,1])\), equal to one on \([-1,1]\) and
+zero off \((-2,2)\), and fixed constants
+\(B_*>2\Theta_*+B+3\) and \(d_*>0\) for which the preceding depth-two
+agreement hull is contained, for all sufficiently small targets, in
+\(\{|\chi|<R_\delta+B_*,\ |d|<d_*\}\).  The frozen singular field used by
+the graph rule is
+\begin{equation}
+ \Xi_\delta(\chi,d)
+ \binom{1-2\alpha d}{\chi d},\qquad
+ \Xi_\delta(\chi,d)=
+ \omega\!\left(\frac{\chi}{R_\delta+B_*}\right)
+ \omega\!\left(\frac d{d_*}\right).                 \label{eq:fixed-singular-preparation}
+\end{equation}
+The graph transform is performed in the \((\chi,d)\)-norm.  Its frozen
+preparation must be tame through grade eleven in the precise sense of
+\cref{def:invdet-tame-preparation}; in particular,
+\begin{equation}
+ \operatorname{Lip}_{\chi,d}(q_{0,\delta})
+ \le C_{\rm prep}(1+R_\delta).                       \label{eq:fixed-singular-lipschitz}
+\end{equation}
+The explicit rule \cref{eq:fixed-singular-preparation} has this property by
+the flow-jet calculation in \cref{subsec:invariant-history-details}.
+
 Second, after the invariant graph has been constructed,
 \(\mathfrak P_{\rm pl}\) maps its exact reduced field to a globally bounded,
-globally Lipschitz \(C^{12}\) planar field.  It agrees with that reduced
+globally Lipschitz \(C^{8}\) planar field.  It agrees with that reduced
 field on \(\mathcal U^{\rm pl}_{\rm ret}(\delta)\), equals \(q_0\) on the
 \(b_0\)-balls about \(\gamma_0(\pm R_\delta)\), and obeys the same derivative
-bound.  Both extension rules are held fixed when parameter derivatives are
-taken.  The selected traces are the solutions with
+type of bound for
+\(D_u^a\partial_\nu^i\partial_\zeta^j\),
+\(a+i+j\le8\), \(i,j\le2\).  Both extension rules are held fixed when
+parameter derivatives are taken.  The selected traces are the solutions with
 \[
  \mathscr H_\alpha(z^{a,\rm can}_N(-R_\delta))=0,
  \quad
@@ -229,20 +256,34 @@ In the \((\chi,d)\)-coordinates, the closure of
 \begin{equation}
  C\langle R_\delta\rangle^M e^{cR_\delta}.             \label{eq:preparation-flow-bound}
 \end{equation}
-Smooth plateau functions, obtained from \(\eta\) in finitely many flow-box
-charts, can therefore be chosen equal to one on the \(b_0\)-neighborhood of
-that hull and supported in its \(2b_0\)-neighborhood, with the same type of
-derivative bound.  Multiplying the exact polynomial chart field by these
-plateaus after the stable saturation gives a globally bounded \(C^{12}\)
-graph preparation which agrees with the physical field on the required set.
-The construction uses only the target \(\delta\), not \((\nu,\zeta)\).
+In particular,
+\(\delta^\kappa e^{cR_\delta}=o(1)\), so fixed
+\(B_*>2\Theta_*+B+3\) and \(d_*>0\) can be chosen to contain the entire
+depth-two agreement hull for all sufficiently small targets.  Use
+\cref{eq:fixed-singular-preparation} for the singular field.  Direct
+differentiation gives \cref{eq:fixed-singular-lipschitz}; the successive
+flow-variational equations give the grade-eleven tame-flow estimate, as
+written out in \cref{def:invdet-tame-preparation} and the paragraph following
+\cref{eq:invdet-q0-lipschitz}.
+
+For every current and delayed planar slot, rescale the same plateau \(\eta\)
+to a rectangle strictly between the preceding agreement hull and the support
+of \(\Xi_\delta\).  Apply these plateaus only to the perturbation
+nonlinearities in the decomposition
+\(q_{0,\delta}+\rho F_{N,\delta}\),
+\(A_Nh+\rho G_{N,\delta}\), after the stable saturation already described.
+This gives globally bounded \(C^{12}\) maps, agrees with the exact polynomial
+chart on every required slot, and uses only the target \(\delta\), not
+\((\nu,\zeta)\).  The chain rule, \cref{eq:shared-products}, and
+\cref{eq:preparation-flow-bound} give the declared derivative majorant
+without a factor depending on \(N\).
 
 The inequality imposed on \(b_0\) separates the retained tube, its depth-two
 backtracks, and the two endpoint balls.  A smooth partition of unity in
 \((\chi,d)\) can therefore blend the exact reduced graph field on the
 retained tube with \(q_0\) on those balls and with a bounded cutoff field
 outside.  Extending the finite normal Taylor jet before blending preserves
-the required derivatives across the joins.  Repeated chain rules, the
+the required eight derivatives across the joins.  Repeated chain rules, the
 polynomial form of \cref{eq:shared-exact-X,eq:shared-exact-h}, and
 \cref{eq:preparation-flow-bound} give the majorant in
 \cref{def:canonical-preparation} after increasing its three constants.  The
