@@ -1,0 +1,291 @@
+\section{A range-to-root transfer principle}
+\label{sec:abstract-response}
+
+The construction of a selected complete-history root has two logically
+different parts.  A range argument must first construct the history graph and
+the two selected traces, including their parameter derivatives.  Once that
+has been done, a scalar argument turns two Melnikov pairings and their
+remainders into a root response.  We isolate the latter implication here so
+that the model-specific calculation below has a reusable conclusion.  In
+particular, the following theorem does not construct an invariant graph or a
+trace inverse: their existence and regularity are explicit hypotheses.
+
+Let \(I\subset\R\) be a compact interval.  For each \(N\ge2\), let
+\(\mathcal H_N\) be a history space, let
+\(\nu_{0,N}\in I\), and assume
+\begin{equation}
+ \inf_{N\ge2}\operatorname{dist}(\nu_{0,N},\partial I)=d_*>0.
+ \label{eq:abstract-center-buffer}
+\end{equation}
+The notation below permits the graph, the trace spaces, and their norms to
+depend on \(N\) and \(\delta\); only the constants displayed as common are
+required to be independent of \(N\).
+
+\begin{theorem}[Uniform range-to-root and Melnikov transfer]
+\label{thm:abstract-root-response}
+Fix \(\bar\delta,\bar\zeta>0\).  Suppose that the following data have been
+verified for every \(N\ge2\), \(0<\delta<\bar\delta\), \(\nu\in I\), and
+\(|\zeta|<\bar\zeta\).
+
+\smallskip
+\noindent
+\emph{Complete-history range.}
+An already solved range problem supplies a Banach chart \(\mathcal U_N\),
+a phase section \(\Sigma_N\subset\mathcal U_N\), an exact
+complete-history lift with invariant range
+\[
+ \mathcal I_{N,\delta,\nu,\zeta}:\mathcal U_N\longrightarrow\mathcal H_N,
+\]
+and selected one-sided traces
+\(z^a_{N,\delta,\nu,\zeta}\) and
+\(z^r_{N,\delta,\nu,\zeta}\).  Their central values lie on the same phase
+section.  Present-state evaluation \(\operatorname{ev}_{0,N}\) is a left
+inverse of \(\mathcal I_{N,\delta,\nu,\zeta}\), so the lift is injective.
+A scalar matcher
+\(\mathfrak m_{N,\delta,\nu,\zeta}:\Sigma_N\times\Sigma_N\to\R\)
+defines
+\begin{equation}
+ \mathscr G_N(\delta,\nu,\zeta)
+ =\mathfrak m_{N,\delta,\nu,\zeta}
+   \bigl(z^a_{N,\delta,\nu,\zeta}(0),
+         z^r_{N,\delta,\nu,\zeta}(0)\bigr).
+ \label{eq:abstract-gap-definition}
+\end{equation}
+The matcher has the zero-fiber property
+\begin{equation}
+ \mathscr G_N(\delta,\nu,\zeta)=0
+ \quad\Longleftrightarrow\quad
+ \mathcal I_{N,\delta,\nu,\zeta}
+       \bigl(z^a_{N,\delta,\nu,\zeta}(0)\bigr)
+ =\mathcal I_{N,\delta,\nu,\zeta}
+       \bigl(z^r_{N,\delta,\nu,\zeta}(0)\bigr).
+ \label{eq:abstract-zero-fiber}
+\end{equation}
+Thus a zero is equality of the selected histories, not merely equality of a
+projected observable.  The lift, traces, and matcher possess the parameter
+jets needed to make \(\mathscr G_N\) jointly \(C^2\) in \((\nu,\zeta)\) on
+an open neighborhood of the closed parameter box.  This includes the pure
+\(\nu\nu\) and mixed \(\nu\zeta\) derivatives.
+
+\smallskip
+\noindent
+\emph{Melnikov data and tails.}
+There are Banach spaces \(V_N\), measurable functions
+\(\psi_N:\R\to V_N^*\) and
+\(f_{\nu,N},f_{\zeta,N}:\R\to V_N\), and numbers
+\(R_\delta\to\infty\) as \(\delta\to0\), such that the absolutely
+convergent pairings
+\begin{align}
+ a_N&=\int_{\R}\langle\psi_N(s),f_{\nu,N}(s)\rangle\,\dd s,
+ &
+ b_N&=\int_{\R}\langle\psi_N(s),f_{\zeta,N}(s)\rangle\,\dd s
+ \label{eq:abstract-melnikov-coefficients}
+\end{align}
+represent the derivatives of the same normalized matcher as in
+\cref{eq:abstract-gap-definition}.  Thus any phase, endpoint, or moving-history
+contribution must already be included in these profiles or proved to vanish.
+Assume that, with constants independent of \(N\),
+\begin{equation}
+ 0<a_*\le |a_N|\le a^*,\qquad |b_N|\le b^*.
+ \label{eq:abstract-coefficient-bounds}
+\end{equation}
+Put
+\begin{equation}
+ a_{N,\delta}=\int_{-R_\delta}^{R_\delta}
+     \langle\psi_N,f_{\nu,N}\rangle\,\dd s,
+ \qquad
+ b_{N,\delta}=\int_{-R_\delta}^{R_\delta}
+     \langle\psi_N,f_{\zeta,N}\rangle\,\dd s.
+ \label{eq:abstract-truncated-coefficients}
+\end{equation}
+Assume the common tail estimate
+\begin{equation}
+ \int_{|s|>R_\delta}
+ \left(
+  |\langle\psi_N(s),f_{\nu,N}(s)\rangle|
+  +|\langle\psi_N(s),f_{\zeta,N}(s)\rangle|
+ \right)\dd s
+ \le C_{\rm tail}\delta.
+ \label{eq:abstract-tail-bound}
+\end{equation}
+
+\smallskip
+\noindent
+\emph{Range-to-gap remainders.}
+The output of the graph and trace estimates obeys, throughout the same
+parameter box,
+\begin{align}
+ \left|\frac{\mathscr G_N(\delta,\nu,\zeta)}{\delta}
+       -a_{N,\delta}(\nu-\nu_{0,N})\right|
+ &\le C_{\rm rg}\delta,
+ \label{eq:abstract-gap-level}\\
+ |\partial_\nu\mathscr G_N-\delta a_{N,\delta}|
+ &\le C_{\rm rg}\delta^2,
+ \label{eq:abstract-gap-slope}\\
+ |\partial_\zeta\mathscr G_N-\delta^2b_{N,\delta}|
+ &\le C_{\rm rg}(\delta^3+\delta^2|\zeta|),
+ \label{eq:abstract-gap-response}\\
+ |\partial_{\nu\nu}\mathscr G_N|
+ +|\partial_{\nu\zeta}\mathscr G_N|
+ +|\partial_{\zeta\zeta}\mathscr G_N|
+ &\le C_{\rm rg}\delta^2.
+ \label{eq:abstract-gap-second-jets}
+\end{align}
+
+Then there are \(\delta_0\in(0,\bar\delta)\),
+\(\zeta_0\in(0,\bar\zeta)\), \(c_0\in(0,d_*)\), and \(C>0\), all
+independent of \(N\), such that for every \(N\ge2\),
+\(0<\delta<\delta_0\), and \(|\zeta|<\zeta_0\), the equation
+\(\mathscr G_N(\delta,\nu,\zeta)=0\) has exactly one solution in
+\(|\nu-\nu_{0,N}|<c_0\).  This solution is a selected complete-history
+root by \cref{eq:abstract-zero-fiber}, is \(C^2\) in \(\zeta\), and
+satisfies
+\begin{align}
+ \partial_\zeta\nu_{c,N}(\delta,\zeta)
+ &=-\delta\frac{b_N}{a_N}
+   +O(\delta^2+\delta|\zeta|),
+ \label{eq:abstract-root-derivative}\\
+ |\partial_{\zeta\zeta}\nu_{c,N}(\delta,\zeta)|
+ &\le C\delta,
+ \label{eq:abstract-root-second-derivative}\\
+ \left|\nu_{c,N}(\delta,\zeta)-\nu_{c,N}(\delta,0)
+       +\delta\frac{b_N}{a_N}\zeta\right|
+ &\le C(\delta^2|\zeta|+\delta\zeta^2).
+ \label{eq:abstract-root-increment}
+\end{align}
+The constant implicit in \cref{eq:abstract-root-derivative} is common in
+\(N\).  More generally, if a physical parameter is scaled as
+\(\mu=\mu_f(\delta)+\delta^q\nu\), where \(q>0\) and \(\mu_f\) is
+independent of \(\zeta\), then
+\begin{equation}
+ \left|\mu_{c,N}(\delta,\zeta)-\mu_{c,N}(\delta,0)
+       +\frac{b_N}{a_N}\delta^{q+1}\zeta\right|
+ \le C\{\delta^{q+2}|\zeta|+\delta^{q+1}\zeta^2\}.
+ \label{eq:abstract-physical-increment}
+\end{equation}
+In particular, \(q=2\) gives a leading \(\delta^3\zeta\) response.
+\end{theorem}
+
+\begin{proof}
+The tail bound gives
+\begin{equation}
+ |a_{N,\delta}-a_N|+|b_{N,\delta}-b_N|
+ \le C_{\rm tail}\delta.                            \label{eq:abstract-tail-consequence}
+\end{equation}
+Consequently, after decreasing \(\delta_0\),
+\begin{align}
+ \left|\frac{\mathscr G_N}{\delta}
+       -a_N(\nu-\nu_{0,N})\right|&\le C_0\delta,
+ \label{eq:abstract-full-gap-level}\\
+ |\partial_\nu\mathscr G_N-\delta a_N|&\le C_1\delta^2,
+ \label{eq:abstract-full-gap-slope}\\
+ |\partial_\zeta\mathscr G_N-\delta^2b_N|
+ &\le C_2(\delta^3+\delta^2|\zeta|),
+ \label{eq:abstract-full-gap-response}
+\end{align}
+uniformly in the parameter box.  Here the bounded diameter of \(I\) absorbs
+the factor \(|\nu-\nu_{0,N}|\) when
+\cref{eq:abstract-tail-consequence} is inserted into
+\cref{eq:abstract-gap-level}.
+
+Set \(\zeta_0=\bar\zeta/2\) and choose, for example,
+\(c_0=d_*/2\).  At
+\(\nu=\nu_{0,N}\pm c_0\),
+\cref{eq:abstract-full-gap-level} has the two opposite leading values
+\(\pm a_Nc_0\).  They retain opposite signs once
+\(C_0\delta_0<a_*c_0/2\), so continuity gives a zero in the local
+window.  If also \(C_1\delta_0<a_*/2\), then
+\begin{equation}
+ |\partial_\nu\mathscr G_N|\ge\frac12a_*\delta
+ \label{eq:abstract-uniform-slope}
+\end{equation}
+and its sign is the sign of \(a_N\) throughout that window.  The zero is
+therefore unique.  The ordinary implicit-function theorem, applied at each
+\(\zeta\), and uniqueness patch these local branches into one \(C^2\)
+function on the common \(\zeta\)-interval.
+
+Along the root,
+\begin{equation}
+ \partial_\zeta\nu_{c,N}
+ =-\frac{\partial_\zeta\mathscr G_N}
+          {\partial_\nu\mathscr G_N}.                \label{eq:abstract-ift-ratio}
+\end{equation}
+Write the numerator and denominator as
+\(\delta^2b_N+e_\zeta\) and \(\delta a_N+e_\nu\).  By
+\cref{eq:abstract-full-gap-slope,eq:abstract-full-gap-response},
+\(|e_\nu|\le C_1\delta^2\) and
+\(|e_\zeta|\le C_2(\delta^3+\delta^2|\zeta|)\).  Using
+\cref{eq:abstract-uniform-slope,eq:abstract-coefficient-bounds} in
+\cref{eq:abstract-ift-ratio} gives
+\begin{align*}
+ \left|\partial_\zeta\nu_{c,N}
+       +\delta\frac{b_N}{a_N}\right|
+ &\le \frac{|e_\zeta|}{|\delta a_N+e_\nu|}
+  +\frac{\delta^2|b_N|\,|e_\nu|}
+   {|\delta a_N|\,|\delta a_N+e_\nu|} \\
+ &\le C(\delta^2+\delta|\zeta|),
+\end{align*}
+which is \cref{eq:abstract-root-derivative}.
+
+Differentiating
+\(\mathscr G_N(\delta,\nu_{c,N}(\zeta),\zeta)=0\) once more gives
+\begin{equation*}
+ \partial_\nu\mathscr G_N\,\partial_{\zeta\zeta}\nu_{c,N}
+ =-\left\{
+   \partial_{\nu\nu}\mathscr G_N(\partial_\zeta\nu_{c,N})^2
+  +2\partial_{\nu\zeta}\mathscr G_N\partial_\zeta\nu_{c,N}
+  +\partial_{\zeta\zeta}\mathscr G_N\right\}.
+\end{equation*}
+The first derivative is \(O(\delta)\); hence
+\cref{eq:abstract-gap-second-jets,eq:abstract-uniform-slope} yield
+\cref{eq:abstract-root-second-derivative}.  Integrating
+\cref{eq:abstract-root-derivative} from \(0\) to \(\zeta\) proves
+\cref{eq:abstract-root-increment}.  Multiplication by \(\delta^q\) proves
+\cref{eq:abstract-physical-increment}.
+\end{proof}
+
+\paragraph{How to apply the theorem.}
+For a new RFDE or other infinite-dimensional matching problem, one must
+verify five items: (i) construct one exact history lift and the two selected
+traces on it; (ii) prove the zero-fiber property of the scalar matcher;
+(iii) justify the joint \(C^2\) graph--trace parameter jets, including the
+pure and mixed derivatives in \cref{eq:abstract-gap-second-jets};
+(iv) identify the adjoint pairings \(a_N,b_N\), including all phase and
+endpoint terms, prove
+\(\inf_N|a_N|>0\), and estimate their finite-section tails; and (v) prove
+the four range-to-gap bounds
+\cref{eq:abstract-gap-level,eq:abstract-gap-slope,%
+eq:abstract-gap-response,eq:abstract-gap-second-jets}.  A nonzero response
+additionally requires a model-specific bound on \(|b_N/a_N|\); it is not a
+consequence of the transfer theorem.
+
+\paragraph{Structural and model-specific inputs.}
+The exact history lift, selected trace range, zero-fiber implication,
+parameter jets, transverse inverse estimates used to obtain them, and the
+tail and remainder bounds are the structural inputs to
+\cref{thm:abstract-root-response}.  The theorem itself is indifferent to
+whether they arise from an RFDE graph transform, a Lin problem, or another
+range construction.  In the shared-resource network, by contrast, the
+identities
+\[
+ X_0(s)-X_0(s-\theta_k)=-\frac{\theta_k}{2\alpha},
+ \qquad
+ \psi(s)=e^{-s^2/2}(s,1)^T
+\]
+and the stationary-row cancellation are specific to the affine singular
+orbit and the chosen delay layers.  The curvature--resolvent return then
+gives
+\begin{equation}
+ a_N=\sqrt{2\pi},\qquad
+ b_N=\sqrt{2\pi}\frac{r_N}{\alpha},\qquad
+ -\frac{b_N}{a_N}=-\frac{r_N}{\alpha}=\mathscr C_N.
+ \label{eq:abstract-current-dictionary}
+\end{equation}
+The graph and trace hypotheses are supplied in
+\cref{lem:shared-graph-trace}, while
+\cref{eq:shared-leading-gap,eq:shared-melnikov,%
+eq:shared-gaussian-tail,eq:shared-gap-expansion,eq:shared-gap-nu,%
+eq:shared-gap-zeta,eq:shared-gap-zz,eq:shared-gap-mixed}
+verify the pairing and remainder inputs.  In another model, these affine,
+Gaussian, and curvature identities must be recomputed; the abstract theorem
+does not propagate them automatically.
