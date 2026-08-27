@@ -47,6 +47,19 @@ curvatures, no nontrivial synchrony polydiagonal, and a transverse amplitude
 bounded below along the matched root orbit.  Thus the conclusion is not a
 synchronous copy of a scalar canard.
 
+There is a complementary warning in projection-based model reduction.
+Eliminating unresolved network variables generally produces memory terms,
+and nonlinear projection methods can use those terms to recover transients
+that a memoryless reduction loses 
+\citep{herrera2020tractable}.  That literature reconstructs reduced dynamics;
+our question is an identifiability question for a parameter selected by an
+orbit-matching problem.  We impose the stronger identity that the projected
+vector-field functional itself is unchanged at every full history, and then
+show that the selected root still changes.  Thus the new issue is not merely
+that projection creates memory, but that two structurally different memory
+channels can be indistinguishable to the projected vector field and yet be
+distinguished by a complete-history root.
+
 Synchrony polydiagonals and the associated quotient networks are classically
 organized by balanced equivalence relations or, more generally, common
 invariant synchrony subspaces of the coupling matrices

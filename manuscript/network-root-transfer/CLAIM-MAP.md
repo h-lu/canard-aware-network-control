@@ -1,8 +1,9 @@
 # Paper A claim and proof map
 
 This file maps the acceptance criteria in
-[Issue #29](https://github.com/h-lu/canard-aware-network-control/issues/29)
-to the refocused manuscript.  It is an audit aid, not part of the paper.
+[Issue #30](https://github.com/h-lu/canard-aware-network-control/issues/30)
+to the proof-strengthened manuscript.  It is an audit aid, not part of the
+paper.
 
 ## Central principle
 
@@ -37,6 +38,36 @@ delay moment -> transverse Markov resolvent -> heterogeneous curvature
 | Actual asynchronous root orbit | second part of `cor:robust-asynchronous` | Fixed slow-time profile and oscillation lower bound in Section 3 |
 | No nontrivial synchrony quotient | explicit witness after `cor:preparation-universality` | Failure of vector-field tangency to every nonsingleton polydiagonal |
 
+## Contribution map
+
+```text
+projection and network-canard theories allow collective reduction
+    but do not decide a history-matching root from a projected functional
+        -> atomwise row neutrality gives exact projected blindness
+        -> a uniform invariant-history range problem exposes the hidden mode
+        -> transverse resolvent and heterogeneous curvature return that mode
+        -> an adjoint gap identity transfers the return into a root shift.
+```
+
+The new conclusion is the failure of projection identifiability for a
+selected complete-history root.  Dobrushin contraction, the fold normal form,
+and the scalar implicit-function theorem are enabling ingredients rather than
+the claimed novelty.
+
+## Proof spine and verification gates
+
+| Link | Input | Output | Decisive reason | Required location |
+| --- | --- | --- | --- | --- |
+| Transverse inverse | Common Dobrushin gap | `N`-uniform semigroup and resolvent bounds on `E_N` | Poisson expansion in oscillation norm | Section 3.1 |
+| History graph | Prepared chart field and fixed atomic evaluations | Injective invariant complete-history graph with finite mixed jets | Special-flow contraction plus finite block-triangular prolongation | Detailed graph proof |
+| Selected traces | Reduced graph field and endpoint/phase rows | Two one-sided solutions with uniform inverse | Explicit Gaussian Green operator | Section 3.1 and detailed trace proof |
+| Hidden return | Row-neutral delay moment and heterogeneous curvature | `D_zeta q_1=0`, explicit `D_zeta q_2` | Direct projected term cancels while the transverse resolvent survives | Section 3.2 |
+| Exact gap | Selected finite traces and first integral | Uniform gap and derivative expansions | Finite-section identity plus an explicit five-part error decomposition | Detailed gap proof |
+| Root response | Gap transversality and structural coefficient | Local root and `delta^3` displacement | Uniform scalar implicit-function theorem | Abstract transfer result and model application |
+
+No theorem is promoted on the strength of a formal coefficient alone.  The
+history-graph and exact-gap links are the two load-bearing proof gates.
+
 ## Quantifier boundaries
 
 - Open/dense genericity is asserted for each fixed finite network, not for an
@@ -59,8 +90,8 @@ From this directory, run:
 make
 ```
 
-The refocused build produces a 22-page PDF with no LaTeX/BibTeX warnings,
-undefined references, or overfull/underfull boxes.  The generated manuscript
-PDF is intentionally ignored; the figure source and vector figure are
-tracked.  The pre-refocus source is preserved by the tag
-`paper-a-before-hidden-response-refocus`.
+The generated manuscript PDF is intentionally ignored; the figure source and
+vector figure are tracked.  The pre-refocus source is preserved by the tag
+`paper-a-before-hidden-response-refocus`.  Page count and build diagnostics
+must be refreshed after the proof appendices and abstract transfer theorem
+are integrated.
