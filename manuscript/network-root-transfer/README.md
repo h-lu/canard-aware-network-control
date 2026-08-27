@@ -12,7 +12,7 @@ the selected complete-history root moves through a transverse-resolvent and
 curvature-return mechanism.  The manuscript proves a network-size-uniform
 response expansion, classifies zero leading-response directions, gives a robust
 non-synchrony witness with an asynchronous root orbit, and shows that the
-leading response increment is shared by any two fixed canonical
+leading response increment is shared by any two fixed admissible
 preparations.
 
 The exact finite-parameter baseline root is not claimed to be preparation

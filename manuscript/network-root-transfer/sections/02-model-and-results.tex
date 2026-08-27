@@ -138,7 +138,7 @@ the singular critical field is
                     \frac{s^2-2}{4\alpha}\right).
 \]
 
-\begin{definition}[Admissible canonical preparation datum]
+\begin{definition}[Admissible fixed preparation datum]
 \label[definition]{def:canonical-preparation}
 Put
 \[
@@ -164,7 +164,7 @@ For each \(0<\delta<1\), set
        0\le t\le2\Theta_*\}.
 \end{align*}
 
-An admissible canonical preparation datum \(\mathbf p_{\rm can}\) is a pair
+An admissible fixed preparation datum \(\mathbf p_{\rm can}\) is a pair
 of fixed, parameter-independent extension rules
 \((\mathfrak P_{\rm gr},\mathfrak P_{\rm pl})\), together with the constants
 above, satisfying the following properties for every \(N\) and target
@@ -270,7 +270,7 @@ equivalent to equality of the two selected complete RFDE histories.
 Assume \cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds}
 with all displayed bounds common in \(N\).  Fix a compact interval
 \(I_\nu\) containing every \(\nu_{0,N}\) in its
-interior with one common positive boundary distance, and one canonical
+interior with one common positive boundary distance, and one fixed admissible
 preparation datum \(\mathbf p_{\rm can}\) as in
 \cref{def:canonical-preparation}.  Then there
 exist \(\delta_0,\zeta_0,c_0,C>0\), depending only on the common model
@@ -379,9 +379,22 @@ node curvatures, is exactly the obstruction to a nonzero leading-order
 projection-invisible response in this tangent class.
 \end{theorem}
 
+\begin{remark}[Additional structural constraints]
+\label[remark]{rem:constrained-directions}
+The equivalence in \cref{thm:response-directions} concerns the full
+row-neutral matrix spaces displayed there.  If an application prescribes a
+smaller tangent space---for example by fixing a sparse support, a Laplacian
+sign pattern, or another conservation law---the applicable functional is
+\(\Lambda_N\) restricted to that space.  Curvature heterogeneity remains
+necessary, but it is sufficient only when this restricted functional is
+nonzero; in that case its kernel is again a codimension-one hyperplane in the
+admissible tangent space.  The rank-one witness
+\cref{eq:variance-witness} need not respect extra constraints.
+\end{remark}
+
 \begin{corollary}[Leading response is preparation universal]
 \label[corollary]{cor:preparation-universality}
-Fix two canonical preparation data \(\mathbf p_1,\mathbf p_2\) satisfying
+Fix two admissible preparation data \(\mathbf p_1,\mathbf p_2\) satisfying
 \cref{def:canonical-preparation}, and let
 \(\mu^{(j)}_{c,N}\) be their selected roots.  On a common parameter box,
 with a constant independent of \(N\),
