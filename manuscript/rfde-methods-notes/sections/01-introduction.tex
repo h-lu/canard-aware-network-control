@@ -1,0 +1,41 @@
+\section{Introduction}
+
+Let an RFDE generate a semiflow on a space of continuous histories.  An
+event-defined return asks for more than smooth dependence at a fixed time:
+the event time moves with the initial history, and the returned object is an
+entire translated history segment.  While that segment still overlaps the
+arbitrary continuous initial history, differentiation with respect to the
+event time moves an evaluation point through a function that need not be
+differentiable.  The first question in these notes is when the method of
+steps has removed this obstruction.
+
+The second question concerns geometry rather than regularity.  A convenient
+selected hit may occur near \(m\) periods of a periodic orbit without being
+labelled as a first return and without being known to equal the \(m\)-th
+iterate of a first-return map.  For a stable-manifold argument one must then
+know whether convergence under this selected map describes the intrinsic
+stable set of the same periodic orbit.
+
+The two results below answer these questions under explicit local
+hypotheses.  First, a selected window beginning after \(k\) maximum delays
+supports a \(C^k\) complete-history hit when a common solution tube, strict
+endpoint signs, and positive event speed are available.  Second, a bounded
+positive-time selected return identifies the periodic-orbit stable-set germ
+when all relevant arcs stay in a common tube, stable flow orbits have
+recurrent selected hits, and the section isolates the base phase.
+
+These statements are extracted from a larger project so that their
+assumptions and proof mechanisms can be audited without model-specific
+calculations.  Standard fixed-delay semiflow, smooth-dependence, and
+Poincar\'e-map background is available in
+\citet{hale1993introduction,diekmann1995delay}.  That background citation is
+not a novelty comparison.  We have not yet identified the nearest published
+theorems governing the precise joint \(C^k\) threshold or the direct-return
+stable-germ statement.  Accordingly, these notes make no claim of newness,
+sharpness, or readiness for submission.
+
+\Cref{sec:setting} fixes the objects and local conventions.
+\Cref{sec:eventual-return} gives the regularity theorem, and
+\cref{sec:stable-germ} gives the stable-germ lemma.
+\Cref{sec:scope-gate} records the exact scope and the literature decisions
+still required.

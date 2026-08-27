@@ -1,0 +1,49 @@
+\section{Setting and local conventions}\label{sec:setting}
+
+Fix \(d<\infty\) and a maximum delay \(\tau_*>0\).  The history space is
+\begin{equation}
+ \cX_{\tau_*}=C([-\tau_*,0],\R^d),\qquad
+ \norm{\phi}_{\infty}=\sup_{-\tau_*\le\theta\le0}\abs{\phi(\theta)}.
+ \label{eq:history-space}
+\end{equation}
+On an open set \(U\subset\cX_{\tau_*}\), consider the fixed-delay RFDE
+\begin{equation}
+ \dot x(t)=\mathcal F(x_t),
+ \qquad x_t(\theta)=x(t+\theta),
+ \qquad \mathcal F\colon U\to\R^d.                 \label{eq:general-rfde}
+\end{equation}
+Assume throughout that \(\mathcal F\) is \(C^r\), with \(r\ge 1\).
+Whenever the solution from \(\phi\) is defined and remains in \(U\), write
+\(
+ \Phi_t(\phi)=x_t(\phi).
+\)
+The phrase \emph{common \(U\)-tube through \(T_+\)} means that every initial
+history under consideration has a solution through \(T_+\), and that all
+history segments needed in the argument lie in one open solution domain on
+which the stated derivatives of \(\mathcal F\) are available.
+
+\begin{definition}[Selected event]
+Let \(g\colon V\subset\cX_{\tau_*}\to\R\) be an event functional.  Given an
+initial-history chart \(\iota\colon D\to U\) and a declared time window
+\(I=[T_-,T_+]\), a \emph{selected event} is the zero in that window of
+\begin{equation}
+ \cH(t,u)=g\bigl(\Phi_t(\iota(u))\bigr).             \label{eq:event-functional}
+\end{equation}
+The adjective ``selected'' records the chosen window.  It does not assert
+that the event is the first zero after time zero or assign it an ordinal.
+\end{definition}
+
+For the geometric statement, let \(\Phi\) be a continuous semiflow on a
+metric state space, let \(\Gamma\) be a periodic orbit, and let a local
+section \(N\) meet \(\Gamma\) at \(p\).  On a retained local domain, write
+\begin{align*}
+ W_N^s(\cQ)
+   &=\{x\in N:\ \cQ^n x\text{ remains defined in }N
+                 \text{ and }\cQ^n x\to p\},\\
+ W^s_{\mathrm{tube}}(\Gamma)
+   &=\{x:\ \text{the retained forward flow arc stays in the declared tube}
+             \text{ and }\operatorname{dist}(\Phi_t x,\Gamma)\to0\}.
+\end{align*}
+Only their germs at \(p\) will be compared.  Thus shrinking \(N\), the flow
+tube, or the retained domains without changing a neighborhood of \(p\) does
+not alter the conclusion.

@@ -1,0 +1,57 @@
+\section{A direct return and the periodic-orbit stable germ}
+\label{sec:stable-germ}
+
+We now separate the intrinsic stable-set question from the algebraic identity
+between a selected map and an iterate of a first-return map.
+
+\begin{lemma}[Direct selected return identifies the stable-set germ]
+\label{lem:direct-selected-stable-germ}
+Let \(\Phi\) be a continuous semiflow, \(\Gamma\) a periodic orbit through a
+transverse local section \(\Sigma\) at \(p\).  Choose a local section patch
+\(N\subset\Sigma\) with the phase-isolation property
+\begin{equation}
+ x_n\in N,\qquad \operatorname{dist}(x_n,\Gamma)\to0
+ \quad\Longrightarrow\quad x_n\to p.                 \label{eq:section-phase-isolation}
+\end{equation}
+Let \(\cQ(x)=\Phi_{\Theta(x)}(x)\) be a selected local return of the
+same semiflow with
+\[
+ \cQ\colon N\to N,\qquad \cQ(p)=p,\qquad
+ \Theta(p)=mP,\qquad
+ 0<\Theta_-\le\Theta(x)\le\Theta_+<\infty.
+\]
+Suppose every intervening arc between successive iterates stays in one common
+flow tube.  Restrict both stable sets to points whose relevant iterates or
+flow arcs stay in these declared local domains, and assume that local
+flow-stable points in \(N\) have the selected hits recurrently defined in
+\(N\).  Then, as germs at \(p\),
+\begin{equation}
+ \operatorname{germ}_p W^s_N(\cQ)
+ =\operatorname{germ}_p\bigl(N\cap W^s_{\rm tube}(\Gamma)\bigr).
+                                                               \label{eq:direct-return-stable-germ}
+\end{equation}
+Consequently, a direct near-\(mP\) selected return can construct the intrinsic
+periodic-orbit stable-sheet germ; an identity \(\cQ=P^m\) and a
+first-return label are sufficient conveniences, not necessary hypotheses.
+If \(\cQ\) is \(C^2\), \(p\) has the required hyperbolic splitting,
+and a local graph theorem applies, its stable graph represents this same
+intrinsic germ.
+\end{lemma}
+
+\begin{proof}
+Put
+\(t_n=\sum_{j=0}^{n-1}\Theta(\cQ^j x)\).  If
+\(\cQ^n(x)\to p\), then \(t_n\to\infty\) by the positive lower bound;
+joint continuity of \(\Phi_t\), uniformly for
+\(0\le t\le\Theta_+\), sends every intervening late-time arc to the
+corresponding arc of \(\Gamma\).  Conversely, convergence of the flow orbit
+to \(\Gamma\), together with recurrent selected hits in \(N\), gives
+\(\operatorname{dist}(\cQ^n x,\Gamma)\to0\).  The phase-isolation
+property \cref{eq:section-phase-isolation} then gives
+\(\cQ^n x\to p\).
+\end{proof}
+
+The lemma is local in every respect: the map, iterates, intervening arcs, and
+stable sets are retained only while they remain in the declared
+neighborhoods.  It does not prove that a selected hit is globally defined,
+that it is a first return, or that its stable set separates global basins.

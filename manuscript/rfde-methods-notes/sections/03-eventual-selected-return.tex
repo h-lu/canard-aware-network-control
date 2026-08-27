@@ -1,0 +1,95 @@
+\section{Eventually smooth selected-event returns}\label{sec:eventual-return}
+
+The first result isolates the regularity needed to turn a selected event into
+a moving complete-history return.  The distinction from a fixed-time map is
+essential: before the translation part has cleared the initial interval,
+changing time moves an evaluation point in a merely continuous history.
+
+\begin{theorem}[Eventually smooth selected-event return]
+\label{thm:eventual-selected-return}
+Let \(1\le k\le r\), let \(\cM\) be a Banach space,
+\(D\subset\cM\) open, and let
+\(\iota\colon D\to U\subset\cX_{\tau_*}\) be \(C^k\).  Suppose all
+solutions from \(\iota(D)\) exist in one common \(U\)-tube through \(T_+\).
+Let \(V\subset\cX_{\tau_*}\) be open, let
+\(g\colon V\to\R\) be \(C^k\), and assume
+\(\Phi_t(\iota(u))\in V\) for \((t,u)\in I\times D\).  Put
+\[
+ \cH(t,u)=g(\Phi_t(\iota(u))).
+\]
+Suppose a common interval \(I=[T_-,T_+]\) satisfies
+\begin{equation}
+ T_->k\tau_*,\qquad
+ \sup_{u\in D}\cH(T_-,u)\le-\delta_-,\qquad
+ \inf_{u\in D}\cH(T_+,u)\ge\delta_+,
+ \qquad
+ \partial_t\cH\ge a_*>0                             \label{eq:eventual-return-gates}
+\end{equation}
+on \(I\times D\), for \(\delta_-,\delta_+,a_*>0\).  Then each
+\(u\in D\) has exactly one selected event
+\(T(u)\in(T_-,T_+)\), and the event time and ambient event-hit map
+\[
+ T\colon D\to\R,
+ \qquad \cE(u)=\Phi_{T(u)}(\iota(u))
+       \colon D\to\cX_{\tau_*}
+\]
+are \(C^k\).  The threshold \(k\tau_*\) is a uniform sufficient condition;
+no necessity or optimality is asserted.  It is independent of the number of
+nodes in any finite network, although concrete tube and derivative constants
+need not be.
+
+If \(\iota\) is a \(C^k\) chart of a local section \(\Sigma\), and
+\(\cE(D_0)\subset\iota(D)\) for an open \(D_0\subset D\), then
+\begin{equation}
+ \cQ=\iota^{-1}\circ\cE\big|_{D_0}
+ \colon D_0\to D                                      \label{eq:induced-selected-return}
+\end{equation}
+is the induced \(C^k\) selected section-return map.
+\end{theorem}
+
+The proof has three links.  The Volterra equation first gives the triangular
+fixed-time variational hierarchy.  A method-of-steps induction then upgrades
+this hierarchy to joint time/history regularity after the translated initial
+history has cleared.  Finally, the event inequalities turn that regularity
+into a unique moving zero by the implicit-function theorem.
+
+\begin{proof}
+On the common tube, repeated Fr\'echet differentiation of the Volterra
+equation gives, for every fixed time, the triangular initial-data
+variational hierarchy through order \(k\).  We record the additional joint
+smoothing step because it is essential here.  Inductively in \(j\), the
+mixed jets
+\[
+ \partial_t^aD_\phi^b x(t;\phi),
+ \qquad a+b\le j,
+\]
+exist after \((j-1)\tau_*\) and depend continuously on \((t,\phi)\) in the
+corresponding multilinear-operator norms.  For \(j=1\) this follows from the
+integral equation and the first variational equation.  If it holds through
+order \(j\), differentiating \(x'=\mathcal F(x_t)\) and the triangular
+variational equations once more expresses every order-\((j+1)\) jet as a
+finite sum of continuous derivatives of \(\mathcal F\) applied to lower-order
+history jets.  After one further maximum delay, every argument segment lies
+in the already regularized interval.  The linear inhomogeneous variational
+equations and Gronwall's inequality give continuity in the multilinear-
+operator norms, completing the induction.
+
+The earliest physical time in \(\Phi_t(\phi)\) is \(t-\tau_*\).  Hence, for
+every total order \(j\le k\), the preceding jets define continuous
+\(\cX_{\tau_*}\)-valued derivatives once \(t>j\tau_*\).  Therefore
+\((t,\phi)\mapsto\Phi_t(\phi)\) is jointly \(C^k\) for \(t>k\tau_*\), and
+\(\cH\) is jointly \(C^k\) on \(I\times D\).  The endpoint signs and
+positive speed give existence and uniqueness in the declared window; the
+Banach implicit-function theorem gives \(T\in C^k\), and composition gives
+\(\cE\in C^k\).  The last assertion follows by composing with the section
+chart inverse.  See also the fixed-time RFDE and Poincar\'e-map background in
+\citet[Chs.~VII.4 and XIV.3]{diekmann1995delay}.
+\end{proof}
+
+\begin{remark}[What is not used]
+No exclusion of earlier hits is used in
+\cref{thm:eventual-selected-return}.  Such an exclusion is needed only to
+call the selected branch a first return or to assign it an exact ordinal.
+The theorem supplies no model-specific common tube, event window, or
+derivative constants.
+\end{remark}

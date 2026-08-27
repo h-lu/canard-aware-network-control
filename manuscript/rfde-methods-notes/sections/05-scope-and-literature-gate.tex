@@ -1,0 +1,63 @@
+\section{Scope and literature decision gate}\label{sec:scope-gate}
+
+\subsection{Exact scope}
+
+\Cref{thm:eventual-selected-return} treats finite-dimensional,
+fixed-maximum-delay RFDEs on a continuous-history space.  It deliberately
+excludes state-dependent or neutral delays, infinite delays, infinite
+networks, and infinite-dimensional node states.  It asserts the strict
+inequality \(T_->k\tau_*\) only as a sufficient regularization threshold.
+It does not prove that this threshold is necessary or optimal.
+
+The theorem is conditional on a common solution tube, terminal event domain,
+strict endpoint signs, and uniform positive speed.  It does not manufacture
+those inputs for a concrete model.  Likewise,
+\cref{lem:direct-selected-stable-germ} is a local identification result.  It
+does not prove hyperbolicity, construct a stable graph, establish a global
+basin boundary, or provide recurrent selected hits.
+
+\subsection{What must be checked before any novelty claim}
+
+The books cited below provide standard RFDE semiflow, smooth-dependence, and
+Poincar\'e-map background, but this draft has not yet carried out the
+theorem-by-theorem comparison required to locate the two statements.  A
+future literature audit must answer at least the following questions.
+
+\begin{enumerate}[label=(L\arabic*)]
+\item Is joint \(C^k\) dependence of
+  \((t,\phi)\mapsto\Phi_t(\phi)\) on the continuous-history phase space after
+  \(k\tau_*\) already stated in this form, or is the induction here an
+  adaptation of fixed-time regularity results?
+\item What are the sharpest established hypotheses for smooth event-defined
+  RFDE Poincar\'e maps, especially when the event is selected in a late common
+  window rather than required to be the first hit?
+\item Is the stable-germ conclusion for a bounded positive-time selected
+  return an explicit published lemma, an immediate suspension argument, or a
+  useful statement that is usually left implicit?
+\item Which common-domain and compatibility hypotheses in the published
+  results correspond exactly to the \(U\)-tube, terminal event domain,
+  retained local section, and recurrent-hit assumptions used here?
+\end{enumerate}
+
+Until these questions are resolved from primary sources, the correct status
+is: two isolated working arguments with possible reusable value, but no
+established independent originality and no venue claim.
+
+\begin{thebibliography}{9}
+
+\bibitem[Diekmann et al.(1995)]{diekmann1995delay}
+O.~Diekmann, S.~A. van Gils, S.~M. Verduyn Lunel, and H.-O. Walther.
+\newblock \emph{Delay Equations: Functional-, Complex-, and Nonlinear
+  Analysis}.
+\newblock Applied Mathematical Sciences 110, Springer, New York, 1995.
+\newblock \href{https://doi.org/10.1007/978-1-4612-4206-2}
+  {doi:10.1007/978-1-4612-4206-2}.
+
+\bibitem[Hale and Verduyn Lunel(1993)]{hale1993introduction}
+J.~K. Hale and S.~M. Verduyn Lunel.
+\newblock \emph{Introduction to Functional Differential Equations}.
+\newblock Applied Mathematical Sciences 99, Springer, New York, 1993.
+\newblock \href{https://doi.org/10.1007/978-1-4612-4342-7}
+  {doi:10.1007/978-1-4612-4342-7}.
+
+\end{thebibliography}
