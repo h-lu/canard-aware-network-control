@@ -69,21 +69,71 @@ exactly \cref{eq:scalar-v,eq:scalar-w}, including the two half-weighted
 delayed terms.  Thus the constants in the transverse theorem below refer to
 this RFDE, not to an unspecified network realization.
 
-Use the transverse history diameter norm
+Put \(P_\perp=\Id-\mathbf1\pi^T\) and
+\[
+ E_{N,\perp}=\Ker\pi^T\times\Ker\pi^T,
+ \qquad
+ m_N(x,y)=\max\{\operatorname{diam}x,3\operatorname{diam}y\}.
+\]
+For a complete synchronous trajectory \((V,W)\), the quotient variational
+equation on \(E_{N,\perp}\) is
+\begin{align}
+ \dot x_\perp(t)={}&
+ \{f'(V(t))-\eps\kappa_1-\eps\kappa_3H'(V(t))\}x_\perp(t)
+ +3(Q-\Id)x_\perp(t)-y_\perp(t)\notag\\
+ &+\eps\sum_{j=0}^1
+ \{\kappa_1+\kappa_3H'(V(t-\tau_j))\}
+ P_\perp B_jx_\perp(t-\tau_j),
+                                                        \label{eq:transverse-variational}\\
+ \dot y_\perp(t)={}&\eps x_\perp(t)
+ +\{2(Q-\Id)-\eps\Id\}y_\perp(t).                    \label{eq:transverse-recovery}
+\end{align}
+The projection on the delayed terms is essential when
+\(\pi^TB_j\ne\tfrac12\pi^T\).  Define
+\(X_{N,1/10}=C([-r,0],E_{N,\perp})\) with the transverse history diameter
+norm
 \begin{equation}
  \norm{\phi}_{1/10}
  =\sup_{-r\le\theta\le0}e^{\theta/10}
-   \max\{\osc\phi_v(\theta),3\osc\phi_w(\theta)\}.      \label{eq:diameter-norm}
+   m_N(\phi_v(\theta),\phi_w(\theta)).                  \label{eq:diameter-norm}
 \end{equation}
+Let \(U_{\perp,N}(t,s)\) denote the evolution family of
+\cref{eq:transverse-variational,eq:transverse-recovery} on this space.  For
+\(F\in C_b(\R,E_{N,\perp})\), set
+\(\norm F_{\perp,\infty}=\sup_t m_N(F_v(t),F_w(t))\).
+Let \(L_{\perp,N}\) be the differential operator obtained by moving the
+right-hand side of
+\cref{eq:transverse-variational,eq:transverse-recovery} to the left, and set
+\begin{align}
+ \mathscr Y_{\perp,N}&=C_b(\R,E_{N,\perp}),\notag\\
+ \mathscr X_{\perp,N}
+ &=\{z\in C_b^1(\R,E_{N,\perp}):
+          L_{\perp,N}z\in\mathscr Y_{\perp,N}\},
+                                                               \label{eq:transverse-operator-spaces}\\
+ \norm z_{\mathscr X_{\perp,N}}
+ &=\sup_{t\in\R}\norm{z_t}_{1/10}
+   +\norm{L_{\perp,N}z}_{\perp,\infty}.
+\end{align}
 
 \begin{theorem}[Complete-line transverse inverse]\label{thm:transverse}
 Along every complete synchronous leaky trajectory satisfying
 \(\sup_t\abs{V(t)-1}\le5/2\), every network satisfying
-\cref{eq:row-mass-network} has
-\begin{equation}
- \norm{U_{\perp,N}(t,s)}_{1/10}\le e^{-(t-s)/10},
- \qquad \norm{G_{\perp,N}}\le10.                       \label{eq:green-bound}
-\end{equation}
+\cref{eq:row-mass-network} admits a unique bounded complete solution of the
+forced transverse equation for every \(F\in C_b(\R,E_{N,\perp})\).  The
+resulting causal Green operator
+\[
+ G_{\perp,N}:C_b(\R,E_{N,\perp})
+ \longrightarrow\mathscr X_{\perp,N}
+\]
+and the evolution family satisfy
+\begin{align}
+ \norm{U_{\perp,N}(t,s)}_{1/10}
+ &\le e^{-(t-s)/10},\qquad t\ge s,\notag\\
+ \sup_t\norm{(G_{\perp,N}F)_t}_{1/10}
+ &\le10\norm F_{\perp,\infty},\qquad
+ \norm{G_{\perp,N}}_{\mathscr Y_{\perp,N}
+      \to\mathscr X_{\perp,N}}\le11.                \label{eq:green-bound}
+\end{align}
 The constants are independent of the finite network size and admitted
 topology.
 \end{theorem}
@@ -92,118 +142,68 @@ The proof uses a directed Dobrushin--Halanay estimate and a forward pullback
 of zero-history forced solutions.  It never inverts an RFDE semiflow on the
 whole history space.
 
-We type the operator statement before giving the transfer corollary.  For a
-fixed phase and trace preparation, let
-\(\mathscr X_\parallel,\mathscr Y_\parallel\) be the Banach domain and
-codomain of the scalar phase-fixed Lin realization, and let
-\(\mathscr X_{\perp,N},\mathscr Y_{\perp,N}\) be their transverse network
-counterparts.  The scalar endpoint, phase, and gap rows are components of
-\(\mathscr Y_\parallel\).  A parameter derivative or other inhomogeneity is
-therefore an element of
-\(\mathscr Y_\parallel\oplus\mathscr Y_{\perp,N}\).  In these spaces,
-\[
- \cL_\parallel\in\mathcal L(\mathscr X_\parallel,\mathscr Y_\parallel),
- \quad
- \cL_{\perp,N}\in
-   \mathcal L(\mathscr X_{\perp,N},\mathscr Y_{\perp,N}),
- \quad
- C_N\in\mathcal L(\mathscr X_{\perp,N},\mathscr Y_\parallel).
-\]
-The complete-line inverse in \cref{thm:transverse} supplies
-\(G_{\perp,N}=\cL_{\perp,N}^{-1}\in
-\mathcal L(\mathscr Y_{\perp,N},\mathscr X_{\perp,N})\).  Thus the row
-operation below acts on the codomain, not on the RFDE phase space.
+We separate the algebraic transfer from its leaky realization.  By
+\cref{thm:transverse},
+\(\cL_{\perp,N}:=L_{\perp,N}:\mathscr X_{\perp,N}
+\to\mathscr Y_{\perp,N}\) is an isomorphism with inverse
+\(G_{\perp,N}\); in the graph norm,
+\(\norm{G_{\perp,N}}\le11\).
 
-\begin{corollary}[Upper-triangular canonical root transfer]
+\begin{corollary}[Abstract upper-triangular root transfer]
 \label{cor:canonical-transfer}
-Suppose a scalar phase-fixed Lin operator has Fredholm index \(-1\), a
-one-dimensional normalized cokernel, gap \(d(\nu)\), and a simple root
-\(d(\nu_c)=0\).  If all network endpoint, phase, parameter, and gap rows are
-collective, then
-\begin{equation}
- \cL_N=
- \begin{pmatrix}\cL_{\parallel}&C_N\\0&\cL_{\perp,N}\end{pmatrix},
+Let \(\mathscr X_\parallel,\mathscr Y_\parallel\) be Banach spaces, suppose
+\(\cL_\parallel:\mathscr X_\parallel\to\mathscr Y_\parallel\) has
+Fredholm index \(-1\) and one-dimensional cokernel spanned by
+\(\psi\in\mathscr Y_\parallel^*\), normalized by
+\(\psi(e_\parallel)=1\), and let
+\(\Gamma_N\in\mathcal L(\mathscr X_{\perp,N},\mathscr Y_\parallel)\).
+Define the bounded block operator
+\[
+ \cL_N:
+ \mathscr X_\parallel\oplus\mathscr X_{\perp,N}
+ \longrightarrow
+ \mathscr Y_\parallel\oplus\mathscr Y_{\perp,N},
  \qquad
+ \cL_N=
+ \begin{pmatrix}\cL_{\parallel}&\Gamma_N\\0&\cL_{\perp,N}\end{pmatrix}.
+\]
+Let \(g_\parallel(\nu)\in\mathscr Y_\parallel\) define
+\(d(\nu)=\psi(g_\parallel(\nu))\), and assume that \(d\) has a simple root
+\(d(\nu_c)=0\).  Then
+\begin{equation}
  T_N\cL_N=\cL_{\parallel}\oplus\cL_{\perp,N},           \label{eq:lin-sum}
 \end{equation}
 where
 \[
  T_N(y_\parallel,y_\perp)
- =\bigl(y_\parallel-C_NG_{\perp,N}y_\perp,y_\perp\bigr),
- \qquad
- \norm{C_NG_{\perp,N}}\le\frac{391}{2000}\delta_B.
+ =\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp,y_\perp\bigr).
 \]
-If \(\psi\) is the normalized scalar cokernel, the full normalized
-cokernel is
+The full cokernel functional, normalized by
+\(e_N=(e_\parallel,0)\), is
 \begin{equation}
  \Psi_N(y_\parallel,y_\perp)
- =\psi\bigl(y_\parallel-C_NG_{\perp,N}y_\perp\bigr).    \label{eq:full-cokernel}
+ =\psi\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp\bigr). \label{eq:full-cokernel}
 \end{equation}
-For a collective parameter row \((g_\parallel,0)\), one has
-\(\Psi_N(g_\parallel,0)=\psi(g_\parallel)\).  Hence
-\(d_N(\nu)=d(\nu)\), and every admitted finite network has the same
-Fredholm index, root, slope, and orientation as the scalar problem.
+For the collective residual \((g_\parallel(\nu),0)\), one has
+\(\Psi_N(g_\parallel(\nu),0)=d(\nu)\).  Hence
+\(\cL_N\) has the same Fredholm index as \(\cL_\parallel\), while
+\(d_N(\nu)=d(\nu)\) has the same root, slope, and orientation as the scalar
+gap.
 \end{corollary}
 
-For the leaky model, \cref{thm:transverse} verifies the network block of
-this corollary.  The result is conditional on the scalar phase-fixed
-complete-history root and the declared collective preparation.  The scalar
-leaky root itself and an invariant asynchronous voltage strip remain separate
-open problems.
-
-\subsection{Uniform structural transfer}
-
-For each \(N\), let \(\mathfrak R_N\) be a Banach space of admissible
-perturbation data.  Its norm controls the instantaneous block, fixed-support
-delay measure, nonlinear jets, and trace preparation in their corresponding
-operator norms; it is not an unscaled Frobenius norm.  On a common parameter
-cylinder, let
+For a fixed scalar phase, endpoint, parameter, and gap realization, the leaky
+network has precisely this block form, with all scalar data lifted
+collectively and
 \[
- \widetilde d_N:
- I_\nu\times B_{\mathfrak R_N}(0,r_{\cR})\longrightarrow\R
+ \norm{\Gamma_NG_{\perp,N}}
+ \le\frac{391}{2000}\delta_B.
 \]
-be the resulting normalized selected gap.  All derivatives with respect to
-\(\cR\) below are Fr\'echet derivatives in \(\mathfrak R_N\).
+Thus \cref{thm:transverse} verifies the network block of the corollary.  The
+result remains conditional on the scalar phase-fixed complete-history root
+and the declared collective preparation.  The scalar leaky root itself and
+an invariant asynchronous voltage strip are separate open problems.
 
-\begin{theorem}[Dimension-uniform one-gap theorem]\label{thm:one-gap}
-Assume the graph--trace or augmented-Lin range problem is uniformly solvable,
-the model-fitting error is at most \(C_{\rm fit}\norm{\cR}\), and
-\(\widetilde d_N\) is jointly \(C^2\).  Suppose, uniformly in \(N\),
-\begin{equation}
- \widetilde d_N(\nu_{0,N},0)=0,\qquad
- \abs{a_N}:=\abs{\partial_\nu\widetilde d_N(\nu_{0,N},0)}\ge m_*>0,
- \quad \norm{D_{\cR}\widetilde d_N}\le B_*,
- \quad \norm{D^2\widetilde d_N}\le M_*.               \label{eq:root-bounds}
-\end{equation}
-Here \(B_*,M_*,C_{\rm fit}\ge0\).  If
-\(r_\nu,r_{\cR},\eta_*>0\) are respectively the common cylinder radii and
-the range-solve radius, set
-\begin{equation}
- \rho_*=\min\left\{r_{\cR},\frac{m_*r_\nu}{2B_*},
- \frac{m_*}{2M_*(1+2B_*/m_*)},
- \frac{\eta_*}{C_{\rm fit}}\right\}.                   \label{eq:rho-star}
-\end{equation}
-Every quotient in \cref{eq:rho-star} whose nonnegative denominator is zero
-is, by convention, \(+\infty\); hence an identically absent error term
-imposes no artificial radius restriction.
-For every \(r=\norm{\cR_N}\le\rho_*\), there is exactly one root in
-\begin{equation}
- \abs{\nu-\nu_{0,N}}\le\frac{2B_*}{m_*}r,              \label{eq:root-ball}
-\end{equation}
-and, with \(\ell_N=D_{\cR}\widetilde d_N(\nu_{0,N},0)\),
-\begin{equation}
- \left|\nu_{c,N}(\cR_N)-\nu_{0,N}
-       +\frac{\ell_N[\cR_N]}{a_N}\right|
- \le\frac{M_*}{2m_*}\left(1+\frac{2B_*}{m_*}\right)^2r^2. \label{eq:root-remainder}
-\end{equation}
-All constants are independent of the admitted finite network size.
-\end{theorem}
-
-The theorem concerns a selected complete-history root.  A zero-fiber
-implication is additionally required to call it a geometric canard, and a
-separate selection theorem is required to make it preparation independent.
-
-\subsection{A synchrony-quotient-free instance}
+\subsection{Shared-resource networks without a synchrony quotient}
 
 We next state a separate network result whose node fields are heterogeneous
 and whose slow recovery variable is shared.  For each \(N\ge2\), let
@@ -271,37 +271,79 @@ and define
  A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.            \label{eq:shared-rn}
 \end{align}
 
-For completeness, we also fix the selection entering the theorem.  In the
-fold chart
+We now fix the selection entering the theorem.  In the fold chart
 \[
  s=\delta t,\qquad w=\frac23-\delta^2Y,\qquad
  v=\mathbf1+\delta\mathbf1X
        +\delta^2\{g_NX^2+h\},\qquad h\in E_N,
 \]
 the singular critical field is
-\(q_0(X,Y)=(Y-\alpha X^2,-X)\).  A uniformly admissible preparation rule
-\(\mathcal P=(\mathcal P_N)\) means that the same frozen graph cutoffs,
-planar joining cutoff, degree-three normal extension, phase buffer, and
-invariant-tail levels are used for every \(N\), with common derivative
-bounds; the preparation is independent of \((\nu,\zeta)\) and agrees with
-\cref{eq:shared-rfde-v,eq:shared-rfde-w} on the retained continuous
-depth-two \(q_0\)-flow hull of half-length
-\(S_\delta=\sqrt{2p\log(1/\delta)}\), for an exponent \(p>4\) fixed in the
-theorem below.  It selects attracting and repelling phase-fixed planar
-traces \(z^a_{N,\mathcal P_N}\) and
-\(z^r_{N,\mathcal P_N}\), with phase \(X(0)=0\).  Their normalized central
-gap is
+\(q_0(X,Y)=(Y-\alpha X^2,-X)\), with singular orbit
+\[
+ \gamma_0(s)=\left(-\frac{s}{2\alpha},
+                    \frac{s^2-2}{4\alpha}\right).
+\]
+
+\begin{definition}[Canonical preparation datum]\label{def:canonical-preparation}
+Fix \(p>4\), sufficiently large for the finite tame losses below, and
+\(B>2\Theta_*+2\).  A canonical preparation datum
+\[
+ \mathbf p_{\rm can}
+ =(p,B,\chi_{\rm graph},\chi_{\rm plan},
+   \sigma_h,\mathcal E_{\rm nor},h_*)
+\]
+consists of fixed graph-cutoff profiles, a planar joining cutoff, a
+componentwise stable saturation, a degree-three normal extension operator,
+and a common stable radius.  These objects and their required derivatives
+through order twelve are fixed once and for all.
+
+For each \(N\ge2\) and target \(0<\delta<1\), put
+\[
+ S_\delta=\sqrt{2p\log(1/\delta)},\qquad R_\delta=S_\delta+B.
+\]
+The datum generates a target-frozen preparation
+\(\mathcal P^{\rm can}_{N,\delta}\).  It depends on \(N\) through the
+physical coefficients, \(P_{\perp,N}\), \(A_N\), and \(g_N\), and on
+\(\delta\) through \(S_\delta\) and \(R_\delta\), but its cutoff operators
+are independent of \((\nu,\zeta)\).  Parameter derivatives are always taken
+with the target-\(\delta\) preparation held fixed.
+
+Let \(\mathcal U^{\rm pl}_{\rm ret}(\delta)\) be the shrinking planar
+tubular neighborhood of
+\(\gamma_0([-S_\delta-1,S_\delta+1])\), and let
+\[
+ \mathfrak H^{[2]}_\delta
+ =\{\Phi_{q_0}^{-t}u:
+       u\in\mathcal U^{\rm pl}_{\rm ret}(\delta),\
+       0\le t\le2\Theta_*\}.
+\]
+The graph preparation agrees with the transformed physical RFDE on an open
+fixed-buffer neighborhood of this continuous depth-two flow hull for every
+current and delayed stable slot with \(\|h\|_N\le h_*\).  The planar
+preparation agrees with the exact reduced graph field on the retained tube
+and equals \(q_0\) near \(\gamma_0(\pm R_\delta)\).  The selected traces
+satisfy
+\[
+ \mathscr H_\alpha(z^{a,\rm can}_N(-R_\delta))=0,
+ \quad
+ \mathscr H_\alpha(z^{r,\rm can}_N(R_\delta))=0,
+ \quad
+ X^{a,\rm can}_N(0)=X^{r,\rm can}_N(0)=0.
+\]
+\end{definition}
+
+The normalized central gap of these traces is
 \begin{align}
- \mathscr D_{N,\mathcal P_N}(\delta,\nu,\zeta)
+ \mathscr D^{\rm can}_N(\delta,\nu,\zeta)
   &=\frac{2}{\alpha e}\left\{
-    \mathscr H_\alpha(z^a_{N,\mathcal P_N}(0))
-   -\mathscr H_\alpha(z^r_{N,\mathcal P_N}(0))\right\},
+    \mathscr H_\alpha(z^{a,\rm can}_N(0))
+   -\mathscr H_\alpha(z^{r,\rm can}_N(0))\right\},
                                                                \label{eq:shared-gap}\\
  \mathscr H_\alpha(X,Y)
   &=\frac12e^{-2\alpha Y}
     \left(\alpha Y-\alpha^2X^2+\frac12\right).       \label{eq:shared-first-integral}
 \end{align}
-On the retained graph, a zero of \(\mathscr D_{N,\mathcal P_N}\) is
+On the retained graph, a zero of \(\mathscr D^{\rm can}_N\) is
 equivalent to equality of the two selected complete RFDE histories.
 
 \begin{theorem}[Main theorem: shared-resource network response]
@@ -311,28 +353,28 @@ with all displayed bounds common in \(N\), and assume
 \begin{equation}
  \inf_{N\ge2}\abs{r_N}>0.                              \label{eq:shared-nondegeneracy}
 \end{equation}
-Fix \(p>4\) sufficiently large, a compact interval \(I_\nu\) containing
-every \(\nu_{0,N}\) in its interior with one common positive boundary
-distance, and a class of uniformly admissible preparation rules with one
-set of bounds.  Then there exist
-\(\delta_0,\zeta_0,c_0,C>0\), independent of \(N\) and of the rule in
-that class, such that for every \(N\ge2\), every
-\(0<\delta<\delta_0\), every \(\abs\zeta<\zeta_0\), and every admitted
-\(\mathcal P\), the gap \(\mathscr D_{N,\mathcal P_N}/\delta\) has exactly
-one root in the local window
+Fix a compact interval \(I_\nu\) containing every \(\nu_{0,N}\) in its
+interior with one common positive boundary distance, and one canonical
+preparation datum \(\mathbf p_{\rm can}\) as in
+\cref{def:canonical-preparation}.  Then there
+exist \(\delta_0,\zeta_0,c_0,C>0\), depending only on the common model
+bounds, that boundary distance, and \(\mathbf p_{\rm can}\), but independent
+of \(N\), such that for every \(N\ge2\), every
+\(0<\delta<\delta_0\), and every \(\abs\zeta<\zeta_0\), the gap
+\(\mathscr D^{\rm can}_N/\delta\) has exactly one root in the local window
 \(\{\nu:\abs{\nu-\nu_{0,N}}<c_0\}\subset I_\nu\),
 \begin{equation}
- \nu_{c,N,\mathcal P_N}(\delta,\zeta)\in I_\nu,
+ \nu^{\rm can}_{c,N}(\delta,\zeta)\in I_\nu,
  \qquad
- \abs{\nu_{c,N,\mathcal P_N}(\delta,\zeta)-\nu_{0,N}}<c_0. \label{eq:shared-root}
+ \abs{\nu^{\rm can}_{c,N}(\delta,\zeta)-\nu_{0,N}}<c_0. \label{eq:shared-root}
 \end{equation}
 No assertion is made here about additional zeros elsewhere in \(I_\nu\).
 The selected attracting and repelling complete histories agree at this
 root.  With
-\(\mu_{c,N,\mathcal P_N}=\delta^2\nu_{c,N,\mathcal P_N}\),
+\(\mu^{\rm can}_{c,N}=\delta^2\nu^{\rm can}_{c,N}\),
 \begin{align}
- &\left|\mu_{c,N,\mathcal P_N}(\delta,\zeta)
-       -\mu_{c,N,\mathcal P_N}(\delta,0)
+ &\left|\mu^{\rm can}_{c,N}(\delta,\zeta)
+       -\mu^{\rm can}_{c,N}(\delta,0)
        -\mathscr C_N\delta^3\zeta\right|
  \le C\{\delta^4\abs\zeta+\delta^3\zeta^2\},        \label{eq:shared-response}\\
  &\mathscr C_N=-\frac{r_N}{\alpha}
@@ -340,9 +382,9 @@ root.  With
  A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.             \label{eq:shared-coeff}
 \end{align}
 In particular,
-\(\inf_N\abs{\mathscr C_N}>0\).  The exact finite-\(\delta\) root may
-depend on \(\mathcal P_N\); its coefficient and the displayed remainder
-bound do not within the declared preparation class.
+\(\inf_N\abs{\mathscr C_N}>0\).  The exact finite-\(\delta\) root is the
+object selected by \(\mathbf p_{\rm can}\).  No uniform comparison with
+other graph preparations is asserted.
 \end{theorem}
 
 The nondegeneracy class is nonempty without a hidden synchrony quotient.
@@ -376,5 +418,5 @@ This instance proves that the general root mechanism is not merely an
 arbitrary-size replication of a two-module quotient.  It does not cover
 moving delay atoms, arbitrary perturbations of the base topology, or graph
 families whose mixing gap closes, and it does not identify the
-preparation-indexed root with an independently selected physical outer
+canonically selected root with an independently selected physical outer
 canard.

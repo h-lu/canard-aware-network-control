@@ -1,8 +1,8 @@
 \documentclass[11pt]{article}
 \input{preamble}
 
-\newcommand{\papertitle}{Dimension-Uniform Transfer of Selected
-Complete-History Roots in Finite Retarded Networks}
+\newcommand{\papertitle}{Selected Complete-History Roots in Heterogeneous
+Retarded Networks: Uniform Existence and Structural Response}
 
 \title{\papertitle}
 \author{Haibo Lu\\
@@ -11,7 +11,7 @@ Complete-History Roots in Finite Retarded Networks}
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={Dimension-Uniform Transfer of Selected Complete-History Roots in Finite Retarded Networks},
+  pdftitle={Selected Complete-History Roots in Heterogeneous Retarded Networks: Uniform Existence and Structural Response},
   pdfauthor={Haibo Lu},
   pdfsubject={Selected history roots in finite retarded Dobrushin networks},
   pdfkeywords={canard matching, retarded functional differential equation,
@@ -22,29 +22,33 @@ Complete-History Roots in Finite Retarded Networks}
 \maketitle
 
 \begin{abstract}
-We study phase-fixed roots defined by matching complete histories in finite
-retarded networks.  The principal result treats a shared-resource family on
-directed Markov networks with a common Dobrushin gap, fixed delay support,
-and heterogeneous node curvatures.  A dimension-uniform invariant-history
-graph and two selected one-sided traces reduce the matching problem to a
-scalar normalized gap.  For every finite network size and every preparation
-in a bounded common class, this gap has a unique local root.  Its response to
-an atomwise row-neutral perturbation has an explicit nonzero leading
-coefficient and a remainder uniform in network size and in the preparation.
-An explicit family with pairwise distinct curvatures shows that the response
-does not arise from a nontrivial synchrony quotient.
+Near a fold of a retarded equation, equality of present states does not imply
+equality of the histories seen by the delayed vector field.  We therefore
+select attracting and repelling one-sided traces on a common invariant
+history graph and call a parameter value a complete-history root when those
+traces agree on a fixed phase section.
 
-The proof separates the collective and transverse mechanisms.  Dobrushin
-contraction supplies a dimension-free stable inverse, while a graph--trace
-range construction turns the formal fold expansion into equality of two
-retained RFDE histories.  For a companion leaky FitzHugh--Nagumo network, we
-also prove network-size-independent transverse decay and a causal
-complete-line Green bound.  An exact upper-triangular row reduction then
-transfers any supplied scalar simple Lin root through delayed layers that
-need not share a left stationary measure.  The shared-resource root is
-preparation indexed: the theorem does not identify it with a
-preparation-independent physical canard, and the leaky scalar root is not
-constructed here.
+For a shared-resource family on finite directed Markov networks, we prove
+existence and local uniqueness of this root with constants independent of
+network size.  The hypotheses are a common Dobrushin gap, fixed delay
+support, uniformly bounded heterogeneous curvatures, and a canonical trace
+preparation fixed across the network family.  Under an atomwise
+stationary-row-neutral redistribution of the delayed layers, the root has an
+explicit nonzero leading response and a quadratic remainder uniform in
+network size.  The direct collective response cancels: the perturbation first
+creates a transverse displacement through the Markov resolvent, and
+heterogeneous curvature then returns that displacement to the scalar matching
+gap.  An explicit family with pairwise distinct curvatures shows that this
+mechanism does not arise from a nontrivial synchrony quotient.
+
+A companion result gives network-size-independent transverse decay and a
+causal complete-line Green bound for a leaky delayed FitzHugh--Nagumo
+network.  A bounded upper-triangular row reduction then transfers any
+supplied scalar simple Lin root through delayed layers that need not share a
+left stationary measure.  The constructed shared-resource root is selected
+by the fixed canonical preparation; it is not identified here with a
+preparation-independent physical canard, and the companion scalar root is
+not constructed.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
@@ -61,9 +65,14 @@ Dobrushin contraction; Lin method; complete-history root
 \input{sections/04-conclusion}
 
 \section*{Acknowledgements}
-OpenAI Codex assisted with symbolic calculations, proof auditing, and textual
-organization.  The author assumes responsibility for all mathematical claims
-and for the final manuscript.
+OpenAI Codex was used to draft and revise portions of the \LaTeX{} source,
+generate the reproducible Matplotlib source for \cref{fig:root-mechanism},
+suggest symbolic rearrangements, audit sign and scaling consistency, and
+organize literature searches.  No AI output is treated as a proof or a
+numerical certificate.  The submission release will identify AI-modified
+source files and record human checks of the algebra, citations, assumptions,
+and figure semantics.  The author assumes responsibility for every
+mathematical claim and for the final manuscript.
 
 \section*{Declarations}
 \paragraph{Funding.} No funding was received for conducting this study.

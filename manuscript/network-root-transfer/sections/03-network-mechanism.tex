@@ -1,7 +1,7 @@
 \section{The collective--transverse mechanism}\label{sec:network-mechanism}
 
 This section isolates the mechanism behind
-\cref{thm:transverse,cor:canonical-transfer,thm:one-gap}.  The point is not
+\cref{thm:transverse,cor:canonical-transfer,thm:shared-resource}.  The point is not
 that a synchronous orbit can be copied into \(N\) nodes; that observation
 alone gives no uniform inverse and no control of nonsynchronous histories.
 The useful fact is that the collective RFDE and every transverse network
@@ -77,11 +77,12 @@ hence
 \]
 The pullback limit \(S\to-\infty\) is therefore a unique bounded complete
 solution and defines \(G_{\perp,N}\).  This proves
-\(\norm{G_{\perp,N}}\le10\).  The construction is causal and remains valid
+the history-component bound (10) in \cref{eq:green-bound}; the equation
+adds the forcing term and gives the graph-norm bound (11).  The construction is causal and remains valid
 for nonperiodic complete synchronous trajectories as long as the voltage
 strip holds.
 
-\subsection{Exact transfer and structural transfer}
+\subsection{Exact upper-triangular transfer}
 
 For the canonical synchronized Lin realization, all endpoint, phase, and
 gap rows are collective.  Row mass makes the collective line invariant, but
@@ -90,13 +91,13 @@ collective equation.  Thus the complete-history operator has the exact block
 form
 \[
  \cL_N=
- \begin{pmatrix}\cL_\parallel&C_N\\0&\cL_{\perp,N}\end{pmatrix},
+ \begin{pmatrix}\cL_\parallel&\Gamma_N\\0&\cL_{\perp,N}\end{pmatrix},
 \]
 not in general a direct sum.  Since
 \(\cL_{\perp,N}^{-1}=G_{\perp,N}\), the bounded codomain row operation
 \begin{equation}
  T_N(y_\parallel,y_\perp)
- =\bigl(y_\parallel-C_NG_{\perp,N}y_\perp,y_\perp\bigr)
+ =\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp,y_\perp\bigr)
  \quad\hbox{satisfies}\quad
  T_N\cL_N=\cL_\parallel\oplus\cL_{\perp,N}.            \label{eq:triangular-row-reduction}
 \end{equation}
@@ -106,7 +107,7 @@ the collective complement \(e_N=(e_\parallel,0)\), then the full functional
 is
 \begin{equation}
  \Psi_N(y_\parallel,y_\perp)
- =\psi\bigl(y_\parallel-C_NG_{\perp,N}y_\perp\bigr).   \label{eq:triangular-cokernel}
+ =\psi\bigl(y_\parallel-\Gamma_NG_{\perp,N}y_\perp\bigr). \label{eq:triangular-cokernel}
 \end{equation}
 For a collective parameter or inhomogeneity
 \((g_\parallel,0)\), \(\Psi_N(g_\parallel,0)=\psi(g_\parallel)\).
@@ -121,7 +122,7 @@ The triangular correction is uniform.  With
 \]
 oscillation duality and the complete-line Green bound give
 \begin{equation}
- \norm{C_NG_{\perp,N}}
+ \norm{\Gamma_NG_{\perp,N}}
  \le\frac{391}{2000}\delta_B\le\frac{391}{2000}.       \label{eq:triangular-row-bound}
 \end{equation}
 No delayed-history residence factor appears here: on complete-line sup
@@ -130,50 +131,17 @@ complete-history matching.  Replacing the history jump by a current-state
 projection would discard the delayed transverse correction in
 \cref{eq:triangular-cokernel}.
 
-For structural perturbations, exact splitting is no longer required.  We
-briefly prove the scalar part of \cref{thm:one-gap}, since it explains the
-specific radius in \cref{eq:rho-star}.  Put
-\[
- d_N(s,\cR)=\widetilde d_N(\nu_{0,N}+s,\cR).
-\]
-For \(r=\norm{\cR}\), Taylor's formula and
-\cref{eq:root-bounds} give, on
-\(|s|\le2B_*r/m_*\),
-\begin{equation}
- \abs{\partial_sd_N(s,\cR)-a_N}
- \le M_*\left(\abs s+r\right)
- \le M_*\left(1+\frac{2B_*}{m_*}\right)r
- \le\frac{m_*}{2}.                                    \label{eq:root-slope-strip}
-\end{equation}
-Thus the gap is strictly monotone with the orientation of \(a_N\).
-Moreover, at \(s=\pm2B_*r/m_*\), the linear term dominates the residual,
-so the endpoint signs are opposite.  The first two bounds in
-\cref{eq:rho-star} keep these endpoints inside the common cylinder; the
-third proves \cref{eq:root-slope-strip}; and the fourth keeps the
-graph--trace range solve inside its validated ball.  Existence and
-uniqueness follow.
-
-Writing the root as \(s_N\) and expanding at \((0,0)\) yields
-\[
- 0=a_Ns_N+\ell_N[\cR]+\cE_N,\qquad
- \abs{\cE_N}\le\frac{M_*}{2}(\abs{s_N}+r)^2.
-\]
-The root enclosure then gives \cref{eq:root-remainder}.  This calculation
-also shows why a small residual norm without a uniform simple-root bound is
-insufficient: the displacement is divided by \(a_N\).
-
 \subsection{The shared-resource history graph and selected traces}
 \label{subsec:shared-proof}
 
 We now prove the analytic steps used in \cref{thm:shared-resource}.  This
 result has a different role from the preceding triangular transfer: it
-constructs its own preparation-indexed planar histories for a heterogeneous
-shared-resource network.  In particular, the graph and trace range problems
-below are not additional unstated hypotheses of the theorem.
-Here the ``invariant-tail levels'' in the admissible preparation are the two
-zero levels \(\mathscr H_\alpha=0\) used below.  Arbitrary independently
-chosen outer levels or outer RFDE slow manifolds are not included in this
-preparation class.
+constructs its own canonically selected planar histories for a heterogeneous
+shared-resource network.  In particular, the graph and trace problems below
+are not additional unstated hypotheses of the theorem.  The two endpoint
+levels are exactly \(\mathscr H_\alpha=0\), as fixed in
+\cref{def:canonical-preparation}; arbitrary outer levels, outer RFDE slow
+manifolds, or alternative graph preparations are not included.
 
 \subsubsection{Exact chart and dimension-free model fit}
 
@@ -261,13 +229,50 @@ measure is parameter independent.  This avoids differentiating moving
 Dirac masses and makes its affine-history anchor derivatives identically
 zero.
 
+Along the singular orbit, let
+\[
+ L_0(U,V)=(U'-sU-V,V'+U).
+\]
+We specify the spaces used for the receding one-sided trace problems.  Put
+\(R=R_\delta\), \(J_a=[-R,0]\), and \(J_r=[0,R]\).  Fix a Green loss
+\(d_0\le4\), and choose \(c>c_0\) and \(M>m_0+d_0+2\), where
+\(c_0,m_0\) dominate the finite tame losses of the prepared field.  For
+\(\sigma\in\{a,r\}\), define
+\begin{align}
+ \norm{\xi}_{\mathcal X_\sigma}
+ &=\sup_{s\in J_\sigma}
+   e^{-c|s|}\langle s\rangle^{-M}|\xi(s)|,\notag\\
+ \norm f_{\mathcal Y_\sigma}
+ &=\sup_{s\in J_\sigma}
+   e^{-c|s|}\langle s\rangle^{-(M-d_0)}|f(s)|,       \label{eq:trace-strong-spaces}\\
+ |\beta|_{\partial,\sigma}
+ &=e^{R^2/2-cR}\langle R\rangle^{-(M-d_0)}|\beta|.  \label{eq:trace-boundary-norm}
+\end{align}
+Let
+\[
+ \mathcal D_\sigma
+ =\{\xi\in C^1(J_\sigma;\R^2):
+       \xi\in\mathcal X_\sigma,\ L_0\xi\in\mathcal Y_\sigma\}
+\]
+carry its graph norm, and let \(\R_{\partial,\sigma}\) denote the scalar
+endpoint space with norm \cref{eq:trace-boundary-norm}.  The weaker Gaussian
+pairing norm
+\begin{equation}
+ \norm g_{G;\widehat c,\widehat m,J}
+ =\int_J e^{-s^2/2+\widehat c|s|}
+          \langle s\rangle^{\widehat m}|g(s)|\,\dd s   \label{eq:trace-gaussian-space}
+\end{equation}
+will be used only for the scalar gap.  The strong source space embeds
+continuously into this pairing space with a constant independent of \(R\);
+the nonlinear trace fixed point is not taken in the Gaussian \(L^1\) norm.
+
 \begin{lemma}[Uniform graph and trace range]
 \label{lem:shared-graph-trace}
-Fix the common bounds in \cref{thm:shared-resource} and one bounded class of
-admissible preparations.  After choosing the fixed exponent \(p>4\)
-sufficiently large, there are \(\delta_*,\zeta_*,C,c>0\) and an integer
-\(M\), all independent of \(N\) and of the preparation in that class, with
-the following properties.
+Fix the common bounds in \cref{thm:shared-resource} and one datum
+\(\mathbf p_{\rm can}\) from \cref{def:canonical-preparation}.  There are
+\(\delta_*,\zeta_*,C,c,C_{\rm jet},C_{\rm tr}>0\) and an integer \(M\),
+depending on those data but independent of \(N\), with the following
+properties.
 
 For \(0<\delta<\delta_*\), \(\nu\in I_\nu\), and
 \(|\zeta|<\zeta_*\), let
@@ -287,20 +292,25 @@ and, for the finite derivative list \(a\le3\), \(i\le1\), \(j\le2\),
  \le C\langle s\rangle^M e^{c|s|}                   \label{eq:shared-graph-remainder}
 \end{equation}
 on the nested retained tube.  The graph equation and its displayed mixed
-derivatives have a right inverse bounded uniformly in \(N\).
+derivatives form a finite block-lower-triangular prolonged system.  Every
+diagonal block has inverse norm at most two, and the full finite prolonged
+inverse has norm at most \(C_{\rm jet}\), uniformly in \(N\).
 
-The prepared tail conditions
+Writing \(z^\sigma=z^{\sigma,\rm can}_N\) for the traces generated by the
+fixed datum, the prepared tail conditions
 \(\mathscr H_\alpha(z^a(-R))=\mathscr H_\alpha(z^r(R))=0\), where
 \(R=S_\delta+B\) and \(B>2\Theta_*+2\) is fixed, together with the phase
 \(X^a(0)=X^r(0)=0\), select unique one-sided traces.  Their retained central
 pieces are exact histories on the unprepared graph, and their trace--phase--
-endpoint linearization is onto with a uniformly bounded right inverse.
+normalized-endpoint linearizations are bounded isomorphisms with inverse norm
+at most \(C_{\rm tr}\).  These inverses act on graph-tangent planar and
+history sources; no inverse on the ambient RFDE history space is asserted.
 In the tame weighted norms used in the proof,
 \begin{align}
- \norm{z^\sigma-\gamma_0}&\le C\delta,&
- \norm{\partial_\nu z^\sigma}&\le C\delta,\notag\\
- \norm{\partial_\zeta z^\sigma}
-  +\norm{\partial_{\zeta\zeta}z^\sigma}&\le C\delta^2,
+ \norm{z^\sigma-\gamma_0}_{\mathcal X_\sigma}&\le C\delta,&
+ \norm{\partial_\nu z^\sigma}_{\mathcal X_\sigma}&\le C\delta,\notag\\
+ \norm{\partial_\zeta z^\sigma}_{\mathcal X_\sigma}
+  +\norm{\partial_{\zeta\zeta}z^\sigma}_{\mathcal X_\sigma}&\le C\delta^2,
  &\sigma&\in\{a,r\}.                                  \label{eq:shared-trace-jets}
 \end{align}
 The same \(O(\delta^2)\) estimate holds for the mixed derivatives obtained
@@ -315,14 +325,22 @@ In the coordinates
  \chi=-2\alpha X,
  \qquad d=Y-\alpha X^2+\frac1{2\alpha},
 \]
-prepare \(q_0\) by one common compact cutoff which is the identity on the
-continuous depth-two \(q_0\)-flow hull of the retained tube.  Prepare every
-current and delayed stable slot by the same componentwise smooth saturation
-followed by \(P_{\perp,N}\).  Estimate \cref{eq:shared-products} shows that
-all derivatives of these preparations are bounded, without a factor of
-\(N\), by a polynomial \(P(S_\delta)\).  The preparation is the physical
-system on a common stable ball containing the entire retained depth-two
-history hull.
+write \(\Gamma(\chi,d)\) for the inverse coordinate map.  We
+use the datum \(\mathbf p_{\rm can}\) to prepare \(q_0\) by the fixed
+target-frozen cutoff and every current and delayed stable slot by the fixed
+componentwise saturation followed by \(P_{\perp,N}\).  The agreement region
+is the fixed-buffer neighborhood of \(\mathfrak H^{[2]}_\delta\) from
+\cref{def:canonical-preparation}.  Estimate \cref{eq:shared-products} shows
+that, for
+\[
+ \mathcal I_k=\{(a,b,i,j)\in\mathbb N_0^4:
+ b\le3,\ i\le1,\ j\le2,\ a+b+i+j\le k\},
+ \qquad k\le12,
+\]
+all \(D_u^a\partial_\rho^b\partial_\nu^i\partial_\zeta^j\) derivatives of
+the prepared graph data are bounded, without a factor of \(N\), by a
+polynomial \(P_{12}(R_\delta)\).  The preparation equals the transformed
+physical RFDE on the common stable ball containing the retained flow hull.
 
 For a bounded planar field \(Q\) and a graph \(H:\R^2\to E_N\), let
 \[
@@ -333,13 +351,33 @@ For a bounded planar field \(Q\) and a graph \(H:\R^2\to E_N\), let
 For each target \(\delta\), freeze this preparation at
 \(S=S_\delta\), introduce a dummy amplitude
 \(\rho\in[-\delta,\delta]\), and recover the physical chart at
-\(\rho=\delta\).  Writing the prepared version of
+\(\rho=\delta\).  Put
+\[
+ \Lambda_\delta=[-\delta,\delta]_\rho\times I_\nu
+                  \times[-\zeta_*,\zeta_*],
+ \qquad
+ \mathfrak Z_N^0=C_b(\R^2;\R^2)\times C_b(\R^2;E_N),
+\]
+with the maximum norm.  If \(q_{0,S}\) denotes the globally bounded,
+globally Lipschitz prepared singular field, let \(Z_0=(q_{0,S},0)\).  We
+iterate on the closed subset of
+\(C(\Lambda_\delta;\mathfrak Z_N^0)\)
+\begin{equation}
+ \mathbb B_{N,\delta}
+ =\left\{Z:
+ \sup_{\Lambda_\delta}\norm{Z-Z_0}_0\le R_0(\delta,S),\quad
+ \sup_{\Lambda_\delta}\operatorname{Lip}(Z-Z_0)\le R_1(\delta,S)
+ \right\}.                                            \label{eq:shared-graph-ball}
+\end{equation}
+The Lipschitz constraint is closed under uniform convergence, so this is a
+complete metric space; every planar field in it has a complete flow on
+\(\R^2\).  Writing the prepared version of
 \cref{eq:shared-exact-X,eq:shared-exact-h} as
-\(u'=q_0(u)+\rho F_N\),
+\(u'=q_{0,S}(u)+\rho F_N\),
 \(\rho h'=A_Nh+\rho G_N\), its special-flow transform is
 \begin{align}
  \mathcal T_{Q,N}(Q,H)(u)
- &=q_0(u)+\rho F_N
+ &=q_{0,S}(u)+\rho F_N
    \bigl(u,H(u),\mathbf M_N\mathcal I_{Q,H}(u);\rho,\nu,\zeta\bigr),
                                                                \label{eq:shared-TQ}\\
  \mathcal T_{H,N}(Q,H)(u)
@@ -358,21 +396,47 @@ majorant
  e^{-\{D\gamma-c\delta(1+S_\delta)\}r}\,\dd r=o(1)   \label{eq:shared-graph-contraction}
 \end{equation}
 for the Lipschitz constant of \((\mathcal T_{Q,N},\mathcal T_{H,N})\).
+More precisely, with
+\[
+ A_g(S)=P_g(S)e^{C_gS},\qquad
+ \varepsilon_\delta=C_*\delta A_{10}(S+B),
+\]
+decrease \(\delta_*\) so that \(\varepsilon_\delta\le1/2\) and
+\(C_*\delta(1+S+B)\le D\gamma/2\).  Taking
+\begin{equation}
+ R_g(\delta,S)=\frac{\delta A_g(S)}{1-\varepsilon_\delta}
+               \le2\delta A_g(S),\qquad g=0,1,       \label{eq:shared-graph-radii}
+\end{equation}
+makes \cref{eq:shared-graph-ball} invariant and the transform a strict
+contraction, uniformly in \(N\).
+To control jets only where they are later used, choose
+\(1>\kappa_0>\cdots>\kappa_D>0\) and buffered constants \(B_k\), and set
+\[
+ \mathcal U_k(\delta)
+ =\{\Gamma(\chi,d):|\chi|\le S+B_k,\ |d|\le\delta^{\kappa_k}\},
+ \qquad
+ \norm V_{k;c,m}
+ =\sup_{\Gamma(\chi,d)\in\mathcal U_k(\delta)}
+   \frac{\norm{V(\Gamma(\chi,d))}}
+        {\langle\chi\rangle^m e^{c|\chi|}}.
+\]
+These local fibers are paired with the global \(C^0\) contraction above;
+the nested buffers absorb the finite flow and differentiation losses.
 The same estimate holds for the highest current block after any derivative
 in the finite list of the lemma; all other terms contain already controlled
 lower blocks.  More explicitly, order
 \[
  J_{a,b,i,j}=D_u^a\partial_\rho^b\partial_\nu^i
-                 \partial_\zeta^j,\qquad
- b\le3,\quad i\le1,\quad j\le2,
+                 \partial_\zeta^j,
+ \qquad (a,b,i,j)\in\mathcal I_{10},
 \]
 first by total order and then by parameter order.  Fa\`a di Bruno's formula
 and the flow variational equations put each current block in the form
 \begin{equation}
- \mathbf J\mathcal T_N(Z)
- =B_{\mathbf J}(\mathbf J_{<}Z)
- +\rho\,\mathcal A_{\mathbf J}(\mathbf J_{<}Z)
-          [\mathbf JZ].                               \label{eq:shared-jet-triangle}
+ \mathbf J_\ell\mathcal T_N(Z)
+ =B_\ell(\mathbf J_{<\ell}Z)
+ +\rho\,\mathscr L_\ell(\mathbf J_{<\ell}Z)
+          [\mathbf J_\ell Z].                        \label{eq:shared-jet-triangle}
 \end{equation}
 If a derivative hits a flow argument, the vector-field jet gains one state
 slot and loses one parameter derivative, so it precedes the current block;
@@ -381,7 +445,13 @@ of \(\mathbf M_N\) vanish, and
 \cref{eq:shared-evaluation-TV} bounds every remaining history evaluation.
 The coefficient of the last term in
 \cref{eq:shared-jet-triangle} has the same \(o(1)\) bound as
-\cref{eq:shared-graph-contraction}.  Induction over this finite block list
+\cref{eq:shared-graph-contraction}; in particular,
+\begin{equation}
+ \norm{\rho\mathscr L_\ell}\le\varepsilon_\delta\le\frac12,
+ \qquad
+ \norm{(I-\rho\mathscr L_\ell)^{-1}}\le2.            \label{eq:shared-jet-block-inverse}
+\end{equation}
+Induction over this finite block list
 gives invariant jet balls and, for consecutive Picard iterates, recurrences
 of the form
 \[
@@ -391,11 +461,12 @@ with the same constants for every \(N\).  Uniform convergence of a jet and
 its first derivative, followed by the fundamental theorem of calculus on
 state and parameter line segments, identifies the limits as genuine mixed
 derivatives.  This proves convergence of the mixed Picard jets, uniformly
-for \(|\rho|\le\delta\), and gives
-\begin{equation}
- \norm{(I-D\mathcal T_N)^{-1}}\le2                   \label{eq:shared-graph-range}
-\end{equation}
-after decreasing \(\delta_*\).  Taylor's formula in \(\rho\), evaluated at
+for \(|\rho|\le\delta\).  The full finite prolonged system is lower
+triangular with the diagonal inverses in
+\cref{eq:shared-jet-block-inverse}; its inverse is therefore bounded by a
+constant \(C_{\rm jet}\) independent of \(N\) and \(\delta\).  This is a
+finite jet statement, not a same-regularity Fr\'echet inverse on a single
+\(C_b^3\) graph space.  Taylor's formula in \(\rho\), evaluated at
 \(\rho=\delta\), gives
 \cref{eq:shared-graph-expansion}; the corresponding graph-pair remainder is
 the Banach-valued integral
@@ -439,16 +510,7 @@ the boundary of the shrinking tube, so it introduces no inverse power of
 which bootstrap back into the exact graph are called RFDE histories; the
 outer planar tails are selection devices.
 
-It remains to solve for the two selected planar traces.  Along
-\[
- \gamma_0(s)=\left(-\frac{s}{2\alpha},
-                    \frac{s^2-2}{4\alpha}\right),
-\]
-the linearized operator is
-\[
- L_0(U,V)=(U'-sU-V,V'+U).
-\]
-Put \(E(s)=e^{s^2/2}\),
+It remains to solve for the two selected planar traces.  Put \(E(s)=e^{s^2/2}\),
 \(I(s)=\int_0^se^{t^2/2}\,\dd t\), and
 \[
  \tau(s)=(-1,s)^T,
@@ -461,29 +523,37 @@ These are respectively the tangent and Gaussian normal solutions, with
  b'&=E^{-1}(sf_1+f_2)=:B_f.                           \label{eq:shared-ab}
 \end{align}
 The phase \(U(0)=0\) is exactly \(a(0)=0\).  With the no-incoming normal
-coordinate prescribed at the outer endpoint, the two one-sided inverses are
+coordinate prescribed at the outer endpoint, define
+\begin{equation}
+ \mathscr A_0^\sigma\xi
+ =\bigl(L_0\xi,U(0),b(s_\sigma)\bigr):
+ \mathcal D_\sigma\longrightarrow
+ \mathcal Y_\sigma\times\R\times\R_{\partial,\sigma},
+ \qquad s_a=-R,\quad s_r=R.                          \label{eq:shared-trace-operator}
+\end{equation}
+Given source \(f\), phase value \(\varphi\), and normalized endpoint value
+\(\beta\), the two inverses are
 \begin{align}
- a_a(s)&=-\int_s^0A_f(t)\,\dd t,&
- b_a(s)&=\beta_a+\int_{-R}^sB_f(t)\,\dd t,\notag\\
- a_r(s)&= \int_0^sA_f(t)\,\dd t,&
- b_r(s)&=\beta_r-\int_s^RB_f(t)\,\dd t.               \label{eq:shared-one-sided-green}
+ a_a(s)&=-\varphi-\int_s^0A_f(t)\,\dd t,&
+ b_a(s)&=\beta+\int_{-R}^sB_f(t)\,\dd t,\notag\\
+ a_r(s)&=-\varphi+\int_0^sA_f(t)\,\dd t,&
+ b_r(s)&=\beta-\int_s^RB_f(t)\,\dd t.                \label{eq:shared-one-sided-green}
 \end{align}
 The elementary estimates
 \[
  |I(s)|\le CE(s)\langle s\rangle^{-1},
  \qquad |E(s)-sI(s)|\le CE(s)
 \]
-and the one-sided Gaussian tail bounds show that, for fixed \(c_0,M_0\),
+and the one-sided Gaussian tail bounds show that
 \begin{equation}
- \norm{\mathcal G_R^\sigma(f,\beta_\sigma)}_{c_0,M_0+d}
- \le C\left(\norm f_{c_0,M_0}
- +e^{R^2/2-c_0R}\langle R\rangle^{-M_0}|\beta_\sigma|\right),
+ \norm{(\mathscr A_0^\sigma)^{-1}(f,\varphi,\beta)}_{\mathcal D_\sigma}
+ \le C_G\left(\norm f_{\mathcal Y_\sigma}
+                  +|\varphi|+|\beta|_{\partial,\sigma}\right),
                                                                \label{eq:shared-green-bound}
 \end{equation}
-where \(d\le4\), \(C\) is independent of \(R\), and
-\(\norm g_{c,M}=\sup e^{-c|s|}\langle s\rangle^{-M}|g(s)|\).
-Thus the Gaussian growth is paired with its one-sided integral before a
-norm is taken.
+where \(C_G\) is independent of \(R\).  Thus
+\(\mathscr A_0^\sigma\) is a bounded isomorphism, and the Gaussian growth is
+paired with its one-sided integral before a norm is taken.
 
 The tail equation \(\mathscr H_\alpha=0\) is not an assumed stable
 manifold.  At an endpoint it is exactly
@@ -501,25 +571,49 @@ boundary norm of \cref{eq:shared-green-bound}.  For
  |D_\xi N(s,\xi)|\le
  C\{\delta e^{c|s|}\langle s\rangle^M+|\xi|\}.
 \]
-Use two tame weights separated by the finite loss \(d\) in
-\cref{eq:shared-green-bound}.  On a ball of radius \(C\delta\), the
-one-sided fixed-point map defined by
-\cref{eq:shared-one-sided-green,eq:shared-tail-level} has Lipschitz factor
+Use the two tame weights in \cref{eq:trace-strong-spaces}, separated by the
+finite loss \(d_0\), and let \(\mathcal G_R^\sigma\) denote
+\((\mathscr A_0^\sigma)^{-1}\) with zero phase value.  The nonlinear trace
+map is
+\[
+ \mathcal K_\sigma(\xi)
+ =\mathcal G_R^\sigma
+   \bigl(N_{\delta,\nu,\zeta}(\cdot,\xi),
+         \mathcal B_\sigma(a(s_\sigma))\bigr).
+\]
+On \(\norm\xi_{\mathcal X_\sigma}\le C_0\delta\), the preceding pointwise
+bounds and \cref{eq:shared-green-bound} give
+\begin{align}
+ \norm{N(\cdot,\xi)}_{\mathcal Y_\sigma}
+ &\le C_1\delta+C_2\delta^2\Lambda_R,\notag\\
+ \norm{N(\cdot,\xi)-N(\cdot,\widetilde\xi)}_{\mathcal Y_\sigma}
+ &\le C_3\delta\Lambda_R
+       \norm{\xi-\widetilde\xi}_{\mathcal X_\sigma},
+ \qquad
+ \Lambda_R=e^{c_*R}\langle R\rangle^{M_*}.           \label{eq:shared-trace-source}
+\end{align}
+Choose \(C_0\) and then \(\delta_*\) so that
+\begin{equation}
+ C_G(C_1\delta+C_2\delta^2\Lambda_R)\le C_0\delta,
+ \qquad
+ \kappa_{\rm tr}:=C_GC_3\delta\Lambda_R\le\frac12.  \label{eq:shared-trace-contraction}
+\end{equation}
+Equivalently, the Lipschitz factor is bounded by
 \begin{equation}
  C\delta e^{cR}\langle R\rangle^M=o(1),
- \qquad R=S_\delta+B.                                 \label{eq:shared-trace-contraction}
+ \qquad R=S_\delta+B.                                 \label{eq:shared-trace-smallness}
 \end{equation}
-It therefore has a unique fixed point, and its linearization has inverse
-norm at most two.  The \(\nu\)-source is \(O(\delta)\); atomwise row
-neutrality makes the first \(\zeta\)-source \(O(\delta^2)\).
+Thus \(\mathcal K_\sigma\) has a unique fixed point and
+\(\norm{(I-D\mathcal K_\sigma)^{-1}}\le2\).  The corresponding
+trace--phase--normalized-endpoint residual has inverse norm at most
+\(2C_G\).  The \(\nu\)-source is \(O(\delta)\); atomwise row neutrality
+makes the first \(\zeta\)-source \(O(\delta^2)\).
 Differentiating the same fixed-point equation proves
 \cref{eq:shared-trace-jets} and the stated mixed bounds.
 
-The graph is solved first and the trace equations second.  Their combined
-derivative is block lower triangular; \cref{eq:shared-graph-range} and the
-last trace inverse therefore give a uniform right inverse for the full
-graph--trace--phase--endpoint range problem.  Finally, in the normal
-coordinate one has the exact identity
+The graph and trace constructions are therefore solved in sequence; no
+joint right inverse for arbitrary graph--trace sources is needed.  Finally,
+in the normal coordinate one has the exact identity
 \[
  d(\gamma_0(s)+(U,V))=V+sU-\alpha U^2.
 \]
@@ -530,11 +624,12 @@ and all of its retained delay backtracks lie inside the uncut shrinking
 graph, completing the exact-history assertion.
 \end{proof}
 
-The range assertion in \cref{lem:shared-graph-trace} is the one required by
-this selected object: the invariant-graph residual followed by its tangent
-one-sided trace problem.  It is not an inverse for arbitrary forcing off the
-graph in the ambient RFDE history space, and no such stronger inverse is
-used below.
+The two operator statements in \cref{lem:shared-graph-trace} are deliberately
+separate: a finite prolonged graph system and, after its graph has been
+fixed, two one-sided trace isomorphisms.  The history lift
+\(\mathcal I_{Q,H}\) is injective because present evaluation returns \(u\),
+and it maps only graph-tangent sources.  No inverse for arbitrary forcing off
+the graph in the ambient RFDE history space is claimed or used below.
 
 \subsubsection{The mixed curvature return and the normalized gap}
 
@@ -614,9 +709,8 @@ boundary-value problem.  The two endpoint values of
 phase, both endpoints, and the moving complete histories.  The Green bounds
 in \cref{lem:shared-graph-trace} and
 \cref{eq:shared-graph-remainder} allow the traces to be replaced by
-\(\gamma_0\) in the leading terms.  The omitted Gaussian tails and the
-difference between two preparations in the declared class are bounded,
-with the same parameter derivatives, by
+\(\gamma_0\) in the leading terms.  The omitted Gaussian tails of the fixed
+canonical preparation are bounded, with the same parameter derivatives, by
 \begin{equation}
  C e^{-S_\delta^2/2+cS_\delta}
        \langle S_\delta\rangle^M
@@ -625,17 +719,17 @@ with the same parameter derivatives, by
 Choosing the fixed \(p\) after the finite tame losses makes this smaller
 than the algebraic remainders below.  The pairings in
 \cref{eq:shared-leading-gap,eq:shared-melnikov} therefore yield, uniformly
-in \(N\), in the preparation class, and on the common parameter box,
+in \(N\) and on the common parameter box,
 \begin{align}
- \frac{\mathscr D_{N,\mathcal P_N}}\delta
+ \frac{\mathscr D^{\rm can}_N}\delta
  &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),
                                                                \label{eq:shared-gap-expansion}\\
- \partial_\nu\mathscr D_{N,\mathcal P_N}
+ \partial_\nu\mathscr D^{\rm can}_N
  &=\delta\sqrt{2\pi}+O(\delta^2),                    \label{eq:shared-gap-nu}\\
- \partial_\zeta\mathscr D_{N,\mathcal P_N}
+ \partial_\zeta\mathscr D^{\rm can}_N
  &=\delta^2\sqrt{2\pi}\frac{r_N}{\alpha}
        +O(\delta^3+\delta^2|\zeta|),                 \label{eq:shared-gap-zeta}\\
- \partial_{\zeta\zeta}\mathscr D_{N,\mathcal P_N}
+ \partial_{\zeta\zeta}\mathscr D^{\rm can}_N
  &=O(\delta^2).                                       \label{eq:shared-gap-zz}
 \end{align}
 Thus the graph, trace, endpoint, and remainder estimates needed for the
@@ -648,14 +742,14 @@ signs and strict monotonicity on
 \(|\nu-\nu_{0,N}|<c_0\) for small \(\delta,\zeta\), proving the unique root
 in \cref{eq:shared-root}.  Along that root,
 \begin{equation}
- \partial_\zeta\nu_{c,N,\mathcal P_N}
+ \partial_\zeta\nu^{\rm can}_{c,N}
  =-\delta\frac{r_N}{\alpha}
        +O(\delta^2+\delta|\zeta|).                    \label{eq:shared-root-derivative}
 \end{equation}
 Integrating \cref{eq:shared-root-derivative} from \(0\) to \(\zeta\) and
 multiplying by \(\delta^2\) gives
 \cref{eq:shared-response,eq:shared-coeff}, with a constant independent of
-\(N\) and of the declared preparation.  On the section \(X=0\), the map
+\(N\) (and allowed to depend on \(\mathbf p_{\rm can}\)).  On the section \(X=0\), the map
 \(Y\mapsto\mathscr H_\alpha(0,Y)\) has derivative \(\alpha e/2\ne0\) at
 the singular crossing.  Hence a zero of the gap is equality of the two
 reduced current states.  Injectivity of the history graph in
@@ -722,12 +816,13 @@ a preparation-independent scalar root.
 
 The separate shared-resource structural-root theorem allows heterogeneous
 curvature under a common Dobrushin gap, fixed delay support, an atomwise
-row-neutral structural direction, and the bounded admissible preparation
-class stated in \cref{thm:shared-resource}.  The graph and selected-trace
-range solves for that class are constructed in
-\cref{lem:shared-graph-trace}; they are not extra hypotheses.  The exact
-finite-\(\delta\) root remains preparation indexed.  The theorem does not
+row-neutral structural direction, and the fixed canonical preparation datum
+in \cref{def:canonical-preparation}.  The graph and selected-trace
+constructions are proved in \cref{lem:shared-graph-trace}; they are not extra
+hypotheses.  The exact finite-\(\delta\) root remains selection dependent.
+The theorem does not
 cover order-one changes of the base generator, moving delay atoms, a closing
-mixing gap, a preparation-independent root, or identification with an
-independently selected physical outer canard.  These are mathematical
-boundaries, not numerical omissions.
+mixing gap, comparison of arbitrary graph preparations, a
+preparation-independent root, or identification with an independently
+selected physical outer canard.  These are mathematical boundaries, not
+numerical omissions.
