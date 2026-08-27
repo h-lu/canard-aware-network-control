@@ -149,9 +149,11 @@ For \(0<\delta<\delta_*\), \(\nu\in I_\nu\), and
 \(\gamma_0([-S_\delta,S_\delta])\), the exact system
 \cref{eq:shared-exact-X,eq:shared-exact-h} has an injective invariant
 complete-history graph \(h=H_{N,\delta,\nu,\zeta}(X,Y)\).  On every fixed
-compact subset of the fold chart,
+compact singular-time interval and every fixed \(C_0>0\),
 \begin{equation}
- \sup_{N,\nu,\zeta}\|H_{N,\delta,\nu,\zeta}\|_N\le C_K\delta.
+ \sup_{\substack{N,\nu,\zeta,\ |s|\le L\\|\xi|\le C_0\delta}}
+ \|H_{N,\delta,\nu,\zeta}(\gamma_0(s)+\xi)\|_N
+ \le C_{L,C_0}\delta.
                                                                \label{eq:shared-graph-local-size}
 \end{equation}
 Its reduced field has the expansion
@@ -561,11 +563,21 @@ The only order-\(\delta^2\) structural term left in
 \begin{equation}
  D_\zeta q_{1,N}=0,\qquad
  D_\zeta q_{2,N}(\gamma_0(s),\nu,0)
-   =\left(\frac{r_N}{\alpha}s,0\right)^T.              \label{eq:q2-return}
+   =\left(\frac{r_N}{\alpha}s,0\right)^T,\qquad |s|\le S_\delta.
+                                                               \label{eq:q2-return}
 \end{equation}
 This proves both the cancellation of the lower-order response and the
 mixed-curvature return; it is an identity for the actual graph jets of
-\cref{eq:shared-graph-expansion}, not a formal current-state expansion.
+\cref{eq:shared-graph-expansion} on the uncut segment, not a formal
+current-state expansion.  We denote by
+\begin{equation}
+ D_\zeta q^{\rm phys}_{2,N}(\gamma_0(s),\nu,0)
+ :=\left(\frac{r_N}{\alpha}s,0\right)^T,\qquad s\in\R,
+                                                               \label{eq:q2-physical-continuation}
+\end{equation}
+the corresponding physical singular-orbit continuation.  This object is
+read from the raw chart equation and is not the graph coefficient of the
+target-frozen cutoff outside its agreement region.
 
 We next include the trace and endpoint contributions.  The normalized
 adjoint and the first-integral differential along \(\gamma_0\) are
@@ -574,23 +586,28 @@ adjoint and the first-integral differential along \(\gamma_0\) are
  \nabla\mathscr H_\alpha(\gamma_0(s))
        =\frac{\alpha e}{2}\psi(s).                    \label{eq:shared-adjoint}
 \end{equation}
-The first reduced coefficient is
+On the uncut segment, the first reduced coefficient is
 \begin{equation}
  q_{1,N,X}=-\kappa_NX^3
           +K\pi_N^T\cL_{N,0}[\mathbf1X],\qquad
  q_{1,N,Y}=\nu.                                       \label{eq:shared-q1}
 \end{equation}
-Along \(\gamma_0\), the delay term in \cref{eq:shared-q1} is constant in
-\(s\), by \cref{eq:shared-affine-delay}, and hence pairs to zero with the
-odd function \(se^{-s^2/2}\).  Using
+Let \(q^{\rm phys}_{1,N}(\gamma_0(s),\nu)\), for every \(s\in\R\),
+denote the value obtained by evaluating the right-hand side of
+\cref{eq:shared-q1} on the affine singular history.  It agrees exactly with
+the prepared graph coefficient for \(|s|\le S_\delta\).  Along
+\(\gamma_0\), its delay term is constant in \(s\), by
+\cref{eq:shared-affine-delay}, and hence pairs to zero with the odd function
+\(se^{-s^2/2}\).  Using
 \(\int e^{-s^2/2}\dd s=\sqrt{2\pi}\),
 \(\int s^2e^{-s^2/2}\dd s=\sqrt{2\pi}\), and
 \(\int s^4e^{-s^2/2}\dd s=3\sqrt{2\pi}\), we obtain
 \begin{align}
- \int_\R\psi^Tq_{1,N}(\gamma_0(s),\nu)\,\dd s
+ \int_\R\psi^Tq^{\rm phys}_{1,N}(\gamma_0(s),\nu)\,\dd s
  &=\sqrt{2\pi}\left(\nu+\frac{3\kappa_N}{8\alpha^3}\right)
  =\sqrt{2\pi}(\nu-\nu_{0,N}),                        \label{eq:shared-leading-gap}\\
- \int_\R\psi^TD_\zeta q_{2,N}(\gamma_0(s),\nu,0)\,\dd s
+ \int_\R\psi^TD_\zeta q^{\rm phys}_{2,N}
+       (\gamma_0(s),\nu,0)\,\dd s
  &=\sqrt{2\pi}\frac{r_N}{\alpha}.                    \label{eq:shared-melnikov}
 \end{align}
 

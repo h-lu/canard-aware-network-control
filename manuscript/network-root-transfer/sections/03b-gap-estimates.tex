@@ -39,27 +39,52 @@ there.  For \(\ell=1,2\), set
 \end{align*}
 The unused parameter arguments are suppressed below; in particular,
 \(q_{1,N}\) is independent of \(\zeta\).  Since
-\(c_H\nabla\mathscr H_\alpha(\gamma_0(s))=\psi(s)\), introduce two
-whole-line pairings and the finite baseline second-order pairing
+\(c_H\nabla\mathscr H_\alpha(\gamma_0(s))=\psi(s)\), define the two
+\emph{physical} singular-orbit integrands
 \begin{align}
- M_{1,N}(\nu)
- &=\int_{\mathbb R}A_{1,N}(\gamma_0(s),\nu)\,\dd s,
+ a^{\rm phys}_{1,N}(s,\nu)
+ &=e^{-s^2/2}\left\{
+      \nu+\frac{\kappa_N}{8\alpha^3}s^4+\ell_Ns\right\},
+ &\ell_N&=-\frac{K}{2\alpha}\pi_N^TM_{1,N}(0)\mathbf1,
+                                                        \label{eq:gap-physical-a1}\\
+ a^{\rm phys}_{2,\zeta,N}(s)
+ &=e^{-s^2/2}\frac{r_N}{\alpha}s^2.                 \label{eq:gap-physical-a2z}
+\end{align}
+Here \(M_{1,N}(0)=\sum_k\theta_kB_{k,N}\) is the delay-moment matrix
+from \cref{eq:shared-parameters}.  These formulas come directly from the
+unprepared chart equations and therefore make sense on the whole singular
+orbit, independently of the target-frozen cutoff.  On \(|s|\le S\),
+depth-two agreement gives the exact identities
+\begin{equation}
+ A_{1,N}(\gamma_0(s),\nu)=a^{\rm phys}_{1,N}(s,\nu),
+ \qquad
+ \partial_\zeta A_{2,N}(\gamma_0(s),\nu,0)
+   =a^{\rm phys}_{2,\zeta,N}(s).                    \label{eq:gap-central-physical-agreement}
+\end{equation}
+Introduce the physical whole-line pairings and the finite, prepared
+baseline second-order pairing
+\begin{align}
+ \mathfrak M_{1,N}^{\rm phys}(\nu)
+ &=\int_{\mathbb R}a^{\rm phys}_{1,N}(s,\nu)\,\dd s,
                                                         \label{eq:gap-M1}\\
  B_{2,N}^{S}(\nu)
  &=\int_{-S}^{S}A_{2,N}(\gamma_0(s),\nu,0)\,\dd s,
                                                         \label{eq:gap-B2}\\
- M_{2,N}
- &=\int_{\mathbb R}\partial_\zeta
-       A_{2,N}(\gamma_0(s),\nu,0)\,\dd s.             \label{eq:gap-M2}
+ \mathfrak M_{2,N}^{\rm phys}
+ &=\int_{\mathbb R}a^{\rm phys}_{2,\zeta,N}(s)\,\dd s.
+                                                        \label{eq:gap-M2}
 \end{align}
 The identities already obtained in
 \cref{eq:shared-leading-gap,eq:shared-melnikov} say
 \begin{equation}
- M_{1,N}(\nu)=\sqrt{2\pi}(\nu-\nu_{0,N}),
+ \mathfrak M_{1,N}^{\rm phys}(\nu)
+   =\sqrt{2\pi}(\nu-\nu_{0,N}),
  \qquad
- M_{2,N}=\sqrt{2\pi}\frac{r_N}{\alpha}.              \label{eq:gap-leading-pairings}
+ \mathfrak M_{2,N}^{\rm phys}
+   =\sqrt{2\pi}\frac{r_N}{\alpha}.                 \label{eq:gap-leading-pairings}
 \end{equation}
-In particular, \(M_{2,N}\) is independent of \(\nu\).
+In particular, \(\mathfrak M_{2,N}^{\rm phys}\) is independent of
+\(\nu\).
 
 We first record exactly which growing-tube estimates the gap calculation
 uses.  Put \(W_{c,m}(s)=e^{c|s|}\langle s\rangle^m\), and let
@@ -74,29 +99,40 @@ denote the identity and the parameter derivatives needed below.
 \label[proposition]{prop:finite-gap-bridge}
 Fix the common model bounds, the interval \(I_\nu\), and one fixed
 admissible preparation with \(p>4\) satisfying
-\cref{def:invdet-tame-preparation}.  By
-\cref{prop:invdet-coefficient-envelope}, there are fixed
-\(c,m,C_q\), independent of \(N\), for which the two graph coefficients
-satisfy
+\cref{def:invdet-tame-preparation}.  Fix constants
+\(C_{\rm pw},c_{\rm tr}>0\) and
+\(m_{\rm tr}\in\mathbb N_0\) supplied by the trace bounds in
+\cref{eq:shared-trace-jets}, and put
+\[
+ W_{\rm tr}=W_{c_{\rm tr},m_{\rm tr}}.
+\]
+Apply \cref{prop:invdet-coefficient-envelope} to this fixed input tube.
+It gives fixed \(C_q,c_q>0\) and \(m_q\in\mathbb N_0\), independent of
+\(N,\delta\), for which the two graph coefficients satisfy
 \begin{equation}
  \left|D_z^a\partial_\nu^i\partial_\zeta^j
  q_{\ell,N}(\gamma_0(s)+\xi,\nu,\zeta)\right|
- \le C_q W_{c,m}(s),                                  \label{eq:gap-coefficient-envelope}
+ \le C_q W_{c_q,m_q}(s),                              \label{eq:gap-coefficient-envelope}
 \end{equation}
 for \(\ell=1,2\), \(0\le a\le3\),
 \(0\le i,j\le2\), whenever
 \(|s|\le S+1\), \(\nu\in I_\nu\), \(|\zeta|\le\zeta_*\), and
-\(|\xi|\le C\delta W_{c,m}(s)\).  The same estimate for the derivatives of
-\(\mathcal R_{3,N}\) listed in \cref{eq:shared-graph-remainder} is
-\cref{eq:invdet-local-remainder}.  Then there are
-\(\delta_b,\zeta_b,C_b>0\), depending only on the fixed common data and the
-displayed envelope but not on \(N\), such that, for every \(N\ge2\),
+\(|\xi|\le C_{\rm pw}\delta W_{\rm tr}(s)\).
+Applying \cref{eq:invdet-local-remainder} to the same fixed input tube gives
+fixed \(C_R,c_R>0\) and \(m_R\in\mathbb N_0\) for which the listed
+derivatives of \(\mathcal R_{3,N}\) are bounded by
+\(C_RW_{c_R,m_R}(s)\).  Thus the input tube, the coefficient output weight,
+and the remainder output weight are three distinct objects.  Then there are
+\(\delta_b,C_b>0\) and \(0<\zeta_b\le\zeta_*\), depending only on the fixed
+common data and the displayed envelopes but not on \(N\), such that, for
+every \(N\ge2\),
 \(0<\delta<\delta_b\), \(\nu\in I_\nu\), and
 \(|\zeta|<\zeta_b\), the exact decomposition
 \begin{align}
  \mathscr D_N^{\rm can}
- ={}&\delta M_{1,N}(\nu)+\delta^2B_{2,N}^{S}(\nu)
-       +\delta^2\zeta M_{2,N}\notag\\
+ ={}&\delta\mathfrak M_{1,N}^{\rm phys}(\nu)
+       +\delta^2B_{2,N}^{S}(\nu)
+       +\delta^2\zeta\mathfrak M_{2,N}^{\rm phys}\notag\\
  &+E_{\partial,N}+E_{\rm sing,N}+E_{\rm mov,N}
        +E_{\rm par,N}+E_{\rm jet,N}+E_{\rm prep,N}       \label{eq:gap-exact-decomposition}
 \end{align}
@@ -180,15 +216,17 @@ would move, is asserted in this proposition.
 
 On \([-S,S]\), insert
 \cref{eq:shared-graph-expansion} into
-\cref{eq:gap-finite-section-identity}.  Add and subtract the corresponding
-singular-orbit integrands, extend the latter to \(\mathbb R\), and Taylor
-expand only the \(\zeta\)-dependence of \(A_{2,N}\) at the fixed singular
-orbit.  This gives \cref{eq:gap-exact-decomposition}, with
+\cref{eq:gap-finite-section-identity}.  Using the exact central agreement
+\cref{eq:gap-central-physical-agreement}, add and subtract the corresponding
+physical singular-orbit integrands, extend those explicit integrands to
+\(\mathbb R\), and Taylor expand only the \(\zeta\)-dependence of
+\(A_{2,N}\) at the fixed singular orbit.  This gives
+\cref{eq:gap-exact-decomposition}, with
 \begin{align}
  E_{\rm sing,N}
- ={}&-\delta\int_{|s|>S}A_{1,N}(\gamma_0(s),\nu)\,\dd s\notag\\
+ ={}&-\delta\int_{|s|>S}a^{\rm phys}_{1,N}(s,\nu)\,\dd s\notag\\
  &-\delta^2\zeta\int_{|s|>S}
-       \partial_\zeta A_{2,N}(\gamma_0(s),\nu,0)\,\dd s,
+       a^{\rm phys}_{2,\zeta,N}(s)\,\dd s,
                                                         \label{eq:gap-singular-error}\\
  E_{\rm mov,N}
  ={}&\delta\int_{-S}^{S}\!{}^{\rm pw}
@@ -227,32 +265,44 @@ We now prove the stated bounds.  The trace estimates in
 \begin{align}
  |z^{\rm pw}(s)-\gamma_0(s)|
        +|\partial_\nu z^{\rm pw}(s)|
- &\le C\delta W_{c,m}(s),\notag\\
+ &\le C_{\rm pw}\delta W_{\rm tr}(s),\notag\\
  |\partial_{\nu\nu}z^{\rm pw}(s)|
        +|\partial_\zeta z^{\rm pw}(s)|
        +|\partial_{\nu\zeta}z^{\rm pw}(s)|
        +|\partial_{\zeta\zeta}z^{\rm pw}(s)|
- &\le C\delta^2 W_{c,m}(s).                          \label{eq:gap-pointwise-trace-jets}
+ &\le C_{\rm pw}\delta^2 W_{\rm tr}(s).              \label{eq:gap-pointwise-trace-jets}
 \end{align}
-Increasing \(c,m\) finitely many times is harmless.  It also gives, for
-example,
+Direct differentiation of the explicit first integral on the fixed trace
+tube supplies another fixed weight
+\(W_{\mathscr H}=W_{c_{\mathscr H},m_{\mathscr H}}\), as recorded in
+\cref{eq:gap-H-envelope} below.  Because only finitely many products occur
+in the chain rules, choose once and for all a fixed integration majorant
+\[
+ W_{\rm out}=W_{c_{\rm out},m_{\rm out}}
+\]
+which dominates \(W_{\rm tr}\), \(W_{c_q,m_q}\),
+\(W_{c_R,m_R}\), \(W_{\mathscr H}\), and every finite product of these
+weights used below.  This choice enlarges only an output majorant; it does
+not enlarge the input tube.
+For example,
 \begin{equation}
  \int_{-R}^{R}e^{-s^2/2}
        |\partial_\zeta z^{\rm pw}(s)|^2
-       \langle s\rangle^{m}\,\dd s\le C\delta^4,     \label{eq:gap-quadratic-trace}
+       W_{\rm out}(s)\,\dd s\le C\delta^4,           \label{eq:gap-quadratic-trace}
 \end{equation}
 because
-\(\int_{\mathbb R}e^{-s^2/2+2c|s|}
-\langle s\rangle^{3m}\,\dd s<\infty\).
+\(\int_{\mathbb R}e^{-s^2/2}W_{\rm tr}(s)^2
+W_{\rm out}(s)\,\dd s<\infty\).
 
 For sufficiently small \(\delta\),
-\(\sup_{|s|\le R}\delta W_{c,m}(s)=o(1)\).  Direct differentiation of
+\(\sup_{|s|\le R}\delta W_{\rm tr}(s)=o(1)\).  Direct differentiation of
 \cref{eq:shared-first-integral} therefore gives, for every fixed
 \(0\le k\le4\),
-\begin{equation}
+ \begin{equation}
  |D^k\mathscr H_\alpha(\gamma_0(s)+\xi)|
- \le C e^{-s^2/2+c|s|}\langle s\rangle^m
- \quad\text{if }|\xi|\le C\delta W_{c,m}(s).          \label{eq:gap-H-envelope}
+ \le C e^{-s^2/2}W_{\mathscr H}(s)
+ \quad\text{if }|s|\le R,\quad
+ |\xi|\le C_{\rm pw}\delta W_{\rm tr}(s).           \label{eq:gap-H-envelope}
 \end{equation}
 Indeed every such derivative is \(e^{-2\alpha Y}\) times a fixed
 polynomial in \((X,Y)\), while
@@ -286,8 +336,10 @@ moving-trace integral is
 because \(\partial_\zeta q_{1,N}=0\).  It is \(O(\delta^3)\), not
 \(O(\delta^2)\), by
 \cref{eq:gap-pointwise-trace-jets}.  A second \(\zeta\)-derivative adds
-either \(\partial_{\zeta\zeta}z^{\rm pw}=O_G(\delta^2)\) or the quadratic
-term controlled by \cref{eq:gap-quadratic-trace}.  The \(\nu\nu\)-column
+either a term bounded pointwise by
+\(C_{\rm pw}\delta^2W_{\rm tr}\), from
+\(\partial_{\zeta\zeta}z^{\rm pw}\), or the quadratic term controlled by
+\cref{eq:gap-quadratic-trace}.  The \(\nu\nu\)-column
 instead contains
 \(\delta D_z\partial_\nu A_{1,N}\partial_\nu z^{\rm pw}\), which is only
 \(O(\delta^2)\).  These observations give
@@ -304,9 +356,20 @@ Taylor's formula with integral remainder yields the pointwise identity
        \partial_{\zeta\zeta}A_{2,N}
           (\gamma_0(s),\nu,t\zeta)\,\dd t.
 \end{align*}
-The Gaussian envelope and its first two \(\nu\)-derivatives are integrable
-on \(\mathbb R\).  Differentiating this formula once or twice in \(\zeta\)
-proves
+For the first two \(\zeta\)-derivatives of this remainder, use instead the
+identities
+\begin{align*}
+ \partial_\zeta\{A_{2,N}(\zeta)-A_{2,N}(0)
+                  -\zeta\partial_\zeta A_{2,N}(0)\}
+ &=\zeta\int_0^1\partial_{\zeta\zeta}A_{2,N}(t\zeta)\,\dd t,\\
+ \partial_{\zeta\zeta}\{A_{2,N}(\zeta)-A_{2,N}(0)
+                  -\zeta\partial_\zeta A_{2,N}(0)\}
+ &=\partial_{\zeta\zeta}A_{2,N}(\zeta),
+\end{align*}
+where the fixed arguments \((\gamma_0(s),\nu)\) have been suppressed.
+The same three identities remain valid after at most two \(\nu\)-derivatives.
+Thus only the declared rectangular derivatives with \(j\le2\) are used.
+Their Gaussian envelopes are integrable, which proves
 \cref{eq:gap-error-parameter-zero,eq:gap-error-parameter-derivatives}.
 
 It remains to estimate the two tail classes.  For every fixed \(c,m\),
@@ -315,7 +378,14 @@ It remains to estimate the two tail classes.  For every fixed \(c,m\),
  \le C e^{-S^2/2+cS}\langle S\rangle^{m+1}
  =\delta^{p-o(1)}.                                   \label{eq:gap-gaussian-tail-bound}
 \end{equation}
-This proves the asserted estimate for \(E_{\rm sing,N}\).  On each
+The explicit physical formulas
+\cref{eq:gap-physical-a1,eq:gap-physical-a2z}, together with the uniform
+bounds on \(\kappa_N\), \(\ell_N\), and \(r_N\), show directly that the
+two singular-tail integrands and all their required \((\nu,\zeta)\)
+derivatives are a Gaussian times a polynomial of degree at most four.
+Hence \cref{eq:gap-gaussian-tail-bound} proves the asserted estimate for
+\(E_{\rm sing,N}\) without extending the local prepared-coefficient
+envelope beyond \(|s|\le S+1\).  On each
 preparation interval, \(S\le|s|\le S+B\), the interval length is fixed.
 The preparation derivative bound in
 \cref{def:canonical-preparation}, the trace bounds

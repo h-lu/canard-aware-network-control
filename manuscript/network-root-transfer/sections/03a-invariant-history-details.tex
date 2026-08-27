@@ -133,12 +133,18 @@ The following tame-flow property is the exact input used below.
 \begin{definition}[Tame frozen preparation]
 \label[definition]{def:invdet-tame-preparation}
 The frozen preparation is called tame through grade eleven if there are a
-polynomial \(P_*\), constants \(C_*,c_*,\Gamma_*>0\), and an integer
-\(M_*\), independent of \(N\) and \(\delta\), such that the order-zero
-estimate below holds for every vector field \(Q\) in the graph ball defined
-in \cref{eq:invdet-graph-ball}.  At positive grade, it is required
+polynomial \(P_*\), constants \(c_*,\Gamma_*>0\), and an integer
+\(M_*\geq1\), independent of \(N\) and \(\delta\), such that the order-zero
+displacement estimate
+\begin{equation}
+ \|\Phi_Q^{\vartheta-\rho r}-\Id\|_{C_b(U;U)}
+ \leq \mathfrak B_\delta(1+r^{M_*})
+       e^{\Gamma_*(1+R_\delta)|\rho|r}               \label{eq:invdet-tame-displacement}
+\end{equation}
+holds for every vector field \(Q\) in the graph ball defined in
+\cref{eq:invdet-graph-ball}.  At positive grade, it is required
 inductively for every smooth Picard iterate whose preceding graph jets lie
-in the invariant balls already constructed:
+in the invariant balls already constructed that
 \begin{equation}
  \|\mathscr J\Phi_Q^{\vartheta-\rho r}\|_
  {C_b(U;\mathcal L_{\rm multi})}
@@ -147,9 +153,11 @@ in the invariant balls already constructed:
 \end{equation}
 for \(-\Theta_*\leq\vartheta\leq0\), \(r\geq0\),
 \(|\rho|\leq\delta\), and every state--parameter flow jet
-\(\mathscr J\) of total grade at most eleven.  The same estimate, multiplied
-by the current-block difference plus preceding-block differences, holds for
-two Picard iterates in the corresponding common jet fibers, where
+\(\mathscr J\) of total grade between one and eleven.  For two Picard
+iterates in the corresponding common jet fibers, the difference of the
+two flows (grade zero) and the difference of every positive-grade flow jet
+obey the same right-hand side multiplied by the current-block difference
+plus preceding-block differences, where
 \begin{equation}
  \mathfrak B_\delta=P_*(R_\delta)e^{c_*R_\delta}.       \label{eq:invdet-tame-envelope}
 \end{equation}
@@ -216,9 +224,13 @@ and \cref{eq:invdet-subpower} give
  \leq C(1+R_\delta)+b_{\rm gr,1}\delta\mathfrak B_\delta
  \leq C'(1+R_\delta).                                 \label{eq:invdet-Q-lipschitz}
 \end{equation}
-The ordinary flow variational equations, successively differentiated
-through grade eleven in the block order used below, then prove
-\cref{eq:invdet-tame-flow}.  The state derivative of the perturbation in
+Since every prepared \(Q\) is bounded, integrating
+\(\partial_t\Phi_Q^t=Q(\Phi_Q^t)\) proves
+\cref{eq:invdet-tame-displacement}; no bound on the unbounded map
+\(u\mapsto\Phi_Q^tu\) itself is asserted.  The ordinary flow variational
+equations, successively differentiated through grade eleven in the block
+order used below, then prove \cref{eq:invdet-tame-flow} for positive-grade
+jets.  The state derivative of the perturbation in
 \(Q\) retains \(\rho\), whereas a \(\rho\)-parameter derivative which
 removes that factor is bounded by \(A_\delta\) and belongs to the prescribed
 tame envelope.  Fixed-time flow factors are bounded by
@@ -309,8 +321,8 @@ for a fixed time \(t\),
  \leq C\mathfrak B_\delta(1+|t|)e^{C(1+R_\delta)|t|}
        \|Q-\widetilde Q\|_\infty.                    \label{eq:invdet-flow-difference}
 \end{equation}
-This is also the grade-zero difference case of
-\cref{eq:invdet-tame-flow}.  Combining it with the Lipschitz bound for
+This is the grade-zero two-flow difference clause in
+\cref{def:invdet-tame-preparation}.  Combining it with the Lipschitz bound for
 \(H\), and using the maximum norm on the fixed tuple in
 \cref{eq:invdet-history-evaluation}, yields
 \begin{align}
@@ -678,9 +690,11 @@ polynomial factor in \(R_\delta\); the weights
 
 \begin{proposition}[Growing-tube coefficient envelope]
 \label[proposition]{prop:invdet-coefficient-envelope}
-There are \(C,c>0\) and an integer \(M\), independent of \(N\) and
-\(\delta\), such that, for \(\ell=1,2\), the reduced coefficients after
-conversion back to the \((X,Y)\)-coordinates satisfy
+Fix \(C_0,c_0>0\) and an integer \(M_0\geq0\).  There are
+\(\delta_0>0\), \(C,c>0\), and an integer \(M\), depending on these three
+fixed tube data and on the common preparation data but independent of \(N\),
+such that, for every \(0<\delta<\delta_0\) and \(\ell=1,2\), the reduced
+coefficients after conversion back to the \((X,Y)\)-coordinates satisfy
 \begin{equation}
  \left|D_u^a\partial_\nu^i\partial_\zeta^j
  q_{\ell,N}(\gamma_0(s)+\xi,\nu,\zeta)\right|
@@ -692,7 +706,8 @@ whenever \(0\leq a\leq3\), \(0\leq i,j\leq2\),
 \[
  |\xi|\leq C_0\delta e^{c_0|s|}\langle s\rangle^{M_0}.
 \]
-After increasing \(C,c,M\), the same bound holds for the stable
+After increasing the output constants \(C,c,M\), without changing the
+input tube, the same bound holds for the stable
 coefficients \(H_{1,N},H_{2,N}\).  Moreover,
 \begin{equation}
  \partial_\zeta q_{1,N}=0.                            \label{eq:invdet-q1-zeta-zero}
@@ -768,37 +783,93 @@ in \cref{eq:invdet-vector-field-pullback} preserve this zero, proving
 \cref{eq:invdet-q1-zeta-zero}.
 \end{proof}
 
-We record the local tame bound used in the main proof.  Split the stable
-integral after every derivative at
-\(L\log(1/\delta)\).  By choosing \(L\) after the finite jet grade, its tail
-is bounded by
+We record the local tame bound used in the main proof, including the norms
+in which the block induction is performed.  Split the stable integral after
+every derivative at \(L\log(1/\delta)\).  By choosing \(L\) after the finite
+jet grade, its tail is bounded by
 \begin{equation}
  C\mathfrak B_\delta
  \{1+L\log(1/\delta)\}^{M_*}
  e^{-a_*L\log(1/\delta)/2}=O(\delta^6).              \label{eq:invdet-convolution-tail}
 \end{equation}
 On the finite part, the additional base-flow displacement is at most
-\(\delta L\log(1/\delta)=o(1)\).  Let \(L_J\) be the number of ordered
-blocks and choose fixed buffers
-\[
- 0=C_0<C_1<\cdots<C_{L_J},\qquad
- C_{\ell+1}-C_\ell>2\Theta_*+2.
-\]
-At block \(\ell\), take the weighted supremum on the core interval and use
-the successive fixed buffers for the already known lower blocks.  Every
-current or delayed flow evaluation of a lower block, and every finite
-convolution shift, then lands in its assigned outer domain.  The weights
-\(W_{c,m}(s)=e^{c|s|}\langle s\rangle^m\) obey
-\[
- W_{c,m}(s+t)\leq C_TW_{c,m}(s),\qquad |t|\leq2\Theta_*+2,
-\]
-with \(C_T\) independent of \(s,N,\delta\).
+\(\delta L\log(1/\delta)=o(1)\).
 
-For points a fixed buffer away from \(\pm S_\delta\), all the sampled
-points lie in the uncut physical hull; the polynomial chart and its
-singular variational equations give \(CW_{c,m}(s)\).  In the complementary
-endpoint strips, \(R_\delta-|s|\) is bounded, so the global tame majorant
-\(P(R_\delta)e^{cR_\delta}\) is bounded by \(CW_{c',m'}(s)\).
+Enumerate the finite ordered jet blocks by
+\(\ell=0,\ldots,L_J\), including the order-zero block.  Fix any input-tube
+data \(K_{\rm in},c_{\rm in}>0\) and \(m_{\rm in}\in\mathbb N_0\).
+Choose fixed time buffers
+\begin{equation}
+ 0=B_0<B_1<\cdots<B_{L_J},\qquad
+ B_{j+1}-B_j>2\Theta_*+2,                            \label{eq:invdet-local-buffers}
+\end{equation}
+and, recursively, fixed tube weights
+\[
+ W_j^{\rm tub}(s)=e^{c_j^{\rm tub}|s|}
+                   \langle s\rangle^{m_j^{\rm tub}},
+ \qquad K_j\geq K_{\rm in},
+\]
+starting with
+\(W_0^{\rm tub}=e^{c_{\rm in}|s|}\langle s\rangle^{m_{\rm in}}\)
+and \(K_0=K_{\rm in}\).  The finite-time singular-flow estimates allow the
+later parameters to be chosen monotonically,
+\[
+ c_{j+1}^{\rm tub}\geq c_j^{\rm tub},\qquad
+ m_{j+1}^{\rm tub}\geq m_j^{\rm tub},\qquad
+ K_{j+1}\geq K_j,
+\]
+and so that every current or fixed-delay evaluation and every finite
+convolution shift used at level \(0\leq j<L_J\) maps
+\begin{equation}
+ \mathcal T^{\chi d}_{j,\delta}
+ :=\left\{\mathcal K(\gamma_0(s)+\xi):
+       |s|\leq S_\delta+1+B_j,
+       |\xi|\leq K_j\delta W_j^{\rm tub}(s)\right\}   \label{eq:invdet-local-tubes}
+\end{equation}
+into \(\mathcal T^{\chi d}_{j+1,\delta}\).  Thus these are
+\((\chi,d)\)-coordinate tubes, as required by the graph transform; their
+preimages under \(\mathcal K\) are the displayed \((X,Y)\)-tubes on which
+the final estimates are asserted.  The monotone choices and the increasing
+buffers give
+\(\mathcal T^{\chi d}_{j,\delta}\subset
+  \mathcal T^{\chi d}_{j+1,\delta}\).
+Only finitely many such choices are made.  Their planar normal radii remain
+inside the shrinking agreement
+strip for small \(\delta\), because
+\(\delta e^{c_j^{\rm tub}S_\delta}
+\langle S_\delta\rangle^{m_j^{\rm tub}}=o(\delta^\kappa)\).
+The stable components remain inside their fixed saturation ball by the
+global graph radii.  Planar bases outside the central interval enter only
+fixed-width prepared endpoint strips; those are controlled by the global
+tame majorant below.
+
+For a block-valued map \(V\) and a positive weight \(W\), define
+\begin{equation}
+ \|V\|_{j;W}
+ :=\sup_{\lambda\in\Lambda_\delta}
+   \sup_{\substack{|s|\leq S_\delta+1+B_j\\
+                   |\xi|\leq K_j\delta W_j^{\rm tub}(s)}}
+       \frac{\|V(\mathcal K(\gamma_0(s)+\xi);\lambda)\|_{\rm op}}{W(s)}.
+                                                               \label{eq:invdet-local-weighted-norm}
+\end{equation}
+Choose output weights
+\(W_\ell^{\rm out}(s)=e^{c_\ell^{\rm out}|s|}
+\langle s\rangle^{m_\ell^{\rm out}}\) recursively in the block order.
+At the \(\ell\)-th step, enlarge its two exponents only enough to dominate
+the finitely many products of earlier weights and fixed-shift ratios in the
+source \(\mathbf b_\ell\) of
+\cref{eq:invdet-highest-block-form}.  This is a finite, noncircular
+construction: \(W_\ell^{\rm out}\) is chosen only after all weights occurring
+in its source have been fixed.
+
+On the inner portions \(|s|\leq S_\delta-C_{\rm buf}\), with
+\(C_{\rm buf}\) chosen after the finite block list, all sampled points lie
+in the uncut physical hull; the polynomial chart and its singular
+variational equations give the corresponding output weight.  On the
+complementary portions of the fixed buffered tubes,
+\(\bigl||s|-S_\delta\bigr|\) is bounded, so the global tame majorant
+\(P(R_\delta)e^{cR_\delta}\) is bounded by the chosen
+\(CW_\ell^{\rm out}(s)\).
 The global invariant radius of every block obtained from
 \cref{eq:invdet-invariant-jet-recurrence} has the tame size
 \[
@@ -806,15 +877,22 @@ The global invariant radius of every block obtained from
 \]
 This follows by the same finite induction because every source radius has
 that form and \((1-\eta_\delta)^{-1}\leq2\).  After division by the
-appropriate local weight, the explicit highest-block formula
-\cref{eq:invdet-highest-block-form} therefore becomes
+appropriate local weight, estimate the \(\ell\)-th block on
+\(\mathcal T^{\chi d}_{L_J-\ell,\delta}\).  Every lower block is sampled at
+worst on \(\mathcal T^{\chi d}_{L_J-\ell+1,\delta}\), which is contained in
+the domain \(\mathcal T^{\chi d}_{L_J-k,\delta}\) already controlled for
+\(k<\ell\).
+The explicit highest-block formula
+\cref{eq:invdet-highest-block-form} therefore gives
 \begin{equation}
- \|\mathbf J_\ell Z\|_{\ell;W}
- \leq B_{\ell;W}
+ \|\mathbf J_\ell Z\|_{L_J-\ell;W_\ell^{\rm out}}
+ \leq B_\ell^{\rm loc}
    +\eta_\delta R_{\ell,\delta}^{\rm glob}
-   +\sum_{k<\ell}C_{\ell k}\|\mathbf J_k Z\|_{\ell+1;W},          \label{eq:invdet-local-block-recurrence}
+   +\sum_{k<\ell}C_{\ell k}
+       \|\mathbf J_k Z\|_{L_J-k;W_k^{\rm out}},       \label{eq:invdet-local-block-recurrence}
 \end{equation}
-where \(B_{\ell;W}\) and \(C_{\ell k}\) are independent of \(N,\delta\),
+where \(B_\ell^{\rm loc}\) and \(C_{\ell k}\) are independent of
+\(N,\delta\),
 and
 \[
  \eta_\delta R_{\ell,\delta}^{\rm glob}
@@ -822,33 +900,46 @@ and
 \]
 after increasing the fixed polynomial and exponential constants.
 The tail
-\cref{eq:invdet-convolution-tail} is absorbed in \(B_{\ell;W}\).
+\cref{eq:invdet-convolution-tail} is absorbed in \(B_\ell^{\rm loc}\).
 Induction in \(\ell\), starting with the order-zero graph bound, gives one
-uniform radius for every required local weighted block.  Applying this to
+uniform radius for every required block on its declared tube, hence in
+particular on the original tube \(\mathcal T^{\chi d}_{0,\delta}\).
+Applying this to
 the integral Taylor remainder
 \cref{eq:invdet-Taylor-remainder}, then applying the pullback
 \cref{eq:invdet-coefficient-pullbacks} and absorbing its polynomial
-coordinate loss, proves
+coordinate loss, gives constants \(C_{\rm rem},c_{\rm rem}>0\) and
+\(M_{\rm rem}\in\mathbb N_0\), depending on the fixed input-tube data but
+not on \(N,\delta\), for which
 \begin{equation}
  |D_u^a\partial_\nu^i\partial_\zeta^j
        \mathcal R_{3,N}(\gamma_0(s)+\xi)|
- \leq C\langle s\rangle^Me^{c|s|},
- \qquad a\leq3,\quad i,j\leq2,                     \label{eq:invdet-local-remainder}
+ \leq C_{\rm rem}\langle s\rangle^{M_{\rm rem}}
+          e^{c_{\rm rem}|s|},
+ \qquad a\leq3,\quad i,j\leq2,                       \label{eq:invdet-local-remainder}
 \end{equation}
-on a nested retained tube.  This also makes explicit why a global
+whenever
+\[
+ |s|\leq S_\delta+1,\qquad
+ |\xi|\leq K_{\rm in}\delta e^{c_{\rm in}|s|}
+                     \langle s\rangle^{m_{\rm in}}.
+\]
+This also makes explicit why a global
 \(C_b^3\) remainder estimate independent of \(\delta\) is neither claimed
 nor needed.
 
-The same split gives the fixed-compact graph size asserted in
-\cref{lem:shared-graph-trace}.  On a fixed compact \(K\subset U\), the
-finite part of the stable integrand remains in one fixed physical
-neighborhood and is bounded independently of \(\delta\); its integral is
-therefore \(O(\delta)\).  The complementary tail is bounded by
+The same split gives the local graph size used in
+\cref{lem:shared-graph-trace}.  Fix \(L,C_0>0\) and take
+\(u=\gamma_0(s)+\xi\) in the \((X,Y)\)-coordinates, with
+\(|s|\le L\) and \(|\xi|\le C_0\delta\).  The finite part of every stable
+integrand and its required fixed-delay backtracks then remain in one fixed
+uncut physical neighborhood and are bounded independently of \(\delta\);
+their contribution is \(O(\delta)\).  The complementary tail is bounded by
 \(\delta A_\delta O(\delta^6)=o(\delta)\).  Consequently
 \begin{equation}
- \sup_{N,\nu,\zeta}\sup_{u\in K}
-       \|H_{N,\delta,\nu,\zeta}(u)\|_N
- \leq C_K\delta.                                      \label{eq:invdet-fixed-compact-size}
+ \sup_{\substack{N,\nu,\zeta,\ |s|\le L\\|\xi|\le C_0\delta}}
+ \|H_{N,\delta,\nu,\zeta}(\gamma_0(s)+\xi)\|_N
+ \leq C_{L,C_0}\delta.                               \label{eq:invdet-fixed-compact-size}
 \end{equation}
 
 At \(\rho=0\), one differentiation of
@@ -861,9 +952,10 @@ For the stable component, the only additional terms are the moments
  \leq\frac{k!}{(D\gamma)^{k+1}},
  \qquad k=0,1.                                      \label{eq:invdet-semigroup-moments}
 \end{equation}
-Consequently \(Z_{1,N}\) and \(Z_{2,N}\) depend only on the physical data
-on the declared depth-one and depth-two hulls, respectively.  The full
-fixed point still uses the untruncated integral in
+Consequently, on the retained tube, the restrictions of \(Z_{1,N}\) and
+\(Z_{2,N}\) depend only on the physical data on the declared depth-one and
+depth-two hulls, respectively.  Their global prepared continuations need not
+have this independence.  The full fixed point still uses the untruncated integral in
 \cref{eq:invdet-TH}; the split in
 \cref{eq:invdet-convolution-tail} is only an estimate.
 
@@ -918,13 +1010,28 @@ to equality of their reduced present states; it is not merely an equality
 after stationary projection.
 
 To return to the phase space \(\mathcal H_{N,\delta}\) in
-\cref{sec:model-results}, use the pointwise inverse fold chart together
-with the time reparametrization
-\(\vartheta=\delta\theta_{\rm phys}\).  This gives a continuous injective
-map from the slow history interval \([-\Theta_*,0]\) onto the original
-history interval \([-\Theta_*/\delta,0]\).  Consequently the embedding and
-history-equality statements above are statements about the full original
-RFDE histories, not only about their slow-coordinate representatives.
+\cref{sec:model-results}, first use the time reparametrization
+\(\vartheta=\delta\theta_{\rm phys}\).  The voltage history determines
+\begin{align*}
+ X(\vartheta)
+ &=\delta^{-1}\{\pi_N^Tv(\vartheta/\delta)-1\},\qquad
+ -\Theta_*\le\vartheta\le0,\\
+ h(\vartheta)
+ &=\delta^{-2}P_{\perp,N}v(\vartheta/\delta)-g_NX(\vartheta)^2.
+\end{align*}
+The current resource value gives
+\(Y(0)=\delta^{-2}(2/3-w(0))\), and the exact chart equation
+\(Y'=-X+\delta\nu\) then recovers the discarded resource past by
+\begin{equation}
+ Y(\vartheta)=Y(0)+\int_\vartheta^0X(r)\,\dd r
+                    +\delta\nu\,\vartheta .          \label{eq:invdet-recover-resource-history}
+\end{equation}
+These formulas define a continuous left inverse on the image of the slow
+history lift.  Hence the map into
+\(C([ -\Theta_*/\delta,0];\R^N)\times\R\) is injective even though the RFDE
+phase space stores only the current resource value.  Consequently the
+embedding and history-equality statements above concern the full original
+RFDE state, not only its slow-coordinate representative.
 
 Finally, let \(J\) be a retained interval of a graph orbit.  If
 \begin{equation}
