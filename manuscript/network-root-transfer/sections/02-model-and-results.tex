@@ -1,0 +1,380 @@
+\section{Network classes and main results}\label{sec:model-results}
+
+\subsection{Scalar leaky-recovery RFDE}
+
+Let \(r=5\sqrt5\), \((\tau_0,\tau_1)=(4\sqrt5,5\sqrt5)\), and
+\(H(v)=(v-1)^3\).  The autonomous scalar model is
+\begin{align}
+ \dot v={}&v-\frac{v^3}{3}-w
+ +\eps\kappa_1\left\{\frac{v(t-\tau_0)+v(t-\tau_1)}2-v(t)\right\}
+ \notag\\
+ &+\eps\kappa_3\left\{
+ \frac{H(v(t-\tau_0))+H(v(t-\tau_1))}{2}-H(v(t))\right\},\label{eq:scalar-v}\\
+ \dot w={}&\eps(v-a-w).\label{eq:scalar-w}
+\end{align}
+The validated center is
+\begin{equation}
+ \eps=\frac15,\qquad a=\frac14,\qquad
+ \kappa_1=\frac1{250},\qquad \kappa_3=\frac1{200}.       \label{eq:center}
+\end{equation}
+The full phase space is
+\(X=C([-r,0],\R^2)\).  Because the recovery equation has no delayed recovery
+slot, the positive-time semiflow factors through
+\begin{equation}
+ Y=C([-r,0],\R)\times\R,\qquad
+ \Pi_Y(\phi_v,\phi_w)=(\phi_v,\phi_w(0)).               \label{eq:reduced-space}
+\end{equation}
+This reduction preserves every nonzero Floquet multiplier and pulls stable
+sets back exactly; an obsolete recovery history is not an additional
+crossing coordinate.
+
+\subsection{Finite row-mass Dobrushin networks}
+
+For a finite network let \(Q,B_0,B_1\in\R^{N\times N}\) be nonnegative
+matrices and let \(\pi\) be any stationary probability vector satisfying
+\begin{equation}
+ Q\mathbf1=\mathbf1,\quad \pi^TQ=\pi^T,\quad
+ \pi^T\mathbf1=1,\quad
+ \tau(Q)\le\frac12,\qquad
+ B_j\mathbf1=\frac12\mathbf1.                           \label{eq:row-mass-network}
+\end{equation}
+Here \(\tau(Q)\) is the Dobrushin coefficient.  Zero entries of \(\pi\)
+are allowed, and no lower bound on \(\pi_{\min}\) enters the estimates.
+The row-mass identities preserve the collective line
+\(\Span\{\mathbf1\}\), but \(\Ker\pi^T\) need not be invariant under the
+delayed layers: no identity \(\pi^TB_j=\frac12\pi^T\) is assumed.
+Collective/quotient coordinates therefore produce an upper-triangular
+operator.  The former balanced direct sum is the special case
+\[
+ \delta_B=0,\qquad
+ \delta_B:=\delta_0+\delta_1,\qquad
+ \delta_j:=\frac12\norm{\pi^TB_j-\tfrac12\pi^T}_1,
+ \qquad 0\le\delta_B\le1.
+\]
+
+The finite leaky network to which the estimates below apply is, with
+\(f(s)=s-s^3/3\) and both \(f\) and \(H\) acting componentwise,
+\begin{align}
+ \dot v(t)={}&f(v(t))-w(t)+3(Q-\Id)v(t)\notag\\
+ &+\eps\kappa_1\{B_0v(t-\tau_0)+B_1v(t-\tau_1)-v(t)\}\notag\\
+ &+\eps\kappa_3\{B_0H(v(t-\tau_0))+B_1H(v(t-\tau_1))-H(v(t))\},
+                                                               \label{eq:leaky-network-v}\\
+ \dot w(t)={}&\eps\{v(t)-a\mathbf1-w(t)\}+2(Q-\Id)w(t).
+                                                               \label{eq:leaky-network-w}
+\end{align}
+Here \(v,w\in\R^N\), and all scalar constants are exactly those in
+\cref{eq:center}.  The row-mass identities imply that
+\(v=V\mathbf1\), \(w=W\mathbf1\) is invariant and that its restriction is
+exactly \cref{eq:scalar-v,eq:scalar-w}, including the two half-weighted
+delayed terms.  Thus the constants in the transverse theorem below refer to
+this RFDE, not to an unspecified network realization.
+
+Use the transverse history diameter norm
+\begin{equation}
+ \norm{\phi}_{1/10}
+ =\sup_{-r\le\theta\le0}e^{\theta/10}
+   \max\{\osc\phi_v(\theta),3\osc\phi_w(\theta)\}.      \label{eq:diameter-norm}
+\end{equation}
+
+\begin{theorem}[Complete-line transverse inverse]\label{thm:transverse}
+Along every complete synchronous leaky trajectory satisfying
+\(\sup_t\abs{V(t)-1}\le5/2\), every network satisfying
+\cref{eq:row-mass-network} has
+\begin{equation}
+ \norm{U_{\perp,N}(t,s)}_{1/10}\le e^{-(t-s)/10},
+ \qquad \norm{G_{\perp,N}}\le10.                       \label{eq:green-bound}
+\end{equation}
+The constants are independent of the finite network size and admitted
+topology.
+\end{theorem}
+
+The proof uses a directed Dobrushin--Halanay estimate and a forward pullback
+of zero-history forced solutions.  It never inverts an RFDE semiflow on the
+whole history space.
+
+We type the operator statement before giving the transfer corollary.  For a
+fixed phase and trace preparation, let
+\(\mathscr X_\parallel,\mathscr Y_\parallel\) be the Banach domain and
+codomain of the scalar phase-fixed Lin realization, and let
+\(\mathscr X_{\perp,N},\mathscr Y_{\perp,N}\) be their transverse network
+counterparts.  The scalar endpoint, phase, and gap rows are components of
+\(\mathscr Y_\parallel\).  A parameter derivative or other inhomogeneity is
+therefore an element of
+\(\mathscr Y_\parallel\oplus\mathscr Y_{\perp,N}\).  In these spaces,
+\[
+ \cL_\parallel\in\mathcal L(\mathscr X_\parallel,\mathscr Y_\parallel),
+ \quad
+ \cL_{\perp,N}\in
+   \mathcal L(\mathscr X_{\perp,N},\mathscr Y_{\perp,N}),
+ \quad
+ C_N\in\mathcal L(\mathscr X_{\perp,N},\mathscr Y_\parallel).
+\]
+The complete-line inverse in \cref{thm:transverse} supplies
+\(G_{\perp,N}=\cL_{\perp,N}^{-1}\in
+\mathcal L(\mathscr Y_{\perp,N},\mathscr X_{\perp,N})\).  Thus the row
+operation below acts on the codomain, not on the RFDE phase space.
+
+\begin{corollary}[Upper-triangular canonical root transfer]
+\label{cor:canonical-transfer}
+Suppose a scalar phase-fixed Lin operator has Fredholm index \(-1\), a
+one-dimensional normalized cokernel, gap \(d(\nu)\), and a simple root
+\(d(\nu_c)=0\).  If all network endpoint, phase, parameter, and gap rows are
+collective, then
+\begin{equation}
+ \cL_N=
+ \begin{pmatrix}\cL_{\parallel}&C_N\\0&\cL_{\perp,N}\end{pmatrix},
+ \qquad
+ T_N\cL_N=\cL_{\parallel}\oplus\cL_{\perp,N},           \label{eq:lin-sum}
+\end{equation}
+where
+\[
+ T_N(y_\parallel,y_\perp)
+ =\bigl(y_\parallel-C_NG_{\perp,N}y_\perp,y_\perp\bigr),
+ \qquad
+ \norm{C_NG_{\perp,N}}\le\frac{391}{2000}\delta_B.
+\]
+If \(\psi\) is the normalized scalar cokernel, the full normalized
+cokernel is
+\begin{equation}
+ \Psi_N(y_\parallel,y_\perp)
+ =\psi\bigl(y_\parallel-C_NG_{\perp,N}y_\perp\bigr).    \label{eq:full-cokernel}
+\end{equation}
+For a collective parameter row \((g_\parallel,0)\), one has
+\(\Psi_N(g_\parallel,0)=\psi(g_\parallel)\).  Hence
+\(d_N(\nu)=d(\nu)\), and every admitted finite network has the same
+Fredholm index, root, slope, and orientation as the scalar problem.
+\end{corollary}
+
+For the leaky model, \cref{thm:transverse} verifies the network block of
+this corollary.  The result is conditional on the scalar phase-fixed
+complete-history root and the declared collective preparation.  The scalar
+leaky root itself and an invariant asynchronous voltage strip remain separate
+open problems.
+
+\subsection{Uniform structural transfer}
+
+For each \(N\), let \(\mathfrak R_N\) be a Banach space of admissible
+perturbation data.  Its norm controls the instantaneous block, fixed-support
+delay measure, nonlinear jets, and trace preparation in their corresponding
+operator norms; it is not an unscaled Frobenius norm.  On a common parameter
+cylinder, let
+\[
+ \widetilde d_N:
+ I_\nu\times B_{\mathfrak R_N}(0,r_{\cR})\longrightarrow\R
+\]
+be the resulting normalized selected gap.  All derivatives with respect to
+\(\cR\) below are Fr\'echet derivatives in \(\mathfrak R_N\).
+
+\begin{theorem}[Dimension-uniform one-gap theorem]\label{thm:one-gap}
+Assume the graph--trace or augmented-Lin range problem is uniformly solvable,
+the model-fitting error is at most \(C_{\rm fit}\norm{\cR}\), and
+\(\widetilde d_N\) is jointly \(C^2\).  Suppose, uniformly in \(N\),
+\begin{equation}
+ \widetilde d_N(\nu_{0,N},0)=0,\qquad
+ \abs{a_N}:=\abs{\partial_\nu\widetilde d_N(\nu_{0,N},0)}\ge m_*>0,
+ \quad \norm{D_{\cR}\widetilde d_N}\le B_*,
+ \quad \norm{D^2\widetilde d_N}\le M_*.               \label{eq:root-bounds}
+\end{equation}
+Here \(B_*,M_*,C_{\rm fit}\ge0\).  If
+\(r_\nu,r_{\cR},\eta_*>0\) are respectively the common cylinder radii and
+the range-solve radius, set
+\begin{equation}
+ \rho_*=\min\left\{r_{\cR},\frac{m_*r_\nu}{2B_*},
+ \frac{m_*}{2M_*(1+2B_*/m_*)},
+ \frac{\eta_*}{C_{\rm fit}}\right\}.                   \label{eq:rho-star}
+\end{equation}
+Every quotient in \cref{eq:rho-star} whose nonnegative denominator is zero
+is, by convention, \(+\infty\); hence an identically absent error term
+imposes no artificial radius restriction.
+For every \(r=\norm{\cR_N}\le\rho_*\), there is exactly one root in
+\begin{equation}
+ \abs{\nu-\nu_{0,N}}\le\frac{2B_*}{m_*}r,              \label{eq:root-ball}
+\end{equation}
+and, with \(\ell_N=D_{\cR}\widetilde d_N(\nu_{0,N},0)\),
+\begin{equation}
+ \left|\nu_{c,N}(\cR_N)-\nu_{0,N}
+       +\frac{\ell_N[\cR_N]}{a_N}\right|
+ \le\frac{M_*}{2m_*}\left(1+\frac{2B_*}{m_*}\right)^2r^2. \label{eq:root-remainder}
+\end{equation}
+All constants are independent of the admitted finite network size.
+\end{theorem}
+
+The theorem concerns a selected complete-history root.  A zero-fiber
+implication is additionally required to call it a geometric canard, and a
+separate selection theorem is required to make it preparation independent.
+
+\subsection{A synchrony-quotient-free instance}
+
+We next state a separate network result whose node fields are heterogeneous
+and whose slow recovery variable is shared.  For each \(N\ge2\), let
+\(P_N\ge0\) be row stochastic and let \(\pi_N\) be a strictly positive
+stationary probability vector.  For fixed \(D,\gamma>0\), assume
+\begin{equation}
+ P_N\mathbf1=\mathbf1,\qquad
+ \pi_N^TP_N=\pi_N^T,\qquad \pi_N^T\mathbf1=1,\qquad
+ \tau(P_N)\le1-\gamma.                                \label{eq:shared-markov}
+\end{equation}
+Set
+\begin{equation}
+ P_{c,N}=\mathbf1\pi_N^T,\qquad P_{\perp,N}=\Id-P_{c,N},\qquad
+ E_N=\Ker\pi_N^T,\qquad A_N=D(P_N-\Id)|_{E_N},       \label{eq:shared-splitting}
+\end{equation}
+and equip \(\R^N\) with
+\begin{equation}
+ \norm{x}_N=\abs{\pi_N^Tx}+\osc(x).                   \label{eq:shared-norm}
+\end{equation}
+Let the curvature vectors satisfy, with constants independent of \(N\),
+\begin{equation}
+ 0<c_-\le c_{i,N}\le c_+,\qquad \pi_N^Tc_N=\alpha>0. \label{eq:shared-curvature}
+\end{equation}
+Fix \(\beta>0\), \(K\ne0\), and finitely many delay locations
+\(0\le\theta_0<\cdots<\theta_m\le\Theta_*\).  For
+\begin{equation}
+ B_{k,N}(\zeta)=B_{k,N}+\zeta R_{k,N},\qquad
+ C_N(\zeta)=\sum_{k=0}^mB_{k,N}(\zeta),                \label{eq:shared-layers}
+\end{equation}
+assume the fixed-support operator bound and the atomwise full-row
+neutrality
+\begin{equation}
+ \sup_N\sum_{k=0}^m
+ \left(\norm{B_{k,N}}_{\cL(\R^N,\norm{\cdot}_N)}
+       +\norm{R_{k,N}}_{\cL(\R^N,\norm{\cdot}_N)}\right)<\infty,
+ \qquad \pi_N^TR_{k,N}=0.                             \label{eq:shared-layer-bounds}
+\end{equation}
+The latter is a row identity, not merely
+\(\pi_N^TR_{k,N}\mathbf1=0\).
+
+For \(\eps=\delta^2\), the RFDE is
+\begin{align}
+ \dot v(t)={}&\frac23\mathbf1-w(t)\mathbf1
+ -c_N\circ(v(t)-\mathbf1)^{\circ2}
+ -\frac\beta3(v(t)-\mathbf1)^{\circ3}+D(P_N-\Id)v(t)\notag\\
+ &+\delta^2K\left\{C_N(\zeta)v(t)
+ -\sum_{k=0}^mB_{k,N}(\zeta)
+       v\left(t-\frac{\theta_k}{\delta}\right)\right\},
+                                                               \label{eq:shared-rfde-v}\\
+ \dot w(t)={}&\delta^2\{\pi_N^Tv(t)-a\},             \label{eq:shared-rfde-w}
+\end{align}
+where \(v\in\R^N\), \(w\in\R\), and the powers and products are
+componentwise.  Its collective fold is
+\((v,w,a)=(\mathbf1,2/3,1)\).  Write
+\begin{equation}
+ a=1+\delta^2\nu,\qquad \mu=a-1=\delta^2\nu,\qquad
+ \dot M_{1,N}=\sum_{k=0}^m\theta_kR_{k,N},             \label{eq:shared-parameters}
+\end{equation}
+and define
+\begin{align}
+ g_N&=A_N^{-1}P_{\perp,N}c_N,\notag\\
+ \kappa_N&=\frac\beta3+2\pi_N^T\diag(c_N)g_N,\qquad
+ \nu_{0,N}=-\frac{3\kappa_N}{8\alpha^3},             \label{eq:shared-center}\\
+ r_N&=\frac{K}{2\alpha}\pi_N^T\diag(c_N)
+ A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.            \label{eq:shared-rn}
+\end{align}
+
+For completeness, we also fix the selection entering the theorem.  In the
+fold chart
+\[
+ s=\delta t,\qquad w=\frac23-\delta^2Y,\qquad
+ v=\mathbf1+\delta\mathbf1X
+       +\delta^2\{g_NX^2+h\},\qquad h\in E_N,
+\]
+the singular critical field is
+\(q_0(X,Y)=(Y-\alpha X^2,-X)\).  A uniformly admissible preparation rule
+\(\mathcal P=(\mathcal P_N)\) means that the same frozen graph cutoffs,
+planar joining cutoff, degree-three normal extension, phase buffer, and
+invariant-tail levels are used for every \(N\), with common derivative
+bounds; the preparation is independent of \((\nu,\zeta)\) and agrees with
+\cref{eq:shared-rfde-v,eq:shared-rfde-w} on the retained continuous
+depth-two \(q_0\)-flow hull of half-length
+\(S_\delta=\sqrt{2p\log(1/\delta)}\), for an exponent \(p>4\) fixed in the
+theorem below.  It selects attracting and repelling phase-fixed planar
+traces \(z^a_{N,\mathcal P_N}\) and
+\(z^r_{N,\mathcal P_N}\), with phase \(X(0)=0\).  Their normalized central
+gap is
+\begin{align}
+ \mathscr D_{N,\mathcal P_N}(\delta,\nu,\zeta)
+  &=\frac{2}{\alpha e}\left\{
+    \mathscr H_\alpha(z^a_{N,\mathcal P_N}(0))
+   -\mathscr H_\alpha(z^r_{N,\mathcal P_N}(0))\right\},
+                                                               \label{eq:shared-gap}\\
+ \mathscr H_\alpha(X,Y)
+  &=\frac12e^{-2\alpha Y}
+    \left(\alpha Y-\alpha^2X^2+\frac12\right).       \label{eq:shared-first-integral}
+\end{align}
+On the retained graph, a zero of \(\mathscr D_{N,\mathcal P_N}\) is
+equivalent to equality of the two selected complete RFDE histories.
+
+\begin{theorem}[Main theorem: shared-resource network response]
+\label{thm:shared-resource}
+Assume \cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds}
+with all displayed bounds common in \(N\), and assume
+\begin{equation}
+ \inf_{N\ge2}\abs{r_N}>0.                              \label{eq:shared-nondegeneracy}
+\end{equation}
+Fix \(p>4\) sufficiently large, a compact interval \(I_\nu\) containing
+every \(\nu_{0,N}\) in its interior with one common positive boundary
+distance, and a class of uniformly admissible preparation rules with one
+set of bounds.  Then there exist
+\(\delta_0,\zeta_0,c_0,C>0\), independent of \(N\) and of the rule in
+that class, such that for every \(N\ge2\), every
+\(0<\delta<\delta_0\), every \(\abs\zeta<\zeta_0\), and every admitted
+\(\mathcal P\), the gap \(\mathscr D_{N,\mathcal P_N}/\delta\) has exactly
+one root in the local window
+\(\{\nu:\abs{\nu-\nu_{0,N}}<c_0\}\subset I_\nu\),
+\begin{equation}
+ \nu_{c,N,\mathcal P_N}(\delta,\zeta)\in I_\nu,
+ \qquad
+ \abs{\nu_{c,N,\mathcal P_N}(\delta,\zeta)-\nu_{0,N}}<c_0. \label{eq:shared-root}
+\end{equation}
+No assertion is made here about additional zeros elsewhere in \(I_\nu\).
+The selected attracting and repelling complete histories agree at this
+root.  With
+\(\mu_{c,N,\mathcal P_N}=\delta^2\nu_{c,N,\mathcal P_N}\),
+\begin{align}
+ &\left|\mu_{c,N,\mathcal P_N}(\delta,\zeta)
+       -\mu_{c,N,\mathcal P_N}(\delta,0)
+       -\mathscr C_N\delta^3\zeta\right|
+ \le C\{\delta^4\abs\zeta+\delta^3\zeta^2\},        \label{eq:shared-response}\\
+ &\mathscr C_N=-\frac{r_N}{\alpha}
+ =-\frac{K}{2\alpha^2}\pi_N^T\diag(c_N)
+ A_N^{-1}P_{\perp,N}\dot M_{1,N}\mathbf1.             \label{eq:shared-coeff}
+\end{align}
+In particular,
+\(\inf_N\abs{\mathscr C_N}>0\).  The exact finite-\(\delta\) root may
+depend on \(\mathcal P_N\); its coefficient and the displayed remainder
+bound do not within the declared preparation class.
+\end{theorem}
+
+The nondegeneracy class is nonempty without a hidden synchrony quotient.
+Indeed, take \(\pi_N=N^{-1}\mathbf1\), \(P_N=P_{c,N}\), and
+\[
+ s_{i,N}=\frac{\sqrt3(2i-N-1)}{\sqrt{(N-1)(N+1)}},
+ \qquad c_N=\mathbf1+\sigma s_N,\qquad 0<\sigma<1/\sqrt3.
+\]
+These choices satisfy
+\[
+ \pi_N^Ts_N=0,\qquad \pi_N^Ts_N^{\circ2}=1,\qquad
+ \norm{s_N}_\infty<\sqrt3,\qquad \alpha=1.
+\]
+For two delays \(\theta_0<\theta_1\), set
+\[
+ B_{0,N}=B_{1,N}=bP_{c,N},\qquad
+ R_{0,N}=s_N\pi_N^T,\qquad R_{1,N}=-s_N\pi_N^T,
+ \qquad b>0.
+\]
+The layers remain entrywise positive for
+\(\abs\zeta<b/\sqrt3\), all entries of
+\(c_N\) are distinct, and
+\begin{equation}
+ \mathscr C_N=\frac{K\sigma(\theta_0-\theta_1)}{2D}\ne0
+                                                               \label{eq:shared-witness-coeff}
+\end{equation}
+for every \(N\ge2\).  The distinct curvatures destroy every nontrivial
+synchrony polydiagonal.
+
+This instance proves that the general root mechanism is not merely an
+arbitrary-size replication of a two-module quotient.  It does not cover
+moving delay atoms, arbitrary perturbations of the base topology, or graph
+families whose mixing gap closes, and it does not identify the
+preparation-indexed root with an independently selected physical outer
+canard.

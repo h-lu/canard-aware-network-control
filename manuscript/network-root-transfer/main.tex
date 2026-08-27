@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\input{preamble}
+
+\newcommand{\papertitle}{Dimension-Uniform Transfer of Selected
+Complete-History Roots in Finite Retarded Networks}
+
+\title{\papertitle}
+\author{Haibo Lu\\
+  \small Shanghai Institute of Technology, Shanghai, China\\
+  \small \href{mailto:luhaibo1985@gmail.com}{luhaibo1985@gmail.com}\\
+  \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
+\date{}
+\hypersetup{
+  pdftitle={Dimension-Uniform Transfer of Selected Complete-History Roots in Finite Retarded Networks},
+  pdfauthor={Haibo Lu},
+  pdfsubject={Selected history roots in finite retarded Dobrushin networks},
+  pdfkeywords={canard matching, retarded functional differential equation,
+    Dobrushin network, Lin method, complete-history root}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study phase-fixed roots defined by matching complete histories in finite
+retarded networks.  The principal result treats a shared-resource family on
+directed Markov networks with a common Dobrushin gap, fixed delay support,
+and heterogeneous node curvatures.  A dimension-uniform invariant-history
+graph and two selected one-sided traces reduce the matching problem to a
+scalar normalized gap.  For every finite network size and every preparation
+in a bounded common class, this gap has a unique local root.  Its response to
+an atomwise row-neutral perturbation has an explicit nonzero leading
+coefficient and a remainder uniform in network size and in the preparation.
+An explicit family with pairwise distinct curvatures shows that the response
+does not arise from a nontrivial synchrony quotient.
+
+The proof separates the collective and transverse mechanisms.  Dobrushin
+contraction supplies a dimension-free stable inverse, while a graph--trace
+range construction turns the formal fold expansion into equality of two
+retained RFDE histories.  For a companion leaky FitzHugh--Nagumo network, we
+also prove network-size-independent transverse decay and a causal
+complete-line Green bound.  An exact upper-triangular row reduction then
+transfers any supplied scalar simple Lin root through delayed layers that
+need not share a left stationary measure.  The shared-resource root is
+preparation indexed: the theorem does not identify it with a
+preparation-independent physical canard, and the leaky scalar root is not
+constructed here.
+\end{abstract}
+
+\noindent\textbf{Keywords.}
+canard matching; retarded functional differential equation; finite network;
+Dobrushin contraction; Lin method; complete-history root
+
+\medskip
+\noindent\textbf{Mathematics Subject Classification (2020).}
+34K26; 34E17; 37G10
+
+\input{sections/01-introduction}
+\input{sections/02-model-and-results}
+\input{sections/03-network-mechanism}
+\input{sections/04-conclusion}
+
+\section*{Acknowledgements}
+OpenAI Codex assisted with symbolic calculations, proof auditing, and textual
+organization.  The author assumes responsibility for all mathematical claims
+and for the final manuscript.
+
+\section*{Declarations}
+\paragraph{Funding.} No funding was received for conducting this study.
+\paragraph{Competing interests.} The author has no relevant financial or
+non-financial interests to disclose.
+\paragraph{Data and code availability.} Development sources are currently
+maintained in a private research repository.  A paper-specific public archive,
+including an immutable version and exact verification instructions, will be
+released before submission.
+
+\begingroup
+\small
+\bibliographystyle{plainnat}
+\bibliography{../../references/references}
+\endgroup
+\end{document}

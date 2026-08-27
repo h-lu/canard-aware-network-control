@@ -1,0 +1,107 @@
+\section{Introduction}\label{sec:introduction}
+
+In a retarded differential equation, an orbit is represented at each time by
+an entire history segment.  This matters near a canard connection: matching
+two current states need not match the delayed information that subsequently
+returns to the critical direction.  Delayed canards have been established in
+several scalar and spatially extended settings
+\citep{campbell2009delay,krupa2016complex,krupa2016explosion,
+avitabile2020local}, while Lin-type constructions for functional differential
+equations provide a natural language for phase-fixed matching
+\citep{hale1986heteroclinic,lin1986exponential,hupkes2009lin}.  The question
+addressed here is whether a selected complete-history root can be controlled
+uniformly after the scalar problem is embedded into finite retarded networks.
+
+Two elementary reductions do not answer this question.  First, copying a
+scalar orbit on the synchronous line proves invariance but gives no inverse
+for nonsynchronous histories.  Second, row-mass preservation leaves the
+collective line invariant, yet delayed coupling layers need not preserve the
+transverse complement determined by a stationary measure.  The linearized
+network operator is then upper triangular rather than an orthogonal direct
+sum.  A current-state projection would remove precisely the delayed
+transverse contribution that feeds back into the collective matching row.
+
+These obstructions are distinct from the dimensional-reduction questions
+usually organized around spectral modes, synchronization quotients, or
+graph limits
+\citep{laurence2019spectral,thibeault2020threefold,masuda2022dimension,
+ma2023generalized,bramburger2023pattern}.  They also persist in network models
+with delayed feedback or canard-type collective dynamics
+\citep{balzer2024cascading,liu2026predicting}.  Our estimates instead use
+oscillation norms and a common Dobrushin gap; no eigenbasis, reversibility, or
+simultaneous diagonalization of the coupling layers is required.
+
+\subsection{Principal result}
+
+The main theorem, \cref{thm:shared-resource}, concerns a shared-resource RFDE
+on a finite directed Markov network.  Node curvatures may be heterogeneous,
+the delay support is fixed, and the perturbation of each delay atom is
+neutral with respect to the stationary row.  After the fold scaling
+\(\varepsilon=\delta^2\), a bounded common preparation selects an attracting
+and a repelling phase-fixed trace.  Their normalized complete-history gap has,
+for every finite network size, exactly one root in a common local parameter
+window.  If \(\mu=\delta^2\nu\) and \(\zeta\) denotes the structural
+perturbation, then
+\begin{equation}
+ \mu_{c,N,\mathcal P_N}(\delta,\zeta)
+ =\mu_{c,N,\mathcal P_N}(\delta,0)
+   +\mathscr C_N\delta^3\zeta
+   +O(\delta^4|\zeta|+\delta^3\zeta^2),                 \label{eq:intro-response}
+\end{equation}
+uniformly in \(N\) and in the declared preparation class, with
+\(\inf_N|\mathscr C_N|>0\).  At the root the two selected retained histories
+are equal, not merely their present states.  An explicit family with
+pairwise-distinct curvatures has the same nonzero coefficient for every
+\(N\ge2\) and admits no nontrivial synchrony polydiagonal.
+
+The root in \cref{eq:intro-response} is deliberately indexed by
+\(\mathcal P_N\).  The preparation fixes the cutoffs, tail levels, and
+phase convention used to select the two one-sided traces.  The theorem proves
+that the leading structural coefficient and the displayed remainder bound
+are uniform across the declared class; it does not prove that the exact
+finite-\(\delta\) root is independent of that selection.  Nor does it
+identify the root with an independently selected geometric or physical outer
+canard.
+
+\subsection{Mechanism and companion transfer results}
+
+The proof of the main theorem has four steps.  A Dobrushin estimate gives a
+dimension-free exponential inverse on the transverse network space.  An
+exact fold chart then produces a common contraction for an invariant history
+graph, including the required state and parameter jets.  One-sided Gaussian
+Green operators solve the trace, phase, and endpoint equations with bounds
+uniform in network size.  Only after this range problem is solved do we pair
+the reduced field with its adjoint.  Atomwise row neutrality cancels the
+direct structural delay term, leaving a mixed-curvature contribution that
+produces \(\mathscr C_N\).  Strict monotonicity of the normalized gap then
+gives the unique root.  The decisive bridge is the injectivity of the history
+graph: equality in the scalar reduced gap becomes equality of the retained
+complete RFDE histories.
+
+Three supporting results isolate parts of this mechanism.  For the leaky
+FitzHugh--Nagumo network in \cref{eq:leaky-network-v,eq:leaky-network-w},
+\cref{thm:transverse} gives dimension- and topology-uniform transverse decay
+and a causal complete-line Green bound.  When the endpoint, phase, parameter,
+and gap data are collective, \cref{cor:canonical-transfer} uses a bounded
+codomain row operation to reduce the upper-triangular Lin operator to the
+scalar/transverse direct sum.  Consequently any supplied scalar simple root
+has exactly the same root, slope, and orientation in every admitted finite
+network.  Finally, \cref{thm:one-gap} records an abstract quantitative
+perturbation statement with an explicit root radius and quadratic remainder.
+
+The companion leaky result is a transfer theorem, not an existence theorem
+for its scalar root.  The main shared-resource result constructs its own
+selected histories and root, but only for a common Dobrushin gap, fixed delay
+support, an atomwise row-neutral perturbation direction, and a bounded class
+of preparations.  Signed coupling, moving delay atoms, closing mixing gaps,
+infinite networks, and preparation-independent canard selection lie outside
+the proved scope.
+
+\subsection{Organization}
+
+\Cref{sec:model-results} states the two network classes and the four main
+results.  \Cref{sec:network-mechanism} proves first the complete-line inverse
+and triangular transfer, and then the invariant-history graph, trace range,
+normalized gap expansion, and explicit non-synchrony witness needed for the
+principal theorem.  The final section records the exact mathematical boundary
+of the resulting root theory.
