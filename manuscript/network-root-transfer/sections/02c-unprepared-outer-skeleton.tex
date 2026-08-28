@@ -167,13 +167,163 @@ and
 \end{equation}
 \end{corollary}
 
+The preceding matrix splitting does have a positive-\(\delta\),
+voltage-history-space consequence, provided the resource coordinate is frozen.
+This is the first ambient RFDE estimate needed by an outer-history
+construction.  It is convenient to use fold time \(s=\delta t\), for which
+the history length is fixed rather than \(O(\delta^{-1})\).
+
+For
+\(\eta=(E_0,\ldots,E_m)\in\mathfrak T_N^{\rm red}\), write
+\(L_{k,N}(\eta)=B_{k,N}+E_k\), and put
+\begin{equation}
+ \mathscr X_N=C([-\theta_m,0];\R^N),\qquad
+ \mathfrak a_N(r)=
+ \left\{\frac1{|\lambda_{c,N}(r)|}
+             +\frac2{D\gamma}\right\}^{-1}.         \label{eq:frozen-history-a}
+\end{equation}
+Fix \(0<\vartheta<1/4\).  For \(0<\delta<e^{-1}\) and \(r\ne0\), define
+the smooth capped rate and its associated fading-history norm by
+\begin{align}
+ \kappa_{N,\delta}(r)
+ &=\vartheta\left\{
+       \frac{\delta}{\mathfrak a_N(r)}
+       +\frac{\theta_m}{\log(1/\delta)}\right\}^{-1},
+                                                        \label{eq:frozen-history-rate}\\
+ \|\phi\|_{N,r,\delta}^{\sharp}
+ &=\sup_{-\theta_m\le\theta\le0}
+       e^{2\kappa_{N,\delta}(r)\theta}\|\phi(\theta)\|_N.
+                                                        \label{eq:frozen-history-norm}
+\end{align}
+The harmless case \(\theta_m=0\) is interpreted by deleting the second
+term in braces and reducing the history equation to an ODE.
+
+\begin{proposition}[Frozen-resource voltage-history splitting]
+\label[proposition]{prop:frozen-voltage-history-splitting}
+Retain \cref{prop:unprepared-outer-skeleton,cor:outer-reduced-actions} and
+the structural-ball layers \cref{eq:structural-ball-layers}.  After
+decreasing \(r_{\rm out},\delta_0,\eta_0>0\), independently of \(N\), the
+following holds whenever
+\[
+ 0<\delta<\delta_0,\qquad
+ \rho_\delta\le |r|\le r_{\rm out},\qquad
+ \|\eta\|_{\mathfrak T_N}<\eta_0.
+\]
+On \(\mathscr X_N\), consider the frozen-resource voltage RFDE
+\begin{equation}
+ u'(s)=\delta^{-1}\mathcal J_N^{\rm fv}(r)u(s)
+ +\delta K\sum_{k=0}^mL_{k,N}(\eta)
+       \{u(s)-u(s-\theta_k)\}.                      \label{eq:frozen-voltage-rfde}
+\end{equation}
+Let \(\mathcal T_{N,\delta,r,\eta}(s)\) denote its solution semigroup.
+
+If \(r>0\), the whole history space is exponentially stable and
+\begin{equation}
+ \|\mathcal T_{N,\delta,r,\eta}(s)\phi\|_{N,r,\delta}^{\sharp}
+ \le C e^{-\kappa_{N,\delta}(r)s}
+       \|\phi\|_{N,r,\delta}^{\sharp},qquad s\ge0.  \label{eq:frozen-attracting-history-estimate}
+\end{equation}
+If \(r<0\), there is an invariant splitting
+\begin{equation}
+ \mathscr X_N=\mathscr W^s_{N,\delta,r,\eta}
+                 \oplus\mathscr W^u_{N,\delta,r,\eta},
+ \qquad \operatorname{codim}\mathscr W^s=1,
+ \qquad \dim\mathscr W^u=1,                         \label{eq:frozen-repelling-history-splitting}
+\end{equation}
+whose projections have norm at most \(C\) in
+\cref{eq:frozen-history-norm}.  On the stable space,
+\begin{equation}
+ \|\mathcal T(s)\phi^s\|_{N,r,\delta}^{\sharp}
+ \le C e^{-\kappa_{N,\delta}(r)s}
+       \|\phi^s\|_{N,r,\delta}^{\sharp},\qquad s\ge0.          \label{eq:frozen-repelling-stable-estimate}
+\end{equation}
+The unstable space is spanned by
+\begin{equation}
+ h^u_{N,\delta,r,\eta}(\theta)
+ =e^{\lambda^u_{N,\delta,r,\eta}\theta}
+       e^u_{N,\delta,r,\eta},qquad -\theta_m\le\theta\le0, \label{eq:frozen-unstable-history}
+\end{equation}
+where \(\ell_{c,N}(r)e^u_{N,\delta,r,\eta}=1\) and
+\begin{equation}
+ \left|\lambda^u_{N,\delta,r,\eta}
+       -\delta^{-1}\lambda_{c,N}(r)\right|\le C\delta,
+ \qquad
+ \|e^u_{N,\delta,r,\eta}-e_{c,N}(r)\|_N\le C\delta^2,       \label{eq:frozen-unstable-root-estimate}
+\end{equation}
+and the inverse restricted to this line satisfies
+\begin{equation}
+ \|\mathcal T(-s)|_{\mathscr W^u}\|
+ \le C e^{-\lambda^u_{N,\delta,r,\eta}s},\qquad s\ge0.     \label{eq:frozen-unstable-inverse-estimate}
+\end{equation}
+Here \(\mathcal T(-s)|_{\mathscr W^u}\) is only the inverse on the
+one-dimensional invariant line; no backward RFDE semiflow is asserted.
+
+The bundles, projections, unstable root, and normalized unstable history are
+twice Fr\'{e}chet differentiable in \(\eta\), in fixed graph charts, with
+common operator-norm bounds through order two.  The proof is controlled by
+the dimension-free quantity
+\begin{equation}
+ \epsilon_{N,\delta}(r)
+ :=C\frac{\delta^2
+       \{1+e^{2\kappa_{N,\delta}(r)\theta_m}\}}
+          {\mathfrak a_N(r)}
+ \le C\frac{\delta^{1-2\vartheta}}{S_\delta}=o(1).  \label{eq:frozen-history-smallness}
+\end{equation}
+In particular, the attracting equation has no characteristic root with
+real part greater than \(-\kappa_{N,\delta}(r)\); on the repelling branch the
+only such root is the real simple root in
+\cref{eq:frozen-unstable-root-estimate}.
+\end{proposition}
+
+The fading factor \(2\kappa\) in the phase norm and the smaller decay rate
+\(\kappa\) in the conclusion are intentional.  The margin controls the
+translation of prescribed old history before one full delay has elapsed;
+using the same exponent in both places would leave no perturbative gap.
+For clarity, this is a fading-norm estimate: its comparison with the ordinary
+supremum norm is
+\begin{equation}
+ \|\phi\|^\sharp_{N,r,\delta}\le\|\phi\|_\infty
+ \le e^{2\kappa_{N,\delta}(r)\theta_m}
+       \|\phi\|^\sharp_{N,r,\delta}
+ \le\delta^{-2\vartheta}\|\phi\|^\sharp_{N,r,\delta}.         \label{eq:frozen-history-norm-equivalence}
+\end{equation}
+The cap is also necessary at the level of this model class: long-delay weak
+modes need not retain a \(\delta\)-independent fast-time decay rate.
+
+\begin{remark}[Why the resource direction must be phase-quotiented]
+\label[remark]{rem:frozen-resource-phase-quotient}
+\Cref{prop:frozen-voltage-history-splitting} cannot be upgraded by simply
+adjoining the frozen resource equation and retaining the phrase ``one
+unstable direction.''  In the admissible homogeneous, delay-free collective
+subclass \(c_N=\alpha\mathbf1\), the collective voltage--resource block in
+the original time is
+\[
+ \dot u=\lambda_{c,N}(r)u-\omega,
+ \qquad \dot\omega=\delta^2u,
+\]
+and hence has characteristic polynomial
+\begin{equation}
+ \lambda^2-\lambda_{c,N}(r)\lambda+\delta^2.         \label{eq:full-frozen-resource-polynomial}
+\end{equation}
+For \(r<0\) with \(|r|\ge\rho_\delta\), both roots are real and positive
+for all sufficiently small \(\delta\).  Thus the unquotiented full frozen
+system has two unstable collective--resource roots on the repelling branch.
+The additional slow root signals a degree of freedom that can be related to
+the longitudinal bundle only after a genuine slow history has been
+constructed.  A physical outer theorem must first prove a
+stable--center--strong-unstable trichotomy containing that longitudinal
+bundle and only then impose phase to obtain the normal stable/one-strong-
+unstable splitting; the raw full frozen system does not have the latter
+dichotomy.
+\end{remark}
+
 The proofs, including the dimension-uniform block graph construction, are in
 \cref{sec:supplementary-outer-skeleton}.  Three qualifications are essential.
 First, \cref{eq:outer-stable-layer-semigroup} concerns the leading
-frozen-resource voltage matrix \(\mathcal J^{\rm fv}_{N}(r)\), not the
-finite-\(\delta\) RFDE spectrum;
-the long delays
-can create weak history modes.  Second, the action is that of the principal
+frozen-resource voltage matrix \(\mathcal J^{\rm fv}_{N}(r)\).  Its
+positive-\(\delta\) frozen-resource RFDE upgrade is precisely
+\cref{prop:frozen-voltage-history-splitting}; neither result includes the
+resource tangent or a nonautonomous slow history.  Second, the action is that of the principal
 normal equation \(\delta^2n_T=\lambda_{c,N}(r(T))n\), not yet an action
 estimate for an invariant RFDE slow-history graph.  Third, at
 \(r=\pm\rho_\delta\), so that \(X=r/\delta\), the critical curve has

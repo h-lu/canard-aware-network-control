@@ -32,7 +32,8 @@ fixed.
 | Preparation-relative canonical response germ | `thm:canonical-response-germ` | Pairwise fixed-preparation expansion and uniform derivative limit |
 | Selected weighted connection conormal | `thm:weighted-connection-jet`, `thm:structural-ball-connection`, `cor:schur-full-conormal`, `thm:joint-redistribution-conormal` | Both models raywise; shared-resource full structural ball under an admissible rule; cokernel-valued jet; pairwise preparation-independent limiting conormal; fixed-chart covariance with the front-face qualification for chart families |
 | Physical-identification interface | `prop:physical-weighted-c1-transfer` | Weighted `C^1` root criterion, gap-level sufficient conditions, and conditional section/defining-function naturality; no physical root existence is asserted |
-| Critical-layer precursor | `prop:unprepared-outer-skeleton` | Preparation-independent constant-history critical curve and dimension-uniform leading frozen-resource fast-voltage splitting; not a positive-`delta` RFDE spectral theorem |
+| Critical-layer precursor | `prop:unprepared-outer-skeleton` | Preparation-independent constant-history critical curve and dimension-uniform leading frozen-resource fast-voltage splitting |
+| Positive-`delta` frozen voltage histories | `prop:frozen-voltage-history-splitting`, `rem:frozen-resource-phase-quotient` | Capped-rate full-history stability/splitting for the frozen-resource voltage RFDE, uniform structural `C^2` bounds, and an exact obstruction to the raw full-system one-unstable formulation; no nonautonomous slow tracker |
 | Truncated reduced actions | `cor:outer-reduced-actions` | Formal critical-curve speed and two positive truncated actions for the reduced critical-layer equation; not an invariant slow-history action |
 | Weak-selection obstruction | `prop:backward-asymptotic-nonselection` | A common phase row, convergence in an unnormalized history norm, and superalgebraic strong-history closeness do not by themselves select a unique tame RFDE history family; generic logical counterexample, not a model-specific impossibility theorem |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
@@ -127,11 +128,12 @@ The limits separate exactly:
   locus and selected-to-physical weighted `C^1` identification remain open
   under Issue #32.  Issue #11 concerns a different Paper III model and is not
   an input to Paper A.
-- The preparation-independent critical curve, leading frozen-voltage
-  splitting, and truncated reduced actions are proved precursors only.  They are not a
-  finite-`delta` RFDE slow-history theorem.  The generic nonselection example
-  is a logical counterexample to weak selection criteria, not a
-  model-specific impossibility theorem; G0 and G1 remain open.
+- The preparation-independent critical curve, frozen-resource
+  positive-`delta` voltage-history splitting, and truncated reduced actions
+  are proved precursors.  They are not a nonautonomous RFDE slow-history
+  theorem.  The generic nonselection example is a logical counterexample to
+  weak selection criteria, not a model-specific impossibility theorem; the
+  phase-quotiented part of G0 and all of G1 remain open.
 - A zero leading covector does not rule out higher-order response.
 - The one-delay no-go applies only to the pure-redistribution leading source
   after coincident atoms have been merged.

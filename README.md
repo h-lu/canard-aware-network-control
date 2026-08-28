@@ -25,6 +25,13 @@ The workspace, branch, and eventual public-release policy is recorded in
 research design remains in
 [docs/flagship-research-design.md](docs/flagship-research-design.md).
 
+Paper A now also proves a positive-`delta`, capped-rate full-history
+splitting for the frozen-resource outer voltage RFDE, uniformly in finite
+network size.  This closes the frozen voltage part of the physical
+outer-history gate.  It does not yet construct the phase-quotiented
+nonautonomous slow histories, their exact fold overlap, or a physical
+preparation-independent root.
+
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:
 > unshifted coefficient plus output/row phase, or shifted coefficient plus

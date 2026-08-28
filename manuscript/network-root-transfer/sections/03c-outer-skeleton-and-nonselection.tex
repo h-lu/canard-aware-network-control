@@ -225,6 +225,288 @@ Integrating on either branch proves
 \cref{eq:outer-critical-fold-offset}.
 \end{proof}
 
+\subsection{Positive-\texorpdfstring{\(\delta\)}{delta} frozen-voltage histories}
+
+\begin{proof}[Proof of \cref{prop:frozen-voltage-history-splitting}]
+We give a direct trajectory-space proof.  In particular, no determinant,
+normality of \(P_N\), or backward RFDE semiflow is used.  The common layer
+bound and the structural-ball radius give
+\begin{equation}
+ b_*:=|K|\sup_{N,\,\|\eta\|_{\mathfrak T_N}<\eta_0}
+       \sum_{k=0}^m\|L_{k,N}(\eta)\|<\infty.         \label{eq:frozen-layer-common-bound}
+\end{equation}
+
+We first collect the current-state estimates.  Decrease \(r_{\rm out}\) so
+that, for one \(c_0>0\),
+\begin{equation}
+ |\lambda_{c,N}(r)|\ge c_0|r|,
+ \qquad 0<|r|\le r_{\rm out}.                       \label{eq:frozen-collective-gap}
+\end{equation}
+For \(r>0\), the rank-one eigenprojection and
+\cref{eq:outer-stable-layer-semigroup} give
+\begin{equation}
+ \|e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)s}\|
+ \le M_0e^{-\mathfrak a_N(r)s/\delta},\qquad s\ge0. \label{eq:frozen-current-attracting}
+\end{equation}
+For \(r<0\), put
+\begin{equation}
+ P_N^u(r)=e_{c,N}(r)\ell_{c,N}(r),\qquad
+ P_N^s(r)=\Id-P_N^u(r).                              \label{eq:frozen-current-projections}
+\end{equation}
+The same estimates imply
+\begin{align}
+ \|e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)s}P_N^s(r)\|
+ &\le M_0e^{-\mathfrak a_N(r)s/\delta},&&s\ge0,\notag\\
+ \|e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)s}P_N^u(r)\|
+ &\le M_0e^{\mathfrak a_N(r)s/\delta},&&s\le0.     \label{eq:frozen-current-repelling}
+\end{align}
+The harmonic definition in \cref{eq:frozen-history-a} is only a smooth
+common lower rate for the two current blocks.  Uniform boundedness of the
+projections follows from \cref{eq:outer-eigen-from-graphs}.
+
+Write \(\kappa=\kappa_{N,\delta}(r)\) for the rest of the proof.  From
+\cref{eq:frozen-history-rate},
+\begin{equation}
+ 2\kappa<\frac{\mathfrak a_N(r)}{2\delta},\qquad
+ e^{2\kappa\theta_m}\le\delta^{-2\vartheta}.        \label{eq:frozen-cap-bounds}
+\end{equation}
+If a current path \(y\) and a prescribed old history are assembled into
+\(\widehat y\), set
+\begin{equation}
+ \mathcal R_\eta[\widehat y_s]
+ =\delta K\sum_{k=0}^mL_{k,N}(\eta)
+       \{\widehat y(s)-\widehat y(s-\theta_k)\}.     \label{eq:frozen-delay-operator}
+\end{equation}
+On any exponentially weighted trajectory space, translation across one
+delay gives at most the factor \(e^{2\kappa\theta_m}\).  The current Green
+integrals and \cref{eq:frozen-cap-bounds} therefore give the common
+perturbation number
+\begin{equation}
+ q_{N,\delta}(r)
+ \le C\frac{\delta^2
+       \{1+e^{2\kappa\theta_m}\}}{\mathfrak a_N(r)}.
+                                                               \label{eq:frozen-LP-number}
+\end{equation}
+Since \(\mathfrak a_N(r)\ge c|r|\) on the retained interval and
+\(|r|\ge\rho_\delta=\delta S_\delta/(2\alpha)\),
+\begin{equation}
+ q_{N,\delta}(r)
+ \le C\frac{\delta^{1-2\vartheta}}{S_\delta}=o(1).  \label{eq:frozen-LP-small}
+\end{equation}
+This proves \cref{eq:frozen-history-smallness} and permits one common choice
+of \(\delta_0\) for which every contraction below has constant at most
+one half.
+
+Suppose first that \(r>0\).  For \(\phi\in\mathscr X_N\), prescribe
+\(\widehat y(\theta)=\phi(\theta)\) for \(-\theta_m\le\theta\le0\) and use
+variation of constants for \(s\ge0\):
+\begin{equation}
+ y(s)=e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)s}\phi(0)
+ +\int_0^s e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)(s-u)}
+       \mathcal R_\eta[\widehat y_u]\,\dd u.        \label{eq:frozen-attracting-VoC}
+\end{equation}
+For a future path put
+\(\|y\|_+=\sup_{s\ge0}e^{\kappa s}\|y(s)\|_N\).
+If \(u-\theta_k\ge0\), then
+\begin{equation*}
+ e^{\kappa u}\|y(u-\theta_k)\|_N
+ \le e^{\kappa\theta_m}\|y\|_+.
+\end{equation*}
+If \(u-\theta_k<0\), the factor two in
+\cref{eq:frozen-history-norm} gives instead
+\begin{equation}
+ e^{\kappa u}\|\phi(u-\theta_k)\|_N
+ \le e^{-\kappa u+2\kappa\theta_k}
+       \|\phi\|_{N,r,\delta}^{\sharp}
+ \le e^{2\kappa\theta_m}
+       \|\phi\|_{N,r,\delta}^{\sharp}.             \label{eq:frozen-old-history-bound}
+\end{equation}
+Using \cref{eq:frozen-current-attracting} in
+\cref{eq:frozen-attracting-VoC}, the Green integral is bounded by
+\begin{equation*}
+ \int_0^s e^{-\mathfrak a_N(r)(s-u)/\delta}
+              e^{-\kappa u}\,\dd u
+ \le\frac{e^{-\kappa s}}
+          {\mathfrak a_N(r)/\delta-\kappa}.
+\end{equation*}
+Thus \cref{eq:frozen-LP-number} and a Neumann argument give
+\begin{equation}
+ \|y(s)\|_N
+ \le C e^{-\kappa s}\|\phi\|_{N,r,\delta}^{\sharp}.
+                                                               \label{eq:frozen-attracting-current-decay}
+\end{equation}
+To lift this estimate to a history segment, take
+\(-\theta_m\le\theta\le0\).  If \(s+\theta\ge0\), then
+\begin{equation*}
+ e^{2\kappa\theta}\|y(s+\theta)\|_N
+ \le Ce^{-\kappa s}e^{\kappa\theta}
+       \|\phi\|_{N,r,\delta}^{\sharp}.
+\end{equation*}
+If \(s+\theta<0\), translation of the prescribed history gives
+\begin{equation*}
+ e^{2\kappa\theta}\|\phi(s+\theta)\|_N
+ \le e^{-2\kappa s}\|\phi\|_{N,r,\delta}^{\sharp}.
+\end{equation*}
+Taking the supremum proves
+\cref{eq:frozen-attracting-history-estimate}.  Notice that the old-history
+shift is estimated directly; a spectral bound alone would not prove this
+semigroup estimate.
+
+Now let \(r<0\).  Define the unperturbed unstable history embedding
+\begin{equation}
+ (\jmath_N^ua)(\theta)
+ =e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)\theta}a,\qquad
+ a\in\Ran P_N^u(r),\quad -\theta_m\le\theta\le0,    \label{eq:frozen-base-unstable-embedding}
+\end{equation}
+and the fixed complementary coordinate space
+\begin{equation}
+ \mathscr K_N(r)=\{\psi\in\mathscr X_N:
+                         P_N^u(r)\psi(0)=0\}.       \label{eq:frozen-base-stable-coordinate}
+\end{equation}
+The map \(\jmath_N^u\), current evaluation, and both coordinate
+projections are bounded uniformly in the fading norm.  Every history has a
+unique representation \(\psi+\jmath_N^ua\).
+
+For a given \(\psi\in\mathscr K_N(r)\), seek
+\(a\in\Ran P_N^u(r)\) and a future path \(y\) with \(\|y\|_+<\infty\).
+Assemble the old history as
+\(\widehat y(\theta)=\psi(\theta)+(\jmath_N^ua)(\theta)\).  The
+Lyapunov--Perron equations are
+\begin{align}
+ y(s)={}&e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)s}
+              P_N^s(r)\psi(0)\notag\\
+ &+\int_0^s e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)(s-u)}P_N^s(r)
+       \mathcal R_\eta[\widehat y_u]\,\dd u\notag\\
+ &-\int_s^\infty e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)(s-u)}P_N^u(r)
+       \mathcal R_\eta[\widehat y_u]\,\dd u,        \label{eq:frozen-stable-LP}\\
+ a={}&-\int_0^\infty
+       e^{-\delta^{-1}\mathcal J_N^{\rm fv}(r)u}P_N^u(r)
+       \mathcal R_\eta[\widehat y_u]\,\dd u.        \label{eq:frozen-stable-boundary}
+\end{align}
+The last identity is simply the unstable projection of the first one at
+\(s=0\), so endpoint compatibility is exact.  The stable forward integral
+has denominator
+\(\mathfrak a_N(r)/\delta-\kappa\), and the unstable future integral has
+denominator \(\mathfrak a_N(r)/\delta+\kappa\).  Together with
+\cref{eq:frozen-old-history-bound}, this makes
+\cref{eq:frozen-stable-LP,eq:frozen-stable-boundary} a contraction with
+constant bounded by \cref{eq:frozen-LP-number}.  Its unique solution obeys
+\begin{equation}
+ \|y\|_++\|a\|_N
+ \le C\|\psi\|_{N,r,\delta}^{\sharp}.               \label{eq:frozen-stable-LP-bound}
+\end{equation}
+Linearity defines a bounded graph map
+\(F^s_{N,\delta,r,\eta}:\mathscr K_N(r)\to\Ran P_N^u(r)\), with
+\begin{equation}
+ \|F^s_{N,\delta,r,\eta}\|
+ \le Cq_{N,\delta}(r),                               \label{eq:frozen-stable-graph-small}
+\end{equation}
+and
+\begin{equation}
+ \mathscr W^s_{N,\delta,r,\eta}
+ =\{\psi+\jmath_N^uF^s_{N,\delta,r,\eta}\psi:
+                 \psi\in\mathscr K_N(r)\}.         \label{eq:frozen-stable-history-graph}
+\end{equation}
+Conversely, variation of constants for any solution with finite
+\(\|y\|_+\), followed by unstable projection and passage of the terminal
+time to infinity, recovers
+\cref{eq:frozen-stable-LP,eq:frozen-stable-boundary}.  The graph therefore
+characterizes exactly the histories whose future decays at this rate.  It is
+invariant by uniqueness.  The same two-case history-segment estimate used
+above proves \cref{eq:frozen-repelling-stable-estimate}.
+
+For the complementary line, solve directly on \((-\infty,0]\).  Given
+\(a\in\Ran P_N^u(r)\), seek \(y\) satisfying
+\begin{align}
+ y(s)={}&e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)s}a\notag\\
+ &+\int_0^s e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)(s-u)}P_N^u(r)
+       \mathcal R_\eta[y_u]\,\dd u\notag\\
+ &+\int_{-\infty}^s
+       e^{\delta^{-1}\mathcal J_N^{\rm fv}(r)(s-u)}P_N^s(r)
+       \mathcal R_\eta[y_u]\,\dd u.                 \label{eq:frozen-unstable-LP}
+\end{align}
+On the space with norm
+\(\sup_{s\le0}e^{-\kappa s}\|y(s)\|_N\), a delayed value lies farther in
+the decaying direction:
+\begin{equation*}
+ e^{-\kappa s}\|y(s-\theta_k)\|_N
+ \le e^{-\kappa\theta_k}
+       \sup_{u\le0}e^{-\kappa u}\|y(u)\|_N.
+\end{equation*}
+The two Green integrals hence give a contraction no larger than
+\cref{eq:frozen-LP-number}.  This constructs a one-dimensional space of
+complete backward histories, which is invariant by autonomy and uniqueness.
+For its history at zero, the same contraction estimate gives explicitly
+\begin{equation}
+ \|(y_a)_0-\jmath_N^ua\|_{N,r,\delta}^{\sharp}
+ \le Cq_{N,\delta}(r)\|a\|_N.                       \label{eq:frozen-unstable-graph-small}
+\end{equation}
+The stable and unstable graphs are \(o(1)\) perturbations of complementary
+base graphs, so they remain complementary and their projections are bounded
+by one common constant.  This proves
+\cref{eq:frozen-repelling-history-splitting}.
+
+For completeness, invariance of the one-dimensional line gives a continuous
+one-dimensional group.  Hence there is a real \(\lambda^u\) and a normalized
+current vector \(e^u\), with \(\ell_{c,N}(r)e^u=1\), for which its histories
+have the form \cref{eq:frozen-unstable-history}.  Projecting
+\cref{eq:frozen-unstable-LP} onto the current stable graph gives
+\begin{equation}
+ \|e^u-e_{c,N}(r)\|_N\le C\delta^2.                 \label{eq:frozen-unstable-vector-proof-bound}
+\end{equation}
+Indeed, the stable current Green denominator is
+\(\lambda^u+D\gamma/(2\delta)\), while the delayed coefficient is
+\(O(\delta)\); hence the stable resolvent is \(O(\delta)\), without first
+using the root expansion.  Substitution of
+\(e^{\lambda^us}e^u\) into \cref{eq:frozen-voltage-rfde}, followed by
+\(\ell_{c,N}(r)\), yields
+\begin{equation}
+ \lambda^u-\delta^{-1}\lambda_{c,N}(r)
+ =\delta K\sum_{k=0}^m\ell_{c,N}(r)L_{k,N}(\eta)
+       \{1-e^{-\lambda^u\theta_k}\}e^u.            \label{eq:frozen-unstable-scalar-equation}
+\end{equation}
+The right-hand side is \(O(\delta)\), because \(\lambda^u>0\) for small
+\(\delta\).  This proves \cref{eq:frozen-unstable-root-estimate}.  The group
+on the line now gives
+\cref{eq:frozen-unstable-inverse-estimate}.
+
+It remains to justify the structural derivatives.  The delay locations are
+fixed, the map \(\eta\mapsto(L_{0,N}(\eta),\ldots,L_{m,N}(\eta))\) is
+affine in the full operator-sum norm, and the fading weight is independent of
+\(\eta\).  Thus every Lyapunov--Perron map above is twice Fr\'{e}chet
+differentiable on one fixed Banach space, and its first two derivatives have
+common bounds.  Differentiating the contraction equation once and twice and
+using \((1-q_{N,\delta}(r))^{-1}\le2\) gives common bounds for the graph
+maps.  The usual graph-projection formulas give the same bounds for the
+projections.  Differentiating
+\cref{eq:frozen-unstable-scalar-equation} and the stable current equation
+gives the asserted bounds for \(\lambda^u,e^u\), and
+\cref{eq:frozen-unstable-history}.  More explicitly, solve the stable
+current equation for \(e^u=e_{c,N}+e^s(\lambda,\eta)\); its stable resolvent
+and its first two \((\lambda,\eta)\)-derivatives are uniformly bounded at the
+displayed scales.  After moving the right side of
+\cref{eq:frozen-unstable-scalar-equation} to the left, the derivative of the
+resulting scalar residual with respect to \(\lambda\) is
+\(1+O(\delta)\), because the atoms \(\theta_k\) are fixed.  It is at least
+one half for small \(\delta\), so the ordinary implicit-function theorem
+supplies the claimed \(C^2_\eta\) root and vector.  No moving evaluation atom
+is differentiated.
+
+Finally, complexify the phase space and all graph maps.  Every characteristic
+solution is then a phase-space orbit and splits according to
+\cref{eq:frozen-repelling-history-splitting}.  The stable estimate excludes a
+characteristic exponent with real part greater than \(-\kappa\), except for
+the displayed unstable line; the attracting estimate gives the analogous
+exclusion there.  A generalized vector at \(\lambda^u\) would produce a
+second linearly independent, nondecaying generalized history, contradicting
+the one-dimensional unstable summand: indeed,
+\cref{eq:frozen-unstable-root-estimate,eq:frozen-history-rate} give
+\(\lambda^u>\kappa\), so every polynomial multiple of
+\(e^{\lambda^us}\) lies in the backward weighted class used in
+\cref{eq:frozen-unstable-LP}.  Thus the displayed real root is
+algebraically simple.  This completes the proof.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem

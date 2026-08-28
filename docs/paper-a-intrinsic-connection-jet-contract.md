@@ -142,15 +142,20 @@ Singular `delta`-dependent rescalings can alter the limit and are excluded.
 
 For the shared-resource Markov RFDE, the unprepared critical curve, leading
 frozen-voltage splitting, and two positive formal truncated reduced actions are
-now proved in Proposition `prop:unprepared-outer-skeleton`.  Supplementary
+now proved in Proposition `prop:unprepared-outer-skeleton`.  Proposition
+`prop:frozen-voltage-history-splitting` upgrades the voltage layer to a
+positive-`delta`, capped-rate splitting on the fixed full-history space,
+uniformly in network size and twice Frechet in the structural layer tuple.
+It freezes the resource and does not construct a slow tracker.  Supplementary
 Proposition `prop:backward-asymptotic-nonselection` proves that bounded
 complete backward extension, convergence in an unnormalized history norm,
 and even superalgebraic strong-history closeness do not select a unique tame
 history jet.  The following finite-`delta` items remain unproved uniformly in
 `N`:
 
-1. a full-history outer dichotomy with exactly one strong repelling unstable
-   bundle and an infinite-dimensional stable history complement;
+1. a phase-quotiented, nonautonomous outer normal splitting along a true
+   positive-`delta` slow tracker; the raw voltage--resource one-unstable
+   formulation is false in an admissible homogeneous subclass;
 2. a parameter-coherent `C^1_nu C^2_eta` attracting representative and
    repelling codimension-one history sheet;
 3. the finite-`delta` resource correction needed for entry into the receding
@@ -169,8 +174,9 @@ recorded in
 [`paper-a-physical-outer-history-route.md`](paper-a-physical-outer-history-route.md).
 They are a proof design, not additional manuscript claims.
 
-G0 and G1 remain open.  The critical-layer proposition is only a precursor,
-and the generic nonselection example is not a model-specific impossibility
+The frozen-voltage part of G0 is closed.  The phase quotient, true slow
+tracker, and nonautonomous roughness part of G0, as well as G1, remain open.
+The generic nonselection example is not a model-specific impossibility
 theorem for the shared-resource RFDE.
 
 ## 5. Stop/go rules
@@ -205,11 +211,15 @@ Do not:
       hypotheses and no implied existence.
 - [x] Prove the unprepared outer critical curve, leading frozen-voltage
       splitting, and positive formal truncated reduced actions.
+- [x] Prove the positive-`delta` frozen-resource voltage full-history
+      splitting with a capped rate, and isolate the raw full-system
+      two-unstable obstruction.
 - [x] Prove that bounded backward convergence in an unnormalized history norm
       and superalgebraic history closeness do not select a unique tame
       parameterized history.
-- [ ] Prove the finite-`delta` full-history dichotomy, mixed outer-history
-      Lyapunov--Perron construction, and exact fold-graph overlap for Paper A.
+- [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
+      outer-history Lyapunov--Perron construction, and exact fold-graph
+      overlap for Paper A.
 - [ ] Identify the physical front-face conormal with `Lambda_N`.
 - [ ] Prove a nontrivial passage-jet composition law beyond the conditional
       exact-holonomy re-cutting naturality already proved, or another genuinely

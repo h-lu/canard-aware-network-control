@@ -1,8 +1,9 @@
 # Paper A: physical outer-history route after the layer theorem
 
-Status: **the unprepared critical curve, leading frozen-voltage splitting,
-formal truncated reduced actions, and a sharp nonselection obstruction are proved;
-the finite-`delta` RFDE slow-history theorem is open.**
+Status: **the unprepared critical curve, formal truncated reduced actions,
+the positive-`delta` frozen-resource voltage history splitting, and a sharp
+nonselection obstruction are proved; the phase-quotiented nonautonomous RFDE
+slow-history theorem is open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -47,6 +48,31 @@ that inference, not a model-specific nonexistence theorem.
 
 These are genuine critical-layer inputs and a genuine logical obstruction.  They do not
 construct a finite-`delta` slow-history representative.
+
+Proposition `prop:frozen-voltage-history-splitting` now closes the first
+positive-`delta` ambient-history gate for the **frozen-resource voltage
+equation**.  In fold time `s=delta t` it proves, on the fixed history space,
+
+- capped-rate stability of the full attracting voltage history space;
+- on the repelling branch, an invariant codimension-one stable history
+  space and a one-dimensional strong-unstable history line;
+- constants and structural `C^2_eta` graph/projection bounds uniform in
+  network size.
+
+The fading phase norm uses exponent `2 kappa`, while the evolution estimate
+uses `kappa`; this margin controls old-history translation.  The contraction
+number is
+
+```text
+C delta^2 {1 + exp(2 kappa theta_m)} / a(r)
+    <= C delta^(1-2 vartheta) / S_delta.
+```
+
+This is not the full voltage--resource theorem.  Remark
+`rem:frozen-resource-phase-quotient` gives an admissible homogeneous
+subclass in which the raw frozen repelling voltage--resource block has two
+positive roots.  The correct next object is therefore a phase-quotiented
+normal cocycle, not an unquotiented one-unstable dichotomy.
 
 ## 2. The exact curve-restricted physical equation
 
@@ -151,7 +177,8 @@ infinitely many stable history modes.  The correct mixed boundary data are:
 - one scalar strong-unstable coordinate at the outer endpoint
   `r=-r_out`.
 
-Schematically, after a full-history dichotomy has been proved, the normal
+Schematically, after the frozen splitting has been transferred to a
+phase-quotiented nonautonomous normal cocycle, the normal
 Lyapunov--Perron equation must have the form
 
 ```text
@@ -225,8 +252,8 @@ kappa_delta
            + delta^(1-vartheta)/S_delta}.
 ```
 
-If the required full-history dichotomy and boundary-map estimates are
-proved, this would close after first choosing `r_out` small and then
+If the required nonautonomous normal splitting and boundary-map estimates
+are proved, this would close after first choosing `r_out` small and then
 `delta` small.  The corresponding conservative boundary-forgetting scale is
 
 ```text
@@ -236,19 +263,20 @@ C delta^(-M) exp{-c log(1/delta)/delta},
 which is still smaller than every algebraic power.  No such estimate is yet
 claimed in the manuscript.
 
-## 5. The first new analytic lemma
+## 5. The next new analytic lemma
 
-The next proof cannot start from the instantaneous matrix theorem alone.
-It must establish, on the curvewise, `delta`-dependent complete-history
-space:
+The frozen-resource voltage theorem is now proved.  The next proof must
+construct a true positive-`delta` slow tracker, fix its time-shift direction,
+and transfer the frozen bundles to the resulting nonautonomous normal
+cocycle.  It must establish:
 
-1. an attracting history evolution with a capped-weight stable estimate;
-2. on the repelling branch, exactly one strong unstable history bundle and
-   a complementary infinite-dimensional stable history bundle;
-3. roughness under the nonautonomous `O(delta^2)` delay operator and the
-   `O(delta^2)` slow-curve correction;
-4. joint `C^1_nu C^2_eta` Frechet bounds for the projections, boundary maps,
-   and fixed point, uniform in `N`.
+1. a parameter-coherent true slow tracker on both outer branches;
+2. a normalized tangent history and a fixed phase row;
+3. roughness of the frozen voltage bundles under the nonautonomous
+   slow-curve and modulation terms;
+4. the attracting representative and repelling mixed-boundary sheet;
+5. joint `C^1_nu C^2_eta` Frechet bounds for the normal bundles, boundary
+   maps, and fixed points, uniform in `N`.
 
 Only after this lemma may the mixed Lyapunov--Perron equation in Section 3
 be called an actual construction.
@@ -284,7 +312,12 @@ not acceptable.
       superalgebraic history closeness do not select a tame history jet.
 - [x] Exact curve-restricted physical invariance equation and correct mixed
       boundary geometry recorded.
-- [ ] Full RFDE history dichotomy with one strong repelling unstable bundle.
+- [x] Positive-`delta` frozen-resource voltage history splitting, with one
+      strong repelling unstable line and a full stable history complement.
+- [x] Proof that the raw full voltage--resource one-unstable target is false
+      before phase quotienting.
+- [ ] Phase-quotiented nonautonomous normal splitting along a true slow
+      history.
 - [ ] Attracting representative and repelling codimension-one history sheet
       with uniform parameter jets.
 - [ ] The `delta^2/(2 alpha)` resource correction and exact overlap with the
