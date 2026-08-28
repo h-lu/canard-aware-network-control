@@ -1,0 +1,211 @@
+\section{Preparation-independent critical-layer geometry}
+\label{sec:unprepared-outer-skeleton}
+
+The finite-section noncanonicity result raises a sharper question: which
+outer features are nevertheless fixed by the physical equation?  The
+following result answers this at the critical-layer level and shows precisely
+why it does not select a complete history.  The splitting is for the leading
+frozen-resource fast-voltage matrix obtained by omitting the
+\(O(\delta^2)\) current and delayed variational terms; the critical curve is
+not a finite-\(\delta\) slow solution.
+
+Put
+\begin{equation}
+ \mathcal A_N=D(P_N-\Id),\qquad
+ \mathcal N_N(x)=c_N\circ x^{\circ2}
+              +\frac\beta3x^{\circ3}.                 \label{eq:outer-fast-nonlinearity}
+\end{equation}
+
+\begin{proposition}[Uniform critical curve and leading frozen-voltage splitting]
+\label[proposition]{prop:unprepared-outer-skeleton}
+Assume the common Markov, curvature, and operator bounds in
+\cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds}.
+There are \(r_0,C,C_P>0\), independent of \(N\) and of the delay layers,
+with the following properties.
+
+For \(|r|\le r_0\), there is a solution
+\(z_{0,N}(r)\in E_N\) of
+\begin{equation}
+ A_Nz_{0,N}(r)
+ =P_{\perp,N}\mathcal N_N
+       \bigl(r\mathbf1+z_{0,N}(r)\bigr),
+ \qquad \|z_{0,N}(r)\|_N\le Cr^2,                  \label{eq:outer-critical-transverse}
+\end{equation}
+and it is the unique solution in the displayed \(Cr^2\)-ball.
+Define
+\begin{align}
+ x_{0,N}(r)&=r\mathbf1+z_{0,N}(r),\notag\\
+ V_{0,N}(r)&=\mathbf1+x_{0,N}(r),\notag\\
+ w_{0,N}(r)&=\frac23-\pi_N^T\mathcal N_N(x_{0,N}(r)).
+                                                               \label{eq:outer-critical-curve}
+\end{align}
+Then the constant history with value \(V_{0,N}(r)\), at frozen resource
+\(w_{0,N}(r)\), is an exact zero of the unprepared voltage field for every
+positive \(\delta\), every admitted redistribution, and either recovery law.  In
+particular, this critical curve uses no cutoff or completion.  Uniformly for
+\(0\le j\le3\),
+\begin{align}
+ z_{0,N}(r)
+ &=g_Nr^2+g_{3,N}r^3+R^z_N(r),
+ &\|\partial_r^jR^z_N(r)\|_N&\le C|r|^{4-j},\notag\\
+ w_{0,N}(r)
+ &=\frac23-\alpha r^2-\kappa_Nr^3+R^w_N(r),
+ &|\partial_r^jR^w_N(r)|&\le C|r|^{4-j},             \label{eq:outer-critical-expansion}
+\end{align}
+where
+\begin{equation}
+ g_{3,N}=2A_N^{-1}P_{\perp,N}(c_N\circ g_N).         \label{eq:outer-g3}
+\end{equation}
+
+The leading frozen-resource fast-voltage matrix along this curve is
+\begin{equation}
+ \mathcal J^{\rm fv}_{N}(r)=\mathcal A_N-\diag\!\left(
+       2c_N\circ x_{0,N}(r)+\beta x_{0,N}(r)^{\circ2}
+                                  \right).            \label{eq:outer-layer-jacobian}
+\end{equation}
+It has a real simple eigenvalue \(\lambda_{c,N}(r)\), continued from the
+collective zero eigenvalue at the fold, and corresponding right eigenvector
+and left eigenfunctional \(e_{c,N}(r)\), \(\ell_{c,N}(r)\), normalized by
+\begin{equation}
+ \ell_{c,N}(r)\mathbf1=1,
+ \qquad \ell_{c,N}(r)e_{c,N}(r)=1.                  \label{eq:outer-eigen-normalization}
+\end{equation}
+Writing \(O_{\rm unif}\) for a remainder whose bound is independent of
+\(N\), they obey, in the vector and dual norms,
+\begin{align}
+ e_{c,N}(r)&=\mathbf1+2rg_N+O_{\rm unif}(r^2),\notag\\
+ \ell_{c,N}(r)&=\pi_N^T
+   +2r\,\pi_N^T\diag(c_N)A_N^{-1}P_{\perp,N}+O_{\rm unif}(r^2),\notag\\
+ \lambda_{c,N}(r)&=-2\alpha r-3\kappa_Nr^2+O_{\rm unif}(r^3),
+                                                               \label{eq:outer-eigen-expansion}
+\end{align}
+where all remainder constants are independent of \(N\).  If
+\(P^s_N(r)=\Id-e_{c,N}(r)\ell_{c,N}(r)\), then
+\begin{equation}
+ \|e^{\mathcal J^{\rm fv}_{N}(r)t}P^s_N(r)\|
+ \le C_Pe^{-D\gamma t/2},\qquad t\ge0.              \label{eq:outer-stable-layer-semigroup}
+\end{equation}
+Consequently the leading frozen-resource voltage layer is attracting for
+\(0<r\le r_0\), whereas for \(-r_0\le r<0\) it has exactly one unstable
+direction.  This statement excludes both the resource zero direction and all
+positive-\(\delta\) current and delayed variational terms.
+
+There is also an exact sign identity.  With
+\begin{equation}
+ \Theta_N(r)=\ell_{c,N}(r)V_{0,N}'(r),               \label{eq:outer-theta}
+\end{equation}
+one has \(\Theta_N(r)=1+O_{\rm unif}(r^2)\); after decreasing \(r_0\),
+\begin{equation}
+ \frac12\le\Theta_N(r)\le\frac32,
+ \qquad
+ \lambda_{c,N}(r)=\frac{w_{0,N}'(r)}{\Theta_N(r)}.  \label{eq:outer-eigen-identity}
+\end{equation}
+\end{proposition}
+
+\begin{corollary}[Truncated action for the reduced critical-layer equation]
+\label[corollary]{cor:outer-reduced-actions}
+Retain \cref{prop:unprepared-outer-skeleton}.
+For the shared-resource and sensed-recovery laws, respectively, set
+\begin{align}
+ \sigma_N^{\rm sh}(r)&=r,\notag\\
+ \sigma_N^{\rm rec}(r)&=\pi_N^T\!\left[
+   \varpi_N\circ x_{0,N}(r)
+   +d_N^{\rm rec}\circ x_{0,N}(r)^{\circ2}\right]. \label{eq:outer-recovery-source}
+\end{align}
+For the second formula, assume additionally \cref{eq:sensing-bounds}.  Then
+\begin{equation}
+ \sigma_N^{\rm rec}(r)=r+\chi_N^{\rm rec}r^2+O_{\rm unif}(r^3).
+                                                               \label{eq:outer-recovery-expansion}
+\end{equation}
+Fix \(p>4\) and \(\nu_*>0\), restrict to \(|\nu|\le\nu_*\), and let
+\begin{equation}
+ S_\delta=\sqrt{2p\log(1/\delta)},\qquad
+ \rho_\delta=\frac{\delta S_\delta}{2\alpha},       \label{eq:outer-matching-radius}
+\end{equation}
+and use slow time \(T=\delta^2t\).  There are fixed
+\(0<r_{\rm out}<r_0\) and \(\delta_0>0\), depending only on
+\(p,\nu_*\) and the common bounds, such that, for either
+\(\diamond\in\{\mathrm{sh},\mathrm{rec}\}\) and every
+\(0<\delta<\delta_0\),
+\begin{equation}
+ q^\diamond_{N,\delta,\nu}(r)
+ :=\frac{\sigma_N^\diamond(r)-\delta^2\nu}{w_{0,N}'(r)}
+ =-\frac1{2\alpha}
+   +O_{\rm unif}\!\left(|r|+\frac{\delta^2}{|r|}\right)       \label{eq:outer-reduced-speed}
+\end{equation}
+on \(\rho_\delta\le|r|\le r_{\rm out}\), and
+\begin{equation}
+ -\frac{3}{2\alpha}\le q^\diamond_{N,\delta,\nu}(r)
+ \le-\frac1{6\alpha}.                               \label{eq:outer-speed-sign}
+\end{equation}
+The two truncated reduced actions
+\begin{align}
+ \mathcal A^a_{N,\diamond}
+ &=\int_{\rho_\delta}^{r_{\rm out}}
+      \frac{\lambda_{c,N}(r)}
+           {q^\diamond_{N,\delta,\nu}(r)}\,\dd r,\notag\\
+ \mathcal A^r_{N,\diamond}
+ &=-\int_{-r_{\rm out}}^{-\rho_\delta}
+      \frac{\lambda_{c,N}(r)}
+           {q^\diamond_{N,\delta,\nu}(r)}\,\dd r       \label{eq:outer-normal-actions}
+\end{align}
+are positive for \(0<\delta<\delta_0\).  These are truncated actions of the
+formal reduced critical-curve equation, not actions of finite-\(\delta\)
+invariant RFDE histories.  If \(\rho_\delta\le r_{\rm out}/2\), then, uniformly in
+\(N\), \(\nu\), and the two recovery laws,
+\begin{equation}
+ \min\{\mathcal A^a_{N,\diamond},
+        \mathcal A^r_{N,\diamond}\}
+ \ge \frac{\alpha^2r_{\rm out}^2}{6}=:\mathcal A_*>0,
+                                                               \label{eq:outer-action-lower-bound}
+\end{equation}
+and
+\begin{equation}
+ \mathcal A^{a/r}_{N,\diamond}
+ =2\alpha^2(r_{\rm out}^2-\rho_\delta^2)
+   +O_{\rm unif}(r_{\rm out}^3+\delta^2r_{\rm out}). \label{eq:outer-action-expansion}
+\end{equation}
+\end{corollary}
+
+The proofs, including the dimension-uniform block graph construction, are in
+\cref{sec:supplementary-outer-skeleton}.  Three qualifications are essential.
+First, \cref{eq:outer-stable-layer-semigroup} concerns the leading
+frozen-resource voltage matrix \(\mathcal J^{\rm fv}_{N}(r)\), not the
+finite-\(\delta\) RFDE spectrum;
+the long delays
+can create weak history modes.  Second, the action is that of the principal
+normal equation \(\delta^2n_T=\lambda_{c,N}(r(T))n\), not yet an action
+estimate for an invariant RFDE slow-history graph.  Third, at
+\(r=\pm\rho_\delta\), so that \(X=r/\delta\), the critical curve has
+\begin{equation}
+ d_{\rm crit}
+ =\frac{2/3-w_{0,N}(r)}{\delta^2}-\alpha X^2
+      +\frac1{2\alpha}
+ =\frac1{2\alpha}+O_{\rm unif}(\delta S_\delta^3),            \label{eq:outer-critical-fold-offset}
+\end{equation}
+whereas the retained canard tube has \(|d|<\delta^\kappa\).  Thus, in the
+present \(r\)-parameterization and fold chart, a physical outer-history
+theorem must at least produce the leading finite-\(\delta\) correction
+\begin{equation}
+ w^{{\rm slow},\diamond,\pm}_{N,\delta,\nu,\zeta}(\pm\rho_\delta)
+ =w_{0,N}(\pm\rho_\delta)+\frac{\delta^2}{2\alpha}
+   +E^{\diamond,\pm}_{N,\delta,\nu,\zeta}.          \label{eq:outer-required-resource-correction}
+\end{equation}
+A sufficient resource-coordinate remainder for entry into
+\(|d|<\delta^\kappa\) would be
+\(E^{\diamond,\pm}_{N,\delta,\nu,\zeta}
+=o(\delta^{2+\kappa})\), uniformly in the displayed indices on a fixed
+admissible compact \((\nu,\zeta)\)-window.  Even that
+would not prove exact overlap without the corresponding voltage and full
+history estimates.
+
+Nor can such a theorem obtain a unique history merely by asking for a
+bounded complete backward extension converging in an unnormalized history
+norm to a reference branch.
+\Cref{prop:backward-asymptotic-nonselection} gives an explicit RFDE
+counterexample, even for families which are superalgebraically close in a
+strong history norm and share one phase row.  These qualitative conditions
+alone prove neither uniqueness nor the required weighted parameter jets.
+Any complete-history construction for this RFDE must therefore specify an
+additional model-dependent selection or normalization and prove its uniform
+jets.

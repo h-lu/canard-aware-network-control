@@ -1,0 +1,377 @@
+\section{Critical-layer geometry and a history-selection obstruction}
+\label{sec:supplementary-outer-skeleton}
+
+\subsection{Proofs for the preparation-independent critical layer}
+
+\begin{proof}[Proof of \cref{prop:unprepared-outer-skeleton}]
+Put \(a_*=D\gamma\).  The estimates
+\cref{eq:poisson-bound,eq:shared-products} imply, with constants independent
+of \(N\),
+\begin{align}
+ \|\mathcal N_N(x)\|_N
+ &\le C_2\|x\|_N^2+C_3\|x\|_N^3,\notag\\
+ \|D\mathcal N_N(x)\|
+ &\le C_4\|x\|_N+C_5\|x\|_N^2.                     \label{eq:outer-N-bounds}
+\end{align}
+For fixed \(r\), consider on \(E_N\)
+\begin{equation}
+ \mathcal T_{N,r}(z)=A_N^{-1}P_{\perp,N}
+       \mathcal N_N(r\mathbf1+z).                   \label{eq:outer-critical-contraction}
+\end{equation}
+Choose \(M_z\) larger than twice the common quadratic bound in
+\cref{eq:outer-N-bounds}.  If \(r_0\) is sufficiently small, uniformly in
+\(N\), the map \(\mathcal T_{N,r}\) sends
+\(\{\|z\|_N\le M_zr^2\}\) into itself and has Lipschitz constant at most
+one half.  Its fixed point is the unique fixed point in that ball and is the
+solution \(z_{0,N}(r)\) of \cref{eq:outer-critical-transverse}.
+
+On this ball,
+\begin{equation}
+ A_N-P_{\perp,N}D\mathcal N_N(r\mathbf1+z_{0,N}(r))
+                                                               \label{eq:outer-critical-derivative}
+\end{equation}
+has inverse norm at most \(2a_*^{-1}\).  Repeated differentiation of the
+fixed-point equation therefore gives uniform \(C^4\) bounds.  Substituting
+\(z_{0,N}(r)=z_{2,N}r^2+z_{3,N}r^3+O_{\rm unif}(r^4)\) into
+\cref{eq:outer-critical-transverse} gives
+\begin{align*}
+ A_Nz_{2,N}&=P_{\perp,N}c_N,\\
+ A_Nz_{3,N}&=P_{\perp,N}
+       \left(2c_N\circ g_N+\frac\beta3\mathbf1\right).
+\end{align*}
+Since \(P_{\perp,N}\mathbf1=0\), these identities give
+\(z_{2,N}=g_N\) and \cref{eq:outer-g3}.  Taylor's formula applied after
+the uniform \(C^4\) estimate yields the first line of
+\cref{eq:outer-critical-expansion}.  Stationary projection of
+\(\mathcal N_N(r\mathbf1+z_{0,N}(r))\) gives
+\begin{equation*}
+ \alpha r^2+\left\{2\pi_N^T(c_N\circ g_N)+\frac\beta3\right\}r^3
+ +O_{\rm unif}(r^4),
+\end{equation*}
+which proves the second line and identifies \(\kappa_N\).
+
+The voltage field at the constant history \(V_{0,N}(r)\) is
+\begin{equation*}
+ (2/3-w_{0,N}(r))\mathbf1
+ -\mathcal N_N(x_{0,N}(r))+A_Nz_{0,N}(r).
+\end{equation*}
+Its stationary and transverse projections vanish by
+\cref{eq:outer-critical-transverse,eq:outer-critical-curve}.  Moreover,
+every delayed difference is exactly
+\(V_{0,N}(r)-V_{0,N}(r)=0\).  This proves the preparation- and
+redistribution-free assertion for every \(\delta\).  The recovery law is
+irrelevant to this frozen voltage equation.
+
+We next construct the layer splitting without assuming that \(P_N\) is
+normal or diagonalizable.  Write
+\begin{equation}
+ d_N(r)=2c_N\circ x_{0,N}(r)
+          +\beta x_{0,N}(r)^{\circ2}.                \label{eq:outer-diagonal-coefficient}
+\end{equation}
+The decomposition
+\(\R^N=\operatorname{span}\{\mathbf1\}\oplus E_N\),
+\(x=u\mathbf1+h\), is isometric in the sense that
+\(\|x\|_N=|u|+\|h\|_N\).  In these coordinates
+\begin{equation}
+ \mathcal J^{\rm fv}_{N}(r)=
+ \begin{pmatrix}a(r)&b(r)\\c(r)&S(r)\end{pmatrix},             \label{eq:outer-J-blocks}
+\end{equation}
+where
+\begin{align}
+ a&=-\pi_N^Td_N,&
+ bh&=-\pi_N^T(d_N\circ h),\notag\\
+ c&=-P_{\perp,N}d_N,&
+ S&=A_N-P_{\perp,N}\diag(d_N)|_{E_N}.               \label{eq:outer-block-formulas}
+\end{align}
+Because \(x_{0,N}(r)=r\mathbf1+O_{\rm unif}(r^2)\),
+\begin{equation}
+ |a|+\|b\|+\|c\|+\|S-A_N\|\le C_J|r|              \label{eq:outer-block-smallness}
+\end{equation}
+with one \(C_J\).  Decrease \(r_0\) until
+\(C_Jr_0\le a_*/64\).  Bounded-perturbation variation of constants then
+gives
+\begin{equation}
+ \|e^{S(r)t}\|\le e^{-(a_*-C_J|r|)t},\qquad t\ge0. \label{eq:outer-S-semigroup}
+\end{equation}
+
+Seek the center and stable invariant graphs in the forms \(h=H(r)u\) and
+\(u=L(r)h\).  Their equations are
+\begin{align}
+ c+SH&=H(a+bH),\notag\\
+ aL+b&=L(cL+S).                                      \label{eq:outer-block-graph-equations}
+\end{align}
+The linear Sylvester operators at the origin are
+\(H\mapsto A_NH\) and \(L\mapsto LA_N\).  Their inverse norms are at most
+\(a_*^{-1}\), by the forward semigroup integral and its dual.  More
+explicitly, \cref{eq:outer-block-graph-equations} is equivalent to
+\begin{align}
+ H&=A_N^{-1}\{-c-(S-A_N)H+H(a+bH)\},\notag\\
+ L&=\{aL+b-LcL-L(S-A_N)\}A_N^{-1}.                  \label{eq:outer-HL-contractions}
+\end{align}
+On the balls \(\|H\|,\|L\|\le4C_J|r|/a_*\),
+\cref{eq:outer-block-smallness} makes both right-hand sides self-maps with
+Lipschitz constant at most one half after one further decrease of \(r_0\).
+Hence \(H,L=O_{\rm unif}(r)\), they have uniform finite derivatives, and
+\(1-LH\) stays uniformly away from zero.
+
+Set
+\begin{equation}
+ e_{c,N}(r)=\frac{\mathbf1+H(r)}{1-L(r)H(r)},
+ \qquad
+ \ell_{c,N}(r)(u\mathbf1+h)=u-L(r)h.                \label{eq:outer-eigen-from-graphs}
+\end{equation}
+The graph equations show that these are a right and left eigenobject for the
+same real scalar eigenvalue \(\lambda_{c,N}=a+bH\), and the two
+normalizations in \cref{eq:outer-eigen-normalization} are automatic.  The
+stable graph is \(\Ker\ell_{c,N}\), and its generator in the \(h\)
+coordinate is \(S+cL\).  In fact,
+\begin{equation}
+ \|S+cL-A_N\|\le C|r|.                               \label{eq:outer-stable-generator-perturbation}
+\end{equation}
+The graph coordinate \(h\mapsto Lh\,\mathbf1+h\), its inverse on the stable
+graph, and the projection \(P_N^s\) all have norm at most one fixed constant,
+because \(L,H=O_{\rm unif}(r)\) and \(1-LH\) is uniformly separated from zero.
+Bounded-perturbation variation of constants applied to
+\cref{eq:outer-stable-generator-perturbation} therefore gives
+\cref{eq:outer-stable-layer-semigroup} with a uniform prefactor.
+
+The first-order parts of \cref{eq:outer-block-graph-equations} give
+\begin{equation}
+ H(r)=2r g_N+O_{\rm unif}(r^2),
+ \qquad
+ L(r)=-2r\,\pi_N^T\diag(c_N)A_N^{-1}P_{\perp,N}
+          +O_{\rm unif}(r^2).                        \label{eq:outer-HL-expansion}
+\end{equation}
+Together with \cref{eq:outer-eigen-from-graphs}, these identities prove the
+right and left expansions in \cref{eq:outer-eigen-expansion}.
+
+Differentiate the exact critical equation in \(r\).  Since the derivative
+with respect to voltage is \(\mathcal J^{\rm fv}_{N}(r)\), one obtains
+\begin{equation}
+ \mathcal J^{\rm fv}_{N}(r)V_{0,N}'(r)
+ =w_{0,N}'(r)\mathbf1.                               \label{eq:outer-critical-differentiated}
+\end{equation}
+Left multiplication by \(\ell_{c,N}(r)\) gives the exact identity in
+\cref{eq:outer-eigen-identity}.  Moreover,
+\begin{equation*}
+ \Theta_N(r)=1-L(r)z_{0,N}'(r)=1+O_{\rm unif}(r^2).
+\end{equation*}
+The expansion of \(w_{0,N}'/\Theta_N\) yields the eigenvalue expansion.
+It also shows, after decreasing \(r_0\), that the collective eigenvalue is
+negative for \(r>0\) and positive for \(r<0\).  The stable complement has
+no eigenvalue with nonnegative real part by
+\cref{eq:outer-stable-layer-semigroup}, proving the index statements.
+\end{proof}
+
+\begin{proof}[Proof of \cref{cor:outer-reduced-actions}]
+For sensed
+recovery, substitution of
+\(x_{0,N}(r)=r\mathbf1+g_Nr^2+O_{\rm unif}(r^3)\) gives
+\begin{equation*}
+ \sigma_N^{\rm rec}(r)
+ =r+\pi_N^T(\varpi_N\circ g_N+d_N^{\rm rec})r^2+O_{\rm unif}(r^3),
+\end{equation*}
+which is \cref{eq:outer-recovery-expansion}.  In slow time, the recovery
+equation restricted formally to the critical curve reads
+\begin{equation*}
+ w_{0,N}'(r)r_T=\sigma_N^\diamond(r)-\delta^2\nu,
+\end{equation*}
+and hence gives \cref{eq:outer-reduced-speed}.
+
+Uniformly for the two laws,
+\begin{equation}
+ w_{0,N}'(r)=-2\alpha r+O_{\rm unif}(r^2),\qquad
+ \sigma_N^\diamond(r)=r+O_{\rm unif}(r^2).         \label{eq:outer-speed-inputs}
+\end{equation}
+First choose \(r_{\rm out}\) so small that, on
+\(0<|r|\le r_{\rm out}\),
+\begin{equation*}
+ \alpha|r|\le|w_{0,N}'(r)|\le3\alpha|r|,
+ \qquad
+ |\sigma_N^\diamond(r)-r|\le|r|/4.
+\end{equation*}
+Then decrease \(\delta_0\) so that
+\(\delta^2\nu_*\le\rho_\delta/4\) and
+\(\rho_\delta\le r_{\rm out}/2\).  The numerator in
+\cref{eq:outer-reduced-speed} has the sign of \(r\) and modulus between
+\(|r|/2\) and \(3|r|/2\), while \(w_{0,N}'\) has the opposite sign.
+This proves \cref{eq:outer-speed-sign} and the displayed expansion.
+
+Combining the exact identities
+\cref{eq:outer-eigen-identity,eq:outer-reduced-speed} gives
+\begin{equation}
+ \frac{\lambda_{c,N}(r)}{q^\diamond_{N,\delta,\nu}(r)}
+ =\frac{w_{0,N}'(r)^2}
+  {\Theta_N(r)\{\sigma_N^\diamond(r)-\delta^2\nu\}}.          \label{eq:outer-action-identity}
+\end{equation}
+It has the sign of \(r\), and the preceding bounds imply
+\begin{equation}
+ \frac{4\alpha^2}{9}|r|
+ \le\left|\frac{\lambda_{c,N}(r)}
+                 {q^\diamond_{N,\delta,\nu}(r)}\right|
+ \le36\alpha^2|r|.                                  \label{eq:outer-action-integrand-bounds}
+\end{equation}
+Integration proves positivity and
+\cref{eq:outer-action-lower-bound}.  Finally,
+\cref{eq:outer-speed-inputs,eq:outer-action-identity} gives
+\begin{equation*}
+ \frac{\lambda_{c,N}(r)}{q^\diamond_{N,\delta,\nu}(r)}
+ =4\alpha^2r+O_{\rm unif}(r^2+\delta^2).
+\end{equation*}
+Integrating on either branch proves
+\cref{eq:outer-action-expansion}.  Substituting
+\(r=\delta X\), \(|X|=S_\delta/(2\alpha)\), into
+\cref{eq:outer-critical-expansion} gives
+\cref{eq:outer-critical-fold-offset}.
+\end{proof}
+
+\subsection{Why unnormalized backward convergence does not select a history}
+
+The next elementary RFDE example makes precise why an outer-history theorem
+needs a normalized boundary coordinate.  It rules out a logical inference;
+it remains compatible with a separately imposed global anchor for the
+particular network field of the main article.
+
+\begin{proposition}[Unnormalized backward convergence and loss of jet control]
+\label[proposition]{prop:backward-asymptotic-nonselection}
+Fix \(0<\delta_*<1\), let
+\(\tau:(0,\delta_*)\to(0,\infty)\) be arbitrary, and write
+\(\tau_\delta=\tau(\delta)\).  On \(\R^2\) use
+\(|(y,z)|_1=|y|+|z|\), and put
+\begin{equation*}
+ X_\delta=C([-\tau_\delta,0];\R^2),\qquad
+ X^1_\delta=C^1([-\tau_\delta,0];\R^2),
+\end{equation*}
+with
+\begin{equation*}
+ \|\phi\|_{X_\delta}=\sup_\vartheta|\phi(\vartheta)|_1,
+ \qquad
+ \|\phi\|_{X^1_\delta}=\|\phi\|_{X_\delta}
+       +\sup_\vartheta|\phi'(\vartheta)|_1.
+\end{equation*}
+Consider the RFDE
+\begin{equation}
+ \dot x(t)=\mathcal F_\delta(x_t),
+ \qquad \mathcal F_\delta(\phi)=\delta^{-2}\phi(0),           \label{eq:nonselection-rfde}
+\end{equation}
+whose compatible \(C^1\) histories satisfy
+\begin{equation}
+ \mathcal M^1_\delta
+ =\{\phi\in X^1_\delta:\phi'(0)=\delta^{-2}\phi(0)\}.        \label{eq:nonselection-manifold}
+\end{equation}
+
+Even after fixing the common phase row
+\begin{equation}
+ \phi_y(0)=1,                                        \label{eq:nonselection-phase-row}
+\end{equation}
+bounded complete backward extension and convergence to zero in the
+unnormalized history norm do not select a history.  Indeed, for every
+\(A\in\R\),
+\begin{equation}
+ x_{\delta,A}(t)=e^{t/\delta^2}(1,A),\qquad t\le0,   \label{eq:nonselection-family}
+\end{equation}
+solves \cref{eq:nonselection-rfde} and satisfies
+\begin{equation}
+ \sup_{t\le0}\|x_{\delta,A,t}\|_{X_\delta}<\infty,
+ \qquad
+ \|x_{\delta,A,t}\|_{X_\delta}\longrightarrow0
+       \quad(t\to-\infty).                          \label{eq:nonselection-asymptotics}
+\end{equation}
+
+Even superalgebraic closeness in \(X^1_\delta\), together with smooth
+parameter dependence for each fixed \(\delta\), does not imply a tame
+\(C^1_\nu C^2_\eta\) history jet.  Fix \(0<a<b\), put
+\(\omega_\delta=e^{b/\delta^2}\), and, on
+\(K=[-1/2,1/2]^2\), define
+\begin{align}
+ A_\delta(\nu,\eta)
+ &=e^{-a/\delta^2}(1+\nu)
+   \{\sin(\omega_\delta\eta)+1-\cos(\omega_\delta\eta)\},\notag\\
+ \Phi_\delta(\nu,\eta)(\vartheta)
+ &=e^{\vartheta/\delta^2}
+       (1,A_\delta(\nu,\eta)),
+ \qquad -\tau_\delta\le\vartheta\le0.             \label{eq:nonselection-jet-family}
+\end{align}
+The formula extends to a \(C^\infty\) map from \(\R^2\) to the closed
+linear space \(\mathcal M^1_\delta\); restrict it to \(K\).  Every member
+obeys \cref{eq:nonselection-phase-row}, extends to a solution satisfying
+\cref{eq:nonselection-asymptotics}, and, relative to
+\(\Phi_\delta^{\rm ref}(\vartheta)=e^{\vartheta/\delta^2}(1,0)\),
+\begin{equation}
+ \sup_K\|\Phi_\delta-\Phi_\delta^{\rm ref}\|_{X^1_\delta}
+ \le\frac92(1+\delta^{-2})e^{-a/\delta^2}
+ =O(\delta^q)\quad\text{for every }q>0.              \label{eq:nonselection-flat-size}
+\end{equation}
+At \((\nu,\eta)=(0,0)\), however,
+\begin{align}
+ \|\partial_\eta\Phi_\delta\|_{X_\delta}
+ &=e^{(b-a)/\delta^2},&
+ \|\partial_{\eta\eta}\Phi_\delta\|_{X_\delta}
+ &=e^{(2b-a)/\delta^2},\notag\\
+ \|\partial_\nu\partial_\eta\Phi_\delta\|_{X_\delta}
+ &=e^{(b-a)/\delta^2},&
+ \|\partial_\nu\partial_{\eta\eta}\Phi_\delta\|_{X_\delta}
+ &=e^{(2b-a)/\delta^2}.                              \label{eq:nonselection-jet-blowup}
+\end{align}
+In particular, for arbitrary fixed \(C>0\), \(M,m,c\ge0\), and \(p>0\),
+the ratio of each of the four displayed derivative norms to the envelope
+\begin{equation}
+ C\delta^{-M}\langle S_\delta\rangle^m e^{cS_\delta},
+ \qquad S_\delta=\sqrt{2p\log(1/\delta)},            \label{eq:nonselection-tame-envelope}
+\end{equation}
+tends to \(+\infty\) as \(\delta\downarrow0\).  Since
+\(\|\cdot\|_{X_\delta}\le\|\cdot\|_{X^1_\delta}\), the same conclusion
+holds a fortiori for the strong-history derivative norms.
+\end{proposition}
+
+\begin{proof}
+The functional \(\mathcal F_\delta\) is bounded linear on \(X_\delta\),
+so \cref{eq:nonselection-rfde} is an RFDE, in fact in the nondelayed
+subclass.  Direct differentiation proves \cref{eq:nonselection-family}.
+Its history segment is
+\begin{equation*}
+ x_{\delta,A,t}(\vartheta)=e^{(t+\vartheta)/\delta^2}(1,A),
+\end{equation*}
+and hence
+\begin{equation*}
+ \|x_{\delta,A,t}\|_{X_\delta}=(1+|A|)e^{t/\delta^2},
+ \qquad
+ \|x_{\delta,A,t}\|_{X^1_\delta}
+ =(1+\delta^{-2})(1+|A|)e^{t/\delta^2}.
+\end{equation*}
+This proves \cref{eq:nonselection-asymptotics}; the distinguished histories
+\(x_{\delta,A,0}\) all satisfy the same phase row, while present evaluation
+of the second component recovers the free coefficient \(A\).  Moreover,
+\(\partial_\vartheta\phi(0)=\delta^{-2}\phi(0)\), so these histories and
+the family below lie in \(\mathcal M^1_\delta\), which is the kernel of a
+bounded linear map on \(X^1_\delta\) and hence is closed.
+
+For the second component of \cref{eq:nonselection-jet-family}, relative to
+the reference history, use
+\(|\sin u|\le1\), \(|1-\cos u|\le2\), and
+\(1+\nu\le3/2\).  This gives \cref{eq:nonselection-flat-size}, since
+\(e^{-a/\delta^2}\) dominates every power of \(\delta\).  At \(\eta=0\),
+direct differentiation of \(A_\delta\) gives coefficients
+\begin{equation*}
+ e^{(b-a)/\delta^2},\quad e^{(2b-a)/\delta^2},\quad
+ e^{(b-a)/\delta^2},\quad e^{(2b-a)/\delta^2}
+\end{equation*}
+in the four derivative slots of
+\cref{eq:nonselection-jet-blowup}.  The exponential profile has
+\(X_\delta\)-norm one, proving the equalities.  Finally, the logarithm of
+the ratio of the first quantity to
+\cref{eq:nonselection-tame-envelope} is
+\begin{equation*}
+ \frac{b-a}{\delta^2}-M\log(1/\delta)
+ -m\log\langle S_\delta\rangle-cS_\delta-\log C,
+\end{equation*}
+which tends to \(+\infty\).  The two derivative norms with exponent
+\((2b-a)/\delta^2\) diverge still faster, proving all four assertions.
+\end{proof}
+
+Thus the words ``complete backward'', ``bounded'', and ``convergent in an
+unnormalized history norm'', even with the displayed phase row, do not by
+themselves select a complete history.  Nor may tame parameter jets be
+inferred from fixed-\(\delta\) smoothness and superalgebraic \(C^0\) or
+\(C^1\) closeness.  A valid construction must add a model-specific selection
+or normalization and prove its uniform jets.
