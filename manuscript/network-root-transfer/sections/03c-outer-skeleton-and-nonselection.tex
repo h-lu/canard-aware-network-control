@@ -1871,6 +1871,148 @@ constructs a compatible resource extension on the whole old-history
 interval, so no past-orbit claim has entered the proof.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:raw-compatible-base-collar-refinement}]
+Fix \(e\).  Since
+\[
+ \frac{\delta}{|e|}
+ \le\frac{2\alpha}{S_\delta}=o(1),
+\]
+after decreasing \(\delta_0\) choose nested same-sign annuli
+\[
+ e\in\operatorname{int}I_e,\qquad
+ I_e\Subset J_{0,e}\Subset J_e\Subset
+       \{0<|r|<r_0\},
+\]
+with \(|r|\asymp|e|\) on \(J_e\), uniformly in \(e\), and such that
+\[
+ \left\{\Phi_{q_0}^{-\tau}(r):
+      r\in\overline I_e,\ 0\le\tau\le\delta\theta_m\right\}
+ \subset J_{0,e}.
+\]
+In the weighted norm of \cref{eq:backtrack-weighted-norm}, the critical
+voltage \(f_N(r)=r\mathbf1+z_{0,N}(r)\) obeys
+\begin{equation}
+ \|f_N\|_{h+2,|e|;J_e}
+ +\|q_0z_{0,N}'\|_{h,|e|;J_e}
+ \le C_h|e|.                                      \label{eq:base-collar-critical-size}
+\end{equation}
+The zero-delay summand of \(\mathcal D_{0,N}\) vanishes as a complete
+difference.  Applying \cref{prop:physical-backtrack-calculus} with
+\(I=I_e\), \(J_0=J_{0,e}\), and \(J=J_e\) at order \(h+1\), and retaining
+the \(\delta/|e|\) factor in each composition difference, gives
+\begin{equation}
+ \|\mathcal D_{0,N}\|_{h+1,|e|;I_e}\le C_h\delta. \label{eq:base-collar-delay-size}
+\end{equation}
+For the collective residual, write
+\[
+ w_{0,N}'(r)=r\,m_N(r).
+\]
+The critical expansion and high-regularity bounds imply, after decreasing
+\(r_{\rm out}\),
+\[
+ 0<c_m\le |m_N(r)|\le C_m,\qquad
+ \|m_N\|_{C^{h+1}(J_e)}\le C_h .
+\]
+The exact reduced-speed quotient is therefore
+\[
+ q_0(r)
+ =\frac{r-\varepsilon\nu}{w_{0,N}'(r)}
+ =\left(1-\frac{\varepsilon\nu}{r}\right)m_N(r)^{-1}.
+\]
+Hence
+\[
+ \max_{0\le j\le h-1}|e|^j
+       |\partial_r^{j+1}q_0(r)|
+ \le C_h\left(1+\frac{\varepsilon}{|e|^2}\right)
+ \le C_h,\qquad r\in I_e.
+\]
+On the other hand, \cref{eq:base-collar-delay-size} gives
+\[
+ |e|^j|\partial_r^{j+1}\mathcal D_{0,c,N}(r)|
+ \le C_h\frac{\delta}{|e|}
+ \le\frac{C_h}{S_\delta},
+ \qquad 0\le j\le h-1.
+\]
+Consequently,
+\begin{equation}
+ \max_{0\le j\le h-1}|e|^j
+ \left|\partial_r^j
+   (\mathcal D_{0,c,N}-q_0)'(r)\right|
+ \le C_h,\qquad r\in I_e.                         \label{eq:base-collar-collective-derivative-size}
+\end{equation}
+The definitions in \cref{eq:nonlinear-tracker-data} therefore give
+\begin{align}
+ \|R_{z,N}\|_{h,|e|;I_e}
+ &\le C_h\varepsilon(|e|+\delta),\notag\\
+ \|R_{q,N}\|_{h-1,|e|;I_e}
+ &\le C_h\varepsilon.                             \label{eq:base-collar-residual-size}
+\end{align}
+
+Along the formal moving core, each \(\theta\)-derivative is
+\(\delta q_0(r)\partial_r\).  The weighted product calculus and
+\cref{eq:base-collar-residual-size} therefore imply, for
+\(0\le m\le h-1\),
+\begin{align}
+ \delta^{m+1}
+ \|\partial_\theta^mE_v^0(0)\|_N
+ &\le C_h\varepsilon(|e|+\delta)
+       \left(\frac{\delta^2}{|e|}\right)^m,\notag\\
+ \delta^{m+1}|\partial_\theta^mE_w^0(0)|
+ &\le C_h\varepsilon\delta^2
+       \left(\frac{\delta^2}{|e|}\right)^m,       \label{eq:base-collar-formal-defect-jets}
+\end{align}
+where \(E_v^0,E_w^0\) are defined in
+\cref{eq:moving-core-formal-defects}.  Since
+\(|e|\ge\rho_\delta=\delta S_\delta/(2\alpha)\), the factor
+\(\delta^2/|e|\) is bounded and tends to zero uniformly.
+
+Repeat the triangular compatibility recursion in the proof of
+\cref{lem:raw-compatible-moving-core-collar}, but do not apply
+\(\mathcal L_e\).  Equations
+\cref{eq:moving-core-resource-defect-recursion,%
+eq:base-collar-formal-defect-jets} give, successively for
+\(1\le j\le h\),
+\begin{align}
+ \delta^j\|b_{j,e}\|_N
+ &\le C_h\left\{\varepsilon(|e|+\delta)
+   +\sum_{0\le\ell<j}\delta^\ell
+       (\|b_{\ell,e}\|_N+|d_{\ell,e}|)\right\},\notag\\
+ \delta^j|d_{j,e}|
+ &\le C_h\left\{\varepsilon(|e|+\delta)
+   +\sum_{0\le\ell<j}\delta^\ell
+       (\|b_{\ell,e}\|_N+|d_{\ell,e}|)\right\}.   \label{eq:base-collar-refined-recursion}
+\end{align}
+The base values vanish, and the first rows are the exact identities in
+\cref{eq:moving-core-first-defects}.  Finite induction proves the first
+inequality in \cref{eq:base-collar-vanishing-jets}.  The second follows
+from \(\delta\le C\rho_\delta\le C|e|\).  Applying the Hermite estimate
+\cref{eq:collar-Hermite-bound} proves
+\cref{eq:base-collar-vanishing-cap}; substitution of the definition of
+\(\rho_\delta\) proves \cref{eq:base-collar-inner-scale}.
+
+Finally, in the special case of
+\cref{eq:moving-core-sharpness},
+\(\nu=0\), \(\mathcal D_{0,\perp,N}=0\), and
+\(z_{0,N}(r)=g_Nr^2+O(r^3)\), one has
+\[
+ R_{z,N}(e)
+ =2\varepsilon q_0(e)e\,g_N+O(\varepsilon e^2).
+\]
+Thus, for any fixed admissible example with \(g_N\ne0\), or uniformly
+for a family satisfying
+\(\inf_N\|g_N\|_N>0\),
+\[
+ \delta\|b_{1,e}\|_N=\|R_{z,N}(e)\|_N
+ \ge c\varepsilon|e|
+\]
+at the inner scale for sufficiently small \(\delta\).  Hence the
+\(O(\varepsilon|e|)\) base scale cannot in general be improved.
+Equation \cref{eq:moving-core-sharpness} separately shows that applying
+\(\mathcal L_e\) removes this factor \(|e|\) and yields the sharp
+\(O(\varepsilon)\) moving-column scale.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:delayed-phase-event-core}]
 Let
 \[
@@ -3038,6 +3180,214 @@ The shifted terminal row
 factorization.  The final exclusions follow because every operator used
 here is the differential at the fixed reduced base and only order-zero
 norms were inverted.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:inner-anchored-nonlinear-phase-chart}]
+For the scalar autonomous flow,
+\begin{equation}
+ \partial_t\Phi_{q_0}^t(r)=q_0(\Phi_{q_0}^t(r)),\qquad
+ \partial_r\Phi_{q_0}^t(r)
+ =\frac{q_0(\Phi_{q_0}^t(r))}{q_0(r)}.             \label{eq:anchored-phase-flow-derivatives}
+\end{equation}
+Choose \(c_\phi\) so that \(q_+c_\phi<\chi_0\) and
+\(q_+c_\phi<1/2\).  For
+\(\|a\|_{\phi,\mathrm{rel}}<c_\phi\), the flow displacement up to time
+\(a(r)\) is at most \(q_+|a(r)|<\chi_0|r|\).  A continuation argument
+therefore keeps the entire flow segment in
+\(\mathcal C_{\sigma,\chi_0}\), while
+\[
+ \overline{\mathcal C_{\sigma,\chi_0}}
+ \subset\mathcal C_{\sigma,2\chi_0}
+ \subset\mathcal C_{\sigma,4\chi_0}
+ \subset J_\sigma.
+\]
+Thus its image is compactly contained in \(J_\sigma\).
+The standard parameter-dependent scalar-flow theorem and the Banach-space
+Nemytskii chain rule now show that
+\(a\mapsto\Theta_a\) is \(C^1\) into \(C^1(I_\sigma)\).
+The chain rule gives
+\cref{eq:nonlinear-phase-chart-a-derivative,%
+eq:nonlinear-phase-chart-derivative}; subtraction gives
+\cref{eq:nonlinear-phase-row-identity}.  Differentiating the nonlinear
+action with respect to \(a\) proves
+\cref{eq:anchored-nonlinear-phase-action-derivative,%
+eq:anchored-nonlinear-phase-linearization} and the asserted \(C^1\)
+action map.  If
+\(\partial_s\bar r=\delta q_0(\bar r)\) and
+\(R(s)=\Theta_a(\bar r(s))\), then
+\[
+ \partial_sR
+ =\delta q_0(\Theta_a(\bar r))
+   +\delta\mathscr B_{\phi,\sigma}^{\rm nl}(a)(\bar r).
+\]
+This proves the exact collective-equation equivalence.
+
+The anchored action equation is the scalar initial-value problem
+\begin{equation}
+ a'(r)=\frac{\widehat Q(r)}
+ {q_0(r)q_0(\Phi_{q_0}^{a(r)}(r))},\qquad
+ a(e_{\sigma,*})=0.                               \label{eq:anchored-phase-explicit-IVP}
+\end{equation}
+On a fixed relative collar its right-hand side is continuous in \(r\),
+locally Lipschitz in \(a\), and has denominator bounded away from zero.
+It therefore has a unique local solution.
+
+Put \(x=|r|\).  As long as the solution remains in that collar, integration
+from the inner anchor gives on either branch
+\begin{align}
+ |a(r)|
+ &\le CD\int_{\rho_\delta}^{x}
+       \left(u+\frac{\varepsilon}{u^2}\right)\dd u\notag\\
+ &=CD\left\{\frac{x^2-\rho_\delta^2}{2}
+       +\varepsilon\left(\frac1{\rho_\delta}-\frac1x\right)\right\}.
+                                                        \label{eq:anchored-phase-primitive-bound}
+\end{align}
+The same formula applies on the negative branch because absolute value
+reverses its integration orientation.  It follows that
+\[
+ \sup|a|+\int_{I_\sigma}|a'|\,\dd r
+       +\sup|r|\,|a'|
+ \le CD\left(r_{\rm out}^2+\frac{\varepsilon}{\rho_\delta}\right),
+\]
+which proves \cref{eq:anchored-phase-A1-bound}.  Moreover,
+\begin{align*}
+ \frac{|a(r)|}{|r|}
+ &\le CD\left(|r|+\frac{\varepsilon}{\rho_\delta^2}\right),\\
+ |q_0(r)a'(r)|
+ &=\frac{|\widehat Q(r)|}{|q_0(\Theta_a(r))|}
+ \le CD\left(|r|+\frac{\varepsilon}{|r|^2}\right).
+\end{align*}
+Taking suprema proves \cref{eq:anchored-phase-relative-bound}.
+
+Since
+\[
+ \Theta_a(r)-r
+ =\int_0^{a(r)}q_0(\Phi_{q_0}^t(r))\,\dd t,
+\]
+the preceding relative estimate yields
+\[
+ \frac{|\Theta_a(r)-r|}{|r|}\le CD\Lambda_\delta.
+\]
+Choose \(D_*\) so that the right-hand side above is smaller than
+\(\min\{\chi_0,c_\phi/C\}\).  Then
+\(\|a\|_{\phi,\mathrm{rel}}<c_\phi\), the image remains strictly inside
+\(\mathcal C_{\sigma,4\chi_0}\), and
+\(|\Theta_a(r)|\asymp|r|\).  The weighted derivative
+bound on \(q_0\) then gives
+\[
+ \left|\frac{q_0(\Theta_a(r))}{q_0(r)}-1\right|
+ \le C\frac{|\Theta_a(r)-r|}{|r|}
+ \le CD\Lambda_\delta.
+\]
+Substitution in \cref{eq:nonlinear-phase-chart-derivative} proves the
+derivative part of \cref{eq:anchored-phase-chart-smallness}.  These
+estimates improve the bootstrap collar, so continuation closes the local
+solution on all of \(I_\sigma\).  They also prove uniqueness and,
+after one final decrease of \(D_*\),
+\cref{eq:anchored-phase-orientation}.
+
+Combining the action equation with
+\cref{eq:nonlinear-phase-row-identity} proves
+\cref{eq:anchored-phase-speed-sign}.  Finally,
+\(\varepsilon=\delta^2\) and
+\(\rho_\delta=\delta S_\delta/(2\alpha)\) give
+\cref{eq:anchored-phase-small-parameters}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:inner-anchored-relative-phase-schur}]
+The relative phase space is Banach, and
+\begin{equation}
+ \|a\|_{\mathsf A_\phi^1(I_\sigma)}
+ \le Cr_{\rm out}\|a\|_{\phi,\mathrm{rel}}.        \label{eq:relative-phase-A1-embedding}
+\end{equation}
+For data \((h,b)\), the explicit inverse of the unperturbed anchored
+operator is
+\begin{equation}
+ a(r)=b+\int_{e_{\sigma,*}}^r\frac{h(u)}{q_0(u)^2}\,\dd u.   \label{eq:inner-anchored-linear-explicit-inverse}
+\end{equation}
+On either same-sign branch,
+\(|r-e_{\sigma,*}|\le |r|\).  The bounds on \(q_0\) therefore give
+\[
+ \sup_r\frac{|a(r)|}{|r|}+\sup_r|a'(r)|
+ \le C\left\{\|h\|_{\phi,\infty}
+                  +\frac{|b|}{\rho_\delta}\right\}.
+\]
+This proves the first isomorphism with its uniform inverse.
+
+We next prove the stronger action estimate.  Combining
+\cref{eq:structured-phase-speed-bound,eq:relative-phase-A1-embedding}
+and
+\(\sup_{I_\sigma}m_\delta
+ \le r_{\rm out}+\varepsilon/\rho_\delta^2\)
+gives
+\begin{equation}
+ \|\mathfrak A_\sigma^{\rm form}a\|_{\phi,\infty}
+ \le Cr_{\rm out}\left\{
+       r_{\rm out}+\frac1{S_\delta^2}\right\}
+       \|a\|_{\phi,\mathrm{rel}}.                 \label{eq:relative-formal-action-smallness}
+\end{equation}
+For the collar response, put \(c=E_{0,\sigma}a\).  The corresponding
+branch estimate in \cref{eq:raw-phase-collar-response-bound}, followed by
+the pointwise normal-to-phase bound
+\cref{eq:normal-phase-pointwise-Q}, gives
+\[
+ \|Q_{\sigma,\rm col}c\|_{\phi,\infty}
+ \le C\{r_{\rm out}+\delta^{2-2\vartheta}\}|c|.
+\]
+Since \(|c|\le r_{\rm out}\|a\|_{\phi,\mathrm{rel}}\) on either branch,
+the last display and
+\cref{eq:raw-compatible-true-action,eq:relative-formal-action-smallness}
+prove \cref{eq:relative-raw-action-smallness}.  Notice that on the
+repelling branch \(e_{r,0}=e_{r,*}\), so its collar multiplier is even the
+anchored value.
+
+Let \(M_*\) be a common inverse bound for
+\(\mathscr B_{\phi,\sigma,*}^0\).  Choose \(r_{\rm out}\) and then
+\(\delta_0\) so that the right-hand side of
+\cref{eq:relative-raw-action-smallness}, multiplied by \(M_*\), is at most
+\(1/2\).  The Neumann formula
+\begin{equation}
+ (\mathscr S_{\sigma,*}^{\rm rc})^{-1}
+ =\left\{I-(\mathscr B_{\phi,\sigma,*}^0)^{-1}
+       (\mathfrak A_\sigma^{\rm rc},0)\right\}^{-1}
+       (\mathscr B_{\phi,\sigma,*}^0)^{-1}         \label{eq:inner-anchored-schur-neumann}
+\end{equation}
+proves the asserted isomorphism and uniform bound.
+
+For \(y\in\mathcal D(\mathscr N_\sigma)\),
+\cref{eq:normal-phase-pointwise-Q} gives
+\begin{equation}
+ \|\mathfrak D_\sigma^\infty y\|_{\phi,\infty}
+ \le C\{r_{\rm out}+\delta^{2-2\vartheta}\}
+       \|y\|_{\mathcal D(\mathscr N_\sigma)}.      \label{eq:inner-anchored-normal-action-bound}
+\end{equation}
+Define \(y,a,x\) by \cref{eq:inner-anchored-schur-inverse}.  The first
+coupled row is immediate.  In the second, use the exact identity
+\(\mathfrak A_\sigma^{\rm rc}
+ =\mathfrak D_\sigma^\infty T_\sigma^{\rm rc}
+      +\mathscr P_{c,\sigma,N}\) to obtain
+\begin{align*}
+ &\mathscr B_{\phi,\sigma,*}^0a
+ -(\mathfrak D_\sigma^\infty x
+       +\mathscr P_{c,\sigma,N}a,0)\\
+ &\quad
+ =\mathscr S_{\sigma,*}^{\rm rc}a
+       -(\mathfrak D_\sigma^\infty y,0)=g.
+\end{align*}
+Conversely, every solution has \(y=G_\sigma f\), after which the same
+identity reduces the second row to the invertible anchored Schur equation;
+this proves uniqueness.
+
+Completeness follows from the coordinate isometry
+\((x,a)\mapsto(x-T_\sigma^{\rm rc}a,a)\), exactly as in
+\cref{eq:raw-compatible-full-graph-norm}.  Finally,
+\cref{eq:raw-schur-fixed-normal-graph-bound,%
+eq:inner-anchored-normal-action-bound} and the anchored Schur inverse
+bound prove \cref{eq:inner-anchored-schur-bound}.  The construction uses
+one inner phase row and no terminal-time variable, which proves the scope
+statement.
 \end{proof}
 
 \begin{proof}[Proof of

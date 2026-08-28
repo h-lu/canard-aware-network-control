@@ -1702,6 +1702,42 @@ collar, not a past physical orbit, and does not by itself close the full
 phase--normal Schur loop.
 \end{lemma}
 
+\begin{lemma}[Vanishing base raw-compatible collar correction]
+\label[lemma]{lem:raw-compatible-base-collar-refinement}
+Retain \cref{lem:raw-compatible-moving-core-collar} at the fixed order
+\(h\ge3\), and write
+\[
+ d_{j,e}=c_{j,e}^{\rm rc}-c_{j,e}^{0},
+ \qquad 0\le j\le h,
+\]
+for the resource-jet correction used in its proof.  After decreasing
+\(\delta_0\),
+\begin{equation}
+ \max_{0\le j\le h}\delta^j
+ \bigl\{\|b_{j,e}\|_N+|d_{j,e}|\bigr\}
+ \le C_h\varepsilon(|e|+\delta)
+ \le C_h\varepsilon|e|                         \label{eq:base-collar-vanishing-jets}
+\end{equation}
+uniformly for
+\(\rho_\delta\le |e|\le r_{\rm out}\).  Consequently,
+\begin{equation}
+ \|\phi_e^{\rm rc}-\phi_e^0\|_{\mathrm{cap},h,e}
+ \le C_h\varepsilon(|e|+\delta)
+ \le C_h\varepsilon|e|.                         \label{eq:base-collar-vanishing-cap}
+\end{equation}
+At either inner endpoint this becomes
+\begin{equation}
+ \|\phi_{\pm\rho_\delta}^{\rm rc}
+             -\phi_{\pm\rho_\delta}^0\|_{\mathrm{cap},h,\pm\rho_\delta}
+ \le C_h\varepsilon\rho_\delta
+ =C_h\frac{\delta^3S_\delta}{2\alpha}.          \label{eq:base-collar-inner-scale}
+\end{equation}
+The improvement is only for the base correction.  The moving-endpoint
+column in \cref{eq:moving-core-cap-bound} is generally only
+\(O(\varepsilon)\), as witnessed by
+\cref{eq:moving-core-sharpness}.
+\end{lemma}
+
 \begin{proposition}[Delayed zeroth-order phase--event inverse]
 \label[proposition]{prop:delayed-phase-event-core}
 Under \cref{lem:reduced-flow-phase-defect}, define
@@ -2494,6 +2530,295 @@ control parameter or higher slow jets, preserve the sign of the physical
 speed, construct a past physical orbit, or prove a preparation-independent
 complete-history root.
 \end{theorem}
+
+For the fold-side anchored formulation, define
+\begin{align}
+ \mathsf A_{\phi,\mathrm{rel}}^1(I_\sigma)
+ &=\left\{a\in C^1(I_\sigma):
+       \|a\|_{\phi,\mathrm{rel}}<\infty\right\},\notag\\
+ \|a\|_{\phi,\mathrm{rel}}
+ &=\sup_{r\in I_\sigma}\frac{|a(r)|}{|r|}
+       +\sup_{r\in I_\sigma}|a'(r)|,\notag\\
+ \mathsf H_{\phi,\infty}^0(I_\sigma)
+ &=C(I_\sigma),\qquad
+ \|h\|_{\phi,\infty}=\sup_{r\in I_\sigma}|h(r)|.  \label{eq:relative-phase-spaces}
+\end{align}
+
+\begin{lemma}[Inner-anchored nonlinear reduced-flow phase chart]
+\label[lemma]{lem:inner-anchored-nonlinear-phase-chart}
+Let
+\[
+ I_a=[\rho_\delta,r_{\rm out}],\qquad
+ I_r=[-r_{\rm out},-\rho_\delta],\qquad
+ \varepsilon=\delta^2,
+\]
+and put
+\[
+ e_{a,*}=\rho_\delta,\qquad e_{r,*}=-\rho_\delta,\qquad
+ m_\delta(r)=|r|+\frac{\varepsilon}{|r|^2}.
+\]
+For \(\chi>0\), put
+\[
+ \mathcal C_{\sigma,\chi}
+ :=\left\{u:\ \text{there exists }r\in I_\sigma
+       \text{ with }|u-r|<\chi|r|\right\}.
+\]
+Fix \(0<\chi_0<1/8\), and assume that each \(I_\sigma\) has a
+same-sign open enlargement \(J_\sigma\) satisfying
+\[
+ \mathcal C_{\sigma,4\chi_0}
+ \subset J_\sigma .
+\]
+Assume on \(J_\sigma\), uniformly in all retained indices, that
+\begin{equation}
+ 0<q_-\le-q_0(r)\le q_+,\qquad
+ |r|\,|q_0'(r)|\le C_q,                            \label{eq:anchored-phase-q-class}
+\end{equation}
+There is \(c_\phi>0\), independent of \(N,\delta\) and the branch, such
+that the open set
+\[
+ \mathcal U_{\sigma,\phi}
+ =\{a\in\mathsf A_{\phi,\mathrm{rel}}^1(I_\sigma):
+          \|a\|_{\phi,\mathrm{rel}}<c_\phi\}
+\]
+has the following property.  For \(a\in\mathcal U_{\sigma,\phi}\), set
+\begin{equation}
+ \Theta_a(r)=\Phi_{q_0}^{a(r)}(r).                 \label{eq:nonlinear-phase-chart}
+\end{equation}
+Then \(\Theta_a(I_\sigma)\subset J_\sigma\), and the map
+\[
+ a\longmapsto\Theta_a:
+   \mathcal U_{\sigma,\phi}\to C^1(I_\sigma)
+\]
+is \(C^1\).  Its differential and the exact phase identities are
+\begin{align}
+ D_a\Theta_a[h](r)
+ &=q_0(\Theta_a(r))h(r),                           \label{eq:nonlinear-phase-chart-a-derivative}\\
+ \Theta_a'(r)
+ &=\frac{q_0(\Theta_a(r))}{q_0(r)}
+       \{1+q_0(r)a'(r)\},                          \label{eq:nonlinear-phase-chart-derivative}\\
+ q_0(r)\Theta_a'(r)-q_0(\Theta_a(r))
+ &=q_0(r)q_0(\Theta_a(r))a'(r).                    \label{eq:nonlinear-phase-row-identity}
+\end{align}
+Define the nonlinear phase action by
+\begin{equation}
+ \mathscr B_{\phi,\sigma}^{\rm nl}(a)(r)
+ =q_0(r)q_0(\Theta_a(r))a'(r).                     \label{eq:anchored-nonlinear-phase-action}
+\end{equation}
+The map
+\[
+ \mathscr B_{\phi,\sigma}^{\rm nl}:
+ \mathcal U_{\sigma,\phi}\longrightarrow
+             \mathsf H_{\phi,\infty}^0(I_\sigma)
+\]
+is \(C^1\), and its differential is
+\begin{align}
+ D\mathscr B_{\phi,\sigma}^{\rm nl}(a)h
+ ={}&q_0(r)q_0(\Theta_a(r))h'(r)\notag\\
+ &+q_0(r)q_0'(\Theta_a(r))q_0(\Theta_a(r))
+             a'(r)h(r),                            \label{eq:anchored-nonlinear-phase-action-derivative}\\
+ D\mathscr B_{\phi,\sigma}^{\rm nl}(0)h
+ ={}&q_0(r)^2h'(r).                                \label{eq:anchored-nonlinear-phase-linearization}
+\end{align}
+Consequently the full anchored scalar map
+\begin{equation}
+ \mathscr B_{\phi,\sigma,*}^{\rm nl}(a)
+ =\bigl(\mathscr B_{\phi,\sigma}^{\rm nl}(a),
+             a(e_{\sigma,*})\bigr)                 \label{eq:anchored-nonlinear-phase-full-map}
+\end{equation}
+is \(C^1\) from \(\mathcal U_{\sigma,\phi}\) to
+\(\mathsf H_{\phi,\infty}^0(I_\sigma)\times\R\), and
+\begin{equation}
+ D\mathscr B_{\phi,\sigma,*}^{\rm nl}(0)h
+ =\bigl(q_0^2h',h(e_{\sigma,*})\bigr).             \label{eq:anchored-nonlinear-full-linearization}
+\end{equation}
+In particular, let \(\widehat Q:I_\sigma\to\R\) denote a speed
+residual already pulled back to the fixed reduced coordinate.  If
+\[
+ \partial_s\bar r(s)=\delta q_0(\bar r(s)),
+ \qquad
+ r_a(s)=\Theta_a(\bar r(s)),
+\]
+then
+\[
+ \partial_sr_a(s)
+ =\delta\left\{q_0(r_a(s))
+          +\widehat Q(\bar r(s))\right\}
+\]
+is equivalent, since \(\bar r\) covers \(I_\sigma\), to
+\begin{equation}
+ \mathscr B_{\phi,\sigma}^{\rm nl}(a)(r)
+ =\widehat Q(r).                                   \label{eq:anchored-nonlinear-phase-equation}
+\end{equation}
+
+There are constants \(c_*,C_*,D_*>0\), depending only on
+\(q_\pm,C_q,\chi_0\) and the common collar geometry, with the following
+property.  In particular they are independent of
+\(N,\delta,\nu,\eta\) and of the branch.  If
+\(\widehat Q\in C(I_\sigma)\) and
+\begin{equation}
+ |\widehat Q(r)|\le Dm_\delta(r),\qquad
+ D\Lambda_\delta\le D_*,\qquad
+ \Lambda_\delta=r_{\rm out}
+       +\frac{\varepsilon}{\rho_\delta^2},          \label{eq:anchored-phase-speed-class}
+\end{equation}
+then the anchored problem
+\begin{equation}
+ q_0(r)q_0(\Theta_a(r))a'(r)=\widehat Q(r),\qquad
+ a(e_{\sigma,*})=0,                               \label{eq:anchored-phase-IVP}
+\end{equation}
+has a unique solution \(a\in\mathcal U_{\sigma,\phi}\).  It satisfies
+\begin{align}
+ \|a\|_{\mathsf A_\phi^1(I_\sigma)}
+ &\le C_*DM_\delta,
+ &M_\delta&=r_{\rm out}^2
+                  +\frac{\varepsilon}{\rho_\delta},
+                                                               \label{eq:anchored-phase-A1-bound}\\
+ \sup_{r\in I_\sigma}\frac{|a(r)|}{|r|}
+ +\sup_{r\in I_\sigma}|q_0(r)a'(r)|
+ &\le C_*D\Lambda_\delta,                          \label{eq:anchored-phase-relative-bound}\\
+ \sup_{r\in I_\sigma}\frac{|\Theta_a(r)-r|}{|r|}
+ +\sup_{r\in I_\sigma}|\Theta_a'(r)-1|
+ &\le C_*D\Lambda_\delta.                          \label{eq:anchored-phase-chart-smallness}
+\end{align}
+After decreasing \(D_*\) if necessary,
+\begin{equation}
+ \operatorname{sgn}\Theta_a(r)=\operatorname{sgn}r,\qquad
+ c_*\le\Theta_a'(r)\le C_*,
+ \qquad r\in I_\sigma,                             \label{eq:anchored-phase-orientation}
+\end{equation}
+so \(\Theta_a\) is an orientation-preserving \(C^1\) diffeomorphism onto
+its same-sign image.  Moreover,
+\begin{equation}
+ q_0(\Theta_a(r))+\widehat Q(r)
+ =q_0(r)\Theta_a'(r)<0.                            \label{eq:anchored-phase-speed-sign}
+\end{equation}
+Thus the reconstructed scalar reduced speed, not yet a speed along a
+constructed RFDE tracker, retains its sign.
+Since \(a(e_{\sigma,*})=0\),
+\[
+ \Theta_a(e_{\sigma,*})=e_{\sigma,*}.
+\]
+Thus the attracting chart is fixed at its inner terminal section
+\(e_{a,*}=\rho_\delta\), whereas the repelling chart is fixed at its
+inner entry section \(e_{r,*}=-\rho_\delta\).
+
+Since \(\rho_\delta=\delta S_\delta/(2\alpha)\),
+\begin{equation}
+ \Lambda_\delta=r_{\rm out}+\frac{4\alpha^2}{S_\delta^2},
+ \qquad
+ M_\delta=r_{\rm out}^2+\frac{2\alpha\delta}{S_\delta}.       \label{eq:anchored-phase-small-parameters}
+\end{equation}
+Consequently, for every fixed dimension-uniform upper bound
+\(D\le D_0\), condition
+\cref{eq:anchored-phase-speed-class} follows by first choosing
+\(r_{\rm out}\) so that \(D_0r_{\rm out}\) is sufficiently small and
+then decreasing \(\delta\).
+\end{lemma}
+
+The exponent in \(\Theta_a=\Phi_{q_0}^{a}\) is \(a\), not
+\(\delta a\).  Indeed, a fold-time displacement \(\Delta S\) produces the
+\(q_0\)-flow time \(\delta\Delta S=\widehat\tau\), while the phase
+coordinate satisfies \(a=\xi/q_0=\widehat\tau\).  Replacing \(a\) by
+\(\delta a\) would incorrectly linearize the action as
+\(\delta q_0^2a'\).  The two inner anchors are a nonlinear gauge choice;
+they are not silently identified with the branch-entry row of
+\cref{prop:scaled-phase-event-core}.  The next proposition instead
+constructs the corresponding one-row linear inverse directly.
+
+\begin{proposition}[Inner-anchored phase Schur inverse]
+\label[proposition]{prop:inner-anchored-relative-phase-schur}
+Retain
+\cref{thm:raw-compatible-phase-normal-inverse,%
+lem:inner-anchored-nonlinear-phase-chart} and the spaces in
+\cref{eq:relative-phase-spaces}.  On
+\(\mathsf H_{\phi,\infty}^0(I_\sigma)\times\R\), use the
+inner-row data norm
+\begin{equation}
+ \|(h,b)\|_{\phi,*}
+ =\|h\|_{\phi,\infty}+\frac{|b|}{\rho_\delta}.     \label{eq:relative-phase-data-norm}
+\end{equation}
+Then
+\begin{equation}
+ \mathscr B_{\phi,\sigma,*}^0a
+ =\bigl(q_0^2a',a(e_{\sigma,*})\bigr)              \label{eq:inner-anchored-phase-linear-operator}
+\end{equation}
+is an isomorphism
+\[
+ \mathsf A_{\phi,\mathrm{rel}}^1(I_\sigma)
+ \longrightarrow
+ \mathsf H_{\phi,\infty}^0(I_\sigma)\times\R
+\]
+with a dimension-uniform inverse.
+The scalar \(b\) is included to make the linear map onto; the nonlinear
+anchored chart in \cref{eq:anchored-phase-IVP} uses the slice \(b=0\).
+
+The fixed-base linear raw-compatible true-speed action from
+\cref{eq:raw-compatible-true-action}, restricted to the relative space,
+satisfies the stronger pointwise estimate
+\begin{equation}
+ \|\mathfrak A_\sigma^{\rm rc}a\|_{\phi,\infty}
+ \le C r_{\rm out}\left\{
+        r_{\rm out}+\frac1{S_\delta^2}
+                    +\delta^{2-2\vartheta}\right\}
+       \|a\|_{\phi,\mathrm{rel}}.                  \label{eq:relative-raw-action-smallness}
+\end{equation}
+Consequently, after first decreasing \(r_{\rm out}\) and then
+\(\delta_0\),
+\begin{equation}
+ \mathscr S_{\sigma,*}^{\rm rc}
+ =\mathscr B_{\phi,\sigma,*}^0
+       -(\mathfrak A_\sigma^{\rm rc},0)            \label{eq:inner-anchored-relative-schur}
+\end{equation}
+is an isomorphism between the same spaces, with dimension-uniform inverse.
+
+Put
+\[
+ \mathfrak D_\sigma^\infty y=Q_{\rm n}[y]
+       \in\mathsf H_{\phi,\infty}^0(I_\sigma).
+\]
+For
+\(f\in\widetilde{\mathsf Y}_{\sigma,0}\) and
+\(g\in\mathsf H_{\phi,\infty}^0(I_\sigma)\times\R\), the coupled problem
+\begin{align}
+ \mathscr N_\sigma\{x-T_\sigma^{\rm rc}a\}&=f,\notag\\
+ \mathscr B_{\phi,\sigma,*}^0a
+  -\bigl(\mathfrak D_\sigma^\infty x
+       +\mathscr P_{c,\sigma,N}a,0\bigr)&=g       \label{eq:inner-anchored-coupled-block}
+\end{align}
+has the unique solution
+\begin{align}
+ y&=G_\sigma f,\notag\\
+ a&=(\mathscr S_{\sigma,*}^{\rm rc})^{-1}
+       \{(\mathfrak D_\sigma^\infty y,0)+g\},\notag\\
+ x&=T_\sigma^{\rm rc}a+y.                         \label{eq:inner-anchored-schur-inverse}
+\end{align}
+If
+\begin{align}
+ \mathcal G_{\sigma,\delta}^{*,\rm rc}
+ &=\{(x,a):a\in\mathsf A_{\phi,\mathrm{rel}}^1,\
+       x-T_\sigma^{\rm rc}a\in\mathcal D(\mathscr N_\sigma)\},\notag\\
+ \|(x,a)\|_{\mathcal G_{\sigma,\delta}^{*,\rm rc}}
+ &=\|x-T_\sigma^{\rm rc}a\|_{\mathcal D(\mathscr N_\sigma)}
+       +\|a\|_{\phi,\mathrm{rel}},                 \label{eq:inner-anchored-graph-norm}
+\end{align}
+then this is a Banach graph space and
+\begin{equation}
+ \|(x,a)\|_{\mathcal G_{\sigma,\delta}^{*,\rm rc}}
+ \le C\left\{\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}
+                    +\|g\|_{\phi,*}\right\}.       \label{eq:inner-anchored-schur-bound}
+\end{equation}
+
+On the attracting branch the inner anchor does not set the outer entry
+value \(a(r_{\rm out})\) to zero; rather
+\(|a(r_{\rm out})|\le r_{\rm out}\|a\|_{\phi,\mathrm{rel}}\), which is
+the extra small factor in the raw collar term of
+\cref{eq:relative-raw-action-smallness}.  This proposition fixes the
+fold-side phase and removes the constant-mode obstruction at the scalar
+phase/fixed-base linear level.  It introduces no nonlinear normal residual
+or moving terminal event and proves no nonlinear tracker or physical
+complete-history connection.
+\end{proposition}
 
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}

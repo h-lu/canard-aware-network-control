@@ -49,8 +49,17 @@ raw-compatible boundary column, including the repelling feedback, and the
 affine-residual bulk source is controlled in the shifted response.  Together
 these results close a fixed-reduced-base zeroth-order phase--normal inverse in
 a graph/action norm, with total action
-`O(r_out^2+delta/S_delta+delta^(2-2 vartheta))`.  Higher phase and parameter
-jets, moving-event estimates, the nonlinear tracker, speed sign,
+`O(r_out^2+delta/S_delta+delta^(2-2 vartheta))`.  The base raw-collar
+correction is further shown to be `O(epsilon |e|)` (hence
+`O(delta^3 S_delta)` at the inner sections).  An exact inner-anchored
+nonlinear `q_0`-flow chart preserves the two same-sign branches, and its
+one-row relative-phase linearization has a dimension-uniform Schur inverse
+with pointwise action
+`O(r_out(r_out+S_delta^(-2)+delta^(2-2 vartheta)))`.  The fixed-section
+statement removes the constant-phase obstruction only at the scalar
+phase/fixed-base linear level.  The nonlinear normal remainder, higher
+parameter jets, moving-event estimates, the
+nonlinear tracker,
 nonautonomous normal splitting, and the finite-`delta` physical slow-history
 relation remain open.
 The former leaky-network and

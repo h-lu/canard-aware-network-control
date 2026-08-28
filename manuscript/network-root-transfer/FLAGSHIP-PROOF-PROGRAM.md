@@ -386,8 +386,15 @@ not the conormal of an independently defined physical maximal-canard locus.
       control the structured affine-residual response in true action, assemble
       the raw-compatible phase boundary column, and close the fixed-reduced-base
       zeroth-order graph/action phase--normal inverse.
-- [ ] Prove higher phase and parameter/event-time derivative estimates, and
-      construct the nonlinear outer tracker with a controlled speed sign.
+- [x] Prove the vanishing $O(\varepsilon|e|)$ base raw-collar correction,
+      construct the fold-side anchored nonlinear $q_0$-flow phase chart with
+      a controlled scalar reduced-speed sign, and close its fixed-base
+      one-row relative-phase Schur inverse.
+- [ ] Prove a fixed-section nonlinear graph/action residual with a
+      dimension-uniform quadratic remainder.
+- [ ] Prove the required second moving-endpoint collar jets and
+      terminal-relative event chart, then construct the nonlinear outer
+      tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -400,10 +407,15 @@ The frozen-voltage part of G0, the exact algebra of the quotient, fixed-phase
 component flushing on both outer branches, repelling compatible feedback,
 exact phase-delay shift, structured reverse action estimate, raw-compatible
 boundary-column assembly, and fixed-reduced-base zeroth-order graph/action
-phase--normal inverse are now closed.  The reverse column is not uniformly
-bounded in the old normalized state norm.  Higher phase and
+phase--normal inverse are now closed.  The base collar correction vanishes
+at the fold-side scale, and the inner-anchored nonlinear phase chart and
+relative one-row Schur inverse remove the constant-phase obstruction to a
+same-sign tube at the scalar phase/fixed-base linear level.  A uniform
+nonlinear normal tube is not yet constructed.  The reverse column is not
+uniformly bounded in
+the old normalized state norm.  The fixed-section nonlinear remainder,
 relative-parameter jets, moving-event control, nonlinear tracker existence,
-speed sign, nonautonomous quotient roughness, and G1 remain open.  The generic
+nonautonomous quotient roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.
 This zeroth-order border does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.
