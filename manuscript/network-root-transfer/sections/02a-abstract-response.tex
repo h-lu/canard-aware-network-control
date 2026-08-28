@@ -1,5 +1,364 @@
-\section{A range-to-root transfer principle}
+\section{Hidden-return structure and quantitative persistence}
 \label{sec:abstract-response}
+
+\subsection{The cokernel hidden-return map}
+
+We first isolate the structural statement which determines the response
+coefficient.  Its algebra is the standard one-dimensional Schur elimination;
+the point of recording it is to state exactly which source, inverse, return,
+and uniform bounds must be realized by the RFDE.  No independent novelty is
+claimed for the block elimination itself.  It is distinct from the
+implicit-function argument below.
+
+\begin{lemma}[Projection--lift chain rule]
+\label[lemma]{lem:projection-lift-chain}
+Let \(\mathcal H,\mathcal X,\mathcal C,\mathcal U\) be Banach spaces,
+\(\Pi\in\mathcal L(\mathcal X,\mathcal C)\), and suppose
+\(F:(-\eta_0,\eta_0)\times\mathcal H\to\mathcal X\) and
+\(\mathcal I:(-\eta_0,\eta_0)\times\mathcal U\to\mathcal H\) are jointly
+\(C^1\) on the relevant open neighborhoods.  Write
+\(F_\eta=F(\eta,\cdot)\) and
+\(\mathcal I_\eta=\mathcal I(\eta,\cdot)\).  If
+\begin{equation}
+ \Pi F_\eta=\Pi F_0
+ \quad\hbox{as maps on \(\mathcal H\) for every admitted \(\eta\)}, \label{eq:abstract-exact-blindness}
+\end{equation}
+then the reduced field \(Q_\eta=\Pi F_\eta\circ\mathcal I_\eta\) obeys
+\begin{equation}
+ \left.\partial_\eta Q_\eta(u)\right|_{\eta=0}
+ =D(\Pi F_0)(\mathcal I_0(u))
+      \left.\partial_\eta\mathcal I_\eta(u)\right|_{\eta=0}.     \label{eq:projection-lift-chain}
+\end{equation}
+Thus exact blindness removes the direct structural derivative but need not
+remove the derivative transmitted through the invariant lift.
+\end{lemma}
+
+\begin{proof}
+Differentiate \(\Pi F_\eta(\mathcal I_\eta(u))\).  The direct term is
+\(\Pi(\partial_\eta F_\eta)|_{\eta=0}=0\) by
+\cref{eq:abstract-exact-blindness}; the remaining chain-rule term is
+\cref{eq:projection-lift-chain}.
+\end{proof}
+
+\subsection{An abstract two-atom source criterion}
+
+The following elementary moment lemma isolates the part of the mechanism
+that depends only on separated delay locations.  Its purpose is to give a
+portable verification interface; the nonlinear RFDE content begins only
+after this source has been lifted through the history equation and returned
+to a collective cokernel.
+
+\begin{proposition}[Sharp two-atom inversion of a redistributed moment]
+\label[proposition]{prop:abstract-two-atom-source}
+Let \(\mathcal A\) and \(E\ne\{0\}\) be real Banach spaces, let
+\(\mathsf v\in\mathcal L(\mathcal A,E)\), fix real locations
+\(\theta_0,\ldots,\theta_m\), and let
+\(c\in\R\setminus\{0\}\).  Define
+\[
+ \mathcal A_{\rm red}^{m+1}
+ =\left\{a=(a_0,\ldots,a_m)\in\mathcal A^{m+1}:
+          \sum_{k=0}^m a_k=0\right\},
+ \qquad
+ \|a\|_1=\sum_{k=0}^m\|a_k\|_{\mathcal A},
+\]
+and
+\begin{equation}
+ \mathsf S_{\theta,c}a
+ =c\,\mathsf v\!\left(\sum_{k=0}^m\theta_ka_k\right).
+ \label{eq:abstract-two-atom-source}
+\end{equation}
+Write
+\(\theta_-=\min_k\theta_k\),
+\(\theta_+=\max_k\theta_k\), and
+\(\Delta_\theta=\theta_+-\theta_-\).
+If \(\Delta_\theta>0\), then
+\begin{equation}
+ \operatorname{Ran}\mathsf S_{\theta,c}=\operatorname{Ran}\mathsf v,
+ \qquad
+ \|\mathsf S_{\theta,c}\|
+ =\frac{|c|\Delta_\theta}{2}\|\mathsf v\|.          \label{eq:abstract-moment-norm}
+\end{equation}
+Suppose in addition that
+\(\mathsf j\in\mathcal L(E,\mathcal A)\) is a bounded right inverse of
+\(\mathsf v\).  Choose indices \(k_-\) and \(k_+\) at the extreme
+locations.  Then
+\begin{equation}
+ \begin{aligned}
+  (\mathsf Q_{\theta,c}y)_{k_-}
+   &=-\frac{\mathsf j y}{c\Delta_\theta},&
+  (\mathsf Q_{\theta,c}y)_{k_+}
+   &= \frac{\mathsf j y}{c\Delta_\theta},\\
+  (\mathsf Q_{\theta,c}y)_k&=0&&(k\notin\{k_-,k_+\})
+ \end{aligned}                                      \label{eq:abstract-two-atom-right-inverse}
+\end{equation}
+defines a right inverse of \(\mathsf S_{\theta,c}\), with
+\begin{equation}
+ \|\mathsf Q_{\theta,c}\|
+ =\frac{2\|\mathsf j\|}{|c|\Delta_\theta},
+ \qquad
+ \|\mathsf S_{\theta,c}\|\|\mathsf Q_{\theta,c}\|
+ =\|\mathsf v\|\|\mathsf j\|\ge1.                \label{eq:abstract-moment-right-inverse-norm}
+\end{equation}
+If \(\|\mathsf v\|=\|\mathsf j\|=1\), the two-atom inverse realizes
+the pointwise minimum probe cost and the dual channel is a scaled isometry:
+\begin{align}
+ \inf_{\mathsf S_{\theta,c}a=y}\|a\|_1
+ &=\|\mathsf Q_{\theta,c}y\|_1
+   =\frac{2\|y\|_E}{|c|\Delta_\theta},             \label{eq:abstract-moment-optimal-cost}\\
+ \|\ell\mathsf S_{\theta,c}\|
+ &=\frac{|c|\Delta_\theta}{2}\|\ell\|_{E^*},
+ \qquad
+ \ell(y)=(\ell\mathsf S_{\theta,c})(\mathsf Q_{\theta,c}y) \label{eq:abstract-moment-dual-isometry}
+\end{align}
+for every \(y\in E\) and \(\ell\in E^*\).  If
+\(\Delta_\theta=0\), then \(\mathsf S_{\theta,c}=0\) on
+\(\mathcal A_{\rm red}^{m+1}\).
+\end{proposition}
+
+\begin{proof}
+Put \(\bar\theta=(\theta_-+\theta_+)/2\).  Since \(\sum_ka_k=0\),
+\[
+ \|\mathsf S_{\theta,c}a\|_E
+ =|c|\left\|\mathsf v\!\left(
+       \sum_k(\theta_k-\bar\theta)a_k\right)\right\|_E
+ \le\frac{|c|\Delta_\theta}{2}\|\mathsf v\|\|a\|_1.
+\]
+Putting \(-x/2\) at \(k_-\), \(x/2\) at \(k_+\), and zero elsewhere,
+then taking the supremum over nonzero \(x\in\mathcal A\), proves the norm
+equality.  The same construction without the factors \(1/2\) proves the
+range identity.
+
+The tuple in \cref{eq:abstract-two-atom-right-inverse} has zero sum and
+\(\sum_k\theta_k(\mathsf Q_{\theta,c}y)_k=c^{-1}\mathsf j y\), so it is a
+right inverse.  Its exact norm is the first equality in
+\cref{eq:abstract-moment-right-inverse-norm}; the product formula follows
+from \cref{eq:abstract-moment-norm}, and it is at least one because
+\(\mathsf v\mathsf j=\Id_E\).
+
+If both operator norms are one, then
+\(\|y\|_E\le\|\mathsf j y\|_{\mathcal A}\le\|y\|_E\).  Every solution
+of \(\mathsf S_{\theta,c}a=y\) is bounded below by the reciprocal source
+norm, and \(\mathsf Q_{\theta,c}y\) attains this bound.  Finally,
+\[
+ \|\ell\|
+ \le\|\ell\mathsf S_{\theta,c}\|\|\mathsf Q_{\theta,c}\|,
+ \qquad
+ \|\ell\mathsf S_{\theta,c}\|
+ \le\|\ell\|\|\mathsf S_{\theta,c}\|,
+\]
+and the reciprocal norm identities force equality.  If
+\(\Delta_\theta=0\), all locations equal \(\theta_*\), so
+\(\sum_k\theta_ka_k=\theta_*\sum_ka_k=0\).
+\end{proof}
+
+For each \(N\), let
+\(\mathcal T_N,\mathcal D_{\perp,N},\mathcal Y_{\perp,N},
+\mathcal D_{\parallel,N},\mathcal Y_{\parallel,N}\) be real Banach spaces,
+where \(\mathcal T_N\) consists of projection-invisible structural
+directions.  Let
+\[
+ L_{\perp,N}:\mathcal D_{\perp,N}\longrightarrow\mathcal Y_{\perp,N},
+ \qquad
+ L_{\parallel,N}:\mathcal D_{\parallel,N}
+       \longrightarrow\mathcal Y_{\parallel,N}
+\]
+be bounded linear operators, and let
+\[
+ \mathsf S_N:\mathcal T_N\to\mathcal Y_{\perp,N},\qquad
+ \mathsf B_N:\mathcal D_{\perp,N}\to\mathcal Y_{\parallel,N}
+\]
+be bounded and linear.  Here \(\mathsf S_NR\) is the transverse source left
+by a blind direction,
+\(L_{\perp,N}^{-1}\) propagates it through the full-history range problem,
+and \(\mathsf B_N\) returns that response to the collective equation.
+
+\begin{theorem}[Cokernel Schur complement for a hidden response]
+\label[theorem]{thm:hidden-return-schur}
+Assume that \(L_{\perp,N}\) is a bounded isomorphism, that
+\(\operatorname{Ran}L_{\parallel,N}\) is closed of codimension one, and that
+\(f_{\nu,N}\in\mathcal Y_{\parallel,N}\) has nonzero class in
+\(\operatorname{coker}L_{\parallel,N}\).  Define the hidden-return map
+intrinsic to this fixed collective cokernel,
+\begin{equation}
+ \mathcal K_N(R)
+ =\left[\mathsf B_NL_{\perp,N}^{-1}\mathsf S_NR\right]
+ \in\operatorname{coker}L_{\parallel,N}.               \label{eq:hidden-return-cokernel}
+\end{equation}
+There is a unique bounded linear functional
+\(\Lambda_N:\mathcal T_N\to\R\) such that
+\begin{equation}
+ \mathcal K_N(R)+\Lambda_N(R)[f_{\nu,N}]=0
+ \quad\hbox{in }\operatorname{coker}L_{\parallel,N}.   \label{eq:hidden-return-balance}
+\end{equation}
+Equivalently, if
+\(\mathfrak l_N\in\mathcal Y_{\parallel,N}^*\setminus\{0\}\) satisfies
+\(\ker\mathfrak l_N=\operatorname{Ran}L_{\parallel,N}\), then
+\begin{equation}
+ \Lambda_N(R)
+ =-\frac{\mathfrak l_N\mathsf B_NL_{\perp,N}^{-1}\mathsf S_NR}
+          {\mathfrak l_N f_{\nu,N}}.                  \label{eq:hidden-return-schur}
+\end{equation}
+This scalar is unchanged by rescaling \(\mathfrak l_N\) or adding a
+collective range term \(L_{\parallel,N}w_R\),
+\(w_R\in\mathcal D_{\parallel,N}\), to the returned forcing.  It is
+also invariant under block-preserving transverse coordinate changes: if
+\(J_N,K_N\) are Banach-space isomorphisms and
+\begin{equation}
+ \widetilde L_{\perp,N}=K_NL_{\perp,N}J_N^{-1},\qquad
+ \widetilde{\mathsf S}_N=K_N\mathsf S_N,\qquad
+ \widetilde{\mathsf B}_N=\mathsf B_NJ_N^{-1},         \label{eq:hidden-return-coordinate-change}
+\end{equation}
+then the product defining \(\mathcal K_N\) is unchanged.  The normalization
+of the physical matching parameter, however, is held fixed.
+
+Moreover,
+\begin{equation}
+ \|\Lambda_N\|
+ \le
+ \frac{\|\mathsf B_N\|\,\|L_{\perp,N}^{-1}\|\,
+       \|\mathsf S_N\|}
+      {\operatorname{dist}(f_{\nu,N},
+          \operatorname{Ran}L_{\parallel,N})}.       \label{eq:hidden-return-uniform-bound}
+\end{equation}
+Consequently, common numerator bounds and a common positive lower bound on
+the displayed distance give \(\sup_N\|\Lambda_N\|<\infty\).
+Whenever \(\Lambda_N\ne0\), its zero set is a closed codimension-one
+hyperplane in \(\mathcal T_N\), and its complement is open and dense.
+\end{theorem}
+
+\begin{proof}
+The cokernel is one dimensional and \([f_{\nu,N}]\ne0\), so this class is a
+basis.  Every class \(\mathcal K_N(R)\) therefore has a unique coefficient in
+that basis, which proves \cref{eq:hidden-return-balance}.  Applying any
+\(\mathfrak l_N\) with the stated kernel gives \cref{eq:hidden-return-schur};
+linearity and boundedness follow by composition.  The quotient norm of
+\([f_{\nu,N}]\) is its distance from the closed range, which gives
+\cref{eq:hidden-return-uniform-bound}.  Rescaling the
+cokernel functional cancels between numerator and denominator.  A collective
+range term is killed by \(\mathfrak l_N\), and
+\cref{eq:hidden-return-coordinate-change} cancels inside the three-factor
+product.  Finally, the kernel of a
+nonzero bounded scalar functional is closed and has codimension one.
+\end{proof}
+
+The meaning of \cref{thm:hidden-return-schur} is the first-order block system
+\begin{equation}
+ L_{\perp,N}h_N=\mathsf S_NR,\qquad
+ L_{\parallel,N}x_N+f_{\nu,N}\lambda_N+\mathsf B_Nh_N=0.       \label{eq:hidden-return-block-system}
+\end{equation}
+By \cref{lem:projection-lift-chain}, exact projection blindness removes the
+direct structural derivative of the reduced vector field.  For
+\cref{eq:hidden-return-block-system}, one must additionally verify that
+direct structural derivatives of auxiliary matcher, phase, endpoint, or
+preparation rows vanish in the cokernel---either because they are zero or
+because they belong to \(\operatorname{Ran}L_{\parallel,N}\).  After this
+model-dependent check, eliminating \(h_N\) and passing to the collective
+cokernel gives
+\(\lambda_N=\Lambda_N(R)\).  This is the hidden-return calculation; existence
+of a nearby nonlinear root with a controlled remainder is a separate step.
+
+The collective cokernel used in the shared-resource model is not one of the
+finite-interval trace--phase--endpoint isomorphisms.  It is the following
+phase-fixed whole-line operator.
+
+\begin{lemma}[Gaussian cokernel of the fold matching operator]
+\label[lemma]{lem:fold-gaussian-cokernel}
+Fix \(c>0\) and \(M\ge0\), and define
+\begin{align*}
+ \mathcal Y_\infty^{c,M}
+ &=\left\{f\in C(\R;\R^2):
+   \|f\|_{\mathcal Y_\infty^{c,M}}
+   :=\sup_{s\in\R}e^{-c|s|}\langle s\rangle^{-M}|f(s)|<\infty\right\},\\
+ \mathcal X_\infty^{c,M+1}
+ &=\left\{\xi\in C(\R;\R^2):
+   \|\xi\|_{\mathcal X_\infty^{c,M+1}}
+   :=\sup_{s\in\R}e^{-c|s|}\langle s\rangle^{-M-1}|\xi(s)|<\infty\right\}.
+\end{align*}
+For \(\xi=(U,V)\), let
+\[
+ L_0\xi=(U'-sU-V,V'+U)
+\]
+and give the phase-fixed domain
+\begin{equation}
+ \mathcal D_\infty^{c,M}
+ =\{\xi\in C^1(\R;\R^2):
+      \xi\in\mathcal X_\infty^{c,M+1},
+      L_0\xi\in\mathcal Y_\infty^{c,M},\ U(0)=0\}     \label{eq:whole-line-fold-domain}
+\end{equation}
+its graph norm; this is a Banach space because the differential operator is
+closed in the displayed weighted spaces.  Then
+\(L_0:\mathcal D_\infty^{c,M}\to\mathcal Y_\infty^{c,M}\) is injective,
+has closed range of codimension one, and
+\begin{equation}
+ \operatorname{Ran}L_0=\ker\mathfrak l_0,
+ \qquad
+ \mathfrak l_0f
+ =\int_\R e^{-s^2/2}\{sf_1(s)+f_2(s)\}\,\dd s.        \label{eq:fold-gaussian-cokernel}
+\end{equation}
+Moreover, \(L_0\) has a bounded right inverse from
+\(\ker\mathfrak l_0\) to \(\mathcal D_\infty^{c,M}\).
+\end{lemma}
+
+\begin{proof}
+Put \(E(s)=e^{s^2/2}\), \(I(s)=\int_0^sE(t)\,\dd t\), and
+\[
+ \tau(s)=(-1,s)^T,\qquad
+ n(s)=(I(s),E(s)-sI(s))^T.
+\]
+These form a fundamental pair for \(L_0\xi=0\).  Writing
+\(\xi=a\tau+bn\), variation of constants gives
+\begin{equation}
+ a'=E^{-1}\{-(E-sI)f_1+If_2\}=:A_f,\qquad
+ b'=E^{-1}(sf_1+f_2)=:B_f.                            \label{eq:whole-line-ab}
+\end{equation}
+For every \(\xi\in\mathcal D_\infty^{c,M}\),
+\[
+ b(s)=E(s)^{-1}\{sU(s)+V(s)\}\longrightarrow0
+ \quad(s\to\pm\infty).
+\]
+Integrating the second equation in \cref{eq:whole-line-ab} therefore shows
+that \(\mathfrak l_0(L_0\xi)=0\).
+
+Conversely, if \(f\in\ker\mathfrak l_0\), set
+\begin{equation}
+ a(s)=\int_0^sA_f(t)\,\dd t,\qquad
+ b(s)=\int_{-\infty}^sB_f(t)\,\dd t
+     =-\int_s^\infty B_f(t)\,\dd t.                  \label{eq:whole-line-green}
+\end{equation}
+Then \(\xi=a\tau+bn\) solves \(L_0\xi=f\) and has \(U(0)=0\).
+The elementary bounds
+\[
+ |I(s)|\le CE(s)\langle s\rangle^{-1},\qquad
+ |E(s)-sI(s)|\le CE(s)
+\]
+together with
+\begin{align*}
+ \left|\int_s^\infty e^{-t^2/2}(tf_1(t)+f_2(t))\,\dd t\right|
+ &\le C_{c,M}e^{-s^2/2+c|s|}\langle s\rangle^M\|f\|_{\mathcal Y_\infty^{c,M}}
+ &&(s\ge0),\\
+ \left|\int_{-\infty}^s e^{-t^2/2}(tf_1(t)+f_2(t))\,\dd t\right|
+ &\le C_{c,M}e^{-s^2/2+c|s|}\langle s\rangle^M\|f\|_{\mathcal Y_\infty^{c,M}}
+ &&(s\le0)
+\end{align*}
+and the elementary exponential integral bound for \(A_f\), give
+\[
+ \|\xi\|_{\mathcal X_\infty^{c,M+1}}
+ \le C_{c,M}\|f\|_{\mathcal Y_\infty^{c,M}}.
+\]
+Since \(L_0\xi=f\), the same inequality plus
+\(\|L_0\xi\|_{\mathcal Y_\infty^{c,M}}=\|f\|_{\mathcal Y_\infty^{c,M}}\)
+is the required graph-norm estimate.  The graph domain is complete because
+the maximal first-order operator is closed in the displayed weighted
+spaces, and the phase condition \(U(0)=0\) is closed.  This constructs the
+asserted bounded right inverse.  If \(f=0\), the
+coefficient \(b\) is constant and the Gaussian mode \(n\) is excluded by
+\(\mathcal X_\infty^{c,M+1}\); the phase row then removes the remaining
+tangent mode \(\tau\).  Hence the operator is injective.  Finally,
+\(\mathfrak l_0\) is a nonzero bounded functional on
+\(\mathcal Y_\infty^{c,M}\), so its kernel is closed and has codimension one.
+\end{proof}
+
+\subsection{Quantitative persistence of the response coefficient}
 
 The construction of a selected complete-history root has two logically
 different parts.  A range argument must first construct the history graph and
@@ -244,6 +603,78 @@ The first derivative is \(O(\delta)\); hence
 \cref{eq:abstract-physical-increment}.
 \end{proof}
 
+\begin{corollary}[Schur-to-root persistence]
+\label[corollary]{cor:schur-to-root}
+For every \(N\ge2\), let \(R_N\in\mathcal T_N\), with
+\(\sup_N\|R_N\|_{\mathcal T_N}<\infty\), and suppose the hypotheses of
+\cref{thm:hidden-return-schur,thm:abstract-root-response} hold with common
+constants for this family.  Assume that
+\(\mathcal Y_{\parallel,N}\) is a Banach space of the
+\(V_N\)-valued whole-line profiles used in
+\cref{eq:abstract-melnikov-coefficients}, and choose its bounded cokernel
+functional to be
+\[
+ \mathfrak l_Nf=\int_\R\langle\psi_N(s),f(s)\rangle\,\dd s,
+ \qquad
+ \ker\mathfrak l_N=\operatorname{Ran}L_{\parallel,N}.
+\]
+Assume that the profiles in \cref{eq:abstract-melnikov-coefficients}
+satisfy
+\begin{equation}
+ a_N=\mathfrak l_Nf_{\nu,N},\qquad
+ f_{\zeta,N}
+ =\mathsf B_NL_{\perp,N}^{-1}\mathsf S_NR_N
+   +L_{\parallel,N}w_{N,R_N}                          \label{eq:schur-to-root-profiles}
+\end{equation}
+for some \(w_{N,R_N}\in\mathcal D_{\parallel,N}\), with the profile and
+range-term bounds required by the common tail and range-to-gap hypotheses.
+Thus all direct
+structural contributions from matcher, phase, endpoint, and preparation rows
+have either been included in the returned forcing or verified to lie in the
+collective range.  Then
+\begin{equation}
+ b_N(R_N)=\mathfrak l_N\mathsf B_NL_{\perp,N}^{-1}\mathsf S_NR_N,
+ \qquad -\frac{b_N(R_N)}{a_N}=\Lambda_N(R_N),         \label{eq:schur-to-root-ratio}
+\end{equation}
+and
+\begin{align}
+ \partial_\zeta\nu_{c,N}(\delta,\zeta)
+ &=\delta\Lambda_N(R_N)+O(\delta^2+\delta|\zeta|),
+                                                               \label{eq:schur-root-derivative}\\
+ \left|\mu_{c,N}(\delta,\zeta)-\mu_{c,N}(\delta,0)
+       -\delta^{q+1}\zeta\Lambda_N(R_N)\right|
+ &\le C\{\delta^{q+2}|\zeta|+\delta^{q+1}\zeta^2\}. \label{eq:schur-root-increment}
+\end{align}
+The constants are uniform in \(N\) whenever the hypotheses of the two
+theorems are uniform.  On every admissible tangent space where
+\(\Lambda_N\ne0\), the leading zero-response directions form the
+codimension-one hyperplane \(\ker\Lambda_N\).  If \(q=2\) and several fixed
+preparations have the same leading block data in
+\cref{eq:schur-to-root-profiles} while satisfying the range-to-gap bounds
+with preparation-dependent constants, then all their baseline-subtracted
+increments define the same dimension-uniform germ
+\begin{equation}
+ [\mu^{\mathbf p}_{c,N}(\delta,\zeta)
+      -\mu^{\mathbf p}_{c,N}(\delta,0)]_{\rm resp}
+ =[\delta^3\zeta\Lambda_N(R_N)]_{\rm resp}.           \label{eq:abstract-canonical-germ}
+\end{equation}
+This last assertion is pairwise for fixed preparations; it does not claim a
+single remainder constant over an unbounded preparation class.
+\end{corollary}
+
+\begin{proof}
+Applying \(\mathfrak l_N\) to
+\cref{eq:schur-to-root-profiles} kills the collective range term and proves
+\cref{eq:schur-to-root-ratio}.  Substitution into
+\cref{eq:abstract-root-derivative,eq:abstract-physical-increment} gives
+\cref{eq:schur-root-derivative,eq:schur-root-increment}; the final statement
+about the hyperplane is \cref{thm:hidden-return-schur}.  For \(q=2\), divide
+the difference between \cref{eq:schur-root-increment} and its leading term by
+\(\delta^3|\zeta|\) and let \((\delta,\zeta)\to(0,0)\); this proves
+\cref{eq:abstract-canonical-germ} for each fixed preparation and hence
+pairwise on intersections of their parameter boxes.
+\end{proof}
+
 \paragraph{How to apply the theorem.}
 For a new RFDE or other infinite-dimensional matching problem, one must
 verify five items: (i) construct one exact history lift and the two selected
@@ -260,28 +691,70 @@ additionally requires a model-specific bound on \(|b_N/a_N|\); it is not a
 consequence of the transfer theorem.
 
 \paragraph{Structural and model-specific inputs.}
-The exact history lift, selected trace range, zero-fiber implication,
-parameter jets, transverse inverse estimates used to obtain them, and the
-tail and remainder bounds are the structural inputs to
-\cref{thm:abstract-root-response}.  The theorem itself is indifferent to
-whether they arise from an RFDE graph transform, a Lin problem, or another
-range construction.  In the shared-resource network, by contrast, the
-identities
+The response coefficient should first be obtained from
+\cref{thm:hidden-return-schur}; \cref{thm:abstract-root-response} then
+persists that coefficient to an exact nonlinear root.  In the shared-resource
+network take
+\(\mathcal D_{\perp,N}=\mathcal Y_{\perp,N}=E_N\), with the network norm.
+The first transverse graph variation and its collective return give the
+following bounded maps; in particular, \(\mathsf B_Nh\) is the indicated
+whole-line profile, not a single vector:
+\begin{align}
+ L_{\perp,N}&=A_N,&
+ \mathsf S_N\mathbf R
+ &=\frac{K}{2\alpha}P_{\perp,N}
+      \left(\sum_k\theta_kR_k\right)\mathbf1,\notag\\
+ \mathsf B_Nh(s)&=\left(\frac{s}{\alpha}
+             \pi_N^T\diag(c_N)h,0\right)^T,&
+ \mathfrak l_0f&=\int_{\R}e^{-s^2/2}(s,1)f(s)\,\dd s.   \label{eq:abstract-schur-dictionary}
+\end{align}
+Here
+\begin{equation}
+ \mathcal D_{\parallel,N}=\mathcal D_\infty^{c,M},\qquad
+ \mathcal Y_{\parallel,N}=\mathcal Y_\infty^{c,M},\qquad
+ L_{\parallel,N}=L_0,                                 \label{eq:abstract-collective-dictionary}
+\end{equation}
+and \cref{lem:fold-gaussian-cokernel} proves
+\(\operatorname{Ran}L_{\parallel,N}=\ker\mathfrak l_0\).  The
+matching-parameter profile is \(f_{\nu,N}=(0,1)^T\), so
+\(\mathfrak l_0f_{\nu,N}=\sqrt{2\pi}\).  Hence
+\cref{eq:hidden-return-schur} is exactly
+\cref{eq:response-functional}.  The identities
 \[
  X_0(s)-X_0(s-\theta_k)=-\frac{\theta_k}{2\alpha},
  \qquad
  \psi(s)=e^{-s^2/2}(s,1)^T
 \]
 and the stationary-row cancellation are specific to the affine singular
-orbit and the chosen delay layers.  The curvature--resolvent return then
-gives
-\begin{equation}
- a_N=\sqrt{2\pi},\qquad
+orbit and the chosen delay layers.  Row neutrality removes the direct
+structural delay profile.  Separately, the transverse solution
+\(h_{*,N}=L_{\perp,N}^{-1}\mathsf S_N\mathbf R\) is constant in \(s\), so
+the unperturbed delay operator applied to
+\(h_{*,N}(s)-h_{*,N}(s-\theta_k)\) also vanishes.  The remaining
+curvature--resolvent return gives
+\begin{align}
+ f_{\zeta,N}
+ &=\mathsf B_NA_N^{-1}\mathsf S_N\mathbf R_N
+   \quad\text{in }\mathcal Y_\infty^{c,M},
+   \qquad w_{N,R_N}=0,\notag\\
+ a_N&=\sqrt{2\pi},\qquad
  b_N=\sqrt{2\pi}\frac{r_N}{\alpha},\qquad
  -\frac{b_N}{a_N}=-\frac{r_N}{\alpha}=\mathscr C_N.
  \label{eq:abstract-current-dictionary}
+\end{align}
+In particular, at \(\zeta=0\),
+\begin{equation}
+ \delta^{-1}\partial_\zeta\nu_{c,N}\longrightarrow\mathscr C_N,
+ \qquad
+ \delta^{-3}\partial_\zeta\mu_{c,N}\longrightarrow\mathscr C_N,
+                                                               \label{eq:abstract-current-scaling}
 \end{equation}
-The graph and trace hypotheses are supplied in
+uniformly in \(N\).  Thus the Schur variable is normalized relative to the
+physical parameter \(\mu=\delta^2\nu\), not to an arbitrary rescaling of the
+matching row.
+The exact history lift, selected trace range, zero-fiber implication,
+parameter jets, and transverse inverse needed for this dictionary are
+supplied in
 \cref{lem:shared-graph-trace}; the exact finite-section passage is
 \cref{prop:finite-gap-bridge}.  Together with
 \cref{eq:shared-leading-gap,eq:shared-melnikov,%

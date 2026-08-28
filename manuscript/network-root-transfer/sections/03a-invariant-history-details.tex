@@ -7,7 +7,7 @@ problems.  The purpose is to specify the Banach spaces, the prepared
 nonlinearities, the contraction, and the finite mixed prolongation without
 appealing to a same-regularity implicit-function theorem.
 
-The preparation in \cref{def:canonical-preparation} contains a tame-flow
+The preparation in \cref{def:admissible-preparation} contains a tame-flow
 condition in addition to its global derivative majorant.  We state that
 condition in operator form below and verify it for the explicit cutoff in
 the \((\chi,d)\)-coordinates.  The distinction is essential:
@@ -84,7 +84,7 @@ polynomial factors below.  From this point through the graph construction,
 The final pointwise estimates are pulled back to \((X,Y)\).
 
 Fix a target \(\delta\), freeze the graph preparation from
-\cref{def:canonical-preparation}, and denote the resulting globally bounded
+\cref{def:admissible-preparation}, and denote the resulting globally bounded
 maps by
 \begin{align}
  q_{0,\delta}&:U\longrightarrow U,\notag\\
@@ -167,7 +167,7 @@ This property is obtained by a concrete admissible choice.  Let
 \(\omega\in C_c^\infty(\R)\) equal one on \([-1,1]\) and vanish off
 \((-2,2)\).  Choose fixed \(B_*>2\Theta_*+B+3\) and \(d_*>0\) so that,
 for all sufficiently small \(\delta\), the fixed \(b_0\)-neighborhood of
-the depth-two hull in \cref{def:canonical-preparation} is contained in
+the depth-two hull in \cref{def:admissible-preparation} is contained in
 \[
  |\chi|<R_\delta+B_*,\qquad |d|<d_*.
 \]
@@ -240,7 +240,7 @@ exponential in \cref{eq:invdet-tame-flow}.  This is a joint induction with
 the invariant jet balls, not a smoothness assertion for arbitrary \(C^1\)
 fields.  Thus
 \cref{eq:invdet-explicit-q0-preparation}, together with the slotwise
-preparation already required in \cref{def:canonical-preparation}, is a
+preparation already required in \cref{def:admissible-preparation}, is a
 sufficient concrete realization of
 \cref{def:invdet-tame-preparation}.
 
@@ -251,7 +251,7 @@ The bound in \cref{eq:preparation-derivative-list} permits
 Gronwall would then give \(e^{\Theta_*A_\delta}\) for a fixed delay
 evaluation, and \cref{eq:invdet-subpower} does not control
 \(\delta A_\delta e^{\Theta_*A_\delta}\).  This is why
-\cref{def:canonical-preparation} includes the explicit singular cutoff and
+\cref{def:admissible-preparation} includes the explicit singular cutoff and
 requires \cref{eq:invdet-tame-flow}; its derivative majorant is not being
 used as a substitute for flow control.
 \end{remark}
@@ -505,7 +505,7 @@ two positive-grade factors use lower total grades.
 
 More concretely, replace every occurrence of the current graph jet in these
 formulas by an arbitrary element \(V\) of the current common fiber.  Retain
-the terms linear in \(V\) in the variational equations
+the terms linear in \(V\) in the variational systems in
 \cref{eq:invdet-first-flow-parameter,eq:invdet-flow-partitions}, solve them
 with zero initial value, substitute the resulting flow jets and the stable
 component of \(V\) in the terms linear in \(V\) in the Fa\`a di Bruno
@@ -558,7 +558,7 @@ Choose \(\delta_0\) so that the finitely many occurrences of
 balls through grade eleven, with radii independent of \(N\).
 
 For consecutive iterates, suppose every preceding block converges
-geometrically.  Equation \cref{eq:invdet-highest-block-difference} gives
+geometrically.  \Cref{eq:invdet-highest-block-difference} gives
 \begin{equation}
  a_{k+1}\leq\eta_\delta a_k+Cq^k,
  \qquad \max\{\eta_\delta,q\}<1.                    \label{eq:invdet-jet-increment-recurrence}
@@ -688,11 +688,12 @@ state derivatives through the finite order used here lose only a
 polynomial factor in \(R_\delta\); the weights
 \(\langle s\rangle^Me^{c|s|}\) absorb this loss.
 
-\begin{proposition}[Growing-tube coefficient envelope]
+\begin{proposition}[Graph-only coefficient envelopes]
 \label[proposition]{prop:invdet-coefficient-envelope}
 Fix \(C_0,c_0>0\) and an integer \(M_0\geq0\).  There are
 \(\delta_0>0\), \(C,c>0\), and an integer \(M\), depending on these three
-fixed tube data and on the common preparation data but independent of \(N\),
+fixed tube data and on the common model and graph-preparation data from the
+first part of \cref{def:admissible-preparation}, but independent of \(N\),
 such that, for every \(0<\delta<\delta_0\) and \(\ell=1,2\), the reduced
 coefficients after conversion back to the \((X,Y)\)-coordinates satisfy
 \begin{equation}
@@ -702,17 +703,26 @@ coefficients after conversion back to the \((X,Y)\)-coordinates satisfy
 \end{equation}
 whenever \(0\leq a\leq3\), \(0\leq i,j\leq2\),
 \(|s|\leq S_\delta+1\), \(\nu\in I_\nu\),
-\(|\zeta|\leq\zeta_*\), and
-\[
- |\xi|\leq C_0\delta e^{c_0|s|}\langle s\rangle^{M_0}.
-\]
-After increasing the output constants \(C,c,M\), without changing the
-input tube, the same bound holds for the stable
+\(|\zeta|\leq\zeta_*\), and either
+\begin{equation}
+ |\xi|\leq C_0\delta e^{c_0|s|}\langle s\rangle^{M_0},          \label{eq:invdet-trace-input-tube}
+\end{equation}
+or the evaluation point is
+\begin{equation}
+ \gamma_0(s)+\xi=\Gamma(s,d),\qquad |d|\leq\delta^\kappa.      \label{eq:invdet-retained-input-tube}
+\end{equation}
+After increasing the output constants \(C,c,M\), without changing these
+input sets, the same bound holds for the stable
 coefficients \(H_{1,N},H_{2,N}\).  Moreover,
 \begin{equation}
- \partial_\zeta q_{1,N}=0.                            \label{eq:invdet-q1-zeta-zero}
+ \partial_\zeta q_{1,N}=0,\qquad
+ \partial_{\nu\nu}q_{1,N}=0.                         \label{eq:invdet-q1-zeta-zero}
 \end{equation}
 \end{proposition}
+
+Only \(\mathfrak P_{\rm gr}\) enters this proposition.  In particular, its
+proof is logically prior to the construction of the planar trace completion
+\(\mathfrak P_{\rm pl}\).
 
 \begin{proof}
 Differentiate the fixed-point equations at \(\rho=0\).  Since
@@ -748,7 +758,7 @@ In the second line, differentiating the base shift contributes
 \(-r q_{0,\delta}(u)\); every other new term contains \(Z_{1,N}\), one
 fixed-time flow variation, or one derivative of the prepared data.
 
-Equations \cref{eq:invdet-q1-q2-formulas,eq:invdet-H1-H2-formulas} show
+\Cref{eq:invdet-q1-q2-formulas,eq:invdet-H1-H2-formulas} show
 that the first coefficient samples one fixed-delay backtrack and the second
 samples at most a sum of two delays.  The factors \(r^k\), \(k=0,1\), in
 the stable formulas are controlled by
@@ -757,8 +767,14 @@ does not enlarge this delay depth: the atoms are fixed, and the
 corresponding flow variations remain on the intervening finite singular
 flow segments.
 
-For \(|s|\leq S_\delta+1\), all of these points belong to the continuous
-depth-two uncut hull in \cref{def:canonical-preparation}.  The raw
+For \(|s|\leq S_\delta+1\), all points generated from either
+\cref{eq:invdet-trace-input-tube} or
+\cref{eq:invdet-retained-input-tube} belong to the continuous depth-two
+uncut hull in \cref{def:admissible-preparation}, after decreasing
+\(\delta_0\).  For the second alternative this is exactly how that hull was
+defined; for the first, use
+\(\delta e^{c_0S_\delta}\langle S_\delta\rangle^{M_0}
+=o(\delta^\kappa)\).  The raw
 polynomials \cref{eq:invdet-raw-F,eq:invdet-raw-G}, the singular flow
 variational equations, and \cref{eq:shared-products} therefore bound each
 factor by \(P(\langle s\rangle)e^{c|s|}\), uniformly in \(N\).  The finite
@@ -781,6 +797,11 @@ unconjugated first coefficient has zero \(\zeta\)-derivative.  Since
 \(\mathcal K\) is parameter independent, its push-forward and the pullback
 in \cref{eq:invdet-vector-field-pullback} preserve this zero, proving
 \cref{eq:invdet-q1-zeta-zero}.
+The formula for \(\widehat q_{1,N}\) in
+\cref{eq:invdet-q1-q2-formulas} is affine in \(\nu\) (indeed its resource
+component is exactly \(\nu\)); the base flow is \(\nu\)-independent.
+Consequently its second \(\nu\)-derivative also vanishes, and the
+parameter-independent pullback preserves this identity.
 \end{proof}
 
 We record the local tame bound used in the main proof, including the norms
@@ -924,6 +945,51 @@ whenever
  |\xi|\leq K_{\rm in}\delta e^{c_{\rm in}|s|}
                      \langle s\rangle^{m_{\rm in}}.
 \]
+The same estimate, after one further fixed enlargement of the output
+weight, holds on the entire retained set
+\begin{equation}
+ |s|\le S_\delta+1,\qquad
+ \gamma_0(s)+\xi=\Gamma(s,d),\qquad |d|\le\delta^\kappa.       \label{eq:invdet-retained-remainder-tube}
+\end{equation}
+To see this without importing the planar completion, rerun the finite
+local-block induction with a second nested family whose initial normal
+radius is \(\delta^\kappa\):
+\begin{equation}
+ \mathcal T^{\rm ret}_{j,\delta}
+ :=\left\{\Gamma(\chi,d):
+   |\chi|\le S_\delta+1+B_j^{\rm ret},\quad
+   |d|\le K_j^{\rm ret}\delta^\kappa
+      e^{c_j^{\rm ret}|\chi|}\langle\chi\rangle^{m_j^{\rm ret}}
+   \right\}.                                        \label{eq:invdet-retained-nested-tubes}
+\end{equation}
+Choose the finitely many buffers and weights successively in the jet-block
+order so that each current evaluation, fixed-delay backtrack, and finite
+flow variation used at one block maps into the next tube.  There may be
+more than two delay backtracks in the third and higher jets; their number is
+finite because the prolonged jet list is finite.  Uniform singular-flow
+bounds and
+\[
+ \delta^\kappa e^{O(R_\delta)}=o(1),\qquad
+ \delta A_\delta=o(\delta^\kappa)
+\]
+show that all these finite pieces, including the displacement caused by the
+full graph, remain in the fixed prepared \(b_0\)-neighborhood and stable
+saturation ball.  Samples belonging to the declared depth-two agreement
+hull use the physical polynomial field; all further finite samples use the
+fixed graph preparation and its tame bounds.
+
+On the inner portions of the buffered tubes the resulting physical or
+prepared polynomial factors are controlled by a fixed output weight.  On
+the complementary portions one has
+\(\bigl||\chi|-S_\delta\bigr|=O(1)\), with the constant taken from the
+finite buffer list, so the global tame majorant
+\(P(R_\delta)e^{cR_\delta}\) is absorbed after enlarging the factor
+\(e^{c|\chi|}\langle\chi\rangle^M\).  The infinite convolution tail is
+unchanged and remains \(O(\delta^6A_\delta)\).  Thus the same recurrence
+\cref{eq:invdet-local-block-recurrence} applies to the retained nested
+tubes, with constants independent of \(N,\delta\), and yields
+\cref{eq:invdet-local-remainder} on
+\cref{eq:invdet-retained-remainder-tube}.
 This also makes explicit why a global
 \(C_b^3\) remainder estimate independent of \(\delta\) is neither claimed
 nor needed.
@@ -1041,7 +1107,7 @@ Finally, let \(J\) be a retained interval of a graph orbit.  If
 lies in the planar agreement region and all corresponding values of \(H\)
 lie in the stable agreement ball \(\|h\|_N<h_*\), then every current and
 delayed slot in the prepared right-hand side equals its unprepared
-counterpart.  Equation \cref{eq:invdet-semiconjugacy} is therefore an exact
+counterpart.  \Cref{eq:invdet-semiconjugacy} is therefore an exact
 semiconjugacy for the physical RFDE on that retained segment.  In the
 application to the selected traces, the identity
 \[
@@ -1060,7 +1126,7 @@ agreement criterion and proves the exact retained-history assertion.
 \label[lemma]{lem:invdet-to-main-lemma}
 Assume
 \cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds} and fix a
-preparation satisfying \cref{def:canonical-preparation}, including its
+preparation satisfying \cref{def:admissible-preparation}, including its
 tame-flow clause \cref{def:invdet-tame-preparation}.  Then the following clauses of
 \cref{lem:shared-graph-trace} follow from this subsection:
 \begin{enumerate}[label=\textup{(\roman*)}]
@@ -1079,9 +1145,9 @@ tame-flow clause \cref{def:invdet-tame-preparation}.  Then the following clauses
 \end{enumerate}
 The one-sided trace existence, the endpoint normalization, the trace
 linear isomorphisms, and the estimates in
-\cref{eq:shared-trace-jets} are not proved here; they remain the separate
-finite-dimensional trace argument beginning with
-\cref{eq:shared-trace-operator}.
+\cref{eq:shared-trace-jets} are proved separately in the finite-dimensional
+trace argument beginning with \cref{eq:shared-trace-operator}; they are not
+part of the present history-graph lemma.
 
 The explicit tame-flow clause excludes the uncontrolled fixed-delay flow
 factor described in \cref{rem:invdet-missing-flow-hypothesis}.  Likewise, a uniform bound for

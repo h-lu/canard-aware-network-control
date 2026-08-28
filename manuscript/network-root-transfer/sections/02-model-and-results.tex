@@ -138,16 +138,15 @@ the singular critical field is
                     \frac{s^2-2}{4\alpha}\right).
 \]
 
-\begin{definition}[Admissible fixed preparation datum]
-\label[definition]{def:canonical-preparation}
+\begin{definition}[Selection convention]
+\label[definition]{def:admissible-preparation}
 Put
 \[
  \chi=-2\alpha X,\qquad
  d=Y-\alpha X^2+\frac1{2\alpha},
 \]
 and denote the inverse coordinate map by \(\Gamma(\chi,d)\).  Fix
-\(p>4\), \(B>2\Theta_*+2\), \(0<\kappa<1\), and positive constants
-\(h_*,C_{\rm prep},c_{\rm prep}\), \(M_{\rm prep}\in\mathbb N\), and
+\(p>4\), \(B>2\Theta_*+2\), \(0<\kappa<1\), \(h_*>0\), and
 \[
  0<b_0<\min\left\{1,\frac{B-2\Theta_*-2}{4}\right\}.
 \]
@@ -164,146 +163,111 @@ For each \(0<\delta<1\), set
        0\le t\le2\Theta_*\}.
 \end{align*}
 
-An admissible fixed preparation datum \(\mathbf p_{\rm can}\) is a pair
-of fixed, parameter-independent extension rules
-\((\mathfrak P_{\rm gr},\mathfrak P_{\rm pl})\), together with the constants
-above and a target threshold \(\delta_{\rm prep}>0\), satisfying the following
-properties for every \(N\) and \(0<\delta<\delta_{\rm prep}\).
+An \emph{admissible fixed selection datum}
+\(\mathbf p_{\rm sel}\) consists of extension rules
+\((\mathfrak P_{\rm gr},\mathfrak P_{\rm pl})\), positive constants
+\(C_{\rm prep},c_{\rm prep}\), an integer \(M_{\rm prep}\in\mathbb N\), and
+\(\delta_{\rm prep}>0\).  One pair of rules is fixed simultaneously for all
+\(N\) and all \(0<\delta<\delta_{\rm prep}\): it may depend on the frozen
+target \(\delta\), but not on the differentiated parameters
+\((\nu,\zeta)\).  We require the following four clauses.
 
-First, \(\mathfrak P_{\rm gr}\) maps the exact chart field
-\cref{eq:shared-exact-X,eq:shared-exact-h} to a globally bounded
-\(C^{12}\) field with complete planar flow.  It is exactly the physical
-chart field on the open \(b_0\)-neighborhood, measured in the
-\((\chi,d)\)-coordinates and the stable norm, of
-\(\mathfrak H^{[2]}_\delta\), for all current and delayed stable slots with
-\(\|h\|_N<h_*\).  On its range, all state derivatives and the mixed
-\((\rho,\nu,\zeta)\)-derivatives used below,
-\begin{equation}
- D_u^a\partial_\rho^b\partial_\nu^i\partial_\zeta^j,
- \qquad a+b+i+j\le12,\qquad b\le3,\qquad i\le2,\qquad j\le2,
-                                                               \label{eq:preparation-derivative-list}
-\end{equation}
-are bounded in the product norms by
-\(C_{\rm prep}\langle R_\delta\rangle^{M_{\rm prep}}
-e^{c_{\rm prep}R_\delta}\).  Here \(\rho\) is the dummy chart amplitude
-introduced in the graph proof.  The rule uses the same scalar cutoff and
-stable-saturation profiles for every \(N\), applies the saturation
-componentwise followed by \(P_{\perp,N}\), and is independent of
-\((\nu,\zeta)\).
+\smallskip
+\noindent\textup{(S1) Exact depth-two agreement.}
+The graph rule agrees with the exact chart field
+\cref{eq:shared-exact-X,eq:shared-exact-h} on the open \(b_0\)-neighborhood,
+in the \((\chi,d)\)- and stable product norm, of
+\(\mathfrak H^{[2]}_\delta\), in every current and delayed slot with
+\(\|h\|_N<h_*\).
 
-The singular planar part of this rule is fixed explicitly as follows.  Choose
-one \(\omega\in C_c^\infty(\R;[0,1])\), equal to one on \([-1,1]\) and
-zero off \((-2,2)\), and fixed constants
-\(B_*>2\Theta_*+B+3\) and \(d_*>0\) for which the preceding depth-two
-agreement hull is contained, for all sufficiently small targets, in
-\(\{|\chi|<R_\delta+B_*,\ |d|<d_*\}\).  The frozen singular field used by
-the graph rule is
-\begin{equation}
- \Xi_\delta(\chi,d)
- \binom{1-2\alpha d}{\chi d},\qquad
- \Xi_\delta(\chi,d)=
- \omega\!\left(\frac{\chi}{R_\delta+B_*}\right)
- \omega\!\left(\frac d{d_*}\right).                 \label{eq:fixed-singular-preparation}
-\end{equation}
-The graph transform is performed in the \((\chi,d)\)-norm.  Its frozen
-preparation must be tame through grade eleven in the precise sense of
-\cref{def:invdet-tame-preparation}; in particular,
-\begin{equation}
- \operatorname{Lip}_{\chi,d}(q_{0,\delta})
- \le C_{\rm prep}(1+R_\delta).                       \label{eq:fixed-singular-lipschitz}
-\end{equation}
-The explicit rule \cref{eq:fixed-singular-preparation} has this property by
-the flow-jet calculation in \cref{subsec:invariant-history-details}.
-
-Second, after the invariant graph has been constructed,
-\(\mathfrak P_{\rm pl}\) maps its exact reduced field to a globally bounded,
-globally Lipschitz \(C^{8}\) planar field.  It agrees with that reduced
-field on \(\mathcal U^{\rm pl}_{\rm ret}(\delta)\), equals \(q_0\) on the
-\(b_0\)-balls about \(\gamma_0(\pm R_\delta)\), and obeys the same derivative
-type of bound for
-\(D_u^a\partial_\nu^i\partial_\zeta^j\),
-\(a+i+j\le8\), \(i,j\le2\).  Both extension rules are held fixed when
-parameter derivatives are taken.  The selected traces are the solutions with
+\smallskip
+\noindent\textup{(S2) Complete uniform graph extension.}
+The graph rule produces a globally bounded \(C^{12}\) field whose planar
+flow is complete.  For the dummy chart amplitude \(\rho\), every derivative
+\(D_u^a\partial_\rho^b\partial_\nu^i\partial_\zeta^j\) with
+\(a+b+i+j\le12\), \(b\le3\), and \(i,j\le2\) is bounded in the product
+norms by
 \[
- \mathscr H_\alpha(z^{a,\rm can}_N(-R_\delta))=0,
- \quad
- \mathscr H_\alpha(z^{r,\rm can}_N(R_\delta))=0,
- \quad
- X^{a,\rm can}_N(0)=X^{r,\rm can}_N(0)=0.
+ C_{\rm prep}\langle R_\delta\rangle^{M_{\rm prep}}
+ e^{c_{\rm prep}R_\delta},
 \]
+uniformly in \(N\).  Its fixed-time planar flow has the corresponding mixed
+regularity through grade eleven required by the special-flow graph transform,
+with the same \(N\)-uniform polynomial--exponential dependence on
+\(R_\delta\).
+
+\smallskip
+\noindent\textup{(S3) Controlled planar completion.}
+After graph reduction, \(\mathfrak P_{\rm pl}\) gives a globally bounded and
+globally Lipschitz planar field \(\widetilde Q_{N,\delta,\nu,\zeta}\),
+\(C^3\) in the state, with continuous derivatives
+\(D_u^a\partial_\nu^i\partial_\zeta^j\) for
+\(0\le a\le3\), \(0\le i,j\le2\), and \(i+j\le2\), all with the same
+type of \(N\)-uniform tame bound.  It equals the reduced graph field on
+\(\mathcal U^{\rm pl}_{\rm ret}(\delta)\), equals \(q_0\) on the
+\(b_0\)-balls about \(\gamma_0(\pm R_\delta)\), and, on
+\[
+ \mathcal C_\delta
+ =\{\Gamma(\chi,d):|\chi|\le R_\delta,\ |d|\le b_0/2\},
+\]
+satisfies, for those same indices,
+\begin{equation}
+ \left|D_u^a\partial_\nu^i\partial_\zeta^j
+   (\widetilde Q_{N,\delta,\nu,\zeta}-q_0)
+       (\Gamma(\chi,d))\right|
+ \le C_{\rm prep}\delta^{\omega_{ij}}
+       e^{c_{\rm prep}|\chi|}\langle\chi\rangle^{M_{\rm prep}},
+ \quad
+ \omega_{ij}=1+\mathbf1_{\{j\ge1\ {\rm or}\ i=2\}}.    \label{eq:planar-preparation-smallness}
+\end{equation}
+Both rules are held fixed under parameter differentiation.
+
+\smallskip
+\noindent\textup{(S4) Endpoint and phase selection.}
+The selected attracting and repelling traces are the solutions satisfying
+\[
+ \mathscr H_\alpha(z^{a,\rm sel}_N(-R_\delta))=0,
+ \qquad
+ \mathscr H_\alpha(z^{r,\rm sel}_N(R_\delta))=0,
+ \qquad
+ X^{a,\rm sel}_N(0)=X^{r,\rm sel}_N(0)=0.
+\]
+We use ``admissible preparation'' as a synonym for a datum satisfying
+\textup{(S1)}--\textup{(S4)}.  The explicit
+cutoffs and the exact flow-jet implementation are recorded in the
+supplementary material.
 \end{definition}
 
 \begin{lemma}[Existence of admissible preparations]
 \label[lemma]{lem:preparation-existence}
 For every choice of \(p,B,\kappa,b_0,h_*\) satisfying
-\cref{def:canonical-preparation}, admissible extension rules exist after
-choosing \(C_{\rm prep},c_{\rm prep},M_{\rm prep}\) sufficiently large.
+\cref{def:admissible-preparation}, admissible extension rules exist.  More
+precisely, first fix the target-frozen cutoff, saturation, and collar data,
+then choose \(C_{\rm prep},c_{\rm prep},M_{\rm prep}\) sufficiently large,
+and finally decrease \(\delta_{\rm prep}>0\).
 \end{lemma}
 
 \begin{proof}
-Choose a fixed scalar plateau \(\eta\in C^\infty(\R;[0,1])\), equal to one
-on \([-1,1]\) and zero off \((-2,2)\), and a fixed smooth saturation
-\(s_{h_*}:\R\to[-2h_*,2h_*]\) equal to the identity on
-\([-h_*,h_*]\).  Apply \(s_{h_*}\) componentwise to every stable slot and
-then apply \(P_{\perp,N}\).  The product estimate
-\cref{eq:shared-products} makes all derivatives of this operation
-dimension independent.
-
-In the \((\chi,d)\)-coordinates, the closure of
-\(\mathfrak H^{[2]}_\delta\) is compact.  The singular flow is taken only for
-\(0\le t\le2\Theta_*\); its variational equations on
-\(|\chi|\le S_\delta+1\), \(|d|\le\delta^\kappa\) have derivatives bounded by
-\begin{equation}
- C\langle R_\delta\rangle^M e^{cR_\delta}.             \label{eq:preparation-flow-bound}
-\end{equation}
-In particular,
-\(\delta^\kappa e^{cR_\delta}=o(1)\), so fixed
-\(B_*>2\Theta_*+B+3\) and \(d_*>0\) can be chosen to contain the entire
-depth-two agreement hull for all sufficiently small targets.  Use
-\cref{eq:fixed-singular-preparation} for the singular field.  Direct
-differentiation gives \cref{eq:fixed-singular-lipschitz}; the successive
-flow-variational equations give the grade-eleven tame-flow estimate, as
-written out in \cref{def:invdet-tame-preparation} and the paragraph following
-\cref{eq:invdet-q0-lipschitz}.
-
-For every current and delayed planar slot, rescale the same plateau \(\eta\)
-to a rectangle strictly between the preceding agreement hull and the support
-of \(\Xi_\delta\).  Apply these plateaus only to the perturbation
-nonlinearities in the decomposition
-\(q_{0,\delta}+\rho F_{N,\delta}\),
-\(A_Nh+\rho G_{N,\delta}\), after the stable saturation already described.
-This gives globally bounded \(C^{12}\) maps, agrees with the exact polynomial
-chart on every required slot, and uses only the target \(\delta\), not
-\((\nu,\zeta)\).  The chain rule, \cref{eq:shared-products}, and
-\cref{eq:preparation-flow-bound} give the declared derivative majorant
-without a factor depending on \(N\).
-
-The inequality imposed on \(b_0\) separates the retained tube, its depth-two
-backtracks, and the two endpoint balls.  A smooth partition of unity in
-\((\chi,d)\) can therefore blend the exact reduced graph field on the
-retained tube with \(q_0\) on those balls and with a bounded cutoff field
-outside.  Extending the finite normal Taylor jet before blending preserves
-the required eight derivatives across the joins.  Repeated chain rules, the
-polynomial form of \cref{eq:shared-exact-X,eq:shared-exact-h}, and
-\cref{eq:preparation-flow-bound} give the majorant in
-\cref{def:canonical-preparation} after increasing its three constants.  The
-resulting planar field is globally bounded and Lipschitz, hence complete.
-The scalar plateaus, saturation, and partition rule are the same for all
-\(N\), completing the construction.
+A target-frozen graph cutoff and transverse saturation give
+\textup{(S1)}--\textup{(S2)}; a weighted Whitney
+completion on a fixed-width collar gives \textup{(S3)} without
+losing powers of \(\delta\).  The construction and uniform estimates are in
+\cref{subsec:supplementary-preparation-existence} of the supplementary
+material; \textup{(S4)} then fixes the two traces.
 \end{proof}
 
 The normalized central gap of these traces is
 \begin{align}
- \mathscr D^{\rm can}_N(\delta,\nu,\zeta)
+ \mathscr D^{\rm sel}_N(\delta,\nu,\zeta)
   &=\frac{2}{\alpha e}\left\{
-    \mathscr H_\alpha(z^{a,\rm can}_N(0))
-   -\mathscr H_\alpha(z^{r,\rm can}_N(0))\right\},
+    \mathscr H_\alpha(z^{a,\rm sel}_N(0))
+   -\mathscr H_\alpha(z^{r,\rm sel}_N(0))\right\},
                                                                \label{eq:shared-gap}\\
  \mathscr H_\alpha(X,Y)
   &=\frac12e^{-2\alpha Y}
     \left(\alpha Y-\alpha^2X^2+\frac12\right).       \label{eq:shared-first-integral}
 \end{align}
-On the retained graph, a zero of \(\mathscr D^{\rm can}_N\) is
+On the retained graph, a zero of \(\mathscr D^{\rm sel}_N\) is
 equivalent to equality of the two selected complete RFDE histories.
 
 \begin{theorem}[Uniform complete-history root and hidden response]
@@ -312,28 +276,28 @@ Assume \cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds}
 with all displayed bounds common in \(N\).  Fix a compact interval
 \(I_\nu\) containing every \(\nu_{0,N}\) in its
 interior with one common positive boundary distance, and one fixed admissible
-preparation datum \(\mathbf p_{\rm can}\) as in
-\cref{def:canonical-preparation}.  Then there
+preparation datum \(\mathbf p_{\rm sel}\) as in
+\cref{def:admissible-preparation}.  Then there
 exist \(\delta_0,\zeta_0,c_0,C>0\), depending only on the common model
 bounds, \(I_\nu\), its stated boundary distance, and
-\(\mathbf p_{\rm can}\), but independent
+\(\mathbf p_{\rm sel}\), but independent
 of \(N\), such that for every \(N\ge2\), every
 \(0<\delta<\delta_0\), and every \(\abs\zeta<\zeta_0\), the gap
-\(\mathscr D^{\rm can}_N/\delta\) has exactly one root in the local window
+\(\mathscr D^{\rm sel}_N/\delta\) has exactly one root in the local window
 \(\{\nu:\abs{\nu-\nu_{0,N}}<c_0\}\subset I_\nu\),
 \begin{equation}
- \nu^{\rm can}_{c,N}(\delta,\zeta)\in I_\nu,
+ \nu^{\rm sel}_{c,N}(\delta,\zeta)\in I_\nu,
  \qquad
- \abs{\nu^{\rm can}_{c,N}(\delta,\zeta)-\nu_{0,N}}<c_0. \label{eq:shared-root}
+ \abs{\nu^{\rm sel}_{c,N}(\delta,\zeta)-\nu_{0,N}}<c_0. \label{eq:shared-root}
 \end{equation}
 No assertion is made here about additional zeros elsewhere in \(I_\nu\).
 The selected attracting and repelling complete histories agree at this
-root.  The map \(\zeta\mapsto\nu^{\rm can}_{c,N}(\delta,\zeta)\) is
+root.  The map \(\zeta\mapsto\nu^{\rm sel}_{c,N}(\delta,\zeta)\) is
 twice continuously differentiable on the common parameter box.  With
-\(\mu^{\rm can}_{c,N}=\delta^2\nu^{\rm can}_{c,N}\),
+\(\mu^{\rm sel}_{c,N}=\delta^2\nu^{\rm sel}_{c,N}\),
 \begin{align}
- &\left|\mu^{\rm can}_{c,N}(\delta,\zeta)
-       -\mu^{\rm can}_{c,N}(\delta,0)
+ &\left|\mu^{\rm sel}_{c,N}(\delta,\zeta)
+       -\mu^{\rm sel}_{c,N}(\delta,0)
        -\mathscr C_N\delta^3\zeta\right|
  \le C\{\delta^4\abs\zeta+\delta^3\zeta^2\},        \label{eq:shared-response}\\
  &\mathscr C_N=-\frac{r_N}{\alpha}
@@ -342,26 +306,28 @@ twice continuously differentiable on the common parameter box.  With
 At \(\zeta=0\),
 \begin{equation}
  \left|\delta^{-3}\partial_\zeta
- \mu^{\rm can}_{c,N}(\delta,0)-\mathscr C_N\right|
+ \mu^{\rm sel}_{c,N}(\delta,0)-\mathscr C_N\right|
  \le C\delta.                                          \label{eq:shared-response-derivative}
 \end{equation}
 Consequently, if \(c_*:=\inf_N|\mathscr C_N|>0\), then, after decreasing
 \(\delta_0\),
-\(|\partial_\zeta\mu^{\rm can}_{c,N}(\delta,0)|
+\(|\partial_\zeta\mu^{\rm sel}_{c,N}(\delta,0)|
 \ge(c_*/2)\delta^3\) for every \(N\).  The exact finite-\(\delta\) root is
-the object selected by \(\mathbf p_{\rm can}\).
+the object selected by \(\mathbf p_{\rm sel}\).
 \end{theorem}
 
-\begin{corollary}[Projection non-identifiability]
+\begin{corollary}[Non-recovery from the projected functional]
 \label[corollary]{cor:projection-nonidentifiability}
-Suppose \(c_*=\inf_N|\mathscr C_N|>0\).  There are common
+Assume the hypotheses and retain the fixed preparation datum of
+\cref{thm:shared-resource}.  Suppose in addition that
+\(c_*=\inf_N|\mathscr C_N|>0\).  There are common
 \(\widehat\delta,\widehat\zeta>0\) such that, whenever
 \(0<\delta<\widehat\delta\) and
 \(0<|\zeta|<\widehat\zeta\),
 \begin{equation}
  \operatorname{sgn}(\mathscr C_N\zeta)
- \{\mu^{\rm can}_{c,N}(\delta,\zeta)
-       -\mu^{\rm can}_{c,N}(\delta,0)\}
+ \{\mu^{\rm sel}_{c,N}(\delta,\zeta)
+       -\mu^{\rm sel}_{c,N}(\delta,0)\}
  \ge\frac{c_*}{2}\delta^3|\zeta|                     \label{eq:root-separation}
 \end{equation}
 for every \(N\).  For every common \(\nu\), the two \(\nu\)-parametrized
@@ -420,6 +386,173 @@ node curvatures, is exactly the obstruction to a nonzero leading-order
 projection-invisible response in this tangent class.
 \end{theorem}
 
+The preceding classification detects whether one particular return channel is
+zero.  We now prove a stronger statement: projection-blind delay probes span
+the whole transverse forcing space, so their scalar responses determine the
+entire transverse return covector compressed by the collective matching
+equation.
+
+For \(\mathbf R\in\mathfrak T_N^{\rm red}\), define the blind source and its
+transverse lift by
+\begin{equation}
+ \mathsf S_N\mathbf R
+ =\frac{K}{2\alpha}P_{\perp,N}
+       \left(\sum_{k=0}^m\theta_kR_k\right)\mathbf1,
+ \qquad
+ \mathsf T_N\mathbf R=A_N^{-1}\mathsf S_N\mathbf R\in E_N.
+                                                               \label{eq:tomography-source}
+\end{equation}
+Thus the curvature model has the return covector
+\begin{equation}
+ \mathfrak r_N^{\rm curv}(h)
+ =-\frac1\alpha\pi_N^T\diag(c_N)h,
+ \qquad
+ \Lambda_N=\mathfrak r_N^{\rm curv}\mathsf T_N.      \label{eq:curvature-return-covector}
+\end{equation}
+
+This source is an exact Markov realization of
+\cref{prop:abstract-two-atom-source}.  On
+\[
+ \mathcal A_N^{\rm row}
+ =\{R\in\R^{N\times N}:\pi_N^TR=0\}
+\]
+take
+\(\mathsf v_N(R)=P_{\perp,N}R\mathbf1\),
+\(\mathsf j_N(y)=y\pi_N^T\), and \(c=K/(2\alpha)\).  In the inherited
+operator norm, \(\|\mathsf v_N\|=\|\mathsf j_N\|=1\), uniformly in
+\(N\), and \(\mathfrak T_N^{\rm red}\) is isometric to the corresponding
+sum-zero tuple space over \(\mathcal A_N^{\rm row}\).  Thus the source and
+the displayed right inverse have norm product one; the condition loss below
+comes only from the transverse dynamics \(A_N^{-1}\).
+
+\begin{theorem}[Two-delay blind controllability and dual reconstruction]
+\label[theorem]{thm:hidden-return-tomography}
+Suppose \(m\ge1\), set
+\(\Delta_\theta=\theta_m-\theta_0>0\), and retain the norm in
+\cref{eq:shared-norm}.  The source
+\(\mathsf S_N:\mathfrak T_N^{\rm red}\to E_N\) is onto.  A right inverse is
+\begin{equation}
+ \begin{aligned}
+  (\mathsf Q_Ny)_0
+    &=-\frac{2\alpha}{K\Delta_\theta}\,y\pi_N^T,&
+  (\mathsf Q_Ny)_m
+    &= \frac{2\alpha}{K\Delta_\theta}\,y\pi_N^T,\\
+  (\mathsf Q_Ny)_k&=0&& (k\notin\{0,m\}),
+ \end{aligned}
+ \qquad y\in E_N,                                    \label{eq:tomography-source-right-inverse}
+\end{equation}
+and the sharp operator bounds are
+\begin{equation}
+ \|\mathsf S_N\|
+   =\frac{|K|\Delta_\theta}{4\alpha},
+ \qquad
+ \|\mathsf Q_N\|
+   =\frac{4\alpha}{|K|\Delta_\theta}.               \label{eq:tomography-source-condition}
+\end{equation}
+More generally, after coincident delay atoms have been merged, the source
+vanishes on \(\mathfrak T_N^{\rm red}\) when the delay support consists of
+a single point.  Hence, in the merged representation, at least two distinct
+delay locations are necessary and sufficient for this blind controllability.
+
+For any bounded return covector \(\mathfrak r_N\in E_N^*\), put
+\begin{equation}
+ \mathcal O_N\mathfrak r_N
+ :=\mathfrak r_N\mathsf T_N
+ \in(\mathfrak T_N^{\rm red})^*.                    \label{eq:tomography-dual-map}
+\end{equation}
+Then \(\mathcal O_N\) is injective.  If
+\(\Lambda_N=\mathcal O_N\mathfrak r_N\), the reconstruction formula is
+\begin{equation}
+ \mathfrak r_N(z)
+ =\Lambda_N(\mathsf Q_NA_Nz),
+ \qquad z\in E_N,                                    \label{eq:tomography-reconstruction}
+\end{equation}
+and
+\begin{equation}
+ \frac{|K|\Delta_\theta}{4\alpha D(2-\gamma)}
+       \|\mathfrak r_N\|
+ \le \|\Lambda_N\|
+ \le
+ \frac{|K|\Delta_\theta}{4\alpha D\gamma}
+       \|\mathfrak r_N\|.                           \label{eq:tomography-dual-condition}
+\end{equation}
+Thus \(\mathcal O_N\), regarded as an isomorphism onto its range, has
+condition number at most \((2-\gamma)/\gamma\), uniformly in \(N\), when
+the range carries the inherited dual norm; and \(\Lambda_N=0\) if and only
+if \(\mathfrak r_N=0\).
+
+There is also a generator-supported realization that preserves the support of
+the chosen base layers.
+If \(P_N\) is irreducible, define
+\begin{equation}
+ Q_N(d)=(P_N-\Id)\diag(d),\qquad
+ \mathsf G_N(d)_0=Q_N(d),\qquad
+ \mathsf G_N(d)_m=-Q_N(d),                           \label{eq:tomography-generator-probe}
+\end{equation}
+with all other layers zero.  For \(d\in E_N\),
+\begin{align}
+ \mathsf T_N\mathsf G_N(d)
+ &=-\frac{K\Delta_\theta}{2\alpha D}\,d,            \label{eq:tomography-generator-identity}\\
+ \mathfrak r_N(d)
+ &=-\frac{2\alpha D}{K\Delta_\theta}
+       (\mathcal O_N\mathfrak r_N)(\mathsf G_N(d)), \label{eq:tomography-generator-reconstruction}\\
+ 2\gamma\|d\|_N
+ &\le \|\mathsf G_N(d)\|_{\mathfrak T_N}
+ \le6(2-\gamma)\|d\|_N.                            \label{eq:tomography-generator-condition}
+\end{align}
+With base layers
+\(B_{0,N}=B_{m,N}=(\Id+P_N)/2\), both perturbed layers are entrywise
+nonnegative with exactly the support of the chosen base layers whenever
+\(2|\zeta|\|d\|_\infty<1\).  For the open dense set of
+\(d\in E_N\) with no zero entry, each nonzero probe layer has rank \(N-1\).
+\end{theorem}
+
+\begin{corollary}[Finite-scale recovery of curvature pairings]
+\label[corollary]{cor:curvature-tomography}
+Assume the common network, curvature, base-layer, and interval hypotheses of
+\cref{thm:shared-resource}, let \(m\ge1\), suppose \(P_N\) is irreducible,
+and fix one admissible preparation rule common to all
+\(\mathsf G_N(d_N)\) with \(\|d_N\|_N\le1\).  Write
+\(z_N=c_N-\alpha\mathbf1\in E_N\) and
+\(\langle x,y\rangle_{\pi_N}=\pi_N^T(x\circ y)\).  On the
+generator-supported probes in
+\cref{eq:tomography-generator-probe},
+\begin{equation}
+ \Lambda_N(\mathsf G_N(d))
+ =\frac{K\Delta_\theta}{2\alpha^2D}
+       \langle z_N,d\rangle_{\pi_N}.                 \label{eq:curvature-tomography-pairing}
+\end{equation}
+Hence the leading responses on any \(N-1\) probes spanning \(E_N\)
+determine the entire centered curvature profile \(z_N\), not merely whether
+it is heterogeneous.
+
+More quantitatively, there are
+\(\delta_{\rm tom},\zeta_{\rm tom},C_{\rm tom}>0\), depending only on the
+common data in \cref{thm:shared-resource} and that fixed preparation rule,
+but independent of \(N\) and of the choice of \(d_N\in E_N\) with
+\(\|d_N\|_N\le1\), such that the following holds.  Let
+\(\mu^{\mathbf p,d}_{c,N}\) denote the selected root for the direction
+\(\mathsf G_N(d_N)\).  For every \(N\ge2\),
+\(0<\delta<\delta_{\rm tom}\), and
+\(0<|\zeta|<\zeta_{\rm tom}\),
+\begin{equation}
+ \left|
+  \frac{2\alpha^2D}{K\Delta_\theta}
+  \frac{\mu^{\mathbf p,d}_{c,N}(\delta,\zeta)
+        -\mu^{\mathbf p,d}_{c,N}(\delta,0)}
+       {\delta^3\zeta}
+  -\langle z_N,d_N\rangle_{\pi_N}
+ \right|
+ \le C_{\rm tom}(\delta+|\zeta|).                    \label{eq:curvature-finite-tomography}
+\end{equation}
+The network skeleton \((P_N,\pi_N,D)\), delay locations, \(K\), and
+\(\alpha\) are regarded as known; the return profile \(z_N\) is the object
+identified by the root responses.  The estimate is uniform for the weighted
+response pairings.  It does not, without a uniform lower frame bound for the
+chosen probes, assert an \(N\)-uniform condition number for recovering the
+coordinate vector \(z_N\) from finitely many noisy pairings.
+\end{corollary}
+
 \begin{remark}[Additional structural constraints]
 \label[remark]{rem:constrained-directions}
 The equivalence in \cref{thm:response-directions} concerns the full
@@ -433,10 +566,54 @@ admissible tangent space.  The rank-one witness
 \cref{eq:variance-witness} need not respect extra constraints.
 \end{remark}
 
+The next result supplies a large constrained class which preserves the
+chosen base-layer support.  It also shows that the codimension-one conclusion is not an
+artifact of allowing arbitrary full matrices.
+
+\begin{proposition}[Generator-supported hidden-response directions]
+\label[proposition]{prop:generator-supported-directions}
+Fix \(N\ge2\), suppose \(P_N\) is irreducible, and choose two delay atoms
+\(\theta_j<\theta_\ell\).  For \(d\in\R^N\), put
+\begin{equation}
+ Q_N(d)=(P_N-\Id)\diag(d),\qquad
+ R_j(d)=Q_N(d),\qquad R_\ell(d)=-Q_N(d),               \label{eq:generator-direction}
+\end{equation}
+with all other \(R_k(d)=0\), and denote the resulting direction space by
+\(\mathfrak G_N\).  Then
+\(d\mapsto\mathbf R(d)\) is a linear isomorphism from \(\R^N\) onto
+\(\mathfrak G_N\subset\mathfrak T_N^{\rm red}\), and
+\begin{equation}
+ \Lambda_N(\mathbf R(d))
+ =\frac{K(\theta_\ell-\theta_j)}{2\alpha^2D}
+   \left\{\pi_N^T(c_N\circ d)
+             -(\pi_N^Tc_N)(\pi_N^Td)\right\}.         \label{eq:generator-covariance}
+\end{equation}
+Consequently, the restriction of \(\Lambda_N\) to \(\mathfrak G_N\) is
+nonzero if and only if \(c_N\ne\alpha\mathbf1\).  In that case its kernel is
+a closed codimension-one hyperplane in this support-constrained,
+pure-redistribution direction space.
+
+For the positive choice \(d=c_N\),
+\begin{equation}
+ \Lambda_N(\mathbf R(c_N))
+ =\frac{K(\theta_\ell-\theta_j)}{2\alpha^2D}
+   \left\{\pi_N^T(c_N^{\circ2})-\alpha^2\right\}.     \label{eq:generator-variance}
+\end{equation}
+Moreover, choose the compatible base layers
+\(B_{j,N}=B_{\ell,N}=(\Id+P_N)/2\), with every other layer zero.
+If \(\|d\|_\infty\le d_+\), then
+\(B_{j,N}+\zeta Q_N(d)\) and
+\(B_{\ell,N}-\zeta Q_N(d)\) remain entrywise nonnegative, with their original
+base-layer support unchanged, whenever \(2|\zeta|d_+<1\).  For \(d=c_N\), the perturbation
+matrix has rank \(N-1\).
+\end{proposition}
+
 \begin{corollary}[Leading response is preparation universal]
 \label[corollary]{cor:preparation-universality}
-Fix two admissible preparation data \(\mathbf p_1,\mathbf p_2\) satisfying
-\cref{def:canonical-preparation}, and let
+Assume the common physical-model, direction-family, and interval hypotheses
+of \cref{thm:shared-resource}.  Fix two admissible preparation data
+\(\mathbf p_1,\mathbf p_2\) satisfying
+\cref{def:admissible-preparation}, and let
 \(\mu^{(j)}_{c,N}\) be their selected roots.  On a common parameter box,
 with a constant independent of \(N\),
 \begin{align}
@@ -460,6 +637,104 @@ independent of \(N\).  This compares response
 increments from the two preparation-specific baselines; it does not assert
 equality of the two finite-\(\delta\) baseline roots.
 \end{corollary}
+
+\begin{definition}[Response-germ equivalence]
+\label[definition]{def:response-germ}
+Let \(F=(F_N)_{N\ge2}\) and \(G=(G_N)_{N\ge2}\) be scalar-valued families,
+each defined on an \(N\)-uniform punctured neighborhood of
+\((\delta,\zeta)=(0,0)\), with
+\(F_N(\delta,0)=G_N(\delta,0)=0\).  We write \(F\sim_{\rm resp}G\) if
+\begin{equation}
+ \lim_{\rho\downarrow0}
+ \sup_{\substack{N\ge2,\ 0<\delta<\rho\\0<|\zeta|<\rho}}
+ \frac{|F_N(\delta,\zeta)-G_N(\delta,\zeta)|}
+      {\delta^3|\zeta|}=0.                             \label{eq:response-germ-equivalence}
+\end{equation}
+where the supremum is taken after restricting the representatives to the
+intersection of their neighborhoods.  This is an equivalence relation; its
+classes under further restriction are called dimension-uniform response
+germs.
+\end{definition}
+
+\begin{theorem}[Canonical leading response germ and covector]
+\label[theorem]{thm:canonical-response-germ}
+Fix one physical model family satisfying the hypotheses of
+\cref{thm:shared-resource}, and fix a stationary-row-neutral direction family
+\(\mathbf R=(\mathbf R_N)_{N\ge2}\) with a common
+\(\mathfrak T_N\)-norm bound.  Throughout the comparison, hold fixed the
+stationary projection \(\Pi_N\), the phase condition
+\(X_N^a(0)=X_N^r(0)=0\), the endpoint equation \(\mathscr H_\alpha=0\),
+and the physical-parameter normalization \(\mu=\delta^2\nu\).  For an
+admissible preparation \(\mathbf p\), set
+\[
+ \Delta^{\mathbf p}_{N,\mathbf R}(\delta,\zeta)
+ =\mu^{\mathbf p}_{c,N}(\delta,\zeta)
+   -\mu^{\mathbf p}_{c,N}(\delta,0).
+\]
+The response germ
+\begin{equation}
+ \mathfrak C(\mathbf R)
+ :=[\Delta^{\mathbf p}_{\mathbf R}]_{\rm resp}
+ =[(\delta,\zeta)\mapsto
+      \delta^3\zeta\,\Lambda_N(\mathbf R_N)]_{\rm resp} \label{eq:canonical-response-germ}
+\end{equation}
+is the same for any two fixed admissible preparation data, after restricting
+the representatives to the intersection of their parameter boxes.  Moreover,
+the same coefficient is recovered by the limit
+\begin{equation}
+ \mathfrak R_N(\mathbf R_N)
+ :=\lim_{\delta\downarrow0}\delta^{-3}
+   \left.\partial_\zeta
+      \mu^{\mathbf p}_{c,N}(\delta,\zeta)\right|_{\zeta=0}
+ =\Lambda_N(\mathbf R_N)                               \label{eq:canonical-response-covector}
+\end{equation}
+which has the same value for every fixed admissible preparation in this
+comparison class; for each fixed admissible preparation and each uniformly
+bounded direction family the convergence is uniform in
+\(N\).  Thus each \(\mathfrak R_N\) is a bounded covector on the
+stationary-row-neutral direction space, and the covector norms obey the
+uniform estimate
+\cref{eq:response-functional-bound}.  Its restriction to each of the
+direction spaces in
+\cref{thm:response-directions,prop:generator-supported-directions}
+has a codimension-one kernel whenever it is nonzero.
+\end{theorem}
+
+\begin{remark}[What is canonical]
+\label[remark]{rem:canonical-boundary}
+The canonicity in \cref{thm:canonical-response-germ} is relative to the fixed
+physical model family, stationary projection, phase and endpoint conditions,
+and physical-parameter normalization specified above.  Within this comparison
+class, replacing one fixed admissible preparation datum by another leaves the
+baseline-subtracted leading response germ, and hence its limiting covector,
+unchanged.  The assertion is pairwise on common parameter boxes and does not
+provide one remainder constant over the entire preparation class.  No
+invariance is claimed under changes of the fixed projection, matching
+conditions, or parameter normalization.  The theorem neither identifies the
+two exact finite-\(\delta\) roots nor produces a preparation-independent
+maximal canard.
+\end{remark}
+
+\begin{proposition}[Finite-section noncanonicity]
+\label[proposition]{prop:finite-section-noncanonicity}
+Fix the physical RFDE, the graph preparation, the phase section, and the
+endpoint equation \(\mathscr H_\alpha=0\).  The remaining planar completion
+allowed by \cref{def:admissible-preparation} does not determine an intrinsic
+finite-\(\delta\) root.  More precisely, for any fixed network size \(N_0\)
+and every sufficiently small fixed target \(\delta_*>0\), there is an
+admissible one-parameter family of target-frozen planar completion rules
+\(\mathfrak P_{{\rm pl},\lambda}\), defined for all network sizes and all
+targets and equal on the retained physical tubes and endpoint balls, such
+that
+\begin{equation}
+ \left.\partial_\lambda
+   \mu^{\lambda}_{c,N_0}(\delta_*,0)\right|_{\lambda=0}\ne0.    \label{eq:completion-root-sensitivity}
+\end{equation}
+Thus the exact selected root cannot be a function only of the physical RFDE
+and its retained local fold data under the present finite-section axioms.
+This does not preclude an intrinsic canard selected by additional physical
+outer invariant manifolds or asymptotic boundary conditions.
+\end{proposition}
 
 The nondegeneracy class is nonempty without a hidden synchrony quotient.
 Take \(\pi_N=N^{-1}\mathbf1\), \(P_N=P_{c,N}\), and
@@ -513,17 +788,17 @@ need not preserve entrywise positivity of the perturbed layers; positivity is
 not an assumption of \cref{thm:shared-resource}.
 
 For the reference direction \(\mathbf R_N^*\), let
-\(v^{\rm can}_{c,N}\) be the voltage component of the matched selected root
+\(v^{\rm sel}_{c,N}\) be the voltage component of the matched selected root
 orbit.  Uniformly in \(N\) and in the common \(\zeta\)-interval,
 \begin{equation}
  \left\|\delta^{-2}P_{\perp,N}
- v^{\rm can}_{c,N}(-\delta^{-1})
+ v^{\rm sel}_{c,N}(-\delta^{-1})
        +\frac{\sigma}{4D}s_N\right\|_N\le C_a\delta.  \label{eq:asynchronous-profile}
 \end{equation}
 After decreasing \(\delta_0\), this gives the genuine asynchronous lower
 bound
 \begin{equation}
- \osc\!\left(P_{\perp,N}v^{\rm can}_{c,N}(-\delta^{-1})\right)
+ \osc\!\left(P_{\perp,N}v^{\rm sel}_{c,N}(-\delta^{-1})\right)
  \ge\frac{\sigma}{4D}\delta^2                         \label{eq:asynchronous-lower}
 \end{equation}
 for every \(N\ge2\).  The response is therefore both robust in the
@@ -534,3 +809,55 @@ collective subspace.
 This instance is not an arbitrary-size replication of a lower-dimensional
 quotient.  It realizes the projection-blind response on heterogeneous root
 orbits with a quantitative transverse amplitude.
+
+The preceding example maximizes mixing and uses rank-one delay directions.
+The following family realizes the same obstruction on a sparse directed
+topology with high-rank, support-preserving redistribution.
+
+\begin{corollary}[Sparse directed high-rank response]
+\label[corollary]{cor:reset-cycle-response}
+Fix \(q\in(0,1)\), put \(\varrho=1-q\), and let \(S_N\) be the cyclic forward
+shift, \((S_Nx)_i=x_{i+1}\), with cyclic indices.  For \(N\ge3\), set
+\begin{equation}
+ P_N=\varrho S_N+q\mathbf1e_1^T,\qquad
+ \pi_{i,N}=\frac{q\varrho^{i-1}}{1-\varrho^N}.         \label{eq:reset-cycle-network}
+\end{equation}
+Choose \(0<\eta<1/4\) and define
+\begin{equation}
+ f_{i,N}=(-1)^i+\eta\frac{i}{N},\qquad
+ s_N=f_N-(\pi_N^Tf_N)\mathbf1,\qquad
+ c_N=\mathbf1+\sigma s_N,\qquad
+ 0<\sigma<(2+\eta)^{-1}.                              \label{eq:reset-cycle-curvature}
+\end{equation}
+Take two delays \(0=\theta_0<\theta_1=\theta\), the base layers
+\(B_{0,N}=B_{1,N}=(\Id+P_N)/2\), and the generator-supported directions
+\begin{equation}
+ R_{0,N}=\lambda(P_N-\Id)\diag(c_N),\qquad
+ R_{1,N}=-R_{0,N},\qquad \lambda\ne0.                 \label{eq:reset-cycle-layers}
+\end{equation}
+Then the common physical-model hypotheses hold with constants independent of
+\(N\), \(\tau(P_N)=1-q\), and every \(P_N\) has only \(O(N)\) nonzero
+entries.  After fixing the common interval \(I_\nu\) constructed below and an
+admissible preparation supplied by \cref{lem:preparation-existence},
+\cref{thm:shared-resource} applies with constants independent of \(N\).
+The perturbed delay layers retain the same nonnegative
+sparse support for
+\(2|\zeta\lambda|[1+\sigma(2+\eta)]<1\), while
+\(\operatorname{rank}R_{0,N}=N-1\).  Their response satisfies
+\begin{align}
+ \mathscr C_N
+ &=\frac{K\lambda\theta}{2D}
+       \left\{\pi_N^T(c_N^{\circ2})-1\right\},
+                                                               \label{eq:reset-cycle-coefficient}\\
+ \inf_{N\ge3}|\mathscr C_N|
+ &\ge \frac{2|K\lambda|\theta\sigma^2q^2(1-q)}{D}>0. \label{eq:reset-cycle-lower}
+\end{align}
+All entries of \(c_N\) are distinct, so the RFDE has no nontrivial synchrony
+polydiagonal.  For its matched root orbit, uniformly on the common
+\(\zeta\)-box of \cref{thm:shared-resource} after a common decrease of
+\(\delta_0\),
+\begin{equation}
+ \osc\!\left(P_{\perp,N}v^{\rm sel}_{c,N}(-\delta^{-1})\right)
+ \ge\frac{\sigma}{8D}\delta^2,\qquad N\ge3.           \label{eq:reset-cycle-asynchrony}
+\end{equation}
+\end{corollary}

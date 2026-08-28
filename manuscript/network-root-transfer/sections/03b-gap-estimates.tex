@@ -129,7 +129,7 @@ every \(N\ge2\),
 \(0<\delta<\delta_b\), \(\nu\in I_\nu\), and
 \(|\zeta|<\zeta_b\), the exact decomposition
 \begin{align}
- \mathscr D_N^{\rm can}
+ \mathscr D_N^{\rm sel}
  ={}&\delta\mathfrak M_{1,N}^{\rm phys}(\nu)
        +\delta^2B_{2,N}^{S}(\nu)
        +\delta^2\zeta\mathfrak M_{2,N}^{\rm phys}\notag\\
@@ -166,17 +166,17 @@ Their parameter derivatives obey
 \end{align}
 Consequently, uniformly in the same quantifier order,
 \begin{align}
- \frac{\mathscr D_N^{\rm can}}{\delta}
+ \frac{\mathscr D_N^{\rm sel}}{\delta}
  &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),             \label{eq:gap-bridge-expansion}\\
- \partial_\nu\mathscr D_N^{\rm can}
+ \partial_\nu\mathscr D_N^{\rm sel}
  &=\delta\sqrt{2\pi}+O(\delta^2),                    \label{eq:gap-bridge-nu}\\
- \partial_\zeta\mathscr D_N^{\rm can}
+ \partial_\zeta\mathscr D_N^{\rm sel}
  &=\delta^2\sqrt{2\pi}\frac{r_N}{\alpha}
        +O(\delta^3+\delta^2|\zeta|),                 \label{eq:gap-bridge-zeta}\\
- \partial_{\zeta\zeta}\mathscr D_N^{\rm can}
+ \partial_{\zeta\zeta}\mathscr D_N^{\rm sel}
  &=O(\delta^2),                                       \label{eq:gap-bridge-zz}\\
- |\partial_{\nu\nu}\mathscr D_N^{\rm can}|
-       +|\partial_{\nu\zeta}\mathscr D_N^{\rm can}|
+ |\partial_{\nu\nu}\mathscr D_N^{\rm sel}|
+       +|\partial_{\nu\zeta}\mathscr D_N^{\rm sel}|
  &\le C_b\delta^2.                                   \label{eq:gap-bridge-mixed}
 \end{align}
 These are precisely the five estimates used in the implicit-function
@@ -190,7 +190,7 @@ integral of \(q_0\), hence
 \(\nabla\mathscr H_\alpha(z)^Tq_0(z)=0\) for every planar state \(z\).
 The fundamental theorem of calculus on the two one-sided traces gives
 \begin{align}
- \mathscr D_N^{\rm can}
+ \mathscr D_N^{\rm sel}
  ={}&c_H\{\mathscr H_\alpha(z^a(-R))
               -\mathscr H_\alpha(z^r(R))\}\notag\\
  &+c_H\int_{-R}^0
@@ -388,7 +388,7 @@ Hence \cref{eq:gap-gaussian-tail-bound} proves the asserted estimate for
 envelope beyond \(|s|\le S+1\).  On each
 preparation interval, \(S\le|s|\le S+B\), the interval length is fixed.
 The preparation derivative bound in
-\cref{def:canonical-preparation}, the trace bounds
+\cref{def:admissible-preparation}, the trace bounds
 \cref{eq:gap-pointwise-trace-jets}, and
 \cref{eq:gap-H-envelope} show, after any
 \(\mathscr D\in\mathfrak A\), that the integrand in
