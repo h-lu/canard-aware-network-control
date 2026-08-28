@@ -1464,6 +1464,277 @@ immediately, while integration of the \(i=0\) bound over either branch gives
 \cref{eq:phase-event-pulse-bound}.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:current-absorbed-delay-splitting}]
+For \(\theta_k=0\), the corresponding summand in
+\cref{eq:fixed-phase-collar-delay} is the intact identity
+\[
+ L_{k,N}\{\widehat u_{\gamma,Z}(s)
+                -\widehat u_{\gamma,Z}(s)\}=0.
+\]
+Delete it before splitting the delay.  For \(k\in\mathcal I_+\), write its
+current part as \(L_{k,N}Z(s)\) and its shifted part as
+\(-L_{k,N}\widehat Z(s-\theta_k)\).  Substitution in
+\cref{eq:fixed-phase-delay-perturbation} puts every current term in
+\(\mathbb A_{\rm cur}\) and every shifted term in \(\mathbb B_k\), with the
+signs displayed in \cref{eq:current-absorbed-delay-blocks}.  This proves the
+exact identity \cref{eq:current-absorbed-delay-equation}.
+
+It remains to prove the attracting evolution estimate.  Let
+\(\mathbb A_0\) denote the principal two-by-two matrix in
+\cref{eq:fixed-phase-principal-s-system}.  In the
+\(\|\cdot\|_{a,\rm out}\)-norm, the coefficient bounds and
+\cref{eq:attracting-outer-buffer-range} give
+\begin{align}
+ \|\mathbb A_{\rm cur}-\mathbb A_0\|&\le C\varepsilon,\notag\\
+ \max_{1\le i\le d}\delta^{-i}
+ \|\partial_s^i\mathbb A_{\rm cur}(s)\|&\le C_d.   \label{eq:current-absorbed-coefficient-motion}
+\end{align}
+To justify the higher derivatives, apply
+\cref{prop:physical-backtrack-calculus} to \(q_0\) and to each composition
+of \(z_{0,N}\) with its exact backtrack.  The common layer bound and the
+principal coefficient estimates through order \(k_d+2\) give, on the fixed
+outer annulus,
+\begin{equation}
+ \max_{0\le j\le d+1}
+ \bigl\{|\partial_r^j\mathcal D_{0,c,N}(r)|
+              +|\partial_r^jq_0(r)|\bigr\}\le C_d.            \label{eq:current-absorbed-D0-jets}
+\end{equation}
+Consequently
+\(\max_{j\le d}|\partial_r^j\mathfrak d_N|\le C_d\), and the
+same calculation applied to
+\(\mathscr R_{k,N}^{\rm cur},c_{k,N},b_{k,N}\) gives
+\begin{equation}
+ \max_{0\le j\le d}\sup_{r_{\rm out}/2\le r\le r_{\rm out}}
+ \left\{\|\partial_r^j\mathbb A_{\rm cur}(r)\|
+   +\varepsilon^{-1}\sum_{k\in\mathcal I_+}
+        \|\partial_r^j\mathbb B_k(r)\|\right\}\le C_d.       \label{eq:current-absorbed-block-jets}
+\end{equation}
+Since \(\partial_s\bar r_a=\delta q_0(\bar r_a)\), the chain rule now
+proves the second line of
+\cref{eq:current-absorbed-coefficient-motion}.  The first line includes
+\(\varepsilon\mathfrak d_N(p-\ell_NZ)\); the structural layer bound controls
+the finite sum without a factor depending on \(N\).  The second line follows
+from the displayed block-jet estimate.
+
+The diagonal transverse evolution is forward stable at a fixed rate, and
+the scalar coefficient satisfies \(w_{0,N}'\le-c r_{\rm out}\) on the
+buffer.  The two off-diagonal maps have the same small block loop as
+\cref{eq:principal-green-loop}.  The Volterra block inversion used in
+the proof of \cref{prop:principal-tracker-endpoint-green} therefore gives
+an evolution \(\mathbb U_{a,0}\) of the principal block with
+\(\|\mathbb U_{a,0}(s,u)\|\le Ce^{-c(s-u)/\delta}\).  Duhamel's identity is
+\begin{equation*}
+ \mathbb U_{a,\rm cur}(s,u)=\mathbb U_{a,0}(s,u)
+ +\delta^{-1}\int_u^s\mathbb U_{a,0}(s,v)
+       \{\mathbb A_{\rm cur}(v)-\mathbb A_0(v)\}
+       \mathbb U_{a,\rm cur}(v,u)\,\dd v.
+\end{equation*}
+In the exponentially weighted kernel norm the integral operator has norm
+at most \(C\varepsilon\), because the \(\delta^{-1}\) prefactor is paired
+with an exponential convolution of width \(O(\delta)\).  Neumann inversion
+therefore gives
+\[
+ \|\mathbb U_{a,\rm cur}(s,u)\|
+ \le Ce^{-c(s-u)/\delta}.
+\]
+Differentiate the evolution equations in \(s\) and \(u\).  Each derivative
+of an endpoint contributes one factor \(\delta^{-1}\), while
+\cref{eq:current-absorbed-coefficient-motion} controls every coefficient
+commutator.  More precisely,
+\(\partial_s\mathbb U=\delta^{-1}\mathbb A_{\rm cur}(s)\mathbb U\) and
+\(\partial_u\mathbb U=-\delta^{-1}\mathbb U\mathbb A_{\rm cur}(u)\);
+Leibniz' rule and induction on \(i+j\) prove
+\cref{eq:current-absorbed-attracting-evolution}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:attracting-finite-generation-flushing}]
+Since \(|q_0|\le q_+\),
+\[
+ |\bar r_a(s)-r_{\rm out}|\le q_+\delta L_b=o(1)
+\]
+uniformly for the choice \cref{eq:attracting-flush-buffer-length}.  The same
+speed bound gives \(S_a\ge c/\delta\), whereas
+\(L_b=O(S_\delta)\).  After decreasing \(\delta_0\), this proves
+\(L_b<S_a\) and \cref{eq:attracting-outer-buffer-range}.
+
+We now work in fold time.  Let \(\Theta_+=\{\theta_k:k\in\mathcal I_+\}\)
+and fix the finite seam set
+\begin{equation*}
+ \Sigma_b=\left\{\theta_{i_1}+\cdots+\theta_{i_n}\in[0,L_b]:
+        n\ge0,\ \theta_{i_j}\in\Theta_+\right\}.
+\end{equation*}
+It is finite because
+\(n\min\Theta_+\le L_b\).  Let
+\(PC_{\Theta_+}^d([0,L_b];E_N\times\R)\) be the Banach space of continuous
+functions whose restrictions to the closures of the components of
+\([0,L_b]\setminus\Sigma_b\) are \(W^{d,\infty}\), with one-sided traces at
+the seams.  On this space use the strong norm
+\begin{equation}
+ \|x\|_{\mathfrak S_{a,d}}
+ =\max_{0\le i\le d}\delta^i
+   \operatorname*{ess\,sup}_{0\le s\le L_b}
+   \left\{\|\partial_s^iZ(s)\|_N
+             +\frac{|\partial_s^ip(s)|}{r_{\rm out}}\right\}.   \label{eq:attracting-piecewise-strong-norm}
+\end{equation}
+The displayed expression is a complete norm because the partition is
+finite.  Translation by any \(\theta_k\in\Theta_+\) maps its seam set into
+\(\Sigma_b\), and convolution with the smooth evolution family maps each
+cell into the same piecewise Sobolev class.  Thus the operators below act on
+this fixed Banach space.  Define
+\begin{align}
+ (\mathbb K_ax)(s)
+ &=
+ \delta^{-1}\sum_{k\in\mathcal I_+}
+ \int_{\theta_k}^{s}
+   \mathbb U_{a,\rm cur}(s,u)\mathbb B_k(u)
+                 Z(u-\theta_k)\,\dd u,            \label{eq:attracting-generation-operator}\\
+ x_{\rm col}(s)
+ &=
+ \mathbb U_{a,\rm cur}(s,0)\binom{\gamma(0)}{b_p}\notag\\
+ &\quad+
+ \delta^{-1}\sum_{k\in\mathcal I_+}
+ \int_0^{\min\{s,\theta_k\}}
+   \mathbb U_{a,\rm cur}(s,u)\mathbb B_k(u)
+                 \gamma(u-\theta_k)\,\dd u.       \label{eq:attracting-direct-collar-term}
+\end{align}
+An integral whose lower endpoint exceeds its upper endpoint is zero.
+Variation of constants gives the exact equation
+\begin{equation}
+ x=x_{\rm col}+\mathbb K_ax.                      \label{eq:attracting-generation-fixed-point}
+\end{equation}
+
+The fixed-support layer-sum bound gives the dimension-uniform estimate
+\begin{equation*}
+ \sum_{k\in\mathcal I_+}
+ \|\mathbb B_k(s)\|_{\mathcal L(\R^N,
+          (E_N\times\R,\|\cdot\|_{a,\rm out}))}
+ \le C\varepsilon.
+\end{equation*}
+Differentiating
+\cref{eq:attracting-generation-operator} on each cell, and using
+\cref{eq:current-absorbed-attracting-evolution}, gives
+\begin{equation}
+ \|\mathbb K_a\|_{\mathcal L(\mathfrak S_{a,d})}
+ \le C_d\varepsilon
+ \le C_d\delta^{2-2\vartheta}=:\beta_{a,\delta}.   \label{eq:attracting-generation-number}
+\end{equation}
+For the old-history term, evaluation behind the seam costs at most
+\(e^{2\kappa_{r_{\rm out}}\theta_m}\le\delta^{-2\vartheta}\), but it is
+multiplied by \(\varepsilon\).  The endpoint term has no such loss.  Hence
+\begin{equation}
+ \|x_{\rm col}\|_{\mathfrak S_{a,d}}
+ \le C_d\left\{\|\gamma\|_{\mathrm{cap},h,r_{\rm out}}
+                 +\frac{|b_p|}{r_{\rm out}}\right\}.           \label{eq:attracting-direct-collar-bound}
+\end{equation}
+For completeness, the derivative estimate follows cell by cell from
+Leibniz' rule.  At differentiation order \(j+1\), an endpoint term contains
+\(\delta^{-1}\partial_s^j\{\mathbb B_k(s)Z(s-\theta_k)\}\), hence only
+derivatives of \(Z\) through order \(j\).  The factor
+\(O(\varepsilon/\delta)\) is absorbed by the next \(\delta\)-weight, while
+derivatives of the kernel are controlled by
+\cref{eq:current-absorbed-attracting-evolution}.  Induction through order
+\(d\) proves the same bound on every component of the fixed partition, with
+no dependence on the number of seams.  Neumann inversion of
+\cref{eq:attracting-generation-fixed-point} therefore gives the same bound
+for \(x\).
+
+Expand the inverse only \(M\) generations:
+\begin{equation}
+ x=\sum_{n=0}^{M-1}\mathbb K_a^nx_{\rm col}
+                  +\mathbb K_a^Mx.                \label{eq:attracting-finite-generation-expansion}
+\end{equation}
+Consider \(s\in[L_b-\theta_m,L_b]\).  A word with \(n\le M-1\) shifted
+edges contains current evolution intervals whose total length is at least
+\(s-n\theta_m\) for the endpoint term and at least
+\(s-(n+1)\theta_m\) for an old-history insertion.  By
+\cref{eq:attracting-flush-buffer-length}, the latter, smaller quantity is
+at least \(L_0+1\).  Multiplying the evolution estimates along the word
+therefore gives \(e^{-cL_0/\delta}\).  More explicitly, an \(n\)-edge term
+is an integral over an ordered simplex in variables \(u_1,\ldots,u_n\);
+the shifted constraints are
+\(u_{j+1}\le u_j-\theta_{i_j}\).  Summing the lengths of the intervening
+current-evolution factors telescopes exactly to
+\(s-v-\sum_{j=1}^n\theta_{i_j}\), where \(v=0\) for an endpoint word and
+\(0\le v\le\theta_m\) for an old-history insertion.  This gives the two
+lower bounds just displayed.
+Differentiating the simplex integral creates either kernel derivatives or
+boundary faces.  The former are canceled by the strong \(\delta\)-weights,
+and a boundary face merely removes one convolution without changing the
+telescoping lower bound.  Since \(n\le M-1\) and \(d\) are fixed, the
+remaining convolution polynomials are absorbed by decreasing \(c\).
+Consequently,
+\begin{align}
+ \left\|\sum_{n=0}^{M-1}\mathbb K_a^nx_{\rm col}
+       \right\|_{\mathfrak S_{a,d};
+             [L_b-\theta_m,L_b]}
+ &\le C_de^{-cL_0/\delta}\mathcal D_a,\notag\\
+ \|\mathbb K_a^Mx\|_{\mathfrak S_{a,d}}
+ &\le C_d\delta^{M(2-2\vartheta)}\mathcal D_a,     \label{eq:attracting-word-tail-bounds}\\
+ \mathcal D_a
+ &=\|\gamma\|_{\mathrm{cap},h,r_{\rm out}}
+                 +\frac{|b_p|}{r_{\rm out}}.\notag
+\end{align}
+Condition \cref{eq:attracting-flush-generation-count} implies \(M>d\).
+Here the required smoothing can be seen without invoking an unstated
+theorem.  Continuity of \(\gamma\) and \(Z(0)=\gamma(0)\) first gives a
+classical \(C^1\) solution for \(s>0\).  Inductively, if the solution is
+\(C^j\) after \((j-1)\theta_m\), differentiating the retarded equation on
+\([j\theta_m,L_b]\) reads only values from the preceding \(C^j\) region and
+gives \(C^{j+1}\) regularity there.  Since
+\(L_b-\theta_m>M\theta_m>d\theta_m\), the whole exit interval is genuinely
+\(C^d\), even when the initial seam was not compatible through order \(d\).
+
+On the exit interval, \(\partial_s\bar r_a=\delta q_0(\bar r_a)\),
+\(|q_0|\asymp1\), and \(|r|\asymp r_{\rm out}\).  Repeated chain rule gives
+\begin{equation}
+ \max_{0\le j\le d}\sup_{J_b}|r|^j|\partial_r^jf|
+ \le C_d\delta^{-2d}
+   \max_{0\le i\le d}\delta^i
+       \sup_{L_b-\theta_m\le s\le L_b}|\partial_s^if|.         \label{eq:attracting-strong-to-slow}
+\end{equation}
+The corresponding estimate for \(p\) has the harmless outer factor
+\(|r|^{-1}\) already present in the
+\(\mathsf P_\varepsilon^d\)-norm.
+
+It remains to recover \(Q\) without losing another derivative.  With
+\(H=0\), the scalar row and the algebraic row in
+\cref{eq:fixed-phase-normal-block} combine exactly to
+\[
+ \delta p_s=\varepsilon
+       (w_{0,N}'+\varepsilon\mathfrak d_N)Q.
+\]
+After reparameterization,
+\begin{equation}
+ Q_b(r)=\frac{q_0(r)p_b'(r)}
+              {w_{0,N}'(r)+\varepsilon\mathfrak d_N(r)}.       \label{eq:attracting-Q-from-p}
+\end{equation}
+The jet bound above and \(|w_{0,N}'|\asymp r_{\rm out}\) give explicitly
+\begin{equation*}
+ \max_{0\le j\le d-1}
+ \sup_{J_b}r_{\rm out}^{j+1}
+ \left|\partial_r^j
+   \{w_{0,N}'+\varepsilon\mathfrak d_N\}^{-1}\right|\le C_d.
+\end{equation*}
+Hence the
+\(\mathsf P_\varepsilon^d\)-bound for \(p_b\) controls
+\(Q_b\) in \(\mathsf Q_\varepsilon^{d-1}\).
+Applying \cref{eq:attracting-strong-to-slow} to
+\cref{eq:attracting-word-tail-bounds}, and inserting the common
+\(\varepsilon^{-1}\) normalization, proves
+\cref{eq:attracting-finite-generation-flush}.
+
+Finally, \(S_\delta/\delta\to\infty\), so
+\(\delta^{-2d}e^{-cA_dS_\delta/\delta}\) is smaller than every algebraic
+power.  Moreover,
+\[
+ M(2-2\vartheta)-2d
+ >2M(1-2\vartheta)-2d>0,
+\]
+which proves the last assertion.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
 Because the rescaled fold-time RFDE is autonomous, differentiation of the
 base solution in fold time gives a solution of the variational equation.  At the

@@ -1427,6 +1427,145 @@ In fold time, the same identity gives, on a pulse interval \([s_-,s_+]\),
 The pulse may be small, but its phase shift remains constant after the pulse.
 \end{proposition}
 
+We next isolate the strong block on which delay generations can actually be
+counted.  A zero-delay difference is deleted as one intact zero term.  For a
+positive delay, its current evaluation belongs to the generator and only its
+shifted evaluation is a generation edge.
+
+\begin{lemma}[Current-absorbed positive-delay splitting]
+\label[lemma]{lem:current-absorbed-delay-splitting}
+Fix \(d\ge0\), put \(k_d=\max\{2,d+1\}\), and retain
+\cref{prop:fixed-phase-green-collar-buffer,prop:physical-backtrack-calculus},
+with the backtrack proposition used at order \(k_d\) and the principal
+coefficient estimates taken through order \(k_d+2\).  Put
+\[
+ \mathcal I_+=\{k\in\{0,\ldots,m\}:\theta_k>0\}.
+\]
+Along either prescribed reduced path, with all undisplayed coefficients
+evaluated at \(\bar r_\sigma(s)\), define
+\begin{align}
+ \mathscr R_{k,N}^{\rm cur}(s)
+ &=K\{P_{\perp,N}-z_{0,N}'\pi_N^T\}L_{k,N}(\eta),
+ &c_{k,N}(s)&=K\pi_N^TL_{k,N}(\eta),\notag\\
+ b_{k,N}(s)
+ &=\{\varepsilon w_{0,N}'(s)
+       +\varepsilon^2\mathfrak d_N(s)\}c_{k,N}(s),
+ &&k\in\mathcal I_+,                              \label{eq:current-absorbed-delay-rows}\\
+ \mathbb A_{\rm cur}(s)\binom Zp
+ &=
+  \binom{\displaystyle
+  \mathcal C_NZ-z_{0,N}'p
+       +\varepsilon\sum_{k\in\mathcal I_+}
+                    \mathscr R_{k,N}^{\rm cur}Z}
+ {\displaystyle
+  w_{0,N}'p-w_{0,N}'\ell_NZ
+       +\varepsilon\mathfrak d_N(p-\ell_NZ)
+       +\sum_{k\in\mathcal I_+}b_{k,N}Z},\notag\\
+ \mathbb B_k(s)u
+ &=
+ \binom{-\varepsilon\mathscr R_{k,N}^{\rm cur}(s)u}
+       {-b_{k,N}(s)u}.
+                                                               \label{eq:current-absorbed-delay-blocks}
+\end{align}
+After eliminating \(Q\), \cref{eq:fixed-phase-normal-block} is exactly
+\begin{equation}
+ \delta x_s
+ =\mathbb A_{\rm cur}(s)x(s)
+  +\sum_{k\in\mathcal I_+}
+       \mathbb B_k(s)\widehat Z(s-\theta_k)
+  +\binom FH,\qquad x=(Z,p),                       \label{eq:current-absorbed-delay-equation}
+\end{equation}
+where \(\widehat Z=\gamma\) before \(s=0\) and \(\widehat Z=Z\) afterwards.
+No term with \(\theta_k=0\) occurs.
+
+On an attracting outer buffer
+\([0,L_b]\subset[0,S_a]\) for which
+\begin{equation}
+ \frac12r_{\rm out}\le\bar r_a(s)\le r_{\rm out},
+ \qquad 0\le s\le L_b,                            \label{eq:attracting-outer-buffer-range}
+\end{equation}
+let \(\mathbb U_{a,\rm cur}(s,u)\) be the evolution family of
+\(\delta x_s=\mathbb A_{\rm cur}(s)x\).  In the norm
+\[
+ \|(Z,p)\|_{a,\rm out}=\|Z\|_N+\frac{|p|}{r_{\rm out}},
+\]
+it satisfies
+\begin{equation}
+ \max_{i+j\le d}\delta^{i+j}
+ \|\partial_s^i\partial_u^j
+       \mathbb U_{a,\rm cur}(s,u)\|_{\mathcal L(E_N\times\R)}
+ \le C_d e^{-c(s-u)/\delta},
+ \qquad 0\le u\le s\le L_b.                       \label{eq:current-absorbed-attracting-evolution}
+\end{equation}
+Here the operator norm is induced by \(\|\cdot\|_{a,\rm out}\).
+The constants may depend on \(d\), the fixed \(r_{\rm out}\), and the fixed
+delay support, but are uniform in \(N,\delta,\nu,\eta\) on the retained
+balls.
+\end{lemma}
+
+\begin{proposition}[Attracting finite-generation collar flushing]
+\label[proposition]{prop:attracting-finite-generation-flushing}
+Retain
+\cref{prop:compatible-endpoint-jet-collar,%
+prop:fixed-phase-green-collar-buffer,%
+lem:current-absorbed-delay-splitting}.  Fix an integer \(d\ge1\), take
+\(h\ge\max\{3,d\}\), and choose an integer \(M=M_d\) such that
+\begin{equation}
+ M(1-2\vartheta)>d.                               \label{eq:attracting-flush-generation-count}
+\end{equation}
+ Fix \(A_d>0\), put
+\begin{equation}
+ L_0=A_dS_\delta,\qquad
+ L_b=(M+1)\theta_m+L_0+1,                        \label{eq:attracting-flush-buffer-length}
+\end{equation}
+and decrease \(\delta_0\).  Then \(L_b<S_a\) and
+\cref{eq:attracting-outer-buffer-range} hold.
+
+Let \(\gamma\in C^h([-\theta_m,0];\R^N)\) satisfy
+\(\gamma(0)\in E_N\), and let \(b_p\in\R\).  Let \((Z,p,Q)\) be the
+attracting solution of \cref{eq:fixed-phase-normal-block} with \(F=H=0\),
+old voltage history \(\gamma\), and
+\[
+ Z(0)=\gamma(0),\qquad p(0)=b_p.
+\]
+On the exit interval
+\begin{equation*}
+ J_b=\bar r_a([L_b-\theta_m,L_b]),
+\end{equation*}
+use \(r=\bar r_a(s)\) to write the restrictions as
+\((Z_b,p_b,Q_b)\).  Then
+\begin{align}
+ &\|Z_b\|_{\mathsf Z_\varepsilon^d(J_b)}
+ +\|p_b\|_{\mathsf P_\varepsilon^d(J_b)}
+ +\|Q_b\|_{\mathsf Q_\varepsilon^{d-1}(J_b)}
+ \notag\\
+ &\quad\le C_d\left\{
+   \delta^{-2d}e^{-cL_0/\delta}
+   +\delta^{M(2-2\vartheta)-2d}\right\}
+ \varepsilon^{-1}
+ \left\{\|\gamma\|_{\mathrm{cap},h,r_{\rm out}}
+             +\frac{|b_p|}{r_{\rm out}}\right\}.  \label{eq:attracting-finite-generation-flush}
+\end{align}
+More precisely, if the input is given the normalized norm
+\begin{equation*}
+ \|(\gamma,b_p)\|_{a,\mathrm{in}}
+ =\varepsilon^{-1}
+   \left\{\|\gamma\|_{\mathrm{cap},h,r_{\rm out}}
+                  +\frac{|b_p|}{r_{\rm out}}\right\},
+\end{equation*}
+then the operator norm of this collar-to-exit trace tends to zero with
+\(\delta\), uniformly in \(N\).  No decay from the corresponding
+\emph{unnormalized} input norm is asserted.  For every fixed \(\mu>0\),
+\[
+ \delta^{-2d}e^{-cA_dS_\delta/\delta}
+ \le C_{d,\mu}\delta^\mu.
+\]
+
+The estimate is fixed-parameter.  It neither differentiates the inverse in
+\((\nu,\eta)\) nor treats the repelling mixed orientation.  It also supplies
+no phase--normal coupling, nonlinear contraction, speed sign, or tracker.
+\end{proposition}
+
 There is nevertheless an intrinsic quotient once an actual physical history
 has been constructed.  The point is to quotient by the transported tangent
 line, rather than by an eigenvector of a frozen voltage--resource matrix; a
