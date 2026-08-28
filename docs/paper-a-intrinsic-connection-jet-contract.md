@@ -239,6 +239,11 @@ Do not:
 - [x] Prove weighted third-order calculus for the state-dependent physical
       backtrack and delayed composition, sufficient for the rectangular
       `J_phys` jet and with relative loss `O(S_delta^(-1))`.
+- [x] Prove the principal finite-endpoint Green splitting with the exact
+      cancellation coordinate, mixed repelling orientation, action-weighted
+      boundary lifts, and sharp regularity loss.
+- [ ] Upgrade finite endpoint traces to compatible complete-history collar
+      lifts and close the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.

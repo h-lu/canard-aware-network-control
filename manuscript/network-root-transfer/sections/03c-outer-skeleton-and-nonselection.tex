@@ -30,8 +30,11 @@ On this ball,
  A_N-P_{\perp,N}D\mathcal N_N(r\mathbf1+z_{0,N}(r))
                                                                \label{eq:outer-critical-derivative}
 \end{equation}
-has inverse norm at most \(2a_*^{-1}\).  Repeated differentiation of the
-fixed-point equation therefore gives uniform \(C^4\) bounds.  Substituting
+has inverse norm at most \(2a_*^{-1}\).  Because \(\mathcal N_N\) is a
+polynomial with uniform multilinear bounds, induction in the differentiated
+fixed-point equation gives, for every fixed finite \(s\), uniform \(C^s\)
+bounds.  This proves \cref{eq:outer-critical-high-regularity}; in particular
+the \(C^4\) bounds are uniform.  Substituting
 \(z_{0,N}(r)=z_{2,N}r^2+z_{3,N}r^3+O_{\rm unif}(r^4)\) into
 \cref{eq:outer-critical-transverse} gives
 \begin{align*}
@@ -705,6 +708,226 @@ asserted bound for \(\mathcal C_j\).  The rectangular parameter statement is
 now the third-order joint Banach-space chain rule.  Substitution of
 \(\rho_\delta=\delta S_\delta/(2\alpha)\) proves
 \cref{eq:backtrack-logarithmic-loss}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:principal-tracker-endpoint-green}]
+The high regularity in
+\cref{eq:outer-critical-high-regularity}, the polynomial formula for
+\(D\mathcal N_N\), and the critical expansions give
+\cref{eq:principal-green-coefficients}.  The sign and zeroth-order speed
+bounds are \cref{eq:outer-speed-sign,eq:outer-speed-inputs}.  Repeated
+differentiation of
+\[
+ q_0(r)=\frac{r-\varepsilon\nu}{w_{0,N}'(r)}
+\]
+and \(|r|\ge\rho_\delta\) gives
+\cref{eq:principal-green-q-bounds}; every apparently singular term contains
+at most a power of \(\varepsilon/|r|\).  In particular, differentiating
+\(q_0\) uses the first, but not the second, of the two ratios
+\begin{equation}
+ \frac{\varepsilon}{\rho_\delta}
+ =\frac{2\alpha\delta}{S_\delta},
+ \qquad
+ \frac{\varepsilon}{\rho_\delta^2}
+ =\frac{4\alpha^2}{S_\delta^2}.                    \label{eq:principal-green-small-ratios}
+\end{equation}
+After decreasing \(\delta_0\), both ratios are uniformly bounded and tend
+to zero.  The second ratio enters later, when the scalar Green equation is
+normalized by \(|w_{0,N}'|\asymp|r|\); it is not produced by
+differentiating \(q_0\).
+
+Write a dot for differentiation along \(\dot r=q_0(r)\).  The coordinate
+\cref{eq:principal-green-p-coordinate} gives the exact system
+\begin{align}
+ \varepsilon\dot Z
+ &=C_N(r)Z-z_{0,N}'(r)\mathfrak p+f,\notag\\
+ \varepsilon\dot{\mathfrak p}
+ &=w_{0,N}'(r)\mathfrak p
+   -w_{0,N}'(r)\ell_N(r)Z-\varepsilon g,\notag\\
+ C_N(r)&=B_N(r)+z_{0,N}'(r)\ell_N(r).              \label{eq:principal-green-transformed-system}
+\end{align}
+Indeed, the second row of
+\cref{eq:principal-tracker-operator} reads
+\[
+ g=-\frac{\dd}{\dd T}\{\varepsilon Q+\ell_NZ\}+w_{0,N}'Q,
+\]
+which proves the second equation; the first follows from
+\(\varepsilon Q=\mathfrak p-\ell_NZ\).  This is the cancellation that the
+untransformed derivative coupling conceals.
+
+The transverse Markov estimate gives
+\(\|e^{A_NT}\|_{E_N\to E_N}\le e^{-D\gamma T}\) for \(T\ge0\).
+Since \(\|C_N(r)-A_N\|\le Cr_{\rm out}\), bounded-perturbation variation of
+constants yields the evolution estimate
+\begin{equation}
+ \|U_C(T,S)\|
+ \le C e^{-D\gamma(T-S)/(2\varepsilon)},
+ \qquad T\ge S.                                    \label{eq:principal-green-C-evolution}
+\end{equation}
+The scalar evolution is
+\begin{equation}
+ u_q(T,S)=\exp\left\{\varepsilon^{-1}
+      \int_S^T w_{0,N}'(r(\sigma))\,\dd\sigma\right\}.       \label{eq:principal-green-scalar-evolution}
+\end{equation}
+It is forward stable on \(I_\delta^a\); on \(I_\delta^r\), its restriction
+to the scalar line has a backward-stable inverse.  No ambient backward RFDE
+evolution is being used.
+
+We construct one slow particular solution.  Pass to
+\(x=\log(|r|/\rho_\delta)\) and first apply a fixed-width linear jet
+extension to the right-hand sides and coefficients at each endpoint.  At
+the far side of that collar, freeze the coefficients, preserve the stable
+matrix bound and the sign of \(w_{0,N}'\), and attach an artificial
+\(T\)-halfline that is no longer required to have the form
+\(r=\pm\rho_\delta e^x\).  Extend the data with the same linear operator
+and freeze the endpoint weight.  Thus the repelling \(Z\)-row has a genuine
+past halfline and its scalar row has a genuine future halfline; on the
+attracting branch both rows have genuine past halflines.  The extensions
+have the same weighted \(C^s\) bounds, uniformly in the length of the
+physical logarithmic interval.
+
+Writing tildes for the extended objects, the three diagonal Green kernels
+are explicitly
+\begin{align}
+ (\mathscr G_ZF)(T)
+ &=\varepsilon^{-1}\int_{-\infty}^T
+       \widetilde U_C(T,S)\widetilde F(S)\,\dd S,\notag\\
+ (\mathscr G_{\mathfrak p}^aH)(T)
+ &=\varepsilon^{-1}\int_{-\infty}^T
+       \widetilde u_q(T,S)\widetilde H(S)\,\dd S,\notag\\
+ (\mathscr G_{\mathfrak p}^rH)(T)
+ &=-\varepsilon^{-1}\int_T^\infty
+       \widetilde u_q(T,S)\widetilde H(S)\,\dd S.  \label{eq:principal-green-diagonal-kernels}
+\end{align}
+Use \(\mathscr G_Z\) for the transverse row on both branches,
+\(\mathscr G_{\mathfrak p}^a\) on the attracting branch, and
+\(\mathscr G_{\mathfrak p}^r\) on the repelling branch.  Their block fixed
+point has inputs
+\(F=f-z_{0,N}'\mathfrak p\) and
+\(H=-w_{0,N}'\ell_NZ-\varepsilon g\).
+Restriction to the retained interval solves the original equation.  The
+halfline is only a device for selecting a bounded right inverse; it is not a
+history of the RFDE and is not a physical preparation.
+
+For clarity, the logarithmic norm equivalences behind the estimate are
+\begin{align}
+ \|Z\|_{\mathsf Z_\varepsilon^s}
+ &\asymp\varepsilon^{-1}\|Z\|_{C_x^s},&
+ \|\mathfrak p\|_{\mathsf P_\varepsilon^s}
+ &\asymp\varepsilon^{-1}\|\mathfrak p/r\|_{C_x^s},&
+ \|Q\|_{\mathsf Q_\varepsilon^s}
+ &\asymp\varepsilon^{-1}\|rQ\|_{C_x^s}.          \label{eq:principal-green-log-norms}
+\end{align}
+In these norms the direct scalar source obeys
+\begin{equation}
+ \|\mathscr G_{\mathfrak p}^{a/r}(-\varepsilon g)\|_{
+       \mathsf P_\varepsilon^s}
+ \le C_s\frac{\varepsilon}{\rho_\delta^2}
+       \|(0,g)\|_{\mathsf Y_\varepsilon^s},       \label{eq:principal-green-g-source}
+\end{equation}
+because the scalar denominator is \(|w_{0,N}'|\asymp|r|\).  The two
+off-diagonal Green maps satisfy
+\begin{equation}
+ \|\mathcal K_{Z\mathfrak p}\|\le Cr_{\rm out}^2,
+ \qquad
+ \|\mathcal K_{\mathfrak p Z}\|\le C,
+ \qquad
+ \|\mathcal K_{Z\mathfrak p}\mathcal K_{\mathfrak p Z}\|
+ \le Cr_{\rm out}^2.                               \label{eq:principal-green-loop}
+\end{equation}
+The first estimate uses \(z_{0,N}'=O(r)\),
+\(\mathfrak p=O(\varepsilon|r|)\), and the fixed transverse Green
+denominator.  The second uses
+\(w_{0,N}'\ell_N=O(r^2)\) and the scalar Green denominator
+\(|w_{0,N}'|\asymp|r|\).  Hence the block system is invertible after one
+fixed decrease of \(r_{\rm out}\).
+
+To make the derivative induction explicit, put
+\(\mathcal D=r\partial_r=(r/q_0)\partial_T\).  Commuting
+\(\mathcal D^j\) through the equations produces three kinds of lower-order
+terms.  Derivatives of
+\(C_N-A_N,z_{0,N}',\ell_N,w_{0,N}'\) retain their respective structural
+sizes and hence the same diagonal perturbation and off-diagonal bounds as in
+\cref{eq:principal-green-loop}.  Ratios such as
+\(\mathcal Dw_{0,N}'/w_{0,N}'\) are merely \(O(1)\); they multiply
+lower-order unknowns already controlled by induction and need no smallness.
+Only commutators with the transport coefficient
+\(\varepsilon q_0/r\) carry \(C_s\varepsilon/|r|\).  After the scalar row
+is normalized by both \(|w_{0,N}'|\asymp|r|\) and the
+\(\mathfrak p/r\) coordinate, its singular transport ratio is
+\(C_s\varepsilon/|r|^2\).  The triangular equivalence between
+\(\mathcal D^j\) and \(r^j\partial_r^j\), together with
+\cref{eq:principal-green-small-ratios}, lets these terms be absorbed at
+each derivative order.  The direct estimates
+\cref{eq:principal-green-g-source,eq:principal-green-loop} then close the
+same two-by-two block induction successively through order \(s\).  This proves the
+\(\mathsf Z_\varepsilon^s\times\mathsf P_\varepsilon^s\) part of
+\cref{eq:principal-green-slow-bound}.
+
+To recover the original speed component, do not select another solution of
+a scalar equation.  The transformed second row gives the exact identity
+\begin{equation}
+ Q=\frac{\mathfrak p-\ell_NZ}{\varepsilon}
+  =\frac{g+q_0\mathfrak p'}{w_{0,N}'}.             \label{eq:principal-green-Q-recovery}
+\end{equation}
+If \(\mathfrak p\in\mathsf P_\varepsilon^s\), then the numerator obeys
+\begin{equation}
+ \left|\partial_r^j\{g+q_0\mathfrak p'\}\right|
+ \le C_s\varepsilon|r|^{-j},\qquad0\le j\le s-1. \label{eq:principal-green-Q-forcing}
+\end{equation}
+The coefficient bounds for \(1/w_{0,N}'\), whose \(j\)-th derivative is
+\(O(|r|^{-j-1})\), prove the
+\(\mathsf Q_\varepsilon^{s-1}\) estimate.  This is the algebraic component
+of the same transformed solution, so it solves both rows of the original
+operator with no uniqueness bridge left implicit.  With one additional
+input and coefficient derivative, the transformed construction gives
+\(\mathfrak p\in\mathsf P_\varepsilon^{s+1}\), and the same identity proves
+\cref{eq:principal-green-extra-q-derivative}.
+
+It remains to impose finite endpoint traces.  For the homogeneous transformed
+system, the attracting lift is the fixed point of
+\begin{align}
+ Z(T)&=U_C(T,0)b_z-\varepsilon^{-1}
+   \int_0^TU_C(T,S)z_{0,N}'(S)\mathfrak p(S)\,\dd S,\notag\\
+ \mathfrak p(T)&=u_q(T,0)b_p-\varepsilon^{-1}
+   \int_0^Tu_q(T,S)w_{0,N}'(S)\ell_N(S)Z(S)\,\dd S. \label{eq:principal-green-attracting-LP}
+\end{align}
+On the repelling branch the mixed lift is the fixed point of
+\begin{align}
+ Z(T)&=U_C(T,0)b_s-\varepsilon^{-1}
+   \int_0^TU_C(T,S)z_{0,N}'(S)\mathfrak p(S)\,\dd S,\notag\\
+ \mathfrak p(T)&=u_q(T,T_r)b_u+\varepsilon^{-1}
+   \int_T^{T_r}u_q(T,S)w_{0,N}'(S)\ell_N(S)Z(S)\,\dd S.
+                                                               \label{eq:principal-green-repelling-LP}
+\end{align}
+The loop estimate \cref{eq:principal-green-loop} gives existence and
+uniqueness.  It also shows directly that the terminal
+\(\mathfrak p\)-row is uniformly transverse to the scalar unstable mode.
+
+By linearity, split the repelling datum as
+\((b_s,b_u)=(b_s,0)+(0,b_u)\).  Close the first fixed point in the norm
+weighted by \(e^{c\Phi_s}\), and the second in the norm weighted by
+\(e^{c\Phi_u}\).  The fast kernel preserves both weights after decreasing
+\(r_{\rm out}\), because
+\(|w_{0,N}'|\le C r_{\rm out}\) while its decay rate is bounded below by
+\(D\gamma/(2\varepsilon)\); the same
+\(O(r_{\rm out}^2)\) loop closes both fixed points.  Thus the stable datum
+does not acquire a growing terminal scalar tail, and the terminal datum does
+not acquire a growing initial fast tail.  The attracting integral equations
+close similarly in the \(e^{c\Phi_a}\)-weighted norm.  Consequently the two
+integral equations give
+\cref{eq:principal-green-attracting-layer,eq:principal-green-repelling-layer}.
+Successive time differentiation is triangular after multiplying the
+\(j\)-th derivative by \(\varepsilon^j\).  Finally,
+\(\dd T=\dd r/q_0(r)\), \(|q_0|\asymp1\), and
+\(|w_{0,N}'(r)|\asymp|r|\) give
+\cref{eq:principal-green-action-comparison}.
+
+The trace identities follow at \(T=0\) and \(T=T_r\) in the two integral
+systems.  Subtracting the slow particular solution from any solution with a
+prescribed trace leaves the corresponding homogeneous lift.  This proves
+\cref{eq:principal-green-lifts,eq:principal-green-augmented-inverse} and
+uniqueness.
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]

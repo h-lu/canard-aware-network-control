@@ -56,6 +56,15 @@ where
 \begin{equation}
  g_{3,N}=2A_N^{-1}P_{\perp,N}(c_N\circ g_N).         \label{eq:outer-g3}
 \end{equation}
+The two curve components are \(C^\infty\) in \(r\).  More precisely, for
+every fixed finite \(s\),
+\begin{equation}
+ \max_{0\le j\le s}\sup_{|r|\le r_0}
+ \left\{\|\partial_r^jz_{0,N}(r)\|_N
+             +|\partial_r^jw_{0,N}(r)|\right\}
+ \le C_s,                                           \label{eq:outer-critical-high-regularity}
+\end{equation}
+where \(C_s\) is independent of \(N\).
 
 The leading frozen-resource fast-voltage matrix along this curve is
 \begin{equation}
@@ -522,6 +531,197 @@ In particular, imposing boundary data on
 can still select different representatives.  The missing theorem must
 construct a nonempty physical representative class and control that
 dependence in full-history parameter norms.
+
+The remaining principal tracker linearization has an apparent derivative
+coupling from the transverse curve into the slow speed.  The next result
+removes that singularity exactly and proves the endpoint Green splitting
+that is available before compatible complete collars have been constructed.
+It is restricted to the shared-resource law.  Put
+\begin{align}
+ B_N(r)
+ &=A_N-P_{\perp,N}D\mathcal N_N(x_{0,N}(r))|_{E_N},\notag\\
+ \ell_N(r)
+ &=\pi_N^TD\mathcal N_N(x_{0,N}(r))|_{E_N}.        \label{eq:principal-tracker-coefficients}
+\end{align}
+
+\begin{proposition}[Endpoint Green splitting for the principal tracker]
+\label[proposition]{prop:principal-tracker-endpoint-green}
+Retain \cref{prop:unprepared-outer-skeleton,cor:outer-reduced-actions}, use
+the shared-resource speed \(q_0=q^{\rm sh}_{N,\delta,\nu}\), fix an integer
+regularity order \(s\ge1\), and put
+\begin{equation}
+ \varepsilon=\delta^2,\qquad
+ I_\delta^a=[\rho_\delta,r_{\rm out}],\qquad
+ I_\delta^r=[-r_{\rm out},-\rho_\delta].           \label{eq:principal-green-intervals}
+\end{equation}
+After decreasing \(r_{\rm out}\) and then \(\delta_0\), independently of
+\(N\), the following holds for \(|\nu|\le\nu_*\) and
+\(0<\delta<\delta_0\).  On either interval,
+\begin{align}
+ -q_+\le q_0(r)\le-q_-<0,\qquad
+ &c_w|r|\le|w_{0,N}'(r)|\le C_w|r|,\qquad
+ rw_{0,N}'(r)<0,                                   \label{eq:principal-green-signs}\\
+ \max_{0\le j\le s+1}|r|^j
+ \bigl\{\|\partial_r^j(B_N-A_N)\|
+ &+\|\partial_r^jz_{0,N}'\|_N
+  +\|\partial_r^j\ell_N\|
+  +|\partial_r^jw_{0,N}'|\bigr\}
+ \le C_s|r|,                                      \label{eq:principal-green-coefficients}\\
+ \max_{0\le j\le s+1}|r|^j
+ |\partial_r^jq_0(r)|&\le C_s.                    \label{eq:principal-green-q-bounds}
+\end{align}
+All displayed constants are dimension uniform.
+
+For
+\begin{equation}
+ \mathcal L_{N,\delta}\binom ZQ
+ =\binom{
+   \varepsilon q_0Z'-B_NZ+\varepsilon z_{0,N}'Q}
+  {-\varepsilon q_0Q'+w_{0,N}'Q-q_0(\ell_NZ)'}
+ =\binom fg,                                       \label{eq:principal-tracker-operator}
+\end{equation}
+set
+\begin{equation}
+ \mathfrak p=\varepsilon Q+\ell_NZ.                \label{eq:principal-green-p-coordinate}
+\end{equation}
+For \(I\in\{I_\delta^a,I_\delta^r\}\), define
+\begin{align}
+ \|Z\|_{\mathsf Z_\varepsilon^s(I)}
+ &=\varepsilon^{-1}\max_{0\le j\le s}\sup_{r\in I}
+       |r|^j\|\partial_r^jZ(r)\|_N,\notag\\
+ \|\mathfrak p\|_{\mathsf P_\varepsilon^s(I)}
+ &=\varepsilon^{-1}\max_{0\le j\le s}\sup_{r\in I}
+       |r|^{j-1}|\partial_r^j\mathfrak p(r)|,\notag\\
+ \|Q\|_{\mathsf Q_\varepsilon^j(I)}
+ &=\varepsilon^{-1}\max_{0\le i\le j}\sup_{r\in I}
+       |r|^{i+1}|\partial_r^iQ(r)|,\notag\\
+ \|(f,g)\|_{\mathsf Y_\varepsilon^s(I)}
+ &=\varepsilon^{-1}\max_{0\le j\le s}\sup_{r\in I}|r|^j
+       \bigl\{\|\partial_r^jf(r)\|_N
+                    +|\partial_r^jg(r)|\bigr\}.    \label{eq:principal-green-spaces}
+\end{align}
+The factor \(|r|^{-1}\) at order zero in the
+\(\mathsf P_\varepsilon^s\)-norm is intentional.
+
+There are linear slow Green operators
+\(\mathcal G^{a/r}_{N,\delta}\) such that, writing
+\((Z_{\rm sl},Q_{\rm sl})=\mathcal G^{a/r}_{N,\delta}(f,g)\) and
+\(\mathfrak p_{\rm sl}=\varepsilon Q_{\rm sl}+\ell_NZ_{\rm sl}\),
+\begin{equation}
+ \|Z_{\rm sl}\|_{\mathsf Z_\varepsilon^s}
+ +\|\mathfrak p_{\rm sl}\|_{\mathsf P_\varepsilon^s}
+ +\|Q_{\rm sl}\|_{\mathsf Q_\varepsilon^{s-1}}
+ \le C_s\|(f,g)\|_{\mathsf Y_\varepsilon^s}.       \label{eq:principal-green-slow-bound}
+\end{equation}
+If \((f,g)\in\mathsf Y_\varepsilon^{s+1}\) and the coefficient bounds are
+retained through order \(s+2\), then
+\begin{equation}
+ \|Q_{\rm sl}\|_{\mathsf Q_\varepsilon^s}
+ \le C_s\|(f,g)\|_{\mathsf Y_\varepsilon^{s+1}}.  \label{eq:principal-green-extra-q-derivative}
+\end{equation}
+
+The endpoint trace maps are
+\begin{align}
+ \Gamma_a(Z,Q)
+ &=\bigl(Z(r_{\rm out}),
+   \varepsilon Q(r_{\rm out})
+       +\ell_N(r_{\rm out})Z(r_{\rm out})\bigr),\notag\\
+ \Gamma_r(Z,Q)
+ &=\bigl(Z(-\rho_\delta),
+   \varepsilon Q(-r_{\rm out})
+       +\ell_N(-r_{\rm out})Z(-r_{\rm out})\bigr).
+                                                               \label{eq:principal-green-traces}
+\end{align}
+There are homogeneous boundary lifts
+\begin{equation}
+ \mathcal B_a,\mathcal B_r:E_N\times\R
+          \longrightarrow\Ker\mathcal L_{N,\delta},
+ \qquad \Gamma_a\mathcal B_a=\Gamma_r\mathcal B_r=\Id.       \label{eq:principal-green-lifts}
+\end{equation}
+Consequently the unique solution with endpoint datum \(b\) is
+\begin{equation}
+ \binom ZQ
+ =\mathcal G^{a/r}_{N,\delta}(f,g)
+  +\mathcal B_{a/r}\left[
+      b-\Gamma_{a/r}\mathcal G^{a/r}_{N,\delta}(f,g)\right]. \label{eq:principal-green-augmented-inverse}
+\end{equation}
+
+The boundary lifts are estimated in \((Z,\mathfrak p)\), not in the top
+slow \(Q\)-norm.  Let \(r_a(T)\) solve
+\(\dot r=q_0(r)\), \(r_a(0)=r_{\rm out}\), and let \(r_r(T)\) solve
+\(\dot r=q_0(r)\), \(r_r(0)=-\rho_\delta\), reaching
+\(-r_{\rm out}\) at \(T=T_r\).  Put
+\begin{align}
+ \Phi_a(T)&=\varepsilon^{-1}\int_0^T
+        |w_{0,N}'(r_a(\sigma))|\,\dd\sigma,\notag\\
+ \Phi_s(T)&=\varepsilon^{-1}\int_0^T
+        w_{0,N}'(r_r(\sigma))\,\dd\sigma,\notag\\
+ \Phi_u(T)&=\varepsilon^{-1}\int_T^{T_r}
+        w_{0,N}'(r_r(\sigma))\,\dd\sigma.          \label{eq:principal-green-actions}
+\end{align}
+If \((Z_b,\mathfrak p_b)\) is a boundary lift, then, for
+\(0\le j\le s\),
+\begin{align}
+ \varepsilon^j\bigl\{
+  \|\partial_T^jZ_b(T)\|_N
+       +|\partial_T^j\mathfrak p_b(T)|\bigr\}
+ &\le C_se^{-c\Phi_a(T)}(\|b_z\|_N+|b_p|)          \label{eq:principal-green-attracting-layer}
+\end{align}
+on the attracting branch.  On the repelling branch write the trace datum
+as \(b=(b_s,b_u)\in E_N\times\R\); then
+\begin{align}
+ \varepsilon^j\bigl\{
+  \|\partial_T^jZ_b(T)\|_N
+       +|\partial_T^j\mathfrak p_b(T)|\bigr\}
+ \le C_s\bigl\{
+ e^{-c\Phi_s(T)}\|b_s\|_N
+ +e^{-c\Phi_u(T)}|b_u|\bigr\}.                     \label{eq:principal-green-repelling-layer}
+\end{align}
+Moreover,
+\begin{align}
+ \Phi_a(T)&\asymp
+     \frac{r_{\rm out}^2-r_a(T)^2}{\varepsilon},&
+ \Phi_s(T)&\asymp
+     \frac{r_r(T)^2-\rho_\delta^2}{\varepsilon},&
+ \Phi_u(T)&\asymp
+     \frac{r_{\rm out}^2-r_r(T)^2}{\varepsilon},  \label{eq:principal-green-action-comparison}
+\end{align}
+with dimension-uniform comparison constants.
+\end{proposition}
+
+\begin{remark}[No uniform gain of a full slow derivative]
+\label[remark]{rem:principal-green-no-derivative-gain}
+The endpoint theorem deliberately does not assert a uniform map
+\(\mathsf Y_\varepsilon^{s-1}\to
+\mathsf Z_\varepsilon^s\times\mathsf Q_\varepsilon^s\).
+That assertion is false even for constant coefficients.  On a fixed interior
+interval consider
+\[
+ -\varepsilon Z'+Z=f_\varepsilon,qquad
+ h_\varepsilon=\varepsilon^2,qquad
+ f_\varepsilon(r)=\varepsilon h_\varepsilon^{s-1}
+                         e^{\mathrm i r/h_\varepsilon}.
+\]
+The \(\mathsf Y_\varepsilon^{s-1}\)-norm of the forcing is bounded, but the
+bounded particular solution has
+\(|\partial_r^sZ|\asymp1\), so its slow order-\(s\) norm is
+\(\asymp\varepsilon^{-1}\).
+
+The one-order loss in \(Q\) is also genuine.  Freeze
+\(B=-1\), \(q_0=-1\), \(z_0'=0\), \(\ell=r_*>0\), and
+\(w_0'=-r_*\), and take
+\(f_\varepsilon=\varepsilon^{s+1}e^{\mathrm i r/\varepsilon}\),
+\(g=0\).  The particular solution has
+\(|Z|\asymp\varepsilon^{s+1}\) and
+\(|Q|\asymp r_*\varepsilon^s\).  Its slow \(Q\)-norm is bounded through
+order \(s-1\), and its input \(\mathsf Y_\varepsilon^s\)-norm is bounded,
+whereas the order-\(s\) \(Q\)-norm grows like
+\(c\varepsilon^{-1}\).  Taking real or imaginary parts gives the same
+examples in the real Banach spaces.  They use the exact traces of the
+particular solutions and therefore are not endpoint boundary layers.
+Thus the coefficient hypotheses in the proposition alone cannot yield a
+same-order estimate for \(Q\).
+\end{remark}
 
 There is nevertheless an intrinsic quotient once an actual physical history
 has been constructed.  The point is to quotient by the transported tangent

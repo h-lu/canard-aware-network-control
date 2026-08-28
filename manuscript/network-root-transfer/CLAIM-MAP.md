@@ -36,6 +36,7 @@ fixed.
 | Positive-`delta` frozen voltage histories | `prop:frozen-voltage-history-splitting`, `rem:frozen-resource-phase-quotient` | Capped-rate full-history stability/splitting for the frozen-resource voltage RFDE, uniform structural `C^2` bounds, and an exact obstruction to the raw full-system one-unstable formulation; no nonautonomous slow tracker |
 | Exact tracker/quotient interface | `prop:exact-outer-history-equation`, `prop:physical-history-phase-quotient`, `prop:exact-resource-gauge-quotient` | Uncut if-and-only-if tracker equation; genuine transported longitudinal history; exact stationary-gauge quotient; resource-gauge triangularization and $O(S_\delta^{-1})$ Volterra realization. Conditional on tracker existence and collar bounds; no tracker or dichotomy existence claim |
 | Physical backtrack calculus | `prop:physical-backtrack-calculus` | Uniform weighted derivatives of the state-dependent physical delay map and the joint delayed composition/difference through three Fr\'{e}chet derivatives; raw backtrack variations are $O(\delta)$ and their relative contribution is $O(S_\delta^{-1})$ on the logarithmic collar, uniformly in $N$ and $\delta$ |
+| Principal endpoint Green splitting | `prop:principal-tracker-endpoint-green` | Exact cancellation coordinate $\mathfrak p=\delta^2Q+\ell_NZ$; dimension-uniform slow right inverse, mixed repelling endpoint lift, action-weighted boundary layers, and sharp one-derivative loss in $Q$. Finite endpoint traces only: no compatible complete-history collar lift or nonlinear tracker |
 | Truncated reduced actions | `cor:outer-reduced-actions` | Formal critical-curve speed and two positive truncated actions for the reduced critical-layer equation; not an invariant slow-history action |
 | Weak-selection obstruction | `prop:backward-asymptotic-nonselection` | A common phase row, convergence in an unnormalized history norm, and superalgebraic strong-history closeness do not by themselves select a unique tame RFDE history family; generic logical counterexample, not a model-specific impossibility theorem |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
@@ -131,10 +132,12 @@ The limits separate exactly:
   under Issue #32.  Issue #11 concerns a different Paper III model and is not
   an input to Paper A.
 - The preparation-independent critical curve, frozen-resource
-  positive-`delta` voltage-history splitting, truncated reduced actions, and
-  exact tracker/quotient identities are proved precursors.  The latter
-  identities assume an exact tracker; they do not construct one or prove its
-  normal dichotomy.  The generic nonselection example is a logical
+  positive-`delta` voltage-history splitting, truncated reduced actions,
+  exact tracker/quotient identities, physical-backtrack calculus, and
+  principal finite-endpoint Green splitting are proved precursors.  The
+  quotient identities assume an exact tracker, while the Green theorem has
+  only finite endpoint traces; together they do not construct a compatible
+  RFDE tracker or prove its normal dichotomy.  The generic nonselection example is a logical
   counterexample to weak selection criteria, not a model-specific
   impossibility theorem; tracker existence, quotient roughness, and all of
   G1 remain open.

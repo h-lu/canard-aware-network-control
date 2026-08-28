@@ -1,9 +1,10 @@
 # Paper A: physical outer-history route after the layer theorem
 
 Status: **the unprepared critical curve, formal truncated reduced actions,
-the positive-`delta` frozen-resource voltage history splitting, and a sharp
-nonselection obstruction are proved; the phase-quotiented nonautonomous RFDE
-slow-history theorem is open.**
+the positive-`delta` frozen-resource voltage history splitting, physical
+backtrack calculus, principal finite-endpoint Green splitting, and a sharp
+nonselection obstruction are proved; the compatible nonlinear RFDE tracker
+and phase-quotiented nonautonomous slow-history theorem are open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -103,6 +104,15 @@ proved, not formal.  Uniformity requires the adapted resource norm
 `|omega|/|w_prime(r)|`; the raw product norm generally loses a factor
 `1/|r|`.  The proposition still assumes existence of the exact tracker,
 `|w_prime(r)| comparable to |r|`, and a delay collar.
+
+Proposition `prop:principal-tracker-endpoint-green` closes the principal
+finite-dimensional endpoint BVP.  The cancellation coordinate
+`mathfrak p=delta^2 Q+ell_N Z` yields a dimension-uniform slow Green inverse
+on both branches, the correct mixed terminal orientation on the repelling
+branch, and action-weighted homogeneous boundary lifts.  It also proves that
+`Q` loses one slow derivative and that the loss is sharp under the listed
+coefficient hypotheses.  This theorem does not construct the compatible
+complete-history collar lift or solve the nonlinear tracker equation.
 
 ## 2. The exact curve-restricted physical equation
 
@@ -367,6 +377,11 @@ not acceptable.
       the third Fréchet derivative required by the rectangular
       `J_phys` jet, with only `O(S_delta^(-1))` relative loss on the
       logarithmic collar.
+- [x] Principal finite-endpoint Green splitting, including high-order
+      critical coefficients, the mixed repelling terminal orientation, and
+      action-weighted boundary layers in `(Z,mathfrak p)`.
+- [ ] Compatible high-regularity complete-history collar lift and nonlinear
+      tracker contraction on both outer branches.
 - [ ] Phase-quotiented nonautonomous normal splitting along a true slow
       history.
 - [ ] Attracting representative and repelling codimension-one history sheet

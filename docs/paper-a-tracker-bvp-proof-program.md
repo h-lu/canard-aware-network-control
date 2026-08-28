@@ -2,6 +2,13 @@
 
 Status: **proof contract, not a proved tracker theorem.**
 
+Proposition `prop:principal-tracker-endpoint-green` now proves the principal
+linear Green splitting for finite endpoint traces, including the exact
+cancellation coordinate, dimension-uniform slow bounds, action-weighted
+boundary lifts, and the sharp one-derivative loss in `Q`.  It does not lift a
+compatible complete RFDE collar and therefore does not construct the
+nonlinear tracker targeted by this contract.
+
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
 It starts from the exact, uncut identities already proved in Propositions
@@ -130,10 +137,12 @@ L_q(Z,Q)
 ```
 
 All state-dependent backtrack terms, seed corrections, and nonlinear
-remainders stay on the right.  The diagonal `Z` and `Q` Green operators are
-the main inverse; the two off-diagonal terms are closed by a block Neumann
-argument.  The `Q -> Z` feedback carries `delta^2`; the `Z -> Q` feedback is
-triangular and uses `ell_N=O(r)` together with the derivative weight.
+remainders stay on the right.  The proved endpoint Green theorem uses
+`mathfrak p=delta^2 Q+ell_N Z`: its `Z` and `mathfrak p` diagonal Green
+operators are the main inverse, and the two off-diagonal terms close by a
+block Neumann argument.  Algebraic recovery of `Q` loses one slow derivative,
+and the theorem proves by counterexample that this loss cannot be removed
+from the stated coefficient hypotheses.
 
 ## 3. Mixed boundary geometry
 
@@ -171,10 +180,14 @@ B_tr^r(Z,Q)
 The row must be uniformly transverse to the homogeneous principal `Q` mode,
 and the inner collar must lie in the high-regularity compatible
 solution-manifold history space fixed in Section 4.  The missing Green lemma
-must define `Tr_in^hist`, the terminal row, their compatibility conditions,
-and prove that `(L_z,L_q,B_tr^r)` is a dimension-uniform isomorphism after the
-explicit collar lift is split off.  No quotient stable sheet or outer graph
-may enter this Stage-I boundary operator.
+is now only the complete-collar upgrade: it must define `Tr_in^hist`, the
+terminal history row, their compatibility conditions, and prove that
+`(L_z,L_q,B_tr^r)` is a dimension-uniform isomorphism after the compatible
+collar lift is split off.  Proposition
+`prop:principal-tracker-endpoint-green` already proves the corresponding
+finite endpoint trace, mixed terminal orientation, and boundary-layer
+estimates.  No quotient stable sheet or outer graph may enter this Stage-I
+boundary operator.
 
 There is one further causal datum.  For `r` within one delay of
 `-rho_delta`, the physical backtrack samples `q` on the old-side extension of
@@ -268,18 +281,30 @@ contains `nu nu` and `nu nu eta`, which are needed to compare first
 conormals at slightly different roots.  All derivatives are taken on fixed
 Banach charts and bounded uniformly in the finite network size.
 
-The fixed-point proof must use an explicit regularity ladder.  For a fixed
-\(k\ge3\), take the curve unknowns in weighted order \(k+3\), the equation
-residuals in weighted order \(k+2\), and prove that the first-order mixed
-Green operator maps the residual space back to the unknown space.  The
-physical-backtrack theorem then uses \(q\)-directions through weighted order
-\(k+2\) and delayed inputs through order \(k+3\).  This one-derivative
-recovery is part of the missing Green lemma; it may not be hidden under a
-generic smooth-dependence assertion.  Before using this ladder one must also
-prove uniform \(r\)-regularity of `z_0,w_0,B_N,ell_N` through the required
-orders (or lower the ladder and every downstream claim consistently); the
-currently recorded low-order critical-curve estimates cannot silently be
-promoted.
+The fixed-point proof must use an explicit regularity ladder.  Put
+`s=k+3` for one fixed `k>=3` and use the exact cancellation coordinate
+
+```text
+mathfrak p = delta^2 Q + ell_N Z.
+```
+
+The correct uniform endpoint Green transfer is
+
+```text
+residual order s
+  -> (Z,mathfrak p) slow order s and Q slow order s-1.
+```
+
+Thus `Q` has order `k+2`, exactly what the physical-backtrack theorem needs,
+while the delayed voltage input `Z` has order `k+3`.  If a downstream claim
+requires `Q` itself at order `s`, the residual and coefficient inputs must be
+raised to at least order `s+1`.  There is no uniform recovery from residual
+order `s-1` to the full order-`s` slow norm: high-frequency forcing already
+contradicts it for `epsilon y'+y=f`.  The proved endpoint Green theorem
+includes this no-gain statement, uses singular boundary-layer norms for
+arbitrary finite endpoint mismatches, and establishes the required uniform
+`r`-regularity of `z_0,w_0,B_N,ell_N`.  Compatible complete-history collar
+lifts at these orders remain to be constructed.
 
 The backtrack is differentiated through
 
@@ -319,7 +344,8 @@ therefore be written as
 (Z,Q) = (Z_slow,Q_slow) + B_boundary b,
 ```
 
-where `B_boundary b` is the explicit homogeneous Green boundary layer.
+where `B_boundary b` is the explicit homogeneous Green boundary layer,
+measured in `(Z,mathfrak p)` rather than the top slow `Q` norm.
 Here `b` is generally a compatible complete collar history in
 `H_cap^(k+3)`, together with the scalar resource compatibility row; it is not
 merely a finite-dimensional endpoint amplitude.  The missing Green lemma
@@ -334,10 +360,11 @@ representative-class comparison.
 The tracker and its entry into the retained fold chart are not closed until
 all eight items below are proved.
 
-1. A dimension-uniform Green inverse, including the explicit boundary-layer
-   coordinate, for the attracting BVP and for the repelling mixed BVP.  The
-   repelling strong scalar uses its terminal Green operator; forward shooting
-   is forbidden.
+1. Upgrade the proved dimension-uniform finite-endpoint Green inverse and
+   explicit boundary-layer coordinate to compatible complete-history collar
+   traces for the attracting BVP and repelling Stage-I mixed BVP.  The
+   repelling strong scalar already uses its terminal Green operator; forward
+   shooting remains forbidden.
 2. Weighted `C^k` bounds for `q -> r_k(q)` and for all delayed compositions,
    including every derivative in `J_phys`.
 3. Bounds for `R_z,R_q` and the nonlinear remainder giving the displayed
@@ -522,10 +549,12 @@ gauges.
 - [x] Exact raw tracker invariance equation.
 - [x] Exact physical time-tangent quotient.
 - [x] Exact resource gauge and Volterra history coordinate.
-- [ ] Principal mixed Green inverse with dimension-uniform bounds.
+- [x] Principal finite-endpoint Green splitting with dimension-uniform slow
+      bounds, mixed repelling orientation, action-weighted boundary lifts,
+      and the sharp regularity ladder.
 - [ ] Repelling Stage-I tracker trace/terminal operator and compatible
       high-regularity collar lift.
-- [ ] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
+- [x] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
       ladder orders.
 - [x] Backtrack/composition parameter jets through the weighted third
       Fréchet derivative needed for `J_phys`.
