@@ -2943,6 +2943,25 @@ eq:raw-phase-collar-action-bound} and
 
 \begin{proof}[Proof of
 \cref{thm:raw-compatible-phase-normal-inverse}]
+We first justify the normal graph domain used in the statement.  If
+\(y_n\to y\) in the hybrid state norm and
+\(\mathscr N_\sigma y_n\to f\) in the normal-data norm, then the
+variation-of-constants identities for
+\cref{eq:fixed-phase-normal-block} pass to the limit.  The finite seam
+traces and the algebraic row pass to the limit as well; on the repelling
+branch this uses the boundedness of \(\mathfrak C_e\).
+Consequently \(y\in\mathcal D(\mathscr N_\sigma)\) and
+\(\mathscr N_\sigma y=f\).  Thus \(\mathscr N_\sigma\) is closed and its
+domain with \cref{eq:fixed-phase-normal-domain-graph-norm} is Banach.
+The coordinate map
+\[
+ (x,a,\widehat\tau)\longmapsto
+ (x-T_\sigma^{\rm rc}a,a,\widehat\tau)
+\]
+is an isometry from \(\mathcal G_{\sigma,\delta}^{\rm rc}\) onto the
+corresponding product Banach space, proving completeness of the full graph
+domain.
+
 The inverse estimate
 \cref{eq:phase-event-inverse-bound} at \(j=0\) gives a constant
 \(M_\phi\), independent of \(N\) and \(\delta\), such that
@@ -2966,6 +2985,11 @@ Let \(f\) and \(g\) be prescribed.  The fixed-phase inverse and
  \|y\|_{\widetilde{\mathsf X}_{\sigma,0}}
  \le C\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}.
 \]
+Since \(\mathscr N_\sigma y=f\), this also gives
+\begin{equation}
+ \|y\|_{\mathcal D(\mathscr N_\sigma)}
+ \le C\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}.     \label{eq:raw-schur-fixed-normal-graph-bound}
+\end{equation}
 The normal-to-phase estimate gives, with the two scalar rows set to zero,
 \begin{equation}
  \|(\mathfrak D_\sigma y,0,0)\|_{
@@ -2997,7 +3021,7 @@ exactly
 \]
 The invertibility already proved gives uniqueness.
 
-Combining the bounds for \(G_\sigma\),
+Combining \cref{eq:raw-schur-fixed-normal-graph-bound} with the bounds for
 \((\mathscr S_\sigma^{\rm rc})^{-1}\), and
 \cref{eq:raw-schur-normal-action-data} proves
 \cref{eq:raw-compatible-schur-bound}.  On the attracting branch the actual

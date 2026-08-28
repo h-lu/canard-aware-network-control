@@ -2391,11 +2391,21 @@ not vanish; it is the mixed-boundary output that drives the feedback.
 Retain \cref{prop:fixed-phase-green-collar-buffer,%
 prop:scaled-phase-event-core,%
 prop:normal-to-phase-action-coupling,%
-lem:raw-phase-boundary-column-assembly}.  Let
-\(\mathscr N_\sigma\) denote the fixed-phase normal boundary operator in
-\cref{eq:fixed-phase-normal-block}, including the closed feedback
-\cref{eq:fixed-phase-collar-feedback} on the repelling branch, and let
-\(G_\sigma=\mathscr N_\sigma^{-1}\).  For a normal-data package
+lem:raw-phase-boundary-column-assembly}.  A normal response is a hybrid
+triple \(y=(\gamma_y,Z_y,p_y)\), with
+\[
+ Q_y=\varepsilon^{-1}(p_y-\ell_NZ_y)
+          +\mathscr D_{c,N}^{\rm lin}[\gamma_y,Z_y].
+\]
+Let \(F_y,H_y\) be the residuals obtained by moving every displayed
+non-source term in \cref{eq:fixed-phase-normal-block} to the left.  Define
+\begin{equation}
+ \mathscr N_a y=(\gamma_y,p_y(0),F_y,H_y),\qquad
+ \mathscr N_r y=(\gamma_y-\mathfrak C_ep_y(0),
+                         p_y(S_r),F_y,H_y).         \label{eq:fixed-phase-normal-boundary-operator}
+\end{equation}
+Thus on the repelling branch the first component is the prescribed baseline
+history, whereas \(\gamma_y\) is the actual total history.  For a normal-data package
 \(f=(\gamma_0,b_\sigma,F,H)\), use the scaled norm
 \begin{equation}
  \|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}
@@ -2405,7 +2415,23 @@ lem:raw-phase-boundary-column-assembly}.  Let
    +\|(F,H)\|_{\mathsf Y_{\sigma,0}}\right\}.     \label{eq:raw-schur-normal-data-norm}
 \end{equation}
 Here \(b_a=p(0)\), \(b_r=p(S_r)\), and
-\(e_a=r_{\rm out}\), \(e_r=-\rho_\delta\).  Put
+\(e_a=r_{\rm out}\), \(e_r=-\rho_\delta\).
+Let \(\mathcal D(\mathscr N_\sigma)\) be the continuous finite-seam hybrid
+responses with piecewise \(W^{1,\infty}\) current part, seam condition
+\(Z_y(0)=\gamma_y(0)\), algebraic row \(Q_y\), and residual in
+\(\widetilde{\mathsf Y}_{\sigma,0}\).  Equip it with
+\begin{equation}
+ \|y\|_{\mathcal D(\mathscr N_\sigma)}
+ =\|y\|_{\widetilde{\mathsf X}_{\sigma,0}}
+  +\|\mathscr N_\sigma y\|_{\widetilde{\mathsf Y}_{\sigma,0}}.  \label{eq:fixed-phase-normal-domain-graph-norm}
+\end{equation}
+Then \(\mathscr N_\sigma\) is closed, and
+\[
+ G_\sigma:\widetilde{\mathsf Y}_{\sigma,0}
+       \longrightarrow\mathcal D(\mathscr N_\sigma)
+\]
+is the solution operator supplied by
+\cref{prop:fixed-phase-green-collar-buffer}.  Put
 \[
  \mathfrak D_\sigma y=Q_{\rm n}[y]
      \in\mathsf H_\phi^0(I_\sigma),\qquad
@@ -2439,13 +2465,20 @@ has, for every
  (a,\widehat\tau)
   &=(\mathscr S_\sigma^{\rm rc})^{-1}
        \{(\mathfrak D_\sigma y,0,0)+g\},\notag\\
- x&=T_\sigma^{\rm rc}a+y.                       \label{eq:raw-compatible-schur-inverse}
+x&=T_\sigma^{\rm rc}a+y.                       \label{eq:raw-compatible-schur-inverse}
 \end{align}
-It satisfies
+Define
+\begin{align}
+ \mathcal G_{\sigma,\delta}^{\rm rc}
+ &=\{(x,a,\widehat\tau):
+       x-T_\sigma^{\rm rc}a\in\mathcal D(\mathscr N_\sigma)\},\notag\\
+ \|(x,a,\widehat\tau)\|_{\mathcal G_{\sigma,\delta}^{\rm rc}}
+ &=\|x-T_\sigma^{\rm rc}a\|_{\mathcal D(\mathscr N_\sigma)}
+       +\|a\|_{\mathsf A_\phi^1}+|\widehat\tau|.    \label{eq:raw-compatible-full-graph-norm}
+\end{align}
+This is a Banach graph norm.  The solution satisfies
 \begin{equation}
- \|x-T_\sigma^{\rm rc}a\|_{
-       \widetilde{\mathsf X}_{\sigma,0}}
- +\|a\|_{\mathsf A_\phi^1(I_\sigma)}+|\widehat\tau|
+ \|(x,a,\widehat\tau)\|_{\mathcal G_{\sigma,\delta}^{\rm rc}}
  \le C\{\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}
                  +\|g\|_{\mathsf H_\phi^0\times\R^2}\}.      \label{eq:raw-compatible-schur-bound}
 \end{equation}

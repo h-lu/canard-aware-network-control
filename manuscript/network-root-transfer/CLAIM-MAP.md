@@ -45,6 +45,8 @@ fixed.
 | Normal-to-phase action coupling | `prop:normal-to-phase-action-coupling` | The algebraically reconstructed speed of the normalized fixed-phase normal block, including endpoint/collar boundary layers, maps into $\mathsf H_\phi^0$ with norm $O(r_{\rm out}^2+\delta^{2-2\vartheta})$ and therefore produces a small bordered phase response. No higher phase-source jet, phase-to-normal column, moving-event column, or full coupled inverse is asserted |
 | Formal delayed phase core and reverse column | `lem:reduced-flow-phase-defect`, `prop:delayed-phase-event-core` | Exact complete-history phase-delay differential, exact annihilation of constant phase, an $O(\delta[1+\log(r_{\rm out}/\rho_\delta)])$ action bound, and a dimension-uniform delayed scalar phase inverse. The two phase-induced normal sources are identified exactly, including the affine-residual derivative. The collar is the formal $q_0$-flow collar; no raw-compatible collar identification, affine-residual solution bound, or full Schur inverse is asserted |
 | Event-aligned normal traces | `prop:event-aligned-normal-traces` | Exact triangularization of raw moving terminal traces by a fixed-$r$ quotient; the scaled event-time unknown disappears from homogeneous normal rows, and the reduced-base trace column is zero. A terminal-relative translation conjugacy preserves fixed-base kernel bounds. Raw trace differentiation instead costs one derivative and a sharp $\delta^{-2}$ strong-norm factor. No moving-family flushing or nonlinear tracker is asserted |
+| Shifted phase-to-normal action response | `prop:phase-delay-action-shift`, `prop:structured-phase-action-green` | Exact shift $p^\sharp=p+\varepsilon P$, structured bulk sources including the affine-residual derivative, shifted attracting and repelling boundary rows, and dimension-uniform true-action bound $O(r_{\rm out}^2+\delta/S_\delta)$. The old normalized-state reverse column is explicitly not uniformly bounded |
+| Raw-compatible zeroth-order phase--normal border | `lem:raw-phase-boundary-column-assembly`, `thm:raw-compatible-phase-normal-inverse` | Exact boundary column $E_0a\,\gamma_e^{\rm ph}$, repelling closed $p(0)$ feedback and shifted terminal row, total action $O(r_{\rm out}^2+\delta/S_\delta+\delta^{2-2\vartheta})$, and a dimension-uniform Schur inverse for $x=T_\sigma^{\rm rc}a+y$ in the graph norm controlling the normal operator domain, $a$, and the scaled event time. Fixed reduced base and order zero only; no higher jets, moving nonlinear family, tracker, speed sign, past orbit, or physical root |
 | Attracting finite-generation flushing | `lem:current-absorbed-delay-splitting`, `prop:attracting-finite-generation-flushing` | Exact deletion of zero-delay differences, current absorption for positive delays, a fixed seam-partition Banach space, and an order-dependent finite-generation estimate taking arbitrary strong attracting collar data to a genuine slow exit history with dimension-uniform normalized operator norm tending to zero. Fixed parameter only; no phase coupling, tracker, or parameter jet |
 | Repelling component-kernel flushing | `lem:repelling-component-generations`, `prop:repelling-component-flushing` | Weighted full-branch coefficient jets; a resummed current loop with forward transverse and future scalar kernels; exact recursive-delay generation count on one additive seam space; and inner-history/terminal-scalar handoff estimates obtained by oriented words and a localized terminal first-exit action. The normalized component traces tend to zero uniformly in network size. Fixed parameter and fixed phase only: no high-order compatible `p(0)`-collar feedback, coupled phase--normal inverse, nonlinear tracker, speed sign, or physical root |
 | Compatible repelling-collar closure | `prop:compatible-repelling-collar-closure` | High-order closure of the raw-compatible scalar $p(0)$-to-history feedback, with no extra Fredholm row; separate closed-loop collar and terminal columns; and a cross-column action/generation estimate preserving both normalized handoff limits uniformly in network size. Fixed parameter and fixed phase only; no phase-to-normal/event border, nonlinear tracker, speed sign, or physical root |
@@ -161,10 +163,14 @@ The limits separate exactly:
   closed, and the normalized normal-to-phase action column is
   $O(r_{\rm out}^2+\delta^{2-2\vartheta})$.  The exact formal reverse
   phase-delay column, its scalar delayed inverse, and fixed-`r`
-  event-aligned normal trace are also proved.  The raw-compatible phase
-  collar, affine-residual normal solution bound, and coupled phase--normal
-  inverse are not proved.
-  These results do not yet
+  event-aligned normal trace are also proved.  The exact phase-delay shift
+  and structured action estimate are now proved.  The raw-compatible collar
+  is assembled as a boundary column, the affine-residual bulk response is
+  controlled in the shifted/action space, and their combination closes the
+  fixed-reduced-base zeroth-order phase--normal inverse in a graph norm.
+  This does not give a uniform inverse in the old normalized state norm,
+  higher phase or parameter jets, a moving nonlinear tracker, speed sign, a
+  past physical history, or a physical root.  These results do not yet
   construct an RFDE tracker or prove its normal dichotomy.  The generic
   nonselection example is a logical
   counterexample to weak selection criteria, not a model-specific

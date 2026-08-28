@@ -40,14 +40,19 @@ history from convergence in an unnormalized history norm alone.  Its
 fixed-phase component analysis now includes high-order finite-generation
 flushing on both outer branches, with a forward-transverse/future-scalar
 first-exit construction on the repelling side.  It also closes the
-high-order raw-compatible repelling p(0) feedback and proves a small
-zeroth-order normal-to-phase action column.  In the reverse direction it
-derives the exact formal phase-delay defect, closes its delayed scalar
-phase--event inverse, and identifies the phase-induced normal residual.  A
-fixed-`r` event-aligned trace theorem removes the scaled terminal-time
-unknown from normal rows at the reduced base.  The raw-compatible phase
-collar, affine-residual normal bound, complete border, nonlinear tracker,
-and finite-`delta` physical slow-history relation remain open.
+high-order raw-compatible repelling `p(0)` feedback and proves the small
+zeroth-order normal-to-phase action column.  In the reverse direction, the
+exact phase-delay shift exposes the failure of a uniform old-normalized-state
+bound, while the structured response has true-speed action
+`O(r_out^2+delta/S_delta)`.  The moving-core collar supplies the exact
+raw-compatible boundary column, including the repelling feedback, and the
+affine-residual bulk source is controlled in the shifted response.  Together
+these results close a fixed-reduced-base zeroth-order phase--normal inverse in
+a graph/action norm, with total action
+`O(r_out^2+delta/S_delta+delta^(2-2 vartheta))`.  Higher phase and parameter
+jets, moving-event estimates, the nonlinear tracker, speed sign,
+nonautonomous normal splitting, and the finite-`delta` physical slow-history
+relation remain open.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag
