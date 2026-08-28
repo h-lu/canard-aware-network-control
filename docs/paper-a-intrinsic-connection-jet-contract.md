@@ -38,10 +38,11 @@ physical attracting/repelling complete-history objects
     -> two-delay recovery and N-uniform consequences.
 ```
 
-The first arrow is owned by
-[Issue #11](https://github.com/h-lu/canard-aware-network-control/issues/11)
-unless it is reproved for the shared-resource Markov class.  Issue #32 owns
-the remaining front-face geometry and identification.
+The first arrow must be proved for the shared-resource Markov class inside
+this project.  [Issue #11](https://github.com/h-lu/canard-aware-network-control/issues/11)
+concerns a different two-module leaky model and cannot be imported as a
+Paper A theorem.  Issue #32 therefore owns both the Paper A physical-history
+construction and the subsequent front-face identification.
 
 ## 2. The selected connection locus that is already proved
 
@@ -139,12 +140,21 @@ Singular `delta`-dependent rescalings can alter the limit and are excluded.
 
 ## 4. What is still needed for the physical theorem
 
-For the shared-resource Markov RFDE, no repository result currently proves
-the following items uniformly in `N`:
+For the shared-resource Markov RFDE, the unprepared critical curve, leading
+frozen-voltage splitting, and two positive formal truncated reduced actions are
+now proved in Proposition `prop:unprepared-outer-skeleton`.  Supplementary
+Proposition `prop:backward-asymptotic-nonselection` proves that bounded
+complete backward extension, convergence in an unnormalized history norm,
+and even superalgebraic strong-history closeness do not select a unique tame
+history jet.  The following finite-`delta` items remain unproved uniformly in
+`N`:
 
-1. preparation-free attracting and repelling complete-history slow objects;
-2. a parameter-coherent `C^1_nu C^2_eta` construction of those objects;
-3. entry into the receding logarithmic fold chart with all delayed
+1. a full-history outer dichotomy with exactly one strong repelling unstable
+   bundle and an infinite-dimensional stable history complement;
+2. a parameter-coherent `C^1_nu C^2_eta` attracting representative and
+   repelling codimension-one history sheet;
+3. the finite-`delta` resource correction needed for entry into the receding
+   logarithmic fold chart, with all delayed
    backtracks contained in the physical tube;
 4. exact common-history-graph overlap, rather than current-state or
    exponentially close shadowing;
@@ -153,11 +163,15 @@ the following items uniformly in `N`:
 6. construction and verification of physical section holonomy, plus a
    nontrivial passage-jet composition law beyond exact-holonomy re-cutting.
 
-The older two-module outer-history notes prove the insufficiency of bounded
-backward completion and give a correct curve-restricted Lyapunov--Perron
-interface, but their nonlinear outer dichotomy and gluing theorem remain an
-open gate.  They also concern a different model class and cannot be imported
-as a theorem for arbitrary finite `N` shared-resource networks.
+The exact curve-restricted equation, correct mixed boundary geometry,
+candidate capped history weight, and first missing dichotomy lemma are
+recorded in
+[`paper-a-physical-outer-history-route.md`](paper-a-physical-outer-history-route.md).
+They are a proof design, not additional manuscript claims.
+
+G0 and G1 remain open.  The critical-layer proposition is only a precursor,
+and the generic nonselection example is not a model-specific impossibility
+theorem for the shared-resource RFDE.
 
 ## 5. Stop/go rules
 
@@ -189,7 +203,13 @@ Do not:
 - [x] Upgrade the raywise structural response to a joint Frechet theorem.
 - [x] State the physical weighted-`C^1` transfer theorem with exact
       hypotheses and no implied existence.
-- [ ] Close or import the physical outer-history construction from Issue #11.
+- [x] Prove the unprepared outer critical curve, leading frozen-voltage
+      splitting, and positive formal truncated reduced actions.
+- [x] Prove that bounded backward convergence in an unnormalized history norm
+      and superalgebraic history closeness do not select a unique tame
+      parameterized history.
+- [ ] Prove the finite-`delta` full-history dichotomy, mixed outer-history
+      Lyapunov--Perron construction, and exact fold-graph overlap for Paper A.
 - [ ] Identify the physical front-face conormal with `Lambda_N`.
 - [ ] Prove a nontrivial passage-jet composition law beyond the conditional
       exact-holonomy re-cutting naturality already proved, or another genuinely

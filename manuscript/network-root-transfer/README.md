@@ -32,7 +32,12 @@ cokernel-valued hidden-return jet, while the calibrated conormal converges in
 dual norm to `(1,-Lambda_N)`.  This removes dependence on a scalar gap
 representative, but it remains a selected connection object.  The
 preparation-free physical identification is tracked separately in Issue #32
-and depends on the outer-history construction in Issue #11.
+and must be proved for this shared-resource Markov class; Issue #11 concerns a
+different Paper III model.  The development manuscript now proves the exact
+critical curve, leading frozen-voltage splitting, and truncated reduced
+actions as precursors, together with a generic obstruction to selecting a
+history from convergence in an unnormalized history norm alone.  It still does not prove the
+finite-`delta` physical slow-history relation.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag
@@ -45,7 +50,8 @@ The submission build is split into `main.pdf` and `supplement.pdf`.  The main
 article keeps all hypotheses, theorem outputs, return formulas, and the
 load-bearing proof mechanism.  The supplement contains the weighted Whitney
 preparation, localized noncanonicity bump, complete special-flow history graph,
-and exact six-part finite-section ledger.
+exact six-part finite-section ledger, critical-layer proof, and history-
+selection counterexample.
 
 Build with:
 

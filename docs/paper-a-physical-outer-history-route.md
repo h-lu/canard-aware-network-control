@@ -1,0 +1,298 @@
+# Paper A: physical outer-history route after the layer theorem
+
+Status: **the unprepared critical curve, leading frozen-voltage splitting,
+formal truncated reduced actions, and a sharp nonselection obstruction are proved;
+the finite-`delta` RFDE slow-history theorem is open.**
+
+This note refines the physical-identification part of
+[Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
+It concerns Paper A's finite shared-resource Markov networks.  Issue #11
+concerns a different two-module leaky model and cannot supply this theorem.
+
+## 1. What has now been proved
+
+Proposition `prop:unprepared-outer-skeleton` in the main paper, with its
+proof in Supplement D, gives the following objects without a preparation,
+cutoff, or planar completion:
+
+1. a unique local constant-history critical curve
+   `(V_0,N(r), w_0,N(r))`, uniform in network size;
+2. its cubic expansion
+
+   ```text
+   z_0,N(r) = g_N r^2 + g_3,N r^3 + O_unif(r^4),
+   w_0,N(r) = 2/3 - alpha r^2 - kappa_N r^3 + O_unif(r^4);
+   ```
+
+3. a fold-continuing simple collective eigenvalue and an `N-1` dimensional
+   stable complement for the leading frozen-voltage matrix;
+4. the exact identity
+
+   ```text
+   lambda_c,N(r) = w_0,N'(r) / Theta_N(r),
+   Theta_N(r) = 1 + O_unif(r^2),
+   ```
+
+   which fixes the attracting and repelling signs without assuming a sign
+   for `kappa_N`;
+5. a nonzero reduced speed and two positive formal truncated actions on
+   `rho_delta <= |r| <= r_out`, with a common lower bound.
+
+Supplementary Proposition `prop:backward-asymptotic-nonselection` proves
+that backward completeness, boundedness, convergence in an unnormalized
+history norm, a common phase row, fixed-`delta` smoothness, and even
+superalgebraic strong-history closeness do not by themselves imply either a
+unique history or tame parameter jets.  It is a generic RFDE obstruction to
+that inference, not a model-specific nonexistence theorem.
+
+These are genuine critical-layer inputs and a genuine logical obstruction.  They do not
+construct a finite-`delta` slow-history representative.
+
+## 2. The exact curve-restricted physical equation
+
+Let a structural redistribution be
+
+```text
+L_k,N(eta) = B_k,N + E_k,
+sum_k E_k = 0,
+pi_N^T E_k = 0.
+```
+
+Use slow time `T=delta^2 t` and seek a history curve in the form
+
+```text
+V(r) = 1 + r 1 + z(r),        pi_N^T z(r) = 0,
+q(r) = dr/dT.
+```
+
+If `Phi_q^T` is the scalar base flow, the physical delay
+`theta_k/delta` in `t` becomes `delta theta_k` in `T`, so the delayed base
+point is
+
+```text
+r_k(r) = Phi_q^(-delta theta_k)(r).
+```
+
+The exact, uncut voltage invariance equation is
+
+```text
+delta^2 q(r) {1 + z'(r)}
+  = {2/3-w(r)} 1
+    - c_N o {r 1 + z(r)}^2
+    - (beta/3) {r 1 + z(r)}^3
+    + A_N z(r)
+    + delta^2 K sum_k L_k,N(eta)
+        [{r-r_k(r)}1 + z(r)-z(r_k(r))].
+```
+
+Its collective and transverse projections are, exactly,
+
+```text
+delta^2 q
+  = 2/3-w
+    - pi_N^T[c_N o (r1+z)^2]
+    - (beta/3) pi_N^T[(r1+z)^3]
+    + delta^2 K sum_k pi_N^T L_k,N(eta)
+        [{r-r_k}1 + z(r)-z(r_k)],
+
+delta^2 q z'
+  = A_N z
+    - P_perp,N[c_N o (r1+z)^2 + (beta/3)(r1+z)^3]
+    + delta^2 K P_perp,N sum_k L_k,N(eta)
+        [{r-r_k}1 + z(r)-z(r_k)].
+```
+
+The resource equation is
+
+```text
+q(r) w'(r) = sigma_N(r) - delta^2 nu,
+```
+
+with `sigma_N(r)=r` for shared recovery and the sensed expression from
+the main paper for the second return channel.
+
+This formulation uses only forward RFDE information: delayed values are
+evaluations of the same curve at a backward base-flow point.  It is the
+equation that a physical outer-history theorem must solve.  It also shows
+the first required resource correction: at the logarithmic matching radius,
+
+```text
+w_slow,N,delta(r)
+  = w_0,N(r) + delta^2/(2 alpha) + E_delta(r).
+```
+
+because the critical curve itself lies at
+`d=1/(2 alpha)+o(1)`, not in the retained `d=0` canard tube.
+The displayed `delta^2/(2 alpha)` term is necessary, not sufficient.  At
+`r=+/-rho_delta`, a sufficient resource-coordinate estimate would be
+`E_delta=o(delta^(2+kappa))`, uniformly in all indices; exact overlap still
+requires voltage and full-history estimates.
+
+## 3. Correct boundary geometry
+
+The two outer branches do not have the same boundary-value structure.
+
+### Attracting branch
+
+For `r in [rho_delta,r_out]`, a delayed base point lies farther out on the
+attracting branch.  A construction therefore needs a compatible physical
+history on an outer collar of `r_out` whose width is `O(delta Theta_*)`.
+All principal normal directions contract toward the inner boundary.
+
+### Repelling branch
+
+For `r in [-r_out,-rho_delta]`, the instantaneous problem has one strong
+collective unstable direction.  In the full RFDE phase space the stable
+part is not merely the `N-1` Markov current modes: long delay supplies
+infinitely many stable history modes.  The correct mixed boundary data are:
+
+- a complete stable-history coordinate on an inner collar near
+  `r=-rho_delta`;
+- one scalar strong-unstable coordinate at the outer endpoint
+  `r=-r_out`.
+
+Schematically, after a full-history dichotomy has been proved, the normal
+Lyapunov--Perron equation must have the form
+
+```text
+n(T)
+  = U(T,T_in) P_s beta_s
+    + U(T,T_out) P_u beta_u
+    + delta^(-2) integral_(T_in)^T U(T,S) P_s F(S) dS
+    - delta^(-2) integral_T^(T_out) U(T,S) P_u F(S) dS.
+```
+
+Here `P_s` acts on a full stable history space and `P_u` is the one
+dimensional strong collective coordinate.  The output is naturally a
+codimension-one repelling history sheet, not a unique repelling trajectory
+chosen by outer data alone.
+
+The obstruction is already present without delay or nonlinearity.  For
+
+```text
+delta^2 n_perp,T = A_N n_perp,
+```
+
+recovering an inner stable coordinate from its outer value costs
+
+```text
+exp{D gamma (T_out-T_in)/delta^2}.
+```
+
+Thus an `N`-uniform outer-to-inner inverse preserving current evaluation
+cannot exist.  The inner stable-history coordinate must be retained and
+later fixed by exact gluing to the incoming physical history.
+
+## 4. Candidate norms for the new theorem
+
+This subsection records the proof design, not a proved estimate.
+
+On either outer interval, the expected normal correction is `O(delta^2)`.
+A scale-compatible curve norm is
+
+```text
+||n||_(k,delta)
+  = max_(j<=k) sup_r delta^(-2) |r|^j ||D_r^j n(r)||,
+
+||qhat||_(k,delta)
+  = max_(j<=k) sup_r delta^(-2) |r|^(j+1)
+      |D_r^j qhat(r)|.
+```
+
+At `rho_delta=delta S_delta/(2 alpha)`, one has
+`r_k-r=O(delta)` and `delta/rho_delta=O(1/S_delta)`.  Delay composition
+therefore has the candidate loss `1+O(1/S_delta)` in these norms.
+
+A full fast-action weight is unsafe because evaluation across a long delay
+can introduce `exp(c/delta)` inside the contraction constant.  A candidate
+capped exponent density is
+
+```text
+a(r) = min{D gamma/2, c |r|},
+L_delta = log(1/delta),
+lambda_weight(r)
+  = vartheta delta^(-2)
+      min{a(r), delta L_delta/Theta_*},
+0 < vartheta < 1/2.
+```
+
+Across one slow-time delay window its weight ratio is at most
+`delta^(-vartheta)`.  The target contraction estimate is
+
+```text
+kappa_delta
+  <= C {r_out + 1/S_delta
+           + delta^(1-vartheta)/S_delta}.
+```
+
+If the required full-history dichotomy and boundary-map estimates are
+proved, this would close after first choosing `r_out` small and then
+`delta` small.  The corresponding conservative boundary-forgetting scale is
+
+```text
+C delta^(-M) exp{-c log(1/delta)/delta},
+```
+
+which is still smaller than every algebraic power.  No such estimate is yet
+claimed in the manuscript.
+
+## 5. The first new analytic lemma
+
+The next proof cannot start from the instantaneous matrix theorem alone.
+It must establish, on the curvewise, `delta`-dependent complete-history
+space:
+
+1. an attracting history evolution with a capped-weight stable estimate;
+2. on the repelling branch, exactly one strong unstable history bundle and
+   a complementary infinite-dimensional stable history bundle;
+3. roughness under the nonautonomous `O(delta^2)` delay operator and the
+   `O(delta^2)` slow-curve correction;
+4. joint `C^1_nu C^2_eta` Frechet bounds for the projections, boundary maps,
+   and fixed point, uniform in `N`.
+
+Only after this lemma may the mixed Lyapunov--Perron equation in Section 3
+be called an actual construction.
+
+## 6. Two legitimate completion routes
+
+### Exact physical anchor
+
+Name a global invariant set, fix a phase and a wave/asymptotic coordinate,
+construct its physical incoming and outgoing history objects, and prove
+their exact connection root.  This would give an exact finite-`delta`
+maximal-canard locus.
+
+### Physical representative class
+
+Construct a nonempty class of uncut invariant slow-history representatives,
+prove that different normalized boundary representatives differ at the fold
+by a superalgebraic amount in the full weighted `C^1` parameter norm, and
+define the physical connection root only modulo that flat equivalence.  Then
+prove that the resulting algebraic conormal jet equals `Lambda_N`.
+
+The second route is acceptable only if nonemptiness, full-history gluing,
+and flat `C^1` comparison are theorems.  Defining the class by the desired
+comparison, or merely renaming the existing preparation-selected roots, is
+not acceptable.
+
+## 7. Gate ledger
+
+- [x] Unprepared critical curve, cubic expansion, and dimension-uniform
+      leading frozen-voltage splitting.
+- [x] Positive attracting and repelling formal truncated reduced actions.
+- [x] Exact proof that convergence in an unnormalized history norm and
+      superalgebraic history closeness do not select a tame history jet.
+- [x] Exact curve-restricted physical invariance equation and correct mixed
+      boundary geometry recorded.
+- [ ] Full RFDE history dichotomy with one strong repelling unstable bundle.
+- [ ] Attracting representative and repelling codimension-one history sheet
+      with uniform parameter jets.
+- [ ] The `delta^2/(2 alpha)` resource correction and exact overlap with the
+      existing fold history graph.
+- [ ] Exact incoming-history gluing that fixes the repelling stable-history
+      coordinate.
+- [ ] A physical gap/root, or a nonempty flat-equivalence class of roots.
+- [ ] Weighted `C^1` selected-to-physical comparison and identification with
+      `Lambda_N`.
+
+Issue #32 remains open.

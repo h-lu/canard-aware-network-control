@@ -343,14 +343,21 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] State and prove a quantitative weighted-`C^1` selected-to-physical
       transfer criterion, including a gap-level sufficient condition.  This
       is an interface theorem and does not supply the physical histories.
-- [ ] Import or prove the preparation-free physical outer-history relation
-      owned by Issue #11.
+- [x] Prove the preparation-independent critical curve, leading frozen-
+      voltage splitting, and positive truncated reduced actions.
+- [x] Prove that convergence in an unnormalized history norm, even with a
+      fixed phase row and superalgebraic strong-history closeness, does not
+      select tame history jets by itself.
+- [ ] Prove the finite-`delta` full-history dichotomy, mixed-boundary outer
+      history construction, and fold-graph overlap for Paper A itself.
 - [ ] Prove weighted `C^1` selected-to-physical identification.
 - [ ] Prove a nontrivial passage-jet composition law beyond the exact-holonomy
       re-cutting naturality already contained in the transfer proposition, or
       another reusable consequence.
 
-Completing the five checked items does not close Issue #32 and does not
+These checked precursor items do not close G0 or G1, and the generic
+nonselection example is not a model-specific impossibility theorem.
+Completing them does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.
 
 ### Editorial simulation snapshot
