@@ -45,9 +45,12 @@ relative phase-to-state estimate recovers normalized state and pointwise
 true action with factor `O(r_out+S_delta^(-1))`.  The exact nonlinear formal
 phase-delay functional now has a two-point `O(delta |r|)` remainder in both
 value and piecewise derivative.  A raw-compatible `C^2` old-history
-assembler, the full nonlinear normal residual, the nonlinear tracker, its
-nonautonomous normal dichotomy, exact fold overlap, and a physical
-preparation-independent root remain open.
+assembler is now closed on a fixed-reference ball, including the second
+endpoint jet, the four closed endpoint collars, and an
+`epsilon^(-1)`-normalized quadratic graph remainder.  The full assembled
+nonlinear normal residual, the nonlinear tracker, its nonautonomous normal
+dichotomy, exact fold overlap, and a physical preparation-independent root
+remain open.
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:

@@ -3003,6 +3003,160 @@ history with the raw-compatible nonlinear collar nor supplies the collar's
 second endpoint jet.
 \end{lemma}
 
+\begin{lemma}[Second-jet raw-compatible history assembler]
+\label[lemma]{lem:second-jet-raw-history-assembler}
+Retain
+\cref{prop:compatible-endpoint-jet-collar,%
+lem:raw-compatible-moving-core-collar,%
+lem:raw-compatible-base-collar-refinement,%
+lem:inner-anchored-nonlinear-phase-chart}
+at a fixed order \(h\ge3\), together with the critical and backtrack
+estimates through order \(h+3\) on the common enlargements \(J_\sigma\).
+Choose \(\chi>0\) so small that
+\begin{equation}
+ 2q_+\chi<\min\{4\chi_0,1/2\},                   \label{eq:raw-assembler-relative-width}
+\end{equation}
+and, for \(\sigma\in\{a,r\}\), put
+\begin{equation}
+ \widetilde I_{\sigma,\chi}
+ =\overline{\{e:\ \text{there is }r\in I_\sigma
+                    \text{ with }|e-r|<2q_+\chi|r|\}}
+ \Subset J_\sigma .                              \label{eq:raw-assembler-enlarged-collar}
+\end{equation}
+After decreasing \(\delta_0\), the finite collar construction in the three
+results above, including its critical, backtrack, and compatibility-defect
+estimates, extends to these same-sign relative endpoint collars.  For the
+voltage and resource compatibility defects \(b_{j,e}\) and \(d_{j,e}\)
+on that extension, one has
+\begin{equation}
+ \max_{0\le j\le h}\delta^j
+ \left\{\|\mathcal L_e^\ell b_{j,e}\|_N
+             +|\mathcal L_e^\ell d_{j,e}|\right\}
+ \le C_h\varepsilon |e|^{1-\ell},
+ \qquad \ell=0,1,2,                              \label{eq:second-endpoint-collar-jets}
+\end{equation}
+uniformly for \(e\in\widetilde I_{a,\chi}\cup
+\widetilde I_{r,\chi}\), where
+\(\mathcal L_e=q_0(e)\partial_e\).  Thus, if
+\(\Delta\phi_e=\phi_e^{\rm rc}-\phi_e^0\), then for every reference
+\(e_*\in I_\sigma\) and every \(e\) in its relative collar with
+\(|e|\asymp|e_*|\), in the fixed-reference cap norm introduced below,
+\begin{equation}
+ \|\Delta\phi_e\|_{\mathrm{cap},h,e_*}
+ +|e|\,\|\mathcal L_e\Delta\phi_e\|_{\mathrm{cap},h,e_*}
+ +|e|^2\,\|\mathcal L_e^2\Delta\phi_e\|_{\mathrm{cap},h,e_*}
+ \le C_h\varepsilon|e|.                           \label{eq:second-endpoint-collar-cap}
+\end{equation}
+
+More precisely, fix \(e_*\in I_\sigma\) and put
+\[
+ e_c=\Phi_{q_0}^{c}(e_*),\qquad |c|\le\chi|e_*|.
+\]
+The whole tube
+\begin{equation}
+ \left\{\Phi_{q_0}^{t}(e_*),\
+   \Phi_{q_0}^{-\tau}(\Phi_{q_0}^{t}(e_*)):
+   |t|\le\chi|e_*|,\ 0\le\tau\le\delta\theta_m\right\}
+                                                        \label{eq:raw-assembler-flow-backtrack-tube}
+\end{equation}
+lies in \(\widetilde I_{\sigma,\chi}\), and
+\begin{equation}
+ \frac34|e_*|\le|\Phi_{q_0}^{t}(e_*)|
+       \le\frac54|e_*|,
+ \qquad |t|\le\chi|e_*|.                        \label{eq:raw-assembler-relative-flow-bound}
+\end{equation}
+This includes the cases \(e_*=\pm\rho_\delta\) and
+\(e_*=\pm r_{\rm out}\); the shifted endpoint need not remain in the
+original closed interval.
+
+All cap norms in the rest of the statement use the single reference weight
+\(\kappa_{e_*}\), not the moving weight \(\kappa_{e_c}\).  For
+\[
+ U=(Z,p,\zeta)\in
+ E_N\times\mathbb R\times\mathscr K_{N,\delta}^h
+\]
+set
+\begin{equation}
+ \|U\|_{\mathrm{col},e_*}
+ =\|Z\|_N+\frac{|p|}{|e_*|}
+       +\|\zeta\|_{\mathrm{cap},h,e_*}.            \label{eq:nonlinear-collar-data-norm}
+\end{equation}
+The finite triangular recursion defining \(\Gamma_{e_c}^h\) has a unique
+extension to an open, dimension-uniform ball
+\(\|U\|_{\mathrm{col},e_*}<r_h\) in this fixed-reference norm;
+write its value at the displayed affine-core data as
+\(\Gamma_{e_c;e_*}^{h,\mathrm{fr}}(U;\nu,\eta)\).  This extension is
+defined directly by the compatibility recursion, not by comparing the two
+fading weights, and it agrees with \(\Gamma_{e_c}^h\) wherever both are
+defined.  On that open ball define the exact centered voltage-history
+assembler
+\begin{equation}
+ \mathscr H_{e_*}^{\rm rc}(c,U)
+ =\operatorname{pr}_\phi
+   \Gamma_{e_c;e_*}^{h,\mathrm{fr}}(U;\nu,\eta)
+       -\phi_{e_c}^0.                             \label{eq:nonlinear-raw-history-assembler}
+\end{equation}
+It is \(C^2\) into the fixed-reference \(C^h\) history space; the
+anisotropic derivatives needed below have dimension-uniform bounds.  At
+its base point,
+\begin{equation}
+ \mathscr H_{e_*}^{\rm rc}(0,0)=\Delta\phi_{e_*},
+ \qquad
+ \partial_c\mathscr H_{e_*}^{\rm rc}(0,0)
+       =\gamma_{e_*}^{\rm ph}.                    \label{eq:nonlinear-raw-history-first-jets}
+\end{equation}
+There is \(0<r_h'<r_h\), dimension-uniform, such that for
+\(|c|\le\chi|e_*|\), \(\|U\|_{\mathrm{col},e_*}\le r_h'\), and data
+directions \(H,H_1,H_2\),
+\begin{align}
+ \|\partial_c^2\mathscr H_{e_*}^{\rm rc}(c,0)
+       \|_{\mathrm{cap},h,e_*}
+ &\le C_h\frac{\varepsilon}{|e_*|},\notag\\
+ \|\partial_cD_U\mathscr H_{e_*}^{\rm rc}(c,0)H
+       \|_{\mathrm{cap},h,e_*}
+ &\le \frac{C_h}{|e_*|}\|H\|_{\mathrm{col},e_*},\notag\\
+ \|D_U^2\mathscr H_{e_*}^{\rm rc}(c,U)[H_1,H_2]
+       \|_{\mathrm{cap},h,e_*}
+ &\le C_h\prod_{i=1}^2\|H_i\|_{\mathrm{col},e_*}. \label{eq:nonlinear-raw-history-C2-bounds}
+\end{align}
+Consequently,
+\begin{align}
+ &\|\mathscr H_{e_*}^{\rm rc}(c,U)
+      -\mathscr H_{e_*}^{\rm rc}(0,0)
+      -c\gamma_{e_*}^{\rm ph}
+      -D_U\mathscr H_{e_*}^{\rm rc}(0,0)U
+        \|_{\mathrm{cap},h,e_*}\notag\\
+ &\qquad\le C_h\left[
+   \varepsilon|e_*|
+       \left(\frac{|c|}{|e_*|}\right)^2
+ +\frac{|c|}{|e_*|}\|U\|_{\mathrm{col},e_*}
+  +\|U\|_{\mathrm{col},e_*}^2\right].             \label{eq:nonlinear-raw-history-taylor}
+\end{align}
+Here and below the remainder is exactly the four-term difference
+\begin{align}
+ \operatorname{Rem}\mathscr H_{e_*}^{\rm rc}(c,U)
+ :={}&\mathscr H_{e_*}^{\rm rc}(c,U)
+      -\mathscr H_{e_*}^{\rm rc}(0,0)
+      -c\gamma_{e_*}^{\rm ph}\notag\\
+ &{}-D_U\mathscr H_{e_*}^{\rm rc}(0,0)U.          \label{eq:nonlinear-raw-history-remainder-definition}
+\end{align}
+In particular, if
+\(\|U\|_{\mathrm{col},e_*}\le\varepsilon R\le r_h'\), then
+\begin{equation}
+ \varepsilon^{-1}
+ \|\operatorname{Rem}\mathscr H_{e_*}^{\rm rc}(c,U)
+       \|_{N,e_*,\delta}^{\sharp}
+ \le C_h\left(\frac{|c|}{|e_*|}+R\right)^2.       \label{eq:nonlinear-raw-history-graph-remainder}
+\end{equation}
+The full moving formal collar is subtracted in
+\cref{eq:nonlinear-raw-history-assembler}; subtracting only its tangent
+would not give
+\cref{eq:nonlinear-raw-history-graph-remainder}.  The construction uses a
+fixed \(\theta\)-history chart and never translates an arbitrary
+\(C^0\) history.  It constructs an order-\(h\) compatible old-history
+assembler, not a past orbit, a nonlinear tracker, or a physical connection.
+\end{lemma}
+
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}
 Retain \cref{lem:repelling-component-generations}.  Fix \(d\ge1\), take

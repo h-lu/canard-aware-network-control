@@ -3702,6 +3702,350 @@ constructed.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{lem:second-jet-raw-history-assembler}]
+We first justify the relative endpoint enlargement.  Since
+\(\widetilde I_{\sigma,\chi}\Subset J_\sigma\), all coefficient estimates
+used in the finite collar recursion hold there after decreasing
+\(\delta_0\).  Moreover,
+\[
+ |\Phi_{q_0}^{t}(e_*)-e_*|\le q_+|t|.
+\]
+Thus \cref{eq:raw-assembler-relative-width} gives
+\cref{eq:raw-assembler-relative-flow-bound}.  Since
+\[
+ \frac{\delta\theta_m}{|e_*|}
+ \le\frac{2\alpha\theta_m}{S_\delta}\longrightarrow0,
+\]
+we may also require
+\(q_+\delta\theta_m\le q_+\chi|e_*|\).  Applying the flow estimate once
+more proves
+\cref{eq:raw-assembler-flow-backtrack-tube}.  In particular every point of
+the enlarged collar has \(|e|\ge\rho_\delta/2\), remains of the same sign,
+and stays in a common coefficient domain.  The nested-annulus construction
+in the proofs of
+\cref{lem:raw-compatible-moving-core-collar,%
+lem:raw-compatible-base-collar-refinement}
+therefore repeats verbatim on the enlargement.  This is the promised
+extension at all four closed endpoints; it uses neither a backward physical
+orbit nor an identification of two fading norms.
+
+We next add the missing second endpoint derivative to that finite
+compatibility recursion.  Retain the critical and backtrack estimates
+through order \(h+3\).  The definitions of the two residuals, the weighted
+critical estimates, and the complete joint-difference estimate
+\cref{eq:backtrack-joint-difference} give
+\begin{equation}
+ \|\mathcal L_e^nR_{z,N}(e)\|_N
+ \le C_h\varepsilon|e|^{1-n},\qquad
+ |\mathcal L_e^nR_{q,N}(e)|
+ \le C_h\varepsilon|e|^{-n},
+ \quad 0\le n\le h+1.                            \label{eq:second-endpoint-residual-jets}
+\end{equation}
+Indeed, this is
+\cref{eq:base-collar-residual-size} with two further retained derivatives,
+translated from weighted \(\partial_e\)-jets to powers of
+\(\mathcal L_e=q_0(e)\partial_e\).  The delay gain here belongs to the
+complete current-minus-backtrack difference in
+\cref{eq:backtrack-joint-difference}; no individual backtrack derivative
+is claimed to carry a factor \(\delta\).
+
+Along the formal core, \(\partial_\theta=\delta\mathcal L_e\).
+Consequently, for \(0\le m\le h-1\) and \(\ell=0,1,2\),
+\begin{align*}
+ \delta^{m+1}
+ \|\mathcal L_e^\ell\partial_\theta^mE_v^0(0)\|_N
+ &=\delta^{2m}
+   \|\mathcal L_e^{m+\ell}R_{z,N}(e)\|_N\\
+ &\le C_h\varepsilon|e|^{1-\ell}
+       \left(\frac{\delta^2}{|e|}\right)^m,\\
+ \delta^{m+1}
+ |\mathcal L_e^\ell\partial_\theta^mE_w^0(0)|
+ &=\delta^{2m+2}
+   |\mathcal L_e^{m+\ell}R_{q,N}(e)|\\
+ &\le C_h\varepsilon|e|^{1-\ell}
+       \left(\frac{\delta^2}{|e|}\right)^{m+1}.
+\end{align*}
+Because \(|e|\ge\rho_\delta/2\), both parentheses are at most one for
+small \(\delta\).  Hence
+\begin{align}
+ \max_{0\le m\le h-1}\delta^{m+1}
+ \bigl\{&
+  \|\mathcal L_e^\ell
+          \partial_\theta^mE_v^0(0)\|_N
+ +|\mathcal L_e^\ell
+          \partial_\theta^mE_w^0(0)|\bigr\}
+ \le C_h\varepsilon |e|^{1-\ell}.                \label{eq:second-endpoint-formal-defect-jets}
+\end{align}
+
+Apply \(\mathcal L_e^\ell\), \(\ell=0,1,2\), to the exact resource
+recursion
+\cref{eq:moving-core-resource-defect-recursion} and to the triangular
+voltage recursion used in
+\cref{eq:moving-core-voltage-defect-recursion}.  At level \(j\), the
+top jet occurs only on the left.  On the right, every term contains either
+a formal defect from
+\cref{eq:second-endpoint-formal-defect-jets} or a lower compatibility
+defect.  Leibniz' rule distributes the endpoint derivatives among bounded
+coefficients and those lower defects.  Thus, with
+\[
+ M_{j,\ell}
+ =\max_{0\le i\le j}\delta^i
+   \{\|\mathcal L_e^\ell b_{i,e}\|_N
+                   +|\mathcal L_e^\ell d_{i,e}|\},
+\]
+the finite recursion has the estimate
+\begin{equation}
+ M_{j,\ell}\le C_h\left\{
+   \varepsilon|e|^{1-\ell}
+  +\sum_{i<j}\sum_{q=0}^{\ell}
+       |e|^{q-\ell}M_{i,q}\right\}.               \label{eq:second-endpoint-triangular-induction}
+\end{equation}
+The base values vanish, and the first rows are the exact defects in
+\cref{eq:moving-core-first-defects}.  Induction first in \(j\) and then
+in \(\ell\) proves
+\cref{eq:second-endpoint-collar-jets}.
+
+The Hermite operator is independent of \(e\), and
+\[
+ \Delta\phi_e
+ =\mathcal E_{\delta,h}(b_{0,e},\ldots,b_{h,e}).
+\]
+If \(|e|\asymp|e_*|\), its support remains in
+\([-c_H\delta,0]\).  On this short interval the fixed weight
+\(e^{2\kappa_{e_*}\theta}\) is at most one, so the Hermite estimate applied
+to
+\cref{eq:second-endpoint-collar-jets} proves
+\cref{eq:second-endpoint-collar-cap}.  Notice that this argument compares
+only compactly supported corrections; it does not assert equivalence of
+the moving and fixed fading norms on the whole old-history interval.
+
+We next construct the fixed-reference chart without first invoking the
+moving-weight domain of \(\Gamma_e^h\).  Given \(U=(Z,p,\zeta)\), start with
+\[
+ a_{0,e}(U)=V_{0,N}(e)+Z,\qquad
+ c_{0,e}(U)=w_{\rm seed,N}(e)-p.
+\]
+For \(1\le j\le h\), set successively
+\begin{align}
+ \psi_{j-1,e}(U)
+ ={}&\widehat\gamma_e^0+\zeta
+   +\mathcal E_{\delta,h}
+      (a_{0,e}(U),\ldots,a_{j-1,e}(U),0,\ldots,0),\notag\\
+ a_{j,e}(U)
+ ={}&\mathfrak V_{j,N}
+   (\psi_{j-1,e}(U),c_{0,e}(U);
+                         \delta,\nu,\eta),        \label{eq:fixed-reference-collar-jet-recursion}
+\end{align}
+and let \(c_{j,e}(U)\) be the resource jet forced at the same level, using
+\(\mathfrak G_{N,\delta,\nu}\) whenever a resource derivative occurs.
+Finally set
+\begin{equation}
+ \phi_{e;e_*}^{\rm fr}(U)
+ =\widehat\gamma_e^0+\zeta
+      +\mathcal E_{\delta,h}
+          (a_{0,e}(U),\ldots,a_{h,e}(U)),\qquad
+ \Gamma_{e;e_*}^{h,\rm fr}(U;\nu,\eta)
+ =(\phi_{e;e_*}^{\rm fr}(U),c_{0,e}(U)).          \label{eq:fixed-reference-chart-recursion}
+\end{equation}
+At a strict delay, the Hermite lift vanishes with all required derivatives,
+so this finite triangular definition is not circular.  On its intersection
+with the old moving-cap domain it satisfies the same compatibility
+recursion and therefore equals \(\Gamma_e^h\) by uniqueness.
+
+Set
+\[
+ b_{j,e}(U)=a_{j,e}(U)-a_{j,e}^0,\qquad
+ d_{j,e}(U)=c_{j,e}(U)-c_{j,e}^0.
+\]
+For \(j\ge1\), collect the strictly delayed data directions in
+\begin{equation}
+ \mathfrak E_{j,e_*}\zeta
+ =\left(
+   \delta^{r+2}\partial_\theta^r\zeta(-\theta_k)
+   \right)_{\substack{\theta_k>0\\0\le r\le j-1}}.
+                                                               \label{eq:fixed-reference-delayed-direction-map}
+\end{equation}
+The fixed-reference cap norm gives
+\begin{equation}
+ \|\mathfrak E_{j,e_*}\zeta\|
+ \le C_h\delta^2e^{2\kappa_{e_*}\theta_m}
+       \|\zeta\|_{\mathrm{cap},h,e_*}
+ \le C_h\delta^{2-2\vartheta}
+       \|\zeta\|_{\mathrm{cap},h,e_*}
+ \le C_h\|\zeta\|_{\mathrm{cap},h,e_*}.           \label{eq:fixed-reference-delayed-core-bound}
+\end{equation}
+The map \(\mathfrak E_{j,e_*}\) is independent of \(e\).  This is the
+strict-delay compensation that permits a fixed-reference ball; no
+equivalence of the fixed and moving fading weights is used.
+
+Put
+\[
+ Y_{j,e}(U)
+ =(\delta^jb_{j,e}(U),\delta^jd_{j,e}(U)),\qquad
+ \|(x,y)\|_\times=\|x\|_N+|y|.
+\]
+After multiplying the order-\(j\) compatibility identities by
+\(\delta^j\), retardedness gives a finite recursion of the form
+\begin{equation}
+ Y_{j,e}(U)
+ =\mathfrak F_{j,e}\left(
+   Z,\frac p{|e_*|},\mathfrak E_{j,e_*}\zeta,
+   Y_{0,e}(U),\ldots,Y_{j-1,e}(U)\right),          \label{eq:mixed-scaled-compatibility-map}
+\end{equation}
+where the factor \(|e_*|\) multiplying the normalized \(p\)-coordinate is
+included in \(\mathfrak F_{j,e}\).  On a fixed bounded scaled-jet ball,
+the polynomial current field, the resource recursion, the weighted
+coefficient estimates, and
+\cref{eq:fixed-reference-delayed-core-bound} give
+\begin{equation}
+ |e_*|^q\|\,\mathcal L_e^qD^\ell
+              \mathfrak F_{j,e}\,\|
+ \le C_h,\qquad q+\ell\le2.                       \label{eq:mixed-scaled-compatibility-coefficients}
+\end{equation}
+Here \(D^\ell\) denotes any \(\ell\)-fold derivative in the displayed data
+and lower-jet variables, with their product norms.  In particular, no
+endpoint derivative falls on \(\mathfrak E_{j,e_*}\zeta\).
+
+To expose both the domain and the derivative induction, define
+\begin{align}
+ B_j^q(U)
+ &=|e_*|^q\max_{0\le i\le j}
+       \|\mathcal L_e^qY_{i,e}(U)\|_\times,
+       &&0\le q\le2,                              \label{eq:mixed-background-majorants}\\
+ M_j^{q,\ell}(U;H_1,\ldots,H_\ell)
+ &=|e_*|^q\max_{0\le i\le j}
+ \|\mathcal L_e^qD_U^\ell Y_{i,e}(U)
+       [H_1,\ldots,H_\ell]\|_\times,
+       &&1\le\ell\le2.                            \label{eq:mixed-data-majorants}
+\end{align}
+Since \(h\) is fixed, the finite algebraic recursion and
+\cref{eq:mixed-scaled-compatibility-coefficients} give, for an integer
+\(m_h\) independent of \(N,\delta,e_*\),
+\begin{equation}
+ 1+\sum_{q=0}^2B_j^q(U)
+ \le C_h\left(1+\sum_{q=0}^2B_{j-1}^q(U)\right)^{m_h}.
+                                                               \label{eq:mixed-background-recurrence}
+\end{equation}
+The level-zero rows are \(b_{0,e}(U)=Z\) and \(d_{0,e}(U)=-p\).
+Therefore the recursion stays in a common bounded jet ball on an open
+dimension-uniform set
+\(\|U\|_{\mathrm{col},e_*}<r_h\), and
+\(\max_{0\le q\le2}B_h^q(U)\le C_h\) on a smaller closed subball.
+This proves that \cref{eq:fixed-reference-chart-recursion} defines the
+asserted fixed-reference extension and, by uniqueness on the overlap, the
+agreement with \(\Gamma_e^h\).
+
+With the background bounds absorbed into \(C_h\), the chain rule applied
+to \cref{eq:mixed-scaled-compatibility-map} gives exactly the three
+recurrences needed here:
+\begin{align}
+ M_j^{0,1}(H)
+ &\le C_h\left\{\|H\|_{\mathrm{col},e_*}
+   +\sum_{i<j}M_i^{0,1}(H)\right\},\notag\\
+ M_j^{0,2}(H_1,H_2)
+ &\le C_h\left\{
+   \prod_{\ell=1}^2\|H_\ell\|_{\mathrm{col},e_*}
+   +\sum_{i<j}M_i^{0,2}(H_1,H_2)\right.\notag\\[-1mm]
+ &\hspace{28mm}\left.
+   +\sum_{i,k<j}
+      M_i^{0,1}(H_1)M_k^{0,1}(H_2)\right\},\notag\\
+ M_j^{1,1}(H)
+ &\le C_h\left\{\|H\|_{\mathrm{col},e_*}
+   +\sum_{i<j}
+      \bigl(M_i^{1,1}(H)+M_i^{0,1}(H)\bigr)\right\}.
+                                                               \label{eq:mixed-data-recurrences}
+\end{align}
+The second line displays the product of two lower first variations.  In the
+last line, \(\mathcal L_e\) may fall either on a coefficient or on a lower
+background jet; \cref{eq:mixed-background-recurrence} controls both.
+At level zero,
+\[
+ M_0^{0,1}(H)\le C\|H\|_{\mathrm{col},e_*},\qquad
+ M_0^{0,2}(H_1,H_2)=M_0^{1,1}(H)=0.
+\]
+Finite induction in \(j\) yields
+\begin{align}
+ M_h^{0,1}(H)&\le C_h\|H\|_{\mathrm{col},e_*},\notag\\
+ M_h^{0,2}(H_1,H_2)
+ &\le C_h\prod_{i=1}^2\|H_i\|_{\mathrm{col},e_*},\notag\\
+ M_h^{1,1}(H)&\le C_h\|H\|_{\mathrm{col},e_*}.     \label{eq:mixed-majorants-closed}
+\end{align}
+Undoing the factor \(|e_*|^q\) gives, uniformly for
+\(e=\Phi_{q_0}^c(e_*)\), \(|c|\le\chi|e_*|\), and \(U\) in that smaller
+closed subball,
+\begin{align}
+ &\max_{0\le j\le h}\delta^j
+ \left\{
+  \|\mathcal L_e^qD_U^\ell b_{j,e}(U)
+            [H_1,\ldots,H_\ell]\|_N\right.\notag\\[-1mm]
+ &\hspace{43mm}\left.
+  +|\mathcal L_e^qD_U^\ell d_{j,e}(U)
+            [H_1,\ldots,H_\ell]|
+ \right\}\notag\\
+ &\qquad\le C_h|e_*|^{-q}
+       \prod_{i=1}^{\ell}\|H_i\|_{\mathrm{col},e_*},
+ \quad 1\le\ell\le2,\quad q+\ell\le2.             \label{eq:mixed-endpoint-collar-jet-bound}
+\end{align}
+These are precisely the cases
+\((q,\ell)=(0,1),(0,2),(1,1)\).  This is the mixed
+\(e\)--\(p\) and \(e\)--core estimate not supplied by fixed-\(e\)
+smoothness alone; no case with \(q+\ell>2\) is asserted.
+
+Subtracting the two Hermite decompositions gives the exact fixed-chart
+identity
+\begin{equation}
+ \mathscr H_{e_*}^{\rm rc}(c,U)
+ =\zeta+\mathcal E_{\delta,h}
+       (b_{0,e_c}(U),\ldots,b_{h,e_c}(U)).         \label{eq:nonlinear-raw-history-exact-Hermite}
+\end{equation}
+Because
+\(\frac{\dd}{\dd c}=\mathcal L_{e_c}\),
+\cref{eq:second-endpoint-collar-jets,%
+eq:mixed-endpoint-collar-jet-bound} and the Hermite estimate prove that
+this map is \(C^2\) and give
+\cref{eq:nonlinear-raw-history-C2-bounds}.  At \(U=0,c=0\),
+\cref{eq:nonlinear-raw-history-exact-Hermite} is
+\(\Delta\phi_{e_*}\), while its \(c\)-derivative is
+\[
+ \mathcal L_{e_*}(\phi_{e_*}^{\rm rc}-\phi_{e_*}^0)
+ =\gamma_{e_*}^{\rm ph}.
+\]
+This proves
+\cref{eq:nonlinear-raw-history-first-jets}.
+
+Use the exact decomposition
+\begin{align*}
+ &\mathscr H(c,U)-\mathscr H(0,0)
+       -c\partial_c\mathscr H(0,0)-D_U\mathscr H(0,0)U\\
+ &\quad=
+ \{\mathscr H(c,0)-\mathscr H(0,0)
+             -c\partial_c\mathscr H(0,0)\}\\
+ &\qquad+
+ \{\mathscr H(c,U)-\mathscr H(c,0)-D_U\mathscr H(c,0)U\}\\
+ &\qquad+
+ \{D_U\mathscr H(c,0)-D_U\mathscr H(0,0)\}U .
+\end{align*}
+The integral Taylor formula and
+\cref{eq:nonlinear-raw-history-C2-bounds} bound these three braces,
+respectively, by
+\[
+ C_h\frac{\varepsilon c^2}{|e_*|},\qquad
+ C_h\|U\|_{\mathrm{col},e_*}^2,\qquad
+ C_h\frac{|c|}{|e_*|}\|U\|_{\mathrm{col},e_*}.
+\]
+This proves
+\cref{eq:nonlinear-raw-history-taylor}.  The cap norm dominates the frozen
+sharp norm.  If
+\(\|U\|_{\mathrm{col},e_*}\le\varepsilon R\), divide the last estimate by
+\(\varepsilon\), use \(|e_*|\le1\) and \(\varepsilon\le1\), and absorb the
+three terms into
+\(C_h(|c|/|e_*|+R)^2\).  This proves
+\cref{eq:nonlinear-raw-history-graph-remainder}.  Every construction took
+place on a prescribed compatible history segment; no backward orbit or
+tracker existence has been inferred.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:repelling-component-flushing}]
 The repelling travel time satisfies \(S_r\ge c/\delta\), whereas
 \(L_b=O(S_\delta)\).  Thus

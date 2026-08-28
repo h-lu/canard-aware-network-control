@@ -63,9 +63,12 @@ norm.  This uses the inner anchor and does not contradict the unrestricted
 old-state obstruction.  The exact nonlinear formal `q_0`-history delay
 functional is now also closed: its derivative is the linear phase-delay
 column and its two-point remainder is `O(delta |r|)` in value and piecewise
-derivative.  The nonlinear raw-compatible old-history assembler, the full
-normal residual, higher parameter jets, moving-event estimates, the
-nonlinear tracker,
+derivative.  The nonlinear raw-compatible old-history assembler is now
+constructed directly by the finite compatibility recursion on a
+fixed-reference ball.  It includes the second endpoint jet and a
+dimension-uniform normalized quadratic graph remainder, without comparing
+the full fixed and moving fading norms.  The full assembled normal residual,
+higher parameter jets, moving-event estimates, the nonlinear tracker,
 nonautonomous normal splitting, and the finite-`delta` physical slow-history
 relation remain open.
 The former leaky-network and
