@@ -1512,6 +1512,153 @@ statements follow because no phase-induced normal or moving-event column
 has entered the calculation.
 \end{proof}
 
+\begin{proof}[Proof of \cref{lem:reduced-flow-phase-defect}]
+Put
+\(
+ x_{0,N}(r)=r\mathbf1+z_{0,N}(r)
+\), so that \(x_{0,N}'=e_{0,N}\).  If
+\(r_k(r)=\Phi_{q_0}^{-\delta\theta_k}(r)\), then
+\cref{eq:backtrack-basic-identities} gives
+\begin{equation}
+ r_k'(r)=\frac{q_0(r_k(r))}{q_0(r)}.              \label{eq:phase-defect-backtrack-tangent}
+\end{equation}
+Differentiating the exact reduced delay row
+\(
+ \mathcal D_{0,N}(r)
+ =K\sum_kL_{k,N}\{x_{0,N}(r)-x_{0,N}(r_k(r))\}
+\)
+and multiplying by \(q_0(r)\) therefore yields
+\begin{align}
+ q_0(r)\mathcal D_{0,N}'(r)
+ =K\sum_{k=0}^mL_{k,N}\{&q_0(r)e_{0,N}(r)\notag\\
+ &-q_0(r_k(r))e_{0,N}(r_k(r))\}.                 \label{eq:phase-defect-D0-tangent}
+\end{align}
+
+Along the backward-extended reduced path one has
+\(
+ \bar r_\sigma(s-\theta_k)=r_k(\bar r_\sigma(s))
+\).
+The collective-history differential of the first term in
+\cref{eq:fold-time-tracker-delay}, in a direction \(\xi\), is
+\begin{align*}
+ K\sum_{k=0}^mL_{k,N}\{&e_{0,N}(\bar r_\sigma(s))\xi(s)\\
+ &-e_{0,N}(\bar r_\sigma(s-\theta_k))\xi(s-\theta_k)\}.
+\end{align*}
+The subtracted term contributes
+\(-\mathcal D_{0,N}'(\bar r_\sigma(s))\xi(s)\).
+Substitute
+\(
+ \xi(s)=q_0(\bar r_\sigma(s))\widehat a(s)
+\)
+and subtract \cref{eq:phase-defect-D0-tangent}, multiplied by
+\(\widehat a(s)\).  Every current evaluation cancels, leaving exactly
+\cref{eq:reduced-flow-phase-delay-defect}.  This proves
+\cref{eq:exact-phase-delay-cancellation}.  A constant phase makes each
+remaining difference zero, including the intact zero-delay summand, and
+proves \cref{eq:constant-phase-delay-annihilation}.
+
+It remains to estimate the phase differences.  If
+\(s-\theta_k\ge0\), the two corresponding \(r\)-values lie on the same
+backtrack segment.  The common-collar geometry and
+\cref{eq:backtrack-basic-identities} give
+\begin{align*}
+ |a(\bar r_\sigma(s))-a(\bar r_\sigma(s-\theta_k))|
+ &\le \int_{\bar r_\sigma(s-\theta_k)}^{\bar r_\sigma(s)}
+                 |a'(u)|\,|\dd u|\\
+ &\le C\frac{\delta\theta_k}{|\bar r_\sigma(s)|}
+              \|a\|_{\mathsf A_\phi^1(I_\sigma)}.
+\end{align*}
+If \(s-\theta_k<0\), the constant extension in
+\cref{eq:formal-phase-collar-extension} replaces the delayed value by the
+entry value.  Since then \(0\le s<\theta_k\), the same integral estimate
+from \(e_{\sigma,0}\) to \(\bar r_\sigma(s)\) gives the identical bound.
+The reduced speed, \(e_{0,N}\), and the layer sums are uniformly bounded,
+and every delayed \(r\)-value is comparable in modulus with the current
+one.  Summing proves \cref{eq:phase-delay-pointwise-bound}.  Projection
+does not enlarge the norm.  Thus
+\begin{align*}
+ \int_{I_\sigma}|\mathscr P_{c,\sigma,N}a(r)|\,\dd r
+ &\le C\delta\log\frac{r_{\rm out}}{\rho_\delta}
+              \|a\|_{\mathsf A_\phi^1},\\
+ \sup_{r\in I_\sigma}|r|\,
+       |\mathscr P_{c,\sigma,N}a(r)|
+ &\le C\delta\|a\|_{\mathsf A_\phi^1}.
+\end{align*}
+These are precisely the two terms of the
+\(\mathsf H_\phi^0\)-norm and prove
+\cref{eq:phase-delay-action-bound}.
+
+We finally identify the full column.  At \(Z=p=0\), the derivatives of
+the quadratic terms \(h_{c,N}\) and \(h_{\perp,N}\) vanish.  Terms obtained
+by differentiating coefficients multiplying \(Z\), \(p\), or
+\(\Delta\mathcal D_N^{\rm ft}=0\) vanish as well.  The algebraic speed
+row therefore gives
+\[
+ \widehat Q_{\rm full}
+ =\varepsilon^{-1}(p-\ell_NZ)
+   +\mathscr D_{c,N}^{\rm lin}[\gamma,Z]
+   +\mathscr P_{c,\sigma,N}a
+ =Q_{\rm n}+\mathscr P_{c,\sigma,N}a.
+\]
+Substitution in \cref{eq:phase-event-a-equation} proves
+\cref{eq:full-delayed-phase-row}.  Differentiating the affine \(Z\)-row
+\(-R_{z,N}(r)\) in the direction
+\(\xi=q_0a\), and adding the phase differential of the delay row, gives
+the first line of \cref{eq:exact-phase-normal-source-column}.
+
+For the \(p\)-row, the affine value is
+\(
+ \varepsilon R_{q,N}=\varepsilon^2q_0\mathfrak d_N
+\).
+Its derivative along the reduced path is
+\(\varepsilon q_0R_{q,N}'a\).  The part of the speed differential not
+already present in the fixed-phase block is
+\(\mathscr P_{c,\sigma,N}a\); it contributes
+\(\varepsilon^2\mathfrak d_N\mathscr P_{c,\sigma,N}a\), while the delay
+row itself contributes
+\(\varepsilon w_{0,N}'\mathscr P_{c,\sigma,N}a\).  This is the second
+line of \cref{eq:exact-phase-normal-source-column}.  Setting \(a=c\) and
+using \cref{eq:constant-phase-delay-annihilation} proves
+\cref{eq:constant-phase-residual-column}.  The calculation used only the
+formal reduced-flow extension, so it makes none of the collar or tracker
+identifications excluded in the statement.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:delayed-phase-event-core}]
+Let
+\[
+ \mathcal P_\sigma(a,\widehat\tau)
+   =(\mathscr P_{c,\sigma,N}a,0,0).
+\]
+Then
+\(
+ \mathscr B_{\phi,\sigma}^{\rm del}
+ =\mathscr B_{\phi,\sigma}-\mathcal P_\sigma
+\).
+By \cref{eq:phase-delay-action-bound,eq:phase-event-inverse-bound},
+\begin{equation*}
+ \|\mathscr B_{\phi,\sigma}^{-1}\mathcal P_\sigma\|
+ \le C\delta\left\{1+
+          \log\frac{r_{\rm out}}{\rho_\delta}\right\}.
+\end{equation*}
+Because \(\rho_\delta\asymp\delta S_\delta\), the right-hand side tends
+to zero.  After decreasing \(\delta_0\), the Neumann series for
+\(
+ (I-\mathscr B_{\phi,\sigma}^{-1}\mathcal P_\sigma)^{-1}
+\)
+converges and gives
+\[
+ (\mathscr B_{\phi,\sigma}^{\rm del})^{-1}
+ =(I-\mathscr B_{\phi,\sigma}^{-1}\mathcal P_\sigma)^{-1}
+       \mathscr B_{\phi,\sigma}^{-1}.
+\]
+Its geometric-series estimate is
+\cref{eq:delayed-phase-event-inverse-bound}.  Constants lie in the
+bordered phase variable and are annihilated by \(\mathscr P_{\sigma,N}\)
+by \cref{eq:constant-phase-delay-annihilation}; no delay-generation
+argument was used.  This also proves all stated scope boundaries.
+\end{proof}
+
 \begin{proof}[Proof of
 \cref{lem:current-absorbed-delay-splitting}]
 For \(\theta_k=0\), the corresponding summand in

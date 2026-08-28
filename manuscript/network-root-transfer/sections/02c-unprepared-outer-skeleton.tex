@@ -1483,6 +1483,143 @@ phase--normal block is asserted until the phase-to-normal collar and moving
 event columns have been defined and estimated.
 \end{proposition}
 
+The reverse off-diagonal has an exact cancellation before any estimate is
+made.  Write
+\begin{equation}
+ e_{0,N}(r)=\mathbf1+z_{0,N}'(r).                  \label{eq:reduced-flow-voltage-tangent}
+\end{equation}
+Extend the prescribed reduced path backward by one delay with the
+\(q_0\)-flow, as in \cref{prop:fixed-phase-green-collar-buffer}.
+
+\begin{lemma}[Exact reduced-flow phase-defect column]
+\label[lemma]{lem:reduced-flow-phase-defect}
+Retain \cref{prop:fold-time-tracker-normal-form,%
+prop:fixed-phase-green-collar-buffer,%
+prop:scaled-phase-event-core}.  Let
+\(a\in\mathsf A_\phi^1(I_\sigma)\), pull it to the current fold-time
+interval by \(a(s)=a(\bar r_\sigma(s))\), and use the constant formal
+phase extension
+\begin{equation}
+ \widehat a(s)=
+ \begin{cases}
+  a(e_{\sigma,0}),&-\theta_m\le s<0,\\
+  a(\bar r_\sigma(s)),&0\le s\le S_\sigma.
+ \end{cases}                                      \label{eq:formal-phase-collar-extension}
+\end{equation}
+For \(s\ge0\), put
+\begin{align}
+ (\mathscr P_{\sigma,N}a)(s)
+ =K\sum_{k=0}^mL_{k,N}(\eta)\,
+ &q_0(\bar r_\sigma(s-\theta_k))
+ e_{0,N}(\bar r_\sigma(s-\theta_k))\notag\\
+ &\times\{\widehat a(s)-\widehat a(s-\theta_k)\}.
+                                                        \label{eq:reduced-flow-phase-delay-defect}
+\end{align}
+Then
+\begin{equation}
+ D_r\Delta\mathcal D_N^{\rm ft}[\bar r_\sigma,0]
+       [q_0(\bar r_\sigma)\widehat a]
+ =\mathscr P_{\sigma,N}a.                          \label{eq:exact-phase-delay-cancellation}
+\end{equation}
+Here \(D_r\) is the Fr\'echet derivative with respect to the complete
+collective history, not merely the current scalar value.
+In particular,
+\begin{equation}
+ \mathscr P_{\sigma,N}c=0\qquad(c\in\R).           \label{eq:constant-phase-delay-annihilation}
+\end{equation}
+Writing
+\(\mathscr P_{c,\sigma,N}=\pi_N^T\mathscr P_{\sigma,N}\) and
+\(\mathscr P_{\perp,\sigma,N}=P_{\perp,N}\mathscr P_{\sigma,N}\), one has
+\begin{align}
+ \|\mathscr P_{\sigma,N}a(s)\|_N
+ &\le C\frac{\delta}{|\bar r_\sigma(s)|}
+              \|a\|_{\mathsf A_\phi^1(I_\sigma)},             \label{eq:phase-delay-pointwise-bound}\\
+ \|\mathscr P_{c,\sigma,N}a\|_{\mathsf H_\phi^0(I_\sigma)}
+ &\le C\delta\left\{1+
+       \log\frac{r_{\rm out}}{\rho_\delta}\right\}
+              \|a\|_{\mathsf A_\phi^1(I_\sigma)}.             \label{eq:phase-delay-action-bound}
+\end{align}
+All constants are uniform in \(N\).
+
+More precisely, linearize the full fold-time defect system at the prescribed
+reduced path \((\bar r_\sigma,0,0)\), and write the collective variation as
+\(\xi=q_0(\bar r_\sigma)a\).  If
+\begin{equation}
+ Q_{\rm n}
+ =\varepsilon^{-1}(p-\ell_NZ)
+       +\mathscr D_{c,N}^{\rm lin}[\gamma,Z]        \label{eq:phase-column-normal-speed}
+\end{equation}
+is the fixed-phase normal speed direction, then the full differential of the
+speed correction and the phase row are exactly
+\begin{align}
+ \widehat Q_{\rm full}
+ &=Q_{\rm n}+\mathscr P_{c,\sigma,N}a,\notag\\
+ q_0^2a'
+ &=Q_{\rm n}+\mathscr P_{c,\sigma,N}a.             \label{eq:full-delayed-phase-row}
+\end{align}
+The differential of the total speed \(q=q_0(r)+Q\) is instead
+\(q_0'q_0a+\widehat Q_{\rm full}\).
+Relative to \cref{eq:fixed-phase-normal-block}, the two phase-induced normal
+sources are exactly
+\begin{align}
+ \mathscr C_{Z,\sigma}a
+ ={}&-q_0R_{z,N}'a
+   +\varepsilon\{\mathscr P_{\perp,\sigma,N}a
+           -z_{0,N}'\mathscr P_{c,\sigma,N}a\},\notag\\
+ \mathscr C_{p,\sigma}a
+ ={}&\varepsilon q_0R_{q,N}'a
+   +\varepsilon\{w_{0,N}'+\varepsilon\mathfrak d_N\}
+             \mathscr P_{c,\sigma,N}a,             \label{eq:exact-phase-normal-source-column}
+\end{align}
+where every coefficient is evaluated at the current \(r\).
+Consequently a constant phase leaves only
+\begin{equation}
+ (\mathscr C_{Z,\sigma}c,\mathscr C_{p,\sigma}c)
+ =c(-q_0R_{z,N}',\,\varepsilon q_0R_{q,N}').       \label{eq:constant-phase-residual-column}
+\end{equation}
+These are precisely the derivatives of the affine normal residual
+\((-R_{z,N},\varepsilon R_{q,N})\) along the reduced flow.  They need not
+vanish because the preparation-independent critical curve is not a
+finite-\(\delta\) physical tracker.
+
+The extension \cref{eq:formal-phase-collar-extension} is the formal
+\(q_0\)-flow phase column, not the endpoint derivative of the raw-compatible
+collar chart.  The lemma does not identify those two columns and does not
+bound the residual column in a nonlinear tracker space.
+\end{lemma}
+
+\begin{proposition}[Delayed zeroth-order phase--event inverse]
+\label[proposition]{prop:delayed-phase-event-core}
+Under \cref{lem:reduced-flow-phase-defect}, define
+\begin{equation}
+ \mathscr B_{\phi,\sigma}^{\rm del}(a,\widehat\tau)
+ =\bigl(q_0^2a'-\mathscr P_{c,\sigma,N}a,\,
+       a(e_{\sigma,0}),\,a(e_{\sigma,1})+\widehat\tau\bigr).
+                                                        \label{eq:delayed-phase-event-operator}
+\end{equation}
+After decreasing \(\delta_0\), this is an isomorphism
+\begin{equation*}
+ \mathsf A_\phi^1(I_\sigma)\times\R
+ \longrightarrow \mathsf H_\phi^0(I_\sigma)\times\R^2
+\end{equation*}
+with dimension-uniform inverse.  More explicitly,
+\begin{equation}
+ \|(\mathscr B_{\phi,\sigma}^{\rm del})^{-1}\|
+ \le\frac{\|\mathscr B_{\phi,\sigma}^{-1}\|}
+ {1-C\delta\{1+\log(r_{\rm out}/\rho_\delta)\}},   \label{eq:delayed-phase-event-inverse-bound}
+\end{equation}
+where the denominator is positive for small \(\delta\).  Thus the
+phase-induced delayed speed is now included in the scalar bordered block;
+the persistent constant phase mode remains in the bordered variable and is
+not treated as a delay generation.
+
+The proposition still uses the formal \(q_0\)-flow collar and fixed
+\(r\)-endpoint rows.  It proves neither the raw-compatible phase collar, the
+affine-residual normal column in
+\cref{eq:constant-phase-residual-column}, nor the scaled moving-event normal
+row, and hence not the full phase--normal inverse.
+\end{proposition}
+
 We next isolate the strong block on which delay generations can actually be
 counted.  A zero-delay difference is deleted as one intact zero term.  For a
 positive delay, its current evaluation belongs to the generator and only its
