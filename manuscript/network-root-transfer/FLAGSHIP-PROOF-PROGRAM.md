@@ -368,9 +368,11 @@ not the conormal of an independently defined physical maximal-canard locus.
       RFDE equivalence, and compatible-collar initial-history interface.
 - [x] Prove the fixed-phase `C^0` complete-history Green--collar inverse,
       including the repelling scalar feedback without an extra boundary row.
+- [x] Prove the exact scaled scalar phase--event core, its sharp event-time
+      scaling, and the persistence obstruction to phase echo contraction.
 - [ ] Prove the high-order finite-generation buffer-to-slow bootstrap,
-      bordered phase/event inverse, parameter/event-time estimates, and
-      close the nonlinear outer tracker.
+      couple it to the phase--event core, prove parameter/event-time
+      estimates, and close the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.

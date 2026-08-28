@@ -3,8 +3,9 @@
 Status: **the selected-connection front-face theorem is supported by the
 current estimates; the exact nonlinear tracker normal form, a raw-compatible
 endpoint collar chart, and the fixed-phase `C^0` complete-history
-Green--collar inverse are now proved.  The high-order phase/event coupling,
-physical tracker, and physical identification gate remain open.**
+Green--collar inverse are now proved.  The exact scaled scalar phase--event
+core is also proved.  The high-order phase--normal coupling, physical
+tracker, and physical identification gate remain open.**
 
 This note tracks
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -181,8 +182,12 @@ Proposition `prop:fixed-phase-green-collar-buffer` now proves the
 fixed-parameter `C^0` Green inverse for the complete-history `(Z,p)` normal
 restriction, including the repelling compatible-collar feedback with no
 extra boundary row.  It fixes the zero-order row count, but does not supply
-the high-order finite-generation echo bootstrap or the collective
-phase/event border.
+the high-order finite-generation echo bootstrap or its coupling to the
+collective phase.
+Proposition `prop:scaled-phase-event-core` now supplies the exact scalar
+phase--event border in the scaled event-time variable.  It also proves that
+any net phase shift produced by a compact speed pulse persists.  Coupling
+this scalar inverse to the high-order normal block remains open.
 These results still neither construct the tracker nor prove a dichotomy for
 the quotient.  The following
 finite-`delta` items remain unproved uniformly in `N`:
@@ -275,8 +280,10 @@ Do not:
       collar-to-initial-history interface.
 - [x] Prove the fixed-phase `C^0` complete-history Green--collar inverse and
       repelling scalar feedback without an extra Fredholm row.
+- [x] Prove the exact scaled scalar phase--event core and its persistence
+      obstruction.
 - [ ] Prove the high-order finite-generation buffer-to-slow bootstrap, the
-      bordered phase/event inverse, and close the nonlinear outer tracker.
+      coupled phase--normal inverse, and close the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.

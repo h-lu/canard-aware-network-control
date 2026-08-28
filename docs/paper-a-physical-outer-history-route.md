@@ -9,9 +9,10 @@ proved, together with a boundary-layer obstruction showing why they do not
 yet close the nonlinear RFDE tracker.  The exact fixed-delay fold-time
 tracker normal form is now proved and fixes the remaining construction
 route.  The fixed-phase `C^0` complete-history Green--collar inverse is also
-proved.  Its high-order finite-generation bootstrap, bordered phase/event
-inverse, nonlinear tracker, and phase-quotiented nonautonomous slow-history
-theorem remain open.**
+proved, as is the exact scaled scalar phase--event core.  The high-order
+finite-generation bootstrap, coupled phase--normal inverse, nonlinear
+tracker, and phase-quotiented nonautonomous slow-history theorem remain
+open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -157,6 +158,11 @@ future Green line on the repelling branch, and contracts the unknown
 `p(0)`-dependence of the compatible collar without adding a boundary row.
 This is a conditional diagonal restriction with the collective phase fixed;
 it provides neither high-order slow jets nor a physical tracker.
+Proposition `prop:scaled-phase-event-core` separately closes the scalar
+phase equation with entry and event rows.  The event-time variable must be
+scaled as `delta DeltaS`; any net phase shift produced by a compact speed
+pulse persists, so this scalar block cannot be placed in the echo
+contraction.
 
 ## 2. The exact curve-restricted physical equation
 
@@ -435,6 +441,8 @@ not acceptable.
       initial-history interface, with no past-orbit assumption.
 - [x] Fixed-phase `C^0` complete-history Green--collar inverse, including the
       repelling compatible-history feedback and unchanged finite row count.
+- [x] Exact scaled scalar phase--event core and the phase-persistence
+      obstruction.
 - [ ] Fold-time finite method-of-steps buffers, order-dependent
       buffer-to-slow bootstrap, and
       nonlinear tracker contraction on both outer branches.

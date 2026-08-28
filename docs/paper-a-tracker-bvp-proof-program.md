@@ -25,8 +25,11 @@ this equivalence.  Proposition `prop:fixed-phase-green-collar-buffer` now
 closes the fixed-parameter `C^0` complete-history Green--collar inverse for
 the `(Z,p)` diagonal normal restriction.  It includes the repelling
 `p(0)`-to-compatible-collar feedback without adding a Fredholm row.  The
-high-order finite-generation bootstrap, bordered phase/event inverse, and
-nonlinear contraction remain open.
+exact scaled scalar phase--event core is now also proved, including the sharp
+`delta^{-1}` loss for an unscaled event-time variable and persistence of a
+phase shift after a compact speed pulse.  The high-order finite-generation
+bootstrap, coupled phase--normal inverse, and nonlinear contraction remain
+open.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -487,26 +490,41 @@ Its three terms correspond to the outer/terminal scalar layer, the inner
 transverse layer, and the future-slaved inner scalar component.  This
 anisotropic derivative estimate is not yet a consequence of the proved
 uniform action bound and must be established by the finite-generation
-lemma.  If one keeps only the existing coarse action estimate, the honest
-alternative is to take `L_0(delta)=A_s S_delta` instead of fixing `L_0`.
-These estimates are targets for the missing buffer lemma, not results already
-proved in the paper.  The
-order of choices is: first fix `s`, `M_s`, and `L_0` (hence `L_b`), then take
-`a_boundary` and `r_out` small, and finally take `delta` small.
+lemma.  The next strict theorem will instead use the coarser tail already
+supported by the proved action estimate,
+
+```text
+E_coarse,s(L)
+  = C_s { delta^(-2s) exp(-c L/delta)
+        + (S_delta/delta)^s exp(-c L/delta)
+        + (S_delta/delta)^s exp(-c S_delta L) }.
+```
+
+It takes `L_0(delta)=A_s S_delta`, with `A_s` fixed sufficiently large
+after `s` and the admissible gauge loss are fixed.  The third term is then
+a positive power of `delta`, while the first two are superalgebraically
+small.  The sharper fixed-`L_0` display above remains a later anisotropic
+refinement, not an input to the next proof.  For the coarse route, first fix
+`s`, `M_s`, and `A_s`, put
+`L_b>(M_s+1)theta_m+A_s S_delta`, then take `a_boundary` and
+`r_out` small, and finally take `delta` small.
 
 This finite-step budget applies only to the causal strong blocks after the
-slow phase has been removed: the attracting outer stable block, the
+slow phase has been bordered out: the attracting outer stable block, the
 repelling inner transverse block, and (after time reversal) the repelling
 outer scalar terminal block.  It is false for the full `(r,Z,p)` system
-without a bordered phase/event row.  A short collar pulse can leave a
-persistent displacement in the phase variable, and no number of delay
-passages supplies a factor `beta_delta^M` for that displacement.
+without the proved scaled scalar phase/event core and its still-open coupling
+to the normal block.  Any net phase displacement produced by a short collar
+pulse persists, and no number of delay passages supplies a factor
+`beta_delta^M` for that displacement.
 
-Before counting delay generations, absorb every no-shift term into the
-perturbed current Green block: this includes
-`epsilon mathfrak d_N(p-ell_N Z)`, every `+L_k,N Z(s)` current piece, and all
-zero-delay layers.  The generation operator may contain only shifted
-evaluations `-L_k,N Z(s-theta_k)` with `theta_k>0`.  Otherwise its `M`-th
+Before counting delay generations, first delete every `theta_k=0`
+summand as the intact identity
+`L_k,N[Z(s)-Z(s)] = 0`; it must not be split.  Then absorb every
+remaining no-shift term into the perturbed current Green block, including
+`epsilon mathfrak d_N(p-ell_N Z)` and the `+L_k,N Z(s)` current pieces
+from the positive-delay layers.  The generation operator may contain only
+shifted evaluations `-L_k,N Z(s-theta_k)` with `theta_k>0`.  Otherwise its `M`-th
 power does not represent `M` delay passages and the buffer-length count is
 invalid.
 
@@ -755,7 +773,9 @@ gauges.
 - [x] Fixed-parameter `C^0` complete-history Green--collar inverse for the
       fixed-phase `(Z,p)` normal restriction, including the repelling
       `p(0)` collar feedback and unchanged finite row count.
-- [ ] High-order finite-generation echo bootstrap and bordered phase/event
+- [x] Exact scaled scalar phase--event core with entry phase and terminal
+      event rows, sharp event-time scaling, and phase-persistence obstruction.
+- [ ] High-order finite-generation echo bootstrap and coupled phase--normal
       inverse for the full Stage-I operator.
 - [x] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
       ladder orders.
