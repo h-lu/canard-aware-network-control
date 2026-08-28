@@ -1306,6 +1306,127 @@ generated in \((Z,p)\); their high-order slow bootstrap is a separate
 finite-generation estimate.
 \end{proposition}
 
+The deleted collective equation has a separate, explicitly invertible
+phase--event core.  Its natural event-time unknown is scaled by \(\delta\).
+This is also the precise reason that a phase displacement cannot be included
+in the finite-generation echo contraction.
+
+\begin{proposition}[Exact scaled phase--event core]
+\label[proposition]{prop:scaled-phase-event-core}
+Retain \cref{prop:principal-tracker-endpoint-green,%
+prop:fold-time-tracker-normal-form}.  On either reduced branch let
+\(e_{\sigma,0}\) and \(e_{\sigma,1}\) denote its entry and exit values:
+\begin{equation*}
+ (e_{a,0},e_{a,1})=(r_{\rm out},\rho_\delta),\qquad
+ (e_{r,0},e_{r,1})=(-\rho_\delta,-r_{\rm out}).
+\end{equation*}
+Let \(\bar r_\sigma:[0,S_\sigma]\to I_\sigma\) be the corresponding
+reduced fold-time path, defined by
+\begin{equation*}
+ \partial_s\bar r_\sigma=\delta q_0(\bar r_\sigma),\qquad
+ \bar r_\sigma(0)=e_{\sigma,0},\qquad
+ \bar r_\sigma(S_\sigma)=e_{\sigma,1}.
+\end{equation*}
+Write \(I_\sigma\) for the closed interval between these endpoints.  Norm
+integrals over \(I_\sigma\) are the usual nonoriented integrals; only
+primitives with explicit endpoints are oriented from \(e_{\sigma,0}\).
+Fix an integer \(j\ge0\), retain the coefficient estimates through order
+\(j+1\), and endow
+\(\mathsf H_\phi^j(I_\sigma)=C^j(I_\sigma)\) and
+\(\mathsf A_\phi^{j+1}(I_\sigma)=C^{j+1}(I_\sigma)\) with
+\begin{align}
+ \|h\|_{\mathsf H_{\phi}^j(I_\sigma)}
+ &=\int_{I_\sigma}|h(r)|\,\dd r
+   +\max_{0\le i\le j}\sup_{r\in I_\sigma}
+          |r|^{i+1}|\partial_r^ih(r)|,\notag\\
+ \|a\|_{\mathsf A_{\phi}^{j+1}(I_\sigma)}
+ &=\sup_{r\in I_\sigma}|a(r)|
+   +\int_{I_\sigma}|a'(r)|\,\dd r
+   +\max_{1\le i\le j+1}\sup_{r\in I_\sigma}
+          |r|^i|\partial_r^ia(r)|.               \label{eq:phase-event-spaces}
+\end{align}
+Then the bordered operator
+\begin{equation}
+ \mathscr B_{\phi,\sigma}(a,\widehat\tau)
+ =\bigl(q_0^2a',\ a(e_{\sigma,0}),\
+              a(e_{\sigma,1})+\widehat\tau\bigr) \label{eq:phase-event-operator}
+\end{equation}
+is an isomorphism
+\begin{equation*}
+ \mathsf A_{\phi}^{j+1}(I_\sigma)\times\R
+ \longrightarrow
+ \mathsf H_{\phi}^{j}(I_\sigma)\times\R^2
+\end{equation*}
+with dimension-uniform inverse.  For data \((h,b_0,b_E)\), that inverse is
+\begin{align}
+ a(r)&=b_0+\int_{e_{\sigma,0}}^r
+                  \frac{h(u)}{q_0(u)^2}\,\dd u,\notag\\
+ \widehat\tau&=b_E-a(e_{\sigma,1}),              \label{eq:phase-event-explicit-inverse}
+\end{align}
+and
+\begin{equation}
+ \|a\|_{\mathsf A_{\phi}^{j+1}}+|\widehat\tau|
+ \le C_j\bigl\{
+       \|h\|_{\mathsf H_{\phi}^{j}}+|b_0|+|b_E|\bigr\}.    \label{eq:phase-event-inverse-bound}
+\end{equation}
+
+More precisely, let \(\xi\) be the collective variation of \(r\) along
+the prescribed reduced path and let \(\widehat Q\) be the variation of the
+reconstructed speed, pulled back to the \(r\)-interval along that monotone
+path when it is written as \(\widehat Q(r)\).  The collective differential of
+\cref{eq:fold-time-tracker-r} is
+\begin{equation}
+ \xi_s=\delta\{q_0'(\bar r_\sigma)\xi+\widehat Q\}.
+                                                               \label{eq:phase-event-xi-equation}
+\end{equation}
+With \(a=\xi/q_0(\bar r_\sigma)\), this is exactly
+\begin{equation}
+ a_s=\delta\frac{\widehat Q}{q_0(\bar r_\sigma)},
+ \qquad q_0(r)^2a'(r)=\widehat Q(r).              \label{eq:phase-event-a-equation}
+\end{equation}
+If \(\Delta S\) varies the terminal fold time and \(b_{\rm raw}\) is the
+linearized terminal event datum, then
+\begin{equation}
+ \xi(S_\sigma)+\delta q_0(e_{\sigma,1})\Delta S
+ =b_{\rm raw}.                                   \label{eq:phase-event-raw-row}
+\end{equation}
+Thus \(\widehat\tau=\delta\Delta S\) and
+\(b_E=b_{\rm raw}/q_0(e_{\sigma,1})\) give precisely the last row of
+\cref{eq:phase-event-operator}.  Using the unscaled \(\Delta S\) instead
+would make the corresponding inverse bound lose a factor \(\delta^{-1}\).
+The physical entry datum is
+\(b_0=\xi(0)/q_0(e_{\sigma,0})\).
+This loss is sharp: with \(\widehat Q=0\), zero entry phase, and
+\(b_{\rm raw}=1\), one has
+\(|\Delta S|=|\delta q_0(e_{\sigma,1})|^{-1}\).
+
+The entry phase row is also essential.  If it is removed, the homogeneous
+operator has the one-dimensional kernel
+\((a,\widehat\tau)=(c,-c)\).
+
+If \(\widehat Q\) vanishes after a compact collar interval, then \(a\) is
+constant thereafter, not decaying.  Hence the collective phase and every
+phase-induced delayed term must remain in the bordered block; no power of a
+strict-delay generation operator can contract this persistent component.
+The proposition inverts only this scalar core.  It does not prove the full
+coupled phase--normal inverse or a nonlinear moving-event chart.
+
+The phase source norm is compatible with the existing slow Green ladder:
+for \(\widehat Q\in\mathsf Q_\varepsilon^j(I_\sigma)\),
+\begin{equation}
+ \|\widehat Q\|_{\mathsf H_\phi^j}
+ \le C\varepsilon
+   \left\{1+\log\frac{r_{\rm out}}{\rho_\delta}\right\}
+   \|\widehat Q\|_{\mathsf Q_\varepsilon^j}.      \label{eq:phase-event-Q-embedding}
+\end{equation}
+In fold time, the same identity gives, on a pulse interval \([s_-,s_+]\),
+\begin{equation}
+ |a(s_+)-a(s_-)|
+ \le C\delta\int_{s_-}^{s_+}|\widehat Q(s)|\,\dd s.            \label{eq:phase-event-pulse-bound}
+\end{equation}
+The pulse may be small, but its phase shift remains constant after the pulse.
+\end{proposition}
+
 There is nevertheless an intrinsic quotient once an actual physical history
 has been constructed.  The point is to quotient by the transported tangent
 line, rather than by an eigenvector of a frozen voltage--resource matrix; a

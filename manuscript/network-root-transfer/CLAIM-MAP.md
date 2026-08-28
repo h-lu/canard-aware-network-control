@@ -41,6 +41,7 @@ fixed.
 | Raw-compatible endpoint collars | `prop:compatible-endpoint-jet-collar`, `prop:endpoint-scale-not-slow-speed` | Dimension-uniform Hermite endpoint-jet chart satisfying the raw RFDE compatibility recursion; exact resource-defect/speed/backtrack bridge and fixed-history parameter jets, with no extra Fredholm row. The chart is not a Green right inverse, and a sharp scalar boundary layer proves that finite endpoint scale does not control the slow-speed norm |
 | Exact fold-time tracker interface | `prop:fold-time-tracker-normal-form` | Direct fixed-delay $(r,Z,\mathfrak p_{\rm nl})$ normal form exactly equivalent to the raw fold-time RFDE; algebraic speed reconstruction and explicit compatible-collar initial-history map. Reparameterization is conditional on nonvanishing speed and makes no past-orbit claim for arbitrary old histories; no mixed-buffer BVP existence is asserted |
 | Fixed-phase prescribed-history Green inverse | `prop:fixed-phase-green-collar-buffer` | Dimension-uniform fixed-parameter $C^0$ inverse for the $(Z,p)$ normal block with a prescribed old RFDE voltage-history segment, boundary traces $(Z(0),p(0))$ on the attracting branch or $(Z(0),p(S_r))$ on the repelling branch, and compatible $p(0)$-to-collar feedback. No backward RFDE is used. No high-order slow inverse, phase/event border, speed sign, tracker, or parameter jet is asserted |
+| Scaled phase--event core | `prop:scaled-phase-event-core` | Explicit dimension-uniform inverse for the scalar collective phase equation with entry phase and terminal event rows, using the sharp scaled event-time variable $\widehat\tau=\delta\Delta S$. It proves the unscaled $\delta^{-1}$ loss and persistence of any net phase shift after compact speed forcing. The coupled phase--normal inverse and nonlinear moving-event chart are not asserted |
 | Truncated reduced actions | `cor:outer-reduced-actions` | Formal critical-curve speed and two positive truncated actions for the reduced critical-layer equation; not an invariant slow-history action |
 | Weak-selection obstruction | `prop:backward-asymptotic-nonselection` | A common phase row, convergence in an unnormalized history norm, and superalgebraic strong-history closeness do not by themselves select a unique tame RFDE history family; generic logical counterexample, not a model-specific impossibility theorem |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
@@ -146,8 +147,9 @@ The limits separate exactly:
   on a finite method-of-steps buffer.  The exact fixed-delay fold-time normal
   form now identifies the correct system and collar interface for that
   coupling.  Its fixed-phase `C^0` complete-history Green inverse is proved,
-  including the repelling collar feedback without an extra row, but the
-  high-order finite-generation and phase/event bordered inverse are not.
+  including the repelling collar feedback without an extra row.  The
+  separately bordered scalar phase--event core is also explicit, but the
+  high-order finite-generation and coupled phase--normal inverse are not.
   These results do not yet
   construct an RFDE tracker or prove its normal dichotomy.  The generic
   nonselection example is a logical

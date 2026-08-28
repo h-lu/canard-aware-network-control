@@ -1390,6 +1390,80 @@ the deleted phase equation, controls the boundary-layer value of \(Q\), or
 produces high-order slow jets, which proves the stated scope boundary.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:scaled-phase-event-core}]
+The speed and coefficient estimates in
+\cref{eq:principal-green-signs,eq:principal-green-q-bounds} imply
+\begin{equation}
+ 0<c_q\le|q_0(r)|\le C_q,\qquad
+ \sup_{r\in I_\sigma}|r|^i
+       |\partial_r^i(q_0^{-2})(r)|\le C_i          \label{eq:phase-event-q-inverse-bounds}
+\end{equation}
+through every fixed order, uniformly in \(N,\delta\).  Therefore
+\cref{eq:phase-event-explicit-inverse} is well defined and directly gives
+\(q_0^2a'=h\) and the two boundary rows.  Conversely, the differential
+equation and the entry row force the displayed integral formula, after which
+the event row uniquely forces \(\widehat\tau\).  This proves bijectivity.
+The forward map is bounded: the first bound in
+\cref{eq:phase-event-q-inverse-bounds} gives
+\[
+ \int_{I_\sigma}|q_0^2a'|\,\dd r
+ \le C_q^2\int_{I_\sigma}|a'|\,\dd r,
+\]
+and Leibniz's rule with the remaining coefficient bounds controls every
+weighted derivative in \(\mathsf H_\phi^j\) by
+\(\|a\|_{\mathsf A_\phi^{j+1}}\).
+
+The zeroth-order estimate follows from
+\begin{equation*}
+\sup_{r\in I_\sigma}|a(r)|
+ \le |b_0|+c_q^{-2}\int_{I_\sigma}|h(r)|\,\dd r.
+\end{equation*}
+The same identity gives
+\(\int_{I_\sigma}|a'|\,\dd r
+ \le c_q^{-2}\int_{I_\sigma}|h|\,\dd r\).
+For \(1\le i\le j+1\), differentiate
+\(a'=h/q_0^2\) exactly \(i-1\) times.  Each Leibniz term is a product of
+\(\partial_r^kh\) and
+\(\partial_r^{i-1-k}(q_0^{-2})\).  Multiplication by \(|r|^i\), followed by
+\cref{eq:phase-event-q-inverse-bounds}, assigns \(|r|^{k+1}\) to the first
+factor and \(|r|^{i-1-k}\) to the second.  The source norm in
+\cref{eq:phase-event-spaces} therefore bounds every term.  The formula for
+\(\widehat\tau\) then proves \cref{eq:phase-event-inverse-bound}.
+
+Linearizing \(r_s=\delta q\), with
+\(q=q_0(r)+Q\), gives
+\cref{eq:phase-event-xi-equation}.  Since
+\((\bar r_\sigma)_s=\delta q_0(\bar r_\sigma)\), differentiating
+\(a=\xi/q_0(\bar r_\sigma)\) cancels the two terms containing \(q_0'\) and
+gives the first identity in \cref{eq:phase-event-a-equation}.  Dividing by
+the reduced path speed gives its \(r\)-form.  Finally, varying the terminal
+identity \(\bar r_\sigma(S_\sigma)=e_{\sigma,1}\) gives
+\cref{eq:phase-event-raw-row}.  The substitutions
+\(\widehat\tau=\delta\Delta S\) and
+\(b_E=b_{\rm raw}/q_0(e_{\sigma,1})\) prove the claimed scaled row; solving
+back for \(\Delta S\) proves the \(\delta^{-1}\) loss in the unscaled
+variable, and the displayed zero-forcing datum proves sharpness.  Deleting
+the entry row leaves \(a\) equal to an arbitrary constant and forces
+\(\widehat\tau=-a\), which proves the kernel statement.  If
+\(\widehat Q=0\) on a terminal subinterval, then
+\cref{eq:phase-event-a-equation} gives \(a_s=0\) there.  This proves both
+the persistence statement and the scope boundary.  Finally, the definition
+of \(\mathsf Q_\varepsilon^j\) gives
+\[
+ |\partial_r^i\widehat Q(r)|
+ \le \varepsilon |r|^{-i-1}
+       \|\widehat Q\|_{\mathsf Q_\varepsilon^j},
+ \qquad 0\le i\le j.
+\]
+The weighted supremum part of the \(\mathsf H_\phi^j\)-norm follows
+immediately, while integration of the \(i=0\) bound over either branch gives
+\(\varepsilon\log(r_{\rm out}/\rho_\delta)\).  This proves
+\cref{eq:phase-event-Q-embedding}.  Integrating the first equation in
+\cref{eq:phase-event-a-equation} over a fold-time pulse and using
+\(|q_0|^{-1}\le c_q^{-1}\) proves
+\cref{eq:phase-event-pulse-bound}.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
 Because the rescaled fold-time RFDE is autonomous, differentiation of the
 base solution in fold time gives a solution of the variational equation.  At the
