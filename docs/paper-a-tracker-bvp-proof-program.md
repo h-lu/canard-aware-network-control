@@ -399,9 +399,12 @@ arbitrary finite endpoint mismatches, and establishes the required uniform
 `r`-regularity of `z_0,w_0,B_N,ell_N`.  Compatible complete-history collar
 lifts now exist as raw endpoint charts at these orders.  What remains is a
 bounded Green-to-collar coupling in the fixed-delay fold-time system.  The
-old collar is retained in the fixed `theta` chart for the first-delay buffer;
-only after it has left the delay window is the interior correction measured
-in the Eulerian `r`-slow ladder.
+old collar is retained in the fixed `theta` chart on an initial
+method-of-steps buffer.  After one maximal delay the prescribed history no
+longer occurs by direct evaluation, but its `delta`-width delayed echo is
+still present in the generated solution.  It may enter the Eulerian
+`r`-slow ladder only after enough delay steps have made that echo small at
+the requested derivative order.
 
 The backtrack is differentiated through
 
@@ -423,11 +426,18 @@ at most
 delta/|r| <= C/S_delta.
 ```
 
-The exact fold-time normal form fixes the hybrid decomposition.  Choose once
-and for all
+The exact fold-time normal form fixes the hybrid decomposition.  For the
+requested slow order `s`, choose an integer
 
 ```text
-L_b > 2 theta_m + 1.
+M_s (1-2 vartheta) > s
+```
+
+(the uniform choice `M_s=2s+1` is sufficient because `vartheta<1/4`), and
+then choose
+
+```text
+L_b > (M_s+1) theta_m + L_0,       L_0>1.
 ```
 
 Use action/strong-history control on the attracting outer buffer
@@ -446,11 +456,23 @@ the target contraction number
 ```text
 C { a_boundary + r_out + 1/S_delta
     + delta^(1-2 vartheta)/S_delta
-    + exp(-c L_b/delta) } < 1/2.
+    + delta^(M_s(1-2 vartheta)-s)/S_delta^M_s
+    + E_act(L_0) } < 1/2.
 ```
 
-The order of choices is: first fix `L_b`, then take `a_boundary` and
-`r_out` small, and finally take `delta` small.
+Here the fifth term is the worst-case conversion of the iterated collar echo
+to an order-`s` slow derivative: each delayed passage gains the capped
+history factor `delta^(1-2 vartheta)/S_delta`, while conversion of a remaining
+`delta`-width profile costs at most `delta^(-s)`.  The last term denotes the
+appropriate tails from the already proved action weights: in the `T=delta s`
+coordinate it is the maximum of the attracting outer, repelling transverse
+inner, and repelling scalar terminal weights evaluated `delta L_0` from their
+controlled endpoints.  It must not be replaced uniformly by
+`exp(-c L_0/delta)`, because the scalar action rate at
+`|r|=rho_delta` is only of order `S_delta`.  These estimates are targets for
+the missing buffer lemma, not results already proved in the paper.  The
+order of choices is: first fix `s`, `M_s`, and `L_0` (hence `L_b`), then take
+`a_boundary` and `r_out` small, and finally take `delta` small.
 
 The displayed slow norms cannot be imposed directly on an arbitrary
 `O(delta^2)` collar mismatch.  Such a mismatch creates an `O(delta^2)`
@@ -469,8 +491,9 @@ merely a finite-dimensional endpoint amplitude.  The missing Green lemma
 is now specifically the hybrid coupling: the raw collar chart constructs
 compatible histories and fixes the exact trace count, but it does not turn
 arbitrary Green data into a compatible lift.  The new lemma must couple its
-bounded trace to the fold-time mixed Green inverse through the first-delay
-buffers, prove buffer-to-slow bootstrap, and control the event time.  The
+bounded trace to the fold-time mixed Green inverse through a finite
+method-of-steps buffer, prove the order-`s` buffer-to-slow bootstrap, and
+control the event time.  The
 slow norms apply only to `(Z_slow,Q_slow)`; the boundary layer is measured by
 its history amplitude and the capped Green weight.  Restricting all gauges
 to artificially matched slow boundary values would defeat the
@@ -482,11 +505,11 @@ The tracker and its entry into the retained fold chart are not closed until
 all eight items below are proved.
 
 1. Prove a dimension-uniform fold-time mixed Green/Lyapunov--Perron theorem
-   on the three first-delay buffers, couple it to the raw-compatible collar
-   chart, and bootstrap its middle trace into the existing slow Green
-   ladder.  The repelling strong scalar uses only its one-dimensional future
-   Green operator; backward RFDE evolution and forward shooting remain
-   forbidden.
+   on the three finite method-of-steps buffers, couple it to the
+   raw-compatible collar chart, and bootstrap its middle trace into the
+   existing slow Green ladder after `M_s` delay passages.  The repelling
+   strong scalar uses only its one-dimensional future Green operator;
+   backward RFDE evolution and forward shooting remain forbidden.
 2. After the speed sign and event time are closed, apply the weighted `C^k`
    bounds for `q -> r_k(q)` and all delayed compositions, including every
    derivative in `J_phys`, to the reparameterized interior.

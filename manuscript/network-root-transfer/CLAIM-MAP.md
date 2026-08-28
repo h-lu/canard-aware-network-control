@@ -141,8 +141,9 @@ The limits separate exactly:
   nonlinear resource-defect normal form and raw-compatible endpoint collar
   chart are also proved.  The quotient identities assume an exact tracker,
   while the collar chart is not a right inverse for arbitrary Green sources;
-  a proved boundary-layer obstruction forces a hybrid slow/action or
-  first-delay coupling.  The exact fixed-delay fold-time normal form now
+  a proved boundary-layer obstruction forces a hybrid slow/action coupling
+  on a finite method-of-steps buffer.  The exact fixed-delay fold-time normal
+  form now
   identifies the correct system and collar interface for that coupling, but
   does not prove its mixed-buffer inverse.  These results do not yet
   construct an RFDE tracker or prove its normal dichotomy.  The generic

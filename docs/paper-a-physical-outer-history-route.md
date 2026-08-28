@@ -8,7 +8,7 @@ normal form and a raw-compatible endpoint-history collar chart are also
 proved, together with a boundary-layer obstruction showing why they do not
 yet close the nonlinear RFDE tracker.  The exact fixed-delay fold-time
 tracker normal form is now proved and fixes the remaining construction
-route.  Its mixed first-delay buffer theorem, the nonlinear tracker, and the
+route.  Its finite method-of-steps buffer theorem, the nonlinear tracker, and the
 phase-quotiented nonautonomous slow-history theorem remain open.**
 
 This note refines the physical-identification part of
@@ -132,7 +132,7 @@ histories, not a source-wise Green right inverse.  Proposition
 `prop:endpoint-scale-not-slow-speed` proves sharply that an
 `O(delta^2)` finite endpoint resource defect may still generate an
 unbounded slow-speed boundary layer.  Thus the next gate is a hybrid
-slow/action Green--collar coupling or first-delay buffer.
+slow/action Green--collar coupling on a finite method-of-steps buffer.
 
 Proposition `prop:fold-time-tracker-normal-form` proves the exact way around
 that obstruction.  In fold time, `(r,Z,mathfrak p_nl)` satisfies a
@@ -141,8 +141,12 @@ algebraically, and no `Q Z_s` or `Q p_s` term is created.  The collar chart
 is an ordinary compatible initial history with trace `p_e`.  The old history
 need not be a past orbit.  Once the fixed-delay mixed BVP proves `q<0`, the
 interior reparameterizes to the exact `r`-tracker and the existing physical
-backtrack calculus applies.  This equivalence is proved, but its
-first-delay-buffer contraction is not.
+backtrack calculus applies.  This equivalence is proved, but its mixed-buffer
+contraction is not.  One maximal delay removes direct evaluation of the
+prescribed history, not the narrow delayed echoes that it has already
+generated.  At slow order `s` the current proof contract therefore uses an
+integer `M_s` with `M_s(1-2 vartheta)>s` before bootstrapping to the slow
+Green norm.
 
 ## 2. The exact curve-restricted physical equation
 
@@ -419,7 +423,8 @@ not acceptable.
       finite endpoint resource-defect scale alone.
 - [x] Exact fixed-delay fold-time tracker normal form and compatible-collar
       initial-history interface, with no past-orbit assumption.
-- [ ] Fold-time mixed first-delay buffers, buffer-to-slow bootstrap, and
+- [ ] Fold-time finite method-of-steps buffers, order-dependent
+      buffer-to-slow bootstrap, and
       nonlinear tracker contraction on both outer branches.
 - [ ] Phase-quotiented nonautonomous normal splitting along a true slow
       history.

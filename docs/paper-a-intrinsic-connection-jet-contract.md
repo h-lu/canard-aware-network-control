@@ -170,7 +170,9 @@ local `C^0` speed coordinate.  Proposition
 endpoint-history chart and exact `p_e`-to-speed/backtrack bridge without an
 extra Fredholm row.  Proposition `prop:endpoint-scale-not-slow-speed` proves
 that this chart cannot simply be attached to the finite endpoint Green
-theorem: a hybrid slow/action estimate or first-delay buffer is necessary.
+theorem: a hybrid slow/action estimate on a finite method-of-steps buffer is
+necessary.  A single maximal delay clears direct old-history evaluations but
+does not erase their generated narrow echoes.
 Proposition `prop:fold-time-tracker-normal-form` then proves the exact
 fixed-delay system in which that buffer must be constructed, including its
 direct equivalence with the raw RFDE and the collar initial-history
