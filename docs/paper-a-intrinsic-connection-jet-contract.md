@@ -150,8 +150,18 @@ It freezes the resource and does not construct a slow tracker.  Supplementary
 Proposition `prop:backward-asymptotic-nonselection` proves that bounded
 complete backward extension, convergence in an unnormalized history norm,
 and even superalgebraic strong-history closeness do not select a unique tame
-history jet.  The following finite-`delta` items remain unproved uniformly in
-`N`:
+history jet.  Proposition `prop:physical-history-phase-quotient` now proves
+one exact bridge: once a monotone physical history exists, its time tangent
+has a stationary-gauge normalization and the projected variational evolution
+is an exact representation of the intrinsic quotient cocycle.  Proposition
+`prop:exact-outer-history-equation` proves the uncut if-and-only-if
+invariance equation for such a history.  Proposition
+`prop:exact-resource-gauge-quotient` then removes the apparently large
+resource coupling exactly and conjugates the quotient to a standard voltage
+RFDE with an `O(S_delta^(-1))` Volterra correction in the adapted norm.
+These results neither construct the tracker nor prove a dichotomy for the
+quotient.  The following
+finite-`delta` items remain unproved uniformly in `N`:
 
 1. a phase-quotiented, nonautonomous outer normal splitting along a true
    positive-`delta` slow tracker; the raw voltage--resource one-unstable
@@ -168,11 +178,11 @@ history jet.  The following finite-`delta` items remain unproved uniformly in
 6. construction and verification of physical section holonomy, plus a
    nontrivial passage-jet composition law beyond exact-holonomy re-cutting.
 
-The exact curve-restricted equation, correct mixed boundary geometry,
-candidate capped history weight, and first missing dichotomy lemma are
-recorded in
+The proved exact curve equation and quotient identities, together with the
+correct mixed boundary geometry and next dichotomy estimates, are tracked in
 [`paper-a-physical-outer-history-route.md`](paper-a-physical-outer-history-route.md).
-They are a proof design, not additional manuscript claims.
+The remaining tracker/dichotomy construction there is a proof design, not an
+additional manuscript claim.
 
 The frozen-voltage part of G0 is closed.  The phase quotient, true slow
 tracker, and nonautonomous roughness part of G0, as well as G1, remain open.
@@ -217,6 +227,10 @@ Do not:
 - [x] Prove that bounded backward convergence in an unnormalized history norm
       and superalgebraic history closeness do not select a unique tame
       parameterized history.
+- [x] Prove the exact stationary-coordinate phase quotient conditional only
+      on existence of a genuine monotone physical history.
+- [x] Prove the exact uncut outer-history equation, genuine longitudinal
+      cocycle, resource-gauge quotient, and Volterra history conjugacy.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.

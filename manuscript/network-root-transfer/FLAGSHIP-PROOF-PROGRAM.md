@@ -351,6 +351,9 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Prove that convergence in an unnormalized history norm, even with a
       fixed phase row and superalgebraic strong-history closeness, does not
       select tame history jets by itself.
+- [x] Derive the exact uncut tracker equation, genuine longitudinal history
+      cocycle, stationary-coordinate quotient, and resource-gauge Volterra
+      realization conditional on tracker existence.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -359,8 +362,9 @@ not the conormal of an independently defined physical maximal-canard locus.
       re-cutting naturality already contained in the transfer proposition, or
       another reusable consequence.
 
-The frozen-voltage part of G0 is now closed; its phase quotient, true slow
-tracker, and nonautonomous roughness remain open, as does G1.  The generic
+The frozen-voltage part of G0 and the exact algebra of the quotient are now
+closed.  True slow-tracker existence, its relative parameter jets, and
+nonautonomous quotient roughness remain open, as does G1.  The generic
 nonselection example is not a model-specific impossibility theorem.
 Completing them does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.

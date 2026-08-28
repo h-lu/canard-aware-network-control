@@ -34,6 +34,7 @@ fixed.
 | Physical-identification interface | `prop:physical-weighted-c1-transfer` | Weighted `C^1` root criterion, gap-level sufficient conditions, and conditional section/defining-function naturality; no physical root existence is asserted |
 | Critical-layer precursor | `prop:unprepared-outer-skeleton` | Preparation-independent constant-history critical curve and dimension-uniform leading frozen-resource fast-voltage splitting |
 | Positive-`delta` frozen voltage histories | `prop:frozen-voltage-history-splitting`, `rem:frozen-resource-phase-quotient` | Capped-rate full-history stability/splitting for the frozen-resource voltage RFDE, uniform structural `C^2` bounds, and an exact obstruction to the raw full-system one-unstable formulation; no nonautonomous slow tracker |
+| Exact tracker/quotient interface | `prop:exact-outer-history-equation`, `prop:physical-history-phase-quotient`, `prop:exact-resource-gauge-quotient` | Uncut if-and-only-if tracker equation; genuine transported longitudinal history; exact stationary-gauge quotient; resource-gauge triangularization and $O(S_\delta^{-1})$ Volterra realization. Conditional on tracker existence and collar bounds; no tracker or dichotomy existence claim |
 | Truncated reduced actions | `cor:outer-reduced-actions` | Formal critical-curve speed and two positive truncated actions for the reduced critical-layer equation; not an invariant slow-history action |
 | Weak-selection obstruction | `prop:backward-asymptotic-nonselection` | A common phase row, convergence in an unnormalized history norm, and superalgebraic strong-history closeness do not by themselves select a unique tame RFDE history family; generic logical counterexample, not a model-specific impossibility theorem |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
@@ -129,11 +130,13 @@ The limits separate exactly:
   under Issue #32.  Issue #11 concerns a different Paper III model and is not
   an input to Paper A.
 - The preparation-independent critical curve, frozen-resource
-  positive-`delta` voltage-history splitting, and truncated reduced actions
-  are proved precursors.  They are not a nonautonomous RFDE slow-history
-  theorem.  The generic nonselection example is a logical counterexample to
-  weak selection criteria, not a model-specific impossibility theorem; the
-  phase-quotiented part of G0 and all of G1 remain open.
+  positive-`delta` voltage-history splitting, truncated reduced actions, and
+  exact tracker/quotient identities are proved precursors.  The latter
+  identities assume an exact tracker; they do not construct one or prove its
+  normal dichotomy.  The generic nonselection example is a logical
+  counterexample to weak selection criteria, not a model-specific
+  impossibility theorem; tracker existence, quotient roughness, and all of
+  G1 remain open.
 - A zero leading covector does not rule out higher-order response.
 - The one-delay no-go applies only to the pure-redistribution leading source
   after coincident atoms have been merged.

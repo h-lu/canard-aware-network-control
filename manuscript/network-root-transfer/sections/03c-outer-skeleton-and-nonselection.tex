@@ -507,6 +507,260 @@ the one-dimensional unstable summand: indeed,
 algebraically simple.  This completes the proof.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:exact-outer-history-equation}]
+If \(T=\delta^2t\), then
+\[
+ \frac{\dd}{\dd t}V(r(T))
+ =\delta^2q(r)V'(r),\qquad
+ \frac{\dd}{\dd t}w(r(T))
+ =\delta^2q(r)w'(r).
+\]
+The physical delay \(\theta_k/\delta\) in original time is the slow-time
+delay \(\delta\theta_k\).  Therefore
+\[
+ r\!\left(T-\delta\theta_k\right)
+ =\Phi_q^{-\delta\theta_k}(r(T))=r_k(r(T)),
+\]
+and the delayed voltage in the raw RFDE is \(V(r_k(r(T)))\).  Substitute
+\(V=\mathbf1+r\mathbf1+z\), use
+\(\mathcal A_N\mathbf1=0\), and note that
+\(\mathcal A_Nz=A_Nz\).  The voltage equation is then exactly
+\cref{eq:exact-outer-voltage-invariance}.  Since
+\[
+ \pi_N^TV(r)-a
+ =1+r+\pi_N^Tz(r)-\{1+\delta^2\nu\}
+ =r-\delta^2\nu,
+\]
+the resource equation is exactly
+\cref{eq:exact-outer-resource-invariance}.  Since every retained \(r\) may
+serve as the initial value \(r_0\), evaluating the generated equation at
+\(t=0\) proves necessity at every retained point.  The same substitution in
+reverse proves sufficiency on every orbit segment for which all displayed
+points remain in \(J\).
+
+It remains to justify the regularity used below.  From
+\cref{eq:exact-outer-resource-invariance},
+\[
+ w'(r)=\frac{r-\delta^2\nu}{q(r)}
+\]
+is \(C^1\), so \(w\) is \(C^2\) in the interior.  The scalar flow and each
+backtrack \(r_k\) are \(C^1\).  Consequently the right-hand side of
+\cref{eq:exact-outer-voltage-invariance} is \(C^1\); division by the nonzero
+\(q\) shows that \(z'\), hence \(V'\), is \(C^1\).  Thus \(V\) is \(C^2\)
+there as claimed.
+
+For fold time \(s=\delta t\), an offset \(\theta\) corresponds to the
+slow-time offset \(\delta\theta\), which proves
+\cref{eq:exact-outer-history-embedding}.  Current evaluation and
+\(\pi_N^TV'(r)=1+\pi_N^Tz'(r)=1\) give
+\cref{eq:exact-outer-history-phase}.  Finally,
+\(T=\delta s\).  Defining \(r_*(s)=r(\delta s)\) gives
+\(r_*'(s)=\delta q(r_*(s))\), and differentiation of the entire history
+embedding gives
+\[
+ \frac{\dd}{\dd s}\mathcal H_{V,w,q}(r_*(s))
+ =\delta q(r_*(s))\partial_r\mathcal H_{V,w,q}(r_*(s)).
+\]
+Division by its stationary current coordinate proves
+\cref{eq:exact-outer-history-tangent}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
+Because the rescaled fold-time RFDE is autonomous, differentiation of the
+base solution in fold time gives a solution of the variational equation.  At the
+history level this says
+\begin{equation}
+ \mathcal U_*(s,u)
+ \left(\theta\mapsto v_*'(u+\theta),w_*'(u)\right)
+ =\left(\theta\mapsto v_*'(s+\theta),w_*'(s)\right).
+                                                               \label{eq:phase-quotient-time-tangent}
+\end{equation}
+Moreover,
+\[
+ \varrho_N
+ \left(\theta\mapsto v_*'(s+\theta),w_*'(s)\right)
+ =\pi_N^Tv_*'(s)=r_*'(s).
+\]
+Division by the nonzero endpoint speed proves both the normalization in
+\cref{eq:physical-normalized-tangent} and
+\cref{eq:physical-tangent-transport}.  It also shows uniqueness among scalar
+multiples of the time tangent.
+
+Since \(\varrho_N\tau_*(s)=1\), the operator \(Q_*(s)\) is a projection with
+\begin{equation}
+ \operatorname{Ran}Q_*(s)=\ker\varrho_N,
+ \qquad
+ \ker Q_*(s)=\operatorname{span}\{\tau_*(s)\}.      \label{eq:phase-quotient-range-kernel}
+\end{equation}
+For \(x\in\ker\varrho_N\), use the variational cocycle identity and
+\cref{eq:physical-tangent-transport} to compute
+\begin{align*}
+ &Q_*(s)\mathcal U_*(s,t)Q_*(t)\mathcal U_*(t,u)x\\
+ &\quad=Q_*(s)\mathcal U_*(s,u)x
+ -Q_*(s)\mathcal U_*(s,t)\tau_*(t)
+       \varrho_N\mathcal U_*(t,u)x\\
+ &\quad=Q_*(s)\mathcal U_*(s,u)x,
+\end{align*}
+because the second term is a scalar multiple of \(Q_*(s)\tau_*(s)=0\).
+This is \cref{eq:physical-quotient-cocycle}.  The range--kernel identities
+identify the process with the quotient process, and the triangle inequality
+gives \cref{eq:physical-quotient-bound}.  Finally, normalizing any nonzero
+multiple of the time tangent by \(\varrho_N\tau=1\) recovers exactly
+\cref{eq:physical-normalized-tangent}; hence the construction contains no
+choice of tangent scale or frozen eigendirection.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:exact-resource-gauge-quotient}]
+The history derivative in
+\cref{eq:exact-outer-history-tangent} gives
+\(E_s^c=\partial_r\mathcal H_{V,w,q}(r_s)\).  Since the autonomous
+time tangent is \(\delta q(r_s)E_s^c\),
+\cref{eq:phase-quotient-time-tangent} yields
+\[
+ \mathcal U_*(s,\sigma)\{\delta q(r_\sigma)E_\sigma^c\}
+ =\delta q(r_s)E_s^c,
+\]
+which proves \cref{eq:resource-gauge-center-cocycle}.
+
+For reference, the full fold-time variational equation along the tracker is
+\begin{align}
+ \xi'(s)={}&\delta^{-1}\mathcal J_*(s)\xi(s)
+ -\delta^{-1}\omega(s)\mathbf1\notag\\
+ &+\delta K\sum_{k=0}^mL_{k,N}(\eta)
+       \{\xi(s)-\xi(s-\theta_k)\},\notag\\
+ \omega'(s)={}&\delta\pi_N^T\xi(s).                 \label{eq:resource-gauge-full-variation}
+\end{align}
+At the current endpoint,
+\[
+ \xi(s)=u(s)+V'(r_s)a(s),\qquad
+ \omega(s)=w'(r_s)a(s).
+\]
+Differentiate \(a=\omega/w'(r_s)\), use \(r_s'=\delta q(r_s)\), and
+differentiate the exact resource identity
+\[
+ q(r)w'(r)=r-\delta^2\nu
+ \quad\Longrightarrow\quad
+ q'(r)w'(r)+q(r)w''(r)=1=\pi_N^TV'(r).
+\]
+The full variation equation then gives
+\begin{align*}
+ a'
+ &=\frac{\delta\pi_N^T\{u+V'a\}}{w'}
+   -a\frac{\delta q w''}{w'}\\
+ &=\frac{\delta}{w'}\pi_N^Tu+\delta q'a,
+\end{align*}
+which is \cref{eq:resource-gauge-a}.
+
+For \(-\theta_m\le\theta<0\), histories translate, so
+\[
+ (\partial_s-\partial_\theta)\xi(s+\theta)=0.
+\]
+The definition of \(e_s\), or direct differentiation of
+\(\delta q(r_s)e_s(\theta)=v_*'(s+\theta)\), gives
+\begin{equation}
+ (\partial_s-\partial_\theta)e_s(\theta)
+ =-\delta q'(r_s)e_s(\theta).                       \label{eq:resource-gauge-e-transport}
+\end{equation}
+Apply \(\partial_s-\partial_\theta\) to
+\(\psi_s=\xi_s-e_sa\) and use
+\cref{eq:resource-gauge-a,eq:resource-gauge-e-transport}; the two
+\(\delta q'a\) terms cancel and give
+\cref{eq:resource-gauge-transport}.
+
+The normalized center history is not itself a solution but obeys the
+transport law \cref{eq:resource-gauge-center-cocycle}.  Equivalently, the
+full variational operator applied to \(E_s^c\) equals
+\(\partial_sE_s^c+\delta q'(r_s)E_s^c\).  Substitute
+\[
+ (\xi_s,\omega)
+ =(\psi_s,0)+aE_s^c
+\]
+in \cref{eq:resource-gauge-full-variation}, subtract the derivative of
+\(aE_s^c\), and use \cref{eq:resource-gauge-a}.  All terms proportional to
+\(a\), including the delayed tangent terms, cancel.  The voltage endpoint
+of the remaining rank-one term is
+\[
+ -V'(r_s)\frac{\delta}{w'(r_s)}\pi_N^Tu(s)
+ =-\delta H_s\pi_N^Tu(s).
+\]
+This proves \cref{eq:resource-gauge-boundary}.  It also proves directly that
+\(\psi_s\) is unchanged by adding a multiple of \(E_s^c\).
+
+We next solve the nonstandard transport equation along characteristics.
+For fixed \(s,\theta\), set
+\[
+ F(\sigma)=\psi_{s+\sigma}(\theta-\sigma),
+ \qquad \theta\le\sigma\le0.
+\]
+Then \(F(\theta)=u(s+\theta)\), \(F(0)=\psi_s(\theta)\), and
+\cref{eq:resource-gauge-transport} gives
+\[
+ F'(\sigma)
+ =-\delta h_{s+\sigma}(\theta-\sigma)
+       \pi_N^Tu(s+\sigma).
+\]
+Integration proves
+\[
+ \psi_s(\theta)=u_s(\theta)
+ -\delta\int_\theta^0h_{s+\sigma}(\theta-\sigma)
+        \pi_N^Tu_s(\sigma)\,\dd\sigma,
+\]
+which is \cref{eq:resource-gauge-history-conjugacy}.  In particular,
+\[
+ \psi_s(-\theta_k)
+ =u(s-\theta_k)-(\mathcal K_su_s)(-\theta_k).
+\]
+Substitution in \cref{eq:resource-gauge-boundary} proves
+\cref{eq:resource-gauge-standard-rfde}; the Volterra term therefore has the
+displayed positive sign inside the delay bracket.  This derivation is along
+characteristics on the delay-enlarged time interval, so no derivative of a
+formally time-dependent conjugacy has been discarded.
+
+It remains to prove the uniform bounds.  Under
+\cref{eq:resource-gauge-collar-bounds}, the ratios of \(q\), the vector
+\(V'\), and hence \(e_s\) are bounded by common constants, while
+\[
+ \|h_s(\theta)\|_N\le\frac{C}{\rho_\delta}.
+\]
+If \(\theta\le\sigma\le0\), then
+\(e^{2\kappa_*(\theta-\sigma)}\le1\).  Therefore
+\begin{align*}
+ e^{2\kappa_*\theta}\|(\mathcal K_s\phi)(\theta)\|_N
+ &\le\frac{C\delta}{\rho_\delta}
+   \int_\theta^0
+      e^{2\kappa_*(\theta-\sigma)}
+      e^{2\kappa_*\sigma}\|\phi(\sigma)\|_N\,\dd\sigma\\
+ &\le C\frac{\delta\theta_m}{\rho_\delta}
+       \|\phi\|^\sharp_{\kappa_*}.
+\end{align*}
+The definition of \(\rho_\delta\) proves
+\cref{eq:resource-gauge-volterra-bound}.  For small \(\delta\), the bound is
+at most \(1/2\), and the Neumann series proves
+\cref{eq:resource-gauge-volterra-inverse}.
+
+Conversely, let \(u\) solve
+\cref{eq:resource-gauge-standard-rfde} and define
+\(\psi_s=(\Id-\mathcal K_s)u_s\).  Reversing the characteristic calculation
+shows that \(\psi\) satisfies
+\cref{eq:resource-gauge-transport}; reversing the endpoint substitution
+shows that it satisfies \cref{eq:resource-gauge-boundary}.  Solve the scalar
+linear equation \cref{eq:resource-gauge-a} from any prescribed value of
+\(a\), and reconstruct
+\[
+ (\xi_s,\omega(s))=(\psi_s,0)+a(s)E_s^c.
+\]
+The cancellations already proved above, now read in reverse, show that this
+pair solves the full variational equation.  Thus
+\cref{eq:resource-gauge-history-conjugacy,eq:resource-gauge-history-inverse}
+give the asserted two-sided quotient coordinate equivalence.
+
+Finally, \(|\omega|/|w'(r_s)|=|a|\) and
+\(\xi_s=\psi_s+e_sa\), with \(\|e_s\|^\sharp_{\kappa_*}\le C\).
+The two triangle inequalities give the claimed uniform equivalence between
+\cref{eq:resource-gauge-anisotropic-norm} and
+\(\|\psi_s\|^\sharp_{\kappa_*}+|a|\).
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem

@@ -510,7 +510,14 @@ dimension-uniform critical-layer calculation.
 \Cref{prop:frozen-voltage-history-splitting} upgrades its voltage layer to a
 positive-\(\delta\), fixed-history-space splitting with a capped rate; the
 resource is frozen, and the theorem is neither a nonautonomous RFDE slow
-manifold nor a physical outer-history construction.
+manifold nor a physical outer-history construction.  The exact uncut
+invariance equation and the quotient identities in
+\cref{prop:exact-outer-history-equation,prop:physical-history-phase-quotient,%
+prop:exact-resource-gauge-quotient} show what changes once a genuine monotone
+history is available: time translation supplies the transported longitudinal
+line, and an adapted resource gauge removes the singular resource coupling
+through an \(O(S_\delta^{-1})\) Volterra history correction.  These identities
+assume, rather than construct, that history.
 
 The dimension-uniform range estimates use Dobrushin contraction in the
 oscillation seminorm \citep{gaubert2015dobrushin}, in the context of a broad
@@ -549,13 +556,14 @@ machinery.  \Cref{sec:sensed-recovery} supplies the second return channel.
 coefficient calculations.  After the main proof,
 \cref{sec:unprepared-outer-skeleton} records a preparation-independent
 critical curve, a positive-\(\delta\) frozen-voltage full-history splitting,
-and truncated reduced actions.  It also shows why the unquotiented
-voltage--resource system has the wrong unstable count, and gives an exact
-counterexample showing why convergence in an unnormalized history norm and a
-phase row do not by themselves select a tame RFDE history.  These results
-delimit, but do not supply, a phase-quotiented nonautonomous physical
-outer-history construction.  Detailed history-graph and finite-section
-bookkeeping is placed in the supplementary material.
+truncated reduced actions, the exact uncut tracker equation, and two exact
+realizations of the quotient along any genuine monotone tracker.  It also
+shows why the unquotiented voltage--resource system has the wrong unstable
+count, and gives an exact counterexample showing why convergence in an
+unnormalized history norm and a phase row do not by themselves select a tame
+RFDE history.  These results delimit, but do not supply, tracker existence or
+the phase-quotiented nonautonomous normal dichotomy.  Detailed history-graph
+and finite-section bookkeeping is placed in the supplementary material.
 
 \Cref{fig:root-mechanism} summarizes the information flow from exact blindness
 to the two-delay source, nonlinear root responses, and recovered return

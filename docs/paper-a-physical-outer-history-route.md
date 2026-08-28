@@ -74,7 +74,43 @@ subclass in which the raw frozen repelling voltage--resource block has two
 positive roots.  The correct next object is therefore a phase-quotiented
 normal cocycle, not an unquotiented one-unstable dichotomy.
 
+Proposition `prop:physical-history-phase-quotient` closes the algebraic part
+of that quotient.  Along any already constructed physical history with
+nonzero stationary-coordinate speed, it normalizes the exact transported
+time tangent by `pi_N^T phi(0)=1` and proves that projection onto the fixed
+stationary-coordinate gauge produces an exact representation of the
+intrinsic quotient cocycle.  The gauge kernel need not itself be invariant.
+This is not a slow-history existence or dual-phase theorem: its input is the
+physical history that still has to be constructed.
+
+Proposition `prop:exact-resource-gauge-quotient` now supplies the useful
+normal coordinates once an exact tracker is given.  Dividing the resource
+variation by the tracker slope `w_prime(r)` and subtracting the resulting
+multiple of the genuine history tangent removes the raw
+`-omega/delta` coupling exactly.  The quotient history is related to an
+ordinary voltage history by
+
+```text
+psi_s = (I - K_s) u_s,
+||K_s|| <= C / S_delta,
+```
+
+and the sign and Volterra correction in the resulting nonautonomous RFDE are
+proved, not formal.  Uniformity requires the adapted resource norm
+`|omega|/|w_prime(r)|`; the raw product norm generally loses a factor
+`1/|r|`.  The proposition still assumes existence of the exact tracker,
+`|w_prime(r)| comparable to |r|`, and a delay collar.
+
 ## 2. The exact curve-restricted physical equation
+
+Proposition `prop:exact-outer-history-equation` now proves the statements
+in this section as an if-and-only-if reduction.  A solution of the displayed
+uncut invariance equation generates an actual orbit of the raw RFDE, and
+every physical orbit lying on such an `r`-parameterized curve satisfies
+the equation.  The proposition also identifies the derivative of the full
+history embedding with the normalized time tangent used by the quotient
+cocycle.  It does not prove that a solution of the invariance equation
+exists.
 
 Let a structural redistribution be
 
@@ -271,7 +307,8 @@ and transfer the frozen bundles to the resulting nonautonomous normal
 cocycle.  It must establish:
 
 1. a parameter-coherent true slow tracker on both outer branches;
-2. a normalized tangent history and a fixed phase row;
+2. uniform bounds and parameter jets for the stationary-gauge normalized
+   tangent history and quotient representation;
 3. roughness of the frozen voltage bundles under the nonautonomous
    slow-curve and modulation terms;
 4. the attracting representative and repelling mixed-boundary sheet;
@@ -316,6 +353,12 @@ not acceptable.
       strong repelling unstable line and a full stable history complement.
 - [x] Proof that the raw full voltage--resource one-unstable target is false
       before phase quotienting.
+- [x] Exact stationary-coordinate quotient along any genuine monotone
+      physical history; no frozen eigenvector is used as a phase direction.
+- [x] Exact if-and-only-if uncut outer-history invariance equation and its
+      normalized full-history tangent.
+- [x] Exact resource-gauge normal equation and `O(S_delta^(-1))` Volterra
+      conjugacy to a standard voltage-history RFDE.
 - [ ] Phase-quotiented nonautonomous normal splitting along a true slow
       history.
 - [ ] Attracting representative and repelling codimension-one history sheet

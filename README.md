@@ -28,9 +28,12 @@ research design remains in
 Paper A now also proves a positive-`delta`, capped-rate full-history
 splitting for the frozen-resource outer voltage RFDE, uniformly in finite
 network size.  This closes the frozen voltage part of the physical
-outer-history gate.  It does not yet construct the phase-quotiented
-nonautonomous slow histories, their exact fold overlap, or a physical
-preparation-independent root.
+outer-history gate.  It further gives the exact uncut outer-history
+invariance equation and, conditional on an exact monotone tracker, the
+genuine longitudinal cocycle and an exact resource-gauge/Volterra
+realization of its normal quotient.  It does not yet construct that tracker,
+prove its nonautonomous normal dichotomy, establish exact fold overlap, or
+produce a physical preparation-independent root.
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:
