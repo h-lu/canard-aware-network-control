@@ -383,6 +383,10 @@ not the conormal of an independently defined physical maximal-canard locus.
       phase--event core and identify both phase-induced normal sources.
 - [x] Triangularize the scaled moving-event normal traces on fixed
       `r`-sections and prove the sharp `delta^(-2)` raw-translation loss.
+- [x] Construct the terminal-relative nonlinear $C^2$ strong-to-weak
+      moving-window coordinates at a nonzero base, including the derived
+      fixed-section event row, nonzero terminal columns, mixed second
+      derivatives, and sharp first/second translation losses.
 - [x] Prove the exact phase-delay shift and old-state-norm obstruction,
       control the structured affine-residual response in true action, assemble
       the raw-compatible phase boundary column, and close the fixed-reduced-base
@@ -407,8 +411,9 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Reparameterize every retained generated-interior subsegment whose delay
       collar lies beyond the first maximal delay as an exact tracker, and
       verify the uncut quotient and resource-gauge Volterra hypotheses there.
-- [ ] Prove the terminal-relative moving-event $C^2$ chart, then construct
-      the nonlinear outer tracker.
+- [ ] Construct the fixed physical-section hit map and the hybrid
+      strong-terminal/weak-middle moving-event residual and inverse, then the
+      terminal-to-terminal nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -438,8 +443,9 @@ on each canonical outer graph slice, with a first Newton jet, strict speed
 sign, and finite forward RFDE reconstruction.  Its sufficiently deep
 generated interior is now an exact physical-coordinate tracker with the
 uncut quotient and Volterra realization.  Relative-parameter jets,
-moving-event control, terminal-to-terminal nonlinear tracker existence,
-nonautonomous quotient roughness, and G1 remain open.  The generic
+the common strong terminal buffer and full moving-event residual/inverse,
+terminal-to-terminal nonlinear tracker existence, nonautonomous quotient
+roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.
 This zeroth-order border does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.

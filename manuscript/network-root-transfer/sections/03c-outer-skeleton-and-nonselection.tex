@@ -2133,6 +2133,111 @@ All remaining exclusions are immediate because only traces, not a solution
 map or a tracker, were constructed.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:terminal-relative-trace-scale-chart}]
+For a Banach space \(X\), the translation--restriction map
+\[
+ \mathcal T(x,t)(\varsigma)=x(t+\varsigma)
+\]
+is \(C^2\) from
+\(C^{d+2}(K^\ell;X)\times(-\ell/2,\ell/2)\) to
+\(C^d(K;X)\).  Its first two derivatives are
+\begin{align}
+ D\mathcal T(x,t)[h,b]
+ &=\mathcal T(h,t)+b\,\mathcal T(x',t),\notag\\
+ D^2\mathcal T(x,t)[(h,b),(k,c)]
+ &=b\,\mathcal T(k',t)+c\,\mathcal T(h',t)
+       +bc\,\mathcal T(x'',t).                   \label{eq:proof-trace-scale-translation}
+\end{align}
+Taylor's formula with integral remainder, applied after
+\(\partial_\varsigma^j\) for \(0\le j\le d\), proves the asserted
+Fr\'echet differentiability and continuity of these derivatives.  The two
+unused derivatives are essential; translation on the piecewise
+\(W^{d,\infty}\) space itself need not be differentiable.
+
+By \cref{eq:trace-scale-reference-event}, the scalar inverse-function
+theorem gives \(\chi_*\in C^{d+2}\) after decreasing its neighborhood.
+Therefore evaluation, composition with \(\chi_*\), the translations in
+\cref{eq:trace-scale-chart}, and subtraction are \(C^2\) from the strong
+domain to the displayed weak target.  Formula
+\cref{eq:trace-scale-reconstruction} follows directly from the definitions,
+so the retained moving window loses no algebraic information.  Retaining
+\(\widehat\tau\) as the first output distinguishes simultaneous translations;
+the event row is then the derived functional
+\(E=r^\#(0)-e_1\).  The map does not give a same-space inverse because two
+derivatives were deliberately spent, and it does not retain data outside the
+moving window.
+
+We compute the jets at \((Y_*,0)\).  Since
+\(t_{\widehat\tau}=\widehat\tau/\delta\),
+\cref{eq:proof-trace-scale-translation} gives
+\[
+ DE[H_i]=\xi_i(0)+\delta^{-1}r_*'(0)\sigma_i=B_i
+\]
+and the two raw formulas in \cref{eq:trace-scale-raw-first}.  Moreover,
+\[
+ D\alpha[H_i]
+ =\chi_*'(e_1)B_i
+ =\frac{B_i}{r_*'(0)}
+ =A_i.
+\]
+Differentiating the two subtractions in
+\cref{eq:trace-scale-chart} gives
+\[
+ DN_Z^\#[H_i]
+ =\mathsf z_i+\delta^{-1}Z_*'\sigma_i-Z_*'A_i
+ =\mathsf z_i-\frac{Z_*'}{\delta q_e}\xi_i(0),
+\]
+and the same calculation with \(p_*\) gives the other line of
+\cref{eq:trace-scale-first-triangularization}.  Adding
+\(Z_*'DE/(\delta q_e)\), or its \(p_*\) counterpart, recovers the raw
+trace and proves the two right-hand identities there.
+
+The second derivative of the terminal scalar evaluation is exactly
+\[
+ D^2\{r(t_{\widehat\tau})\}[H_1,H_2]=R_{12}.
+\]
+For the inverse function,
+\[
+ \chi_*'(e_1)=\frac1{r_*'(0)},\qquad
+ \chi_*''(e_1)=-\frac{r_*''(0)}{r_*'(0)^3}.
+\]
+Consequently
+\[
+ D^2\alpha[H_1,H_2]
+ =\frac{R_{12}}{r_*'(0)}
+   -\frac{r_*''(0)}{r_*'(0)}A_1A_2
+ =A_{12}.
+\]
+Apply \cref{eq:proof-trace-scale-translation} to the raw term and the
+ordinary second-order chain rule to
+\(Z_*(\alpha+\varsigma)\).  Their difference is
+\cref{eq:trace-scale-Z-second}.  Replacing \(Z_*\) and
+\(\mathsf z_i\) by \(p_*\) and \(\mathsf p_i\) proves
+\cref{eq:trace-scale-p-second}.  If both directions contain only
+\(\sigma_i\), then \(A_i=\sigma_i/\delta\) and \(A_{12}=0\); both
+event-aligned derivatives vanish, which proves the stated pure-column
+cancellation.
+
+Finally,
+\[
+ D_{\widehat\tau}\mathcal T x
+ =\delta^{-1}\mathcal T x',\qquad
+ D_{\widehat\tau}^2\mathcal T x
+ =\delta^{-2}\mathcal T x''.
+\]
+The definition of \(\|\cdot\|_{d,\delta}\) gives
+\[
+ \|\delta^{-1}x'\|_{d,\delta}
+ \le\delta^{-2}\|x\|_{d+1,\delta},\qquad
+ \|\delta^{-2}x''\|_{d,\delta}
+ \le\delta^{-4}\|x\|_{d+2,\delta},
+\]
+which is \cref{eq:trace-scale-translation-losses}.  The scope exclusions
+follow because no equation for \(Y\), and no solution operator into the
+strong terminal space, entered the construction.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:phase-delay-action-shift}]
 Put \(P=\mathscr P_{c,\sigma,N}a\).  In the algebraic row,
 \begin{equation*}

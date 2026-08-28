@@ -1882,6 +1882,173 @@ collar, estimate the affine-residual column, or prove the full bordered
 inverse.
 \end{proposition}
 
+\begin{lemma}[Terminal-relative event-aligned trace-scale coordinates]
+\label[lemma]{lem:terminal-relative-trace-scale-chart}
+Fix \(d\ge0\), \(L\ge0\), and \(\ell>0\), translate the reference terminal
+time to zero, and put
+\[
+ K=[-L-\theta_m,0],\qquad
+ K^\ell=[-L-\theta_m-\ell,\ell].
+\]
+Let
+\[
+ Y_*=(r_*,Z_*,p_*)\in
+ C^{d+2}(K^\ell;\R\times E_N\times\R)
+\]
+satisfy
+\begin{equation}
+ r_*(0)=e_1,\qquad r_*'(0)=\delta q_e,\qquad
+ |q_e|\ge q_->0.                                  \label{eq:trace-scale-reference-event}
+\end{equation}
+Assume \(r_*\) has a scalar inverse \(\chi_*\) near \(e_1\), normalized by
+\(\chi_*(e_1)=0\).  For
+\[
+ Y=(r,Z,p)\in C^{d+2}(K^\ell;\R\times E_N\times\R),
+ \qquad t_{\widehat\tau}=\widehat\tau/\delta,
+\]
+restrict to the open neighborhood on which
+\[
+ |t_{\widehat\tau}|<\ell/2,\qquad
+ r(t_{\widehat\tau})\in\mathcal D(\chi_*),\qquad
+ |\alpha(Y,\widehat\tau)|<\ell/2,
+\]
+where
+\begin{equation}
+ \alpha(Y,\widehat\tau)
+ =\chi_*\!\left(r(t_{\widehat\tau})\right).       \label{eq:trace-scale-phase-match}
+\end{equation}
+Define, for \(\varsigma\in K\),
+\begin{align}
+ E(Y,\widehat\tau)
+ &=r(t_{\widehat\tau})-e_1,\notag\\
+ r^\#(\varsigma)
+ &=r(t_{\widehat\tau}+\varsigma),\notag\\
+ N_Z^\#(\varsigma)
+ &=Z(t_{\widehat\tau}+\varsigma)
+      -Z_*(\alpha(Y,\widehat\tau)+\varsigma),\notag\\
+ N_p^\#(\varsigma)
+ &=p(t_{\widehat\tau}+\varsigma)
+      -p_*(\alpha(Y,\widehat\tau)+\varsigma).
+                                                        \label{eq:trace-scale-chart}
+\end{align}
+Then
+\begin{equation}
+ (Y,\widehat\tau)\longmapsto
+   (\widehat\tau,r^\#,N_Z^\#,N_p^\#)             \label{eq:trace-scale-map}
+\end{equation}
+is \(C^2\) from the displayed strong neighborhood to
+\[
+ \R\times C^d(K;\R)
+       \times C^d(K;E_N)\times C^d(K;\R).
+\]
+In these coordinates the fixed physical-section event row is the bounded
+functional
+\begin{equation}
+ E=r^\#(0)-e_1.                                    \label{eq:trace-scale-event-row}
+\end{equation}
+It is algebraically lossless on the retained moving window: once
+\((\widehat\tau,r^\#,N_Z^\#,N_p^\#)\) is known, put
+\(\alpha=\chi_*(r^\#(0))\) and reconstruct, for
+\(\varsigma\in K\),
+\begin{align}
+ r(t_{\widehat\tau}+\varsigma)&=r^\#(\varsigma),\notag\\
+ Z(t_{\widehat\tau}+\varsigma)
+ &=N_Z^\#(\varsigma)+Z_*(\alpha+\varsigma),\notag\\
+ p(t_{\widehat\tau}+\varsigma)
+ &=N_p^\#(\varsigma)+p_*(\alpha+\varsigma).
+                                                        \label{eq:trace-scale-reconstruction}
+\end{align}
+This is a strong-to-weak moving-window coordinate package, not a
+same-space Banach diffeomorphism or a chart of the unretained part of
+\(K^\ell\).
+
+At \((Y_*,0)\), let a direction be
+\[
+ H_i=(\xi_i,\mathsf z_i,\mathsf p_i,\sigma_i),
+ \qquad
+ B_i=\xi_i(0)+q_e\sigma_i,\qquad
+ A_i=\frac{B_i}{\delta q_e}.                      \label{eq:trace-scale-first-data}
+\]
+The raw translated terminal traces
+\[
+ Z_{\rm raw}^\#(\varsigma)=Z(t_{\widehat\tau}+\varsigma),
+ \qquad
+ p_{\rm raw}^\#(\varsigma)=p(t_{\widehat\tau}+\varsigma)
+\]
+have derivatives
+\begin{align}
+ DE[H_i]&=B_i,\notag\\
+ DZ_{\rm raw}^\#[H_i]
+ &=\mathsf z_i+\delta^{-1}Z_*'\sigma_i,\notag\\
+ Dp_{\rm raw}^\#[H_i]
+ &=\mathsf p_i+\delta^{-1}p_*'\sigma_i.           \label{eq:trace-scale-raw-first}
+\end{align}
+Thus the nonzero-base terminal columns are retained.  The event-aligned
+coordinates instead satisfy the exact triangularization
+\begin{align}
+ DN_Z^\#[H_i]
+ &=\mathsf z_i-\frac{Z_*'}{\delta q_e}\xi_i(0),
+ &DZ_{\rm raw}^\#[H_i]
+ &=DN_Z^\#[H_i]+\frac{Z_*'}{\delta q_e}DE[H_i],
+ \notag\\
+ DN_p^\#[H_i]
+ &=\mathsf p_i-\frac{p_*'}{\delta q_e}\xi_i(0),
+ &Dp_{\rm raw}^\#[H_i]
+ &=DN_p^\#[H_i]+\frac{p_*'}{\delta q_e}DE[H_i].
+                                                        \label{eq:trace-scale-first-triangularization}
+\end{align}
+All unmarked reference functions in these formulas are evaluated at
+\(\varsigma\).
+
+For the second derivative, put
+\begin{align}
+ R_{12}
+ &=\delta^{-1}\xi_1'(0)\sigma_2
+   +\delta^{-1}\xi_2'(0)\sigma_1
+   +\delta^{-2}r_*''(0)\sigma_1\sigma_2,\notag\\
+ A_{12}
+ &=\frac{R_{12}-r_*''(0)A_1A_2}{\delta q_e}.
+                                                        \label{eq:trace-scale-second-data}
+\end{align}
+The second event derivative is
+\begin{equation}
+ D^2E[H_1,H_2]=R_{12}.                              \label{eq:trace-scale-event-second}
+\end{equation}
+Then
+\begin{align}
+ D^2N_Z^\#[H_1,H_2]
+={}&\delta^{-1}\{
+   \mathsf z_1'\sigma_2+\mathsf z_2'\sigma_1\}
+ +\delta^{-2}Z_*''\sigma_1\sigma_2\notag\\
+ &{}-Z_*'A_{12}-Z_*''A_1A_2,                     \label{eq:trace-scale-Z-second}\\
+ D^2N_p^\#[H_1,H_2]
+={}&\delta^{-1}\{
+   \mathsf p_1'\sigma_2+\mathsf p_2'\sigma_1\}
+ +\delta^{-2}p_*''\sigma_1\sigma_2\notag\\
+ &{}-p_*'A_{12}-p_*''A_1A_2.                     \label{eq:trace-scale-p-second}
+\end{align}
+In particular, the pure \(\widehat\tau^2\) reference column cancels
+identically, but the mixed path--event columns do not.
+
+With the scaled strong norm in
+\cref{eq:moving-trace-strong-norm}, raw translation obeys
+\begin{align}
+ \|D_{\widehat\tau}\mathcal T x\|_{d,\delta}
+ &\le\delta^{-2}\|x\|_{d+1,\delta},\notag\\
+ \|D_{\widehat\tau}^2\mathcal T x\|_{d,\delta}
+ &\le\delta^{-4}\|x\|_{d+2,\delta}.              \label{eq:trace-scale-translation-losses}
+\end{align}
+The first power is sharp by
+\cref{prop:event-aligned-normal-traces}; the second follows from the same
+rescaling.  The alignment cancels pure reference translations but does not
+turn these raw strong-to-weak losses into same-space bounds.
+
+This lemma constructs only \(C^2\) moving-window coordinates for an already
+available strong terminal buffer.  It does not produce that buffer, a parameterized RFDE
+solution map, a fixed-chart nonlinear residual, a moving-event inverse, a
+physical endpoint family, or a connection root.
+\end{lemma}
+
 \begin{proposition}[Exact phase-delay shift and state-norm obstruction]
 \label[proposition]{prop:phase-delay-action-shift}
 Retain \cref{prop:fixed-phase-green-collar-buffer,%

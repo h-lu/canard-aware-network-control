@@ -1,7 +1,8 @@
 # Paper A: mixed tracker BVP and physical representative class
 
-Status: **proof contract for the terminal-to-terminal tracker family; an
-exact generated-interior tracker theorem is now proved.**
+Status: **proof contract for the terminal-to-terminal tracker family; the
+exact generated-interior tracker and the nonlinear terminal trace-scale
+coordinate theorem are now proved.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -39,6 +40,11 @@ deep generated interiors now have exact physical-coordinate tracker,
 quotient, and Volterra realizations.  They do not supply the moving terminal
 family, a past orbit, physical branch endpoints, or the cross-branch tracker
 targeted here.
+Lemma `lem:terminal-relative-trace-scale-chart` now supplies the exact
+nonlinear `C^2` strong-to-weak coordinate calculus on any already available
+strong terminal buffer, including the nonzero terminal columns and mixed
+event derivatives.  It does not construct that buffer, the fixed-section hit
+map, or the hybrid moving-event residual and inverse.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -801,6 +807,10 @@ gauges.
       delay collars beyond the first maximal delay, including exact
       backtracks, uncut history windows, uniform resource-gauge collar
       bounds, and the `O(S_delta^(-1))` Volterra realization.
+- [x] Terminal-relative nonlinear `C^2` strong-to-weak moving-window
+      coordinates on a supplied strong buffer, including the retained event
+      displacement, derived fixed-section row, nonzero-base terminal columns,
+      mixed second derivatives, and sharp translation losses.
 - [ ] Terminal-to-terminal nonlinear tracker family and Green--collar
       reconstruction at the physical endpoints.
 - [ ] Full action-weighted nonautonomous quotient roughness theorem,
@@ -821,5 +831,6 @@ gauges.
 
 Until the unchecked items are proved, Paper A must continue to say that the
 terminal-to-terminal physical tracker family, gap, and root do not yet exist
-as theorems.  The generated-interior representative above is a theorem, but
-it neither selects the physical endpoints nor compares preparations.
+as theorems.  The generated-interior representative and terminal trace-scale
+coordinates above are theorems, but neither selects the physical endpoints
+nor compares preparations.

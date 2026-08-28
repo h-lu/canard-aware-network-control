@@ -38,7 +38,10 @@ forward-transverse/future-scalar kernels and a terminal first-exit action.
 The high-order repelling compatibility feedback and the zeroth-order
 normal-to-phase action column are also closed.  The formal reverse
 phase-delay core and fixed-`r` event-aligned normal trace are now closed as
-well.  The raw-compatible phase collar, affine-residual normal column, and
+well.  A nonlinear `C^2` terminal-relative strong-to-weak moving-window
+coordinate theorem now retains the event displacement, the nonzero terminal
+columns, and all mixed second derivatives on a supplied strong buffer; it is
+not yet the buffer, hit map, or moving-event inverse.  The raw-compatible phase collar, affine-residual normal column, and
 fixed-base border have since been closed.  An inner-anchored nonlinear phase
 chart and its relative Schur inverse remove the constant mode, while the
 relative phase-to-state estimate recovers normalized state and pointwise
