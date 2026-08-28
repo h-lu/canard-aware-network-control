@@ -7,7 +7,16 @@ linear Green splitting for finite endpoint traces, including the exact
 cancellation coordinate, dimension-uniform slow bounds, action-weighted
 boundary lifts, and the sharp one-derivative loss in `Q`.  It does not lift a
 compatible complete RFDE collar and therefore does not construct the
-nonlinear tracker targeted by this contract.
+nonlinear tracker targeted by this contract.  Proposition
+`prop:nonlinear-resource-defect-normal-form` now proves the exact nonlinear
+cancellation coordinate and its local `C^0` speed reconstruction, while
+`prop:compatible-endpoint-jet-collar` constructs the dimension-uniform
+raw-compatible endpoint-history chart with the exact resource-defect/speed
+bridge.  The latter is not a right inverse for arbitrary Green sources.
+Proposition `prop:endpoint-scale-not-slow-speed` proves that the remaining
+Green--collar coupling needs a hybrid slow/action estimate or a first-delay
+buffer: a finite `mathfrak p=O(delta^2)` trace alone does not control the
+slow-speed norm.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -144,6 +153,22 @@ block Neumann argument.  Algebraic recovery of `Q` loses one slow derivative,
 and the theorem proves by counterexample that this loss cannot be removed
 from the stated coefficient hypotheses.
 
+The cancellation is now exact beyond the principal block.  With
+`mathfrak p_nl=w_seed-w`, Proposition
+`prop:nonlinear-resource-defect-normal-form` proves
+
+```text
+mathfrak p_nl
+  = delta^2 Q + ell_N Z + h_c - delta^2 Delta D_c,
+```
+
+and rewrites both projected tracker equations without derivatives of `h_c`,
+`Delta D_c`, or `Q` in the forcing.  The retained differential block is the
+proved principal Green system; the full Fréchet derivative also contains
+the explicitly displayed `delta^2`-weighted delay/backtrack terms.  Around
+each admissible base point, `Q` is locally reconstructed in `C^0` because
+`D_Q Delta D_c=O(delta)`.
+
 ## 3. Mixed boundary geometry
 
 The physical speed is negative on both outer branches, so time moves toward
@@ -179,33 +204,50 @@ B_tr^r(Z,Q)
 
 The row must be uniformly transverse to the homogeneous principal `Q` mode,
 and the inner collar must lie in the high-regularity compatible
-solution-manifold history space fixed in Section 4.  The missing Green lemma
-is now only the complete-collar upgrade: it must define `Tr_in^hist`, the
-terminal history row, their compatibility conditions, and prove that
-`(L_z,L_q,B_tr^r)` is a dimension-uniform isomorphism after the compatible
-collar lift is split off.  Proposition
+solution-manifold history space fixed in Section 4.  The raw-compatible
+endpoint chart and its exact finite trace count are now proved.  The missing
+Green lemma must couple that chart to `Tr_in^hist` and the terminal history
+row, and prove that `(L_z,L_q,B_tr^r)` is a dimension-uniform hybrid
+isomorphism after the compatible collar lift is split off.  Proposition
 `prop:principal-tracker-endpoint-green` already proves the corresponding
 finite endpoint trace, mixed terminal orientation, and boundary-layer
 estimates.  No quotient stable sheet or outer graph may enter this Stage-I
 boundary operator.
 
 There is one further causal datum.  For `r` within one delay of
-`-rho_delta`, the physical backtrack samples `q` on the old-side extension of
-the branch.  Fix an anchored old-speed collar
+`-rho_delta`, the physical backtrack samples the old side of the branch.
+The old speed is not an independently anchored scalar function.  Proposition
+`prop:compatible-endpoint-jet-collar` constructs a raw-compatible history
 
 ```text
-q_old = Gamma_q^old[Q(-rho_delta), hat_gamma_q]
-        on [-rho_delta,-rho_delta+ell_delta].
+(phi_e,omega_e)
+  = Gamma_e^h[Z_e,p_e,hat_gamma;nu,eta],
 ```
 
-Its value at the endpoint is the unknown `Q(-rho_delta)` produced by the
-mixed BVP, not a second scalar boundary condition.  The shape datum
-`hat_gamma_q`, its raw-equation compatibility rows, and the uniformly bounded
-anchored extension operator `Gamma_q^old` are part of the collar space and
-must be compared between gauges.  Equivalently one may solve `Q` on the
-delay-enlarged interval, but then the Green theorem must supply the same
-trace count and may not impose both an independent inner value and the outer
-terminal row.
+where `p_e=w_seed(e)-omega_e`, the endpoint derivative jets are determined
+by the raw RFDE compatibility recursion, and `hat_gamma` is a collar gauge,
+not a Fredholm row.  The collective history derives the speed through
+
+```text
+r_phi(theta) = pi_N^T(phi_e(theta)-1),
+q_old(r_phi(theta)) = delta^(-1) r_phi'(theta),
+r_phi(theta) = Phi_(q_old)^(delta theta)(e).
+```
+
+The first compatibility row proves exactly
+
+```text
+delta^2 {q_old(e)-q_0(e)}
+ = p_e - ell_N(e) Z_e - h_c(e,Z_e)
+   + delta^2 {D_c[phi_e]-D_0,c(e)},
+```
+
+so `p_e` is the nonlinear tracker trace and not a second scalar boundary
+condition.  The chart carries the full rectangular parameter jet in fixed
+`theta` coordinates.  Eulerian fixed-`r` parameter differentiation loses
+history derivatives, so the first-delay collar must remain in the pullback
+chart or be treated by a new hybrid right inverse.  The proved chart does
+not imply that an arbitrary Green source has those compatibility jets.
 
 Only after that tracker exists does Stage II retain the stable
 voltage-history coordinate at the inner collar and prescribe the scalar
@@ -304,7 +346,10 @@ contradicts it for `epsilon y'+y=f`.  The proved endpoint Green theorem
 includes this no-gain statement, uses singular boundary-layer norms for
 arbitrary finite endpoint mismatches, and establishes the required uniform
 `r`-regularity of `z_0,w_0,B_N,ell_N`.  Compatible complete-history collar
-lifts at these orders remain to be constructed.
+lifts now exist as raw endpoint charts at these orders.  What remains is a
+bounded Green-to-collar coupling: either contract first in a piecewise/
+hybrid space and bootstrap compatibility at the fixed point, or construct a
+source-jet-dependent collar right inverse.
 
 The backtrack is differentiated through
 
@@ -349,7 +394,11 @@ measured in `(Z,mathfrak p)` rather than the top slow `Q` norm.
 Here `b` is generally a compatible complete collar history in
 `H_cap^(k+3)`, together with the scalar resource compatibility row; it is not
 merely a finite-dimensional endpoint amplitude.  The missing Green lemma
-must construct its bounded trace and lift at every rung of the scale.  The
+is now specifically the hybrid coupling: the raw collar chart constructs
+compatible histories and fixes the exact trace count, but it does not turn
+arbitrary Green data into a compatible lift.  The new lemma must couple its
+bounded trace to the Green inverse at every rung while controlling the
+old-speed boundary layer.  The
 slow norms apply only to `(Z_slow,Q_slow)`; the boundary layer is measured by
 its history amplitude and the capped Green weight.  Restricting all gauges
 to artificially matched slow boundary values would defeat the
@@ -360,9 +409,11 @@ representative-class comparison.
 The tracker and its entry into the retained fold chart are not closed until
 all eight items below are proved.
 
-1. Upgrade the proved dimension-uniform finite-endpoint Green inverse and
-   explicit boundary-layer coordinate to compatible complete-history collar
-   traces for the attracting BVP and repelling Stage-I mixed BVP.  The
+1. Couple the proved dimension-uniform finite-endpoint Green inverse and
+   explicit boundary-layer coordinate to the proved raw-compatible endpoint
+   chart for the attracting BVP and repelling Stage-I mixed BVP.  This must
+   use a slow/action hybrid norm or an explicit first-delay buffer, because
+   `mathfrak p(e)=O(delta^2)` does not control the slow-speed norm.  The
    repelling strong scalar already uses its terminal Green operator; forward
    shooting remains forbidden.
 2. Weighted `C^k` bounds for `q -> r_k(q)` and for all delayed compositions,
@@ -414,8 +465,9 @@ all eight items below are proved.
 An admissible physical endpoint gauge `g` consists only of raw-RFDE data:
 
 - an attracting compatible history on the fixed outer collar;
-- the repelling Stage-I data `(gamma_in,hat_gamma_q,b_q)`, including the
-  anchored old-speed collar and the scalar terminal tracker row;
+- the repelling Stage-I data `(gamma_in,hat_gamma,b_q)`, including the raw
+  compatible collar whose collective history derives the old speed, and the
+  scalar terminal tracker row;
 - a transverse strong-unstable terminal graph on the repelling outer
   section, retaining all stable-history coordinates;
 - one common `r`-phase and one common slow-history tube;
@@ -552,13 +604,21 @@ gauges.
 - [x] Principal finite-endpoint Green splitting with dimension-uniform slow
       bounds, mixed repelling orientation, action-weighted boundary lifts,
       and the sharp regularity ladder.
-- [ ] Repelling Stage-I tracker trace/terminal operator and compatible
-      high-regularity collar lift.
+- [x] Exact nonlinear resource-defect normal form, full linearization, and
+      local `C^0` reconstruction of the physical speed.
+- [x] Dimension-uniform raw-compatible endpoint-jet collar chart, including
+      the exact `p_e`-to-speed/backtrack bridge and fixed-`theta` `J_phys`
+      parameter jets.
+- [x] Sharp obstruction showing that finite endpoint `mathfrak p` scale does
+      not control the slow-speed class.
+- [ ] Repelling Stage-I Green trace/terminal operator coupled to the raw
+      collar chart through a hybrid slow/action inverse or first-delay
+      buffer.
 - [x] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
       ladder orders.
 - [x] Backtrack/composition parameter jets through the weighted third
       Fréchet derivative needed for `J_phys`.
-- [ ] Nonlinear tracker contraction and collar reconstruction.
+- [ ] Nonlinear tracker contraction and Green--collar reconstruction.
 - [ ] Full action-weighted nonautonomous quotient roughness theorem,
       including Volterra, phase-row, moving-projection, delay, `q`, and
       parameter-jet terms.

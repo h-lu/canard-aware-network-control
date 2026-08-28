@@ -3,8 +3,11 @@
 Status: **the unprepared critical curve, formal truncated reduced actions,
 the positive-`delta` frozen-resource voltage history splitting, physical
 backtrack calculus, principal finite-endpoint Green splitting, and a sharp
-nonselection obstruction are proved; the compatible nonlinear RFDE tracker
-and phase-quotiented nonautonomous slow-history theorem are open.**
+nonselection obstruction are proved.  The exact nonlinear resource-defect
+normal form and a raw-compatible endpoint-history collar chart are also
+proved, together with a boundary-layer obstruction showing why they do not
+yet close the nonlinear RFDE tracker.  The hybrid Green--collar tracker and
+phase-quotiented nonautonomous slow-history theorem remain open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -112,7 +115,22 @@ on both branches, the correct mixed terminal orientation on the repelling
 branch, and action-weighted homogeneous boundary lifts.  It also proves that
 `Q` loses one slow derivative and that the loss is sharp under the listed
 coefficient hypotheses.  This theorem does not construct the compatible
-complete-history collar lift or solve the nonlinear tracker equation.
+complete-history Green lift or solve the nonlinear tracker equation.
+
+Proposition `prop:nonlinear-resource-defect-normal-form` identifies the
+exact cancellation coordinate with the physical resource defect
+`mathfrak p_nl=w_seed-w`, gives the full nonlinear normal form without
+derivatives of the nonlinear collective remainders in the forcing, and
+locally reconstructs `Q` in `C^0`.  Proposition
+`prop:compatible-endpoint-jet-collar` constructs a dimension-uniform
+raw-RFDE compatible collar chart; its collective history derives `q_old`,
+and its first compatibility row is exactly the nonlinear endpoint
+`mathfrak p_nl` reconstruction.  It is a chart of solution-manifold
+histories, not a source-wise Green right inverse.  Proposition
+`prop:endpoint-scale-not-slow-speed` proves sharply that an
+`O(delta^2)` finite endpoint resource defect may still generate an
+unbounded slow-speed boundary layer.  Thus the next gate is a hybrid
+slow/action Green--collar coupling or first-delay buffer.
 
 ## 2. The exact curve-restricted physical equation
 
@@ -380,8 +398,15 @@ not acceptable.
 - [x] Principal finite-endpoint Green splitting, including high-order
       critical coefficients, the mixed repelling terminal orientation, and
       action-weighted boundary layers in `(Z,mathfrak p)`.
-- [ ] Compatible high-regularity complete-history collar lift and nonlinear
-      tracker contraction on both outer branches.
+- [x] Exact nonlinear resource-defect normal form and local `C^0` speed
+      reconstruction.
+- [x] Raw-compatible high-regularity endpoint collar chart with exact
+      resource-defect/speed/backtrack bridge and fixed-history parameter
+      jets.
+- [x] Boundary-layer obstruction to deriving slow-speed control from a
+      finite endpoint resource-defect scale alone.
+- [ ] Hybrid Green--collar/first-delay coupling and nonlinear tracker
+      contraction on both outer branches.
 - [ ] Phase-quotiented nonautonomous normal splitting along a true slow
       history.
 - [ ] Attracting representative and repelling codimension-one history sheet

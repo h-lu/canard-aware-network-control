@@ -1,7 +1,10 @@
 # Paper A: weighted complete-history connection conormal
 
 Status: **the selected-connection front-face theorem is supported by the
-current estimates; the physical identification gate is open.**
+current estimates; the exact nonlinear tracker normal form and a
+raw-compatible endpoint collar chart are now proved, but their hybrid Green
+coupling, the physical tracker, and the physical identification gate remain
+open.**
 
 This note tracks
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -159,8 +162,16 @@ invariance equation for such a history.  Proposition
 `prop:exact-resource-gauge-quotient` then removes the apparently large
 resource coupling exactly and conjugates the quotient to a standard voltage
 RFDE with an `O(S_delta^(-1))` Volterra correction in the adapted norm.
-These results neither construct the tracker nor prove a dichotomy for the
-quotient.  The following
+Proposition `prop:nonlinear-resource-defect-normal-form` now upgrades the
+principal cancellation to the exact physical resource defect and proves a
+local `C^0` speed coordinate.  Proposition
+`prop:compatible-endpoint-jet-collar` constructs the raw-compatible
+endpoint-history chart and exact `p_e`-to-speed/backtrack bridge without an
+extra Fredholm row.  Proposition `prop:endpoint-scale-not-slow-speed` proves
+that this chart cannot simply be attached to the finite endpoint Green
+theorem: a hybrid slow/action estimate or first-delay buffer is necessary.
+These results still neither construct the tracker nor prove a dichotomy for
+the quotient.  The following
 finite-`delta` items remain unproved uniformly in `N`:
 
 1. a phase-quotiented, nonautonomous outer normal splitting along a true
@@ -242,8 +253,14 @@ Do not:
 - [x] Prove the principal finite-endpoint Green splitting with the exact
       cancellation coordinate, mixed repelling orientation, action-weighted
       boundary lifts, and sharp regularity loss.
-- [ ] Upgrade finite endpoint traces to compatible complete-history collar
-      lifts and close the nonlinear outer tracker.
+- [x] Prove the exact nonlinear resource-defect normal form and local `C^0`
+      speed reconstruction.
+- [x] Construct the raw-compatible endpoint-history collar chart with its
+      exact speed/backtrack bridge, and prove the finite-endpoint slow-speed
+      obstruction.
+- [ ] Couple the finite endpoint Green inverse to the collar chart in a
+      hybrid slow/action or first-delay space and close the nonlinear outer
+      tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.

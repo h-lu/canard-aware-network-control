@@ -37,6 +37,8 @@ fixed.
 | Exact tracker/quotient interface | `prop:exact-outer-history-equation`, `prop:physical-history-phase-quotient`, `prop:exact-resource-gauge-quotient` | Uncut if-and-only-if tracker equation; genuine transported longitudinal history; exact stationary-gauge quotient; resource-gauge triangularization and $O(S_\delta^{-1})$ Volterra realization. Conditional on tracker existence and collar bounds; no tracker or dichotomy existence claim |
 | Physical backtrack calculus | `prop:physical-backtrack-calculus` | Uniform weighted derivatives of the state-dependent physical delay map and the joint delayed composition/difference through three Fr\'{e}chet derivatives; raw backtrack variations are $O(\delta)$ and their relative contribution is $O(S_\delta^{-1})$ on the logarithmic collar, uniformly in $N$ and $\delta$ |
 | Principal endpoint Green splitting | `prop:principal-tracker-endpoint-green` | Exact cancellation coordinate $\mathfrak p=\delta^2Q+\ell_NZ$; dimension-uniform slow right inverse, mixed repelling endpoint lift, action-weighted boundary layers, and sharp one-derivative loss in $Q$. Finite endpoint traces only: no compatible complete-history collar lift or nonlinear tracker |
+| Exact nonlinear tracker normal form | `prop:nonlinear-resource-defect-normal-form` | The cancellation coordinate is exactly the physical resource defect $\mathfrak p_{\rm nl}=w_{\rm seed}-w$; exact nonlinear $(Z,\mathfrak p_{\rm nl},Q)$ identities, full Fr\'{e}chet differential, and a local dimension-uniform $C^0$ speed coordinate. No nonlinear tracker fixed point is asserted |
+| Raw-compatible endpoint collars | `prop:compatible-endpoint-jet-collar`, `prop:endpoint-scale-not-slow-speed` | Dimension-uniform Hermite endpoint-jet chart satisfying the raw RFDE compatibility recursion; exact resource-defect/speed/backtrack bridge and fixed-history parameter jets, with no extra Fredholm row. The chart is not a Green right inverse, and a sharp scalar boundary layer proves that finite endpoint scale does not control the slow-speed norm |
 | Truncated reduced actions | `cor:outer-reduced-actions` | Formal critical-curve speed and two positive truncated actions for the reduced critical-layer equation; not an invariant slow-history action |
 | Weak-selection obstruction | `prop:backward-asymptotic-nonselection` | A common phase row, convergence in an unnormalized history norm, and superalgebraic strong-history closeness do not by themselves select a unique tame RFDE history family; generic logical counterexample, not a model-specific impossibility theorem |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
@@ -134,10 +136,13 @@ The limits separate exactly:
 - The preparation-independent critical curve, frozen-resource
   positive-`delta` voltage-history splitting, truncated reduced actions,
   exact tracker/quotient identities, physical-backtrack calculus, and
-  principal finite-endpoint Green splitting are proved precursors.  The
-  quotient identities assume an exact tracker, while the Green theorem has
-  only finite endpoint traces; together they do not construct a compatible
-  RFDE tracker or prove its normal dichotomy.  The generic nonselection example is a logical
+  principal finite-endpoint Green splitting are proved precursors.  The exact
+  nonlinear resource-defect normal form and raw-compatible endpoint collar
+  chart are also proved.  The quotient identities assume an exact tracker,
+  while the collar chart is not a right inverse for arbitrary Green sources;
+  a proved boundary-layer obstruction forces a hybrid slow/action or
+  first-delay coupling.  These results do not yet construct an RFDE tracker
+  or prove its normal dichotomy.  The generic nonselection example is a logical
   counterexample to weak selection criteria, not a model-specific
   impossibility theorem; tracker existence, quotient roughness, and all of
   G1 remain open.

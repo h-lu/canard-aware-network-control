@@ -359,6 +359,14 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Derive the exact uncut tracker equation, genuine longitudinal history
       cocycle, stationary-coordinate quotient, and resource-gauge Volterra
       realization conditional on tracker existence.
+- [x] Prove the physical-backtrack parameter calculus, principal
+      finite-endpoint Green splitting, exact nonlinear resource-defect
+      normal form, and raw-compatible endpoint-history collar chart.
+- [x] Prove that finite endpoint resource-defect scale alone does not control
+      the slow-speed class.
+- [ ] Couple the Green inverse to the compatible collar chart through a
+      hybrid slow/action estimate or first-delay buffer and close the
+      nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
