@@ -67,10 +67,15 @@ derivative.  The nonlinear raw-compatible old-history assembler is now
 constructed directly by the finite compatibility recursion on a
 fixed-reference ball.  It includes the second endpoint jet and a
 dimension-uniform normalized quadratic graph remainder, without comparing
-the full fixed and moving fading norms.  The full assembled normal residual,
-higher parameter jets, moving-event estimates, the nonlinear tracker,
-nonautonomous normal splitting, and the finite-`delta` physical slow-history
-relation remain open.
+the full fixed and moving fading norms.  These modules are now assembled into
+an exact fixed-parameter, inner-anchored nonlinear graph--action residual.
+Its derivative is precisely the existing raw-compatible Schur isomorphism,
+its normalized base defect is
+`O(r_out+S_delta^(-2))`, and it has a dimension-uniform quadratic/two-point
+remainder.  Existence of a zero is not claimed.  The quantitative branch
+solution, higher parameter jets, moving-terminal estimates, the nonlinear
+tracker, nonautonomous normal splitting, and the finite-`delta` physical
+slow-history relation remain open.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag

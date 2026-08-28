@@ -398,7 +398,7 @@ not the conormal of an independently defined physical maximal-canard locus.
       norm and its two-point Lipschitz estimate.
 - [x] Construct a uniformly graph-tame $C^2$ raw-compatible old-history
       assembler, including the endpoint/collar second jet.
-- [ ] Prove a fixed-section nonlinear graph/action residual with a
+- [x] Prove a fixed-section nonlinear graph/action residual with a
       dimension-uniform quadratic remainder.
 - [ ] Prove the terminal-relative moving-event $C^2$ chart, then construct
       the nonlinear outer tracker.
@@ -420,11 +420,14 @@ relative one-row Schur inverse remove the constant-phase obstruction to a
 same-sign tube at the scalar phase/fixed-base linear level.  On the anchored
 relative subspace, the exact delay profile now yields a uniform returned-state
 bound and pointwise true action in an equivalent graph--action norm; the
-unrestricted old-state obstruction remains.  A uniform nonlinear normal tube
-is not yet constructed.  The fixed-reference $C^2$ old-history assembler,
-including its endpoint/collar second jet and normalized quadratic remainder,
-is now closed.  The fixed-section assembled residual, relative-parameter jets,
-moving-event control, nonlinear tracker existence,
+unrestricted old-state obstruction remains.  The fixed-reference $C^2$
+old-history assembler, including its endpoint/collar second jet and normalized
+quadratic remainder, is now closed.  Its exact fixed-section assembly with the
+nonlinear phase-delay and normal equations is also closed: the base defect is
+$O(r_{\rm out}+S_\delta^{-2})$, the differential is the uniform anchored
+Schur block, and the remainder is uniformly quadratic in two-point form.  A
+zero of that residual, relative-parameter jets, moving-event control,
+nonlinear tracker existence,
 nonautonomous quotient roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.
 This zeroth-order border does not close Issue #32 and does not

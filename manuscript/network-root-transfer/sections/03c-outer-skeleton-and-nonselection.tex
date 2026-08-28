@@ -4046,6 +4046,369 @@ tracker existence has been inferred.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{thm:fixed-section-nonlinear-graph-residual}]
+We first verify the exact assembly, before making any estimate.  Extend the
+current normal path by
+\[
+ \widehat Z_x(s)=
+ \begin{cases}
+  \gamma_x(s),&-\theta_m\le s<0,\\
+  Z_x(s),&s\ge0.
+ \end{cases}
+\]
+The seam condition in \(\mathcal D(\mathscr N_\sigma)\) makes this
+extension continuous.  On the old segment \(\widehat Z_x=\gamma_x\) is
+an additive voltage correction; it is not asserted to lie in \(E_N\).
+The formal part of the complete voltage history is
+the \(q_0\)-flow history used in
+\cref{eq:nonlinear-phase-delay-functional}; its current phase is
+\(r_a(s)=\Theta_a(r_0(s))\).  Since the network delay is linear in the
+voltage history, adding the normal history gives the identity
+\begin{align}
+ &K\sum_kL_{k,N}
+    \{\widehat v_{x,a}(s)-\widehat v_{x,a}(s-\theta_k)\}
+          -\mathcal D_{0,N}(r_a(s))\notag\\
+ &\qquad=\Pi_{\sigma,N}(a)(s)
+  +K\sum_kL_{k,N}
+       \{\widehat Z_x(s)-\widehat Z_x(s-\theta_k)\}\notag\\
+ &\qquad=\Pi_{\sigma,N}(a)(s)+D_N(x)(s).          \label{eq:proof-fixed-section-delay-split}
+\end{align}
+No Taylor expansion is used here.  This proves
+\cref{eq:fixed-section-exact-delay-splitting} whenever the boundary row is
+imposed.
+
+Substitute \cref{eq:proof-fixed-section-delay-split} into
+\cref{eq:fold-time-speed-reconstruction}.  The result is exactly
+\cref{eq:fixed-section-nonlinear-speed}.  Next subtract the fixed-base
+linear \(Z\)-row in \cref{eq:fixed-phase-normal-block} from
+\cref{eq:fold-time-tracker-Z}.  The uncancelled terms are
+\cref{eq:fixed-section-nonlinear-Z-source}.  Subtracting the corresponding
+\(p\)-row gives
+\cref{eq:fixed-section-nonlinear-p-source}; in particular the last brace is
+\[
+ \varepsilon^2\{(q_0(r_a)+Q^{\rm nl})d_a-d_0Q_{\rm n}\}.
+\]
+Keeping both terms is essential: their \(x\)-differentials cancel at the
+base.  Finally, the exact scalar identity
+\cref{eq:nonlinear-phase-row-identity} says that the collective
+row is precisely
+\[
+ \mathscr B_{\phi,\sigma}^{\rm nl}(a)
+             -Q_\sigma^{\rm nl,\flat}(x,a)=0.
+\]
+This proves that \cref{eq:fixed-section-nonlinear-residual} is the exact
+fixed-section residual of the fold-time equations.
+
+We next check that the boundary package has neither a missing nor a
+duplicated row.  The exact Hermite identity
+\cref{eq:nonlinear-raw-history-exact-Hermite} gives
+\[
+ \mathscr H_{e_*}^{\rm rc}(c,(0,p,0))(0)=0.
+\]
+Thus the equation for the first normal-data component, together with the
+seam already built into \(\mathcal D(\mathscr N_\sigma)\), forces
+\(Z_x(0)=\gamma_x(0)=0\).  On the attracting branch the second component
+of \(\mathscr N_a\) independently imposes \(p_x(0)=0\).  On the repelling
+branch, the equation
+\[
+ \gamma_x-\mathfrak C_ep_x(0)
+ =\mathscr H_{-\rho_\delta}^{\rm rc}
+       (c_r,(0,p_x(0),0))-\mathfrak C_ep_x(0)
+\]
+is equivalent to the single history equation
+\(\gamma_x=\mathscr H_r^{\rm can}(x,a)\), while the remaining finite row
+is \(p_x(S_r)=0\).  Hence the seam is not imposed a second time.
+
+We now compute the differential.  At \(u=(x,a)=0\),
+\begin{equation}
+\begin{gathered}
+ \Pi_N(0)=0,\qquad
+ D\Pi_N(0)a=\mathscr P_{\sigma,N}a,\qquad
+ DQ_\sigma^{\rm nl}(0)(x,a)
+ =Q_{\rm n}[x]+\mathscr P_{c,\sigma,N}a.
+\end{gathered}                                    \label{eq:proof-fixed-section-speed-linearization}
+\end{equation}
+The quadratic maps \(h_{c,N}\) and \(h_{\perp,N}\) have zero differential
+at \(Z=0\).  Differentiating
+\cref{eq:fixed-section-nonlinear-Z-source} in \(a\) therefore gives
+\[
+ -q_0R_{z,N}'a
+ +\varepsilon\{\mathscr P_{\perp,\sigma,N}a
+       -z_{0,N}'\mathscr P_{c,\sigma,N}a\}
+ =\mathscr C_{Z,\sigma}a.
+\]
+Its \(x\)-differential is zero.  In the \(p\)-source, the \(x\)-part of
+the last brace is
+\[
+ \varepsilon^2\{d_0Q_{\rm n}[x]-d_0Q_{\rm n}[x]\}=0.
+\]
+The \(a\)-part, including the derivative of \(q_0(r_a)d_a\), is
+\begin{align*}
+ &\varepsilon w_0'\mathscr P_{c,\sigma,N}a
+ +\varepsilon^2d_0\mathscr P_{c,\sigma,N}a
+ +\varepsilon^2q_0(q_0d_0)'a\\
+ &\qquad=\varepsilon\{w_0'+\varepsilon d_0\}
+       \mathscr P_{c,\sigma,N}a
+       +\varepsilon q_0R_{q,N}'a
+ =\mathscr C_{p,\sigma}a.
+\end{align*}
+Here \(R_{q,N}=\varepsilon q_0d_0\).  Thus the bulk differential is the
+formal phase column of
+\cref{eq:exact-phase-normal-source-column}.
+
+For the history row,
+\cref{eq:nonlinear-raw-history-first-jets} gives
+\[
+ \partial_c\mathscr H_{e_*}^{\rm rc}(0,0)
+       =\gamma_{e_*}^{\rm ph}.
+\]
+By the definition of the closed compatible feedback in
+\cref{eq:fixed-phase-collar-feedback}, the \(p\)-column of the repelling
+assembler is
+\[
+ D_p\mathscr H_{-\rho_\delta}^{\rm rc}(0,0)p
+       =\mathfrak C_ep.
+\]
+It cancels the explicit subtraction in
+\cref{eq:canonical-nonlinear-history-rows}.  The attracting package has no
+variable endpoint data.  Hence the complete differential of
+\(\mathscr S_\sigma^{\rm nl}\) is
+\begin{equation}
+ D\mathscr S_\sigma^{\rm nl}(0)(x,a)
+       =\mathscr N_\sigma T_\sigma^{\rm rc}a,     \label{eq:proof-fixed-section-normal-source-linearization}
+\end{equation}
+and contains no \(x\)-column.  Combining
+\cref{eq:anchored-nonlinear-full-linearization,%
+eq:proof-fixed-section-speed-linearization,%
+eq:proof-fixed-section-normal-source-linearization}
+proves \cref{eq:fixed-section-nonlinear-linearization}.  Its inverse is
+the one in
+\cref{eq:inner-anchored-schur-inverse}, with the equivalent graph--action
+norm from \cref{eq:relative-graph-action-equivalence}.
+
+It remains to prove that the exact formulas define a tame map in that
+space.  Put
+\[
+ A=\|a\|_{\phi,\mathrm{rel}},\qquad
+ R=\|(x,a)\|_{\mathcal G_{\sigma,\delta}^{\rm rga}},
+ \qquad P=\mathscr P_{c,\sigma,N}a,
+\]
+and use the shifted quantities
+\[
+ p^\sharp=p_x+\varepsilon P,\qquad
+ Q^\sharp=Q_{\rm n}[x]+P.
+\]
+By definition of the graph--action norm,
+\begin{equation}
+ \|Z_x(r)\|_N\le\varepsilon R,\qquad
+ |p^\sharp(r)|\le\varepsilon|r|R,\qquad
+ |Q^\sharp(r)|\le|r|R,\qquad
+ \|\gamma_x\|_{N,e_\sigma,\delta}^\sharp
+       \le\varepsilon R.                         \label{eq:proof-fixed-section-rga-scales}
+\end{equation}
+The formal entry extension gives \(P(0)=0\) on the repelling branch.
+Consequently
+\begin{equation}
+ |p_x(0)|\le\varepsilon\rho_\delta R,\qquad
+ \|(0,p_x(0),0)\|_{\mathrm{col},-\rho_\delta}
+       \le\varepsilon R.                         \label{eq:proof-fixed-section-repelling-data-scale}
+\end{equation}
+This is the reason for using \(p^\sharp\).  Replacing
+\cref{eq:proof-fixed-section-rga-scales} by the older
+\(m_\delta\)-bound would introduce the unbounded ratio
+\(m_\delta(r)/|r|\) at \(r=\rho_\delta\).
+
+The phase chart and the coefficient estimates
+\cref{eq:principal-green-coefficients,eq:principal-green-q-bounds}
+give, on a fixed small ball,
+\begin{equation}
+ |r_a-r_0|\le C|r_0|A,\qquad
+ |b(r_a)-b(r_0)|\le C\omega_b(r_0)A,              \label{eq:proof-fixed-section-moving-coefficients}
+\end{equation}
+where one may take
+\[
+ \omega_{\mathcal C}=\omega_{z_0'}=\omega_{w_0'}
+   =\omega_\ell=|r_0|,\qquad \omega_d=1.
+\]
+Taylor's formula gives the corresponding quadratic and two-point
+remainders after subtracting \(q_0b'a\).  For the affine residuals those
+remainders satisfy
+\begin{align}
+ \|R_{z,N}(r_a)-R_{z,N}(r_0)
+          -q_0R_{z,N}'(r_0)a\|_N
+ &\le C\varepsilon|r_0|A^2,\notag\\
+ |R_{q,N}(r_a)-R_{q,N}(r_0)
+          -q_0R_{q,N}'(r_0)a|
+ &\le C\varepsilon A^2.                          \label{eq:proof-fixed-section-affine-remainders}
+\end{align}
+The same bounds with \(A^2\) replaced by
+\((A+B)\|a-b\|_{\phi,\mathrm{rel}}\) hold for two inputs.  These are
+direct consequences of
+\cref{eq:second-endpoint-residual-jets}; all intermediate phase points
+remain in the enlarged same-sign collar.
+
+The polynomial current field and the common node norm give
+\begin{equation}
+ |h_{c,N}(r,Z)|+\|h_{\perp,N}(r,Z)\|_N
+ \le C\|Z\|_N^2,                                 \label{eq:proof-fixed-section-normal-quadraticity}
+\end{equation}
+together with the usual two-point bound, uniformly in \(N\).  Moreover,
+\cref{eq:nonlinear-phase-delay-quadratic-bound} gives
+\begin{equation}
+ \Pi_N(a)=\mathscr P_{\sigma,N}a+\mathcal R_{\Pi,\sigma,N}(a),\qquad
+ \|\mathcal R_{\Pi,\sigma,N}(a)(s)\|_N
+       \le C\delta|r_0(s)|A^2,                   \label{eq:proof-fixed-section-Pi-scale}
+\end{equation}
+and its two-point analogue.  Subtracting \(Q^\sharp\) from
+\cref{eq:fixed-section-nonlinear-speed} now gives the exact cancellation
+\begin{equation}
+ Q_\sigma^{\rm nl}-Q^\sharp
+ =-\varepsilon^{-1}\{(\ell_a-\ell_0)Z_x
+                  +h_{c,N}(r_a,Z_x)\}
+       +\mathcal R_{\Pi,c,\sigma,N}(a).           \label{eq:proof-fixed-section-speed-remainder}
+\end{equation}
+Using
+\cref{eq:proof-fixed-section-rga-scales,%
+eq:proof-fixed-section-moving-coefficients,%
+eq:proof-fixed-section-normal-quadraticity,%
+eq:proof-fixed-section-Pi-scale}
+and
+\(\varepsilon/\rho_\delta\le C\delta/S_\delta\), we obtain
+\begin{equation}
+ \sup_{r\in I_\sigma}
+   \frac{|Q_\sigma^{\rm nl}(u)(r)-Q^\sharp(u)(r)|}{|r|}
+ \le CR^2,                                       \label{eq:proof-fixed-section-speed-quadratic-bound}
+\end{equation}
+again with the corresponding two-point estimate.
+
+For completeness, we record the scale ledger for the two normal source
+rows after their affine value and linear phase column have been removed:
+\begin{equation}
+ \frac{\|\operatorname{Rem}S_Z(u)(r)\|_N}{\varepsilon}
+ +\frac{|\operatorname{Rem}S_p(u)(r)|}
+             {\varepsilon|r|^2}
+ \le CR^2.                                       \label{eq:proof-fixed-section-normal-source-ledger}
+\end{equation}
+Indeed, coefficient--state products use
+\cref{eq:proof-fixed-section-moving-coefficients} and
+\cref{eq:proof-fixed-section-rga-scales}; the \(h\)-terms use
+\cref{eq:proof-fixed-section-normal-quadraticity}; the phase-delay terms
+use \cref{eq:proof-fixed-section-Pi-scale}; and the collective linear
+delay is recovered from the algebraic shifted row as
+\[
+ D_{c,N}(x)=Q^\sharp-\varepsilon^{-1}
+                   (p^\sharp-\ell_0Z_x).
+\]
+The only apparently singular terms occur in the \(p\)-row.  There
+\begin{itemize}
+\item
+\((w_a'-w_0')p^\sharp=O(\varepsilon|r|^2R^2)\);
+\item
+the affine remainder contributes
+\(O(\varepsilon^2R^2)\), whose normalized size is controlled by
+\(\varepsilon/\rho_\delta^2=O(S_\delta^{-2})\);
+\item
+the last brace is harmless because its entire \(x\)-linear part cancels,
+as shown above, and
+\cref{eq:proof-fixed-section-speed-quadratic-bound} controls what remains.
+\end{itemize}
+Every other term has an additional factor \(|r|\), \(\delta\), or
+\(\varepsilon/|r|\).  Applying the same decomposition on the segment
+between two inputs proves the two-point version of
+\cref{eq:proof-fixed-section-normal-source-ledger}.
+
+The phase action has the exact remainder
+\[
+ \mathscr B_{\phi,\sigma}^{\rm nl}(a)-q_0^2a'
+ =q_0(r)\{q_0(\Theta_a(r))-q_0(r)\}a'(r).
+\]
+The relative phase norm and
+\cref{eq:anchored-phase-q-class} therefore give
+\begin{equation}
+ \|\mathscr B_{\phi,\sigma}^{\rm nl}(a)-q_0^2a'\|_{\phi,\infty}
+ \le CA^2,                                       \label{eq:proof-fixed-section-phase-action-remainder}
+\end{equation}
+with a two-point constant \(C(A+B)\).  Combining this with
+\cref{eq:proof-fixed-section-speed-quadratic-bound} controls the phase
+component of the residual.
+
+Finally, the attracting history remainder is
+\(\operatorname{Rem}\mathscr H(c_a,0)\).  On the repelling branch it is
+\[
+ \operatorname{Rem}\mathscr H
+       (c_r,(0,p_x(0),0));
+\]
+the linear \(p_x(0)\)-term has already cancelled against
+\(\mathfrak C_ep_x(0)\).  \Cref{eq:nonlinear-raw-history-graph-remainder,%
+eq:proof-fixed-section-repelling-data-scale}
+give, in both cases,
+\begin{equation}
+ \varepsilon^{-1}
+ \|\operatorname{Rem}B_{\gamma,\sigma}^{\rm nl}(u)\|_N^\sharp
+ \le CR^2,                                       \label{eq:proof-fixed-section-history-remainder}
+\end{equation}
+and the \(C^2\) bounds in
+\cref{eq:nonlinear-raw-history-C2-bounds} give the two-point version.
+\Cref{eq:proof-fixed-section-normal-source-ledger,%
+eq:proof-fixed-section-phase-action-remainder,%
+eq:proof-fixed-section-history-remainder}
+prove both that the map is \(C^1\) on a uniform graph ball and the claimed
+estimate \cref{eq:fixed-section-nonlinear-two-point}.
+
+At the origin,
+\[
+ \mathscr S_\sigma^{\rm nl}(0,0)
+ =\bigl(\Delta\phi_{e_{\sigma,0}},0,
+                    -R_{z,N}(r_0),\varepsilon R_{q,N}(r_0)\bigr),
+\]
+which proves \cref{eq:fixed-section-nonlinear-base-residual}.  The collar
+estimate gives
+\(\varepsilon^{-1}\|\Delta\phi_e\|_N^\sharp\le C|e|\).
+Furthermore,
+\[
+ \varepsilon^{-1}\|R_{z,N}\|_\infty\le Cr_{\rm out},
+ \qquad
+ \sup_{r\in I_\sigma}\frac{|R_{q,N}(r)|}{|r|^2}
+ \le C\frac{\varepsilon}{\rho_\delta^2}
+ \le CS_\delta^{-2}.
+\]
+These estimates prove
+\cref{eq:fixed-section-nonlinear-base-bound}.  If the residual vanishes,
+the formal old voltage in
+\cref{eq:fixed-section-complete-voltage-history} is
+\(\phi_{e_c}^0\), while the boundary equation and
+\cref{eq:nonlinear-raw-history-assembler} give
+\[
+ \widehat v_{x,a}(s)=\phi_{e_c}^{\rm rc}(s),
+ \qquad -\theta_m\le s\le0,
+ \qquad e_c=\Theta_a(e_{\sigma,0}).
+\]
+The physical old coordinates in
+\cref{eq:fixed-section-physical-old-decomposition} satisfy the algebraic
+identity
+\begin{equation}
+ \mathbf1+r_-(s)\mathbf1+z_{0,N}(r_-(s))+Z_-(s)
+ =\mathbf1+R_{\sigma,a}(s)\mathbf1
+       +z_{0,N}(R_{\sigma,a}(s))+\gamma_x(s).    \label{eq:proof-fixed-section-old-voltage-identity}
+\end{equation}
+They are continuous and \(Z_-(s)\in E_N\).  At the seam,
+\(R_{\sigma,a}(0)=r_a(0)=e_c\) and
+\(\gamma_x(0)=0\), hence
+\[
+ r_-(0)=r_a(0),\qquad Z_-(0)=0=Z_x(0).
+\]
+The order-(h) compatibility recursion for
+\(\phi_{e_c}^{\rm rc}\), together with the exact current residual, gives
+the classical seam compatibility required by the fold-time equations.
+Thus use \((r_-,Z_-)\) on the old interval and \((r_a,Z_x)\) on the
+current interval in
+\cref{prop:fold-time-tracker-normal-form}.  The exact delay identity at the
+beginning of the proof then gives the asserted forward RFDE segment.
+Neither argument extends the selected old history to a past orbit or fixes
+the opposite moving event.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:repelling-component-flushing}]
 The repelling travel time satisfies \(S_r\ge c/\delta\), whereas
 \(L_b=O(S_\delta)\).  Thus

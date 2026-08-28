@@ -3112,7 +3112,7 @@ directions \(H,H_1,H_2\),
  \|\partial_c^2\mathscr H_{e_*}^{\rm rc}(c,0)
        \|_{\mathrm{cap},h,e_*}
  &\le C_h\frac{\varepsilon}{|e_*|},\notag\\
- \|\partial_cD_U\mathscr H_{e_*}^{\rm rc}(c,0)H
+ \|\partial_cD_U\mathscr H_{e_*}^{\rm rc}(c,U)H
        \|_{\mathrm{cap},h,e_*}
  &\le \frac{C_h}{|e_*|}\|H\|_{\mathrm{col},e_*},\notag\\
  \|D_U^2\mathscr H_{e_*}^{\rm rc}(c,U)[H_1,H_2]
@@ -3156,6 +3156,226 @@ fixed \(\theta\)-history chart and never translates an arbitrary
 \(C^0\) history.  It constructs an order-\(h\) compatible old-history
 assembler, not a past orbit, a nonlinear tracker, or a physical connection.
 \end{lemma}
+
+\begin{theorem}[Fixed-section nonlinear graph--action residual]
+\label[theorem]{thm:fixed-section-nonlinear-graph-residual}
+Retain
+\cref{prop:nonlinear-resource-defect-normal-form,%
+prop:fold-time-tracker-normal-form,%
+thm:raw-compatible-phase-normal-inverse,%
+prop:inner-anchored-relative-phase-schur,%
+prop:relative-structured-phase-response,%
+lem:nonlinear-reduced-flow-phase-delay,%
+lem:second-jet-raw-history-assembler}
+at a fixed parameter pair \((\nu,\eta)\) and at order \(h\ge3\).
+Write
+\[
+ r_0(s)=\bar r_\sigma(s),\qquad
+ r_a(s)=\Theta_a(r_0(s)),\qquad
+ c_\sigma(a)=a(e_{\sigma,0}),
+\]
+where
+\[
+ e_{a,0}=r_{\rm out},\qquad e_{r,0}=-\rho_\delta,
+ \qquad e_{a,*}=\rho_\delta,\qquad e_{r,*}=-\rho_\delta.
+\]
+The repeated value \(e_{r,0}=e_{r,*}\) has two different roles: it is the
+repelling entry endpoint and also the fold-side phase anchor.
+
+For \(x=(\gamma_x,Z_x,p_x)\) define the two canonical zero-core history
+packages
+\begin{align}
+ \mathscr H_a^{\rm can}(x,a)
+ &=\mathscr H_{r_{\rm out}}^{\rm rc}
+       \bigl(c_a(a),(0,0,0)\bigr),\notag\\
+ \mathscr H_r^{\rm can}(x,a)
+ &=\mathscr H_{-\rho_\delta}^{\rm rc}
+       \bigl(c_r(a),(0,p_x(0),0)\bigr),           \label{eq:canonical-nonlinear-history-packages}
+\end{align}
+and the nonredundant baseline rows
+\begin{align}
+ B_{\gamma,a}^{\rm nl}(x,a)
+ &=\mathscr H_a^{\rm can}(x,a),\notag\\
+ B_{\gamma,r}^{\rm nl}(x,a)
+ &=\mathscr H_r^{\rm can}(x,a)-\mathfrak C_ep_x(0).
+                                                        \label{eq:canonical-nonlinear-history-rows}
+\end{align}
+Thus the attracting finite resource row is \(p_x(0)=0\), whereas the
+repelling row is \(p_x(S_r)=0\) and \(p_x(0)\) remains the output that is
+fed into the compatible collar.  No variable \(Z_x(0)\) or arbitrary core
+is inserted into
+\cref{eq:canonical-nonlinear-history-packages}; doing so would create a
+new linear history feedback not contained in the inverse of
+\cref{prop:inner-anchored-relative-phase-schur}.
+
+Put
+\begin{align}
+ D_N(x)&=\mathscr D_N^{\rm lin}[\gamma_x,Z_x],
+ &D_{c,N}(x)&=\pi_N^TD_N(x),
+ &D_{\perp,N}(x)&=P_{\perp,N}D_N(x),\notag\\
+ \Pi_N(a)&=\Pi_{\sigma,N}(a),
+ &\Pi_{c,N}(a)&=\pi_N^T\Pi_N(a),
+ &\Pi_{\perp,N}(a)&=P_{\perp,N}\Pi_N(a).
+                                                        \label{eq:assembled-nonlinear-delay-pieces}
+\end{align}
+Every coefficient carrying the subscript \(a\) below is evaluated at
+\(r_a(s)\), and a subscript \(0\) means evaluation at \(r_0(s)\); for
+example
+\[
+ C_a=\mathcal C_N(r_a),\quad
+ z_a'=z_{0,N}'(r_a),\quad
+ w_a'=w_{0,N}'(r_a),\quad
+ \ell_a=\ell_N(r_a),\quad
+ d_a=(\mathcal D_{0,c,N}-q_0)'(r_a).
+\]
+Define the exact reconstructed speed correction
+\begin{equation}
+ Q^{\rm nl}_\sigma(x,a)
+ =\varepsilon^{-1}
+    \{p_x-\ell_aZ_x-h_{c,N}(r_a,Z_x)\}
+       +\Pi_{c,N}(a)+D_{c,N}(x),                 \label{eq:fixed-section-nonlinear-speed}
+\end{equation}
+and let
+\(Q^{\rm nl,\flat}_\sigma(x,a)(r_0(s))\)
+denote the same function pulled back to the fixed reduced coordinate.
+The two exact nonlinear normal sources, relative to the fixed-base block
+\cref{eq:fixed-phase-normal-block}, are
+\begin{align}
+ S_{Z,\sigma}^{\rm nl}(x,a)
+={}&(C_a-C_0)Z_x-(z_a'-z_0')p_x-R_{z,N}(r_a)
+       +z_a'h_{c,N}(r_a,Z_x)-h_{\perp,N}(r_a,Z_x)\notag\\
+ &+\varepsilon\{\Pi_{\perp,N}(a)-z_a'\Pi_{c,N}(a)
+             -(z_a'-z_0')D_{c,N}(x)\},           \label{eq:fixed-section-nonlinear-Z-source}\\
+ S_{p,\sigma}^{\rm nl}(x,a)
+={}&(w_a'-w_0')p_x-(w_a'\ell_a-w_0'\ell_0)Z_x
+       -w_a'h_{c,N}(r_a,Z_x)\notag\\
+ &+\varepsilon(w_a'-w_0')D_{c,N}(x)
+       +\varepsilon w_a'\Pi_{c,N}(a)\notag\\
+ &+\varepsilon^2\{(q_0(r_a)+Q^{\rm nl}_\sigma(x,a))d_a
+                         -d_0Q_{\rm n}[x]\}.     \label{eq:fixed-section-nonlinear-p-source}
+\end{align}
+Set
+\begin{equation}
+ \mathscr S_\sigma^{\rm nl}(x,a)
+ =\bigl(B_{\gamma,\sigma}^{\rm nl}(x,a),0,
+            S_{Z,\sigma}^{\rm nl}(x,a),
+            S_{p,\sigma}^{\rm nl}(x,a)\bigr)     \label{eq:fixed-section-nonlinear-normal-package}
+\end{equation}
+and finally
+\begin{equation}
+ \mathcal F_\sigma(x,a)
+ =\left(
+   \mathscr N_\sigma x-\mathscr S_\sigma^{\rm nl}(x,a),
+   \mathscr B_{\phi,\sigma,*}^{\rm nl}(a)
+      -\bigl(Q^{\rm nl,\flat}_\sigma(x,a),0\bigr)
+       \right).                                  \label{eq:fixed-section-nonlinear-residual}
+\end{equation}
+
+There are \(R_0>0\) and \(C>0\), independent of \(N\), the branch, and
+sufficiently small \(\delta\), such that
+\cref{eq:fixed-section-nonlinear-residual} is a well-defined \(C^1\) map
+on the open \(R_0\)-ball of
+\(\mathcal G_{\sigma,\delta}^{\rm rga}\) into
+\[
+ \widetilde{\mathsf Y}_{\sigma,0}
+    \times\bigl(\mathsf H_{\phi,\infty}^0(I_\sigma)\times\R\bigr).
+\]
+Its base value is exactly
+\begin{equation}
+ \mathcal F_\sigma(0,0)
+ =\left(
+  -\Delta\phi_{e_{\sigma,0}},0,
+       R_{z,N}(r_0),-\varepsilon R_{q,N}(r_0),0,0
+        \right),                                 \label{eq:fixed-section-nonlinear-base-residual}
+\end{equation}
+with the entries grouped according to
+\cref{eq:fixed-phase-normal-boundary-operator} and the anchored phase row.
+In particular,
+\begin{equation}
+ \|\mathcal F_\sigma(0,0)\|
+ \le C\lambda_\delta,
+ \qquad
+ \lambda_\delta=r_{\rm out}+S_\delta^{-2}.      \label{eq:fixed-section-nonlinear-base-bound}
+\end{equation}
+
+The differential at the fixed reduced base is precisely the already
+inverted anchored raw-compatible Schur block:
+\begin{equation}
+ D\mathcal F_\sigma(0,0)(x,a)
+ =\left(
+   \mathscr N_\sigma\{x-T_\sigma^{\rm rc}a\},
+   \mathscr B_{\phi,\sigma,*}^0a
+      -\bigl(\mathfrak D_\sigma^\infty x
+                  +\mathscr P_{c,\sigma,N}a,0\bigr)
+       \right).                                  \label{eq:fixed-section-nonlinear-linearization}
+\end{equation}
+Consequently it is an isomorphism with a dimension- and
+\(\delta\)-uniform inverse.  If
+\begin{equation}
+ \mathcal Q_\sigma(u)
+ =\mathcal F_\sigma(u)-\mathcal F_\sigma(0)
+                      -D\mathcal F_\sigma(0)u,
+ \qquad u=(x,a),                                 \label{eq:fixed-section-nonlinear-remainder}
+\end{equation}
+then, for \(u,v\) in the \(R_0\)-ball,
+\begin{equation}
+ \|\mathcal Q_\sigma(u)-\mathcal Q_\sigma(v)\|
+ \le C(\|u\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}
+          +\|v\|_{\mathcal G_{\sigma,\delta}^{\rm rga}})
+       \|u-v\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}.  \label{eq:fixed-section-nonlinear-two-point}
+\end{equation}
+All norms in
+\cref{eq:fixed-section-nonlinear-base-bound,eq:fixed-section-nonlinear-two-point}
+are the displayed product norms.
+
+At any zero of \(\mathcal F_\sigma\), the seam relation in
+\(\mathcal D(\mathscr N_\sigma)\) and
+\cref{eq:canonical-nonlinear-history-rows} imply
+\[
+ \gamma_x=\mathscr H_\sigma^{\rm can}(x,a),
+ \qquad Z_x(0)=0.
+\]
+Use the formal complete phase history
+\(R_{\sigma,a}\) from
+\cref{eq:nonlinear-phase-delay-functional}, including its constant-phase
+old extension, and define the complete voltage history
+\begin{equation}
+ \widehat v_{x,a}(s)=
+ \begin{cases}
+  \mathbf1+R_{\sigma,a}(s)\mathbf1
+       +z_{0,N}(R_{\sigma,a}(s))+\gamma_x(s),
+       &-\theta_m\le s<0,\\
+  \mathbf1+r_a(s)\mathbf1+z_{0,N}(r_a(s))+Z_x(s),
+       &0\le s\le S_\sigma.
+ \end{cases}                                      \label{eq:fixed-section-complete-voltage-history}
+\end{equation}
+Then the exact total delay defect, for \(0\le s\le S_\sigma\), is
+\begin{equation}
+ K\sum_kL_{k,N}
+   \{\widehat v_{x,a}(s)-\widehat v_{x,a}(s-\theta_k)\}
+       -\mathcal D_{0,N}(r_a(s))
+ =\Pi_{\sigma,N}(a)(s)
+       +\mathscr D_N^{\rm lin}[\gamma_x,Z_x](s). \label{eq:fixed-section-exact-delay-splitting}
+\end{equation}
+For the old segment put
+\begin{align}
+ r_-(s)
+ &=R_{\sigma,a}(s)+\pi_N^T\gamma_x(s),\notag\\
+ Z_-(s)
+ &=z_{0,N}(R_{\sigma,a}(s))+P_{\perp,N}\gamma_x(s)
+       -z_{0,N}(r_-(s))\in E_N.                  \label{eq:fixed-section-physical-old-decomposition}
+\end{align}
+At a zero, this old pair joins continuously at \(s=0\) to
+\((r_a,Z_x)\), and its reconstructed voltage is identically the first
+line of \cref{eq:fixed-section-complete-voltage-history}.  Consequently
+such a zero satisfies the unmodified fold-time RFDE on the forward branch
+interval and the selected inner phase section.  The theorem only
+assembles and estimates the residual; it does not assert that a zero
+exists.  Even after a local zero is obtained, the zero-core collar is a
+canonical compatible preparation, not a proved past orbit.  No moving
+terminal event, branch-to-branch handoff, preparation-independent physical
+history relation, or complete-history root is proved here.
+\end{theorem}
 
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}
