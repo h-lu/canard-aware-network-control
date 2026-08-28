@@ -16,7 +16,13 @@ bridge.  The latter is not a right inverse for arbitrary Green sources.
 Proposition `prop:endpoint-scale-not-slow-speed` proves that the remaining
 Green--collar coupling needs a hybrid slow/action estimate or a first-delay
 buffer: a finite `mathfrak p=O(delta^2)` trace alone does not control the
-slow-speed norm.
+slow-speed norm.  Proposition `prop:fold-time-tracker-normal-form` now
+proves the exact structural repair: in fold time the tracker is a
+fixed-delay defect system, the compatible collar is an ordinary initial
+history, and neither `Q Z_s` nor `Q p_s` occurs.  Once `q<0` has been proved,
+the solution can be reparameterized by `r`; no preparation or cutoff enters
+this equivalence.  The fixed-delay mixed buffer estimate and nonlinear
+contraction are still open.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -90,6 +96,51 @@ w(r) = 2/3 - F_N(r,z) + delta^2 D_c(r,z,q,eta)
 Thus a solution of this two-unknown system is an actual solution of the raw
 RFDE, not of a cutoff or prepared completion.  Conversely, every monotone
 physical tracker in the fixed `r`-phase satisfies this system.
+
+### The fixed-delay form used for existence
+
+The global fixed point is **not** to be closed directly in the preceding
+`r`-slow equations.  Proposition `prop:fold-time-tracker-normal-form` proves
+the exact equivalent formulation on
+
+```text
+I_s = [s_-,s_+],          J_s = [s_- - theta_m,s_+].
+```
+
+For
+
+```text
+r(s) = pi_N^T(v(s)-1),
+Z(s) = P_perp,N(v(s)-1)-z_0,N(r(s)),
+p(s) = w_seed,N(r(s))-w(s),
+```
+
+let `D_N^ft[r,Z](s)` be the raw fixed-delay difference formed from
+`(r,Z)(s)` and `(r,Z)(s-theta_k)`, and put
+`Delta D_N^ft=D_N^ft-D_0,N(r(s))`.  Then
+
+```text
+Q = delta^(-2){p-ell_N Z-h_c} + Delta D_c^ft,
+q = q_0(r)+Q,
+r_s = delta q,
+
+delta Z_s
+  = mathcal C_N Z-z_0' p-R_z+z_0' h_c-h_perp
+    +delta^2{Delta D_perp^ft-z_0' Delta D_c^ft},
+
+delta p_s
+  = w_0' p-w_0' ell_N Z-w_0' h_c
+    +delta^2 w_0' Delta D_c^ft
+    +delta^4 q(D_0,c-q_0)'.
+```
+
+This system is directly equivalent, term by term, to the raw fold-time RFDE.
+It does not assume that the prescribed old history is a past orbit.  If the
+whole delay-enlarged collective history has a nonvanishing monotone speed,
+or after the first-delay window has flushed the prescribed history, the
+solution reparameterizes to the exact `r`-tracker equations.  This is the
+form in which the first-delay buffers and the nonlinear mixed BVP must be
+proved.
 
 ## 2. Seed, residual, and principal linear operator
 
@@ -347,9 +398,10 @@ includes this no-gain statement, uses singular boundary-layer norms for
 arbitrary finite endpoint mismatches, and establishes the required uniform
 `r`-regularity of `z_0,w_0,B_N,ell_N`.  Compatible complete-history collar
 lifts now exist as raw endpoint charts at these orders.  What remains is a
-bounded Green-to-collar coupling: either contract first in a piecewise/
-hybrid space and bootstrap compatibility at the fixed point, or construct a
-source-jet-dependent collar right inverse.
+bounded Green-to-collar coupling in the fixed-delay fold-time system.  The
+old collar is retained in the fixed `theta` chart for the first-delay buffer;
+only after it has left the delay window is the interior correction measured
+in the Eulerian `r`-slow ladder.
 
 The backtrack is differentiated through
 
@@ -371,14 +423,34 @@ at most
 delta/|r| <= C/S_delta.
 ```
 
-After the diagonal Green inverses are established, the complete nonlinear
-map must have contraction number
+The exact fold-time normal form fixes the hybrid decomposition.  Choose once
+and for all
 
 ```text
-C { r_out + 1/S_delta + delta^(1-2 vartheta)/S_delta } < 1/2.
+L_b > 2 theta_m + 1.
 ```
 
-The order of choices is: first fix `r_out` small, then take `delta` small.
+Use action/strong-history control on the attracting outer buffer
+`[0,L_b]`, the repelling causal inner buffer `[0,L_b]`, and the repelling
+scalar terminal buffer `[S_r-L_b,S_r]`.  Use the existing slow Green norm
+only on the middle intervals.  With `T=delta s`,
+
+```text
+epsilon^j partial_T^j = delta^j partial_s^j,
+```
+
+so the proved endpoint Green boundary-layer derivatives match exactly the
+`delta^j partial_theta^j` collar norm.  The complete nonlinear map must have
+the target contraction number
+
+```text
+C { a_boundary + r_out + 1/S_delta
+    + delta^(1-2 vartheta)/S_delta
+    + exp(-c L_b/delta) } < 1/2.
+```
+
+The order of choices is: first fix `L_b`, then take `a_boundary` and
+`r_out` small, and finally take `delta` small.
 
 The displayed slow norms cannot be imposed directly on an arbitrary
 `O(delta^2)` collar mismatch.  Such a mismatch creates an `O(delta^2)`
@@ -397,8 +469,8 @@ merely a finite-dimensional endpoint amplitude.  The missing Green lemma
 is now specifically the hybrid coupling: the raw collar chart constructs
 compatible histories and fixes the exact trace count, but it does not turn
 arbitrary Green data into a compatible lift.  The new lemma must couple its
-bounded trace to the Green inverse at every rung while controlling the
-old-speed boundary layer.  The
+bounded trace to the fold-time mixed Green inverse through the first-delay
+buffers, prove buffer-to-slow bootstrap, and control the event time.  The
 slow norms apply only to `(Z_slow,Q_slow)`; the boundary layer is measured by
 its history amplitude and the capped Green weight.  Restricting all gauges
 to artificially matched slow boundary values would defeat the
@@ -409,15 +481,15 @@ representative-class comparison.
 The tracker and its entry into the retained fold chart are not closed until
 all eight items below are proved.
 
-1. Couple the proved dimension-uniform finite-endpoint Green inverse and
-   explicit boundary-layer coordinate to the proved raw-compatible endpoint
-   chart for the attracting BVP and repelling Stage-I mixed BVP.  This must
-   use a slow/action hybrid norm or an explicit first-delay buffer, because
-   `mathfrak p(e)=O(delta^2)` does not control the slow-speed norm.  The
-   repelling strong scalar already uses its terminal Green operator; forward
-   shooting remains forbidden.
-2. Weighted `C^k` bounds for `q -> r_k(q)` and for all delayed compositions,
-   including every derivative in `J_phys`.
+1. Prove a dimension-uniform fold-time mixed Green/Lyapunov--Perron theorem
+   on the three first-delay buffers, couple it to the raw-compatible collar
+   chart, and bootstrap its middle trace into the existing slow Green
+   ladder.  The repelling strong scalar uses only its one-dimensional future
+   Green operator; backward RFDE evolution and forward shooting remain
+   forbidden.
+2. After the speed sign and event time are closed, apply the weighted `C^k`
+   bounds for `q -> r_k(q)` and all delayed compositions, including every
+   derivative in `J_phys`, to the reparameterized interior.
 3. Bounds for `R_z,R_q` and the nonlinear remainder giving the displayed
    contraction number.
 4. Compatible attracting collars and repelling terminal charts with common
@@ -611,9 +683,11 @@ gauges.
       parameter jets.
 - [x] Sharp obstruction showing that finite endpoint `mathfrak p` scale does
       not control the slow-speed class.
+- [x] Exact fixed-delay fold-time tracker normal form, direct equivalence
+      with the raw RFDE, conditional reparameterization, and explicit
+      `Gamma_e^h` initial-history interface.
 - [ ] Repelling Stage-I Green trace/terminal operator coupled to the raw
-      collar chart through a hybrid slow/action inverse or first-delay
-      buffer.
+      collar chart through the fixed-delay mixed first-buffer inverse.
 - [x] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
       ladder orders.
 - [x] Backtrack/composition parameter jets through the weighted third

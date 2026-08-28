@@ -39,6 +39,7 @@ fixed.
 | Principal endpoint Green splitting | `prop:principal-tracker-endpoint-green` | Exact cancellation coordinate $\mathfrak p=\delta^2Q+\ell_NZ$; dimension-uniform slow right inverse, mixed repelling endpoint lift, action-weighted boundary layers, and sharp one-derivative loss in $Q$. Finite endpoint traces only: no compatible complete-history collar lift or nonlinear tracker |
 | Exact nonlinear tracker normal form | `prop:nonlinear-resource-defect-normal-form` | The cancellation coordinate is exactly the physical resource defect $\mathfrak p_{\rm nl}=w_{\rm seed}-w$; exact nonlinear $(Z,\mathfrak p_{\rm nl},Q)$ identities, full Fr\'{e}chet differential, and a local dimension-uniform $C^0$ speed coordinate. No nonlinear tracker fixed point is asserted |
 | Raw-compatible endpoint collars | `prop:compatible-endpoint-jet-collar`, `prop:endpoint-scale-not-slow-speed` | Dimension-uniform Hermite endpoint-jet chart satisfying the raw RFDE compatibility recursion; exact resource-defect/speed/backtrack bridge and fixed-history parameter jets, with no extra Fredholm row. The chart is not a Green right inverse, and a sharp scalar boundary layer proves that finite endpoint scale does not control the slow-speed norm |
+| Exact fold-time tracker interface | `prop:fold-time-tracker-normal-form` | Direct fixed-delay $(r,Z,\mathfrak p_{\rm nl})$ normal form exactly equivalent to the raw fold-time RFDE; algebraic speed reconstruction and explicit compatible-collar initial-history map. Reparameterization is conditional on nonvanishing speed and makes no past-orbit claim for arbitrary old histories; no mixed-buffer BVP existence is asserted |
 | Truncated reduced actions | `cor:outer-reduced-actions` | Formal critical-curve speed and two positive truncated actions for the reduced critical-layer equation; not an invariant slow-history action |
 | Weak-selection obstruction | `prop:backward-asymptotic-nonselection` | A common phase row, convergence in an unnormalized history norm, and superalgebraic strong-history closeness do not by themselves select a unique tame RFDE history family; generic logical counterexample, not a model-specific impossibility theorem |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
@@ -141,8 +142,11 @@ The limits separate exactly:
   chart are also proved.  The quotient identities assume an exact tracker,
   while the collar chart is not a right inverse for arbitrary Green sources;
   a proved boundary-layer obstruction forces a hybrid slow/action or
-  first-delay coupling.  These results do not yet construct an RFDE tracker
-  or prove its normal dichotomy.  The generic nonselection example is a logical
+  first-delay coupling.  The exact fixed-delay fold-time normal form now
+  identifies the correct system and collar interface for that coupling, but
+  does not prove its mixed-buffer inverse.  These results do not yet
+  construct an RFDE tracker or prove its normal dichotomy.  The generic
+  nonselection example is a logical
   counterexample to weak selection criteria, not a model-specific
   impossibility theorem; tracker existence, quotient roughness, and all of
   G1 remain open.

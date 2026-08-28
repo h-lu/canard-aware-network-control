@@ -364,9 +364,11 @@ not the conormal of an independently defined physical maximal-canard locus.
       normal form, and raw-compatible endpoint-history collar chart.
 - [x] Prove that finite endpoint resource-defect scale alone does not control
       the slow-speed class.
-- [ ] Couple the Green inverse to the compatible collar chart through a
-      hybrid slow/action estimate or first-delay buffer and close the
-      nonlinear outer tracker.
+- [x] Prove the exact fixed-delay fold-time tracker normal form, direct raw
+      RFDE equivalence, and compatible-collar initial-history interface.
+- [ ] Prove the fixed-delay mixed first-buffer inverse, buffer-to-slow
+      bootstrap, parameter/event-time estimates, and close the nonlinear
+      outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.

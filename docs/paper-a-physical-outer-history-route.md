@@ -6,7 +6,9 @@ backtrack calculus, principal finite-endpoint Green splitting, and a sharp
 nonselection obstruction are proved.  The exact nonlinear resource-defect
 normal form and a raw-compatible endpoint-history collar chart are also
 proved, together with a boundary-layer obstruction showing why they do not
-yet close the nonlinear RFDE tracker.  The hybrid Green--collar tracker and
+yet close the nonlinear RFDE tracker.  The exact fixed-delay fold-time
+tracker normal form is now proved and fixes the remaining construction
+route.  Its mixed first-delay buffer theorem, the nonlinear tracker, and the
 phase-quotiented nonautonomous slow-history theorem remain open.**
 
 This note refines the physical-identification part of
@@ -131,6 +133,16 @@ histories, not a source-wise Green right inverse.  Proposition
 `O(delta^2)` finite endpoint resource defect may still generate an
 unbounded slow-speed boundary layer.  Thus the next gate is a hybrid
 slow/action Green--collar coupling or first-delay buffer.
+
+Proposition `prop:fold-time-tracker-normal-form` proves the exact way around
+that obstruction.  In fold time, `(r,Z,mathfrak p_nl)` satisfies a
+fixed-delay system directly equivalent to the raw RFDE; `Q` is reconstructed
+algebraically, and no `Q Z_s` or `Q p_s` term is created.  The collar chart
+is an ordinary compatible initial history with trace `p_e`.  The old history
+need not be a past orbit.  Once the fixed-delay mixed BVP proves `q<0`, the
+interior reparameterizes to the exact `r`-tracker and the existing physical
+backtrack calculus applies.  This equivalence is proved, but its
+first-delay-buffer contraction is not.
 
 ## 2. The exact curve-restricted physical equation
 
@@ -405,8 +417,10 @@ not acceptable.
       jets.
 - [x] Boundary-layer obstruction to deriving slow-speed control from a
       finite endpoint resource-defect scale alone.
-- [ ] Hybrid Green--collar/first-delay coupling and nonlinear tracker
-      contraction on both outer branches.
+- [x] Exact fixed-delay fold-time tracker normal form and compatible-collar
+      initial-history interface, with no past-orbit assumption.
+- [ ] Fold-time mixed first-delay buffers, buffer-to-slow bootstrap, and
+      nonlinear tracker contraction on both outer branches.
 - [ ] Phase-quotiented nonautonomous normal splitting along a true slow
       history.
 - [ ] Attracting representative and repelling codimension-one history sheet
