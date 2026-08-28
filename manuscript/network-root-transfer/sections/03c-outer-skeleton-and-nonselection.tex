@@ -3540,6 +3540,168 @@ graph norm.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{lem:nonlinear-reduced-flow-phase-delay}]
+Put
+\[
+ r_k(s)=\bar r_\sigma(s-\theta_k)
+       =\Phi_{q_0}^{-\delta\theta_k}(\bar r_\sigma(s)),
+ \qquad
+ u(s)=\widehat a_\sigma(s),\qquad
+ v_k(s)=\widehat a_\sigma(s-\theta_k).
+\]
+The current terms in
+\(\mathcal D_N^{\rm ft}[R_{\sigma,a},0]\) and in the reduced delay
+\(\mathcal D_{0,N}(R_{\sigma,a}(s))\) cancel.  Indeed, the
+\(q_0\)-backtrack of
+\[
+ R_{\sigma,a}(s)
+ =\Phi_{q_0}^{u(s)+\delta\theta_k}(r_k(s))
+\]
+by the \(k\)-th delay is
+\(\Phi_{q_0}^{u(s)}(r_k(s))\), whereas the actual delayed history is
+\(\Phi_{q_0}^{v_k(s)}(r_k(s))\).  Thus the flow group law gives the exact
+identity
+\begin{equation}
+ \Pi_{\sigma,N}(a)(s)
+ =K\sum_kL_{k,N}(\eta)
+ \left[
+  x_{0,N}\!\left(\Phi_{q_0}^{u(s)}(r_k(s))\right)
+ -x_{0,N}\!\left(\Phi_{q_0}^{v_k(s)}(r_k(s))\right)
+ \right].                                        \label{eq:nonlinear-phase-delay-exact-flow-form}
+\end{equation}
+This also proves exact annihilation when the complete phase is constant.
+
+For fixed \(k,s\), define
+\[
+ F_{k,s}(z)=x_{0,N}\!\left(\Phi_{q_0}^{z}(r_k(s))\right),
+ \qquad R(s)=|\bar r_\sigma(s)|.
+\]
+All phase-flow points in the fixed ball have modulus comparable with
+\(R(s)\).  The critical-curve \(C^3\) estimate,
+\cref{eq:nonlinear-phase-delay-two-jets}, and the scalar flow identities
+give
+\begin{equation}
+ \|F_{k,s}'\|_N+\|F_{k,s}''\|_N
+       +R(s)\|F_{k,s}'''\|_N\le C.                \label{eq:nonlinear-phase-delay-flow-jets}
+\end{equation}
+Moreover, because \(r_k\) itself follows the \(q_0\)-flow,
+\begin{equation}
+ \partial_sF_{k,s}(z)=\delta\,\partial_zF_{k,s}(z)
+ \quad\hbox{with \(z\) held fixed}.               \label{eq:nonlinear-phase-delay-flow-transport}
+\end{equation}
+Finally,
+\[
+ F_{k,s}'(0)=q_0(r_k(s))e_{0,N}(r_k(s)).
+\]
+The differential at zero of
+\cref{eq:nonlinear-phase-delay-exact-flow-form} is therefore exactly
+\cref{eq:reduced-flow-phase-delay-defect}, proving
+\cref{eq:nonlinear-phase-delay-linearization}.
+
+Let \(A=\|a\|_{\phi,\mathrm{rel}}\) and
+\(d_k=u-v_k\).  Relative anchoring, delay comparability, and the constant
+old-history extension give, including the first delay window,
+\begin{align}
+ |u|+|v_k|&\le CR A,&
+ |d_k|&\le C\delta A,\notag\\
+ |\dot u|+|\dot v_k|+|\dot d_k|
+ &\le C\delta A                                  \label{eq:nonlinear-phase-delay-relative-increments}
+\end{align}
+on every seam cell.  For two inputs \(a,b\), with the notation in the
+statement, the corresponding differences satisfy
+\begin{align}
+ |u_a-u_b|+|v_{k,a}-v_{k,b}|&\le CRH,\notag\\
+ |d_{k,a}-d_{k,b}|&\le C\delta H,\notag\\
+ |\dot u_a-\dot u_b|+|\dot v_{k,a}-\dot v_{k,b}|
+       +|\dot d_{k,a}-\dot d_{k,b}|
+ &\le C\delta H.                                  \label{eq:nonlinear-phase-delay-relative-differences}
+\end{align}
+
+Suppress \(k,s\), write \(v=v_k\), \(d=d_k\), and subtract the
+linear term.  The remainder of one summand is
+\begin{align}
+ E_{k,s}(v,d)
+ &=F_{k,s}(v+d)-F_{k,s}(v)-F_{k,s}'(0)d\notag\\
+ &=d\int_0^1
+   \{F_{k,s}'(v+td)-F_{k,s}'(0)\}\,\dd t.          \label{eq:nonlinear-phase-delay-summand-remainder}
+\end{align}
+By
+\cref{eq:nonlinear-phase-delay-flow-jets,%
+eq:nonlinear-phase-delay-relative-increments},
+\begin{equation}
+ \|E_{k,s}(v,d)\|_N\le C\delta R A^2.              \label{eq:nonlinear-phase-delay-summand-value}
+\end{equation}
+Using \((v,d)\), rather than the two undifferenced phases, retains the
+delay factor.  Along the segment joining two inputs,
+\[
+ \|\partial_dE\|\le CR(A+B),\qquad
+ \|\partial_vE\|\le C\delta(A+B).
+\]
+Together with
+\cref{eq:nonlinear-phase-delay-relative-differences}, this proves the
+value part of the two-point remainder estimate.
+
+Differentiate
+\cref{eq:nonlinear-phase-delay-summand-remainder} on one seam cell.
+The transport identity
+\cref{eq:nonlinear-phase-delay-flow-transport} yields the exact formula
+\begin{align}
+ \partial_sE={}&
+ \delta\{F'(v+d)-F'(v)-F''(0)d\}\notag\\
+ &+\{F'(v+d)-F'(0)\}\dot u
+   -\{F'(v)-F'(0)\}\dot v.                        \label{eq:nonlinear-phase-delay-summand-derivative}
+\end{align}
+The first brace equals
+\[
+ d\int_0^1\{F''(v+td)-F''(0)\}\,\dd t.
+\]
+The weighted third-derivative bound in
+\cref{eq:nonlinear-phase-delay-flow-jets} makes this
+\(O(\delta A^2)\); its prefactor in
+\cref{eq:nonlinear-phase-delay-summand-derivative} makes the contribution
+\(O(\delta^2A^2)\).  Since
+\(|\bar r_\sigma|\ge\rho_\delta\gg\delta\), this is
+\(O(\delta R A^2)\).  The last two terms have the same bound by
+\cref{eq:nonlinear-phase-delay-flow-jets,%
+eq:nonlinear-phase-delay-relative-increments}.  Hence
+\begin{equation}
+ \|\partial_sE_{k,s}\|_N\le C\delta R A^2.         \label{eq:nonlinear-phase-delay-summand-derivative-bound}
+\end{equation}
+The mean-value theorem applied to
+\cref{eq:nonlinear-phase-delay-summand-derivative}, using
+\cref{eq:nonlinear-phase-delay-flow-jets,%
+eq:nonlinear-phase-delay-relative-increments,%
+eq:nonlinear-phase-delay-relative-differences}, gives
+\begin{equation}
+ \|\partial_sE_k(a)-\partial_sE_k(b)\|_N
+ \le C\delta R(A+B)H.                             \label{eq:nonlinear-phase-delay-summand-derivative-two-point}
+\end{equation}
+
+The linear summand \(F'(0)d\) and its derivative
+\[
+ \delta F''(0)d+F'(0)\dot d
+\]
+are \(O(\delta A)\) and Lipschitz with constant \(C\delta\).  Summation
+with the common layer bound now proves
+\cref{eq:nonlinear-phase-delay-quadratic-bound,%
+eq:nonlinear-phase-delay-two-point}.
+
+It remains only to check seams.  At \(s=0\), every positive-delay
+difference has
+\(u=v_k=a(e_{\sigma,0})\), so \(\Pi_{\sigma,N}(a)(0)=0\).  At
+\(s=\theta_k\), the old definition gives
+\(v_k=a(e_{\sigma,0})\), while the current definition gives
+\(v_k=a(\bar r_\sigma(0))\), the same value.  Hence
+\(\Pi_{\sigma,N}(a)\), its linearization, and its remainder are continuous.
+Their one-sided derivatives may jump, but continuity creates no
+distributional seam measure.  A zero-delay term has \(u=v_k\) identically
+and vanishes before any estimate.  Uniform boundedness of
+\(\pi_N^T\) and \(P_{\perp,N}\) proves the projected assertions.  The
+definition itself shows that no nonlinear raw-compatible history has been
+constructed.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:repelling-component-flushing}]
 The repelling travel time satisfies \(S_r\ge c/\delta\), whereas
 \(L_b=O(S_\delta)\).  Thus

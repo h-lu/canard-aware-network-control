@@ -2902,6 +2902,107 @@ fixed-base linear estimate; it supplies no nonlinear old-history assembler
 or nonlinear residual.
 \end{proposition}
 
+\begin{lemma}[Exact nonlinear reduced-flow phase-delay defect]
+\label[lemma]{lem:nonlinear-reduced-flow-phase-delay}
+Retain
+\cref{prop:unprepared-outer-skeleton,%
+prop:fixed-phase-green-collar-buffer,%
+lem:reduced-flow-phase-defect,%
+lem:inner-anchored-nonlinear-phase-chart}
+and the common layer-sum bounds.  Use the \(C^3\) critical-curve bounds and
+the shared-resource speed estimates, valid on the same-sign collar,
+\begin{equation}
+ |q_0'(r)|\le C,\qquad |r|\,|q_0''(r)|\le C.       \label{eq:nonlinear-phase-delay-two-jets}
+\end{equation}
+Decrease \(c_\phi\) if necessary so that every phase-flow point below
+remains in that collar.
+
+Let
+\(\bar r_\sigma:[-\theta_m,S_\sigma]\to J_\sigma\) be the backward
+one-delay \(q_0\)-extension of the reduced path, so that
+\[
+ \partial_s\bar r_\sigma=\delta q_0(\bar r_\sigma),
+ \qquad e_{\sigma,0}=\bar r_\sigma(0).
+\]
+For \(a\in\mathcal U_{\sigma,\phi}\), define
+\begin{align}
+ \widehat a_\sigma(s)
+ &=
+ \begin{cases}
+  a(e_{\sigma,0}),&-\theta_m\le s<0,\\
+  a(\bar r_\sigma(s)),&0\le s\le S_\sigma,
+ \end{cases}\notag\\
+ R_{\sigma,a}(s)
+ &=\Phi_{q_0}^{\widehat a_\sigma(s)}
+                  (\bar r_\sigma(s)),\notag\\
+ \Pi_{\sigma,N}(a)(s)
+ &=\Delta\mathcal D_N^{\rm ft}[R_{\sigma,a},0](s),
+       \qquad 0\le s\le S_\sigma.                 \label{eq:nonlinear-phase-delay-functional}
+\end{align}
+In the last line, the subtracted reduced delay is evaluated at
+\(R_{\sigma,a}(s)\), exactly as in
+\cref{eq:fold-time-tracker-delay}.
+
+Let
+\[
+ \Sigma_\sigma
+ =\{\theta_k:0<\theta_k<S_\sigma\}
+\]
+with repetitions deleted.  For continuous \(\mathbb R^N\)-valued functions that
+are \(W^{1,\infty}\) on the components of
+\([0,S_\sigma]\setminus\Sigma_\sigma\), put
+\begin{align}
+ \|F\|_{\mathrm{pw},1}
+ &=\sup_s\|F(s)\|_N
+   +\operatorname*{ess\,sup}_{s\notin\Sigma_\sigma}
+          \|\partial_sF(s)\|_N,\notag\\
+ \|F\|_{\Pi,\mathrm{rel}}
+ &=\sup_s\frac{\|F(s)\|_N}
+                    {\delta|\bar r_\sigma(s)|}
+   +\operatorname*{ess\,sup}_{s\notin\Sigma_\sigma}
+       \frac{\|\partial_sF(s)\|_N}
+                    {\delta|\bar r_\sigma(s)|}.   \label{eq:nonlinear-phase-delay-range-norms}
+\end{align}
+Then \(\Pi_{\sigma,N}\) maps a fixed relative-phase ball into this
+continuous finite-seam space,
+\begin{equation}
+ \Pi_{\sigma,N}(0)=0,\qquad
+ D\Pi_{\sigma,N}(0)a=\mathscr P_{\sigma,N}a.       \label{eq:nonlinear-phase-delay-linearization}
+\end{equation}
+Set
+\begin{equation}
+ \mathcal R_{\Pi,\sigma,N}(a)
+ =\Pi_{\sigma,N}(a)-\mathscr P_{\sigma,N}a.        \label{eq:nonlinear-phase-delay-remainder}
+\end{equation}
+There is a dimension- and branch-uniform constant \(C\) such that, with
+\(A=\|a\|_{\phi,\mathrm{rel}}\),
+\begin{align}
+ \|\Pi_{\sigma,N}(a)\|_{\mathrm{pw},1}
+ &\le C\delta A,\notag\\
+ \|\mathcal R_{\Pi,\sigma,N}(a)\|_{\Pi,\mathrm{rel}}
+ &\le CA^2.                                       \label{eq:nonlinear-phase-delay-quadratic-bound}
+\end{align}
+If \(a,b\) belong to the same ball and
+\[
+ A=\|a\|_{\phi,\mathrm{rel}},\qquad
+ B=\|b\|_{\phi,\mathrm{rel}},\qquad
+ H=\|a-b\|_{\phi,\mathrm{rel}},
+\]
+then
+\begin{align}
+ \|\Pi_{\sigma,N}(a)-\Pi_{\sigma,N}(b)\|_{\mathrm{pw},1}
+ &\le C\delta H,\notag\\
+ \|\mathcal R_{\Pi,\sigma,N}(a)
+       -\mathcal R_{\Pi,\sigma,N}(b)\|_{\Pi,\mathrm{rel}}
+ &\le C(A+B)H.                                    \label{eq:nonlinear-phase-delay-two-point}
+\end{align}
+The same estimates hold after collective or transverse projection.  A
+constant complete phase is annihilated exactly.  This is the nonlinear
+defect of the formal \(q_0\)-flow history.  It neither identifies that
+history with the raw-compatible nonlinear collar nor supplies the collar's
+second endpoint jet.
+\end{lemma}
+
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}
 Retain \cref{lem:repelling-component-generations}.  Fix \(d\ge1\), take

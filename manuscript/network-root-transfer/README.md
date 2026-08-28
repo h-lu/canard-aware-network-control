@@ -60,8 +60,11 @@ analysis now also proves an `O(delta)` relative phase-delay profile and
 recovers the returned state and pointwise true action with the sharper factor
 `O(r_out+S_delta^(-1))` in a uniformly equivalent relative graph--action
 norm.  This uses the inner anchor and does not contradict the unrestricted
-old-state obstruction.  The nonlinear phase-delay remainder, nonlinear
-old-history assembler, higher parameter jets, moving-event estimates, the
+old-state obstruction.  The exact nonlinear formal `q_0`-history delay
+functional is now also closed: its derivative is the linear phase-delay
+column and its two-point remainder is `O(delta |r|)` in value and piecewise
+derivative.  The nonlinear raw-compatible old-history assembler, the full
+normal residual, higher parameter jets, moving-event estimates, the
 nonlinear tracker,
 nonautonomous normal splitting, and the finite-`delta` physical slow-history
 relation remain open.

@@ -394,7 +394,7 @@ not the conormal of an independently defined physical maximal-canard locus.
       returned normalized state and pointwise true action with factor
       $O(r_{\rm out}+S_\delta^{-1})$, and close the equivalent relative
       graph--action norm.
-- [ ] Prove the exact nonlinear phase-only delay remainder in the relative
+- [x] Prove the exact nonlinear phase-only delay remainder in the relative
       norm and its two-point Lipschitz estimate.
 - [ ] Construct a uniformly graph-tame $C^2$ raw-compatible old-history
       assembler, including the endpoint/collar second jet.
@@ -422,8 +422,8 @@ same-sign tube at the scalar phase/fixed-base linear level.  On the anchored
 relative subspace, the exact delay profile now yields a uniform returned-state
 bound and pointwise true action in an equivalent graph--action norm; the
 unrestricted old-state obstruction remains.  A uniform nonlinear normal tube
-is not yet constructed.  The nonlinear phase-delay remainder, the $C^2$
-old-history assembler, the fixed-section residual, relative-parameter jets,
+is not yet constructed.  The $C^2$ old-history assembler, the fixed-section
+residual, relative-parameter jets,
 moving-event control, nonlinear tracker existence,
 nonautonomous quotient roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.

@@ -42,8 +42,10 @@ well.  The raw-compatible phase collar, affine-residual normal column, and
 fixed-base border have since been closed.  An inner-anchored nonlinear phase
 chart and its relative Schur inverse remove the constant mode, while the
 relative phase-to-state estimate recovers normalized state and pointwise
-true action with factor `O(r_out+S_delta^(-1))`.  The nonlinear phase-delay
-remainder, a `C^2` old-history assembler, the nonlinear tracker, its
+true action with factor `O(r_out+S_delta^(-1))`.  The exact nonlinear formal
+phase-delay functional now has a two-point `O(delta |r|)` remainder in both
+value and piecewise derivative.  A raw-compatible `C^2` old-history
+assembler, the full nonlinear normal residual, the nonlinear tracker, its
 nonautonomous normal dichotomy, exact fold overlap, and a physical
 preparation-independent root remain open.
 
