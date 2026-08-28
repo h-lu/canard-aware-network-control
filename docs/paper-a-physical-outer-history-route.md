@@ -9,6 +9,9 @@ This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
 It concerns Paper A's finite shared-resource Markov networks.  Issue #11
 concerns a different two-module leaky model and cannot supply this theorem.
+The now-fixed mixed BVP, endpoint-gauge class, flat comparison, and exact
+membership gap are specified in
+[`paper-a-tracker-bvp-proof-program.md`](paper-a-tracker-bvp-proof-program.md).
 
 ## 1. What has now been proved
 
@@ -285,7 +288,7 @@ Across one slow-time delay window its weight ratio is at most
 ```text
 kappa_delta
   <= C {r_out + 1/S_delta
-           + delta^(1-vartheta)/S_delta}.
+           + delta^(1-2 vartheta)/S_delta}.
 ```
 
 If the required nonautonomous normal splitting and boundary-map estimates
@@ -312,8 +315,9 @@ cocycle.  It must establish:
 3. roughness of the frozen voltage bundles under the nonautonomous
    slow-curve and modulation terms;
 4. the attracting representative and repelling mixed-boundary sheet;
-5. joint `C^1_nu C^2_eta` Frechet bounds for the normal bundles, boundary
-   maps, and fixed points, uniform in `N`.
+5. joint `J_phys=(C^1_nu C^2_eta) intersect (C^2_nu C^1_eta)` Frechet
+   bounds for the normal bundles, boundary maps, and fixed points, uniform
+   in `N`.
 
 Only after this lemma may the mixed Lyapunov--Perron equation in Section 3
 be called an actual construction.
@@ -359,6 +363,10 @@ not acceptable.
       normalized full-history tangent.
 - [x] Exact resource-gauge normal equation and `O(S_delta^(-1))` Volterra
       conjugacy to a standard voltage-history RFDE.
+- [x] Weighted physical-backtrack and delayed-composition calculus through
+      the third Fréchet derivative required by the rectangular
+      `J_phys` jet, with only `O(S_delta^(-1))` relative loss on the
+      logarithmic collar.
 - [ ] Phase-quotiented nonautonomous normal splitting along a true slow
       history.
 - [ ] Attracting representative and repelling codimension-one history sheet

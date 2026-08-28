@@ -565,6 +565,148 @@ Division by its stationary current coordinate proves
 \cref{eq:exact-outer-history-tangent}.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:physical-backtrack-calculus}]
+The flow definition is equivalent to
+\begin{equation}
+ \int_r^{r_j(r)}\frac{\dd u}{q(u)}=-\delta\theta_j.
+                                                               \label{eq:backtrack-integral-identity}
+\end{equation}
+The sign and lower bound in \cref{eq:backtrack-q-class} give the first
+estimate in \cref{eq:backtrack-basic-identities}.  Differentiation with
+respect to \(r\) gives
+\[
+ -\frac1{q(r)}+\frac{r_j'(r)}{q(r_j(r))}=0,
+\]
+which is its second identity.  Differentiation of
+\cref{eq:backtrack-integral-identity} in a direction \(h\) gives
+\[
+ \frac{D_qr_j[h]}{q(r_j)}
+ -\int_r^{r_j}\frac{h(u)}{q(u)^2}\,\dd u=0,
+\]
+and hence \cref{eq:backtrack-first-variation}.
+
+We next prove the differentiability without losing an unnecessary third
+spatial derivative of \(q\).  For fixed
+\(0\le\tau\le\delta\theta_m\), set
+\[
+ R_q(\tau,r)=\Phi_q^{-\tau}(r)
+\]
+and consider the fixed-domain equation
+\begin{equation}
+ \mathscr H_\tau(q,R)(r)
+ =\int_r^{R(r)}\frac{\dd u}{q(u)}+\tau=0.           \label{eq:backtrack-implicit-map}
+\end{equation}
+The strict inclusion \(J_0\Subset J\) persists under sufficiently small
+\(C^1\) perturbations of \(q\) and \(R\).  Hence this equation is defined on
+an open product neighborhood.  More explicitly, writing
+\(C^a_\rho(K)\) for \(C^a(K)\) with
+\cref{eq:backtrack-weighted-norm}, it is a map
+\[
+ \mathscr H_\tau:
+ C^{k+2}_\rho(J)\times\mathcal U_k(I,J_0)longrightarrow C^k_\rho(I),
+\]
+where \(\mathcal U_k(I,J_0)\) is the open set of \(C^k\) maps whose range
+lies in \(\operatorname{int}J_0\).
+
+On either sign component set \(y=\log|r|\).  For each fixed \(k\), the norm
+\cref{eq:backtrack-weighted-norm} is uniformly equivalent to
+\begin{equation}
+ \max_{0\le a\le k}\sup_y
+   \|\partial_y^a f(\operatorname{sgn}(J)e^y)\|,    \label{eq:backtrack-log-norm}
+\end{equation}
+because \((r\partial_r)^a\) is a triangular combination of
+\(r^b\partial_r^b\), \(b\le a\).  In these equivalent weighted spaces the
+map \(\mathscr H_\tau\) is \(C^3\): three derivatives with respect to its
+upper endpoint differentiate \(q^{-1}\) only twice, and therefore
+\(q,h\in C^{k+2}\) suffice after \(k\) spatial derivatives.  Moreover,
+\[
+ D_R\mathscr H_\tau(q,R)v=\frac{v}{q(R)}.
+\]
+Its inverse is multiplication by \(q(R)\), with norm bounded solely by the
+common constants in \cref{eq:backtrack-q-class}.  The Banach implicit-function
+theorem therefore makes \(q\mapsto R_q(\tau,\cdot)\) three times
+Fr\'{e}chet differentiable in the stated spaces.
+
+Differentiating \cref{eq:backtrack-implicit-map} with respect to \(\tau\)
+gives \(\partial_\tau R_q=-q(R_q)\).  Since \(R_q(0,r)=r\), integration in
+\(\tau\) proves the first line below.  For the parameter derivatives,
+differentiate \cref{eq:backtrack-implicit-map} successively.  Every pure
+\(q\)-derivative is an integral over \([r,R_q]\), hence has a factor
+\(C\tau\); every endpoint term contains a lower variation of \(R_q\).
+Induction on the parameter order, followed by multiplication by the uniformly
+bounded inverse of \(D_R\mathscr H_\tau\), gives, for \(1\le b\le3\),
+\begin{align}
+ \max_{a\le k}\sup_y
+ \left|\partial_y^a\{R_q(\tau,r)-r\}\right|
+ &\le C\tau,\notag\\
+ \max_{a\le k}\sup_y
+ \left|\partial_y^aD_q^bR_q(\tau,r)
+          [h_1,\ldots,h_b]\right|
+ &\le C\tau\prod_{\ell=1}^b
+       \|h_\ell\|_{k+2,\rho;J}.                    \label{eq:backtrack-fixed-time-jets}
+\end{align}
+Here the integral and endpoint Nemytskii estimates are uniform because
+\(|R_q/r|\) stays between two fixed positive constants when
+\(\epsilon_\rho\) is small.  This also proves directly that the constants do
+not depend on \(\rho,\delta\), or the interval locations.  Taking
+\(\tau=\delta\theta_j\) and using
+\cref{eq:backtrack-log-norm} proves
+\cref{eq:backtrack-map-bound,eq:backtrack-frechet-bounds}.
+
+The exact second variation, useful for checking the signs, is
+\begin{align}
+ D_q^2r_j[h_1,h_2]
+={}&\{h_2(r_j)+q'(r_j)R_2\}
+       \int_r^{r_j}\frac{h_1}{q^2}
+ +\frac{h_1(r_j)}{q(r_j)}R_2\notag\\
+ &-2q(r_j)\int_r^{r_j}\frac{h_1h_2}{q^3},
+ \qquad R_2=D_qr_j[h_2].                            \label{eq:backtrack-second-variation}
+\end{align}
+It is the derivative of \cref{eq:backtrack-first-variation}; one further
+derivative is covered by \cref{eq:backtrack-fixed-time-jets}.
+
+The collar geometry and the first displacement bound give
+\begin{equation}
+ \frac12\le\frac{|r_j(r)|}{|r|}\le\frac32,\qquad
+ \left|\log\frac{|r_j(r)|}{|r|}\right|
+ \le C\epsilon_\rho,                               \label{eq:backtrack-log-shift}
+\end{equation}
+after decreasing \(\epsilon_0\).  In fact, if
+\(Y_q(\tau,y)=\log|R_q(\tau,\operatorname{sgn}(J)e^y)|\), then
+\cref{eq:backtrack-fixed-time-jets} and smoothness of the logarithm on the
+displayed ratio interval give the stronger bound
+\begin{equation}
+ \|Y_q(\tau,\cdot)-\Id\|_{C^k_y}
+ +\sum_{b=1}^3\|D_q^bY_q(\tau,\cdot)\|_{
+      \mathcal L^b(C^{k+2}_\rho(J);C^k_y)}
+ \le C\frac{\tau}{\rho},                           \label{eq:backtrack-log-jet-shift}
+\end{equation}
+Fa\`a di Bruno's formula in the \(y\)-coordinate now proves
+\cref{eq:backtrack-composition-bound}.  Apply the fundamental theorem of
+calculus to the full \(C^k_y\) displacement in
+\cref{eq:backtrack-log-jet-shift} to obtain
+\cref{eq:backtrack-composition-difference}.  For every positive parameter
+order, each Fa\`a di Bruno term contains at least one variation from
+\cref{eq:backtrack-fixed-time-jets}.  A term with \(b\) such factors is
+bounded first by \(C\epsilon_\rho^b\); since
+\(\epsilon_\rho\le\epsilon_0\), it is at most \(C\epsilon_\rho\).
+This proves all three lines of
+\cref{eq:backtrack-composition-frechet}, including the third derivative.
+The same calculation applied to the joint map \((f,q)\mapsto f\circ r_j(q)\)
+has either no variation of \(f\), or exactly one such variation.  Applying it
+instead to
+\[
+ f(\operatorname{sgn}(J)e^{Y_q(y)})
+   -f(\operatorname{sgn}(J)e^y)
+\]
+leaves a factor from \cref{eq:backtrack-log-jet-shift} in every term and
+proves \cref{eq:backtrack-joint-difference}; dropping that factor gives the
+asserted bound for \(\mathcal C_j\).  The rectangular parameter statement is
+now the third-order joint Banach-space chain rule.  Substitution of
+\(\rho_\delta=\delta S_\delta/(2\alpha)\) proves
+\cref{eq:backtrack-logarithmic-loss}.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
 Because the rescaled fold-time RFDE is autonomous, differentiation of the
 base solution in fold time gives a solution of the variational equation.  At the

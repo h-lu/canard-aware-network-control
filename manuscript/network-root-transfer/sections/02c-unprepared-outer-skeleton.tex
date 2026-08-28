@@ -390,6 +390,132 @@ time-tangent history in
 \end{equation}
 \end{proposition}
 
+The state-dependent backtrack in
+\cref{eq:exact-outer-backtrack} has to be differentiated in the tracker
+problem.  The next estimate makes explicit the only relative loss: the delay
+shift divided by the distance from the fold.
+
+For an interval \(J\) contained in one component of \(\R\setminus\{0\}\),
+put
+\begin{equation}
+ \|f\|_{k,\rho;J}
+ =\max_{0\le j\le k}\sup_{r\in J}
+       |r|^j\|\partial_r^jf(r)\|.                  \label{eq:backtrack-weighted-norm}
+\end{equation}
+The definition applies to scalar-, vector-, and operator-valued functions.
+
+\begin{proposition}[Weighted calculus for the physical backtrack]
+\label[proposition]{prop:physical-backtrack-calculus}
+Fix an integer \(k\ge2\), \(0<q_-<q_+\), and \(M>0\).  Let
+\(I\Subset J\) be compact intervals in one component of
+\(\R\setminus\{0\}\) such that
+\begin{equation}
+ |r|\ge\rho\quad(r\in I),
+ \qquad |r|\ge\rho/2\quad(r\in J).                \label{eq:backtrack-collar-geometry}
+\end{equation}
+Suppose \(q\in C^{k+2}(J)\) satisfies
+\begin{equation}
+ q_-\le-q(r)\le q_+,
+ \qquad \|q\|_{k+2,\rho;J}\le M,                 \label{eq:backtrack-q-class}
+\end{equation}
+Suppose moreover that one fixed interval \(J_0\Subset J\) contains the whole
+backward flow tube
+\begin{equation}
+ \left\{\Phi_q^{-\tau}(r):
+       r\in\overline I,\ 0\le\tau\le\delta\theta_m\right\}
+ \subset J_0.                                      \label{eq:backtrack-flow-tube}
+\end{equation}
+Put \(r_j(r)=\Phi_q^{-\delta\theta_j}(r)\).  The collars and \(\rho\) may
+vary with \(\delta\).  There are \(\epsilon_0,C>0\), depending only on
+\(k,\theta_m,q_-,q_+\), and \(M\), but not on \(N,\delta,\rho\), or the
+locations and lengths of the displayed intervals, such that, whenever
+\begin{equation}
+ \epsilon_\rho:=\frac{\delta\theta_m}{\rho}
+ \le\epsilon_0,                                    \label{eq:backtrack-relative-shift}
+\end{equation}
+the following estimates hold for every \(j\):
+\begin{align}
+ |r_j(r)-r|&\le q_+\delta\theta_j,
+ &r_j'(r)&=\frac{q(r_j(r))}{q(r)},                  \label{eq:backtrack-basic-identities}\\
+ \|r_j-\Id\|_{k,\rho;I}&\le C\delta\theta_j.    \label{eq:backtrack-map-bound}
+\end{align}
+On the open subset of \(C^{k+2}(J)\), endowed with
+\cref{eq:backtrack-weighted-norm}, whose swept flow tube remains in
+\(\operatorname{int}J\), the map
+\[
+ q\longmapsto r_j-\Id:
+ C^{k+2}(J)\longrightarrow C^k(I)
+\]
+is three times Fr\'{e}chet differentiable.  For
+\(h,h_1,h_2,h_3\in C^{k+2}(J)\),
+\begin{align}
+ D_qr_j[h]
+ &=q(r_j)\int_r^{r_j}\frac{h(u)}{q(u)^2}\,\dd u,  \label{eq:backtrack-first-variation}\\
+ \|D_qr_j[h]\|_{k,\rho;I}
+ &\le C\delta\theta_j\|h\|_{k+2,\rho;J},\notag\\
+ \|D_q^2r_j[h_1,h_2]\|_{k,\rho;I}
+ &\le C\delta\theta_j
+       \|h_1\|_{k+2,\rho;J}\|h_2\|_{k+2,\rho;J},\notag\\
+ \|D_q^3r_j[h_1,h_2,h_3]\|_{k,\rho;I}
+ &\le C\delta\theta_j
+       \prod_{a=1}^3\|h_a\|_{k+2,\rho;J}.
+                                                               \label{eq:backtrack-frechet-bounds}
+\end{align}
+If \(f\in C^{k+3}(J;X)\), where \(X\) is any Banach space, then
+\begin{align}
+ \|f\circ r_j\|_{k,\rho;I}
+ &\le C\|f\|_{k,\rho;J},                           \label{eq:backtrack-composition-bound}\\
+ \|f\circ r_j-f\|_{k,\rho;I}
+ &\le C\epsilon_\rho\|f\|_{k+1,\rho;J},          \label{eq:backtrack-composition-difference}\\
+ \|D_q(f\circ r_j)[h]\|_{k,\rho;I}
+ &\le C\epsilon_\rho\|f\|_{k+1,\rho;J}
+                    \|h\|_{k+2,\rho;J},\notag\\
+ \|D_q^2(f\circ r_j)[h_1,h_2]\|_{k,\rho;I}
+ &\le C\epsilon_\rho\|f\|_{k+2,\rho;J}
+       \|h_1\|_{k+2,\rho;J}\|h_2\|_{k+2,\rho;J},\notag\\
+ \|D_q^3(f\circ r_j)[h_1,h_2,h_3]\|_{k,\rho;I}
+ &\le C\epsilon_\rho\|f\|_{k+3,\rho;J}
+       \prod_{a=1}^3\|h_a\|_{k+2,\rho;J}.
+                                                               \label{eq:backtrack-composition-frechet}
+\end{align}
+More precisely, on any product neighborhood with one common flow tube, put
+\[
+ \mathcal C_j(f,q)=f\circ r_j(q),\qquad
+ \Delta_j(f,q)=f\circ r_j(q)-f|_I.
+\]
+Both maps from
+\(C^{k+3}(J;X)\times C^{k+2}(J)\) to \(C^k(I;X)\) are three times
+Fr\'{e}chet differentiable.  If \(1\le b\le3\) and
+\((g_a,h_a)\) are product-space directions, then
+\begin{align}
+ &\|D^b\Delta_j(f,q)
+       [(g_1,h_1),\ldots,(g_b,h_b)]\|_{k,\rho;I}\notag\\
+ &\quad\le C\epsilon_\rho\left\{
+      \|f\|_{k+3,\rho;J}\prod_{a=1}^b\|h_a\|_{k+2,\rho;J}
+      +\sum_{\ell=1}^b\|g_\ell\|_{k+3,\rho;J}
+          \prod_{a\ne\ell}\|h_a\|_{k+2,\rho;J}\right\}.
+                                                               \label{eq:backtrack-joint-difference}
+\end{align}
+The same estimate without the factor \(\epsilon_\rho\) holds for
+\(D^b\mathcal C_j\).  Thus a parameter-dependent pair \((f,q)\), with a
+common flow tube and common \(C^1_\nu C^2_\eta\) bounds in these two Banach
+spaces, produces delayed compositions and delayed differences with the same
+rectangular parameter regularity, including the mixed
+\(\partial_\nu\partial_{\eta\eta}\) derivative.  The same conclusion holds
+for every rectangular jet of total order at most three, in particular also
+for \(C^2_\nu C^1_\eta\) and the mixed
+\(\partial_{\nu\nu}\partial_\eta\) derivative.  A raw backtrack variation has
+the absolute factor \(C\delta\theta_j\) in
+\cref{eq:backtrack-frechet-bounds}; once it enters a weighted delayed
+composition, its relative factor is \(C\epsilon_\rho\).  At
+\(\rho=\rho_\delta\), this factor is
+\begin{equation}
+ \epsilon_{\rho_\delta}\le\frac{C}{S_\delta}.       \label{eq:backtrack-logarithmic-loss}
+\end{equation}
+All constants in these conclusions are uniform in \(N,\delta\), and the
+admissible collar family just specified.
+\end{proposition}
+
 The proposition is an exact reduction, not an existence assertion.
 In particular, imposing boundary data on
 \cref{eq:exact-outer-voltage-invariance,eq:exact-outer-resource-invariance}

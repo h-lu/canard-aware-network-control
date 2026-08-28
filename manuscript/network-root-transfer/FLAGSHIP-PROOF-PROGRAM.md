@@ -7,6 +7,11 @@ sensed-recovery model have now been inserted in the manuscript.  Items
 below retain the design history; the final checklist records the current
 verification state.
 
+The separate physical-history implementation under Issue #32 now has a fixed
+mixed-BVP and representative-class contract in
+[`../../docs/paper-a-tracker-bvp-proof-program.md`](../../docs/paper-a-tracker-bvp-proof-program.md).
+That contract is not a claim that the tracker theorem has been proved.
+
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
 The current theorem fixes an admissible preparation

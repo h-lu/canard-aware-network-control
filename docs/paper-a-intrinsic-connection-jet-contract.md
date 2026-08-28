@@ -166,8 +166,9 @@ finite-`delta` items remain unproved uniformly in `N`:
 1. a phase-quotiented, nonautonomous outer normal splitting along a true
    positive-`delta` slow tracker; the raw voltage--resource one-unstable
    formulation is false in an admissible homogeneous subclass;
-2. a parameter-coherent `C^1_nu C^2_eta` attracting representative and
-   repelling codimension-one history sheet;
+2. a parameter-coherent
+   `J_phys=(C^1_nu C^2_eta) intersect (C^2_nu C^1_eta)` attracting
+   representative and repelling codimension-one history sheet;
 3. the finite-`delta` resource correction needed for entry into the receding
    logarithmic fold chart, with all delayed
    backtracks contained in the physical tube;
@@ -181,6 +182,10 @@ finite-`delta` items remain unproved uniformly in `N`:
 The proved exact curve equation and quotient identities, together with the
 correct mixed boundary geometry and next dichotomy estimates, are tracked in
 [`paper-a-physical-outer-history-route.md`](paper-a-physical-outer-history-route.md).
+The concrete two-unknown tracker system, principal block operator, mixed
+Green boundary conditions, admissible raw endpoint gauges, flat-equivalence
+estimate, and exact physical membership gap are fixed in
+[`paper-a-tracker-bvp-proof-program.md`](paper-a-tracker-bvp-proof-program.md).
 The remaining tracker/dichotomy construction there is a proof design, not an
 additional manuscript claim.
 
@@ -231,6 +236,9 @@ Do not:
       on existence of a genuine monotone physical history.
 - [x] Prove the exact uncut outer-history equation, genuine longitudinal
       cocycle, resource-gauge quotient, and Volterra history conjugacy.
+- [x] Prove weighted third-order calculus for the state-dependent physical
+      backtrack and delayed composition, sufficient for the rectangular
+      `J_phys` jet and with relative loss `O(S_delta^(-1))`.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.
