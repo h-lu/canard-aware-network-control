@@ -377,9 +377,15 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Close the high-order compatible repelling p(0)-collar feedback and
       prove the zeroth-order normal-to-phase action estimate, including
       endpoint and collar boundary layers.
-- [ ] Define and estimate the opposite phase-to-normal and scaled
-      moving-event columns, close the full phase--normal Schur loop, prove
-      parameter/event-time estimates, and close the nonlinear outer tracker.
+- [x] Derive the exact reduced-flow phase-delay defect, its constant-mode
+      cancellation and zeroth-order action bound; invert the formal delayed
+      phase--event core and identify both phase-induced normal sources.
+- [x] Triangularize the scaled moving-event normal traces on fixed
+      `r`-sections and prove the sharp `delta^(-2)` raw-translation loss.
+- [ ] Identify and estimate the raw-compatible phase collar and the
+      affine-residual normal column, close the full phase--normal Schur loop,
+      prove parameter/event-time estimates, and close the nonlinear outer
+      tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -391,10 +397,11 @@ not the conormal of an independently defined physical maximal-canard locus.
 The frozen-voltage part of G0, the exact algebra of the quotient, the
 fixed-phase component flushing on both outer branches, and the repelling
 compatible scalar feedback are now closed.  The normal-to-phase half of the
-zeroth-order action border is small.  True slow-tracker existence, the
-opposite phase-to-normal/moving-event columns, the complete border, relative
-parameter jets, and nonautonomous quotient roughness remain open, as does
-G1.  The generic
+zeroth-order action border is small; the formal reverse phase-delay block
+and fixed-section event trace are also closed.  True slow-tracker existence,
+the raw-compatible phase collar, affine-residual normal bound, complete
+border, relative parameter jets, and nonautonomous quotient roughness remain
+open, as does G1.  The generic
 nonselection example is not a model-specific impossibility theorem.
 Completing them does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.

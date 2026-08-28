@@ -36,8 +36,10 @@ component Green analysis now bootstraps arbitrary strong collars to genuine
 high-order slow traces on both branches; the repelling argument uses
 forward-transverse/future-scalar kernels and a terminal first-exit action.
 The high-order repelling compatibility feedback and the zeroth-order
-normal-to-phase action column are also closed.  It does not yet close the
-opposite phase-to-normal/moving-event columns or the complete border, construct the
+normal-to-phase action column are also closed.  The formal reverse
+phase-delay core and fixed-`r` event-aligned normal trace are now closed as
+well.  It does not yet identify the raw-compatible phase collar, bound the
+affine-residual normal column, close the complete border, construct the
 nonlinear tracker, prove its nonautonomous normal dichotomy, establish exact
 fold overlap, or produce a physical preparation-independent root.
 

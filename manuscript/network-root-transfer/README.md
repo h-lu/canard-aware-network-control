@@ -41,10 +41,13 @@ fixed-phase component analysis now includes high-order finite-generation
 flushing on both outer branches, with a forward-transverse/future-scalar
 first-exit construction on the repelling side.  It also closes the
 high-order raw-compatible repelling p(0) feedback and proves a small
-zeroth-order normal-to-phase action column.  The opposite
-phase-to-normal/moving-event columns, complete border, nonlinear tracker,
-and finite-`delta` physical
-slow-history relation remain open.
+zeroth-order normal-to-phase action column.  In the reverse direction it
+derives the exact formal phase-delay defect, closes its delayed scalar
+phase--event inverse, and identifies the phase-induced normal residual.  A
+fixed-`r` event-aligned trace theorem removes the scaled terminal-time
+unknown from normal rows at the reduced base.  The raw-compatible phase
+collar, affine-residual normal bound, complete border, nonlinear tracker,
+and finite-`delta` physical slow-history relation remain open.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag
