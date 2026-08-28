@@ -20,3 +20,4 @@ results/raw/
 *.synctex.gz
 tmp/
 manuscript/**/main.pdf
+manuscript/**/supplement.pdf

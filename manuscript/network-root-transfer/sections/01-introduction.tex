@@ -1,185 +1,481 @@
-\section{Introduction}\label{sec:introduction}
+\section{Introduction}
+\label{sec:introduction}
 
-In a retarded differential equation, the state at time \(t\) is an entire
-history segment.  This distinction becomes decisive in an orbit-matching
-problem near a fold: two present states can agree while the delayed
-information that later returns to the critical direction remains different.
-We therefore call a parameter value a \emph{selected complete-history root}
-when an attracting and a repelling one-sided trace, constructed on the same
-invariant history graph, agree as retained RFDE histories on a fixed phase
-section.  Their outer tail levels and cutoffs are fixed by an admissible
-preparation datum.  No uniqueness is built into that datum: the
-finite-parameter root is consequently a selected
-object; the result below shows that its leading response coefficient is shared
-by any two fixed admissible preparations even though their baseline roots need
-not agree.  The labels attracting and repelling refer to the two singular
-fold sides used in this local selection; they do not assert that the traces
-come from independently prescribed outer slow manifolds.
+Suppose a parameter changes a delayed network while leaving a prescribed
+projected vector field exactly unchanged at every full history.  Can that
+parameter nevertheless be detected by a dynamical matching measurement?  If
+the projection closes the dynamics, the quotient system answers the question.
+If it does not, an invisible perturbation can first displace unresolved
+histories and later return to a resolved matching condition.  This paper shows
+that, for a class of finite retarded networks, the returned information is not
+only detectable: two separated delays make the entire compressed transverse
+return functional recoverable, with estimates independent of network size.
 
-The phenomenon studied here is a failure of projection identifiability.  A
-structural perturbation changes each delay layer in a direction annihilated by
-the stationary row of a directed Markov network.  Hence, at every full vector
-history, the stationary projection of the RFDE right-hand side is exactly the
-same before and after perturbation.  Nevertheless, the selected root moves.
-The information lost under projection first enters the stable transverse
-history, passes through a dimension-uniform Markov resolvent, and is then
-returned to the scalar matching equation by heterogeneous curvature.
-
-\subsection{Relation to existing canard and network theory}
-
-The fold chart and singular orbit used below come from planar canard theory
-\citep{krupa2001relaxation,krupa2001extending}.  Canard explosions and more
-complicated canard-induced oscillations have been established in concrete
-delay equations \citep{campbell2009delay,krupa2016complex,krupa2016explosion},
-and \citet{avitabile2020local} developed a local theory for spatio-temporal
-canards with infinite-dimensional fast dynamics.  Our question is different:
-can two network families with identical stationary-projected vector-field
-functionals have different complete-history matching roots?
-
-Canards and canard-type tipping on networks have been studied on consensus
-manifolds, nonlinear diffusion networks, adaptive mean-field networks, and
-through collective reductions
-\citep{jardon2020consensus,bonetto2024nonlinear,qin2023tipping,
-balzer2024cascading,laurence2019spectral,thibeault2020threefold,
-masuda2022dimension,ma2023generalized,liu2026predicting}.  Collective
-reductions are powerful when the discarded modes are slaved without returning
-new information to the selected observable.  Our result isolates an
-obstruction to that premise: stationary projection and invariant-history
-reduction need not commute.  The explicit family has pairwise distinct node
-curvatures, no nontrivial synchrony polydiagonal, and a transverse amplitude
-bounded below along the matched root orbit.  Thus the conclusion is not a
-synchronous copy of a scalar canard.
-
-There is a complementary warning in projection-based model reduction.
-Eliminating unresolved network variables generally produces memory terms,
-and nonlinear projection methods can use those terms to recover transients
-that a memoryless reduction loses 
-\citep{herrera2020tractable}.  That literature reconstructs reduced dynamics;
-our question is an identifiability question for a parameter selected by an
-orbit-matching problem.  We impose the stronger identity that the projected
-vector-field functional itself is unchanged at every full history, and then
-show that the selected root still changes.  Thus the new issue is not merely
-that projection creates memory, but that two structurally different memory
-channels can be indistinguishable to the projected vector field and yet be
-distinguished by a complete-history root.
-
-Synchrony polydiagonals and the associated quotient networks are classically
-organized by balanced equivalence relations or, more generally, common
-invariant synchrony subspaces of the coupling matrices
-\citep{golubitsky2005patterns,neuberger2020invariant}.  We use this standard
-notion in the explicit witness: pairwise-distinct curvature terms violate
-tangency to every polydiagonal containing two different nodes, even though
-the coupling itself has a collective Markov component.
-
-The analytic tools have classical ancestors.  The Dobrushin coefficient is
-the contraction ratio of a stochastic operator in the oscillation seminorm
-\citep{gaubert2015dobrushin}, and delayed consensus estimates are available
-for several directed and scalable network classes
-\citep{moreau2004consensus,munz2010delay,atay2013consensus,
-haskovec2021consensus,proskurnikov2023delay}.  Fredholm and Lin-type matching
-for functional differential equations is also established
-\citep{hale1986heteroclinic,lin1986exponential,malletparet1999fredholm,
-hupkes2009lin}.  We use these ideas as tools rather than claim a new
-contraction or Fredholm principle.  The main result package couples four
-facts: exact blindness of the stationary-projected RFDE, construction
-of the complete-history root, a transverse-return coefficient with uniform
-remainder, and a sharp algebraic classification of the perturbation
-directions for which that coefficient vanishes.
-
-\subsection{Projection blindness and the main theorem}
-
-Let \(\mathcal F_{N,\delta,\nu,\zeta}\) be the full history vector field and
-\(\Pi_N(x,y)=(\pi_N^Tx,y)\) the stationary output projection.  Atomwise row
-neutrality gives the exact functional identity
+The setting is a family of directed Markov networks with a common Dobrushin
+gap and finitely many fixed delay locations.  A structural parameter
+redistributes coupling between delay layers in stationary-row-neutral
+directions.  If \(\mathcal F_{N,\delta,\nu,\zeta}\) is the full history vector
+field and \(\Pi_N(x,y)=(\pi_N^Tx,y)\), then
 \begin{equation}
+ \Pi_N\mathcal F_{N,\delta,\nu,\zeta}(\Phi)
+ =\Pi_N\mathcal F_{N,\delta,\nu,0}(\Phi)              \label{eq:intro-blindness}
+\end{equation}
+for every unreduced history \(\Phi\).  This is equality at the same full
+history, not exact lumpability and not equality of projected trajectories.
+Nevertheless, a selected complete-history fold-matching root has a nonzero
+leading response.  The mechanism is
+\begin{equation}
+ \begin{aligned}
+  \text{blind delay redistribution}
+  &\longrightarrow \text{transverse source}
+   \longrightarrow \text{stable history lift}\\
+  &\longrightarrow \text{collective cokernel}
+   \longrightarrow \text{root response}.
+ \end{aligned}                                      \label{eq:intro-return-chain}
+\end{equation}
+
+The perturbations have a concrete network interpretation.  A designer may
+redistribute a fixed aggregate interaction between communication, transport,
+or feedback channels with different latencies while preserving stationary
+balance at every channel.  An observer that records only the stationary
+average then sees the same projected right-hand side, even though hidden
+disagreement modes retain the latency information.  Near a fold, small
+hidden displacements can change where attracting and repelling slow-passage
+histories meet.  The selected root studied here is a rigorous local
+transition sensitivity for that meeting problem.  It is not asserted to be
+a biological onset or a globally defined switching threshold; its value is
+that it tests whether an aggregate-only description has discarded
+dynamically recoverable delay information.
+
+\paragraph{Reusable verification interface.}
+To transport \cref{eq:intro-return-chain} to another RFDE, one must verify
+five independent inputs: exact blindness on the full history space; a
+factored source \(\mathsf S_N\) with a dimension-uniform right inverse on
+the admitted probe space; a dimension-uniform transverse history inverse
+\(L_{\perp,N}^{-1}\); a return map \(\mathsf B_N\) into a collective
+matching operator with one-dimensional cokernel and nonzero parameter class;
+and a \(C^2\) history lift, zero-fiber identification, and finite-section
+remainder bounds.  The abstract two-atom source criterion in
+\cref{prop:abstract-two-atom-source}, the hidden-return result
+\cref{thm:hidden-return-schur}, and the range-to-root result
+\cref{thm:abstract-root-response} separate these checks.  The two concrete
+models below verify the same source and range interfaces but realize
+inequivalent return covectors.
+
+\subsection{Main theorem}
+
+The next statement collects the operator dichotomy, the RFDE range
+construction, and the nonlinear measurement in one result for the two model
+families treated here.  It is a model-family synthesis theorem, not a
+replacement for the abstract portability criteria just listed.  Its
+constituent statements are separated in later sections so that the source
+theorem and the range-to-root theorem can be reused independently.
+
+For this statement, call a model family \emph{uniformly admissible} when the
+following data are fixed independently of \(N\): constants
+\(D,\gamma,\alpha,\beta>0\), \(K\ne0\), and finitely many merged delay
+locations; row-stochastic \(P_N\) with strictly positive stationary
+probability \(\pi_N\) and \(\tau(P_N)\le1-\gamma\); curvature vectors with
+\(0<c_-\le c_{i,N}\le c_+\) and \(\pi_N^Tc_N=\alpha\); and delay layers
+and stationary-row-neutral pure-redistribution directions satisfying one
+common sum of operator-norm bounds.  The physical RFDE is either
+\cref{eq:shared-rfde-v,eq:shared-rfde-w} or
+\cref{eq:shared-rfde-v,eq:sensed-recovery-law}; in the second case the
+sensing coefficients also obey \cref{eq:sensing-bounds}.  A compact
+\(\nu\)-interval contains all corresponding fold centers with one positive
+boundary distance.  Finally, one selection datum is fixed: it agrees with
+the physical history equation on the retained fold tube, supplies the stated
+uniformly bounded smooth history completion, and fixes the endpoint and
+phase rows; the full, nonempty class is specified by \textup{(S1)}--\textup{(S4)}
+in \cref{def:admissible-preparation}.
+
+\begin{theorem}[Projection-blind two-delay fold-response readout]
+\label[theorem]{thm:flagship-synthesis}
+Consider a uniformly admissible family in the preceding sense.  Let
+\(\mathfrak T_N^{\rm red}\) be the stationary-row-neutral
+pure-redistribution space, let
+\(\mathsf S_N:\mathfrak T_N^{\rm red}\to E_N\) be the first-delay-moment
+source, and put \(\mathsf T_N=A_N^{-1}\mathsf S_N\).  If
+\(\Theta\) is the merged delay support, set
+\(\Delta_\theta=\max\Theta-\min\Theta\).
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item Every admitted redistribution is exactly invisible to the stationary
+projection at every unreduced history:
+\[
  \Pi_N\mathcal F_{N,\delta,\nu,\zeta}
- =\Pi_N\mathcal F_{N,\delta,\nu,0}.                    \label{eq:intro-blindness}
-\end{equation}
-This is stronger than cancellation of a first-order coefficient: it holds
-for every full history and every admitted \(\zeta\).  It does not make the
-projected dynamics closed, because the projected nonlinear field still
-depends on the transverse components of that history.
+ =\Pi_N\mathcal F_{N,\delta,\nu,0}.
+\]
+If \(\Delta_\theta>0\), then \(\mathsf S_N\) is onto \(E_N\), has an explicit
+two-layer right inverse \(\mathsf Q_N\), and
+\[
+ \|\mathsf S_N\|=\frac{|K|\Delta_\theta}{4\alpha},
+ \qquad
+ \|\mathsf Q_N\|=\frac{4\alpha}{|K|\Delta_\theta}.
+\]
+If the merged support contains only one location, then
+\(\mathsf S_N=0\) on \(\mathfrak T_N^{\rm red}\).
+This last assertion is a no-go statement only for the leading
+first-delay-moment source on the pure-redistribution space; it does not
+exclude higher-order responses or responses outside
+\(\mathfrak T_N^{\rm red}\).
 
-Under a common Dobrushin gap, fixed delay support, uniformly bounded positive
-curvatures, and one fixed admissible preparation datum, \cref{thm:shared-resource}
-constructs exactly one root in a common local window for every finite network
-size.  If \(\mu=\delta^2\nu\), then
+\item For each uniformly bounded family
+\(\mathbf R_N\in\mathfrak T_N^{\rm red}\), there exist
+\(\delta_0,\zeta_0,c_0,C>0\), depending on the common model bounds, the
+common direction bound, and the fixed preparation datum, but not on \(N\),
+such that for every \(N\ge2\), \(0<\delta<\delta_0\), and
+\(|\zeta|<\zeta_0\), the corresponding selected gap has exactly one zero
+\(\nu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,\zeta)\) in
+\[
+ |\nu-\nu_{0,N}^{\rm mod}|<c_0,
+\]
+where \(\nu_{0,N}^{\rm mod}=\nu_{0,N}\) in the curvature model and
+\(\nu_{0,N}^{\rm mod}=\nu_{0,N}^{\rm rec}\) in the recovery-sensing
+model.  No assertion is made about zeros outside this window.  At this zero
+the two retained complete RFDE histories agree.  Put
+\(\mu_{c,N}^{\mathbf p,\mathbf R_N}
+=\delta^2\nu_{c,N}^{\mathbf p,\mathbf R_N}\).  With
+\(\mathfrak r_N\in E_N^*\) denoting the curvature or recovery return
+covector and
+\(\Lambda_N=\mathfrak r_N\mathsf T_N\),
+\[
+ \Delta_{N,\mathbf R}^{\mathbf p}(\delta,\zeta)
+ :=\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,\zeta)
+   -\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0),
+ \qquad
+ \left|\Delta_{N,\mathbf R}^{\mathbf p}(\delta,\zeta)
+   -\delta^3\zeta\Lambda_N(\mathbf R_N)\right|
+ \le C\{\delta^4|\zeta|+\delta^3\zeta^2\},
+\]
+on one parameter box with one constant for all \(N\).
+
+\item In the case \(\Delta_\theta>0\), the observation map
+\(\mathcal O_N\mathfrak r_N=\mathfrak r_N\mathsf T_N\) is injective and
+\[
+ \mathfrak r_N(z)
+  =(\mathcal O_N\mathfrak r_N)(\mathsf Q_NA_Nz),
+ \qquad
+ \operatorname{cond}(\mathcal O_N|_{\operatorname{Ran}\mathcal O_N})
+ \le\frac{2-\gamma}{\gamma},
+\]
+where the range has the inherited dual norm.  Consequently limiting
+normalized root increments on a probe family whose transverse images span
+\(E_N\) determine the compressed return covector.  Finite-scale increments
+approximate the corresponding covector evaluations with error
+\(O(\delta+|\zeta|)\).  Under the additional irreducibility,
+compatible-base-layer, and common unit-probe preparation hypotheses of
+\cref{cor:curvature-tomography,cor:recovery-tomography}, that error bound is
+uniform in \(N\) and over \(\|d_N\|_N\le1\).
+
+\item For either model, after fixing the physical model, stationary
+projection, phase and endpoint conditions, and normalization
+\(\mu=\delta^2\nu\), baseline-subtracted increments from any two fixed
+admissible preparation data satisfy
+\[
+ |\Delta^{\mathbf p_1}_{N,\mathbf R}
+   -\Delta^{\mathbf p_2}_{N,\mathbf R}|
+ \le C_{\mathbf p_1,\mathbf p_2}
+       \{\delta^4|\zeta|+\delta^3\zeta^2\}
+\]
+on their common parameter box.  Here
+\(C_{\mathbf p_1,\mathbf p_2}\) is independent of \(N\), but may depend on
+the fixed pair of preparations.  Hence they define the same
+dimension-uniform leading response germ
+\([\,\delta^3\zeta\Lambda_N(\mathbf R_N)\,]_{\rm resp}\).  For each fixed
+preparation and each uniformly bounded direction family, the normalized
+derivative converges to the limiting direction-response covector
+\(\Lambda_N\) uniformly in \(N\); no uniformity over the whole preparation
+class is asserted.  For the shared-resource family, however, the exact
+finite-\(\delta\) roots are not preparation independent: at every fixed
+\(N_0\) and sufficiently small fixed target, an admissible localized change
+of the outer completion can move the selected baseline root.
+\end{enumerate}
+
+No preparation-independent maximal-canard claim, full-network reconstruction,
+or \(N\)-uniform inversion from an arbitrary finite noisy probe frame is part
+of the theorem.
+\end{theorem}
+
+\begin{proof}
+For the shared-resource model, exact blindness is
+\cref{prop:projection-blindness}; for the recovery-sensing model the same
+voltage identity holds and the modified recovery law has no direct
+\(\zeta\)-dependence.  The source dichotomy and dual reconstruction are
+\cref{thm:hidden-return-tomography}.  The two model-specific root statements
+are \cref{thm:shared-resource,thm:sensed-recovery-response}.  The finite-scale
+generator-probe conclusions, under their additional hypotheses, are
+\cref{cor:curvature-tomography,cor:recovery-tomography}.  Preparation
+universality for the shared-resource model is
+\cref{cor:preparation-universality,thm:canonical-response-germ}; the
+recovery-sensing germ is \cref{eq:sensing-canonical-germ}.  The final
+finite-section noncanonicity assertion, as stated here for the
+shared-resource family, is \cref{prop:finite-section-noncanonicity}.
+\end{proof}
+
+\subsection{Blind controllability and dual recovery}
+
+Let \(E_N=\ker\pi_N^T\) be the transverse space and let
+\(\mathfrak T_N^{\rm red}\) contain delay-layer directions
+\(\mathbf R=(R_0,\ldots,R_m)\) satisfying
+\(\pi_N^TR_k=0\) for each layer and \(\sum_kR_k=0\).  The second identity
+keeps the aggregate coupling fixed.  The leading transverse source and its
+stable lift are
 \begin{equation}
- \mu^{\rm can}_{c,N}(\delta,\zeta)
- =\mu^{\rm can}_{c,N}(\delta,0)
-   +\mathscr C_N\delta^3\zeta
-   +O(\delta^4|\zeta|+\delta^3\zeta^2),                \label{eq:intro-response}
+ \mathsf S_N\mathbf R
+ =\frac{K}{2\alpha}P_{\perp,N}
+   \left(\sum_k\theta_kR_k\right)\mathbf1,
+ \qquad
+ \mathsf T_N\mathbf R=A_N^{-1}\mathsf S_N\mathbf R. \label{eq:intro-source-lift}
 \end{equation}
-uniformly in \(N\), where
+Thus the zeroth delay moment is erased exactly, while the first moment may
+survive.
+
+Our first main result, \cref{thm:hidden-return-tomography}, proves a sharp
+dichotomy.  If two delay locations differ by
+\(\Delta_\theta>0\), then \(\mathsf S_N\) maps the projection-blind
+redistributions onto all of \(E_N\).  An explicit two-layer right inverse
+\(\mathsf Q_N\) satisfies
 \begin{equation}
- \mathscr C_N
- =-\frac{K}{2\alpha^2}\pi_N^T\diag(c_N)A_N^{-1}P_{\perp,N}
-     \left(\sum_k\theta_kR_{k,N}\right)\mathbf1.      \label{eq:intro-coefficient}
+ \mathsf S_N\mathsf Q_N=\Id_{E_N},
+ \qquad
+ \|\mathsf S_N\|\,\|\mathsf Q_N\|=1,               \label{eq:intro-sharp-source}
 \end{equation}
-When \(\inf_N|\mathscr C_N|>0\),
-\cref{eq:intro-blindness,eq:intro-response} exhibit two systems with the
-same projected vector-field functional and different selected roots.  This is
-the precise projection non-identifiability conclusion.
+with each norm given exactly and independently of \(N\).  After coincident
+atoms are merged, a single-point delay support instead gives
+\(\mathsf S_N=0\) on \(\mathfrak T_N^{\rm red}\).  This is a sharp no-go
+statement for the leading source generated by pure delay redistributions; it
+does not concern moving delays, general row-neutral perturbations, or
+higher-order mechanisms.  Dependence of stability on delay distributions and
+their moments has a separate history \citep{kiss2010stability}; what is sharp
+here is the projection-blind source map on matrix redistributions.  We use
+``blind controllability'' only for this
+algebraic ability of admissible parameter directions to span the leading
+transverse source, not for time-dependent state control in the classical
+sense \citep{hermann1977nonlinear}.
 
-The coefficient is not imposed as a hypothesis of the existence theorem.
-\Cref{thm:response-directions} classifies it.  For a fixed heterogeneous
-network, the leading coefficient's kernel in the stationary-row-neutral
-direction space is a closed codimension-one hyperplane; the complementary
-nonzero directions are open and dense.  The same is true under the additional pure-redistribution constraint
-\(\sum_kR_{k,N}=0\) when two delays are distinct.  An explicit witness gives
+Let \(\mathfrak r_N\in E_N^*\) be the transverse return covector compressed
+by the collective matching equation.  The observed response covector is
 \begin{equation}
- \mathscr C_N=-\frac{K}{2\alpha^2}
- \left\{\pi_N^T(c_N^{\circ2})-\alpha^2\right\},        \label{eq:intro-variance}
+ \Lambda_N=\mathcal O_N\mathfrak r_N
+ :=\mathfrak r_N\mathsf T_N.
 \end{equation}
-so curvature heterogeneity is exactly what allows a hidden transverse history
-to return to the selected scalar gap at leading order in this tangent class.
+The same theorem gives the coordinate-free reconstruction
+\begin{equation}
+ \mathfrak r_N(z)=\Lambda_N(\mathsf Q_NA_Nz),
+ \qquad z\in E_N,                                   \label{eq:intro-reconstruction}
+\end{equation}
+and bounds the condition number of \(\mathcal O_N\), as an isomorphism onto
+its range with the inherited dual norm, by \((2-\gamma)/\gamma\).  Once the
+right inverse is known, injectivity and \cref{eq:intro-reconstruction} are
+standard duality.  The mathematical content is the exactly
+projection-blind source realization, its sharp two-delay inverse, and the
+dimension-uniform return bounds---not a new principle of Banach-space duality.
 
-The explicit sequence following \cref{thm:response-directions} strengthens
-this fixed-network genericity in two ways.  Its coefficient is the same
-nonzero number for every \(N\), and it stays uniformly separated from zero
-on a fixed-radius ball in the supremum of the network direction norms.  At
-slow time \(s=-1\), the transverse part of the matched voltage history has
-size at least \(\sigma\delta^2/(4D)\), uniformly in \(N\).  Hence the algebraic
-response is realized by a genuinely asynchronous orbit, not only by a formal
-derivative at a collective state.
+\subsection{Nonlinear complete-history readout}
 
-The word ``selected'' remains essential.  The fixed datum fixes the
-tail levels, cutoffs, normal extension, and phase convention.  We do not prove
-that two preparations have the same finite-\(\delta\) baseline root.  We do
-prove in \cref{cor:preparation-universality} that any two fixed admissible
-preparations have the same leading increment in \(\zeta\), up to the uniform
-remainder in \cref{eq:intro-response}.  The response coefficient is therefore
-preparation universal at leading order even though the selected baseline is
-not claimed to be.
+The operator statement becomes a dynamical measurement only after an
+infinite-dimensional range problem is solved.  Near a collective fold we
+construct an invariant RFDE history graph and attracting and repelling
+one-sided traces.  A zero of their scalar gap is equality of the retained
+complete RFDE histories on the phase section, not merely equality of a
+projected observable.  Fix a uniformly bounded blind direction family
+\(\mathbf R=(\mathbf R_N)\).  The root theorem proves
+\begin{equation}
+ \Delta_{N,\mathbf R}^{\mathbf p}(\delta,\zeta)
+ :=\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,\zeta)
+     -\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0)
+ =\delta^3\zeta\Lambda_N(\mathbf R_N)
+   +O(\delta^4|\zeta|+\delta^3\zeta^2),             \label{eq:intro-response}
+\end{equation}
+with one parameter box and one remainder constant for all admitted network
+sizes and every bounded probe family.  Consequently, normalized finite-scale
+root increments recover the pairings of \(\mathfrak r_N\) with error
+\(C(\delta+|\zeta|)\).  This is the nonlinear bridge from
+\cref{eq:intro-reconstruction} to an input--output quantity.
 
-\subsection{Proof mechanism and scope}
+For generator-supported probes \(\mathsf G_N(d)\), the two model
+realizations give the explicit pairings
+\begin{align}
+ \Lambda_N^{\rm curv}(\mathsf G_N(d))
+ &=\frac{K\Delta_\theta}{2\alpha^2D}
+   \langle c_N-\alpha\mathbf1,d\rangle_{\pi_N},
+                                                               \label{eq:intro-curvature-pairing}\\
+ \Lambda_N^{\rm rec}(\mathsf G_N(d))
+ &=-\frac{K\Delta_\theta}{2\alpha D}
+   \left\langle\varpi_N-\frac{c_N}{\alpha},d
+   \right\rangle_{\pi_N}.                         \label{eq:intro-recovery-pairing}
+\end{align}
+Thus any \(N-1\) probes spanning \(E_N\) determine the relevant centered
+return profile at fixed \(N\).  The pairing estimates are uniform over the
+unit probe ball.  Without a uniform lower frame bound, however, we do not
+claim an \(N\)-uniform condition number for reconstructing a coordinate
+vector from finitely many noisy pairings.  Likewise, an absolute measurement
+error in the root increment is amplified by
+\(\delta^{-3}|\zeta|^{-1}\); the theorem establishes asymptotic
+identifiability, not noise robustness as \(\delta\downarrow0\).
 
-The proof has four analytic steps.  A Dobrushin estimate gives a
-dimension-free exponential inverse on the stationary transverse space.  An
-exact fold chart and a special-flow contraction construct an invariant
-complete-history graph together with the finite state and parameter jets
-needed for the response.  One-sided Gaussian Green operators solve the
-trace, phase, and endpoint problems with constants independent of network
-size.  Only after this range problem is solved do we pair the reduced field
-with its adjoint.  Row neutrality cancels the direct projected delay term;
-the delay moment, transverse resolvent, and curvature pairing then give
-\cref{eq:intro-coefficient}.  Injectivity of the history graph upgrades
-equality of the reduced phase-section states to equality of the retained RFDE
-histories.  \Cref{fig:root-mechanism} displays this geometry and response
-chain.
+We use ``tomography'' descriptively for the recovery of this one compressed
+return covector from directional root responses.  The network skeleton,
+stationary weights, delay locations, and scalar coefficients are treated as
+known.  We neither reconstruct the full hidden network nor infer all
+coefficients of the RFDE.
 
-The theorem does not assert the first network canard, a preparation-
-independent maximal canard, or a physical pulse threshold.  It treats finite
-networks with a common mixing gap and fixed delay support; moving delay atoms,
-a closing gap, infinite networks, and arbitrary preparation comparison require
-additional arguments.  \Cref{sec:model-results} defines the network class and
-states the blindness, root, genericity, universality, robustness, and
-asynchrony results.  \Cref{sec:abstract-response} isolates the reusable
-range-to-root implication.  \Cref{sec:network-mechanism} proves the
-model-specific range and transverse-return mechanism.  The complete
-special-flow contraction and finite-section gap bookkeeping are supplied in
-\cref{subsec:invariant-history-details,subsec:finite-gap-bridge}, while
-\cref{sec:conclusion} records the resulting mathematical principle and its
-boundary.
+\subsection{What is intrinsic, and what is not}
+
+The scalar readout in \cref{eq:intro-response} is selected by finite
+endpoints and an outer planar completion.  It would be incorrect simply to
+rename its exact finite-\(\delta\) zero an intrinsic maximal canard.
+\Cref{prop:finite-section-noncanonicity} constructs localized admissible
+changes of the artificial completion which leave the physical RFDE, retained
+fold tube, phase row, and endpoint equation fixed but move that exact root.
+This is an obstruction result, not a missing uniqueness proof.
+
+There is nevertheless a relative-canonical object within a precisely fixed
+comparison class.  Hold fixed the physical RFDE family, stationary projection, phase and
+endpoint conditions, and normalization \(\mu=\delta^2\nu\).  Subtract each
+admissible preparation's own \(\zeta=0\) baseline.  For any two fixed
+preparations, \cref{thm:canonical-response-germ} gives
+\begin{equation}
+ [\Delta_{N,\mathbf R}^{\mathbf p}]_{\rm resp}
+ =[(\delta,\zeta)\mapsto
+    \delta^3\zeta\Lambda_N(\mathbf R_N)]_{\rm resp}, \label{eq:intro-canonical-germ}
+\end{equation}
+on their common parameter box, and
+\(\delta^{-3}\partial_\zeta
+\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0)
+\to\Lambda_N(\mathbf R_N)\)
+uniformly in \(N\).  The baseline-subtracted leading response germ and its
+limiting covector are therefore preparation independent in this relative
+sense; the finite-section representative root is not.
+
+\subsection{Two inequivalent return channels}
+
+The shared-resource model returns the transverse history through heterogeneous
+fast curvature:
+\begin{equation}
+ \mathfrak r_N^{\rm curv}(h)
+ =-\frac1\alpha\pi_N^T(c_N\circ h).
+                                                               \label{eq:intro-curvature-return}
+\end{equation}
+Its response is nonzero on the full blind redistribution space exactly when
+the node curvatures are not stationary-homogeneous.  The second RFDE family
+changes the recovery law and has
+\begin{equation}
+ \mathfrak r_N^{\rm rec}(h)
+ =\left\langle\varpi_N-\frac{c_N}{\alpha},h
+   \right\rangle_{\pi_N}.                           \label{eq:intro-sensing-return}
+\end{equation}
+With \(c_N=\alpha\mathbf1\), the curvature channel vanishes identically
+while heterogeneous recovery sensing remains active.  For each fixed \(N\),
+varying the positive sensing weights realizes every nonzero ray in \(E_N^*\).
+This makes the second family a genuinely different return operator, not a
+renaming of the first model.
+
+The generator probes are supported on \(\Id+P_N\) and therefore preserve the
+support of the chosen base layers
+\(B_{0,N}=B_{m,N}=(\Id+P_N)/2\).  For sufficiently small signed
+amplitudes the perturbed layers remain entrywise nonnegative; for an open
+dense set of directions the nonzero probe layers have rank \(N-1\).  Sparse directed
+reset--cycle networks then give \(O(N)\)-edge realizations with common
+Dobrushin gap, uniformly nonzero response, and no nontrivial synchrony
+polydiagonal in the curvature family.  Thus the result is not an arbitrary-size
+copy of a lower-dimensional synchronous fold-matching problem.
+
+\subsection{Relation to existing theory and the novelty boundary}
+
+Exact lumpability requires the full vector field to descend to a closed
+quotient, equivalently to intertwine full and quotient flows under appropriate
+hypotheses \citep{horstmeyer2016lumpability}.
+\Cref{eq:intro-blindness} is weaker in a different direction: it compares two
+projected vector-field functionals at the same unreduced history, but the
+common functional need not factor through the projected history.  We prove
+projection blindness, not exact lumpability.  Nor does same-history equality
+assert invariance of an entire measured output trajectory under parameter
+changes, as in structural unidentifiability or dynamical compensation
+\citep{bearup2013inputoutput,villaverde2017dynamical}.  Mori--Zwanzig theory supplies a
+broad conceptual precedent for unresolved modes returning through memory
+\citep{chorin2002optimal,herrera2020tractable}; here the return is instead a
+deterministic first-delay-moment source, a stable transverse inverse, and a
+one-dimensional matching cokernel.
+
+Adjoint sensitivity already represents scalar response derivatives as
+covector pairings, including for functional differential systems with
+time lags \citep{cacuci1981sensitivity,rihan2003sensitivity}, and sufficiently many
+directional measurements can of course recover a finite-dimensional
+functional.  Network reconstruction from response dynamics
+\citep{timme2007revealing}, from delayed noisy interactions
+\citep{zhang2019reconstruction}, and from long noisy time series
+\citep{pereira2025robust} addresses the more ambitious problem of recovering
+interaction structure, delays, or dynamics.  We make no such claim.  The new
+conjunction here is narrower: admissible probes annihilate the entire
+stationary projection at every delay atom and preserve aggregate coupling;
+two separated delays nevertheless span the transverse source with sharp
+dimension-free cost; and a nonlinear complete-history root reads out the
+resulting covector with a uniform remainder.  The Schur elimination,
+one-dimensional cokernel projection, and dual reconstruction after a right
+inverse are standard operations and are not presented as new principles.
+
+Observability and parameter identifiability for nonlinear delay systems ask
+whether states, histories, or model parameters can be recovered from an
+input--output behavior
+\citep{xia2002analysis,zhang2006parameter,anguelova2010analytic,verduynlunel2001parameter}.
+Our result is not an observability test and does not recover the delay layers,
+delay locations, or an arbitrary RFDE state.  The network skeleton and
+coefficients are known; the probes recover only the finite-dimensional return
+covector compressed by the chosen fold-matching equation.  Equality of the
+two retained complete histories at a selected root is a zero-fiber property
+of that matching construction, not analytic observability of the underlying
+delay system.
+
+The fold chart and singular orbit are classical planar canard objects
+\citep{krupa2001relaxation,krupa2001extending}.  Canard explosions and more
+complicated canard-induced oscillations occur in delay equations
+\citep{campbell2009delay,krupa2016complex,krupa2016explosion}, and local
+infinite-dimensional fast--slow theory includes DDE examples
+\citep{avitabile2020local}.  Network canards arise in consensus,
+nonlinear-diffusion, adaptive mean-field, and tipping settings
+\citep{jardon2020consensus,bonetto2024nonlinear,balzer2024cascading,qin2023tipping}.
+We do not claim a first network canard, a preparation-independent maximal
+canard, or a new infinite-dimensional center-manifold theorem.
+
+The dimension-uniform range estimates use Dobrushin contraction in the
+oscillation seminorm \citep{gaubert2015dobrushin}, in the context of a broad
+literature on delayed consensus
+\citep{moreau2004consensus,munz2010delay,atay2013consensus,haskovec2021consensus,proskurnikov2023delay}.
+Fredholm and Lin methods already provide finite-codimension matching theories
+for RFDEs and mixed-type equations
+\citep{hale1986heteroclinic,lin1986exponential,malletparet1999fredholm,hupkes2009lin}.
+Our range construction is model specific: it combines a Dobrushin-controlled
+complete-history graph, selected traces, and a finite-section estimate.  It is
+not a new general Fredholm or Lin theorem.  Synchrony polydiagonals are
+organized by balanced relations and common invariant subspaces
+\citep{golubitsky2005patterns,neuberger2020invariant}; the sparse curvature
+family rules them out by distinct node curvatures.
+
+\subsection{Proof architecture and organization}
+
+The proof has four load-bearing steps.  First, stationary-row cancellation
+gives exact blindness.  Second, the Dobrushin gap supplies a dimension-free
+transverse inverse, while two delay atoms give the sharp source right inverse.
+Third, a special-flow transform constructs an injective invariant graph of
+complete RFDE histories and two selected traces.  Fourth, Gaussian cokernel
+pairings and a finite-section error estimate transfer the whole-line return
+coefficient to the nonlinear root.  The two model calculations then identify
+the curvature and recovery covectors, while the localized bump construction
+proves exact-root noncanonicity.
+
+\Cref{sec:model-results} defines the shared-resource model and states the
+blind-controllability, root-readout, tomography, and obstruction results.
+\Cref{sec:abstract-response} records the supporting Schur and range-to-root
+machinery.  \Cref{sec:sensed-recovery} supplies the second return channel.
+\Cref{sec:network-mechanism} proves the model-specific graph, trace, and
+coefficient calculations.  Detailed history-graph and finite-section
+bookkeeping is placed in the supplementary material.
+
+\Cref{fig:root-mechanism} summarizes the information flow from exact blindness
+to the two-delay source, nonlinear root responses, and recovered return
+covector.
 
 \input{figures/root-mechanism}
+\clearpage

@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\input{preamble}
+\IfFileExists{main.aux}{\externaldocument[][nocite]{main}}{}
+
+\newcommand{\papertitle}{Two-Delay Blind Controllability and Selected
+Fold-Response Readout in Retarded Markov Networks}
+
+\title{Supplementary Material for\\[2mm]\papertitle}
+\author{Haibo Lu\\
+  \small Shanghai Institute of Technology, Shanghai, China\\
+  \small \href{mailto:luhaibo1985@gmail.com}{luhaibo1985@gmail.com}}
+\date{}
+\hypersetup{
+  pdftitle={Supplementary Material for Two-Delay Blind Controllability and Selected Fold-Response Readout in Retarded Markov Networks},
+  pdfauthor={Haibo Lu},
+  pdfsubject={Detailed preparation, invariant-history, and finite-section proofs}
+}
+
+\begin{document}
+\maketitle
+
+This supplement contains the construction and bookkeeping proofs used in the
+main article.  The numbering and notation of the main article are retained in
+cross-references.  Section A gives the preparation and noncanonicity
+constructions, Section B the invariant complete-history graph, and Section C
+the finite-section bridge.
+
+\appendix
+\input{sections/supplementary-proofs}
+\input{sections/03a-invariant-history-details}
+\input{sections/03b-gap-estimates}
+
+\begingroup
+\small
+\bibliographystyle{plainnat}
+\bibliography{../../references/references}
+\endgroup
+
+\end{document}

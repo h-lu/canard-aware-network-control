@@ -1,4 +1,3 @@
-TECTONIC ?= tectonic
 LATEXMK ?= latexmk
 PYTHON ?= python3
 ROOT_FIGURE := figures/root-mechanism.pdf
@@ -13,12 +12,15 @@ $(ROOT_FIGURE): figures/root_mechanism.py
 	$(PYTHON) figures/root_mechanism.py --output $(ROOT_FIGURE)
 
 paper: $(ROOT_FIGURE)
-	@if command -v $(TECTONIC) >/dev/null 2>&1; then \
-		$(TECTONIC) main.tex --keep-intermediates --keep-logs --outdir build; \
-	else \
-		$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex; \
-	fi
+	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
+	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error supplement.tex
+	$(LATEXMK) -g -pdf -interaction=nonstopmode -halt-on-error main.tex
+	$(LATEXMK) -g -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 
 clean:
-	@if command -v $(LATEXMK) >/dev/null 2>&1; then $(LATEXMK) -C main.tex; fi
+	@if command -v $(LATEXMK) >/dev/null 2>&1; then \
+		$(LATEXMK) -C main.tex; \
+		$(LATEXMK) -C supplement.tex; \
+	fi
+	$(RM) main.bbl supplement.bbl
 	find build -type f -delete
