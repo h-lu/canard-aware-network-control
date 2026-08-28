@@ -723,6 +723,302 @@ Thus the coefficient hypotheses in the proposition alone cannot yield a
 same-order estimate for \(Q\).
 \end{remark}
 
+The principal cancellation coordinate has an exact nonlinear counterpart.
+It is the resource defect itself, rather than a formal change of variables.
+For a nonvanishing speed \(q\), define
+\begin{align}
+ \mathcal D_N(r,z,q,\eta)
+ =K\sum_{k=0}^mL_{k,N}(\eta)
+ \bigl[\{r-r_k^q(r)\}\mathbf1
+       +z(r)-z(r_k^q(r))\bigr],                   \label{eq:nonlinear-tracker-delay}\\
+ \mathcal D_{c,N}&=\pi_N^T\mathcal D_N,
+ &\mathcal D_{\perp,N}&=P_{\perp,N}\mathcal D_N,\notag
+\end{align}
+where \(r_k^q=\Phi_q^{-\delta\theta_k}\).  Put
+\begin{equation}
+ F_N(r,z)=\pi_N^T\mathcal N_N(r\mathbf1+z).        \label{eq:nonlinear-tracker-F}
+\end{equation}
+
+\begin{proposition}[Exact nonlinear resource-defect normal form]
+\label[proposition]{prop:nonlinear-resource-defect-normal-form}
+Retain the shared-resource equation and the intervals of
+\cref{prop:principal-tracker-endpoint-green}.  Let
+\(z=z_{0,N}+Z\), \(q=q_0+Q\), and suppose all backtracks remain in one
+common collar.  Set
+\begin{align}
+ \mathcal R_N^{(2)}(r,Z)
+ &={\mathcal N}_N(x_{0,N}+Z)-{\mathcal N}_N(x_{0,N})
+      -D{\mathcal N}_N(x_{0,N})Z,\notag\\
+ h_{c,N}&=\pi_N^T\mathcal R_N^{(2)},\qquad
+ h_{\perp,N}=P_{\perp,N}\mathcal R_N^{(2)},\notag\\
+ \mathcal D_{0,N}&=\mathcal D_N(r,z_{0,N},q_0,\eta),\notag\\
+ \Delta\mathcal D_N
+ &=\mathcal D_N(r,z_{0,N}+Z,q_0+Q,\eta)-\mathcal D_{0,N},\notag\\
+ R_{z,N}&=\varepsilon
+   \{q_0z_{0,N}'-\mathcal D_{0,\perp,N}\},\notag\\
+ R_{q,N}&=\varepsilon q_0
+   (\mathcal D_{0,c,N}-q_0)',\notag\\
+ \mathcal C_N(r)&=B_N(r)+z_{0,N}'(r)\ell_N(r).   \label{eq:nonlinear-tracker-data}
+\end{align}
+Define the seed resource and the nonlinear resource defect by
+\begin{align}
+ w_{\rm seed,N}
+ &=w_{0,N}+\varepsilon\mathcal D_{0,c,N}-\varepsilon q_0,\notag\\
+ \mathfrak p_{\rm nl}
+ &=w_{\rm seed,N}-w\notag\\
+ &=\varepsilon Q+\ell_NZ+h_{c,N}
+       -\varepsilon\Delta\mathcal D_{c,N}.        \label{eq:nonlinear-resource-defect}
+\end{align}
+Then the two projected identities in
+\cref{eq:exact-outer-voltage-invariance,eq:exact-outer-resource-invariance}
+are equivalent to
+\begin{align}
+ \varepsilon qZ'
+ ={}&\mathcal C_NZ-z_{0,N}'\mathfrak p_{\rm nl}-R_{z,N}
+       +z_{0,N}'h_{c,N}-h_{\perp,N}\notag\\
+ &+\varepsilon\{
+       \Delta\mathcal D_{\perp,N}
+       -z_{0,N}'\Delta\mathcal D_{c,N}\},         \label{eq:nonlinear-tracker-Z-normal-form}\\
+ \varepsilon q\mathfrak p_{\rm nl}'
+ ={}&w_{0,N}'\mathfrak p_{\rm nl}-w_{0,N}'\ell_NZ
+       -w_{0,N}'h_{c,N}\notag\\
+ &+\varepsilon w_{0,N}'\Delta\mathcal D_{c,N}
+       +\varepsilon^2q(\mathcal D_{0,c,N}-q_0)',   \label{eq:nonlinear-tracker-p-normal-form}\\
+ \varepsilon Q
+ ={}&\mathfrak p_{\rm nl}-\ell_NZ-h_{c,N}
+       +\varepsilon\Delta\mathcal D_{c,N},
+ &q={}&q_0+Q,                                      \label{eq:nonlinear-tracker-Q-reconstruction}\\
+ w={}&w_{\rm seed,N}-\mathfrak p_{\rm nl}.        \label{eq:nonlinear-tracker-w-reconstruction}
+\end{align}
+In particular, no derivative of \(h_{c,N}\),
+\(\Delta\mathcal D_{c,N}\), or \(Q\) occurs in the nonlinear forcing.
+At the origin the right-hand sides have affine value
+\((-R_{z,N},\varepsilon R_{q,N})\).  If
+\[
+ \mathscr K_{\perp/c,N}[\widehat Z,\widehat Q]
+ =D\Delta\mathcal D_{\perp/c,N}(0,0)
+       [\widehat Z,\widehat Q],
+\]
+then the exact differential is
+\begin{align}
+ \varepsilon q_0\widehat Z'
+ &=\mathcal C_N\widehat Z-z_{0,N}'\widehat p
+   +\varepsilon(\mathscr K_{\perp,N}
+                  -z_{0,N}'\mathscr K_{c,N}),\notag\\
+ \varepsilon q_0\widehat p'
+ &=w_{0,N}'\widehat p-w_{0,N}'\ell_N\widehat Z
+   +\varepsilon w_{0,N}'\mathscr K_{c,N}
+   +\varepsilon^2(\mathcal D_{0,c,N}-q_0)'\widehat Q,\notag\\
+ \varepsilon\widehat Q
+ &=\widehat p-\ell_N\widehat Z
+   +\varepsilon\mathscr K_{c,N}.                 \label{eq:nonlinear-tracker-full-differential}
+\end{align}
+Thus \cref{eq:principal-green-transformed-system} is the retained leading
+differential block; the full linearization additionally contains the
+displayed \(\varepsilon\)-weighted delay/backtrack terms.
+
+Around each admissible base point, after shrinking the product neighborhood,
+the algebraic relation
+\cref{eq:nonlinear-tracker-Q-reconstruction} locally determines \(Q\) from
+\((Z,\mathfrak p_{\rm nl})\) in \(C^0\).  More precisely, on every common
+flow tube on which \(-q\) is bounded above and below and
+\(\|\mathbf1+z_{0,N}'+Z'\|_N\le M_X\),
+\begin{equation}
+ \|D_Q\Delta\mathcal D_{c,N}[H]\|_{C^0}
+ \le C\delta M_X\|H\|_{C^0}.                     \label{eq:nonlinear-tracker-Q-contraction}
+\end{equation}
+Hence the coordinate change is one-to-one for small \(\delta\), uniformly
+in \(N\).  The reduced structural directions have no direct contribution to
+\(\mathcal D_{c,N}\), because \(\pi_N^TE_k=0\).
+\end{proposition}
+
+The remaining endpoint object is a genuine RFDE history, not an independent
+function \(q_{\rm old}\).  The next result constructs its strong compatibility
+jets without adding rows to the Green boundary operator.  In fold time write
+the raw fields as
+\begin{align}
+ \mathfrak F_{N,\delta,\nu,\eta}(\phi,\omega)
+ ={}&\delta^{-1}\bigl[
+  (2/3-\omega)\mathbf1
+  -\mathcal N_N(\phi(0)-\mathbf1)
+  +\mathcal A_N\{\phi(0)-\mathbf1\}\bigr]\notag\\
+ &+\delta K\sum_{k=0}^mL_{k,N}(\eta)
+       \{\phi(0)-\phi(-\theta_k)\},\notag\\
+ \mathfrak G_{N,\delta,\nu}(\phi)
+ ={}&\delta\{\pi_N^T\phi(0)-1-\delta^2\nu\}.       \label{eq:raw-fold-time-fields}
+\end{align}
+
+\begin{proposition}[Compatible endpoint-jet collar chart]
+\label[proposition]{prop:compatible-endpoint-jet-collar}
+Fix an integer \(h\ge3\).  Suppose at least one delay is positive, put
+\(\theta_+=\min\{\theta_k:\theta_k>0\}\), and choose
+\(c_H>0\) and small \(\delta\) so that \(4c_H\delta<\theta_+\).
+Decrease \(r_{\rm out}\le1\) if necessary.
+For an endpoint \(e\) satisfying
+\(\rho_\delta\le|e|\le r_{\rm out}\), set
+\(\kappa_e=\kappa_{N,\delta}(e)\) and define
+\begin{equation}
+ \|\psi\|_{\mathrm{cap},h,e}
+ =\max_{0\le j\le h}\delta^j
+   \sup_{-\theta_m\le\theta\le0}
+    e^{2\kappa_e\theta}\|\partial_\theta^j\psi(\theta)\|_N.   \label{eq:strong-collar-norm}
+\end{equation}
+There is a dimension-uniform linear Hermite operator
+\begin{equation}
+ \mathcal E_{\delta,h}(a_0,\ldots,a_h)(\theta)
+ =\sum_{j=0}^h\delta^ja_j\chi_j(\theta/\delta),    \label{eq:collar-Hermite-lift}
+\end{equation}
+where the scalar one-sided \(C^\infty(({-}\infty,0])\) functions \(\chi_j\)
+are supported, relative to that half-line, in \([-c_H,0]\) and satisfy
+\(\chi_j^{(i)}(0)=\delta_{ij}\).  It obeys
+\begin{equation}
+ \|\mathcal E_{\delta,h}a\|_{\mathrm{cap},h,e}
+ \le C_h\max_{0\le j\le h}\delta^j\|a_j\|_N.      \label{eq:collar-Hermite-bound}
+\end{equation}
+Put
+\begin{equation}
+ \mathscr K_{N,\delta}^h
+ =\{\widehat\gamma\in C^h([-\theta_m,0];\R^N):
+        \partial_\theta^j\widehat\gamma(0)=0,\ 0\le j\le h\}.
+                                                               \label{eq:collar-core-space}
+\end{equation}
+
+On every fixed bounded data ball whose endpoint values lie in a sufficiently
+small weighted affine neighborhood of a reference critical collar, every
+\begin{equation}
+ (Z_e,p_e,\widehat\gamma;\nu,\eta)
+ \in E_N\times\R\times\mathscr K_{N,\delta}^h
+       \times\R\times\mathfrak T_N^{\rm red}       \label{eq:collar-chart-data}
+\end{equation}
+determines a unique history--resource pair
+\begin{equation}
+ \Gamma_e^h(Z_e,p_e,\widehat\gamma;\nu,\eta)
+   =(\phi_e,\omega_e)                               \label{eq:collar-chart}
+\end{equation}
+of the form \(\phi_e=\widehat\gamma+\mathcal E_{\delta,h}a\), satisfying
+\begin{align}
+ \phi_e(0)&=V_{0,N}(e)+Z_e,&
+ \omega_e&=w_{\rm seed,N}(e)-p_e,                 \label{eq:collar-current-data}\\
+ \partial_\theta^j\phi_e(0)
+ &=\mathfrak V_{j,N}(\phi_e,\omega_e;\delta,\nu,\eta),
+ &1&\le j\le h.                                   \label{eq:collar-compatibility}
+\end{align}
+Here \(\mathfrak V_{1,N}=\mathfrak F_{N,\delta,\nu,\eta}\), and
+\(\mathfrak V_{j,N}\) is obtained by differentiating the two raw equations
+\(j-1\) times, using \(\mathfrak G\) for every resource derivative.
+Thus \cref{eq:collar-compatibility} is precisely the order-\(h\) raw-RFDE
+compatibility condition.  The recursion for the endpoint jets is triangular:
+the right-hand side at order \(j\) uses only endpoint jets of order below
+\(j\) and the prescribed core jets at the positive delays.
+
+For fixed parameters, two chart values satisfy the dimension-uniform tame
+estimate
+\begin{align}
+ \|\phi_e-\widetilde\phi_e\|_{\mathrm{cap},h,e}
+ +\frac{|\omega_e-\widetilde\omega_e|}{|e|}
+ \le C_h\biggl\{
+  \|Z_e-\widetilde Z_e\|_N
+  +\frac{|p_e-\widetilde p_e|}{|e|}
+  +\|\widehat\gamma-\widetilde{\widehat\gamma}\|_{
+        \mathrm{cap},h,e}\biggr\}.                \label{eq:collar-chart-tame-bound}
+\end{align}
+The chart, as a map into the fixed \(\theta\)-history space, is three times
+Fr\'{e}chet differentiable in all its arguments, with analogous triangular
+tame bounds, uniformly in \(N\).  In particular it supports every
+rectangular parameter jet in
+\((C_\nu^1C_\eta^2)\cap(C_\nu^2C_\eta^1)\).
+
+If the collective collar coordinate
+\begin{equation}
+ r_{\phi_e}(\theta)=\pi_N^T\{\phi_e(\theta)-\mathbf1\}         \label{eq:collar-collective-coordinate}
+\end{equation}
+is monotone and
+\(-q_+\le\delta^{-1}r_{\phi_e}'\le-q_-\), its image carries the unique
+old-speed function
+\begin{equation}
+ q_{\rm old}(r_{\phi_e}(\theta))
+ =\delta^{-1}r_{\phi_e}'(\theta).                  \label{eq:collar-derived-old-speed}
+\end{equation}
+It belongs to \(C^{h-1}\), includes its complete endpoint jet, and is not
+an additional boundary datum.  More precisely,
+\begin{equation}
+ r_{\phi_e}(\theta)=\Phi_{q_{\rm old}}^{\delta\theta}(e),
+ \qquad r_{\phi_e}(0)=e,                           \label{eq:collar-backtrack-bridge}
+\end{equation}
+and, with
+\[
+ \mathcal D_{c,N}[\phi_e]
+ =K\sum_{k=0}^m\pi_N^TL_{k,N}(\eta)
+       \{\phi_e(0)-\phi_e(-\theta_k)\},
+\]
+the first compatibility row gives the exact endpoint bridge
+\begin{equation}
+ \varepsilon\{q_{\rm old}(e)-q_0(e)\}
+ =p_e-\ell_N(e)Z_e-h_{c,N}(e,Z_e)
+  +\varepsilon\{\mathcal D_{c,N}[\phi_e]
+                    -\mathcal D_{0,c,N}(e)\}.     \label{eq:collar-speed-defect-bridge}
+\end{equation}
+Thus the right-hand side is exactly the reconstruction of
+\(\varepsilon Q_e\) in
+\cref{eq:nonlinear-tracker-Q-reconstruction}.  The exact nonlinear scalar
+trace is simply
+\begin{equation}
+ \mathfrak p_{\rm nl}(e)=w_{\rm seed,N}(e)-\omega_e=p_e.      \label{eq:collar-nonlinear-trace}
+\end{equation}
+Consequently the finite Green trace count remains
+\((N-1)+1=N\).  On the repelling branch the inner value \(p_e\) may be the
+output of the mixed BVP; evaluating \(\Gamma_e^h\) at that value imposes no
+second scalar boundary row.  The core variable \(\widehat\gamma\) is a
+collar gauge, not an additional Fredholm row.
+
+The pullback
+\(q_{\rm old}\circ r_{\phi_e}=\delta^{-1}r_{\phi_e}'\) carries the same
+three parameter jets in the fixed \(\theta\)-chart.  No lossless Eulerian
+fixed-\(r\) assertion is made: on a common image interval, a parameter
+derivative of total order \(0\le b\le\min\{3,h-1\}\) generally has only
+\(D_\lambda^bq_{\rm old}\in C^{h-1-b}\); a full third Eulerian parameter
+jet therefore requires \(h\ge4\).  Nor is
+\(\Gamma_e^h\) a compatible right inverse for arbitrary Green sources; it
+is a chart of raw-compatible histories, and matching it to such a right
+inverse is a separate hybrid step.  If there is no positive delay, the
+statement reduces to the corresponding finite-dimensional jet recursion.
+\end{proposition}
+
+The strong collar chart does not make every endpoint Green lift slow.  The
+following scalar mode identifies the remaining hybrid boundary-layer gate.
+
+\begin{proposition}[Finite endpoint scale does not control the slow speed]
+\label[proposition]{prop:endpoint-scale-not-slow-speed}
+Let \(I=[\rho,R]\) with fixed \(R>0\), take
+\(q_0=-c\), \(w_0'(r)=-r/c\), \(\ell=0\), and \(Z=0\), where \(c>0\).
+For every fixed \(0<A<c/2\), the homogeneous scalar equation has the solution
+\begin{equation}
+ Q_A(r)=A\exp\left\{\frac{r^2-R^2}{2c^2\varepsilon}\right\},
+ \qquad \mathfrak p_A(r)=\varepsilon Q_A(r).       \label{eq:speed-boundary-layer}
+\end{equation}
+It retains the strict speed sign \(q_0+Q_A\le-c/2\) and has endpoint datum
+\(\mathfrak p_A(R)=\varepsilon A\), hence the finite endpoint scale is
+\begin{equation}
+ \varepsilon^{-1}R^{-1}|\mathfrak p_A(R)|=A/R.    \label{eq:speed-boundary-layer-trace-scale}
+\end{equation}
+Nevertheless,
+\begin{equation}
+ \|Q_A\|_{\mathsf Q_\varepsilon^0}
+ \ge\frac{RA}{\varepsilon},
+ \qquad R|Q_A'(R)|=\frac{R^2A}{c^2\varepsilon},    \label{eq:speed-boundary-layer-blowup}
+\end{equation}
+so it does not belong to the uniform slow-speed class of
+\cref{prop:physical-backtrack-calculus}.  If \(w'=r/(q_0+Q_A)\), then
+\begin{equation}
+ |w'(R)-w_0'(R)|=\frac{RA}{c(c-A)},                \label{eq:speed-boundary-layer-resource}
+\end{equation}
+which is not \(O(\varepsilon)\).  Thus the finite endpoint scale alone does
+not supply the slow-speed hypothesis.  Coupling the collar chart to the
+finite endpoint theorem still requires a slow/action hybrid backtrack
+estimate, or an explicit first-delay buffer, before it can close the
+nonlinear tracker.
+\end{proposition}
+
 There is nevertheless an intrinsic quotient once an actual physical history
 has been constructed.  The point is to quotient by the transported tangent
 line, rather than by an eigenvector of a frozen voltage--resource matrix; a

@@ -740,11 +740,11 @@ Write a dot for differentiation along \(\dot r=q_0(r)\).  The coordinate
 \cref{eq:principal-green-p-coordinate} gives the exact system
 \begin{align}
  \varepsilon\dot Z
- &=C_N(r)Z-z_{0,N}'(r)\mathfrak p+f,\notag\\
+ &=\mathcal C_N(r)Z-z_{0,N}'(r)\mathfrak p+f,\notag\\
  \varepsilon\dot{\mathfrak p}
  &=w_{0,N}'(r)\mathfrak p
    -w_{0,N}'(r)\ell_N(r)Z-\varepsilon g,\notag\\
- C_N(r)&=B_N(r)+z_{0,N}'(r)\ell_N(r).              \label{eq:principal-green-transformed-system}
+ \mathcal C_N(r)&=B_N(r)+z_{0,N}'(r)\ell_N(r).     \label{eq:principal-green-transformed-system}
 \end{align}
 Indeed, the second row of
 \cref{eq:principal-tracker-operator} reads
@@ -757,7 +757,7 @@ untransformed derivative coupling conceals.
 
 The transverse Markov estimate gives
 \(\|e^{A_NT}\|_{E_N\to E_N}\le e^{-D\gamma T}\) for \(T\ge0\).
-Since \(\|C_N(r)-A_N\|\le Cr_{\rm out}\), bounded-perturbation variation of
+Since \(\|\mathcal C_N(r)-A_N\|\le Cr_{\rm out}\), bounded-perturbation variation of
 constants yields the evolution estimate
 \begin{equation}
  \|U_C(T,S)\|
@@ -846,7 +846,7 @@ To make the derivative induction explicit, put
 \(\mathcal D=r\partial_r=(r/q_0)\partial_T\).  Commuting
 \(\mathcal D^j\) through the equations produces three kinds of lower-order
 terms.  Derivatives of
-\(C_N-A_N,z_{0,N}',\ell_N,w_{0,N}'\) retain their respective structural
+\(\mathcal C_N-A_N,z_{0,N}',\ell_N,w_{0,N}'\) retain their respective structural
 sizes and hence the same diagonal perturbation and off-diagonal bounds as in
 \cref{eq:principal-green-loop}.  Ratios such as
 \(\mathcal Dw_{0,N}'/w_{0,N}'\) are merely \(O(1)\); they multiply
@@ -928,6 +928,196 @@ systems.  Subtracting the slow particular solution from any solution with a
 prescribed trace leaves the corresponding homogeneous lift.  This proves
 \cref{eq:principal-green-lifts,eq:principal-green-augmented-inverse} and
 uniqueness.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:nonlinear-resource-defect-normal-form}]
+Projecting \cref{eq:exact-outer-voltage-invariance} onto \(E_N\), and using
+the critical-curve equation, gives
+\begin{equation}
+ \varepsilon qZ'
+ =B_NZ-\varepsilon Qz_{0,N}'-R_{z,N}
+       -h_{\perp,N}+\varepsilon\Delta\mathcal D_{\perp,N}.
+                                                               \label{eq:nonlinear-tracker-pre-Z}
+\end{equation}
+The collective projection gives the exact reconstruction
+\[
+ w=\frac23-F_N(r,z)+\varepsilon\mathcal D_{c,N}
+       -\varepsilon q.
+\]
+Since
+\[
+ F_N(r,z_{0,N}+Z)-F_N(r,z_{0,N})
+ =\ell_NZ+h_{c,N},
+\]
+subtracting this formula from \(w_{\rm seed,N}\) proves
+\cref{eq:nonlinear-resource-defect}.  Substitution of
+\cref{eq:nonlinear-tracker-Q-reconstruction} into
+\cref{eq:nonlinear-tracker-pre-Z} then proves
+\cref{eq:nonlinear-tracker-Z-normal-form}, including all five signs.
+
+For the scalar equation, write
+\[
+ w=w_{\rm seed,N}-\mathfrak p_{\rm nl},\qquad
+ w_{\rm seed,N}'
+ =w_{0,N}'+\varepsilon(\mathcal D_{0,c,N}-q_0)'.
+\]
+The exact resource identity and \(q_0w_{0,N}'=r-\varepsilon\nu\) imply
+\[
+ -q\mathfrak p_{\rm nl}'+w_{0,N}'Q
+ =-\varepsilon q(\mathcal D_{0,c,N}-q_0)'.
+\]
+Multiply by \(\varepsilon\) and use
+\cref{eq:nonlinear-tracker-Q-reconstruction}; this is exactly
+\cref{eq:nonlinear-tracker-p-normal-form}.  Reversing the calculation proves
+equivalence with the two projected tracker identities.
+
+At \(Z=Q=\mathfrak p_{\rm nl}=0\), the two quadratic remainders and the
+value of \(\Delta\mathcal D_N\) vanish.  Its differential need not vanish.
+The last term in the scalar equation is \(\varepsilon R_{q,N}\), proving
+the affine-value statement.  Differentiating the three identities gives
+\cref{eq:nonlinear-tracker-full-differential}; omitting precisely its
+displayed delay/backtrack corrections leaves the principal retained block.
+
+It remains to verify the local coordinate assertion.  Differentiating the
+integral backtrack identity in a speed direction \(H\) gives
+\[
+ D_qr_k^q[H]
+ =q(r_k^q)\int_r^{r_k^q}\frac{H(u)}{q(u)^2}\,\dd u.
+\]
+The common sign bounds and the interval length
+\(|r-r_k^q|\le C\delta\theta_k\) imply
+\(\|D_qr_k^q[H]\|_{C^0}\le C\delta\|H\|_{C^0}\).
+Only the evaluation point in
+\cref{eq:nonlinear-tracker-delay} depends on \(q\); hence the chain rule and
+the assumed bound on \(\mathbf1+z_{0,N}'+Z'\) prove
+\cref{eq:nonlinear-tracker-Q-contraction}.  The contraction theorem applied
+to
+\[
+ Q=\varepsilon^{-1}
+   \{\mathfrak p_{\rm nl}-\ell_NZ-h_{c,N}\}
+       +\Delta\mathcal D_{c,N}(Z,Q)
+\]
+gives the claimed unique \(C^0\) coordinate.  Finally,
+\(\pi_N^TE_k=0\) removes the direct \(\eta\)-dependence of the collective
+delay row.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:compatible-endpoint-jet-collar}]
+Choose one-sided scalar Hermite functions \(\chi_0,\ldots,\chi_h\) on the
+half-line with the displayed endpoint jets and with all jets zero at the
+left edge of their support.
+For \(0\le i\le h\),
+\[
+ \partial_\theta^i
+ \{\delta^ja_j\chi_j(\theta/\delta)\}
+ =\delta^{j-i}a_j\chi_j^{(i)}(\theta/\delta).
+\]
+Multiplication by \(\delta^i\), followed by the supremum, proves
+\cref{eq:collar-Hermite-bound}.  This argument uses only scalar
+multiplication and is therefore dimension uniform.
+
+We describe the compatibility recursion.  If \(v_s=\phi\) and \(w\) are a
+classical solution of
+\[
+ v'=\mathfrak F_{N,\delta,\nu,\eta}(v_s,w),
+ \qquad w'=\mathfrak G_{N,\delta,\nu}(v_s),
+\]
+then repeated time differentiation at zero expresses \(v^{(j)}(0)\) as a
+smooth function \(\mathfrak V_{j,N}\) of the endpoint voltage jets through
+order \(j-1\), the voltage jets at the delayed points through order \(j-1\),
+and the current resource.  Every resource derivative in that expression is
+eliminated recursively with \(\mathfrak G\).  Retardedness is what prevents
+the unknown endpoint jet of order \(j\) from appearing on the right.
+
+Write \(\phi=\widehat\gamma+\mathcal E_{\delta,h}a\).  The support condition
+and \(4c_H\delta<\theta_+\) imply that the Hermite term and all its derivatives
+vanish at every strictly delayed point.  A zero-delay summand is identically
+zero in \(\mathfrak F\).  Set
+\[
+ a_0=V_{0,N}(e)+Z_e,\qquad
+ \omega_e=w_{\rm seed,N}(e)-p_e,
+\]
+and define successively
+\[
+ a_j=\mathfrak V_{j,N}
+ \bigl(\widehat\gamma+\mathcal E_{\delta,h}
+        (a_0,\ldots,a_{j-1},0,\ldots,0),
+       \omega_e;\delta,\nu,\eta\bigr),
+ \qquad1\le j\le h.
+                                                               \label{eq:collar-jet-recursion}
+\]
+The endpoint-jet property of \(\mathcal E_{\delta,h}\) proves
+\cref{eq:collar-current-data,eq:collar-compatibility}.  Conversely, those
+conditions force the same recursion, so the chart is unique.  There are
+exactly \(hN\) unknown endpoint derivative components and \(hN\)
+compatibility identities; neither the current value nor the resource defect
+adds a Green boundary row.
+
+For completeness, we record why the singular factors are tame in
+\cref{eq:strong-collar-norm}.  In the \(j\)-th compatibility identity,
+multiplication by \(\delta^j\) cancels the factor \(\delta^{-1}\) in the
+current field against the already controlled order-\((j-1)\) jet.  A
+strictly delayed order-\((j-1)\) jet enters with the factor
+\(\delta^{j+1}\).  Its strong norm costs at most
+\(\delta^{-(j-1)}e^{2\kappa_e\theta_m}\), so the net coefficient is bounded
+by
+\begin{equation}
+ C\delta^2e^{2\kappa_e\theta_m}
+ \le C\delta^{2-2\vartheta}.
+                                                               \label{eq:collar-delay-jet-factor}
+\end{equation}
+The polynomial current terms and the resource recursion obey the same
+triangular estimate.  Induction in \(j\), the uniform product and operator
+bounds, and \cref{eq:collar-Hermite-bound} prove
+\cref{eq:collar-chart-tame-bound}.  Differentiating the finite triangular
+recursion up to three times proves the asserted fixed-\(\theta\) Fr\'{e}chet
+and rectangular parameter bounds; uniform third parameter derivatives of
+\(w_{\rm seed,N}(e)\) follow from the physical backtrack calculus and the
+high-order critical coefficients already proved.  The same factor
+\cref{eq:collar-delay-jet-factor} controls every old-history evaluation.
+
+Under the displayed monotonicity, \(r_{\phi_e}\) is a \(C^h\)
+diffeomorphism onto its image.  The chain rule gives
+\cref{eq:collar-derived-old-speed} and \(q_{\rm old}\in C^{h-1}\), including
+all endpoint jets, while integration of that identity proves
+\cref{eq:collar-backtrack-bridge}.  Taking the collective projection of the
+first compatibility identity, subtracting the critical seed identity, and
+using \(\omega_e=w_{\rm seed,N}(e)-p_e\) gives
+\cref{eq:collar-speed-defect-bridge}.  The scalar trace identity follows
+from the same resource definition.  Thus the pullback old speed and its
+jets are outputs of one compatible voltage history, rather than independent
+boundary conditions.
+
+For clarity about parameter regularity, differentiating at fixed Eulerian
+\(r\), when a common image chart has been chosen, yields already at first
+order
+\[
+ D_\lambda q_{\rm old}\circ r_{\phi_e}
+ =\delta^{-1}\left\{
+   r_{\theta\lambda}
+   -\frac{r_{\theta\theta}}{r_\theta}r_\lambda\right\}.
+\]
+Iteration proves the stated \(C^{h-1-b}\) scale.  This is why the theorem
+asserts full parameter jets for the fixed-\(\theta\) collar and its pulled
+back speed, but does not yet assert a complete-collar Green inverse.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:endpoint-scale-not-slow-speed}]
+With the displayed coefficients, the homogeneous scalar row is
+\[
+ \varepsilon cQ'-\frac r cQ=0.
+\]
+Direct integration gives \cref{eq:speed-boundary-layer}.  Its maximum is
+attained at \(R\), so \(q_0+Q_A\le-c+A\le-c/2\), while
+\(\mathfrak p_A(R)=\varepsilon A\).  Current evaluation in the slow norm and
+one differentiation give exactly
+\cref{eq:speed-boundary-layer-blowup}.  Finally,
+\[
+ w'(R)=-\frac R{c-A},\qquad w_0'(R)=-\frac Rc,
+\]
+which proves \cref{eq:speed-boundary-layer-resource}.  Thus loss of the
+speed sign is not responsible for the obstruction.
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
