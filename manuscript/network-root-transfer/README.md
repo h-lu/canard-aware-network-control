@@ -39,8 +39,11 @@ actions as precursors, together with a generic obstruction to selecting a
 history from convergence in an unnormalized history norm alone.  Its
 fixed-phase component analysis now includes high-order finite-generation
 flushing on both outer branches, with a forward-transverse/future-scalar
-first-exit construction on the repelling side.  The compatible
-phase--normal border, nonlinear tracker, and finite-`delta` physical
+first-exit construction on the repelling side.  It also closes the
+high-order raw-compatible repelling p(0) feedback and proves a small
+zeroth-order normal-to-phase action column.  The opposite
+phase-to-normal/moving-event columns, complete border, nonlinear tracker,
+and finite-`delta` physical
 slow-history relation remain open.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the

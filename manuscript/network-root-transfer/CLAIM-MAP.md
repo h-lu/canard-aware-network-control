@@ -42,8 +42,10 @@ fixed.
 | Exact fold-time tracker interface | `prop:fold-time-tracker-normal-form` | Direct fixed-delay $(r,Z,\mathfrak p_{\rm nl})$ normal form exactly equivalent to the raw fold-time RFDE; algebraic speed reconstruction and explicit compatible-collar initial-history map. Reparameterization is conditional on nonvanishing speed and makes no past-orbit claim for arbitrary old histories; no mixed-buffer BVP existence is asserted |
 | Fixed-phase prescribed-history Green inverse | `prop:fixed-phase-green-collar-buffer` | Dimension-uniform fixed-parameter $C^0$ inverse for the $(Z,p)$ normal block with a prescribed old RFDE voltage-history segment, boundary traces $(Z(0),p(0))$ on the attracting branch or $(Z(0),p(S_r))$ on the repelling branch, and compatible $p(0)$-to-collar feedback. No backward RFDE is used. No high-order slow inverse, phase/event border, speed sign, tracker, or parameter jet is asserted |
 | Scaled phase--event core | `prop:scaled-phase-event-core` | Explicit dimension-uniform inverse for the scalar collective phase equation with entry phase and terminal event rows, using the sharp scaled event-time variable $\widehat\tau=\delta\Delta S$. It proves the unscaled $\delta^{-1}$ loss and persistence of any net phase shift after compact speed forcing. The coupled phase--normal inverse and nonlinear moving-event chart are not asserted |
+| Normal-to-phase action coupling | `prop:normal-to-phase-action-coupling` | The algebraically reconstructed speed of the normalized fixed-phase normal block, including endpoint/collar boundary layers, maps into $\mathsf H_\phi^0$ with norm $O(r_{\rm out}^2+\delta^{2-2\vartheta})$ and therefore produces a small bordered phase response. No higher phase-source jet, phase-to-normal column, moving-event column, or full coupled inverse is asserted |
 | Attracting finite-generation flushing | `lem:current-absorbed-delay-splitting`, `prop:attracting-finite-generation-flushing` | Exact deletion of zero-delay differences, current absorption for positive delays, a fixed seam-partition Banach space, and an order-dependent finite-generation estimate taking arbitrary strong attracting collar data to a genuine slow exit history with dimension-uniform normalized operator norm tending to zero. Fixed parameter only; no phase coupling, tracker, or parameter jet |
 | Repelling component-kernel flushing | `lem:repelling-component-generations`, `prop:repelling-component-flushing` | Weighted full-branch coefficient jets; a resummed current loop with forward transverse and future scalar kernels; exact recursive-delay generation count on one additive seam space; and inner-history/terminal-scalar handoff estimates obtained by oriented words and a localized terminal first-exit action. The normalized component traces tend to zero uniformly in network size. Fixed parameter and fixed phase only: no high-order compatible `p(0)`-collar feedback, coupled phase--normal inverse, nonlinear tracker, speed sign, or physical root |
+| Compatible repelling-collar closure | `prop:compatible-repelling-collar-closure` | High-order closure of the raw-compatible scalar $p(0)$-to-history feedback, with no extra Fredholm row; separate closed-loop collar and terminal columns; and a cross-column action/generation estimate preserving both normalized handoff limits uniformly in network size. Fixed parameter and fixed phase only; no phase-to-normal/event border, nonlinear tracker, speed sign, or physical root |
 | Truncated reduced actions | `cor:outer-reduced-actions` | Formal critical-curve speed and two positive truncated actions for the reduced critical-layer equation; not an invariant slow-history action |
 | Weak-selection obstruction | `prop:backward-asymptotic-nonselection` | A common phase row, convergence in an unnormalized history norm, and superalgebraic strong-history closeness do not by themselves select a unique tame RFDE history family; generic logical counterexample, not a model-specific impossibility theorem |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
@@ -153,8 +155,11 @@ The limits separate exactly:
   separately bordered scalar phase--event core is also explicit.  The
   attracting and repelling high-order finite-generation component buffers
   are now proved, including the repelling scalar-terminal first-exit
-  localization.  The high-order compatible `p(0)`-collar feedback and
-  the coupled phase--normal inverse are not.
+  localization.  The high-order compatible `p(0)`-collar feedback is now
+  closed, and the normalized normal-to-phase action column is
+  $O(r_{\rm out}^2+\delta^{2-2\vartheta})$.  The opposite
+  phase-to-normal/moving-event columns and the coupled phase--normal inverse
+  are not proved.
   These results do not yet
   construct an RFDE tracker or prove its normal dichotomy.  The generic
   nonselection example is a logical
