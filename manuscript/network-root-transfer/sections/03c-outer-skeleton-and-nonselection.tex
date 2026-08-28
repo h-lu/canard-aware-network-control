@@ -1464,6 +1464,54 @@ immediately, while integration of the \(i=0\) bound over either branch gives
 \cref{eq:phase-event-pulse-bound}.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:normal-to-phase-action-coupling}]
+The algebraic row of \cref{eq:fixed-phase-normal-block} is
+\begin{equation*}
+ Q=\varepsilon^{-1}(p-\ell_NZ)
+       +\mathscr D_{c,N}^{\rm lin}[\gamma,Z].
+\end{equation*}
+Put
+\(D=\|(\gamma,Z,p)\|_{\widetilde{\mathsf X}_{\sigma,0}}\).
+By definition of the hybrid norm,
+\begin{equation*}
+ \|Z(r)\|_N\le\varepsilon D,
+ \qquad |p(r)|\le\varepsilon|r|D,
+ \qquad
+ \|\gamma\|_{N,e_\sigma,\delta}^{\sharp}\le\varepsilon D.
+\end{equation*}
+Together with \(\|\ell_N(r)\|\le C|r|\), this bounds the first term by
+\(C|r|D\).
+
+Split the delay row into current and old-history evaluations as in
+\cref{eq:fixed-phase-delay-split-bound}.  Its current part is bounded by
+\(C\varepsilon D\).  Its old part is supported in the first delay window
+and is bounded pointwise by
+\(C\varepsilon e^{2\kappa_{e_\sigma}\theta_m}D\).  Enlarging the latter
+bound proves \cref{eq:normal-phase-pointwise-Q}.
+
+The definition of \(\mathsf H_\phi^0\) gives
+\begin{equation*}
+ \|Q\|_{\mathsf H_\phi^0}
+ =\int_{I_\sigma}|Q(r)|\,\dd r
+       +\sup_{r\in I_\sigma}|r|\,|Q(r)|.
+\end{equation*}
+Integrating the \(|r|D\) term and taking its weighted supremum costs at
+most \(Cr_{\rm out}^2D\).  The remaining term costs at most
+\(C\varepsilon e^{2\kappa_{e_\sigma}\theta_m}D\), because
+\(r_{\rm out}\le1\) and the branch length in the \(r\)-coordinate is
+bounded.  The frozen-cap estimate gives
+\(e^{2\kappa_{e_\sigma}\theta_m}\le\delta^{-2\vartheta}\).
+This proves \cref{eq:normal-phase-H0-coupling}.
+
+Finally apply the inverse estimate
+\cref{eq:phase-event-inverse-bound} at \(j=0\) to \((Q,0,0)\).  The result
+is \cref{eq:normal-phase-response-bound}.  The proof used no derivative of
+\(Q\), so the endpoint boundary layer in
+\cref{prop:endpoint-scale-not-slow-speed} causes no loss.  The scope
+statements follow because no phase-induced normal or moving-event column
+has entered the calculation.
+\end{proof}
+
 \begin{proof}[Proof of
 \cref{lem:current-absorbed-delay-splitting}]
 For \(\theta_k=0\), the corresponding summand in
@@ -2284,6 +2332,105 @@ one fixed sufficiently large \(A_d\) also makes the middle term a positive
 power of \(\delta\).  The terminal exponents are positive by the same
 inequality used in the attracting proof.  This completes the proof and the
 scope statements follow from the construction.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:compatible-repelling-collar-closure}]
+The strong cap bound in
+\cref{eq:strong-compatible-feedback-bound} implies the fading \(C^0\)
+bound in \cref{eq:fixed-phase-collar-feedback}.  Therefore
+\cref{prop:fixed-phase-green-collar-buffer} gives a unique closed-loop
+solution of \cref{eq:strong-compatible-feedback-problem}.  Since the
+problem and the feedback are linear, its inverse splits into the two
+columns in \cref{eq:compatible-repelling-column-split}.  The two actual
+histories constructed below belong to \(C^h\).  Hence the corresponding
+open high-order component solutions supplied by
+\cref{lem:repelling-component-generations} coincide with these mild
+closed-loop columns by the \(C^0\) uniqueness just invoked.
+
+Apply the \(C^0\) inverse separately to those columns.  Current evaluation
+in \(\mathsf X_{r,0}\), followed by
+\cref{eq:strong-compatible-feedback-bound}, gives
+\begin{align*}
+ \frac{|p_{\rm c}(0)|}{\rho_\delta}
+ &\le C\|\gamma_0\|_{N,-\rho_\delta,\delta}^{\sharp},&
+ \frac{|p_{\rm u}(0)|}{\rho_\delta}
+ &\le C\frac{|b_u|}{r_{\rm out}}.
+\end{align*}
+The zeroth term of the strong cap norm dominates the fading norm.  Hence
+\begin{align*}
+ \|\gamma_{\rm c}\|_{\mathrm{cap},h,-\rho_\delta}
+ &\le\|\gamma_0\|_{\mathrm{cap},h,-\rho_\delta}
+       +C_\Gamma\frac{|p_{\rm c}(0)|}{\rho_\delta},\\
+ \|\gamma_{\rm u}\|_{\mathrm{cap},h,-\rho_\delta}
+ &\le C_\Gamma\frac{|p_{\rm u}(0)|}{\rho_\delta},
+\end{align*}
+which proves \cref{eq:compatible-repelling-history-columns}.  Notice that
+\((\mathfrak C_ec)(0)=0\) leaves the transverse boundary row unchanged.
+
+The first closed-loop column is the fixed-history solution with total old
+history \(\gamma_{\rm c}\) and zero terminal datum.  Substitution of the
+first bound in \cref{eq:compatible-repelling-history-columns} into
+\cref{eq:repelling-inner-flush} proves
+\cref{eq:compatible-repelling-inner-column}.
+
+For the second column, split once more into the fixed-history response to
+\(\gamma_{\rm u}\), with zero terminal datum, and the response to
+\((0,b_u)\).  The latter is bounded on \(J_{r,\rm u}\) by
+\cref{eq:repelling-terminal-flush}.  We record the cross estimate for the
+former.  Use the decorated-word expansion in the proof of
+\cref{prop:repelling-component-flushing}.  For an endpoint- or
+old-history-rooted word with fewer than \(M\) recursive strict edges and
+output in \([S_r-L_b-\theta_m,S_r-L_b]\),
+\cref{eq:repelling-oriented-word-identity} gives
+\begin{equation*}
+ t_{\rm out}-t_{\rm in}
+      -\sum_{j=1}^n\theta_{k_j}\ge L_0
+\end{equation*}
+after decreasing \(\delta_0\): indeed \(t_{\rm in}\le\theta_m\), whereas
+\(S_r\ge c/\delta\), \(L_b=O(S_\delta)\), and, more explicitly,
+\begin{equation*}
+ S_r-L_b-(M+1)\theta_m
+   >L_b-M\theta_m=L_0+\theta_m+1
+\end{equation*}
+for small \(\delta\).  Thus the total forward
+transverse length exceeds the total future scalar length by at least
+\(L_0\), and the weighted component kernels give
+\(C_de^{-cL_0/\delta}\).
+
+All words with at least \(M\) strict edges are bounded globally by
+\cref{eq:repelling-generation-number}; after summing the geometric
+remainder their strong norm is at most
+\begin{equation*}
+ C_d\left(\frac{\delta^{1-2\vartheta}}{S_\delta}\right)^M
+       \|\gamma_{\rm u}\|_{\mathrm{cap},h,-\rho_\delta}.
+\end{equation*}
+Kernel differentiation and boundary faces preserve the same root, output,
+and oriented-distance alternatives, exactly as in
+\cref{eq:repelling-inner-generation-tail}.  The output window is in the
+outer annulus, so the strong-to-slow conversion costs
+\(C_d\delta^{-2d}\).  Recovering \(Q\) from
+\cref{eq:repelling-Q-from-p} costs no further power.  Consequently the
+fixed-history cross response is bounded by
+\begin{equation*}
+ C_{d,A_d}\mathcal E_{r,\rm cross}(\delta)
+       \varepsilon^{-1}
+       \|\gamma_{\rm u}\|_{\mathrm{cap},h,-\rho_\delta}.
+\end{equation*}
+Together with \cref{eq:compatible-repelling-history-columns} and the pure
+terminal estimate this proves
+\cref{eq:compatible-repelling-terminal-column}.  Condition
+\cref{eq:compatible-repelling-generation-count} makes the algebraic term in
+\(\mathcal E_{r,\rm cross}\) tend to zero; the exponential term is
+superalgebraically small.
+
+Finally, hold \(Z_e,\widehat\gamma,\nu,\eta\) fixed in
+\cref{prop:compatible-endpoint-jet-collar}.  Its current voltage value is
+independent of \(p_e\), so the resulting voltage-history derivative
+vanishes at \(\theta=0\).  The tame chart estimate
+\cref{eq:collar-chart-tame-bound} gives exactly
+\cref{eq:strong-compatible-feedback-bound}.  This identifies the abstract
+feedback with the raw-compatible collar column and completes the proof.
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]

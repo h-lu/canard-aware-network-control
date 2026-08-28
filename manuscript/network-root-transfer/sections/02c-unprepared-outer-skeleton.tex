@@ -1427,6 +1427,62 @@ In fold time, the same identity gives, on a pulse interval \([s_-,s_+]\),
 The pulse may be small, but its phase shift remains constant after the pulse.
 \end{proposition}
 
+The top slow derivative of a boundary-layer speed correction need not be
+bounded, but its phase action is still small at the natural normal scale.
+This is the first off-diagonal estimate needed for the coupled border.
+
+\begin{proposition}[Normal-to-phase action coupling]
+\label[proposition]{prop:normal-to-phase-action-coupling}
+Retain \cref{prop:fixed-phase-green-collar-buffer,%
+prop:scaled-phase-event-core} with \(j=0\).  For either branch, let
+\((Z,p,Q)\) solve \cref{eq:fixed-phase-normal-block} with prescribed old
+history \(\gamma\), and define its normalized hybrid size by
+\begin{equation}
+ \|(\gamma,Z,p)\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ =\varepsilon^{-1}\left\{
+   \|\gamma\|_{N,e_\sigma,\delta}^{\sharp}
+       +\|(Z,p)\|_{\mathsf X_{\sigma,0}}\right\}.  \label{eq:normalized-hybrid-normal-size}
+\end{equation}
+Here \(e_a=r_{\rm out}\), \(e_r=-\rho_\delta\), and on the repelling branch
+\(\gamma\) may be the actual total history after the feedback in
+\cref{eq:strong-compatible-feedback-problem} has been closed.  Pull \(Q\)
+back by the monotone coordinate \(r=\bar r_\sigma(s)\).  The seam identity
+\(Z(0)=\gamma(0)\) makes the assembled delay row, and hence this \(Q\),
+continuous on \(I_\sigma\).  Then the
+algebraically reconstructed speed direction satisfies
+\begin{align}
+ |Q(r)|
+ &\le C\left\{|r|+\varepsilon
+             e^{2\kappa_{e_\sigma}\theta_m}\right\}
+       \|(\gamma,Z,p)\|_{\widetilde{\mathsf X}_{\sigma,0}},
+                                                               \label{eq:normal-phase-pointwise-Q}\\
+ \|Q\|_{\mathsf H_\phi^0(I_\sigma)}
+ &\le C\left\{r_{\rm out}^2
+       +\varepsilon e^{2\kappa_{e_\sigma}\theta_m}\right\}
+       \|(\gamma,Z,p)\|_{\widetilde{\mathsf X}_{\sigma,0}}\notag\\
+ &\le C\left\{r_{\rm out}^2
+                   +\delta^{2-2\vartheta}\right\}
+       \|(\gamma,Z,p)\|_{\widetilde{\mathsf X}_{\sigma,0}}. \label{eq:normal-phase-H0-coupling}
+\end{align}
+Consequently, if \((a_Q,\widehat\tau_Q)\) is the phase--event response to
+the data \((h,b_0,b_E)=(Q,0,0)\), then
+\begin{equation}
+ \|a_Q\|_{\mathsf A_\phi^1(I_\sigma)}
+      +|\widehat\tau_Q|
+ \le C\left\{r_{\rm out}^2+\delta^{2-2\vartheta}\right\}
+       \|(\gamma,Z,p)\|_{\widetilde{\mathsf X}_{\sigma,0}}. \label{eq:normal-phase-response-bound}
+\end{equation}
+Thus the normal-to-phase off-diagonal is dimension-uniform and becomes
+small by first fixing \(r_{\rm out}\) sufficiently small and then decreasing
+\(\delta\).
+
+This estimate includes endpoint and collar boundary layers; it does not
+place them in \(\mathsf H_\phi^j\) for \(j\ge1\).  It also proves only the
+normal-to-phase half of the coupled border.  No invertibility of the full
+phase--normal block is asserted until the phase-to-normal collar and moving
+event columns have been defined and estimated.
+\end{proposition}
+
 We next isolate the strong block on which delay generations can actually be
 counted.  A zero-delay difference is deleted as one intact zero term.  For a
 positive delay, its current evaluation belongs to the generator and only its
@@ -1824,6 +1880,99 @@ The result is fixed-parameter and fixed-phase.  It uses no backward RFDE
 evolution and does not include the compatible \(p(0)\)-to-collar feedback.
 It proves neither the coupled phase--normal inverse, a nonlinear tracker,
 the speed sign, a repelling invariant history sheet, nor a physical root.
+\end{proposition}
+
+The omitted feedback is not another infinite-dimensional boundary
+condition.  It is a scalar feedback through the already constructed
+compatible collar chart.  The next result closes that feedback in the
+strong history class and records the extra cross-column estimate needed at
+the terminal handoff.
+
+\begin{proposition}[High-order compatible repelling-collar closure]
+\label[proposition]{prop:compatible-repelling-collar-closure}
+Retain \cref{prop:fixed-phase-green-collar-buffer,%
+prop:compatible-endpoint-jet-collar,%
+prop:repelling-component-flushing}.  Fix \(d\ge1\), take
+\(h\ge\max\{3,d\}\), and now choose the generation number so that
+\begin{equation}
+ M(1-2\vartheta)>2d.                              \label{eq:compatible-repelling-generation-count}
+\end{equation}
+Use the same \(L_0,L_b,J_{r,\rm in},J_{r,\rm u}\) as in
+\cref{eq:repelling-flush-buffer-length,eq:repelling-flush-windows}.  Let
+\begin{equation}
+ \mathfrak C_e:\R\longrightarrow
+ C^h([ -\theta_m,0];\R^N)                         \label{eq:strong-compatible-feedback-map}
+\end{equation}
+be a bounded linear map satisfying, uniformly on the retained chart ball,
+\begin{align}
+ (\mathfrak C_ec)(0)&=0,\notag\\
+ \|\mathfrak C_ec\|_{\mathrm{cap},h,-\rho_\delta}
+ &\le C_\Gamma\frac{|c|}{\rho_\delta}.           \label{eq:strong-compatible-feedback-bound}
+\end{align}
+For every
+\(\gamma_0\in C^h([ -\theta_m,0];\R^N)\) with
+\(\gamma_0(0)\in E_N\), and every \(b_u\in\R\), the mixed problem
+\cref{eq:fixed-phase-normal-block} with \(F=H=0\),
+\begin{equation}
+ Z(0)=\gamma(0),\qquad p(S_r)=b_u,\qquad
+ \gamma=\gamma_0+\mathfrak C_ep(0),               \label{eq:strong-compatible-feedback-problem}
+\end{equation}
+has a unique solution with \((Z,p)\in\mathfrak S_{r,d}\).  It splits
+linearly as
+\begin{equation}
+ (Z,p,Q)=(Z_{\rm c},p_{\rm c},Q_{\rm c})
+          +(Z_{\rm u},p_{\rm u},Q_{\rm u}),       \label{eq:compatible-repelling-column-split}
+\end{equation}
+where the first closed-loop column has data \((\gamma_0,b_u)=(\gamma_0,0)\)
+and the second has data \((0,b_u)\).  Their actual old histories are
+\begin{equation*}
+ \gamma_{\rm c}=\gamma_0+\mathfrak C_ep_{\rm c}(0),
+ \qquad
+ \gamma_{\rm u}=\mathfrak C_ep_{\rm u}(0),
+\end{equation*}
+and obey
+\begin{align}
+ \|\gamma_{\rm c}\|_{\mathrm{cap},h,-\rho_\delta}
+ &\le C\|\gamma_0\|_{\mathrm{cap},h,-\rho_\delta},\notag\\
+ \|\gamma_{\rm u}\|_{\mathrm{cap},h,-\rho_\delta}
+ &\le C\frac{|b_u|}{r_{\rm out}}.                 \label{eq:compatible-repelling-history-columns}
+\end{align}
+
+The collar column retains the inner handoff estimate
+\begin{align}
+ &\|Z_{\rm c}\|_{\mathsf Z_\varepsilon^d(J_{r,\rm in})}
+ +\|p_{\rm c}\|_{\mathsf P_\varepsilon^d(J_{r,\rm in})}
+ +\|Q_{\rm c}\|_{\mathsf Q_\varepsilon^{d-1}(J_{r,\rm in})}\notag\\
+ &\qquad\le C_{d,A_d}\mathcal E_{r,\rm in}(\delta)
+       \varepsilon^{-1}
+       \|\gamma_0\|_{\mathrm{cap},h,-\rho_\delta}.          \label{eq:compatible-repelling-inner-column}
+\end{align}
+For the terminal column put
+\begin{equation}
+ \mathcal E_{r,\rm cross}(\delta)
+ =\delta^{-2d}e^{-cL_0/\delta}
+   +\delta^{M(1-2\vartheta)-2d}S_\delta^{-M}.      \label{eq:compatible-repelling-cross-error}
+\end{equation}
+Then
+\begin{align}
+ &\|Z_{\rm u}\|_{\mathsf Z_\varepsilon^d(J_{r,\rm u})}
+ +\|p_{\rm u}\|_{\mathsf P_\varepsilon^d(J_{r,\rm u})}
+ +\|Q_{\rm u}\|_{\mathsf Q_\varepsilon^{d-1}(J_{r,\rm u})}\notag\\
+ &\qquad\le C_{d,A_d}
+   \{\mathcal E_{r,\rm u}(\delta)
+                  +\mathcal E_{r,\rm cross}(\delta)\}
+       \varepsilon^{-1}\frac{|b_u|}{r_{\rm out}}.            \label{eq:compatible-repelling-terminal-column}
+\end{align}
+Both error factors on the last line tend to zero, uniformly in \(N\).
+
+At every base point of the compatible collar chart,
+\(\mathfrak C_e=D_{p_e}(\operatorname{pr}_\phi\Gamma_e^h)\), with
+\(Z_e,\widehat\gamma,\nu,\eta\) fixed, satisfies
+\cref{eq:strong-compatible-feedback-bound}.  Thus the proposition applies
+to the actual linearized raw-compatibility feedback, not merely to an
+abstract collar map.  It remains a fixed-parameter, fixed-phase result: the
+coupled phase--normal border, nonlinear tracker, speed sign, and physical
+root are not asserted.
 \end{proposition}
 
 There is nevertheless an intrinsic quotient once an actual physical history
