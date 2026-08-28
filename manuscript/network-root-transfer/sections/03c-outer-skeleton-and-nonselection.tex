@@ -1735,6 +1735,557 @@ power.  Moreover,
 which proves the last assertion.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:repelling-component-generations}]
+The exact algebra comes first.  From
+\cref{eq:current-absorbed-delay-rows},
+\[
+ b_{k,N}=\varepsilon
+    (w_{0,N}'+\varepsilon\mathfrak d_N)c_{k,N}
+ =\varepsilon a_pc_{k,N}.
+\]
+Therefore the coefficient of \(Z\) in the second row of
+\(\mathbb A_{\rm cur}\) is
+\[
+ -w_{0,N}'\ell_N-\varepsilon\mathfrak d_N\ell_N
+       +\sum_{k\in\mathcal I_+}b_{k,N}
+ =-a_p\left(\ell_N-\varepsilon
+                 \sum_{k\in\mathcal I_+}c_{k,N}\right).
+\]
+The first row is split in the same way.  This proves
+\cref{eq:repelling-component-equations}, including all four signs.
+
+We next supply the weighted jets on the entire repelling branch; the
+fixed-annulus estimate \cref{eq:current-absorbed-block-jets} alone is not
+enough near \(-\rho_\delta\).  Write
+\[
+ m_N(r)=\frac{w_{0,N}'(r)}r,
+\]
+using the removable value at \(r=0\).  The critical-curve jets give
+\[
+ 0<c_m\le |m_N(r)|\le C_m,\qquad
+ \max_{j\le d+2}\bigl\{|\partial_r^jm_N(r)|
+             +|\partial_r^j(m_N^{-1})(r)|\bigr\}\le C_d.
+\]
+For the shared-resource reduced speed,
+\begin{equation}
+ q_0(r)=\frac{r-\varepsilon\nu}{w_{0,N}'(r)}
+       =\left(1-\frac{\varepsilon\nu}{r}\right)m_N(r)^{-1}.
+                                                               \label{eq:repelling-q0-quotient}
+\end{equation}
+Consequently, for \(1\le n\le d+1\),
+\begin{equation}
+ |r|^{n-1}|\partial_r^nq_0(r)|
+ \le C_d\left(1+\frac{\varepsilon}{|r|^2}\right)
+ \le C_d,                                            \label{eq:repelling-q0-improved-jets}
+\end{equation}
+because
+\(\varepsilon/\rho_\delta^2=4\alpha^2/S_\delta^2\).
+The gain of one power of \(|r|\) here is essential; the ordinary weighted
+\(q_0\)-bound would not control the jets of \(\mathfrak d_N\).
+
+Put
+\[
+ f_N(r)=r\mathbf1+z_{0,N}(r),\qquad
+ r_k(r)=\Phi_{q_0}^{-\delta\theta_k}(r).
+\]
+At each retained \(r\), choose a same-sign local annulus on which
+\(|u|\asymp |r|\) and which contains the complete \(q_0\)-backtrack tube.
+On this annulus
+\(\delta\theta_m/|r|\le C/S_\delta\) and
+\(\|f_N\|_{d+2,|r|}\le C_d|r|\).  The composition-difference part of
+\cref{prop:physical-backtrack-calculus}, applied on that annulus, therefore
+gives
+\begin{equation}
+ |r|^n\left\|
+ \partial_r^n\{f_N(r)-f_N(r_k(r))\}\right\|_N
+ \le C_d\delta,\qquad 0\le n\le d+1.              \label{eq:repelling-backtrack-difference-jets}
+\end{equation}
+The common layer-sum bound and the definition of
+\(\mathcal D_{0,c,N}\) imply
+\begin{equation}
+ |r|^n|\partial_r^n\mathcal D_{0,c,N}(r)|
+ \le C_d\delta,\qquad 0\le n\le d+1.              \label{eq:repelling-D0-weighted-jets}
+\end{equation}
+Since \(\mathfrak d_N=(\mathcal D_{0,c,N}-q_0)'\),
+\cref{eq:repelling-q0-improved-jets,eq:repelling-D0-weighted-jets}
+give, for \(0\le j\le d\),
+\[
+ |r|^j|\partial_r^j\mathfrak d_N|
+ \le C_d\left\{\frac{\delta}{|r|}
+          +1+\frac{\varepsilon}{|r|^2}\right\}\le C_d.
+\]
+This is \cref{eq:repelling-d-weighted-jets}.
+
+The principal coefficient estimates give
+\[
+ |r|^j\|\partial_r^j(\mathcal C_N-A_N)\|\le C_d|r|,
+ \qquad
+ |r|^j\bigl\{\|\partial_r^jz_{0,N}'\|
+       +\|\partial_r^j\ell_N\|
+       +|\partial_r^jw_{0,N}'|\bigr\}\le C_d|r|.
+\]
+Together with \(\varepsilon\le C|r|\), the coefficient definitions and
+Leibniz' rule prove \cref{eq:repelling-weighted-block-jets}.  The sign of
+\(w_{0,N}'\) on the negative branch and
+\(\varepsilon/|r|\le C\delta/S_\delta=o(1)\) prove both sides of
+\cref{eq:repelling-component-sizes}.  Weighted differentiation of
+\(a_p^{-1}\), followed by multiplication with the weighted \(q_0\)-jets,
+proves \cref{eq:repelling-inverse-coefficient-jets}.
+
+Along \(\bar r_r\), repeated differentiation of
+\(\partial_s\bar r_r=\delta q_0(\bar r_r)\) now yields, for
+\(0\le m\le d\),
+\begin{align}
+ &\|\partial_s^m(\mathbb A_Z-A_N)\|
+ +|\bar r_r|^{-1}\bigl\{|\partial_s^ma_p|
+                  +\|\partial_s^mC_{Zp}\|\bigr\}\notag\\
+ &\quad
+ +|\bar r_r|^{-2}\|\partial_s^mC_{pZ}\|
+ +\varepsilon^{-1}\sum_k\|\partial_s^mB_k^Z\|
+ +(\varepsilon|\bar r_r|)^{-1}
+       \sum_k\|\partial_s^mB_k^p\|\le C_d.          \label{eq:repelling-fold-time-block-jets}
+\end{align}
+
+The transverse diagonal block is a bounded \(O(\varepsilon)\) perturbation
+of the uniformly forward-stable \(\mathcal C_N\)-evolution.  Duhamel's
+identity, exactly as in the attracting proof, gives the first estimate in
+\cref{eq:repelling-component-kernel-bounds}.  The scalar formula in
+\cref{eq:repelling-component-kernels} is its exact future-stable kernel.
+Differentiating the two endpoint equations for \(U_Z\), and differentiating
+the exponential formula for \(u_p\), proves all mixed endpoint derivative
+bounds.  The weighted coefficient control in
+\cref{eq:repelling-fold-time-block-jets} absorbs the commutators after the
+factor \(\delta^{i+j}\) is inserted.  Notice that this construction reverses
+only one scalar ODE; it never evolves an RFDE backward.
+
+Variation of constants now gives
+\cref{eq:repelling-component-LP}.  The sign in its second row is worth
+checking: if \(\delta p_s=a_pp+f_p\) and \(p(S_r)=0\), then
+\(p=-\mathcal G_p^+f_p\).  Since the current coupling there is
+\(-C_{pZ}Z\), it contributes \(+\mathcal K_{pZ}Z\).
+
+We next close the current loop before introducing any delay generation.
+In the norm \cref{eq:repelling-component-strong-space}, the source
+\(C_{Zp}p\) is \(O(|\bar r_r|^2)\) times the normalized state.  The fast
+transverse Green denominator is bounded below independently of \(r\), so
+\begin{equation}
+ \|\mathcal K_{Zp}\|\le Cr_{\rm out}^2.             \label{eq:repelling-KZp-proof}
+\end{equation}
+For the reverse edge, put \(R(s)=|\bar r_r(s)|\).  Since
+\(R_s=-\delta q_0(\bar r_r)\), \(a_p\asymp R\), and
+\(\partial_u\Psi_p(s,u)=a_p(u)/\delta\), one has
+\begin{equation}
+ \frac{\dd R(u)^2}{\dd\Psi_p(s,u)}
+ =-\frac{2\delta^2q_0(\bar r_r(u))R(u)}{a_p(u)}
+ \le C\delta^2.                                     \label{eq:repelling-radius-action-motion}
+\end{equation}
+Thus, with \(\xi=\Psi_p(s,u)\),
+\[
+ R(u)\le\{R(s)^2+C\delta^2\xi\}^{1/2}.
+\]
+Changing variables from \(u\) to \(\xi\), and using
+\(\dd u=\delta a_p(u)^{-1}\dd\xi\), gives the explicit bound
+\begin{equation}
+ \frac1{R(s)}\delta^{-1}
+ \int_s^{S_r}e^{-c\Psi_p(s,u)}
+       R(u)^2\,\dd u
+ \le\frac C{R(s)}
+       \int_0^\infty e^{-c\xi}
+          \{R(s)^2+C\delta^2\xi\}^{1/2}\,\dd\xi
+ \le C\left(1+\frac{\delta}{R(s)}\right)\le C.      \label{eq:repelling-KpZ-integral}
+\end{equation}
+Here \(\delta/R(s)\le C/S_\delta\).  Endpoint differentiation produces
+either another integral with a polynomial factor in \(\xi\), controlled by
+the same calculation and
+\cref{eq:repelling-fold-time-block-jets}, or a lower-limit boundary term.
+Each such boundary term contains
+\(C_{pZ}(s)/a_p(s)=O(R(s))\), exactly the factor needed by the scalar
+normalization.  Induction through order \(d\) therefore proves
+\(\|\mathcal K_{pZ}\|\le C_d\), without an
+\(r_{\rm out}/R(s)\) loss.  The fixed decrease of
+\(r_{\rm out}\) made for \cref{eq:principal-green-loop} can therefore be
+retained so that the product norm is below \(1/4\).  Indeed, for component
+data \((d_Z,d_p)\), the current problem is
+\[
+ Z=d_Z-\mathcal K_{Zp}p,\qquad
+ p=d_p+\mathcal K_{pZ}Z,
+\]
+and hence
+\begin{equation}
+ Z=\sum_{\ell=0}^\infty
+   (-\mathcal K_{Zp}\mathcal K_{pZ})^\ell
+       (d_Z-\mathcal K_{Zp}d_p),\qquad
+ p=d_p+\mathcal K_{pZ}Z.                           \label{eq:repelling-current-loop-series}
+\end{equation}
+This also proves uniqueness.
+
+The oriented edge weights are proved before any full mixed kernel is formed.
+Choose \(\kappa\) below both constants in
+\cref{eq:repelling-component-kernel-bounds}.  Then
+\[
+ W_Z(s,u)\|U_Z(s,u)\|\le C_de^{-c(s-u)/\delta},
+ \qquad
+ W_p(s,u)|u_p(s,u)|\le C_de^{-c\Psi_p(s,u)}
+\]
+after decreasing \(c\).  If \([s,u]\) is contained in an outer interval
+where \(a_p\ge c_{\rm out}>0\), then
+\(\Psi_p(s,u)\ge c_{\rm out}(u-s)/\delta\), which proves the
+\(W_{p,{\rm out}}\) version.  These are two-point kernel estimates; the last
+one is deliberately not extended across the inner part of the branch.
+
+Expand \cref{eq:repelling-current-loop-series} and use Fubini on each
+finite word.  Multiplication of adjacent edge kernels multiplies their
+weights, while the coupling at the common vertex has the sizes in
+\cref{eq:repelling-component-sizes}.  Use half of each available kernel
+exponent as the bookkeeping weight.  The remaining half gives the same
+Green denominators, so the weighted loop is still bounded by
+\(Cr_{\rm out}^2\).  The fixed choice of \(r_{\rm out}\) is made small
+enough that this is one number \(q_{\rm loop}<1\).  Thus a word with
+forward edges \((u_j,s_j)\), future scalar edges \((s'_j,u'_j)\), and
+\(\ell\) current loops is bounded, relative to its unweighted coefficient
+product, by
+\begin{equation}
+ C_dq_{\rm loop}^{\ell}
+ \exp\left\{-c\sum_j\frac{s_j-u_j}{\delta}
+             -c\sum_j\Psi_p(s'_j,u'_j)\right\}.     \label{eq:repelling-decorated-word-action}
+\end{equation}
+Endpoint differentiation either differentiates one kernel or exposes a
+boundary face.  The kernel jets and
+\cref{eq:repelling-fold-time-block-jets} give the same estimate for every
+such word through order \(d\).  Summing
+\(\sum_{\ell\ge0}q_{\rm loop}^{\ell}\) proves precisely the local,
+oriented assertion following
+\cref{eq:repelling-current-loop-bound}; no global weighted operator claim is
+used.
+
+We make the function space explicit.  If
+\(\mathcal I_+=\varnothing\), the strict generation operator is zero, the
+additive seam set is \(\{0\}\), and every conclusion below follows directly
+from the current-loop solution.  Hence assume
+\(\mathcal I_+\ne\varnothing\).  The positive delays then have a positive
+minimum, so only finitely many of their finite sums lie in \([0,S_r]\).
+The corresponding continuous piecewise \(W^{d,\infty}\) space is Banach.
+A delay shift moves a seam to another member of the same additive set;
+\(\mathcal G_Z\) and \(\mathcal G_p^+\) preserve the partition and create
+no reflected seam.  Thus every operator in
+\cref{eq:repelling-component-generation-recursion} acts on one fixed
+space.  Its bounds do not depend on the number of partition cells.
+
+It remains to estimate a strict generation.  For a current path \(y\), the
+strict \(Z\)-source has size \(O(\varepsilon)y\).  The strict scalar source
+has the exact factor
+\[
+ B_k^py=-\varepsilon a_pc_{k,N}y.
+\]
+The future scalar Green division cancels \(a_p\), leaving
+\(O(\varepsilon)y\) in \(p\), or
+\(O(\varepsilon/|\bar r_r|)y\) in the normalized state.  Delay translation
+changes \(|\bar r_r|\) by a uniformly comparable factor because
+\(\delta\theta_m/\rho_\delta=O(S_\delta^{-1})\).  After the current loop is
+summed,
+\begin{equation}
+ \|\mathscr T_ry\|_{\mathfrak S_{r,d}}
+ \le C_d\frac{\varepsilon}{\rho_\delta}
+          \|y\|_{\mathfrak S_{r,d}},               \label{eq:repelling-strict-generation-proof}
+\end{equation}
+where \(\mathscr T_r\) denotes one complete recursion step in
+\cref{eq:repelling-component-generation-recursion}.  Cellwise
+differentiation is triangular, as in the attracting proof, and uses no
+derivative beyond order \(d\).
+
+The direct old-history source is read only in the first delay window.  Its
+cap loss is at most \(\delta^{-2\vartheta}\), but every such read is
+multiplied by \(\varepsilon\); hence it is absorbed in the displayed bound
+for \(x^{[0]}\).  The endpoint and terminal lifts have the stated size by
+the two diagonal kernels and the current-loop estimate.  This proves the
+first line of \cref{eq:repelling-generation-number}.
+
+For the edge count, split linearly
+\[
+ x^{[n]}=x_E^{[n]}+x_U^{[n]}
+       +\sum_{k_0\in\mathcal I_+}x_{H,k_0}^{[n]}.
+\]
+The endpoint root \(E\) has insertion label \(0\), and the terminal root
+\(U\) has insertion label \(S_r\).  A history root \(H,k_0\), at integration
+label \(v_0\in[0,\theta_{k_0})\), reads
+\(\gamma(\sigma_0)\) at
+\(\sigma_0=v_0-\theta_{k_0}\).  Thus it contains the direct collar edge
+\(\sigma_0\to v_0=\sigma_0+\theta_{k_0}\).  Applying the recursion \(n\)
+times adds exactly \(n\) further \(\mathscr S\)-edges in all three cases.
+This proves the edge convention stated in the lemma.
+
+Since
+\[
+ \frac{\varepsilon}{\rho_\delta}
+ =\frac{2\alpha\delta}{S_\delta}
+ \le C\frac{\delta^{1-2\vartheta}}{S_\delta},
+\]
+the second line follows.  The recursion therefore converges absolutely.
+Its sum satisfies the exact component equations, and the uniqueness in
+\cref{prop:fixed-phase-green-collar-buffer} identifies it with the stated
+mixed-boundary solution.  By construction, only a strict shifted
+\(Z(s-\theta_k)\) of the current path raises the recursion index; the direct
+old-history edge, future scalar propagation, and all current loops do not.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:repelling-component-flushing}]
+The repelling travel time satisfies \(S_r\ge c/\delta\), whereas
+\(L_b=O(S_\delta)\).  Thus
+\(2L_b+\theta_m<S_r\) for small \(\delta\).  On the inner buffer,
+\begin{equation}
+ \rho_\delta\le|\bar r_r(s)|
+ \le C_{A_d}\rho_\delta,\qquad 0\le s\le L_b,     \label{eq:repelling-inner-buffer-geometry}
+\end{equation}
+because \(|\partial_s\bar r_r|\asymp\delta\) and
+\(\delta L_b=O(\delta S_\delta)=O(\rho_\delta)\).  On
+\([S_r-L_b-\theta_m,S_r]\), one has instead
+\begin{equation}
+ \tfrac12r_{\rm out}\le|\bar r_r(s)|\le r_{\rm out}.          \label{eq:repelling-terminal-buffer-geometry}
+\end{equation}
+Linearity gives the two asserted components.
+
+We now expose the orientation hidden by the full mixed Green operator.
+Expand every same-generation inverse by
+\cref{eq:repelling-current-loop-series}.  A resulting decorated component
+word contains forward transverse edges of lengths \(F_j\ge0\), future
+scalar edges of lengths \(P_j\ge0\), and exactly \(n\) recursive strict
+delay edges.  For endpoint and terminal words set
+\(t_{\rm in}=0,S_r\), respectively.  For an old-history word use its current
+insertion label \(t_{\rm in}=v_0\in[0,\theta_m]\), thereby absorbing the
+direct collar edge \(\sigma_0\to v_0\) into the root.  The time labels then
+give the exact telescoping identity
+\begin{equation}
+ t_{\rm out}-t_{\rm in}
+ =\sum_{j=1}^n\theta_{k_j}
+       +\sum_jF_j-\sum_jP_j.                       \label{eq:repelling-oriented-word-identity}
+\end{equation}
+Equivalently, if an old-history word is rooted at its true history label
+\(\sigma_0\), the right-hand side has the additional direct delay
+\(\theta_{k_0}\), and
+\[
+ t_{\rm out}-\sigma_0
+ =\theta_{k_0}+\sum_{j=1}^n\theta_{k_j}
+       +\sum_jF_j-\sum_jP_j.
+\]
+Current loops add one edge of each orientation but no strict delay.  Their
+arbitrary multiplicities sum geometrically by
+\cref{eq:repelling-current-loop-bound}.  This is the component-word action
+lemma; no causal support is attributed to the full mixed Green operator.
+
+Consider first the inner component on
+\([L_b-\theta_m,L_b]\).  Its insertions occur at the initial trace or in
+the first delay window.  If \(n\le M-1\), then
+\begin{equation}
+ t_{\rm out}-t_{\rm in}
+       -\sum_{j=1}^n\theta_{k_j}\ge L_0.           \label{eq:repelling-inner-word-distance}
+\end{equation}
+Indeed, the endpoint-rooted lower bound is
+\[
+ L_b-\theta_m-(M-1)\theta_m
+   =L_b-M\theta_m=L_0+\theta_m+1,
+\]
+whereas the old-history-rooted lower bound, using
+\(v_0\le\theta_m\), is
+\[
+ L_b-\theta_m-\theta_m-(M-1)\theta_m
+   =L_b-(M+1)\theta_m=L_0+1.
+\]
+This is why the direct collar edge is not a generation but is still paid
+for in the buffer length.
+Hence the total forward transverse length is at least \(L_0\) plus the
+total future scalar length.  The component kernel product is therefore
+bounded by \(e^{-cL_0/\delta}\).  Keeping the coarser alternative in which
+a far-future scalar subword is estimated directly gives the harmless
+envelope
+\begin{equation}
+ e^{-cL_0/\delta}+e^{-cS_\delta L_0},              \label{eq:repelling-inner-low-word-tail}
+\end{equation}
+because \(a_p/\delta\ge cS_\delta\) throughout the inner buffer.  Boundary
+faces created by differentiation are decorated words with fewer
+convolutions and the same oriented distance.  The strong \(\delta\)-weights
+cancel all kernel derivatives.
+
+For the terms with at least \(M\) strict edges, sum the convergent remainder
+using \cref{eq:repelling-generation-number}.  The genuine generation number
+is even \(C\delta/S_\delta\); using the stated, larger uniform budget gives
+\begin{equation}
+ \left\|\sum_{n\ge M}x_{\rm in}^{[n]}\right\|_{\mathfrak S_{r,d}}
+ \le C_d\left(\frac{\delta^{1-2\vartheta}}{S_\delta}\right)^M
+       \|\gamma\|_{\mathrm{cap},h,-\rho_\delta}.  \label{eq:repelling-inner-generation-tail}
+\end{equation}
+
+Turn next to the terminal component.  Put
+\[
+ s_*=S_r-L_b,\qquad s_o=S_r-L_b-\theta_m,\qquad
+ W_T=[s_o,s_*],\qquad O_T=[s_o,S_r].
+\]
+Thus \(W_T\) is the complete-history handoff window and \(O_T\) is contained
+in the outer buffer of
+\cref{eq:repelling-terminal-buffer-geometry}.  A decorated terminal word is
+rooted at \(t_{\rm in}=S_r\).  If it has \(n<M\) recursive strict edges,
+traverse it from the root toward its output in \(W_T\).  If it stays in
+\(O_T\), the oriented identity gives
+\[
+ \sum_jP_j-\sum_jF_j
+ =S_r-t_{\rm out}+\sum_{j=1}^n\theta_{k_j}\ge L_b,
+\]
+so its accumulated outer scalar action is at least \(cL_b/\delta\).  If it
+leaves \(O_T\), the first-exit argument below gives the still stronger
+bound.  Hence all \(n<M\) words contribute
+\[
+ C_de^{-cL_0/\delta}
+       \frac{|b_u|}{r_{\rm out}}.
+\]
+Here and below, each complete generation uses the already resummed current
+inverse.  Since \(M\) is fixed, all loop factors in a finite root-prefix are
+absorbed into \(C_d\); the global generation number likewise already
+contains its loop sum.
+
+Now let \(n\ge M\).  In root-to-output order select the first \(M\)
+recursive strict edges nearest \(S_r\), together with their complete
+generation blocks.  Let \(\mathcal V_M\) contain every time label in this
+prefix: both endpoints of every strict edge, all component integration
+vertices, and the full intervening kernel intervals of every same-generation
+current loop.  This last clause is essential; checking only the strict-edge
+endpoints would not localize the loop.  If
+\(\mathcal V_M\subset O_T\), each of these \(M\) complete blocks is measured
+in the outer normalized state and has the one-edge bound
+\begin{equation}
+ \beta_{r,\rm out}\le C_d\varepsilon
+       \le C_d\delta^{2-2\vartheta}.               \label{eq:repelling-terminal-generation-number}
+\end{equation}
+Indeed, on \(O_T\),
+\(B_k^Z=O(\varepsilon)\) and
+\(B_k^p=-\varepsilon a_pc_{k,N}\), while
+\[
+ \delta^{-1}\int_s^{S_r}u_p(s,u)a_p(u)\,\dd u\le1.
+\]
+The scalar normalization costs only the fixed factor
+\(r_{\rm out}^{-1}\), the layer sum is dimension-uniform, and the restricted
+current loops contribute the fixed factor
+\((1-q_{\rm loop})^{-1}\).  The weighted coefficient jets give the same
+bound through order \(d\).
+All remaining recursion blocks are estimated by the global generation
+number \(\beta_{r,\delta}\).  Summing delay labels by the layer-sum bound and
+loop multiplicities by the current-loop series gives the explicit stay
+estimate
+\begin{equation}
+ \sum_{\mathscr W:\,{\rm stay}}\|\mathscr W\|
+ \le C_d\beta_{r,\rm out}^M
+       \left(\sum_{j\ge0}\beta_{r,\delta}^j\right)
+       \frac{|b_u|}{r_{\rm out}}.                  \label{eq:repelling-terminal-stay-sum}
+\end{equation}
+
+Suppose instead that \(\mathcal V_M\not\subset O_T\).  Follow the selected
+prefix from \(S_r\) and stop at its first hit or crossing of the left
+boundary \(s_o\).  Forward \(Z\)-edges and strict delay edges move time
+labels to the right; only a future scalar edge can make this first leftward
+crossing.  Split that scalar kernel at \(s_o\), using its semigroup identity.
+All component labels before the split lie in \(O_T\).  Applied to this
+root-prefix, \cref{eq:repelling-oriented-word-identity} gives the
+crossing-number identity
+\begin{equation}
+ \sum_{\rm pre}P_j-\sum_{\rm pre}F_j
+ =S_r-s_o+\sum_{\rm pre}\theta_{k_j}
+ \ge L_b+\theta_m.                                 \label{eq:repelling-terminal-first-exit-action}
+\end{equation}
+Since every pre-exit scalar segment lies in \(O_T\),
+\begin{equation*}
+ \prod_{\rm pre}|u_p|
+ \le C_d\exp\left\{-\frac{c_{\rm out}}{\delta}
+                   \sum_{\rm pre}P_j\right\}
+ \le C_de^{-c(L_b+\theta_m)/\delta}
+ \le C_de^{-cL_0/\delta}.
+\end{equation*}
+The suffix after the split may leave or re-enter
+\(O_T\); it cannot remove an action factor already extracted.  Estimate all
+remaining recursion blocks globally.  There are only \(M\) possible
+first-exit generation-block classes.  If the marked crossing lies inside a
+current loop, its possible location is summed by
+\(\sum_{\ell\ge0}(\ell+1)q_{\rm loop}^{\ell}<\infty\) and is absorbed into
+\(C_d\).  Therefore
+\begin{equation}
+ \sum_{\mathscr W:\,{\rm exit}}\|\mathscr W\|
+ \le C_de^{-cL_0/\delta}
+       \left(\sum_{j\ge0}\beta_{r,\delta}^j\right)
+       \frac{|b_u|}{r_{\rm out}}.                  \label{eq:repelling-terminal-exit-sum}
+\end{equation}
+The remaining geometric series is dimension-uniform and bounded after
+decreasing \(\delta_0\).  Combining the short, stay, and first-exit word
+classes gives
+\begin{equation}
+ \left\|x_{\rm u}\right\|_{\mathfrak S_{r,d};
+       [S_r-L_b-\theta_m,S_r-L_b]}
+ \le C_d\left\{e^{-cL_0/\delta}
+            +\delta^{M(2-2\vartheta)}\right\}
+       \frac{|b_u|}{r_{\rm out}}.                 \label{eq:repelling-terminal-strong-tail}
+\end{equation}
+Cellwise differentiation of an iterated integral produces interior kernel
+derivatives and boundary faces.  Each face is again a decorated word with
+the same root and output labels; if a convolution collapses, its recursive
+edge count can only decrease.  Reclassifying the face as short, stay, or
+first-exit and using
+\cref{eq:repelling-weighted-kernel-bounds} proves
+\cref{eq:repelling-terminal-stay-sum,eq:repelling-terminal-exit-sum,%
+eq:repelling-terminal-strong-tail} through order \(d\), including every
+one-sided seam trace.
+
+The method-of-steps seam argument used on the attracting branch applies to
+the sum solving the original retarded equation.  Since \(M>d\) and both
+output windows lie after more than \(d\theta_m\) of forward evolution, their
+restrictions are genuine \(C^d\) histories, not merely piecewise ones.
+
+It remains to convert the strong estimates to slow norms.  On the inner
+window, \cref{eq:repelling-inner-buffer-geometry} and
+\(\partial_s\bar r_r=\delta q_0(\bar r_r)\) give
+\begin{equation}
+ \max_{0\le j\le d}\sup |r|^j|\partial_r^jf|
+ \le C_{d,A_d}\left(\frac{S_\delta}{\delta}\right)^d
+       \max_{0\le i\le d}\delta^i\sup|\partial_s^if|.        \label{eq:repelling-inner-strong-to-slow}
+\end{equation}
+On the terminal window the corresponding factor is
+\(C_d\delta^{-2d}\).  The factor \(|r|^{-1}\) required for the
+\(\mathsf P_\varepsilon^d\)-norm is already present in
+\cref{eq:repelling-component-strong-space}.  Applying these conversions to
+\cref{eq:repelling-inner-low-word-tail,%
+eq:repelling-inner-generation-tail,%
+eq:repelling-terminal-strong-tail} gives the \(Z\)- and \(p\)-parts of
+\cref{eq:repelling-inner-flush,eq:repelling-terminal-flush}.
+
+Finally, because \(H=0\), the exact recovery identity remains
+\begin{equation}
+ Q(r)=\frac{q_0(r)p'(r)}
+              {w_{0,N}'(r)+\varepsilon\mathfrak d_N(r)}.      \label{eq:repelling-Q-from-p}
+\end{equation}
+By \cref{eq:repelling-inverse-coefficient-jets}, for \(0\le i\le d-1\),
+\[
+ |r|^{i+1}|\partial_r^iQ(r)|
+ \le C_d\max_{1\le j\le i+1}
+          |r|^{j-1}|\partial_r^jp(r)|.
+\]
+Thus the \(\mathsf P_\varepsilon^d\)-bound gives the
+\(\mathsf Q_\varepsilon^{d-1}\)-bound with no additional power of
+\(\delta\).
+Inserting the common \(\varepsilon^{-1}\) normalization proves the two
+displayed estimates.
+
+The first and third terms in \(\mathcal E_{r,\rm in}\) tend to zero by
+superalgebraic decay and
+\(M(1-2\vartheta)>d\).  Since
+\[
+ \left(\frac{S_\delta}{\delta}\right)^d
+ e^{-cS_\delta L_0}
+ =S_\delta^d\delta^{-d}
+       e^{-cA_dS_\delta^2},
+\]
+one fixed sufficiently large \(A_d\) also makes the middle term a positive
+power of \(\delta\).  The terminal exponents are positive by the same
+inequality used in the attracting proof.  This completes the proof and the
+scope statements follow from the construction.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
 Because the rescaled fold-time RFDE is autonomous, differentiation of the
 base solution in fold time gives a solution of the variational equation.  At the

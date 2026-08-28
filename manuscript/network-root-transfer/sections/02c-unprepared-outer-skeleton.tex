@@ -1566,6 +1566,266 @@ The estimate is fixed-parameter.  It neither differentiates the inverse in
 no phase--normal coupling, nonlinear contraction, speed sign, or tracker.
 \end{proposition}
 
+The repelling branch cannot be treated by taking powers of its full mixed
+Green operator.  Its scalar line is selected from the future, so that full
+operator has precursors and no causal support filtration.  The correct
+iteration counts only strict delayed evaluations of \(Z\), while resumming
+the current \(Z\)--\(p\) loop inside each generation.
+
+\begin{lemma}[Repelling component kernel and decorated delay generations]
+\label[lemma]{lem:repelling-component-generations}
+Retain \cref{lem:current-absorbed-delay-splitting} at order \(d\ge0\), use
+\cref{prop:physical-backtrack-calculus} at order \(d+1\), take the principal
+coefficient estimates through order \(d+3\), and work on
+\(I_r=[0,S_r]\).  Put
+\begin{align}
+ \mathbb A_Z
+ &=\mathcal C_N+\varepsilon\sum_{k\in\mathcal I_+}
+                 \mathscr R_{k,N}^{\rm cur},
+ &a_p&=w_{0,N}'+\varepsilon\mathfrak d_N,\notag\\
+ C_{Zp}&=z_{0,N}',
+ &C_{pZ}&=a_p\left(\ell_N-\varepsilon
+                  \sum_{k\in\mathcal I_+}c_{k,N}\right),\notag\\
+ B_k^Z&=-\varepsilon\mathscr R_{k,N}^{\rm cur},
+ &B_k^p&=-b_{k,N}=-\varepsilon a_pc_{k,N}.          \label{eq:repelling-component-coefficients}
+\end{align}
+Then \cref{eq:current-absorbed-delay-equation}, with \(F=H=0\), is
+\begin{align}
+ \delta Z_s
+ &=\mathbb A_ZZ-C_{Zp}p
+       +\sum_{k\in\mathcal I_+}B_k^Z\widehat Z(s-\theta_k),\notag\\
+ \delta p_s
+ &=a_pp-C_{pZ}Z
+       +\sum_{k\in\mathcal I_+}B_k^p\widehat Z(s-\theta_k).
+                                                               \label{eq:repelling-component-equations}
+\end{align}
+Write \(r_*=|r|\).  Uniformly on the repelling branch,
+\begin{equation}
+ c r_*\le a_p(r)\le C r_*,\qquad
+ \|C_{Zp}(r)\|\le Cr_*,\qquad
+ \|C_{pZ}(r)\|\le Cr_*^2.                         \label{eq:repelling-component-sizes}
+\end{equation}
+Moreover, for \(0\le j\le d\),
+\begin{align}
+ r_*^j|\partial_r^j\mathfrak d_N(r)|
+ &\le C_d,                                                   \label{eq:repelling-d-weighted-jets}\\
+ r_*^j\|\partial_r^j(\mathbb A_Z-A_N)\|
+ &\le C_dr_*,\notag\\
+ r_*^j\bigl\{|\partial_r^ja_p|
+              +\|\partial_r^jC_{Zp}\|\bigr\}
+ &\le C_dr_*,\notag\\
+ r_*^j\|\partial_r^jC_{pZ}\|
+ &\le C_dr_*^2,\notag\\
+ r_*^j\sum_{k\in\mathcal I_+}\|\partial_r^jB_k^Z\|
+ &\le C_d\varepsilon,\notag\\
+ r_*^j\sum_{k\in\mathcal I_+}\|\partial_r^jB_k^p\|
+ &\le C_d\varepsilon r_*,                                  \label{eq:repelling-weighted-block-jets}
+\end{align}
+and
+\begin{equation}
+ r_*^{j+1}\left\{
+  |\partial_r^j(a_p^{-1})|
+  +\left|\partial_r^j\!\left(\frac{q_0}{a_p}\right)\right|
+ \right\}\le C_d.                                  \label{eq:repelling-inverse-coefficient-jets}
+\end{equation}
+
+Let \(U_Z(s,u)\) be the forward evolution of
+\(\delta Z_s=\mathbb A_Z(s)Z\), and, for \(s\le u\), put
+\begin{align}
+ u_p(s,u)
+ &=\exp\left\{-\delta^{-1}\int_s^ua_p(v)\,\dd v\right\},
+ &\Psi_p(s,u)&=\delta^{-1}\int_s^ua_p(v)\,\dd v. \label{eq:repelling-component-kernels}
+\end{align}
+For \(i+j\le d\),
+\begin{align}
+ \delta^{i+j}\|\partial_s^i\partial_u^jU_Z(s,u)\|
+ &\le C_de^{-c(s-u)/\delta},&&u\le s,\notag\\
+ \delta^{i+j}|\partial_s^i\partial_u^ju_p(s,u)|
+ &\le C_de^{-c\Psi_p(s,u)},&&s\le u.             \label{eq:repelling-component-kernel-bounds}
+\end{align}
+Define
+\begin{align}
+ (\mathcal G_Zf)(s)
+ &=\delta^{-1}\int_0^sU_Z(s,u)f(u)\,\dd u,\notag\\
+ (\mathcal G_p^+g)(s)
+ &=\delta^{-1}\int_s^{S_r}u_p(s,u)g(u)\,\dd u,\notag\\
+ \mathcal K_{Zp}&=\mathcal G_ZC_{Zp},
+ &\mathcal K_{pZ}&=\mathcal G_p^+C_{pZ}.          \label{eq:repelling-component-Green-operators}
+\end{align}
+Thus the mixed current problem with component sources \((f_Z,f_p)\) and
+traces \((b_s,b_u)\) is exactly
+\begin{align}
+ Z&=U_Z(\,\cdot\,,0)b_s-\mathcal K_{Zp}p
+                         +\mathcal G_Zf_Z,\notag\\
+ p&=u_p(\,\cdot\,,S_r)b_u+\mathcal K_{pZ}Z
+                         -\mathcal G_p^+f_p.       \label{eq:repelling-component-LP}
+\end{align}
+
+Let \(\Sigma_r\) be the finite set of all sums of positive delays lying in
+\([0,S_r]\), and use the continuous, piecewise \(W^{d,\infty}\) space on
+the induced partition, with norm
+\begin{equation}
+ \|x\|_{\mathfrak S_{r,d}}
+ =\max_{0\le j\le d}\delta^j
+  \operatorname*{ess\,sup}_{0\le s\le S_r}
+  \left\{\|\partial_s^jZ(s)\|_N
+       +\frac{|\partial_s^jp(s)|}{|\bar r_r(s)|}\right\}.     \label{eq:repelling-component-strong-space}
+\end{equation}
+After the fixed choice of small \(r_{\rm out}\),
+\begin{equation}
+ \|\mathcal K_{Zp}\|\le Cr_{\rm out}^2,\qquad
+ \|\mathcal K_{pZ}\|\le C,\qquad
+ \|\mathcal K_{Zp}\mathcal K_{pZ}\|\le\frac14              \label{eq:repelling-current-loop-bound}
+\end{equation}
+on this space.  The action statement used below is local and oriented.  Fix
+small \(\kappa,\kappa_{\rm out}>0\) and attach to a forward transverse edge
+and a future scalar edge, respectively, the two-point weights
+\begin{equation}
+ W_Z(s,u)=e^{\kappa(s-u)/\delta}\quad(u\le s),\qquad
+ W_p(s,u)=e^{\kappa\Psi_p(s,u)}\quad(s\le u).        \label{eq:repelling-oriented-edge-weights}
+\end{equation}
+If both endpoints and the intervening scalar edge lie in an outer interval
+on which \(a_p\ge c_{\rm out}>0\), one may in addition use
+\begin{equation}
+ W_{p,{\rm out}}(s,u)=e^{\kappa_{\rm out}(u-s)/\delta}.
+                                                               \label{eq:repelling-terminal-edge-weight}
+\end{equation}
+For \(i+j\le d\), the corresponding precise estimates are
+\begin{align}
+ \delta^{i+j}W_Z(s,u)
+       \|\partial_s^i\partial_u^jU_Z(s,u)\|&\le C_d,\notag\\
+ \delta^{i+j}W_p(s,u)
+       |\partial_s^i\partial_u^ju_p(s,u)|&\le C_d,\notag\\
+ \delta^{i+j}W_{p,{\rm out}}(s,u)
+       |\partial_s^i\partial_u^ju_p(s,u)|&\le C_d,             \label{eq:repelling-weighted-kernel-bounds}
+\end{align}
+where the last line is used only under the outer-interval condition just
+stated.
+After expanding the current-loop inverse, the kernel of every decorated
+component word, including every boundary-face word obtained by at most
+\(d\) differentiations, remains bounded after multiplication by the product
+of its applicable edge weights.  Each additional current loop contributes
+a factor at most \(q_{\rm loop}<1\), uniformly in \(N\), and the loop
+multiplicities sum geometrically.  No global terminal-fast weight for the
+scalar component is asserted away from such an outer interval.
+
+Let \(h\ge\max\{3,d\}\), let
+\(\gamma\in C^h([-\theta_m,0];\R^N)\) satisfy
+\(\gamma(0)\in E_N\), and let \(b_u\in\R\).  Define
+\begin{align}
+ D_\gamma^\diamond(s)
+ &=\sum_{\substack{k\in\mathcal I_+\\0\le s<\theta_k}}
+       B_k^\diamond(s)\gamma(s-\theta_k),\notag\\
+ (\mathscr S_\diamond y)(s)
+ &=\sum_{\substack{k\in\mathcal I_+\\s\ge\theta_k}}
+       B_k^\diamond(s)y(s-\theta_k),
+ \qquad \diamond\in\{Z,p\}.                     \label{eq:repelling-old-and-strict-sources}
+\end{align}
+Let \(x^{[0]}=(Z^{[0]},p^{[0]})\) be the unique current-loop solution
+\begin{align*}
+ Z^{[0]}&=U_Z(\,\cdot\,,0)\gamma(0)
+     -\mathcal K_{Zp}p^{[0]}+\mathcal G_ZD_\gamma^Z,\\
+ p^{[0]}&=u_p(\,\cdot\,,S_r)b_u
+     +\mathcal K_{pZ}Z^{[0]}-\mathcal G_p^+D_\gamma^p,
+\end{align*}
+and, recursively, let \(x^{[n+1]}\) have zero finite boundary rows and solve
+\begin{align}
+ Z^{[n+1]}&=-\mathcal K_{Zp}p^{[n+1]}
+                  +\mathcal G_Z\mathscr S_ZZ^{[n]},\notag\\
+ p^{[n+1]}&=\mathcal K_{pZ}Z^{[n+1]}
+                  -\mathcal G_p^+\mathscr S_pZ^{[n]}.
+                                                               \label{eq:repelling-component-generation-recursion}
+\end{align}
+Then
+\begin{equation}
+ (Z,p)=\sum_{n=0}^\infty(Z^{[n]},p^{[n]})           \label{eq:repelling-component-generation-series}
+\end{equation}
+converges absolutely in \(\mathfrak S_{r,d}\) to the unique solution of
+\cref{eq:repelling-component-equations} with
+\(Z(0)=\gamma(0)\) and \(p(S_r)=b_u\).  Moreover,
+\begin{align}
+ \|x^{[0]}\|_{\mathfrak S_{r,d}}
+ &\le C_d\left\{\|\gamma\|_{\mathrm{cap},h,-\rho_\delta}
+                         +\frac{|b_u|}{r_{\rm out}}\right\},\notag\\
+ \|x^{[n+1]}\|_{\mathfrak S_{r,d}}
+ &\le\beta_{r,\delta}\|x^{[n]}\|_{\mathfrak S_{r,d}},
+ &\beta_{r,\delta}
+ &\le C_d\frac{\varepsilon}{\rho_\delta}
+  \le C_d\frac{\delta^{1-2\vartheta}}{S_\delta}=o(1).       \label{eq:repelling-generation-number}
+\end{align}
+Each recursion index \(n\) counts exactly \(n\) strict delayed evaluations
+of the current path after the root insertion.  Endpoint and terminal words
+therefore have \(n\) strict positive-delay edges.  An old-history word has,
+in addition, its direct collar edge in \(D_\gamma\); equivalently that edge
+is absorbed into a current insertion label in \([0,\theta_m]\), after which
+the word has \(n\) recursive edges.  The arbitrarily many current
+\(Z\)--\(p\) loops have already been summed by
+\cref{eq:repelling-current-loop-bound}.
+\end{lemma}
+
+\begin{proposition}[Repelling component-kernel finite-generation flushing]
+\label[proposition]{prop:repelling-component-flushing}
+Retain \cref{lem:repelling-component-generations}.  Fix \(d\ge1\), take
+\(h\ge\max\{3,d\}\), and choose \(M=M_d\) so that
+\begin{equation}
+ M(1-2\vartheta)>d.                                \label{eq:repelling-flush-generation-count}
+\end{equation}
+There is \(A_d^*>0\) such that, for fixed \(A_d>A_d^*\),
+\begin{equation}
+ L_0=A_dS_\delta,\qquad
+ L_b=(M+1)\theta_m+L_0+1,                         \label{eq:repelling-flush-buffer-length}
+\end{equation}
+and sufficiently small \(\delta\), one has
+\(2L_b+\theta_m<S_r\).  Set
+\begin{align}
+ J_{r,\rm in}
+ &=\bar r_r([L_b-\theta_m,L_b]),\notag\\
+ J_{r,\rm u}
+ &=\bar r_r([S_r-L_b-\theta_m,S_r-L_b]).          \label{eq:repelling-flush-windows}
+\end{align}
+
+Split the solution linearly as
+\((Z,p,Q)=(Z_{\rm in},p_{\rm in},Q_{\rm in})
+ +(Z_{\rm u},p_{\rm u},Q_{\rm u})\), where the inner component has data
+\((\gamma,b_u)=(\gamma,0)\) and the terminal component has data
+\((\gamma,b_u)=(0,b_u)\).  On the two windows use
+\(r=\bar r_r(s)\).  Then
+\begin{align}
+ &\|Z_{\rm in}\|_{\mathsf Z_\varepsilon^d(J_{r,\rm in})}
+ +\|p_{\rm in}\|_{\mathsf P_\varepsilon^d(J_{r,\rm in})}
+ +\|Q_{\rm in}\|_{\mathsf Q_\varepsilon^{d-1}(J_{r,\rm in})}
+ \notag\\
+ &\quad\le C_{d,A_d}\mathcal E_{r,\rm in}(\delta)
+             \varepsilon^{-1}
+             \|\gamma\|_{\mathrm{cap},h,-\rho_\delta},      \label{eq:repelling-inner-flush}\\
+ &\|Z_{\rm u}\|_{\mathsf Z_\varepsilon^d(J_{r,\rm u})}
+ +\|p_{\rm u}\|_{\mathsf P_\varepsilon^d(J_{r,\rm u})}
+ +\|Q_{\rm u}\|_{\mathsf Q_\varepsilon^{d-1}(J_{r,\rm u})}
+ \notag\\
+ &\quad\le C_{d,A_d}\mathcal E_{r,\rm u}(\delta)
+             \varepsilon^{-1}\frac{|b_u|}{r_{\rm out}},      \label{eq:repelling-terminal-flush}
+\end{align}
+where
+\begin{align}
+ \mathcal E_{r,\rm in}(\delta)
+ &=\left(\frac{S_\delta}{\delta}\right)^d
+       \left\{e^{-cL_0/\delta}+e^{-cS_\delta L_0}\right\}
+   +\delta^{M(1-2\vartheta)-d}S_\delta^{d-M},\notag\\
+ \mathcal E_{r,\rm u}(\delta)
+ &=\delta^{-2d}e^{-cL_0/\delta}
+   +\delta^{M(2-2\vartheta)-2d}.                  \label{eq:repelling-flush-errors}
+\end{align}
+The number \(A_d^*\) is chosen so that the second inner action term tends to
+zero; this is possible because \(S_\delta^2=2p\log(1/\delta)\).  Hence both
+errors tend to zero.  These are normalized component trace estimates, not
+support-vanishing statements.
+
+The result is fixed-parameter and fixed-phase.  It uses no backward RFDE
+evolution and does not include the compatible \(p(0)\)-to-collar feedback.
+It proves neither the coupled phase--normal inverse, a nonlinear tracker,
+the speed sign, a repelling invariant history sheet, nor a physical root.
+\end{proposition}
+
 There is nevertheless an intrinsic quotient once an actual physical history
 has been constructed.  The point is to quotient by the transported tangent
 line, rather than by an eigenvector of a frozen voltage--resource matrix; a
