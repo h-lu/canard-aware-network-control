@@ -366,9 +366,11 @@ not the conormal of an independently defined physical maximal-canard locus.
       the slow-speed class.
 - [x] Prove the exact fixed-delay fold-time tracker normal form, direct raw
       RFDE equivalence, and compatible-collar initial-history interface.
-- [ ] Prove the fixed-delay mixed first-buffer inverse, buffer-to-slow
-      bootstrap, parameter/event-time estimates, and close the nonlinear
-      outer tracker.
+- [x] Prove the fixed-phase `C^0` complete-history Green--collar inverse,
+      including the repelling scalar feedback without an extra boundary row.
+- [ ] Prove the high-order finite-generation buffer-to-slow bootstrap,
+      bordered phase/event inverse, parameter/event-time estimates, and
+      close the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.

@@ -14,15 +14,19 @@ cancellation coordinate and its local `C^0` speed reconstruction, while
 raw-compatible endpoint-history chart with the exact resource-defect/speed
 bridge.  The latter is not a right inverse for arbitrary Green sources.
 Proposition `prop:endpoint-scale-not-slow-speed` proves that the remaining
-Green--collar coupling needs a hybrid slow/action estimate or a first-delay
-buffer: a finite `mathfrak p=O(delta^2)` trace alone does not control the
+Green--collar coupling needs a hybrid slow/action estimate on a finite
+method-of-steps buffer: a finite `mathfrak p=O(delta^2)` trace alone does not control the
 slow-speed norm.  Proposition `prop:fold-time-tracker-normal-form` now
 proves the exact structural repair: in fold time the tracker is a
 fixed-delay defect system, the compatible collar is an ordinary initial
 history, and neither `Q Z_s` nor `Q p_s` occurs.  Once `q<0` has been proved,
 the solution can be reparameterized by `r`; no preparation or cutoff enters
-this equivalence.  The fixed-delay mixed buffer estimate and nonlinear
-contraction are still open.
+this equivalence.  Proposition `prop:fixed-phase-green-collar-buffer` now
+closes the fixed-parameter `C^0` complete-history Green--collar inverse for
+the `(Z,p)` diagonal normal restriction.  It includes the repelling
+`p(0)`-to-compatible-collar feedback without adding a Fredholm row.  The
+high-order finite-generation bootstrap, bordered phase/event inverse, and
+nonlinear contraction remain open.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -456,23 +460,60 @@ the target contraction number
 ```text
 C { a_boundary + r_out + 1/S_delta
     + delta^(1-2 vartheta)/S_delta
-    + delta^(M_s(1-2 vartheta)-s)/S_delta^M_s
+    + delta^(M_s(2-2 vartheta)-2s)
+    + delta^(M_s(1-2 vartheta)-s)
+        S_delta^(s-M_s)
     + E_act(L_0) } < 1/2.
 ```
 
-Here the fifth term is the worst-case conversion of the iterated collar echo
-to an order-`s` slow derivative: each delayed passage gains the capped
-history factor `delta^(1-2 vartheta)/S_delta`, while conversion of a remaining
-`delta`-width profile costs at most `delta^(-s)`.  The last term denotes the
-appropriate tails from the already proved action weights: in the `T=delta s`
-coordinate it is the maximum of the attracting outer, repelling transverse
-inner, and repelling scalar terminal weights evaluated `delta L_0` from their
-controlled endpoints.  It must not be replaced uniformly by
-`exp(-c L_0/delta)`, because the scalar action rate at
-`|r|=rho_delta` is only of order `S_delta`.  These estimates are targets for
-the missing buffer lemma, not results already proved in the paper.  The
+The fifth and sixth terms are the outer- and inner-end conversion budgets for
+an iterated collar echo.  At the outer end, each passage is
+`O(delta^(2-2 vartheta))` and an order-`s` slow derivative costs
+`O(delta^(-2s))`.  At the inner end, each passage gains the conservative
+capped-history factor `delta^(1-2 vartheta)/S_delta`, while conversion of a
+remaining `delta`-width profile costs at most
+`delta^(-s) S_delta^s`.  (More precisely, on a fixed buffer one may replace
+`S_delta^s` by `(S_delta+L_b)^s`.)  The last term is the **target**
+mode-separated action tail
+
+```text
+E_act,s(L_0)
+  = C_s { delta^(-2s) exp(-c L_0/delta)
+        + (S_delta/delta)^s exp(-c L_0/delta)
+        + S_delta^(2s) exp(-c S_delta L_0) }.
+```
+
+Its three terms correspond to the outer/terminal scalar layer, the inner
+transverse layer, and the future-slaved inner scalar component.  This
+anisotropic derivative estimate is not yet a consequence of the proved
+uniform action bound and must be established by the finite-generation
+lemma.  If one keeps only the existing coarse action estimate, the honest
+alternative is to take `L_0(delta)=A_s S_delta` instead of fixing `L_0`.
+These estimates are targets for the missing buffer lemma, not results already
+proved in the paper.  The
 order of choices is: first fix `s`, `M_s`, and `L_0` (hence `L_b`), then take
 `a_boundary` and `r_out` small, and finally take `delta` small.
+
+This finite-step budget applies only to the causal strong blocks after the
+slow phase has been removed: the attracting outer stable block, the
+repelling inner transverse block, and (after time reversal) the repelling
+outer scalar terminal block.  It is false for the full `(r,Z,p)` system
+without a bordered phase/event row.  A short collar pulse can leave a
+persistent displacement in the phase variable, and no number of delay
+passages supplies a factor `beta_delta^M` for that displacement.
+
+Before counting delay generations, absorb every no-shift term into the
+perturbed current Green block: this includes
+`epsilon mathfrak d_N(p-ell_N Z)`, every `+L_k,N Z(s)` current piece, and all
+zero-delay layers.  The generation operator may contain only shifted
+evaluations `-L_k,N Z(s-theta_k)` with `theta_k>0`.  Otherwise its `M`-th
+power does not represent `M` delay passages and the buffer-length count is
+invalid.
+
+The strict condition `M_s(1-2 vartheta)>s` is sufficient, not asserted to be
+sharp.  If a differentiated gauge carries an additional factor
+`delta^(-A) exp(c S_delta)`, use the stronger margin
+`M_s(1-2 vartheta)>s+A`.
 
 The displayed slow norms cannot be imposed directly on an arbitrary
 `O(delta^2)` collar mismatch.  Such a mismatch creates an `O(delta^2)`
@@ -504,13 +545,15 @@ representative-class comparison.
 The tracker and its entry into the retained fold chart are not closed until
 all eight items below are proved.
 
-1. Prove a dimension-uniform fold-time mixed Green/Lyapunov--Perron theorem
-   on the three finite method-of-steps buffers, couple it to the
-   raw-compatible collar chart, and bootstrap its middle trace into the
-   existing slow Green ladder after `M_s` delay passages.  The repelling
+1. Upgrade the proved dimension-uniform fixed-phase `C^0` Green--collar
+   inverse to the three high-order finite method-of-steps buffers, and
+   bootstrap its middle trace into the existing slow Green ladder after
+   `M_s` delay passages.  The repelling
    strong scalar uses only its one-dimensional future Green operator;
    backward RFDE evolution and forward shooting remain forbidden.
-2. After the speed sign and event time are closed, apply the weighted `C^k`
+2. Add the slow phase and event equation as a uniformly invertible bordered
+   block.  The phase displacement is not part of the causal echo contraction.
+   After the speed sign and event time are closed, apply the weighted `C^k`
    bounds for `q -> r_k(q)` and all delayed compositions, including every
    derivative in `J_phys`, to the reparameterized interior.
 3. Bounds for `R_z,R_q` and the nonlinear remainder giving the displayed
@@ -709,8 +752,11 @@ gauges.
 - [x] Exact fixed-delay fold-time tracker normal form, direct equivalence
       with the raw RFDE, conditional reparameterization, and explicit
       `Gamma_e^h` initial-history interface.
-- [ ] Repelling Stage-I Green trace/terminal operator coupled to the raw
-      collar chart through the fixed-delay mixed first-buffer inverse.
+- [x] Fixed-parameter `C^0` complete-history Green--collar inverse for the
+      fixed-phase `(Z,p)` normal restriction, including the repelling
+      `p(0)` collar feedback and unchanged finite row count.
+- [ ] High-order finite-generation echo bootstrap and bordered phase/event
+      inverse for the full Stage-I operator.
 - [x] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
       ladder orders.
 - [x] Backtrack/composition parameter jets through the weighted third

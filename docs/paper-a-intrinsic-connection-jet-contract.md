@@ -1,11 +1,10 @@
 # Paper A: weighted complete-history connection conormal
 
 Status: **the selected-connection front-face theorem is supported by the
-current estimates; the exact nonlinear tracker normal form and a
-raw-compatible endpoint collar chart are now proved, but their hybrid Green
-coupling, the physical tracker, and the physical identification gate remain
-open.  The exact fixed-delay fold-time formulation now identifies the
-correct remaining coupling.**
+current estimates; the exact nonlinear tracker normal form, a raw-compatible
+endpoint collar chart, and the fixed-phase `C^0` complete-history
+Green--collar inverse are now proved.  The high-order phase/event coupling,
+physical tracker, and physical identification gate remain open.**
 
 This note tracks
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -178,6 +177,12 @@ fixed-delay system in which that buffer must be constructed, including its
 direct equivalence with the raw RFDE and the collar initial-history
 interface.  It does not prove the mixed buffer estimate or tracker
 existence.
+Proposition `prop:fixed-phase-green-collar-buffer` now proves the
+fixed-parameter `C^0` Green inverse for the complete-history `(Z,p)` normal
+restriction, including the repelling compatible-collar feedback with no
+extra boundary row.  It fixes the zero-order row count, but does not supply
+the high-order finite-generation echo bootstrap or the collective
+phase/event border.
 These results still neither construct the tracker nor prove a dichotomy for
 the quotient.  The following
 finite-`delta` items remain unproved uniformly in `N`:
@@ -268,8 +273,10 @@ Do not:
       obstruction.
 - [x] Prove the exact fixed-delay fold-time tracker normal form and direct
       collar-to-initial-history interface.
-- [ ] Prove the fixed-delay mixed first-buffer inverse, buffer-to-slow
-      bootstrap, and close the nonlinear outer tracker.
+- [x] Prove the fixed-phase `C^0` complete-history Green--collar inverse and
+      repelling scalar feedback without an extra Fredholm row.
+- [ ] Prove the high-order finite-generation buffer-to-slow bootstrap, the
+      bordered phase/event inverse, and close the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.

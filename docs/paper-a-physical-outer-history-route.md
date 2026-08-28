@@ -8,8 +8,10 @@ normal form and a raw-compatible endpoint-history collar chart are also
 proved, together with a boundary-layer obstruction showing why they do not
 yet close the nonlinear RFDE tracker.  The exact fixed-delay fold-time
 tracker normal form is now proved and fixes the remaining construction
-route.  Its finite method-of-steps buffer theorem, the nonlinear tracker, and the
-phase-quotiented nonautonomous slow-history theorem remain open.**
+route.  The fixed-phase `C^0` complete-history Green--collar inverse is also
+proved.  Its high-order finite-generation bootstrap, bordered phase/event
+inverse, nonlinear tracker, and phase-quotiented nonautonomous slow-history
+theorem remain open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -147,6 +149,14 @@ prescribed history, not the narrow delayed echoes that it has already
 generated.  At slow order `s` the current proof contract therefore uses an
 integer `M_s` with `M_s(1-2 vartheta)>s` before bootstrapping to the slow
 Green norm.
+
+Proposition `prop:fixed-phase-green-collar-buffer` closes the zero-order
+normal block along each prescribed reduced path.  It accepts a complete old
+voltage history and the single scalar resource row, uses only the scalar
+future Green line on the repelling branch, and contracts the unknown
+`p(0)`-dependence of the compatible collar without adding a boundary row.
+This is a conditional diagonal restriction with the collective phase fixed;
+it provides neither high-order slow jets nor a physical tracker.
 
 ## 2. The exact curve-restricted physical equation
 
@@ -423,6 +433,8 @@ not acceptable.
       finite endpoint resource-defect scale alone.
 - [x] Exact fixed-delay fold-time tracker normal form and compatible-collar
       initial-history interface, with no past-orbit assumption.
+- [x] Fixed-phase `C^0` complete-history Green--collar inverse, including the
+      repelling compatible-history feedback and unchanged finite row count.
 - [ ] Fold-time finite method-of-steps buffers, order-dependent
       buffer-to-slow bootstrap, and
       nonlinear tracker contraction on both outer branches.
