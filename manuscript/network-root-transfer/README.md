@@ -72,10 +72,19 @@ an exact fixed-parameter, inner-anchored nonlinear graph--action residual.
 Its derivative is precisely the existing raw-compatible Schur isomorphism,
 its normalized base defect is
 `O(r_out+S_delta^(-2))`, and it has a dimension-uniform quadratic/two-point
-remainder.  Existence of a zero is not claimed.  The quantitative branch
-solution, higher parameter jets, moving-terminal estimates, the nonlinear
-tracker, nonautonomous normal splitting, and the finite-`delta` physical
-slow-history relation remain open.
+remainder.  A uniform contraction now closes the quantitative branch
+solution pointwise at every fixed admissible parameter pair: each outer
+branch has a unique small zero in its canonical graph slice, with a first
+Newton jet and strict speed sign.  The zero reconstructs an exact finite
+forward RFDE segment.  On every retained subsegment whose full delay collar
+lies beyond the first maximal delay, the physical collective coordinate gives
+an exact tracker representative, exact backtracks and uncut history
+invariance, and the resource-gauge quotient has an `O(S_delta^(-1))`
+Volterra realization.  This generated-interior result is not preparation
+independent and does not provide either physical branch endpoint.  Higher
+parameter jets, moving-terminal estimates, a past-complete outer history, the
+cross-branch handoff, nonautonomous normal splitting, and the finite-`delta`
+physical connection/root remain open.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag

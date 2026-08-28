@@ -3431,6 +3431,11 @@ of \(\mathcal F_\sigma\).  It is the unique zero in the open
  &\le MC_2r_\delta^2
  \le C\lambda_\delta^2.                           \label{eq:fixed-section-zero-newton-jet}
 \end{align}
+The derivative at the nonlinear zero remains an isomorphism and satisfies
+\begin{equation}
+ \bigl\|[D\mathcal F_\sigma(u_{\sigma,\delta})]^{-1}\bigr\|
+ \le2M.                                           \label{eq:fixed-section-zero-inverse}
+\end{equation}
 The exact speed along this zero obeys
 \begin{equation}
  q_0\!\left(\Theta_{a_{\sigma,\delta}}(r)\right)
@@ -3462,6 +3467,82 @@ only in the displayed canonical graph slice.  It is not a parameterized
 solution branch, a past-complete orbit, an invariant slow manifold, a
 branch-to-branch handoff, a preparation-independent physical connection,
 or a canard root.
+\end{corollary}
+
+\begin{corollary}[Generated-interior canonical tracker representatives]
+\label[corollary]{cor:generated-interior-canonical-tracker}
+Retain \cref{cor:fixed-section-canonical-zero}.  At either of its zeros,
+write the reconstructed forward solution as
+\[
+ v_\sigma(s),\quad -\theta_m\le s\le S_\sigma,
+ \qquad
+ w_\sigma(s),\quad 0\le s\le S_\sigma,
+\]
+in fold time, and put
+\[
+ r_\sigma(s)=\pi_N^T\{v_\sigma(s)-\mathbf1\}
+ =\Theta_{a_{\sigma,\delta}}(\bar r_\sigma(s)).
+\]
+After decreasing \(\delta_0(r_{\rm out})\) once more,
+\(S_\sigma>2\theta_m\).  Choose
+\begin{equation}
+ 2\theta_m<s_0<s_1\le S_\sigma,\qquad
+ J_\sigma^{\rm gen}=r_\sigma([s_0-\theta_m,s_1]),
+ \qquad I_\sigma^{\rm gen}=r_\sigma([s_0,s_1]).   \label{eq:generated-interior-intervals}
+\end{equation}
+Then \(r_\sigma\) is a \(C^1\) diffeomorphism from
+\([s_0-\theta_m,s_1]\) onto \(J_\sigma^{\rm gen}\).  If
+\(s_\sigma=(r_\sigma|_{[s_0-\theta_m,s_1]})^{-1}\), define
+\begin{equation}
+ V_\sigma(r)=v_\sigma(s_\sigma(r)),\qquad
+ W_\sigma(r)=w_\sigma(s_\sigma(r)),\qquad
+ q_\sigma(r)=\delta^{-1}r_\sigma'(s_\sigma(r)).   \label{eq:generated-interior-tracker}
+\end{equation}
+There are uniform constants \(c_q,C_q,c_w,C_w,C_V>0\) such that
+\begin{align}
+ -C_q\le q_\sigma(r)&\le-c_q<0,
+       &&r\in J_\sigma^{\rm gen},                 \label{eq:generated-interior-q-bounds}\\
+ c_w|r|\le|W_\sigma'(r)|&\le C_w|r|,
+       &&r\in J_\sigma^{\rm gen},                \label{eq:generated-interior-wprime-bounds}\\
+ \|V_\sigma'(r)\|_N&\le C_V,
+       &&r\in J_\sigma^{\rm gen}.                \label{eq:generated-interior-Vprime-bound}
+\end{align}
+For every \(r\in I_\sigma^{\rm gen}\) and every delay atom,
+\begin{equation}
+ r_{\sigma,k}(r)
+ :=r_\sigma(s_\sigma(r)-\theta_k)
+ =\Phi_{q_\sigma}^{-\delta\theta_k}(r)
+ \in J_\sigma^{\rm gen}.                         \label{eq:generated-interior-backtracks}
+\end{equation}
+The triple \((V_\sigma,W_\sigma,q_\sigma)\) exactly satisfies
+\cref{eq:exact-outer-voltage-invariance,eq:exact-outer-resource-invariance}
+on \(I_\sigma^{\rm gen}\), with the backtracks in
+\cref{eq:generated-interior-backtracks}.  Its complete-history embedding is
+not a formal collar: it is exactly the generated forward window
+\begin{equation}
+ \mathcal H_{V_\sigma,W_\sigma,q_\sigma}(r)
+ =\left(
+   \theta\longmapsto v_\sigma(s_\sigma(r)+\theta),\;
+   w_\sigma(s_\sigma(r))
+   \right).                                      \label{eq:generated-interior-history-window}
+\end{equation}
+Consequently the stationary-coordinate quotient in
+\cref{prop:physical-history-phase-quotient} and the exact resource-gauge
+normal equation in \cref{prop:exact-resource-gauge-quotient} apply on this
+generated interior.  In particular, the latter has its exact Volterra
+realization and
+\begin{equation}
+ \|\mathcal K_s\|\le \frac{C}{S_\delta},\qquad
+ \|(\Id-\mathcal K_s)^{-1}\|\le2.                \label{eq:generated-interior-volterra-bound}
+\end{equation}
+
+This corollary constructs an exact generated-interior tracker
+representative carried by each canonical zero.  Here canonical means only
+the fixed zero-core graph slice; no preparation or raw-gauge independence is
+asserted.  The result does not prescribe both physical branch endpoints,
+construct a moving-event or parameter family, extend the initial collar to
+a past-complete orbit, produce a repelling stable sheet, or prove a physical
+connection or root.
 \end{corollary}
 
 \begin{proposition}[Repelling component-kernel finite-generation flushing]

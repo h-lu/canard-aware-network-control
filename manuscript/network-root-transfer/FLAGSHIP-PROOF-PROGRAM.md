@@ -10,7 +10,8 @@ verification state.
 The separate physical-history implementation under Issue #32 now has a fixed
 mixed-BVP and representative-class contract in
 [`../../docs/paper-a-tracker-bvp-proof-program.md`](../../docs/paper-a-tracker-bvp-proof-program.md).
-That contract is not a claim that the tracker theorem has been proved.
+That contract concerns the still-open terminal-to-terminal family; the
+generated-interior tracker statement is now proved separately.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -403,6 +404,9 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Solve the fixed-section residual by a dimension-uniform contraction,
       with canonical-slice uniqueness, first Newton jet, strict speed sign,
       and exact finite forward RFDE reconstruction on both outer branches.
+- [x] Reparameterize every retained generated-interior subsegment whose delay
+      collar lies beyond the first maximal delay as an exact tracker, and
+      verify the uncut quotient and resource-gauge Volterra hypotheses there.
 - [ ] Prove the terminal-relative moving-event $C^2$ chart, then construct
       the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
@@ -431,8 +435,10 @@ $O(r_{\rm out}+S_\delta^{-2})$, the differential is the uniform anchored
 Schur block, and the remainder is uniformly quadratic in two-point form.
 Its pointwise fixed-parameter zero is now obtained by a uniform contraction
 on each canonical outer graph slice, with a first Newton jet, strict speed
-sign, and finite forward RFDE reconstruction.  Relative-parameter jets,
-moving-event control, nonlinear tracker existence,
+sign, and finite forward RFDE reconstruction.  Its sufficiently deep
+generated interior is now an exact physical-coordinate tracker with the
+uncut quotient and Volterra realization.  Relative-parameter jets,
+moving-event control, terminal-to-terminal nonlinear tracker existence,
 nonautonomous quotient roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.
 This zeroth-order border does not close Issue #32 and does not

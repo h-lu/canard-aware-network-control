@@ -4501,6 +4501,21 @@ so \(u=v\).  At the fixed point,
  =-L_\sigma^{-1}\mathcal Q_\sigma(u_{\sigma,\delta}),
 \]
 which proves \cref{eq:fixed-section-zero-newton-jet}.
+Since \(\mathcal Q_\sigma\) is \(C^1\), its two-point bound gives
+\[
+ \|D\mathcal Q_\sigma(u_{\sigma,\delta})\|
+ \le2C_2\|u_{\sigma,\delta}\|.
+\]
+Therefore
+\[
+ \|L_\sigma^{-1}
+       D\mathcal Q_\sigma(u_{\sigma,\delta})\|
+ \le2MC_2r_\delta\le\frac12.
+\]
+The Neumann series for
+\(D\mathcal F_\sigma(u_{\sigma,\delta})
+ =L_\sigma+D\mathcal Q_\sigma(u_{\sigma,\delta})\)
+proves \cref{eq:fixed-section-zero-inverse}.
 
 Let \(R=\|u_{\sigma,\delta}\|\).  The graph--action scales in
 \cref{eq:proof-fixed-section-rga-scales} and the exact speed remainder in
@@ -4534,6 +4549,92 @@ zero with the asserted forward RFDE segment.  The ordered choice of
 This reconstruction is forward from the compatible collar only; it neither
 extends that collar to a past RFDE orbit nor relates the two values of
 \(\sigma\).
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{cor:generated-interior-canonical-tracker}]
+The order-\(h\) raw compatibility at \(s=0\), with \(h\ge3\), and the
+smooth finite-dimensional current field give a classical forward solution.
+Independently of the extra seam compatibility, eventual smoothing by the
+method of steps gives the \(C^2\) regularity required below at every positive
+time beyond one maximal delay.  Because \(s_0-\theta_m>\theta_m\), this
+includes the whole closed interval
+\([s_0-\theta_m,s_1]\).  By
+\cref{eq:fixed-section-zero-speed-sign},
+\begin{equation}
+ r_\sigma'(s)
+ =\delta q_0(\bar r_\sigma(s))
+       \Theta_{a_{\sigma,\delta}}'(\bar r_\sigma(s))<0.
+                                                               \label{eq:proof-generated-interior-speed}
+\end{equation}
+The uniform bounds for \(q_0\) and
+\cref{eq:anchored-phase-orientation} give
+\cref{eq:generated-interior-q-bounds} and the asserted inverse
+\(s_\sigma\).  The branch traverses a reduced-coordinate distance bounded
+below independently of \(\delta\), while
+\(|r_\sigma'|\le C\delta\).  Hence
+\(S_\sigma\ge c/\delta>2\theta_m\) after one further decrease of
+\(\delta_0\).
+
+For \(r=r_\sigma(s)\) and
+\(-\theta_m\le\theta\le0\), uniqueness for the scalar equation
+\(r_s=\delta q_\sigma(r)\) gives
+\[
+ r_\sigma(s+\theta)
+ =\Phi_{q_\sigma}^{\delta\theta}(r).
+\]
+This proves
+\cref{eq:generated-interior-backtracks,eq:generated-interior-history-window}.
+Every point of \(I_\sigma^{\rm gen}\), together with its full delayed
+window, lies in the generated part of the same exact RFDE solution.
+Autonomy therefore lets any such point serve as the initial point of the
+restricted orbit.  Condition~\textup{(i)} of
+\cref{prop:exact-outer-history-equation} holds on every retained subsegment;
+its equivalence gives the two exact uncut invariance equations.
+
+The resource equation, which holds at every current time in the exact
+forward segment, gives on all of \(J_\sigma^{\rm gen}\)
+\[
+ W_\sigma'(r)=\frac{r-\varepsilon\nu}{q_\sigma(r)}.
+\]
+The relative phase-chart bound keeps \(|r|\) uniformly comparable with
+\(|\bar r_\sigma|\ge\rho_\delta\).  Since
+\(\varepsilon/\rho_\delta=O(\delta/S_\delta)\), decreasing \(\delta_0\)
+once more makes \(|r-\varepsilon\nu|\) uniformly comparable with \(|r|\).
+Together with \cref{eq:generated-interior-q-bounds} this proves
+\cref{eq:generated-interior-wprime-bounds}.
+
+The exact normal \(Z\)-row
+\cref{eq:fold-time-tracker-Z}, the graph--action scales in
+\cref{eq:proof-fixed-section-rga-scales}, the relative phase-delay bounds
+\cref{eq:relative-phase-delay-profile,%
+eq:nonlinear-phase-delay-quadratic-bound}, the coefficient and quadratic
+bounds, the exact delay splitting, and the affine-residual bounds give
+\[
+ \|\delta\partial_sZ_x\|_N\le C\varepsilon
+ \qquad\hbox{on the whole current branch}.
+\]
+Here the constant is uniform because the zero lies in the fixed
+\(R_{\rm u}\)-ball, and \(\varepsilon=\delta^2\).
+Since \(|r_\sigma'|\ge c\delta\), differentiating
+\[
+ V_\sigma(r_\sigma(s))
+ =\mathbf1+r_\sigma(s)\mathbf1
+       +z_{0,N}(r_\sigma(s))+Z_x(s)
+\]
+proves \cref{eq:generated-interior-Vprime-bound}.  The same relative
+phase estimate gives \(|r|\ge c_\rho\rho_\delta\) throughout
+\(J_\sigma^{\rm gen}\).
+
+Thus the solution is compatible and \(C^2\) on the whole delay collar,
+\(r_\sigma'\ne0\), \(q_\sigma\) and its reciprocal are uniformly bounded,
+\cref{eq:generated-interior-Vprime-bound} holds, and
+\(|W_\sigma'|\asymp|r|\) there.  Hence
+\cref{prop:physical-history-phase-quotient,prop:exact-resource-gauge-quotient}
+apply.  Finally,
+\(\delta/\rho_\delta=2\alpha/S_\delta\), so
+\cref{eq:resource-gauge-volterra-bound,eq:resource-gauge-volterra-inverse}
+give \cref{eq:generated-interior-volterra-bound}.
 \end{proof}
 
 \begin{proof}[Proof of
