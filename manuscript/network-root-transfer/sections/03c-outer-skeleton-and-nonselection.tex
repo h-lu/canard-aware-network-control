@@ -1220,6 +1220,176 @@ decomposition of \(\phi_e\), together with
 or boundary row is introduced.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{prop:fixed-phase-green-collar-buffer}]
+We first extract the order-zero oriented inverse already present in the proof
+of \cref{prop:principal-tracker-endpoint-green}.  After the change
+\(T=\delta s\), its transformed system is
+\begin{equation}
+ \delta Z_s=\mathcal C_NZ-z_{0,N}'p+F,\qquad
+ \delta p_s=w_{0,N}'p-w_{0,N}'\ell_NZ+H.           \label{eq:fixed-phase-principal-s-system}
+\end{equation}
+The kernels in
+\cref{eq:principal-green-diagonal-kernels}, with the block loop in
+\cref{eq:principal-green-loop}, give zero-trace Green operators
+\(\mathbb G_a^0,\mathbb G_r^0\) and homogeneous finite-trace lifts
+\(\mathbb B_a^0,\mathbb B_r^0\).  At order zero their estimates read
+\begin{align}
+ \|\mathbb G_\sigma^0(F,H)\|_{\mathsf X_{\sigma,0}}
+ &\le C\|(F,H)\|_{\mathsf Y_{\sigma,0}},\notag\\
+ \|\mathbb B_a^0(b_z,b_p)\|_{\mathsf X_{a,0}}
+ &\le C\left(\|b_z\|_N+\frac{|b_p|}{r_{\rm out}}\right),\notag\\
+ \|\mathbb B_r^0(b_s,b_u)\|_{\mathsf X_{r,0}}
+ &\le C\left(\|b_s\|_N+\frac{|b_u|}{r_{\rm out}}\right).    \label{eq:fixed-phase-principal-C0-bound}
+\end{align}
+Although \cref{prop:principal-tracker-endpoint-green} records the slow
+spaces from order one upward, these finite-interval oriented integral
+formulas define bounded operators directly for continuous sources; the same
+operators also follow by \(C^0\)-completion of smooth sources.
+For the scalar row this follows directly by dividing its Green integral by
+\(|\bar r_\sigma(s)|\): the denominator
+\(|w_{0,N}'|\asymp|r|\), while an \(H\)-source is measured by
+\(|H|/|r|^2\).  Equivalently, the action comparison and
+\(|q_0|\asymp1\) give the oriented estimate
+\begin{equation}
+ \sup_{s\in I_\sigma}\frac1{|\bar r_\sigma(s)|}
+ \frac1\delta\int_{\mathcal O_\sigma(s)}
+ |u_q(s,v)|\,|\bar r_\sigma(v)|^2\,\dd v\le C,    \label{eq:fixed-phase-moving-scalar-weight}
+\end{equation}
+where \(\mathcal O_a(s)=[0,s]\) and
+\(\mathcal O_r(s)=[s,S_r]\), with the corresponding stable or future
+scalar kernel.  The coefficient motion along
+\(\partial_s\bar r_\sigma=\delta q_0\) is already included in these exact
+nonautonomous kernels; no endpoint freezing is used.  On the repelling
+branch, \(\mathbb G_r^0\) uses the forward transverse kernel and only the
+one-dimensional future scalar kernel.
+
+We next estimate the fixed-delay perturbation.  Write
+\(w_{0,N}'(r)=r\,m_N(r)\), where \(m_N\) and its required derivatives are
+uniformly bounded and \(|m_N|\ge c\).  The quotient formula
+\[
+ q_0(r)=\frac{r-\varepsilon\nu}{w_{0,N}'(r)}
+\]
+therefore gives \(q_0'=O(1+\varepsilon/r^2)=O(1)\) on
+\(|r|\ge\rho_\delta\).  The exact backtrack identity
+\((r_k^{q_0})'=q_0(r_k^{q_0})/q_0(r)\) then yields
+\(1-(r_k^{q_0})'=O(\delta)\).  Differentiating the definition of
+\(\mathcal D_{0,c,N}\), using \(z_{0,N}'=O(r)\),
+\(z_{0,N}''=O(1)\), and the common layer bound, gives
+\(\mathcal D_{0,c,N}'=O(\delta)\).  Hence
+\(\mathfrak d_N=(\mathcal D_{0,c,N}-q_0)'=O(1)\).  Together with the critical
+coefficient bounds, this proves, uniformly on both paths,
+\begin{equation}
+ \|z_{0,N}'\|_N+\|\ell_N\|\le C|r|,\qquad
+ |w_{0,N}'|\asymp|r|,\qquad |\mathfrak d_N|\le C.  \label{eq:fixed-phase-coefficient-bounds}
+\end{equation}
+Split \(\mathscr D_N^{\rm lin}[\gamma,Z]\) according to whether the delayed argument
+is current or lies in the prescribed old history.  The common layer bound
+gives
+\begin{align}
+ \|\mathscr D_N^{{\rm lin},{\rm cur}}Z\|_{C^0}
+ &\le C\|Z\|_{C^0},\notag\\
+ \|\mathscr D_N^{{\rm lin},{\rm old}}\gamma\|_{C^0}
+ &\le Ce^{2\kappa_e\theta_m}
+       \|\gamma\|_{N,e,\delta}^{\sharp}.          \label{eq:fixed-phase-delay-split-bound}
+\end{align}
+The old part is supported in the first delay window.  Along that fixed
+window \(|\bar r_\sigma(s)|\asymp|e|\); this remains dimension uniform
+because \(|\partial_s\bar r_\sigma|\le C\delta\).
+
+Eliminate \(Q\) in \cref{eq:fixed-phase-normal-block}.  The perturbing
+source added to \cref{eq:fixed-phase-principal-s-system} is
+\begin{align}
+ \mathbb V_Z
+ &=\varepsilon\{\mathscr D_{\perp,N}^{\rm lin}
+                    -z_{0,N}'\mathscr D_{c,N}^{\rm lin}\},\notag\\
+ \mathbb V_p
+ &=\varepsilon w_{0,N}'\mathscr D_{c,N}^{\rm lin}
+   +\varepsilon\mathfrak d_N(p-\ell_NZ)
+   +\varepsilon^2\mathfrak d_N\mathscr D_{c,N}^{\rm lin}.    \label{eq:fixed-phase-delay-perturbation}
+\end{align}
+If only the current part is retained, then
+\cref{eq:fixed-phase-C0-spaces,eq:fixed-phase-coefficient-bounds} imply
+\begin{equation}
+ \|\mathbb G_\sigma^0\mathbb V_{\rm cur}(Z,p)\|_{
+       \mathsf X_{\sigma,0}}
+ \le C\left\{\frac{\varepsilon}{\rho_\delta}
+                 +\frac{\varepsilon^2}{\rho_\delta^2}\right\}
+       \|(Z,p)\|_{\mathsf X_{\sigma,0}}.          \label{eq:fixed-phase-current-feedback-proof}
+\end{equation}
+Indeed, \(p-\ell_NZ=O(|r|\|(Z,p)\|_{\mathsf X})\); the two scalar
+delay sources are therefore \(O(\varepsilon|r|)\) and
+\(O(\varepsilon^2)\), respectively.  Division by the
+\(|r|^2\)-weight in the source norm gives the two displayed ratios.  The
+transverse delay source is smaller and is absorbed by the same bound.
+Likewise,
+\begin{equation}
+ \|\mathbb G_\sigma^0\mathbb V_{\rm old}\gamma\|_{
+       \mathsf X_{\sigma,0}}
+ \le Ce^{2\kappa_e\theta_m}
+       \left\{\frac{\varepsilon}{\rho_\delta}
+                 +\frac{\varepsilon^2}{\rho_\delta^2}\right\}
+       \|\gamma\|_{N,e,\delta}^{\sharp}.         \label{eq:fixed-phase-old-feedback-proof}
+\end{equation}
+The cap estimate \cref{eq:frozen-cap-bounds},
+\(\rho_\delta=\delta S_\delta/(2\alpha)\), and
+\(0<\vartheta<1/4\) turn these bounds into
+\begin{equation}
+ C\left\{\frac{\delta}{S_\delta}
+           +\frac{\delta^2}{S_\delta^2}\right\}
+ \quad\hbox{and}\quad
+ C\left\{\frac{\delta^{1-2\vartheta}}{S_\delta}
+           +\frac{\delta^{2-2\vartheta}}{S_\delta^2}\right\},              \label{eq:fixed-phase-feedback-smallness}
+\end{equation}
+respectively.  Both tend to zero, proving
+\cref{eq:fixed-phase-C0-Neumann-number}.
+
+For a fixed old history, the solution equation is
+\begin{equation}
+ x=\mathbb B_\sigma^0\mathbf b_\sigma+\mathbb G_\sigma^0(F,H)
+   +\mathbb G_\sigma^0\mathbb V_{\rm old}\gamma
+   +\mathbb G_\sigma^0\mathbb V_{\rm cur}x,\qquad x=(Z,p).  \label{eq:fixed-phase-Neumann-equation}
+\end{equation}
+Here \(\mathbf b_\sigma=(\gamma(0),b_\sigma)\in E_N\times\R\).
+The current feedback has norm below one half for small \(\delta\), uniformly
+in \(N\).  Neumann inversion, followed by
+\cref{eq:fixed-phase-principal-C0-bound,%
+eq:fixed-phase-old-feedback-proof}, proves existence, uniqueness, and
+\cref{eq:fixed-phase-C0-inverse}.  On the attracting branch, standard
+method of steps identifies the fixed point with the unique mild initial-value
+solution.  On the repelling branch, method of steps handles only the causal
+delayed \(Z\)-evaluations in both rows; existence and uniqueness of the mixed
+terminal problem come from the oriented Green--Neumann equation, not from a
+backward RFDE flow.  In both cases the solution is classical away from the
+initial seam.
+
+It remains to handle the repelling collar feedback.  Current evaluation is
+bounded in \(\mathsf X_{r,0}\), and
+\cref{eq:fixed-phase-collar-feedback} gives
+\begin{equation*}
+ \|\mathfrak C_ep(0)\|_{N,e,\delta}^{\sharp}
+ \le C_\Gamma\|(Z,p)\|_{\mathsf X_{r,0}}.
+\end{equation*}
+Because \((\mathfrak C_ec)(0)=0\) for every \(c\), this term changes no finite transverse
+trace.  Its contribution to \cref{eq:fixed-phase-Neumann-equation} is the
+additional operator
+\begin{equation*}
+ \mathbb G_r^0\mathbb V_{\rm old}\mathfrak C_e
+       \operatorname{ev}_{p,0},
+\end{equation*}
+whose norm is at most \(C_\Gamma\beta_{\rm col}=o(1)\) by
+\cref{eq:fixed-phase-old-feedback-proof}.  A second Neumann inversion proves
+the feedback assertion with the same two boundary rows.
+
+Finally, fix \(Z_e\) and the core gauge in the differential of
+\(\Gamma_e^h\).  Its current voltage is independent of \(p_e\), whereas
+\cref{eq:collar-chart-tame-bound} gives exactly the last bound in
+\cref{eq:fixed-phase-collar-feedback}.  Thus the abstract feedback is the
+one generated by the raw-compatible chart.  Nothing in this argument solves
+the deleted phase equation, controls the boundary-layer value of \(Q\), or
+produces high-order slow jets, which proves the stated scope boundary.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
 Because the rescaled fold-time RFDE is autonomous, differentiation of the
 base solution in fold time gives a solution of the variational equation.  At the

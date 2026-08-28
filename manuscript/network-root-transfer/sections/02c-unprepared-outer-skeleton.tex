@@ -230,7 +230,7 @@ If \(r>0\), the whole history space is exponentially stable and
 \begin{equation}
  \|\mathcal T_{N,\delta,r,\eta}(s)\phi\|_{N,r,\delta}^{\sharp}
  \le C e^{-\kappa_{N,\delta}(r)s}
-       \|\phi\|_{N,r,\delta}^{\sharp},qquad s\ge0.  \label{eq:frozen-attracting-history-estimate}
+       \|\phi\|_{N,r,\delta}^{\sharp},\qquad s\ge0.  \label{eq:frozen-attracting-history-estimate}
 \end{equation}
 If \(r<0\), there is an invariant splitting
 \begin{equation}
@@ -250,7 +250,7 @@ The unstable space is spanned by
 \begin{equation}
  h^u_{N,\delta,r,\eta}(\theta)
  =e^{\lambda^u_{N,\delta,r,\eta}\theta}
-       e^u_{N,\delta,r,\eta},qquad -\theta_m\le\theta\le0, \label{eq:frozen-unstable-history}
+       e^u_{N,\delta,r,\eta},\qquad -\theta_m\le\theta\le0, \label{eq:frozen-unstable-history}
 \end{equation}
 where \(\ell_{c,N}(r)e^u_{N,\delta,r,\eta}=1\) and
 \begin{equation}
@@ -697,8 +697,8 @@ The endpoint theorem deliberately does not assert a uniform map
 That assertion is false even for constant coefficients.  On a fixed interior
 interval consider
 \[
- -\varepsilon Z'+Z=f_\varepsilon,qquad
- h_\varepsilon=\varepsilon^2,qquad
+ -\varepsilon Z'+Z=f_\varepsilon,\qquad
+ h_\varepsilon=\varepsilon^2,\qquad
  f_\varepsilon(r)=\varepsilon h_\varepsilon^{s-1}
                          e^{\mathrm i r/h_\varepsilon}.
 \]
@@ -1143,6 +1143,167 @@ provides an \(r\)-parameterization of its voltage history.  A past-orbit
 claim additionally requires that the old history satisfy the raw RFDE with
 a compatible resource extension.  This proposition is an exact equivalence,
 not an existence theorem for the mixed BVP.
+\end{proposition}
+
+The first invertible block of that mixed BVP can be isolated without
+assuming a physical tracker.  The qualification ``fixed phase'' is
+essential: deleting the collective equation while allowing its speed
+correction to move the current phase would not give a linearization of the
+raw RFDE.
+
+\begin{proposition}[Fixed-phase \(C^0\) complete-history Green--collar inverse]
+\label[proposition]{prop:fixed-phase-green-collar-buffer}
+Retain \cref{prop:principal-tracker-endpoint-green,%
+prop:compatible-endpoint-jet-collar,%
+prop:fold-time-tracker-normal-form}.  Let \(r_a(T)\) and \(r_r(T)\) be the
+reduced paths in \cref{prop:principal-tracker-endpoint-green}, and let
+\(T_a\) be the first time at which \(r_a(T_a)=\rho_\delta\).  Set
+\begin{equation*}
+ \bar r_a(s)=r_a(\delta s),\quad
+ \bar r_r(s)=r_r(\delta s),\quad
+ S_a=T_a/\delta,\quad S_r=T_r/\delta.
+\end{equation*}
+Thus \(\partial_s\bar r_\sigma=\delta q_0(\bar r_\sigma)\), the attracting
+path runs from \(r_{\rm out}\) to \(\rho_\delta\), and the repelling path
+runs from \(-\rho_\delta\) to \(-r_{\rm out}\).  All coefficients below
+are evaluated on one prescribed path \(\bar r_\sigma\), and the current
+collective variation is fixed to zero.  Extend each reduced path backward
+by one maximal delay with the \(q_0\)-flow inside the common coefficient
+collar.  Work on the retained parameter ball
+\[
+ |\nu|\le\nu_*,\qquad
+ \eta\in\mathfrak T_N^{\rm red},\qquad
+ \|\eta\|_{\mathfrak T_N}<\eta_0.
+\]
+
+Let \(\gamma\in C([ -\theta_m,0];\R^N)\) satisfy
+\(\gamma(0)\in E_N\).  For a current transverse path \(Z\), assemble the
+full voltage direction
+\begin{equation}
+ \widehat u_{\gamma,Z}(s)=
+ \begin{cases}
+  \gamma(s),&-\theta_m\le s<0,\\
+  Z(s),&s\ge0,
+ \end{cases}
+ \quad
+ \mathscr D_N^{\rm lin}[\gamma,Z](s)
+ =K\sum_{k=0}^mL_{k,N}(\eta)
+ \{\widehat u_{\gamma,Z}(s)
+       -\widehat u_{\gamma,Z}(s-\theta_k)\}.       \label{eq:fixed-phase-collar-delay}
+\end{equation}
+Write \(\mathscr D_{c,N}^{\rm lin}=\pi_N^T\mathscr D_N^{\rm lin}\),
+\(\mathscr D_{\perp,N}^{\rm lin}=P_{\perp,N}\mathscr D_N^{\rm lin}\), and
+\(\mathfrak d_N=(\mathcal D_{0,c,N}-q_0)'\).  For continuous sources with
+\(F(s)\in E_N\) and \(H(s)\in\R\), consider
+\begin{align}
+ \delta Z_s={}&\mathcal C_NZ-z_{0,N}'p+F
+   +\varepsilon\{\mathscr D_{\perp,N}^{\rm lin}
+                    -z_{0,N}'\mathscr D_{c,N}^{\rm lin}\},\notag\\
+ \delta p_s={}&w_{0,N}'p-w_{0,N}'\ell_NZ+H
+   +\varepsilon w_{0,N}'\mathscr D_{c,N}^{\rm lin}
+   +\varepsilon^2\mathfrak d_NQ,\notag\\
+ \varepsilon Q={}&p-\ell_NZ
+                  +\varepsilon\mathscr D_{c,N}^{\rm lin}.  \label{eq:fixed-phase-normal-block}
+\end{align}
+This is the \((Z,p)\) diagonal normal restriction of the differential of
+the fold-time system at the reduced path after the current collective
+variation has been fixed.  It is not a Schur complement and not the full
+variational equation.
+
+For \(\sigma\in\{a,r\}\), put \(I_\sigma=[0,S_\sigma]\) and
+\begin{align}
+ \|(Z,p)\|_{\mathsf X_{\sigma,0}}
+ &=\sup_{s\in I_\sigma}
+   \left\{\|Z(s)\|_N+\frac{|p(s)|}{|\bar r_\sigma(s)|}\right\},\notag\\
+ \|(F,H)\|_{\mathsf Y_{\sigma,0}}
+ &=\sup_{s\in I_\sigma}
+   \left\{\|F(s)\|_N+\frac{|H(s)|}{|\bar r_\sigma(s)|^2}\right\}. \label{eq:fixed-phase-C0-spaces}
+\end{align}
+Use the endpoint fading norm
+\(\|\gamma\|_{N,e,\delta}^{\sharp}\) from
+\cref{eq:frozen-history-norm}, with \(e=r_{\rm out}\) on the attracting
+branch and \(e=-\rho_\delta\) on the repelling branch.
+
+After decreasing \(\delta_0\), independently of \(N\), the following holds
+whenever \(0<\delta<\delta_0\): the boundary problems below have unique mild
+solutions, classical for \(s>0\):
+\begin{enumerate}[label=\textup{(\alph*)},leftmargin=2em]
+\item on the attracting branch, prescribe the complete old history
+\(\gamma\), impose \(Z(0)=\gamma(0)\), and set \(p(0)=b_p\);
+\item on the repelling branch, prescribe the complete old history
+\(\gamma\), impose \(Z(0)=\gamma(0)\), and set \(p(S_r)=b_u\).
+Only the scalar future Green line is used;
+no backward RFDE evolution is asserted.
+\end{enumerate}
+Put \(b_a=b_p\) and \(b_r=b_u\).  They obey the dimension-uniform estimate
+\begin{equation}
+ \|(Z,p)\|_{\mathsf X_{\sigma,0}}
+ \le C\left\{
+   \|\gamma\|_{N,e,\delta}^{\sharp}
+   +\frac{|b_\sigma|}{r_{\rm out}}
+   +\|(F,H)\|_{\mathsf Y_{\sigma,0}}\right\}.     \label{eq:fixed-phase-C0-inverse}
+\end{equation}
+
+Fix \(C_\Gamma\).  After decreasing \(\delta_0\) further, the repelling
+result also permits the compatible feedback for a bounded linear map
+\(\mathfrak C_e:\R\to C([ -\theta_m,0];\R^N)\),
+\begin{equation}
+ \gamma=\gamma_0+\mathfrak C_ep(0),\qquad
+ (\mathfrak C_ec)(0)=0\quad(c\in\R),\qquad
+ \|\mathfrak C_ec\|_{N,e,\delta}^{\sharp}
+       \le C_\Gamma\frac{|c|}{|e|}.               \label{eq:fixed-phase-collar-feedback}
+\end{equation}
+The solution remains unique and satisfies
+\cref{eq:fixed-phase-C0-inverse} with \(\gamma_0\) on the right.  In
+particular, at every base point in the fixed bounded chart ball, the
+\(p_e\)-column of the voltage-history component of \(D\Gamma_e^h\), with
+\(Z_e\), the core gauge, and the parameters fixed, is an operator of this
+type evaluated at the unknown resource-defect trace \(p(0)\).  Since
+\((\mathfrak C_ec)(0)=0\), the finite boundary rows remain
+\((Z(0),p(S_r))\in E_N\times\R\); compatibility creates no additional
+Fredholm row.
+
+More explicitly, splitting the delayed term into current and old-history
+parts, let \(\mathbb G_\sigma^0\) be the zero-trace Green operator of the
+principal block, and let \(\mathbb V_{\rm cur}\) and
+\(\mathbb V_{\rm old}\) be the current-path and old-history perturbing
+sources obtained after eliminating \(Q\) in
+\cref{eq:fixed-phase-normal-block}.  With \(e_a=r_{\rm out}\) and
+\(e_r=-\rho_\delta\), define
+\begin{align*}
+ \beta_{\rm cur}
+ &=\max_{\sigma\in\{a,r\}}
+   \|\mathbb G_\sigma^0\mathbb V_{\rm cur}\|_{
+      \mathcal L(\mathsf X_{\sigma,0})},\\
+ \beta_{\rm col}
+ &=\max_{\sigma\in\{a,r\}}
+   \sup_{\gamma\ne0}
+   \frac{\|\mathbb G_\sigma^0\mathbb V_{\rm old}\gamma\|_{
+          \mathsf X_{\sigma,0}}}
+        {\|\gamma\|_{N,e_\sigma,\delta}^{\sharp}}.
+\end{align*}
+Then
+\begin{align}
+ \beta_{\rm cur}
+ &\le C\left\{\frac{\varepsilon}{\rho_\delta}
+                 +\frac{\varepsilon^2}{\rho_\delta^2}\right\},\notag\\
+ \beta_{\rm col}
+ &\le Ce^{2\kappa_e\theta_m}
+       \left\{\frac{\varepsilon}{\rho_\delta}
+                 +\frac{\varepsilon^2}{\rho_\delta^2}\right\}
+ \le C\frac{\delta^{1-2\vartheta}}{S_\delta}=o(1). \label{eq:fixed-phase-C0-Neumann-number}
+\end{align}
+The second line bounds the response to every prescribed old history; its
+smallness as an operator is needed only for
+\cref{eq:fixed-phase-collar-feedback}.
+
+This proposition gives neither an order-\(h\) slow inverse nor a tracker.
+The missing collective variation satisfies a differential phase equation
+and can retain a displacement created by a short collar pulse.  It must be
+closed together with an event row.  Likewise, one maximal delay removes
+direct reads of \(\gamma\), but does not erase the delayed echoes already
+generated in \((Z,p)\); their high-order slow bootstrap is a separate
+finite-generation estimate.
 \end{proposition}
 
 There is nevertheless an intrinsic quotient once an actual physical history
