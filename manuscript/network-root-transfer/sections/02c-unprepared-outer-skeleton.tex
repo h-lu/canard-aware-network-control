@@ -1581,11 +1581,125 @@ These are precisely the derivatives of the affine normal residual
 \((-R_{z,N},\varepsilon R_{q,N})\) along the reduced flow.  They need not
 vanish because the preparation-independent critical curve is not a
 finite-\(\delta\) physical tracker.
+Nevertheless, in the fixed-phase normal source norm,
+\begin{align}
+ \|(\mathscr C_{Z,\sigma}a,\mathscr C_{p,\sigma}a)\|_{
+       \mathsf Y_{\sigma,0}}
+ &\le C\frac{\delta}{S_\delta^2}
+       \|a\|_{\mathsf A_\phi^1(I_\sigma)},         \label{eq:phase-normal-source-bound}\\
+ \|(\mathscr C_{Z,\sigma}c,\mathscr C_{p,\sigma}c)\|_{
+       \mathsf Y_{\sigma,0}}
+ &\le C\left\{\delta^2+\frac{\delta}{S_\delta^3}\right\}|c|.
+                                                        \label{eq:constant-phase-normal-source-bound}
+\end{align}
+Thus both the full formal phase column and its constant affine-residual
+part are \(o(1)\) as normal sources, uniformly on both branches and in
+network size.
 
 The extension \cref{eq:formal-phase-collar-extension} is the formal
 \(q_0\)-flow phase column, not the endpoint derivative of the raw-compatible
 collar chart.  The lemma does not identify those two columns and does not
-bound the residual column in a nonlinear tracker space.
+bound the resulting normal response in the scaled nonlinear tracker space.
+\end{lemma}
+
+\begin{lemma}[Raw-compatible moving-core collar]
+\label[lemma]{lem:raw-compatible-moving-core-collar}
+Retain \cref{prop:unprepared-outer-skeleton,%
+prop:principal-tracker-endpoint-green,%
+prop:physical-backtrack-calculus,%
+prop:compatible-endpoint-jet-collar} at a fixed order \(h\ge3\).
+For every endpoint
+\(\rho_\delta\le |e|\le r_{\rm out}\), define the formal moving critical
+core
+\begin{align}
+ r_e^0(\theta)&=\Phi_{q_0}^{\delta\theta}(e),
+ &\phi_e^0(\theta)&=V_{0,N}(r_e^0(\theta)),\notag\\
+ a_{j,e}^0&=\partial_\theta^j\phi_e^0(0),
+ &\widehat\gamma_e^0
+   &=\phi_e^0-\mathcal E_{\delta,h}
+                   (a_{0,e}^0,\ldots,a_{h,e}^0).             \label{eq:moving-critical-core}
+\end{align}
+Then \(\widehat\gamma_e^0\in\mathscr K_{N,\delta}^h\), and the
+raw-compatible collar with the same current voltage and seed resource is
+well defined by
+\begin{equation}
+ (\phi_e^{\rm rc},\omega_e^{\rm rc})
+ =\Gamma_e^h(0,0,\widehat\gamma_e^0;\nu,\eta).
+                                                               \label{eq:raw-compatible-moving-core}
+\end{equation}
+If
+\begin{equation}
+ b_{j,e}=\partial_\theta^j\phi_e^{\rm rc}(0)-a_{j,e}^0,
+ \qquad \mathcal L_e=q_0(e)\partial_e,             \label{eq:moving-core-jet-defect}
+\end{equation}
+then
+\begin{align}
+ \phi_e^{\rm rc}-\phi_e^0
+ &=\mathcal E_{\delta,h}(b_{0,e},\ldots,b_{h,e}),
+ &b_{0,e}&=0,                                      \label{eq:moving-core-exact-correction}\\
+ \max_{0\le j\le h}\delta^j
+  \{\|b_{j,e}\|_N+\|\mathcal L_eb_{j,e}\|_N\}
+ &\le C_h\varepsilon.                              \label{eq:moving-core-jet-bound}
+\end{align}
+Consequently,
+\begin{equation}
+ \|\phi_e^{\rm rc}-\phi_e^0\|_{\mathrm{cap},h,e}
+ +\|\mathcal L_e\phi_e^{\rm rc}
+          -\mathcal L_e\phi_e^0\|_{\mathrm{cap},h,e}
+ \le C_h\varepsilon.                              \label{eq:moving-core-cap-bound}
+\end{equation}
+All constants are uniform in the network size, the admissible topology,
+the retained parameters, and the two signs of \(e\).
+
+The leading compatibility defects are not merely estimated: they are
+exactly
+\begin{align}
+ b_{1,e}&=-\delta^{-1}R_{z,N}(e),\notag\\
+ c_{1,e}^{\rm rc}-c_{1,e}^{0}
+ &=-\delta R_{q,N}(e),                            \label{eq:moving-core-first-defects}
+\end{align}
+where
+\(c_{1,e}^{0}=\partial_\theta
+  [w_{\rm seed,N}(r_e^0(\theta))]_{\theta=0}\)
+and \(c_{1,e}^{\rm rc}\) is the first resource jet forced by the raw
+compatibility recursion.  In particular, with
+\begin{equation}
+ \gamma_e^{\rm ph}
+ =\mathcal L_e\phi_e^{\rm rc}-\mathcal L_e\phi_e^0,
+                                                               \label{eq:moving-core-phase-collar}
+\end{equation}
+let \(\varpi_e^{\rm rc}\) be the resource endpoint jet germ forced by raw
+compatibility, let
+\(\varpi_e^0(\theta)=w_{\rm seed,N}(r_e^0(\theta))\), and define the
+resource-defect phase jet by
+\(
+ p_e^{\rm ph}=-\mathcal L_e(\varpi_e^{\rm rc}-\varpi_e^0)
+\).
+Then the seam identities are
+\begin{align}
+ \gamma_e^{\rm ph}(0)&=0,
+ &\delta\partial_\theta\gamma_e^{\rm ph}(0)
+   &=-q_0(e)R_{z,N}'(e),\notag\\
+ p_e^{\rm ph}(0)&=0,
+ &\delta\partial_\theta p_e^{\rm ph}(0)
+   &=\varepsilon q_0(e)R_{q,N}'(e).               \label{eq:moving-core-seam-match}
+\end{align}
+Thus the collar column matches the constant affine-residual bulk column in
+\cref{eq:constant-phase-residual-column}; it cannot be discarded at the
+entry seam.
+
+The order in \cref{eq:moving-core-jet-bound} is generally sharp.  For
+example, if \(\nu=0\), \(\mathcal D_{0,\perp,N}=0\), and
+\(z_{0,N}(r)=g_Nr^2+O(r^3)\) with \(g_N\ne0\), then at
+\(e=-\rho_\delta\)
+\begin{equation}
+ \delta\mathcal L_eb_{1,e}
+ =-2\delta^2q_0(0)^2g_N+o(\delta^2).              \label{eq:moving-core-sharpness}
+\end{equation}
+Hence \(\varepsilon^{-1}\gamma_e^{\rm ph}\) is uniformly bounded but is
+not, in general, \(o(1)\).  This lemma constructs a raw-compatible seam
+collar, not a past physical orbit, and does not by itself close the full
+phase--normal Schur loop.
 \end{lemma}
 
 \begin{proposition}[Delayed zeroth-order phase--event inverse]
@@ -1730,6 +1844,80 @@ This proposition is exact trace calculus.  It does not construct the
 nonlinear family, identify the formal collar with the raw-compatible
 collar, estimate the affine-residual column, or prove the full bordered
 inverse.
+\end{proposition}
+
+\begin{proposition}[Exact phase-delay shift and state-norm obstruction]
+\label[proposition]{prop:phase-delay-action-shift}
+Retain \cref{prop:fixed-phase-green-collar-buffer,%
+lem:reduced-flow-phase-defect,prop:event-aligned-normal-traces}.
+For \(a\in\mathsf A_\phi^1(I_\sigma)\), write
+\begin{equation}
+ P=\mathscr P_{c,\sigma,N}a,\qquad
+ P_\perp=\mathscr P_{\perp,\sigma,N}a,\qquad
+ p^\sharp=p+\varepsilon P,\qquad
+ \widehat Q=Q_{\rm n}+P.                          \label{eq:phase-action-shift}
+\end{equation}
+Then the full formal phase column and the fixed-phase normal block are
+equivalent, exactly, to
+\begin{align}
+ \varepsilon\widehat Q
+ &=p^\sharp-\ell_NZ
+       +\varepsilon\mathscr D_{c,N}^{\rm lin}[\gamma,Z],\notag\\
+ \delta Z_s
+ &=\mathcal C_NZ-z_{0,N}'p^\sharp+F
+   +\varepsilon\{\mathscr D_{\perp,N}^{\rm lin}[\gamma,Z]
+       -z_{0,N}'\mathscr D_{c,N}^{\rm lin}[\gamma,Z]\}
+   +F_\phi^\sharp,\notag\\
+ \delta p_s^\sharp
+ &=\{w_{0,N}'+\varepsilon\mathfrak d_N\}
+    \{p^\sharp-\ell_NZ
+       +\varepsilon\mathscr D_{c,N}^{\rm lin}[\gamma,Z]\}
+       +H+H_\phi^\sharp,                          \label{eq:shifted-phase-normal-system}
+\end{align}
+where
+\begin{equation}
+ F_\phi^\sharp=-q_0R_{z,N}'a+\varepsilon P_\perp,
+ \qquad
+ H_\phi^\sharp=\varepsilon q_0R_{q,N}'a
+                    +\delta\varepsilon\partial_sP.           \label{eq:shifted-phase-structured-sources}
+\end{equation}
+The delay columns are continuous and piecewise \(W^{1,\infty}\) on the
+finite delay-seam partition, with
+\begin{align}
+ |P(s)|+\|P_\perp(s)\|_N+|\partial_sP(s)|
+ &\le C\frac{\delta}{|\bar r_\sigma(s)|}
+          \|a\|_{\mathsf A_\phi^1(I_\sigma)},\notag\\
+ \|F_\phi^\sharp(s)\|_N
+ &\le C\varepsilon\|a\|_{\mathsf A_\phi^1(I_\sigma)},
+ &|H_\phi^\sharp(s)|
+ &\le C\frac{\varepsilon^2}{|\bar r_\sigma(s)|}
+          \|a\|_{\mathsf A_\phi^1(I_\sigma)}.   \label{eq:shifted-phase-source-profile}
+\end{align}
+No seam measure occurs in \(\partial_sP\).
+
+For the zero normal-data phase response, the scalar boundary rows become
+\begin{align}
+ p^\sharp(0)&=0 &&(\sigma=a),\notag\\
+ p^\sharp(S_r)&=\varepsilon P(S_r) &&(\sigma=r).  \label{eq:shifted-phase-boundary-rows}
+\end{align}
+The repelling compatible-history feedback remains indexed by
+\(p^\sharp(0)=p(0)\), because the formal entry extension gives \(P(0)=0\).
+
+The shift is necessary, not cosmetic.  If one instead asks for a uniform
+bound of the formal phase response in the old normalized state norm, then
+in general
+\begin{equation}
+ \sup_{0<\delta<\delta_0}
+ \varepsilon^{-1}
+ \|G_\sigma(0,0,\mathscr C_{Z,\sigma}a,
+                       \mathscr C_{p,\sigma}a)\|_{
+                       \mathsf X_{\sigma,0}}=\infty           \label{eq:normalized-phase-response-obstruction}
+\end{equation}
+for a bounded family in \(\mathsf A_\phi^1\), whenever a nonzero collective
+delayed layer is present.  Thus the coupled inverse must be formulated in a
+graph/action norm based on \(\widehat Q\), not by declaring the reverse
+off-diagonal bounded in the old normalized state space.  This proposition
+does not yet estimate the action of \(\widehat Q\).
 \end{proposition}
 
 We next isolate the strong block on which delay generations can actually be
@@ -2067,6 +2255,212 @@ the word has \(n\) recursive edges.  The arbitrarily many current
 \(Z\)--\(p\) loops have already been summed by
 \cref{eq:repelling-current-loop-bound}.
 \end{lemma}
+
+\begin{proposition}[Structured phase-column action Green estimate]
+\label[proposition]{prop:structured-phase-action-green}
+Retain \cref{prop:phase-delay-action-shift,%
+lem:current-absorbed-delay-splitting,%
+lem:repelling-component-generations} at order zero.  Put
+\begin{equation}
+ m_\delta(r)=|r|+\frac{\varepsilon}{|r|^2}.         \label{eq:phase-action-weight}
+\end{equation}
+On either branch, let \((Z,p^\sharp)\) solve the current-absorbed form of
+\cref{eq:shifted-phase-normal-system}, with zero exogenous normal data,
+the structured sources in
+\cref{eq:shifted-phase-structured-sources}, and the formal boundary rows
+\begin{align*}
+ &\gamma=0,\quad Z(0)=0,\quad p^\sharp(0)=0
+       &&(\sigma=a),\\
+ &Z(0)=0,\quad p^\sharp(S_r)=\varepsilon P(S_r),\quad
+   \gamma=\mathfrak C_ep^\sharp(0)
+       &&(\sigma=r),
+\end{align*}
+where the repelling scalar feedback is the closed one from
+\cref{eq:fixed-phase-collar-feedback}.  Then the mixed problem has a unique
+continuous, piecewise \(W^{1,\infty}\) solution and
+\begin{equation}
+ \sup_{s\in I_\sigma}\left\{
+   \frac{\|Z(s)\|_N}{\varepsilon}
+   +\frac{|p^\sharp(s)|}
+          {\varepsilon m_\delta(\bar r_\sigma(s))}\right\}
+ \le C\|a\|_{\mathsf A_\phi^1(I_\sigma)}.         \label{eq:structured-phase-state-bound}
+\end{equation}
+The reconstructed true speed response satisfies
+\begin{align}
+ |\widehat Q(r)|
+ &\le C\left\{|r|+\frac{\varepsilon}{|r|^2}\right\}
+       \|a\|_{\mathsf A_\phi^1(I_\sigma)},       \label{eq:structured-phase-speed-bound}\\
+ \|\widehat Q\|_{\mathsf H_\phi^0(I_\sigma)}
+ &\le C\left\{r_{\rm out}^2
+             +\frac{\varepsilon}{\rho_\delta}\right\}
+       \|a\|_{\mathsf A_\phi^1(I_\sigma)}
+  \le C\left\{r_{\rm out}^2+\frac{\delta}{S_\delta}\right\}
+       \|a\|_{\mathsf A_\phi^1(I_\sigma)}.       \label{eq:structured-phase-action-bound}
+\end{align}
+All bounds are dimension uniform.
+
+Equivalently, if \(T_\sigma^{\rm form}a\) denotes the returned normal
+response in the original variable
+\(p=p^\sharp-\varepsilon P\), then the true action operator
+\begin{equation}
+ \mathfrak A_\sigma^{\rm form}a
+ =Q_{\rm n}[T_\sigma^{\rm form}a]
+       +\mathscr P_{c,\sigma,N}a                 \label{eq:formal-true-action-operator}
+\end{equation}
+maps \(\mathsf A_\phi^1(I_\sigma)\) to
+\(\mathsf H_\phi^0(I_\sigma)\) with norm at most the last constant in
+\cref{eq:structured-phase-action-bound}.  The proposition does not assert
+that \(T_\sigma^{\rm form}\) is uniformly bounded in the old normalized
+state norm; \cref{eq:normalized-phase-response-obstruction} shows that it
+need not be.
+\end{proposition}
+
+\begin{lemma}[Raw-compatible phase boundary-column assembly]
+\label[lemma]{lem:raw-phase-boundary-column-assembly}
+Retain \cref{lem:raw-compatible-moving-core-collar,%
+prop:normal-to-phase-action-coupling,%
+prop:structured-phase-action-green}.  Put
+\[
+ e_a=r_{\rm out},\qquad e_r=-\rho_\delta,\qquad
+ E_{0,\sigma}a=a(e_{\sigma,0}),\qquad
+ \gamma_\sigma^{\rm ph}=\gamma_{e_\sigma}^{\rm ph}.
+\]
+For \(c\in\R\), let \(\mathfrak R_{a,\rm col}c\) be the unique zero-source
+fixed-phase normal response with
+\[
+ \gamma=c\gamma_a^{\rm ph},\qquad p(0)=0,
+\]
+and let \(\mathfrak R_{r,\rm col}c\) be the unique closed repelling response
+with
+\begin{equation}
+ p(S_r)=0,\qquad
+ \gamma=c\gamma_r^{\rm ph}+\mathfrak C_ep(0).       \label{eq:raw-phase-repelling-history-column}
+\end{equation}
+Write \(Q_{\sigma,\rm col}c\) for the algebraically reconstructed
+\(Q_{\rm n}\)-component of this response and, on the repelling branch,
+write \(\gamma_{r,c}^{\rm tot}\) for the actual history in
+\cref{eq:raw-phase-repelling-history-column}.  Then
+\begin{align}
+ \|(c\gamma_a^{\rm ph},\mathfrak R_{a,\rm col}c)\|_{
+       \widetilde{\mathsf X}_{a,0}}
+ &\le C|c|,\notag\\
+ \|(\gamma_{r,c}^{\rm tot},\mathfrak R_{r,\rm col}c)\|_{
+       \widetilde{\mathsf X}_{r,0}}
+ &\le C|c|,                                      \label{eq:raw-phase-collar-response-bound}\\
+ \|Q_{\sigma,\rm col}c\|_{\mathsf H_\phi^0(I_\sigma)}
+ &\le C\{r_{\rm out}^2+\delta^{2-2\vartheta}\}|c|.
+                                                        \label{eq:raw-phase-collar-action-bound}
+\end{align}
+
+Define the raw-compatible returned phase column and its true action by
+\begin{align}
+ T_\sigma^{\rm rc}a
+ &=T_\sigma^{\rm form}a
+       +\mathfrak R_{\sigma,\rm col}E_{0,\sigma}a,\notag\\
+ \mathfrak A_\sigma^{\rm rc}a
+ &=\mathfrak A_\sigma^{\rm form}a
+       +Q_{\sigma,\rm col}E_{0,\sigma}a\notag\\
+ &=Q_{\rm n}[T_\sigma^{\rm rc}a]
+       +\mathscr P_{c,\sigma,N}a.                \label{eq:raw-compatible-true-action}
+\end{align}
+Then
+\begin{equation}
+ \|\mathfrak A_\sigma^{\rm rc}\|_{
+   \mathcal L(\mathsf A_\phi^1,\mathsf H_\phi^0)}
+ \le C\left\{r_{\rm out}^2+\frac{\delta}{S_\delta}
+                     +\delta^{2-2\vartheta}\right\}.
+                                                        \label{eq:raw-compatible-action-smallness}
+\end{equation}
+The old-history voltage boundary column is exactly the differential of the
+raw-compatible collar.  More explicitly, its phase part is
+\begin{equation}
+ E_{0,\sigma}a\,\mathcal L_{e_\sigma}\phi_{e_\sigma}^0
+ +E_{0,\sigma}a\,\gamma_{e_\sigma}^{\rm ph}
+ =E_{0,\sigma}a\,\mathcal L_{e_\sigma}
+                         \phi_{e_\sigma}^{\rm rc}.           \label{eq:raw-phase-collar-exact-assembly}
+\end{equation}
+On the repelling branch the closed feedback
+\(\mathfrak C_ep(0)\) is added to this history.  The additive collar phase
+column creates no extra scalar boundary row because its voltage and resource
+normal traces vanish at the seam.  The total repelling value \(p(0)\) need
+not vanish; it is the mixed-boundary output that drives the feedback.
+\end{lemma}
+
+\begin{theorem}[Raw-compatible zeroth-order phase--normal inverse]
+\label[theorem]{thm:raw-compatible-phase-normal-inverse}
+Retain \cref{prop:fixed-phase-green-collar-buffer,%
+prop:scaled-phase-event-core,%
+prop:normal-to-phase-action-coupling,%
+lem:raw-phase-boundary-column-assembly}.  Let
+\(\mathscr N_\sigma\) denote the fixed-phase normal boundary operator in
+\cref{eq:fixed-phase-normal-block}, including the closed feedback
+\cref{eq:fixed-phase-collar-feedback} on the repelling branch, and let
+\(G_\sigma=\mathscr N_\sigma^{-1}\).  For a normal-data package
+\(f=(\gamma_0,b_\sigma,F,H)\), use the scaled norm
+\begin{equation}
+ \|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}
+ =\varepsilon^{-1}\left\{
+   \|\gamma_0\|_{N,e_\sigma,\delta}^{\sharp}
+   +\frac{|b_\sigma|}{r_{\rm out}}
+   +\|(F,H)\|_{\mathsf Y_{\sigma,0}}\right\}.     \label{eq:raw-schur-normal-data-norm}
+\end{equation}
+Here \(b_a=p(0)\), \(b_r=p(S_r)\), and
+\(e_a=r_{\rm out}\), \(e_r=-\rho_\delta\).  Put
+\[
+ \mathfrak D_\sigma y=Q_{\rm n}[y]
+     \in\mathsf H_\phi^0(I_\sigma),\qquad
+ \mathscr S_\sigma^{\rm rc}
+ =\mathscr B_{\phi,\sigma}-
+       (\mathfrak A_\sigma^{\rm rc},0,0).
+\]
+
+First fix \(r_{\rm out}\) sufficiently small and then decrease
+\(\delta_0\).  Uniformly in \(N\),
+\begin{equation}
+ \|\mathscr B_{\phi,\sigma}^{-1}\|
+       \|\mathfrak A_\sigma^{\rm rc}\|\le\frac12,             \label{eq:raw-schur-smallness}
+\end{equation}
+so \(\mathscr S_\sigma^{\rm rc}\) is an isomorphism from
+\(\mathsf A_\phi^1(I_\sigma)\times\R\) to
+\(\mathsf H_\phi^0(I_\sigma)\times\R^2\), with a
+dimension-uniform inverse.
+
+More precisely, the coupled raw-compatible linear boundary problem
+\begin{align}
+ \mathscr N_\sigma\{x-T_\sigma^{\rm rc}a\}&=f,\notag\\
+ \mathscr B_{\phi,\sigma}(a,\widehat\tau)
+  -\bigl(\mathfrak D_\sigma x
+       +\mathscr P_{c,\sigma,N}a,0,0\bigr)&=g             \label{eq:raw-compatible-coupled-block}
+\end{align}
+has, for every
+\(g\in\mathsf H_\phi^0(I_\sigma)\times\R^2\), the unique solution
+\begin{align}
+ y&=G_\sigma f,\notag\\
+ (a,\widehat\tau)
+  &=(\mathscr S_\sigma^{\rm rc})^{-1}
+       \{(\mathfrak D_\sigma y,0,0)+g\},\notag\\
+ x&=T_\sigma^{\rm rc}a+y.                       \label{eq:raw-compatible-schur-inverse}
+\end{align}
+It satisfies
+\begin{equation}
+ \|x-T_\sigma^{\rm rc}a\|_{
+       \widetilde{\mathsf X}_{\sigma,0}}
+ +\|a\|_{\mathsf A_\phi^1(I_\sigma)}+|\widehat\tau|
+ \le C\{\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}
+                 +\|g\|_{\mathsf H_\phi^0\times\R^2}\}.      \label{eq:raw-compatible-schur-bound}
+\end{equation}
+Thus the correct uniform space is the graph norm on the left, not the old
+normalized state norm of \(x\) alone.  For an arbitrary trial \(a\), the
+lemma above identifies the raw boundary column; full seam compatibility is
+asserted only after the coupled phase equation in
+\cref{eq:raw-compatible-coupled-block} is imposed.
+
+This theorem closes the fixed-reduced-base, zeroth-order raw-compatible
+phase--normal border.  It does not construct a nonlinear moving tracker,
+control parameter or higher slow jets, preserve the sign of the physical
+speed, construct a past physical orbit, or prove a preparation-independent
+complete-history root.
+\end{theorem}
 
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}

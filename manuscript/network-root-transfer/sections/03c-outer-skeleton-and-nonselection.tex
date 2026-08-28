@@ -1619,9 +1619,256 @@ row itself contributes
 \(\varepsilon w_{0,N}'\mathscr P_{c,\sigma,N}a\).  This is the second
 line of \cref{eq:exact-phase-normal-source-column}.  Setting \(a=c\) and
 using \cref{eq:constant-phase-delay-annihilation} proves
-\cref{eq:constant-phase-residual-column}.  The calculation used only the
-formal reduced-flow extension, so it makes none of the collar or tracker
-identifications excluded in the statement.
+\cref{eq:constant-phase-residual-column}.
+
+We record the source size, including the affine residual.  On a same-sign
+local annulus, apply \cref{prop:physical-backtrack-calculus} through order
+two to
+\(f_N(r)=r\mathbf1+z_{0,N}(r)\).  The critical coefficient bounds and the
+common layer-sum bound give
+\begin{equation}
+ \max_{0\le j\le2}|r|^j
+       \|\partial_r^j\mathcal D_{0,N}(r)\|_N
+ \le C\delta.                                      \label{eq:phase-column-D0-two-jets}
+\end{equation}
+The quotient
+\(
+ q_0=(1-\varepsilon\nu/r)m_N^{-1}
+\), with \(w_{0,N}'=rm_N\), also gives
+\begin{equation}
+ |q_0'|\le C,\qquad |r|\,|q_0''|\le C.             \label{eq:phase-column-q0-two-jets}
+\end{equation}
+These estimates hold on both signs of \(r\).  Since
+\(\mathfrak d_N=(\mathcal D_{0,c,N}-q_0)'\), they imply
+\begin{align}
+ |\mathfrak d_N(r)|&\le C,\qquad
+ |\mathfrak d_N'(r)|\le\frac C{|r|},\notag\\
+ \|R_{z,N}'(r)\|_N
+ &\le C\varepsilon\left(1+\frac{\delta}{|r|}\right),
+ &|R_{q,N}'(r)|
+ &\le C\frac{\varepsilon}{|r|}.                   \label{eq:phase-column-residual-jets}
+\end{align}
+Indeed, differentiate the definitions in
+\cref{eq:nonlinear-tracker-data}; use
+\(\|z_{0,N}'\|\le C|r|\), \(\|z_{0,N}''\|\le C\),
+\cref{eq:phase-column-D0-two-jets}, and
+\cref{eq:phase-column-q0-two-jets}.
+
+Put \(A=\|a\|_{\mathsf A_\phi^1(I_\sigma)}\).  Combining
+\cref{eq:phase-delay-pointwise-bound,eq:fixed-phase-coefficient-bounds,%
+eq:phase-column-residual-jets} with
+\cref{eq:exact-phase-normal-source-column} gives, pointwise,
+\begin{align}
+ \|\mathscr C_{Z,\sigma}a(r)\|_N
+ &\le C\left\{\varepsilon\left(1+\frac{\delta}{|r|}\right)
+          +\frac{\varepsilon\delta}{|r|}\right\}A,\notag\\
+ \frac{|\mathscr C_{p,\sigma}a(r)|}{|r|^2}
+ &\le C\left\{\frac{\varepsilon^2}{|r|^3}
+        +\frac{\varepsilon\delta}{|r|^2}
+        +\frac{\varepsilon^2\delta}{|r|^3}\right\}A.
+                                                        \label{eq:phase-column-source-components}
+\end{align}
+Now use
+\(\varepsilon=\delta^2\),
+\(\rho_\delta=\delta S_\delta/(2\alpha)\), and
+\(|r|\ge\rho_\delta\).  Every term on the right is bounded by
+\(C\delta S_\delta^{-2}A\) for small \(\delta\), proving
+\cref{eq:phase-normal-source-bound}.  If \(a=c\), the two terms involving
+\(\mathscr P_{\sigma,N}\) vanish.  The remaining first line is
+\(O(\delta^2)|c|\), while the weighted scalar line is
+\(O(\delta S_\delta^{-3})|c|\).  This proves
+\cref{eq:constant-phase-normal-source-bound}.
+
+The calculation used only the formal reduced-flow extension.  It bounds
+the normal data, not the corresponding response in the
+\(\varepsilon^{-1}\)-normalized tracker space, and makes none of the collar
+or tracker identifications excluded in the statement.
+\end{proof}
+
+\begin{proof}[Proof of \cref{lem:raw-compatible-moving-core-collar}]
+The formal history \(\phi_e^0\) is \(C^h\), and
+\(a_{j,e}^0\) is its endpoint jet.  Hence
+\(\widehat\gamma_e^0\) has zero endpoint jets through order \(h\) and
+belongs to \(\mathscr K_{N,\delta}^h\).  Moreover, the support of the
+Hermite lift lies in \([-c_H\delta,0]\), whereas every strict delay lies
+to the left of \(-4c_H\delta\).  Therefore \(\widehat\gamma_e^0\) and all
+its required jets agree with \(\phi_e^0\) at every strictly delayed point.
+The zero-delay summand vanishes identically.  The triangular collar chart
+is consequently applicable with \((Z_e,p_e)=(0,0)\), and its current-value
+row gives \(b_{0,e}=0\).  Subtracting the two Hermite decompositions gives
+the exact identity \cref{eq:moving-core-exact-correction}.
+
+We first compute the defects that start the compatibility recursion.  At
+the formal moving core, the critical equation and the definition of
+\(w_{\rm seed,N}\) reduce the raw voltage field to
+\begin{equation}
+ \mathfrak F_{N,\delta,\nu,\eta}
+       (\phi_e^0,w_{\rm seed,N}(e))
+ =\delta\{q_0(e)\mathbf1+\mathcal D_{0,\perp,N}(e)\}.         \label{eq:moving-core-raw-voltage-jet}
+\end{equation}
+On the other hand,
+\(
+ a_{1,e}^0=\delta q_0(e)\{\mathbf1+z_{0,N}'(e)\}
+\).
+Their difference and the definition of \(R_{z,N}\) give
+\begin{equation*}
+ b_{1,e}
+ =\delta\{\mathcal D_{0,\perp,N}-q_0z_{0,N}'\}(e)
+ =-\delta^{-1}R_{z,N}(e).
+\end{equation*}
+For the resource row, raw compatibility gives
+\(
+ c_{1,e}^{\rm rc}=\delta(e-\varepsilon\nu)
+\), whereas the formal moving core has
+\(
+ c_{1,e}^{0}=\delta q_0(e)w_{\rm seed,N}'(e)
+\).
+Because
+\(
+ w_{\rm seed,N}'=w_{0,N}'
+     +\varepsilon(\mathcal D_{0,c,N}-q_0)'
+\)
+and \(q_0w_{0,N}'=e-\varepsilon\nu\), subtraction yields
+\begin{equation*}
+ c_{1,e}^{\rm rc}-c_{1,e}^{0}
+ =-\delta\varepsilon q_0(e)
+       (\mathcal D_{0,c,N}-q_0)'(e)
+ =-\delta R_{q,N}(e).
+\end{equation*}
+This proves \cref{eq:moving-core-first-defects}.
+
+We next record the uniform triangular estimate rather than hiding the
+singular bookkeeping in the chart's generic tame bound.  For
+\(0\le j\le h\), let
+\begin{equation*}
+ d_{j,e}=c_{j,e}^{\rm rc}-c_{j,e}^0,
+ \qquad d_{0,e}=0,
+\end{equation*}
+where the higher \(c\)-jets are generated by the raw resource recursion and
+by the formal path, respectively, and set
+\begin{equation*}
+ M_j=\max_{0\le \ell\le j}\delta^\ell
+ \{\|b_{\ell,e}\|_N+|d_{\ell,e}|
+   +\|\mathcal L_eb_{\ell,e}\|_N
+   +|\mathcal L_ed_{\ell,e}|\},
+ \qquad \mathcal L_e=q_0(e)\partial_e.
+\end{equation*}
+
+The two formal compatibility defects along the moving core are
+\begin{equation}
+ E_v^0(\theta)=-\delta^{-1}R_{z,N}(r_e^0(\theta)),
+ \qquad
+ E_w^0(\theta)=-\delta R_{q,N}(r_e^0(\theta)).     \label{eq:moving-core-formal-defects}
+\end{equation}
+Since \(\partial_\theta=\delta\mathcal L_e\) along this core, the
+high-order critical estimates, the weighted \(q_0\)-bounds
+\cref{eq:principal-green-q-bounds}, and
+\cref{prop:physical-backtrack-calculus} applied through order \(h+1\) give
+\begin{align}
+ \max_{0\le m\le h-1}\delta^{m+1}
+ \bigl\{&\|\partial_\theta^mE_v^0(0)\|_N
+       +\|\mathcal L_e\partial_\theta^mE_v^0(0)\|_N\notag\\
+       &+|\partial_\theta^mE_w^0(0)|
+       +|\mathcal L_e\partial_\theta^mE_w^0(0)|\bigr\}
+ \le C_h\varepsilon.                              \label{eq:moving-core-formal-defect-jets}
+\end{align}
+Indeed, the weighted coefficient estimates supply one fold-distance weight
+per \(e\)-derivative, whereas each flow derivative supplies \(\delta\); at
+the inner endpoint their only relative ratio is
+\(\delta/|e|\le C/S_\delta\).  The definitions
+\(R_{z,N}=\varepsilon(q_0z_{0,N}'-\mathcal D_{0,\perp,N})\) and
+\(R_{q,N}=\varepsilon q_0(\mathcal D_{0,c,N}-q_0)'\) then prove the
+display term by term.  This is the high-order input not contained in the
+first-derivative estimate \cref{eq:phase-column-residual-jets}.
+
+The resource difference has the exact triangular recursion
+\begin{align}
+ d_{1,e}&=-\delta R_{q,N}(e),\notag\\
+ d_{j,e}&=\delta\pi_N^Tb_{j-1,e}
+           +\partial_\theta^{j-1}E_w^0(0),
+       \qquad 2\le j\le h.                        \label{eq:moving-core-resource-defect-recursion}
+\end{align}
+This follows by differentiating
+\(\mathfrak G(\phi)=\delta\{\pi_N^T\phi(0)-1-\varepsilon\nu\}\):
+the difference of its order-\((j-1)\) current jets is
+\(\delta\pi_N^Tb_{j-1,e}\), and the remaining term is precisely the
+formal defect in \cref{eq:moving-core-formal-defects}.
+
+Now subtract the recursion obtained by differentiating the formal moving
+core from the order-\(j\) voltage compatibility recursion for
+\(\phi_e^{\rm rc}\).  The current voltage field contains one factor
+\(\delta^{-1}\); after multiplication by \(\delta^j\), every difference
+it produces is one of
+\(\delta^\ell b_{\ell,e}\) or
+\(\delta^\ell d_{\ell,e}\), with \(\ell<j\).  Products are harmless on
+the fixed chart ball because every difference term contains at least one
+such lower defect.  A current delay difference has the additional factor
+\(\delta^2\), while every strictly delayed jet cancels exactly because the
+two cores agree there.  Consequently the voltage recursion, and the same
+recursion after applying \(\mathcal L_e\), obeys
+\begin{align}
+ \delta^j\{\|b_{j,e}\|_N+\|\mathcal L_eb_{j,e}\|_N\}
+ \le C_h\biggl\{\varepsilon
+  +\sum_{0\le\ell<j}\delta^\ell
+   \bigl(&\|b_{\ell,e}\|_N+|d_{\ell,e}|\notag\\
+         &+\|\mathcal L_eb_{\ell,e}\|_N
+          +|\mathcal L_ed_{\ell,e}|\bigr)\biggr\}.           \label{eq:moving-core-voltage-defect-recursion}
+\end{align}
+Equations \cref{eq:moving-core-formal-defect-jets,%
+eq:moving-core-resource-defect-recursion} give the identical bound for the
+new \(d_{j,e}\)-terms.  Thus, for each fixed \(j\le h\),
+\begin{equation}
+ M_j\le C_h\left\{\varepsilon+
+                  \sum_{0\le\ell<j}M_\ell\right\}.           \label{eq:moving-core-triangular-induction}
+\end{equation}
+The base row is the pair of exact identities just proved.  Finite induction
+in \(j\) establishes \cref{eq:moving-core-jet-bound}.  Applying the Hermite
+bound \cref{eq:collar-Hermite-bound} first to \(b_e\) and then to
+\(\mathcal L_eb_e\) proves \cref{eq:moving-core-cap-bound}.
+All recursions are finite smooth algebraic expressions on a common
+same-sign coefficient collar; hence their explicit formulas also justify
+the \(e\)-differentiability used above, uniformly on that collar.
+
+It remains to check the seam and the sharpness claim.  The current value of
+both voltage histories is \(V_{0,N}(e)\), so
+\(\gamma_e^{\rm ph}(0)=0\).  Differentiating the first identity in
+\cref{eq:moving-core-first-defects} along \(\mathcal L_e\) gives
+\begin{equation*}
+ \delta\partial_\theta\gamma_e^{\rm ph}(0)
+ =\delta\mathcal L_eb_{1,e}=-q_0(e)R_{z,N}'(e).
+\end{equation*}
+Let \(\varpi_e^{\rm rc}\) denote the endpoint resource jet germ produced by
+the raw compatibility recursion and put
+\(\varpi_e^0(\theta)=w_{\rm seed,N}(r_e^0(\theta))\).  At the level of
+endpoint jets define the normal resource-defect phase column by
+\begin{equation*}
+ p_e^{\rm ph}=-\mathcal L_e(\varpi_e^{\rm rc}-\varpi_e^0).
+\end{equation*}
+The two germs have the same current value.  Applying
+\(-\mathcal L_e\) to the second identity in
+\cref{eq:moving-core-first-defects} therefore gives
+\begin{equation*}
+ p_e^{\rm ph}(0)=0,
+ \qquad
+ \delta\partial_\theta p_e^{\rm ph}(0)
+ =\delta^2q_0(e)R_{q,N}'(e)
+ =\varepsilon q_0(e)R_{q,N}'(e).
+\end{equation*}
+These are \cref{eq:moving-core-seam-match} and agree with the two rows of
+\cref{eq:constant-phase-residual-column}.
+
+For the final assertion, take the displayed special case.  Then
+\(R_{z,N}=\varepsilon q_0z_{0,N}'\), so
+\begin{equation*}
+ \delta\mathcal L_eb_{1,e}
+ =-\delta^2q_0(e)\partial_e\{q_0(e)z_{0,N}'(e)\}.
+\end{equation*}
+Use \(z_{0,N}'(e)=2g_Ne+O(e^2)\), let
+\(e=-\rho_\delta\to0\), and use the reduced-speed bounds.  This gives
+\cref{eq:moving-core-sharpness}.  Since \(\varepsilon=\delta^2\), the
+normalized collar column can therefore remain of order one.  None of this
+constructs a compatible resource extension on the whole old-history
+interval, so no past-orbit claim has entered the proof.
 \end{proof}
 
 \begin{proof}[Proof of \cref{prop:delayed-phase-event-core}]
@@ -1742,6 +1989,114 @@ the standard failure of same-space differentiability.  This proves
 \cref{eq:moving-trace-one-order-loss} and the asserted regularity boundary.
 All remaining exclusions are immediate because only traces, not a solution
 map or a tracker, were constructed.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:phase-delay-action-shift}]
+Put \(P=\mathscr P_{c,\sigma,N}a\).  In the algebraic row,
+\begin{equation*}
+ \varepsilon\widehat Q
+ =\varepsilon(Q_{\rm n}+P)
+ =p+\varepsilon P-\ell_NZ
+      +\varepsilon\mathscr D_{c,N}^{\rm lin}[\gamma,Z],
+\end{equation*}
+which is the first line of
+\cref{eq:shifted-phase-normal-system}.  In the \(Z\)-row, substituting
+\(p=p^\sharp-\varepsilon P\) creates
+\(+\varepsilon z_{0,N}'P\); this cancels the term
+\(-\varepsilon z_{0,N}'P\) in
+\cref{eq:exact-phase-normal-source-column}.  The remaining phase terms are
+exactly \(F_\phi^\sharp\).
+
+For the scalar row, differentiate the shift:
+\(
+ \delta p_s^\sharp=\delta p_s
+                 +\delta\varepsilon P_s
+\).
+The substitution for \(p\) contributes
+\(-\varepsilon w_{0,N}'P\) and
+\(-\varepsilon^2\mathfrak d_NP\).  These cancel, term by term, the source
+\(\varepsilon(w_{0,N}'+\varepsilon\mathfrak d_N)P\) in
+\cref{eq:exact-phase-normal-source-column}.  What remains is the third
+line of \cref{eq:shifted-phase-normal-system} and the structured source
+\cref{eq:shifted-phase-structured-sources}.
+
+We next differentiate the delay column only on the cells of its finite seam
+partition.  Each summand of \(P\) is a bounded coefficient times
+\begin{equation*}
+ a(\bar r_\sigma(s))-\widehat a(s-\theta_k).
+\end{equation*}
+The estimate in the proof of
+\cref{lem:reduced-flow-phase-defect} gives its size
+\(C\delta|\bar r_\sigma(s)|^{-1}\|a\|_{\mathsf A_\phi^1}\).
+On a seam cell, differentiate the coefficient and the two phase values.
+The identities
+\(\partial_s\bar r_\sigma=\delta q_0(\bar r_\sigma)\),
+\(|r a'(r)|\le\|a\|_{\mathsf A_\phi^1}\), the weighted backtrack
+calculus, and delay comparability give the same bound for \(P_s\).
+The one-sided values coincide at every seam because both branches of
+\(\widehat a\) take the entry value there.  Hence \(P\) is continuous and
+piecewise \(W^{1,\infty}\), with no distributional seam term.  Projection
+does not enlarge the bound, so the first line of
+\cref{eq:shifted-phase-source-profile} follows for \(P_\perp\) as well.
+
+Combine this estimate with
+\cref{eq:phase-column-residual-jets}.  Since
+\(\delta/|r|\le C/S_\delta\),
+\begin{align*}
+ \|F_\phi^\sharp\|_N
+ &\le C\left\{\varepsilon(1+\delta/|r|)
+                    +\varepsilon\delta/|r|\right\}
+      \|a\|_{\mathsf A_\phi^1}
+ \le C\varepsilon\|a\|_{\mathsf A_\phi^1},\\
+ |H_\phi^\sharp|
+ &\le C\left\{\varepsilon^2/|r|
+                   +\delta\varepsilon\,\delta/|r|\right\}
+      \|a\|_{\mathsf A_\phi^1}
+ \le C\varepsilon^2|r|^{-1}
+      \|a\|_{\mathsf A_\phi^1}.
+\end{align*}
+This proves \cref{eq:shifted-phase-source-profile}.
+
+At the attracting entry, the formal constant extension in
+\cref{eq:formal-phase-collar-extension} makes every phase difference zero,
+so \(P(0)=0\).  The same is true at the repelling entry and leaves its
+\(p(0)\)-indexed compatible feedback unchanged.  At the repelling terminal
+event, \cref{prop:event-aligned-normal-traces} fixes the homogeneous normal
+row \(p(S_r)=0\), which becomes
+\(p^\sharp(S_r)=\varepsilon P(S_r)\).  This proves
+\cref{eq:shifted-phase-boundary-rows}.
+
+Finally, the failure of the old state norm is already present in a frozen
+scalar subproblem on a unit fold-time interval.  Put
+\(\rho=\rho_\delta\), take constant
+\(P_\delta=\delta/\rho\), and consider
+\begin{align*}
+ \delta p_s&=-\rho(p+\varepsilon P_\delta),&p(0)&=0
+       &&\text{(attracting)},\\
+ \delta p_s&= \rho(p+\varepsilon P_\delta),&p(1)&=0
+       &&\text{(repelling)}.
+\end{align*}
+Away from the selected boundary by \(O(\delta/\rho)\), both exact solutions
+satisfy
+\(
+ |p|=\varepsilon|P_\delta|
+       \{1+O(e^{-c\rho/\delta})\}
+\).
+A phase function supported on an \(r\)-window of width \(O(\delta)\), with
+\(|a'|\asymp\rho^{-1}\), has bounded
+\(\mathsf A_\phi^1\)-norm and produces
+\(|P|\asymp\delta/\rho\) for a nonzero collective delayed layer.  Hence
+\begin{equation*}
+ \varepsilon^{-1}\frac{|p|}{\rho}
+ \asymp\frac{\delta}{\rho^2}
+ =\frac{4\alpha^2}{\delta S_\delta^2}\longrightarrow\infty.
+\end{equation*}
+The example obeys the same scalar sign and coefficient bounds on either
+orientation.  It proves
+\cref{eq:normalized-phase-response-obstruction}; the shifted speed, by
+contrast, cancels in the interior of this example.  Therefore a uniform
+state-space Schur estimate cannot replace the action estimate still
+excluded from the proposition.
 \end{proof}
 
 \begin{proof}[Proof of
@@ -2307,6 +2662,358 @@ Its sum satisfies the exact component equations, and the uniqueness in
 mixed-boundary solution.  By construction, only a strict shifted
 \(Z(s-\theta_k)\) of the current path raises the recursion index; the direct
 old-history edge, future scalar propagation, and all current loops do not.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:structured-phase-action-green}]
+Write
+\[
+ R(s)=|\bar r_\sigma(s)|,\qquad
+ m(s)=m_\delta(\bar r_\sigma(s)),\qquad
+ A=\|a\|_{\mathsf A_\phi^1(I_\sigma)}.
+\]
+For brevity write \(p=p^\sharp\) throughout this proof.
+The shifted source profile gives, on every cell of the finite delay
+partition,
+\begin{equation}
+ \|F_\phi^\sharp(s)\|_N\le C\varepsilon A,
+ \qquad
+ |H_\phi^\sharp(s)|\le C\frac{\varepsilon^2}{R(s)}A.
+                                                        \label{eq:phase-action-source-proof}
+\end{equation}
+Introduce the order-zero weighted norms
+\begin{align*}
+ \|(Z,p)\|_{\mathfrak X_{\sigma,m}}
+ &=\operatorname*{ess\,sup}_{s\in I_\sigma}
+   \left\{\frac{\|Z(s)\|_N}{\varepsilon}
+          +\frac{|p(s)|}{\varepsilon m(s)}\right\},\\
+ \|(F,H)\|_{\mathfrak Y_{\sigma,m}}
+ &=\operatorname*{ess\,sup}_{s\in I_\sigma}
+   \left\{\frac{\|F(s)\|_N}{\varepsilon}
+          +\frac{|H(s)|}{\varepsilon R(s)m(s)}\right\}.
+\end{align*}
+Since
+\begin{equation}
+ R^2m_\delta(R)=R^3+\varepsilon\ge\varepsilon,       \label{eq:phase-action-weight-root}
+\end{equation}
+\cref{eq:phase-action-source-proof} implies
+\begin{equation}
+ \|(F_\phi^\sharp,H_\phi^\sharp)\|_{
+          \mathfrak Y_{\sigma,m}}\le CA.             \label{eq:phase-action-source-norm}
+\end{equation}
+
+Write \(a_p=w_{0,N}'+\varepsilon\mathfrak d_N\) and use the component
+coefficients in \cref{eq:repelling-component-coefficients} on either
+prescribed path.  The retained coefficient bounds, together with
+\(\varepsilon/R\le\varepsilon/\rho_\delta=o(1)\), give
+\begin{equation}
+ \operatorname{sgn}a_p=(-,+)\quad(\sigma=a,r),\qquad
+ |a_p|\asymp R,\quad \|C_{Zp}\|\le CR,\quad
+ \|C_{pZ}\|\le CR^2,                               \label{eq:phase-action-component-sizes}
+\end{equation}
+and
+\(\sum_k\|B_k^Z\|\le C\varepsilon\),
+\(\sum_k\|B_k^p\|\le C\varepsilon R\).
+Let \(U_Z\) denote the forward transverse evolution, and put
+\begin{align}
+ u_{p,a}(s,u)
+ &=\exp\left\{\delta^{-1}\int_u^s a_p(v)\,\dd v\right\}
+       &&(u\le s),\notag\\
+ u_{p,r}(s,u)
+ &=\exp\left\{-\delta^{-1}\int_s^u a_p(v)\,\dd v\right\}
+       &&(s\le u).                                  \label{eq:phase-action-oriented-scalar-kernels}
+\end{align}
+Since \(m=(R^3+\varepsilon)/R^2\),
+\begin{equation}
+ |\partial_R\log m|
+ =\frac{|R^3-2\varepsilon|}{R(R^3+\varepsilon)}
+ \le\frac2R,\qquad
+ |\partial_s\log m|\le C\frac\delta R.             \label{eq:phase-action-log-weight}
+\end{equation}
+Moreover,
+\begin{equation}
+ \frac{\delta/R}{R/\delta}
+ =\frac{\varepsilon}{R^2}
+ \le\frac{\varepsilon}{\rho_\delta^2}
+ =O(S_\delta^{-2}).                                \label{eq:phase-action-weight-absorption}
+\end{equation}
+Thus, after decreasing \(\delta_0\),
+\begin{equation}
+ u_{p,\sigma}(s,u)\frac{m(u)}{m(s)}
+ \le C\exp\left\{-\frac c\delta
+      \left|\int_s^uR(v)\,\dd v\right|\right\}      \label{eq:phase-action-conjugated-scalar-kernel}
+\end{equation}
+in the appropriate orientation.  Consequently, with
+\(\mathcal O_a(s)=[0,s]\) and \(\mathcal O_r(s)=[s,S_r]\),
+\begin{equation}
+ \sup_s\frac1{\delta m(s)}
+   \int_{\mathcal O_\sigma(s)}
+    u_{p,\sigma}(s,u)R(u)m(u)\,\dd u\le C,          \label{eq:phase-action-scalar-convolution}
+\end{equation}
+and the same conjugated estimate controls the scalar endpoint or terminal
+lift.
+
+Set
+\begin{equation}
+ \kappa_\delta
+ =\sup_{\rho_\delta\le R\le r_{\rm out}}Rm_\delta(R)
+ \le r_{\rm out}^2+\frac{\varepsilon}{\rho_\delta}.          \label{eq:phase-action-current-size}
+\end{equation}
+In \(\mathfrak X_{\sigma,m}\), the two current edges therefore satisfy
+\begin{equation}
+ \|\mathcal K_{Zp}\|\le C\kappa_\delta,\qquad
+ \|\mathcal K_{pZ}\|\le C.                         \label{eq:phase-action-current-loop}
+\end{equation}
+Indeed, \(C_{Zp}p=O(\varepsilon Rm)\|p\|_m\), whereas
+\[
+ \frac{\|C_{pZ}Z\|}{\varepsilon Rm}
+ \le C\frac{R}{m}\frac{\|Z\|}{\varepsilon}
+ \le C\frac{\|Z\|}{\varepsilon}.
+\]
+Choose \(r_{\rm out}\) first and then \(\delta_0\) so that
+\(C\kappa_\delta<1/4\).  The attracting current system, with two forward
+diagonal lines, and the repelling current system, with forward \(Z\) and
+future \(p\), then have uniformly bounded current-loop resolvents.
+
+For a strict current-delay insertion, the \(Z\)-source contributes at most
+\(C\varepsilon\) in the normalized \(Z\)-row, while the scalar source
+contributes
+\[
+ \frac{\|B_k^pZ(s-\theta_k)\|}{\varepsilon R(s)m(s)}
+ \le C\frac{\varepsilon}{m(s)}
+       \|(Z,p)\|_{\mathfrak X_{\sigma,m}}
+ \le C\frac{\varepsilon}{\rho_\delta}
+       \|(Z,p)\|_{\mathfrak X_{\sigma,m}}.
+\]
+Delay translation changes \(R\) and \(m\) only by uniformly comparable
+factors.  After the current-loop resolvent, one generation has norm
+\begin{equation}
+ \beta_{\sigma,m}
+ \le C\left\{\varepsilon+\frac{\varepsilon}{\rho_\delta}\right\}
+ \le C\frac\delta{S_\delta}=o(1).                  \label{eq:phase-action-generation-number}
+\end{equation}
+This closes the attracting delay Neumann series and, on the repelling
+branch, the component-generation series of
+\cref{lem:repelling-component-generations} in the new weight.
+
+It remains to close the compatible repelling collar.  Put
+\[
+ m_0=m_\delta(\rho_\delta),\qquad
+ M=\|(Z,p)\|_{\mathfrak X_{r,m}}.
+\]
+Since \(P(0)=0\),
+\[
+ |p(0)|\le\varepsilon m_0M,\qquad
+ \|\gamma\|_{N,-\rho_\delta,\delta}^{\sharp}
+ \le C\frac{\varepsilon m_0}{\rho_\delta}M.
+\]
+Let
+\(E_\delta=e^{2\kappa_{-\rho_\delta}\theta_m}
+\le\delta^{-2\vartheta}\).
+Old-history reads occur only in the first delay window, where
+\(R\asymp\rho_\delta\) and \(m\asymp m_0\).  Their normalized transverse
+and scalar source responses are, respectively,
+\[
+ CE_\delta\frac{\varepsilon m_0}{\rho_\delta}M,
+ \qquad
+ CE_\delta\frac{\varepsilon m_0/\rho_\delta}{m_0}M.
+\]
+Because \(m_0=\rho_\delta+\varepsilon/\rho_\delta^2\le C\), both are
+bounded by
+\begin{equation}
+ \eta_{\rm col}M,\qquad
+ \eta_{\rm col}=CE_\delta\frac{\varepsilon}{\rho_\delta}
+ \le C\frac{\delta^{1-2\vartheta}}{S_\delta}=o(1). \label{eq:phase-action-collar-feedback-number}
+\end{equation}
+The already bounded current-loop and strict-delay resolvents preserve this
+estimate, so one final Neumann inversion closes
+\(\gamma=\mathfrak C_ep(0)\).
+
+The attracting finite rows vanish.  On the repelling branch,
+\[
+ \frac{|\varepsilon P(S_r)|}{\varepsilon m(r_{\rm out})}
+ \le C\frac{\delta}{r_{\rm out}m(r_{\rm out})}A
+ \le C\frac{\delta}{r_{\rm out}^2}A.
+\]
+Consequently the current-loop formulation, followed by the strict-delay
+and collar resolvents, gives
+\[
+ M\le C\left(1+\frac{\delta}{r_{\rm out}^2}\right)A
+       +\{\beta_{\sigma,m}
+          +\mathbf1_{\{\sigma=r\}}\eta_{\rm col}\}M.
+\]
+After decreasing \(\delta_0\), the last coefficient is below \(1/2\), so
+\(M\le CA\).  Construct the fixed point in the continuous finite-seam
+space, rather than merely an \(L^\infty\) quotient, because \(p(0)\) is
+evaluated.  The integral equations and the continuous, piecewise
+\(W^{1,\infty}\) sources give a continuous, piecewise \(W^{1,\infty}\)
+solution; the same contraction proves uniqueness.  This establishes
+\cref{eq:structured-phase-state-bound}.
+
+For reconstruction, current-history reads are \(O(\varepsilon A)\).  A
+repelling old-history read is supported in the first window and is bounded
+by
+\[
+ CE_\delta\frac{\varepsilon m_0}{\rho_\delta}A
+ \le Cm(s)A,
+\]
+because \(m(s)\asymp m_0\) there and
+\(E_\delta\varepsilon/\rho_\delta=o(1)\).  Hence
+\[
+ |\mathscr D_{c,N}^{\rm lin}[\gamma,Z](s)|\le Cm(s)A.
+\]
+Together with \(|p|/\varepsilon\le mA\),
+\(\|\ell_N\|\le CR\), and \(\|Z\|/\varepsilon\le A\), the algebraic row
+gives \(|\widehat Q|\le CmA\), proving
+\cref{eq:structured-phase-speed-bound}.  Finally,
+\[
+ \int_{\rho_\delta}^{r_{\rm out}}m_\delta(r)\,\dd r
+ +\sup_{\rho_\delta\le r\le r_{\rm out}}r m_\delta(r)
+ \le C\left(r_{\rm out}^2+\frac{\varepsilon}{\rho_\delta}\right),
+\]
+which proves \cref{eq:structured-phase-action-bound}.  The shift identity
+gives the final operator statement, and every constant is dimension
+uniform by the common layer-sum bounds.  The scope statement follows from
+\cref{eq:normalized-phase-response-obstruction}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:raw-phase-boundary-column-assembly}]
+The derivative of an autonomous scalar flow with respect to its initial
+value gives
+\begin{equation}
+ \partial_e\Phi_{q_0}^{\delta\theta}(e)
+ =\frac{q_0(r_e^0(\theta))}{q_0(e)}.              \label{eq:raw-phase-flow-initial-derivative}
+\end{equation}
+Since \(D_rV_{0,N}=e_{0,N}\), it follows that
+\begin{equation}
+ \mathcal L_e\phi_e^0(\theta)
+ =q_0(r_e^0(\theta))e_{0,N}(r_e^0(\theta)).       \label{eq:formal-collar-phase-tangent}
+\end{equation}
+An entry displacement
+\(\xi(0)=q_0(e)E_{0,\sigma}a\) therefore differentiates the formal collar
+to the first term on the left of
+\cref{eq:raw-phase-collar-exact-assembly}.  Differentiating the
+raw-compatible family instead gives
+\(E_{0,\sigma}a\,\mathcal L_e\phi_e^{\rm rc}\).
+Their difference is exactly
+\(E_{0,\sigma}a\,\gamma_e^{\rm ph}\), by
+\cref{eq:moving-core-phase-collar}.  This proves the assembly identity and
+also shows why its multiplier is \(a(e)\), rather than \(q_0(e)a(e)\) or
+\(\delta a(e)\).
+
+For the resource normal coordinate, the corresponding additive collar
+trace is
+\[
+ E_{0,\sigma}a\{
+   \mathcal L_ew_{\rm seed,N}
+        -\mathcal L_e\omega_e^{\rm rc}\}
+ =E_{0,\sigma}a\,p_e^{\rm ph}(0)=0.
+\]
+The voltage trace is zero as well because
+\(\gamma_e^{\rm ph}(0)=0\).  Thus no finite scalar or transverse boundary
+row is created.  On the repelling branch the independent \(p(0)\)-column
+of the compatible chart is \(\mathfrak C_ep(0)\); linearization gives
+\cref{eq:raw-phase-repelling-history-column} with no mixed first-order
+term.  Notice that this argument does not set the total \(p(0)\) to zero.
+
+The cap estimate \cref{eq:moving-core-cap-bound}, at order zero, dominates
+the frozen sharp norm and gives
+\[
+ \|c\gamma_\sigma^{\rm ph}\|_{N,e_\sigma,\delta}^{\sharp}
+ \le C\varepsilon|c|.
+\]
+Apply \cref{eq:fixed-phase-C0-inverse}, using its closed-feedback version
+on the repelling branch.  After division by \(\varepsilon\), this proves
+\cref{eq:raw-phase-collar-response-bound}.  The action estimate
+\cref{eq:raw-phase-collar-action-bound} now follows directly from
+\cref{eq:normal-phase-H0-coupling}.
+
+The formal bulk response already contains the affine-residual sources in
+\cref{eq:shifted-phase-structured-sources}; the collar response corrects
+only the old-history boundary column.  Linear superposition therefore
+gives both identities in
+\cref{eq:raw-compatible-true-action}, without deleting or duplicating the
+bulk source.  Combining
+\cref{eq:structured-phase-action-bound,%
+eq:raw-phase-collar-action-bound} and
+\(|E_{0,\sigma}a|\le\|a\|_{\mathsf A_\phi^1}\) proves
+\cref{eq:raw-compatible-action-smallness}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:raw-compatible-phase-normal-inverse}]
+The inverse estimate
+\cref{eq:phase-event-inverse-bound} at \(j=0\) gives a constant
+\(M_\phi\), independent of \(N\) and \(\delta\), such that
+\(\|\mathscr B_{\phi,\sigma}^{-1}\|\le M_\phi\).
+By \cref{eq:raw-compatible-action-smallness}, one may first choose
+\(r_{\rm out}\) so that \(CM_\phi r_{\rm out}^2<1/4\), and then decrease
+\(\delta_0\) so that the remaining two terms contribute less than \(1/4\).
+This proves \cref{eq:raw-schur-smallness}.  Hence
+\begin{equation}
+ (\mathscr S_\sigma^{\rm rc})^{-1}
+ =\left\{I-\mathscr B_{\phi,\sigma}^{-1}
+       (\mathfrak A_\sigma^{\rm rc},0,0)\right\}^{-1}
+       \mathscr B_{\phi,\sigma}^{-1}              \label{eq:raw-schur-neumann-inverse}
+\end{equation}
+exists and has dimension-uniform norm.
+
+Let \(f\) and \(g\) be prescribed.  The fixed-phase inverse and
+\cref{eq:fixed-phase-C0-inverse} give
+\[
+ y=G_\sigma f,\qquad
+ \|y\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ \le C\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}.
+\]
+The normal-to-phase estimate gives, with the two scalar rows set to zero,
+\begin{equation}
+ \|(\mathfrak D_\sigma y,0,0)\|_{
+       \mathsf H_\phi^0\times\R^2}
+ \le C\{r_{\rm out}^2+\delta^{2-2\vartheta}\}
+       \|y\|_{\widetilde{\mathsf X}_{\sigma,0}}.   \label{eq:raw-schur-normal-action-data}
+\end{equation}
+Define \((a,\widehat\tau)\) and \(x\) by
+\cref{eq:raw-compatible-schur-inverse}.  The first row of
+\cref{eq:raw-compatible-coupled-block} follows immediately from
+\(\mathscr N_\sigma y=f\).  For the second row, use
+\cref{eq:raw-compatible-true-action}:
+\begin{align*}
+ &\mathscr B_{\phi,\sigma}(a,\widehat\tau)
+  -(\mathfrak D_\sigma x
+       +\mathscr P_{c,\sigma,N}a,0,0)\\
+ &\quad
+ =\mathscr B_{\phi,\sigma}(a,\widehat\tau)
+       -(\mathfrak A_\sigma^{\rm rc}a,0,0)
+       -(\mathfrak D_\sigma y,0,0)
+ =g.
+\end{align*}
+Thus the displayed formula is a solution.  Conversely, every solution has
+\(y=x-T_\sigma^{\rm rc}a=G_\sigma f\), after which the phase equation is
+exactly
+\[
+ \mathscr S_\sigma^{\rm rc}(a,\widehat\tau)
+   =(\mathfrak D_\sigma y,0,0)+g.
+\]
+The invertibility already proved gives uniqueness.
+
+Combining the bounds for \(G_\sigma\),
+\((\mathscr S_\sigma^{\rm rc})^{-1}\), and
+\cref{eq:raw-schur-normal-action-data} proves
+\cref{eq:raw-compatible-schur-bound}.  On the attracting branch the actual
+old history is the prescribed normal history plus
+\(E_{0,a}a\,\gamma_a^{\rm ph}\).  On the repelling branch it is
+\[
+ \gamma_{\rm normal}
+ +E_{0,r}a\,\gamma_r^{\rm ph}
+ +\mathfrak C_ep_{\rm total}(0).
+\]
+The shifted terminal row
+\(p^\sharp(S_r)=b_r+\varepsilon P(S_r)\) is already included in
+\(T_r^{\rm form}a+y\).  Hence no boundary row is lost in the graph
+factorization.  The final exclusions follow because every operator used
+here is the differential at the fixed reduced base and only order-zero
+norms were inverted.
 \end{proof}
 
 \begin{proof}[Proof of
