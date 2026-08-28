@@ -48,9 +48,13 @@ value and piecewise derivative.  A raw-compatible `C^2` old-history
 assembler is now closed on a fixed-reference ball, including the second
 endpoint jet, the four closed endpoint collars, and an
 `epsilon^(-1)`-normalized quadratic graph remainder.  The full assembled
-nonlinear normal residual, the nonlinear tracker, its nonautonomous normal
-dichotomy, exact fold overlap, and a physical preparation-independent root
-remain open.
+nonlinear fixed-section residual is now closed and solved, pointwise at each
+fixed admissible parameter pair, by a dimension-uniform contraction.  This
+gives one unique small canonical zero on each outer branch, its first Newton
+jet, strict speed sign, and an exact finite forward segment of the unmodified
+RFDE.  It is not yet a parameterized moving-event tracker, a past physical
+orbit, a cross-branch connection, or a preparation-independent root; its
+nonautonomous normal dichotomy and exact fold overlap remain open.
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:

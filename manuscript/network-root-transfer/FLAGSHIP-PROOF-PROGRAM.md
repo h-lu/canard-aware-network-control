@@ -400,6 +400,9 @@ not the conormal of an independently defined physical maximal-canard locus.
       assembler, including the endpoint/collar second jet.
 - [x] Prove a fixed-section nonlinear graph/action residual with a
       dimension-uniform quadratic remainder.
+- [x] Solve the fixed-section residual by a dimension-uniform contraction,
+      with canonical-slice uniqueness, first Newton jet, strict speed sign,
+      and exact finite forward RFDE reconstruction on both outer branches.
 - [ ] Prove the terminal-relative moving-event $C^2$ chart, then construct
       the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
@@ -425,9 +428,11 @@ old-history assembler, including its endpoint/collar second jet and normalized
 quadratic remainder, is now closed.  Its exact fixed-section assembly with the
 nonlinear phase-delay and normal equations is also closed: the base defect is
 $O(r_{\rm out}+S_\delta^{-2})$, the differential is the uniform anchored
-Schur block, and the remainder is uniformly quadratic in two-point form.  A
-zero of that residual, relative-parameter jets, moving-event control,
-nonlinear tracker existence,
+Schur block, and the remainder is uniformly quadratic in two-point form.
+Its pointwise fixed-parameter zero is now obtained by a uniform contraction
+on each canonical outer graph slice, with a first Newton jet, strict speed
+sign, and finite forward RFDE reconstruction.  Relative-parameter jets,
+moving-event control, nonlinear tracker existence,
 nonautonomous quotient roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.
 This zeroth-order border does not close Issue #32 and does not

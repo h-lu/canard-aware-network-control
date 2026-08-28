@@ -3167,7 +3167,16 @@ prop:inner-anchored-relative-phase-schur,%
 prop:relative-structured-phase-response,%
 lem:nonlinear-reduced-flow-phase-delay,%
 lem:second-jet-raw-history-assembler}
-at a fixed parameter pair \((\nu,\eta)\) and at order \(h\ge3\).
+at order \(h\ge3\).  For each \(N\), work pointwise at a fixed admissible
+parameter pair
+\[
+ |\nu|\le\nu_*,
+ \qquad
+ \eta\in\mathfrak T_N^{\rm red},
+ \qquad
+ \|\eta\|_{\mathfrak T_N}<\eta_0.
+\]
+No parameter differentiability is asserted in this theorem.
 Write
 \[
  r_0(s)=\bar r_\sigma(s),\qquad
@@ -3271,8 +3280,18 @@ and finally
        \right).                                  \label{eq:fixed-section-nonlinear-residual}
 \end{equation}
 
-There are \(R_0>0\) and \(C>0\), independent of \(N\), the branch, and
-sufficiently small \(\delta\), such that
+There are
+\[
+ \bar r_{\rm out}>0,
+ \qquad R_0,C_b,C_2,M>0,
+\]
+with the following uniformity.  For every
+\(0<r_{\rm out}\le\bar r_{\rm out}\), first decrease
+\(\delta_0=\delta_0(r_{\rm out})\) so that all retained smallness
+conditions hold, including
+\(\rho_\delta\le r_{\rm out}/2\).  Then the same four constants work for
+all \(0<\delta<\delta_0\), all admissible fixed parameter pairs, all
+\(N\), and both branches.  In particular,
 \cref{eq:fixed-section-nonlinear-residual} is a well-defined \(C^1\) map
 on the open \(R_0\)-ball of
 \(\mathcal G_{\sigma,\delta}^{\rm rga}\) into
@@ -3293,7 +3312,7 @@ with the entries grouped according to
 In particular,
 \begin{equation}
  \|\mathcal F_\sigma(0,0)\|
- \le C\lambda_\delta,
+ \le C_b\lambda_\delta,
  \qquad
  \lambda_\delta=r_{\rm out}+S_\delta^{-2}.      \label{eq:fixed-section-nonlinear-base-bound}
 \end{equation}
@@ -3309,8 +3328,11 @@ inverted anchored raw-compatible Schur block:
                   +\mathscr P_{c,\sigma,N}a,0\bigr)
        \right).                                  \label{eq:fixed-section-nonlinear-linearization}
 \end{equation}
-Consequently it is an isomorphism with a dimension- and
-\(\delta\)-uniform inverse.  If
+Consequently it is an isomorphism and
+\begin{equation}
+ \|D\mathcal F_\sigma(0,0)^{-1}\|\le M.          \label{eq:fixed-section-linear-inverse-bound}
+\end{equation}
+If
 \begin{equation}
  \mathcal Q_\sigma(u)
  =\mathcal F_\sigma(u)-\mathcal F_\sigma(0)
@@ -3320,7 +3342,7 @@ Consequently it is an isomorphism with a dimension- and
 then, for \(u,v\) in the \(R_0\)-ball,
 \begin{equation}
  \|\mathcal Q_\sigma(u)-\mathcal Q_\sigma(v)\|
- \le C(\|u\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}
+ \le C_2(\|u\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}
           +\|v\|_{\mathcal G_{\sigma,\delta}^{\rm rga}})
        \|u-v\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}.  \label{eq:fixed-section-nonlinear-two-point}
 \end{equation}
@@ -3369,13 +3391,78 @@ At a zero, this old pair joins continuously at \(s=0\) to
 \((r_a,Z_x)\), and its reconstructed voltage is identically the first
 line of \cref{eq:fixed-section-complete-voltage-history}.  Consequently
 such a zero satisfies the unmodified fold-time RFDE on the forward branch
-interval and the selected inner phase section.  The theorem only
+interval and the prescribed inner phase section.  The theorem only
 assembles and estimates the residual; it does not assert that a zero
 exists.  Even after a local zero is obtained, the zero-core collar is a
 canonical compatible preparation, not a proved past orbit.  No moving
 terminal event, branch-to-branch handoff, preparation-independent physical
 history relation, or complete-history root is proved here.
 \end{theorem}
+
+\begin{corollary}[Canonical fixed-section zeros on the two outer branches]
+\label[corollary]{cor:fixed-section-canonical-zero}
+Retain
+\cref{thm:fixed-section-nonlinear-graph-residual} and define
+\begin{equation}
+ R_{\rm u}
+ =\min\left\{\frac{R_0}{2},\frac1{4MC_2}\right\},
+ \qquad
+ \lambda_{\rm N}=\frac{R_{\rm u}}{2MC_b},
+ \qquad
+ r_\delta=2MC_b\lambda_\delta.                  \label{eq:fixed-section-zero-radii}
+\end{equation}
+There is a uniform \(0<\lambda_*\le\lambda_{\rm N}\) such that whenever
+\(\lambda_\delta<\lambda_*\), for each
+\(\sigma\in\{a,r\}\) there is a zero
+\[
+ u_{\sigma,\delta}
+ =(x_{\sigma,\delta},a_{\sigma,\delta})
+ \in\mathcal G_{\sigma,\delta}^{\rm rga}
+\]
+of \(\mathcal F_\sigma\).  It is the unique zero in the open
+\(R_{\rm u}\)-ball and satisfies
+\begin{align}
+ \|u_{\sigma,\delta}\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}
+ &\le r_\delta
+ \le 2MC_b\lambda_\delta,                         \label{eq:fixed-section-zero-size}\\
+ \|u_{\sigma,\delta}
+      +\bigl[D\mathcal F_\sigma(0,0)\bigr]^{-1}
+          \mathcal F_\sigma(0,0)\|
+ &\le MC_2r_\delta^2
+ \le C\lambda_\delta^2.                           \label{eq:fixed-section-zero-newton-jet}
+\end{align}
+The exact speed along this zero obeys
+\begin{equation}
+ q_0\!\left(\Theta_{a_{\sigma,\delta}}(r)\right)
+ +Q_\sigma^{\rm nl,\flat}
+      (x_{\sigma,\delta},a_{\sigma,\delta})(r)
+ =q_0(r)\Theta_{a_{\sigma,\delta}}'(r)
+ \le-c_*q_-<0,
+ \qquad r\in I_\sigma.                            \label{eq:fixed-section-zero-speed-sign}
+\end{equation}
+Thus the complete voltage history in
+\cref{eq:fixed-section-complete-voltage-history}, together with the
+reconstructed current resource
+\(
+ w(s)=w_{\rm seed,N}(r_a(s))-p_x(s),
+\)
+determines an exact monotone forward solution segment of the unmodified
+RFDE, issued from the canonical zero-core raw-compatible voltage history
+and its compatible resource value and phase-anchored at the prescribed
+inner section.
+
+The smallness hypothesis is attained in the required order: first choose
+\[
+ 0<r_{\rm out}<\min\{\bar r_{\rm out},\lambda_*/2\},
+\]
+and then decrease \(\delta_0(r_{\rm out})\) so that, in addition to all
+retained conditions, \(S_\delta^{-2}<\lambda_*/2\).
+The resulting zero is pointwise in the fixed parameter pair and unique
+only in the displayed canonical graph slice.  It is not a parameterized
+solution branch, a past-complete orbit, an invariant slow manifold, a
+branch-to-branch handoff, a preparation-independent physical connection,
+or a canard root.
+\end{corollary}
 
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}

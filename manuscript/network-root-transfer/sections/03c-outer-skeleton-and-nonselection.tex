@@ -4373,7 +4373,52 @@ Furthermore,
  \le CS_\delta^{-2}.
 \]
 These estimates prove
-\cref{eq:fixed-section-nonlinear-base-bound}.  If the residual vanishes,
+\cref{eq:fixed-section-nonlinear-base-bound}.
+
+We record the collar-radius uniformity needed for the quantifiers in the
+statement.  Choose \(\bar r_{\rm out}\) inside the common coefficient and
+same-sign flow collars used throughout the retained results.  The bounds
+for \(q_0\), the critical curve, and the backtracks are then uniform on
+\[
+ 0<r_{\rm out}\le\bar r_{\rm out},
+ \qquad \rho_\delta\le |r|\le r_{\rm out}.
+\]
+The principal Green estimates are written in the normalized
+\((Z,p/|r|)\) state and \((F,H/|r|^2)\) source norms; the finite outer
+row is likewise normalized by \(r_{\rm out}\).  Hence
+\cref{eq:fixed-phase-principal-C0-bound,%
+eq:fixed-phase-moving-scalar-weight}
+has one common constant as the outer collar is decreased.  For each fixed
+\(r_{\rm out}\), decrease \(\delta_0(r_{\rm out})\) so that
+\(\rho_\delta\le r_{\rm out}/2\), all occurrences of
+\(\delta/r_{\rm out}^2\) satisfy their retained smallness gates, and the
+feedback numbers in
+\cref{eq:fixed-phase-feedback-smallness} are below their fixed Neumann
+thresholds.  This gives one common fixed-phase normal inverse.
+
+The unperturbed inner-anchored phase inverse is the explicit integral in
+\cref{eq:inner-anchored-linear-explicit-inverse}; its relative norm is
+uniform.  Its Schur perturbation has the improving factor displayed in
+\cref{eq:relative-raw-action-smallness}, so after fixing
+\(\bar r_{\rm out}\) small enough,
+\cref{eq:inner-anchored-schur-neumann} gives the common inverse bound
+\(M\).  The fixed-reference history recursion uses the scaled variables
+in \cref{eq:mixed-scaled-compatibility-map}; its domain and first two
+data derivatives are uniform in the endpoint by
+\cref{eq:mixed-scaled-compatibility-coefficients,%
+eq:mixed-majorants-closed}.  Choosing \(R_0\) below that common history
+ball and the common relative phase ball therefore costs no power of
+\(r_{\rm out}\).  The coefficient, phase-delay, and history estimates used
+in
+\cref{eq:proof-fixed-section-normal-source-ledger,%
+eq:proof-fixed-section-phase-action-remainder,%
+eq:proof-fixed-section-history-remainder}
+then give common constants \(C_b\) and \(C_2\).  All coefficient estimates
+invoked here are uniform on the retained parameter ball.  This proves the
+full uniformity assertion; fixed parameter means only that no parameter
+derivative has been taken.
+
+If the residual vanishes,
 the formal old voltage in
 \cref{eq:fixed-section-complete-voltage-history} is
 \(\phi_{e_c}^0\), while the boundary equation and
@@ -4404,8 +4449,91 @@ Thus use \((r_-,Z_-)\) on the old interval and \((r_a,Z_x)\) on the
 current interval in
 \cref{prop:fold-time-tracker-normal-form}.  The exact delay identity at the
 beginning of the proof then gives the asserted forward RFDE segment.
-Neither argument extends the selected old history to a past orbit or fixes
+Neither argument extends the canonical old history to a past orbit or fixes
 the opposite moving event.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{cor:fixed-section-canonical-zero}]
+Put
+\[
+ L_\sigma=D\mathcal F_\sigma(0,0),
+ \qquad b_\sigma=\mathcal F_\sigma(0,0).
+\]
+On the closed \(r_\delta\)-ball define
+\begin{equation}
+ \mathcal T_\sigma(u)
+ =-L_\sigma^{-1}\{b_\sigma+\mathcal Q_\sigma(u)\}. \label{eq:fixed-section-zero-contraction}
+\end{equation}
+Since \(\mathcal Q_\sigma(0)=0\),
+\cref{eq:fixed-section-nonlinear-two-point} with one argument zero gives
+\(\|\mathcal Q_\sigma(u)\|\le C_2\|u\|^2\).  By
+\cref{eq:fixed-section-zero-radii},
+\[
+ r_\delta<R_{\rm u}\le\frac{R_0}{2},
+ \qquad
+ MC_2r_\delta\le\frac14.
+\]
+Consequently, for \(\|u\|\le r_\delta\),
+\[
+ \|\mathcal T_\sigma(u)\|
+ \le MC_b\lambda_\delta+MC_2r_\delta^2
+ \le\frac{r_\delta}{2}+\frac{r_\delta}{4}
+ <r_\delta,
+\]
+whereas for two points in that ball,
+\[
+ \|\mathcal T_\sigma(u)-\mathcal T_\sigma(v)\|
+ \le2MC_2r_\delta\|u-v\|
+ \le\frac12\|u-v\|.
+\]
+The contraction theorem proves existence and
+\cref{eq:fixed-section-zero-size}.  If \(u,v\) are two zeros in the open
+\(R_{\rm u}\)-ball, then
+\[
+ \|u-v\|
+ \le MC_2(\|u\|+\|v\|)\|u-v\|
+ <\frac12\|u-v\|,
+\]
+so \(u=v\).  At the fixed point,
+\[
+ u_{\sigma,\delta}+L_\sigma^{-1}b_\sigma
+ =-L_\sigma^{-1}\mathcal Q_\sigma(u_{\sigma,\delta}),
+\]
+which proves \cref{eq:fixed-section-zero-newton-jet}.
+
+Let \(R=\|u_{\sigma,\delta}\|\).  The graph--action scales in
+\cref{eq:proof-fixed-section-rga-scales} and the exact speed remainder in
+\cref{eq:proof-fixed-section-speed-quadratic-bound} give
+\[
+ |Q_\sigma^{\rm nl,\flat}(u_{\sigma,\delta})(r)|
+ \le (R+CR^2)|r|
+ \le D_\delta m_\delta(r),
+ \qquad D_\delta\le Cr_\delta.
+\]
+Moreover
+\(\Lambda_\delta\le C\lambda_\delta\), so
+\(D_\delta\Lambda_\delta\le C\lambda_\delta^2\).
+Choose the uniform \(\lambda_*\le\lambda_{\rm N}\) in the statement so
+that this lies below the uniform speed-class threshold in
+\cref{lem:inner-anchored-nonlinear-phase-chart}.  The zero phase row and
+inner anchor are exactly
+\[
+ \mathscr B_{\phi,\sigma}^{\rm nl}
+       (a_{\sigma,\delta})
+ =Q_\sigma^{\rm nl,\flat}(u_{\sigma,\delta}),
+ \qquad
+ a_{\sigma,\delta}(e_{\sigma,*})=0.
+\]
+That lemma therefore gives
+\cref{eq:fixed-section-zero-speed-sign}.  Finally,
+\cref{thm:fixed-section-nonlinear-graph-residual} identifies the assembled
+zero with the asserted forward RFDE segment.  The ordered choice of
+\(r_{\rm out}\) and \(\delta\) follows directly from
+\(\lambda_\delta=r_{\rm out}+S_\delta^{-2}\).
+This reconstruction is forward from the compatible collar only; it neither
+extends that collar to a past RFDE orbit nor relates the two values of
+\(\sigma\).
 \end{proof}
 
 \begin{proof}[Proof of

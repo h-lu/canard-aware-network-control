@@ -30,8 +30,12 @@ exact scaled scalar phase--event core is now also proved, including the sharp
 phase shift after a compact speed pulse.  The current-absorbed
 positive-delay splitting and the attracting finite-generation flushing
 theorem now close the fixed-parameter attracting buffer at every fixed
-regularity order.  The repelling causal/terminal component kernels, coupled
-phase--normal inverse, and nonlinear contraction remain open.
+regularity order.  The repelling causal/terminal component kernels, the
+raw-compatible fixed-base phase--normal inverse, and the fixed-section
+nonlinear contraction are now closed.  The latter produces finite monotone
+forward RFDE segments from canonical compatible collars; it does not supply
+the moving terminal family, a past orbit, or the cross-branch physical
+tracker targeted here.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -780,12 +784,16 @@ gauges.
 - [x] Fixed-parameter attracting finite-generation collar flushing on a
       rigorously defined delay-sum seam space, including normalized
       buffer-to-slow decay and the sharp one-derivative loss in `Q`.
-- [ ] Repelling causal and scalar-terminal component-kernel flushing, and
-      the coupled phase--normal inverse for the full Stage-I operator.
+- [x] Repelling causal and scalar-terminal component-kernel flushing, and
+      the raw-compatible fixed-base phase--normal inverse.
 - [x] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
       ladder orders.
 - [x] Backtrack/composition parameter jets through the weighted third
       Fréchet derivative needed for `J_phys`.
+- [x] Pointwise fixed-parameter contraction of the canonical fixed-section
+      graph residual on both outer branches, including local uniqueness,
+      first Newton jet, strict speed sign, and finite forward raw-RFDE
+      reconstruction.
 - [ ] Nonlinear tracker contraction and Green--collar reconstruction.
 - [ ] Full action-weighted nonautonomous quotient roughness theorem,
       including Volterra, phase-row, moving-projection, delay, `q`, and
