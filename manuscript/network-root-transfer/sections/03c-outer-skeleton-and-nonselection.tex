@@ -1120,6 +1120,106 @@ which proves \cref{eq:speed-boundary-layer-resource}.  Thus loss of the
 speed sign is not responsible for the obstruction.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:fold-time-tracker-normal-form}]
+We prove the RFDE equivalence directly in fold time; no orbit condition is
+used on the old history.  For the reconstruction in
+\cref{eq:fold-time-tracker-reconstruction}, the collective projection of
+the raw voltage field is
+\begin{align}
+ \pi_N^T\mathfrak F(v_s^{\rm hist},w)
+ ={}&\delta^{-1}
+   \{p-\ell_NZ-h_{c,N}
+          -\varepsilon\mathcal D_{0,c,N}
+          +\varepsilon q_0\}
+       +\delta\mathcal D_{c,N}^{\rm ft}\notag\\
+ ={}&\delta\left[
+ q_0+\varepsilon^{-1}\{p-\ell_NZ-h_{c,N}\}
+       +\Delta\mathcal D_{c,N}^{\rm ft}\right]
+ =\delta q.                                       \label{eq:fold-time-direct-collective}
+\end{align}
+Here we used the critical-curve identity, the definition of
+\(w_{\rm seed,N}\), and
+\[
+ F_N(r,z_{0,N}+Z)-F_N(r,z_{0,N})
+ =\ell_NZ+h_{c,N}.
+\]
+Since \(\pi_N^T\partial_sv=r_s\), the collective raw equation is therefore
+equivalent to \cref{eq:fold-time-tracker-r} and the algebraic speed
+reconstruction.
+
+For the transverse projection, the critical-curve identity and the Taylor
+remainder give
+\begin{equation}
+ P_{\perp,N}\mathfrak F(v_s^{\rm hist},w)
+ =\delta^{-1}\{B_NZ-h_{\perp,N}\}
+       +\delta\mathcal D_{\perp,N}^{\rm ft}.       \label{eq:fold-time-direct-transverse}
+\end{equation}
+On the other hand,
+\[
+ P_{\perp,N}\partial_sv=r_sz_{0,N}'(r)+Z_s
+               =\delta qz_{0,N}'+Z_s.
+\]
+Multiplication by \(\delta\), followed by
+\cref{eq:fold-time-speed-reconstruction}, yields
+\begin{align*}
+ \delta Z_s
+ &=B_NZ-h_{\perp,N}
+       +\varepsilon\mathcal D_{\perp,N}^{\rm ft}
+       -\varepsilon qz_{0,N}'\\
+ &=\mathcal C_NZ-z_{0,N}'p-R_{z,N}
+       +z_{0,N}'h_{c,N}-h_{\perp,N}
+       +\varepsilon\{\Delta\mathcal D_{\perp,N}^{\rm ft}
+                 -z_{0,N}'\Delta\mathcal D_{c,N}^{\rm ft}\},
+\end{align*}
+which is exactly \cref{eq:fold-time-tracker-Z}.  Every step is reversible.
+
+Finally, \(p=w_{\rm seed,N}(r)-w\), \(r_s=\delta q\), and
+\(q_0w_{0,N}'=r-\varepsilon\nu\) show that the raw resource equation is
+equivalent to
+\begin{align*}
+ p_s
+ &=\delta q\{w_{0,N}'
+          +\varepsilon(\mathcal D_{0,c,N}-q_0)'\}
+       -\delta(r-\varepsilon\nu)\\
+ &=\delta w_{0,N}'Q
+       +\delta\varepsilon q(\mathcal D_{0,c,N}-q_0)'.
+\end{align*}
+Multiplying by \(\delta\), and using the algebraic reconstruction of
+\(\varepsilon Q\), gives precisely
+\cref{eq:fold-time-tracker-p}.  This calculation is reversible as well,
+and proves the equivalence of the full raw system with the three
+fixed-delay identities.
+
+It remains only to prove the conditional reparameterization statement.
+Under \cref{eq:fold-time-old-history-speed}, \(q_{\rm ext}\) is
+nonvanishing and \(C^1\) on the image of \(r\).  Therefore
+\[
+ \int_{r(s-\theta_k)}^{r(s)}
+       \frac{\dd u}{q_{\rm ext}(u)}
+ =\delta\int_{s-\theta_k}^{s}\dd\sigma
+ =\delta\theta_k.
+\]
+This is \cref{eq:fold-time-backtrack-identification}.  On the current
+interval \(q_{\rm ext}=q\), so the usual chain rule gives
+\(\delta Z_s=\varepsilon q\,\partial_rZ\) and
+\(\delta p_s=\varepsilon q\,\partial_rp\).  Consequently the fixed-delay
+system becomes exactly
+\cref{eq:nonlinear-tracker-Z-normal-form,eq:nonlinear-tracker-p-normal-form}
+in the \(r\)-coordinate on the current image, and the delayed voltage
+history is the extended-curve evaluation in
+\cref{eq:exact-outer-history-embedding}.  This calculation uses no resource
+equation on the prescribed old history and hence makes no past-orbit claim.
+The same argument applies after the first-delay window without imposing an
+orbit condition on the discarded initial history.
+
+For a chart value \((\phi_e,\omega_e)=\Gamma_e^h(\cdots)\),
+\cref{eq:fold-time-collar-interface} is simply the collective/transverse
+decomposition of \(\phi_e\), together with
+\cref{eq:collar-nonlinear-trace}.  Raw compatibility follows from
+\cref{prop:compatible-endpoint-jet-collar}; no additional resource history
+or boundary row is introduced.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:physical-history-phase-quotient}]
 Because the rescaled fold-time RFDE is autonomous, differentiation of the
 base solution in fold time gives a solution of the variational equation.  At the

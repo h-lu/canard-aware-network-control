@@ -1019,6 +1019,132 @@ estimate, or an explicit first-delay buffer, before it can close the
 nonlinear tracker.
 \end{proposition}
 
+The obstruction is caused by using the slow coordinate inside an endpoint
+layer, not by the physical RFDE.  In fold time the delay is fixed, the
+compatible collar is an ordinary initial history, and the nonlinear speed
+does not multiply a differentiated boundary layer.  The following exact
+reformulation identifies the correct space in which the remaining mixed BVP
+has to be solved.
+
+\begin{proposition}[Exact fixed-delay tracker normal form in fold time]
+\label[proposition]{prop:fold-time-tracker-normal-form}
+Retain \cref{prop:nonlinear-resource-defect-normal-form} and the raw
+fold-time fields in \cref{eq:raw-fold-time-fields}.  Put
+\[
+ I_s=[s_-,s_+],\qquad J_s=[s_--\theta_m,s_+],
+\]
+and suppose
+\[
+ r\in C(J_s)\cap C^1(I_s),\qquad
+ Z\in C(J_s;E_N)\cap C^1(I_s;E_N),\qquad
+ p\in C^1(I_s).
+\]
+All equations below are imposed for \(s\in I_s\).  Suppose every current
+and delayed value of \(r\), as well as every \(q_0\)-backtrack used to
+define \(\mathcal D_{0,N}(r(s))\), lies in one coefficient collar.  Put
+\begin{align}
+ \mathcal D_N^{\rm ft}[r,Z](s)
+ ={}&K\sum_{k=0}^mL_{k,N}(\eta)
+ \bigl[\{r(s)-r(s-\theta_k)\}\mathbf1\notag\\
+ &\hspace{29mm}+z_{0,N}(r(s))+Z(s)
+       -z_{0,N}(r(s-\theta_k))-Z(s-\theta_k)\bigr],\notag\\
+ \Delta\mathcal D_N^{\rm ft}[r,Z](s)
+ ={}&\mathcal D_N^{\rm ft}[r,Z](s)
+       -\mathcal D_{0,N}(r(s)).                   \label{eq:fold-time-tracker-delay}
+\end{align}
+Write \(h_{c/\perp,N}(s)=h_{c/\perp,N}(r(s),Z(s))\), and evaluate every
+undisplayed coefficient below at \(r(s)\).  Define
+\begin{align}
+ Q(s)
+ ={}&\varepsilon^{-1}
+       \{p-\ell_NZ-h_{c,N}\}
+       +\Delta\mathcal D_{c,N}^{\rm ft}[r,Z](s),\notag\\
+ q(s)={}&q_0(r(s))+Q(s).                          \label{eq:fold-time-speed-reconstruction}
+\end{align}
+Assume \(-q_+\le q(s)\le-q_-<0\).  Then the following statements are
+equivalent:
+
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+\item \((r,Z,p)\) satisfies the fixed-delay defect system
+\begin{align}
+ r_s={}&\delta q,                                  \label{eq:fold-time-tracker-r}\\
+ \delta Z_s
+ ={}&\mathcal C_NZ-z_{0,N}'p-R_{z,N}
+       +z_{0,N}'h_{c,N}-h_{\perp,N}\notag\\
+ &+\varepsilon\{\Delta\mathcal D_{\perp,N}^{\rm ft}
+       -z_{0,N}'\Delta\mathcal D_{c,N}^{\rm ft}\},
+                                                        \label{eq:fold-time-tracker-Z}\\
+ \delta p_s
+ ={}&w_{0,N}'p-w_{0,N}'\ell_NZ-w_{0,N}'h_{c,N}
+       +\varepsilon w_{0,N}'\Delta\mathcal D_{c,N}^{\rm ft}\notag\\
+ &+\varepsilon^2q(\mathcal D_{0,c,N}-q_0)'.       \label{eq:fold-time-tracker-p}
+\end{align}
+
+\item The reconstruction
+\begin{equation}
+ v(s)=\mathbf1+r(s)\mathbf1+z_{0,N}(r(s))+Z(s),
+ \qquad
+ w(s)=w_{\rm seed,N}(r(s))-p(s)                  \label{eq:fold-time-tracker-reconstruction}
+\end{equation}
+is a classical solution of the unmodified shared-resource RFDE written in
+fold time, with current history
+\(v_s^{\rm hist}(\theta)=v(s+\theta)\), and
+\[
+ r(s)=\pi_N^T\{v(s)-\mathbf1\},\qquad
+ p(s)=w_{\rm seed,N}(r(s))-w(s).
+\]
+\end{enumerate}
+
+The equivalence itself places no orbit condition on the prescribed old
+history \(J_s\setminus I_s\).  If, in addition,
+\begin{equation}
+ r\in C^2(J_s),\qquad Z\in C^1(J_s;E_N),\qquad
+ -q_+^{\rm ext}\le\delta^{-1}r_s
+       \le-q_-^{\rm ext}<0\quad\hbox{on }J_s,     \label{eq:fold-time-old-history-speed}
+\end{equation}
+define the extended speed on the image of \(r\) by
+\[
+ q_{\rm ext}(r(\sigma))=\delta^{-1}r_\sigma(\sigma),
+ \qquad \sigma\in J_s.
+\]
+Then \(q_{\rm ext}=q\) on the current interval and
+\begin{equation}
+ r(s-\theta_k)=\Phi_{q_{\rm ext}}^{-\delta\theta_k}(r(s)).
+                                                        \label{eq:fold-time-backtrack-identification}
+\end{equation}
+Under this additional hypothesis, reparameterization by \(r\) recovers exactly
+\cref{eq:nonlinear-tracker-Z-normal-form,eq:nonlinear-tracker-p-normal-form}
+on the current \(r\)-image, with every delayed voltage evaluation represented
+by the extended curve.  It also recovers the voltage-history evaluation
+formula in \cref{eq:exact-outer-history-embedding}.  This does not assert that
+the prescribed old history is itself a past physical orbit.  That stronger
+interpretation requires an old resource extension satisfying the raw RFDE.
+Conversely, every monotone physical outer orbit gives this fixed-delay system.
+Without \cref{eq:fold-time-old-history-speed}, the same reparameterization
+conclusion holds after the first-delay window, whenever
+\(s-\theta_k\ge s_-\) for every active delay.
+
+In particular, \cref{eq:fold-time-tracker-Z,eq:fold-time-tracker-p} contains
+neither a state-dependent backtrack nor a product of \(Q\) with \(Z_s\) or
+\(p_s\).  If
+\((\phi_e,\omega_e)=\Gamma_e^h(Z_e,p_e,\widehat\gamma;\nu,\eta)\), its
+raw-compatible initial data for this system are
+\begin{align}
+ r_-(\theta)&=\pi_N^T\{\phi_e(\theta)-\mathbf1\},\notag\\
+ Z_-(\theta)&=P_{\perp,N}\{\phi_e(\theta)-\mathbf1\}
+                  -z_{0,N}(r_-(\theta)),
+ &-\theta_m\le\theta\le0,\notag\\
+ p(s_-)&=w_{\rm seed,N}(e)-\omega_e=p_e.          \label{eq:fold-time-collar-interface}
+\end{align}
+Thus \(\Gamma_e^h\) is an ordinary initial-history chart for the fixed-delay
+system, with no resource history and no extra scalar row.  It need not
+describe a past orbit; even \cref{eq:fold-time-old-history-speed} alone only
+provides an \(r\)-parameterization of its voltage history.  A past-orbit
+claim additionally requires that the old history satisfy the raw RFDE with
+a compatible resource extension.  This proposition is an exact equivalence,
+not an existence theorem for the mixed BVP.
+\end{proposition}
+
 There is nevertheless an intrinsic quotient once an actual physical history
 has been constructed.  The point is to quotient by the transported tangent
 line, rather than by an eigenvector of a frozen voltage--resource matrix; a
