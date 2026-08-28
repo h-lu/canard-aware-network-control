@@ -370,9 +370,13 @@ not the conormal of an independently defined physical maximal-canard locus.
       including the repelling scalar feedback without an extra boundary row.
 - [x] Prove the exact scaled scalar phase--event core, its sharp event-time
       scaling, and the persistence obstruction to phase echo contraction.
-- [ ] Prove the high-order finite-generation buffer-to-slow bootstrap,
-      couple it to the phase--event core, prove parameter/event-time
-      estimates, and close the nonlinear outer tracker.
+- [x] Prove the fixed-parameter high-order finite-generation
+      buffer-to-slow component bootstrap on both branches, including the
+      repelling forward-transverse/future-scalar kernel split and terminal
+      first-exit sum.
+- [ ] Close the high-order compatible repelling `p(0)`-collar feedback,
+      couple both branches to the phase--event core, prove
+      parameter/event-time estimates, and close the nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -381,9 +385,11 @@ not the conormal of an independently defined physical maximal-canard locus.
       re-cutting naturality already contained in the transfer proposition, or
       another reusable consequence.
 
-The frozen-voltage part of G0 and the exact algebra of the quotient are now
-closed.  True slow-tracker existence, its relative parameter jets, and
-nonautonomous quotient roughness remain open, as does G1.  The generic
+The frozen-voltage part of G0, the exact algebra of the quotient, and the
+fixed-phase component flushing on both outer branches are now closed.  True
+slow-tracker existence, its compatible phase--normal border, relative
+parameter jets, and nonautonomous quotient roughness remain open, as does
+G1.  The generic
 nonselection example is not a model-specific impossibility theorem.
 Completing them does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.

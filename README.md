@@ -31,9 +31,13 @@ network size.  This closes the frozen voltage part of the physical
 outer-history gate.  It further gives the exact uncut outer-history
 invariance equation and, conditional on an exact monotone tracker, the
 genuine longitudinal cocycle and an exact resource-gauge/Volterra
-realization of its normal quotient.  It does not yet construct that tracker,
-prove its nonautonomous normal dichotomy, establish exact fold overlap, or
-produce a physical preparation-independent root.
+realization of its normal quotient.  At fixed parameter and fixed phase, the
+component Green analysis now bootstraps arbitrary strong collars to genuine
+high-order slow traces on both branches; the repelling argument uses
+forward-transverse/future-scalar kernels and a terminal first-exit action.
+It does not yet close the compatible phase--normal border, construct the
+nonlinear tracker, prove its nonautonomous normal dichotomy, establish exact
+fold overlap, or produce a physical preparation-independent root.
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:

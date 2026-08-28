@@ -88,13 +88,18 @@ the event-time variation by \(\delta\); it also proves that any net phase
 shift produced by a compact speed pulse persists.  After deleting every
 zero-delay difference intact and absorbing all current positive-delay pieces,
 \cref{lem:current-absorbed-delay-splitting,%
-prop:attracting-finite-generation-flushing} prove a genuine high-order
-finite-generation flushing theorem for the fixed-parameter attracting outer
-buffer.  Its normalized collar-to-exit operator tends to zero uniformly in
-network size and loses only one reconstructed derivative in the speed
-component.  This does not yet provide the repelling causal/terminal
-component kernels, the coupled phase--normal inverse, or the nonlinear
-tracker.  Moreover,
+prop:attracting-finite-generation-flushing,%
+lem:repelling-component-generations,%
+prop:repelling-component-flushing} prove genuine high-order
+finite-generation flushing theorems for both fixed-parameter outer branches.
+The repelling proof does not take powers of a noncausal mixed Green operator:
+it resums the current loop, counts only strict delayed evaluations, and uses
+a terminal first-exit action to separate the outer-small and action-small
+word classes.  The normalized component traces tend to zero uniformly in
+network size and lose only one reconstructed derivative in the speed
+component.  This does not yet provide the high-order compatible
+\(p(0)\)-to-collar feedback, the coupled phase--normal inverse,
+parameter/event-time estimates, or the nonlinear tracker.  Moreover,
 \cref{prop:backward-asymptotic-nonselection} shows that convergence in an
 unnormalized history norm, even with one phase row, does not by itself select
 a unique tame history family.  Physical identification therefore still
