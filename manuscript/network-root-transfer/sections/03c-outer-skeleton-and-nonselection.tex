@@ -1659,6 +1659,91 @@ by \cref{eq:constant-phase-delay-annihilation}; no delay-generation
 argument was used.  This also proves all stated scope boundaries.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:event-aligned-normal-traces}]
+The chain rule at a moving terminal time gives
+\[
+ \left.\frac{\dd}{\dd\lambda}\right|_0
+ p_\lambda(S_\lambda)
+ =\dot p(S)+p_*'(S)\dot S.
+\]
+Applying the same rule pointwise to the history trace gives
+\[
+ \left.\frac{\dd}{\dd\lambda}\right|_0
+ Z_\lambda(S_\lambda-L+\theta)
+ =\dot Z(S-L+\theta)+Z_*'(S-L+\theta)\dot S.
+\]
+Substitution of
+\(\dot S=\delta^{-1}\widehat\tau\) proves
+\cref{eq:raw-moving-normal-traces}.  Differentiating the event in
+\cref{eq:event-aligned-section-row} gives
+\[
+ \xi(S)+r_*'(S)\dot S
+ =\xi(S)+q_e\widehat\tau=b_{\rm raw}.
+\]
+Now write
+\[
+ \dot p(S)
+ =n_p(S)+\frac{p_*'(S)}{\delta q_e}\xi(S)
+\]
+and use the analogous identity for \(\dot Z(S-L+\theta)\).  The two
+terms containing \(\xi(S)\) and \(\widehat\tau\) combine into
+\[
+ \frac{x_*'}{\delta q_e}
+       \{\xi(S)+q_e\widehat\tau\}
+ =\frac{x_*'}{\delta q_e}b_{\rm raw},
+\]
+for \(x_*=p_*\) or the translated \(Z_*\)-history.  This proves
+\cref{eq:event-aligned-triangular-rows}.  If \(b_{\rm raw}=0\), no
+\(\widehat\tau\)-column remains.  At \(Z_*=p_*=0\), both normal time
+derivatives in \cref{eq:raw-moving-normal-traces} vanish, proving the
+reduced-base statement.
+
+For a fixed regular handoff section, the implicit-function theorem and
+\(r_*'(s_h)\ne0\) give
+\[
+ \dot s_h=-\frac{\xi(s_h)}{r_*'(s_h)}.
+\]
+The chain rule for
+\(Z_\lambda(s_h(\lambda)+\theta)\) and
+\(p_\lambda(s_h(\lambda))\) now gives
+\cref{eq:fixed-r-handoff-traces}.  The formula contains neither
+\(S_\lambda\) nor \(\widehat\tau\).  On the reduced branch, autonomy and
+the terminal condition \(r^\#(0)=e_1\) uniquely give
+\cref{eq:terminal-relative-reduced-path}; its fixed-\(r\) crossing at
+\(e_h=\Phi_{q_0}^{-\delta L_b}(e_1)\) is
+\(\varsigma=-L_b\).  Simultaneous translation of the component equations
+carries their Green kernels to translated kernels with the same time
+differences and identical bounds.  Therefore the fixed reduced-base
+component operator has the same norm estimates in these coordinates,
+without differentiating a moving trace.  For a general
+moving nonlinear family, \(s_h(\lambda)-S_\lambda\) need not remain fixed;
+the proof makes no flushing claim for that family.
+
+Finally, direct differentiation of
+\cref{eq:moving-trace-strong-norm} gives
+\[
+ \|\delta^{-1}x'\|_{d,\delta}
+ =\max_{0\le j\le d}\delta^{j-1}
+       \|\partial_s^{j+1}x\|_\infty
+ \le\delta^{-2}\|x\|_{d+1,\delta}.
+\]
+The loss is sharp.  For a fixed nonzero smooth compactly supported \(f\),
+put
+\[
+ x_\delta(s)=\delta^2f((s-S)/\delta).
+\]
+Then
+\(\|x_\delta\|_{d+1,\delta}=O(\delta^2)\), whereas
+\(\|\delta^{-1}x_\delta'\|_{d,\delta}\asymp1\).
+Moreover, the derivative of the translation action is its unbounded
+generator \(x\mapsto x'\).  A continuous piecewise
+\(W^{d,\infty}\) function with a jump in its \(d\)-th derivative supplies
+the standard failure of same-space differentiability.  This proves
+\cref{eq:moving-trace-one-order-loss} and the asserted regularity boundary.
+All remaining exclusions are immediate because only traces, not a solution
+map or a tracker, were constructed.
+\end{proof}
+
 \begin{proof}[Proof of
 \cref{lem:current-absorbed-delay-splitting}]
 For \(\theta_k=0\), the corresponding summand in

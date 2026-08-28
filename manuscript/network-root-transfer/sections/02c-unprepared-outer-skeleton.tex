@@ -1620,6 +1620,118 @@ affine-residual normal column in
 row, and hence not the full phase--normal inverse.
 \end{proposition}
 
+\begin{proposition}[Event-aligned fixed-section normal traces]
+\label[proposition]{prop:event-aligned-normal-traces}
+Retain \cref{prop:fold-time-tracker-normal-form,%
+prop:scaled-phase-event-core}, and fix an integer \(d\ge1\).  Let
+\[
+ \lambda\longmapsto
+ (r_\lambda,Z_\lambda,p_\lambda,S_\lambda)
+\]
+be jointly \(C^1\) in \((\lambda,s)\) on a common interval enlarged by one
+delay, based at \((r_*,Z_*,p_*,S)\), and assume the normal components have \(d+1\)
+fold-time derivatives and depend \(C^1\) on \(\lambda\) in that local
+\(C^{d+1}\) topology near every trace below.  A dot denotes
+\(\partial_\lambda|_{\lambda=0}\), a prime denotes \(\partial_s\), and
+\(\xi=\dot r\).  Suppose
+\begin{equation}
+ r_\lambda(S_\lambda)
+ =e_1+\lambda b_{\rm raw}+o(\lambda),\qquad
+ r_*'(S)=\delta q_e,\qquad |q_e|\ge q_->0,          \label{eq:event-aligned-section-row}
+\end{equation}
+and put \(\widehat\tau=\delta\dot S\).  For fixed \(L\ge0\) such that
+all points \(S_\lambda-L+\theta\) below lie in the common domain, define
+\[
+ (\mathcal T_{S_\lambda,L}Z_\lambda)(\theta)
+ =Z_\lambda(S_\lambda-L+\theta),
+ \qquad-\theta_m\le\theta\le0.
+\]
+Then the raw moving-trace derivatives are
+\begin{align}
+ D\{p_\lambda(S_\lambda)\}
+ &=\dot p(S)+\delta^{-1}p_*'(S)\widehat\tau,\notag\\
+ D\{\mathcal T_{S_\lambda,L}Z_\lambda\}(\theta)
+ &=\dot Z(S-L+\theta)
+       +\delta^{-1}Z_*'(S-L+\theta)\widehat\tau.   \label{eq:raw-moving-normal-traces}
+\end{align}
+The history identity is an equality in \(C^d([-\theta_m,0];E_N)\).
+Define the event-aligned normal traces
+\begin{align}
+ n_p(S)
+ &=\dot p(S)-\frac{p_*'(S)}{\delta q_e}\xi(S),\notag\\
+ n_{Z,S,L}(\theta)
+ &=\dot Z(S-L+\theta)
+   -\frac{Z_*'(S-L+\theta)}{\delta q_e}\xi(S).     \label{eq:event-aligned-normal-quotient}
+\end{align}
+The phase row and the normal traces then triangularize exactly:
+\begin{align}
+ \xi(S)+q_e\widehat\tau&=b_{\rm raw},\notag\\
+ D\{p_\lambda(S_\lambda)\}
+ &=n_p(S)+\frac{p_*'(S)}{\delta q_e}b_{\rm raw},\notag\\
+ D\{\mathcal T_{S_\lambda,L}Z_\lambda\}
+ &=n_{Z,S,L}
+   +\frac{Z_*'(S-L+\cdot)}{\delta q_e}b_{\rm raw}.
+                                                        \label{eq:event-aligned-triangular-rows}
+\end{align}
+In particular, for the homogeneous fixed-\(r\) event, the unknown
+\(\widehat\tau\) disappears from every normal terminal row.  At the
+prescribed reduced base \(Z_*=p_*=0\), the raw moving-event normal column
+itself is identically zero.  This last statement concerns only the
+chain-rule trace column; it does not annihilate the phase-induced bulk
+response or the affine-residual column.
+
+More generally, let \(e_h\) be a fixed regular \(r\)-section and let
+\(s_h(\lambda)\) be its unique nearby crossing:
+\(r_\lambda(s_h(\lambda))=e_h\).  Then
+\begin{align}
+ D\{Z_\lambda(s_h(\lambda)+\cdot)\}
+ &=\dot Z(s_h+\cdot)
+   -\frac{Z_*'(s_h+\cdot)}{r_*'(s_h)}\xi(s_h),\notag\\
+ D\{p_\lambda(s_h(\lambda))\}
+ &=\dot p(s_h)
+   -\frac{p_*'(s_h)}{r_*'(s_h)}\xi(s_h).          \label{eq:fixed-r-handoff-traces}
+\end{align}
+Thus a fixed-\(r\) handoff has no separate moving-\(S\) column.  For the
+reduced terminal branch, the terminal-relative coordinate
+\(\varsigma=s-S\) has reference path
+\begin{equation}
+ r^\#(\varsigma)=\Phi_{q_0}^{\delta\varsigma}(e_1).             \label{eq:terminal-relative-reduced-path}
+\end{equation}
+For any chosen buffer length \(L_b>0\), choosing
+\(e_h=\Phi_{q_0}^{-\delta L_b}(e_1)\) makes its crossing
+\(\varsigma=-L_b\).  At this prescribed reduced base, the
+terminal-relative component operator is conjugate by simultaneous
+translation to the fixed component operator, so its Green kernels and norm
+estimates are unchanged.  In this reference linearization
+\(\widehat\tau\) occurs only in the scalar phase--event border.  This
+statement does not extend the flushing estimates to a moving nonlinear
+family, for which the fixed-\(r\) crossing can move in the
+\(\varsigma\)-coordinate.
+
+There is a genuine regularity cost if one instead differentiates the raw
+moving trace.  With
+\begin{equation}
+ \|x\|_{d,\delta}
+ =\max_{0\le j\le d}\delta^j
+       \|\partial_s^jx\|_\infty,                  \label{eq:moving-trace-strong-norm}
+\end{equation}
+one has
+\begin{equation}
+ \|\delta^{-1}x'\|_{d,\delta}
+ \le\delta^{-2}\|x\|_{d+1,\delta},                \label{eq:moving-trace-one-order-loss}
+\end{equation}
+and the power \(\delta^{-2}\) is sharp.  Translation is not in general
+Fr\'echet differentiable from the continuous piecewise
+\(W^{d,\infty}\) space to itself.  Thus the event-aligned formulation
+avoids an otherwise unavoidable extra derivative in the component
+flushing argument.
+
+This proposition is exact trace calculus.  It does not construct the
+nonlinear family, identify the formal collar with the raw-compatible
+collar, estimate the affine-residual column, or prove the full bordered
+inverse.
+\end{proposition}
+
 We next isolate the strong block on which delay generations can actually be
 counted.  A zero-delay difference is deleted as one intact zero term.  For a
 positive delay, its current evaluation belongs to the generator and only its
