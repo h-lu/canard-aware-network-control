@@ -656,7 +656,7 @@ classes under further restriction are called dimension-uniform response
 germs.
 \end{definition}
 
-\begin{theorem}[Canonical leading response germ and covector]
+\begin{theorem}[Canonical response germ and selected connection conormal]
 \label[theorem]{thm:canonical-response-germ}
 Fix one physical model family satisfying the hypotheses of
 \cref{thm:shared-resource}, and fix a stationary-row-neutral direction family
@@ -691,7 +691,39 @@ the same coefficient is recovered by the limit
 which has the same value for every fixed admissible preparation in this
 comparison class; for each fixed admissible preparation and each uniformly
 bounded direction family the convergence is uniform in
-\(N\).  Thus each \(\mathfrak R_N\) is a bounded covector on the
+\(N\).
+
+Equivalently, center the selected connection locus at its own baseline and
+write it in the weighted physical-parameter coordinate
+\begin{equation}
+ \Xi^{\mathbf p}_{N,\delta}(\zeta)
+ =\delta^{-3}\Delta^{\mathbf p}_{N,\mathbf R}(\delta,\zeta)
+ =\delta^{-1}\{\nu^{\mathbf p}_{c,N}(\delta,\zeta)
+                   -\nu^{\mathbf p}_{c,N}(\delta,0)\}.          \label{eq:model-weighted-connection-graph}
+\end{equation}
+For every fixed preparation there is a constant independent of \(N\) such
+that
+\begin{align}
+ |\Xi^{\mathbf p}_{N,\delta}(\zeta)
+       -\zeta\Lambda_N(\mathbf R_N)|
+ &\le C_{\mathbf p}(\delta|\zeta|+\zeta^2),\notag\\
+ |\partial_\zeta\Xi^{\mathbf p}_{N,\delta}(\zeta)
+       -\Lambda_N(\mathbf R_N)|
+ &\le C_{\mathbf p}(\delta+|\zeta|),\qquad
+ |\partial_{\zeta\zeta}\Xi^{\mathbf p}_{N,\delta}(\zeta)|
+ \le C_{\mathbf p}.                                  \label{eq:model-weighted-connection-bounds}
+\end{align}
+Hence, in coordinates \((\xi,\zeta)\) with
+\(\xi=\delta^{-3}\{\mu-\mu^{\mathbf p}_{c,N}(\delta,0)\}\), the
+conormal line of the selected connection curve at its baseline converges to
+\begin{equation}
+ \operatorname{span}\{\dd\xi
+       -\Lambda_N(\mathbf R_N)\,\dd\zeta\}.          \label{eq:model-limiting-connection-conormal}
+\end{equation}
+The limit is uniform in \(N\) for each fixed preparation and is the same for
+any two fixed preparations after separate baseline centering.
+
+Thus each \(\mathfrak R_N\) is a bounded covector on the
 stationary-row-neutral direction space, and the covector norms obey the
 uniform estimate
 \cref{eq:response-functional-bound}.  Its restriction to each of the
@@ -700,19 +732,124 @@ direction spaces in
 has a codimension-one kernel whenever it is nonzero.
 \end{theorem}
 
+The preceding theorem is stated on rays because the physical family was
+introduced as \(B_k+\zeta R_k\).  The same construction is jointly regular
+on a ball of layer redistributions.  This matters geometrically: it realizes
+\(\Lambda_N\) as one Fr\'{e}chet conormal, rather than as a compatible list
+of directional limits.
+
+\begin{definition}[Structural-ball admissible selection]
+\label[definition]{def:structural-ball-preparation}
+For affine perturbations
+\(\eta=(E_0,\ldots,E_m)\in\mathfrak T_N^{\rm red}\) entering through
+\(B_{k,N}\mapsto B_{k,N}+E_k\), a selection rule is
+\emph{structural-ball admissible} on
+\(B_{\eta_*}(0)\subset\mathfrak T_N^{\rm red}\) if its cutoff, stable-slot
+saturation, collar, endpoint, and phase rules are fixed independently of
+\(\eta\), clauses \textup{(S1)}--\textup{(S4)} of
+\cref{def:admissible-preparation} hold uniformly on the ball, and every
+occurrence of \(\partial_\zeta\) and \(\partial_{\zeta\zeta}\) in
+\textup{(S2)}--\textup{(S3)} is replaced by the Fr\'{e}chet derivatives
+\(D_\eta\) and \(D^2_{\eta\eta}\), bounded in the full operator and symmetric
+bilinear norms.  The same replacement is required in the mixed \(\nu\eta\)
+slots.  All radii and tame constants must be common in \(N\).
+\end{definition}
+
+\begin{lemma}[Structural-ball preparation exists]
+\label[lemma]{lem:structural-ball-preparation}
+For these affine perturbations of the shared-resource family, the fixed
+cutoff, saturation, and Whitney
+collar algorithms used in \cref{lem:preparation-existence} give a
+structural-ball admissible rule after decreasing one radius \(\eta_*>0\),
+independently of \(N\).
+\end{lemma}
+
+\begin{theorem}[Joint blind-redistribution selected connection conormal]
+\label[theorem]{thm:joint-redistribution-conormal}
+For \(\eta=(E_0,\ldots,E_m)\in\mathfrak T_N^{\rm red}\), replace
+\cref{eq:shared-layers} by
+\begin{equation}
+ B_{k,N}(\eta)=B_{k,N}+E_k,
+ \qquad \pi_N^TE_k=0,
+ \qquad \sum_{k=0}^mE_k=0.                           \label{eq:structural-ball-layers}
+\end{equation}
+Fix the common model data of \cref{thm:shared-resource} and one
+structural-ball admissible rule supplied by
+\cref{lem:structural-ball-preparation}.
+
+There are \(\delta_0,\eta_0,c_0,C>0\), independent of \(N\), such that the
+selected complete-history connection has a unique root
+\[
+ \mu^{\mathbf p}_{c,N}(\delta,\eta)
+ =\delta^2\nu^{\mathbf p}_{c,N}(\delta,\eta)
+\]
+in the same local \(\nu\)-window whenever
+\(0<\delta<\delta_0\) and
+\(\|\eta\|_{\mathfrak T_N}<\eta_0\).  The root is jointly \(C^2\)
+Fr\'{e}chet in \(\eta\) and obeys
+\begin{align}
+ \|D_\eta\mu^{\mathbf p}_{c,N}(\delta,\eta)
+       -\delta^3\Lambda_N\|_{(\mathfrak T_N^{\rm red})^*}
+ &\le C\{\delta^4+\delta^3\|\eta\|_{\mathfrak T_N}\},
+                                                               \label{eq:joint-root-derivative}\\
+ \|D_{\eta\eta}^2\mu^{\mathbf p}_{c,N}(\delta,\eta)\|
+ &\le C\delta^3,                                      \label{eq:joint-root-second-derivative}\\
+ |\mu^{\mathbf p}_{c,N}(\delta,\eta)
+       -\mu^{\mathbf p}_{c,N}(\delta,0)
+       -\delta^3\Lambda_N(\eta)|
+ &\le C\{\delta^4\|\eta\|_{\mathfrak T_N}
+          +\delta^3\|\eta\|_{\mathfrak T_N}^2\}. \label{eq:joint-root-increment}
+\end{align}
+Define the weighted graph
+\begin{equation}
+ \Xi^{\mathbf p}_{N,\delta}(\eta)
+ =\delta^{-3}\{\mu^{\mathbf p}_{c,N}(\delta,\eta)
+                     -\mu^{\mathbf p}_{c,N}(\delta,0)\}.       \label{eq:joint-weighted-graph}
+\end{equation}
+Its baseline conormal in
+\((\R\times\mathfrak T_N^{\rm red})^*\) satisfies
+\begin{equation}
+ \left\|(1,-D_\eta\Xi^{\mathbf p}_{N,\delta}(0))
+          -(1,-\Lambda_N)\right\|
+ \le C\delta.                                         \label{eq:joint-conormal-limit}
+\end{equation}
+The limiting hyperplane is
+\begin{equation}
+ \{(\xi,\eta):\xi=\Lambda_N(\eta)\}
+ =\ker\mathfrak J_N,                                  \label{eq:joint-schur-hyperplane}
+\end{equation}
+where \(\mathfrak J_N\) is
+\cref{eq:cokernel-connection-jet}.  The estimates hold in the full dual and
+bilinear operator norms, with one constant for all \(N\); they are not an
+inference from separate directional derivatives.
+
+Any two fixed structural-ball admissible rules have the same limiting
+conormal after their
+selected loci are centered at their own unperturbed baselines.  Neither exact
+finite-\(\delta\) preparation independence nor a physical outer connection
+locus is asserted.
+\end{theorem}
+
 \begin{remark}[What is canonical]
 \label[remark]{rem:canonical-boundary}
 The canonicity in \cref{thm:canonical-response-germ} is relative to the fixed
 physical model family, stationary projection, phase and endpoint conditions,
 and physical-parameter normalization specified above.  Within this comparison
 class, replacing one fixed admissible preparation datum by another leaves the
-baseline-subtracted leading response germ, and hence its limiting covector,
-unchanged.  The assertion is pairwise on common parameter boxes and does not
-provide one remainder constant over the entire preparation class.  No
-invariance is claimed under changes of the fixed projection, matching
-conditions, or parameter normalization.  The theorem neither identifies the
-two exact finite-\(\delta\) roots nor produces a preparation-independent
-maximal canard.
+baseline-subtracted leading response germ, its limiting covector, and the
+weighted conormal in \cref{eq:model-limiting-connection-conormal} unchanged.
+The assertion is pairwise on common parameter boxes and does not provide one
+remainder constant over the entire preparation class.  The conormal line is
+independent of a regular scalar defining function for the same selected
+connection curve.  At finite \(\delta\) it pulls back under every fixed
+\(C^1\) parameter-coordinate change.  The limiting weighted jet is covariant
+under a fixed nonsingular chart, or under a \(\delta\)-dependent chart whose
+derivative and inverse derivative converge uniformly to a nonsingular
+front-face derivative; singular \(\delta\)-dependent rescalings are excluded.  No
+invariance is claimed under changes which alter the physical projection or
+the connection relation itself.  The theorem neither identifies the two
+exact finite-\(\delta\) roots nor constructs a preparation-free physical
+connection locus or maximal canard.
 \end{remark}
 
 \begin{proposition}[Finite-section noncanonicity]

@@ -184,9 +184,31 @@ the fixed pair of preparations.  Hence they define the same
 dimension-uniform leading response germ
 \([\,\delta^3\zeta\Lambda_N(\mathbf R_N)\,]_{\rm resp}\).  For each fixed
 preparation and each uniformly bounded direction family, the normalized
-derivative converges to the limiting direction-response covector
-\(\Lambda_N\) uniformly in \(N\); no uniformity over the whole preparation
-class is asserted.  For the shared-resource family, however, the exact
+derivative converges to the limiting covector evaluation
+\(\Lambda_N(\mathbf R_N)\) uniformly in \(N\); no uniformity over the whole
+preparation class is asserted.  Equivalently, after each selected connection curve is
+centered at its own \(\zeta=0\) root and its physical-parameter difference is
+divided by \(\delta^3\), its baseline conormal converges to
+\[
+ \operatorname{span}\{\dd\xi
+       -\Lambda_N(\mathbf R_N)\,\dd\zeta\}.
+\]
+For the shared-resource family, if the selection rule is structural-ball
+admissible in the sense of
+\cref{def:structural-ball-preparation}, these raywise loci are restrictions of
+one \(C^2\) Fr\'{e}chet graph on a common ball in
+\(\mathfrak T_N^{\rm red}\), and its \(\dd\xi\)-calibrated baseline conormal
+satisfies
+\[
+ \|(1,-D_\eta\Xi^{\mathbf p}_{N,\delta}(0))-(1,-\Lambda_N)\|
+ \le C\delta
+\]
+in the full dual norm, with one constant for all \(N\).  This conclusion is
+proved by a uniform affine-line Picard-jet argument and polarization, not by
+identifying compatible directional derivatives.
+This weighted conormal is a statement about the selected complete-history
+connection relation, not a physical outer maximal canard.  For the
+shared-resource family, moreover, the exact
 finite-\(\delta\) roots are not preparation independent: at every fixed
 \(N_0\) and sufficiently small fixed target, an admissible localized change
 of the outer completion can move the selected baseline root.
@@ -208,7 +230,10 @@ generator-probe conclusions, under their additional hypotheses, are
 \cref{cor:curvature-tomography,cor:recovery-tomography}.  Preparation
 universality for the shared-resource model is
 \cref{cor:preparation-universality,thm:canonical-response-germ}; the
-recovery-sensing germ is \cref{eq:sensing-canonical-germ}.  The final
+recovery-sensing germ is \cref{eq:sensing-canonical-germ}, the raywise
+weighted-conormal realization is \cref{thm:weighted-connection-jet}, and the
+shared-resource full-ball realization is
+\cref{thm:joint-redistribution-conormal}.  The final
 finite-section noncanonicity assertion, as stated here for the
 shared-resource family, is \cref{prop:finite-section-noncanonicity}.
 \end{proof}
@@ -326,7 +351,8 @@ coefficients of the RFDE.
 The scalar readout in \cref{eq:intro-response} is selected by finite
 endpoints and an outer planar completion.  It would be incorrect simply to
 rename its exact finite-\(\delta\) zero an intrinsic maximal canard.
-\Cref{prop:finite-section-noncanonicity} constructs localized admissible
+For the shared-resource family,
+\cref{prop:finite-section-noncanonicity} constructs localized admissible
 changes of the artificial completion which leave the physical RFDE, retained
 fold tube, phase row, and endpoint equation fixed but move that exact root.
 This is an obstruction result, not a missing uniqueness proof.
@@ -345,9 +371,36 @@ on their common parameter box, and
 \(\delta^{-3}\partial_\zeta
 \mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0)
 \to\Lambda_N(\mathbf R_N)\)
-uniformly in \(N\).  The baseline-subtracted leading response germ and its
-limiting covector are therefore preparation independent in this relative
-sense; the finite-section representative root is not.
+uniformly in \(N\).  In the weighted coordinate
+\[
+ \xi=\delta^{-3}\{\mu-\mu^{\mathbf p}_{c,N}(\delta,0)\},
+\]
+the selected connection graph satisfies
+\(\xi=\zeta\Lambda_N(\mathbf R_N)
+ +O(\delta|\zeta|+\zeta^2)\); its baseline tangent has slope
+\(\Lambda_N(\mathbf R_N)+O(\delta)\), and its conormal converges to
+\(\operatorname{span}\{\dd\xi-
+\Lambda_N(\mathbf R_N)\dd\zeta\}\).  For the shared-resource family,
+\cref{thm:joint-redistribution-conormal} proves, rather than infers from those
+raywise limits, that before restriction to a ray the tangent hyperplane is
+the kernel of the cokernel-valued map
+\[
+ (\xi,R)\longmapsto
+ \xi[f_{\nu,N}]
+ +[\mathsf B_NL_{\perp,N}^{-1}\mathsf S_NR].
+\]
+This formulation removes the arbitrary scalar representative of the
+collective cokernel.  The baseline-subtracted response germ, limiting
+covector, and weighted conormal are preparation independent in the stated
+relative sense; the finite-section representative root is not.  They remain
+objects of the selected local connection problem until physical outer
+history families are constructed and compared with it.  The quantitative
+criterion \cref{prop:physical-weighted-c1-transfer} isolates the direct
+obligation: a preparation-free physical root whose weighted structural
+derivative agrees with that of the selected root.  One sufficient gap-level
+route additionally asks that the two root locations converge and that their
+defining gaps differ by \(o(\delta)\) in the \(\nu\)-gap slope and by
+\(o(\delta^2)\) in the structural derivative.
 
 \subsection{Two inequivalent return channels}
 
@@ -399,6 +452,20 @@ broad conceptual precedent for unresolved modes returning through memory
 deterministic first-delay-moment source, a stable transverse inverse, and a
 one-dimensional matching cokernel.
 
+Writing a first-order splitting displacement as a normal-bundle section is
+already a canonical construction in Melnikov theory
+\citep{lomeli2008canonical}.  Accordingly,
+\cref{thm:weighted-connection-jet} is not presented as a new principle merely
+because it replaces a scalar defining function by a conormal line.  Its role
+is to show that the nonlinear selected connection curves realize the same
+cokernel-valued object as the blind-source factorization and that this object
+retains the two-delay and network-size-uniform recovery structure.  A
+preparation-free physical connection manifold would require the additional
+outer-history theorem and weighted \(C^1\) selected-to-physical comparison.
+\Cref{prop:physical-weighted-c1-transfer} records the formal naturality under
+an exact parameter-coherent section holonomy; constructing and verifying such
+a physical holonomy for this model remain outside the present theorem.
+
 Adjoint sensitivity already represents scalar response derivatives as
 covector pairings, including for functional differential systems with
 time lags \citep{cacuci1981sensitivity,rihan2003sensitivity}, and sufficiently many
@@ -407,8 +474,8 @@ functional.  Network reconstruction from response dynamics
 \citep{timme2007revealing}, from delayed noisy interactions
 \citep{zhang2019reconstruction}, and from long noisy time series
 \citep{pereira2025robust} addresses the more ambitious problem of recovering
-interaction structure, delays, or dynamics.  We make no such claim.  The new
-conjunction here is narrower: admissible probes annihilate the entire
+interaction structure, delays, or dynamics.  We make no such claim.  The
+principal conjunction here is narrower: admissible probes annihilate the entire
 stationary projection at every delay atom and preserve aggregate coupling;
 two separated delays nevertheless span the transverse source with sharp
 dimension-free cost; and a nonlinear complete-history root reads out the
@@ -455,15 +522,18 @@ family rules them out by distinct node curvatures.
 
 \subsection{Proof architecture and organization}
 
-The proof has four load-bearing steps.  First, stationary-row cancellation
+The proof has five load-bearing steps.  First, stationary-row cancellation
 gives exact blindness.  Second, the Dobrushin gap supplies a dimension-free
 transverse inverse, while two delay atoms give the sharp source right inverse.
 Third, a special-flow transform constructs an injective invariant graph of
 complete RFDE histories and two selected traces.  Fourth, Gaussian cokernel
 pairings and a finite-section error estimate transfer the whole-line return
-coefficient to the nonlinear root.  The two model calculations then identify
-the curvature and recovery covectors, while the localized bump construction
-proves exact-root noncanonicity.
+coefficient to the nonlinear root.  Fifth, the structural-ball Fr\'{e}chet
+estimate identifies the selected shared-resource connection hyperplane with
+the kernel of the Schur map and its limiting conormal with
+\((1,-\Lambda_N)\).  The two model calculations identify the curvature and
+recovery covectors, while the localized bump construction proves exact-root
+noncanonicity for the shared-resource family.
 
 \Cref{sec:model-results} defines the shared-resource model and states the
 blind-controllability, root-readout, tomography, and obstruction results.

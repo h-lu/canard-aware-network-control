@@ -901,6 +901,144 @@ argument deliberately subtracts each preparation's own \(\zeta=0\) root and
 therefore makes no statement about the two baselines.
 \end{proof}
 
+\begin{proof}[Proof of \cref{lem:structural-ball-preparation}]
+At a full vector history \(\phi\), the structural derivative of the voltage
+field in the direction
+\(\widehat\eta=(\widehat E_0,\ldots,\widehat E_m)\) is
+\begin{equation}
+ D_\eta\mathcal F^v_{N,\delta,\nu,\eta}(\phi)
+       [\widehat\eta]
+ =\delta^2K\sum_{k=0}^m\widehat E_k
+       \{\phi(0)-\phi(-\theta_k/\delta)\},
+ \qquad D_{\eta\eta}^2\mathcal F^v=0.                \label{eq:full-ball-field-derivative}
+\end{equation}
+The resource field has zero structural derivative.  In the operator-sum norm,
+\cref{eq:full-ball-field-derivative} and all admitted state derivatives have
+bounds independent of \(N\).  A fixed structural ball increases the layer
+bound in \cref{eq:shared-layer-bounds} by at most its radius.
+
+Use exactly the target-frozen cutoffs and stable-slot saturations from the
+proof of \cref{lem:preparation-existence}.  These operations are fixed under
+\(\eta\)-differentiation, and \cref{eq:shared-products} converts
+\cref{eq:full-ball-field-derivative} into the required operator-norm bounds
+for the prepared graph field.  To verify the graph dependence without using
+a same-regularity implicit-function theorem, fix a base point \(\eta\) and a
+unit direction \(h\), and run the finite Picard-jet induction of
+\cref{eq:shared-jet-triangle} on the affine line \(\eta+th\).  The first and
+second \(t\)-jet blocks have the same last diagonal block
+\(\rho\mathscr L_\ell\), whose norm is at most one half by
+\cref{eq:shared-jet-block-inverse}; all new forcing terms contain either
+\cref{eq:full-ball-field-derivative} or already controlled lower blocks.
+Consequently the recurrences in the proof of
+\cref{lem:shared-graph-trace} converge uniformly over the structural ball and
+over \(\|h\|_{\mathfrak T_N}\le1\).
+
+For each fixed \(N\), the Picard iterates are smooth in the finite-dimensional
+layer tuple.  Uniform convergence of the iterates and their first two line
+jets, followed by the fundamental theorem of calculus on parameter line
+segments, identifies the limits as derivatives.  The first-derivative bound
+is the full operator norm after taking the supremum over unit \(h\).  For the
+symmetric second derivative, the polarization identity
+\begin{equation}
+ D_{\eta\eta}^2Z[h,k]
+ =\frac14\left\{D_{\eta\eta}^2Z[h+k,h+k]
+               -D_{\eta\eta}^2Z[h-k,h-k]\right\}      \label{eq:full-ball-polarization}
+\end{equation}
+turns the uniform diagonal line-jet bound into a full bilinear-norm bound,
+with a dimension-independent factor.  This is an operator-valued finite-jet
+argument, not an inverse on a same-regularity graph space.
+
+Once the graph has these joint jets, apply the same fixed Whitney operator
+\cref{eq:whitney-thin-extension} to its reduced planar field.  That operator
+is linear, while the collar cutoffs are parameter independent, so the
+operator and bilinear bounds pass to the planar completion.  The endpoint and
+phase rows are the fixed rows in \textup{(S4)}.  After decreasing one common
+ball radius, all four clauses of
+\cref{def:structural-ball-preparation} follow.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:joint-redistribution-conormal}]
+Left multiplication by \(\pi_N^T\) kills every summand in
+\cref{eq:full-ball-field-derivative}, so exact projection blindness holds on
+the whole structural ball.  Repeat the affine-line Picard-jet induction from
+the preceding proof for the two one-sided trace contractions.  Their finite
+prolonged diagonal inverses are bounded by \(C_{\rm tr}\); taking suprema over
+unit directions and then using \cref{eq:full-ball-polarization} gives
+\begin{align}
+ \|D_\eta z^\sigma\|_{\mathcal L(\mathfrak T_N;\mathcal X_\sigma)}
+ +\|D_{\eta\eta}^2z^\sigma\|_{\mathcal L^2(\mathfrak T_N;\mathcal X_\sigma)}
+ &\le C\delta^2,\notag\\
+ \|D_\eta\partial_\nu z^\sigma\|_{\mathcal L(\mathfrak T_N;\mathcal X_\sigma)}
+ &\le C\delta^2,\qquad \sigma\in\{a,r\}.            \label{eq:full-ball-trace-jets}
+\end{align}
+These are joint Fr\'{e}chet estimates in the full operator and bilinear norms.
+
+We next upgrade the finite-section bridge without combining unrelated
+directional limits.  Fix any base point \(\eta\) in the smaller structural
+ball and any unit direction \(h\), and apply
+\cref{prop:finite-gap-bridge} to the affine family
+\(t\mapsto(B_k+E_k)+t h_k\).  Its proof uses only the common layer bound, the
+fixed preparation derivatives, and the norm of the differentiated direction,
+so its constants are uniform in \(\eta,h,N\).  In particular, the exact
+endpoint term, singular and preparation tails, moving-trace term, parameter
+Taylor term, and graph-jet term in
+\cref{eq:gap-exact-decomposition} retain respectively the bounds
+\cref{eq:gap-error-endpoint-bound,eq:gap-error-tail-bound,%
+eq:gap-error-moving-nu,eq:gap-error-moving-zeta,%
+eq:gap-error-jet-bound,eq:gap-error-parameter-zero,%
+eq:gap-error-parameter-derivatives} with \(\partial_t\) in place of
+\(\partial_\zeta\).  Taking the supremum over \(h\) gives the
+first-derivative operator norms; applying
+\cref{eq:full-ball-polarization} to the second line jets gives the mixed
+bilinear norms.  Thus the scalar bridge itself, including all six error
+classes and the moving histories, has been upgraded to the structural ball.
+
+The coefficient calculation is linear in the structural tuple.  Replacing
+\(\dot M_{1,N}\) in \cref{eq:hstar-rn-a} by
+\(\sum_k\theta_kE_k\) gives
+\[
+ h_{*,N}(\eta)
+ =\frac{K}{2\alpha}A_N^{-1}P_{\perp,N}
+       \left(\sum_k\theta_kE_k\right)\mathbf1,
+ \qquad
+ -\alpha^{-1}\pi_N^T\diag(c_N)h_{*,N}(\eta)
+ =\Lambda_N(\eta).
+\]
+The upgraded bridge and \cref{eq:full-ball-trace-jets} therefore give
+\begin{align}
+ \left|\frac{\mathscr D_N^{\rm sel}}\delta
+       -\sqrt{2\pi}(\nu-\nu_{0,N})\right|
+ &\le C\delta,\notag\\
+ |\partial_\nu\mathscr D_N^{\rm sel}-\delta\sqrt{2\pi}|
+ &\le C\delta^2,\notag\\
+ \|D_\eta\mathscr D_N^{\rm sel}
+       +\delta^2\sqrt{2\pi}\Lambda_N\|_{(\mathfrak T_N^{\rm red})^*}
+ &\le C\{\delta^3+\delta^2\|\eta\|_{\mathfrak T_N}\},
+                                                               \label{eq:full-ball-gap-response}\\
+ |\partial_{\nu\nu}\mathscr D_N^{\rm sel}|
+ +\|D_\eta\partial_\nu\mathscr D_N^{\rm sel}\|
+ +\|D_{\eta\eta}^2\mathscr D_N^{\rm sel}\|
+ &\le C\delta^2.                                    \label{eq:full-ball-gap-second}
+\end{align}
+
+Apply \cref{thm:structural-ball-connection} with
+\[
+ a_N=\sqrt{2\pi},\qquad
+ b_N=-\sqrt{2\pi}\Lambda_N,\qquad q=2.
+\]
+\Cref{eq:joint-root-derivative,eq:joint-root-second-derivative,eq:joint-root-increment,eq:joint-conormal-limit}
+follow.  The Schur identification
+\cref{eq:joint-schur-hyperplane} is
+\cref{cor:schur-full-conormal} with the model dictionary
+\cref{eq:abstract-schur-dictionary,eq:abstract-current-dictionary}.
+
+Finally, two fixed structural-ball admissible preparations have the same
+leading \(a_N,b_N\).  Their preparation remainders may have different
+constants but satisfy the same operator-norm orders, so separate baseline
+centering gives the same limiting conormal pairwise on the intersection of
+their balls.
+\end{proof}
+
 \begin{proof}[Proof of \cref{thm:canonical-response-germ}]
 For one fixed preparation, \cref{eq:shared-response} gives
 \[
@@ -923,6 +1061,15 @@ estimate \cref{eq:shared-response-derivative} yields
  \le C_{\mathbf p}\delta,
 \]
 which proves \cref{eq:canonical-response-covector} and its stated uniformity.
+The model dictionary
+\cref{eq:abstract-current-dictionary,eq:abstract-current-scaling} verifies
+the hypotheses of \cref{thm:weighted-connection-jet} with \(q=2\).
+That theorem gives
+\cref{eq:model-weighted-connection-graph,eq:model-weighted-connection-bounds,eq:model-limiting-connection-conormal}.
+Its preparation statement applies because all fixed admissible preparations
+have the same physical leading block data, while
+\cref{cor:preparation-universality} supplies their pairwise remainder
+comparison.
 Boundedness and the kernel classifications are
 \cref{eq:response-functional-bound,thm:response-directions,%
 prop:generator-supported-directions}.

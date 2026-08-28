@@ -675,7 +675,423 @@ the difference between \cref{eq:schur-root-increment} and its leading term by
 pairwise on intersections of their parameter boxes.
 \end{proof}
 
-\paragraph{How to apply the theorem.}
+The quotient in \cref{eq:schur-to-root-ratio} has a geometric realization
+which does not require choosing a scalar representative of the collective
+cokernel.  We record it before returning to the model dictionary.  The word
+``connection'' below refers to the zero-fiber equality of the two histories
+supplied by \cref{thm:abstract-root-response}; it does not assert that those
+histories have been selected by physical outer invariant manifolds.
+
+\begin{theorem}[Selected weighted complete-history connection jet]
+\label[theorem]{thm:weighted-connection-jet}
+Assume the hypotheses of \cref{cor:schur-to-root}, and let
+\(\mu=\mu_f(\delta)+\delta^q\nu\) be the fixed physical-parameter
+normalization in \cref{eq:abstract-physical-increment}.  For each
+\(\delta>0\), put
+\begin{equation}
+ \nu^b_{N,\delta}=\nu_{c,N}(\delta,0),\qquad
+ \xi=\delta^{-1}(\nu-\nu^b_{N,\delta})
+     =\delta^{-(q+1)}
+       \{\mu-\mu_{c,N}(\delta,0)\}.                 \label{eq:weighted-connection-coordinate}
+\end{equation}
+In the local root window, the selected complete-history connection locus
+along the structural ray \(\zeta R_N\) is a \(C^2\) curve
+\begin{equation}
+ \xi=\Xi_{N,\delta}(\zeta),\qquad
+ \Xi_{N,\delta}(\zeta)
+ =\delta^{-1}\{\nu_{c,N}(\delta,\zeta)
+                         -\nu_{c,N}(\delta,0)\}.     \label{eq:weighted-connection-graph}
+\end{equation}
+There is one constant, independent of \(N\), such that
+\begin{align}
+ |\Xi_{N,\delta}(\zeta)-\zeta\Lambda_N(R_N)|
+ &\le C\{\delta|\zeta|+\zeta^2\},                 \label{eq:weighted-connection-level}\\
+ |\partial_\zeta\Xi_{N,\delta}(\zeta)-\Lambda_N(R_N)|
+ &\le C(\delta+|\zeta|),                            \label{eq:weighted-connection-slope}\\
+ |\partial_{\zeta\zeta}\Xi_{N,\delta}(\zeta)|
+ &\le C.                                             \label{eq:weighted-connection-curvature}
+\end{align}
+Consequently the conormal line at the unperturbed selected
+connection,
+\begin{equation}
+ \mathcal N^*_{N,\delta}(R_N)
+ =\operatorname{span}\!\left\{
+   \dd\xi-\partial_\zeta\Xi_{N,\delta}(0)\,\dd\zeta
+   \right\},                                        \label{eq:selected-connection-conormal}
+\end{equation}
+converges, uniformly in \(N\), to
+\begin{equation}
+ \mathcal N^*_{N,0}(R_N)
+ =\operatorname{span}\{\dd\xi-\Lambda_N(R_N)\,\dd\zeta\}.
+                                                               \label{eq:limiting-connection-conormal}
+\end{equation}
+
+The family of raywise coefficients has the bounded cokernel-valued algebraic
+extension
+\begin{equation}
+ \mathfrak J_N:\R\times\mathcal T_N
+       \longrightarrow\operatorname{coker}L_{\parallel,N},
+ \qquad
+ \mathfrak J_N(\xi,R)
+ =\xi[f_{\nu,N}]+\mathcal K_N(R),                   \label{eq:cokernel-connection-jet}
+\end{equation}
+where \(\mathcal K_N\) is defined in
+\cref{eq:hidden-return-cokernel}.  It satisfies
+\begin{equation}
+ \ker\mathfrak J_N
+ =\{(\Lambda_N(R),R):R\in\mathcal T_N\}.           \label{eq:cokernel-connection-kernel}
+\end{equation}
+Thus \(\ker\mathfrak J_N\), rather than a chosen scalar gap row, is the
+candidate full weighted connection hyperplane.  Its realization as the
+tangent hyperplane of a nonlinear locus requires the joint Fr\'{e}chet
+hypotheses in \cref{thm:structural-ball-connection} and is stated in
+\cref{cor:schur-full-conormal}.
+
+The conormal line is independent of the regular scalar function used to
+define the same local connection curve.  At finite \(\delta\), under a
+\(C^1\) change of the \((\xi,\zeta)\)-parameter chart it transforms by
+cotangent pullback.  Convergence of the limiting weighted line is preserved
+for a fixed nonsingular chart, or for a chart family whose derivative and
+inverse derivative converge uniformly to a nonsingular front-face derivative;
+singular \(\delta\)-dependent rescalings are excluded.  In particular, the
+numerical slope is covariant under a fixed parameter rescaling and is not
+claimed to be invariant under arbitrary mixing of the physical and structural
+parameters.  If several fixed preparations satisfy the final
+hypothesis of \cref{cor:schur-to-root} with the same block maps, then
+\cref{eq:cokernel-connection-jet} is their common algebraic extension.  After
+each locus is centered at its own baseline as in
+\cref{eq:weighted-connection-coordinate}, its restriction to the verified ray
+gives the same conormal \cref{eq:limiting-connection-conormal}.  A nonlinear
+full-space realization additionally needs
+\cref{thm:structural-ball-connection}.  The comparison is pairwise and
+supplies no uniform constant over an unbounded preparation class.
+\end{theorem}
+
+\begin{proof}
+The zero-fiber property and the uniform nonzero \(\nu\)-slope in
+\cref{thm:abstract-root-response} make the connection locus a local
+\(C^2\) graph.  Divide \cref{eq:schur-root-increment} by
+\(\delta^{q+1}\), and use
+\cref{eq:weighted-connection-coordinate}; this gives
+\cref{eq:weighted-connection-level}.  Dividing
+\cref{eq:schur-root-derivative} by \(\delta\) gives
+\cref{eq:weighted-connection-slope}, while
+\cref{eq:abstract-root-second-derivative} gives
+\cref{eq:weighted-connection-curvature}.  The graph is defined by
+\(\xi-\Xi_{N,\delta}(\zeta)=0\), so its conormal line is
+\cref{eq:selected-connection-conormal};
+\cref{eq:weighted-connection-slope} at \(\zeta=0\) proves
+\cref{eq:limiting-connection-conormal}.
+
+By \cref{eq:hidden-return-balance},
+\(\mathcal K_N(R)+\Lambda_N(R)[f_{\nu,N}]=0\).
+Because \([f_{\nu,N}]\ne0\) spans the one-dimensional cokernel, this
+identity proves \cref{eq:cokernel-connection-kernel}.  Two regular scalar
+defining functions of the same curve have differentials with the same
+one-dimensional annihilator and hence differ there by a nonzero scalar.
+The chain rule gives cotangent pullback under a parameter-chart change.
+Finally, \cref{eq:abstract-canonical-germ} and
+\cref{eq:schur-root-derivative} give the stated pairwise preparation
+comparison after separate baseline centering.
+\end{proof}
+
+The preceding theorem realizes one structural ray.  A conormal on the full
+structural parameter space requires joint, rather than merely directional,
+regularity.  The following Banach-parameter version states exactly the
+additional estimate.  It starts from an already constructed
+complete-history gap; as in \cref{thm:abstract-root-response}, it does not
+construct the history range.
+
+\begin{theorem}[Uniform structural-ball connection graph]
+\label[theorem]{thm:structural-ball-connection}
+For every \(N\ge2\), let \(\mathcal T_N\) be a real Banach space.  Fix
+\(\bar\delta,\eta_*>0\), independent of \(N\), and equip
+\(\R\times\mathcal T_N\) with the maximum product norm.  Suppose an exact
+complete-history range and a zero-fiber matcher give a scalar gap
+\[
+ \mathscr G_N(\delta,\nu,\eta),
+ \qquad 0<\delta<\bar\delta,\quad
+ \nu\in I,\quad \eta\in B_{2\eta_*}(0)\subset\mathcal T_N,
+\]
+which, for each \(\delta\), is jointly \(C^2\) in \((\nu,\eta)\) on an open
+neighborhood of \(I\times\overline B_{\eta_*}(0)\).  Let \(a_N\in\R\) and
+\(b_N\in\mathcal T_N^*\) satisfy
+\begin{equation}
+ 0<a_*\le|a_N|\le a^*,
+ \qquad \sup_N\|b_N\|_{\mathcal T_N^*}\le b^*.       \label{eq:ball-coefficient-bounds}
+\end{equation}
+Assume, uniformly for
+\((\delta,\nu,\eta)\in(0,\bar\delta)\times I\times
+\overline B_{\eta_*}(0)\) and in \(N\),
+\begin{align}
+ \left|\frac{\mathscr G_N}{\delta}
+       -a_N(\nu-\nu_{0,N})\right|
+ &\le C_{\rm ball}\delta,                           \label{eq:ball-gap-level}\\
+ |\partial_\nu\mathscr G_N-\delta a_N|
+ &\le C_{\rm ball}\delta^2,                        \label{eq:ball-gap-slope}\\
+ \|D_\eta\mathscr G_N-\delta^2b_N\|_{\mathcal T_N^*}
+ &\le C_{\rm ball}\{\delta^3+\delta^2\|\eta\|_{\mathcal T_N}\},
+                                                               \label{eq:ball-gap-response}\\
+ |\partial_{\nu\nu}\mathscr G_N|
+ +\|D_\eta\partial_\nu\mathscr G_N\|_{\mathcal T_N^*}
+ +\|D_{\eta\eta}^2\mathscr G_N\|_{\mathcal L^2(\mathcal T_N;\R)}
+ &\le C_{\rm ball}\delta^2.                        \label{eq:ball-gap-second-jets}
+\end{align}
+Assume also the common center-buffer condition
+\cref{eq:abstract-center-buffer}.  Put
+\begin{equation}
+ \Lambda_N=-a_N^{-1}b_N\in\mathcal T_N^*.           \label{eq:ball-response-covector}
+\end{equation}
+
+There are \(0<\delta_0<\bar\delta\), \(0<\eta_0<\eta_*\),
+\(0<c_0<d_*\), and \(C>0\), independent of \(N\), such that
+for \(0<\delta<\delta_0\) and
+\(\eta\in B_{\eta_0}(0)\), the equation
+\(\mathscr G_N(\delta,\nu,\eta)=0\) has exactly one solution in
+\(|\nu-\nu_{0,N}|<c_0\).  The root map
+\(\eta\mapsto\nu_{c,N}(\delta,\eta)\) is \(C^2\) Fr\'{e}chet, and
+\begin{align}
+ \|D_\eta\nu_{c,N}(\delta,\eta)-\delta\Lambda_N\|_{\mathcal T_N^*}
+ &\le C\{\delta^2+\delta\|\eta\|_{\mathcal T_N}\},
+                                                               \label{eq:ball-root-derivative}\\
+ \|D_{\eta\eta}^2\nu_{c,N}(\delta,\eta)\|_{\mathcal L^2(\mathcal T_N;\R)}
+ &\le C\delta,                                      \label{eq:ball-root-second-derivative}\\
+ |\nu_{c,N}(\delta,\eta)-\nu_{c,N}(\delta,0)
+       -\delta\Lambda_N(\eta)|
+ &\le C\{\delta^2\|\eta\|_{\mathcal T_N}
+          +\delta\|\eta\|_{\mathcal T_N}^2\}.    \label{eq:ball-root-increment}
+\end{align}
+If \(\mu=\mu_f(\delta)+\delta^q\nu\), then
+\begin{equation}
+ |\mu_{c,N}(\delta,\eta)-\mu_{c,N}(\delta,0)
+       -\delta^{q+1}\Lambda_N(\eta)|
+ \le C\{\delta^{q+2}\|\eta\|_{\mathcal T_N}
+          +\delta^{q+1}\|\eta\|_{\mathcal T_N}^2\}.          \label{eq:ball-physical-increment}
+\end{equation}
+
+In the weighted coordinate
+\begin{equation}
+ \Xi_{N,\delta}(\eta)
+ =\delta^{-1}\{\nu_{c,N}(\delta,\eta)
+                      -\nu_{c,N}(\delta,0)\}
+ =\delta^{-(q+1)}\{\mu_{c,N}(\delta,\eta)
+                      -\mu_{c,N}(\delta,0)\},        \label{eq:ball-weighted-graph}
+\end{equation}
+the selected connection locus is a codimension-one \(C^2\) graph in
+\(\R\times\mathcal T_N\), and
+\begin{align}
+ |\Xi_{N,\delta}(\eta)-\Lambda_N(\eta)|
+ &\le C\{\delta\|\eta\|+\|\eta\|^2\},\notag\\
+ \|D_\eta\Xi_{N,\delta}(\eta)-\Lambda_N\|_{\mathcal T_N^*}
+ &\le C\{\delta+\|\eta\|\},
+ \qquad
+ \|D_{\eta\eta}^2\Xi_{N,\delta}(\eta)\|\le C.    \label{eq:ball-weighted-jet}
+\end{align}
+Hence its \(\dd\xi\)-calibrated baseline conormal representative
+\begin{equation}
+ \omega_{N,\delta}
+ =(1,-D_\eta\Xi_{N,\delta}(0))
+ \in(\R\times\mathcal T_N)^*                         \label{eq:ball-conormal}
+\end{equation}
+converges in dual norm, uniformly in \(N\), to
+\begin{equation}
+ \omega_{N,0}=(1,-\Lambda_N).                        \label{eq:ball-limiting-conormal}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The endpoint-sign and strict-monotonicity argument in the proof of
+\cref{thm:abstract-root-response}, now uniform over the smaller closed
+structural ball, gives existence and uniqueness in one common
+\(\nu\)-window.  The Banach-space implicit-function theorem gives joint
+\(C^2\) dependence on \(\eta\).  Along the root,
+\begin{equation}
+ D_\eta\nu_{c,N}
+ =-\frac{D_\eta\mathscr G_N}{\partial_\nu\mathscr G_N}.         \label{eq:ball-ift-ratio}
+\end{equation}
+The denominator has modulus at least \(a_*\delta/2\).  Insert
+\cref{eq:ball-gap-slope,eq:ball-gap-response} into
+\cref{eq:ball-ift-ratio} and use
+\cref{eq:ball-coefficient-bounds,eq:ball-response-covector}; this proves
+\cref{eq:ball-root-derivative} in the operator norm of
+\(\mathcal T_N^*\).
+
+For unit vectors \(h,k\in\mathcal T_N\), twice differentiating the root
+identity gives
+\begin{align*}
+ \partial_\nu\mathscr G_N\,
+       D_{\eta\eta}^2\nu_{c,N}[h,k]
+ =-\{&\partial_{\nu\nu}\mathscr G_N
+       D_\eta\nu_{c,N}[h]D_\eta\nu_{c,N}[k]\\
+ &+D_\eta\partial_\nu\mathscr G_N[h]
+       D_\eta\nu_{c,N}[k]
+  +D_\eta\partial_\nu\mathscr G_N[k]
+       D_\eta\nu_{c,N}[h]
+  +D_{\eta\eta}^2\mathscr G_N[h,k]\}.
+\end{align*}
+The first derivative is \(O(\delta)\).  Divide the bounds in
+\cref{eq:ball-gap-second-jets} by the lower bound for the root slope to
+obtain \cref{eq:ball-root-second-derivative}.  Taylor's formula on the line
+segment \(t\mapsto t\eta\), together with
+\cref{eq:ball-root-derivative} at \(\eta=0\) and
+\cref{eq:ball-root-second-derivative}, gives
+\cref{eq:ball-root-increment}.  Multiplication by \(\delta^q\) proves
+\cref{eq:ball-physical-increment}.  Dividing the last three root estimates
+by \(\delta\) proves
+\cref{eq:ball-weighted-graph,eq:ball-weighted-jet}.  The graph is defined by
+\(\xi-\Xi_{N,\delta}(\eta)=0\), so
+\cref{eq:ball-conormal,eq:ball-limiting-conormal} follow.
+\end{proof}
+
+\begin{corollary}[Full conormal from the hidden-return Schur map]
+\label[corollary]{cor:schur-full-conormal}
+Under \cref{thm:hidden-return-schur,thm:structural-ball-connection}, suppose
+\(a_N=\mathfrak l_Nf_{\nu,N}\) and
+\[
+ b_N(R)=\mathfrak l_N
+   \mathsf B_NL_{\perp,N}^{-1}\mathsf S_NR,
+ \qquad R\in\mathcal T_N.
+\]
+Then \(\Lambda_N\) in \cref{eq:ball-response-covector} is the Schur
+covector of \cref{eq:hidden-return-balance}, and the limiting tangent
+hyperplane of
+the nonlinear structural-ball connection graph is
+\begin{equation}
+ \ker\mathfrak J_N
+ =\{(\Lambda_N(R),R):R\in\mathcal T_N\},            \label{eq:full-conormal-schur-kernel}
+\end{equation}
+and its calibrated limiting conormal is \((1,-\Lambda_N)\).  Thus the
+limiting full Fr\'{e}chet conormal, not only its restrictions to scalar rays,
+is identified by the hidden-return factorization.
+\end{corollary}
+
+\begin{proof}
+The kernel identity is \cref{eq:cokernel-connection-kernel}; the dual-norm
+realization is \cref{eq:ball-limiting-conormal}.
+\end{proof}
+
+\begin{proposition}[Selected-to-physical weighted-\(C^1\) criterion]
+\label[proposition]{prop:physical-weighted-c1-transfer}
+Let \(\mu^{\rm sel}_{c,N}\) be the selected structural-ball root in
+\cref{thm:structural-ball-connection}, with
+\(\mu=\mu_f(\delta)+\delta^q\nu\).  Suppose that a construction which uses no
+preparation datum independently supplies a physical connection root
+\[
+ \mu^{\rm phys}_{c,N}(\delta,\eta),
+ \qquad \eta\in B_{\eta_0}(0)\subset\mathcal T_N,
+\]
+which is \(C^1\) Fr\'{e}chet in \(\eta\).  Assume there is a function
+\(\varepsilon_{\rm phys}(\delta)\downarrow0\) such that
+\begin{equation}
+ \sup_{N\ge2}\sup_{\|\eta\|<\eta_0}
+ \delta^{-(q+1)}
+ \left\|D_\eta\mu^{\rm phys}_{c,N}(\delta,\eta)
+             -D_\eta\mu^{\rm sel}_{c,N}(\delta,\eta)
+ \right\|_{\mathcal T_N^*}
+ \le \varepsilon_{\rm phys}(\delta).                 \label{eq:physical-weighted-c1-hypothesis}
+\end{equation}
+Center the two loci at their own baselines and set
+\[
+ \Xi^\diamond_{N,\delta}(\eta)
+ =\delta^{-(q+1)}
+   \{\mu^\diamond_{c,N}(\delta,\eta)
+                  -\mu^\diamond_{c,N}(\delta,0)\},
+ \qquad \diamond\in\{\mathrm{sel},\mathrm{phys}\}.
+\]
+Then
+\begin{align}
+ |\Xi^{\rm phys}_{N,\delta}(\eta)
+       -\Xi^{\rm sel}_{N,\delta}(\eta)|
+ &\le \varepsilon_{\rm phys}(\delta)\|\eta\|,
+                                                               \label{eq:physical-weighted-c0-transfer}\\
+ \|D_\eta\Xi^{\rm phys}_{N,\delta}(\eta)-\Lambda_N\|
+ &\le C\{\delta+\|\eta\|\}
+       +\varepsilon_{\rm phys}(\delta).              \label{eq:physical-weighted-jet-transfer}
+\end{align}
+In particular, the \(\dd\xi\)-calibrated baseline conormal of the physical locus
+converges in dual norm, uniformly in \(N\), to \((1,-\Lambda_N)\).
+
+A gap-level sufficient condition for
+\cref{eq:physical-weighted-c1-hypothesis} is the following.  Suppose
+\(\mathscr G_N^{\rm sel}\) and \(\mathscr G_N^{\rm phys}\) are jointly
+\(C^2\) defining gaps on one common \(\nu\)-window, their displayed roots lie
+in that window, and, uniformly in \(N\),
+\begin{gather}
+ |\partial_\nu\mathscr G_N^\diamond|\ge c\delta,
+ \qquad
+ \|D_\eta\mathscr G_N^\diamond\|\le C\delta^2,
+ \qquad
+ |\partial_{\nu\nu}\mathscr G_N^\diamond|
+  +\|D_\eta\partial_\nu\mathscr G_N^\diamond\|
+     \le C\delta^2,                                   \label{eq:physical-gap-common-bounds}\\
+ \delta^{-1}|\partial_\nu
+       (\mathscr G_N^{\rm phys}-\mathscr G_N^{\rm sel})|
+ +\delta^{-2}\|D_\eta
+       (\mathscr G_N^{\rm phys}-\mathscr G_N^{\rm sel})\|
+ \le \varepsilon_{\rm gap}(\delta),                  \label{eq:physical-gap-c1-comparison}\\
+ \rho(\delta):=
+ \sup_{N,\|\eta\|<\eta_0}
+ |\nu^{\rm phys}_{c,N}(\delta,\eta)
+       -\nu^{\rm sel}_{c,N}(\delta,\eta)|
+ \longrightarrow0.                                   \label{eq:physical-root-c0-comparison}
+\end{gather}
+Here \(\diamond\in\{\mathrm{sel},\mathrm{phys}\}\) and
+\(\varepsilon_{\rm gap}(\delta)\to0\).  Under these assumptions one may take
+\begin{equation}
+ \varepsilon_{\rm phys}(\delta)
+ \le C\{\varepsilon_{\rm gap}(\delta)+\rho(\delta)\}. \label{eq:physical-transfer-modulus}
+\end{equation}
+
+If two phase sections describe the same physical complete-history connection
+set and are related by a parameter-coherent \(C^1\) flow holonomy, their
+parameter loci, and hence their conormal lines, agree.  Replacing a regular
+defining gap by another one for the same locus does not change the conormal;
+under a \(C^1\) parameter-chart change it transforms by cotangent pullback.
+The limiting weighted conclusion is transported only through a fixed
+nonsingular chart, or a chart family whose derivative and inverse derivative
+converge uniformly to a nonsingular front-face derivative.
+Consequently cutting and rejoining an already constructed physical passage
+by an exact intermediate holonomy leaves the conormal response unchanged.
+The proposition does not construct the physical root or verify any of the
+comparison hypotheses above.
+\end{proposition}
+
+\begin{proof}
+The derivative of each weighted graph is
+\[
+ D_\eta\Xi^\diamond_{N,\delta}
+ =\delta^{-(q+1)}D_\eta\mu^\diamond_{c,N}.
+\]
+Thus \cref{eq:physical-weighted-c1-hypothesis} gives the derivative
+comparison, and integration on the segment \(t\mapsto t\eta\) gives
+\cref{eq:physical-weighted-c0-transfer}.  Combining the derivative comparison
+with \cref{eq:ball-weighted-jet} proves
+\cref{eq:physical-weighted-jet-transfer} and the conormal limit.
+
+For the gap-level criterion, implicit differentiation gives
+\[
+ D_\eta\nu^\diamond_{c,N}
+ =-\left.
+   \frac{D_\eta\mathscr G_N^\diamond}
+        {\partial_\nu\mathscr G_N^\diamond}
+   \right|_{\nu=\nu^\diamond_{c,N}}.
+\]
+Evaluate both quotients first at the same root.  The lower slope bound and
+\cref{eq:physical-gap-c1-comparison} bound their difference by
+\(C\delta\varepsilon_{\rm gap}(\delta)\).  Moving from one root to the other
+and using \cref{eq:physical-gap-common-bounds,eq:physical-root-c0-comparison}
+adds at most \(C\delta\rho(\delta)\).  Since
+\(\mu=\mu_f(\delta)+\delta^q\nu\), this proves
+\cref{eq:physical-weighted-c1-hypothesis,eq:physical-transfer-modulus}.
+
+Exact flow holonomy changes only the section representation of the same
+complete-history connection.  Two regular defining functions of one
+codimension-one zero set have proportional differentials on that set, and
+the chain rule gives cotangent pullback under a chart change.  These facts
+prove the final naturality statements.
+\end{proof}
+
+\paragraph{How to apply the range-to-root theorem.}
 For a new RFDE or other infinite-dimensional matching problem, one must
 verify five items: (i) construct one exact history lift and the two selected
 traces on it; (ii) prove the zero-fiber property of the scalar matcher;
