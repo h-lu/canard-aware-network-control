@@ -38,10 +38,14 @@ forward-transverse/future-scalar kernels and a terminal first-exit action.
 The high-order repelling compatibility feedback and the zeroth-order
 normal-to-phase action column are also closed.  The formal reverse
 phase-delay core and fixed-`r` event-aligned normal trace are now closed as
-well.  It does not yet identify the raw-compatible phase collar, bound the
-affine-residual normal column, close the complete border, construct the
-nonlinear tracker, prove its nonautonomous normal dichotomy, establish exact
-fold overlap, or produce a physical preparation-independent root.
+well.  The raw-compatible phase collar, affine-residual normal column, and
+fixed-base border have since been closed.  An inner-anchored nonlinear phase
+chart and its relative Schur inverse remove the constant mode, while the
+relative phase-to-state estimate recovers normalized state and pointwise
+true action with factor `O(r_out+S_delta^(-1))`.  The nonlinear phase-delay
+remainder, a `C^2` old-history assembler, the nonlinear tracker, its
+nonautonomous normal dichotomy, exact fold overlap, and a physical
+preparation-independent root remain open.
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:

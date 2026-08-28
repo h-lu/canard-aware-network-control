@@ -56,9 +56,12 @@ nonlinear `q_0`-flow chart preserves the two same-sign branches, and its
 one-row relative-phase linearization has a dimension-uniform Schur inverse
 with pointwise action
 `O(r_out(r_out+S_delta^(-2)+delta^(2-2 vartheta)))`.  The fixed-section
-statement removes the constant-phase obstruction only at the scalar
-phase/fixed-base linear level.  The nonlinear normal remainder, higher
-parameter jets, moving-event estimates, the
+analysis now also proves an `O(delta)` relative phase-delay profile and
+recovers the returned state and pointwise true action with the sharper factor
+`O(r_out+S_delta^(-1))` in a uniformly equivalent relative graph--action
+norm.  This uses the inner anchor and does not contradict the unrestricted
+old-state obstruction.  The nonlinear phase-delay remainder, nonlinear
+old-history assembler, higher parameter jets, moving-event estimates, the
 nonlinear tracker,
 nonautonomous normal splitting, and the finite-`delta` physical slow-history
 relation remain open.

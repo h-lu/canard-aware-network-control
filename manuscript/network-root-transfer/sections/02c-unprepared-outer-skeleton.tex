@@ -2820,6 +2820,88 @@ or moving terminal event and proves no nonlinear tracker or physical
 complete-history connection.
 \end{proposition}
 
+\begin{proposition}[Relative structured phase response and graph--action norm]
+\label[proposition]{prop:relative-structured-phase-response}
+Retain
+\cref{lem:reduced-flow-phase-defect,%
+prop:phase-delay-action-shift,%
+prop:normal-to-phase-action-coupling,%
+lem:raw-phase-boundary-column-assembly,%
+prop:inner-anchored-relative-phase-schur}.
+Put
+\[
+ A=\|a\|_{\phi,\mathrm{rel}},\qquad
+ \kappa_\delta=r_{\rm out}+S_\delta^{-1},
+\]
+and let
+\(T_\sigma^{\rm form}a\) and \(T_\sigma^{\rm rc}a\) be the formal and
+raw-compatible returned normal columns already defined.  After possibly
+decreasing \(\delta_0\),
+\begin{align}
+ \|\mathscr P_{\sigma,N}a\|_{C^0}
+ +\|\partial_s\mathscr P_{\sigma,N}a\|_{L^\infty_{\rm pw}}
+ &\le C\delta A,                                  \label{eq:relative-phase-delay-profile}\\
+ \|T_\sigma^{\rm rc}a\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ +\sup_{r\in I_\sigma}
+       \frac{|p_{T a}(r)+\varepsilon
+                    \mathscr P_{c,\sigma,N}a(r)|}
+            {\varepsilon|r|}
+ &\le C\kappa_\delta A,                          \label{eq:relative-phase-state-bound}\\
+ \sup_{r\in I_\sigma}
+       \frac{|\mathfrak A_\sigma^{\rm rc}a(r)|}{|r|}
+ &\le C\kappa_\delta A.                          \label{eq:relative-phase-action-pointwise}
+\end{align}
+Here \(p_{Ta}\) is the \(p\)-component of
+\(T_\sigma^{\rm rc}a\).  The state estimate also holds with
+\(T_\sigma^{\rm form}\) in place of \(T_\sigma^{\rm rc}\), with its
+corresponding \(p\)-component.  Both norms in
+\cref{eq:relative-phase-delay-profile} use the dimension-uniform node norm
+\(\|\cdot\|_N\) in their range.  The derivative in
+\cref{eq:relative-phase-delay-profile} is the classical, equivalently weak,
+derivative on the fixed finite seam partition; no global \(C^1\) claim is
+made.
+
+For the formal column the shifted boundary rows are
+\[
+ p^\sharp(0)=0\quad(\sigma=a),\qquad
+ p^\sharp(S_r)=\varepsilon
+       \mathscr P_{c,r,N}a(S_r)\quad(\sigma=r),
+\]
+whereas the corresponding original-variable rows are
+\(p(0)=0\) and \(p(S_r)=0\).
+Moreover \(\mathscr P_{c,r,N}a(0)=0\), so the repelling feedback remains
+indexed by \(p^\sharp(0)=p(0)\).
+
+For \((x,a)\in\mathcal G_{\sigma,\delta}^{*,\rm rc}\), set
+\[
+ p_{x,a}^\sharp=p_x+\varepsilon\mathscr P_{c,\sigma,N}a,
+ \qquad
+ Q_{x,a}^\sharp=\mathfrak D_\sigma^\infty x
+                    +\mathscr P_{c,\sigma,N}a
+\]
+and define
+\begin{align}
+ \|(x,a)\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}
+ ={}&\|(x,a)\|_{\mathcal G_{\sigma,\delta}^{*,\rm rc}}
+ +\varepsilon^{-1}
+       \|\gamma_x\|_{N,e_\sigma,\delta}^{\sharp}\notag\\
+ &+\sup_{r\in I_\sigma}\left\{
+   \frac{\|Z_x(r)\|_N}{\varepsilon}
+  +\frac{|p_{x,a}^\sharp(r)|}{\varepsilon|r|}
+  +\frac{|Q_{x,a}^\sharp(r)|}{|r|}\right\}.       \label{eq:relative-graph-action-norm}
+\end{align}
+This is a Banach norm, uniformly equivalent to the anchored graph norm:
+\begin{equation}
+ \|(x,a)\|_{\mathcal G_{\sigma,\delta}^{*,\rm rc}}
+ \le\|(x,a)\|_{\mathcal G_{\sigma,\delta}^{\rm rga}}
+ \le C\|(x,a)\|_{\mathcal G_{\sigma,\delta}^{*,\rm rc}}.       \label{eq:relative-graph-action-equivalence}
+\end{equation}
+Hence the anchored coupled inverse remains dimension- and
+\(\delta\)-uniform in the relative graph--action norm.  This is still a
+fixed-base linear estimate; it supplies no nonlinear old-history assembler
+or nonlinear residual.
+\end{proposition}
+
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}
 Retain \cref{lem:repelling-component-generations}.  Fix \(d\ge1\), take

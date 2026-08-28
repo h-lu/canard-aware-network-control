@@ -3391,6 +3391,155 @@ statement.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:relative-structured-phase-response}]
+Write \(\widehat a(s)=a(e_{\sigma,0})\) for \(s<0\) and
+\(\widehat a(s)=a(\bar r_\sigma(s))\) for \(s\ge0\), as in
+\cref{eq:formal-phase-collar-extension}.  Since
+\(|a(r)|\le |r|A\), \(|a'(r)|\le A\), and
+\(|\partial_s\bar r_\sigma|\le C\delta\), the continuous function
+\(\widehat a\) is globally Lipschitz and
+\[
+ |\widehat a(s)-\widehat a(t)|\le C\delta A|s-t|,
+ \qquad |\partial_s\widehat a(s)|\le C\delta A
+\]
+on every open cell of the finite delay-seam partition.  In
+\cref{eq:reduced-flow-phase-delay-defect}, write
+\[
+ c_k(s)=q_0(\bar r_\sigma(s-\theta_k))
+       e_{0,N}(\bar r_\sigma(s-\theta_k)).
+\]
+The retained coefficient bounds give
+\(\|c_k\|_N+\|\partial_sc_k\|_N\le C(1+\delta)\).
+Consequently
+\(\|\mathscr P_{\sigma,N}a(s)\|_N\le C\delta A\), and, cellwise,
+\[
+ \partial_s\mathscr P_{\sigma,N}a
+ =K\sum_kL_{k,N}\left[
+   c_k'\{\widehat a-\widehat a(\,\cdot-\theta_k)\}
+  +c_k\{\widehat a'-\widehat a'(\,\cdot-\theta_k)\}\right].
+\]
+This proves \cref{eq:relative-phase-delay-profile}.  Only the first
+derivative of \(a\) is used: the two values of \(\widehat a\) are each
+differentiated once, and \(a'\) is never differentiated.  At a seam the
+one-sided derivatives may jump, but
+\(\mathscr P_{\sigma,N}a\) is continuous, so no seam measure is created.
+
+Use the original-variable phase sources from
+\cref{eq:exact-phase-normal-source-column}.  By
+\cref{eq:phase-column-residual-jets,eq:fixed-phase-coefficient-bounds}
+and \cref{eq:relative-phase-delay-profile},
+\begin{align}
+ \|\mathscr C_{Z,\sigma}a(r)\|_N
+ &\le C\varepsilon(|r|+\delta)A,\notag\\
+ |\mathscr C_{p,\sigma}a(r)|
+ &\le C\{\varepsilon^2
+       +\varepsilon\delta|r|+\varepsilon^2\delta\}A.
+                                                        \label{eq:relative-phase-normal-source-profile}
+\end{align}
+Indeed,
+\(\|R_{z,N}'\|\le C\varepsilon(1+\delta/|r|)\),
+\(|R_{q,N}'|\le C\varepsilon/|r|\),
+\(\|z_{0,N}'\|+\|\ell_N\|\le C|r|\),
+\(|w_{0,N}'|\le C|r|\), and
+\(|\mathfrak d_N|\le C\).
+Since \(|r|\ge\rho_\delta\),
+\begin{align}
+ \varepsilon^{-1}
+ \|(\mathscr C_{Z,\sigma}a,\mathscr C_{p,\sigma}a)\|_{
+       \mathsf Y_{\sigma,0}}
+ &\le C\left\{r_{\rm out}+\delta
+ +\frac{\varepsilon}{\rho_\delta^2}
+ +\frac{\delta}{\rho_\delta}
+ +\frac{\varepsilon\delta}{\rho_\delta^2}\right\}A\notag\\
+ &\le C\kappa_\delta A.                           \label{eq:relative-phase-normal-data-bound}
+\end{align}
+Here
+\(\varepsilon/\rho_\delta^2=O(S_\delta^{-2})\) and
+\(\delta/\rho_\delta=O(S_\delta^{-1})\).
+
+Apply the fixed-phase \(C^0\) inverse to these original-variable sources.
+Its finite scalar row is zero on both branches:
+\(p(0)=0\) on the attracting branch and \(p(S_r)=0\) on the repelling
+branch.  The attracting old normal history is zero.  On the repelling
+branch use the already closed feedback
+\(\gamma=\mathfrak C_ep(0)\).  Then
+\cref{eq:relative-phase-normal-data-bound,eq:fixed-phase-C0-inverse} give
+\begin{equation}
+ \|T_\sigma^{\rm form}a\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ \le C\kappa_\delta A.                            \label{eq:relative-formal-phase-state-bound}
+\end{equation}
+By the exact shift equivalence and uniqueness, this original-variable
+solution is precisely the previously defined \(T_\sigma^{\rm form}a\).
+Because
+\(|\mathscr P_{c,\sigma,N}a|\le C\delta A\) and
+\(\delta/|r|\le C/S_\delta\), the shifted \(p^\sharp\)-row has the same
+bound.  The displayed shifted boundary rows follow from
+\(p^\sharp=p+\varepsilon\mathscr P_c a\).  At entry every difference
+\(\widehat a(0)-\widehat a(-\theta_k)\) vanishes, so
+\(\mathscr P_{c,\sigma,N}a(0)=0\).
+
+For the formal true action, apply
+\cref{eq:normal-phase-pointwise-Q} to
+\cref{eq:relative-formal-phase-state-bound} and add
+\(\mathscr P_{c,\sigma,N}a\):
+\begin{equation}
+ |\mathfrak A_\sigma^{\rm form}a(r)|
+ \le C\{|r|+\delta^{2-2\vartheta}\}\kappa_\delta A
+       +C\delta A
+ \le C|r|\kappa_\delta A.                         \label{eq:relative-formal-phase-action-pointwise}
+\end{equation}
+The last inequality uses
+\[
+ \frac{\delta}{\rho_\delta}=O(S_\delta^{-1}),\qquad
+ \frac{\delta^{2-2\vartheta}}{\rho_\delta}
+ =O(\delta^{1-2\vartheta}/S_\delta).
+\]
+
+Now put \(c=E_{0,\sigma}a\).  Since
+\(|c|\le r_{\rm out}A\),
+\cref{eq:raw-phase-collar-response-bound} gives a raw collar response of
+normalized hybrid size at most \(Cr_{\rm out}A\).  Its reconstructed action obeys,
+by \cref{eq:normal-phase-pointwise-Q},
+\[
+ |Q_{\sigma,\rm col}c(r)|
+ \le C\{|r|+\delta^{2-2\vartheta}\}|c|
+ \le C|r|r_{\rm out}A.
+\]
+Adding this response to the formal one proves
+\cref{eq:relative-phase-state-bound,%
+eq:relative-phase-action-pointwise} for \(T_\sigma^{\rm rc}\).
+The repelling estimate uses the actual total history after closing the
+\(p(0)\)-feedback, as in
+\cref{eq:raw-phase-collar-response-bound}.
+
+Finally write \(x=T_\sigma^{\rm rc}a+y\), where
+\(y\in\mathcal D(\mathscr N_\sigma)\).  Its domain graph norm controls
+\(\varepsilon^{-1}\|\gamma_y\|^\sharp\),
+\(\varepsilon^{-1}\|Z_y\|_\infty\), and
+\(\sup|p_y|/(\varepsilon|r|)\).  Moreover,
+\cref{eq:normal-phase-pointwise-Q} and
+\(\delta^{2-2\vartheta}\le C|r|\) give
+\[
+ |\mathfrak D_\sigma^\infty y(r)|
+ \le C|r|\|y\|_{\mathcal D(\mathscr N_\sigma)}.
+\]
+Combine these estimates with
+\cref{eq:relative-phase-state-bound,%
+eq:relative-phase-action-pointwise} and
+\[
+ p_{x,a}^\sharp
+ =(p_{T^{\rm rc}a}+\varepsilon\mathscr P_ca)+p_y,
+ \qquad
+ Q_{x,a}^\sharp
+ =\mathfrak A_\sigma^{\rm rc}a+\mathfrak D_\sigma^\infty y.
+\]
+This proves the upper comparison in
+\cref{eq:relative-graph-action-equivalence}; the lower one is immediate.
+Completeness follows from equivalence with the already Banach anchored
+graph norm.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:repelling-component-flushing}]
 The repelling travel time satisfies \(S_r\ge c/\delta\), whereas
 \(L_b=O(S_\delta)\).  Thus

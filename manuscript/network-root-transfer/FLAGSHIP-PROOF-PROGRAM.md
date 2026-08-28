@@ -390,6 +390,14 @@ not the conormal of an independently defined physical maximal-canard locus.
       construct the fold-side anchored nonlinear $q_0$-flow phase chart with
       a controlled scalar reduced-speed sign, and close its fixed-base
       one-row relative-phase Schur inverse.
+- [x] Prove the relative $O(\delta)$ phase-delay profile, recover the
+      returned normalized state and pointwise true action with factor
+      $O(r_{\rm out}+S_\delta^{-1})$, and close the equivalent relative
+      graph--action norm.
+- [ ] Prove the exact nonlinear phase-only delay remainder in the relative
+      norm and its two-point Lipschitz estimate.
+- [ ] Construct a uniformly graph-tame $C^2$ raw-compatible old-history
+      assembler, including the endpoint/collar second jet.
 - [ ] Prove a fixed-section nonlinear graph/action residual with a
       dimension-uniform quadratic remainder.
 - [ ] Prove the required second moving-endpoint collar jets and
@@ -410,11 +418,13 @@ boundary-column assembly, and fixed-reduced-base zeroth-order graph/action
 phase--normal inverse are now closed.  The base collar correction vanishes
 at the fold-side scale, and the inner-anchored nonlinear phase chart and
 relative one-row Schur inverse remove the constant-phase obstruction to a
-same-sign tube at the scalar phase/fixed-base linear level.  A uniform
-nonlinear normal tube is not yet constructed.  The reverse column is not
-uniformly bounded in
-the old normalized state norm.  The fixed-section nonlinear remainder,
-relative-parameter jets, moving-event control, nonlinear tracker existence,
+same-sign tube at the scalar phase/fixed-base linear level.  On the anchored
+relative subspace, the exact delay profile now yields a uniform returned-state
+bound and pointwise true action in an equivalent graph--action norm; the
+unrestricted old-state obstruction remains.  A uniform nonlinear normal tube
+is not yet constructed.  The nonlinear phase-delay remainder, the $C^2$
+old-history assembler, the fixed-section residual, relative-parameter jets,
+moving-event control, nonlinear tracker existence,
 nonautonomous quotient roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.
 This zeroth-order border does not close Issue #32 and does not
