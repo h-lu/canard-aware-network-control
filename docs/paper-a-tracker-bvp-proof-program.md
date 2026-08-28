@@ -27,9 +27,11 @@ the `(Z,p)` diagonal normal restriction.  It includes the repelling
 `p(0)`-to-compatible-collar feedback without adding a Fredholm row.  The
 exact scaled scalar phase--event core is now also proved, including the sharp
 `delta^{-1}` loss for an unscaled event-time variable and persistence of a
-phase shift after a compact speed pulse.  The high-order finite-generation
-bootstrap, coupled phase--normal inverse, and nonlinear contraction remain
-open.
+phase shift after a compact speed pulse.  The current-absorbed
+positive-delay splitting and the attracting finite-generation flushing
+theorem now close the fixed-parameter attracting buffer at every fixed
+regularity order.  The repelling causal/terminal component kernels, coupled
+phase--normal inverse, and nonlinear contraction remain open.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -775,8 +777,11 @@ gauges.
       `p(0)` collar feedback and unchanged finite row count.
 - [x] Exact scaled scalar phase--event core with entry phase and terminal
       event rows, sharp event-time scaling, and phase-persistence obstruction.
-- [ ] High-order finite-generation echo bootstrap and coupled phase--normal
-      inverse for the full Stage-I operator.
+- [x] Fixed-parameter attracting finite-generation collar flushing on a
+      rigorously defined delay-sum seam space, including normalized
+      buffer-to-slow decay and the sharp one-derivative loss in `Q`.
+- [ ] Repelling causal and scalar-terminal component-kernel flushing, and
+      the coupled phase--normal inverse for the full Stage-I operator.
 - [x] Uniform high-order `r` regularity of `z_0,w_0,B_N,ell_N` at the Green
       ladder orders.
 - [x] Backtrack/composition parameter jets through the weighted third

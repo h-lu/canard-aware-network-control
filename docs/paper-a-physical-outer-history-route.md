@@ -10,9 +10,10 @@ yet close the nonlinear RFDE tracker.  The exact fixed-delay fold-time
 tracker normal form is now proved and fixes the remaining construction
 route.  The fixed-phase `C^0` complete-history Green--collar inverse is also
 proved, as is the exact scaled scalar phase--event core.  The high-order
-finite-generation bootstrap, coupled phase--normal inverse, nonlinear
-tracker, and phase-quotiented nonautonomous slow-history theorem remain
-open.**
+finite-generation bootstrap is now proved on the fixed-parameter attracting
+buffer.  The repelling component kernels, coupled phase--normal inverse,
+nonlinear tracker, and phase-quotiented nonautonomous slow-history theorem
+remain open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -443,9 +444,10 @@ not acceptable.
       repelling compatible-history feedback and unchanged finite row count.
 - [x] Exact scaled scalar phase--event core and the phase-persistence
       obstruction.
-- [ ] Fold-time finite method-of-steps buffers, order-dependent
-      buffer-to-slow bootstrap, and
-      nonlinear tracker contraction on both outer branches.
+- [x] Attracting fold-time finite-generation buffer and order-dependent
+      normalized buffer-to-slow bootstrap.
+- [ ] Repelling causal/terminal finite-generation buffers and nonlinear
+      tracker contraction on both outer branches.
 - [ ] Phase-quotiented nonautonomous normal splitting along a true slow
       history.
 - [ ] Attracting representative and repelling codimension-one history sheet
