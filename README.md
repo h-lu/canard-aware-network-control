@@ -1,9 +1,10 @@
-# Long-delay shifts of local canard connections
+# Canard-aware network dynamics and control
 
-Research repository for the JNS manuscript:
+Research repository containing the original JNS manuscript and its focused
+successors.  The active Paper A target is:
 
-> **Long-Delay Shifts of Local Canard Connections in Retarded Fast--Slow
-> Systems**
+> **Two-Delay Blind Controllability and Selected Fold-Response Readout in
+> Retarded Markov Networks**
 
 The original complete LaTeX manuscript, figures, appendices, cover letter,
 and submission checklist are in [manuscript/jns](manuscript/jns).  The former
@@ -12,7 +13,8 @@ integrated successor draft is retained in
 submission manuscript.  Its active descendants are split by proof spine:
 
 - [network-root-transfer](manuscript/network-root-transfer), the first
-  publication target;
+  publication target, now built as a focused main article plus supplementary
+  proof document;
 - [pulse-threshold](manuscript/pulse-threshold), the still-open model-specific
   stable-sheet program;
 - [rfde-methods-notes](manuscript/rfde-methods-notes), whose independent

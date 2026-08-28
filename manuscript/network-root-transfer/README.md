@@ -1,22 +1,28 @@
-# Network root-transfer manuscript
+# Two-delay blind controllability and selected fold-response readout
 
 This directory contains the focused paper on selected complete-history roots
-in heterogeneous finite retarded networks.  It is independent of the physical
+in heterogeneous retarded Markov networks.  It is independent of the physical
 pulse-threshold program in `../pulse-threshold/`.  The integrated source draft
 remains frozen in `../flagship/` as a provenance ledger.
 
-The principal theorem concerns a projection-invisible perturbation of a
-heterogeneous shared-resource network.  Atomwise stationary-row neutrality
-makes the projected RFDE right-hand side identical at every full history, yet
-the selected complete-history root moves through a transverse-resolvent and
-curvature-return mechanism.  The manuscript proves a network-size-uniform
-response expansion, classifies zero leading-response directions, gives a robust
-non-synchrony witness with an asynchronous root orbit, and shows that the
-leading response increment is shared by any two fixed admissible
-preparations.
+The integrated flagship theorem proves that pure delay redistributions which
+are invisible to the stationary projection generate every transverse forcing
+direction when two delay locations are distinct.  An abstract two-atom moment
+criterion isolates the portable source interface and its minimum probe cost.
+The Markov realization gives a sharp right
+inverse, an `N`-uniform dual reconstruction bound, and a matching one-delay
+no-go theorem.  The RFDE realization turns the recovered return covector into
+a network-size-uniform nonlinear complete-history root response.  It includes
+fast-curvature and slow-sensing return channels, generator-supported probes,
+and sparse directed chosen-base-layer-support-preserving rank-`N-1` examples.
 
-The exact finite-parameter baseline root is not claimed to be preparation
-independent or to be a physical outer canard.  The former leaky-network and
+The manuscript proves that the exact finite-parameter root is not determined
+by the present finite-section axioms.  Relative to a fixed physical family,
+projection, matching datum, and parameter normalization, its
+baseline-subtracted leading response germ agrees pairwise for any two fixed
+admissible preparations on their common parameter box.  No uniform remainder
+over the whole preparation class and no physical outer canard are claimed.
+The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag
 `paper-a-before-hidden-response-refocus`.
@@ -24,10 +30,11 @@ pre-refocus source is preserved by the Git tag
 The acceptance criteria, theorem labels, proof locations, and exact scope
 boundaries are indexed in [`CLAIM-MAP.md`](CLAIM-MAP.md).
 
-The current proof-strengthened build is 44 pages.  It includes the reusable
-uniform range-to-root theorem, the complete special-flow history-graph proof,
-and the exact six-part finite-section gap bridge; these are theorem-level
-arguments rather than formal coefficient calculations.
+The submission build is split into `main.pdf` and `supplement.pdf`.  The main
+article keeps all hypotheses, theorem outputs, return formulas, and the
+load-bearing proof mechanism.  The supplement contains the weighted Whitney
+preparation, localized noncanonicity bump, complete special-flow history graph,
+and exact six-part finite-section ledger.
 
 Build with:
 
@@ -35,7 +42,8 @@ Build with:
 make
 ```
 
-The build first regenerates the vector mechanism figure with Python and
-Matplotlib, then uses Tectonic when available and otherwise falls back to
-`latexmk`.  LaTeX intermediates and the manuscript PDF are ignored by the
-repository; the reproducible figure source and its vector PDF are retained.
+The build regenerates the vector mechanism figure with Python and Matplotlib,
+then uses `latexmk` in a forced two-document cycle so that cross-document
+references resolve in both PDFs.  LaTeX intermediates and the main manuscript
+PDFs are ignored by the repository; the reproducible figure source and vector
+PDF are retained.

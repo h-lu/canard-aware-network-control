@@ -1,106 +1,125 @@
-# Paper A claim and proof map
+# Paper A flagship claim and proof map
 
-This file maps the acceptance criteria in
-[Issue #30](https://github.com/h-lu/canard-aware-network-control/issues/30)
-to the proof-strengthened manuscript.  It is an audit aid, not part of the
-paper.
+This audit map tracks [Issue #31](https://github.com/h-lu/canard-aware-network-control/issues/31).
+It is not part of the submitted paper.
 
-## Central principle
-
-For every common value of the matching parameter `nu`, an atomwise
-stationary-row-neutral delay redistribution satisfies the exact identity
+## Central theorem package
 
 ```text
-Pi_N F_{N,delta,nu,zeta} = Pi_N F_{N,delta,nu,0}
+exact projection blindness
+    + two separated delay moments span the transverse source
+    + transverse full-history inverse and collective return
+    = uniformly identifiable hidden-return covector
+    -> nonlinear complete-history root readout.
 ```
 
-on the full RFDE history space.  The two `nu`-parametrized matching problems
-nevertheless have different selected complete-history roots whenever the
-leading transverse-return coefficient is uniformly nonzero.  The mechanism
-is
+The exact finite-section root is not intrinsic under the present axioms.
+The canonical object is the baseline-subtracted response germ and its
+covector.
 
-```text
-delay moment -> transverse Markov resolvent -> heterogeneous curvature
-             -> normalized complete-history gap -> selected root shift.
-```
-
-## Acceptance map
-
-| Acceptance item | Manuscript statement | Proof location |
+| Flagship requirement | Statement | Proof location |
 | --- | --- | --- |
-| Exact projection blindness | `prop:projection-blindness` | Direct use of `pi_N^T R_{k,N}=0` in Section 2 |
-| Existence of the preparation class | `lem:preparation-existence` | Plateau, saturation, flow-box, and normal-extension construction in Section 2; tame frozen-flow verification in Appendix A |
-| Dimension-uniform root and response | `thm:shared-resource` | Invariant-history graph and trace range in Section 4 and Appendix A; exact finite-section gap in Appendix B; abstract root transfer in Section 3 |
-| Projection non-identifiability | `cor:projection-nonidentifiability` | Root-separation estimate following the main theorem proof |
-| Generic leading response | `thm:response-directions` | Bounded functional, codimension-one kernel, and curvature-variance witness in Section 4.1.2 |
-| Two-preparation leading universality | `cor:preparation-universality` | Difference of the two uniform response expansions |
-| Uniform robust neighborhood | first part of `cor:robust-asynchronous` | Lipschitz bound for `Lambda_N` around the reference direction in Section 4.1.3 |
-| Actual asynchronous root orbit | second part of `cor:robust-asynchronous` | Fixed slow-time profile and oscillation lower bound in Section 4.1.3 |
-| No nontrivial synchrony quotient | explicit witness after `cor:preparation-universality` | Failure of vector-field tangency to every nonsingleton polydiagonal |
+| Integrated flagship theorem | `thm:flagship-synthesis` | Exact blindness, two-delay source dichotomy, selected-root readout, dual recovery, and the canonicity boundary |
+| Abstract two-atom source criterion | `prop:abstract-two-atom-source` | General moment-source norm, explicit extreme-atom right inverse, minimum probe cost, dual isometry, and one-atom no-go |
+| Sharp two-delay controllability | `thm:hidden-return-tomography` | Exact source norm, explicit right inverse, and merged-single-delay no-go |
+| Dimension-uniform dual recovery | `thm:hidden-return-tomography` | `r(z)=Lambda(Q A z)` and condition bound `(2-gamma)/gamma` |
+| Finite-scale curvature pairings | `cor:curvature-tomography` | Unit-probe-ball root remainder and weighted reconstruction |
+| Finite-scale recovery pairings | `cor:recovery-tomography` | Second-model pairing formula and arbitrary fixed-`N` covector rays |
+| Preparation-relative canonical response germ | `thm:canonical-response-germ` | Pairwise fixed-preparation expansion and uniform derivative limit |
+| Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
+| Abstract mechanism beyond one model | `thm:hidden-return-schur` | Cokernel Schur quotient, coordinate/range invariance, uniform norm bound |
+| Whole-line collective cokernel | `lem:fold-gaussian-cokernel` | Explicit fundamental pair and weighted Green inverse |
+| Nonlinear persistence | `cor:schur-to-root` | Uniform range-to-root theorem plus Schur profile identity |
+| First return channel | `thm:shared-resource` | Markov inverse followed by heterogeneous fast curvature |
+| Second return channel | `thm:sensed-recovery-response` | Markov inverse followed by heterogeneous slow recovery sensing |
+| Fixed-network genericity | `thm:response-directions`, `thm:sensed-recovery-response` | Nonzero bounded covectors; codimension-one kernels |
+| Sparse/high-rank realization | `cor:reset-cycle-response`, `cor:pure-sensing-response` | Directed reset cycle, nonnegative chosen-base-layer-support-preserving perturbations, and rank-`N-1` directions |
+| Graph/preparation logical closure | Selection convention `(S1)--(S4)`, `lem:graph-only-retained-expansion`, `lem:preparation-existence` | Concise main-text interface; graph-only retained-tube theorem and construction in the supplement |
+| Exact finite-section bridge | `prop:finite-gap-bridge` | Endpoint, tail, moving-trace, parameter, graph-jet, and preparation errors |
 
-## Contribution map
+## Main novelty boundary
+
+- The new part is the conjunction of exact atomwise projection blindness,
+  pure-redistribution control of every transverse source by two separated
+  delays, sharp `N`-uniform inverse bounds, and nonlinear complete-history
+  root readout.
+- Schur elimination, one-dimensional cokernel projection, and recovery of a
+  finite-dimensional functional from a right inverse are standard operations
+  and are not priority claims.
+- The observation theorem reconstructs the compressed return covector for a
+  known network skeleton.  It does not reconstruct the hidden network.
+- Pairing estimates are uniform over the unit probe ball.  Coordinate recovery
+  from finitely many noisy probes is not `N`-uniform without a lower frame
+  bound, and root measurement noise is amplified by
+  `delta^(-3)|zeta|^(-1)`.
+
+## Two model dictionaries
+
+The common blind source is
 
 ```text
-projection and network-canard theories allow collective reduction
-    but do not decide a history-matching root from a projected functional
-        -> atomwise row neutrality gives exact projected blindness
-        -> a uniform invariant-history range problem exposes the hidden mode
-        -> transverse resolvent and heterogeneous curvature return that mode
-        -> an adjoint gap identity transfers the return into a root shift.
+h_*(R) = (K/(2 alpha)) A_N^(-1) P_perp,N
+         (sum_k theta_k R_k) 1.
 ```
 
-The new conclusion is the failure of projection identifiability for a
-selected complete-history root.  Dobrushin contraction, the fold normal form,
-and the scalar implicit-function theorem are enabling ingredients rather than
-the claimed novelty.
+The fast-curvature model returns
 
-## Proof spine and verification gates
+```text
+Lambda_curv(R) = -(1/alpha) pi_N^T(c_N o h_*(R)).
+```
 
-| Link | Input | Output | Decisive reason | Required location |
-| --- | --- | --- | --- | --- |
-| Transverse inverse | Common Dobrushin gap | `N`-uniform semigroup and resolvent bounds on `E_N` | Poisson expansion in oscillation norm | Section 4.1.1 |
-| History graph | Prepared chart field and fixed atomic evaluations | Injective invariant complete-history graph with finite mixed jets | Special-flow contraction plus finite block-triangular prolongation | Section 4.1.1 and Appendix A |
-| Selected traces | Reduced graph field and endpoint/phase rows | Two one-sided solutions with uniform inverse | Explicit Gaussian Green operator | Section 4.1.1 |
-| Hidden return | Row-neutral delay moment and heterogeneous curvature | `D_zeta q_1=0`, explicit `D_zeta q_2` | Direct projected term cancels while the transverse resolvent survives | Section 4.1.2 |
-| Exact gap | Selected finite traces and first integral | Uniform gap and derivative expansions | Finite-section identity plus an explicit six-part error decomposition | Appendix B |
-| Root response | Gap transversality and structural coefficient | Local root and `delta^3` displacement | Uniform range-to-root theorem | Section 3 and the model application in Section 4 |
+The sensed-recovery model returns
 
-No theorem is promoted on the strength of a formal coefficient alone.  The
-history-graph and exact-gap links are the two load-bearing proof gates.
+```text
+Lambda_rec(R) = pi_N^T((varpi_N-c_N/alpha) o h_*(R)).
+```
+
+The limits separate exactly:
+
+- `varpi_N = 1` recovers pure curvature return;
+- `c_N = alpha 1` kills curvature return but permits pure sensing return.
+
+## Literature boundary
+
+- Exact lumpability requires factorization through projected history; the
+  paper proves equality at each common unreduced history without closure.
+- Mori--Zwanzig theory is a conceptual baseline for unresolved return; the
+  paper does not derive a memory kernel or generalized Langevin equation.
+- Nonidentifiability is from the projected-functional summary, not structural
+  input--output unidentifiability, nonlinear-delay observability, or recovery
+  of unknown DDE parameters.
+- Adjoint/covector sensitivity for time-lag systems is standard.  The new
+  step is the exact blind-source factorization, dimension-uniform history
+  return, and nonlinear complete-history root remainder.
+- Delayed-network reconstruction literature recovers edges, delays, or
+  dynamics from data.  Here the network and delays are known and only one
+  compressed return covector is reconstructed.
+- Existing network canard, Banach-space canard, RFDE Fredholm, and Lin results
+  are neighboring tools; no priority claim is made for those theories.
 
 ## Quantifier boundaries
 
-- Open/dense genericity is asserted for each fixed finite network, not for an
-  unrestricted sequence space of network families.
-- The robust ball is uniform in network size but is an operator-norm ball; it
-  need not preserve entrywise positivity of every delayed layer.
-- Preparation universality concerns the leading response increment from each
-  preparation's own `zeta=0` baseline.  Equality of the finite-`delta`
-  baselines is not claimed.
-- Vanishing of the leading coefficient does not exclude a higher-order root
-  response.
-- The selected root is not identified with a preparation-independent maximal
-  canard or a physical pulse threshold.
+- Uniformity is over finite networks with common Dobrushin, delay-support,
+  coefficient, direction, and fixed-preparation bounds.
+- Preparation independence is pairwise for fixed preparations on intersected
+  parameter boxes; it is not a single bound over an unbounded preparation
+  class.
+- The no-go theorem concerns the stated finite-section axioms.  It does not
+  rule out a canard selected by physical outer invariant manifolds.
+- A zero leading covector does not rule out higher-order response.
+- The one-delay no-go applies only to the pure-redistribution leading source
+  after coincident atoms have been merged.
+- No pulse threshold, biological onset, infinite-network limit, moving delay
+  support, or closing-gap theorem is claimed.
 
-## Reproduction and provenance
+## Reproduction gate
 
-From this directory, run:
+From this directory, the command below builds both `main.pdf` and
+`supplement.pdf`:
 
 ```bash
 make
 ```
 
-The generated manuscript PDF is intentionally ignored; the figure source and
-vector figure are tracked.  The pre-refocus source is preserved by the tag
-`paper-a-before-hidden-response-refocus`.
-
-The proof-strengthened build has 44 letter-size pages.  Its final local PDF
-has SHA-256
-`4f1139e07b64960c2a6b8179e946ff1d07650f93d8e8634d6db2b4fc0254c0a9`.
-The corresponding proof-source commit is
-`050fedf3a75421ef5caaf4ec3f177653899af6eb`.
-The final `latexmk` log has no unresolved citation/reference, box, font, or
-fatal diagnostics; every PDF font is embedded.  Two independent cold reads
-reconstructed the history-graph and finite-gap bridges and found no fatal
-proof break after the reported local quantifier and notation repairs were
-applied.
+Before release, record the final commit, PDF hash, page count, clean-log
+audit, embedded-font audit, figure-page review, and independent cold reads.
