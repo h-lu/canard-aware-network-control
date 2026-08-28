@@ -1,6 +1,8 @@
 # Paper A flagship claim and proof map
 
-This audit map tracks [Issue #31](https://github.com/h-lu/canard-aware-network-control/issues/31).
+This audit map tracks [Issue #31](https://github.com/h-lu/canard-aware-network-control/issues/31)
+and the weighted-connection upgrade in
+[Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
 It is not part of the submitted paper.
 
 ## Central theorem package
@@ -13,9 +15,11 @@ exact projection blindness
     -> nonlinear complete-history root readout.
 ```
 
-The exact finite-section root is not intrinsic under the present axioms.
-The canonical object is the baseline-subtracted response germ and its
-covector.
+In the shared-resource family, the exact finite-section root is not intrinsic
+under the present axioms.  The relative-canonical selected object is the
+baseline-subtracted response germ, its covector, and its weighted conormal,
+with the physical model, projection, matching data, and parameter calibration
+fixed.
 
 | Flagship requirement | Statement | Proof location |
 | --- | --- | --- |
@@ -26,6 +30,8 @@ covector.
 | Finite-scale curvature pairings | `cor:curvature-tomography` | Unit-probe-ball root remainder and weighted reconstruction |
 | Finite-scale recovery pairings | `cor:recovery-tomography` | Second-model pairing formula and arbitrary fixed-`N` covector rays |
 | Preparation-relative canonical response germ | `thm:canonical-response-germ` | Pairwise fixed-preparation expansion and uniform derivative limit |
+| Selected weighted connection conormal | `thm:weighted-connection-jet`, `thm:structural-ball-connection`, `cor:schur-full-conormal`, `thm:joint-redistribution-conormal` | Both models raywise; shared-resource full structural ball under an admissible rule; cokernel-valued jet; pairwise preparation-independent limiting conormal; fixed-chart covariance with the front-face qualification for chart families |
+| Physical-identification interface | `prop:physical-weighted-c1-transfer` | Weighted `C^1` root criterion, gap-level sufficient conditions, and conditional section/defining-function naturality; no physical root existence is asserted |
 | Obstruction to exact root canonicity | `prop:finite-section-noncanonicity` | Shared-resource localized target-frozen completion bump plus trace/root IFT |
 | Abstract mechanism beyond one model | `thm:hidden-return-schur` | Cokernel Schur quotient, coordinate/range invariance, uniform norm bound |
 | Whole-line collective cokernel | `lem:fold-gaussian-cokernel` | Explicit fundamental pair and weighted Green inverse |
@@ -39,7 +45,7 @@ covector.
 
 ## Main novelty boundary
 
-- The new part is the conjunction of exact atomwise projection blindness,
+- The principal contribution is the conjunction of exact atomwise projection blindness,
   pure-redistribution control of every transverse source by two separated
   delays, sharp `N`-uniform inverse bounds, and nonlinear complete-history
   root readout.
@@ -48,10 +54,17 @@ covector.
   and are not priority claims.
 - The observation theorem reconstructs the compressed return covector for a
   known network skeleton.  It does not reconstruct the hidden network.
-- Pairing estimates are uniform over the unit probe ball.  Coordinate recovery
+- Pairing estimates are uniform over the unit probe ball under the compatible
+  base-layer and common preparation hypotheses stated in the corresponding
+  corollaries.  Coordinate recovery
   from finitely many noisy probes is not `N`-uniform without a lower frame
   bound, and root measurement noise is amplified by
   `delta^(-3)|zeta|^(-1)`.
+- The weighted conormal is a geometric realization of the proved selected
+  response, not a novelty claim for conormal or Melnikov geometry in
+  isolation.  The paper's principal conjunction remains exact projection blindness,
+  transverse return, sharp two-delay recovery, and `N`-uniform nonlinear
+  realization.
 
 ## Two model dictionaries
 
@@ -106,6 +119,10 @@ The limits separate exactly:
   class.
 - The no-go theorem concerns the stated finite-section axioms.  It does not
   rule out a canard selected by physical outer invariant manifolds.
+- The conormal theorem concerns selected complete-history connection loci
+  centered at their own baselines.  A preparation-free physical connection
+  locus and selected-to-physical weighted `C^1` identification remain open
+  under Issue #32 and depend on the outer-history gate in Issue #11.
 - A zero leading covector does not rule out higher-order response.
 - The one-delay no-go applies only to the pure-redistribution leading source
   after coincident atoms have been merged.

@@ -84,7 +84,9 @@ Resp_N(R)
 
 and the convergence is uniform in `N` for any family with common preparation
 bounds.  This quotient germ/covector, rather than the exact selected root, is
-the canonical object already supported by the proof.
+the relative-canonical selected object already supported by the proof, with
+the physical family, projection, matching data, and parameter normalization
+fixed.
 
 ### Quantifier boundary retained
 
@@ -307,6 +309,49 @@ delta^(-2) P_perp,N v_c,N(-delta^(-1))
       repair and sensed-recovery extension.
 - [x] Complete fresh JNS and Nonlinearity desk simulations on the rebuilt PDF.
 - [x] Record the work in logical commit batches and push the branch.
+
+## 6. Weighted connection-conormal continuation
+
+Issue #32 starts after the preceding gates.  The current estimates prove the
+selected connection locus in
+
+```text
+xi = delta^(-3) (mu-mu_c^p(delta,0))
+```
+
+has limiting conormal `span{d xi-Lambda_N d zeta}`, and that its
+cokernel-valued first-order connection/normal map, relative to the fixed
+matching data, is
+
+```text
+J_N(xi,R) = xi [f_nu,N] + [B_N L_perp,N^(-1) S_N R].
+```
+
+This is a strict geometric consequence of the completed root theorem and is
+pairwise preparation independent after separate baseline centering.  It is
+not the conormal of an independently defined physical maximal-canard locus.
+
+- [x] Prove the selected weighted connection-curve estimates and conormal
+      convergence.
+- [x] Identify the limiting hyperplane as `ker J_N` in the collective
+      cokernel.
+- [x] Record defining-function independence and parameter covariance for
+      fixed nonsingular charts, with the front-face qualification for chart
+      families.
+- [x] Upgrade scalar structural rays to a joint Frechet theorem on a common
+      perturbation ball.
+- [x] State and prove a quantitative weighted-`C^1` selected-to-physical
+      transfer criterion, including a gap-level sufficient condition.  This
+      is an interface theorem and does not supply the physical histories.
+- [ ] Import or prove the preparation-free physical outer-history relation
+      owned by Issue #11.
+- [ ] Prove weighted `C^1` selected-to-physical identification.
+- [ ] Prove a nontrivial passage-jet composition law beyond the exact-holonomy
+      re-cutting naturality already contained in the transfer proposition, or
+      another reusable consequence.
+
+Completing the five checked items does not close Issue #32 and does not
+authorize `physical maximal canard` or `scattering map` terminology.
 
 ### Editorial simulation snapshot
 

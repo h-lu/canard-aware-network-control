@@ -16,12 +16,23 @@ a network-size-uniform nonlinear complete-history root response.  It includes
 fast-curvature and slow-sensing return channels, generator-supported probes,
 and sparse directed chosen-base-layer-support-preserving rank-`N-1` examples.
 
-The manuscript proves that the exact finite-parameter root is not determined
-by the present finite-section axioms.  Relative to a fixed physical family,
+For the shared-resource family, the manuscript proves that the exact
+finite-parameter root is not determined by the present finite-section axioms.
+Relative to a fixed physical family,
 projection, matching datum, and parameter normalization, its
 baseline-subtracted leading response germ agrees pairwise for any two fixed
 admissible preparations on their common parameter box.  No uniform remainder
 over the whole preparation class and no physical outer canard are claimed.
+For both return channels, centering a selected connection curve at its own
+baseline gives the raywise limiting conormal
+`span{d xi-Lambda_N(R_N) d zeta}`.  For the shared-resource family only, a
+structural-ball admissible selection rule upgrades these raywise statements:
+the full `delta^(-3)`-weighted tangent hyperplane converges to the kernel of a
+cokernel-valued hidden-return jet, while the calibrated conormal converges in
+dual norm to `(1,-Lambda_N)`.  This removes dependence on a scalar gap
+representative, but it remains a selected connection object.  The
+preparation-free physical identification is tracked separately in Issue #32
+and depends on the outer-history construction in Issue #11.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag
