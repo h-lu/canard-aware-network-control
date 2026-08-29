@@ -88,11 +88,16 @@ RFDE-specific finite-window Green/Lyapunov--Perron flushing estimate.  Its
 superalgebraic action, combined with the exact stationary event quotient,
 proves first-order raw-gauge equivalence modulo `O(delta^infinity)` for each
 complete physical-hit history in the natural `epsilon^(-1)` event norm.
-This is a local fixed-parameter fixed-section hit class, not exact finite-`delta`
-gauge independence.  Higher gauge and parameter jets, original-endpoint
-recutting, a past-complete outer history, the cross-branch handoff,
-action-weighted global normal splitting, and the finite-`delta` physical
-connection/root remain open.
+One fixed-reference rough residual now makes these local hit families
+parameter coherent, with the full rectangular `J_phys` parameter jet and the
+exact higher-gauge staircase.  Differentiating the centered quotient proves
+pairwise `J_phys` raw-gauge equivalence for every uniformly tame
+`(N,delta,branch)` gauge family, using `D_g^3` but no `D_g^4`.  This is a
+reference-relative fixed-section hit class, not exact finite-`delta` gauge
+independence or covariance between reference charts.  Original-endpoint
+recutting, the normalized terminal Schur theorem, a past-complete outer
+history, the cross-branch handoff, action-weighted global normal splitting,
+and the finite-`delta` physical connection/root remain open.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag

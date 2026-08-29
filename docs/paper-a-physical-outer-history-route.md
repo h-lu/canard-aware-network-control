@@ -1,19 +1,15 @@
 # Paper A: physical outer-history route after the layer theorem
 
-Status: **the unprepared critical curve, formal truncated reduced actions,
-the positive-`delta` frozen-resource voltage history splitting, physical
-backtrack calculus, principal finite-endpoint Green splitting, and a sharp
-nonselection obstruction are proved.  The exact nonlinear resource-defect
-normal form and a raw-compatible endpoint-history collar chart are also
-proved, together with a boundary-layer obstruction showing why they do not
-yet close the nonlinear RFDE tracker.  The exact fixed-delay fold-time
-tracker normal form is now proved and fixes the remaining construction
-route.  The fixed-phase `C^0` complete-history Green--collar inverse is also
-proved, as is the exact scaled scalar phase--event core.  The high-order
-finite-generation bootstrap is now proved on the fixed-parameter attracting
-buffer.  The repelling component kernels, coupled phase--normal inverse,
-nonlinear tracker, and phase-quotiented nonautonomous slow-history theorem
-remain open.**
+Status: **the analytic layer, backtrack calculus, both finite-generation
+directions, raw-compatible phase--normal inverse, fixed-section nonlinear
+zeros, and their exact generated-interior RFDE trackers are proved.  Around
+the fixed physical sections, one fixed-reference rough chart now gives
+parameter-coherent complete-history hits, and differentiated local quotient
+flushing gives raw-gauge equivalence through the full rectangular `J_phys`
+jet.  The result remains local to two separate interior hits and one
+reference chart.  The normalized terminal Schur theorem, original physical
+endpoints, global nonautonomous quotient, repelling history sheet,
+cross-branch gap, and physical root remain open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -446,10 +442,17 @@ not acceptable.
       obstruction.
 - [x] Attracting fold-time finite-generation buffer and order-dependent
       normalized buffer-to-slow bootstrap.
-- [ ] Repelling causal/terminal finite-generation buffers and nonlinear
-      tracker contraction on both outer branches.
-- [ ] Phase-quotiented nonautonomous normal splitting along a true slow
-      history.
+- [x] Repelling causal/terminal finite-generation buffers, compatible collar
+      closure, and the fixed-reduced-base phase--normal inverse.
+- [x] Fixed-section nonlinear contraction on both branches, the
+      infinite-dimensional raw-gauge zero class, and exact
+      generated-interior physical-coordinate tracker representatives.
+- [x] Fixed-reference parameter-coherent hits at the two interior physical
+      sections, including the rectangular parameter jet, mixed gauge
+      staircase, and pairwise `J_phys` raw-gauge flatness for uniformly tame
+      families.
+- [ ] Global phase-quotiented nonautonomous normal splitting from the
+      original outer endpoints to the fold-side interfaces.
 - [ ] Attracting representative and repelling codimension-one history sheet
       with uniform parameter jets.
 - [ ] The `delta^2/(2 alpha)` resource correction and exact overlap with the

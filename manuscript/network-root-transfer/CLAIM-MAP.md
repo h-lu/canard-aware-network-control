@@ -61,6 +61,8 @@ fixed.
 | Common strong physical-hit buffer | `prop:raw-gauge-strong-hit-buffer` | On both branches the common generated neighborhood is time-$C_\delta^3$ and $C^1$ in the raw gauge, with dimension- and $\delta$-uniform annular component bounds. A fixed-reference window of length $O(S_\delta)$ with an $O(\delta^{-1})$ chart enlargement supplies the strong input to the terminal-relative trace chart; raw moving recut loses at most $O(\delta^{-2})$. No second gauge derivative, normalized terminal Schur smallness, nonlinear flushing, flat forgetting, endpoint/asymptotic object, connection, or root is asserted |
 | Local physical-hit quotient flushing | `prop:physical-hit-quotient-flushing` | On an $AS_\delta$ window centered at either actual fixed-section hit, the exact resource-gauge quotient satisfies a dimension-uniform finite-window Green/Lyapunov--Perron estimate. Attracting influence is propagated from the left; repelling influence is split between the left stable trace and the right one-dimensional current-unstable trace. The contraction is RFDE-specific and yields $\exp\{-cS_\delta\log(1/\delta)\}$ interior decay without backward RFDE evolution. Fixed parameter and already constructed trackers only: no global normal bundle, new BVP inverse, parameter jets, sheet, connection, or root |
 | First-order raw-gauge flat physical-hit class | `thm:physical-hit-first-order-flatness` | The exact stationary event quotient and resource reconstruction turn local quotient flushing into $O(\delta^\infty)$ first-gauge-derivative and pairwise raw-gauge equivalence of each complete fixed-section hit history, uniformly in $N$ in the natural $\varepsilon^{-1}$ event norm. This is asymptotic, fixed-parameter, and local to the two separate interior hits. It does not make hit times flat, give exact finite-$\delta$ gauge independence, supply second gauge/parameter jets, recut original endpoints, connect the branches, or prove a physical root |
+| Fixed-reference parameter-coherent physical hits | `lem:fixed-reference-parameter-residual`, `prop:parameter-coherent-physical-hit-family` | A fixed rough graph chart avoids the false differentiability of translating piecewise-$W^{1,\infty}$ paths.  An explicit triangular collar/bulk row isomorphism gives an exact $C^4$ forward-RFDE residual, and its zero family has the full rectangular parameter jet, fixed-parameter $C_g^3$ jet, the precise mixed staircase $\mathcal K_{\rm phys}$, a triangular time-jet ledger, uniform two-sided hit margin, and complete-history event reconstruction.  Uniformity is in $N$, $\delta$, and the branch.  The result is relative to one fixed reference chart and its finite boundary rows; it proves neither reference-chart covariance, a past orbit, original endpoints, nor a cross-branch relation/root |
+| Rectangular-jet raw-gauge forgetting at physical hits | `thm:physical-hit-rectangular-flatness` | Differentiating the centered finite-window Lyapunov--Perron equation on one fixed fading space gives $O(\delta^\infty)$ for every hit-map derivative in $\mathcal K_{\rm phys}$ containing at least one gauge slot.  Direct endpoint Faà di Bruno expansion then proves pairwise $\mathcal J_{\rm phys}=(C_\nu^1C_\eta^2)\cap(C_\nu^2C_\eta^1)$ equivalence for every uniformly tame $(N,\delta,\sigma)$ gauge family, using $D_g^3$ but no $D_g^4$.  Pure parameter response of one representative is retained.  The theorem gives two separate reference-relative local hit classes, not terminal Schur control, original-endpoint recutting, a repelling sheet, connection gap, or physical root |
 | Attracting finite-generation flushing | `lem:current-absorbed-delay-splitting`, `prop:attracting-finite-generation-flushing` | Exact deletion of zero-delay differences, current absorption for positive delays, a fixed seam-partition Banach space, and an order-dependent finite-generation estimate taking arbitrary strong attracting collar data to a genuine slow exit history with dimension-uniform normalized operator norm tending to zero. Fixed parameter only; no phase coupling, tracker, or parameter jet |
 | Repelling component-kernel flushing | `lem:repelling-component-generations`, `prop:repelling-component-flushing` | Weighted full-branch coefficient jets; a resummed current loop with forward transverse and future scalar kernels; exact recursive-delay generation count on one additive seam space; and inner-history/terminal-scalar handoff estimates obtained by oriented words and a localized terminal first-exit action. The normalized component traces tend to zero uniformly in network size. Fixed parameter and fixed phase only: no high-order compatible `p(0)`-collar feedback, coupled phase--normal inverse, nonlinear tracker, speed sign, or physical root |
 | Compatible repelling-collar closure | `prop:compatible-repelling-collar-closure` | High-order closure of the raw-compatible scalar $p(0)$-to-history feedback, with no extra Fredholm row; separate closed-loop collar and terminal columns; and a cross-column action/generation estimate preserving both normalized handoff limits uniformly in network size. Fixed parameter and fixed phase only; no phase-to-normal/event border, nonlinear tracker, speed sign, or physical root |
@@ -210,16 +212,20 @@ The limits separate exactly:
   chart.  On those local buffers, the exact quotient now has
   RFDE-specific finite-window flushing, and the complete physical-hit
   histories are first-order raw-gauge equivalent modulo
-  $O(\delta^\infty)$ in the normalized event norm.  No common-chart
-  comparison of the full gauge-dependent outer domains is asserted.  This
-  does not yet give second gauge or action-weighted parameter jets, a
-  $C^2$-in-parameter physical-endpoint family, physical branch endpoints, a
+  $O(\delta^\infty)$ in the normalized event norm.  A separate fixed rough
+  chart now supplies the parameter-coherent local hit family and its full
+  $\mathcal J_{\rm phys}$ raw-gauge-flat class, with the stated
+  $\mathcal K_{\rm phys}$ staircase.  No covariance between different
+  fixed-reference charts or common-chart comparison of the full
+  gauge-dependent outer domains is asserted.  This does not yet give the
+  normalized terminal Schur estimate, an action-weighted parameter-jet
+  theorem at the original physical endpoints, physical branch endpoints, a
   past-complete history, a cross-branch handoff, or a physical root, and it
   does not prove the global nonautonomous normal bundle.  The generic
   nonselection example is a logical
   counterexample to weak selection criteria, not a model-specific
   impossibility theorem; terminal-to-terminal tracker existence and the
-  parameter-jet part of G1 remain open.
+  original-endpoint parameter-jet part of G1 remains open.
 - A zero leading covector does not rule out higher-order response.
 - The one-delay no-go applies only to the pure-redistribution leading source
   after coincident atoms have been merged.

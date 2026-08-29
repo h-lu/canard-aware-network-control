@@ -16,10 +16,12 @@ tracker statement, together with the fixed-interior weak-C1 physical-section
 hit maps and their common time-\(C_\delta^3\), gauge-\(C^1\) strong
 generated buffers, are now proved separately.  On those local buffers, the
 exact quotient also has a finite-window RFDE Lyapunov--Perron flushing
-estimate, and each complete fixed-section hit history is first-order
-raw-gauge independent modulo \(O(\delta^\infty)\) in the normalized event
-norm.  This does not yet supply parameter jets or the terminal-to-terminal
-physical relation.
+estimate.  A fixed-reference rough residual now gives parameter-coherent
+local hit families, and differentiation on one centered fading space proves
+full rectangular-jet raw-gauge equivalence modulo
+\(O(\delta^\infty)\) in the normalized event norm.  These classes remain
+relative to one reference chart and two separate interior sections; they do
+not supply the terminal-to-terminal physical relation.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -439,8 +441,16 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Convert that flushing through the exact resource/event quotient into
       $O(\delta^\infty)$ first-order raw-gauge equivalence of each complete
       fixed-section hit history in the normalized event norm.
-- [ ] Prove the normalized terminal Schur estimate and differentiated
-      action-weighted parameter/gauge-jet flushing, then construct the hybrid
+- [x] Construct one fixed-reference rough residual and the parameter-coherent
+      physical-hit family with the rectangular parameter jet, fixed-parameter
+      $C_g^3$ jet, mixed $\mathcal K_{\rm phys}$ staircase, triangular time
+      ledger, and complete-history event reconstruction.
+- [x] Differentiate the centered local quotient and prove
+      $\mathcal J_{\rm phys}$ raw-gauge equivalence for uniformly tame
+      $(N,\delta,\sigma)$ gauge families, without a $D_g^4$ assumption.
+- [ ] Prove the normalized terminal Schur estimate and the corresponding
+      action-weighted parameter/gauge-jet theorem at the original endpoints,
+      then construct the hybrid
       strong-terminal/weak-middle moving-event residual and inverse and the
       terminal-to-terminal nonlinear outer tracker.
 - [ ] Prove the global action-weighted phase-quotiented normal splitting,
@@ -479,9 +489,12 @@ hit maps with uniform scaled first gauge derivatives and the exact phase
 quotient.  Their common strong buffers now support an RFDE-specific
 finite-window quotient flushing argument, and each complete hit history is
 first-order raw-gauge equivalent modulo $O(\delta^\infty)$ in the
-normalized event norm.  This does not compare the full gauge-dependent
-tracker domains or recut the physical endpoints.  Second gauge and
-relative-parameter jets, the normalized terminal Schur estimate, the full
+normalized event norm.  The fixed-reference rough chart now upgrades this
+local result to the full rectangular parameter jet and the exact mixed gauge
+staircase, while retaining the pure parameter response of one representative.
+This does not compare different reference charts, the full gauge-dependent
+tracker domains, or the original endpoints.  The normalized terminal Schur
+estimate, the original-endpoint action-weighted parameter theorem, the full
 moving-event residual/inverse, terminal-to-terminal nonlinear tracker
 existence, global action-weighted quotient roughness, and the remaining
 parts of G1 stay open.  The generic

@@ -551,7 +551,21 @@ history is raw-gauge independent modulo \(O(\delta^\infty)\), uniformly in
 network size and in the natural \(\varepsilon\)-normalized event norm.
 This is a nonlinear variational forgetting theorem for the actual raw-gauge
 family, but it is fixed-parameter and first order at the two
-interior hits.  It supplies neither a \(C^2\)-in-gauge or parameter family,
+interior hits.  The fixed-reference residual in
+\cref{lem:fixed-reference-parameter-residual} avoids translating the rough
+piecewise-$W^{1,\infty}$ graph: an explicit triangular collar/bulk row
+isomorphism gives an exact $C^4$ forward-RFDE chart.
+\Cref{prop:parameter-coherent-physical-hit-family} constructs its
+parameter-coherent complete-history hit maps with the rectangular parameter
+jet and the exact mixed gauge staircase.  Differentiating the centered
+Lyapunov--Perron equation then gives
+\cref{thm:physical-hit-rectangular-flatness}: every derivative containing a
+gauge slot is $O(\delta^\infty)$, and any two uniformly tame gauge fields
+give the same
+$\mathcal J_{\rm phys}=(C_\nu^1C_\eta^2)\cap(C_\nu^2C_\eta^1)$ hit jet
+modulo $O(\delta^\infty)$.  The pure parameter response of one representative
+is not removed.  These are two separate local classes relative to one
+reference chart; they supply neither covariance between reference charts,
 the original physical endpoints, a past-complete history, nor a connection
 between the two branches.
 
@@ -726,13 +740,21 @@ superalgebraic scale.  The exact resource/event reconstruction in
 \cref{thm:physical-hit-first-order-flatness} upgrades this to
 \(O(\delta^\infty)\) first-order raw-gauge equivalence of the complete
 histories at each fixed physical hit.  This is not a \(C^2\)-in-gauge
-theorem, an action-weighted parameter-jet dichotomy, an
+theorem by itself.  The fixed-reference construction in
+\cref{lem:fixed-reference-parameter-residual,prop:parameter-coherent-physical-hit-family}
+adds the full rectangular parameter jet and the necessary higher gauge
+staircase without moving the rough graph domain.  The differentiated
+finite-window argument in
+\cref{thm:physical-hit-rectangular-flatness} then proves
+$\mathcal J_{\rm phys}$ pairwise raw-gauge flatness for uniformly tame
+gauge fields, using $D_g^3$ but no $D_g^4$.  This remains local to one
+reference chart and the two separate interior hits.  It is not an
+action-weighted original-endpoint dichotomy, an
 \(\varepsilon\)-normalized terminal Schur inverse, or a physical-endpoint
-recut.  It supplies neither parameter derivatives nor a terminal-to-terminal
-moving-event family, and no compatible collar is shown to be cut from a past
-orbit.  Thus no cross-branch handoff, physical connection, or canard root
-follows.  Detailed history-graph and finite-section bookkeeping is placed in
-the supplementary material.
+recut.  No compatible collar is shown to be cut from a past orbit.  Thus no
+cross-branch handoff, physical connection, or canard root follows.  Detailed
+history-graph and finite-section bookkeeping is placed in the supplementary
+material.
 
 \Cref{fig:root-mechanism} summarizes the information flow from exact blindness
 to the two-delay source, nonlinear root responses, and recovered return

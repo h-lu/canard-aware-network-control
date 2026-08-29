@@ -1,12 +1,14 @@
 # Paper A: weighted complete-history connection conormal
 
 Status: **the selected-connection front-face theorem is supported by the
-current estimates; the exact nonlinear tracker normal form, a raw-compatible
-endpoint collar chart, and the fixed-phase `C^0` complete-history
-Green--collar inverse are now proved.  The exact scaled scalar phase--event
-core and fixed-parameter attracting finite-generation flushing are also
-proved.  The repelling component kernels, high-order phase--normal coupling,
-physical tracker, and physical identification gate remain open.**
+current estimates.  Both finite-generation directions, the raw-compatible
+phase--normal inverse, fixed-section nonlinear RFDE segments, and their
+generated-interior physical trackers are proved.  On the fixed interior
+sections, one reference chart now supports parameter-coherent hit histories
+and raw-gauge equivalence through the full rectangular `J_phys` jet.  The
+normalized terminal Schur theorem, original endpoints, repelling history
+sheet, physical gap/root, and selected-to-physical identification remain
+open.**
 
 This note tracks
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -190,17 +192,23 @@ this scalar inverse to the high-order normal block remains open.  Proposition
 `prop:attracting-finite-generation-flushing` now proves the missing
 high-order bootstrap on the fixed-parameter attracting buffer, using an
 exact current/shifted-delay splitting and a finite delay-sum seam space.  Its
-repelling component-kernel analogues remain open.
-These results still neither construct the tracker nor prove a dichotomy for
-the quotient.  The following
+repelling component-kernel analogue, compatible collar closure, and the
+fixed-reduced-base phase--normal inverse are now also proved.  The nonlinear
+fixed-section contraction supplies exact finite forward RFDE segments and
+generated-interior trackers.  A fixed-reference parameter chart and local
+quotient differentiation further give rectangular-jet raw-gauge-flat hit
+classes at the two fixed interior sections.  These local classes neither
+construct the terminal-to-terminal tracker nor prove the global quotient
+dichotomy.  The following
 finite-`delta` items remain unproved uniformly in `N`:
 
 1. a phase-quotiented, nonautonomous outer normal splitting along a true
    positive-`delta` slow tracker; the raw voltage--resource one-unstable
    formulation is false in an admissible homogeneous subclass;
-2. a parameter-coherent
+2. a terminal-to-terminal, parameter-coherent
    `J_phys=(C^1_nu C^2_eta) intersect (C^2_nu C^1_eta)` attracting
-   representative and repelling codimension-one history sheet;
+   representative and repelling codimension-one history sheet; the local
+   fixed-reference interior hit classes do not supply this sheet;
 3. the finite-`delta` resource correction needed for entry into the receding
    logarithmic fold chart, with all delayed
    backtracks contained in the physical tube;
@@ -221,8 +229,10 @@ estimate, and exact physical membership gap are fixed in
 The remaining tracker/dichotomy construction there is a proof design, not an
 additional manuscript claim.
 
-The frozen-voltage part of G0 is closed.  The phase quotient, true slow
-tracker, and nonautonomous roughness part of G0, as well as G1, remain open.
+The local generated-interior tracker and quotient parts of G0 are closed,
+including their fixed-reference rectangular jets.  The original-endpoint
+terminal Schur coupling, global nonautonomous roughness, cross-branch sheet
+and gap, and the physical-identification part of G1 remain open.
 The generic nonselection example is not a model-specific impossibility
 theorem for the shared-resource RFDE.
 

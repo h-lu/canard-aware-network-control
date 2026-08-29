@@ -6,9 +6,12 @@ trackers, the common-buffer physical-section hit maps, their
 time-`C_delta^3`/gauge-`C1` strong generated buffers, and the nonlinear
 terminal trace-scale coordinate theorem are now proved.  The exact quotient
 on each fixed physical-hit buffer now also has a finite-window
-Green/Lyapunov--Perron flushing estimate, and the complete hit histories are
-first-order raw-gauge equivalent modulo `O(delta^infinity)` in the natural
-normalized event norm.**
+Green/Lyapunov--Perron flushing estimate.  A fixed-reference rough residual
+now supplies parameter-coherent local physical-hit families, and the
+complete hit histories are raw-gauge equivalent through the full rectangular
+`J_phys` jet modulo `O(delta^infinity)` in the natural normalized event
+norm.  The result is local to one reference chart and two separate interior
+sections.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -64,6 +67,16 @@ resource/event quotient and proves a raw-gauge-independent flat class for
 each complete fixed-section hit history.  This is fixed-parameter and first
 order only; it neither compares the original endpoints nor connects the two
 branches.
+Lemma `lem:fixed-reference-parameter-residual` and Proposition
+`prop:parameter-coherent-physical-hit-family` now replace that local
+fixed-parameter limitation by one exact fixed-reference rough chart.  Its
+zero family has the rectangular parameter jet, the required mixed gauge
+staircase, a triangular time-jet ledger, and complete-history event maps.
+Theorem `thm:physical-hit-rectangular-flatness` differentiates the centered
+quotient equation itself and proves pairwise `J_phys` equivalence for every
+uniformly tame `(N,delta,branch)` gauge family.  It retains the pure parameter
+response of one representative and proves no covariance between different
+reference charts.
 Lemma `lem:terminal-relative-trace-scale-chart` now supplies the exact
 nonlinear `C^2` strong-to-weak coordinate calculus on any already available
 strong terminal buffer, including the nonzero terminal columns and mixed
@@ -77,7 +90,7 @@ It starts from the exact, uncut identities already proved in Propositions
 `prop:exact-outer-history-equation`, `prop:physical-history-phase-quotient`,
 and `prop:exact-resource-gauge-quotient`.  The purpose of this note is to fix
 the unknowns, boundary geometry, norms, and acceptance estimates before the
-remaining terminal-to-terminal and parameter-jet arguments are written.
+remaining terminal-to-terminal and original-endpoint arguments are written.
 
 The target is not a unique finite-`delta` slow history.  With no named global
 anchor in the model, the strongest honest physical object is
@@ -867,18 +880,25 @@ gauges.
       each complete fixed-section hit history: the normalized derivative and
       pairwise difference are `O(delta^m)` for every fixed `m>0`, uniformly
       in network size.
+- [x] Fixed-reference parameter-coherent physical-hit families with the
+      rectangular parameter jet, fixed-parameter `C_g^3` jet, exact mixed
+      gauge staircase, triangular time-jet ledger, and complete-history
+      event reconstruction.
+- [x] Differentiated centered quotient and `J_phys` raw-gauge equivalence for
+      every uniformly tame `(N,delta,branch)` gauge family on each local hit;
+      no `D_g^4` assumption or backward RFDE is used.
 - [x] Terminal-relative nonlinear `C^2` strong-to-weak moving-window
       coordinates on a supplied strong buffer, including the retained event
       displacement, derived fixed-section row, nonzero-base terminal columns,
       mixed second derivatives, and sharp translation losses.
-- [ ] Normalized terminal phase-to-normal Schur estimate and differentiated
-      second-gauge/action-weighted parameter-jet flushing on the common
-      buffers; then the hybrid moving-event residual/inverse,
+- [ ] Normalized terminal phase-to-normal Schur estimate and the corresponding
+      action-weighted parameter/gauge theorem at the original endpoints;
+      then the hybrid moving-event residual/inverse,
       original-endpoint/asymptotic replacement, and terminal-to-terminal
       nonlinear tracker reconstruction.
 - [ ] Full action-weighted global nonautonomous quotient theorem, including
       Volterra, moving projection, delay, `q`, and rectangular parameter-jet
-      terms.  The local fixed-parameter first-gauge hit theorem is proved.
+      terms.  The local fixed-reference rectangular-jet hit theorem is proved.
 - [ ] Attracting point and repelling codimension-one sheet.
 - [ ] Uniform flat forgetting through `J_phys` for every fixed gauge pair
       after physical endpoint recutting.
@@ -896,6 +916,7 @@ Until the unchecked items are proved, Paper A must continue to say that the
 terminal-to-terminal physical tracker family, gap, and root do not yet exist
 as theorems.  The raw-gauge fixed-section family, its pointwise
 generated-interior representatives, the common-buffer weak interior hits,
-their first-order raw-gauge flat complete-history classes, and the terminal
-trace-scale coordinates above are theorems, but they neither select physical
-endpoints nor compare the full reparameterized trackers on a common chart.
+their fixed-reference `J_phys` raw-gauge-flat complete-history classes, and
+the terminal trace-scale coordinates above are theorems, but they neither
+select physical endpoints, compare different fixed-reference charts, nor
+compare the full reparameterized trackers on a common chart.
