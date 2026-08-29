@@ -44,9 +44,13 @@ uniform normalized terminal theorem.  The three-summand causal-entry inverse
 and the fixed-envelope nonlinear bulk/boundary/terminal membership and
 contraction are now closed on the admissible joint wedge.  The resulting
 zero has a strict speed sign and zero repelling terminal speed correction,
-but its phase slack is not a moving duration.  The second terminal slow jet
-and history shear, moving-duration normal column, original-endpoint family,
-and full physical terminal Schur factor remain open.
+but its phase slack is not a moving duration.  The structured
+post-flushing tangent theorem now supplies the two normal-voltage slow
+derivatives needed by the formal history column on the last available
+left-history windows.  The right envelope needed to realize that column as
+an actual duration shear, the moving-duration normal column,
+original-endpoint family, and full physical terminal Schur factor remain
+open.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -495,11 +499,17 @@ not the conormal of an independently defined physical maximal-canard locus.
       inverse and the exact fixed-envelope nonlinear zero, including hard
       bulk/boundary/terminal membership, anisotropic contraction, strict
       speed sign, and vanishing repelling terminal speed correction.
+- [x] Prove the structured post-flushing terminal tangent theorem for that
+      exact zero, including the protected-window
+      $Z_s=O(\varepsilon\delta/\rho_\delta)$ and
+      $Z_{ss}=O(\varepsilon/\rho_\delta)$ bounds.  This closes the
+      slow-jet size subcondition for the formal normal-history column, not
+      the missing duration selector.
 - [ ] Prove the moving-duration phase--normal terminal theorem and its
       action-weighted parameter/gauge jets at the original endpoints.  This
-      requires the second terminal slow jet, an original-endpoint extension
-      of the proved split-range architecture, raw-compatible endpoint
-      histories, and the complete duration column before the
+      requires a right-hand endpoint envelope, an original-endpoint
+      extension of the proved split-range architecture, raw-compatible
+      endpoint histories, and the complete speed/history duration columns before the
       terminal-to-terminal nonlinear outer tracker.
 - [ ] Prove the global action-weighted phase-quotiented normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
@@ -533,11 +543,12 @@ is now diagonal-uniform, and its causal-entry block is uniformly invertible
 in the prefix-action graph norm.  The explicit $p=\varepsilon r$ direction
 proves that an unscaled arbitrary rough bulk cannot be extended to the
 normalized terminal row; structured bulk and localized endpoint columns
-must be estimated separately.  The fixed-envelope three-summand inverse and
-nonlinear zero are now closed on the admissible wedge.  The next valid
-construction is therefore the second terminal slow jet, followed by a
-moving-duration extension of that split-range core and its complete duration
-column, not transport of the interior chart.  The fixed-reference $C^2$
+must be estimated separately.  The fixed-envelope three-summand inverse,
+nonlinear zero, and structured post-flushing second slow jet are now closed
+on the admissible wedge.  The next valid construction is therefore the
+right-hand endpoint envelope and moving-duration extension of that
+split-range core with its complete speed/history duration columns, not
+transport of the interior chart.  The fixed-reference $C^2$
 old-history assembler, including its endpoint/collar second jet and normalized
 quadratic remainder, is now closed.  Its exact fixed-section assembly with the
 nonlinear phase-delay and normal equations is also closed: the base defect is

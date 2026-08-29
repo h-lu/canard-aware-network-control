@@ -100,10 +100,15 @@ to equal the original endpoint.
 Under the explicit condition `kappa_p=O(1)`, the scalar event-aligned core is uniformly
 invertible by a rank-one formula.  A free terminal-history interface absorbs
 the history shear `K_Z`, which never enters the scalar denominator;
-uniformity requires the separately stated slow endpoint jets.  These are
-linear and conditional endpoint results.  An actual forward endpoint RFDE
-reference satisfying the `K_p` and `K_Z` jet gates, the moving-duration
-nonlinear family, and the physical root remain open.  The
+uniformity requires the separately stated slow endpoint jets.  The exact
+fixed-envelope zero now satisfies those two jet-size estimates on protected
+post-flushing left-history windows, by a differentiated component theorem
+with the exact future row `p_s(S_r)=delta R_q(r_r(S_r))`.  This
+bounds the formal history column but does not instantiate `K_Z`,
+because no right envelope or original-endpoint selector exists yet.
+An actual forward original-endpoint RFDE reference satisfying the complete
+`K_p`/`K_Z` selector hypotheses, the moving-duration nonlinear
+family, and the physical root remain open.  The
 fixed-envelope duration-selector algebra on a supplied reference is now
 closed: its raw terminal column factors exactly through the event row, an explicit range shear
 annihilates that column, and the scalar coefficient is the supplied
@@ -1372,8 +1377,18 @@ gauges.
       `Q_r^(nl,flat)(x_r^fe,a_r^fe)(e_(r,1))=0` as a repelling terminal speed
       correction.  The event slack records a phase mismatch; it is not a
       moving-duration or original-endpoint zero.
-- [ ] Second-order terminal Green/slow-jet theorem and the selected-window
-      `Z_s,Z_ss` bounds required for the uniform `K_Z` gate.
+- [x] Structured post-flushing terminal tangent theorem for the exact
+      fixed-envelope segment: after differentiating the physical fold-time
+      equations, retaining all tangent terms in the component operator, and
+      using the exact repelling future row
+      `p_s(S_r)=delta R_q(r_r(S_r))`, the protected selector windows
+      (including `L=0`) satisfy
+      `Z_s=O(epsilon delta/rho_delta)` and
+      `Z_ss=O(epsilon/rho_delta)`.  This closes the slow-jet size
+      subcondition for the formal normal-voltage history column.  Realizing
+      it as the actual `K_Z` of a duration selector still requires the
+      right-hand envelope and endpoint family; no raw-full-state shear is
+      claimed.
 - [ ] Actual moving-duration endpoint RFDE family and the original-endpoint
       `J_phys` parameter/gauge family before terminal-to-terminal tracker
       reconstruction.
@@ -1411,11 +1426,14 @@ square core, terminal-supported `L^\infty` Green extension, three-summand
 linear core, piecewise-`L^\infty` terminal-free extension, speed-aligned
 future scalar row, speed-projected phase column, fixed-reference affine
 border/corrector, joint admissible-wedge kinetic bound, fixed-envelope
-nonlinear three-summand zero, and conditional scalar event-aligned inverse,
-are also proved.  The fixed-envelope zero has vanishing repelling terminal
-speed correction.  Its phase slack is not shown to vanish, and the
-original-endpoint normalization is not established, so the scalar-shear
-identity cannot be invoked.  The history shear and moving-duration endpoint remain open
-until the second-order terminal slow jet is constructed.  None of these constructs the endpoint RFDE
-family, compares different fixed-reference charts, or compares the full
-reparameterized trackers on a common chart.
+  nonlinear three-summand zero, structured post-flushing tangent estimate,
+  and conditional scalar event-aligned inverse are also proved.  The
+fixed-envelope zero has vanishing repelling terminal speed correction, and
+its normal-voltage terminal history has the two slow derivatives needed for
+the formal history-column bound.  Its phase slack is not shown to vanish,
+the original-endpoint normalization is not established, and no right-hand
+`O(rho_delta/delta)` physical envelope has been constructed.  Thus an
+actual duration-selector `K_Z`, the moving endpoint, and the
+original-endpoint scalar identity remain open.  None of these constructs
+the endpoint RFDE family, compares different fixed-reference charts, or
+compares the full reparameterized trackers on a common chart.

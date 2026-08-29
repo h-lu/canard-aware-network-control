@@ -67,7 +67,14 @@ bulk/boundary/terminal residual now yield a unique nearby fixed-envelope
 forward segment in the stated affine causal star ball, with strict physical
 speed sign and zero repelling terminal speed correction.  Its triangular
 slack is only a terminal phase mismatch: this does not construct a
-moving-duration or original-coordinate endpoint.
+moving-duration or original-coordinate endpoint.  Differentiating this
+exact fold-time segment and flushing its incoming tangent now gives the
+post-flushing normal-voltage bounds
+`Z_s=O(epsilon delta/rho_delta)` and
+`Z_ss=O(epsilon/rho_delta)`, including on the last available
+left-history window.  This closes the slow-jet size condition for the
+formal terminal-history column; an actual duration-selector `K_Z`
+still requires the missing right envelope and endpoint family.
 Every sufficiently deep generated subsegment of every
 gauge zero is an exact pointwise physical-coordinate tracker with the uncut
 quotient and Volterra realization.  On a common generated buffer, the fixed

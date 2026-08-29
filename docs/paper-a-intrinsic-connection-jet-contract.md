@@ -20,9 +20,15 @@ nearby fixed-envelope forward zero in the stated affine causal star ball,
 with strict physical speed sign and
 `Q_r^(nl,flat)(x_r^fe,a_r^fe)(e_(r,1))=0`.  This is only the vanishing of
 the repelling terminal speed correction.  Its slack is only a terminal phase
-mismatch; it is not an original-coordinate or moving-duration endpoint.  A forward
-endpoint reference verifying those hypotheses, the moving-duration nonlinear
-RFDE column, original endpoint histories, repelling history sheet, physical
+mismatch; it is not an original-coordinate or moving-duration endpoint.
+The same exact segment now has a structured post-flushing tangent theorem:
+on its protected final left-history windows,
+`Z_s=O(epsilon delta/rho_delta)` and
+`Z_ss=O(epsilon/rho_delta)`.  This closes the slow-jet size
+subcondition for the formal normal-history column, not the actual duration
+shear: the required right envelope and endpoint family are still absent.
+A forward original-endpoint reference, the moving-duration nonlinear RFDE
+column, original endpoint histories, repelling history sheet, physical
 gap/root, and selected-to-physical identification remain open.**
 
 This note tracks
@@ -373,6 +379,13 @@ Do not:
       The resulting zero has strict physical speed sign and
       `Q_r^(nl,flat)(x_r^fe,a_r^fe)(e_(r,1))=0` only as a terminal speed
       correction; it is not an original endpoint.
+- [x] Differentiate that exact fixed-envelope segment and prove the
+      post-flushing left-window bounds
+      `Z_s=O(epsilon delta/rho_delta)` and
+      `Z_ss=O(epsilon/rho_delta)`, including the exact repelling future
+      tangent row.  This closes the slow-jet size subcondition for the
+      formal normal-history column only; it does not supply a right envelope,
+      an original-endpoint jet, or an actual duration-selector `K_Z`.
 - [ ] Construct a forward endpoint RFDE reference satisfying the scalar and
       history shear gates, close the moving-duration split-range problem,
       and obtain raw-compatible original-endpoint `J_phys` histories.
