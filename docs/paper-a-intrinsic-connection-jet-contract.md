@@ -355,9 +355,18 @@ Do not:
       and raw-collar anchor, conditional scalar event-aligned inverse, and
       free terminal-history interface with its explicit `K_Z` derivative
       gate.
+- [x] Extend the terminal-free bulk Green operator to piecewise-`L^\infty`
+      data, project the phase column into the exact endpoint-speed kernel,
+      and prove the full fixed-reference phase--normal--event-slack bordered
+      inverse with its affine residual corrector and explicit
+      `limsup_(delta->0) Omega_aff=O(kappa^2)` data budget.  This does not
+      yet assert `kappa`-uniform predictor smallness or construct the actual
+      moving-duration column.
 - [ ] Construct a forward endpoint RFDE reference satisfying the scalar and
-      history shear gates, close the nonlinear moving-duration split-range
-      problem, and obtain raw-compatible original-endpoint `J_phys` histories.
+      history shear gates, close the nonlinear three-summand and
+      moving-duration split-range problems with the missing `kappa`-uniform
+      contraction control, and obtain raw-compatible original-endpoint
+      `J_phys` histories.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.

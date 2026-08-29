@@ -66,8 +66,25 @@ At any nonlinear zero of this row one has exactly `Q_e=0`,
 the future Green coordinate and removes the scalar-shear hypothesis
 *conditional on existence of the nonlinear zero*; it does not construct that
 zero or supply the terminal voltage second jet needed for `K_Z`.
-The
-exact scalar endpoint shear is
+The terminal-free bulk Green operator has now also been extended directly
+to piecewise-`L^\infty` sources, so a hard bulk/terminal cut of the affine
+residual is an exact a.e. decomposition rather than a false continuous-source
+or density argument.  After the speed-row replacement, the phase column is
+projected through the terminal scalar Green column so that its **total**
+linear endpoint speed vanishes exactly; this repairs the phase-to-speed
+finite-row coupling which a normal-only row replacement would miss.  The
+resulting fixed-reference phase--normal--event-slack border is a uniform
+isomorphism and accepts the exact affine residual.  The slack is reserved for
+a prospective duration correction but is not yet a moving-duration column.
+Its affine predictor has normal size `O(lambda_delta)`, phase/slack size
+`O(lambda_delta + lambda_delta M_delta/rho_delta
+   + R_delta eta_bd,delta + R_delta m_(sigma,T))`, and exact zero total
+linear repelling endpoint speed.  The explicit budget has
+`limsup_(delta->0) Omega_aff=O(kappa^2)`, but the current linear constants
+may depend on fixed `kappa`; a uniform two-parameter predictor smallness
+statement remains part of the nonlinear contraction gate.  This is an affine
+predictor, not a nonlinear RFDE zero or a moving endpoint family.  The exact
+scalar endpoint shear is
 `K_p=R_q+(q_0/q_*)w_0' Q_e`; the raw-compatible local outer-endpoint germ has
 `Q_e=0`, `K_p=R_q=O(epsilon)`, and `kappa_p=o(1)`.  Under the explicit
 condition `kappa_p=O(1)`, the scalar event-aligned core is uniformly
@@ -1326,9 +1343,19 @@ gauges.
       has coefficient `1+o(1)`, and every eventual nonlinear zero of
       `epsilon Q_e` has exact unit speed ratio and
       `K_p=R_q=O(epsilon)`.  Existence of that nonlinear zero is not included.
+- [x] Direct piecewise-`L^\infty` extension of the terminal-free bulk
+      Green operator, closing the exact a.e. hard split of the affine
+      residual without a false density argument.
+- [x] Speed-projected phase column, full fixed-reference
+      phase--normal--event-slack bordered inverse, and exact affine corrector.
+      The repelling phase column and the normal response have zero total
+      linear endpoint speed.  Its explicit affine budget has
+      `limsup_(delta->0) Omega_aff=O(kappa^2)`; this is not yet a
+      `kappa`-uniform predictor smallness theorem.
 - [ ] Fixed-envelope nonlinear three-summand residual and contraction,
-      including exact nonlinear split-range membership, affine terminal
-      corrector, and the speed-aligned endpoint zero.
+      including exact nonlinear split-range membership, the nonlinear
+      terminal remainder, `kappa`-uniform predictor/contraction control,
+      and the speed-aligned endpoint zero.
 - [ ] Second-order terminal Green/slow-jet theorem and the selected-window
       `Z_s,Z_ss` bounds required for the uniform `K_Z` gate.
 - [ ] Actual moving-duration endpoint RFDE family and the original-endpoint
@@ -1365,8 +1392,10 @@ fixed-envelope selector algebra and the local first-order terminal component
 propagator, together with the direct terminal-free
 `lambda_delta`-bulk trace, localized boundary columns, source-split hybrid
 square core, terminal-supported `L^\infty` Green extension, three-summand
-linear core, speed-aligned future scalar row, and conditional scalar
-event-aligned inverse, are also proved.  The scalar shear is automatically
+linear core, piecewise-`L^\infty` terminal-free extension, speed-aligned
+future scalar row, speed-projected phase column, fixed-reference affine
+border/corrector, and conditional scalar event-aligned inverse, are also
+proved.  The scalar shear is automatically
 small at any eventual speed-aligned nonlinear zero; that zero and the
 history shear remain open until the nonlinear terminal residual and
 second-order terminal slow jet are constructed.  None of these constructs the endpoint RFDE
