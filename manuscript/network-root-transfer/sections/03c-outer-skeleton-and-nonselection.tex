@@ -2495,6 +2495,187 @@ K_p=R_{q,N}(e_r)
 voltage jet was constructed in this argument.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{thm:speed-bordered-affine-endpoint-core}]
+We first close the phase-to-speed row which is absent from a normal-only
+row replacement.  On the repelling branch,
+\cref{eq:speed-aligned-linear-speed,eq:speed-row-right-inverse} give
+\[
+ \varepsilon\{\mathfrak D_rT_r^{\rm rc}a
+        +\mathscr P_{c,r,N}a\}(e_{r,1})
+ =c_r^{\rm sp}[a]
+ =\mathscr B_r^{\rm sp}
+       \mathfrak v_r^{\rm sp}c_r^{\rm sp}[a].
+\]
+Subtracting the last response proves
+\cref{eq:speed-projected-phase-kernel}.  Thus \(T_r^{\rm sp}a\), rather
+than \(T_r^{\rm rc}a\), is the phase column in the kernel of the full
+linear endpoint-speed row.
+
+We next estimate this projection.  Put
+\(A=\|a\|_{\mathsf A_{r,\mathrm{hyb}}}\).
+The two phase norms and the terminal phase-column estimate give
+\begin{equation}
+ \|a\|_{\mathsf A_{r,\mathrm{pa}}}
+ \le C\lambda_\delta^{-1}A,\qquad
+ \frac{|(\mathfrak A_r^{\rm rc}a)(e_{r,1})|}{R_\delta}
+ \le C\frac{\rho_\delta}{\lambda_\delta}A.       \label{eq:proof-speed-phase-endpoint-column}
+\end{equation}
+For fixed \(\varkappa>0\),
+\[
+ \frac{\rho_\delta}{\lambda_\delta}
+ \le\frac{\delta S_\delta^3}{2\alpha}
+ \le\frac{M_\delta}{2\alpha\varkappa^2};
+\]
+all constants below may depend on that fixed \(\varkappa\).
+Since \(|\chi_{r,\delta}|\ge1/2\), the direct boundary-column and
+terminal-trace estimates in
+\cref{prop:diagonal-boundary-prefix-terminal-trace} imply
+\begin{align}
+ \|\mathfrak v_r^{\rm sp}c_r^{\rm sp}[a]\|_
+       {\widetilde{\mathsf X}_{r,0}}
+ +\|(Z_{r,T},p_{r,T})
+       [\mathfrak v_r^{\rm sp}c_r^{\rm sp}[a]]\|_
+       {\mathsf T_{r,T}^1([0,L_b])}
+ &\le C_\varkappa(\rho_\delta+M_\delta)A,
+                                                        \label{eq:proof-speed-phase-column-state}\\
+ \|\mathfrak D_r\mathfrak v_r^{\rm sp}
+          c_r^{\rm sp}[a]\|_{\mathsf H_{r,\mathrm{hyb}}}
+ &\le C_\varkappa(\rho_\delta+M_\delta)A.        \label{eq:proof-speed-phase-column-action}
+\end{align}
+For the prefix part of the last line one uses
+\cref{eq:boundary-column-global-action}; its additional factor
+\(\eta_{{\rm bd},\delta}\) is at most one.  Combining these inequalities
+with
+\cref{eq:source-split-hybrid-phase-smallness} proves
+\cref{eq:speed-projected-phase-bounds} and the first line following
+\cref{eq:speed-projected-phase-small-number}.  The attracting identities
+are immediate.  Since every summand in
+\(\eta_{\mathrm{sp},\delta}\) tends to zero, the phase Schur operator
+\[
+ \mathscr S_{\sigma,\mathrm{hyb}}^{\rm sp}
+ =\mathscr B_{\sigma,\mathrm{hyb}}
+       -(\mathfrak A_\sigma^{\rm sp},0)
+\]
+is a uniform isomorphism by the same Neumann argument as before.
+
+The speed-row replacement in
+\cref{prop:repelling-speed-aligned-terminal-row} applies to each of the
+three direct source summands, and the attracting normal operator is
+unchanged.  Therefore
+\(\mathscr N_\sigma^{\rm sp,\infty}\) is an isomorphism on the transported
+domain in \cref{eq:speed-bordered-normal-domain}.  Solving first its
+normal row, then the phase Schur equation, and finally the terminal event
+row gives exactly
+\cref{eq:affine-complete-bordered-inverse}.  Conversely those three rows
+force the same formulas.  This proves the isomorphism and both uniform
+operator bounds.  Notice that the last row is triangular: it determines
+\(\tau\) only after \(a\) has been found.
+
+It remains to verify the affine datum and the quantitative predictor
+bounds.  The residual jets
+\cref{eq:second-endpoint-residual-jets} with \(n=0\) give, throughout the
+receding collars,
+\begin{equation}
+ \|R_{z,N}(r)\|_N\le C\varepsilon|r|,
+ \qquad |R_{q,N}(r)|\le C\varepsilon.           \label{eq:proof-affine-residual-pointwise}
+\end{equation}
+The raw-compatible collar estimate also gives
+\[
+ \varepsilon^{-1}
+ \|\Delta\phi_{e_{\sigma,0}}\|_{N,e_{\sigma,0},\delta}^{\sharp}
+ \le C|e_{\sigma,0}|\le CR_\delta.
+\]
+For the terminal-free summand, its direct norm is consequently bounded by
+\begin{equation}
+ C\sup_{\rho_\delta\le |r|\le R_\delta}
+ \left\{\frac{|r|}{\lambda_\delta}
+       +\frac{\varepsilon}
+              {\lambda_\delta|r|^2}\right\}
+ \le C,                                         \label{eq:proof-affine-bulk-source}
+\end{equation}
+because \(R_\delta\le\lambda_\delta\) and
+\(\varepsilon/\rho_\delta^2\le C S_\delta^{-2}
+\le C\lambda_\delta\).
+On the terminal annulus \(|r|\asymp r_{\sigma,T}\), and
+\[
+ \frac{\varepsilon}{r_{\sigma,T}m_{\sigma,T}}
+ \le r_{\sigma,T}.
+\]
+Thus the terminal direct norm is at most \(Cr_{\sigma,T}\).
+These estimates prove
+\cref{eq:affine-source-summand-bounds,%
+eq:affine-terminal-source-sharp-bound}.  The indicator functions only
+choose the two a.e. source coordinates; they introduce neither an
+approximation nor a distributional interface term.
+
+For clarity, first apply the old-row three-summand Green operator to this
+datum.  The bulk and boundary estimates give an old global state of size
+\(C\lambda_\delta\).  The same holds for the special terminal datum.  On
+the repelling branch this follows directly from
+\cref{eq:terminal-source-state-bound}.  On the attracting branch its
+sharper norm \(O(\rho_\delta)\) gives
+\[
+ \varepsilon^{-1}\|Z\|_N\le C\rho_\delta,\qquad
+ \varepsilon^{-1}\frac{|p|}{|r|}
+ \le C\frac{m_{a,T}}{\rho_\delta}\rho_\delta
+ \le C\lambda_\delta
+\]
+on the terminal annulus, and the source is zero before that annulus.
+Replacing the old repelling row by the speed row adds a terminal boundary
+column.  The final-window flushing of the bulk and entry columns and
+\cref{eq:terminal-source-speed-bound} show that the direct norm of this
+correction is at most \(C\lambda_\delta\).  Hence
+\begin{equation}
+ \|y_\sigma^{\rm aff}\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ \le C\lambda_\delta.                           \label{eq:proof-affine-normal-state}
+\end{equation}
+
+The same summand calculation, now retaining the oriented primitives,
+gives
+\begin{align}
+ \|\mathfrak D_\sigma y_\sigma^{\rm aff}\|_
+       {\mathsf H_{\sigma,\mathrm{hyb}}}
+ \le C\biggl\{&
+   \lambda_\delta
+   +\frac{\lambda_\delta M_\delta}{\rho_\delta}
+   +R_\delta\eta_{{\rm bd},\delta}
+   +R_\delta m_{\sigma,T}\biggr\}.              \label{eq:proof-affine-returned-action}
+\end{align}
+Indeed, the four displayed terms are respectively the pointwise ledger,
+the bulk prefix obtained by integrating
+\(|Q_{\rm B}|\le C\lambda_\delta m_\delta\), the boundary prefix, and the
+terminal prefix.  The speed-row correction is another boundary column of
+norm \(O(\lambda_\delta)\), so its pointwise and prefix terms are absorbed
+by the first term.  Applying the uniform phase Schur inverse and then
+\(\tau=-a(e_{\sigma,1})\) proves
+\cref{eq:affine-predictor-phase-slack-bound}.
+
+The normal terminal observations give \(C\lambda_\delta\).  The old phase
+column contributes at most
+\(C(\rho_\delta+M_\delta)\|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}\),
+as in the proof of
+\cref{eq:source-split-reconstructed-terminal-observation}, and the
+speed-projection correction has the same bound by
+\cref{eq:proof-speed-phase-column-state}.  This proves
+\cref{eq:affine-predictor-terminal-bound}.
+
+Finally,
+\[
+ \frac{\lambda_\delta M_\delta}{\rho_\delta}
+ =2\alpha\varkappa^2+o(1),
+\]
+up to terms which vanish for fixed \(\varkappa\), while
+\(\lambda_\delta\), \(R_\delta\eta_{{\rm bd},\delta}\), and
+\(R_\delta m_{\sigma,T}\) tend to zero.  This proves
+\cref{eq:affine-explicit-budget-limit}.  The affine speed datum is
+zero, so
+\(\mathfrak D_ry_r^{\rm aff}(e_{r,1})=0\); adding
+\cref{eq:speed-projected-phase-kernel} proves
+\cref{eq:affine-predictor-speed-row}.  Every step was linear or affine,
+which proves the final scope statement.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:phase-delay-action-shift}]
 Put \(P=\mathscr P_{c,\sigma,N}a\).  In the algebraic row,
 \begin{equation*}
@@ -4774,6 +4955,50 @@ statements.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:diagonal-bulk-pw-extension}]
+Use the same branchwise component Green formulas as in
+\cref{prop:fixed-phase-green-collar-buffer}, with Lebesgue integrals for
+the two distributed source rows.  A bounded source on each side of
+\(s_{\sigma,T}\) produces an absolutely continuous response on each open
+piece.  The integral formulas have matching one-sided values at the
+interface, so their sum is continuous and piecewise \(W^{1,\infty}\).
+Closing the repelling compatible feedback is the same finite-rank
+contraction as for continuous data: it uses only current evaluation of the
+Green response and hence is bounded for the essential-supremum source norm.
+This constructs \(G_{\sigma,\rm B}^{\infty}\) and proves the a.e. normal
+equation.
+
+If two such responses have the same data, their difference has zero
+distributed rows, zero prescribed baseline history, and zero finite normal
+row.  It is therefore the zero solution by the homogeneous mixed-problem
+uniqueness already used in
+\cref{prop:fixed-phase-green-collar-buffer}.  This proves uniqueness and
+also shows agreement with \(G_\sigma\) on continuous sources.  No closure
+of a continuous-source subspace in \(L^\infty\) is involved.
+
+Every estimate in the proof of
+\cref{prop:diagonal-bulk-terminal-prefix-trace} is obtained from an
+integral kernel bound, a finite-rank feedback estimate, or the exact
+scalar recovery identity.  Replacing a supremum of a continuous source by
+its essential supremum leaves those estimates unchanged.  In particular,
+the global Green estimate gives
+\cref{eq:bulk-pw-global-bound}; the weighted-speed estimate followed by
+the oriented primitive calculation gives
+\cref{eq:bulk-pw-prefix-bound}.  Restricting the same response at
+\(s_{\sigma,T}\) supplies the incoming data for
+\cref{prop:diagonal-terminal-component-green} and proves
+\cref{eq:bulk-pw-terminal-bound}.
+
+The source vanishes a.e. on the complete terminal buffer.  Hence the
+method-of-steps solution there is the homogeneous continuation of its
+incoming interface data.  The component-generation proof of
+\cref{eq:bulk-terminal-final-flush} applies verbatim, including its
+one-sided interface traces.  The algebraic speed row and its primitive
+then give the local speed/action estimate.  This proves all asserted
+extensions.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{lem:source-split-hybrid-phase-core}]
 The formula
 \(
@@ -4946,10 +5171,10 @@ The three input coordinates are unique before applying an inverse: bulk and
 terminal distributed sources have disjoint a.e. supports, while the
 boundary summand has zero distributed rows.  Each summand is complete in
 its displayed direct norm, so
-\cref{eq:terminal-source-three-summand-range} is a Banach space.  The two
-Green formulas agree on their common continuous core and solve the same
-a.e. normal equations.  Uniqueness of the component construction therefore
-gives
+\cref{eq:terminal-source-three-summand-range} is a Banach space.  The bulk
+and terminal Green formulas solve their respective a.e. normal equations,
+while the boundary summand uses the old zero-source Green operator.
+Uniqueness of the component construction therefore gives
 \begin{equation*}
  \mathscr N_\sigma^\infty G_\sigma^\infty=I
 \end{equation*}
@@ -4960,7 +5185,7 @@ For
 \(
 y=G_\sigma^\infty(f_{\rm B}+f_{\rm bd}+f_T)
 \), add
-\cref{eq:bulk-direct-prefix-bound,%
+\cref{eq:bulk-pw-prefix-bound,%
 eq:boundary-column-global-action,%
 eq:terminal-source-speed-bound,%
 eq:terminal-source-action-bound}.
@@ -4975,10 +5200,11 @@ the formulas in \cref{eq:terminal-source-extended-inverse} prove
 bijectivity and the uniform forward and inverse estimates.
 
 Add
-\cref{eq:terminal-source-interface-bound,%
+\cref{eq:bulk-pw-terminal-bound,%
+eq:terminal-source-interface-bound,%
 eq:terminal-source-trace-bound}
-to the two old summand estimates in the proof of
-\cref{eq:source-split-terminal-observation}.  The local weighted-speed and
+to the boundary-summand estimate in
+\cref{eq:boundary-column-terminal-trace}.  The local weighted-speed and
 action terms follow from
 \cref{eq:terminal-source-speed-bound,%
 eq:terminal-source-action-bound}
