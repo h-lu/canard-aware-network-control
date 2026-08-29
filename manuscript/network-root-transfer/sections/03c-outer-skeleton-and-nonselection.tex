@@ -5785,6 +5785,309 @@ The two triangle inequalities give the claimed uniform equivalence between
 \(\|\psi_s\|^\sharp_{\kappa_*}+|a|\).
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{prop:physical-hit-quotient-flushing}]
+We give the finite-window trajectory argument because ordinary
+bounded-generator roughness on \(\mathscr X_N\) would not be legitimate:
+changing an RFDE boundary functional changes the generator domain.  The
+argument below works with current values and their translated pasts, and
+never treats point injection at \(\theta=0\) as a bounded map into
+\(C([-\theta_m,0];\mathbb R^N)\).
+
+Fix a gauge, suppress \(\sigma,g\), and write \(s_h=S_{\sigma,h}(g)\).
+On the one-delay enlargement of
+\([s_h-L_\delta,s_h+L_\delta]\), the generated speed bounds give
+\begin{equation}
+ |r_s-e_{\sigma,h}|
+ \le C\delta(L_\delta+\theta_m)
+ \le C_A\delta S_\delta.                          \label{eq:proof-hit-local-r-geometry}
+\end{equation}
+The exact voltage reconstruction on this buffer is
+\[
+ v(s)=\mathbf1+r_s\mathbf1+z_{0,N}(r_s)+Z_{\sigma,g}(s).
+\]
+By \cref{eq:strong-hit-C1-bound},
+\(\|Z_{\sigma,g}(s)\|_N\le C\varepsilon\).  Smoothness of the
+critical curve and of the diagonal nonlinearity therefore gives
+\begin{equation}
+ \|\mathcal J_*(s)
+       -\mathcal J_N^{\rm fv}(e_{\sigma,h})\|
+ \le C_A(\delta S_\delta+\varepsilon).            \label{eq:proof-hit-current-coefficient-difference}
+\end{equation}
+Moreover, on this fixed annulus,
+\begin{equation}
+ |W'(r_s)|\asymp r_h,\qquad
+ \|E_s^c\|_{\mathscr Y_N}\le C,\qquad
+ \|H_s\|_N\le\frac C{r_h},\qquad
+ \|\mathcal K_s\|_{\mathcal L(
+       \mathscr X_N,\|\cdot\|_{\sigma,h}^{\sharp})}
+ \le C\frac{\delta}{r_h}.                         \label{eq:proof-hit-resource-coordinate-bounds}
+\end{equation}
+The last estimate is the proof of
+\cref{eq:resource-gauge-volterra-bound} with the local lower bound
+\(|r|\asymp r_h\), instead of the weaker global lower bound
+\(\rho_\delta\).  The same Volterra estimate with \(\kappa_*=0\) gives
+\begin{equation}
+ \|\mathcal K_s\|_{\mathcal L(
+       (\mathscr X_N,\|\cdot\|_{\infty,N}),
+       (\mathscr X_N,\|\cdot\|_{\infty,N}))}
+ \le C\frac{\delta}{r_h}.                         \label{eq:proof-hit-volterra-C0-bound}
+\end{equation}
+
+Put
+\[
+ J_h=\mathcal J_N^{\rm fv}(e_{\sigma,h}).
+\]
+At \(e_{a,h}=r_h\), the whole current matrix \(J_h\) is uniformly
+stable.  Indeed, the transverse semigroup estimate in
+\cref{eq:outer-stable-layer-semigroup} combines with the negative simple
+eigenvalue in \cref{eq:outer-eigen-identity}.  At
+\(e_{r,h}=-r_h\), it has a uniformly stable subspace and one simple
+unstable line.  Denote the corresponding fixed current projections by
+\(P_h^s,P_h^u\), taking \(P_h^s=\Id\), \(P_h^u=0\) on the attracting
+branch.  Their norms are common, and for some \(c_0,C_0>0\),
+\begin{align}
+ \|e^{J_h(s-t)/\delta}P_h^s\|
+ &\le C_0e^{-c_0(s-t)/\delta},&&s\ge t,\notag\\
+ \|e^{J_h(s-t)/\delta}P_h^u\|
+ &\le C_0e^{-c_0(t-s)/\delta},&&s\le t.           \label{eq:proof-hit-current-green-bounds}
+\end{align}
+The second line is only the inverse on the finite-dimensional unstable
+line.
+
+Write the exact standard quotient equation as
+\begin{equation}
+ u'(s)=\delta^{-1}J_hu(s)+\mathscr R_su_s,         \label{eq:proof-hit-quotient-perturbation}
+\end{equation}
+where
+\begin{align}
+ \mathscr R_s\phi
+={}&\delta^{-1}\{\mathcal J_*(s)-J_h\}\phi(0)\notag\\
+ &+\delta K\sum_{k=0}^mL_{k,N}(\eta)
+   \bigl[\phi(0)-\phi(-\theta_k)
+          +(\mathcal K_s\phi)(-\theta_k)\bigr]
+   -\delta H_s\pi_N^T\phi(0).                    \label{eq:proof-hit-quotient-remainder}
+\end{align}
+This is an identity, not a frozen approximation.  From the definition of
+\(\kappa_{\sigma,h}\),
+\begin{equation}
+ e^{2\kappa_{\sigma,h}\theta_m}
+ \le\delta^{-2\vartheta},\qquad
+ \kappa_{\sigma,h}\le\frac{C}{\delta},\qquad
+ \kappa_{\sigma,h}\ge c\log(1/\delta).            \label{eq:proof-hit-rate-ledger}
+\end{equation}
+Consequently the delayed Volterra term, as a current functional on the
+fixed fading history space, satisfies
+\begin{equation}
+ \left\|\delta K\sum_kL_{k,N}
+       (\mathcal K_s\,\cdot)(-\theta_k)\right\|
+ \le C\frac{\delta^{2-2\vartheta}}{r_h},          \label{eq:proof-hit-volterra-evaluation}
+\end{equation}
+where there is only one delayed-evaluation loss.  The ordinary delayed
+row is bounded by \(C\delta^{1-2\vartheta}\), and the last rank-one row
+in \cref{eq:proof-hit-quotient-remainder} is bounded by \(C\delta/r_h\).
+
+For completeness, we now close the finite-window
+Lyapunov--Perron estimate.  On the attracting branch put
+\[
+ s_-=s_h-L_\delta,\qquad d_a(s)=s-s_-
+ \quad(s_-\le s\le s_h).
+\]
+On the repelling branch also put \(s_+=s_h+L_\delta\) and
+\[
+ d_r(s)=\min\{s-s_-,s_+-s\}
+ \quad(s_-\le s\le s_+).
+\]
+Extend either distance by zero on the prescribed old collar
+\([s_--\theta_m,s_-]\), and choose
+\(\widehat\kappa=c_1\kappa_{\sigma,h}\) with a fixed sufficiently small
+\(c_1>0\).  Both distances are one-Lipschitz.  Hence translating a current
+value by at most \(\theta_m\) costs at most
+\(e^{\widehat\kappa\theta_m}\), while convolution of either kernel in
+\cref{eq:proof-hit-current-green-bounds} against the weight
+\(e^{\widehat\kappa d_\sigma}\) costs at most \(C\delta\).
+
+On the attracting branch, variation of constants is causal from \(s_-\).
+On the repelling branch, split the current value by
+\(P_h^s+P_h^u\), evolve the stable component from \(s_-\), and evolve
+only the one-dimensional unstable component from \(s_+\).  Explicitly,
+the mixed current Green kernel is
+\begin{equation}
+ G_h(s,t)=
+ \begin{cases}
+  e^{J_h(s-t)/\delta}P_h^s,&t\le s,\\
+  -e^{J_h(s-t)/\delta}P_h^u,&t>s.
+ \end{cases}                                      \label{eq:proof-hit-mixed-current-green}
+\end{equation}
+For an already existing solution, the resulting integral identity follows
+by applying the two fixed projections to
+\cref{eq:proof-hit-quotient-perturbation}.  It imposes no new
+boundary-value condition.
+
+Use these identities on the weighted current trajectory space
+\[
+ \|y\|_{\mathcal W_\sigma}
+ =\sup e^{\widehat\kappa d_\sigma(s)}\|y(s)\|_N,
+\]
+including the fixed old collar in the supremum.  Split every delayed value
+lying before \(s_-\) into the prescribed old-history term; all remaining
+delayed values belong to the trajectory unknown.  The bounds in
+\cref{eq:proof-hit-current-coefficient-difference,%
+eq:proof-hit-resource-coordinate-bounds,%
+eq:proof-hit-current-green-bounds,%
+eq:proof-hit-volterra-evaluation}
+show that the linear part acting on the trajectory unknown has norm at
+most
+\begin{equation}
+ q_{\rm loc}
+ \le C_A\left\{
+    \delta S_\delta+\delta^2
+       +\delta^2e^{2\kappa_{\sigma,h}\theta_m}
+       +\delta^3e^{2\kappa_{\sigma,h}\theta_m}
+          \right\}
+ \le C_A\{\delta S_\delta+\delta^{2-2\vartheta}\}
+ =o(1).                                           \label{eq:proof-hit-local-contraction}
+\end{equation}
+This is the RFDE-specific roughness step.  The factor \(\delta\) in front
+of the braces comes from integrating the finite-dimensional current Green
+kernel; the strict delay is then paid by its explicit outer factor
+\(\delta\).  No unbounded point-source operator on the history space has
+been used.
+
+After decreasing \(\delta_0\), \(q_{\rm loc}\le1/2\), so the Neumann
+series closes.  The affine boundary and old-history terms may incur a
+fixed power of
+\(e^{\kappa_{\sigma,h}\theta_m}\), but their weighted trajectory norm is
+bounded by
+\[
+ C\delta^{-C\vartheta}
+ \begin{cases}
+  \|u_{s_-}\|_{a,h}^{\sharp},&\sigma=a,\\
+  \|u_{s_-}\|_{r,h}^{\sharp}
+      +\|u_{s_+}\|_{r,h}^{\sharp},&\sigma=r.
+ \end{cases}
+\]
+Every point in the output history
+\([s_h-\theta_m,s_h]\) has
+\(d_\sigma(s)\ge L_\delta-\theta_m\).  Because
+\(L_\delta=AS_\delta\to\infty\), the fixed polynomial loss and the
+\(\theta_m\)-shift are absorbed by decreasing the exponential constant:
+\[
+ \delta^{-C\vartheta}
+ e^{-\widehat\kappa(L_\delta-\theta_m)}
+ \le C e^{-c\kappa_{\sigma,h}L_\delta}.
+\]
+This proves
+\cref{eq:hit-attracting-interior-flush,%
+eq:hit-repelling-interior-flush}.  Finally,
+\cref{eq:proof-hit-rate-ledger} proves
+\cref{eq:hit-fading-rate-bounds}, and
+\[
+ \kappa_{\sigma,h}L_\delta
+ \ge cA S_\delta\log(1/\delta)
+\]
+dominates every fixed multiple of \(\log(1/\delta)\).  Hence the
+flushing factor is superalgebraic.  The construction used the inverse only
+on \(P_h^u\mathbb R^N\), proving the asserted scope.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:physical-hit-first-order-flatness}]
+Fix a gauge direction \(k\), and let
+\[
+ X_k(s)=(\xi_{k,s},\omega_k(s))
+ =D_g\mathcal Z_{\sigma,g}(s)k
+\]
+be the fixed-time variation of the actual physical branch.  Differentiating
+the exact RFDE family at fixed time shows that \(X_k\) solves the homogeneous
+full variational equation
+\cref{eq:resource-gauge-full-variation}; there is no coefficient forcing
+at first order.  On the generated hit window define
+\begin{equation}
+ a_k(s)=\frac{\omega_k(s)}{W'(r_s)},\qquad
+ \psi_{k,s}=\xi_{k,s}-e_sa_k(s),\qquad
+ \psi_{k,s}=(\Id-\mathcal K_s)u_{k,s}.             \label{eq:proof-hit-gauge-quotient-coordinates}
+\end{equation}
+Thus \(u_k\) solves the exact quotient RFDE used in
+\cref{prop:physical-hit-quotient-flushing}.
+
+The endpoints \(s_\pm=s_h\pm L_\delta\), together with their complete
+histories, lie in the strong generated buffer.  The weak complete-history
+bound \cref{eq:physical-hit-uniform-history-jets}, the fixed-annulus
+bounds \(|W'|\asymp r_h\), \(\|e_s\|\le C\), and the inverse in
+\cref{eq:resource-gauge-volterra-inverse} give
+\begin{equation}
+ \|u_{k,s_\pm}\|_{\sigma,h}^{\sharp}
+ \le C_h\|k\|_{\mathfrak B_{\sigma,\delta}^h}.     \label{eq:proof-hit-gauge-endpoint-bound}
+\end{equation}
+The attracting estimate uses only the minus sign; retaining both signs is
+harmless.  Apply
+\cref{eq:hit-attracting-interior-flush,%
+eq:hit-repelling-interior-flush} and then the fading-to-ordinary comparison
+to obtain
+\begin{equation}
+ \|u_{k,s_h}\|_{\infty,N}
+ \le C\delta^{-2\vartheta}
+       e^{-c\kappa_{\sigma,h}L_\delta}
+       \|k\|_{\mathfrak B_{\sigma,\delta}^h}.      \label{eq:proof-hit-gauge-center-bound}
+\end{equation}
+
+It remains to identify the complete event variation without losing the
+resource component.  At the hit,
+\(E_{s_h}^c=\tau_{\sigma,g}(s_h)\) exactly by
+\cref{eq:exact-outer-history-tangent}.  Put
+\[
+ b_k=\pi_N^T\psi_{k,s_h}(0)=\pi_N^Tu_k(s_h);
+\]
+the second equality uses
+\((\mathcal K_{s_h}u_{k,s_h})(0)=0\).
+Since
+\[
+ X_k(s_h)=(\psi_{k,s_h},0)+a_k(s_h)E_{s_h}^c,
+ \qquad
+ \varrho_N E_{s_h}^c=1,
+\]
+the event derivative
+\cref{eq:physical-hit-history-derivative} has the exact form
+\begin{equation}
+ D_g\mathcal E_{\sigma,h}(g)k
+ =\left(
+   \psi_{k,s_h}-e_{s_h}b_k,\;
+   -W'(e_{\sigma,h})b_k
+   \right).                                      \label{eq:proof-hit-exact-event-bridge}
+\end{equation}
+In particular, using
+\(\psi_{k,s_h}=(\Id-\mathcal K_{s_h})u_{k,s_h}\),
+\cref{eq:proof-hit-resource-coordinate-bounds,%
+eq:proof-hit-volterra-C0-bound}, and
+\(|W'(e_{\sigma,h})|\asymp r_h\),
+\begin{equation}
+ \|D_g\mathcal E_{\sigma,h}(g)k\|_{\mathrm{ev},h}
+ \le C\varepsilon^{-1}\|u_{k,s_h}\|_{\infty,N}.   \label{eq:proof-hit-event-bridge-bound}
+\end{equation}
+The resource term in
+\cref{eq:proof-hit-exact-event-bridge} is essential for this complete
+history statement.
+
+Because \(\varepsilon=\delta^2\),
+\cref{eq:proof-hit-gauge-center-bound,%
+eq:proof-hit-event-bridge-bound}
+give
+\begin{equation}
+ \|D_g\mathcal E_{\sigma,h}(g)\|
+ \le C\delta^{-2-2\vartheta}
+       \exp\{-cA S_\delta\log(1/\delta)\}.         \label{eq:proof-hit-flat-envelope}
+\end{equation}
+For every prescribed \(P>0\), the right-hand side is at most
+\(C_P\delta^P\) after decreasing \(\delta_P\), because
+\(S_\delta\to\infty\).  This proves
+\cref{eq:physical-hit-gauge-flat-derivative}.  The common gauge ball is
+convex, so integration of the derivative along the line segment from
+\(g_1\) to \(g_2\) proves
+\cref{eq:physical-hit-gauge-flat-pair}.  The definition and the stated
+limitations of the flat class follow immediately.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem

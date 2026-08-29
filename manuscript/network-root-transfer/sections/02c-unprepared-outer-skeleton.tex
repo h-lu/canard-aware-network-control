@@ -4454,6 +4454,124 @@ is uniformly equivalent to
 \(\|\psi_s\|^\sharp_{\kappa_*}+|a(s)|\).
 \end{proposition}
 
+\begin{proposition}[Local two-sided quotient flushing at a physical hit]
+\label[proposition]{prop:physical-hit-quotient-flushing}
+Retain
+\cref{prop:raw-gauge-strong-hit-buffer,%
+prop:exact-resource-gauge-quotient}
+on the shared-resource law, still pointwise at one fixed admissible
+parameter pair.  Fix \(A>0\), put
+\begin{equation}
+ L_\delta=AS_\delta,\qquad
+ \kappa_{\sigma,h}
+ =\kappa_{N,\delta}(e_{\sigma,h}),                \label{eq:hit-flushing-length-rate}
+\end{equation}
+and equip \(\mathscr X_N\) with the fixed hit norm
+\begin{equation}
+ \|\phi\|_{\sigma,h}^{\sharp}
+ =\sup_{-\theta_m\le\theta\le0}
+   e^{2\kappa_{\sigma,h}\theta}\|\phi(\theta)\|_N.
+                                                               \label{eq:hit-fixed-fading-norm}
+\end{equation}
+For every raw gauge in the common ball, write
+\[
+ s_h=S_{\sigma,h}(g),\qquad
+ I_{\sigma,h}(g)=[s_h-L_\delta,s_h+L_\delta].
+\]
+After decreasing \(\delta_0(A,r_{\rm out})\), this interval and its
+one-delay enlargement lie in the common generated buffer.  Every solution
+\(u\) of the exact standard quotient RFDE
+\cref{eq:resource-gauge-standard-rfde} along that already constructed
+tracker obeys
+\begin{align}
+ \|u_{s_h}\|_{a,h}^{\sharp}
+ &\le C e^{-c\kappa_{a,h}L_\delta}
+       \|u_{s_h-L_\delta}\|_{a,h}^{\sharp},
+                                                        \label{eq:hit-attracting-interior-flush}\\
+ \|u_{s_h}\|_{r,h}^{\sharp}
+ &\le C e^{-c\kappa_{r,h}L_\delta}
+   \left\{\|u_{s_h-L_\delta}\|_{r,h}^{\sharp}
+          +\|u_{s_h+L_\delta}\|_{r,h}^{\sharp}\right\}.
+                                                        \label{eq:hit-repelling-interior-flush}
+\end{align}
+Uniformly in \(N\) and the retained indices,
+\begin{equation}
+ \kappa_{\sigma,h}\ge c_\kappa\log(1/\delta),
+ \qquad
+ e^{2\kappa_{\sigma,h}\theta_m}\le\delta^{-2\vartheta}.
+                                                        \label{eq:hit-fading-rate-bounds}
+\end{equation}
+Thus the right-hand sides of
+\cref{eq:hit-attracting-interior-flush,%
+eq:hit-repelling-interior-flush}
+are superalgebraically small relative to uniformly bounded endpoint
+histories.
+
+The repelling estimate uses a stable-left/one-dimensional-unstable-right
+current Green representation; its backward factor is only the inverse on
+the transported finite-dimensional unstable line.  This is a local,
+fixed-parameter interior estimate for already constructed physical branch
+segments, not a global invariant normal bundle or a new boundary-value
+inverse.  It does not extend either segment through the fold, identify a
+repelling invariant history sheet, take parameter derivatives, relate the
+two branches, or construct a physical connection or root.
+\end{proposition}
+
+\begin{theorem}[First-order raw-gauge forgetting at fixed physical hits]
+\label[theorem]{thm:physical-hit-first-order-flatness}
+Retain \cref{prop:physical-hit-quotient-flushing} and use the
+\(\varepsilon\)-normalized event norm
+\begin{equation}
+ \|(\phi,\omega)\|_{\mathrm{ev},h}
+ =\varepsilon^{-1}\left\{
+       \|\phi\|_{\infty,N}+\frac{|\omega|}{r_h}\right\},
+ \qquad
+ \|\phi\|_{\infty,N}
+ =\sup_{-\theta_m\le\theta\le0}\|\phi(\theta)\|_N,
+ \qquad \varepsilon=\delta^2.                    \label{eq:physical-hit-event-normal-norm}
+\end{equation}
+For every \(P>0\) there are \(C_P,\delta_P>0\), independent of \(N\),
+the branch, the fixed admissible parameter point, and the gauges in the
+common convex ball, such that
+\begin{equation}
+ \sup_{\sigma\in\{a,r\}}\sup_g
+ \|D_g\mathcal E_{\sigma,h}(g)\|_
+   {\mathcal L(\mathfrak B_{\sigma,\delta}^h,
+               (\mathscr Y_N,\|\cdot\|_{\mathrm{ev},h}))}
+ \le C_P\delta^P,
+ \qquad 0<\delta<\delta_P.                       \label{eq:physical-hit-gauge-flat-derivative}
+\end{equation}
+In particular, for any two gauges in that ball,
+\begin{equation}
+ \|\mathcal E_{\sigma,h}(g_1)
+       -\mathcal E_{\sigma,h}(g_2)\|_{\mathrm{ev},h}
+ \le C_P\delta^P
+       \|g_1-g_2\|_{\mathfrak B_{\sigma,\delta}^h}.          \label{eq:physical-hit-gauge-flat-pair}
+\end{equation}
+Hence each physical section carries a well-defined raw-gauge-independent
+flat class
+\begin{equation}
+ [\mathcal E_{\sigma,h}]_{\mathrm{flat}}
+ :=
+ [\mathcal E_{\sigma,h}(g)]_{\mathcal O(\delta^\infty)}
+ \quad\hbox{in }\Sigma_{N,e_{\sigma,h}}.           \label{eq:physical-hit-flat-class}
+\end{equation}
+Here \(g=g(\delta)\) may be any uniformly bounded gauge family in the
+common ball, and the equivalence relation is the all-orders estimate
+\cref{eq:physical-hit-gauge-flat-pair}.
+
+The class in \cref{eq:physical-hit-flat-class} is asymptotic: it does not
+assert exact gauge independence at a fixed positive \(\delta\).
+The event quotient removes the time tangent, so the theorem does not make
+the hit time \(S_{\sigma,h}(g)\) or its scaled displacement
+\(\widehat\tau_{\sigma,h}(g)\) flat.  It constructs two separate
+raw-gauge-independent hit classes, not a branch-to-branch relation.  In
+particular, it
+does not prove fold passage, membership in a repelling stable sheet,
+parameter-jet flatness, a signed connection gap, transversality, or a
+physical root.
+\end{theorem}
+
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
 fold-time variational equation is removed exactly only after the genuine
 tracker tangent is known.  The remaining Volterra coordinate correction is
