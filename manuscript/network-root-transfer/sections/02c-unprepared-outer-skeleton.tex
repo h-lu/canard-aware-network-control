@@ -2049,6 +2049,159 @@ solution map, a fixed-chart nonlinear residual, a moving-event inverse, a
 physical endpoint family, or a connection root.
 \end{lemma}
 
+\begin{lemma}[Endpoint-centered fixed-envelope duration selector]
+\label[lemma]{lem:endpoint-centered-duration-selector}
+Fix an integer \(d\ge0\), a branch, and a supplied classical reference
+\(Y_*=(r_*,Z_*,p_*)\) on the fixed forward envelope
+\begin{equation*}
+ \widehat J_\delta=[-\theta_m,S_*+\ell_{*,\delta}].
+\end{equation*}
+For fixed \(L,c_T>0\), put
+\[
+ S(\tau)=S_*+\frac{\tau}{\delta},\qquad
+ I_\tau=(-c_T\rho_\delta,c_T\rho_\delta).
+\]
+Assume that
+\begin{equation}
+ \bigcup_{\tau\in I_\tau}
+ \left(\{S(\tau)\}\cup
+ [S(\tau)-L-\theta_m,S(\tau)-L]\right)
+ \Subset\widehat J_\delta.                       \label{eq:endpoint-selector-envelope-containment}
+\end{equation}
+Let \(\mathcal X_{\rm env}\) be a Banach space of trial triples on this
+fixed envelope which are piecewise \(W^{1,\infty}\) on the rough part and
+continuously embedded in \(C^{d+2}\) on a terminal buffer containing the
+compact set in \cref{eq:endpoint-selector-envelope-containment}.  Let
+\(\mathcal Y_{\rm up}\) be a Banach product range containing the fixed
+residual rows and the retained terminal trace slots, and assume that the
+displayed terminal evaluations are bounded from
+\(\mathcal X_{\rm env}\) to those slots.  The envelope is fixed with
+respect to \(\tau\), not uniformly in \(\delta\); in particular its right
+margin is at least \(c_T\rho_\delta/\delta\).  Suppose
+\begin{equation}
+ r_*(0)=e_0,\qquad r_*(S_*)=e_1,\qquad
+ q_{0,e}=q_0(e_1)\ne0,\qquad
+ q_{*,e}=\delta^{-1}r_*'(S_*)\ne0.              \label{eq:endpoint-selector-reference-speeds}
+\end{equation}
+
+Let \(R_\gamma\) be a raw-compatible entry-collar residual in fixed
+\(\theta\)-coordinates, let \(R_{\rm RFDE}\) impose the unmodified RFDE
+on the fixed envelope, and retain the seam and causal-entry rows.  Only the
+terminal selector is evaluated at \(S(\tau)\).  Assume that
+\(\mathcal U^{\rm raw}:\mathcal X_{\rm env}\times I_\tau
+\to\mathcal Y_{\rm up}\) and
+\(E:\mathcal X_{\rm env}\times I_\tau\to\mathbb R\) are \(C^1\) near
+\((Y_*,0)\), and write
+\begin{align}
+ \mathcal U^{\rm raw}(Y,\tau)
+ &=\bigl(R_\gamma(Y),R_{\rm RFDE}(Y),
+          B^{n,\rm raw}(Y,\tau),r(0)-e_0\bigr),\notag\\
+ E(Y,\tau)&=\frac{r(S(\tau))-e_1}{q_{0,e}},\qquad
+ \mathcal F^{\rm raw}=(\mathcal U^{\rm raw},E).             \label{eq:endpoint-selector-residual}
+\end{align}
+Here the attracting finite normal row is fixed at the entry, while a
+repelling terminal row has the form
+\(p(S(\tau))-b_r\).  Any retained moving terminal voltage history is
+written as
+\(Z(S(\tau)-L+\cdot)-h_Z\).  Rows absent from a particular branch are
+omitted.
+
+At \((Y_*,0)\), a variation \(v\) has displayed components
+\((\xi,\mathsf z,\mathsf p)\), and
+\begin{equation}
+ D\mathcal F^{\rm raw}(Y_*,0)
+ =\begin{pmatrix}L^{\rm raw}&C_{\rm ter}^{\rm raw}\\
+                  \ell_{\rm ter}&c_{\rm ter}\end{pmatrix},
+ \qquad
+ \ell_{\rm ter}v=\frac{\xi(S_*)}{q_{0,e}},\qquad
+ c_{\rm ter}=\frac{q_{*,e}}{q_{0,e}}.           \label{eq:endpoint-selector-raw-border}
+\end{equation}
+The entry collar, bulk, seam, causal-entry, and attracting finite normal
+components of \(C_{\rm ter}^{\rm raw}\) vanish exactly.  Its only possible
+displayed components are
+\begin{equation}
+ C_{p,r}^{\rm raw}=\frac{p_*'(S_*)}{\delta},\qquad
+ C_{Z,L}^{\rm raw}(\theta)
+ =\frac{Z_*'(S_*-L+\theta)}{\delta}.             \label{eq:endpoint-selector-raw-terminal-column}
+\end{equation}
+Define \(K\in\mathcal L(\mathbb R,\mathcal Y_{\rm up})\) to vanish in
+every fixed row and to have
+terminal components
+\begin{equation}
+ K_p=\frac{q_{0,e}p_*'(S_*)}{\delta q_{*,e}},\qquad
+ K_{Z,L}(\theta)
+ =\frac{q_{0,e}Z_*'(S_*-L+\theta)}
+        {\delta q_{*,e}}.                       \label{eq:endpoint-selector-event-shear}
+\end{equation}
+Then \(C_{\rm ter}^{\rm raw}=Kc_{\rm ter}\).  The bounded row operation
+\begin{equation}
+ \mathcal U^{\rm ea}=\mathcal U^{\rm raw}-KE     \label{eq:endpoint-selector-nonlinear-row-shear}
+\end{equation}
+preserves the nonlinear zero set and triangularizes the derivative:
+\begin{equation}
+ D(\mathcal U^{\rm ea},E)(Y_*,0)
+ =\begin{pmatrix}L^{\rm ea}&0\\
+                  \ell_{\rm ter}&c_{\rm ter}\end{pmatrix},
+ \qquad
+ L^{\rm ea}=L^{\rm raw}-K\ell_{\rm ter}.       \label{eq:endpoint-selector-event-aligned-border}
+\end{equation}
+The terminal rows in \(L^{\rm ea}\) are exactly the event-aligned traces
+of
+\cref{eq:event-aligned-normal-quotient,eq:trace-scale-first-triangularization}.
+If \(L^{\rm ea}:\mathcal X_{\rm env}\to\mathcal Y_{\rm up}\) is an
+isomorphism, then so is the complete bordered derivative.  For raw data
+\((f^{\rm raw},b)\), put \(f^{\rm ea}=f^{\rm raw}-Kb\); its inverse is
+\begin{equation}
+ v=(L^{\rm ea})^{-1}f^{\rm ea},\qquad
+ \tau=c_{\rm ter}^{-1}
+       \{b-\ell_{\rm ter}(L^{\rm ea})^{-1}f^{\rm ea}\}.
+                                                        \label{eq:endpoint-selector-triangular-inverse}
+\end{equation}
+
+The upper duration column is not a coordinate invariant.  More generally,
+for a block
+\begin{equation*}
+ \mathscr B(v,\tau)=(Lv+C\tau,\ell v+c\tau)
+\end{equation*}
+with invertible \(L\), a bounded affine domain lift
+\(v=w+A\tau\) changes
+\begin{equation}
+ C\longmapsto C+LA,\qquad c\longmapsto c+\ell A,              \label{eq:endpoint-selector-domain-shear}
+\end{equation}
+but preserves the Schur scalar exactly:
+\begin{equation}
+ (c+\ell A)-\ell L^{-1}(C+LA)
+ =c-\ell L^{-1}C.                               \label{eq:endpoint-selector-domain-schur-invariance}
+\end{equation}
+A range shear \((f,b)\mapsto(f-Kb,b)\) preserves the complete bordered
+operator up to an isomorphism but does not in general preserve the
+numerical Schur scalar.  If both upper blocks are invertible and
+\(\alpha=\ell L^{-1}K\ne1\), then
+\begin{equation}
+ c-\ell(L-K\ell)^{-1}(C-Kc)
+ =\frac{c-\ell L^{-1}C}{1-\alpha}.              \label{eq:endpoint-selector-range-schur-law}
+\end{equation}
+
+If the terminal germ of the supplied reference is the physical path in
+\cref{eq:reference-pulled-physical-path}, in particular if
+\begin{equation}
+ \delta^{-1}r_*'(S_*)=q_\sigma^E(e_1),           \label{eq:endpoint-selector-structured-germ}
+\end{equation}
+then \cref{thm:reference-pulled-causal-endpoint} gives
+\begin{equation}
+ c_{\rm ter}
+ =\frac{q_\sigma^E(e_1)}{q_0(e_1)}\in[1/2,3/2].             \label{eq:endpoint-selector-scalar-margin}
+\end{equation}
+Without this membership, only the nonvanishing speed ratio in
+\cref{eq:endpoint-selector-reference-speeds} is asserted.
+
+This is exact fixed-envelope selector and bordered-operator calculus.  It
+does not construct the endpoint reference, prove that \(L^{\rm ea}\) is a
+dimension-uniform rough-middle/strong-terminal hybrid isomorphism, control
+\(K\) in such a hybrid norm, or produce a nonlinear original-endpoint
+tracker, a past orbit, or a physical root.
+\end{lemma}
+
 \begin{proposition}[Exact phase-delay shift and state-norm obstruction]
 \label[proposition]{prop:phase-delay-action-shift}
 Retain \cref{prop:fixed-phase-green-collar-buffer,%

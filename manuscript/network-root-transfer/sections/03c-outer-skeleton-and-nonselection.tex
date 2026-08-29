@@ -2238,6 +2238,82 @@ follow because no equation for \(Y\), and no solution operator into the
 strong terminal space, entered the construction.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:endpoint-centered-duration-selector}]
+The current interval, its delay enlargement, and the entry history chart
+are fixed.  Hence pure \(\tau\)-differentiation annihilates
+\(R_\gamma\), \(R_{\rm RFDE}\), the seam and causal-entry rows, and the
+entry evaluation.  The moving-evaluation chain rule gives
+\begin{align*}
+ D E(Y_*,0)[v,\zeta]
+ &=\frac{\xi(S_*)}{q_{0,e}}
+   +\frac{q_{*,e}}{q_{0,e}}\zeta,\\
+ D\{p(S(\tau))\}(Y_*,0)[v,\zeta]
+ &=\mathsf p(S_*)+\delta^{-1}p_*'(S_*)\zeta,\\
+ D\{Z(S(\tau)-L+\cdot)\}(Y_*,0)[v,\zeta]
+ &=\mathsf z(S_*-L+\cdot)
+   +\delta^{-1}Z_*'(S_*-L+\cdot)\zeta.
+\end{align*}
+This proves
+\cref{eq:endpoint-selector-raw-border,eq:endpoint-selector-raw-terminal-column}.
+The fixed entry normal row has no selector dependence.
+
+In the terminal scalar slot,
+\begin{equation*}
+ K_pc_{\rm ter}
+ =\frac{q_{0,e}p_*'(S_*)}{\delta q_{*,e}}
+       \frac{q_{*,e}}{q_{0,e}}
+ =\frac{p_*'(S_*)}{\delta}.
+\end{equation*}
+The same calculation in the terminal history space gives
+\(K_{Z,L}c_{\rm ter}=\delta^{-1}Z_*'(S_*-L+\cdot)\).
+Thus \(C_{\rm ter}^{\rm raw}=Kc_{\rm ter}\).  The upper row after
+\cref{eq:endpoint-selector-nonlinear-row-shear} is
+\begin{equation*}
+ (L^{\rm raw}-K\ell_{\rm ter})v
+ +(C_{\rm ter}^{\rm raw}-Kc_{\rm ter})\zeta
+ =L^{\rm ea}v,
+\end{equation*}
+while the event row is unchanged.  This proves
+\cref{eq:endpoint-selector-event-aligned-border}.  Its terminal scalar
+component is
+\begin{equation*}
+ \mathsf p(S_*)
+ -\frac{p_*'(S_*)}{\delta q_{*,e}}\xi(S_*),
+\end{equation*}
+and its terminal history component is
+\begin{equation*}
+ \mathsf z(S_*-L+\cdot)
+ -\frac{Z_*'(S_*-L+\cdot)}{\delta q_{*,e}}\xi(S_*).
+\end{equation*}
+These are the event-aligned expressions in the cited trace formulas.  The
+row shear sends raw data \((f^{\rm raw},b)\) to
+\((f^{\rm raw}-Kb,b)\); forward substitution gives
+\cref{eq:endpoint-selector-triangular-inverse}.
+
+Under \(v=w+A\tau\), direct collection of the \(\tau\)-terms gives
+\cref{eq:endpoint-selector-domain-shear}; substituting those two columns
+in the Schur expression proves
+\cref{eq:endpoint-selector-domain-schur-invariance}.  For the upper range
+shear, put \(\alpha=\ell L^{-1}K\).  The rank-one resolvent identity gives
+\begin{equation*}
+ \ell(L-K\ell)^{-1}
+ =\frac{\ell L^{-1}}{1-\alpha}.
+\end{equation*}
+Therefore
+\begin{equation*}
+ c-\ell(L-K\ell)^{-1}(C-Kc)
+ =c-\frac{\ell L^{-1}C-\alpha c}{1-\alpha}
+ =\frac{c-\ell L^{-1}C}{1-\alpha},
+\end{equation*}
+which is \cref{eq:endpoint-selector-range-schur-law}.  Finally,
+\cref{eq:endpoint-selector-structured-germ} identifies the endpoint speed,
+so \cref{eq:endpoint-selector-scalar-margin} is exactly
+\cref{eq:reference-pulled-terminal-coefficient}.  The proof used only the
+supplied fixed envelope and bounded terminal traces; it supplied no hybrid
+upper inverse or nonlinear endpoint family.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:phase-delay-action-shift}]
 Put \(P=\mathscr P_{c,\sigma,N}a\).  In the algebraic row,
 \begin{equation*}
