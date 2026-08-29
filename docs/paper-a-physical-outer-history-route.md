@@ -8,8 +8,14 @@ controlled through one endpoint derivative at rate
 `exp{-c R_delta Delta s/delta}`, while one zeroth-order positive-delay
 Duhamel generation is `O(epsilon/R_delta)`.  On the repelling outer interval
 `R_delta/2 <= |r_r| <= R_delta`, only the terminal scalar kernel is proved to
-have the same `R_delta/delta` rate scale.  The moving-duration arbitrary-source inverse, complete
-RFDE terminal column and Schur factor, original physical endpoint
+have the same `R_delta/delta` rate scale.  The terminal-free/zero-source
+source-split linear core and its conditional scalar event-aligned inverse are
+now proved.  The exact identity
+`K_p=R_q+(q_0/q_*)w_0'Q_e` reduces uniformity to an endpoint-speed gate, and
+the terminal history shear is isolated as a free-interface observation with
+explicit selected-window derivative conditions.  A forward endpoint
+reference verifying those conditions, the moving-duration nonlinear RFDE
+family, original physical endpoint
 histories, global quotient, repelling history sheet, cross-branch gap, and
 physical root remain open.**
 

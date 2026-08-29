@@ -44,17 +44,29 @@ recovery identity yields the small normalized causal-prefix factor
 terminal `T^1` trace.  The attracting column and repelling entry-history
 column flush; the repelling terminal scalar column provably does not.  A
 freely prescribed terminal voltage-history row remains outside this result.
-The event-aligned `K` correction, source-split hybrid assembly, the endpoint
-RFDE family, and the physical root remain open.  The
+The unique source-split causal-entry square core is now closed for the
+terminal-free distributed bulk plus the localized zero-source boundary
+summand.  Its hybrid phase return is `o(1)`, and terminal histories are
+bounded observations rather than illicit final-history boundary rows.  The
+exact scalar endpoint shear is
+`K_p=R_q+(q_0/q_*)w_0' Q_e`; the raw-compatible local outer-endpoint germ has
+`Q_e=0`, `K_p=R_q=O(epsilon)`, and `kappa_p=o(1)`.  Under the explicit
+condition `kappa_p=O(1)`, the scalar event-aligned core is uniformly
+invertible by a rank-one formula.  A free terminal-history interface absorbs
+the history shear `K_Z`, which never enters the scalar denominator;
+uniformity requires the separately stated slow endpoint jets.  These are
+linear and conditional endpoint results.  An actual forward endpoint RFDE
+reference satisfying the `K_p` and `K_Z` jet gates, the moving-duration
+nonlinear family, and the physical root remain open.  The
 fixed-envelope duration-selector algebra on a supplied reference is now
 closed: its raw terminal
 column factors exactly through the event row, an explicit range shear
 annihilates that column, and the scalar coefficient is the supplied
 reference terminal-speed ratio.  It becomes the structured physical speed
 ratio only under the corresponding terminal-germ membership.  Thus a
-standalone `C_ter` is chart dependent; the remaining linear-operator gate is
-the hybrid invertibility of the sheared upper block, not a coordinate-free
-estimate of `C_ter`.**
+standalone `C_ter` is chart dependent.  The remaining gate is construction
+of the forward endpoint reference which verifies the conditional shear and
+speed hypotheses, not a coordinate-free estimate of `C_ter`.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -279,12 +291,16 @@ eta_bd,delta
 It also gives the localized `A_phi^1` lift and full terminal `T^1` trace.
 The attracting column and repelling entry-history column flush from the final
 window, whereas the repelling terminal scalar column cannot flush because its
-exact endpoint value is `p_r(S_r)=b_r`.  Thus the remaining source-split gate
-is no longer the normal boundary column itself.  It is the unique hybrid
-assembly of the terminal-free bulk and localized summand, followed by uniform
-control of the terminal event/history shear `K`, including the endpoint jet
-needed to bound its scalar normal component.  That assembly must still track
-at least
+exact endpoint value is `p_r(S_r)=b_r`.  The unique source-split hybrid
+assembly of the terminal-free bulk and localized summand is now proved.  Its
+normal range is split in the raw input coordinates, its phase space records
+both weighted speed and every normalized causal prefix, and its terminal
+history is retained only as an observation.  The exact endpoint-shear
+identity shows that the next nonconditional gate is construction of a
+forward endpoint reference with `|Q_e|<=C epsilon/rho_delta` (and the stronger
+`C epsilon/R_delta` when `K_p=O(epsilon)` is required), together with the
+selected-window `Z_*'` and `Z_*''` bounds for the history shear.  The
+remaining nonlinear construction must still track at least
 
 ```text
 rho_delta/r_out,delta -> 0,
@@ -377,9 +393,10 @@ for an endpoint RFDE family.  The row shear
 L_ent^ea = L_ent^raw - K ell_ter.
 ```
 
-Thus there is no invariant nonzero `C_ter` estimate to close.  Once the
-event-aligned hybrid upper block is proved invertible, the bordered inverse
-is exactly
+Thus there is no invariant nonzero `C_ter` estimate to close.  The
+source-split causal-entry core and its conditional scalar event-aligned
+inverse are now proved.  When a supplied endpoint reference satisfies
+`kappa_p=O(1)`, the bordered inverse is exactly
 
 ```text
 f_ea    = f_raw - K b,
@@ -387,17 +404,16 @@ v       = (L_ent^ea)^(-1) f_ea,
 hat_tau = c_ter^(-1) { b - ell_ter v }.
 ```
 
-The terminal arbitrary-source propagator and its direct
-`lambda_delta`-scaled terminal-free rough-middle bulk composition are
-now available, but the full analytic estimate is not.  What remains is the
-localized terminal/event columns and the rank-one event-aligned correction
-with a uniform norm for `K`; only their
-composition with the now-proved first-order structured phase column can
-prove that `L_ent^ea` is a hybrid
-isomorphism.  It also requires an actual endpoint strong buffer with the
-rectangular `J_phys` jets.  The fixed-reduced-base inverse, the local terminal
-propagator, supplied terminal trace chart, and interior-hit inverse are
-reusable inputs, not that theorem itself.
+The terminal-free rough-middle bulk, localized boundary columns, structured
+phase column, source-split square core, and rank-one scalar correction are
+therefore now one closed linear chain.  The history component is correctly
+factored through a free interface variable; `K_Z` is an observation shear,
+not a backward RFDE boundary condition.  What remains is model-specific and
+nonlinear: construct an actual endpoint strong buffer, prove its scaled
+`K_p` and selected-window `K_Z` bounds and structured speed ratio, establish
+closure of the nonlinear residual in the split range, and then obtain the
+rectangular `J_phys` endpoint family.  The conditional linear theorem does
+not supply any of those objects.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -1275,13 +1291,14 @@ gauges.
       structured scalar margin, event-aligned range shear, exact triangular
       border, affine-lift Schur invariance, and the distinction between
       operator equivalence and a numerical Schur value.
-- [ ] Event-aligned moving-duration phase--normal theorem and the
-      corresponding causal-entry/terminal-event action-weighted
-      parameter/gauge result at the original endpoints.  Combine the proved
-      terminal-free bulk trace with separately estimated localized endpoint
-      rows, control the event shear `K`, construct raw-compatible endpoint histories, and
-      obtain the endpoint `J_phys` family before terminal-to-terminal
-      nonlinear tracker reconstruction.
+- [x] Source-split causal-entry square core, exact `K_p` identity and
+      raw-collar anchor, conditional scalar rank-one event-aligned inverse,
+      and free terminal-history interface with its explicit `K_Z` derivative
+      gate.
+- [ ] Actual moving-duration endpoint RFDE family, including verification of
+      its scalar/history shear bounds and structured speed ratio, nonlinear
+      split-range closure, and the original-endpoint `J_phys` parameter/gauge
+      family before terminal-to-terminal tracker reconstruction.
 - [ ] Full action-weighted global nonautonomous quotient theorem, including
       Volterra, moving projection, delay, `q`, and rectangular parameter-jet
       terms.  The local fixed-reference rectangular-jet hit theorem is proved.
@@ -1303,7 +1320,7 @@ terminal-to-terminal physical tracker family, gap, and root do not yet exist
 as theorems.  The raw-gauge fixed-section family, its pointwise
 generated-interior representatives, the common-buffer weak interior hits,
 their fixed-reference `J_phys` raw-gauge-flat complete-history classes, and
-the terminal trace-scale coordinates above are theorems.  So is the
+the terminal trace-scale coordinates above are theorems.  So are the
 prescribed-speed scalar original-coordinate-endpoint flight-time theorem on the
 receding collar, the exact reference-pulled endpoint conjugacy for every
 prescribed source in the stated structured class, and the fixed-reference
@@ -1311,8 +1328,9 @@ diagonal order-zero inverse, including its prefix-action causal-entry
 restriction and the exact old-rough-source loss theorem.  The exact
 fixed-envelope selector algebra and the local first-order terminal component
 propagator, together with the direct terminal-free
-`lambda_delta`-bulk trace, are also proved, but the event-aligned upper
-block has no hybrid
-inverse yet.  None of these constructs the endpoint RFDE
+`lambda_delta`-bulk trace, localized boundary columns, source-split hybrid
+square core, and conditional scalar event-aligned inverse, are also proved.
+The required endpoint shear bounds remain hypotheses until a forward
+endpoint reference is constructed.  None of these constructs the endpoint RFDE
 family, compares different fixed-reference charts, or compares the full
 reparameterized trackers on a common chart.

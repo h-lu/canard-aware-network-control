@@ -9,10 +9,14 @@ diagonal.  The first-order terminal propagator, structured phase column,
 terminal-free bulk trace, and localized zero-source normal boundary columns
 are also closed there.  The latter have normalized causal action
 `O(delta S_delta)` and a uniform terminal `T^1` trace; the repelling terminal
-scalar column is retained and proved not to flush.  The source-split hybrid
-assembly, terminal event/history shear `K`, moving-duration RFDE column, full
-terminal Schur inverse, original endpoint histories, repelling history sheet,
-physical gap/root, and selected-to-physical identification remain open.**
+scalar column is retained and proved not to flush.  The
+terminal-free/zero-source source-split square core is now closed, as are the
+exact scalar shear identity, raw-collar anchor, conditional rank-one
+event-aligned inverse under `kappa_p=O(1)`, and free history-interface
+factorization with its explicit `K_Z` slow-derivative gate.  A forward
+endpoint reference verifying those hypotheses, the moving-duration nonlinear
+RFDE column, original endpoint histories, repelling history sheet, physical
+gap/root, and selected-to-physical identification remain open.**
 
 This note tracks
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -347,11 +351,13 @@ Do not:
       phase column, terminal-free bulk prefix/trace, and localized zero-source
       normal boundary columns, including `eta_bd,delta=O(delta S_delta)` and
       the nonflushing repelling terminal scalar column.
-- [ ] Construct the moving-duration RFDE causal-entry/terminal-event BVP
-      with its source-split hybrid inverse, uniform terminal event/history
-      shear, complete normal terminal column, normalized full phase--normal
-      Schur estimate, raw-compatible endpoint histories, and
-      original-endpoint `J_phys` family.
+- [x] Prove the source-split causal-entry square core, exact `K_p` identity
+      and raw-collar anchor, conditional scalar event-aligned inverse, and
+      free terminal-history interface with its explicit `K_Z` derivative
+      gate.
+- [ ] Construct a forward endpoint RFDE reference satisfying the scalar and
+      history shear gates, close the nonlinear moving-duration split-range
+      problem, and obtain raw-compatible original-endpoint `J_phys` histories.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.
