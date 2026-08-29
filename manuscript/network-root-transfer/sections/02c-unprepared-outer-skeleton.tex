@@ -2893,6 +2893,109 @@ they are not silently identified with the branch-entry row of
 \cref{prop:scaled-phase-event-core}.  The next proposition instead
 constructs the corresponding one-row linear inverse directly.
 
+\begin{proposition}[Endpoint-recut obstruction for the inner-anchored phase core]
+\label[proposition]{prop:inner-anchor-endpoint-recut-obstruction}
+Retain \cref{lem:inner-anchored-nonlinear-phase-chart}, fix a sufficiently
+small \(r_{\rm out}>0\), and put
+\begin{equation}
+ \lambda_\delta^{\rm ep}=r_{\rm out}+S_\delta^{-2}.
+                                                        \label{eq:endpoint-obstruction-lambda}
+\end{equation}
+There is a dimension-uniform \(d_0>0\) such that, for all sufficiently
+small \(\delta\), the admissible pulled-back scalar source
+\begin{equation}
+ \widehat Q_{\sigma,\delta}(r)
+ =D_\delta|r|,\qquad
+ D_\delta=d_0\lambda_\delta^{\rm ep},             \label{eq:endpoint-obstruction-source}
+\end{equation}
+belongs to the speed class in
+\cref{eq:anchored-phase-speed-class}.  Let \(a_{\sigma,\delta}\) be the
+corresponding inner-anchored solution.  With
+\begin{equation*}
+ e_{a,o}=r_{\rm out},\qquad e_{r,o}=-r_{\rm out},
+\end{equation*}
+one has
+\begin{align}
+ a_{a,\delta}(e_{a,o})&>0,
+ &a_{r,\delta}(e_{r,o})&<0,                       \label{eq:endpoint-obstruction-phase-signs}\\
+ cD_\delta(r_{\rm out}^2-\rho_\delta^2)
+ &\le |a_{\sigma,\delta}(e_{\sigma,o})|
+ \le CD_\delta(r_{\rm out}^2-\rho_\delta^2),      \label{eq:endpoint-obstruction-phase-size}\\
+ \Theta_{a_{a,\delta}}(r_{\rm out})&<r_{\rm out},
+ &\Theta_{a_{r,\delta}}(-r_{\rm out})&>-r_{\rm out}.
+                                                        \label{eq:endpoint-obstruction-sidedness}
+\end{align}
+For these two admissible inner-anchored solutions, neither image
+\(\Theta_{a_{\sigma,\delta}}(I_\sigma)\) contains its original outer
+endpoint.  The attracting forward scalar path starts at
+\(\Theta_{a_{a,\delta}}(r_{\rm out})<r_{\rm out}\) and ends at
+\(\rho_\delta\), whereas the repelling path starts at \(-\rho_\delta\) and
+ends at \(\Theta_{a_{r,\delta}}(-r_{\rm out})>-r_{\rm out}\).  The strict
+scalar speed sign in \cref{eq:anchored-phase-speed-sign} does not repair this
+failure.  On the attracting side the missing endpoint lies behind the
+available forward segment; on the repelling side it requires an as yet
+unconstructed forward continuation.
+
+The same obstruction is visible in the bordered rows.  The unique constant
+shift preserving \(a'\) and imposing the attracting causal-entry row, and
+the associated algebraic scalar event-row corrections, are
+\begin{align}
+ \widetilde a_{a,\delta}
+ &=a_{a,\delta}-a_{a,\delta}(r_{\rm out}),
+ &\widehat\tau_{a,\delta}
+ &=a_{a,\delta}(r_{\rm out}),\notag\\
+ \widetilde a_{r,\delta}
+ &=a_{r,\delta},
+ &\widehat\tau_{r,\delta}
+ &=-a_{r,\delta}(-r_{\rm out}).                  \label{eq:endpoint-obstruction-row-reanchoring}
+\end{align}
+They satisfy
+\begin{align}
+ \widetilde a_{a,\delta}(r_{\rm out})&=0,
+ &\widetilde a_{a,\delta}(\rho_\delta)
+       +\widehat\tau_{a,\delta}&=0,\notag\\
+ \widetilde a_{r,\delta}(-\rho_\delta)&=0,
+ &\widetilde a_{r,\delta}(-r_{\rm out})
+       +\widehat\tau_{r,\delta}&=0.              \label{eq:endpoint-obstruction-rows}
+\end{align}
+For fixed \(r_{\rm out}\), as \(\delta\downarrow0\),
+\begin{equation}
+ \min_{\sigma\in\{a,r\}}
+ \frac{|\widehat\tau_{\sigma,\delta}|}{\rho_\delta}
+ \longrightarrow\infty,
+ \qquad
+ \min_{\sigma\in\{a,r\}}
+ \frac{|\widehat\tau_{\sigma,\delta}|/\delta}{S_\delta}
+ \longrightarrow\infty.                         \label{eq:endpoint-obstruction-scale-divergence}
+\end{equation}
+In particular,
+\begin{equation}
+ \|\widetilde a_{a,\delta}\|_{\phi,\mathrm{rel}}
+ \ge
+ \frac{|\widehat\tau_{a,\delta}|}{\rho_\delta}
+ \longrightarrow\infty.                         \label{eq:endpoint-obstruction-relative-norm}
+\end{equation}
+Here \(\widehat\tau_{\sigma,\delta}\) is scalar bordered-row bookkeeping, and
+\(\widehat\tau_{\sigma,\delta}/\delta\) is only its represented fold-time
+scale; no nonlinear physical moving-event time has been constructed.
+Indeed, \(\widetilde a_{a,\delta}\) need not solve the same nonlinear phase
+action equation.  Hence the present weighted speed class, inner-anchored
+relative inverse, strict speed sign, and an \(O(S_\delta)\) terminal window
+do not imply a literal original-endpoint recut.  Such a theorem must instead
+solve a new causal-entry plus terminal-event moving-duration boundary
+problem, or impose an additional endpoint cancellation
+\(|\widehat\tau|=O(\rho_\delta)\) together with the missing one-sided
+attachment.
+
+This is a scalar phase-core nonimplication result.  The source in
+\cref{eq:endpoint-obstruction-source} is not asserted to be the residual of
+a full RFDE tracker, and the proposition does not exclude additional
+model-specific cancellation.  It excludes only the attempted deduction of
+original-endpoint recutting from the scalar phase-core hypotheses and
+estimates of
+\cref{lem:inner-anchored-nonlinear-phase-chart} alone.
+\end{proposition}
+
 \begin{proposition}[Inner-anchored phase Schur inverse]
 \label[proposition]{prop:inner-anchored-relative-phase-schur}
 Retain

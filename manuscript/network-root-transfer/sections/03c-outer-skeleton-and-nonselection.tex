@@ -3401,6 +3401,93 @@ Combining the action equation with
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:inner-anchor-endpoint-recut-obstruction}]
+By \cref{eq:anchored-phase-small-parameters},
+
+\[
+ \Lambda_\delta=r_{\rm out}+4\alpha^2S_\delta^{-2}.
+\]
+
+Choose \(r_{\rm out}\) and then \(d_0\) so that
+\(D_\delta\Lambda_\delta\le D_*\) for all sufficiently small
+\(\delta\).  Since \(|r|\le m_\delta(r)\),
+\cref{eq:endpoint-obstruction-source} then satisfies
+\cref{eq:anchored-phase-speed-class}.  The anchored solution therefore
+exists and remains in the common phase collar.  In particular,
+
+\[
+ q_-^2
+ \le q_0(r)q_0(\Theta_{a_{\sigma,\delta}}(r))
+ \le q_+^2.
+\]
+
+\Cref{eq:anchored-phase-explicit-IVP} gives
+\begin{align}
+ a_{a,\delta}(r_{\rm out})
+ &=\int_{\rho_\delta}^{r_{\rm out}}
+   \frac{D_\delta u}
+   {q_0(u)q_0(\Theta_{a_{a,\delta}}(u))}\,\dd u>0,
+                                                        \label{eq:proof-endpoint-obstruction-attracting-integral}\\
+ a_{r,\delta}(-r_{\rm out})
+ &=\int_{-\rho_\delta}^{-r_{\rm out}}
+   \frac{D_\delta|u|}
+   {q_0(u)q_0(\Theta_{a_{r,\delta}}(u))}\,\dd u<0.
+                                                        \label{eq:proof-endpoint-obstruction-repelling-integral}
+\end{align}
+Bounding the denominators between \(q_-^2\) and \(q_+^2\) proves
+\cref{eq:endpoint-obstruction-phase-signs,eq:endpoint-obstruction-phase-size}.
+
+For every admissible \(r\),
+\begin{equation}
+ \Theta_a(r)-r
+ =\int_0^{a(r)}q_0(\Phi_{q_0}^t(r))\,\dd t.       \label{eq:proof-endpoint-obstruction-flow-displacement}
+\end{equation}
+Because \(q_0<0\), the signs just obtained prove
+\cref{eq:endpoint-obstruction-sidedness}.  By
+\cref{eq:anchored-phase-orientation}, each chart is orientation preserving,
+and its inner endpoint is fixed.  Hence its whole image lies between that
+fixed inner endpoint and the displaced outer endpoint.  Neither original
+outer endpoint belongs to the image.  The reconstructed speed remains
+negative by \cref{eq:anchored-phase-speed-sign}; it therefore cannot create
+the attracting endpoint in future time, while on the repelling branch the
+outer endpoint lies beyond the constructed terminal point.
+
+The identities in
+\cref{eq:endpoint-obstruction-rows} follow directly from the inner anchors
+and \cref{eq:endpoint-obstruction-row-reanchoring}.  They are precisely the
+entry and terminal rows of the scalar bordered bookkeeping; no claim is
+made here that constant reanchoring preserves the nonlinear phase action.
+
+For sufficiently small \(\delta\), one has
+\(\rho_\delta<r_{\rm out}/2\).  Thus
+\cref{eq:endpoint-obstruction-phase-size} yields
+\begin{equation}
+ |\widehat\tau_{\sigma,\delta}|
+ \ge c d_0(r_{\rm out}+S_\delta^{-2})r_{\rm out}^2.
+                                                        \label{eq:proof-endpoint-obstruction-tau-lower}
+\end{equation}
+The right-hand side converges to \(cd_0r_{\rm out}^3>0\), whereas
+
+\[
+ \rho_\delta=\frac{\delta S_\delta}{2\alpha}\longrightarrow0,
+ \qquad
+ \delta S_\delta=2\alpha\rho_\delta.
+\]
+
+This proves both limits in
+\cref{eq:endpoint-obstruction-scale-divergence}.  Finally,
+
+\[
+ |\widetilde a_{a,\delta}(\rho_\delta)|
+ =|\widehat\tau_{a,\delta}|,
+\]
+
+so the value term in the relative norm proves
+\cref{eq:endpoint-obstruction-relative-norm}.  The last conclusions are
+exactly the logical consequences of these scale and sidedness failures.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:inner-anchored-relative-phase-schur}]
 The relative phase space is Banach, and
 \begin{equation}
