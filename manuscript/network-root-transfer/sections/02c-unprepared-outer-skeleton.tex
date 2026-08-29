@@ -3332,6 +3332,145 @@ construct the rough-middle-to-incoming trace, an endpoint RFDE reference,
 the event shear \(K\), a moving-duration inverse, or a physical root.
 \end{proposition}
 
+\begin{proposition}[Diagonal terminal-free normal data: prefix and terminal trace]
+\label[proposition]{prop:diagonal-bulk-terminal-prefix-trace}
+Retain
+\cref{cor:diagonal-raw-compatible-phase-normal-inverse,%
+prop:normal-to-phase-action-coupling,%
+prop:diagonal-terminal-component-green},
+fix \(\varkappa,A>0\) and an integer \(M\ge2\), and use the scales and terminal
+recuts in
+\cref{eq:prefix-action-diagonal-scales,%
+eq:terminal-component-scales,eq:terminal-component-recut}.
+Let \(\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}\) be the space of
+normal data
+\(f=(\gamma_0,b_\sigma,F,H)\in
+\widetilde{\mathsf Y}_{\sigma,0}\) such that
+\begin{equation}
+ F(s)=H(s)=0\quad(s_{\sigma,T}\le s\le S_\sigma),
+ \qquad b_r=0\quad\hbox{if }\sigma=r.            \label{eq:bulk-terminal-free-data}
+\end{equation}
+Here \(\gamma_0\) denotes the prescribed history on the attracting branch
+and the prescribed baseline history in the closed repelling-feedback
+problem.  Give this space the direct data norm
+\begin{align}
+ \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}}
+ &=\lambda_\delta^{-1}
+       \|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}\notag\\
+ &=\frac1{\varepsilon\lambda_\delta}
+   \left\{
+    \|\gamma_0\|_{N,e_\sigma,\delta}^{\sharp}
+    +\frac{|b_\sigma|}{R_\delta}
+    +\sup_{0\le s\le S_\sigma}
+       \left(\|F(s)\|_N
+          +\frac{|H(s)|}{|\bar r_\sigma(s)|^2}\right)
+   \right\}.                                    \label{eq:bulk-terminal-free-data-norm}
+\end{align}
+Thus the norm is specified before applying a solution operator; it contains
+neither a reconstructed speed nor a returned trace.
+
+For \(f\in\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}\), write
+\begin{equation}
+ y_f=(\gamma_f,Z_f,p_f)=G_\sigma f,\qquad
+ Q_f=\mathfrak D_\sigma y_f,                     \label{eq:bulk-terminal-returned-normal}
+\end{equation}
+where \(Q_f\) is pulled back to the reduced coordinate.  Define
+\begin{align}
+ \Pi_{\sigma,f}(r)
+ &=\int_{e_{\sigma,0}}^r\frac{Q_f(u)}{q_0(u)^2}\,\dd u,\notag\\
+ \Gamma_{\sigma,T}f(\theta)
+ &=Z_f(s_{\sigma,T}+\theta),\qquad
+                    -\theta_m\le\theta\le0,\notag\\
+ b_{a,T}(f)&=p_f(s_{a,T}),\qquad
+ b_{r,T}(f)=p_f(S_r)=0,                           \label{eq:bulk-terminal-interface-data}\\
+ (Z_{\sigma,T}[f],p_{\sigma,T}[f])(t)
+ &=(Z_f,p_f)(s_{\sigma,T}+t),\qquad 0\le t\le L_b,\notag\\
+ Q_{\sigma,T}[f](t)
+ &=Q_f(\bar r_{\sigma,T}(t)).                    \label{eq:bulk-terminal-recut-data}
+\end{align}
+
+For all sufficiently small \(\delta\), with threshold allowed to depend
+on the displayed fixed choices, the following estimates are uniform in
+\(N\), the branch, and the retained parameters.  First,
+\begin{equation}
+ \|y_f\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ \le C_{\varkappa,A,M}\lambda_\delta
+        \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}}.
+                                                        \label{eq:bulk-global-normal-bound}
+\end{equation}
+The speed and every causal prefix satisfy the direct estimate
+\begin{equation}
+ \frac1{\lambda_\delta}
+   \sup_{r\in I_\sigma}\frac{|Q_f(r)|}{m_\delta(r)}
+ +\frac1{\rho_\delta}
+   \sup_{r\in I_\sigma}|\Pi_{\sigma,f}(r)|
+ \le C_{\varkappa,A,M}
+       \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}}.
+                                                        \label{eq:bulk-direct-prefix-bound}
+\end{equation}
+Consequently, rather than by hypothesis,
+\begin{equation}
+ f\in\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}},\qquad
+ \|f\|_{\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}}
+ \le C_{\varkappa,A,M}
+       \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}}.
+                                                        \label{eq:bulk-direct-graph-embedding}
+\end{equation}
+
+The incoming terminal data have their natural small size,
+\begin{equation}
+ \varepsilon^{-1}\left\{
+   \|\Gamma_{\sigma,T}f\|_{C^0}
+    +\frac{|b_{\sigma,T}(f)|}{m_{\sigma,T}}\right\}
+ \le C_{\varkappa,A,M}\lambda_\delta
+       \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}},
+                                                        \label{eq:bulk-terminal-interface-bound}
+\end{equation}
+and their propagated terminal trace obeys
+\begin{align}
+ \|(Z_{\sigma,T}[f],p_{\sigma,T}[f])\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}
+ &\le C_{\varkappa,A,M}\lambda_\delta
+       \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}},
+                                                        \label{eq:bulk-terminal-full-trace-bound}\\
+ \|(Z_{\sigma,T}[f],p_{\sigma,T}[f])\|_
+       {\mathsf T_{\sigma,T}^1([L_b-\theta_m,L_b])}
+ &\le C_{\varkappa,A,M}\lambda_\delta
+       \mathcal E_{\sigma,T}(\delta)
+       \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}}.
+                                                        \label{eq:bulk-terminal-final-flush}
+\end{align}
+The corresponding local speed and phase increment satisfy
+\begin{align}
+ \sup_{0\le t\le L_b}|Q_{\sigma,T}[f](t)|
+ &\le C_{\varkappa,A,M}\lambda_\delta m_{\sigma,T}
+       \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}},\notag\\
+ \frac1{\rho_\delta}\sup_{0\le t\le L_b}
+ \left|\int_{\bar r_{\sigma,T}(0)}^{\bar r_{\sigma,T}(t)}
+        \frac{Q_f(u)}{q_0(u)^2}\,\dd u\right|
+ &\le C_{\varkappa,A,M}\lambda_\delta m_{\sigma,T}
+       \|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}}.
+                                                        \label{eq:bulk-terminal-local-action}
+\end{align}
+
+The normalized global prefix in
+\cref{eq:bulk-direct-prefix-bound} is bounded but is not asserted to tend
+to zero: the upper-bound ledger contains the nonvanishing coefficient
+\begin{equation}
+ \frac{\lambda_\delta R_\delta^2}{\rho_\delta}
+ =2\alpha\varkappa^2+o(1).                       \label{eq:bulk-prefix-nonsmall-scale}
+\end{equation}
+This proposition closes the fixed-path, first-order terminal trace of
+\(\lambda_\delta\)-small old-normal data whose sources vanish on the
+terminal buffer.  A nonzero repelling terminal row is a distinct localized
+column and cannot satisfy
+\cref{eq:bulk-terminal-final-flush}.  No estimate here covers an arbitrary
+unit rough datum, a localized terminal endpoint/event column, the event shear \(K\),
+a moving-duration or full hybrid inverse, an endpoint RFDE family,
+parameter or higher jets, a nonlinear tracker, a past-complete connection,
+or a physical root.
+\end{proposition}
+
 \begin{proposition}[Unavoidable \(S_\delta^2\) loss for rough normal data]
 \label[proposition]{prop:rough-normal-prefix-action-obstruction}
 The old rough norm cannot replace the weighted-speed/action graph norm in

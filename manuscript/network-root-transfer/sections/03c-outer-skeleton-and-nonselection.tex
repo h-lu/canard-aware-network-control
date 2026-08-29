@@ -4190,6 +4190,127 @@ full-action-space assertion has been used.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:diagonal-bulk-terminal-prefix-trace}]
+Put
+\[
+ D=\|f\|_{\mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}},
+ \qquad D_0=\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}
+             =\lambda_\delta D.
+\]
+The diagonal fixed-phase inverse and its closed repelling-feedback version
+give
+\begin{equation}
+ \|y_f\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ \le CD_0=C\lambda_\delta D,                    \label{eq:proof-bulk-global-normal}
+\end{equation}
+which proves \cref{eq:bulk-global-normal-bound}.
+
+We prove the prefix estimate directly from these old-data bounds, before
+using any prefix-action graph space.  Put
+\(E_\delta=\varepsilon\delta^{-2\vartheta}\).  The pointwise algebraic-row
+estimate in \cref{eq:normal-phase-pointwise-Q}, followed by
+\cref{eq:proof-bulk-global-normal}, yields
+\begin{equation}
+ |Q_f(r)|\le C\lambda_\delta
+       \{|r|+E_\delta\}D.                       \label{eq:proof-bulk-pointwise-speed}
+\end{equation}
+Since \(m_\delta(r)\ge|r|\) and
+\(m_\delta(r)\ge\rho_\delta\) on either reduced interval,
+\begin{equation}
+ \frac1{\lambda_\delta}
+  \sup_{I_\sigma}\frac{|Q_f|}{m_\delta}
+ \le C\left(1+\frac{E_\delta}{\rho_\delta}\right)D
+ \le CD.                                        \label{eq:proof-bulk-weighted-speed}
+\end{equation}
+For the primitive, the uniform two-sided speed bounds and
+\cref{eq:proof-bulk-pointwise-speed} give
+\begin{equation}
+ \frac{\|\Pi_{\sigma,f}\|_\infty}{\rho_\delta}
+ \le C\frac{\lambda_\delta}{\rho_\delta}
+       \{R_\delta^2+E_\delta R_\delta\}D.       \label{eq:proof-bulk-prefix-preledger}
+\end{equation}
+Now
+\begin{equation}
+ \frac{E_\delta}{\rho_\delta}
+ =O\left(\frac{\delta^{1-2\vartheta}}{S_\delta}\right)=o(1),
+ \qquad
+ \frac{E_\delta R_\delta}{\varepsilon/\rho_\delta}
+ =\frac{\varkappa}{2\alpha}
+    \delta^{3/2-2\vartheta}S_\delta^{5/2}=o(1),
+ \qquad E_\delta R_\delta\le\frac{\varepsilon}{\rho_\delta}
+                                                        \label{eq:proof-bulk-cap-scale}
+\end{equation}
+for all sufficiently small \(\delta\).  Hence the braces in
+\cref{eq:proof-bulk-prefix-preledger} are bounded by \(CM_\delta\), and
+direct expansion gives
+\begin{align}
+ \frac{\lambda_\delta M_\delta}{\rho_\delta}
+ &=2\alpha\varkappa^2
+   +2\alpha\varkappa^3\sqrt\delta\,S_\delta^{7/2}
+   +4\alpha^2\varkappa\sqrt\delta\,S_\delta^{-1/2}
+   +4\alpha^2S_\delta^{-4}\notag\\
+ &\le C_\varkappa.                              \label{eq:proof-bulk-prefix-ratio}
+\end{align}
+This proves \cref{eq:bulk-direct-prefix-bound} without assuming graph
+membership.  The definition in
+\cref{eq:prefix-action-normal-data-norm}, together with
+\(D_0=\lambda_\delta D\) and \(\lambda_\delta=o(1)\), now proves
+\cref{eq:bulk-direct-graph-embedding} as a conclusion.
+
+We next take the terminal interface.  By the window geometry, after one
+further decrease of \(\delta\), the segment
+\([s_{\sigma,T}-\theta_m,s_{\sigma,T}]\) is a generated current segment.
+Thus \cref{eq:proof-bulk-global-normal} gives
+\begin{equation}
+ \varepsilon^{-1}\|\Gamma_{\sigma,T}f\|_{C^0}
+ \le C\lambda_\delta D.                         \label{eq:proof-bulk-interface-history}
+\end{equation}
+On the attracting branch,
+\(|\bar r_a(s_{a,T})|\le C\rho_\delta\), so the same global estimate gives
+\begin{equation}
+ \frac{|b_{a,T}(f)|}{\varepsilon m_{a,T}}
+ \le C\frac{\rho_\delta}{m_{a,T}}
+          \lambda_\delta D
+ \le C\lambda_\delta D.                        \label{eq:proof-bulk-attracting-interface-row}
+\end{equation}
+On the repelling branch the local scalar row is the prescribed terminal
+row \(b_r=0\).  This proves
+\cref{eq:bulk-terminal-interface-bound}.  By
+\cref{eq:bulk-terminal-free-data}, the distributed local sources also
+vanish, so the data norm in
+\cref{eq:terminal-component-data-norm} is at most
+\(C\lambda_\delta D\).
+
+The restriction of \(y_f\) to the terminal window solves that local mixed
+problem.  Local uniqueness and
+\cref{eq:terminal-component-source-bound} prove
+\cref{eq:bulk-terminal-full-trace-bound}.  Since the local distributed
+sources vanish and the repelling terminal row is zero,
+\cref{eq:terminal-component-rough-flush} gives
+\cref{eq:bulk-terminal-final-flush}.  Finally,
+\cref{eq:terminal-component-local-action}, with the same local data norm,
+proves \cref{eq:bulk-terminal-local-action}.
+
+For completeness, expand the nonvanishing coefficient in the prefix
+upper-bound ledger:
+\begin{align*}
+ \frac{\lambda_\delta R_\delta^2}{\rho_\delta}
+ &=\frac{R_\delta^3}{\rho_\delta}
+   +\frac{S_\delta^{-2}R_\delta^2}{\rho_\delta}\\
+ &=2\alpha\varkappa^3\sqrt\delta\,S_\delta^{7/2}
+       +2\alpha\varkappa^2
+ =2\alpha\varkappa^2+o(1).
+\end{align*}
+This proves \cref{eq:bulk-prefix-nonsmall-scale} and records why no
+\(\delta\)-small contraction is claimed from this upper-bound ledger.
+If \(b_r\ne0\),
+then \(p_r(S_r)=b_r\) is visible at the final endpoint with normalized size
+\(|b_r|/(\varepsilon m_{r,T})\), so it cannot acquire the vanishing factor
+\(\mathcal E_{r,T}\).  The remaining exclusions now follow from the direct
+data class and the fixed-phase, fixed-reduced-path operators used above.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:rough-normal-prefix-action-obstruction}]
 Let \(\bar r_a\) be the attracting reduced path and take the hybrid normal
 direction
