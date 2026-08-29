@@ -177,7 +177,10 @@ exact terminal coefficient is the nonzero quotient
 \(q_\sigma^E(e_{\sigma,1})/q_0(e_{\sigma,1})\).
 \Cref{cor:diagonal-raw-compatible-phase-normal-inverse} also re-audits the
 fixed-reference order-zero raw-compatible phase--normal graph inverse on
-the receding diagonal.  Separately,
+the receding diagonal.  The causal-entry graph inverse and its exact rough
+source obstruction show why weighted speed and causal prefixes, rather than
+the old unrestricted rough range, are the uniform coordinates.
+Separately,
 \cref{lem:current-absorbed-delay-splitting} controls the attracting
 outer-buffer evolution kernel through one endpoint derivative with rate
 \(\exp\{-c r_{{\rm out},\delta}\Delta s/\delta\}\), while one zeroth-order
@@ -186,12 +189,19 @@ positive-delay Duhamel generation is
 \(r_{{\rm out},\delta}/2\le |r_r|\le r_{{\rm out},\delta}\),
 \cref{lem:repelling-component-generations} proves only that the terminal
 scalar kernel has the same \(r_{{\rm out},\delta}/\delta\) rate scale.
-This still does not close the moving RFDE endpoint problem.  The next proof
-gate is the arbitrary-source rough-middle/strong-terminal inverse,
-including the complete moving-duration normal column and its off-diagonal
-terminal Schur correction, followed by the original-endpoint nonlinear
-family.  In particular, membership of the source produced by that open BVP
-in \cref{eq:reference-pulled-source-class} has not been proved.
+The resulting terminal propagator now accepts continuous incoming histories
+and first-order normal sources.  Its structured phase column, terminal-free
+bulk trace, and localized zero-source normal boundary columns are all
+controlled in their distinct natural norms.  For the localized columns the
+normalized causal action is \(O(\delta S_\delta)\); the attracting and
+repelling-entry columns flush, while a nonzero repelling terminal scalar row
+is correctly retained.  This still does not close the moving RFDE endpoint
+problem.  The next proof gate is the source-split hybrid assembly and the
+complete terminal event/history shear, including the moving-duration normal
+column and its off-diagonal terminal Schur correction, followed by the
+original-endpoint nonlinear family.  In particular, membership of the source
+produced by that open BVP in \cref{eq:reference-pulled-source-class} has not
+been proved.
 \Cref{prop:relative-structured-phase-response} then uses the relative anchor
 to prove an \(O(\delta)\) delay profile and
 \(O(r_{\rm out}+S_\delta^{-1})\) bounds for both the returned phase column in

@@ -731,7 +731,12 @@ exact terminal coefficient is
 zero.  Moreover,
 \cref{cor:diagonal-raw-compatible-phase-normal-inverse} re-audits the
 fixed-reference raw-compatible phase--normal graph inverse at order zero on
-the same receding diagonal.  Separately,
+the same receding diagonal.
+\Cref{thm:diagonal-causal-entry-prefix-action-inverse,prop:rough-normal-prefix-action-obstruction}
+then identify its correct causal range: charging the weighted speed controls
+every recorded prefix, whereas the old unrestricted rough norm has the sharp
+loss \(R_\delta^2/\rho_\delta\asymp S_\delta^2\).
+Separately,
 \cref{lem:current-absorbed-delay-splitting} controls the attracting
 outer-buffer evolution kernel through one endpoint derivative with rate
 \(\exp\{-c r_{{\rm out},\delta}\Delta s/\delta\}\), while one zeroth-order
@@ -741,10 +746,31 @@ On the repelling outer interval
 \(r_{{\rm out},\delta}/2\le |r_r|\le r_{{\rm out},\delta}\),
 \cref{lem:repelling-component-generations} proves only that the terminal
 scalar kernel has the same \(r_{{\rm out},\delta}/\delta\) rate scale.
-The remaining physical theorem must construct the arbitrary-source
-rough-middle/strong-terminal inverse, the complete moving-duration normal
-column, and its full terminal Schur factor.  None of the preceding results
-proves that the source produced by that open moving RFDE BVP satisfies
+On these kernels,
+\cref{prop:diagonal-terminal-component-green,%
+prop:raw-compatible-terminal-phase-column,%
+prop:diagonal-bulk-terminal-prefix-trace}
+give the first-order terminal propagator, the structured phase column, and
+the direct terminal-free bulk-to-prefix-to-trace composition.  The remaining
+localized normal boundary columns are closed by
+\cref{prop:diagonal-boundary-prefix-terminal-trace}.  For
+\(f_\sigma^{\rm bd}=(\gamma_0,b_\sigma,0,0)\), the exact vanishing of the
+distributed scalar source yields
+\[
+ \rho_\delta^{-1}\sup_r
+ \left|\int_{e_{\sigma,0}}^r\frac{Q_\sigma^{\rm bd}}{q_0^2}\,\dd u\right|
+ \le C\eta_{{\rm bd},\delta}D_\sigma^{\rm bd},
+ \qquad
+ \eta_{{\rm bd},\delta}=O(\delta S_\delta)=o(1),
+\]
+as well as a uniform first-order terminal trace.  The attracting column and
+repelling entry-history column flush from the final window; the repelling
+terminal scalar column provably does not, because its endpoint value is the
+prescribed row.  Thus the remaining physical theorem must assemble the bulk
+and localized summands in one hybrid space, control the complete terminal
+event/history shear and moving-duration normal column, and bound the full
+terminal Schur factor.  None of the preceding results proves that the source
+produced by that open moving RFDE BVP satisfies
 \cref{eq:reference-pulled-source-class}, or places the existing
 fixed-section RFDE zeros at the original endpoints.
 Finally, the delay profile itself is \(O(\delta)\) in the relative phase

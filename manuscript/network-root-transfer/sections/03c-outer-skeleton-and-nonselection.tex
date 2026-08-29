@@ -4311,6 +4311,163 @@ data class and the fixed-phase, fixed-reduced-path operators used above.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:diagonal-boundary-prefix-terminal-trace}]
+Put \(D=D_\sigma^{\rm bd}\).  The data in
+\cref{eq:boundary-column-direct-norm} have zero distributed sources, and
+their old fixed-normal norm is exactly \(D\).  The diagonal specialization
+of the fixed-phase inverse, including the closed repelling collar feedback,
+therefore gives
+\begin{equation}
+ \|y_\sigma^{\rm bd}\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ \le CD.                                         \label{eq:proof-boundary-global-state}
+\end{equation}
+In particular,
+\begin{equation}
+ |p_\sigma(r)|\le C\varepsilon |r|D.             \label{eq:proof-boundary-p-pointwise}
+\end{equation}
+
+The pointwise algebraic-row estimate
+\cref{eq:normal-phase-pointwise-Q} gives
+\begin{equation}
+ |Q_\sigma^{\rm bd}(r)|
+ \le C\{|r|+E_\delta\}D,\qquad
+ E_\delta=\varepsilon\delta^{-2\vartheta}.       \label{eq:proof-boundary-Q-preweight}
+\end{equation}
+The cap definition gives the displayed value of \(E_\delta\).  Also
+\(m_\delta(r)=|r|+\varepsilon/|r|^2\) is bounded below by a fixed
+multiple of \(\varepsilon^{1/3}=\delta^{2/3}\), whereas
+\(E_\delta=\delta^{2-2\vartheta}\) and
+\(\vartheta<1/4\).  Hence \(E_\delta\le Cm_\delta(r)\) for all small
+\(\delta\), uniformly on both intervals.  This proves the weighted-speed
+part of \cref{eq:boundary-column-global-action}.
+
+The sharper primitive estimate uses the fact that the distributed scalar
+source vanishes.  The scalar differential row and the algebraic row in
+\cref{eq:fixed-phase-normal-block} then give, on both branches,
+\begin{equation}
+ Q_\sigma^{\rm bd}(r)
+ =\frac{q_0(r)p_\sigma'(r)}
+        {w_{0,N}'(r)+\varepsilon\mathfrak d_N(r)}.            \label{eq:proof-boundary-Q-from-p}
+\end{equation}
+This is the same exact recovery identity used separately in
+\cref{eq:attracting-Q-from-p,eq:repelling-Q-from-p}.  Define the scalar
+action coefficient
+\begin{equation}
+ \mathcal A_{{\rm act},N}(r)=\frac1{q_0(r)
+        \{w_{0,N}'(r)+\varepsilon\mathfrak d_N(r)\}}.         \label{eq:proof-boundary-action-coefficient}
+\end{equation}
+The two-sign estimates
+\cref{eq:principal-green-coefficients,%
+eq:phase-column-q0-two-jets,eq:phase-column-residual-jets} give
+\begin{equation*}
+ |q_0|\asymp1,\qquad |q_0'|\le C,\qquad
+ |w_{0,N}'+\varepsilon\mathfrak d_N|\asymp |r|,
+ \qquad
+ |w_{0,N}''+\varepsilon\mathfrak d_N'|\le C.
+\end{equation*}
+Here the bound on \(\mathfrak d_N'\) on both branches follows by applying
+the weighted physical-backtrack calculus through order two to
+\(\mathcal D_{0,c,N}\), exactly as in the derivation of
+\cref{eq:phase-column-D0-two-jets,eq:phase-column-residual-jets}; the factor
+\(\varepsilon/|r|\) is absorbed because
+\(\varepsilon/\rho_\delta=o(1)\).  Direct differentiation of
+\cref{eq:proof-boundary-action-coefficient} therefore gives
+\begin{equation}
+ |\mathcal A_{{\rm act},N}(r)|\le\frac C{|r|},\qquad
+ |\mathcal A_{{\rm act},N}'(r)|\le\frac C{|r|^2}.          \label{eq:proof-boundary-action-coefficient-bounds}
+\end{equation}
+These bounds hold on either same-sign interval; no branch orientation is
+used in them.
+
+For an oriented primitive from \(e_{\sigma,0}\) to \(r\), integration by
+parts is legitimate cellwise.  The seam contributions telescope because
+\(p_\sigma\) is continuous.  Equations
+\cref{eq:proof-boundary-Q-from-p,%
+eq:proof-boundary-action-coefficient} give
+\begin{align}
+ \Pi_\sigma^{\rm bd}(r)
+ ={}&\mathcal A_{{\rm act},N}(r)p_\sigma(r)
+   -\mathcal A_{{\rm act},N}(e_{\sigma,0})
+       p_\sigma(e_{\sigma,0})\notag\\
+ &{}-\int_{e_{\sigma,0}}^r
+       \mathcal A_{{\rm act},N}'(u)p_\sigma(u)\,\dd u .      \label{eq:proof-boundary-action-integration-by-parts}
+\end{align}
+Use
+\cref{eq:proof-boundary-p-pointwise,%
+eq:proof-boundary-action-coefficient-bounds} and forget the orientation
+only after taking absolute values.  Uniformly for every partial prefix,
+\begin{equation}
+ |\Pi_\sigma^{\rm bd}(r)|
+ \le C\varepsilon
+       \left\{1+\log\frac{R_\delta}{\rho_\delta}\right\}D.
+                                                        \label{eq:proof-boundary-prefix-bound}
+\end{equation}
+This proves the last line of
+\cref{eq:boundary-column-global-action}.  Since
+\begin{equation*}
+ \log(R_\delta/\rho_\delta)\le CS_\delta^2,\qquad
+ \frac{\varepsilon}{\rho_\delta}=\frac{2\alpha\delta}{S_\delta},
+\end{equation*}
+one has \(\eta_{{\rm bd},\delta}\le C\delta S_\delta=o(1)\),
+which proves \cref{eq:boundary-column-action-smallness}.
+
+For the causal phase lift, the first two identities in
+\cref{eq:boundary-column-causal-phase-lift} follow directly from its
+definition.  The primitive estimate gives its normalized \(C^0\) bound.
+Furthermore,
+\begin{align*}
+ \int_{I_\sigma}|(a_\sigma^{\rm bd})'(r)|\,\dd r
+ +\sup_{I_\sigma}|r(a_\sigma^{\rm bd})'(r)|
+ &\le C\int_{\rho_\delta}^{R_\delta}m_\delta(r)\,\dd r\,D
+    +C\sup_{\rho_\delta\le r\le R_\delta}r m_\delta(r)D\\
+ &\le C\left\{R_\delta^2
+          +\frac{\varepsilon}{\rho_\delta}\right\}D.
+\end{align*}
+The same quantity dominates the unnormalized \(C^0\) bound for small
+\(\delta\).  The definition in \cref{eq:phase-event-spaces} therefore
+proves \cref{eq:boundary-column-phase-lift-bound}.
+
+It remains to pass to the terminal recut.  The global state estimate gives
+\begin{equation}
+ \varepsilon^{-1}\|\Gamma_{\sigma,T}^{\rm bd}\|_{C^0}
+ \le CD.                                         \label{eq:proof-boundary-terminal-history}
+\end{equation}
+On the attracting branch,
+\(|\bar r_a(s_{a,T})|\le C\rho_\delta\) and
+\(m_{a,T}\asymp S_\delta^{-2}\), so
+\begin{equation*}
+ \frac{|p_a(s_{a,T})|}{\varepsilon m_{a,T}}
+ \le C\frac{\rho_\delta}{m_{a,T}}D\le CD.
+\end{equation*}
+On the repelling branch the terminal scalar datum is \(b_r\), and
+\(m_{r,T}\asymp R_\delta\), so its normalized local size is also at most
+\(CD\).  The local distributed sources vanish.  Thus the restriction of
+the global solution has local data norm at most \(CD\) in
+\cref{eq:terminal-component-data-norm}.  Local uniqueness and
+\cref{eq:terminal-component-source-bound,%
+eq:terminal-component-local-action} prove
+\cref{eq:boundary-column-terminal-trace}.
+
+For the attracting solution, the first line of
+\cref{eq:terminal-component-rough-flush} applies to all the displayed
+boundary data.  For the repelling solution, apply its second line to the
+entry-history column in \cref{eq:boundary-column-repelling-split}, whose
+terminal scalar row is zero.  This proves
+\cref{eq:boundary-column-final-flush}.  For the other repelling column,
+the exact endpoint row is \(p_r^{\rm ter}(S_r)=b_r\).  Since the endpoint
+belongs to the final history window, the zeroth term of the terminal trace
+norm gives
+\begin{equation*}
+ \|(Z_{r,T}^{\rm ter},p_{r,T}^{\rm ter})\|_
+       {\mathsf T_{r,T}^1([L_b-\theta_m,L_b])}
+ \ge\frac{|b_r|}{\varepsilon m_{r,T}}.
+\end{equation*}
+Finally \(m_{r,T}=R_\delta+\varepsilon/R_\delta^2\asymp R_\delta\),
+which proves \cref{eq:boundary-terminal-column-nonflush} and the stated
+scope boundary.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:rough-normal-prefix-action-obstruction}]
 Let \(\bar r_a\) be the attracting reduced path and take the hybrid normal
 direction

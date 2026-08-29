@@ -3471,6 +3471,140 @@ parameter or higher jets, a nonlinear tracker, a past-complete connection,
 or a physical root.
 \end{proposition}
 
+\begin{proposition}[Diagonal localized boundary columns: causal action and terminal trace]
+\label[proposition]{prop:diagonal-boundary-prefix-terminal-trace}
+Retain
+\cref{cor:diagonal-raw-compatible-phase-normal-inverse,%
+prop:normal-to-phase-action-coupling,%
+prop:diagonal-terminal-component-green,%
+prop:physical-backtrack-calculus}
+with the coefficient and backtrack estimates through order two, fix
+\(\varkappa,A>0\) and \(M\ge2\), and use the diagonal
+scales and terminal recuts in
+\cref{eq:prefix-action-diagonal-scales,%
+eq:terminal-component-scales,eq:terminal-component-recut}.  For either
+branch let
+\begin{equation}
+ f_{\sigma}^{\rm bd}=(\gamma_0,b_\sigma,0,0),\qquad
+ D_{\sigma}^{\rm bd}
+ =\varepsilon^{-1}\left\{
+   \|\gamma_0\|_{N,e_\sigma,\delta}^{\sharp}
+       +\frac{|b_\sigma|}{R_\delta}\right\}.     \label{eq:boundary-column-direct-norm}
+\end{equation}
+Here \(b_a=p(0)\), \(b_r=p(S_r)\),
+\(e_a=R_\delta\), and \(e_r=-\rho_\delta\).  On the repelling branch
+\(\gamma_0\) is the prescribed baseline history before the compatible
+\(p(0)\)-feedback is closed.  Thus the norm in
+\cref{eq:boundary-column-direct-norm} is specified entirely by the input
+data and not by the returned history or speed.
+
+Write
+\begin{equation}
+ y_{\sigma}^{\rm bd}
+   =(\gamma_\sigma,Z_\sigma,p_\sigma)
+   =G_\sigma f_{\sigma}^{\rm bd},\qquad
+ Q_{\sigma}^{\rm bd}=\mathfrak D_\sigma y_{\sigma}^{\rm bd},
+ \qquad
+ \Pi_{\sigma}^{\rm bd}(r)
+   =\int_{e_{\sigma,0}}^r
+       \frac{Q_{\sigma}^{\rm bd}(u)}{q_0(u)^2}\,\dd u .      \label{eq:boundary-column-returned-data}
+\end{equation}
+On the repelling branch split the solution linearly as
+\begin{equation}
+ y_r^{\rm bd}=y_r^{\rm in}+y_r^{\rm ter},\qquad
+ \mathscr N_ry_r^{\rm in}=(\gamma_0,0,0,0),\qquad
+ \mathscr N_ry_r^{\rm ter}=(0,b_r,0,0),          \label{eq:boundary-column-repelling-split}
+\end{equation}
+where both columns include the compatible collar feedback.  Put
+\begin{equation}
+ \eta_{{\rm bd},\delta}
+ =\frac{\varepsilon}{\rho_\delta}
+    \left\{1+\log\frac{R_\delta}{\rho_\delta}\right\},
+ \qquad
+ M_\delta=R_\delta^2+\frac{\varepsilon}{\rho_\delta}.
+                                                        \label{eq:boundary-column-small-numbers}
+\end{equation}
+Then, for all sufficiently small \(\delta\), uniformly in \(N\), the
+branch, and the retained parameters,
+\begin{align}
+ \|y_{\sigma}^{\rm bd}\|_{\widetilde{\mathsf X}_{\sigma,0}}
+ &\le C D_{\sigma}^{\rm bd},\notag\\
+ \sup_{r\in I_\sigma}
+     \frac{|Q_{\sigma}^{\rm bd}(r)|}{m_\delta(r)}
+ &\le C D_{\sigma}^{\rm bd},\notag\\
+ \frac1{\rho_\delta}
+   \sup_{r\in I_\sigma}|\Pi_{\sigma}^{\rm bd}(r)|
+ &\le C\eta_{{\rm bd},\delta}D_{\sigma}^{\rm bd}.          \label{eq:boundary-column-global-action}
+\end{align}
+Moreover,
+\begin{equation}
+ \eta_{{\rm bd},\delta}=O(\delta S_\delta)=o(1).             \label{eq:boundary-column-action-smallness}
+\end{equation}
+In particular, the causal phase lift
+\begin{equation}
+ a_{\sigma}^{\rm bd}=\Pi_{\sigma}^{\rm bd},\qquad
+ q_0^2(a_{\sigma}^{\rm bd})'=Q_{\sigma}^{\rm bd},\qquad
+ a_{\sigma}^{\rm bd}(e_{\sigma,0})=0              \label{eq:boundary-column-causal-phase-lift}
+\end{equation}
+satisfies
+\begin{equation}
+ \|a_{\sigma}^{\rm bd}\|_{\mathsf A_\phi^1(I_\sigma)}
+ \le C M_\delta D_{\sigma}^{\rm bd},\qquad
+ \frac{\|a_{\sigma}^{\rm bd}\|_{C^0}}{\rho_\delta}
+ \le C\eta_{{\rm bd},\delta}D_{\sigma}^{\rm bd}.          \label{eq:boundary-column-phase-lift-bound}
+\end{equation}
+
+Let \(\Gamma_{\sigma,T}^{\rm bd}\),
+\(b_{\sigma,T}^{\rm bd}\), and the terminal recut of
+\((Z_\sigma,p_\sigma,Q_\sigma^{\rm bd})\) be defined as in
+\cref{eq:bulk-terminal-interface-data,eq:bulk-terminal-recut-data}, except
+that \(b_{r,T}^{\rm bd}=b_r\).  Then
+\begin{align}
+ \varepsilon^{-1}\left\{
+   \|\Gamma_{\sigma,T}^{\rm bd}\|_{C^0}
+      +\frac{|b_{\sigma,T}^{\rm bd}|}{m_{\sigma,T}}
+                    \right\}
+ &\le C D_{\sigma}^{\rm bd},\notag\\
+ \|(Z_{\sigma,T}^{\rm bd},p_{\sigma,T}^{\rm bd})\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}
+ &\le C D_{\sigma}^{\rm bd},\notag\\
+ \sup_{0\le t\le L_b}|Q_{\sigma,T}^{\rm bd}(t)|
+ +\frac1{\rho_\delta}\sup_{0\le t\le L_b}
+  \left|\int_{\bar r_{\sigma,T}(0)}^{\bar r_{\sigma,T}(t)}
+       \frac{Q_{\sigma}^{\rm bd}(u)}{q_0(u)^2}\,\dd u\right|
+ &\le C m_{\sigma,T}D_{\sigma}^{\rm bd}.        \label{eq:boundary-column-terminal-trace}
+\end{align}
+The boundary columns which do not carry a repelling terminal scalar row
+are flushed from the final history window:
+\begin{align}
+ \|(Z_{a,T}^{\rm bd},p_{a,T}^{\rm bd})\|_
+       {\mathsf T_{a,T}^1([L_b-\theta_m,L_b])}
+ &\le C\mathcal E_{a,T}(\delta)D_a^{\rm bd},\notag\\
+ \|(Z_{r,T}^{\rm in},p_{r,T}^{\rm in})\|_
+       {\mathsf T_{r,T}^1([L_b-\theta_m,L_b])}
+ &\le C\mathcal E_{r,T}(\delta)
+       \varepsilon^{-1}
+       \|\gamma_0\|_{N,-\rho_\delta,\delta}^{\sharp}.       \label{eq:boundary-column-final-flush}
+\end{align}
+The terminal scalar column does not flush.  Indeed,
+\begin{equation}
+ \|(Z_{r,T}^{\rm ter},p_{r,T}^{\rm ter})\|_
+       {\mathsf T_{r,T}^1([L_b-\theta_m,L_b])}
+ \ge \frac{|b_r|}{\varepsilon m_{r,T}}
+ \ge c\frac{|b_r|}{\varepsilon R_\delta}.       \label{eq:boundary-terminal-column-nonflush}
+\end{equation}
+
+The small action in \cref{eq:boundary-column-global-action} is special to
+the zero distributed scalar residual \(H=0\).  It does not contradict
+\cref{prop:rough-normal-prefix-action-obstruction}, whose witness has a
+nonzero distributed \(H\)-row.  This proposition supplies the global
+localized boundary lifts, including the repelling terminal scalar column.
+It does not turn a retained terminal voltage history into a freely
+prescribed boundary row, construct a source-split phase--normal inverse,
+bound the event shear of a nonzero endpoint reference, or produce a
+moving-duration family, a complete-history connection, or a physical root.
+\end{proposition}
+
 \begin{proposition}[Unavoidable \(S_\delta^2\) loss for rough normal data]
 \label[proposition]{prop:rough-normal-prefix-action-obstruction}
 The old rough norm cannot replace the weighted-speed/action graph norm in
