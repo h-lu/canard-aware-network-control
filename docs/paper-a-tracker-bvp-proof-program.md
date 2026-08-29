@@ -25,10 +25,16 @@ it resums the current loop, gives strict-delay numbers
 data from the final history window when the distributed sources vanish, and
 controls the reconstructed speed and local terminal phase increment.  This
 closes the terminal propagator input, not
-the rough-middle-to-incoming trace/prefix map.  The structured phase column
-in the same strong norm, the event-aligned `K` correction, the complete
-hybrid upper block, the endpoint RFDE family, and the physical root remain
-open.  The fixed-envelope duration-selector algebra on a supplied reference is now
+the rough-middle-to-incoming trace/prefix map.  The raw-compatible structured
+phase column is now closed in the same first-order terminal norm.  On the
+full action space the uniform statement uses the exact shifted coordinate
+`p^sharp=p+epsilon P`; on the causal-entry space the physical `(Z,p)` column
+has the stronger `O(rho_delta)` bound, and the additive entry collar is
+separately flushed.  The attracting physical column genuinely has an
+`S_delta` loss on the larger action space, so the causal-entry hypothesis is
+not cosmetic.  The event-aligned `K` correction, the complete hybrid upper
+block, the endpoint RFDE family, and the physical root remain open.  The
+fixed-envelope duration-selector algebra on a supplied reference is now
 closed: its raw terminal
 column factors exactly through the event row, an explicit range shear
 annihilates that column, and the scalar coefficient is the supplied
@@ -233,10 +239,15 @@ uses `m_delta(r)=|r|+epsilon/|r|^2`, accepts arbitrary continuous distributed
 normal sources, and proves the two-sided repelling Green-kernel bound without
 backward RFDE evolution.  Its flushing statement begins with an explicitly
 supplied terminal-interface history; it does not construct that history from
-rough-middle data.  Higher diagonal jets, the rough-middle-to-incoming
-trace/prefix map, the structured phase column in the same strong norm, and
-uniform hybrid control of the event shear `K` and event-aligned terminal rows
-still require new estimates.  That theorem must track at least
+rough-middle data.  Proposition
+`prop:raw-compatible-terminal-phase-column` now composes the structured
+phase source and raw-compatible collar with this propagator.  It proves the
+shifted full-action bound and the `O(rho_delta)` physical-column bound on the
+causal-entry space using only one phase derivative; the collar part has the
+same final-window flushing factor as pure incoming data.  Higher diagonal
+jets, the rough-middle-to-incoming trace/prefix map, localized terminal/event
+columns, and uniform hybrid control of the event shear `K` and event-aligned
+terminal rows still require new estimates.  That theorem must track at least
 
 ```text
 rho_delta/r_out,delta -> 0,
@@ -341,9 +352,10 @@ hat_tau = c_ter^(-1) { b - ell_ter v }.
 
 The terminal arbitrary-source propagator is now available, but the full
 analytic estimate is not.  What remains is the rough-middle-to-incoming
-trace/prefix assembly, the structured phase source in the same first-order
-terminal norm, and the rank-one event-aligned correction with a uniform norm
-for `K`; only their composition can prove that `L_ent^ea` is a hybrid
+trace/prefix assembly, the localized terminal/event columns, and the
+rank-one event-aligned correction with a uniform norm for `K`; only their
+composition with the now-proved first-order structured phase column can
+prove that `L_ent^ea` is a hybrid
 isomorphism.  It also requires an actual endpoint strong buffer with the
 rectangular `J_phys` jets.  The fixed-reduced-base inverse, the local terminal
 propagator, supplied terminal trace chart, and interior-hit inverse are
@@ -787,8 +799,10 @@ exp{-c r_(sigma,T) L_0/delta}
 
 and its first derivative is recovered directly from the RFDE rather than by
 differentiating a Green kernel.  This estimate starts from an explicit
-terminal-interface history.  It does not prove the middle-to-interface map,
-the structured phase column, or the following arbitrary-`s` hybrid budget.
+terminal-interface history.  The subsequent raw-compatible phase-column
+proposition supplies the structured source in this norm, but neither result
+proves the middle-to-interface map, localized endpoint columns, or the
+following arbitrary-`s` hybrid budget.
 
 The complete nonlinear map must have the target contraction number
 
@@ -1203,6 +1217,12 @@ gauges.
       `p=epsilon r` obstruction proving the unavoidable
       `R_delta^2/rho_delta=2 alpha kappa^2 S_delta^2` loss in the old
       unrestricted rough norm.
+- [x] Raw-compatible structured phase column in the first-order terminal
+      norm: uniform shifted-coordinate bound on the full action space,
+      `O(rho_delta)` physical-column and local speed/action bounds on the
+      causal-entry space, and separate final-window flushing of the additive
+      entry collar.  The attracting physical column is not claimed uniformly
+      on the larger action space.
 - [x] Endpoint-centered fixed-envelope duration-selector calculus: the raw
       moving terminal column, reference terminal-speed ratio, conditional
       structured scalar margin, event-aligned range shear, exact triangular
@@ -1212,9 +1232,8 @@ gauges.
       corresponding causal-entry/terminal-event action-weighted
       parameter/gauge result at the original endpoints.  Assemble the
       rough-middle-to-incoming trace/prefix map with the proved terminal
-      propagator, prove the structured phase column in that strong norm,
-      split structured bulk data from localized endpoint rows, control the
-      event shear `K`, construct raw-compatible endpoint histories, and
+      propagator, split structured bulk data from localized endpoint rows,
+      control the event shear `K`, construct raw-compatible endpoint histories, and
       obtain the endpoint `J_phys` family before terminal-to-terminal
       nonlinear tracker reconstruction.
 - [ ] Full action-weighted global nonautonomous quotient theorem, including
