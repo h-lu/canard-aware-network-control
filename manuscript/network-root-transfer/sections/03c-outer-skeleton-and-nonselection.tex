@@ -6088,6 +6088,436 @@ convex, so integration of the derivative along the line segment from
 limitations of the flat class follow immediately.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:fixed-reference-parameter-residual}]
+Fix $\lambda^\circ$ and suppress it from the notation.  The domain current
+paths now all live on the single interval $[0,S_\sigma^\circ]$ and its
+fixed-delay enlargement.  We emphasize that this is a new chart of the raw
+equations, not the map that translates a path from a parameter-dependent
+interval.  In particular, if $T_kZ(s)=Z(s-\theta_k)$, then each $T_k$ is a
+fixed bounded linear map on the finite-seam graph domain.
+
+Use $\bar r_\sigma^\circ$ and $q_0^\circ$ in the nonlinear phase chart and
+write $r_u=\Theta_a^\circ(\bar r_\sigma^\circ)$.  Substitute
+\cref{eq:fixed-reference-physical-fields} and the actual
+$(\nu,\eta,g)$-compatible old collar directly into
+\cref{eq:raw-fold-time-fields}.  More explicitly, first form
+$R_\gamma$ and $R_{\rm bulk}^{H}$ in
+\cref{eq:fixed-reference-collar-mismatch} and then apply the triangular
+row isomorphism \cref{eq:fixed-reference-row-isomorphism}.  Its displayed
+inverse proves that vanishing is equivalent to
+$R_\gamma=R_{\rm bulk}^{H}=0$.  At $\lambda=\lambda^\circ$, inserting
+$\gamma_x=H+R_\gamma$ into the delayed voltage slots gives exactly
+\begin{equation}
+ R_{\rm bulk}^{\gamma}
+ =R_{\rm bulk}^{H}
+   +\mathcal J_{\lambda^\circ}^{\rm old}R_\gamma, \label{eq:proof-fixed-reference-row-identity}
+\end{equation}
+because the old history occurs linearly and only at the fixed delayed
+arguments.  Thus the transformed rows are literally the old graph rows at
+the reference parameter, not merely tangent to them.
+
+Move the fixed-reference principal normal
+block and phase row to the left exactly as in
+\cref{eq:fixed-section-nonlinear-Z-source,%
+eq:fixed-section-nonlinear-p-source,%
+eq:raw-gauge-residual}; every coefficient difference, including the
+change of the shared speed with $\nu$, remains on the right.  This defines
+\cref{eq:fixed-reference-parameter-residual}.  Reversing these algebraic
+row operations shows that its vanishing is equivalent to the two raw
+fold-time equations on the fixed forward interval, the compatible initial
+history, the seam, the selected finite boundary row, and the inner phase
+row.  It does not extend that initial history backward.  Identity
+\cref{eq:proof-fixed-reference-row-identity} shows that at
+$\lambda=\lambda^\circ$ the construction is literally
+\cref{eq:raw-gauge-residual}.
+Moreover,
+\[
+ \partial_sr_u(s)
+ =\delta q_0^\circ(\bar r_\sigma^\circ(s))
+       (\Theta_a^\circ)'(\bar r_\sigma^\circ(s)).
+\]
+At a zero the left side is also $\delta$ times the reconstructed physical
+collective speed in the raw equation.  Division by $\delta$ proves
+\cref{eq:fixed-reference-speed-identity}.
+
+We next verify the claimed Banach regularity.  No trial current path is
+composed with a moving time map.  The only history operators acting on it
+are the fixed $T_k$.  The layer law is affine in $\eta$, the current field
+is polynomial, and the remaining coefficient maps are smooth Nemytskii
+maps on a common same-sign compact collar.  Although
+\cref{lem:inner-anchored-nonlinear-phase-chart} recorded only the first
+derivative needed there, its fixed-reference formula
+\[
+ \Theta_a^\circ(r)=\Phi_{q_0^\circ}^{a(r)}(r),
+ \qquad
+ \mathscr B_{\phi,\sigma}^{\rm nl,\circ}(a)
+ =q_0^\circ(r)q_0^\circ(\Theta_a^\circ(r))a'(r)
+\]
+is four times differentiable from the retained $\mathsf A_\phi^1$ ball
+to the same weak phase range: every derivative is a finite product with at
+most one differentiated direction $h'$ and otherwise undifferentiated
+directions.  The common coefficient bounds control all such products.
+
+Likewise, differentiating the finite triangular compatibility recursion
+in \cref{eq:collar-compatibility} at most four times gives a finite sum of
+products of lower rows.  The core history enters linearly, all delayed
+core evaluations are fixed, and multiplication of the level-$j$ row by
+$\delta^j$ leaves the same uniform triangular induction as in
+\cref{eq:fixed-reference-collar-jet-recursion,eq:mixed-data-majorants},
+continued for the fixed four derivatives.  The normalized powers of
+$\delta$ cancel at each triangular level, so the resulting four-derivative
+constants are independent of $\delta$ as well as $N$ and the branch.
+Thus the actual-parameter collar map is four times differentiable in the
+normalized data, gauge, and parameter norms.  Combining these observations
+with the fixed bounded row operations proves all derivatives in
+\cref{eq:physical-gauge-staircase}, uniformly in $N$.
+
+At the reference parameter the $u$-derivative is the invertible operator
+in \cref{eq:raw-gauge-zero-inverse}.  Continuity in operator norm and one
+Neumann argument, after decreasing the product ball, give
+\cref{eq:fixed-reference-parameter-inverse}.  This argument occurs on the
+fixed rough graph and hence invokes neither same-space differentiability of
+translation nor a high-regularity inverse.  It completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:parameter-coherent-physical-hit-family}]
+Apply the parameter-dependent implicit-function theorem to the single
+fixed-reference residual
+\cref{eq:fixed-reference-parameter-residual}.  The inverse in
+\cref{eq:fixed-reference-parameter-inverse} and the four-times
+differentiable rough residual give one zero map on a smaller product box.
+There is no moving graph-domain overlap to patch.  For completeness,
+differentiate
+\[
+ \widehat{\mathcal F}_{\sigma,\lambda^\circ}
+       (u(\nu,\eta,g);\nu,\eta,g)=0.
+\]
+The top derivative always has the form
+\begin{equation}
+ D_u\widehat{\mathcal F}_{\sigma,\lambda^\circ}(u)\,
+     D_g^\ell\partial_\nu^iD_\eta^ju
+ =-\mathfrak R_{\ell,i,j},                       \label{eq:proof-parameter-zero-induction}
+\end{equation}
+where \(\mathfrak R_{\ell,i,j}\) is a finite sum of lower zero jets and
+derivatives of the fixed-reference residual.  Induction in
+\(\ell+i+j\), followed by its common inverse bound, proves the asserted
+dimension-uniform estimates.  The exact speed identity in
+\cref{eq:fixed-reference-speed-identity} and the orientation margin of the
+fixed-reference phase chart are uniform on the smaller product ball.  The
+generated bounds for $V'$ and $W'$ then prove
+\cref{eq:parameter-coherent-tracker-signs}.
+
+We next prove the triangular time ledger without propagating a new
+Gr\"onwall estimate across $O(\delta^{-1})$ delay cells.  The rough IFT
+already bounds every retained zero jet in the whole-branch $C^0$ graph
+norm.  Normalize the current variables by
+\[
+ \mathbf y=(r/r_h,Z/\varepsilon,p/(\varepsilon r_h)).
+\]
+Differentiate the exact fixed-delay RFDE first in the parameter and gauge
+directions and then pointwise in $s$.  At joint order $(a,d)$, with
+$a=\ell+i+j$, the highest time derivative occurs linearly on the left; the
+right side contains only lower time derivatives, fixed delayed values of
+the same parameter jet, and lower parameter jets.  Each time derivative
+costs at most one factor $\delta^{-1}$.  The affine layer bound and the
+common current-field coefficient bounds close induction in $a+d$.  The
+order-$h$ compatibility recursion makes the one-sided derivatives agree at
+every seam.  This proves
+\cref{eq:parameter-coherent-time-jet-ledger}; it is the higher-order version
+of the pointwise argument in
+\cref{eq:proof-strong-hit-step-induction}, not long-time smooth dependence
+of a generic RFDE semiflow.  To upgrade the formal differentiated
+identities to Fr\'{e}chet strong jets, insert parameter--gauge difference
+quotients in the normalized RFDE.  The rough IFT gives convergence first
+in the whole-branch $C^0$ graph norm; subtracting the equations and using
+the same pointwise induction upgrades it successively to each retained
+scaled time-derivative norm, uniformly on unit direction balls.
+
+It remains to center the family at the physical event.  The hit equation
+has derivative
+\[
+ \partial_s r_{\sigma,\nu,\eta,g}(S_{\sigma,h})
+ =\delta q_{\sigma,\nu,\eta,g}(e_{\sigma,h}),
+\]
+whose scaled coefficient is bounded away from zero by
+\cref{eq:parameter-coherent-tracker-signs}.  The scalar implicit-function
+theorem therefore gives the same mixed jets for the scaled hit displacement
+$\widehat\tau=\delta(S-S^0)$.  The unscaled time can lose one factor
+\(\delta^{-1}\).
+
+We reprove the margin in the fixed-duration chart.  The inner anchors in
+\cref{eq:fixed-reference-inner-endpoints}, the free outer endpoint's
+phase-chart closeness to $\pm r_{\rm out}$, and
+$\rho_\delta<r_{\rm out}/4$ give
+\cref{eq:parameter-coherent-endpoint-gap} after shrinking the product
+ball.  Since
+$c_q\le-q_{\sigma,\nu,\eta,g}\le C_q$, integration of
+$r'=\delta q$ from either endpoint to the unique intermediate hit gives
+\cref{eq:parameter-coherent-hit-margin}, after decreasing the constant to
+pay for the fixed left delay collar.  Because
+$L_\delta=AS_\delta=o(\delta^{-1})$, the event-relative window
+\cref{eq:parameter-coherent-event-window} lies in the common generated
+buffer.  Apply the finite-order chain rule to
+$Y(S(\nu,\eta,g)+\varsigma)$.  A term with $a$ explicit parameter/gauge
+derivatives on $Y$ and a partition into $m$ hit-time blocks satisfies
+$m\le b-a$, while the sum of the block sizes is $b-a$.  In the scaled
+$C^3$ target it uses time derivatives only through order $3+m$, and
+\[
+ 3+m\le3+b-a\le h-a
+\]
+because $b\le4$ and $h\ge8$.  Each hit-time block contributes at most
+$\delta^{-1}$ through $D^B S=\delta^{-1}D^B\widehat\tau$, and the scaled
+time derivative contributes another $\delta^{-1}$ per block.  The total
+loss is therefore $\delta^{-2m}\le\delta^{-2b}$.  This proves
+\cref{eq:parameter-coherent-event-buffer-jets}.  Restriction to the last
+delay interval and the reconstruction
+\cref{eq:parameter-coherent-physical-reconstruction} give
+\cref{eq:parameter-coherent-hit-map}.  This completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:physical-hit-rectangular-flatness}]
+We differentiate the finite-window quotient construction rather than infer
+jet smallness from \cref{eq:physical-hit-gauge-flat-pair}.  Fix one
+distinguished gauge direction $k$.  For a base point
+\(\zeta=(\nu,\eta,g)\), let $u_k(\zeta)$ be the ordinary-history quotient
+in \cref{eq:proof-hit-gauge-quotient-coordinates}.  It is the boundary-to-hit
+solution of the exact standard quotient RFDE.
+
+Recenter before differentiating:
+\begin{equation}
+ \widetilde u_k^\zeta(\varsigma)
+ =u_k^\zeta(s_h(\zeta)+\varsigma).               \label{eq:proof-centered-gauge-quotient}
+\end{equation}
+For the attracting branch use $-L_\delta-\theta_m\le\varsigma\le0$
+and the fixed weight
+$d_a(\varsigma)=\varsigma+L_\delta$ on $[-L_\delta,0]$, extended by zero
+on the old collar.  For the repelling branch use
+$-L_\delta-\theta_m\le\varsigma\le L_\delta$ and
+$d_r(\varsigma)=\min\{\varsigma+L_\delta,
+L_\delta-\varsigma\}$, again extended by zero on the old collar.  These
+define fixed weighted current spaces by
+\begin{equation}
+ \|y\|_{\mathcal W_\sigma}
+ =\sup_{\varsigma}
+    e^{\widehat\kappa_\sigma d_\sigma(\varsigma)}
+       \|y(\varsigma)\|_N,
+ \qquad
+ \widehat\kappa_\sigma=c_1\kappa_{\sigma,h},     \label{eq:proof-centered-W-norm}
+\end{equation}
+where the fixed $c_1>0$ is the sufficiently small constant used in the
+proof of \cref{prop:physical-hit-quotient-flushing}.  Neither the domains
+nor the weights depend on $\zeta$.
+
+The matrices $J_h=\mathcal J_N^{\rm fv}(e_{\sigma,h})$ and
+$P_h^{s,u}$ in \cref{eq:proof-hit-current-green-bounds} are fixed-section
+objects.  They do not depend on $\nu,\eta$, or $g$: the reduced layers
+enter only the delayed remainder.  Hence their current Green kernel
+$G_h$ is fixed and no spectral projection is differentiated.  Splitting
+the stable left boundary, the one-dimensional unstable right boundary,
+and the prescribed old collar exactly as in
+\cref{eq:proof-hit-mixed-current-green}, the centered equation is
+\begin{equation}
+ \widetilde u_k^\zeta
+ =\mathcal A_\zeta k
+       +\mathcal T_\zeta\widetilde u_k^\zeta.    \label{eq:proof-differentiated-hit-LP}
+\end{equation}
+We now define both operators in that identity.  Split the exact remainder
+in \cref{eq:proof-hit-quotient-remainder} after recentering as
+\begin{equation}
+ \mathscr R_\zeta(\varsigma)y_\varsigma
+ =\mathscr R_\zeta^{\rm cur}(\varsigma)y
+       +f_{\zeta,k}^{\rm old}(\varsigma).         \label{eq:proof-centered-remainder-split}
+\end{equation}
+In the first term every argument before $-L_\delta$ is set to zero.  In the
+second, the current part is set to zero and the prescribed quotient collar
+\begin{equation}
+ \gamma_{\zeta,k}(\varsigma)
+ =\widetilde u_k^\zeta(\varsigma),
+ \qquad -L_\delta-\theta_m\le\varsigma\le-L_\delta,
+                                                               \label{eq:proof-centered-old-collar}
+\end{equation}
+is inserted.  This split includes the portions of every delayed and
+Volterra evaluation that cross the left boundary.  In particular, its
+current-interval forcing is supported in
+$[-L_\delta,-L_\delta+\theta_m]$.
+
+Put
+\begin{align*}
+ b_{-,\zeta,k}&=\widetilde u_k^\zeta(-L_\delta),
+ &&\sigma=a,\\
+ b_{s,\zeta,k}&=P_h^s\widetilde u_k^\zeta(-L_\delta),
+ &b_{u,\zeta,k}&=P_h^u\widetilde u_k^\zeta(L_\delta),
+ &&\sigma=r.
+\end{align*}
+On the current intervals the operators in
+\cref{eq:proof-differentiated-hit-LP} are exactly
+\begin{align}
+ (\mathcal T_{a,\zeta}y)(\varsigma)
+ &=\int_{-L_\delta}^{\varsigma}
+   e^{J_h(\varsigma-t)/\delta}
+   \mathscr R_\zeta^{\rm cur}(t)y\,\dd t,\notag\\
+ (\mathcal A_{a,\zeta}k)(\varsigma)
+ &=e^{J_h(\varsigma+L_\delta)/\delta}b_{-,\zeta,k}
+   +\int_{-L_\delta}^{\varsigma}
+      e^{J_h(\varsigma-t)/\delta}
+          f_{\zeta,k}^{\rm old}(t)\,\dd t,       \label{eq:proof-centered-attracting-operators}\\
+ (\mathcal T_{r,\zeta}y)(\varsigma)
+ &=\int_{-L_\delta}^{L_\delta}
+      G_h(\varsigma,t)
+      \mathscr R_\zeta^{\rm cur}(t)y\,\dd t,\notag\\
+ (\mathcal A_{r,\zeta}k)(\varsigma)
+ &=e^{J_h(\varsigma+L_\delta)/\delta}b_{s,\zeta,k}
+   +e^{J_h(\varsigma-L_\delta)/\delta}b_{u,\zeta,k}\notag\\
+ &\quad+\int_{-L_\delta}^{L_\delta}
+      G_h(\varsigma,t)f_{\zeta,k}^{\rm old}(t)\,\dd t.
+                                                               \label{eq:proof-centered-repelling-operators}
+\end{align}
+On the old collar set $\mathcal T_{\sigma,\zeta}y=0$ and
+$\mathcal A_{\sigma,\zeta}k=\gamma_{\zeta,k}$.  These formulas display
+the left current trace, the repelling right one-dimensional trace, and all
+old-collar forcing separately; hence
+\cref{eq:proof-differentiated-hit-LP} is the exact Green identity.
+
+We record the operator ledger explicitly.  The proof of
+\cref{eq:proof-hit-local-contraction}, now in the fixed centered variable,
+gives
+\begin{equation}
+ \|\mathcal T_\zeta\|_{\mathcal L(\mathcal W_\sigma)}\le\frac12.
+                                                               \label{eq:proof-centered-LP-margin}
+\end{equation}
+Let
+\begin{equation}
+ \mathcal K_{\rm base}
+ =\{(\ell-1,i,j):(\ell,i,j)\in\mathcal K_{\rm phys},
+                         \ \ell\ge1\}.            \label{eq:proof-centered-base-staircase}
+\end{equation}
+For every base derivative indexed by
+$\alpha\in\mathcal K_{\rm base}$, with $b=|\alpha|\le3$,
+\begin{align}
+ \|D_\zeta^\alpha\mathcal T_\zeta\|_{
+       \mathcal L(\mathcal W_\sigma)}
+ &\le C_b\delta^{-M_b}e^{c_bS_\delta},\notag\\
+ \|D_\zeta^\alpha(\mathcal A_\zeta k)\|_{\mathcal W_\sigma}
+ &\le C_b\delta^{-M_b}e^{c_bS_\delta}
+       \|k\|_{\mathfrak B_{\sigma,\delta}^h}.  \label{eq:proof-centered-LP-jets}
+\end{align}
+Indeed, \cref{eq:parameter-coherent-time-jet-ledger} supplies the centered
+tracker, old-collar, and two endpoint jets.  The current coefficient
+$\mathcal J_*-J_h$, the ratios in $H_s$, and the Volterra kernel
+$\mathcal K_s$ are finite products and fixed translations of those jets;
+$|W'|\asymp r_h$ controls every reciprocal.  The layer row is affine in
+$\eta$.  A fixed delay costs at most
+$e^{\widehat\kappa_\sigma\theta_m}$ in
+\cref{eq:proof-centered-W-norm}, whereas convolution with either fixed
+Green kernel costs $C\delta$.  Applying these two facts to
+\cref{eq:proof-centered-attracting-operators,%
+eq:proof-centered-repelling-operators} gives exactly the two estimates in
+\cref{eq:proof-centered-LP-jets}.  Thus every retained derivative is a
+bounded insertion on the same fading space.  It need not be small; only the
+zeroth-order operator in
+\cref{eq:proof-centered-LP-margin} is inverted.
+
+Differentiate \cref{eq:proof-differentiated-hit-LP}.  For
+$\alpha\in\mathcal K_{\rm base}$, multivariate induction gives
+\begin{equation}
+ D_\zeta^\alpha\widetilde u_k
+ =(\Id-\mathcal T_\zeta)^{-1}
+ \left\{D_\zeta^\alpha(\mathcal A_\zeta k)
+ +\sum_{0<\beta\le\alpha}c_{\beta,\alpha}
+       (D_\zeta^\beta\mathcal T_\zeta)
+       D_\zeta^{\alpha-\beta}\widetilde u_k\right\}. \label{eq:proof-centered-LP-induction}
+\end{equation}
+Equations
+\cref{eq:proof-centered-LP-margin,eq:proof-centered-LP-jets} therefore
+bound its $\mathcal W_\sigma$ norm by the same tame envelope, with
+$b=|\alpha|$.  Every point
+of the center history $[-\theta_m,0]$ has
+$d_\sigma\ge L_\delta-\theta_m$.  Converting the fixed fading norm to the
+ordinary history norm and absorbing the fixed delay shift gives, for
+$b\le3$,
+\begin{equation}
+ \|D_\zeta^b\widetilde u_{k,0}\|_{\infty,N}
+ \le C_b\delta^{-M_b}e^{c_bS_\delta}
+       e^{-c\kappa_{\sigma,h}L_\delta}
+       \|k\|_{\mathfrak B_{\sigma,\delta}^h}.    \label{eq:proof-differentiated-hit-center}
+\end{equation}
+This calculation never differentiates an RFDE generator.  On the
+repelling branch the only future inverse is still the inverse on the fixed
+one-dimensional current line.
+
+The exact bridge \cref{eq:proof-hit-exact-event-bridge} is a bounded
+operator $\mathcal B_\zeta^{\rm ev}$ applied to the center history:
+\begin{equation}
+ D_g\mathcal E_{\sigma,h}(\zeta)k
+ =\mathcal B_\zeta^{\rm ev}\widetilde u_{k,0},
+ \quad
+ \mathcal B_\zeta^{\rm ev}u
+ =\left((\Id-\mathcal K_\zeta)u
+          -e_\zeta\pi_N^Tu(0),
+        -W_\zeta'(e_{\sigma,h})\pi_N^Tu(0)\right).
+                                                               \label{eq:proof-centered-event-bridge}
+\end{equation}
+The same coefficient ledger gives tame operator jets of
+$\mathcal B_\zeta^{\rm ev}$ through order three.  Leibniz' rule and
+\cref{eq:proof-differentiated-hit-center} therefore yield
+\begin{equation}
+ \|D_\zeta^bD_g\mathcal E_{\sigma,h}(\zeta)\|_{\rm ev,h}
+ \le C_b\delta^{-M_b}e^{c_bS_\delta}
+       e^{-c\kappa_{\sigma,h}L_\delta},
+ \qquad b\le3.                                  \label{eq:proof-differentiated-hit-event}
+\end{equation}
+Choose among the $b$ base directions exactly $\ell-1$ gauge directions
+and $i+j$ parameter directions.  The index set
+\cref{eq:physical-gauge-staircase} makes $b\le3$, so this proves every
+slot in \cref{eq:physical-hit-flat-mixed-index}.
+
+Finally,
+\[
+ \kappa_{\sigma,h}L_\delta
+ \ge cA S_\delta\log(1/\delta).
+\]
+This dominates
+$M_b\log(1/\delta)+c_bS_\delta$.
+Hence \cref{eq:proof-differentiated-hit-event} is $O(\delta^P)$ for
+every prescribed $P$, proving
+\cref{eq:physical-hit-mixed-flatness}.
+
+For the pairwise statement, apply the multivariate Fa\`a di Bruno formula
+separately to
+$\mathcal E(\lambda,g_a(\lambda))$, $a=1,2$, through each slot of
+$\mathcal I_{\rm phys}$.  Every non-pure term contains
+\begin{equation}
+ D_g^m\partial_\lambda^\beta\mathcal E,
+ \qquad 1\le m\le3,\qquad m+|\beta|\le3,        \label{eq:proof-composite-gauge-slots}
+\end{equation}
+and is superalgebraically small by
+\cref{eq:physical-hit-mixed-flatness}; the remaining factors are tame jets
+of $g_a$.  The only terms without a gauge derivative are the two pure
+explicit-parameter derivatives.  At each fixed $\lambda$ compare those by
+the convex-line identity
+\begin{equation}
+ (\partial_\lambda^\alpha\mathcal E)(\lambda,g_1(\lambda))
+ -(\partial_\lambda^\alpha\mathcal E)(\lambda,g_2(\lambda))
+ =\int_0^1D_g\partial_\lambda^\alpha
+       \mathcal E(\lambda,g_t(\lambda))
+       [g_1(\lambda)-g_2(\lambda)]\,\dd t,        \label{eq:proof-rectangular-gauge-integration}
+\end{equation}
+where $g_t=g_2+t(g_1-g_2)$ and
+$\alpha\in\mathcal I_{\rm phys}$.  These are precisely the one-gauge
+slots retained in \cref{eq:physical-gauge-staircase}.  The constants,
+uniform in $N$, $\delta$, and the branch, in
+\cref{eq:physical-hit-tame-gauge-fields}, including any
+$e^{cS_\delta}$ loss, are absorbed by the same superalgebraic envelope.
+This direct endpoint expansion uses $D_g^3\mathcal E$ but never
+$D_g^4\mathcal E$.  It proves
+\cref{eq:physical-hit-rectangular-pair-flatness}.  The scope statements
+follow because the argument never relates the attracting and repelling
+sections.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem

@@ -4572,6 +4572,374 @@ parameter-jet flatness, a signed connection gap, transversality, or a
 physical root.
 \end{theorem}
 
+The fixed-parameter qualifier in the preceding theorem cannot be removed by
+compactness alone: superalgebraic closeness of histories does not control
+their parameter derivatives.  We next construct the required common
+parameter chart and then differentiate the quotient argument itself.  Put
+\begin{equation}
+ \mathcal I_{\rm phys}
+ =\{(i,j):0\le i\le1,\ 0\le j\le2\}
+   \cup\{(i,j):0\le i\le2,\ 0\le j\le1\},       \label{eq:physical-rectangular-index-set}
+\end{equation}
+and, for a Banach-valued map $F(\nu,\eta)$, write
+\begin{equation}
+ \|F\|_{\mathcal J_{\rm phys};X}
+ =\max_{(i,j)\in\mathcal I_{\rm phys}}
+   \sup_{(\nu,\eta)}
+   \|\partial_\nu^iD_\eta^jF(\nu,\eta)\|_{
+      \mathcal L^j(\mathfrak T_N^{\rm red};X)}.   \label{eq:physical-rectangular-jet-norm}
+\end{equation}
+Thus
+
+\[
+ \mathcal J_{\rm phys}
+ =(C_\nu^1C_\eta^2)\cap(C_\nu^2C_\eta^1),
+\]
+
+including the mixed third derivatives
+$\partial_\nu D_{\eta\eta}^2$ and
+$\partial_{\nu\nu}^2D_\eta$, but not a fourth-order
+$\partial_{\nu\nu}^2D_{\eta\eta}^2$ slot.
+
+For the gauge variable we retain exactly the staircase needed to compose
+with a parameter-dependent gauge field:
+\begin{equation}
+ \mathcal K_{\rm phys}
+ =\{(\ell,i,j):0\le\ell\le1,
+                  \ (i,j)\in\mathcal I_{\rm phys}\}
+  \cup\{(\ell,i,j):2\le\ell\le3,
+                  \ \ell+i+j\le3\}.             \label{eq:physical-gauge-staircase}
+\end{equation}
+Thus one gauge derivative may be followed by the complete rectangular
+parameter jet, while the higher gauge derivatives needed by the
+third-order chain rule are retained through total order three.  This is
+not a claim of full $C_g^3\mathcal J_{\rm phys}$ product regularity.
+
+The rough current graph cannot be trivialized by translating or rescaling
+its time interval: translation is not Fr\'{e}chet differentiable on the
+piecewise $W^{1,\infty}$ graph space.  We instead freeze the reference
+fold-time equation itself.
+
+\begin{lemma}[Fixed-reference rough residual chart]
+\label[lemma]{lem:fixed-reference-parameter-residual}
+Retain
+\cref{prop:fold-time-tracker-normal-form,%
+thm:raw-compatible-phase-normal-inverse,%
+thm:raw-gauge-fixed-section-zero}
+at order $h\ge8$, and fix an admissible reference parameter
+$\lambda^\circ=(\nu^\circ,\eta^\circ)$.  Let
+$\bar r_\sigma^\circ:[0,S_\sigma^\circ]\to I_\sigma$ be its reduced
+fold-time path.  Use this one interval, its fixed-delay enlargement, and
+the graph and range norms at $\lambda^\circ$ for every nearby parameter.
+Here $\mathcal G_{\sigma,\delta}^{\rm rga,\circ}$,
+$\mathcal Y_{\sigma,\delta}^{\circ}$, and
+$\mathfrak B_{\sigma,\delta}^{h,\circ}$ denote the resulting fixed copies
+of, respectively, the domain, the product target of
+\cref{eq:raw-gauge-residual}, and the normalized raw-gauge space.
+There are common neighborhoods and an exact residual
+\begin{equation}
+ \widehat{\mathcal F}_{\sigma,\lambda^\circ}:
+ \mathcal G_{\sigma,\delta}^{\rm rga,\circ}
+ \times\mathcal P_N^\circ
+ \times\mathfrak B_{\sigma,\delta}^{h,\circ}
+ \longrightarrow\mathcal Y_{\sigma,\delta}^{\circ}          \label{eq:fixed-reference-parameter-residual}
+\end{equation}
+with the following properties.
+
+For $u=(x,a)$, reconstruct on the fixed interval
+\begin{equation}
+ r_u(s)=\Theta_a^\circ(\bar r_\sigma^\circ(s)),\qquad
+ v_u(s)=\mathbf1+r_u(s)\mathbf1+z_{0,N}(r_u(s))+Z_x(s),
+ \qquad
+ w_u(s)=w_{\rm seed,N}(r_u(s))-p_x(s),            \label{eq:fixed-reference-physical-fields}
+\end{equation}
+At a zero, the inner phase row fixes exactly one end of each phase path:
+\begin{equation}
+ r_{a,u}(S_a^\circ)=\rho_\delta,
+ \qquad
+ r_{r,u}(0)=-\rho_\delta.                       \label{eq:fixed-reference-inner-endpoints}
+\end{equation}
+The opposite, outer endpoint is free.  Thus the fixed duration does not
+impose two endpoint conditions on either branch.
+
+For clarity, the fixed row operation used below is part of the definition.
+Let $H_{\sigma,\lambda,g}(u)$ be the actual-parameter compatible old
+collar returned by the raw history package, let $\gamma_x$ be the trial
+old-history coordinate, and put
+\begin{equation}
+ R_\gamma=\gamma_x-H_{\sigma,\lambda,g}(u).       \label{eq:fixed-reference-collar-mismatch}
+\end{equation}
+Write $R_{\rm bulk}^{H}$ for the two unmodified raw fold-time residuals
+when $H_{\sigma,\lambda,g}(u)$ is inserted in every negative-time delayed
+slot.  If the raw voltage residual is written as left side minus right
+side, the fixed-reference old-history injection has unprojected voltage
+and resource components
+\begin{equation}
+ (\mathbf J_{\lambda^\circ}^{\rm old}\rho)(s)
+ =\delta K\!\sum_{k:\,s-\theta_k<0}
+       L_{k,N}(\eta^\circ)\rho(s-\theta_k),
+ \qquad
+ (\mathbf J_{\lambda^\circ}^{\rm old,w}\rho)(s)=0. \label{eq:fixed-reference-old-history-injection}
+\end{equation}
+Let $\mathcal J_{\lambda^\circ}^{\rm old}$ denote
+\cref{eq:fixed-reference-old-history-injection} after the fixed
+collective--transverse row reduction at $\lambda^\circ$.  On the collar
+and bulk rows apply the triangular isomorphism
+\begin{align}
+ \mathscr U_{\lambda^\circ}(R_\gamma,R_{\rm bulk}^{H})
+ &=\bigl(R_\gamma,
+       R_{\rm bulk}^{H}+\mathcal J_{\lambda^\circ}^{\rm old}R_\gamma\bigr),
+                                                        \notag\\
+ \mathscr U_{\lambda^\circ}^{-1}(R_\gamma,\widetilde R_{\rm bulk})
+ &=\bigl(R_\gamma,
+       \widetilde R_{\rm bulk}
+          -\mathcal J_{\lambda^\circ}^{\rm old}R_\gamma\bigr).
+                                                        \label{eq:fixed-reference-row-isomorphism}
+\end{align}
+The seam, finite boundary, and inner phase rows are left unchanged.
+Both maps in \cref{eq:fixed-reference-row-isomorphism} are bounded in the
+normalized fixed-reference product norms, uniformly in $N$ and $\delta$.
+
+Use the raw-compatible collar at the actual parameter and gauge on the
+old fixed-delay interval.  The residual in
+\cref{eq:fixed-reference-parameter-residual} is obtained by substituting
+these fields into the two unmodified raw fold-time equations
+\cref{eq:raw-fold-time-fields}, together with the same seam, finite
+boundary, and inner phase rows as in
+\cref{eq:raw-gauge-residual}, and then applying the fixed bounded row
+operations at $\lambda^\circ$.  Thus its zero is equivalent to the
+unmodified forward RFDE on the fixed interval, compatibility of its
+initial history, and the displayed finite boundary and phase rows; it does
+not assert a past orbit.  Indeed, at a zero $R_\gamma=0$, so
+$R_{\rm bulk}^{H}=0$ by
+\cref{eq:fixed-reference-row-isomorphism}.  No moving trial path or
+parameter-dependent terminal evaluation enters the definition.  At the
+reference parameter the identity
+$R_{\rm bulk}^{\gamma}=R_{\rm bulk}^{H}
+ +\mathcal J_{\lambda^\circ}^{\rm old}R_\gamma$
+makes it exactly
+$\mathcal F_\sigma^g$ in the fixed graph coordinates, and
+\begin{equation}
+ \left\|\bigl[D_u\widehat{\mathcal F}_{\sigma,\lambda^\circ}
+       (u;\lambda,g)\bigr]^{-1}\right\|\le4M       \label{eq:fixed-reference-parameter-inverse}
+\end{equation}
+on a smaller common product ball.
+At a zero, the physical collective speed is represented kinematically by
+\begin{equation}
+ q_{\sigma,\lambda,g}(r_u(s))
+ =q_0^\circ(\bar r_\sigma^\circ(s))
+       (\Theta_a^\circ)'(\bar r_\sigma^\circ(s)). \label{eq:fixed-reference-speed-identity}
+\end{equation}
+Consequently the common sign follows from the reference sign and the
+orientation margin of the phase chart; it is not inferred by identifying
+the reference speed with the changed physical parameter.
+
+The map is four times Fr\'{e}chet differentiable on that rough product
+ball, with derivatives uniform in $N$, $\delta$, and the branch in the
+normalized parameter and gauge norms.  More precisely, it has every derivative required by
+\cref{eq:physical-gauge-staircase}.  This regularity is strong-to-weak only
+where a time derivative is spent: the fixed translations
+$s\mapsto s-\theta_k$ are bounded linear maps, while the finite
+compatibility recursion and the nonlinear phase Nemytskii maps supply the
+remaining derivatives.  The lemma makes no same-space differentiability
+claim for a moving translation on piecewise $W^{1,\infty}$.
+\end{lemma}
+
+\begin{proposition}[Parameter-coherent physical-hit families]
+\label[proposition]{prop:parameter-coherent-physical-hit-family}
+Retain
+\cref{thm:raw-gauge-fixed-section-zero,%
+prop:raw-gauge-strong-hit-buffer,%
+lem:fixed-reference-parameter-residual,%
+lem:terminal-relative-trace-scale-chart}
+at one fixed order $h\ge8$.  After decreasing the common structural ball
+and the raw-gauge ball, the following conclusions hold on one common open
+parameter box
+\begin{equation}
+ \mathcal P_N=(-\nu_*,\nu_*)
+   \times B_{\eta_*}^{\mathfrak T_N^{\rm red}}(0)\subset
+       \R\times\mathfrak T_N^{\rm red}.          \label{eq:physical-hit-parameter-box}
+\end{equation}
+
+First, use the single fixed-reference residual chart in
+\cref{lem:fixed-reference-parameter-residual}, centered at the middle of
+the displayed box.  This freezes the interval and the fixed-delay graph
+before the parameter is varied; it is not a translation or rescaling of a
+rough trial path.  Its unique zero
+\begin{equation}
+ (\nu,\eta,g)\longmapsto
+ u_{\sigma,\delta}(\nu,\eta,g)
+ \in\mathcal G_{\sigma,\delta}^{\rm rga}          \label{eq:parameter-coherent-raw-zero}
+\end{equation}
+has every mixed derivative
+\begin{equation}
+ D_g^\ell\partial_\nu^iD_\eta^j
+       u_{\sigma,\delta},\qquad
+ (\ell,i,j)\in\mathcal K_{\rm phys},             \label{eq:physical-hit-mixed-derivative-class}
+\end{equation}
+and these derivatives are dimension uniformly bounded as multilinear maps
+from the normalized gauge and parameter spaces.  The inverse at every zero
+satisfies \cref{eq:fixed-reference-parameter-inverse}.  In particular, the exact reconstructed
+RFDE segments have the rectangular parameter jets, the fixed-parameter
+$C_g^3$ jets, and precisely the mixed staircase in
+\cref{eq:physical-gauge-staircase}.  They retain, uniformly on the box,
+\begin{equation}
+ q_{\sigma,\nu,\eta,g}\le-c_q<0,
+ \qquad
+ c_w|r|\le|W_{\sigma,\nu,\eta,g}'(r)|\le C_w|r|,
+ \qquad
+ \|V_{\sigma,\nu,\eta,g}'(r)\|_N\le C_V          \label{eq:parameter-coherent-tracker-signs}
+\end{equation}
+on the common generated collar containing the physical hit.
+Moreover, with
+\(\mathbf y=(r/r_h,Z/\varepsilon,p/(\varepsilon r_h))\), the zero family
+has the triangular strong-to-weak ledger
+\begin{equation}
+ \sup_s\delta^d
+ \left\|\partial_s^d
+ D_g^\ell\partial_\nu^iD_\eta^j\mathbf y(s)\right\|
+ \le C_{\ell,i,j,d},
+ \qquad
+ (\ell,i,j)\in\mathcal K_{\rm phys},\quad
+ 0\le d\le h-(\ell+i+j).                         \label{eq:parameter-coherent-time-jet-ledger}
+\end{equation}
+The supremum is on the common generated subbuffer used below, including
+the delay collar.  In particular, since $h\ge8$, every mixed slot retained
+here has the extra time derivatives needed to translate it into a scaled
+$C^3$ event window.
+
+Second, fix $A>0$, put $L_\delta=AS_\delta$, and use the event-relative
+window
+\begin{equation}
+ K_{\delta,h}=[-L_\delta-\theta_m,L_\delta].       \label{eq:parameter-coherent-event-window}
+\end{equation}
+The fixed-chart endpoints straddle the physical section with a uniform
+coordinate margin: for some $c_{\rm end}>0$,
+\begin{equation}
+ r_{\sigma,\nu,\eta,g}(0)-e_{\sigma,h}
+       \ge c_{\rm end}r_{\rm out},
+ \qquad
+ e_{\sigma,h}-r_{\sigma,\nu,\eta,g}(S_\sigma^\circ)
+       \ge c_{\rm end}r_{\rm out}.              \label{eq:parameter-coherent-endpoint-gap}
+\end{equation}
+Consequently there is a unique hit $S_{\sigma,h}$ and, for a uniform
+$c_{\rm hit}>0$,
+\begin{equation}
+ \min\{S_{\sigma,h}-\theta_m,
+            S_\sigma^\circ-S_{\sigma,h}\}
+ \ge \frac{c_{\rm hit}}{\delta}.                \label{eq:parameter-coherent-hit-margin}
+\end{equation}
+For the exact tracker triple $Y=(r,Z,p)$, define
+\begin{equation}
+ \mathcal Y_{\sigma,h}^{\#}(\nu,\eta,g)(\varsigma)
+ =Y_{\sigma,\nu,\eta,g}
+    (S_{\sigma,h}(\nu,\eta,g)+\varsigma),
+ \qquad \varsigma\in K_{\delta,h}.              \label{eq:parameter-coherent-event-buffer}
+\end{equation}
+After decreasing \(\delta_0(A,r_{\rm out})\), this is a common generated
+buffer for all retained arguments.  If
+\(b=\ell+i+j\) and the derivative belongs to
+\cref{eq:physical-hit-mixed-derivative-class}, then
+\begin{equation}
+ \bigl\|D_g^\ell\partial_\nu^iD_\eta^j
+     \mathcal Y_{\sigma,h}^{\#}\bigr\|_{
+     \mathcal L^{\ell+j}(\mathfrak B_{\sigma,\delta}^h,
+       \mathfrak T_N^{\rm red};\mathfrak S^3(K_{\delta,h}))}
+ \le C_b\delta^{-2b}.                            \label{eq:parameter-coherent-event-buffer-jets}
+\end{equation}
+Here the notation on the left means the corresponding mixed multilinear
+operator, with the scalar \(\nu\)-directions suppressed, and
+$\mathfrak S^3(K_{\delta,h})$ is the norm in
+\cref{eq:strong-hit-buffer-norm} with $B_{\sigma,h}$ replaced by
+$K_{\delta,h}$.  The exponent is a safe strong-to-weak translation loss,
+not an assertion that every slot actually attains it.  Writing
+\begin{equation}
+ v(s)=\mathbf1+r(s)\mathbf1+z_{0,N}(r(s))+Z(s),
+ \qquad w(s)=w_{\rm seed,N}(r(s))-p(s),           \label{eq:parameter-coherent-physical-reconstruction}
+\end{equation}
+restriction of the event-relative buffer to $[-\theta_m,0]$ gives the
+complete-history hit map with the same staircase regularity,
+\begin{equation}
+ \mathcal E_{\sigma,h}(\nu,\eta,g)
+ =\left(\theta\longmapsto
+       v_{\sigma,\nu,\eta,g}
+          (S_{\sigma,h}(\nu,\eta,g)+\theta),
+       \ w_{\sigma,\nu,\eta,g}
+          (S_{\sigma,h}(\nu,\eta,g))\right)
+ \in\Sigma_{N,e_{\sigma,h}}.                     \label{eq:parameter-coherent-hit-map}
+\end{equation}
+All constants are independent of $N$, $\delta$, the two branches, and the
+point of the retained parameter box.
+
+This proposition constructs a parameter-coherent family on the fixed
+physical interior sections relative to the chosen reference chart
+$\lambda^\circ$.  It proves no covariance between two different
+fixed-reference charts.  It does not yet estimate the differentiated
+quotient, identify the original outer endpoints, or construct a terminal
+Schur inverse, repelling history sheet, branch-to-branch relation, or root.
+\end{proposition}
+
+\begin{theorem}[Rectangular-jet raw-gauge forgetting at physical hits]
+\label[theorem]{thm:physical-hit-rectangular-flatness}
+Retain
+\cref{prop:parameter-coherent-physical-hit-family,%
+prop:physical-hit-quotient-flushing,%
+thm:physical-hit-first-order-flatness}.
+For every $P>0$ and every
+$(\ell,i,j)\in\mathcal K_{\rm phys}$ with
+\begin{equation}
+ \ell\ge1,                                      \label{eq:physical-hit-flat-mixed-index}
+\end{equation}
+there are $C_{P,\ell,i,j},\delta_{P,\ell,i,j}>0$ such that
+\begin{equation}
+ \sup_{\sigma,\nu,\eta,g}
+ \bigl\|D_g^\ell\partial_\nu^iD_\eta^j
+       \mathcal E_{\sigma,h}(\nu,\eta,g)\bigr\|_{
+  \mathcal L^{\ell+j}(\mathfrak B_{\sigma,\delta}^h,
+       \mathfrak T_N^{\rm red};
+       (\mathscr Y_N,\|\cdot\|_{\rm ev,h}))}
+ \le C_{P,\ell,i,j}\delta^P.                   \label{eq:physical-hit-mixed-flatness}
+\end{equation}
+The supremum is over the common gauge and parameter boxes, and the constants
+are independent of $N$.
+
+More generally, for $a=1,2$ let
+$(g_{a,N,\delta,\sigma})_{N,\delta,\sigma}$ be a family of maps from
+$\mathcal P_N$ to $\mathfrak B_{\sigma,\delta}^h$ taking values in the
+common convex gauge ball and having tame rectangular jets.  Assume that
+the following constants are independent of $N$, $\delta$, and the branch;
+we suppress those three indices below:
+\begin{equation}
+ \|g_a\|_{\mathcal J_{\rm phys};
+             \mathfrak B_{\sigma,\delta}^h}
+ \le C_{12}\delta^{-M_{12}}e^{c_{12}S_\delta},
+ \qquad a=1,2.                                   \label{eq:physical-hit-tame-gauge-fields}
+\end{equation}
+Then for every $P>0$,
+\begin{equation}
+ \bigl\|\mathcal E_{\sigma,h}(\cdot,g_1(\cdot))
+       -\mathcal E_{\sigma,h}(\cdot,g_2(\cdot))
+       \bigr\|_{\mathcal J_{\rm phys};
+             (\mathscr Y_N,\|\cdot\|_{\rm ev,h})}
+ \le C_{P,12}\delta^P.                          \label{eq:physical-hit-rectangular-pair-flatness}
+\end{equation}
+Thus each of the two physical sections carries a well-defined
+\(\mathcal J_{\rm phys}\)-flat complete-history class relative to the
+chosen fixed-reference chart, independent of the raw gauge within the
+stated tame class.  The constant $C_{P,12}$ is likewise independent of
+$N$, $\delta$, and the branch.
+
+The conclusion concerns differences between physical representatives.
+Parameter derivatives of one representative are generally nonzero and are
+not flushed away; those derivatives contain the response that a later
+connection conormal must retain.  The theorem still gives two separate hit
+classes.  It does not make the hit times flat, supply an
+\(\varepsilon\)-normalized terminal Schur inverse, pass through the fold,
+construct a repelling sheet or signed membership gap, or prove a physical
+root.  Nor does it identify the classes produced from two different
+reference charts.
+\end{theorem}
+
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
 fold-time variational equation is removed exactly only after the genuine
 tracker tangent is known.  The remaining Volterra coordinate correction is
