@@ -21,7 +21,10 @@ local hit families, and differentiation on one centered fading space proves
 full rectangular-jet raw-gauge equivalence modulo
 \(O(\delta^\infty)\) in the normalized event norm.  These classes remain
 relative to one reference chart and two separate interior sections; they do
-not supply the terminal-to-terminal physical relation.
+not supply the terminal-to-terminal physical relation.  The scalar
+endpoint-recut obstruction now proves that the inner-anchored estimates,
+strict speed sign, and interior windows alone cannot be promoted to the
+original endpoints by literal recutting.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -448,11 +451,15 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Differentiate the centered local quotient and prove
       $\mathcal J_{\rm phys}$ raw-gauge equivalence for uniformly tame
       $(N,\delta,\sigma)$ gauge families, without a $D_g^4$ assumption.
+- [x] Prove the scalar endpoint-recut nonimplication, including the
+      wrong-sided outer endpoints and algebraic bordered fold-time scale
+      exceeding every fixed $O(S_\delta)$ interior window.
 - [ ] Prove the normalized terminal Schur estimate and the corresponding
-      action-weighted parameter/gauge-jet theorem at the original endpoints,
-      then construct the hybrid
-      strong-terminal/weak-middle moving-event residual and inverse and the
-      terminal-to-terminal nonlinear outer tracker.
+      causal-entry/terminal-event action-weighted parameter/gauge-jet theorem
+      at the original endpoints.  This requires a newly centered
+      moving-duration reference, a hybrid arbitrary-source
+      strong-terminal/weak-middle inverse, and the complete terminal column
+      before the terminal-to-terminal nonlinear outer tracker.
 - [ ] Prove the global action-weighted phase-quotiented normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -471,7 +478,12 @@ relative one-row Schur inverse remove the constant-phase obstruction to a
 same-sign tube at the scalar phase/fixed-base linear level.  On the anchored
 relative subspace, the exact delay profile now yields a uniform returned-state
 bound and pointwise true action in an equivalent graph--action norm; the
-unrestricted old-state obstruction remains.  The fixed-reference $C^2$
+unrestricted old-state obstruction remains.  The endpoint-recut obstruction
+additionally proves that this scalar package permits wrong-sided original
+endpoints and a formal bordered duration scale much longer than the local
+hit buffers.  Therefore the next valid construction is a newly centered
+causal-entry/terminal-event moving-duration BVP, not transport of the
+interior chart.  The fixed-reference $C^2$
 old-history assembler, including its endpoint/collar second jet and normalized
 quadratic remainder, is now closed.  Its exact fixed-section assembly with the
 nonlinear phase-delay and normal equations is also closed: the base defect is

@@ -7,7 +7,9 @@ the fixed physical sections, one fixed-reference rough chart now gives
 parameter-coherent complete-history hits, and differentiated local quotient
 flushing gives raw-gauge equivalence through the full rectangular `J_phys`
 jet.  The result remains local to two separate interior hits and one
-reference chart.  The normalized terminal Schur theorem, original physical
+reference chart.  A scalar endpoint-recut obstruction now proves that these
+inner-anchored hits cannot be promoted by literal recutting.  The newly
+centered causal-entry/terminal-event Schur theorem, original physical
 endpoints, global nonautonomous quotient, repelling history sheet,
 cross-branch gap, and physical root remain open.**
 
@@ -361,22 +363,35 @@ claimed in the manuscript.
 
 ## 5. The next new analytic lemma
 
-The frozen-resource voltage theorem is now proved.  The next proof must
-construct a true positive-`delta` slow tracker, fix its time-shift direction,
-and transfer the frozen bundles to the resulting nonautonomous normal
-cocycle.  It must establish:
+Proposition `prop:inner-anchor-endpoint-recut-obstruction` rules out
+the direct route from the fixed interior hits: within the proved scalar
+speed class, the two inner-anchored images may miss their outer endpoints,
+and the algebraic bordered fold-time scale can exceed every fixed
+`O(S_delta)` window.  It is a scalar nonimplication theorem, not a
+full-RFDE impossibility result.
 
-1. a parameter-coherent true slow tracker on both outer branches;
-2. uniform bounds and parameter jets for the stationary-gauge normalized
-   tangent history and quotient representation;
-3. roughness of the frozen voltage bundles under the nonautonomous
-   slow-curve and modulation terms;
-4. the attracting representative and repelling mixed-boundary sheet;
-5. joint `J_phys=(C^1_nu C^2_eta) intersect (C^2_nu C^1_eta)` Frechet
-   bounds for the normal bundles, boundary maps, and fixed points, uniform
-   in `N`.
+The next proof must therefore construct a newly centered, moving-duration
+causal-entry/terminal-event BVP.  In fold time its endpoint rows are
 
-Only after this lemma may the mixed Lyapunov--Perron equation in Section 3
+```text
+attracting:  r_a(0) = r_out,      r_a(S_a) = rho_delta,
+repelling:   r_r(0) = -rho_delta, r_r(S_r) = -r_out,
+S_sigma = S_sigma^(ep,0) + hat_tau / delta.
+```
+
+It must establish:
+
+1. an endpoint-centered approximate reference on each branch, rather than a
+   renamed interior-hit segment;
+2. a hybrid arbitrary-source rough-middle/strong-terminal inverse with the
+   causal entry row and the complete moving-terminal column;
+3. the epsilon-normalized terminal Schur estimate in the graph/action norm;
+4. a parameter-coherent original-endpoint tracker family with all
+   `J_phys=(C^1_nu C^2_eta) intersect (C^2_nu C^1_eta)` jets;
+5. only then, the stationary-gauge tangent, nonautonomous quotient
+   roughness, attracting representative, and repelling mixed-boundary sheet.
+
+Only after these lemmas may the mixed Lyapunov--Perron equation in Section 3
 be called an actual construction.
 
 ## 6. Two legitimate completion routes
@@ -451,6 +466,12 @@ not acceptable.
       sections, including the rectangular parameter jet, mixed gauge
       staircase, and pairwise `J_phys` raw-gauge flatness for uniformly tame
       families.
+- [x] Scalar proof that the inner-anchored hypotheses do not imply literal
+      original-endpoint recutting: both endpoint sidedness and the divergent
+      algebraic bordered fold-time scale are explicit.
+- [ ] Newly centered causal-entry/terminal-event moving-duration BVP,
+      hybrid arbitrary-source inverse, normalized terminal Schur estimate,
+      and original-endpoint `J_phys` family.
 - [ ] Global phase-quotiented nonautonomous normal splitting from the
       original outer endpoints to the fold-side interfaces.
 - [ ] Attracting representative and repelling codimension-one history sheet

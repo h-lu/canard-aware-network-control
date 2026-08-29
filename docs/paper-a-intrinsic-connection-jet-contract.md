@@ -6,9 +6,11 @@ phase--normal inverse, fixed-section nonlinear RFDE segments, and their
 generated-interior physical trackers are proved.  On the fixed interior
 sections, one reference chart now supports parameter-coherent hit histories
 and raw-gauge equivalence through the full rectangular `J_phys` jet.  The
-normalized terminal Schur theorem, original endpoints, repelling history
-sheet, physical gap/root, and selected-to-physical identification remain
-open.**
+scalar endpoint-recut obstruction now proves that these inner-anchored
+objects cannot be promoted by literal recutting.  The newly centered
+causal-entry/terminal-event Schur theorem, original endpoints, repelling
+history sheet, physical gap/root, and selected-to-physical identification
+remain open.**
 
 This note tracks
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -233,6 +235,12 @@ The local generated-interior tracker and quotient parts of G0 are closed,
 including their fixed-reference rectangular jets.  The original-endpoint
 terminal Schur coupling, global nonautonomous roughness, cross-branch sheet
 and gap, and the physical-identification part of G1 remain open.
+The scalar endpoint-recut obstruction is closed: it proves that the current
+speed class, inner anchor, speed sign, and interior windows alone do not
+yield those original endpoints.  Its bordered coordinate is not a
+constructed physical event time, and the result is not a full-RFDE
+impossibility theorem.  The next valid operator must release duration and
+use exactly one causal-entry row and one terminal-event row.
 The generic nonselection example is not a model-specific impossibility
 theorem for the shared-resource RFDE.
 
@@ -297,8 +305,15 @@ Do not:
       obstruction.
 - [x] Prove the fixed-parameter attracting finite-generation
       buffer-to-slow bootstrap.
-- [ ] Prove the repelling causal/terminal component kernels, the coupled
-      phase--normal inverse, and close the nonlinear outer tracker.
+- [x] Prove the repelling causal/terminal component kernels, compatible
+      collar feedback, fixed-reduced-base phase--normal inverse,
+      fixed-section nonlinear zeros, generated-interior trackers, and
+      fixed-reference rectangular-jet interior hit classes.
+- [x] Prove the scalar endpoint-recut nonimplication, including endpoint
+      sidedness and the divergent algebraic bordered fold-time scale.
+- [ ] Construct a newly centered causal-entry/terminal-event moving-duration
+      BVP with its hybrid arbitrary-source inverse, normalized terminal Schur
+      estimate, and original-endpoint `J_phys` family.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.
