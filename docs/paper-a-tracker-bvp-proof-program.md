@@ -2,7 +2,8 @@
 
 Status: **proof contract for the terminal-to-terminal tracker family; the
 raw-gauge fixed-section zero family, its exact pointwise generated-interior
-trackers, the common-buffer weak physical-section hit maps, and the nonlinear
+trackers, the common-buffer physical-section hit maps, their
+time-`C_delta^3`/gauge-`C1` strong generated buffers, and the nonlinear
 terminal trace-scale coordinate theorem are now proved.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
@@ -40,18 +41,21 @@ forward RFDE segments from canonical compatible collars.  Their sufficiently
 deep generated interiors now have exact physical-coordinate tracker,
 quotient, and Volterra realizations.  They do not supply the moving terminal
 family, a past orbit, physical branch endpoints, or the cross-branch tracker
-targeted here.  Proposition `prop:raw-gauge-physical-hit` does provide the
+targeted here.  Proposition `prop:raw-gauge-physical-hit` provides the
 strictly weaker common-buffer result: at fixed parameters the interior
 sections `r=+/-r_out/2` have unique raw-gauge `C1` hits, uniform scaled
 hit/history first derivatives, and the exact stationary phase-quotient
-formula.  It is not a `C2` strong terminal buffer or a recut of the physical
-endpoints.
+formula.  Proposition `prop:raw-gauge-strong-hit-buffer` now upgrades that
+same generated neighborhood to a time-`C_delta^3`, gauge-`C1` family in
+dimension-uniform annular component scales and supplies the strong input for
+the terminal trace chart.  It is not `C2` in the gauge and is not a recut of
+the original physical endpoints.
 Lemma `lem:terminal-relative-trace-scale-chart` now supplies the exact
 nonlinear `C^2` strong-to-weak coordinate calculus on any already available
 strong terminal buffer, including the nonzero terminal columns and mixed
-event derivatives.  It does not construct that buffer or the hybrid
-moving-event residual and inverse; the independent proposition above only
-constructs the weaker interior hit map.
+event derivatives.  It does not construct the hybrid moving-event residual
+and inverse; the independent proposition above supplies its strong local
+buffer but not the normalized terminal Schur estimate.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -663,8 +667,11 @@ completion, projected endpoint equality, or parameter oscillations of size
 exhibits a nonempty raw-compatible boundary gauge ball at the natural
 `O(epsilon)=O(delta^2)` scale.  Its weak complete histories now also have
 unique gauge-`C1` hits of the fixed interior sections with uniform scaled
-first derivatives.  These hits have not been upgraded to physical endpoint
-data or uniform tame `J_phys` jets.  The terminal-to-terminal construction
+first derivatives.  Their surrounding generated windows now have the
+time-`C_delta^3`, gauge-`C1` strong regularity needed by the terminal trace
+chart.  These hits have not been upgraded to asymptotic physical endpoint
+data, nonlinear variational forgetting, or uniform tame `J_phys` jets.  The
+terminal-to-terminal construction
 must still lift at least one member to all of the physical endpoint data and
 jets above; a full admissible class that could remain empty is insufficient.
 
@@ -829,15 +836,20 @@ gauges.
 - [x] Common generated buffer and fixed interior physical-section hits at
       `r=+/-r_out/2`, with joint weak-history C1 dependence, dimension-uniform
       scaled hit/history first derivatives, and the exact stationary
-      phase-quotient formula.  No strong terminal buffer or endpoint recut is
-      claimed.
+      phase-quotient formula.
+- [x] Common time-`C_delta^3`, gauge-`C1` strong generated buffers around
+      both physical interior hits, in the natural annular component scales,
+      together with a fixed-reference terminal chart window and the safe
+      `O(delta^(-2))` raw recut loss.  No second gauge derivative, normalized
+      terminal Schur estimate, or original-endpoint recut is claimed.
 - [x] Terminal-relative nonlinear `C^2` strong-to-weak moving-window
       coordinates on a supplied strong buffer, including the retained event
       displacement, derived fixed-section row, nonzero-base terminal columns,
       mixed second derivatives, and sharp translation losses.
-- [ ] Common `C^2` strong terminal buffers, the hybrid moving-event
-      residual/inverse, recutting at both physical endpoints, and the
-      terminal-to-terminal nonlinear tracker/Green--collar reconstruction.
+- [ ] Nonlinear variational flushing and the normalized terminal
+      phase-to-normal Schur estimate on the common strong buffers; then the
+      hybrid moving-event residual/inverse, original-endpoint/asymptotic
+      replacement, and terminal-to-terminal nonlinear tracker reconstruction.
 - [ ] Full action-weighted nonautonomous quotient roughness theorem,
       including Volterra, phase-row, moving-projection, delay, `q`, and
       parameter-jet terms.

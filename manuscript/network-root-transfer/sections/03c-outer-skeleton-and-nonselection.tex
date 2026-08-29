@@ -5083,6 +5083,157 @@ derivative.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:raw-gauge-strong-hit-buffer}]
+We first record the uniform zero-order scales on the fixed annulus.  The
+relative phase estimate, the graph--action norm, and
+\cref{eq:raw-gauge-zero-derivative} give, after decreasing the common
+gauge ball,
+\begin{align}
+ \sup_{s\in B_{\sigma,h}}
+ \left\{
+  \frac{|r_{\sigma,g}(s)|}{r_h}
+ +\frac{\|Z_{\sigma,g}(s)\|_N}{\varepsilon}
+ +\frac{|p_{\sigma,g}(s)|}{\varepsilon r_h}
+ \right\}&\le C,\notag\\
+ \sup_{s\in B_{\sigma,h}}
+ \left\{
+  \frac{|D_gr_{\sigma,g}(s)k|}{r_h}
+ +\frac{\|D_gZ_{\sigma,g}(s)k\|_N}{\varepsilon}
+ +\frac{|D_gp_{\sigma,g}(s)k|}{\varepsilon r_h}
+ \right\}&\le C\|k\|_{\mathfrak B_{\sigma,\delta}^h}.
+                                                        \label{eq:proof-strong-hit-zero-scales}
+\end{align}
+For the last component use
+\(p_g=p_{x_g,a_g}^\sharp
+ -\varepsilon\mathscr P_{c,\sigma,N}a_g\), not a nonlinear phase-delay
+functional.  The first term has the relative graph scale, while
+\cref{eq:relative-phase-delay-profile} controls the second; on the fixed
+annulus its \(O(\varepsilon\delta)\) contribution is absorbed by
+\(O(\varepsilon r_h)\).  The same argument applies after one gauge
+derivative.
+
+We next upgrade these zero-order estimates without invoking a new inverse.
+By \cref{eq:raw-gauge-exact-boundary-identities} and
+\cref{prop:fold-time-tracker-normal-form}, every member of the family is a
+classical solution of the same unmodified fixed-delay RFDE.  Here the
+complete initial voltage history is not merely the normal assembler
+\(\mathscr H_{\sigma,g}^{\rm raw}\).  The exact boundary identities,
+followed by the collar interface
+\cref{eq:fold-time-collar-interface}, identify the full initial
+history--resource pair with the corresponding value of \(\Gamma_e^h\).
+The raw history assembler is \(C^2\) into \(C^h\) by
+\cref{eq:nonlinear-raw-history-C2-bounds}; the collar chart is \(C^3\) on
+the retained data ball.  Composing both with the \(C^1\) zero map in
+\cref{eq:raw-gauge-zero-derivative} therefore makes this full compatible
+initial pair \(C^1\) in \(g\), into \(C^h\).
+
+For completeness, perform the required method-of-steps estimate directly.
+On the annulus
+\(|r_{\sigma,g}|\asymp r_h\), introduce the normalized current variables
+\begin{equation*}
+ \mathbf y_{\sigma,g}
+ =\left(r_{\sigma,g}/r_h,
+        Z_{\sigma,g}/\varepsilon,
+        p_{\sigma,g}/(\varepsilon r_h)\right).
+\end{equation*}
+After substitution in
+\cref{eq:fold-time-speed-reconstruction,eq:fold-time-tracker-r,eq:fold-time-tracker-Z,eq:fold-time-tracker-p},
+the right-hand sides and their state derivatives through order three are
+bounded on the common graph ball.  The bounds are uniform in \(N\): every
+delayed row is estimated by the common layer-sum bound, and all critical
+curve, seed, and nonlinear coefficient derivatives are uniform on this
+fixed annulus.  Every differentiation of a current equation costs at most
+one factor \(\delta^{-1}\).  The finitely enlarged delay collar needed for
+three such substitutions remains generated interior and in the same-sign
+fixed annulus after decreasing \(\delta_0\); this follows from the
+\(O(\delta^{-1})\) distance of the bracket from the branch endpoints.
+Using the already available whole-branch \(C^0\) graph bound, differentiate
+the RFDE and its first variational equation pointwise in time, rather than
+propagating a new estimate across \(O(\delta^{-1})\) delay cells.  The
+three-step derivative recursion gives, for \(0\le j\le3\),
+\begin{align}
+ \sup_{B_{\sigma,h}}\delta^j
+       \|\partial_s^j\mathbf y_{\sigma,g}\|&\le C,\notag\\
+ \sup_{B_{\sigma,h}}\delta^j
+       \|\partial_s^jD_g\mathbf y_{\sigma,g}k\|
+ &\le C\|k\|_{\mathfrak B_{\sigma,\delta}^h}.  \label{eq:proof-strong-hit-step-induction}
+\end{align}
+To verify Fr\'{e}chet, rather than merely bounded, gauge dependence, fix
+\(g,k\) and insert the difference quotient
+\[
+ \Delta_t\mathbf y
+ =t^{-1}(\mathbf y_{\sigma,g+tk}-\mathbf y_{\sigma,g})
+\]
+in the normalized RFDE.  The \(C^1\) graph reconstruction gives
+\(\Delta_t\mathbf y\to D_g\mathbf y_{\sigma,g}k\) first in the whole-branch
+\(C^0\) topology.  Subtracting the two equations and passing successively
+through the same three pointwise time-derivative identities upgrades this
+convergence to the scaled \(C^3\) topology, uniformly for \(k\) in the unit
+ball.  The coefficients in those identities depend continuously on
+\(g\), so the resulting operator-valued derivative is continuous.  Since
+\(T_{\sigma,-}-\theta_m>2\theta_m\), every point of
+\(B_{\sigma,h}\) lies beyond the two method-of-steps seams needed for
+third time regularity.  Equivalently, the order-\(h\) compatibility already
+removes those seam jumps.  Thus the one-sided cell derivatives in
+\cref{eq:proof-strong-hit-step-induction} join to genuine \(C^3\)
+functions.  Estimates
+\eqref{eq:proof-strong-hit-zero-scales} and
+\eqref{eq:proof-strong-hit-step-induction}
+prove \cref{eq:strong-hit-C1-map,eq:strong-hit-C1-bound}.
+
+At the left bracket endpoint,
+\cref{eq:proof-physical-hit-signs} and
+the generated speed bound
+\(|r_{\sigma,g}'|\le\delta q_+\) from
+\cref{eq:generated-interior-q-bounds} give
+\begin{equation*}
+ S_{\sigma,h}(g)-T_{\sigma,-}
+ \ge\frac{\kappa_hr_h}{2\delta q_+}.
+\end{equation*}
+The same calculation between the hit and the right bracket endpoint gives
+the corresponding right-hand bound.  Decreasing the constant once to pay
+for the extra left delay collar proves
+\cref{eq:strong-hit-time-margin}.
+
+Condition \cref{eq:strong-hit-window-budget} and the time margin show that
+\cref{eq:strong-hit-reference-buffer} is defined.  Under the additional
+shift budget \cref{eq:strong-hit-chart-shift-budget}, every translation by
+\(\widehat\tau_{\sigma,h}(g)/\delta
+ =S_{\sigma,h}(g)-S_{\sigma,h}^0\)
+remains inside \(B_{\sigma,h}\).  Restriction and fixed translation are
+bounded on the scaled \(C^3\) space, so
+\cref{eq:strong-hit-C1-map} gives the asserted \(C^1\) fixed-reference
+buffer.  Its reference event has
+\begin{equation*}
+ r_{\sigma,0}(S_{\sigma,h}^0)=e_{\sigma,h},\qquad
+ r_{\sigma,0}'(S_{\sigma,h}^0)
+ =\delta q_{\sigma,0}(e_{\sigma,h}),\qquad
+ |q_{\sigma,0}(e_{\sigma,h})|\ge q_-.
+\end{equation*}
+Hence all hypotheses of
+\cref{lem:terminal-relative-trace-scale-chart} hold with \(d=1\).
+Composition with the \(C^1\) gauge map proves the recut assertion.  Finally,
+\cref{eq:physical-hit-map-uniform-bound} controls
+\(D_g\widehat\tau\), and the first translation estimate in
+\cref{eq:trace-scale-translation-losses}, together with
+\cref{eq:strong-hit-C1-bound}, gives the safe ordinary-product bound
+\cref{eq:strong-hit-recut-loss}.  To see that the shift budget is available
+on a fixed gauge ball, integrate
+\cref{eq:physical-hit-map-uniform-bound}: after decreasing the gauge radius,
+\[
+ |S_{\sigma,h}(g)-S_{\sigma,h}^0|
+ \le C\delta^{-1}\|g\|
+ <\frac{c_{\rm buf}}{8\delta}.
+\]
+Taking \(\ell_\delta=c_{\rm buf}/(4\delta)\) gives
+\cref{eq:strong-hit-chart-shift-budget}; since
+\(\delta S_\delta\to0\), any \(L_\delta=O(S_\delta)\) also satisfies
+\cref{eq:strong-hit-window-budget} after a harmless decrease of
+\(c_{\rm buf}\).  No second gauge derivative or normalized terminal Schur
+estimate has been used.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:repelling-component-flushing}]
 The repelling travel time satisfies \(S_r\ge c/\delta\), whereas
 \(L_b=O(S_\delta)\).  Thus

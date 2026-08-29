@@ -13,7 +13,8 @@ mixed-BVP and representative-class contract in
 That contract concerns the still-open terminal-to-terminal family; the
 raw-gauge fixed-section zero family and its pointwise generated-interior
 tracker statement, together with the fixed-interior weak-C1 physical-section
-hit maps, are now proved separately.
+hit maps and their common time-\(C_\delta^3\), gauge-\(C^1\) strong
+generated buffers, are now proved separately.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -423,10 +424,14 @@ not the conormal of an independently defined physical maximal-canard locus.
       physical-section hits at $r=\pm r_{\rm out}/2$, with joint weak-history
       C1 dependence, dimension-uniform scaled hit/history derivatives, and
       the exact stationary phase-quotient formula.
-- [ ] Upgrade to a common C2 strong terminal buffer at the physical endpoints,
-      and construct the hybrid strong-terminal/weak-middle moving-event
-      residual and inverse, then the terminal-to-terminal nonlinear outer
-      tracker.
+- [x] Upgrade the same interior neighborhoods to common
+      time-$C_\delta^3$, gauge-C1 strong generated buffers with
+      dimension-uniform annular bounds, an $O(\delta^{-1})$ fixed-reference
+      chart enlargement, and the safe $O(\delta^{-2})$ moving-recut loss.
+- [ ] Prove nonlinear variational flushing and the normalized terminal
+      Schur estimate, then construct the hybrid
+      strong-terminal/weak-middle moving-event residual and inverse and the
+      terminal-to-terminal nonlinear outer tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.

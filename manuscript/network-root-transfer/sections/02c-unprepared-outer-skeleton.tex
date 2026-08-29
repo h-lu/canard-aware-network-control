@@ -3981,6 +3981,115 @@ endpoint, prove gauge flatness, produce parameter jets or a repelling sheet,
 or construct a physical connection or root.
 \end{proposition}
 
+\begin{proposition}[Common strong generated buffer at the physical hit]
+\label[proposition]{prop:raw-gauge-strong-hit-buffer}
+Retain \cref{prop:raw-gauge-physical-hit} at order \(h\ge3\), still
+pointwise at one fixed admissible parameter pair, and put
+\begin{equation}
+ B_{\sigma,h}
+ =[T_{\sigma,-}-\theta_m,T_{\sigma,+}],\qquad
+ Y_{\sigma,g}=(r_{\sigma,g},Z_{\sigma,g},p_{\sigma,g}).
+                                                        \label{eq:strong-hit-fixed-buffer}
+\end{equation}
+For \(Y=(r,Z,p)\in C^3(B_{\sigma,h})\), define
+\begin{equation}
+ \|Y\|_{\mathfrak S_{\sigma,h}^3}
+ =\max_{0\le j\le3}\delta^j
+   \sup_{s\in B_{\sigma,h}}
+   \left\{
+    \frac{|\partial_s^jr(s)|}{r_h}
+   +\frac{\|\partial_s^jZ(s)\|_N}{\varepsilon}
+   +\frac{|\partial_s^jp(s)|}{\varepsilon r_h}
+   \right\}.                                    \label{eq:strong-hit-buffer-norm}
+\end{equation}
+After decreasing the common gauge ball and
+\(\delta_0(r_{\rm out})\), there are uniform constants
+\(c_{\rm buf},C_{\rm buf}>0\) such that
+\begin{equation}
+ \min\{S_{\sigma,h}(g)-(T_{\sigma,-}-\theta_m),
+          T_{\sigma,+}-S_{\sigma,h}(g)\}
+ \ge \frac{c_{\rm buf}}{\delta}                 \label{eq:strong-hit-time-margin}
+\end{equation}
+and
+\begin{equation}
+ g\longmapsto Y_{\sigma,g}|_{B_{\sigma,h}}
+ \quad\hbox{is \(C^1\) from \(\mathfrak B_{\sigma,\delta}^h\)
+ into \(\mathfrak S_{\sigma,h}^3\)},             \label{eq:strong-hit-C1-map}
+\end{equation}
+with
+\begin{equation}
+ \sup_g\left\{
+  \|Y_{\sigma,g}\|_{\mathfrak S_{\sigma,h}^3}
+  +\|D_gY_{\sigma,g}\|_{\mathcal L(
+       \mathfrak B_{\sigma,\delta}^h,
+       \mathfrak S_{\sigma,h}^3)}
+       \right\}\le C_{\rm buf}.                \label{eq:strong-hit-C1-bound}
+\end{equation}
+The constants are independent of \(N\), \(\delta\), the branch, and the
+fixed parameter point in the retained structural ball.
+
+More explicitly, let \(L_\delta,\ell_\delta\ge0\) satisfy
+\begin{equation}
+ \delta\{L_\delta+\theta_m+\ell_\delta\}
+ \le\frac12c_{\rm buf},                         \label{eq:strong-hit-window-budget}
+\end{equation}
+and set
+\begin{equation}
+ K_\delta=[-L_\delta-\theta_m,0],\qquad
+ K_\delta^{\ell}
+ =[-L_\delta-\theta_m-\ell_\delta,\ell_\delta].
+                                                        \label{eq:strong-hit-moving-windows}
+\end{equation}
+If \(S_{\sigma,h}^0=S_{\sigma,h}(0)\), then the fixed-reference buffer
+\begin{equation}
+ \mathcal Y_{\sigma,h}(g)(\varsigma)
+ =Y_{\sigma,g}(S_{\sigma,h}^0+\varsigma),\qquad
+ \varsigma\in K_\delta^{\ell},                 \label{eq:strong-hit-reference-buffer}
+\end{equation}
+is \(C^1\) in \(g\) into the scaled \(C^3\) space.  If, in addition,
+\begin{equation}
+ \sup_g|S_{\sigma,h}(g)-S_{\sigma,h}^0|
+ <\frac12\ell_\delta,                            \label{eq:strong-hit-chart-shift-budget}
+\end{equation}
+then every translated window sampled by
+\(\widehat\tau_{\sigma,h}(g)\) stays in the same generated buffer.
+Consequently \cref{lem:terminal-relative-trace-scale-chart}, with
+\(d=1\), applies to
+\((\mathcal Y_{\sigma,h}(g),\widehat\tau_{\sigma,h}(g))\).
+It produces a \(C^1\) family of event-aligned \(C^1\) retained traces in
+the fixed physical section.  For a product trace \(X=(x,z,p)\) on
+\(K_\delta\), write
+\begin{equation*}
+ \|X\|_{C^1_{\delta,\mathrm{ord}}(K_\delta)}
+ =\max_{0\le j\le1}\delta^j
+   \sup_{\varsigma\in K_\delta}
+       \bigl\{|\partial_\varsigma^jx|
+              +\|\partial_\varsigma^jz\|_N
+              +|\partial_\varsigma^jp|\bigr\}.
+\end{equation*}
+Thus, in this ordinary unnormalized product space, its first gauge
+differential has the safe operator bound
+\begin{equation}
+ \|D_g(r^\#,N_Z^\#,N_p^\#)\|_{\mathcal L(
+       \mathfrak B_{\sigma,\delta}^h,
+       C^1_{\delta,\mathrm{ord}}(K_\delta))}
+ \le C_{\rm buf}\delta^{-2}.                    \label{eq:strong-hit-recut-loss}
+\end{equation}
+This is a supplied strong input for the trace chart, not a claim that raw
+translation is uniformly bounded on one same strong space.
+
+The two window conditions are nonempty on one fixed gauge ball: after
+choosing \(L_\delta=O(S_\delta)\), one may take
+\(\ell_\delta=c_{\rm buf}/(4\delta)\) and decrease the gauge radius so
+that \cref{eq:strong-hit-chart-shift-budget} holds.
+
+The proposition concerns time regularity and first gauge dependence.  It
+does not make the gauge map \(C^2\), estimate an
+\(\varepsilon\)-normalized terminal phase-to-normal Schur column, prove
+gauge forgetting, construct a hybrid source inverse, take parameter
+derivatives, or produce a repelling sheet, physical connection, or root.
+\end{proposition}
+
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}
 Retain \cref{lem:repelling-component-generations}.  Fix \(d\ge1\), take

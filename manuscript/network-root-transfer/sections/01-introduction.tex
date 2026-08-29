@@ -531,12 +531,17 @@ belong to an exact RFDE orbit rather than a formal history graph.
 \Cref{prop:raw-gauge-physical-hit} restricts these orbit segments, on one
 gauge-independent generated buffer per branch, to the unique hits of the
 fixed interior sections \(r=\pm r_{\rm out}/2\).  The scaled hit-time and
-phase-quotiented history derivatives are dimension uniform.  No common chart
-yet compares the full reparameterized trackers on their moving domains; only
-their fixed interior hit histories have a common-section \(C^1\) gauge map.
-This interior realization does not supply flat forgetting, physical branch
-endpoints, a \(C^2\) strong-terminal parameter family, a past-complete
-history, or a connection between the two branches.
+phase-quotiented history derivatives are dimension uniform.
+\Cref{prop:raw-gauge-strong-hit-buffer} upgrades the common interior
+neighborhood to a \(C^1\)-in-gauge family of time-\(C_\delta^3\) generated
+buffers in the natural annular component scales.  It supplies the strong
+input required by the terminal-relative trace chart, including a
+\(\delta^{-2}\) safe loss for the raw moving recut.  Thus gauges can now be
+compared in one local strong chart around the fixed physical hit, but not on
+the full outer domains or at the original branch endpoints.  This interior
+realization does not supply nonlinear variational flushing, flat forgetting,
+a \(C^2\)-in-gauge or parameter family, a past-complete history, or a
+connection between the two branches.
 
 The dimension-uniform range estimates use Dobrushin contraction in the
 oscillation seminorm \citep{gaubert2015dobrushin}, in the context of a broad
@@ -695,15 +700,20 @@ sections \(r=\pm r_{\rm out}/2\),
 buffer, proves joint \(C^1\) dependence of its weak complete histories on
 time and raw gauge, and obtains a unique section hit.  The scaled event time
 and hit history have dimension-uniform first gauge derivatives, with the
-history derivative given exactly by the stationary phase quotient.  This is
-an interior weak-history comparison, not a \(C^2\) strong terminal buffer,
-physical-endpoint recut, or flat-forgetting theorem.  It supplies neither
-parameter derivatives nor a terminal-to-terminal moving-event family, and
-no compatible collar is shown to be cut from a past orbit.  Thus no
-cross-branch handoff, physical connection, or canard root follows.  The
-phase-quotiented nonautonomous normal dichotomy also remains open.  Detailed
-history-graph and finite-section bookkeeping is placed in the supplementary
-material.
+history derivative given exactly by the stationary phase quotient.
+\Cref{prop:raw-gauge-strong-hit-buffer} then proves a common time-\(C^3\)
+generated buffer for both branches, \(C^1\) gauge dependence with
+dimension- and \(\delta\)-uniform annular scaled bounds, and compatibility
+with the \(C^2\) strong-to-weak terminal chart.  The raw moving recut retains
+the sharp safe loss \(O(\delta^{-2})\).  This is a local regularity and chart
+interface, not a \(C^2\)-in-gauge theorem, an
+\(\varepsilon\)-normalized terminal Schur estimate, a physical-endpoint
+recut, or flat forgetting.  It supplies neither parameter derivatives nor a
+terminal-to-terminal moving-event family, and no compatible collar is shown
+to be cut from a past orbit.  Thus no cross-branch handoff, physical
+connection, or canard root follows.  The phase-quotiented nonautonomous
+normal dichotomy also remains open.  Detailed history-graph and
+finite-section bookkeeping is placed in the supplementary material.
 
 \Cref{fig:root-mechanism} summarizes the information flow from exact blindness
 to the two-delay source, nonlinear root responses, and recovered return

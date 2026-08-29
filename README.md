@@ -67,10 +67,15 @@ quotient and Volterra realization.  On a common generated buffer, the fixed
 interior sections `r=+/-r_out/2` now have unique raw-gauge `C1` hits; the
 scaled hit time and complete-history hit have dimension-uniform first
 derivatives, and the latter is exactly the stationary phase quotient of the
-fixed-time gauge derivative.  This is a weak-history interior hit theorem,
-not a `C2` strong terminal buffer or a recutting of the physical branch
-endpoints.  Flat forgetting is not yet proved.  It is not yet a parameterized
-terminal-to-terminal tracker, a past physical orbit, a cross-branch connection, or a
+fixed-time gauge derivative.  The same interior window is now a common
+time-`C_delta^3` strong generated buffer, `C1` in the gauge with
+dimension-uniform annular bounds; it supplies the previously missing strong
+input to the nonlinear terminal trace chart, with the safe
+`O(delta^(-2))` raw recut loss.  This is not a `C2`-in-gauge result, a
+normalized hybrid terminal inverse, or a recutting of the original physical
+branch endpoints.  Nonlinear variational flushing and flat forgetting are
+not yet proved.  It is not yet a parameterized terminal-to-terminal tracker,
+a past physical orbit, a cross-branch connection, or a
 preparation-independent root; its nonautonomous normal dichotomy and exact
 fold overlap remain open.
 
