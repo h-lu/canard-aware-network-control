@@ -3488,6 +3488,172 @@ exactly the logical consequences of these scale and sidedness failures.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{thm:receding-collar-causal-flight-time}]
+Fix \(\varkappa_{\rm ep}>0\).  We first record the joint scale ledger.
+After decreasing \(\delta_{\rm ep}(\varkappa_{\rm ep})\),
+\begin{align}
+ \frac{\rho_\delta}{r_{{\rm out},\delta}}
+ &=\frac{\delta^{1/2}}
+        {2\alpha\varkappa_{\rm ep}S_\delta^{1/2}},
+ &
+ \frac{\delta}{r_{{\rm out},\delta}^2}
+ &=\frac1{\varkappa_{\rm ep}^2S_\delta^3},        \label{eq:proof-receding-flight-geometric-ratios}\\
+ r_{{\rm out},\delta}S_\delta^2
+ &=\varkappa_{\rm ep}\delta^{1/2}S_\delta^{7/2}
+ \longrightarrow0.                              \label{eq:proof-receding-flight-lambda-ratio}
+\end{align}
+For each fixed positive \(\varkappa_{\rm ep}\), the first two ratios tend
+to zero.  This is why the theorem chooses
+\(\varkappa_{\rm ep}\) before
+\(\delta_{\rm ep}(\varkappa_{\rm ep})\); no common small-\(\delta\)
+threshold is asserted as \(\varkappa_{\rm ep}\downarrow0\).
+In particular,
+\begin{equation}
+ \lambda_\delta^{\rm ep}\le CS_\delta^{-2},\qquad
+ \sup_{\rho_\delta\le |r|\le r_{{\rm out},\delta}}
+        m_\delta(r)
+ \le r_{{\rm out},\delta}
+       +\frac{\varepsilon}{\rho_\delta^2}
+ \le C\lambda_\delta^{\rm ep}.                   \label{eq:proof-receding-flight-source-maximum}
+\end{equation}
+The source hypothesis therefore gives
+\[
+ \|\widehat Q_\sigma\|_\infty
+ \le CC_Q(\lambda_\delta^{\rm ep})^2=o(1).
+\]
+Decrease \(\delta_{\rm ep}\) so that this is at most \(q_-/2\).
+This proves the strict sign of \(q_\sigma=q_0+\widehat Q_\sigma\).
+
+The flight-time definitions immediately give
+\[
+ \beta_\sigma'
+ =\frac1{q_0}-\frac1{q_\sigma}
+ =\frac{\widehat Q_\sigma}{q_0q_\sigma},
+ \qquad
+ \beta_\sigma(e_{\sigma,0})=0.
+\]
+They also give
+\[
+ \beta_\sigma(e_{\sigma,1})
+ =\theta_\sigma^0(e_{\sigma,1})
+       -\theta_\sigma(e_{\sigma,1})
+ =-\widehat\tau_\sigma.
+\]
+Solving the first identity algebraically for
+\(\widehat Q_\sigma\) proves
+\cref{eq:receding-flight-bordered-problem,%
+eq:receding-flight-beta-prime}.  Reversing the limits in the last
+identity proves \cref{eq:receding-flight-duration}.  Conversely, the bulk
+row determines \(\beta_\sigma'\), the causal row fixes its integration
+constant, and the terminal row fixes \(\widehat\tau_\sigma\).  This proves
+existence and uniqueness of the bordered solution.
+
+The strict speed bounds imply
+\begin{equation}
+ |\beta_\sigma'(r)|\le CD_\delta m_\delta(r).
+                                                        \label{eq:proof-receding-flight-derivative-bound}
+\end{equation}
+Moreover,
+\begin{equation}
+ \int_{I_\sigma}m_\delta(r)\,\dd r
+ \le C\left\{r_{{\rm out},\delta}^2
+                   +\frac{\varepsilon}{\rho_\delta}\right\}
+ =CM_\delta^{\rm ep}.                             \label{eq:proof-receding-flight-action-integral}
+\end{equation}
+Since \(|r|\ge\rho_\delta\), integration from the causal endpoint and
+\cref{eq:receding-flight-duration} yield
+\begin{equation}
+ \sup_{I_\sigma}\frac{|\beta_\sigma(r)|}{|r|}
+       +\frac{|\widehat\tau_\sigma|}{\rho_\delta}
+ \le C D_\delta\frac{M_\delta^{\rm ep}}{\rho_\delta}.
+                                                        \label{eq:proof-receding-flight-pre-scale}
+\end{equation}
+Now
+\begin{align}
+ \frac{\lambda_\delta^{\rm ep}M_\delta^{\rm ep}}
+      {\rho_\delta}
+ &=
+ 2\alpha\{r_{{\rm out},\delta}+S_\delta^{-2}\}
+ \left\{\varkappa_{\rm ep}^2S_\delta^2
+                    +\frac{2\alpha}{S_\delta^2}\right\}\notag\\
+ &\le C\{\varkappa_{\rm ep}^2+S_\delta^{-4}\}.
+                                                        \label{eq:proof-receding-flight-normalized-action}
+\end{align}
+Indeed, the two omitted cross terms are absorbed by the right-hand side
+using
+\(\delta^{1/2}S_\delta^{7/2}\to0\), uniformly for
+\(0<\varkappa_{\rm ep}\le1\).  Combining
+\cref{eq:proof-receding-flight-derivative-bound,%
+eq:proof-receding-flight-pre-scale,%
+eq:proof-receding-flight-normalized-action}
+with \(D_\delta\le C_Q\lambda_\delta^{\rm ep}\) proves
+\cref{eq:receding-flight-relative-bounds}.  Multiplication by
+\(\rho_\delta/\delta=S_\delta/(2\alpha)\) proves
+\cref{eq:receding-flight-fold-time-bound}.
+
+We next prove the nonlinear Schur assertion.  The open set on which
+\(\|q_0+\widehat Q\|_\infty\) stays uniformly separated from zero is open
+in \(C^0(I_\sigma)\).  Reciprocal Nemytskii substitution is real analytic
+there.  Integration and endpoint evaluation are bounded linear maps.
+Thus
+\(\widehat Q\mapsto(\beta,\widehat\tau)\) is real analytic.
+Differentiating \cref{eq:receding-flight-duration} under the integral sign
+gives \cref{eq:receding-flight-duration-differential}.
+Differentiating the bordered map at a solution gives
+\begin{equation}
+ (b,\zeta)\longmapsto
+ \left(
+   \frac{q_0^2b'}{(1-q_0\beta')^2},
+   b(e_{\sigma,0}),\
+   b(e_{\sigma,1})+\zeta\right).                 \label{eq:proof-receding-flight-differential}
+\end{equation}
+The multiplier in the first row and its reciprocal are uniformly bounded,
+because
+\[
+ 1-q_0\beta'=\frac{q_0}{q_0+\widehat Q}.
+\]
+For data \((h,b_0,b_E)\), the unique inverse is therefore
+\begin{align}
+ b'(r)&=\frac{(1-q_0(r)\beta'(r))^2}{q_0(r)^2}h(r),
+ \qquad b(e_{\sigma,0})=b_0,\notag\\
+ \zeta&=b_E-b(e_{\sigma,1}).                     \label{eq:proof-receding-flight-linear-inverse}
+\end{align}
+If \(H=\|h\|_{\mathsf H_{\sigma,{\rm ep}}}\), then
+\[
+ |b'(r)|\le C\lambda_\delta^{\rm ep}m_\delta(r)H,
+\]
+and hence
+\[
+ \sup_{I_\sigma}\frac{|b(r)|}{|r|}
+ \le C\left\{\frac{|b_0|}{\rho_\delta}
+       +\frac{\lambda_\delta^{\rm ep}M_\delta^{\rm ep}}
+              {\rho_\delta}H\right\}.
+\]
+The same estimate at \(e_{\sigma,1}\), followed by the last row of
+\cref{eq:proof-receding-flight-linear-inverse}, bounds
+\(|\zeta|/\rho_\delta\).  Use
+\cref{eq:proof-receding-flight-normalized-action} and
+\(\varkappa_{\rm ep}\le\varkappa_{\rm ep}^*\le1\) to obtain
+\cref{eq:receding-flight-bordered-inverse}.  The displayed formulas also
+show that the differential and its inverse are bounded in the stated
+norms, proving the isomorphism.
+
+Finally, \(\theta_\sigma\) is strictly increasing along the oriented
+interval from \(e_{\sigma,0}\) to \(e_{\sigma,1}\), with range
+\([0,\delta S_\sigma]\).  Its inverse gives the unique solution of
+\cref{eq:receding-flight-physical-ivp} by
+\[
+ r_\sigma(s)=\theta_\sigma^{-1}(\delta s).
+\]
+The nonvanishing continuous speed makes this solution \(C^1\), strictly
+decreasing, and unique even though no Lipschitz assumption on
+\(\widehat Q_\sigma\) was imposed.  At \(s=S_\sigma\) it equals
+\(e_{\sigma,1}\), which proves the final assertion.  Every construction
+in this proof was scalar and Eulerian; no diagonal-uniform RFDE inverse or
+endpoint history has been inferred.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:inner-anchored-relative-phase-schur}]
 The relative phase space is Banach, and
 \begin{equation}

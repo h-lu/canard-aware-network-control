@@ -2996,6 +2996,227 @@ estimates of
 \cref{lem:inner-anchored-nonlinear-phase-chart} alone.
 \end{proposition}
 
+The obstruction is a fixed-outer-radius statement about an inner-anchored
+reference chart.  It does not say that a scalar causal endpoint problem has
+no solution.  For a given Eulerian speed, the correct phase is the
+difference of two flight-time coordinates.  This gives an exact nonlinear
+terminal row and also identifies a receding outer scale on which its
+duration fits the \(O(S_\delta)\) endpoint window.
+
+\begin{theorem}[Receding-collar causal flight time and terminal Schur row]
+\label[theorem]{thm:receding-collar-causal-flight-time}
+Retain the common same-sign scalar-speed bounds in
+\cref{eq:anchored-phase-q-class}.  Fix \(C_Q>0\).  There is
+\(0<\varkappa_{\rm ep}^*<1\), depending only on \(C_Q\) and the common
+scalar collar bounds, with the following property.  For every fixed
+\(0<\varkappa_{\rm ep}\le\varkappa_{\rm ep}^*\), there is
+\(\delta_{\rm ep}(\varkappa_{\rm ep})>0\).  Whenever
+\(0<\delta<\delta_{\rm ep}(\varkappa_{\rm ep})\), set
+\begin{equation}
+ r_{{\rm out},\delta}
+ =\varkappa_{\rm ep}(\delta S_\delta^3)^{1/2},
+ \qquad
+ \lambda_\delta^{\rm ep}
+ =r_{{\rm out},\delta}+S_\delta^{-2},
+ \qquad
+ M_\delta^{\rm ep}
+ =r_{{\rm out},\delta}^2+\frac{\varepsilon}{\rho_\delta}.
+                                                        \label{eq:receding-flight-scales}
+\end{equation}
+In this theorem \(r_{\rm out}=r_{{\rm out},\delta}\), and
+\[
+ (e_{a,0},e_{a,1})=(r_{{\rm out},\delta},\rho_\delta),
+ \qquad
+ (e_{r,0},e_{r,1})=(-\rho_\delta,-r_{{\rm out},\delta}).
+\]
+Write \(I_\sigma\) for the closed interval between these endpoints and put
+\[
+ m_\delta(r)=|r|+\frac{\varepsilon}{|r|^2}.
+\]
+Let \(\widehat Q_\sigma\in C(I_\sigma)\) be an
+\emph{Eulerian} speed correction: its argument is the current physical
+scalar coordinate, not a fixed-reference pullback.  Assume
+\begin{equation}
+ |\widehat Q_\sigma(r)|\le D_\delta m_\delta(r),
+ \qquad
+ 0\le D_\delta\le C_Q\lambda_\delta^{\rm ep}.     \label{eq:receding-flight-source-class}
+\end{equation}
+Then
+\[
+ q_\sigma(r)=q_0(r)+\widehat Q_\sigma(r)
+ \le-\frac{q_-}{2}<0
+\]
+on \(I_\sigma\).  Define
+\begin{align}
+ \theta_\sigma(r)
+ &=\int_{e_{\sigma,0}}^r\frac{\dd u}{q_\sigma(u)},
+ &
+ \theta_\sigma^0(r)
+ &=\int_{e_{\sigma,0}}^r\frac{\dd u}{q_0(u)},\notag\\
+ \beta_\sigma(r)
+ &=\theta_\sigma^0(r)-\theta_\sigma(r),
+ &
+ \widehat\tau_\sigma
+ &=\theta_\sigma(e_{\sigma,1})
+       -\theta_\sigma^0(e_{\sigma,1}).            \label{eq:receding-flight-coordinates}
+\end{align}
+The pair \((\beta_\sigma,\widehat\tau_\sigma)\) is the unique solution of
+the exact nonlinear bordered problem
+\begin{align}
+ \mathscr B_{\sigma}^{\rm tof}(\beta_\sigma)(r)
+ &:=\frac{q_0(r)^2\beta_\sigma'(r)}
+          {1-q_0(r)\beta_\sigma'(r)}
+   =\widehat Q_\sigma(r),\notag\\
+ \beta_\sigma(e_{\sigma,0})&=0,\qquad
+ \beta_\sigma(e_{\sigma,1})
+       +\widehat\tau_\sigma=0.                   \label{eq:receding-flight-bordered-problem}
+\end{align}
+In particular,
+\begin{align}
+ \beta_\sigma'(r)
+ &=\frac{\widehat Q_\sigma(r)}
+       {q_0(r)\{q_0(r)+\widehat Q_\sigma(r)\}},
+                                                        \label{eq:receding-flight-beta-prime}\\
+ \widehat\tau_\sigma
+ &=\int_{e_{\sigma,1}}^{e_{\sigma,0}}
+    \frac{\widehat Q_\sigma(r)}
+       {q_0(r)\{q_0(r)+\widehat Q_\sigma(r)\}}\,\dd r.
+                                                        \label{eq:receding-flight-duration}
+\end{align}
+Its exact source differential is
+\begin{equation}
+ D_{\widehat Q}\widehat\tau_\sigma[H]
+ =\int_{e_{\sigma,1}}^{e_{\sigma,0}}
+       \frac{H(r)}
+        {\{q_0(r)+\widehat Q_\sigma(r)\}^2}\,\dd r.
+                                                        \label{eq:receding-flight-duration-differential}
+\end{equation}
+The following estimates are uniform in \(N,\delta\), the branch, and
+\(0<\varkappa_{\rm ep}\le\varkappa_{\rm ep}^*\):
+\begin{align}
+ \sup_{I_\sigma}
+   \frac{|\beta_\sigma'(r)|}{m_\delta(r)}
+ &\le CD_\delta,\notag\\
+ \sup_{I_\sigma}\frac{|\beta_\sigma(r)|}{|r|}
+   +\frac{|\widehat\tau_\sigma|}{\rho_\delta}
+ &\le C C_Q\{\varkappa_{\rm ep}^2+S_\delta^{-4}\},
+                                                        \label{eq:receding-flight-relative-bounds}\\
+ \frac{|\widehat\tau_\sigma|}{\delta}
+ &\le C C_Q\{\varkappa_{\rm ep}^2S_\delta
+                         +S_\delta^{-3}\}.        \label{eq:receding-flight-fold-time-bound}
+\end{align}
+
+The nonlinear terminal row has a uniform action-weighted Schur inverse.
+Put
+\begin{align}
+ \|h\|_{\mathsf H_{\sigma,{\rm ep}}}
+ &=\frac1{\lambda_\delta^{\rm ep}}
+   \sup_{r\in I_\sigma}\frac{|h(r)|}{m_\delta(r)},\notag\\
+\|b\|_{\mathsf A_{\sigma,{\rm ep}}}
+ &=\sup_{r\in I_\sigma}\frac{|b(r)|}{|r|}
+   +\frac1{\lambda_\delta^{\rm ep}}
+      \sup_{r\in I_\sigma}\frac{|b'(r)|}{m_\delta(r)}.
+                                                        \label{eq:receding-flight-linear-norms}
+\end{align}
+The rational bulk map \(\mathscr B_\sigma^{\rm tof}\) is understood on the
+connected component of zero in the open set
+\begin{equation}
+ \left\{\beta\in C^1(I_\sigma):
+  \inf_{r\in I_\sigma}|1-q_0(r)\beta'(r)|>0\right\}.
+                                                        \label{eq:receding-flight-rational-domain}
+\end{equation}
+On the source ball defined by the strict form of
+\cref{eq:receding-flight-source-class}, the map
+\[
+ \widehat Q_\sigma\longmapsto
+       (\beta_\sigma,\widehat\tau_\sigma)
+\]
+is real analytic from \(C(I_\sigma)\), with its \(C^0\) topology, into
+\(\mathsf A_{\sigma,{\rm ep}}\times\mathbb R\).  At every such solution, the
+differential of
+\begin{equation}
+ (\beta,\widehat\tau)\longmapsto
+ \left(\mathscr B_\sigma^{\rm tof}(\beta),
+       \beta(e_{\sigma,0}),
+       \beta(e_{\sigma,1})+\widehat\tau\right)    \label{eq:receding-flight-bordered-map}
+\end{equation}
+is an isomorphism.  If its data are \((h,b_0,b_E)\) and its unknown
+variation is \((b,\zeta)\), then
+\begin{equation}
+ \|b\|_{\mathsf A_{\sigma,{\rm ep}}}
+       +\frac{|\zeta|}{\rho_\delta}
+ \le C\left\{
+   \|h\|_{\mathsf H_{\sigma,{\rm ep}}}
+       +\frac{|b_0|+|b_E|}{\rho_\delta}\right\}.  \label{eq:receding-flight-bordered-inverse}
+\end{equation}
+The uniform assertion in
+\cref{eq:receding-flight-bordered-inverse} concerns the inverse; no uniform
+forward trace bound in these norms is claimed.
+
+Finally, let
+\[
+ S_\sigma
+ =\delta^{-1}\theta_\sigma(e_{\sigma,1})
+ =S_\sigma^0+\frac{\widehat\tau_\sigma}{\delta},
+ \qquad
+ S_\sigma^0
+ =\delta^{-1}\theta_\sigma^0(e_{\sigma,1}).
+\]
+The scalar initial-value problem
+\begin{equation}
+ r_\sigma'(s)=\delta q_\sigma(r_\sigma(s)),
+ \qquad r_\sigma(0)=e_{\sigma,0},                \label{eq:receding-flight-physical-ivp}
+\end{equation}
+has a unique strictly decreasing solution on \([0,S_\sigma]\), and
+\[
+ r_\sigma(S_\sigma)=e_{\sigma,1}.
+\]
+Thus the prescribed scalar causal entry, the hit at the original
+scalar-coordinate terminal endpoint, its exact duration, and the normalized
+scalar terminal Schur row are closed on the receding collar.  This theorem
+does not put the existing fixed-section
+RFDE zeros on the diagonal family
+\(r_{\rm out}=r_{{\rm out},\delta}\).  It also does not construct an
+arbitrary-source normal inverse, a raw-compatible endpoint history, or a
+past physical orbit.  Those are separate requirements for an
+original-endpoint outer tracker and a complete-history connection.
+\end{theorem}
+
+\begin{remark}[The exact endpoint moment is nonlinear]
+\label[remark]{rem:exact-endpoint-flight-moment}
+For a fixed \(r_{\rm out}\), strict negativity of
+\(q_0+\widehat Q_\sigma\) already gives a unique scalar causal hit.  What
+can fail is the normalized terminal window.  By
+\cref{eq:receding-flight-duration}, the condition
+\[
+ |\widehat\tau_\sigma|\le C\rho_\delta
+\]
+is equivalent to the exact nonlinear flight-time moment bound
+\begin{equation}
+ \left|
+ \int_{e_{\sigma,1}}^{e_{\sigma,0}}
+ \frac{\widehat Q_\sigma(r)}
+      {q_0(r)\{q_0(r)+\widehat Q_\sigma(r)\}}\,\dd r
+ \right|
+ \le C\rho_\delta.                               \label{eq:exact-endpoint-flight-moment}
+\end{equation}
+Cancelling only its first variation is insufficient, because the exact
+identity
+\begin{equation}
+ \widehat\tau_\sigma
+ =\int_{e_{\sigma,1}}^{e_{\sigma,0}}
+       \frac{\widehat Q_\sigma}{q_0^2}\,\dd r
+ -\int_{e_{\sigma,1}}^{e_{\sigma,0}}
+       \frac{\widehat Q_\sigma^2}
+        {q_0^2(q_0+\widehat Q_\sigma)}\,\dd r    \label{eq:exact-endpoint-flight-quadratic-remainder}
+\end{equation}
+has a sign-definite second term whenever the speed remains negative.  Thus
+a sign-changing nonzero source can have zero linear moment while retaining
+a nonzero quadratic duration.  The receding scale in
+\cref{thm:receding-collar-causal-flight-time} controls the full nonlinear
+moment, not merely its linearization.
+\end{remark}
+
 \begin{proposition}[Inner-anchored phase Schur inverse]
 \label[proposition]{prop:inner-anchored-relative-phase-schur}
 Retain
@@ -5037,7 +5258,8 @@ Parameter derivatives of one representative are generally nonzero and are
 not flushed away; those derivatives contain the response that a later
 connection conormal must retain.  The theorem still gives two separate hit
 classes.  It does not make the hit times flat, supply an
-\(\varepsilon\)-normalized terminal Schur inverse, pass through the fold,
+\(\varepsilon\)-normalized full phase--normal RFDE terminal Schur inverse,
+pass through the fold,
 construct a repelling sheet or signed membership gap, or prove a physical
 root.  Nor does it identify the classes produced from two different
 reference charts.
