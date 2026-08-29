@@ -3636,9 +3636,164 @@ branch-to-branch handoff, a preparation-independent physical connection,
 or a canard root.
 \end{corollary}
 
-\begin{corollary}[Generated-interior canonical tracker representatives]
+\begin{theorem}[Raw-gauge family of fixed-section outer zeros]
+\label[theorem]{thm:raw-gauge-fixed-section-zero}
+Retain
+\cref{lem:second-jet-raw-history-assembler,%
+thm:fixed-section-nonlinear-graph-residual,%
+cor:fixed-section-canonical-zero}
+at order \(h\ge3\).  At a fixed admissible parameter pair define the
+attracting and repelling raw-gauge spaces
+\begin{align}
+ \mathfrak B_{a,\delta}^h
+ &=E_N\times\R\times\mathscr K_{N,\delta}^h,
+ &g_a&=(\beta_a,b_a,\widehat\gamma_a),\notag\\
+ \mathfrak B_{r,\delta}^h
+ &=E_N\times\mathscr K_{N,\delta}^h\times\R,
+ &g_r&=(\beta_r,\widehat\gamma_r,b_r),           \label{eq:raw-gauge-spaces}
+\end{align}
+with normalized norms
+\begin{align}
+ \|g_a\|_{\mathfrak B_{a,\delta}^h}
+ &=\varepsilon^{-1}\left\{
+    \|\beta_a\|_N+\frac{|b_a|}{r_{\rm out}}
+       +\|\widehat\gamma_a\|_{\mathrm{cap},h,r_{\rm out}}
+                       \right\},\notag\\
+ \|g_r\|_{\mathfrak B_{r,\delta}^h}
+ &=\varepsilon^{-1}\left\{
+    \|\beta_r\|_N
+       +\|\widehat\gamma_r\|_{\mathrm{cap},h,-\rho_\delta}
+       +\frac{|b_r|}{r_{\rm out}}\right\}.      \label{eq:raw-gauge-norms}
+\end{align}
+Thus a bounded gauge has physical boundary amplitude \(O(\varepsilon)\)
+in the displayed natural boundary norms.
+The core histories \(\widehat\gamma_\sigma\) have zero endpoint jets
+through order \(h\); they are genuine raw-history data, not extra boundary
+rows.
+
+For \(u=(x,a)\), replace the canonical history packages in
+\cref{eq:canonical-nonlinear-history-packages} by
+\begin{align}
+ \mathscr H_{a,g_a}^{\rm raw}(u)
+ &=\mathscr H_{r_{\rm out}}^{\rm rc}
+      \bigl(c_a(a),(\beta_a,b_a,\widehat\gamma_a)\bigr),
+                                                        \notag\\
+ \mathscr H_{r,g_r}^{\rm raw}(u)
+ &=\mathscr H_{-\rho_\delta}^{\rm rc}
+      \bigl(c_r(a),(\beta_r,p_x(0),\widehat\gamma_r)\bigr),
+                                                        \label{eq:raw-gauge-history-packages}
+\end{align}
+and put
+\begin{align}
+ B_{\gamma,a}^{g_a}(u)
+ &=\mathscr H_{a,g_a}^{\rm raw}(u),\notag\\
+ B_{\gamma,r}^{g_r}(u)
+ &=\mathscr H_{r,g_r}^{\rm raw}(u)-\mathfrak C_ep_x(0),
+                                                        \label{eq:raw-gauge-history-rows}\\
+ \mathscr S_{\sigma,g_\sigma}^{\rm nl}(u)
+ &=\bigl(B_{\gamma,\sigma}^{g_\sigma}(u),b_\sigma,
+          S_{Z,\sigma}^{\rm nl}(u),
+          S_{p,\sigma}^{\rm nl}(u)\bigr).       \label{eq:raw-gauge-normal-package}
+\end{align}
+Here \(b_a\) is the attracting resource-defect entry row and \(b_r\) is
+the repelling future resource-defect row.  The repelling value \(p_x(0)\)
+remains an output and enters the raw compatibility recursion exactly once.
+Define
+\begin{equation}
+ \mathcal F_{\sigma}^{g_\sigma}(u)
+ =\left(
+   \mathscr N_\sigma x-
+       \mathscr S_{\sigma,g_\sigma}^{\rm nl}(u),
+   \mathscr B_{\phi,\sigma,*}^{\rm nl}(a)
+       -\bigl(Q_\sigma^{\rm nl,\flat}(x,a),0\bigr)
+       \right).                                  \label{eq:raw-gauge-residual}
+\end{equation}
+At zero gauge this is exactly \(\mathcal F_\sigma\).
+
+Let \(L_\sigma=D\mathcal F_\sigma(0,0)\), and define the bounded gauge
+injections into the residual data space by
+\begin{align}
+ \mathscr J_a g_a
+ &=\left(
+  D_U\mathscr H_{r_{\rm out}}^{\rm rc}(0,0)
+       (\beta_a,b_a,\widehat\gamma_a),
+       b_a,0,0;\,0,0\right),\notag\\
+ \mathscr J_r g_r
+ &=\left(
+  D_U\mathscr H_{-\rho_\delta}^{\rm rc}(0,0)
+       (\beta_r,0,\widehat\gamma_r),
+       b_r,0,0;\,0,0\right).                     \label{eq:raw-gauge-linear-injections}
+\end{align}
+The semicolon separates the normal and phase data.  There are uniform
+constants \(g_*,\lambda_g,C_g>0\) and
+\(0<R_{\rm G}\le R_{\rm u}\) such that, whenever
+\begin{equation}
+ \lambda_\delta+\|g_\sigma\|_{\mathfrak B_{\sigma,\delta}^h}
+ <\lambda_g,
+ \qquad
+ \|g_\sigma\|_{\mathfrak B_{\sigma,\delta}^h}<g_*,          \label{eq:raw-gauge-smallness}
+\end{equation}
+the residual \(\mathcal F_\sigma^{g_\sigma}\) has a unique zero
+\begin{equation}
+ u_{\sigma,\delta}^{g_\sigma}
+ \in\mathcal G_{\sigma,\delta}^{\rm rga}
+ \quad\hbox{in the open \(R_{\rm G}\)-ball}.     \label{eq:raw-gauge-zero}
+\end{equation}
+It satisfies
+\begin{align}
+ \|u_{\sigma,\delta}^{g_\sigma}\|_
+       {\mathcal G_{\sigma,\delta}^{\rm rga}}
+ &\le C_g\left(\lambda_\delta
+       +\|g_\sigma\|_{\mathfrak B_{\sigma,\delta}^h}\right),
+                                                        \label{eq:raw-gauge-zero-size}\\
+ \left\|u_{\sigma,\delta}^{g_\sigma}
+     +L_\sigma^{-1}\mathcal F_\sigma(0,0)
+     -L_\sigma^{-1}\mathscr J_\sigma g_\sigma\right\|
+ &\le C_g\left(\lambda_\delta
+       +\|g_\sigma\|_{\mathfrak B_{\sigma,\delta}^h}\right)^2,
+                                                        \label{eq:raw-gauge-first-jet}\\
+ \bigl\|[D_u\mathcal F_\sigma^{g_\sigma}
+       (u_{\sigma,\delta}^{g_\sigma})]^{-1}\bigr\|
+ &\le2M.                                           \label{eq:raw-gauge-zero-inverse}
+\end{align}
+On a smaller common gauge ball the zero is \(C^1\) in \(g_\sigma\), with
+\begin{equation}
+ D_g u_{\sigma,\delta}^{g}
+ =-[D_u\mathcal F_\sigma^g(u_{\sigma,\delta}^g)]^{-1}
+       D_g\mathcal F_\sigma^g(u_{\sigma,\delta}^g),
+ \qquad
+ \|D_g u_{\sigma,\delta}^g\|\le C_g,           \label{eq:raw-gauge-zero-derivative}
+\end{equation}
+and hence
+\begin{equation}
+ \|u_{\sigma,\delta}^{g_1}-u_{\sigma,\delta}^{g_2}\|
+ \le C_g\|g_1-g_2\|_{\mathfrak B_{\sigma,\delta}^h}.       \label{eq:raw-gauge-zero-lipschitz}
+\end{equation}
+The zero at \(g_\sigma=0\) is the canonical zero in
+\cref{cor:fixed-section-canonical-zero}.
+
+At a gauge zero, the exact boundary identities are
+\begin{align}
+ \gamma_x&=\mathscr H_{a,g_a}^{\rm raw}(u),&
+ Z_x(0)&=\beta_a,&p_x(0)&=b_a &&(\sigma=a),\notag\\
+ \gamma_x&=\mathscr H_{r,g_r}^{\rm raw}(u),&
+ Z_x(0)&=\beta_r,&p_x(S_r)&=b_r &&(\sigma=r).     \label{eq:raw-gauge-exact-boundary-identities}
+\end{align}
+They therefore reconstruct exact monotone forward solution segments of the
+unmodified RFDE, with the strict speed bound in
+\cref{eq:fixed-section-zero-speed-sign}, uniformly on the gauge ball.
+This proves a nonempty, infinite-dimensional gauge-indexed class of
+raw-compatible finite-branch representatives.  It does not prove that a gauge history is
+cut from a past orbit, compare two gauges after a physical endpoint recut,
+construct a parameterized moving-event family, or produce a stable sheet,
+connection, or root.
+\end{theorem}
+
+\begin{corollary}[Generated-interior raw-gauge tracker representatives]
 \label[corollary]{cor:generated-interior-canonical-tracker}
-Retain \cref{cor:fixed-section-canonical-zero}.  At either of its zeros,
+Retain \cref{thm:raw-gauge-fixed-section-zero}.  At any one of its
+gauge-indexed zeros,
+write its phase component as \(a_{\sigma,\delta}\), and
 write the reconstructed forward solution as
 \[
  v_\sigma(s),\quad -\theta_m\le s\le S_\sigma,
@@ -3704,9 +3859,11 @@ realization and
 \end{equation}
 
 This corollary constructs an exact generated-interior tracker
-representative carried by each canonical zero.  Here canonical means only
-the fixed zero-core graph slice; no preparation or raw-gauge independence is
-asserted.  The result does not prescribe both physical branch endpoints,
+representative carried by every zero in the raw-gauge ball.  The preceding
+theorem proves Lipschitz dependence of the fixed-section zeros on the gauge;
+this corollary makes no common-chart comparison of the reparameterized
+trackers.  It proves existence, not flat forgetting or raw-gauge independence.
+The result does not prescribe both physical branch endpoints,
 construct a moving-event or parameter family, extend the initial collar to
 a past-complete orbit, produce a repelling stable sheet, or prove a physical
 connection or root.

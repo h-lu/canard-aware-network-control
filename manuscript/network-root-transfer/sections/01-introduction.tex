@@ -517,14 +517,21 @@ prop:exact-resource-gauge-quotient} show what changes once a genuine monotone
 history is available: time translation supplies the transported longitudinal
 line, and an adapted resource gauge removes the singular resource coupling
 through an \(O(S_\delta^{-1})\) Volterra history correction.  These identities
-are conditional at the level of an arbitrary tracker.  For the canonical
-fixed-section zeros constructed below,
-\cref{cor:generated-interior-canonical-tracker} verifies their hypotheses on
-every generated subsegment whose full delay collar lies beyond the first
-maximal delay.  Thus the quotient and Volterra coordinates there belong to an exact
-RFDE orbit rather than a formal history graph.  This interior realization
-does not supply physical branch endpoints, a parameter-coherent moving-event
-family, a past-complete history, or a connection between the two branches.
+are conditional at the level of an arbitrary tracker.  The canonical
+fixed-section zero is only the zero-gauge member of a larger class:
+\cref{thm:raw-gauge-fixed-section-zero} admits a nonempty,
+infinite-dimensional gauge ball of small raw-compatible attracting and
+repelling boundary data, proves a uniform zero for every such gauge, and
+gives its first gauge jet, fixed-graph Lipschitz dependence, strict speed
+sign, and exact forward RFDE reconstruction.  For every zero in that ball,
+\cref{cor:generated-interior-canonical-tracker} verifies the tracker
+hypotheses on each generated subsegment whose full delay collar lies beyond
+the first maximal delay.  Thus the quotient and Volterra coordinates there
+belong to an exact RFDE orbit rather than a formal history graph.  No common
+chart is yet used to compare the reparameterized trackers for two gauges.
+This interior realization does not supply flat forgetting, physical branch
+endpoints, a parameter-coherent moving-event family, a past-complete history,
+or a connection between the two branches.
 
 The dimension-uniform range estimates use Dobrushin contraction in the
 oscillation seminorm \citep{gaubert2015dobrushin}, in the context of a broad
@@ -670,8 +677,17 @@ dimension-uniform two-point quadratic estimate.
 each fixed admissible parameter pair.  On each outer branch it gives a
 unique small zero in the canonical graph slice, its first Newton jet, a
 strict speed sign, and an exact finite forward segment of the unmodified
-RFDE.  It supplies neither parameter derivatives nor a moving-event family,
-and the canonical compatible collar is not shown to be cut from a past
+RFDE.  \Cref{thm:raw-gauge-fixed-section-zero} replaces the zero-core boundary
+choice by a nonempty, infinite-dimensional ball of small raw-compatible
+attracting and repelling gauges.  Uniform contraction and the gauge implicit
+function theorem give one zero in every gauge slice, its first gauge jet,
+fixed-graph Lipschitz dependence, inverse persistence, the same speed sign,
+and exact raw-RFDE reconstruction.  Each sufficiently deep generated
+subsegment is then reparameterized as an exact tracker by
+\cref{cor:generated-interior-canonical-tracker}.  This is a pointwise
+statement on a gauge-dependent interval, not a common-chart comparison or a
+flat-forgetting theorem.  It supplies neither parameter derivatives nor a
+moving-event family, and no compatible collar is shown to be cut from a past
 orbit.  Thus no cross-branch handoff, physical connection, or canard root
 follows.  The phase-quotiented nonautonomous normal dichotomy also remains
 open.  Detailed history-graph and finite-section bookkeeping is placed in

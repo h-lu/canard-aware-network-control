@@ -55,7 +55,8 @@ fixed.
 | Fixed-reference nonlinear raw-history assembler | `lem:second-jet-raw-history-assembler` | Direct finite-recursion construction of the raw-compatible old-history segment on one fixed-reference cap ball, with a same-sign enlargement covering all four closed endpoints, two endpoint derivatives, overlap agreement with the original collar chart, and an $\varepsilon^{-1}$-normalized quadratic graph remainder. By itself it closes only the history-boundary nonlinearity; it is not a past orbit, tracker, physical connection, or root |
 | Fixed-section nonlinear graph--action residual | `thm:fixed-section-nonlinear-graph-residual` | Exact assembly of the nonlinear formal phase delay, canonical zero-core raw-compatible history rows, resource-defect normal equations, and inner phase anchor on one fixed graph space. The map is $C^1$, has base defect $O(r_{\rm out}+S_\delta^{-2})$, linearizes exactly to the existing dimension-uniform anchored Schur isomorphism, and has a uniform quadratic/two-point remainder. It does not assert a zero, a moving terminal event, a past orbit, a physical connection, or a root |
 | Canonical fixed-section zeros | `cor:fixed-section-canonical-zero` | A uniform contraction solves the fixed-section residual at every fixed admissible parameter pair. On each outer branch the zero is unique in the canonical graph slice, is $O(r_{\rm out}+S_\delta^{-2})$, has the displayed first Newton jet and strict speed sign, and reconstructs an exact finite forward segment of the unmodified RFDE. No parameterized branch, moving event, past orbit, invariant sheet, cross-branch handoff, physical connection, or canard root is asserted |
-| Generated-interior tracker representatives | `cor:generated-interior-canonical-tracker` | On every retained subsegment whose delay collar lies beyond the first maximal delay, either canonical fixed-section zero admits a physical-coordinate parameterization with exact scalar backtracks, exact uncut outer-history invariance, and the actual generated RFDE history window. Uniform $q$, $V'$, and $W'$ collar bounds realize the stationary and resource quotients, including an $O(S_\delta^{-1})$ Volterra correction. “Canonical” refers only to the fixed zero-core graph slice: no preparation independence, physical endpoints, parameter family, past-complete orbit, branch handoff, connection, or root is asserted |
+| Raw-gauge fixed-section zeros | `thm:raw-gauge-fixed-section-zero` | The canonical zero extends to a nonempty, infinite-dimensional gauge-indexed class of small $O(\varepsilon)$ raw-compatible attracting and repelling boundary data in the stated natural boundary norms. Each gauge slice has a unique small zero, with a uniform first gauge jet, persistent inverse, fixed-graph $C^1$/Lipschitz dependence, strict speed sign, and exact finite raw-RFDE reconstruction. The theorem does not assert past-orbit generation of the gauges, a common recut for comparing trackers, flat forgetting, parameter jets, physical endpoints, a sheet, connection, or root |
+| Generated-interior tracker representatives | `cor:generated-interior-canonical-tracker` | On every retained subsegment whose delay collar lies beyond the first maximal delay, every raw-gauge fixed-section zero admits a physical-coordinate parameterization with exact scalar backtracks, exact uncut outer-history invariance, and the actual generated RFDE history window. Uniform $q$, $V'$, and $W'$ collar bounds realize the stationary and resource quotients, including an $O(S_\delta^{-1})$ Volterra correction. The fixed-section zeros, not the reparameterized trackers on their gauge-dependent domains, have proved gauge-Lipschitz dependence. No flat forgetting, physical endpoints, parameter family, past-complete orbit, branch handoff, connection, or root is asserted |
 | Attracting finite-generation flushing | `lem:current-absorbed-delay-splitting`, `prop:attracting-finite-generation-flushing` | Exact deletion of zero-delay differences, current absorption for positive delays, a fixed seam-partition Banach space, and an order-dependent finite-generation estimate taking arbitrary strong attracting collar data to a genuine slow exit history with dimension-uniform normalized operator norm tending to zero. Fixed parameter only; no phase coupling, tracker, or parameter jet |
 | Repelling component-kernel flushing | `lem:repelling-component-generations`, `prop:repelling-component-flushing` | Weighted full-branch coefficient jets; a resummed current loop with forward transverse and future scalar kernels; exact recursive-delay generation count on one additive seam space; and inner-history/terminal-scalar handoff estimates obtained by oriented words and a localized terminal first-exit action. The normalized component traces tend to zero uniformly in network size. Fixed parameter and fixed phase only: no high-order compatible `p(0)`-collar feedback, coupled phase--normal inverse, nonlinear tracker, speed sign, or physical root |
 | Compatible repelling-collar closure | `prop:compatible-repelling-collar-closure` | High-order closure of the raw-compatible scalar $p(0)$-to-history feedback, with no extra Fredholm row; separate closed-loop collar and terminal columns; and a cross-column action/generation estimate preserving both normalized handoff limits uniformly in network size. Fixed parameter and fixed phase only; no phase-to-normal/event border, nonlinear tracker, speed sign, or physical root |
@@ -191,16 +192,21 @@ The limits separate exactly:
   uniform two-point quadratic remainder.  A uniform contraction now gives
   a unique small canonical zero on each fixed-parameter outer graph slice,
   its first Newton jet, strict speed sign, and an exact finite forward RFDE
-  segment.  Every retained generated-interior subsegment whose delay collar
-  lies beyond the first maximal delay is an exact physical-coordinate tracker
-  and satisfies the quotient and resource-gauge Volterra conclusions.  This
-  does not yet give higher parameter jets, a moving-event family, physical
-  branch endpoints, a past-complete history, a cross-branch handoff, or a
-  physical root, and it does not prove the nonautonomous normal dichotomy.  The generic
+  segment.  That zero extends to a nonempty, infinite-dimensional
+  raw-compatible gauge-indexed class with uniform slice uniqueness, first
+  gauge jet, persistent inverse, and fixed-graph C1/Lipschitz dependence.
+  Every retained generated-interior subsegment of every gauge zero whose
+  delay collar lies beyond the first maximal delay is an exact
+  physical-coordinate tracker and satisfies the quotient and resource-gauge
+  Volterra conclusions.  No common-chart comparison of gauge-dependent
+  tracker domains is asserted.  This does not yet give flat forgetting,
+  higher parameter jets, a moving-event family, physical branch endpoints, a
+  past-complete history, a cross-branch handoff, or a physical root, and it
+  does not prove the nonautonomous normal dichotomy.  The generic
   nonselection example is a logical
   counterexample to weak selection criteria, not a model-specific
-  impossibility theorem; tracker existence, quotient roughness, and all of
-  G1 remain open.
+  impossibility theorem; terminal-to-terminal tracker existence, quotient
+  roughness, and all of G1 remain open.
 - A zero leading covector does not rule out higher-order response.
 - The one-delay no-go applies only to the pure-redistribution leading source
   after coincident atoms have been merged.

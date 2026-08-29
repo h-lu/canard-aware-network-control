@@ -1,8 +1,9 @@
 # Paper A: mixed tracker BVP and physical representative class
 
 Status: **proof contract for the terminal-to-terminal tracker family; the
-exact generated-interior tracker and the nonlinear terminal trace-scale
-coordinate theorem are now proved.**
+raw-gauge fixed-section zero family, its exact pointwise generated-interior
+trackers, and the nonlinear terminal trace-scale coordinate theorem are now
+proved.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -650,9 +651,12 @@ boundary-layer norm, where `mathfrak p=delta^2 Q+ell_N Z`.  For one fixed
 gauge its parameter jets may lose at most
 `C_g delta^(-M_g) exp(c_g S_delta)` relative to that scale.  Cutoff
 completion, projected endpoint equality, or parameter oscillations of size
-`exp(c/delta^2)` are not admissible gauges.  The construction theorem must
-exhibit at least one compatible raw gauge satisfying these bounds; a
-definition whose admissible class could be empty is insufficient.
+`exp(c/delta^2)` are not admissible gauges.  The fixed-section theorem now
+exhibits a nonempty raw-compatible boundary gauge ball at the natural
+`O(epsilon)=O(delta^2)` scale.  The terminal-to-terminal construction must
+still lift at least one member to all of the physical endpoint data and
+uniform tame `J_phys` jets above; a full admissible class that could remain
+empty is insufficient.
 
 For every two fixed admissible gauges, the theorem must prove
 
@@ -803,10 +807,15 @@ gauges.
       graph residual on both outer branches, including local uniqueness,
       first Newton jet, strict speed sign, and finite forward raw-RFDE
       reconstruction.
-- [x] Generated-interior physical-coordinate tracker representatives on
-      delay collars beyond the first maximal delay, including exact
-      backtracks, uncut history windows, uniform resource-gauge collar
-      bounds, and the `O(S_delta^(-1))` Volterra realization.
+- [x] Nonempty, infinite-dimensional raw-compatible gauge ball at the
+      fixed-section level, with uniform slice uniqueness, first gauge jet,
+      fixed-graph C1/Lipschitz dependence, inverse persistence, speed sign,
+      and raw-RFDE reconstruction.
+- [x] Pointwise generated-interior physical-coordinate tracker
+      representatives for every raw-gauge zero on delay collars beyond the
+      first maximal delay, including exact backtracks, uncut history windows,
+      uniform resource-gauge collar bounds, and the `O(S_delta^(-1))`
+      Volterra realization.  No common-chart tracker comparison is claimed.
 - [x] Terminal-relative nonlinear `C^2` strong-to-weak moving-window
       coordinates on a supplied strong buffer, including the retained event
       displacement, derived fixed-section row, nonzero-base terminal columns,
@@ -817,8 +826,8 @@ gauges.
       including Volterra, phase-row, moving-projection, delay, `q`, and
       parameter-jet terms.
 - [ ] Attracting point and repelling codimension-one sheet.
-- [ ] At least one compatible raw gauge with the stated scale, and uniform
-      flat forgetting through `J_phys` for every fixed gauge pair.
+- [ ] Uniform flat forgetting through `J_phys` for every fixed gauge pair
+      after physical endpoint recutting.
 - [ ] Resource interface remainder and complete-history overlap with the raw
       fold graph.
 - [ ] Exact uncut fold passage to one common history chart.
@@ -831,6 +840,7 @@ gauges.
 
 Until the unchecked items are proved, Paper A must continue to say that the
 terminal-to-terminal physical tracker family, gap, and root do not yet exist
-as theorems.  The generated-interior representative and terminal trace-scale
-coordinates above are theorems, but neither selects the physical endpoints
-nor compares preparations.
+as theorems.  The raw-gauge fixed-section family, its pointwise
+generated-interior representatives, and the terminal trace-scale coordinates
+above are theorems, but they neither select physical endpoints nor compare
+the reparameterized trackers on a common chart.

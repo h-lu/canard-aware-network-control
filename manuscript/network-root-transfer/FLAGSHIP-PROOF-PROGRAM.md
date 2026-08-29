@@ -11,7 +11,8 @@ The separate physical-history implementation under Issue #32 now has a fixed
 mixed-BVP and representative-class contract in
 [`../../docs/paper-a-tracker-bvp-proof-program.md`](../../docs/paper-a-tracker-bvp-proof-program.md).
 That contract concerns the still-open terminal-to-terminal family; the
-generated-interior tracker statement is now proved separately.
+raw-gauge fixed-section zero family and its pointwise generated-interior
+tracker statement are now proved separately.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -408,9 +409,15 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Solve the fixed-section residual by a dimension-uniform contraction,
       with canonical-slice uniqueness, first Newton jet, strict speed sign,
       and exact finite forward RFDE reconstruction on both outer branches.
-- [x] Reparameterize every retained generated-interior subsegment whose delay
-      collar lies beyond the first maximal delay as an exact tracker, and
-      verify the uncut quotient and resource-gauge Volterra hypotheses there.
+- [x] Extend the zero-core solution to a nonempty, infinite-dimensional
+      raw-compatible gauge ball on both branches, with uniform slice
+      uniqueness, fixed-graph C1/Lipschitz dependence, first gauge jet,
+      inverse persistence, strict speed sign, and exact raw-RFDE
+      reconstruction.
+- [x] Reparameterize every retained generated-interior subsegment of every
+      raw-gauge zero whose delay collar lies beyond the first maximal delay as
+      an exact tracker, and verify the uncut quotient and resource-gauge
+      Volterra hypotheses there.
 - [ ] Construct the fixed physical-section hit map and the hybrid
       strong-terminal/weak-middle moving-event residual and inverse, then the
       terminal-to-terminal nonlinear outer tracker.
@@ -440,9 +447,13 @@ $O(r_{\rm out}+S_\delta^{-2})$, the differential is the uniform anchored
 Schur block, and the remainder is uniformly quadratic in two-point form.
 Its pointwise fixed-parameter zero is now obtained by a uniform contraction
 on each canonical outer graph slice, with a first Newton jet, strict speed
-sign, and finite forward RFDE reconstruction.  Its sufficiently deep
-generated interior is now an exact physical-coordinate tracker with the
-uncut quotient and Volterra realization.  Relative-parameter jets,
+sign, and finite forward RFDE reconstruction.  This zero extends uniformly
+to a nonempty, infinite-dimensional raw-compatible gauge ball, with a first
+gauge jet and fixed-graph C1/Lipschitz dependence.  The sufficiently deep
+generated interior of each gauge zero is now an exact physical-coordinate
+tracker with the uncut quotient and Volterra realization, but no common-chart
+comparison of gauge-dependent tracker domains is asserted.  Flat forgetting,
+relative-parameter jets,
 the common strong terminal buffer and full moving-event residual/inverse,
 terminal-to-terminal nonlinear tracker existence, nonautonomous quotient
 roughness, and G1 remain open.  The generic

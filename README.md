@@ -55,9 +55,17 @@ nonlinear fixed-section residual is now closed and solved, pointwise at each
 fixed admissible parameter pair, by a dimension-uniform contraction.  This
 gives one unique small canonical zero on each outer branch, its first Newton
 jet, strict speed sign, and an exact finite forward segment of the unmodified
-RFDE.  It is not yet a parameterized moving-event tracker, a past physical
-orbit, a cross-branch connection, or a preparation-independent root; its
-nonautonomous normal dichotomy and exact fold overlap remain open.
+RFDE.  The canonical zero is now extended to a nonempty,
+infinite-dimensional raw-compatible gauge ball on both branches, with
+uniform slice uniqueness, first gauge jet, fixed-graph C1/Lipschitz
+dependence, inverse persistence, strict speed sign, and exact raw-RFDE
+reconstruction.  Every sufficiently deep generated subsegment of every
+gauge zero is an exact pointwise physical-coordinate tracker with the uncut
+quotient and Volterra realization.  No common-chart tracker comparison or
+flat forgetting is yet proved.  It is not yet a parameterized moving-event
+tracker, a past physical orbit, a cross-branch connection, or a
+preparation-independent root; its nonautonomous normal dichotomy and exact
+fold overlap remain open.
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:

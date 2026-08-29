@@ -4657,6 +4657,160 @@ extends that collar to a past RFDE orbit nor relates the two values of
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{thm:raw-gauge-fixed-section-zero}]
+We use one norm symbol for the branch graph space and write
+\(G=\|g_\sigma\|_{\mathfrak B_{\sigma,\delta}^h}\).
+The normalization in \cref{eq:raw-gauge-norms} gives
+\begin{align}
+ \|(\beta_a,b_a,\widehat\gamma_a)\|_
+      {\mathrm{col},r_{\rm out}}
+ &\le C\varepsilon G,\notag\\
+ \|\beta_r\|_N+
+   \|\widehat\gamma_r\|_{\mathrm{cap},h,-\rho_\delta}
+ &\le\varepsilon G.                              \label{eq:proof-raw-gauge-data-scales}
+\end{align}
+For a trial \(u=(x,a)\) in a fixed small graph ball,
+\cref{eq:relative-graph-action-norm} and
+\(\mathscr P_{c,r,N}a(0)=0\) give
+\begin{equation}
+ \frac{|p_x(0)|}{\rho_\delta}
+ \le C\varepsilon\|u\|,
+ \qquad
+ \frac{|c_\sigma(a)|}{|e_{\sigma,0}|}
+ \le\|a\|_{\phi,\mathrm{rel}}
+ \le\|u\|.                                      \label{eq:proof-raw-gauge-trial-scales}
+\end{equation}
+Consequently all arguments of the two history assemblers remain in the
+single fixed-reference balls of
+\cref{lem:second-jet-raw-history-assembler} after the common graph and
+gauge radii are decreased.
+
+The only change from the residual in
+\cref{thm:fixed-section-nonlinear-graph-residual} occurs in its old-history
+and finite scalar boundary data.  The first differential of that change at
+\((u,g)=(0,0)\) is \(-\mathscr J_\sigma g\): the minus sign comes from
+\(\mathscr N_\sigma x-\mathscr S_{\sigma,g}^{\rm nl}\).  On the repelling
+branch the \(p_x(0)\)-differential of the history assembler is exactly
+\(\mathfrak C_e\) at the base and is canceled by the second term of
+\cref{eq:raw-gauge-history-rows}.  Thus no new linear feedback is added to
+\(L_r\).  The two maps in
+\cref{eq:raw-gauge-linear-injections} are bounded from the normalized gauge
+spaces to the normalized residual space, uniformly in \(N\) and \(\delta\).
+
+More explicitly, define the joint remainder
+\begin{equation}
+ \mathcal R_{\sigma}^{g}(u)
+ =\mathcal F_\sigma^g(u)-\mathcal F_\sigma(0,0)
+       -L_\sigma u+\mathscr J_\sigma g.           \label{eq:proof-raw-gauge-joint-remainder}
+\end{equation}
+The two-point estimates in the proof of
+\cref{thm:fixed-section-nonlinear-graph-residual}, together with
+\cref{eq:nonlinear-raw-history-C2-bounds,%
+eq:nonlinear-raw-history-graph-remainder,%
+eq:proof-raw-gauge-data-scales,%
+eq:proof-raw-gauge-trial-scales}, give
+\begin{align}
+ &\|\mathcal R_\sigma^g(u)-
+          \mathcal R_\sigma^{\widetilde g}(v)\|\notag\\
+ &\quad\le C_G\bigl(\|u\|+\|v\|+
+             \|g\|+\|\widetilde g\|\bigr)
+       \bigl(\|u-v\|+\|g-\widetilde g\|\bigr) . \label{eq:proof-raw-gauge-joint-two-point}
+\end{align}
+Indeed, the pure \(u\)-terms are exactly the old two-point ledger.  The
+new pure-gauge and mixed terms are the \(D_U^2\) and
+\(\partial_cD_U\) terms of the history assembler.  Their physical input
+size is \(O(\varepsilon G)\), and division by the normal-data factor
+\(\varepsilon\) leaves the displayed dimensionless bound.  The repelling
+dependence on \(p_x(0)\) is covered by the same mixed estimate.  No other
+bulk or phase equation depends explicitly on \(g\).
+
+Put \(b_\sigma^0=\mathcal F_\sigma(0,0)\).  For a constant \(C_0\) larger
+than the base and gauge-injection bounds, set
+\begin{equation}
+ d_g=\lambda_\delta+G,
+ \qquad r_g=2MC_0d_g.                             \label{eq:proof-raw-gauge-radius}
+\end{equation}
+On the closed \(r_g\)-ball consider
+\begin{equation}
+ \mathcal T_{\sigma,g}(u)
+ =-L_\sigma^{-1}\left\{
+    b_\sigma^0-\mathscr J_\sigma g
+          +\mathcal R_\sigma^g(u)\right\}.       \label{eq:proof-raw-gauge-contraction}
+\end{equation}
+Choose
+\(R_{\rm G}\le R_{\rm u}\) so that
+\(4MC_GR_{\rm G}<1\), and then choose
+\(g_*\) and \(\lambda_g\) so that
+\(r_g<R_{\rm G}\) and
+\(MC_G(r_g+G)<1/4\).
+Equations
+\cref{eq:fixed-section-nonlinear-base-bound,%
+eq:proof-raw-gauge-joint-two-point}
+show that \(\mathcal T_{\sigma,g}\) maps the \(r_g\)-ball strictly into
+itself and has Lipschitz constant at most \(1/2\).  Its fixed point is the
+zero in \cref{eq:raw-gauge-zero} and proves
+\cref{eq:raw-gauge-zero-size}.  If two zeros lie in the open
+\(R_{\rm G}\)-ball, the same two-point estimate with fixed \(g\) and the
+choice of \(R_{\rm G},g_*\) forces their difference to vanish.  At the
+fixed point, \cref{eq:proof-raw-gauge-joint-remainder} gives
+\begin{equation*}
+ u_{\sigma,\delta}^g+L_\sigma^{-1}b_\sigma^0
+       -L_\sigma^{-1}\mathscr J_\sigma g
+ =-L_\sigma^{-1}\mathcal R_\sigma^g
+       (u_{\sigma,\delta}^g),
+\end{equation*}
+and \cref{eq:proof-raw-gauge-joint-two-point} with
+\((v,\widetilde g)=(0,0)\) proves
+\cref{eq:raw-gauge-first-jet}.
+
+Differentiating the joint two-point estimate gives
+\begin{equation}
+ \|D_u\mathcal F_\sigma^g(u)-L_\sigma\|
+ \le C_G(\|u\|+\|g\|).                           \label{eq:proof-raw-gauge-derivative-perturbation}
+\end{equation}
+After the same decrease of the radii, the Neumann series and
+\(\|L_\sigma^{-1}\|\le M\) prove
+\cref{eq:raw-gauge-zero-inverse}.  The joint residual is \(C^1\) because
+the history assembler is \(C^2\) and all other components have the
+regularity already proved for \(\mathcal F_\sigma\).  The Banach implicit
+function theorem therefore gives \cref{eq:raw-gauge-zero-derivative}; the
+uniform bound follows from \cref{eq:raw-gauge-zero-inverse} and the
+bounded gauge differential.  Integration along the line segment between
+two gauges proves \cref{eq:raw-gauge-zero-lipschitz}.  At zero gauge the
+new residual equals the old one, so local uniqueness identifies its zero
+with \cref{cor:fixed-section-canonical-zero}.
+
+It remains to verify that the zero is a raw RFDE segment rather than only a
+zero of an augmented equation.  On the attracting branch the first two
+normal boundary rows give
+\(\gamma_x=\mathscr H_{a,g_a}^{\rm raw}\) and
+\(p_x(0)=b_a\); the seam condition and the current trace of the history
+assembler give \(Z_x(0)=\beta_a\).  On the repelling branch, cancellation
+of the identical \(\mathfrak C_ep_x(0)\) terms gives
+\(\gamma_x=\mathscr H_{r,g_r}^{\rm raw}\), while the future row gives
+\(p_x(S_r)=b_r\) and the seam gives \(Z_x(0)=\beta_r\).  These are
+\cref{eq:raw-gauge-exact-boundary-identities}.  The exact delay splitting
+and old collective/transverse decomposition in
+\cref{eq:fixed-section-exact-delay-splitting,%
+eq:fixed-section-physical-old-decomposition}
+are algebraic and remain valid with these nonzero raw data.  The order-
+\(h\) compatibility recursion then joins the old and current pieces, so
+\cref{prop:fold-time-tracker-normal-form} reconstructs the unmodified raw
+RFDE on the forward interval.
+
+Finally, \cref{eq:raw-gauge-zero-size} replaces the canonical size
+\(O(\lambda_\delta)\) in the speed argument by
+\(O(\lambda_\delta+G)\).  Decreasing the common gauge radius makes the
+speed-class product in
+\cref{lem:inner-anchored-nonlinear-phase-chart} uniformly small.  The same
+exact phase row therefore proves
+\cref{eq:fixed-section-zero-speed-sign} for every gauge zero.  This also
+shows directly that the raw-gauge ball is nonempty: it contains the zero
+gauge and its canonical solution.  No step evolved an arbitrary history
+backward or compared two gauges at a physical section.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{cor:generated-interior-canonical-tracker}]
 The order-\(h\) raw compatibility at \(s=0\), with \(h\ge3\), and the
 smooth finite-dimensional current field give a classical forward solution.
