@@ -4321,7 +4321,8 @@ Thus
 Moreover, with
 \begin{equation}
  \eta_{\mathrm{sp},\delta}
- =\eta_{\mathrm{hyb},\delta}+\rho_\delta+M_\delta,          \label{eq:speed-projected-phase-small-number}
+ =\eta_{\mathrm{hyb},\delta}
+      +\frac{\rho_\delta}{\lambda_\delta},                 \label{eq:speed-projected-phase-small-number}
 \end{equation}
 one has
 \begin{align}
@@ -4335,7 +4336,7 @@ one has
  +\|(Z_{\sigma,T},p_{\sigma,T})
        [(T_\sigma^{\rm sp}-T_\sigma^{\rm rc})a]\|_
        {\mathsf T_{\sigma,T}^1([0,L_b])}
- &\le C(\rho_\delta+M_\delta)
+ &\le C\frac{\rho_\delta}{\lambda_\delta}
        \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}.             \label{eq:speed-projected-phase-bounds}
 \end{align}
 
@@ -6066,6 +6067,322 @@ solution branch, a past-complete orbit, an invariant slow manifold, a
 branch-to-branch handoff, a preparation-independent physical connection,
 or a canard root.
 \end{corollary}
+
+\begin{lemma}[Joint diagonal wedge and causal-slice kinetic bounds]
+\label[lemma]{lem:joint-diagonal-wedge-kinetic}
+Retain the diagonal scales in
+\cref{eq:outer-matching-radius,eq:prefix-action-diagonal-scales} and the
+linear results through
+\cref{thm:speed-bordered-affine-endpoint-core}.  Fix
+\(\varkappa_0>0\).  There are \(\mathfrak w_*>0\), \(\delta_*>0\), and a
+constant \(C\), independent of \(N,\delta,\varkappa\), the branch, and the
+retained parameters, such that the following conclusions hold on the
+admissible wedge
+\begin{equation}
+ 0<\varkappa\le\varkappa_0,\qquad
+ 0<\delta<\delta_*,\qquad
+ \mathfrak w_{\delta,\varkappa}
+ :=\frac{\delta}{R_\delta^2}
+ =\frac1{\varkappa^2S_\delta^3}\le\mathfrak w_* . \label{eq:joint-diagonal-admissible-wedge}
+\end{equation}
+The fixed constants \(p,\alpha,\vartheta,A,M\), the regularity order, the
+coefficient bounds, and the common node-norm bounds are chosen as in the
+retained results; \(C\) may depend on those fixed data.
+In particular, all Green, terminal-observation, three-summand, speed-row,
+speed-projected phase, and bordered-inverse constants used in
+\cref{cor:terminal-source-split-hybrid-core,thm:speed-bordered-affine-endpoint-core}
+may be chosen to be this same joint constant.  Moreover,
+\begin{align}
+ \sup_{\substack{0<\varkappa\le\varkappa_0\\
+        \mathfrak w_{\delta,\varkappa}\le\mathfrak w_*}}
+ \eta_{\mathrm{sp},\delta}
+ &\longrightarrow0\qquad(\delta\downarrow0),\notag\\
+ \Omega_{\sigma,\delta}^{\rm aff}
+ &\le C\mathfrak b_{\delta,\varkappa},
+ &
+ \mathfrak b_{\delta,\varkappa}
+ &:=\varkappa^2+S_\delta^{-2}
+          +\sqrt\delta\,S_\delta^{7/2},          \label{eq:joint-diagonal-affine-budget}
+\end{align}
+where the first convergence is uniform on the wedge and
+\begin{equation}
+ \lambda_\delta+\rho_\delta+M_\delta
+       +\frac{\rho_\delta}{\lambda_\delta}
+ \le C\mathfrak b_{\delta,\varkappa}.            \label{eq:joint-diagonal-small-scales}
+\end{equation}
+
+For the kinetic statement, let
+\begin{equation}
+ f_y=\mathscr N_\sigma^{\rm sp,\infty}y
+ =f_{y,\rm B}+f_{y,\rm bd}+f_{y,T}               \label{eq:kinetic-normal-data-split}
+\end{equation}
+be the unique decomposition in
+\cref{eq:terminal-source-three-summand-range}, and abbreviate
+\begin{align}
+ B_\sigma(y)&=\|f_{y,\rm B}\|_
+  {\mathsf B_{\sigma,\delta}^{0,\lambda,
+        \mathrm{tf},\infty}},\notag\\
+ D_\sigma(y)&=\|f_{y,\rm bd}\|_
+       {\mathsf E_{\sigma,\delta}^{\rm bd}},\qquad
+ T_\sigma(y)=\|f_{y,T}\|_
+       {\mathsf E_{\sigma,\delta}^{T,\infty}}.  \label{eq:kinetic-normal-data-sizes}
+\end{align}
+If \(a(e_{\sigma,0})=0\), put
+\(x=T_\sigma^{\rm sp}a+y\),
+\begin{equation}
+ p_x^\sharp=p_x+\varepsilon\mathscr P_{c,\sigma,N}a,
+ \qquad
+ Q_x^\sharp=\mathfrak D_\sigma^\infty x
+                  +\mathscr P_{c,\sigma,N}a,     \label{eq:kinetic-shifted-state}
+\end{equation}
+and let \(\mathfrak K_\sigma(x,a)\) be the sum of
+\begin{align}
+ &\varepsilon^{-1}\|\gamma_x\|_{N,e_\sigma,\delta}^{\sharp},\notag\\
+ &\operatorname*{ess\,sup}_{0<s<s_{\sigma,T}}
+ \left\{\frac{\|Z_x(s)\|_N}{\varepsilon}
+ +\frac{|p_x^\sharp(s)|}{\varepsilon|\bar r_\sigma(s)|}
+ +\frac{|Q_x^\sharp(\bar r_\sigma(s))|}
+             {m_\delta(\bar r_\sigma(s))}\right\},\notag\\
+ &\|(Z_{x,T},p_{x,T})\|_
+          {\mathsf T_{\sigma,T}^1([0,L_b])}
+ +\sup_{0\le t\le L_b}
+      \frac{|Q_x^\sharp(\bar r_{\sigma,T}(t))|}{m_{\sigma,T}}.
+                                                        \label{eq:piecewise-kinetic-observable}
+\end{align}
+Then
+\begin{equation}
+ \mathfrak K_\sigma(x,a)
+ \le C\left\{
+   \lambda_\delta B_\sigma(y)+D_\sigma(y)+T_\sigma(y)
+       +\lambda_\delta
+          \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}\right\}. \label{eq:piecewise-kinetic-bound}
+\end{equation}
+The same estimate holds for differences.  The factor
+\(\lambda_\delta\) in the last term uses the causal slice
+\(a(e_{\sigma,0})=0\); it is not a consequence of the older unrestricted
+relative-phase state estimate.
+\end{lemma}
+
+\begin{theorem}[Fixed-envelope RFDE segment with vanishing repelling terminal speed correction]
+\label[theorem]{thm:fixed-envelope-speed-row-zero}
+Retain
+\cref{lem:joint-diagonal-wedge-kinetic,lem:second-jet-raw-history-assembler,%
+thm:fixed-section-nonlinear-graph-residual}
+at order \(h\ge3\).  There is a joint \(\varkappa_*>0\) such that all
+statements below hold when the wedge in
+\cref{eq:joint-diagonal-admissible-wedge} is formed with
+\(0<\varkappa_0\le\varkappa_*\).  Work pointwise at one admissible
+parameter pair.
+For
+\begin{equation}
+ u=(y,a,\tau),\qquad x=T_\sigma^{\rm sp}a+y,      \label{eq:fixed-envelope-nonlinear-coordinates}
+\end{equation}
+use the exact maps
+\(Q_\sigma^{\rm nl},S_{Z,\sigma}^{\rm nl},
+S_{p,\sigma}^{\rm nl}\) and
+\(B_{\gamma,\sigma}^{\rm nl}\) from
+\cref{eq:fixed-section-nonlinear-speed,%
+eq:fixed-section-nonlinear-Z-source,%
+eq:fixed-section-nonlinear-p-source,%
+eq:canonical-nonlinear-history-rows}.
+Define the new finite nonlinear source by
+\begin{align}
+ B_{a,\rm fin}^{\rm sp,nl}(x,a)&=0,\notag\\
+ B_{r,\rm fin}^{\rm sp,nl}(x,a)
+ &=\mathscr B_r^{\rm sp}x
+   -\varepsilon Q_r^{\rm nl,\flat}(x,a)(e_{r,1}),          \label{eq:fixed-envelope-nonlinear-finite-source}
+\end{align}
+and put
+\begin{equation}
+ \mathscr S_\sigma^{\rm sp,nl}(x,a)
+ =\bigl(B_{\gamma,\sigma}^{\rm nl}(x,a),
+ B_{\sigma,\rm fin}^{\rm sp,nl}(x,a),
+ S_{Z,\sigma}^{\rm nl}(x,a),S_{p,\sigma}^{\rm nl}(x,a)
+ \bigr).                                         \label{eq:fixed-envelope-nonlinear-normal-source}
+\end{equation}
+Set
+\begin{equation}
+ \mathscr R_\sigma^{\rm sp,nl}(x,a)
+ =\mathscr N_\sigma^{\rm sp,\infty}x
+       -\mathscr S_\sigma^{\rm sp,nl}(x,a).      \label{eq:fixed-envelope-exact-normal-residual}
+\end{equation}
+Thus the repelling finite component of
+\(\mathscr R_r^{\rm sp,nl}(x,a)\) is exactly
+\begin{equation}
+ \varepsilon Q_r^{\rm nl,\flat}(x,a)(e_{r,1}).  \label{eq:fixed-envelope-exact-speed-row}
+\end{equation}
+
+Split the two distributed components of this exact normal residual by
+the indicators in \cref{eq:affine-hard-source-split}; retain its history
+and scalar finite component in the boundary summand.  Denote the resulting
+unique normal-range decomposition by
+\(\mathscr R_{\sigma,\rm B}^{\rm nl}\),
+\(\mathscr R_{\sigma,\rm bd}^{\rm nl}\), and
+\(\mathscr R_{\sigma,T}^{\rm nl}\).  Define
+\begin{align}
+ \mathbb F_\sigma^{\rm fe}(u)
+ =\bigl(&\mathscr R_{\sigma,\rm B}^{\rm nl}
+          +\mathscr R_{\sigma,\rm bd}^{\rm nl}
+          +\mathscr R_{\sigma,T}^{\rm nl},\notag\\
+ &\mathscr B_{\phi,\sigma}^{\rm nl}(a)
+       -Q_\sigma^{\rm nl,\flat}(x,a),
+   a(e_{\sigma,0}),a(e_{\sigma,1})+\tau\bigr).  \label{eq:fixed-envelope-exact-residual}
+\end{align}
+This is an exact fixed-envelope boundary-value residual for the unmodified
+RFDE equations, with differential rows interpreted a.e. at the one hard
+source interface.  It satisfies
+\begin{align}
+ \mathbb F_\sigma^{\rm fe}(0)
+ &=-\bigl(f_\sigma^{\rm aff},0,0,0\bigr),\notag\\
+ D\mathbb F_\sigma^{\rm fe}(0)
+ &=\mathbb L_\sigma^{\rm aff}.                  \label{eq:fixed-envelope-base-and-linearization}
+\end{align}
+
+We state the nonlinear estimate in the anisotropic correction norm that
+resolves the non-small affine bulk datum.  Let
+\begin{align}
+ \|h\|_{\sigma,*}
+ :={}&B_\sigma(h_y)
+ +\frac{D_\sigma(h_y)+T_\sigma(h_y)}{\lambda_\delta}
+ +\frac1{\mathfrak b_{\delta,\varkappa}}
+   \left\{\|h_a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}
+          +\frac{|h_\tau|}{\rho_\delta}\right\},          \label{eq:fixed-envelope-star-domain-norm}\\
+ \|(f,k,b_0,b_E)\|_{\sigma,*}^{\rm ran}
+ :={}&\|f_{\rm B}\|+\frac{\|f_{\rm bd}\|+\|f_T\|}
+                                  {\lambda_\delta}\notag\\
+ &+\frac1{\mathfrak b_{\delta,\varkappa}}
+   \left\{\|k\|_{\mathsf H_{\sigma,\mathrm{hyb}}}
+       +\frac{|b_0|+|b_E|}{\rho_\delta}\right\}.          \label{eq:fixed-envelope-star-range-norm}
+\end{align}
+Here the three unlabeled normal norms are those of
+\cref{eq:terminal-source-three-summand-range}.  On the causal correction
+slice \(h_a(e_{\sigma,0})=0\), equivalently on the range slice \(b_0=0\),
+the restricted inverse of \(\mathbb L_\sigma^{\rm aff}\) is uniformly
+bounded between these two star norms.
+
+Let
+\begin{equation}
+ \mathbb Q_\sigma^{\rm fe}(u)
+ =\mathbb F_\sigma^{\rm fe}(u)
+   -\mathbb F_\sigma^{\rm fe}(0)
+   -\mathbb L_\sigma^{\rm aff}u.                \label{eq:fixed-envelope-nonlinear-remainder}
+\end{equation}
+There are joint constants \(C_Q,r_*>0\) such that the affine predictor
+\(u_\sigma^{\rm aff}\) in
+\cref{eq:affine-endpoint-predictor} satisfies
+\begin{equation}
+ B_\sigma(y_\sigma^{\rm aff})\le C_Q,\quad
+ D_\sigma(y_\sigma^{\rm aff})
+      +T_\sigma(y_\sigma^{\rm aff})\le C_Q\lambda_\delta,\quad
+ \|a_\sigma^{\rm aff}\|_{\mathsf A_{\sigma,\mathrm{hyb}}}
+      +\frac{|\tau_\sigma^{\rm aff}|}{\rho_\delta}
+ \le C_Q\mathfrak b_{\delta,\varkappa}.         \label{eq:fixed-envelope-affine-box}
+\end{equation}
+After decreasing \(r_*\) uniformly, the exact residual restricts to a
+\(C^1\) map from the affine causal star tube
+\[
+ \{u_\sigma^{\rm aff}+h:
+       h_a(e_{\sigma,0})=0,\ \|h\|_{\sigma,*}<r_*\}
+\]
+into the corresponding three-summand range slice.
+For \(h,k\) on the causal slice with
+\(\|h\|_{\sigma,*},\|k\|_{\sigma,*}\le r_*\),
+the exact nonlinear remainder belongs to the displayed three-summand
+range and obeys
+\begin{align}
+ \|\mathbb Q_\sigma^{\rm fe}(u_\sigma^{\rm aff})\|_
+        {\sigma,*}^{\rm ran}
+ &\le C_Q\mathfrak b_{\delta,\varkappa},\notag\\
+ \|\mathbb Q_\sigma^{\rm fe}(u_\sigma^{\rm aff}+h)
+       -\mathbb Q_\sigma^{\rm fe}(u_\sigma^{\rm aff}+k)\|_
+        {\sigma,*}^{\rm ran}
+ &\le C_Q\mathfrak b_{\delta,\varkappa}
+       \|h-k\|_{\sigma,*}.                     \label{eq:fixed-envelope-star-two-point}
+\end{align}
+In particular,
+\begin{equation}
+ \sup_{\|h\|_{\sigma,*}\le r_*}
+ \|D\mathbb Q_\sigma^{\rm fe}
+       (u_\sigma^{\rm aff}+h)\|_{\mathcal L(*,*)}
+ \le C_Q\mathfrak b_{\delta,\varkappa},         \label{eq:fixed-envelope-star-derivative}
+\end{equation}
+where \(\mathcal L(*,*)\) denotes operators between the causal domain and
+range star slices.
+More precisely, the bulk, boundary-plus-terminal, and phase components
+on the first line have sizes
+\begin{equation}
+ C_Q\mathfrak b_{\delta,\varkappa},\qquad
+ C_Q\lambda_\delta\mathfrak b_{\delta,\varkappa},\qquad
+ C_Q\mathfrak b_{\delta,\varkappa}^2,           \label{eq:fixed-envelope-remainder-components}
+\end{equation}
+respectively; their two-point versions have the same coefficients times
+\(\|h-k\|_{\sigma,*}\).  The entry and event-slack components of
+\(\mathbb Q_\sigma^{\rm fe}\) vanish identically.
+
+After fixing \(0<\varkappa_0\le\varkappa_*\), then decreasing
+\(\mathfrak w_*\), and finally \(\delta_*\), there is a unique zero on
+the causal slice,
+\begin{equation}
+ u_\sigma^{\rm fe}
+ =(y_\sigma^{\rm fe},a_\sigma^{\rm fe},
+          \tau_\sigma^{\rm fe})                 \label{eq:fixed-envelope-nonlinear-zero}
+\end{equation}
+in the affine star ball
+\begin{equation}
+ \|u-u_\sigma^{\rm aff}\|_{\sigma,*}
+ \le C\mathfrak b_{\delta,\varkappa}.           \label{eq:fixed-envelope-zero-star-radius}
+\end{equation}
+It satisfies the sharper component estimates
+\begin{align}
+ B_\sigma(y_\sigma^{\rm fe}-y_\sigma^{\rm aff})
+ &\le C\mathfrak b_{\delta,\varkappa},\notag\\
+ D_\sigma(y_\sigma^{\rm fe}-y_\sigma^{\rm aff})
+ +T_\sigma(y_\sigma^{\rm fe}-y_\sigma^{\rm aff})
+ &\le C\lambda_\delta\mathfrak b_{\delta,\varkappa},\notag\\
+ \|a_\sigma^{\rm fe}-a_\sigma^{\rm aff}\|_
+       {\mathsf A_{\sigma,\mathrm{hyb}}}
+ +\frac{|\tau_\sigma^{\rm fe}-\tau_\sigma^{\rm aff}|}
+       {\rho_\delta}
+ &\le C\mathfrak b_{\delta,\varkappa}^2.       \label{eq:fixed-envelope-zero-component-correction}
+\end{align}
+Restricted to the causal tangent slice and the corresponding range slice,
+the differential at this zero remains an isomorphism in the star norms.
+
+Put \(x_\sigma^{\rm fe}=T_\sigma^{\rm sp}a_\sigma^{\rm fe}
++y_\sigma^{\rm fe}\).  The zero assembles an exact monotone forward
+solution segment of the unmodified RFDE from its raw-compatible old
+history, and
+\begin{equation}
+ q_0(\Theta_{a_\sigma^{\rm fe}}(r))
+ +Q_\sigma^{\rm nl,\flat}
+       (x_\sigma^{\rm fe},a_\sigma^{\rm fe})(r)
+ =q_0(r)\Theta_{a_\sigma^{\rm fe}}'(r)
+ \le-c_*q_-<0.                                  \label{eq:fixed-envelope-zero-speed-sign}
+\end{equation}
+On the repelling branch, in addition,
+\begin{equation}
+ Q_r^{\rm nl,\flat}(x_r^{\rm fe},a_r^{\rm fe})(e_{r,1})=0.
+                                                        \label{eq:fixed-envelope-terminal-speed-correction-zero}
+\end{equation}
+This vanishing concerns the normal-plus-phase terminal speed
+\emph{correction}; the total physical speed is the strictly negative
+quantity in \cref{eq:fixed-envelope-zero-speed-sign}, not zero.
+The last row gives only
+\begin{equation}
+ \tau_\sigma^{\rm fe}=-a_\sigma^{\rm fe}(e_{\sigma,1}),
+ \qquad
+ \Theta_{a_\sigma^{\rm fe}}(e_{\sigma,1})
+ =\Phi_{q_0}^{-\tau_\sigma^{\rm fe}}(e_{\sigma,1}).       \label{eq:fixed-envelope-slack-mismatch}
+\end{equation}
+Thus \(\tau\) records a terminal phase mismatch.  This theorem does not
+construct a moving-duration column or an original-coordinate endpoint;
+in particular it does not imply \(c_{\rm ter}=1\),
+\(K_p=R_{q,N}(e_{r,1})\), or
+\(\tau=\delta\Delta S\).  Its old history is the canonical zero-core
+raw-compatible assembler, not an arbitrary preparation or a past orbit.
+It therefore does not construct a terminal second slow jet, a physical
+connection, or a canard root.
+\end{theorem}
 
 \begin{theorem}[Raw-gauge family of fixed-section outer zeros]
 \label[theorem]{thm:raw-gauge-fixed-section-zero}

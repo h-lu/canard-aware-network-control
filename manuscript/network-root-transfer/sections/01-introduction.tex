@@ -766,13 +766,13 @@ distributed scalar source yields
 as well as a uniform first-order terminal trace.  The attracting column and
 repelling entry-history column flush from the final window; the repelling
 terminal scalar column provably does not, because its endpoint value is the
-prescribed row.  Thus the remaining physical theorem must assemble the bulk
-and localized summands in one hybrid space, control the complete terminal
-event/history shear and moving-duration normal column, and bound the full
-terminal Schur factor.  None of the preceding results proves that the source
-produced by that open moving RFDE BVP satisfies
-\cref{eq:reference-pulled-source-class}, or places the existing
-fixed-section RFDE zeros at the original endpoints.
+prescribed row.  The bulk, boundary, and terminal summands are assembled
+below in one hybrid linear core.  The remaining physical theorem must still
+control the complete terminal event/history shear and moving-duration
+normal column and bound the full terminal Schur factor.  None of the linear
+results alone proves that the source produced by that open moving RFDE BVP
+satisfies \cref{eq:reference-pulled-source-class}, or places a
+fixed-envelope RFDE zero at the original endpoint.
 Finally, the delay profile itself is \(O(\delta)\) in the relative phase
 norm.  Feeding its exact original-variable sources through the closed normal
 Green inverse recovers the previously unavailable normalized state and
@@ -805,7 +805,22 @@ dimension-uniform two-point quadratic estimate.
 each fixed admissible parameter pair.  On each outer branch it gives a
 unique small zero in the canonical graph slice, its first Newton jet, a
 strict speed sign, and an exact finite forward segment of the unmodified
-RFDE.  \Cref{thm:raw-gauge-fixed-section-zero} replaces the zero-core boundary
+RFDE.  On the receding diagonal,
+\cref{lem:joint-diagonal-wedge-kinetic} replaces the misleading
+fixed-\(\delta\) rectangle \(0<\varkappa\le\varkappa_0\) by the admissible wedge
+\(\delta/R_\delta^2\le\mathfrak w_*\), makes the affine constants joint in
+\((N,\delta,\varkappa)\), and proves the causal-slice kinetic estimate.
+\Cref{thm:fixed-envelope-speed-row-zero} then hard-splits the exact
+nonlinear residual into bulk, boundary, and terminal sources and contracts
+about the non-small affine bulk predictor in an anisotropic correction
+norm.  It gives an exact fixed-envelope forward RFDE segment with strict
+speed sign and, on the repelling branch, vanishing terminal speed
+correction \(Q_r(e_{r,1})=0\).  Its triangular slack satisfies only
+\(\tau=-a(e_{\sigma,1})\): the physical terminal coordinate is
+\(\Phi_{q_0}^{-\tau}(e_{\sigma,1})\) and is not shown to equal
+\(e_{\sigma,1}\), so this is not yet an original-endpoint or
+moving-duration theorem.
+\Cref{thm:raw-gauge-fixed-section-zero} replaces the zero-core boundary
 choice by a nonempty, infinite-dimensional ball of small raw-compatible
 attracting and repelling gauges.  Uniform contraction and the gauge implicit
 function theorem give one zero in every gauge slice, its first gauge jet,

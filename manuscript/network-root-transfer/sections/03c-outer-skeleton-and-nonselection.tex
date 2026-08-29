@@ -2521,13 +2521,15 @@ The two phase norms and the terminal phase-column estimate give
  \frac{|(\mathfrak A_r^{\rm rc}a)(e_{r,1})|}{R_\delta}
  \le C\frac{\rho_\delta}{\lambda_\delta}A.       \label{eq:proof-speed-phase-endpoint-column}
 \end{equation}
-For fixed \(\varkappa>0\),
-\[
+Directly from \(\lambda_\delta\ge S_\delta^{-2}\),
+\begin{equation}
  \frac{\rho_\delta}{\lambda_\delta}
- \le\frac{\delta S_\delta^3}{2\alpha}
- \le\frac{M_\delta}{2\alpha\varkappa^2};
-\]
-all constants below may depend on that fixed \(\varkappa\).
+ \le\frac{\delta S_\delta^3}{2\alpha}=o(1).      \label{eq:proof-speed-phase-uniform-ratio}
+\end{equation}
+This estimate is uniform in the outer-scale coefficient \(\varkappa\);
+introducing the weaker comparison
+\(M_\delta/(2\alpha\varkappa^2)\) here would create an artificial
+negative power of \(\varkappa\).
 Since \(|\chi_{r,\delta}|\ge1/2\), the direct boundary-column and
 terminal-trace estimates in
 \cref{prop:diagonal-boundary-prefix-terminal-trace} imply
@@ -2537,11 +2539,11 @@ terminal-trace estimates in
  +\|(Z_{r,T},p_{r,T})
        [\mathfrak v_r^{\rm sp}c_r^{\rm sp}[a]]\|_
        {\mathsf T_{r,T}^1([0,L_b])}
- &\le C_\varkappa(\rho_\delta+M_\delta)A,
+ &\le C\frac{\rho_\delta}{\lambda_\delta}A,
                                                         \label{eq:proof-speed-phase-column-state}\\
  \|\mathfrak D_r\mathfrak v_r^{\rm sp}
           c_r^{\rm sp}[a]\|_{\mathsf H_{r,\mathrm{hyb}}}
- &\le C_\varkappa(\rho_\delta+M_\delta)A.        \label{eq:proof-speed-phase-column-action}
+ &\le C\frac{\rho_\delta}{\lambda_\delta}A.      \label{eq:proof-speed-phase-column-action}
 \end{align}
 For the prefix part of the last line one uses
 \cref{eq:boundary-column-global-action}; its additional factor
@@ -7199,6 +7201,621 @@ zero with the asserted forward RFDE segment.  The ordered choice of
 This reconstruction is forward from the compatible collar only; it neither
 extends that collar to a past RFDE orbit nor relates the two values of
 \(\sigma\).
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:joint-diagonal-wedge-kinetic}]
+We first separate a genuine geometric restriction from an artificial
+\(\varkappa^{-1}\) loss.  Write
+\(\mathfrak w=\mathfrak w_{\delta,\varkappa}\).  On the wedge in
+\cref{eq:joint-diagonal-admissible-wedge}, direct substitution gives
+\begin{align}
+ \frac{\rho_\delta}{R_\delta}
+ &=\frac{\sqrt\delta\,S_\delta\sqrt{\mathfrak w}}{2\alpha},&
+ \frac{\delta}{R_\delta}&=\sqrt{\delta\mathfrak w},&
+ \frac{\delta}{R_\delta^2}&=\mathfrak w,\notag\\
+ \frac{\varepsilon}{R_\delta^3}
+ &=\sqrt\delta\,\mathfrak w^{3/2},&
+ \frac{\delta S_\delta}{R_\delta}
+ &=\sqrt\delta\,S_\delta\sqrt{\mathfrak w},&
+ \frac{\varepsilon}{R_\delta}
+ &=\delta^{3/2}\sqrt{\mathfrak w},               \label{eq:proof-joint-wedge-ratios}\\
+ \frac{m_{r,T}}{R_\delta}
+ &=1+\sqrt\delta\,\mathfrak w^{3/2}.\notag
+\end{align}
+The dimensionless combinations containing a negative power of \(R_\delta\)
+in the retained component Green, terminal-observation, boundary-column,
+terminal-source, and speed-row estimates are exhausted by
+\begin{equation}
+ \frac{\delta}{R_\delta^2},\quad
+ \frac{\rho_\delta}{R_\delta},\quad
+ \frac{\delta}{R_\delta},\quad
+ \frac{\varepsilon}{R_\delta^3},\quad
+ \frac{\delta S_\delta}{R_\delta},\quad
+ \frac{\varepsilon}{R_\delta},\quad
+ \left|\frac{m_{r,T}}{R_\delta}-1\right|.        \label{eq:proof-joint-wedge-exhaustive-ratios}
+\end{equation}
+For traceability, the dependence used to upgrade each earlier fixed-
+\(\varkappa\) estimate is listed step by step, with inherited dependencies
+understood.  The diagonal fixed-base inverse uses
+\(\rho_\delta/R_\delta\), \(\delta/R_\delta\), and
+\(\delta/R_\delta^2\); see
+\cref{eq:proof-diagonal-raw-scale-ratios}.  The terminal component Green
+step additionally uses the annulus displacement ratios
+\(\rho_\delta/R_\delta\), \(\delta/R_\delta\), and
+\(\delta S_\delta/R_\delta\), the generation ratio
+\(\varepsilon/R_\delta\), and
+\(|m_{r,T}/R_\delta-1|\); see
+\cref{eq:terminal-component-annuli,%
+eq:terminal-component-generation-numbers,%
+eq:terminal-component-flush-errors}.  The localized boundary columns add
+\(\log(R_\delta/\rho_\delta)\), while the terminal-source extension adds no
+new negative power beyond the terminal-weight ratio.  The linear speed-row
+rank-one inverse uses
+\(R_\delta^2+\varepsilon/R_\delta+\mathcal E_{r,T}\); the new nonlinear
+speed-row remainder is the only step that additionally uses
+\(\varepsilon/R_\delta^3\).  Finally, the raw-history recursion and hybrid
+Schur step introduce no additional negative power of \(R_\delta\) or
+\(\varkappa\).  These remaining dependencies occur explicitly in
+\cref{eq:boundary-column-small-numbers,%
+eq:terminal-source-small-factors,%
+eq:speed-aligned-row-coefficient,%
+eq:proof-fixed-envelope-speed-remainder-row}; positive powers of \(R_\delta\) are
+bounded by the fixed \(\varkappa_0\).  Choose \(\mathfrak w_*\) below all
+fixed Neumann and annulus thresholds in those estimates.  The first
+quantity in \cref{eq:proof-joint-wedge-exhaustive-ratios} is then at most
+\(\mathfrak w_*\), and all the remaining quantities tend to zero uniformly
+by \cref{eq:proof-joint-wedge-ratios}.  On the attracting branch the same
+listed estimates contain no negative power of \(\varkappa\).  Finally,
+\[
+ \log\frac{R_\delta}{\rho_\delta}\le C S_\delta^2
+\]
+on the same wedge.  Indeed, \(\varkappa\le\varkappa_0\) gives the upper
+bound after using \(\log(1/\delta)=S_\delta^2/(2p)\), while the wedge lower
+bound ensures \(R_\delta/\rho_\delta>1\) for small \(\delta\).
+Thus the logarithm in \(\eta_{{\rm bd},\delta}\) introduces no hidden
+joint loss.  Every Neumann threshold and constant in the cited steps depends
+only on uniform upper bounds for the listed ratios, the fixed
+\(\varkappa_0\), and the fixed model data, and not on the particular
+\(\varkappa\).  The explicit hypotheses of the cited estimates are therefore
+uniform on the wedge, and their Neumann and finite-generation sums prove the
+asserted common linear bounds.
+
+We record the two small-number calculations because they are used in the
+nonlinear theorem.  Since
+\[
+ M_\delta=\varkappa^2\delta S_\delta^3
+                  +\frac{2\alpha\delta}{S_\delta},
+\]
+one has the exact identity
+\begin{align}
+ \frac{\lambda_\delta M_\delta}{\rho_\delta}
+ ={}&2\alpha\varkappa^2
+ +2\alpha\varkappa^3\sqrt\delta\,S_\delta^{7/2}\notag\\
+ &+4\alpha^2\varkappa\sqrt\delta\,S_\delta^{-1/2}
+ +4\alpha^2S_\delta^{-4}.                       \label{eq:proof-joint-affine-prefix}
+\end{align}
+Moreover,
+\begin{align*}
+ \frac{M_\delta^2}{\rho_\delta}
+ ={}&2\alpha\varkappa^4\delta S_\delta^5
+   +8\alpha^2\varkappa^2\delta S_\delta
+   +8\alpha^3\delta S_\delta^{-3},\\
+ \frac{M_\delta E_\delta}{\rho_\delta}
+ ={}&\left(2\alpha\varkappa^2S_\delta^2
+              +4\alpha^2S_\delta^{-2}\right)
+       \delta^{2-2\vartheta}.
+\end{align*}
+Thus every term in \(\eta_{\mathrm{hyb},\delta}\) contains only a
+nonnegative power of \(\varkappa\) and tends to zero uniformly for
+\(0<\varkappa\le\varkappa_0\).  The corrected speed projection uses
+\[
+ \frac{\rho_\delta}{\lambda_\delta}
+ \le\frac{\delta S_\delta^3}{2\alpha},
+\]
+by \cref{eq:proof-speed-phase-uniform-ratio}, so the same is true of
+\(\eta_{\mathrm{sp},\delta}\).  Combining
+\cref{eq:proof-joint-affine-prefix} with the other three terms in
+\cref{eq:affine-predictor-small-number} proves
+\cref{eq:joint-diagonal-affine-budget}.  Young's inequality applied to
+\(\varkappa\sqrt\delta S_\delta^{3/2}\), followed by a decrease of
+\(\delta_*\), proves
+\cref{eq:joint-diagonal-small-scales}.
+
+It remains to prove the kinetic observation.  For the normal response
+\(y\), the bulk estimates give the factor
+\(\lambda_\delta B_\sigma(y)\) before the terminal recut and in the full
+terminal trace.  The boundary and terminal-source estimates give,
+respectively, \(D_\sigma(y)\) and \(T_\sigma(y)\).  The terminal-source
+state/speed estimates control both its possible pre-support future-Green
+tail and its terminal trace by \(T_\sigma(y)\).  The rank-one speed-row
+replacement has the same bounds by
+\cref{eq:speed-aligned-row-inverse}.  This proves
+\cref{eq:piecewise-kinetic-bound} when \(a=0\).
+
+Now suppose \(a(e_{\sigma,0})=0\).  The entry collar column in
+\cref{lem:raw-phase-boundary-column-assembly} vanishes.  By
+\cref{eq:source-split-hybrid-A1-embedding},
+\[
+ \|a\|_{\mathsf A_\phi^1}
+ \le C(\rho_\delta+M_\delta)
+       \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}
+ \le C\lambda_\delta
+       \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}.
+\]
+The structured phase-state, speed, and terminal estimates therefore
+bound \(T_\sigma^{\rm rc}a\) in
+\cref{eq:piecewise-kinetic-observable} by the last term of
+\cref{eq:piecewise-kinetic-bound}.  The speed projection adds a boundary
+column of size
+\[
+ C\frac{\rho_\delta}{\lambda_\delta}
+       \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}
+ \le C\lambda_\delta
+       \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}},
+\]
+where the last inequality follows from
+\(\delta S_\delta^5=o(1)\).  This proves the phase part, and linearity
+gives the difference statement.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:fixed-envelope-speed-row-zero}]
+We first verify the exact residual and its differential.  The history and
+distributed components are the exact identities proved in
+\cref{thm:fixed-section-nonlinear-graph-residual}; multiplying those
+distributed rows by the two complementary indicators changes neither
+equation a.e. nor their sum.  On the repelling branch,
+\cref{eq:fixed-envelope-nonlinear-finite-source} gives the exact finite
+row \(\varepsilon Q_r^{\rm nl,\flat}(e_{r,1})\).  Hence
+\cref{eq:fixed-envelope-exact-residual} is the exact fixed-envelope
+boundary-value residual for the unmodified RFDE equations, not a Taylor
+model.
+
+At the origin its normal value is the negative of
+\cref{eq:affine-normal-source-decomposition}; every other row vanishes.
+For the non-speed normal rows, the proof of
+\cref{eq:proof-fixed-section-normal-source-linearization} gives the
+old phase column \(T_\sigma^{\rm rc}a\).  The difference
+\(T_r^{\rm sp}-T_r^{\rm rc}\) is a pure speed-row right inverse and has
+zero history and distributed data.  Thus substitution of
+\(x=T_\sigma^{\rm sp}a+y\) leaves precisely the corresponding rows of
+\(\mathscr N_\sigma^{\rm sp,\infty}y\).  The speed row itself satisfies
+\begin{align*}
+ D\{\varepsilon Q_r^{\rm nl,\flat}(e_{r,1})\}(0)
+       [T_r^{\rm sp}a+y,a]
+ &=\varepsilon\{\mathfrak D_rx
+             +\mathscr P_{c,r,N}a\}(e_{r,1})\\
+ &=\mathscr B_r^{\rm sp}y
+       +\varepsilon(\mathfrak A_r^{\rm sp}a)(e_{r,1})
+ =\mathscr B_r^{\rm sp}y,
+\end{align*}
+by \cref{eq:speed-projected-phase-kernel}.  The phase, entry, and slack
+rows linearize to
+\[
+ q_0^2a'-\mathfrak D_\sigma y
+       -\mathfrak A_\sigma^{\rm sp}a,\qquad
+ a(e_{\sigma,0}),\qquad a(e_{\sigma,1})+\tau.
+\]
+This proves both identities in
+\cref{eq:fixed-envelope-base-and-linearization}.
+
+Put \(b=\mathfrak b_{\delta,\varkappa}\) for the rest of the proof.
+We next justify the star inverse.  If the normal datum is decomposed as
+\(f_{\rm B}+f_{\rm bd}+f_T\), the direct Green bounds and the sharper
+oriented-prefix calculation give
+\begin{equation}
+ \|\mathfrak D_\sigma
+       G_\sigma^{\rm sp,\infty}f\|_
+          {\mathsf H_{\sigma,\mathrm{hyb}}}
+ \le C\left\{
+   \left(\lambda_\delta+
+       \frac{\lambda_\delta M_\delta}{\rho_\delta}\right)
+          \|f_{\rm B}\|
+       +\|f_{\rm bd}\|+\|f_T\|\right\}.           \label{eq:proof-fixed-envelope-refined-action}
+\end{equation}
+The first coefficient is at most \(Cb\) by
+\cref{eq:proof-joint-affine-prefix}; this is the refinement of the
+coarser unit bulk-prefix bound needed here.  The phase Schur formula and
+\(\lambda_\delta\le Cb\) now give
+\[
+ \frac{\|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}}b
+ \le C\left\{\|f_{\rm B}\|
+   +\frac{\|f_{\rm bd}\|+\|f_T\|}{\lambda_\delta}
+   +\frac{\|k\|_{\mathsf H_{\sigma,\mathrm{hyb}}}}b\right\}.
+\]
+The triangular last row has
+\(\tau=b_E-a(e_{\sigma,1})\), while the causal range slice \(b_0=0\)
+gives \(a(e_{\sigma,0})=0\).  The hybrid endpoint bound therefore gives
+directly
+\[
+ \frac{|\tau|}{\rho_\delta b}
+ \le \frac{|b_E|}{\rho_\delta b}
+      +C\frac{\|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}}b.
+\]
+Together with the unchanged transported normal coordinates, these
+observations prove the asserted uniform restricted star inverse.
+
+The affine bounds in
+\cref{eq:fixed-envelope-affine-box} follow from
+\cref{eq:affine-source-summand-bounds,%
+eq:affine-terminal-source-sharp-bound,%
+eq:affine-predictor-phase-slack-bound,%
+eq:joint-diagonal-affine-budget}; note that
+\(R_\delta,\rho_\delta,r_{\sigma,T}\le C\lambda_\delta\).
+Consequently, for
+\(u=u_\sigma^{\rm aff}+h\) in a fixed star ball on the causal slice,
+\begin{align}
+ B_\sigma(y)&\le C,&
+ D_\sigma(y)+T_\sigma(y)&\le C\lambda_\delta,&
+ \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}&\le Cb,            \label{eq:proof-fixed-envelope-affine-tube}\\
+ \mathfrak K_\sigma(x,a)&\le C\lambda_\delta.               \label{eq:proof-fixed-envelope-kinetic-tube}
+\end{align}
+For two such points the corresponding differences are bounded by
+\begin{equation}
+ B_\sigma(\Delta y)\le\|\Delta h\|_{\sigma,*},\quad
+ D_\sigma(\Delta y)+T_\sigma(\Delta y)
+       \le\lambda_\delta\|\Delta h\|_{\sigma,*},\quad
+ \|\Delta a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}
+       \le b\|\Delta h\|_{\sigma,*}.             \label{eq:proof-fixed-envelope-star-differences}
+\end{equation}
+In particular,
+\(\mathfrak K_\sigma(\Delta x,\Delta a)
+\le C\lambda_\delta\|\Delta h\|_{\sigma,*}\).
+
+We now prove the three nonlinear source estimates.  This is the point at
+which the hard source split and the anisotropic norm are both essential.
+The hybrid phase norm gives
+\begin{equation}
+ \|a\|_{C^0}\le\rho_\delta\|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}},
+ \qquad
+ |q_0^2a'|\le m_\delta
+       \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}.   \label{eq:proof-fixed-envelope-phase-scales}
+\end{equation}
+Thus a moving coefficient may be estimated by the stronger
+\(C\rho_\delta b\), rather than by the rough \(C|r|b\).
+Before the terminal interface,
+\cref{eq:proof-fixed-envelope-kinetic-tube} gives
+\begin{equation}
+ \|Z_x\|_N\le C\varepsilon\lambda_\delta,\qquad
+ |p_x^\sharp|\le C\varepsilon|r|\lambda_\delta,\qquad
+ |Q_x^\sharp|\le C m_\delta(r)\lambda_\delta.     \label{eq:proof-fixed-envelope-bulk-state}
+\end{equation}
+The last estimate is not sharp enough for the bulk scalar-source norm near
+the attracting endpoint.  The linear delay row and the first two bounds
+give
+\begin{equation}
+ |D_{c,N}(x)|\le C\varepsilon\lambda_\delta,\qquad
+ Q_x^\sharp=\varepsilon^{-1}
+       (p_x^\sharp-\ell_0Z_x)+D_{c,N}(x),\qquad
+ |Q_x^\sharp|\le C|r|\lambda_\delta,             \label{eq:proof-fixed-envelope-bulk-speed-sharpening}
+\end{equation}
+because \(\|\ell_0(r)\|\le C|r|\) and
+\(\varepsilon\le\rho_\delta\le|r|\).  This algebraic sharpening is what
+removes the otherwise divergent factor \(m_\delta(r)/|r|\).
+
+Write
+\[
+ A_0=w_0'+\varepsilon d_0,\qquad
+ A_a=w_a'+\varepsilon d_a.
+\]
+The hybrid phase bound, the causal embedding
+\cref{eq:source-split-hybrid-A1-embedding}, and the coefficient jets give
+\begin{align}
+ |r_a-r|&\le C\rho_\delta b,\notag\\
+ \|\Delta\mathcal C\|+\|\Delta z_0'\|
+   +|\Delta w_0'|+\|\Delta\ell\|&\le C|r|b,
+ &|\Delta d|&\le Cb,\notag\\
+ |A_a|&\le C|r|,& |A_a-A_0|&\le C|r|b.           \label{eq:proof-fixed-envelope-bulk-coefficient-ledger}
+\end{align}
+Here \(\varepsilon|\Delta d|\le C|r|b\); this is why no false
+\(O(|r|b)\) claim is made for \(\Delta d\) itself.  In addition,
+\begin{align}
+ |\mathscr P_{c,\sigma,N}a|&\le
+        C\frac{\delta\lambda_\delta}{|r|}b,
+ &\|\mathcal R_{\Pi,\sigma,N}(a)\|_N
+      &\le C\delta|r|b^2,\notag\\
+ |h_{c,N}(r_a,Z_x)|+
+   \|h_{\perp,N}(r_a,Z_x)\|_N
+      &\le C\varepsilon^2\lambda_\delta^2.       \label{eq:proof-fixed-envelope-bulk-auxiliary-ledger}
+\end{align}
+
+After subtraction of the affine value and linear phase column, the
+\(Z\)-source consists of the six combined classes
+\begin{equation}
+ \Delta\mathcal C\,Z_x,\quad
+ \Delta z_0'\,p_x^\sharp,\quad
+ \operatorname{Rem}R_{z,N},\quad
+ z_a'h_{c,N}-h_{\perp,N},\quad
+ \varepsilon\{\mathcal R_{\Pi,\perp,N}
+       -z_a'\mathcal R_{\Pi,c,N}\},\quad
+ \varepsilon\Delta z_0'D_{c,N}(x).              \label{eq:proof-fixed-envelope-Z-term-classes}
+\end{equation}
+The combination
+\(-\Delta z_0'p_x-\varepsilon\Delta z_0'\mathscr P_{c,N}a
+=-\Delta z_0'p_x^\sharp\) is kept exact; its two terms must not be
+estimated separately.  Equations
+\cref{eq:proof-fixed-section-affine-remainders,%
+eq:proof-fixed-envelope-bulk-state,%
+eq:proof-fixed-envelope-bulk-coefficient-ledger,%
+eq:proof-fixed-envelope-bulk-auxiliary-ledger}
+bound these classes, respectively, by
+\begin{equation}
+ C\left\{
+ \varepsilon\lambda_\delta|r|b,\,
+ \varepsilon\lambda_\delta|r|^2b,\,
+ \varepsilon|r|b^2,\,
+ \varepsilon^2\lambda_\delta^2,\,
+ \varepsilon\delta|r|b^2,\,
+ \varepsilon^2|r|\lambda_\delta b
+ \right\}.                                      \label{eq:proof-fixed-envelope-Z-class-sizes}
+\end{equation}
+Each is at most \(C\varepsilon\lambda_\delta b\) on the diagonal
+wedge.
+
+For the scalar source one should not estimate its original displayed
+summands separately.  Put
+\begin{equation}
+ \mathcal R_{Q,\sigma}
+ =Q_\sigma^{\rm nl,\flat}-Q_x^\sharp
+ =-\varepsilon^{-1}
+   \{(\ell_a-\ell_0)Z_x+h_{c,N}(r_a,Z_x)\}
+       +\mathcal R_{\Pi,c,\sigma,N}(a).           \label{eq:proof-fixed-envelope-bulk-RQ-definition}
+\end{equation}
+Direct substitution into
+\cref{eq:fixed-section-nonlinear-p-source} gives the cancellation-safe
+exact remainder identity
+\begin{align}
+ \operatorname{Rem}S_{p,\sigma}^{\rm nl}
+={}&\varepsilon(A_a-A_0)Q_x^\sharp
+   +\varepsilon A_a\mathcal R_{Q,\sigma}
+   +\varepsilon^2\operatorname{Rem}_{a}
+       \{q_0d_0\},                               \label{eq:proof-fixed-envelope-exact-p-remainder}
+\end{align}
+where
+\[
+ \operatorname{Rem}_{a}\{q_0d_0\}
+ =(q_0d_0)(r_a)-(q_0d_0)(r)
+       -q_0(r)(q_0d_0)'(r)a(r).
+\]
+The first two terms in
+\cref{eq:proof-fixed-envelope-exact-p-remainder} are the exact regrouping
+of the \(p_x\), \(D_{c,N}(x)\), phase-delay, and \(d\)-terms; no one of
+those original displayed terms is estimated alone.  By
+\cref{eq:proof-fixed-envelope-bulk-RQ-definition},
+\begin{equation}
+ |\mathcal R_{Q,\sigma}|
+ \le C\{\rho_\delta\lambda_\delta b
+       +\varepsilon\lambda_\delta^2
+       +\delta|r|b^2\}.                          \label{eq:proof-fixed-envelope-bulk-speed-remainder}
+\end{equation}
+The weighted coefficient jets give
+\(|\operatorname{Rem}_{a}\{q_0d_0\}|\le Cb^2\).
+Consequently every term in
+\cref{eq:proof-fixed-envelope-exact-p-remainder} is bounded by
+\(C\varepsilon\lambda_\delta|r|^2b\); here the first term uses the
+sharpened bulk bound
+\cref{eq:proof-fixed-envelope-bulk-speed-sharpening}, not the coarser
+\(m_\delta\)-weighted estimate.  For the remaining apparent losses one uses
+\begin{equation}
+ \varepsilon\lambda_\delta\le C|r|b,\qquad
+ \varepsilon b\le C\lambda_\delta|r|^2,\qquad
+ \delta b\le C\lambda_\delta.                    \label{eq:proof-fixed-envelope-bulk-closing-scales}
+\end{equation}
+whose worst case is \(|r|=\rho_\delta\), where
+\(\lambda_\delta\rho_\delta^2\ge c\varepsilon\).  More explicitly, at
+that endpoint,
+\[
+ \frac{\varepsilon\lambda_\delta}{\rho_\delta b}
+ \le C\frac{\delta}{S_\delta},\qquad
+ \frac{\varepsilon b}{\lambda_\delta\rho_\delta^2}
+ \le 4\alpha^2\frac{b}{\lambda_\delta S_\delta^2}
+ \le Cb,
+ \qquad
+ \frac{\delta b}{\lambda_\delta}
+ \le \delta S_\delta^2b.
+\]
+The right-hand sides are uniformly bounded, and the quantities needed as
+small factors tend to zero in the order used above.
+Thus the exact bulk source belongs to the bulk summand with norm \(Cb\).
+Applying the same decompositions on the line segment between two inputs
+replaces one factor \(b\) by
+\(\|h-k\|_{\sigma,*}\) and proves
+\begin{align}
+ \|\mathbb Q_{\sigma,\rm B}^{\rm fe}
+       (u_\sigma^{\rm aff})\|&\le Cb,\notag\\
+ \|\mathbb Q_{\sigma,\rm B}^{\rm fe}
+       (u_\sigma^{\rm aff}+h)
+  -\mathbb Q_{\sigma,\rm B}^{\rm fe}
+       (u_\sigma^{\rm aff}+k)\|
+ &\le Cb\|h-k\|_{\sigma,*}.                      \label{eq:proof-fixed-envelope-bulk-remainder}
+\end{align}
+
+On the terminal annulus set
+\(t=r_{\sigma,T}\) and \(m=m_{\sigma,T}\).  There
+\(|r|\asymp t\), and
+\cref{eq:proof-fixed-envelope-kinetic-tube} and the delay row give
+\begin{align}
+ \|Z_x\|_N&\le C\varepsilon\lambda_\delta,&
+ |p_x|&\le C\varepsilon m\lambda_\delta,&
+ |Q_x^\sharp|&\le Cm\lambda_\delta,\notag\\
+ |p_x^\sharp|&\le
+   C\varepsilon\{m\lambda_\delta+
+          \delta\lambda_\delta b/t\},&
+ |D_{c,N}(x)|&\le C\varepsilon\lambda_\delta,&
+ |\mathscr P_{c,\sigma,N}a|&\le
+       C\frac{\delta\lambda_\delta}{t}b,&
+ \|\mathcal R_{\Pi,\sigma,N}(a)\|_N
+       &\le C\delta t b^2.                       \label{eq:proof-fixed-envelope-terminal-state-ledger}
+\end{align}
+The coefficient estimates are
+\begin{equation}
+ \|\Delta\mathcal C\|+\|\Delta z_0'\|
+  +|\Delta w_0'|+\|\Delta\ell\|\le Ctb,\qquad
+ |\Delta q_0|+|\Delta d|\le Cb.                 \label{eq:proof-fixed-envelope-terminal-coefficient-ledger}
+\end{equation}
+In particular, not every coefficient displacement is claimed to be
+\(O(tb)\).  Nevertheless \(|A_a|\le Ct\) and
+\(|A_a-A_0|\le Ctb\), because the \(d\)-displacement carries the factor
+\(\varepsilon\le t\).
+
+The six \(Z\)-source classes in
+\cref{eq:proof-fixed-envelope-Z-term-classes}, now using
+\cref{eq:proof-fixed-envelope-terminal-state-ledger}, are bounded by
+\(C\varepsilon\lambda_\delta b\).  This includes
+\(\operatorname{Rem}R_{z,N}=O(\varepsilon tb^2)\).  For the scalar row,
+the cancellation-safe regrouping
+\cref{eq:proof-fixed-envelope-exact-p-remainder} gives
+\begin{equation}
+ |\operatorname{Rem}S_{p,\sigma}^{\rm nl}|
+ \le C\{\varepsilon tm\lambda_\delta b
+              +\varepsilon^2b^2\}.              \label{eq:proof-fixed-envelope-terminal-p-ledger}
+\end{equation}
+The second term is absorbed by the first.  Indeed,
+\begin{equation}
+ \frac{\varepsilon b}{tm\lambda_\delta}
+ \le C
+ \begin{cases}
+  \delta bS_\delta^3,&\sigma=a,\\
+  \delta\mathfrak w_{\delta,\varkappa}
+       b/\lambda_\delta,&\sigma=r,
+ \end{cases}                                     \label{eq:proof-fixed-envelope-terminal-closing-ratios}
+\end{equation}
+and both right-hand sides are uniformly bounded, and tend to zero after
+the ordered choices in the theorem.  Thus the terminal \(Z\)- and
+scalar-source sizes are
+\[
+ C\varepsilon\lambda_\delta b,\qquad
+ C\varepsilon tm\lambda_\delta b,
+\]
+which are precisely \(C\lambda_\delta b\) in the terminal-source norm.
+The same bilinear decompositions prove the two-point bounds.  This
+calculation keeps \(m_{a,T}\gg\rho_\delta\); replacing \(m_{a,T}\) by
+\(|r|\) on the attracting terminal annulus would be invalid.
+
+On the causal slice the attracting history source has no nonlinear
+remainder.  On the repelling branch the only variable collar datum is
+\(p_x(0)\), of normalized size \(O(\lambda_\delta)\).
+\Cref{eq:nonlinear-raw-history-C2-bounds} therefore gives
+\(O(\lambda_\delta^2)\), hence \(O(\lambda_\delta b)\), in the boundary
+norm.  Finally, the nonlinear speed-row remainder is
+\begin{equation}
+ \varepsilon\{Q_r^{\rm nl,\flat}
+       -(\mathfrak D_rx+\mathscr P_{c,r,N}a)\}(e_{r,1}).
+                                                        \label{eq:proof-fixed-envelope-speed-remainder-row}
+\end{equation}
+The exact cancellation
+\cref{eq:proof-fixed-section-speed-remainder}, the terminal kinetic
+bounds, \(\rho_\delta/R_\delta\le1\), and
+\(\varepsilon/R_\delta^3=o(1)\) bound this by
+\(C\lambda_\delta b\) in the speed-row normalization.  The two-point
+versions follow from the same \(C^2\) estimates.  We have proved
+\begin{align}
+ &\|\mathbb Q_{\sigma,\rm bd}^{\rm fe}
+       (u_\sigma^{\rm aff})\|
+ +\|\mathbb Q_{\sigma,T}^{\rm fe}
+       (u_\sigma^{\rm aff})\|
+ \le C\lambda_\delta b,\notag\\
+ &\|\Delta\mathbb Q_{\sigma,\rm bd}^{\rm fe}\|
+ +\|\Delta\mathbb Q_{\sigma,T}^{\rm fe}\|
+ \le C\lambda_\delta b\|h-k\|_{\sigma,*}.        \label{eq:proof-fixed-envelope-boundary-terminal-remainder}
+\end{align}
+The support indicators give exact membership in the two distributed
+summands; no density or cutoff argument is involved.
+
+It remains to estimate the phase row.  The nonlinear phase-action
+remainder is a coefficient displacement times \(a'\).  Using
+\cref{eq:proof-fixed-envelope-phase-scales} first pointwise and then in
+the oriented primitive gives \(Cb^2\) in
+\(\mathsf H_{\sigma,\mathrm{hyb}}\).  For the speed part use the exact
+identity
+\begin{equation}
+ Q_\sigma^{\rm nl}-Q_x^\sharp
+ =-\varepsilon^{-1}
+   \{(\ell_a-\ell_0)Z_x+h_{c,N}(r_a,Z_x)\}
+       +\mathcal R_{\Pi,c,\sigma,N}(a).           \label{eq:proof-fixed-envelope-speed-exact-cancellation}
+\end{equation}
+The pointwise term is \(O(b^2m_\delta)\).  In the prefix estimate one
+must retain \(|a|\le\rho_\delta Cb\); integration then gives
+\[
+ \rho_\delta^{-1}
+ \left\|\mathcal P_\sigma
+       (Q_\sigma^{\rm nl}-Q_x^\sharp)\right\|_\infty
+ \le Cb^2.
+\]
+The polynomial and phase-delay remainders are smaller.  For differences,
+the total phase size is \(O(b)\), the phase difference is
+\(O(b\|h-k\|_*)\), the total kinetic size is \(O(\lambda_\delta)\), and
+the kinetic difference is
+\(O(\lambda_\delta\|h-k\|_*)\).  Since
+\(\lambda_\delta\le Cb\), the same calculation yields
+\begin{equation}
+ \|\Delta\mathbb Q_{\sigma,\phi}^{\rm fe}\|_
+       {\mathsf H_{\sigma,\mathrm{hyb}}}
+ \le Cb^2\|h-k\|_{\sigma,*}.                     \label{eq:proof-fixed-envelope-phase-remainder}
+\end{equation}
+The entry and slack rows are linear, so their remainders vanish.
+All coefficient evaluations remain in the fixed same-sign phase collar.
+The scalar phase flow and polynomial source maps are \(C^1\) there, the
+raw-compatible history assembler is \(C^2\) by
+\cref{eq:nonlinear-raw-history-C2-bounds}, and multiplication by the two
+fixed support indicators is bounded on the piecewise-\(L^\infty\) source
+spaces.  Hence the exact formulas define a \(C^1\) map on the affine star
+tube.  Applying the preceding termwise ledgers to directional
+derivatives, or equivalently taking difference quotients on line segments,
+proves \cref{eq:fixed-envelope-star-derivative}; it also proves
+three-summand membership rather than merely a pointwise bound.
+\Cref{eq:proof-fixed-envelope-bulk-remainder,%
+eq:proof-fixed-envelope-boundary-terminal-remainder,%
+eq:proof-fixed-envelope-phase-remainder}
+prove
+\cref{eq:fixed-envelope-star-two-point,%
+eq:fixed-envelope-remainder-components}.
+
+Let \(M_*\) be the joint star-inverse bound and define
+\[
+\mathcal T_\sigma(h)
+=-(\mathbb L_\sigma^{\rm aff})^{-1}
+       \mathbb Q_\sigma^{\rm fe}(u_\sigma^{\rm aff}+h).
+\]
+Choose \(K>2M_*C_Q\), and choose the \(\varkappa_*\) in the theorem so
+that the \(\varkappa^2\) part of \(b\) lies below the phase-chart and
+contraction thresholds.  For fixed
+\(0<\varkappa_0\le\varkappa_*\), decrease \(\mathfrak w_*\) to the linear
+wedge thresholds and then \(\delta_*\).  The number \(b\) is then so small
+that
+\(\mathcal T_\sigma\) maps the closed star ball
+\(\|h\|_{\sigma,*}\le Kb\) into itself and has Lipschitz constant at
+most \(1/2\).  Its fixed point gives
+\cref{eq:fixed-envelope-nonlinear-zero,%
+eq:fixed-envelope-zero-star-radius}.  Applying the three separate output
+bounds before the star norm proves
+\cref{eq:fixed-envelope-zero-component-correction}.  On the causal
+tangent slice and corresponding range slice, the derivative is a Neumann
+perturbation of the restricted \(\mathbb L_\sigma^{\rm aff}\), so it remains
+an isomorphism.  The same contraction proves uniqueness in the displayed
+affine causal ball.
+
+At the zero, the exact history and distributed rows assemble the same
+unmodified forward RFDE segment as in the last part of the proof of
+\cref{thm:fixed-section-nonlinear-graph-residual}.  The phase row and
+\cref{eq:nonlinear-phase-row-identity} give
+\[
+ q_0(\Theta_a(r))+Q_\sigma^{\rm nl,\flat}(x,a)(r)
+ =q_0(r)\Theta_a'(r).
+\]
+The affine bound and
+\cref{eq:fixed-envelope-zero-component-correction} put \(a\) in the
+uniform same-sign phase-chart ball.  Hence \(\Theta_a'>c_*>0\), proving
+\cref{eq:fixed-envelope-zero-speed-sign}.  The repelling finite row gives
+\cref{eq:fixed-envelope-terminal-speed-correction-zero}, and the last
+triangular row gives \cref{eq:fixed-envelope-slack-mismatch}.  Since the
+physical terminal coordinate in the fixed envelope is
+\(\Phi_{q_0}^{-\tau}(e_{\sigma,1})\) and is not shown to equal
+\(e_{\sigma,1}\), none of the original-endpoint consequences can be
+inferred.  In particular, the zero uses the canonical
+zero-core raw-compatible old-history assembler, does not supply a past
+orbit, and gives no identity \(\tau=\delta\Delta S\).
 \end{proof}
 
 \begin{proof}[Proof of
