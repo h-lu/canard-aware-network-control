@@ -169,14 +169,29 @@ original endpoint, an exact duration correction \(O(\rho_\delta)\), an
 terminal Schur inverse.  The exact duration formula also proves that
 first-order endpoint-moment cancellation alone does not force the exact
 scalar duration to vanish.
-This closes the scalar causal-entry/terminal-event row, but not the RFDE
-endpoint problem: the present Green, collar, finite-generation, and
-parameter-hit theorems were proved after fixing \(r_{\rm out}\), and their
-constants have not been made uniform on this receding diagonal.  The next
-proof gate is therefore the diagonal-uniform arbitrary-source normal
-inverse, including raw-compatible endpoint histories and the complete
-moving terminal column, followed by its coupling to the scalar
-flight-time Schur row.
+\Cref{thm:reference-pulled-causal-endpoint} now conjugates every prescribed
+structured reference-coordinate source satisfying
+\cref{eq:reference-pulled-source-class} to this Eulerian flight-time
+problem and reaches the original scalar-coordinate endpoint.  Its
+exact terminal coefficient is the nonzero quotient
+\(q_\sigma^E(e_{\sigma,1})/q_0(e_{\sigma,1})\).
+\Cref{cor:diagonal-raw-compatible-phase-normal-inverse} also re-audits the
+fixed-reference order-zero raw-compatible phase--normal graph inverse on
+the receding diagonal.  Separately,
+\cref{lem:current-absorbed-delay-splitting} controls the attracting
+outer-buffer evolution kernel through one endpoint derivative with rate
+\(\exp\{-c r_{{\rm out},\delta}\Delta s/\delta\}\), while one zeroth-order
+positive-delay Duhamel generation is
+\(O(\varepsilon/r_{{\rm out},\delta})\).  On the repelling outer interval
+\(r_{{\rm out},\delta}/2\le |r_r|\le r_{{\rm out},\delta}\),
+\cref{lem:repelling-component-generations} proves only that the terminal
+scalar kernel has the same \(r_{{\rm out},\delta}/\delta\) rate scale.
+This still does not close the moving RFDE endpoint problem.  The next proof
+gate is the arbitrary-source rough-middle/strong-terminal inverse,
+including the complete moving-duration normal column and its off-diagonal
+terminal Schur correction, followed by the original-endpoint nonlinear
+family.  In particular, membership of the source produced by that open BVP
+in \cref{eq:reference-pulled-source-class} has not been proved.
 \Cref{prop:relative-structured-phase-response} then uses the relative anchor
 to prove an \(O(\delta)\) delay profile and
 \(O(r_{\rm out}+S_\delta^{-1})\) bounds for both the returned phase column in

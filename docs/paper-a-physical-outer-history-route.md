@@ -1,21 +1,17 @@
 # Paper A: physical outer-history route after the layer theorem
 
-Status: **the analytic layer, backtrack calculus, both finite-generation
-directions, raw-compatible phase--normal inverse, fixed-section nonlinear
-zeros, and their exact generated-interior RFDE trackers are proved.  Around
-the fixed physical sections, one fixed-reference rough chart now gives
-parameter-coherent complete-history hits, and differentiated local quotient
-flushing gives raw-gauge equivalence through the full rectangular `J_phys`
-jet.  The result remains local to two separate interior hits and one
-reference chart.  A scalar endpoint-recut obstruction now proves that these
-inner-anchored hits cannot be promoted by literal recutting.  The correct
-prescribed-Eulerian scalar replacement is now proved on a receding collar:
-it gives an exact causal scalar-coordinate hit at the original endpoint, an
-`O(S_delta)` duration correction, and a normalized scalar terminal Schur
-row.  The diagonal-uniform RFDE
-normal/collar endpoint theorem, original physical endpoint histories,
-global nonautonomous quotient, repelling history sheet, cross-branch gap,
-and physical root remain open.**
+Status: **the prescribed structured scalar original-endpoint problem is now
+closed both in Eulerian and reference-pulled coordinates on the receding collar.  The
+fixed-reference raw-compatible phase--normal inverse is also uniform there
+at order zero.  Separately, the attracting outer-buffer evolution kernel is
+controlled through one endpoint derivative at rate
+`exp{-c R_delta Delta s/delta}`, while one zeroth-order positive-delay
+Duhamel generation is `O(epsilon/R_delta)`.  On the repelling outer interval
+`R_delta/2 <= |r_r| <= R_delta`, only the terminal scalar kernel is proved to
+have the same `R_delta/delta` rate scale.  The moving-duration arbitrary-source inverse, complete
+RFDE terminal column and Schur factor, original physical endpoint
+histories, global quotient, repelling history sheet, cross-branch gap, and
+physical root remain open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -159,8 +155,11 @@ normal block along each prescribed reduced path.  It accepts a complete old
 voltage history and the single scalar resource row, uses only the scalar
 future Green line on the repelling branch, and contracts the unknown
 `p(0)`-dependence of the compatible collar without adding a boundary row.
-This is a conditional diagonal restriction with the collective phase fixed;
-it provides neither high-order slow jets nor a physical tracker.
+Corollary `cor:diagonal-raw-compatible-phase-normal-inverse` upgrades this
+fixed-reference order-zero block to the receding family
+`R_delta=kappa(delta S_delta^3)^(1/2)`, with a uniform graph inverse.  It
+provides neither the moving-duration column, high-order slow jets, nor a
+physical tracker.
 Proposition `prop:scaled-phase-event-core` separately closes the scalar
 phase equation with entry and event rows.  The event-time variable must be
 scaled as `delta DeltaS`; any net phase shift produced by a compact speed
@@ -365,7 +364,7 @@ C delta^(-M) exp{-c log(1/delta)/delta},
 which is still smaller than every algebraic power.  No such estimate is yet
 claimed in the manuscript.
 
-## 5. Scalar endpoint row closed; diagonal RFDE theorem still open
+## 5. Fixed-reference diagonal inverse closed; moving endpoint still open
 
 Proposition `prop:inner-anchor-endpoint-recut-obstruction` rules out
 the direct route from the fixed interior hits: within the proved scalar
@@ -396,8 +395,21 @@ normalized scalar terminal Schur inverse is uniform.  Its exact nonlinear
 duration moment also shows that cancelling only the first-order moment
 cannot control the event time.
 
-The next proof must put the full RFDE normal/collar problem on that same
-receding diagonal.  In fold time its endpoint rows are
+Theorem `thm:reference-pulled-causal-endpoint` now treats every prescribed
+structured reference-coordinate source of the algebraic form used by the
+RFDE phase row.  It constructs the shifted
+reference terminal point, conjugates the pulled-back speed to the Eulerian
+speed, reaches the original scalar-coordinate endpoint, and proves
+`c_ter=q_E(e_1)/q_0(e_1)` with `1/2 <= c_ter <= 3/2`.  This is not the
+complete RFDE moving-duration column, and membership of the source produced
+by that open BVP in the structured class remains unproved.
+
+The fixed-reference order-zero RFDE normal/collar problem is now proved on
+that same receding diagonal.  The reference-pulled phase theorem is exactly
+conjugate to the Eulerian speed and reaches the original scalar endpoint;
+its terminal coefficient is `q_E(e_1)/q_0(e_1)`, uniformly separated from
+zero.  The next proof must add the moving-duration normal column.  In fold
+time its endpoint rows are
 
 ```text
 attracting:  r_a(0) = r_out,delta,
@@ -409,20 +421,31 @@ S_sigma = S_sigma^(ep,0) + hat_tau / delta.
 
 It must establish:
 
-1. a diagonal-uniform Green/collar/finite-generation theorem tracking
-   `rho_delta/r_out`, `delta/r_out^2`, `delta S_delta/r_out`, and
-   `r_out S_delta^2`, with action and hit margins retaining their explicit
-   powers of `r_out`;
+1. a higher-order diagonal Green/collar/finite-generation calculus beyond
+   the proved order-zero inverse and local kernel estimates; on the attracting
+   outer buffer the evolution kernel is controlled through one endpoint
+   derivative at rate `c r_out/delta`, while one zeroth-order positive-delay
+   Duhamel generation costs `epsilon/r_out`; on the repelling outer interval
+   `r_out/2 <= |r_r| <= r_out`, only the terminal scalar-kernel
+   `r_out/delta` rate scale is presently proved;
 2. an endpoint-centered approximate reference on each branch, rather than a
    renamed fixed-radius interior-hit segment;
 3. a hybrid arbitrary-source rough-middle/strong-terminal inverse with the
-   causal entry row and the complete moving-terminal column;
+   causal entry row and the complete moving-terminal column, separating
+   structured bulk data from localized boundary columns;
 4. the epsilon-normalized full phase--normal terminal Schur estimate in the
    graph/action norm; the scalar Schur row alone is already proved;
 5. a parameter-coherent original-endpoint tracker family with all
    `J_phys=(C^1_nu C^2_eta) intersect (C^2_nu C^1_eta)` jets;
 6. only then, the stationary-gauge tangent, nonautonomous quotient
    roughness, attracting representative, and repelling mixed-boundary sheet.
+
+The source split is essential: the available arbitrary-source bulk estimate
+controls phase action only at `O(r_out^2)`, while
+`r_out^2/rho_delta` is
+`O(kappa^2 S_delta^2)` and diverges.  Therefore no uniform
+`O(rho_delta)` terminal-phase estimate can hold for arbitrary sources in
+the undifferentiated bulk class.
 
 Only after these lemmas may the mixed Lyapunov--Perron equation in Section 3
 be called an actual construction.
@@ -506,11 +529,18 @@ not acceptable.
       receding collar, including the original scalar endpoint,
       `O(rho_delta)` duration, `O(S_delta)` fold-time correction, nonlinear
       endpoint moment, and normalized scalar terminal Schur inverse.
-- [ ] Diagonal-uniform RFDE causal-entry/terminal-event theorem, including
-      the Green/collar/finite-generation re-audit, hybrid arbitrary-source
-      inverse, complete normal terminal column, normalized full
-      phase--normal Schur estimate, raw-compatible endpoint histories, and
-      original-endpoint `J_phys` family.
+- [x] Exact reference-pulled/Eulerian endpoint conjugacy for every
+      prescribed source in the stated structured class, original
+      scalar-coordinate hit, nonzero exact terminal coefficient, fixed-reference
+      zeroth-order diagonal phase--normal inverse, attracting evolution
+      kernel through one endpoint derivative, one zeroth-order positive-delay
+      Duhamel-generation scale, and repelling outer-interval terminal
+      scalar-kernel rate scale.
+- [ ] Moving-duration RFDE causal-entry/terminal-event theorem, including
+      the higher-order diagonal calculus, hybrid arbitrary-source inverse,
+      structured/localized source split, complete normal terminal column,
+      normalized full phase--normal Schur estimate, raw-compatible endpoint
+      histories, and original-endpoint `J_phys` family.
 - [ ] Global phase-quotiented nonautonomous normal splitting from the
       original outer endpoints to the fold-side interfaces.
 - [ ] Attracting representative and repelling codimension-one history sheet

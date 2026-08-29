@@ -720,11 +720,33 @@ has an exact scalar-coordinate hit at the original endpoint with
 terminal Schur inverse is dimension uniform.  The duration is the full
 nonlinear flight-time moment; cancelling only its linear part is proved
 insufficient because the quadratic remainder has a fixed sign.
-This scalar theorem does not place the existing fixed-section RFDE zeros
-on the receding diagonal.  The remaining physical theorem must establish a
-diagonal-uniform normal/collar inverse, construct the raw-compatible
-endpoint histories and their terminal column, and only then couple them to
-the exact scalar flight-time row.
+\Cref{thm:reference-pulled-causal-endpoint} closes the scalar
+coordinate-conjugacy seam for every prescribed structured
+reference-coordinate source satisfying
+\cref{eq:reference-pulled-source-class}: it solves the causal phase
+problem, conjugates that source to an Eulerian speed, and reaches the
+original scalar-coordinate endpoint.  Its
+exact terminal coefficient is
+\(q_\sigma^E(e_{\sigma,1})/q_0(e_{\sigma,1})\), uniformly separated from
+zero.  Moreover,
+\cref{cor:diagonal-raw-compatible-phase-normal-inverse} re-audits the
+fixed-reference raw-compatible phase--normal graph inverse at order zero on
+the same receding diagonal.  Separately,
+\cref{lem:current-absorbed-delay-splitting} controls the attracting
+outer-buffer evolution kernel through one endpoint derivative with rate
+\(\exp\{-c r_{{\rm out},\delta}\Delta s/\delta\}\), while one zeroth-order
+positive-delay Duhamel generation is
+\(O(\varepsilon/r_{{\rm out},\delta})\).
+On the repelling outer interval
+\(r_{{\rm out},\delta}/2\le |r_r|\le r_{{\rm out},\delta}\),
+\cref{lem:repelling-component-generations} proves only that the terminal
+scalar kernel has the same \(r_{{\rm out},\delta}/\delta\) rate scale.
+The remaining physical theorem must construct the arbitrary-source
+rough-middle/strong-terminal inverse, the complete moving-duration normal
+column, and its full terminal Schur factor.  None of the preceding results
+proves that the source produced by that open moving RFDE BVP satisfies
+\cref{eq:reference-pulled-source-class}, or places the existing
+fixed-section RFDE zeros at the original endpoints.
 Finally, the delay profile itself is \(O(\delta)\) in the relative phase
 norm.  Feeding its exact original-variable sources through the closed normal
 Green inverse recovers the previously unavailable normalized state and
