@@ -37,9 +37,15 @@ causal prefix, incoming terminal history, full first-order terminal trace,
 final-window flushing, and local action.  Graph membership is a conclusion,
 not an input, and the normalized global-prefix upper-bound budget contains
 `2 alpha kappa^2+o(1)`, so no `delta`-small contraction is claimed.
-Nonzero repelling terminal rows and other localized terminal/event columns
-remain separate.  The event-aligned `K` correction, the complete hybrid upper
-block, the endpoint RFDE family, and the physical root remain open.  The
+The localized zero-source normal boundary columns are now closed separately,
+including a nonzero repelling terminal scalar row.  Their exact `H=0`
+recovery identity yields the small normalized causal-prefix factor
+`eta_bd,delta=O(delta S_delta)`, a localized `A_phi^1` lift, and a uniform
+terminal `T^1` trace.  The attracting column and repelling entry-history
+column flush; the repelling terminal scalar column provably does not.  A
+freely prescribed terminal voltage-history row remains outside this result.
+The event-aligned `K` correction, source-split hybrid assembly, the endpoint
+RFDE family, and the physical root remain open.  The
 fixed-envelope duration-selector algebra on a supplied reference is now
 closed: its raw terminal
 column factors exactly through the event row, an explicit range shear
@@ -256,9 +262,29 @@ old-normal bulk class: direct data produce the weighted speed and every
 causal prefix, the incoming terminal data, the propagated `T^1` trace,
 and final-window flushing.  Its proof does not assume the returned graph
 norm, and it expressly excludes `b_r != 0`.  Higher diagonal jets,
-localized terminal/event columns, and uniform hybrid control of the event
-shear `K` and event-aligned
-terminal rows still require new estimates.  That theorem must track at least
+the localized zero-source normal boundary columns are supplied instead by
+`prop:diagonal-boundary-prefix-terminal-trace`.  For direct data
+`(gamma_0,b_sigma,0,0)`, its exact `H=0` speed recovery and cellwise
+integration by parts give
+
+```text
+sup_prefix |integral Q/q0^2|
+    <= C epsilon {1+log(R_delta/rho_delta)} D_bd,
+
+eta_bd,delta
+    = (epsilon/rho_delta){1+log(R_delta/rho_delta)}
+    = O(delta S_delta) -> 0.
+```
+
+It also gives the localized `A_phi^1` lift and full terminal `T^1` trace.
+The attracting column and repelling entry-history column flush from the final
+window, whereas the repelling terminal scalar column cannot flush because its
+exact endpoint value is `p_r(S_r)=b_r`.  Thus the remaining source-split gate
+is no longer the normal boundary column itself.  It is the unique hybrid
+assembly of the terminal-free bulk and localized summand, followed by uniform
+control of the terminal event/history shear `K`, including the endpoint jet
+needed to bound its scalar normal component.  That assembly must still track
+at least
 
 ```text
 rho_delta/r_out,delta -> 0,
@@ -290,8 +316,8 @@ Its fixed-reference causal-entry operator is uniformly invertible and its
 raw-compatible phase-to-normal return is `o(1)` in that norm.  Thus the
 no-delay normal witness gives the leading loss, while the delay-dependent
 returned columns cannot cancel it.  The moving-endpoint proof
-must nevertheless separate `O(lambda_delta)` structured bulk columns from
-genuinely localized boundary/terminal columns; it cannot demand an
+must nevertheless keep the `O(lambda_delta)` structured bulk and the proved
+localized boundary columns in distinct summands; it cannot demand an
 `O(rho_delta)` terminal phase estimate for every unit old-rough source.
 
 On the attracting branch, replace the inner phase anchor by the causal
