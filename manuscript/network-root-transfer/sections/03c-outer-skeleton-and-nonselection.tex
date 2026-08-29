@@ -3082,6 +3082,321 @@ old-history edge, future scalar propagation, and all current loops do not.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:diagonal-terminal-component-green}]
+We first verify the window geometry.  The reduced speed is bounded above
+and below away from zero, while
+\[
+ \frac{R_\delta}{\delta S_\delta}
+ =\varkappa\delta^{-1/2}S_\delta^{1/2}\longrightarrow\infty .
+\]
+Thus \(S_\sigma>L_b+\theta_m\) for small \(\delta\).  Along either
+shifted path the scalar coordinate moves by at most
+\[
+ q_+\delta(L_b+\theta_m)\le C_{A,M}\delta S_\delta
+ =C_{A,M}\rho_\delta .
+\]
+The attracting endpoint is \(\rho_\delta\), which proves the first line
+of \cref{eq:terminal-component-annuli}.  The repelling endpoint is
+\(-R_\delta\), and
+\(\rho_\delta/R_\delta\to0\), which proves the second line after one more
+decrease of \(\delta_0\).  The fixed annulus ratios also give
+\begin{equation}
+ |\bar r_{\sigma,T}(t)|
+   +\frac{\varepsilon}{|\bar r_{\sigma,T}(t)|^2}
+ \asymp m_{\sigma,T}
+ \quad(-\theta_m\le t\le L_b).                   \label{eq:proof-terminal-weight-comparison}
+\end{equation}
+
+Only zeroth-order coefficient bounds are needed for the first-order
+terminal estimate.  We record them explicitly because a second
+\(r\)-derivative of \(q_0\) is not uniform at \(r=\rho_\delta\).  Write
+\[
+ w_{0,N}'(r)=r\,m_N(r).
+\]
+The critical-curve bounds give common bounds for \(m_N\), its reciprocal,
+and their first derivatives.  Moreover,
+\[
+ q_0(r)=\left(1-\frac{\varepsilon\nu}{r}\right)m_N(r)^{-1}.
+\]
+On either terminal annulus,
+\[
+ \frac{\delta}{|r|}\le\frac C{S_\delta},\qquad
+ \frac{\varepsilon}{|r|^2}\le\frac C{S_\delta^2}.
+                                                        \tag{*}
+\]
+The order-one instance of the backtrack difference estimate used in
+\cref{eq:repelling-backtrack-difference-jets} therefore gives
+\(|\mathcal D_{0,c,N}'|\le C_{A,M}\), and the displayed quotient gives
+\(|q_0'|\le C_{A,M}\).  Hence
+\[
+ |\mathfrak d_N|
+ =|(\mathcal D_{0,c,N}-q_0)'|\le C_{A,M}.          \label{eq:proof-terminal-d-bound}
+\]
+No bound for \(q_0''\) is used.
+
+Use the component notation of
+\cref{eq:repelling-component-coefficients} on both branches.  If
+\[
+ a_p=w_{0,N}'+\varepsilon\mathfrak d_N,
+\]
+then \(-a_p\asymp\rho_\delta\) on the attracting window and
+\(a_p\asymp R_\delta\) on the repelling window.  With
+\(r_T=r_{\sigma,T}\), the remaining bounds are
+\begin{align}
+ \|\mathbb A_Z-A_N\|&\le C_{A,M}r_T,&
+ \|C_{Zp}\|&\le C_{A,M}r_T,&
+ \|C_{pZ}\|&\le C_{A,M}r_T^2,\notag\\
+ \sum_{k\in\mathcal I_+}\|B_k^Z\|
+ &\le C_{A,M}\varepsilon,&
+ \sum_{k\in\mathcal I_+}|B_k^p|
+ &\le C_{A,M}\varepsilon r_T .                  \label{eq:proof-terminal-component-ledger}
+\end{align}
+These follow from
+\cref{eq:principal-green-coefficients,%
+eq:current-absorbed-delay-blocks,eq:proof-terminal-d-bound}.
+
+We next invert the current, unshifted component problem.  Let \(U_Z\) be
+the forward transverse evolution.  On both branches,
+\[
+ \|U_Z(t,u)\|\le Ce^{-c(t-u)/\delta},\qquad u\le t.
+                                                        \label{eq:proof-terminal-fast-kernel}
+\]
+On the attracting branch the scalar line is forward stable and has kernel
+\[
+ |u_{p,a}(t,u)|
+ \le Ce^{-c\rho_\delta(t-u)/\delta},\qquad u\le t.
+                                                        \label{eq:proof-terminal-attracting-scalar}
+\]
+On the repelling branch it is selected from the future, and
+\cref{eq:diagonal-repelling-terminal-kernel} gives
+\[
+ |u_{p,r}(t,u)|
+ \le Ce^{-cR_\delta(u-t)/\delta},\qquad t\le u.
+                                                        \label{eq:proof-terminal-repelling-scalar}
+\]
+Only the last scalar formula is run backward; it is an ordinary
+one-dimensional Green integral, not backward RFDE evolution.
+
+Let \(\mathcal K_{Zp}\) and \(\mathcal K_{pZ}\) be the corresponding
+component Green maps.  In the norm
+\[
+ \|(Z,p)\|_{T,0}
+ =\sup_{0\le t\le L_b}
+       \left\{\|Z(t)\|_N+\frac{|p(t)|}{m_T}\right\},
+ \qquad m_T=m_{\sigma,T},
+\]
+the fast transverse width and the scalar width \(\delta/r_T\) give
+\begin{equation}
+ \|\mathcal K_{Zp}\|\le C_{A,M}r_Tm_T,\qquad
+ \|\mathcal K_{pZ}\|\le C_{A,M}\frac{r_T}{m_T}.
+                                                        \label{eq:proof-terminal-current-loop}
+\end{equation}
+Indeed, \(p=m_T(p/m_T)\), so
+\(C_{Zp}p=O(r_Tm_T)(p/m_T)\).  Conversely,
+\(C_{pZ}Z=O(r_T^2)Z\); scalar integration divides by \(r_T\), and
+normalizing its output by \(m_T\) gives the second bound.  Their product
+is at most \(C_{A,M}r_T^2\).  Thus the product in
+\cref{eq:proof-terminal-current-loop} is smaller than \(1/4\) for small
+\(\delta\).  The same current-loop series as in
+\cref{eq:repelling-current-loop-series}, with both component kernels
+forward on the attracting branch, therefore has a uniform inverse.
+On the repelling branch this inverse is not an evolution family.  Instead,
+the series defines the four normalized blocks
+\(\mathbb G_{\sigma,T}^{ij}(t,u)\),
+\(i,j\in\{Z,p\}\), of a two-sided current Green kernel.  Every term is an
+alternating word of forward transverse edges and, on the repelling branch,
+future scalar edges.  If their respective lengths are \(f_j\) and \(h_j\),
+telescoping the intermediate labels gives
+\[
+ \sum_j f_j-\sum_j h_j=t-u,
+ \qquad
+ \sum_j f_j+\sum_j h_j\ge |t-u|.
+\]
+All transverse rates are at least \(c/\delta\), and all scalar rates are at
+least \(cr_T/\delta\).  Using half of the available exponential weight and
+summing the current-loop multiplicities geometrically therefore gives, in
+the normalized \((Z,p/m_T)\) component norms,
+\begin{equation}
+ \|\mathbb G_{\sigma,T}^{ij}(t,u)\|_{j\to i}
+ \le C_{A,M}
+   \exp\left\{-\frac{cr_T|t-u|}{\delta}\right\}   \label{eq:proof-terminal-full-current-kernel}
+\end{equation}
+for every block.  On the attracting branch this kernel is the ordinary
+forward evolution kernel; on the repelling branch it is genuinely
+two-sided.  No backward RFDE evolution is used.  The transverse line is
+faster; the displayed common rate is the slower safe rate.
+
+We retain the component kernels when estimating distributed sources.
+Using only
+\cref{eq:proof-terminal-full-current-kernel} for \(F\) would introduce a
+false factor \(r_T^{-1}\).  Instead,
+\begin{align}
+ \|\mathcal G_ZF\|_\infty
+ &\le C\|F\|_\infty,\notag\\
+ \frac1{m_T}\|\mathcal G_{p,\sigma}H\|_\infty
+ &\le\frac C{r_Tm_T}\|H\|_\infty,               \label{eq:proof-terminal-source-components}
+\end{align}
+where \(\mathcal G_{p,a}\) is forward and
+\(\mathcal G_{p,r}\) is the future scalar Green map.  The direct history
+reads have sizes \(O(\varepsilon)\gamma\) and
+\(O(\varepsilon r_T)\gamma\) in the two equations.  Together with the
+finite boundary lifts and the current-loop inverse,
+\cref{eq:proof-terminal-source-components} shows that the zero-generation
+solution obeys
+\begin{equation}
+ \|x^{[0]}\|_{T,0}
+ \le C_{A,M}\left\{\|\gamma\|_{C^0}
+       +\frac{|b_\sigma|}{m_T}
+       +\sup\left(\|F\|_N+\frac{|H|}{r_Tm_T}\right)\right\}.
+                                                        \label{eq:proof-terminal-zero-generation}
+\end{equation}
+
+A strict delayed evaluation acts only on \(Z\).  By
+\cref{eq:proof-terminal-component-ledger}, its two source components
+satisfy
+\[
+ \sum_k\left\{\|B_k^Z\zeta_k\|_N
+       +\frac{|B_k^p\zeta_k|}{r_Tm_T}\right\}
+ \le C_{A,M}\left(\varepsilon+\frac{\varepsilon}{m_T}\right)
+       \max_k\|\zeta_k\|_N .
+\]
+The current-loop inverse preserves this bound.  Thus the complete local
+generation maps satisfy
+\[
+ \|\mathscr T_{a,T}\|\le C_{A,M}\frac{\varepsilon}{m_{a,T}},
+ \qquad
+ \|\mathscr T_{r,T}\|\le C_{A,M}\frac{\varepsilon}{m_{r,T}}.
+                                                        \label{eq:proof-terminal-generation}
+\]
+This is \cref{eq:terminal-component-generation-numbers}.  Notice that the
+second estimate retains the terminal annulus.  Replacing it by the minimum
+radius on the whole repelling branch would give only the coarser
+\(\varepsilon/\rho_\delta\) bound.
+
+For small \(\delta\), both numbers in
+\cref{eq:proof-terminal-generation} are below \(1/2\).  The generation
+series
+\[
+ x=\sum_{n=0}^\infty\mathscr T_{\sigma,T}^nx^{[0]}
+\]
+therefore converges in the continuous, finite-seam \(C^0\) space and,
+by \cref{eq:proof-terminal-zero-generation}, has the required zeroth-order
+bound.  The equation itself gives the first-order estimate without
+differentiating a Green kernel.  Indeed,
+\cref{eq:proof-terminal-component-ledger} gives, cellwise,
+\begin{align*}
+ \delta\|Z_t\|_N
+ &\le C_{A,M}\left\{\|Z\|_N+\frac{|p|}{m_T}
+                         +\|F\|_N\right\},\\
+ \frac{\delta|p_t|}{m_T}
+ &\le C_{A,M}\left\{\|Z\|_N+\frac{|p|}{m_T}
+                         +\frac{|H|}{r_Tm_T}\right\}.
+\end{align*}
+For the first line, the actual normalized coupling has size
+\(O(r_Tm_T)|p|/m_T\).  For the second,
+\(r_T^2/m_T\le r_T\), while the delayed scalar row has normalized size
+\(O(\varepsilon r_T/m_T)\).  This proves
+\cref{eq:terminal-component-source-bound}.  Continuity of the retarded
+right-hand side across a seam gives the final \(C^1\) assertion whenever
+the data have no seam there.
+
+For the flushing estimate set \(F=H=0\).  On the attracting branch the
+root data are the left history and the left scalar row.  On the repelling
+branch take \(b_r=0\), so only the left history remains.  Expand only
+\(M\) strict generations:
+\[
+ x=\sum_{n=0}^{M-1}\mathscr T_{\sigma,T}^nx^{[0]}
+       +\mathscr T_{\sigma,T}^Mx .               \label{eq:proof-terminal-finite-expansion}
+\]
+For \(n\le M-1\), an endpoint word has \(n\) strict delay edges and a
+history word has one additional direct collar edge.  At an output in
+\([L_b-\theta_m,L_b]\), these edges consume at most
+\((M+1)\theta_m\).  The remaining current Green travel is at least
+\(L_0+1\).  More explicitly, if \(v\) is the root insertion label,
+\(\vartheta_1,\ldots,\vartheta_k\) are the direct-history and strict-delay
+edge lengths, and \(f_j,h_j\) are the forward and future current-edge
+lengths, respectively, then
+\[
+ \sum_jf_j-\sum_jh_j
+   =t-v-\sum_{i=1}^k\vartheta_i,
+ \qquad
+ \sum_jf_j+\sum_jh_j
+   \ge\left|t-v-\sum_{i=1}^k\vartheta_i\right|
+   \ge L_0+1.
+\]
+On the attracting branch this is the simplex telescoping used
+in \cref{eq:attracting-word-tail-bounds}, now with the local rate
+\(\rho_\delta/\delta\).  On the repelling branch the decorated-word
+identity following
+\cref{eq:repelling-decorated-word-action} gives the same conclusion:
+all transverse edges are faster than the \(R_\delta/\delta\) rate and all
+future scalar edges lie in the terminal annulus.  Current-loop
+multiplicities sum geometrically.  Therefore the finite sum in
+\cref{eq:proof-terminal-finite-expansion} is bounded on the final window
+by
+\[
+ C_{A,M}e^{-cr_TL_0/\delta}
+ \left\{\|\gamma\|_{C^0}
+              +\mathbf1_{\{\sigma=a\}}\frac{|b_a|}{m_{a,T}}\right\}.
+\]
+The tail is bounded by the \(M\)-th power of
+\cref{eq:proof-terminal-generation}.  Boundary-face words created by one
+time differentiation have the same root, output, and delay-edge count.
+Equivalently, the extra \(\theta_m\) in
+\(L_b=(M+2)\theta_m+L_0+1\) lets the differential equation read the same
+estimate one delay earlier.  This proves
+\cref{eq:terminal-component-rough-flush,%
+eq:terminal-component-flush-errors}.
+Finally,
+\[
+ \frac{\rho_\delta L_0}{\delta}
+ =\frac{A}{2\alpha}S_\delta^2,\qquad
+ \frac{R_\delta L_0}{\delta}
+ =A\frac{R_\delta S_\delta}{\delta},
+\]
+whereas
+\begin{align*}
+ m_{a,T}
+ &=\rho_\delta+\frac{\varepsilon}{\rho_\delta^2}
+   =\frac{\delta S_\delta}{2\alpha}
+       +\frac{4\alpha^2}{S_\delta^2}
+   \asymp S_\delta^{-2},\\
+ m_{r,T}
+ &=R_\delta+\frac{\varepsilon}{R_\delta^2}
+   \asymp R_\delta,
+\end{align*}
+and hence
+\(\varepsilon/m_{a,T}=O(\delta^2S_\delta^2)\) and
+\(\varepsilon/m_{r,T}
+ =O(\delta^{3/2}S_\delta^{-3/2})\).
+Thus both errors tend to zero.
+
+It remains to record the local phase action.  The algebraic row is
+\[
+ Q=\varepsilon^{-1}(p-\ell_NZ)
+       +\mathscr D_{c,N}^{\rm lin}[\gamma,Z].
+\]
+On the terminal annulus, \(\|\ell_N\|\le C r_T\), every delayed value
+is bounded by the same generation estimate, and
+\(m_T\ge r_T\) and \(\varepsilon/m_T\to0\).  Hence
+\[
+ \|\mathscr D_{c,N}^{\rm lin}[\gamma,Z]\|_\infty
+ \le C\{\|\gamma\|_{C^0}+\|Z\|_\infty\}
+ \le C\varepsilon\mathcal D_{\sigma,T},
+ \qquad
+ \|Q\|_\infty\le C_{A,M}m_T\mathcal D_{\sigma,T}.
+\]
+The scalar coordinate length of the terminal buffer is at most
+\(C\delta L_b\le C_{A,M}\rho_\delta\), while \(q_0^{-1}\) is uniformly
+bounded.  Since \(\dd r=\delta q_0\,\dd t\), the displayed integral is
+also the fold-time phase increment \(\delta\int Q/q_0\,\dd t\).
+Integration proves the second line of
+\cref{eq:terminal-component-local-action}.  The proof used no endpoint
+reference, moving evaluation, or backward history evolution, which also
+proves the stated scope boundary.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:structured-phase-action-green}]
 Write
 \[

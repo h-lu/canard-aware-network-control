@@ -2680,6 +2680,136 @@ the word has \(n\) recursive edges.  The arbitrarily many current
 \cref{eq:repelling-current-loop-bound}.
 \end{lemma}
 
+\begin{proposition}[Diagonal first-order terminal component Green estimates]
+\label[proposition]{prop:diagonal-terminal-component-green}
+Retain
+\cref{prop:fixed-phase-green-collar-buffer,%
+lem:current-absorbed-delay-splitting,%
+lem:repelling-component-generations}
+at order one.  Fix \(\varkappa,A>0\) and an integer \(M\ge2\), and put
+\begin{align}
+ R_\delta&=\varkappa(\delta S_\delta^3)^{1/2},&
+ r_{a,T}&=\rho_\delta,& r_{r,T}&=R_\delta,\notag\\
+ m_{\sigma,T}&=r_{\sigma,T}
+       +\frac{\varepsilon}{r_{\sigma,T}^2},&
+ L_0&=AS_\delta,&
+ L_b&=(M+2)\theta_m+L_0+1.                       \label{eq:terminal-component-scales}
+\end{align}
+In this proposition take \(r_{\rm out}=R_\delta\).  Let \(S_\sigma\)
+be the reduced fold-time duration in
+\cref{prop:fixed-phase-green-collar-buffer}, set
+\begin{equation}
+ s_{\sigma,T}=S_\sigma-L_b,\qquad
+ \bar r_{\sigma,T}(t)=\bar r_\sigma(s_{\sigma,T}+t),\qquad
+ 0\le t\le L_b,                                  \label{eq:terminal-component-recut}
+\end{equation}
+and extend this path to \([-\theta_m,L_b]\) by the same reduced flow.
+For all sufficiently small \(\delta\), depending on the displayed fixed
+choices,
+\begin{align}
+ \rho_\delta\le \bar r_{a,T}(t)&\le C_A\rho_\delta,
+       &&-\theta_m\le t\le L_b,\notag\\
+ \frac12R_\delta\le|\bar r_{r,T}(t)|&\le R_\delta,
+       &&-\theta_m\le t\le L_b.                 \label{eq:terminal-component-annuli}
+\end{align}
+
+On this shifted interval consider the fixed-phase normal problem
+\cref{eq:fixed-phase-normal-block}, equivalently its current-absorbed form
+\cref{eq:current-absorbed-delay-equation}.  Prescribe a continuous
+transverse history
+\(\gamma\in C([-\theta_m,0];E_N)\), with
+\(Z(0)=\gamma(0)\), and continuous distributed sources \((F,H)\).
+On the attracting branch prescribe \(p(0)=b_a\); on the repelling branch
+prescribe \(p(L_b)=b_r\).  Define
+\begin{align}
+ \mathcal D_{\sigma,T}(\gamma,b_\sigma,F,H)
+ =\varepsilon^{-1}\biggl\{
+   \|\gamma\|_{C^0}
+   +\frac{|b_\sigma|}{m_{\sigma,T}}
+   +\sup_{0\le t\le L_b}
+       \left(\|F(t)\|_N
+             +\frac{|H(t)|}
+                    {r_{\sigma,T}m_{\sigma,T}}\right)
+                         \biggr\},               \label{eq:terminal-component-data-norm}\\
+ \|(Z,p)\|_{\mathsf T_{\sigma,T}^1(J)}
+ =\varepsilon^{-1}\max_{0\le j\le1}\delta^j
+   \operatorname*{ess\,sup}_{t\in J}
+       \left\{\|\partial_t^jZ(t)\|_N
+              +\frac{|\partial_t^jp(t)|}{m_{\sigma,T}}\right\}.
+                                                        \label{eq:terminal-component-trace-norm}
+\end{align}
+Then the two mixed problems have unique continuous, piecewise
+\(W^{1,\infty}\) solutions and, uniformly in \(N,\delta\), the branch,
+and the retained parameters,
+\begin{equation}
+ \|(Z,p)\|_{\mathsf T_{\sigma,T}^1([0,L_b])}
+ \le C_{A,M}\mathcal D_{\sigma,T}(\gamma,b_\sigma,F,H).
+                                                        \label{eq:terminal-component-source-bound}
+\end{equation}
+If the data have no seam on an open neighborhood of
+\([L_b-\theta_m,L_b]\), the restriction there is genuinely \(C^1\).
+
+The local strict-positive-delay generation operators have the sharper
+branchwise bounds
+\begin{equation}
+ \beta_{a,T}\le C_{A,M}\frac{\varepsilon}{m_{a,T}},
+ \qquad
+ \beta_{r,T}\le C_{A,M}\frac{\varepsilon}{m_{r,T}},
+ \qquad
+ m_{a,T}\asymp S_\delta^{-2},\quad
+ m_{r,T}\asymp R_\delta,                         \label{eq:terminal-component-generation-numbers}
+\end{equation}
+and both tend to zero.  Consequently incoming terminal-interface data are
+flushed before the final history window.  More precisely, if \(F=H=0\), then
+\begin{align}
+ \|(Z,p)\|_{\mathsf T_{a,T}^1([L_b-\theta_m,L_b])}
+ &\le C_{A,M}\mathcal E_{a,T}(\delta)\,
+   \varepsilon^{-1}\left\{
+      \|\gamma\|_{C^0}+\frac{|b_a|}{m_{a,T}}\right\},\notag\\
+ \|(Z,p)\|_{\mathsf T_{r,T}^1([L_b-\theta_m,L_b])}
+ &\le C_{A,M}\mathcal E_{r,T}(\delta)\,
+        \varepsilon^{-1}\|\gamma\|_{C^0}
+        \qquad (b_r=0),                          \label{eq:terminal-component-rough-flush}
+\end{align}
+where
+\begin{align}
+ \mathcal E_{a,T}(\delta)
+ &=\exp\left\{-\frac{c\rho_\delta L_0}{\delta}\right\}
+       +\left(C\frac{\varepsilon}{m_{a,T}}\right)^M,\notag\\
+ \mathcal E_{r,T}(\delta)
+ &=\exp\left\{-\frac{cR_\delta L_0}{\delta}\right\}
+       +\left(C\frac{\varepsilon}{m_{r,T}}\right)^M.
+                                                        \label{eq:terminal-component-flush-errors}
+\end{align}
+In particular, both errors tend to zero.  The repelling condition \(b_r=0\)
+is necessary in the flushing statement because a nonzero terminal scalar
+row is visible in the final window.
+
+Let \(Q\) be reconstructed by the algebraic row in
+\cref{eq:fixed-phase-normal-block}, and use the reduced coordinate on the
+terminal buffer.  The same solution satisfies
+\begin{align}
+ \sup_{0\le t\le L_b}|Q(t)|
+ &\le C_{A,M}m_{\sigma,T}
+       \mathcal D_{\sigma,T}(\gamma,b_\sigma,F,H),\notag\\
+ \frac1{\rho_\delta}\sup_{0\le t\le L_b}
+ \left|\int_{\bar r_{\sigma,T}(0)}^{\bar r_{\sigma,T}(t)}
+          \frac{Q(u)}{q_0(u)^2}\,\dd u\right|
+ &\le C_{A,M}m_{\sigma,T}
+       \mathcal D_{\sigma,T}(\gamma,b_\sigma,F,H).          \label{eq:terminal-component-local-action}
+\end{align}
+
+This is a reduced-base, fixed-phase, first-order terminal-source theorem.
+It permits arbitrary distributed sources at their natural transverse and
+scalar terminal scales and proves an incoming-interface flushing estimate;
+its range norm is not defined through the solution operator.  It does not
+construct an endpoint RFDE reference, control the phase-induced structured
+column in this strong norm, construct the rough-middle-to-incoming trace and
+prefix map, prove a higher-order or parameter-differentiated terminal
+inverse, bound the event shear \(K\), or produce a nonlinear moving-endpoint
+family or a physical root.
+\end{proposition}
+
 \begin{proposition}[Structured phase-column action Green estimate]
 \label[proposition]{prop:structured-phase-action-green}
 Retain \cref{prop:phase-delay-action-shift,%
