@@ -2197,6 +2197,57 @@ Here the operator norm is induced by \(\|\cdot\|_{a,\rm out}\).
 The constants may depend on \(d\), the fixed \(r_{\rm out}\), and the fixed
 delay support, but are uniform in \(N,\delta,\nu,\eta\) on the retained
 balls.
+
+There is also a diagonal, order-one version in which the slow rate is not
+hidden in the constant.  Fix \(\varkappa>0\), take \(d=1\), and set
+\begin{equation}
+ R_\delta=\varkappa(\delta S_\delta^3)^{1/2},
+ \qquad r_{\rm out}=R_\delta.                    \label{eq:diagonal-outer-buffer-scale}
+\end{equation}
+For sufficiently small \(\delta\), depending on the fixed
+\(\varkappa\), whenever
+\[
+ \tfrac12R_\delta\le\bar r_a(s)\le R_\delta
+ \quad(0\le s\le L_b),
+\]
+the same evolution family satisfies
+\begin{equation}
+ \max_{i+j\le1}\delta^{i+j}
+ \|\partial_s^i\partial_u^j
+       \mathbb U_{a,\rm cur}(s,u)\|_{\mathcal L(E_N\times\R)}
+ \le C e^{-cR_\delta(s-u)/\delta},
+ \qquad 0\le u\le s\le L_b,                       \label{eq:diagonal-current-absorbed-evolution}
+\end{equation}
+in the norm
+\(\|(Z,p)\|_{a,\delta}=\|Z\|_N+|p|/R_\delta\).
+Moreover,
+\begin{equation}
+ \sup_{0\le s\le L_b}
+   \sum_{k\in\mathcal I_+}
+   \|\mathbb B_k(s)\|_{\mathcal L(E_N,E_N\times\R)}
+ \le C\varepsilon,                               \label{eq:diagonal-delayed-block-size}
+\end{equation}
+where the target has the preceding diagonal norm.  Consequently one strict
+positive-delay Duhamel generation has the scale-explicit bound
+\begin{align}
+ &\sup_{0\le s\le L_b}
+ \left\|
+  \frac1\delta\sum_{k\in\mathcal I_+}
+   \int_0^s\mathbb U_{a,\rm cur}(s,u)
+      \mathbb B_k(u)\zeta_k(u)\,\dd u
+ \right\|_{a,\delta}\notag\\
+ &\hspace{7em}\le
+ C\frac{\varepsilon}{R_\delta}
+ \max_{k\in\mathcal I_+}
+       \|\zeta_k\|_{L^\infty([0,L_b];E_N)}.       \label{eq:diagonal-one-generation}
+\end{align}
+If \(\mathcal I_+=\varnothing\), the left-hand side and the displayed
+right-hand side are both interpreted as zero.
+The fixed-annulus exponent in
+\cref{eq:current-absorbed-attracting-evolution} is therefore not
+diagonal-uniform: on the family
+\cref{eq:diagonal-outer-buffer-scale}, its scalar part contains a factor
+comparable to \(R_\delta\).
 \end{lemma}
 
 \begin{proposition}[Attracting finite-generation collar flushing]
@@ -2397,6 +2448,23 @@ For \(i+j\le d\), the corresponding precise estimates are
 \end{align}
 where the last line is used only under the outer-interval condition just
 stated.
+On the diagonal family
+\cref{eq:diagonal-outer-buffer-scale}, if
+\[
+ \tfrac12R_\delta\le|\bar r_r(v)|\le R_\delta
+ \quad(s\le v\le u),
+\]
+then the order-one terminal estimate with constants independent of
+\(\delta\) is instead
+\begin{equation}
+ \max_{i+j\le1}\delta^{i+j}
+ |\partial_s^i\partial_u^ju_p(s,u)|
+ \le C e^{-cR_\delta(u-s)/\delta}.                \label{eq:diagonal-repelling-terminal-kernel}
+\end{equation}
+Thus the coefficient in a terminal-fast weight must recede with
+\(R_\delta\).  On outer intervals containing a fold-time subinterval of
+fixed positive length, a fixed positive coefficient cannot be retained
+uniformly on this diagonal family.
 After expanding the current-loop inverse, the kernel of every decorated
 component word, including every boundary-face word obtained by at most
 \(d\) differentiations, remains bounded after multiplication by the product
@@ -2697,6 +2765,35 @@ control parameter or higher slow jets, preserve the sign of the physical
 speed, construct a past physical orbit, or prove a preparation-independent
 complete-history root.
 \end{theorem}
+
+\begin{corollary}[Diagonal fixed-base zeroth-order phase--normal inverse]
+\label[corollary]{cor:diagonal-raw-compatible-phase-normal-inverse}
+Retain \cref{thm:raw-compatible-phase-normal-inverse}, fix
+\(\varkappa>0\), and, for each sufficiently small \(\delta\), replace
+every occurrence of the fixed outer endpoint by
+\[
+ r_{\rm out}=R_\delta
+ =\varkappa(\delta S_\delta^3)^{1/2}.
+\]
+Then all conclusions of
+\cref{thm:raw-compatible-phase-normal-inverse}, including closedness,
+bijectivity, and the graph-norm estimate
+\cref{eq:raw-compatible-schur-bound}, hold with a constant independent of
+\(N\) and \(\delta\).  The threshold in \(\delta\) may depend on the fixed
+\(\varkappa\).  In particular,
+\begin{equation}
+ \|\mathscr B_{\phi,\sigma}^{-1}\|
+ \|\mathfrak A_\sigma^{\rm rc}\|
+ \le C\left\{
+   \varkappa^2\delta S_\delta^3
+   +\frac{\delta}{S_\delta}
+   +\delta^{2-2\vartheta}\right\}=o(1).           \label{eq:diagonal-raw-schur-smallness}
+\end{equation}
+This is a fixed-reference, order-zero inverse on a receding spatial
+collar.  It does not contain the moving-duration normal column, identify
+the full RFDE terminal Schur coefficient, or provide a higher-order
+diagonal inverse.
+\end{corollary}
 
 For the fold-side anchored formulation, define
 \begin{align}

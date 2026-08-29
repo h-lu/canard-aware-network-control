@@ -2428,6 +2428,82 @@ commutator.  More precisely,
 \(\partial_u\mathbb U=-\delta^{-1}\mathbb U\mathbb A_{\rm cur}(u)\);
 Leibniz' rule and induction on \(i+j\) prove
 \cref{eq:current-absorbed-attracting-evolution}.
+
+We now keep the slow rate visible on the diagonal family.  Write
+\(R=R_\delta\).  The elementary scale ratios are
+\begin{equation}
+ \frac{\delta}{R}
+ =\frac{\sqrt\delta}{\varkappa S_\delta^{3/2}}\longrightarrow0,
+ \qquad
+ \frac{\delta}{R^2}
+ =\frac1{\varkappa^2S_\delta^3}\longrightarrow0,
+ \qquad
+ \frac{\varepsilon}{R^3}
+ =\frac{\sqrt\delta}{\varkappa^3S_\delta^{9/2}}
+ \longrightarrow0.                              \label{eq:proof-diagonal-buffer-ratios}
+\end{equation}
+On \(R/2\le r\le R\), direct differentiation of the quotient defining
+\(q_0\), followed by the critical coefficient bounds, gives
+\[
+ |q_0'|\le C(1+\varepsilon/R^2),\qquad
+ |q_0''|\le C(1+\varepsilon/R^3).
+\]
+Thus the order-one coefficient and exact-backtrack bounds used above
+remain uniform after first fixing \(\varkappa\) and then decreasing
+\(\delta\).
+
+In the \(\|\cdot\|_{a,\delta}\)-norm, the transverse diagonal rate is
+bounded below independently of \(\delta\), whereas
+\(-w_{0,N}'\ge cR\).  The principal block loop is \(O(R^2)\).
+To make the evolution claim independent of the earlier mixed-BVP Green
+bound, let \(U_Z\) and \(u_p\) denote the two forward diagonal evolutions,
+and form their causal convolution edges
+\(\mathcal K_{Zp}^R\) and \(\mathcal K_{pZ}^R\) with the two principal
+off-diagonal coefficients.  In a kernel norm carrying the weight
+\(\exp\{cR(s-u)/(2\delta)\}\), the coefficient sizes
+\[
+ \|z_{0,N}'\|\le CR,\qquad
+ \|w_{0,N}'\ell_N\|\le CR^2
+\]
+and the fast and slow convolution widths \(O(\delta)\) and
+\(O(\delta/R)\) give
+\begin{equation}
+ \|\mathcal K_{Zp}^R\|\le CR^2,\qquad
+ \|\mathcal K_{pZ}^R\|\le C,\qquad
+ \|\mathcal K_{Zp}^R\mathcal K_{pZ}^R\|
+ \le CR^2<\frac12.                               \label{eq:proof-diagonal-principal-loop}
+\end{equation}
+Here the first edge uses \(p=R(p/R)\), while the second uses the scalar
+Green width before dividing the output by \(R\).  Expanding the causal
+two-by-two Volterra system and summing
+\cref{eq:proof-diagonal-principal-loop} geometrically therefore gives
+\[
+ \|\mathbb U_{a,0}(s,u)\|
+ \le C e^{-cR(s-u)/\delta}.
+\]
+The current-delay perturbation has norm \(C\varepsilon\).  In a kernel
+norm with half the preceding exponent, its Duhamel norm is at most
+\[
+ \frac{C\varepsilon}{\delta}
+   \int_0^\infty e^{-cRv/\delta}\,\dd v
+ \le C\frac{\varepsilon}{R}=o(1).
+\]
+Neumann inversion proves the zeroth-order part of
+\cref{eq:diagonal-current-absorbed-evolution}.  The two endpoint equations
+for the evolution family prove its \(i+j=1\) cases after multiplication
+by \(\delta\).
+
+The structural layer bound and
+\(w_{0,N}'+\varepsilon\mathfrak d_N=O(R)\) on this buffer give
+\cref{eq:diagonal-delayed-block-size}: the lower component of
+\(\mathbb B_k\) is \(O(\varepsilon R)\), which becomes
+\(O(\varepsilon)\) after division by \(R\).  Finally, integrate
+\cref{eq:diagonal-current-absorbed-evolution} against
+\cref{eq:diagonal-delayed-block-size}.  The exponential has width
+\(O(\delta/R)\), so the prefactor \(\delta^{-1}\) leaves precisely
+\(C\varepsilon/R\).  This proves
+\cref{eq:diagonal-one-generation} and the claimed scope of the diagonal
+specialization.
 \end{proof}
 
 \begin{proof}[Proof of
@@ -2740,6 +2816,24 @@ bounds.  The weighted coefficient control in
 \cref{eq:repelling-fold-time-block-jets} absorbs the commutators after the
 factor \(\delta^{i+j}\) is inserted.  Notice that this construction reverses
 only one scalar ODE; it never evolves an RFDE backward.
+
+For the diagonal terminal assertion, take \(d=1\) and suppose
+\(R_\delta/2\le|\bar r_r(v)|\le R_\delta\) on \([s,u]\).
+Then \(a_p(v)\ge cR_\delta\), and the exact exponential formula gives
+\[
+ |u_p(s,u)|\le e^{-cR_\delta(u-s)/\delta}.
+\]
+The two endpoint identities
+\[
+ \delta\partial_su_p=a_p(s)u_p,\qquad
+ \delta\partial_uu_p=-a_p(u)u_p
+\]
+and \(a_p\le CR_\delta\le C\) prove
+\cref{eq:diagonal-repelling-terminal-kernel}.  This also shows directly
+why the coefficient of the terminal-fast weight in
+\cref{eq:repelling-terminal-edge-weight} cannot be chosen independently
+of \(R_\delta\) on terminal buffers containing a fixed positive
+fold-time subinterval.
 
 Variation of constants now gives
 \cref{eq:repelling-component-LP}.  The sign in its second row is worth
@@ -3285,6 +3379,114 @@ The shifted terminal row
 factorization.  The final exclusions follow because every operator used
 here is the differential at the fixed reduced base and only order-zero
 norms were inverted.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{cor:diagonal-raw-compatible-phase-normal-inverse}]
+For fixed \(\varkappa>0\), the diagonal scales obey
+\begin{align}
+ \frac{\rho_\delta}{R_\delta}
+ &=\frac{\sqrt\delta}
+        {2\alpha\varkappa S_\delta^{1/2}}\longrightarrow0,
+ &
+ \frac{\delta}{R_\delta}
+ &=\frac{\sqrt\delta}
+        {\varkappa S_\delta^{3/2}}\longrightarrow0,\notag\\
+ \frac{\delta}{R_\delta^2}
+ &=\frac1{\varkappa^2S_\delta^3}\longrightarrow0.
+                                                        \label{eq:proof-diagonal-raw-scale-ratios}
+\end{align}
+Thus the two spatial intervals remain nonempty and lie in the fixed
+coefficient collar.  The sign bounds and weighted critical-coefficient
+bounds used by
+\cref{prop:principal-tracker-endpoint-green} are inherited on every
+smaller interval.  Its transverse perturbation and block loop are
+\(O(R_\delta)\) and \(O(R_\delta^2)\), respectively, while its only
+singular inner ratios remain
+\(\varepsilon/\rho_\delta\) and
+\(\varepsilon/\rho_\delta^2\).  These are the same uniformly small ratios
+as in the fixed-outer proof.
+
+The order-zero fixed-phase proof uses no unweighted high outer jet.  In its
+first-delay old-history estimate, comparability at the attracting outer
+endpoint follows from \(\delta/R_\delta=o(1)\); at the repelling entry it
+follows from \(\delta/\rho_\delta=O(S_\delta^{-1})\).  Its current and
+old-history feedback numbers remain bounded by
+\[
+ C\left\{\frac{\varepsilon}{\rho_\delta}
+          +\frac{\varepsilon^2}{\rho_\delta^2}\right\},
+ \qquad
+ C\delta^{-2\vartheta}
+ \left\{\frac{\varepsilon}{\rho_\delta}
+          +\frac{\varepsilon^2}{\rho_\delta^2}\right\},
+\]
+respectively, and tend to zero.  Hence the constants in
+\cref{eq:fixed-phase-C0-inverse} and in the closed compatible feedback
+remain uniform.  The compatible collar chart is uniform for every
+\(\rho_\delta\le|e|\le R_\delta\), and the explicit phase-event inverse
+uses only the common two-sided bound on \(q_0\).
+
+We next re-audit the structured phase column; this step cannot be obtained
+by merely substituting a moving endpoint into a fixed-outer quantifier.
+The four contraction and terminal numbers in the proof of
+\cref{prop:structured-phase-action-green} now satisfy
+\begin{align}
+ \kappa_\delta
+ &\le R_\delta^2+\frac{\varepsilon}{\rho_\delta}
+ =\varkappa^2\delta S_\delta^3
+       +\frac{2\alpha\delta}{S_\delta}=o(1),\notag\\
+ \beta_{\sigma,m}
+ &\le C\left\{\varepsilon
+       +\frac{\varepsilon}{\rho_\delta}\right\}
+ =o(1),\notag\\
+ \eta_{\rm col}
+ &\le C\frac{\delta^{1-2\vartheta}}{S_\delta}=o(1),
+ &\frac{\delta}{R_\delta^2}
+ &=\frac1{\varkappa^2S_\delta^3}=o(1).
+                                                        \label{eq:proof-diagonal-structured-ledger}
+\end{align}
+Here the first line closes the current loop, the second the strict-delay
+series, the third the compatible repelling collar, and the fourth the
+repelling terminal lift.  Delay translation is uniform because its two
+worst relative displacements are
+\(\delta/R_\delta=o(1)\) at the outer endpoint and
+\(\delta/\rho_\delta=O(S_\delta^{-1})\) at the inner endpoint.
+All weighted scalar-kernel estimates in that proof depend only on
+\(\varepsilon/R^2\le\varepsilon/\rho_\delta^2=O(S_\delta^{-2})\).
+Thus the same fixed-point argument, now with the explicit ledger above,
+proves uniformly on the diagonal
+\begin{equation}
+ \|\mathfrak A_\sigma^{\rm form}\|
+ \le C\left\{R_\delta^2+\frac{\varepsilon}{\rho_\delta}\right\}.
+                                                        \label{eq:proof-diagonal-structured-action}
+\end{equation}
+
+The normal-to-phase estimate is also uniform after
+\(r_{\rm out}=R_\delta\), since its proof gives directly
+\[
+ \|Q\|_{\mathsf H_\phi^0}
+ \le C\{R_\delta^2+\delta^{2-2\vartheta}\}
+       \|(\gamma,Z,p)\|_{\widetilde{\mathsf X}_{\sigma,0}}.
+\]
+Apply it to the raw-compatible collar response, whose cap datum is
+\(O(\varepsilon)\) uniformly by the collar chart and whose normal response
+is controlled by the diagonal fixed-phase inverse just proved.  This
+repeats the proof of
+\cref{eq:raw-phase-collar-action-bound} with \(R_\delta\) and yields
+\[
+ \|Q_{\sigma,\rm col}c\|_{\mathsf H_\phi^0}
+ \le C\{R_\delta^2+\delta^{2-2\vartheta}\}|c|.
+\]
+Adding this collar action to
+\cref{eq:proof-diagonal-structured-action} gives the diagonal version of
+\cref{eq:raw-compatible-action-smallness}.  Since
+\(R_\delta^2=\varkappa^2\delta S_\delta^3\), it is precisely
+\cref{eq:diagonal-raw-schur-smallness}.  Its right-hand side tends to zero,
+so the Neumann inverse
+\cref{eq:raw-schur-neumann-inverse} is uniform after decreasing
+\(\delta\).  The graph-domain closedness argument is unchanged.  This
+proves all asserted order-zero conclusions and no moving-duration or
+higher-jet statement.
 \end{proof}
 
 \begin{proof}[Proof of
