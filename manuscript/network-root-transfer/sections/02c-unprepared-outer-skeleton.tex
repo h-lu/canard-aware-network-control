@@ -2795,6 +2795,218 @@ the full RFDE terminal Schur coefficient, or provide a higher-order
 diagonal inverse.
 \end{corollary}
 
+The preceding graph inverse is uniform in the order-zero phase norm, but
+that norm does not resolve the causal phase displacement on the
+\(\rho_\delta\)-scale.  The distinction is not cosmetic.  An arbitrary
+normal datum of unit size can generate a speed direction whose accumulated
+action is \(R_\delta^2\), whereas the terminal window has size only
+\(\rho_\delta\).  We therefore record the action domain on which a
+causal-entry inverse is actually uniform.
+
+For the rest of this paragraph set
+\begin{equation}
+ R_\delta=\varkappa(\delta S_\delta^3)^{1/2},\qquad
+ \lambda_\delta=R_\delta+S_\delta^{-2},\qquad
+ M_\delta=R_\delta^2+\frac{\varepsilon}{\rho_\delta},
+ \qquad
+ m_\delta(r)=|r|+\frac{\varepsilon}{|r|^2},       \label{eq:prefix-action-diagonal-scales}
+\end{equation}
+and use the receding intervals and oriented entry endpoints from
+\cref{cor:diagonal-raw-compatible-phase-normal-inverse}.  Thus
+\((e_{a,0},e_{a,1})=(R_\delta,\rho_\delta)\) and
+\((e_{r,0},e_{r,1})=(-\rho_\delta,-R_\delta)\).
+For \(k\in C(I_\sigma)\), define its causal prefix action by
+\begin{equation}
+ (\mathcal P_\sigma k)(r)
+ =\int_{e_{\sigma,0}}^r\frac{k(u)}{q_0(u)^2}\,\dd u.          \label{eq:causal-prefix-action}
+\end{equation}
+Put
+\(\mathsf H_{\sigma,\mathrm{pa}}=C(I_\sigma)\) and
+\(\mathsf A_{\sigma,\mathrm{pa}}=C^1(I_\sigma)\), with Banach norms
+\begin{align}
+ \|k\|_{\mathsf H_{\sigma,\mathrm{pa}}}
+ &=\frac1{\lambda_\delta}
+     \sup_{r\in I_\sigma}\frac{|k(r)|}{m_\delta(r)}
+   +\frac1{\rho_\delta}
+     \sup_{r\in I_\sigma}|(\mathcal P_\sigma k)(r)|,
+                                                        \label{eq:prefix-action-source-norm}\\
+ \|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}
+ &=\frac{\|a\|_{C^0(I_\sigma)}}{\rho_\delta}
+   +\frac1{\lambda_\delta}
+     \sup_{r\in I_\sigma}\frac{|a'(r)|}{m_\delta(r)}.
+                                                        \label{eq:prefix-action-phase-norm}
+\end{align}
+Here ``pa'' means prefix action.  For fixed \(\delta\) these are simply
+weighted \(C^0\) and \(C^1\) spaces; the content is uniformity as the
+collar recedes.
+On this global weighted-speed class, the prefix summand is explicit
+bookkeeping rather than an independent restriction.  Indeed,
+\begin{equation}
+ \frac{\|\mathcal P_\sigma k\|_\infty}{\rho_\delta}
+ \le C\frac{\lambda_\delta M_\delta}{\rho_\delta}
+       \left\{\frac1{\lambda_\delta}
+       \sup_{I_\sigma}\frac{|k|}{m_\delta}\right\}
+ \le C_\varkappa\frac1{\lambda_\delta}
+       \sup_{I_\sigma}\frac{|k|}{m_\delta}.       \label{eq:prefix-action-pointwise-domination}
+\end{equation}
+We retain it to expose the quantity consumed by a terminal row.  A later
+source-split space permitting pointwise-large localized columns is not
+constructed here.
+
+\begin{lemma}[Causal-entry action-resolved core]
+\label[lemma]{lem:causal-entry-prefix-action-core}
+The operator
+\begin{equation}
+ \mathscr B_{\sigma,\mathrm{ent}}a
+ =\bigl(q_0^2a',a(e_{\sigma,0})\bigr)             \label{eq:causal-entry-prefix-action-operator}
+\end{equation}
+is an isomorphism
+\[
+ \mathsf A_{\sigma,\mathrm{pa}}
+ \longrightarrow
+ \mathsf H_{\sigma,\mathrm{pa}}\times\mathbb R.
+\]
+The scalar factor on the right carries the normalized norm
+\(|b_0|/\rho_\delta\).
+Its inverse is
+\begin{equation}
+ a(r)=b_0+(\mathcal P_\sigma k)(r),               \label{eq:causal-entry-prefix-action-inverse}
+\end{equation}
+and, uniformly in \(N,\delta\), and the branch,
+\begin{equation}
+ \|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}
+ \le C\left\{\|k\|_{\mathsf H_{\sigma,\mathrm{pa}}}
+                    +\frac{|b_0|}{\rho_\delta}\right\}.
+                                                        \label{eq:causal-entry-prefix-action-bound}
+\end{equation}
+Conversely, the norm of the data in
+\cref{eq:causal-entry-prefix-action-operator} is bounded by
+\(C\|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}\).
+\end{lemma}
+
+The fixed normal inverse determines which diagonal data families have
+uniform weighted-speed/action size.  For each fixed \(\delta\) the sets
+below coincide with the old continuous spaces; their graph norms, not their
+underlying elements, carry the additional scale.  Put
+\begin{align}
+ \mathscr Q_\sigma f
+ &=\mathfrak D_\sigma G_\sigma f,\notag\\
+ \widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}
+ &=\left\{f\in\widetilde{\mathsf Y}_{\sigma,0}:
+       \mathscr Q_\sigma f\in\mathsf H_{\sigma,\mathrm{pa}}\right\},
+                                                        \label{eq:prefix-action-normal-data-space}\\
+ \|f\|_{\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}}
+ &=\|f\|_{\widetilde{\mathsf Y}_{\sigma,0}}
+       +\|\mathscr Q_\sigma f\|_{\mathsf H_{\sigma,\mathrm{pa}}}.
+                                                        \label{eq:prefix-action-normal-data-norm}
+\end{align}
+Equivalently, restrict \(\mathcal D(\mathscr N_\sigma)\) to
+\begin{equation}
+ \mathcal D_{\mathrm{pa}}(\mathscr N_\sigma)
+ =\left\{y\in\mathcal D(\mathscr N_\sigma):
+       \mathfrak D_\sigma y\in\mathsf H_{\sigma,\mathrm{pa}}\right\}
+                                                        \label{eq:prefix-action-normal-domain}
+\end{equation}
+and add \(\|\mathfrak D_\sigma y\|_{\mathsf H_{\sigma,\mathrm{pa}}}\)
+to its graph norm.
+
+\begin{theorem}[Diagonal causal-entry weighted-action graph inverse]
+\label[theorem]{thm:diagonal-causal-entry-prefix-action-inverse}
+Retain
+\cref{cor:diagonal-raw-compatible-phase-normal-inverse,%
+lem:causal-entry-prefix-action-core} and fix \(\varkappa>0\).  Define
+\begin{equation}
+ \mathscr L_{\sigma,\mathrm{ent}}(y,a)
+ =\left(
+   \mathscr N_\sigma y,
+   q_0^2a'-\mathfrak D_\sigma y
+                  -\mathfrak A_\sigma^{\rm rc}a,
+   a(e_{\sigma,0})
+   \right).                                      \label{eq:causal-entry-phase-normal-operator}
+\end{equation}
+Then, for all sufficiently small \(\delta\), this is an isomorphism
+\begin{equation}
+ \mathcal D_{\mathrm{pa}}(\mathscr N_\sigma)
+       \times\mathsf A_{\sigma,\mathrm{pa}}
+ \longrightarrow
+ \widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}
+       \times\mathsf H_{\sigma,\mathrm{pa}}\times\mathbb R,
+                                                        \label{eq:causal-entry-phase-normal-isomorphism}
+\end{equation}
+where the last scalar factor again carries the norm
+\(|b_0|/\rho_\delta\),
+with inverse norm independent of \(N,\delta\), and the branch.  More
+precisely, for data \((f,k,b_0)\),
+\begin{equation}
+ \|y\|_{\mathcal D_{\mathrm{pa}}(\mathscr N_\sigma)}
+      +\|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}
+ \le C\left\{
+   \|f\|_{\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}}
+   +\|k\|_{\mathsf H_{\sigma,\mathrm{pa}}}
+   +\frac{|b_0|}{\rho_\delta}\right\}.         \label{eq:causal-entry-phase-normal-bound}
+\end{equation}
+The physical normal response reconstructed in the raw-compatible chart is
+\(x=T_\sigma^{\rm rc}a+y\).
+
+The small operator in this inverse is estimated in the
+weighted-speed/action norm.  If
+\begin{equation}
+ E_\delta=\varepsilon\delta^{-2\vartheta},\qquad
+ \eta_{\mathrm{pa},\delta}
+ =M_\delta+\frac{\rho_\delta}{\lambda_\delta}
+   +\frac{E_\delta}{\lambda_\delta}
+   +M_\delta\frac{E_\delta}{\rho_\delta},        \label{eq:prefix-action-schur-number}
+\end{equation}
+then
+\begin{equation}
+ \|\mathfrak A_\sigma^{\rm rc}a\|_{\mathsf H_{\sigma,\mathrm{pa}}}
+ \le C_\varkappa\eta_{\mathrm{pa},\delta}
+       \|a\|_{\mathsf A_{\sigma,\mathrm{pa}}},\qquad
+ \eta_{\mathrm{pa},\delta}\longrightarrow0.    \label{eq:prefix-action-phase-column-smallness}
+\end{equation}
+Thus the theorem controls every causal prefix, not merely the total
+terminal moment.  It is still a fixed-reference, order-zero theorem.  It
+does not define a moving-duration normal column, provide a strong terminal
+history, or close the physical endpoint Schur complement.
+\end{theorem}
+
+\begin{proposition}[Unavoidable \(S_\delta^2\) loss for rough normal data]
+\label[proposition]{prop:rough-normal-prefix-action-obstruction}
+The old rough norm cannot replace the weighted-speed/action graph norm in
+\cref{eq:prefix-action-normal-data-norm} while retaining a uniform
+\(\rho_\delta\)-normalized causal phase bound.  On the attracting branch
+there are data
+\(f_\delta\in\widetilde{\mathsf Y}_{a,\mathrm{pa}}\)
+(and hence in \(\widetilde{\mathsf Y}_{a,0}\)) such that
+\begin{equation}
+ \|f_\delta\|_{\widetilde{\mathsf Y}_{a,0}}\le C,\qquad
+ \|\mathscr Q_af_\delta\|_{\mathsf H_{a,\mathrm{pa}}}
+ \ge c\frac{R_\delta^2}{\rho_\delta}
+ =2\alpha c\varkappa^2S_\delta^2.               \label{eq:rough-normal-prefix-action-loss}
+\end{equation}
+For each fixed \(\varkappa>0\), the left-hand side in the second inequality
+is also at most \(C_\varkappa S_\delta^2\).
+For the corresponding solution of
+\begin{equation}
+ \mathscr L_{a,\mathrm{ent}}(y_\delta,a_\delta)
+ =(f_\delta,0,0),                                \label{eq:rough-normal-prefix-action-test}
+\end{equation}
+one has
+\begin{equation}
+ c_\varkappa S_\delta^2
+ \le\|a_\delta\|_{\mathsf A_{a,\mathrm{pa}}}
+ \le C_\varkappa S_\delta^2.                    \label{eq:rough-normal-causal-phase-loss}
+\end{equation}
+Consequently there is no dimension- and \(\delta\)-uniform inverse from
+the old unrestricted rough normal range
+\(\widetilde{\mathsf Y}_{\sigma,0}\) into the causal-entry phase space.
+The leading obstruction is already present in the no-delay normal block.
+The delayed raw-compatible phase return is an \(o(1)\) correction in the
+displayed graph norm and cannot cancel it.  A later terminal theorem must
+therefore use \(\lambda_\delta\)-scaled bulk data, separately estimated
+localized endpoint columns, and a corresponding hybrid action graph space.
+\end{proposition}
+
 For the fold-side anchored formulation, define
 \begin{align}
  \mathsf A_{\phi,\mathrm{rel}}^1(I_\sigma)

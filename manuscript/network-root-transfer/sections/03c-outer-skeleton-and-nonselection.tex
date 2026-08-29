@@ -3489,6 +3489,274 @@ proves all asserted order-zero conclusions and no moving-duration or
 higher-jet statement.
 \end{proof}
 
+\begin{proof}[Proof of \cref{lem:causal-entry-prefix-action-core}]
+The formula in \cref{eq:causal-entry-prefix-action-inverse} is forced by
+the differential row and the entry value.  The common speed bounds give
+\[
+ \frac1{\lambda_\delta}
+ \sup\frac{|a'|}{m_\delta}
+ \le C\frac1{\lambda_\delta}
+ \sup\frac{|k|}{m_\delta},
+ \qquad
+ \frac{\|a\|_\infty}{\rho_\delta}
+ \le\frac{|b_0|}{\rho_\delta}
+   +\frac{\|\mathcal P_\sigma k\|_\infty}{\rho_\delta}.
+\]
+This proves the inverse estimate and uniqueness.  In the other direction,
+\begin{equation*}
+ \mathcal P_\sigma(q_0^2a')(r)=a(r)-a(e_{\sigma,0}),
+\end{equation*}
+so the prefix part of the data norm is at most
+\(2\|a\|_\infty/\rho_\delta\); the pointwise part follows again from
+the two-sided bounds on \(q_0\).  Completeness follows either from the
+explicit inverse or directly from the weighted uniform norms.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:diagonal-causal-entry-prefix-action-inverse}]
+We first estimate the returned phase column in the new norm.  On either
+receding interval,
+\begin{align}
+ \int_{I_\sigma}m_\delta(r)\,\dd r
+   +\sup_{I_\sigma}|r|m_\delta(r)&\le C M_\delta,
+                                                        \label{eq:proof-prefix-action-weight-integrals}\\
+ \frac{\lambda_\delta M_\delta}{\rho_\delta}
+ &\le C_\varkappa.                              \label{eq:proof-prefix-action-scale-ratio}
+\end{align}
+Indeed, the first estimate is the calculation already used in
+\cref{eq:structured-phase-action-bound}.  Expanding the second left-hand
+side with
+\(R_\delta^2=\varkappa^2\delta S_\delta^3\) and
+\(\rho_\delta=\delta S_\delta/(2\alpha)\) gives a bounded multiple of
+\begin{equation*}
+ \varkappa^2+S_\delta^{-4}
+ +\varkappa^3\sqrt\delta S_\delta^{7/2}
+ +\varkappa\sqrt\delta S_\delta^{-1/2}.
+\end{equation*}
+
+If \(A=\|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}\), then
+\cref{eq:proof-prefix-action-weight-integrals} gives
+\begin{equation}
+ \|a\|_{\mathsf A_\phi^1(I_\sigma)}
+ \le C\{\rho_\delta+\lambda_\delta M_\delta\}A
+ \le C_\varkappa\rho_\delta A.                 \label{eq:proof-prefix-action-A1-embedding}
+\end{equation}
+By \cref{eq:structured-phase-speed-bound}, the formal returned action
+satisfies
+\begin{equation}
+ |\mathfrak A_\sigma^{\rm form}a(r)|
+ \le C m_\delta(r)
+       \|a\|_{\mathsf A_\phi^1(I_\sigma)}.       \label{eq:proof-prefix-action-formal-pointwise}
+\end{equation}
+Consequently its pointwise part in
+\(\mathsf H_{\sigma,\mathrm{pa}}\) is at most
+\(C_\varkappa(\rho_\delta/\lambda_\delta+M_\delta)A\),
+and its prefix part is at most
+\begin{equation*}
+ C\frac{M_\delta}{\rho_\delta}
+    \{\rho_\delta+\lambda_\delta M_\delta\}A
+ \le C_\varkappa M_\delta A.
+\end{equation*}
+
+It remains to include the raw-compatible entry collar.  Apply
+\cref{eq:normal-phase-pointwise-Q} to the response in
+\cref{lem:raw-phase-boundary-column-assembly}.  Its normalized state size
+is \(O(|c|)\), and the frozen-cap factor is at most
+\(\delta^{-2\vartheta}\).  Hence, with
+\(E_\delta=\varepsilon\delta^{-2\vartheta}\),
+\begin{equation}
+ |Q_{\sigma,\rm col}(r)c|
+ \le C\{|r|+E_\delta\}|c|.                      \label{eq:proof-prefix-action-collar-pointwise}
+\end{equation}
+For \(c=a(e_{\sigma,0})\), one has \(|c|\le\rho_\delta A\), while
+\(m_\delta(r)\ge|r|\ge\rho_\delta\).  Therefore the collar contribution
+to the prefix-action norm is at most
+\begin{equation*}
+ C\left\{
+   \frac{\rho_\delta+E_\delta}{\lambda_\delta}
+   +M_\delta\left(1+\frac{E_\delta}{\rho_\delta}\right)
+   \right\}A.
+\end{equation*}
+Together with the formal estimate, this proves
+\cref{eq:prefix-action-phase-column-smallness}.
+The four terms in \(\eta_{\mathrm{pa},\delta}\) tend to zero because
+\begin{align*}
+ \frac{\rho_\delta}{\lambda_\delta}
+ &\le\delta S_\delta^3/(2\alpha),&
+ \frac{E_\delta}{\lambda_\delta}
+ &\le\delta^{2-2\vartheta}S_\delta^2,\\
+ M_\delta&=O_\varkappa(\delta S_\delta^3),&
+ M_\delta\frac{E_\delta}{\rho_\delta}
+ &=O_\varkappa(M_\delta\delta^{1-2\vartheta}/S_\delta).
+\end{align*}
+
+By the lemma, the norm of
+\(\mathscr B_{\sigma,\mathrm{ent}}^{-1}\) is uniform.  Thus
+\begin{equation}
+ \mathscr S_{\sigma,\mathrm{ent}}^{\rm rc}
+ =\mathscr B_{\sigma,\mathrm{ent}}
+       -(\mathfrak A_\sigma^{\rm rc},0)          \label{eq:proof-causal-entry-phase-Schur}
+\end{equation}
+is invertible by a Neumann series after decreasing \(\delta\), and its
+inverse norm is uniform.
+
+We verify the graph assertion rather than invoking it formally.  For each
+fixed \(\delta\), \cref{eq:normal-phase-pointwise-Q} and the old normal
+inverse show that
+\[
+ \mathscr Q_\sigma=\mathfrak D_\sigma G_\sigma:
+ \widetilde{\mathsf Y}_{\sigma,0}\longrightarrow C(I_\sigma)
+\]
+is continuous.  The embedding
+\(\mathsf H_{\sigma,\mathrm{pa}}\hookrightarrow C(I_\sigma)\) is also
+continuous for fixed \(\delta\).  If \(f_n\) is Cauchy in the graph norm,
+then \(f_n\to f\) in \(\widetilde{\mathsf Y}_{\sigma,0}\) and
+\(\mathscr Q_\sigma f_n\to Q\) in
+\(\mathsf H_{\sigma,\mathrm{pa}}\).  Both convergences hold in \(C(I_\sigma)\),
+so \(Q=\mathscr Q_\sigma f\).  Thus
+\(\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}\) is Banach.
+
+The old fixed-normal uniqueness gives both
+\[
+ \mathscr N_\sigma G_\sigma=I,\qquad
+ G_\sigma\mathscr N_\sigma=I
+       \quad\hbox{on }\mathcal D(\mathscr N_\sigma).
+\]
+Consequently \(G_\sigma\) restricts to an isomorphism from
+\(\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}\) onto
+\(\mathcal D_{\mathrm{pa}}(\mathscr N_\sigma)\), the latter is Banach, and
+\begin{align*}
+ \|G_\sigma f\|_{\mathcal D_{\mathrm{pa}}(\mathscr N_\sigma)}
+ &\le C\|f\|_{\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}},\\
+ \|\mathscr N_\sigma y\|_{\widetilde{\mathsf Y}_{\sigma,\mathrm{pa}}}
+ &\le C\|y\|_{\mathcal D_{\mathrm{pa}}(\mathscr N_\sigma)}.
+\end{align*}
+The second identity also uses
+\(\mathscr Q_\sigma\mathscr N_\sigma y=\mathfrak D_\sigma y\).
+Together with the forward bound in
+\cref{lem:causal-entry-prefix-action-core} and
+\cref{eq:prefix-action-phase-column-smallness}, these inequalities show
+that \(\mathscr L_{\sigma,\mathrm{ent}}\) is bounded in both graph
+variables.
+\begin{equation}
+ \|\mathscr L_{\sigma,\mathrm{ent}}(y,a)\|
+ \le C_\varkappa\left\{
+   \|y\|_{\mathcal D_{\mathrm{pa}}(\mathscr N_\sigma)}
+      +\|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}\right\},       \label{eq:proof-causal-entry-forward-bound}
+\end{equation}
+where the range carries the product norm specified in the theorem.
+
+Its inverse is explicitly
+\begin{align}
+ y&=G_\sigma f,\\
+ a&=(\mathscr S_{\sigma,\mathrm{ent}}^{\rm rc})^{-1}
+       \bigl(k+\mathfrak D_\sigma y,b_0\bigr).   \label{eq:proof-causal-entry-phase-normal-inverse}
+\end{align}
+The definitions of the two graph norms and the uniform scalar inverse give
+\cref{eq:causal-entry-phase-normal-bound}.  Conversely, every solution
+must have the displayed \(y\) and then the displayed \(a\), proving
+uniqueness and surjectivity.  Finally,
+\(x=T_\sigma^{\rm rc}a+y\) is exactly the raw-compatible reconstruction
+from \cref{eq:raw-compatible-schur-inverse}.  No terminal row has been
+used in this argument, which proves the stated stop line.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{prop:rough-normal-prefix-action-obstruction}]
+Let \(\bar r_a\) be the attracting reduced path and take the hybrid normal
+direction
+\begin{equation}
+ \gamma_\delta=0,\qquad Z_\delta=0,\qquad
+ p_\delta(s)=\varepsilon\bar r_a(s).              \label{eq:proof-rough-action-test-direction}
+\end{equation}
+The delay row vanishes, and the algebraic equation in
+\cref{eq:fixed-phase-normal-block} gives
+\begin{equation}
+ Q_\delta(r)=r.                                   \label{eq:proof-rough-action-test-speed}
+\end{equation}
+Choose the source package to be the exact residual of this direction:
+\begin{align}
+ b_{a,\delta}&=\varepsilon R_\delta,
+ &F_\delta&=z_{0,N}'p_\delta,\\
+ H_\delta&=\delta(p_\delta)_s-w_{0,N}'p_\delta
+             -\varepsilon^2\mathfrak d_NQ_\delta,
+ &f_\delta&=(0,b_{a,\delta},F_\delta,H_\delta).
+                                                        \label{eq:proof-rough-action-test-data}
+\end{align}
+Then \(\mathscr N_ay_\delta=f_\delta\) exactly.  Since
+\((p_\delta)_s=\varepsilon\delta q_0(\bar r_a)\), the coefficient bounds
+in \cref{eq:principal-green-coefficients,eq:principal-green-q-bounds,%
+eq:fixed-phase-coefficient-bounds}
+give
+\begin{equation*}
+ \|F_\delta(r)\|_N\le C\varepsilon r^2,\qquad
+ |H_\delta(r)|\le C\{\varepsilon r^2+\varepsilon^2\}.
+\end{equation*}
+Because \(\varepsilon/\rho_\delta^2=O(S_\delta^{-2})\), the definition
+in \cref{eq:raw-schur-normal-data-norm} yields
+\begin{equation}
+ \|f_\delta\|_{\widetilde{\mathsf Y}_{a,0}}
+ \le C\left(1+R_\delta^2+\frac{\varepsilon}{\rho_\delta^2}\right)
+ \le C.                                          \label{eq:proof-rough-action-old-data-bound}
+\end{equation}
+Uniqueness of the fixed normal inverse implies
+\(G_af_\delta=y_\delta\), so
+\(\mathscr Q_af_\delta=Q_\delta\).
+
+At the inner endpoint, the speed bounds give
+\begin{align}
+ |(\mathcal P_aQ_\delta)(\rho_\delta)|
+ &=\left|\int_{R_\delta}^{\rho_\delta}
+                 \frac{r}{q_0(r)^2}\,\dd r\right|\\
+ &\ge\frac{R_\delta^2-\rho_\delta^2}{2q_+^2}
+ \ge cR_\delta^2                              \label{eq:proof-rough-action-prefix-lower}
+\end{align}
+for all sufficiently small \(\delta\), because
+\(\rho_\delta/R_\delta\to0\).  This proves
+\cref{eq:rough-normal-prefix-action-loss} and the exact identity
+\(R_\delta^2/\rho_\delta=2\alpha\varkappa^2S_\delta^2\).
+Conversely,
+\begin{equation*}
+ \frac1{\lambda_\delta}\sup\frac{|Q_\delta|}{m_\delta}
+ \le\frac1{\lambda_\delta}\le S_\delta^2,\qquad
+ \frac{\|\mathcal P_aQ_\delta\|_\infty}{\rho_\delta}
+ \le C\frac{R_\delta^2}{\rho_\delta}
+ \le C_\varkappa S_\delta^2.
+\end{equation*}
+This gives the asserted matching upper bound for
+\(\|\mathscr Q_af_\delta\|_{\mathsf H_{a,\mathrm{pa}}}\).
+
+For the coupled entry solution, the second and third rows of
+\cref{eq:rough-normal-prefix-action-test} read
+\begin{equation*}
+ q_0^2a_\delta'=Q_\delta+
+             \mathfrak A_a^{\rm rc}a_\delta,\qquad
+ a_\delta(R_\delta)=0.
+\end{equation*}
+Integrate to \(\rho_\delta\), use
+\cref{eq:proof-rough-action-prefix-lower}, and then apply
+\cref{eq:prefix-action-phase-column-smallness}.  One obtains
+\begin{equation*}
+ cR_\delta^2
+ \le \rho_\delta\|a_\delta\|_{\mathsf A_{a,\mathrm{pa}}}
+    +C_\varkappa\rho_\delta\eta_{\mathrm{pa},\delta}
+       \|a_\delta\|_{\mathsf A_{a,\mathrm{pa}}}.
+\end{equation*}
+Since \(\eta_{\mathrm{pa},\delta}\to0\), this is the lower bound in
+\cref{eq:rough-normal-causal-phase-loss}.  On the other hand,
+\[
+ \|f_\delta\|_{\widetilde{\mathsf Y}_{a,\mathrm{pa}}}
+ \le C_\varkappa\{1+S_\delta^2\},
+\]
+so \cref{eq:causal-entry-phase-normal-bound} gives the matching upper
+bound.  The leading witness has
+\(\mathscr D_N^{\rm lin}[0,0]=0\), so its normal-block obstruction is
+present without a delayed edge.  The delay-dependent returned phase and
+collar columns remain in \(\mathfrak A_a^{\rm rc}a_\delta\), but
+\cref{eq:prefix-action-phase-column-smallness} makes them an \(o(1)\)
+relative correction and therefore unable to cancel the leading action.
+\end{proof}
+
 \begin{proof}[Proof of
 \cref{lem:inner-anchored-nonlinear-phase-chart}]
 For the scalar autonomous flow,
