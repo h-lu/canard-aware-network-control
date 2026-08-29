@@ -61,7 +61,14 @@ RFDE.  The canonical zero is now extended to a nonempty,
 infinite-dimensional raw-compatible gauge ball on both branches, with
 uniform slice uniqueness, first gauge jet, fixed-graph C1/Lipschitz
 dependence, inverse persistence, strict speed sign, and exact raw-RFDE
-reconstruction.  Every sufficiently deep generated subsegment of every
+reconstruction.  Separately, on the admissible joint diagonal wedge, the
+speed-projected affine border and exact nonlinear
+bulk/boundary/terminal residual now yield a unique nearby fixed-envelope
+forward segment in the stated affine causal star ball, with strict physical
+speed sign and zero repelling terminal speed correction.  Its triangular
+slack is only a terminal phase mismatch: this does not construct a
+moving-duration or original-coordinate endpoint.
+Every sufficiently deep generated subsegment of every
 gauge zero is an exact pointwise physical-coordinate tracker with the uncut
 quotient and Volterra realization.  On a common generated buffer, the fixed
 interior sections `r=+/-r_out/2` now have unique raw-gauge `C1` hits; the
@@ -72,8 +79,8 @@ time-`C_delta^3` strong generated buffer, `C1` in the gauge with
 dimension-uniform annular bounds; it supplies the previously missing strong
 input to the nonlinear terminal trace chart, with the safe
 `O(delta^(-2))` raw recut loss.  This is not a `C2`-in-gauge result, a
-normalized hybrid terminal inverse, or a recutting of the original physical
-branch endpoints.  On this actual generated buffer, a new RFDE-specific
+moving-duration hybrid terminal inverse, or a recutting of the original
+physical branch endpoints.  On this actual generated buffer, a new RFDE-specific
 finite-window Lyapunov--Perron estimate now gives attracting one-sided and
 repelling stable-left/one-dimensional-unstable-right quotient flushing with
 factor `exp{-c S_delta log(1/delta)}`.  The exact event reconstruction then

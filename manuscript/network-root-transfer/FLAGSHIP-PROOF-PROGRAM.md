@@ -40,10 +40,13 @@ controls those recorded prefixes; their independent necessity is not
 claimed.  The exact no-delay normal direction \(p=\varepsilon r\) proves that the
 old unrestricted rough norm necessarily loses
 \(R_\delta^2/\rho_\delta\asymp S_\delta^2\); hence it cannot support a
-uniform normalized terminal theorem.  The moving-duration normal column,
-source-split strong-terminal inverse, and full terminal Schur factor remain
-open, including proof that each generated bulk or localized column belongs
-to the appropriate action class.
+uniform normalized terminal theorem.  The three-summand causal-entry inverse
+and the fixed-envelope nonlinear bulk/boundary/terminal membership and
+contraction are now closed on the admissible joint wedge.  The resulting
+zero has a strict speed sign and zero repelling terminal speed correction,
+but its phase slack is not a moving duration.  The second terminal slow jet
+and history shear, moving-duration normal column, original-endpoint family,
+and full physical terminal Schur factor remain open.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -488,13 +491,16 @@ not the conormal of an independently defined physical maximal-canard locus.
       prefix-action graph norm and the exact no-delay obstruction showing
       that old unrestricted rough data incur the divergent loss
       $R_\delta^2/\rho_\delta=2\alpha\varkappa^2S_\delta^2$.
+- [x] On the joint admissible wedge, prove the three-summand causal-entry
+      inverse and the exact fixed-envelope nonlinear zero, including hard
+      bulk/boundary/terminal membership, anisotropic contraction, strict
+      speed sign, and vanishing repelling terminal speed correction.
 - [ ] Prove the moving-duration phase--normal terminal theorem and its
       action-weighted parameter/gauge jets at the original endpoints.  This
-      requires a higher-order diagonal calculus, a hybrid arbitrary-source
-      strong-terminal/weak-middle inverse, a structured/localized source
-      split, raw-compatible endpoint histories, and the complete normal
-      terminal column before the terminal-to-terminal nonlinear outer
-      tracker.
+      requires the second terminal slow jet, an original-endpoint extension
+      of the proved split-range architecture, raw-compatible endpoint
+      histories, and the complete duration column before the
+      terminal-to-terminal nonlinear outer tracker.
 - [ ] Prove the global action-weighted phase-quotiented normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -527,8 +533,10 @@ is now diagonal-uniform, and its causal-entry block is uniformly invertible
 in the prefix-action graph norm.  The explicit $p=\varepsilon r$ direction
 proves that an unscaled arbitrary rough bulk cannot be extended to the
 normalized terminal row; structured bulk and localized endpoint columns
-must be estimated separately.  The next valid construction is therefore a
-moving-duration source-split strong-terminal extension and complete terminal
+must be estimated separately.  The fixed-envelope three-summand inverse and
+nonlinear zero are now closed on the admissible wedge.  The next valid
+construction is therefore the second terminal slow jet, followed by a
+moving-duration extension of that split-range core and its complete duration
 column, not transport of the interior chart.  The fixed-reference $C^2$
 old-history assembler, including its endpoint/collar second jet and normalized
 quadratic remainder, is now closed.  Its exact fixed-section assembly with the
@@ -560,7 +568,7 @@ moving-event residual/inverse, terminal-to-terminal nonlinear tracker
 existence, global action-weighted quotient roughness, and the remaining
 parts of G1 stay open.  The generic
 nonselection example is not a model-specific impossibility theorem.
-This zeroth-order border does not close Issue #32 and does not
+This fixed-envelope closure does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.
 
 ### Editorial simulation snapshot

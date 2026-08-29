@@ -56,22 +56,23 @@ terminal buffer.  The natural terminal source norm uses
 vanishing factor `m_(sigma,T)`.  Combining this summand with the terminal-free
 bulk and zero-source boundary columns gives a unique three-summand
 causal-entry phase--normal isomorphism.  This closes the linear range needed
-for a later nonlinear terminal residual; it does not yet prove that residual
-belongs to the range.
+for the fixed-envelope nonlinear terminal residual closed below.
 The repelling future scalar row can now be replaced uniformly by the exact
 speed-aligned row `epsilon Q_e`.  Its pure terminal-column coefficient is
 `1+O(R_delta^2+epsilon/R_delta+E_(r,T))`, hence is bounded away from zero.
-At any nonlinear zero of this row one has exactly `Q_e=0`,
-`q_*,e/q_0(e)=1`, `K_p=R_q(e)=O(epsilon)`, and `kappa_p=o(1)`.  This selects
-the future Green coordinate and removes the scalar-shear hypothesis
-*conditional on existence of the nonlinear zero*; it does not construct that
-zero or supply the terminal voltage second jet needed for `K_Z`.
+For a supplied original-endpoint reference satisfying the proposition's
+terminal normalization, a nonlinear zero gives exactly `Q_e=0`,
+`q_*,e/q_0(e)=1`, `K_p=R_q(e)=O(epsilon)`, and `kappa_p=o(1)`.  The
+terminal phase slack of the fixed-envelope nonlinear zero constructed below
+is not shown to vanish, so those original-endpoint `K_p` consequences do
+not transfer to it before the moving-duration problem is solved.
 The terminal-free bulk Green operator has now also been extended directly
 to piecewise-`L^\infty` sources, so a hard bulk/terminal cut of the affine
 residual is an exact a.e. decomposition rather than a false continuous-source
 or density argument.  After the speed-row replacement, the phase column is
 projected through the terminal scalar Green column so that its **total**
-linear endpoint speed vanishes exactly; this repairs the phase-to-speed
+normal-plus-phase linearized endpoint speed correction vanishes exactly;
+this repairs the phase-to-speed
 finite-row coupling which a normal-only row replacement would miss.  The
 resulting fixed-reference phase--normal--event-slack border is a uniform
 isomorphism and accepts the exact affine residual.  The slack is reserved for
@@ -79,15 +80,24 @@ a prospective duration correction but is not yet a moving-duration column.
 Its affine predictor has normal size `O(lambda_delta)`, phase/slack size
 `O(lambda_delta + lambda_delta M_delta/rho_delta
    + R_delta eta_bd,delta + R_delta m_(sigma,T))`, and exact zero total
-linear repelling endpoint speed.  The explicit budget has
-`limsup_(delta->0) Omega_aff=O(kappa^2)`, but the current linear constants
-may depend on fixed `kappa`; a uniform two-parameter predictor smallness
-statement remains part of the nonlinear contraction gate.  This is an affine
-predictor, not a nonlinear RFDE zero or a moving endpoint family.  The exact
-scalar endpoint shear is
-`K_p=R_q+(q_0/q_*)w_0' Q_e`; the raw-compatible local outer-endpoint germ has
-`Q_e=0`, `K_p=R_q=O(epsilon)`, and `kappa_p=o(1)`.  Under the explicit
-condition `kappa_p=O(1)`, the scalar event-aligned core is uniformly
+normal-plus-phase linearized repelling endpoint speed correction.  The joint audit replaces the impossible
+fixed-`delta` rectangle in `0<kappa<=kappa_0` by the admissible wedge
+`delta/R_delta^2<=wedge_*`; there the constants are uniform and
+`Omega_aff<=C(kappa^2+S_delta^(-2)+sqrt(delta)S_delta^(7/2))`.
+In a predictor-centered anisotropic correction norm, the exact nonlinear
+bulk/boundary/terminal residual has a contractive inverse-preconditioned
+fixed-point map.  This gives a fixed-envelope RFDE zero, unique nearby in
+the stated affine causal star ball, with strict physical speed sign and
+repelling terminal correction
+`Q_r^(nl,flat)(x_r^fe,a_r^fe)(e_(r,1))=0`.
+Its slack is only `tau=-a(e_1)`, so it is not a moving endpoint family.
+Separately, for a supplied original-endpoint germ satisfying the selector
+normalization, the exact scalar endpoint shear is
+`K_p=R_q+(q_0/q_*)w_0' Q_e`; such a germ with `Q_e=0` has
+`K_p=R_q=O(epsilon)` and `kappa_p=o(1)`.  The fixed-envelope zero does not
+trigger this identity because its physical terminal coordinate is not shown
+to equal the original endpoint.
+Under the explicit condition `kappa_p=O(1)`, the scalar event-aligned core is uniformly
 invertible by a rank-one formula.  A free terminal-history interface absorbs
 the history shear `K_Z`, which never enters the scalar denominator;
 uniformity requires the separately stated slow endpoint jets.  These are
@@ -95,14 +105,14 @@ linear and conditional endpoint results.  An actual forward endpoint RFDE
 reference satisfying the `K_p` and `K_Z` jet gates, the moving-duration
 nonlinear family, and the physical root remain open.  The
 fixed-envelope duration-selector algebra on a supplied reference is now
-closed: its raw terminal
-column factors exactly through the event row, an explicit range shear
+closed: its raw terminal column factors exactly through the event row, an explicit range shear
 annihilates that column, and the scalar coefficient is the supplied
 reference terminal-speed ratio.  It becomes the structured physical speed
 ratio only under the corresponding terminal-germ membership.  Thus a
 standalone `C_ter` is chart dependent.  The remaining gate is construction
-of the forward endpoint reference which verifies the conditional shear and
-speed hypotheses, not a coordinate-free estimate of `C_ter`.**
+of the forward original-endpoint reference which verifies the conditional
+history shear and moving-duration hypotheses, not a coordinate-free estimate
+of `C_ter`.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -412,8 +422,11 @@ scalar row.
 At the linear level, the proved operator
 `L_ent^(0,pa)` contains the order-zero fixed-reference normal equations,
 raw-compatible collar, and causal-entry phase row, but not the terminal
-event row.  It is uniform in the prefix-action graph norm.  The target
-`L_ent^hyb` must extend it to the rough-middle/strong-terminal source split.
+event row.  It is uniform in the prefix-action graph norm.  The fixed-envelope
+three-summand causal-entry extension to terminal-free bulk, localized
+boundary columns, and terminal-supported sources is now proved.  The open
+target is its moving-duration/original-endpoint extension, including the
+complete terminal duration column and the required second slow jet.
 The endpoint-centered fixed-envelope selector algebra on a supplied
 reference is now fixed.  Before row alignment its raw duration column is
 chart dependent and has only the
@@ -447,9 +460,10 @@ factored through a free interface variable; `K_Z` is an observation shear,
 not a backward RFDE boundary condition.  What remains is model-specific and
 nonlinear: construct an actual endpoint strong buffer, prove its scaled
 `K_p` and selected-window `K_Z` bounds and structured speed ratio, establish
-closure of the nonlinear residual in the split range, and then obtain the
-rectangular `J_phys` endpoint family.  The conditional linear theorem does
-not supply any of those objects.
+closure of the moving-duration/original-endpoint nonlinear residual in the
+already proved split-range architecture, and then obtain the rectangular
+`J_phys` endpoint family.  The conditional linear theorem does not supply
+any of those objects.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -1340,22 +1354,24 @@ gauges.
       including the explicit returned-action ledger and the
       `O(m_(sigma,T))` pure-terminal event return.
 - [x] Speed-aligned repelling terminal scalar row: the future Green column
-      has coefficient `1+o(1)`, and every eventual nonlinear zero of
-      `epsilon Q_e` has exact unit speed ratio and
-      `K_p=R_q=O(epsilon)`.  Existence of that nonlinear zero is not included.
+      has coefficient `1+o(1)`; on a supplied original-endpoint reference,
+      a zero of `epsilon Q_e` has exact unit speed ratio and
+      `K_p=R_q=O(epsilon)`.
 - [x] Direct piecewise-`L^\infty` extension of the terminal-free bulk
       Green operator, closing the exact a.e. hard split of the affine
       residual without a false density argument.
 - [x] Speed-projected phase column, full fixed-reference
       phase--normal--event-slack bordered inverse, and exact affine corrector.
       The repelling phase column and the normal response have zero total
-      linear endpoint speed.  Its explicit affine budget has
-      `limsup_(delta->0) Omega_aff=O(kappa^2)`; this is not yet a
-      `kappa`-uniform predictor smallness theorem.
-- [ ] Fixed-envelope nonlinear three-summand residual and contraction,
+      normal-plus-phase linearized endpoint speed correction.
+- [x] Joint admissible-wedge uniformity and fixed-envelope nonlinear
+      three-summand residual/contraction,
       including exact nonlinear split-range membership, the nonlinear
-      terminal remainder, `kappa`-uniform predictor/contraction control,
-      and the speed-aligned endpoint zero.
+      terminal remainder, admissible-wedge-uniform predictor/contraction
+      control, strict speed sign, and
+      `Q_r^(nl,flat)(x_r^fe,a_r^fe)(e_(r,1))=0` as a repelling terminal speed
+      correction.  The event slack records a phase mismatch; it is not a
+      moving-duration or original-endpoint zero.
 - [ ] Second-order terminal Green/slow-jet theorem and the selected-window
       `Z_s,Z_ss` bounds required for the uniform `K_Z` gate.
 - [ ] Actual moving-duration endpoint RFDE family and the original-endpoint
@@ -1394,10 +1410,12 @@ propagator, together with the direct terminal-free
 square core, terminal-supported `L^\infty` Green extension, three-summand
 linear core, piecewise-`L^\infty` terminal-free extension, speed-aligned
 future scalar row, speed-projected phase column, fixed-reference affine
-border/corrector, and conditional scalar event-aligned inverse, are also
-proved.  The scalar shear is automatically
-small at any eventual speed-aligned nonlinear zero; that zero and the
-history shear remain open until the nonlinear terminal residual and
-second-order terminal slow jet are constructed.  None of these constructs the endpoint RFDE
+border/corrector, joint admissible-wedge kinetic bound, fixed-envelope
+nonlinear three-summand zero, and conditional scalar event-aligned inverse,
+are also proved.  The fixed-envelope zero has vanishing repelling terminal
+speed correction.  Its phase slack is not shown to vanish, and the
+original-endpoint normalization is not established, so the scalar-shear
+identity cannot be invoked.  The history shear and moving-duration endpoint remain open
+until the second-order terminal slow jet is constructed.  None of these constructs the endpoint RFDE
 family, compares different fixed-reference charts, or compares the full
 reparameterized trackers on a common chart.

@@ -13,7 +13,14 @@ scalar column is retained and proved not to flush.  The
 terminal-free/zero-source source-split square core is now closed, as are the
 exact scalar shear identity, raw-collar anchor, conditional rank-one
 event-aligned inverse under `kappa_p=O(1)`, and free history-interface
-factorization with its explicit `K_Z` slow-derivative gate.  A forward
+factorization with its explicit `K_Z` slow-derivative gate.  On the joint
+admissible wedge `delta/R_delta^2<=wedge_*`, the speed-projected affine border
+and the exact bulk/boundary/terminal nonlinear residual now give a unique
+nearby fixed-envelope forward zero in the stated affine causal star ball,
+with strict physical speed sign and
+`Q_r^(nl,flat)(x_r^fe,a_r^fe)(e_(r,1))=0`.  This is only the vanishing of
+the repelling terminal speed correction.  Its slack is only a terminal phase
+mismatch; it is not an original-coordinate or moving-duration endpoint.  A forward
 endpoint reference verifying those hypotheses, the moving-duration nonlinear
 RFDE column, original endpoint histories, repelling history sheet, physical
 gap/root, and selected-to-physical identification remain open.**
@@ -359,14 +366,16 @@ Do not:
       data, project the phase column into the exact endpoint-speed kernel,
       and prove the full fixed-reference phase--normal--event-slack bordered
       inverse with its affine residual corrector and explicit
-      `limsup_(delta->0) Omega_aff=O(kappa^2)` data budget.  This does not
-      yet assert `kappa`-uniform predictor smallness or construct the actual
-      moving-duration column.
+      `limsup_(delta->0) Omega_aff=O(kappa^2)` data budget.
+- [x] Replace the impossible fixed-`delta` `kappa` rectangle by the joint
+      admissible wedge, prove the causal-slice kinetic estimate, and close
+      the exact fixed-envelope nonlinear bulk/boundary/terminal contraction.
+      The resulting zero has strict physical speed sign and
+      `Q_r^(nl,flat)(x_r^fe,a_r^fe)(e_(r,1))=0` only as a terminal speed
+      correction; it is not an original endpoint.
 - [ ] Construct a forward endpoint RFDE reference satisfying the scalar and
-      history shear gates, close the nonlinear three-summand and
-      moving-duration split-range problems with the missing `kappa`-uniform
-      contraction control, and obtain raw-compatible original-endpoint
-      `J_phys` histories.
+      history shear gates, close the moving-duration split-range problem,
+      and obtain raw-compatible original-endpoint `J_phys` histories.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.
