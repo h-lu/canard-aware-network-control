@@ -76,7 +76,8 @@ prop:exact-resource-gauge-quotient} now provide the exact uncut invariance
 equation, transported time-tangent quotient, and a resource-gauge
 triangularization conjugate to an ordinary voltage-history RFDE by an
 \(O(S_\delta^{-1})\) Volterra operator.  They do not prove tracker existence,
-the required relative parameter jets, or the quotient dichotomy.
+the required relative parameter jets, or the global action-weighted quotient
+dichotomy with parameter jets.
 \Cref{prop:fold-time-tracker-normal-form} nevertheless gives an exactly
 equivalent fixed-delay fold-time system, while
 \cref{prop:fixed-phase-green-collar-buffer} proves its fixed-parameter
@@ -191,12 +192,21 @@ history evaluation.  The common-buffer upgrade in
 \cref{prop:raw-gauge-strong-hit-buffer} is time-\(C_\delta^3\), \(C^1\) in
 the raw gauge, dimension uniform in the natural annular scales, and supplies
 the strong input for the terminal-relative trace chart.  Its moving recut
-has the safe \(O(\delta^{-2})\) translation loss.  This still does not give
-a second gauge derivative, the normalized phase-to-normal Schur smallness,
-or a recut at either original physical branch endpoint.  Nonlinear
-variational flushing, flat forgetting, parameter jets, the
-terminal-to-terminal moving-event family, a past-complete history, the
-cross-branch handoff, and a physical connection root remain open.
+has the safe \(O(\delta^{-2})\) translation loss.  On that supplied buffer,
+\cref{prop:physical-hit-quotient-flushing} closes a finite-window
+current-Green/delay Lyapunov--Perron estimate for the exact resource-gauge
+quotient.  The resulting factor
+\(\exp\{-cS_\delta\log(1/\delta)\}\), together with the exact complete-event
+reconstruction, proves in
+\cref{thm:physical-hit-first-order-flatness} that each fixed physical-hit
+history is independent of the raw gauge modulo \(O(\delta^\infty)\) in the
+natural \(\varepsilon\)-normalized event norm.  This is local
+fixed-parameter, first-order forgetting; it does not give a second gauge
+derivative, action-weighted parameter jets, the normalized terminal
+phase-to-normal Schur inverse, or a recut at either original physical branch
+endpoint.  The terminal-to-terminal moving-event family, a past-complete
+history, the cross-branch handoff, and a physical connection root remain
+open.
 Moreover,
 \cref{prop:backward-asymptotic-nonselection} shows that convergence in an
 unnormalized history norm, even with one phase row, does not by itself select

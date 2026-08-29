@@ -14,7 +14,12 @@ That contract concerns the still-open terminal-to-terminal family; the
 raw-gauge fixed-section zero family and its pointwise generated-interior
 tracker statement, together with the fixed-interior weak-C1 physical-section
 hit maps and their common time-\(C_\delta^3\), gauge-\(C^1\) strong
-generated buffers, are now proved separately.
+generated buffers, are now proved separately.  On those local buffers, the
+exact quotient also has a finite-window RFDE Lyapunov--Perron flushing
+estimate, and each complete fixed-section hit history is first-order
+raw-gauge independent modulo \(O(\delta^\infty)\) in the normalized event
+norm.  This does not yet supply parameter jets or the terminal-to-terminal
+physical relation.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -428,11 +433,17 @@ not the conormal of an independently defined physical maximal-canard locus.
       time-$C_\delta^3$, gauge-C1 strong generated buffers with
       dimension-uniform annular bounds, an $O(\delta^{-1})$ fixed-reference
       chart enlargement, and the safe $O(\delta^{-2})$ moving-recut loss.
-- [ ] Prove nonlinear variational flushing and the normalized terminal
-      Schur estimate, then construct the hybrid
+- [x] Prove RFDE-specific finite-window quotient flushing on each actual
+      fixed physical-hit buffer, including the attracting left-boundary and
+      repelling stable-left/one-dimensional-unstable-right estimates.
+- [x] Convert that flushing through the exact resource/event quotient into
+      $O(\delta^\infty)$ first-order raw-gauge equivalence of each complete
+      fixed-section hit history in the normalized event norm.
+- [ ] Prove the normalized terminal Schur estimate and differentiated
+      action-weighted parameter/gauge-jet flushing, then construct the hybrid
       strong-terminal/weak-middle moving-event residual and inverse and the
       terminal-to-terminal nonlinear outer tracker.
-- [ ] Prove the phase-quotiented nonautonomous normal splitting,
+- [ ] Prove the global action-weighted phase-quotiented normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
 - [ ] Prove weighted `C^1` selected-to-physical identification.
@@ -465,11 +476,15 @@ generated interior of each gauge zero is now an exact physical-coordinate
 tracker with the uncut quotient and Volterra realization.  The fixed interior
 sections $r=\pm r_{\rm out}/2$ now also have common-buffer weak-history C1
 hit maps with uniform scaled first gauge derivatives and the exact phase
-quotient.  This does not compare the full gauge-dependent tracker domains or
-recut the physical endpoints.  Flat forgetting, relative-parameter jets,
-the common C2 strong terminal buffer and full moving-event residual/inverse,
-terminal-to-terminal nonlinear tracker existence, nonautonomous quotient
-roughness, and G1 remain open.  The generic
+quotient.  Their common strong buffers now support an RFDE-specific
+finite-window quotient flushing argument, and each complete hit history is
+first-order raw-gauge equivalent modulo $O(\delta^\infty)$ in the
+normalized event norm.  This does not compare the full gauge-dependent
+tracker domains or recut the physical endpoints.  Second gauge and
+relative-parameter jets, the normalized terminal Schur estimate, the full
+moving-event residual/inverse, terminal-to-terminal nonlinear tracker
+existence, global action-weighted quotient roughness, and the remaining
+parts of G1 stay open.  The generic
 nonselection example is not a model-specific impossibility theorem.
 This zeroth-order border does not close Issue #32 and does not
 authorize `physical maximal canard` or `scattering map` terminology.

@@ -4,7 +4,11 @@ Status: **proof contract for the terminal-to-terminal tracker family; the
 raw-gauge fixed-section zero family, its exact pointwise generated-interior
 trackers, the common-buffer physical-section hit maps, their
 time-`C_delta^3`/gauge-`C1` strong generated buffers, and the nonlinear
-terminal trace-scale coordinate theorem are now proved.**
+terminal trace-scale coordinate theorem are now proved.  The exact quotient
+on each fixed physical-hit buffer now also has a finite-window
+Green/Lyapunov--Perron flushing estimate, and the complete hit histories are
+first-order raw-gauge equivalent modulo `O(delta^infinity)` in the natural
+normalized event norm.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -50,6 +54,16 @@ same generated neighborhood to a time-`C_delta^3`, gauge-`C1` family in
 dimension-uniform annular component scales and supplies the strong input for
 the terminal trace chart.  It is not `C2` in the gauge and is not a recut of
 the original physical endpoints.
+Proposition `prop:physical-hit-quotient-flushing` uses that actual buffer to
+close an RFDE-specific finite-window trajectory contraction.  It proves
+attracting left-to-interior and repelling
+stable-left/one-dimensional-unstable-right quotient flushing with
+superalgebraic decay.  Theorem
+`thm:physical-hit-first-order-flatness` translates this through the exact
+resource/event quotient and proves a raw-gauge-independent flat class for
+each complete fixed-section hit history.  This is fixed-parameter and first
+order only; it neither compares the original endpoints nor connects the two
+branches.
 Lemma `lem:terminal-relative-trace-scale-chart` now supplies the exact
 nonlinear `C^2` strong-to-weak coordinate calculus on any already available
 strong terminal buffer, including the nonzero terminal columns and mixed
@@ -63,7 +77,7 @@ It starts from the exact, uncut identities already proved in Propositions
 `prop:exact-outer-history-equation`, `prop:physical-history-phase-quotient`,
 and `prop:exact-resource-gauge-quotient`.  The purpose of this note is to fix
 the unknowns, boundary geometry, norms, and acceptance estimates before the
-remaining Lyapunov--Perron argument is written.
+remaining terminal-to-terminal and parameter-jet arguments are written.
 
 The target is not a unique finite-`delta` slow history.  With no named global
 anchor in the model, the strongest honest physical object is
@@ -669,8 +683,11 @@ exhibits a nonempty raw-compatible boundary gauge ball at the natural
 unique gauge-`C1` hits of the fixed interior sections with uniform scaled
 first derivatives.  Their surrounding generated windows now have the
 time-`C_delta^3`, gauge-`C1` strong regularity needed by the terminal trace
-chart.  These hits have not been upgraded to asymptotic physical endpoint
-data, nonlinear variational forgetting, or uniform tame `J_phys` jets.  The
+chart.  On these same local buffers, the quotient now forgets endpoint data
+superalgebraically, and each fixed-section hit history is first-order
+raw-gauge equivalent modulo `O(delta^infinity)`.  These hits have not been
+upgraded to original/asymptotic physical endpoint data, second gauge
+derivatives, or uniform tame `J_phys` parameter jets.  The
 terminal-to-terminal construction
 must still lift at least one member to all of the physical endpoint data and
 jets above; a full admissible class that could remain empty is insufficient.
@@ -842,17 +859,26 @@ gauges.
       together with a fixed-reference terminal chart window and the safe
       `O(delta^(-2))` raw recut loss.  No second gauge derivative, normalized
       terminal Schur estimate, or original-endpoint recut is claimed.
+- [x] RFDE-specific finite-window quotient flushing on both actual
+      physical-hit buffers, with attracting left-boundary and repelling
+      stable-left/one-dimensional-unstable-right Green estimates and no
+      backward ambient RFDE evolution.
+- [x] Exact resource/event bridge and first-order raw-gauge flat class for
+      each complete fixed-section hit history: the normalized derivative and
+      pairwise difference are `O(delta^m)` for every fixed `m>0`, uniformly
+      in network size.
 - [x] Terminal-relative nonlinear `C^2` strong-to-weak moving-window
       coordinates on a supplied strong buffer, including the retained event
       displacement, derived fixed-section row, nonzero-base terminal columns,
       mixed second derivatives, and sharp translation losses.
-- [ ] Nonlinear variational flushing and the normalized terminal
-      phase-to-normal Schur estimate on the common strong buffers; then the
-      hybrid moving-event residual/inverse, original-endpoint/asymptotic
-      replacement, and terminal-to-terminal nonlinear tracker reconstruction.
-- [ ] Full action-weighted nonautonomous quotient roughness theorem,
-      including Volterra, phase-row, moving-projection, delay, `q`, and
-      parameter-jet terms.
+- [ ] Normalized terminal phase-to-normal Schur estimate and differentiated
+      second-gauge/action-weighted parameter-jet flushing on the common
+      buffers; then the hybrid moving-event residual/inverse,
+      original-endpoint/asymptotic replacement, and terminal-to-terminal
+      nonlinear tracker reconstruction.
+- [ ] Full action-weighted global nonautonomous quotient theorem, including
+      Volterra, moving projection, delay, `q`, and rectangular parameter-jet
+      terms.  The local fixed-parameter first-gauge hit theorem is proved.
 - [ ] Attracting point and repelling codimension-one sheet.
 - [ ] Uniform flat forgetting through `J_phys` for every fixed gauge pair
       after physical endpoint recutting.
@@ -870,6 +896,6 @@ Until the unchecked items are proved, Paper A must continue to say that the
 terminal-to-terminal physical tracker family, gap, and root do not yet exist
 as theorems.  The raw-gauge fixed-section family, its pointwise
 generated-interior representatives, the common-buffer weak interior hits,
-and the terminal trace-scale coordinates above are theorems, but they neither
-select physical endpoints nor compare the full reparameterized trackers on a
-common chart.
+their first-order raw-gauge flat complete-history classes, and the terminal
+trace-scale coordinates above are theorems, but they neither select physical
+endpoints nor compare the full reparameterized trackers on a common chart.

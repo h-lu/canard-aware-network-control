@@ -73,11 +73,18 @@ dimension-uniform annular bounds; it supplies the previously missing strong
 input to the nonlinear terminal trace chart, with the safe
 `O(delta^(-2))` raw recut loss.  This is not a `C2`-in-gauge result, a
 normalized hybrid terminal inverse, or a recutting of the original physical
-branch endpoints.  Nonlinear variational flushing and flat forgetting are
-not yet proved.  It is not yet a parameterized terminal-to-terminal tracker,
-a past physical orbit, a cross-branch connection, or a
-preparation-independent root; its nonautonomous normal dichotomy and exact
-fold overlap remain open.
+branch endpoints.  On this actual generated buffer, a new RFDE-specific
+finite-window Lyapunov--Perron estimate now gives attracting one-sided and
+repelling stable-left/one-dimensional-unstable-right quotient flushing with
+factor `exp{-c S_delta log(1/delta)}`.  The exact event reconstruction then
+proves that, at each fixed interior physical section, the complete hit
+history is first-order raw-gauge independent modulo `O(delta^infinity)` in
+the natural `epsilon^(-1)` normal scale, uniformly in network size.  This is
+fixed-parameter local forgetting only: it is not `C2` in the gauge, has no
+parameter jets, and does not recut the original endpoints.  Paper A is still
+not a parameterized terminal-to-terminal tracker, a past physical orbit, a
+cross-branch connection, or a preparation-independent root; the
+action-weighted parameter-jet dichotomy and exact fold overlap remain open.
 
 > **Floquet representation notice (2026-08-25).**  A delayed coefficient
 > evaluated along the delayed orbit has two equivalent Fourier forms:

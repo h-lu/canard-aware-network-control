@@ -538,10 +538,22 @@ buffers in the natural annular component scales.  It supplies the strong
 input required by the terminal-relative trace chart, including a
 \(\delta^{-2}\) safe loss for the raw moving recut.  Thus gauges can now be
 compared in one local strong chart around the fixed physical hit, but not on
-the full outer domains or at the original branch endpoints.  This interior
-realization does not supply nonlinear variational flushing, flat forgetting,
-a \(C^2\)-in-gauge or parameter family, a past-complete history, or a
-connection between the two branches.
+the full outer domains or at the original branch endpoints.
+\Cref{prop:physical-hit-quotient-flushing} then performs an RFDE-specific
+finite-window Lyapunov--Perron argument on that actual nonlinear tracker:
+after quotienting the genuine time tangent, endpoint influence at either
+fixed physical hit is
+\(\exp\{-cS_\delta\log(1/\delta)\}\).  The repelling estimate inverts only
+the one-dimensional current unstable line and never the ambient RFDE
+semiflow.  Through the exact event bridge,
+\cref{thm:physical-hit-first-order-flatness} proves that the complete hit
+history is raw-gauge independent modulo \(O(\delta^\infty)\), uniformly in
+network size and in the natural \(\varepsilon\)-normalized event norm.
+This is a nonlinear variational forgetting theorem for the actual raw-gauge
+family, but it is fixed-parameter and first order at the two
+interior hits.  It supplies neither a \(C^2\)-in-gauge or parameter family,
+the original physical endpoints, a past-complete history, nor a connection
+between the two branches.
 
 The dimension-uniform range estimates use Dobrushin contraction in the
 oscillation seminorm \citep{gaubert2015dobrushin}, in the context of a broad
@@ -705,15 +717,22 @@ history derivative given exactly by the stationary phase quotient.
 generated buffer for both branches, \(C^1\) gauge dependence with
 dimension- and \(\delta\)-uniform annular scaled bounds, and compatibility
 with the \(C^2\) strong-to-weak terminal chart.  The raw moving recut retains
-the sharp safe loss \(O(\delta^{-2})\).  This is a local regularity and chart
-interface, not a \(C^2\)-in-gauge theorem, an
-\(\varepsilon\)-normalized terminal Schur estimate, a physical-endpoint
-recut, or flat forgetting.  It supplies neither parameter derivatives nor a
-terminal-to-terminal moving-event family, and no compatible collar is shown
-to be cut from a past orbit.  Thus no cross-branch handoff, physical
-connection, or canard root follows.  The phase-quotiented nonautonomous
-normal dichotomy also remains open.  Detailed history-graph and
-finite-section bookkeeping is placed in the supplementary material.
+the sharp safe loss \(O(\delta^{-2})\).
+\Cref{prop:physical-hit-quotient-flushing} freezes the current matrix at the
+actual hit and closes the delayed, Volterra, and moving-coefficient terms by
+a finite-window trajectory-space contraction.  It gives one-sided
+attracting and stable-left/unstable-right repelling flushing at the
+superalgebraic scale.  The exact resource/event reconstruction in
+\cref{thm:physical-hit-first-order-flatness} upgrades this to
+\(O(\delta^\infty)\) first-order raw-gauge equivalence of the complete
+histories at each fixed physical hit.  This is not a \(C^2\)-in-gauge
+theorem, an action-weighted parameter-jet dichotomy, an
+\(\varepsilon\)-normalized terminal Schur inverse, or a physical-endpoint
+recut.  It supplies neither parameter derivatives nor a terminal-to-terminal
+moving-event family, and no compatible collar is shown to be cut from a past
+orbit.  Thus no cross-branch handoff, physical connection, or canard root
+follows.  Detailed history-graph and finite-section bookkeeping is placed in
+the supplementary material.
 
 \Cref{fig:root-mechanism} summarizes the information flow from exact blindness
 to the two-delay source, nonlinear root responses, and recovered return

@@ -81,10 +81,18 @@ lies beyond the first maximal delay, the physical collective coordinate gives
 an exact tracker representative, exact backtracks and uncut history
 invariance, and the resource-gauge quotient has an `O(S_delta^(-1))`
 Volterra realization.  This generated-interior result is not preparation
-independent and does not provide either physical branch endpoint.  Higher
-parameter jets, moving-terminal estimates, a past-complete outer history, the
-cross-branch handoff, nonautonomous normal splitting, and the finite-`delta`
-physical connection/root remain open.
+independent and does not provide either physical branch endpoint.  On the
+common generated neighborhoods of the fixed sections
+`r=+/-r_out/2`, the exact resource-gauge quotient now satisfies an
+RFDE-specific finite-window Green/Lyapunov--Perron flushing estimate.  Its
+superalgebraic action, combined with the exact stationary event quotient,
+proves first-order raw-gauge equivalence modulo `O(delta^infinity)` for each
+complete physical-hit history in the natural `epsilon^(-1)` event norm.
+This is a local fixed-parameter fixed-section hit class, not exact finite-`delta`
+gauge independence.  Higher gauge and parameter jets, original-endpoint
+recutting, a past-complete outer history, the cross-branch handoff,
+action-weighted global normal splitting, and the finite-`delta` physical
+connection/root remain open.
 The former leaky-network and
 upper-triangular Lin-transfer companion has been removed from this paper; the
 pre-refocus source is preserved by the Git tag
