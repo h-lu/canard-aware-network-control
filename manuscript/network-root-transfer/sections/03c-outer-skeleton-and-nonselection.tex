@@ -3654,6 +3654,187 @@ endpoint history has been inferred.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{thm:reference-pulled-causal-endpoint}]
+We first construct one fixed terminal envelope.  The scalar flow estimate
+\[
+ |\Phi_{q_0}^t(e)-e|\le q_+|t|
+\]
+and \(q_+c_T<1/4\) show that the terminal tube in
+\cref{eq:reference-pulled-terminal-tube} remains in the same-sign relative
+collar.  On the attracting branch its smallest modulus is at least
+\(3\rho_\delta/4\).  On the repelling branch the terminal modulus is
+\(R_\delta\), and
+\(\rho_\delta/R_\delta\to0\), so the same conclusion follows after
+decreasing \(\delta\).  Enlarging constants gives the first two assertions
+in \cref{eq:reference-pulled-tube-geometry}.  The added interval has length
+at most \(2q_+c_T\rho_\delta\), on which
+\(m_\delta\le C\{R_\delta+\varepsilon/\rho_\delta^2\}\).
+Together with \cref{eq:proof-receding-flight-action-integral}, this proves
+the last assertion there.
+
+For fixed \(Q^{\rm ref}=Q_\sigma^{\rm ref}\), the first row in
+\cref{eq:reference-pulled-causal-phase} is the scalar initial-value problem
+\begin{equation}
+ a'(r)=\frac{Q^{\rm ref}(r)}
+  {q_0(r)q_0(\Phi_{q_0}^{a(r)}(r))},
+ \qquad a(e_{\sigma,0})=0.                       \label{eq:proof-reference-pulled-IVP}
+\end{equation}
+On the relative phase ball from
+\cref{lem:inner-anchored-nonlinear-phase-chart}, its right-hand side is
+continuous in (r), locally Lipschitz in (a), and bounded by
+\(CD_\delta m_\delta(r)\).  Picard continuation on the compact envelope,
+followed by integration from the causal endpoint, gives a unique small
+solution and
+\begin{equation}
+ \sup\frac{|a'|}{m_\delta}\le CD_\delta,
+ \qquad
+ \|a\|_\infty\le CD_\delta M_\delta.             \label{eq:proof-reference-pulled-a-bound}
+\end{equation}
+The right-hand side stays in the chosen relative phase ball because
+\(D_\delta M_\delta/\rho_\delta
+ \le CC_Q\{\varkappa_{\rm ep}^2+S_\delta^{-4}\}\).
+This also proves that no continuation boundary is reached.
+
+Put
+\begin{equation*}
+ F(\tau)=a(\Phi_{q_0}^{\tau}(e_{\sigma,1}))+\tau.
+\end{equation*}
+For \(|\tau|\le c_T\rho_\delta\),
+\begin{equation}
+ F'(\tau)=1+q_0(\Phi_{q_0}^{\tau}(e_{\sigma,1}))
+       a'(\Phi_{q_0}^{\tau}(e_{\sigma,1})).       \label{eq:proof-reference-pulled-terminal-derivative}
+\end{equation}
+The source bound, tube geometry, and
+\(D_\delta\le C_Q\lambda_\delta\) make the second term \(o(1)\),
+uniformly after first fixing
+\(0<\varkappa_{\rm ep}\le\varkappa_{\rm rp}^*\).
+Choose \(\varkappa_{\rm rp}^*\) and then \(\delta\) so that
+\(1/2\le F'\le3/2\) and
+\(\|a\|_\infty\le c_T\rho_\delta/2\).
+The values of (F) at
+\(\tau=\pm c_T\rho_\delta\) then have opposite signs.  The intermediate
+value theorem and strict monotonicity give the unique root
+\(\tau_\sigma\), and
+\begin{equation}
+ |\tau_\sigma|\le2|a(e_{\sigma,1})|
+       \le CD_\delta M_\delta.                    \label{eq:proof-reference-pulled-tau-bound}
+\end{equation}
+Equations \cref{eq:proof-reference-pulled-a-bound,eq:proof-reference-pulled-tau-bound}
+and \cref{eq:proof-receding-flight-normalized-action} prove
+\cref{eq:reference-pulled-relative-bound}.  Multiplication by
+\(\rho_\delta/\delta=S_\delta/(2\alpha)\) proves
+\cref{eq:reference-pulled-fold-time-bound}.
+
+We next prove the exact conjugacy.  The nonlinear phase identity
+\cref{eq:nonlinear-phase-row-identity} and
+\cref{eq:reference-pulled-causal-phase} give
+\[
+ q_0(r)\Theta_a'(r)
+ =q_0(\Theta_a(r))+Q^{\rm ref}(r)
+ =q^E(\Theta_a(r)),
+\]
+which is \cref{eq:reference-pulled-speed-conjugacy}.  It also shows that
+\(\Theta_a\) is orientation preserving and that \(q^E<0\), after the same
+smallness choice.  Differentiating
+\(\theta_E(\Theta_a(r))\) now gives
+\[
+ \frac{\Theta_a'(r)}{q^E(\Theta_a(r))}=\frac1{q_0(r)}.
+\]
+Both sides vanish at the causal endpoint after integration, proving the
+first identity in \cref{eq:reference-pulled-flight-conjugacy}.  The scalar
+flow definition gives
+\(\theta_0(\Phi_{q_0}^{a(r)}(r))=\theta_0(r)+a(r)\), which proves the
+second identity and hence
+\cref{eq:reference-pulled-beta-conjugacy}.  Indeed,
+\(r_{\sigma,\tau}=\Phi_{q_0}^{\tau_\sigma}(e_{\sigma,1})\) and
+\cref{eq:reference-pulled-terminal-row} imply
+\[
+ \Theta_a(r_{\sigma,\tau})
+ =\Phi_{q_0}^{a(r_{\sigma,\tau})+\tau_\sigma}
+       (e_{\sigma,1})=e_{\sigma,1}.
+\]
+The chain rule applied to
+\cref{eq:reference-pulled-physical-path} proves its differential equation.
+Finally,
+\[
+ \theta_0(r_{\sigma,\tau})
+ =\theta_0(e_{\sigma,1})+\tau_\sigma
+ =\delta S_\sigma^0+\tau_\sigma,
+\]
+which proves \cref{eq:reference-pulled-duration} and the endpoint hit.
+
+It remains to prove the bordered inverse.  At a solution, differentiation
+of \cref{eq:reference-pulled-bordered-map} gives
+\begin{equation}
+ (h,\zeta)\longmapsto
+ \left(A_a h'+B_a h,\ h(e_{\sigma,0}),
+        h(r_{\sigma,\tau})+c_{\sigma,{\rm ter}}\zeta\right),
+                                                        \label{eq:proof-reference-pulled-differential}
+\end{equation}
+where
+\begin{align}
+ A_a(r)&=q_0(r)q_0(\Theta_a(r)),\notag\\
+ B_a(r)&=q_0(r)q_0'(\Theta_a(r))
+             q_0(\Theta_a(r))a'(r),              \label{eq:proof-reference-pulled-linear-coefficients}\\
+ c_{\sigma,{\rm ter}}
+ &=1+q_0(r_{\sigma,\tau})a'(r_{\sigma,\tau}).
+\end{align}
+The last coefficient is the derivative in
+\cref{eq:proof-reference-pulled-terminal-derivative}, so it lies in
+\([1/2,3/2]\).  Evaluating
+\cref{eq:reference-pulled-speed-conjugacy} at
+\(r_{\sigma,\tau}\) and using
+\(\Theta_a(r_{\sigma,\tau})=e_{\sigma,1}\) proves the quotient identity
+in \cref{eq:reference-pulled-terminal-coefficient}.
+
+For data \((k,b_0,b_E)\), put
+\begin{align}
+ \mu_a(r)&=\exp\left\{\int_{e_{\sigma,0}}^r
+          q_0'(\Theta_a(u))a'(u)\,\dd u\right\},\notag\\
+ h(r)&=\mu_a(r)^{-1}\left\{b_0+
+   \int_{e_{\sigma,0}}^r
+    \mu_a(u)\frac{k(u)}
+      {q_0(u)q_0(\Theta_a(u))}\,\dd u\right\},\notag\\
+ \zeta&=\frac{b_E-h(r_{\sigma,\tau})}
+                 {c_{\sigma,{\rm ter}}}.         \label{eq:proof-reference-pulled-explicit-inverse}
+\end{align}
+These formulas solve all three rows of
+\cref{eq:proof-reference-pulled-differential} and prove uniqueness.
+Moreover,
+\begin{equation}
+ \int_{I_\sigma^\sharp}
+  |q_0'(\Theta_a)a'|\,\dd r
+ \le CD_\delta\left\{R_\delta+
+              \frac{\varepsilon}{\rho_\delta^2}\right\}=o(1),            \label{eq:proof-reference-pulled-integrating-factor}
+\end{equation}
+because \(|q_0'(u)|\le C/|u|\), the relative collar makes
+\(|\Theta_a(r)|\asymp|r|\), and
+\(m_\delta(r)/|r|=1+\varepsilon/|r|^3\).
+Thus \(\mu_a\) and \(\mu_a^{-1}\) are uniformly bounded.
+
+If \(K=\|k\|_{\mathsf H_{\sigma,{\rm ce}}}\), then
+\[
+ \int_{I_\sigma^\sharp}|k(r)|\,\dd r
+ \le \lambda_\delta M_\delta K,
+ \qquad
+ \frac{\lambda_\delta M_\delta}{\rho_\delta}\le C.
+\]
+The explicit inverse therefore controls
+\(\|h\|_\infty/\rho_\delta\).  From
+\(A_ah'+B_ah=k\), the coefficient bounds, and
+\(|h(r)|\le\rho_\delta\|h\|_\infty/\rho_\delta\),
+\begin{equation*}
+ \frac1{\lambda_\delta}
+ \sup\frac{|h'|}{m_\delta}
+ \le C\left\{K+\frac{\|h\|_\infty}{\rho_\delta}\right\};
+\end{equation*}
+here \(|q_0'(\Theta_a(r))|\rho_\delta\le C\) on the tube.
+The terminal formula for \(\zeta\) gives the remaining row and proves
+\cref{eq:reference-pulled-bordered-inverse}.  This completes the theorem,
+including its stated scope boundary.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:inner-anchored-relative-phase-schur}]
 The relative phase space is Banach, and
 \begin{equation}

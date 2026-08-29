@@ -3217,6 +3217,163 @@ a nonzero quadratic duration.  The receding scale in
 moment, not merely its linearization.
 \end{remark}
 
+The RFDE phase row does not initially produce an Eulerian source.  It
+produces a source pulled back to the fixed reduced coordinate.  The next
+result closes this coordinate seam.  A terminal flow tube is indispensable:
+the reference endpoint that maps to the fixed physical endpoint need not
+belong to the original closed interval.
+
+\begin{theorem}[Reference-pulled causal phase and moving endpoint]
+\label[theorem]{thm:reference-pulled-causal-endpoint}
+Retain \cref{thm:receding-collar-causal-flight-time} and write
+\[
+ R_\delta=r_{{\rm out},\delta},\qquad
+ \lambda_\delta=\lambda_\delta^{\rm ep},\qquad
+ M_\delta=M_\delta^{\rm ep}.
+\]
+Choose a fixed \(c_T>0\) so small that \(q_+c_T<1/4\), and put
+\begin{equation}
+ I_\sigma^\sharp
+ =\operatorname{hull}\left(
+ I_\sigma\cup
+ \{\Phi_{q_0}^{t}(e_{\sigma,1}):|t|\le c_T\rho_\delta\}
+ \right).                                      \label{eq:reference-pulled-terminal-tube}
+\end{equation}
+After decreasing the common same-sign collar, and then taking
+\(\delta\) sufficiently small for each fixed
+\(\varkappa_{\rm ep}>0\), one has
+\begin{equation}
+ I_\sigma^\sharp\Subset J_\sigma,\qquad
+ |r|\ge\tfrac12\rho_\delta\quad(r\in I_\sigma^\sharp),
+ \qquad
+ \int_{I_\sigma^\sharp}m_\delta(r)\,\dd r\le CM_\delta.
+                                                        \label{eq:reference-pulled-tube-geometry}
+\end{equation}
+
+Fix \(C_Q>0\).  There is
+\(0<\varkappa_{\rm rp}^*\le\varkappa_{\rm ep}^*\) such that, whenever
+\(0<\varkappa_{\rm ep}\le\varkappa_{\rm rp}^*\), then for sufficiently
+small \(\delta\), every
+\(Q_{\sigma}^{\rm ref}\in C(I_\sigma^\sharp)\) satisfying
+\begin{equation}
+ |Q_{\sigma}^{\rm ref}(r)|\le D_\delta m_\delta(r),
+ \qquad 0\le D_\delta\le C_Q\lambda_\delta             \label{eq:reference-pulled-source-class}
+\end{equation}
+determines a unique pair
+\begin{equation*}
+ (a_\sigma,\tau_\sigma)\in
+ C^1(I_\sigma^\sharp)\times
+ (-c_T\rho_\delta,c_T\rho_\delta)
+\end{equation*}
+in the small component of zero that solves
+\begin{align}
+ q_0(r)q_0(\Theta_{a_\sigma}(r))a_\sigma'(r)
+ &=Q_{\sigma}^{\rm ref}(r),
+ &a_\sigma(e_{\sigma,0})&=0,                   \label{eq:reference-pulled-causal-phase}\\
+ a_\sigma(r_{\sigma,\tau})+\tau_\sigma&=0,
+ &r_{\sigma,\tau}
+ &=\Phi_{q_0}^{\tau_\sigma}(e_{\sigma,1}),     \label{eq:reference-pulled-terminal-row}
+\end{align}
+where
+\(\Theta_a(r)=\Phi_{q_0}^{a(r)}(r)\).  It satisfies
+\begin{align}
+ \sup_{I_\sigma^\sharp}
+       \frac{|a_\sigma'(r)|}{m_\delta(r)}
+ &\le CD_\delta,\notag\\
+ \frac{\|a_\sigma\|_\infty+|\tau_\sigma|}{\rho_\delta}
+ &\le C D_\delta\frac{M_\delta}{\rho_\delta}
+ \le CC_Q\{\varkappa_{\rm ep}^2+S_\delta^{-4}\},
+                                                        \label{eq:reference-pulled-relative-bound}\\
+ \frac{|\tau_\sigma|}{\delta}
+ &\le CC_Q\{\varkappa_{\rm ep}^2S_\delta+S_\delta^{-3}\}.
+                                                        \label{eq:reference-pulled-fold-time-bound}
+\end{align}
+
+This reference-pulled problem is exactly conjugate to the Eulerian
+flight-time problem.  On the image of \(\Theta_{a_\sigma}\), define
+\begin{equation}
+ Q_\sigma^E(R)
+ =Q_\sigma^{\rm ref}(\Theta_{a_\sigma}^{-1}(R)),
+ \qquad q_\sigma^E(R)=q_0(R)+Q_\sigma^E(R).       \label{eq:reference-pulled-Eulerian-source}
+\end{equation}
+Then
+\begin{equation}
+ q_\sigma^E(\Theta_{a_\sigma}(r))
+ =q_0(r)\Theta_{a_\sigma}'(r).                  \label{eq:reference-pulled-speed-conjugacy}
+\end{equation}
+If
+\begin{align*}
+ \theta_0(r)&=\int_{e_{\sigma,0}}^r\frac{\dd u}{q_0(u)},&
+ \theta_E(R)&=\int_{e_{\sigma,0}}^R\frac{\dd U}{q_\sigma^E(U)},
+\end{align*}
+then
+\begin{align}
+ \theta_E(\Theta_{a_\sigma}(r))&=\theta_0(r),&
+ \theta_0(\Theta_{a_\sigma}(r))-\theta_0(r)&=a_\sigma(r).
+                                                        \label{eq:reference-pulled-flight-conjugacy}
+\end{align}
+Consequently the Eulerian flight defect
+\(\beta_\sigma=\theta_0-\theta_E\) obeys
+\begin{equation}
+ \beta_\sigma(\Theta_{a_\sigma}(r))=a_\sigma(r),
+ \qquad
+ \beta_\sigma(e_{\sigma,1})+\tau_\sigma=0.      \label{eq:reference-pulled-beta-conjugacy}
+\end{equation}
+In particular,
+\begin{equation}
+ R_\sigma(s)=\Theta_{a_\sigma}
+   (\Phi_{q_0}^{\delta s}(e_{\sigma,0}))         \label{eq:reference-pulled-physical-path}
+\end{equation}
+solves
+\(R_\sigma'=\delta q_\sigma^E(R_\sigma)\), starts at
+\(e_{\sigma,0}\), and reaches \(e_{\sigma,1}\) at
+\begin{equation}
+ S_\sigma=S_\sigma^0+\frac{\tau_\sigma}{\delta}.          \label{eq:reference-pulled-duration}
+\end{equation}
+
+The nonlinear bordered differential has a uniform inverse in normalized
+causal--endpoint norms.  Define
+\begin{align}
+ \|k\|_{\mathsf H_{\sigma,{\rm ce}}}
+ &=\frac1{\lambda_\delta}
+      \sup_{I_\sigma^\sharp}\frac{|k(r)|}{m_\delta(r)},\notag\\
+ \|h\|_{\mathsf A_{\sigma,{\rm ce}}}
+ &=\frac{\|h\|_\infty}{\rho_\delta}
+   +\frac1{\lambda_\delta}
+      \sup_{I_\sigma^\sharp}\frac{|h'(r)|}{m_\delta(r)}.
+                                                        \label{eq:reference-pulled-linear-norms}
+\end{align}
+At a solution, put
+\begin{equation}
+ \mathfrak F_\sigma(a,\tau)
+ =\left(q_0q_0(\Theta_a)a',\ a(e_{\sigma,0}),
+    a(\Phi_{q_0}^{\tau}(e_{\sigma,1}))+\tau\right).       \label{eq:reference-pulled-bordered-map}
+\end{equation}
+Then \(D\mathfrak F_\sigma(a_\sigma,\tau_\sigma)\) is an isomorphism.
+For data \((k,b_0,b_E)\) and inverse image \((h,\zeta)\),
+\begin{equation}
+ \|h\|_{\mathsf A_{\sigma,{\rm ce}}}
+      +\frac{|\zeta|}{\rho_\delta}
+ \le C\left\{\|k\|_{\mathsf H_{\sigma,{\rm ce}}}
+      +\frac{|b_0|+|b_E|}{\rho_\delta}\right\}.           \label{eq:reference-pulled-bordered-inverse}
+\end{equation}
+Its exact terminal coefficient is
+\begin{equation}
+ c_{\sigma,{\rm ter}}
+ =1+q_0(r_{\sigma,\tau})a_\sigma'(r_{\sigma,\tau})
+ =\frac{q_\sigma^E(e_{\sigma,1})}{q_0(e_{\sigma,1})},
+ \qquad \frac12\le c_{\sigma,{\rm ter}}\le\frac32.       \label{eq:reference-pulled-terminal-coefficient}
+\end{equation}
+
+Thus a fixed-reference source, a causal entry, the shifted reference
+endpoint, and the original physical endpoint are now one exact scalar
+object.  The theorem does not construct the RFDE moving-duration column.
+In the full phase--normal border that column changes
+\cref{eq:reference-pulled-terminal-coefficient} by an off-diagonal Schur
+term; the scalar coefficient above cannot be substituted for that still
+unproved RFDE estimate.
+\end{theorem}
+
 \begin{proposition}[Inner-anchored phase Schur inverse]
 \label[proposition]{prop:inner-anchored-relative-phase-schur}
 Retain
