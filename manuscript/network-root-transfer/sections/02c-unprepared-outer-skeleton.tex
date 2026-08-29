@@ -2056,7 +2056,7 @@ Fix an integer \(d\ge0\), a branch, and a supplied classical reference
 \begin{equation*}
  \widehat J_\delta=[-\theta_m,S_*+\ell_{*,\delta}].
 \end{equation*}
-For fixed \(L,c_T>0\), put
+For fixed \(L\ge0\) and \(c_T>0\), put
 \[
  S(\tau)=S_*+\frac{\tau}{\delta},\qquad
  I_\tau=(-c_T\rho_\delta,c_T\rho_\delta).
@@ -6380,8 +6380,106 @@ in particular it does not imply \(c_{\rm ter}=1\),
 \(K_p=R_{q,N}(e_{r,1})\), or
 \(\tau=\delta\Delta S\).  Its old history is the canonical zero-core
 raw-compatible assembler, not an arbitrary preparation or a past orbit.
-It therefore does not construct a terminal second slow jet, a physical
-connection, or a canard root.
+By itself it does not construct the terminal second slow jet proved next,
+a physical connection, or a canard root.
+\end{theorem}
+
+\begin{theorem}[Post-flushing terminal second jet of the fixed-envelope segment]
+\label[theorem]{thm:fixed-envelope-terminal-slow-jet}
+Retain
+\cref{prop:diagonal-terminal-component-green,%
+thm:fixed-envelope-speed-row-zero}
+at order \(h\ge4\), with \(M\ge2\).  There is a fixed
+\(A_{\rm jet}>0\) such that the following conclusions hold if the constant
+\(A\) in
+\cref{eq:terminal-component-scales} is chosen at least
+\(A_{\rm jet}\), before \(L_0=AS_\delta\) and \(L_b\) are frozen.
+All constants are uniform in \(N\), the branch, the retained parameters,
+and the admissible joint wedge of
+\cref{eq:joint-diagonal-admissible-wedge}.
+
+Let
+\begin{equation}
+ r_\sigma^{\rm fe}(s)
+ =\Theta_{a_\sigma^{\rm fe}}(\bar r_\sigma(s)),\qquad
+ Z_\sigma^{\rm fe}(s)=Z_{x_\sigma^{\rm fe}}(s),\qquad
+ p_\sigma^{\rm fe}(s)=p_{x_\sigma^{\rm fe}}(s)             \label{eq:fixed-envelope-physical-terminal-fields}
+\end{equation}
+be the physical fold-time segment reconstructed from the zero in
+\cref{thm:fixed-envelope-speed-row-zero}.  For a selector offset \(L\ge0\)
+assume the post-flushing margin
+\begin{equation}
+ L_b-L-(M+2)\theta_m\ge L_0.                     \label{eq:terminal-slow-jet-selector-margin}
+\end{equation}
+With the definition of \(L_b\) in
+\cref{eq:terminal-component-scales}, this includes every \(0\le L\le1\),
+in particular the actual terminal-history window \(L=0\).  Put
+\begin{align}
+ \widetilde J_{\sigma,L}
+ &=[S_\sigma-L-2\theta_m,S_\sigma-L],\notag\\
+ J_{\sigma,L}
+ &=[S_\sigma-L-\theta_m,S_\sigma-L].             \label{eq:terminal-slow-jet-windows}
+\end{align}
+Then \(Z_\sigma^{\rm fe}\) and \(p_\sigma^{\rm fe}\) are \(C^2\) on
+these windows and
+\begin{align}
+ &\sup_{\widetilde J_{\sigma,L}}
+   \left\{\|\partial_sZ_\sigma^{\rm fe}\|_N
+       +\frac{|\partial_sp_\sigma^{\rm fe}|}{m_{\sigma,T}}\right\}
+ +\delta\sup_{J_{\sigma,L}}
+   \left\{\|\partial_s^2Z_\sigma^{\rm fe}\|_N
+       +\frac{|\partial_s^2p_\sigma^{\rm fe}|}{m_{\sigma,T}}\right\}
+ \le C\frac{\varepsilon\delta}{\rho_\delta}.    \label{eq:terminal-tangent-component-bound}
+\end{align}
+On the repelling branch the future scalar datum used in this estimate is
+the exact identity
+\begin{equation}
+ \partial_sp_r^{\rm fe}(S_r)
+ =\delta R_{q,N}\bigl(r_r^{\rm fe}(S_r)\bigr).   \label{eq:terminal-tangent-future-row}
+\end{equation}
+In particular,
+\begin{equation}
+ \|\partial_sZ_\sigma^{\rm fe}\|_{C^0(J_{\sigma,L})}
+ \le C\frac{\varepsilon\delta}{\rho_\delta},
+ \qquad
+ \|\partial_s^2Z_\sigma^{\rm fe}\|_{C^0(J_{\sigma,L})}
+ \le C\frac{\varepsilon}{\rho_\delta}.         \label{eq:fixed-envelope-terminal-slow-jet}
+\end{equation}
+For any uniformly bounded scalar \(c_{q,\sigma}\), define the formal
+normal-history column on the last available fixed-envelope window by
+\begin{equation}
+ (\widehat K_{Z,L}^{\rm fe}\beta)(\theta)
+ =c_{q,\sigma}\frac{\partial_sZ_\sigma^{\rm fe}
+       (S_\sigma-L+\theta)}{\delta}\,\beta,
+ \qquad-\theta_m\le\theta\le0.                  \label{eq:fixed-envelope-formal-history-column}
+\end{equation}
+Then
+\begin{equation}
+ \|\widehat K_{Z,L}^{\rm fe}\|_
+       {\mathcal L(\mathbb R_{\rho_\delta},
+                \mathcal H_{Z,T}^1)}\le C.       \label{eq:fixed-envelope-history-shear-bound}
+\end{equation}
+If a subsequently constructed duration selector satisfies all the right-envelope, containment,
+and endpoint hypotheses of
+\cref{lem:endpoint-centered-duration-selector}, is centered at this same
+base time and history window---\(S_*=S_\sigma\) and
+\(e=r_\sigma^{\rm fe}(S_\sigma)\)---and has
+\(Z_*=Z_\sigma^{\rm fe}\) there and
+\(c_{q,\sigma}=q_0(e)/q_{*,e}\), its actual \(K_{Z,L}\) equals
+\(\widehat K_{Z,L}^{\rm fe}\) and is therefore uniformly bounded.  Thus the
+present theorem closes the slow-jet size subcondition in
+\cref{eq:terminal-history-slow-jet-gate}, not the existence of that
+duration selector.  A selector at a later original endpoint does not inherit
+this estimate without a separate identification of its observation window
+with \(J_{\sigma,L}\), or a new jet theorem on its right envelope.
+
+The conclusion concerns the \(E_N\)-valued normal voltage \(Z\), after the
+collective time tangent has been separated.  It is false for the raw full
+voltage or resource history, whose collective derivatives contain the
+nonzero physical drift.  The theorem supplies neither a right-hand
+fixed envelope of length \(O(\rho_\delta/\delta)\), nor a moving-duration
+or original-endpoint zero, parameter jets, a past orbit, a connection, or
+a canard root.
 \end{theorem}
 
 \begin{theorem}[Raw-gauge family of fixed-section outer zeros]

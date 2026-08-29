@@ -7819,6 +7819,309 @@ orbit, and gives no identity \(\tau=\delta\Delta S\).
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{thm:fixed-envelope-terminal-slow-jet}]
+Write \(r=r_\sigma^{\rm fe}\), \(Z=Z_\sigma^{\rm fe}\), and
+\(p=p_\sigma^{\rm fe}\), and suppress \(N,\sigma\) where no ambiguity can
+result.  The hard source interface used to define the three-summand range
+in \cref{thm:fixed-envelope-speed-row-zero} is not an interface in the
+physical equation: the two indicator pieces add to the original smooth
+source.  The order-\(h\) compatible entry history and the method of steps
+therefore make the reconstructed segment \(C^2\) on every terminal window
+in \cref{eq:terminal-slow-jet-windows}.  We now prove the uniform estimates;
+ordinary eventual smoothing alone would not give their scale.
+
+Put
+\begin{align*}
+ \Delta&=\Delta\mathcal D_N^{\rm ft}[r,Z],
+ &D&=p-\ell_N(r)Z-h_{c,N}(r,Z),\\
+ d&=(\mathcal D_{0,c,N}-q_0)',
+ &a_p&=w_{0,N}'(r)+\varepsilon d(r).
+\end{align*}
+Using the speed reconstruction \(Q=\varepsilon^{-1}D+\Delta_c\), the
+second equation in
+\cref{eq:fold-time-tracker-Z,eq:fold-time-tracker-p} has the exact
+cancellation-safe form
+\begin{equation}
+ \delta p_s=a_p D+\varepsilon a_p\Delta_c
+                 +\varepsilon^2q_0(r)d(r).       \label{eq:proof-terminal-jet-p-eliminated}
+\end{equation}
+This identity is the reason that no estimate of \(Q_s/\varepsilon\) will
+be used.
+
+Set
+\[
+ u=r_s,\qquad U=Z_s,\qquad V=p_s,\qquad
+ r_k=r(s-\theta_k),\qquad u_k=u(s-\theta_k).
+\]
+Separate the derivative of the fixed-delay defect as
+\begin{align}
+ \partial_s\Delta
+ &=\mathscr L_{\Delta,s}U+g_\Delta,\notag\\
+ \mathscr L_{\Delta,s}U
+ &=K\sum_{k=0}^mL_{k,N}(\eta)
+       \{U(s)-U(s-\theta_k)\},\notag\\
+ g_\Delta
+ &=K\sum_{k=0}^mL_{k,N}(\eta)
+   \bigl[(u-u_k)\mathbf1+z_{0,N}'(r)u
+                    -z_{0,N}'(r_k)u_k\bigr]
+       -\mathcal D_{0,N}'(r)u.                  \label{eq:proof-terminal-jet-delay-split}
+\end{align}
+Differentiating the two exact tracker equations once and retaining every
+term containing \(U,V\), or a delayed \(U\), in the operator gives
+\begin{align}
+ \delta U_s={}&\mathcal C_NU-z_{0,N}'V
+ +(z_{0,N}'D_Zh_{c,N}-D_Zh_{\perp,N})U\notag\\
+ &+\varepsilon\{(\mathscr L_{\Delta,s}U)_\perp
+        -z_{0,N}'(\mathscr L_{\Delta,s}U)_c\}+F_1,
+                                                        \label{eq:proof-terminal-jet-Z-system}\\
+ \delta V_s={}&a_pV-a_p(\ell_N+D_Zh_{c,N})U
+       +\varepsilon a_p(\mathscr L_{\Delta,s}U)_c+H_1,
+                                                        \label{eq:proof-terminal-jet-p-system}
+\end{align}
+where all coefficients and nonlinear derivatives are evaluated at
+\((r(s),Z(s))\), and
+\begin{align}
+ F_1={}&\mathcal C_N'(r)uZ-z_{0,N}''(r)up-R_{z,N}'(r)u
+       +z_{0,N}''(r)u h_{c,N}\notag\\
+ &+z_{0,N}'(r)\partial_rh_{c,N}u
+       -\partial_rh_{\perp,N}u\notag\\
+ &+\varepsilon\{(g_\Delta)_\perp-z_{0,N}'(r)(g_\Delta)_c
+             -z_{0,N}''(r)u\Delta_c\},          \label{eq:proof-terminal-jet-F1}\\
+ H_1={}&a_p'(r)uD
+       -a_p\{\ell_N'(r)uZ+\partial_rh_{c,N}u\}
+       +\varepsilon a_p'(r)u\Delta_c\notag\\
+ &+\varepsilon a_p(g_\Delta)_c
+       +\varepsilon^2(q_0d)'(r)u.                \label{eq:proof-terminal-jet-H1}
+\end{align}
+Thus \cref{eq:proof-terminal-jet-Z-system,eq:proof-terminal-jet-p-system}
+have exactly the current-loop plus strict-positive-delay architecture of
+\cref{eq:current-absorbed-delay-equation}.  In particular, the potentially
+singular \(Q_s\) has not been declared to be an external source.
+
+We record the direct source ledger.  The terminal kinetic bounds in the
+proof of \cref{thm:fixed-envelope-speed-row-zero}, the phase orientation
+margin, and the fixed-delay difference formula give, on the one-delay
+enlargement of the terminal buffer,
+\begin{align}
+ |r|&\asymp r_{\sigma,T},& |u|&\le C\delta,\notag\\
+ \|Z\|_N&\le C\varepsilon\lambda_\delta,&
+ |p|+|D|&\le C\varepsilon m_{\sigma,T}\lambda_\delta,\notag\\
+ \|\Delta\|_N+\|g_\Delta\|_N&\le C\delta.       \label{eq:proof-terminal-jet-base-ledger}
+\end{align}
+The coefficient jets retained in the theorem imply
+\begin{align}
+ |a_p|+\|z_{0,N}'\|_N+\|\ell_N\|
+ &\le Cr_{\sigma,T},\notag\\
+ |a_p'|+\|z_{0,N}''\|_N+\|\ell_N'\|
+       +\|\mathcal C_N'\|&\le C,\notag\\
+ |(q_0d)'|&\le C/r_{\sigma,T},&
+ \|R_{z,N}'\|_N&\le C\varepsilon
+       (1+\delta/r_{\sigma,T}),\notag\\
+ |h_{c,N}|+\|h_{\perp,N}\|_N
+       +|\partial_rh_{c,N}|+\|\partial_rh_{\perp,N}\|_N
+ &\le C\|Z\|_N^2
+       \le C\varepsilon^2\lambda_\delta^2,\notag\\
+ \|D_Zh_{c,N}\|+\|D_Zh_{\perp,N}\|
+ &\le C\varepsilon\lambda_\delta.              \label{eq:proof-terminal-jet-coefficient-ledger}
+\end{align}
+Substitution in
+\cref{eq:proof-terminal-jet-F1,eq:proof-terminal-jet-H1} yields
+\begin{align}
+ \|F_1\|_N&\le C\varepsilon\delta,\notag\\
+ |H_1|&\le C\left\{
+  \varepsilon\delta m_{\sigma,T}\lambda_\delta
+ +\varepsilon\delta r_{\sigma,T}\lambda_\delta
+ +\varepsilon\delta^2+\varepsilon\delta r_{\sigma,T}
+ +\frac{\varepsilon^2\delta}{r_{\sigma,T}}\right\}\notag\\
+ &\le Cr_{\sigma,T}m_{\sigma,T}
+             \frac{\varepsilon\delta}{\rho_\delta}.     \label{eq:proof-terminal-jet-source-ledger}
+\end{align}
+For completeness, on the attracting terminal annulus the ratios needed in
+the last inequality reduce to
+\[
+ \lambda_\delta,\quad
+ \frac{\rho_\delta\lambda_\delta}{m_{a,T}},\quad
+ \frac\delta{m_{a,T}},\quad
+ \frac{\rho_\delta}{m_{a,T}},\quad
+ \frac\varepsilon{\rho_\delta m_{a,T}},
+\]
+and on the repelling annulus to
+\[
+ \frac{\lambda_\delta\rho_\delta}{R_\delta},\quad
+ \frac{\delta\rho_\delta}{R_\delta^2},\quad
+ \frac{\rho_\delta}{R_\delta},\quad
+ \frac{\varepsilon\rho_\delta}{R_\delta^3}.
+\]
+They are uniformly bounded, and in fact tend to zero in the order fixed by
+the admissible wedge.  This verifies the direct component norm; it is not
+an appeal to a generic gain of one slow derivative.
+
+The operator terms in
+\cref{eq:proof-terminal-jet-Z-system,eq:proof-terminal-jet-p-system}
+satisfy the same component ledger as
+\cref{eq:proof-terminal-component-ledger}:
+\begin{align}
+ \|\mathbb A_Z-A_N\|&\le Cr_{\sigma,T},&
+ \|C_{Zp}\|&\le Cr_{\sigma,T},&
+ \|C_{pZ}\|&\le Cr_{\sigma,T}^2,\notag\\
+ \sum_k\|B_k^Z\|&\le C\varepsilon,&
+ \sum_k|B_k^p|&\le C\varepsilon r_{\sigma,T}.   \label{eq:proof-terminal-tangent-operator-ledger}
+\end{align}
+Indeed, the new \(D_Zh\)-terms are
+\(O(\varepsilon\lambda_\delta)\), and all \(U,V\)-dependent pieces of
+\(\partial_s\Delta\) were retained in the operator.  The current-loop inverse
+and strict-delay generation proof of
+\cref{prop:diagonal-terminal-component-green} therefore applies verbatim
+after a uniform Neumann perturbation.
+
+It remains to control the roots of the differentiated component words.
+On the delay window immediately preceding the terminal recut, the bulk
+kinetic estimate has the same bounds as
+\cref{eq:proof-terminal-jet-base-ledger}.  Moreover,
+\[
+ D=\varepsilon(Q-\Delta_c),\qquad
+ p=D+\ell_NZ+h_{c,N},\qquad
+ \delta\le C m_{\sigma,T}\lambda_\delta.
+\]
+Substitution in the two exact tracker equations gives, on that whole
+window,
+\[
+ \|Z_s\|_N+\frac{|p_s|}{m_{\sigma,T}}
+ \le C\frac{\varepsilon\lambda_\delta}{\delta}.
+\]
+This uses the physical \(p\), not the shifted bookkeeping coordinate
+\(p^\sharp\).  It supplies both the derivative of the left \(Z\)-history
+and, on the attracting branch, the left scalar value.  Together with the
+terminal \(\mathsf T^1\) estimate it gives the incoming tangent bound
+\begin{equation}
+ \mathcal I_{\sigma,T}^{(1)}
+ \le C\frac{\varepsilon\lambda_\delta}{\delta},             \label{eq:proof-terminal-jet-incoming-data}
+\end{equation}
+where \(\mathcal I_{a,T}^{(1)}\) contains both the left \(U\)-history and
+the left scalar value \(V/m_{a,T}\), while
+\(\mathcal I_{r,T}^{(1)}\) contains the left \(U\)-history.  On the
+repelling branch the scalar datum is instead selected from the future.
+The exact identity
+\begin{equation}
+ \delta p_s=\varepsilon w_{0,N}'(r)Q
+                  +\varepsilon^2q\,d(r)          \label{eq:proof-terminal-jet-exact-speed-row}
+\end{equation}
+follows directly from
+\cref{eq:fold-time-tracker-p,eq:fold-time-speed-reconstruction}.
+At \(s=S_r\),
+\cref{eq:fixed-envelope-terminal-speed-correction-zero} gives \(Q=0\),
+and hence \(q=q_0(r)\).  Since
+\(R_{q,N}=\varepsilon q_0d\) and \(\varepsilon=\delta^2\),
+\cref{eq:terminal-tangent-future-row} follows and
+\begin{equation}
+ \frac{|V(S_r)|}{m_{r,T}}
+ \le C\frac{\varepsilon\delta}{R_\delta}
+ \le C\frac{\varepsilon\delta}{\rho_\delta}.    \label{eq:proof-terminal-jet-future-size}
+\end{equation}
+
+To invoke the earlier Green estimates without changing their hypotheses,
+split the tangent solution linearly as
+\[
+ (U,V)=X_{\rm src}+X_{\rm ter}+X_{\rm in}.
+\]
+Here \(X_{\rm src}\) has data \((F_1,H_1)\) and zero finite roots;
+\(X_{\rm ter}\) is absent on the attracting branch and, on the repelling
+branch, has only the future scalar datum \(V(S_r)\); and
+\(X_{\rm in}\) has the incoming tangent roots and zero distributed source
+and zero repelling future row.  The small perturbations in
+\cref{eq:proof-terminal-tangent-operator-ledger} preserve the forward
+transverse rate, the attracting forward scalar rate, and the repelling
+future scalar rate used in
+\cref{eq:proof-terminal-fast-kernel,%
+eq:proof-terminal-attracting-scalar,%
+eq:proof-terminal-repelling-scalar}.  The direct source estimate and
+\cref{eq:proof-terminal-jet-source-ledger} give
+\[
+ \sup\left\{\|(X_{\rm src})_Z\|_N
+       +\frac{|(X_{\rm src})_p|}{m_{\sigma,T}}\right\}
+ \le C\frac{\varepsilon\delta}{\rho_\delta},
+\]
+and the future scalar lift together with
+\cref{eq:proof-terminal-jet-future-size} gives the same bound for
+\(X_{\rm ter}\).  Only \(X_{\rm in}\) is subjected to the rough-root
+flushing factor.
+
+Repeat the \(M\)-generation expansion in the proof of
+\cref{eq:terminal-component-rough-flush} for \(X_{\rm in}\).  The
+extra one-delay enlargement in
+\cref{eq:terminal-slow-jet-windows} leaves the current travel length
+\(L_0+1-L\ge L_0\) after all direct-history and strict-delay edges have
+been removed.  Boundary-face words have the same root and edge count.
+Together with
+\cref{eq:proof-terminal-jet-source-ledger,%
+eq:proof-terminal-jet-incoming-data,eq:proof-terminal-jet-future-size},
+this gives
+\begin{align}
+ \sup_{\widetilde J_{\sigma,L}}
+ \left\{\|U\|_N+\frac{|V|}{m_{\sigma,T}}\right\}
+ \le C\left\{
+   \frac{\varepsilon\delta}{\rho_\delta}
+   +\mathcal E_{\sigma,T}^{\rm jet}(\delta)
+       \frac{\varepsilon\lambda_\delta}{\delta}\right\},
+                                                        \label{eq:proof-terminal-jet-flushed-tangent}\\
+ \mathcal E_{\sigma,T}^{\rm jet}(\delta)
+ =\exp\{-cr_{\sigma,T}L_0/\delta\}
+   +\left(\frac{C\varepsilon}{m_{\sigma,T}}\right)^M.
+                                                        \label{eq:proof-terminal-jet-flush-error}
+\end{align}
+The only scale still to check is
+\begin{equation}
+ \mathcal E_{\sigma,T}^{\rm jet}(\delta)
+       \frac{\lambda_\delta\rho_\delta}{\delta^2}
+ \longrightarrow0.                              \label{eq:proof-terminal-jet-final-scale}
+\end{equation}
+Now
+\[
+ \frac{\lambda_\delta\rho_\delta}{\delta^2}
+ \le C\left\{\frac1{\delta S_\delta}
+       +\varkappa_0\delta^{-1/2}S_\delta^{5/2}\right\}.
+\]
+On the attracting branch the exponential in
+\cref{eq:proof-terminal-jet-flush-error} is a sufficiently high power of
+\(\delta\) after \(A\ge A_{\rm jet}\) is fixed, and
+\(\varepsilon/m_{a,T}=O(\delta^2S_\delta^2)\).  On the repelling branch
+the wedge gives \(R_\delta S_\delta/\delta\to\infty\) faster than every
+logarithmic power and
+\(\varepsilon/m_{r,T}=O(\delta^{3/2}S_\delta^{-3/2}/\varkappa)\);
+the lower bound on \(\varkappa\) implicit in
+\cref{eq:joint-diagonal-admissible-wedge} makes its \(M\)-th power
+uniformly sufficient for \(M\ge2\).  This proves
+\cref{eq:proof-terminal-jet-final-scale}.
+
+The first term of \cref{eq:terminal-tangent-component-bound} now follows
+from \cref{eq:proof-terminal-jet-flushed-tangent}.  On the smaller window
+\(J_{\sigma,L}\), the delayed values needed by
+\cref{eq:proof-terminal-jet-Z-system,eq:proof-terminal-jet-p-system}
+remain in \(\widetilde J_{\sigma,L}\).  Those equations,
+\cref{eq:proof-terminal-jet-source-ledger}, and
+\cref{eq:proof-terminal-tangent-operator-ledger} therefore give the
+second-derivative part directly, proving
+\cref{eq:terminal-tangent-component-bound,eq:fixed-envelope-terminal-slow-jet}.
+Finally, the definition in
+\cref{eq:fixed-envelope-formal-history-column} and the norm in
+\cref{eq:terminal-voltage-interface-norm} give
+\[
+ \frac{\rho_\delta}{\varepsilon}
+ \left\{\frac1\delta
+       \frac{C\varepsilon\delta}{\rho_\delta}
+       +\frac{C\varepsilon}{\rho_\delta}\right\}\le C,
+\]
+which is \cref{eq:fixed-envelope-history-shear-bound}.  Under the additional
+selector hypotheses stated in the theorem, this formal column is exactly
+the \(K_{Z,L}\) of
+\cref{eq:endpoint-selector-event-shear}; no such right envelope is inferred
+here.  The raw full state
+retains the collective time tangent and is therefore outside the normal
+history space used in this calculation.  The stated scope restrictions
+follow.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{thm:raw-gauge-fixed-section-zero}]
 We use one norm symbol for the branch graph space and write
 \(G=\|g_\sigma\|_{\mathfrak B_{\sigma,\delta}^h}\).
