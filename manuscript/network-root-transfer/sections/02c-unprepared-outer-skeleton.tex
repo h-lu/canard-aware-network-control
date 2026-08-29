@@ -2202,6 +2202,68 @@ dimension-uniform rough-middle/strong-terminal hybrid isomorphism, control
 tracker, a past orbit, or a physical root.
 \end{lemma}
 
+\begin{proposition}[Exact terminal normal shear and raw-collar anchor]
+\label[proposition]{prop:endpoint-normal-shear-identity}
+Retain
+\cref{prop:fold-time-tracker-normal-form,%
+lem:raw-compatible-moving-core-collar,%
+lem:endpoint-centered-duration-selector}.
+Let a supplied classical endpoint reference satisfy the unmodified RFDE on
+a terminal buffer, let
+\[
+ e=r_*(S_*),\qquad q_{*,e}=\delta^{-1}r_*'(S_*)\ne0,
+ \qquad Q_e=Q_*(S_*),
+\]
+and suppose its moving finite normal row is the scalar \(p\)-row in
+\cref{eq:endpoint-selector-raw-terminal-column}.  Then the scalar event
+shear has the exact representation
+\begin{equation}
+ K_p
+ =R_{q,N}(e)
+   +\frac{q_0(e)}{q_{*,e}}w_{0,N}'(e)Q_e.        \label{eq:endpoint-normal-shear-identity}
+\end{equation}
+Consequently, if
+\begin{equation}
+ |q_{*,e}|\asymp|q_0(e)|\asymp1,\qquad
+ |w_{0,N}'(e)|\asymp R_\delta,\qquad |e|\asymp R_\delta,
+                                                        \label{eq:endpoint-normal-shear-scale-hypotheses}
+\end{equation}
+then
+\begin{align}
+ |K_p|&\le C\{\varepsilon+R_\delta|Q_e|\},\notag\\
+ \kappa_{p,\delta}
+ :=\frac{\rho_\delta|K_p|}{\varepsilon R_\delta}
+ &\le C\left\{\frac{\rho_\delta}{R_\delta}
+              +\frac{\rho_\delta|Q_e|}{\varepsilon}\right\}.
+                                                        \label{eq:endpoint-normal-shear-scale-bound}
+\end{align}
+Thus \(|Q_e|\le C\varepsilon/\rho_\delta\) is sufficient for
+\(\kappa_{p,\delta}=O(1)\), while
+\(|Q_e|\le C\varepsilon/R_\delta\) is sufficient for
+\(K_p=O(\varepsilon)\).
+
+For comparison, take the raw-compatible moving-core collar in
+\cref{eq:raw-compatible-moving-core} and place its current endpoint at the
+repelling outer event, \(|e|\asymp R_\delta\).  Then
+\begin{equation}
+ q_{*,e}=q_0(e),\qquad Q_e=0,\qquad
+ p_*'(0)=\delta R_{q,N}(e),\qquad
+ K_p^{\rm rc}=R_{q,N}(e).                       \label{eq:raw-collar-terminal-shear-anchor}
+\end{equation}
+In particular,
+\begin{equation}
+ |K_p^{\rm rc}|\le C\varepsilon,\qquad
+ \kappa_{p,\delta}^{\rm rc}
+ \le C\frac{\rho_\delta}{R_\delta}=o(1).       \label{eq:raw-collar-terminal-shear-smallness}
+\end{equation}
+
+The last identities concern a local raw-compatible endpoint germ.  They do
+not identify that germ with the terminal history reached by a forward branch.
+In particular, the ordinary terminal \(\mathsf T^1\)-bound does not imply
+either endpoint-speed condition above, and this proposition does not bound
+the shear of a still-unconstructed physical endpoint reference.
+\end{proposition}
+
 \begin{proposition}[Exact phase-delay shift and state-norm obstruction]
 \label[proposition]{prop:phase-delay-action-shift}
 Retain \cref{prop:fixed-phase-green-collar-buffer,%
@@ -3604,6 +3666,334 @@ prescribed boundary row, construct a source-split phase--normal inverse,
 bound the event shear of a nonzero endpoint reference, or produce a
 moving-duration family, a complete-history connection, or a physical root.
 \end{proposition}
+
+\paragraph{The source-split causal core.}
+The preceding two propositions have deliberately different scales.  To keep
+them distinct, fix \(\varkappa,A>0\) and an integer \(M\ge2\).  All constants
+and smallness thresholds in this paragraph may depend on these fixed choices.
+Define the pure distributed bulk space
+\begin{equation}
+ \mathsf B_{\sigma,\delta}^{0,\lambda,\mathrm{tf}}
+ =\{(0,0,F,H)\in
+       \mathsf B_{\sigma,\delta}^{\lambda,\mathrm{tf}}\}     \label{eq:source-split-pure-bulk}
+\end{equation}
+with the inherited norm, and define
+\begin{equation}
+ \mathsf E_{\sigma,\delta}^{\mathrm{bd}}
+ =\{(\gamma_0,b_\sigma,0,0)
+       \in\widetilde{\mathsf Y}_{\sigma,0}\},\qquad
+ \|(\gamma_0,b_\sigma,0,0)\|_{\mathsf E_{\sigma,\delta}^{\mathrm{bd}}}
+ =\varepsilon^{-1}\left\{
+   \|\gamma_0\|_{N,e_\sigma,\delta}^{\sharp}
+       +\frac{|b_\sigma|}{R_\delta}\right\}.       \label{eq:source-split-boundary-space}
+\end{equation}
+The normal range is the algebraic direct sum
+\begin{equation}
+ \widetilde{\mathsf Y}_{\sigma,\mathrm{split}}
+ =\mathsf B_{\sigma,\delta}^{0,\lambda,\mathrm{tf}}
+       \oplus\mathsf E_{\sigma,\delta}^{\mathrm{bd}},
+ \qquad
+ \|f_{\rm B}+f_{\rm bd}\|_{\mathrm{split}}
+ =\|f_{\rm B}\|_{\mathsf B_{\sigma,\delta}^{0,\lambda,\mathrm{tf}}}
+   +\|f_{\rm bd}\|_{\mathsf E_{\sigma,\delta}^{\mathrm{bd}}}. \label{eq:source-split-normal-range}
+\end{equation}
+This splitting is unique because the first summand has zero history and zero
+finite normal rows, while the second has zero distributed rows.  In
+particular, its norm is specified before applying \(G_\sigma\).
+
+Define the unscaled hybrid phase spaces
+\(
+ \mathsf H_{\sigma,\mathrm{hyb}}=C(I_\sigma)
+\)
+and
+\(
+ \mathsf A_{\sigma,\mathrm{hyb}}=C^1(I_\sigma)
+\)
+by
+\begin{align}
+ \|k\|_{\mathsf H_{\sigma,\mathrm{hyb}}}
+ &=\sup_{r\in I_\sigma}\frac{|k(r)|}{m_\delta(r)}
+   +\frac1{\rho_\delta}
+       \sup_{r\in I_\sigma}|(\mathcal P_\sigma k)(r)|,
+                                                        \label{eq:source-split-hybrid-H}\\
+ \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}
+ &=\frac{\|a\|_{C^0(I_\sigma)}}{\rho_\delta}
+   +\sup_{r\in I_\sigma}
+       \frac{|q_0(r)^2a'(r)|}{m_\delta(r)}.        \label{eq:source-split-hybrid-A}
+\end{align}
+The prefix term in \(\mathsf H_{\sigma,\mathrm{hyb}}\) is not controlled by
+its pointwise term uniformly; it retains the rough-source obstruction below.
+The final scalar factor \(\mathbb R_{\rho_\delta}\) is given the norm
+\(|b|/\rho_\delta\).
+
+\begin{lemma}[Hybrid causal-entry phase core]
+\label[lemma]{lem:source-split-hybrid-phase-core}
+Retain
+\cref{prop:structured-phase-action-green,%
+lem:raw-phase-boundary-column-assembly,%
+eq:prefix-action-diagonal-scales} and put
+\begin{equation}
+ E_\delta=\varepsilon\delta^{-2\vartheta},\qquad
+ \eta_{\mathrm{hyb},\delta}
+ =M_\delta+\frac{M_\delta^2}{\rho_\delta}
+       +E_\delta+\frac{M_\delta E_\delta}{\rho_\delta}.
+                                                        \label{eq:source-split-hybrid-small-number}
+\end{equation}
+Then
+\begin{equation}
+ \mathscr B_{\sigma,\mathrm{hyb}}a
+ =\bigl(q_0^2a',a(e_{\sigma,0})\bigr)             \label{eq:source-split-hybrid-phase-operator}
+\end{equation}
+is a dimension- and diagonal-uniform isomorphism
+\[
+ \mathsf A_{\sigma,\mathrm{hyb}}
+ \longrightarrow
+ \mathsf H_{\sigma,\mathrm{hyb}}\times\mathbb R_{\rho_\delta},
+ \qquad
+ a(r)=b_0+(\mathcal P_\sigma k)(r).
+\]
+Moreover,
+\begin{align}
+ \|a\|_{\mathsf A_\phi^1(I_\sigma)}
+ &\le C\{\rho_\delta+M_\delta\}
+       \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}},    \label{eq:source-split-hybrid-A1-embedding}\\
+ \|\mathfrak A_\sigma^{\rm rc}a\|_
+       {\mathsf H_{\sigma,\mathrm{hyb}}}
+ &\le C\eta_{\mathrm{hyb},\delta}
+       \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}},
+ \qquad
+ \eta_{\mathrm{hyb},\delta}=o(1).                \label{eq:source-split-hybrid-phase-smallness}
+\end{align}
+\end{lemma}
+
+\begin{theorem}[Diagonal source-split causal-entry square core]
+\label[theorem]{thm:diagonal-source-split-hybrid-core}
+Retain
+\cref{cor:diagonal-raw-compatible-phase-normal-inverse,%
+prop:diagonal-bulk-terminal-prefix-trace,%
+prop:diagonal-boundary-prefix-terminal-trace,%
+prop:raw-compatible-terminal-phase-column,%
+lem:source-split-hybrid-phase-core}.
+Put
+\begin{equation}
+ \mathcal D_{\mathrm{split}}(\mathscr N_\sigma)
+ =G_\sigma\widetilde{\mathsf Y}_{\sigma,\mathrm{split}},
+ \qquad
+ \|y\|_{\mathcal D_{\mathrm{split}}}
+ =\|\mathscr N_\sigma y\|_{\mathrm{split}}.       \label{eq:source-split-normal-domain}
+\end{equation}
+Then, for all sufficiently small \(\delta\),
+\begin{equation}
+ \mathscr L_{\sigma,\mathrm{ent}}^{\mathrm{split}}(y,a)
+ =\left(
+   \mathscr N_\sigma y,\,
+   q_0^2a'-\mathfrak D_\sigma y
+             -\mathfrak A_\sigma^{\rm rc}a,\,
+   a(e_{\sigma,0})\right)                        \label{eq:source-split-square-operator}
+\end{equation}
+is an isomorphism
+\begin{equation}
+ \mathcal D_{\mathrm{split}}(\mathscr N_\sigma)
+       \times\mathsf A_{\sigma,\mathrm{hyb}}
+ \longrightarrow
+ \widetilde{\mathsf Y}_{\sigma,\mathrm{split}}
+       \times\mathsf H_{\sigma,\mathrm{hyb}}
+       \times\mathbb R_{\rho_\delta}              \label{eq:source-split-square-isomorphism}
+\end{equation}
+with inverse norm independent of \(N,\delta\), and the branch.  For data
+\((f,k,b_0)\), its inverse is
+\begin{align}
+ y&=G_\sigma f,\notag\\
+ a&=\left\{\mathscr B_{\sigma,\mathrm{hyb}}
+       -(\mathfrak A_\sigma^{\rm rc},0)\right\}^{-1}
+       (k+\mathfrak D_\sigma y,b_0),              \label{eq:source-split-square-inverse}\\
+ x&=T_\sigma^{\rm rc}a+y. \notag
+\end{align}
+
+The terminal history is a bounded observation, not an additional onto row.
+Indeed, if \(f=f_{\rm B}+f_{\rm bd}\), the terminal recuts below,
+interpreted by linear extension of the definitions in
+\cref{eq:bulk-terminal-interface-data,eq:bulk-terminal-recut-data}, satisfy
+\begin{align}
+ &\varepsilon^{-1}\left\{
+   \|\Gamma_{\sigma,T}y\|_{C^0}
+      +\frac{|b_{\sigma,T}(y)|}{m_{\sigma,T}}\right\}
+ +\|(Z_{\sigma,T}[y],p_{\sigma,T}[y])\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}\notag\\
+ &\quad
+ +\frac{\|Q_{\sigma,T}[y]\|_{C^0}}{m_{\sigma,T}}
+ +\frac1{\rho_\delta m_{\sigma,T}}
+   \sup_{0\le t\le L_b}
+   \left|\int_{\bar r_{\sigma,T}(0)}^{\bar r_{\sigma,T}(t)}
+       \frac{\mathfrak D_\sigma y(u)}{q_0(u)^2}\,\dd u\right|\notag\\
+ &\le C\left\{
+     \lambda_\delta\|f_{\rm B}\|_
+       {\mathsf B_{\sigma,\delta}^{0,\lambda,\mathrm{tf}}}
+       +\|f_{\rm bd}\|_{\mathsf E_{\sigma,\delta}^{\mathrm{bd}}}
+       \right\}.                                 \label{eq:source-split-terminal-observation}
+\end{align}
+For the reconstructed response, put
+\(
+ p_x^\sharp=p_x+\varepsilon\mathscr P_{c,\sigma,N}a
+\).
+Then
+\begin{equation}
+ \|(Z_{x,T},p_{x,T}^\sharp)\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}
+ +\|(Z_{x,T},p_{x,T})\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}
+ \le C\left\{
+   \lambda_\delta\|f_{\rm B}\|
+   +\|f_{\rm bd}\|
+   +(\rho_\delta+M_\delta)
+        \|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}\right\}.     \label{eq:source-split-reconstructed-terminal-observation}
+\end{equation}
+Finally,
+\begin{equation}
+ \ell_{\sigma,\mathrm{ter}}(y,a)=a(e_{\sigma,1})             \label{eq:source-split-terminal-event-row}
+\end{equation}
+is a bounded scalar observation into \(\mathbb R_{\rho_\delta}\).
+
+This theorem closes the square causal-entry core for terminal-free
+distributed bulk plus zero-source boundary columns.  It does not make an
+arbitrary final voltage history a boundary condition, include
+terminal-supported distributed sources, verify the endpoint shear of a
+nonzero physical reference, construct a moving-duration family, or prove a
+physical root.
+\end{theorem}
+
+\begin{corollary}[Conditional event-aligned scalar core and history interface]
+\label[corollary]{cor:conditional-event-aligned-source-split-inverse}
+Retain \cref{lem:endpoint-centered-duration-selector}, including its fixed
+envelope and selector length \(L\), and assume
+\begin{equation}
+ 0\le L,\qquad L+\theta_m\le L_b,\qquad
+ J_L=[L_b-L-\theta_m,L_b-L]\subset[0,L_b].       \label{eq:terminal-selector-recut-window}
+\end{equation}
+Let \(L_\sigma=\mathscr L_{\sigma,\mathrm{ent}}^{\mathrm{split}}\) and
+\(\ell_\sigma=\ell_{\sigma,\mathrm{ter}}\).  On the attracting branch put
+\(\mathcal K_{p,a}=0\).  On the repelling branch, for a supplied endpoint
+reference, define the scalar normal-row column
+\begin{equation}
+ \mathcal K_{p,r}\beta
+ =\bigl((0,K_p\beta,0,0),0,0\bigr),\qquad
+ \kappa_{p,\delta}
+ =\frac{\rho_\delta|K_p|}{\varepsilon R_\delta}. \label{eq:source-split-event-normal-column}
+\end{equation}
+If \(\kappa_{p,\delta}\le C_K\), then
+\begin{equation}
+ \alpha_{p,\sigma}
+ =\ell_\sigma L_\sigma^{-1}\mathcal K_{p,\sigma},
+ \qquad
+ |\alpha_{p,\sigma}|
+ \le C C_K\{
+   \eta_{{\rm bd},\delta}+\eta_{\mathrm{hyb},\delta}\}
+ =o(1).                                         \label{eq:source-split-event-alpha}
+\end{equation}
+Hence the event-aligned scalar core
+\begin{equation}
+ L_\sigma^{\rm ea}
+ =L_\sigma-\mathcal K_{p,\sigma}\ell_\sigma       \label{eq:source-split-event-aligned-core}
+\end{equation}
+is a uniform isomorphism, with
+\begin{equation}
+ (L_\sigma^{\rm ea})^{-1}
+ =L_\sigma^{-1}
+  +\frac{L_\sigma^{-1}\mathcal K_{p,\sigma}
+              \ell_\sigma L_\sigma^{-1}}
+         {1-\alpha_{p,\sigma}}.                  \label{eq:source-split-Sherman-Morrison}
+\end{equation}
+
+Let
+\(
+ \mathcal H_{Z,T}^1=W^{1,\infty}([-\theta_m,0];E_N)
+\), with
+\begin{equation}
+ \|h\|_{\mathcal H_{Z,T}^1}
+ =\varepsilon^{-1}
+   \max\{\|h\|_{C^0},\delta\|h'\|_{L^\infty}\}.  \label{eq:terminal-voltage-interface-norm}
+\end{equation}
+For \(v=(y,a)\), put \(x=T_\sigma^{\rm rc}a+y\), and define the full physical
+observation on the same selector window by
+\begin{equation}
+ (\mathcal T_{Z,L}v)(\theta)
+ =Z_{x,T}(L_b-L+\theta),\qquad -\theta_m\le\theta\le0.
+                                                               \label{eq:terminal-voltage-full-observation}
+\end{equation}
+The estimates in
+\cref{eq:source-split-terminal-observation,eq:source-split-reconstructed-terminal-observation},
+and the definition of the terminal \(\mathsf T^1\)-norm, make
+\(\mathcal T_{Z,L}\) a uniform map into \(\mathcal H_{Z,T}^1\).  Let
+\(K_{Z,L}:\mathbb R_{\rho_\delta}\to\mathcal H_{Z,T}^1\) be bounded.  Introduce
+a free interface history \(h\in\mathcal H_{Z,T}^1\).  Then
+\begin{align*}
+ \mathcal X_\sigma^{\rm split}
+ &=\mathcal D_{\mathrm{split}}(\mathscr N_\sigma)
+       \times\mathsf A_{\sigma,\mathrm{hyb}},\\
+ \mathcal Y_\sigma^{\rm split}
+ &=\widetilde{\mathsf Y}_{\sigma,\mathrm{split}}
+       \times\mathsf H_{\sigma,\mathrm{hyb}}
+       \times\mathbb R_{\rho_\delta}.
+\end{align*}
+The operator
+\begin{equation}
+ \widetilde L_\sigma^{\rm ea}(v,h)
+ =\left(
+   L_\sigma v-\mathcal K_{p,\sigma}\ell_\sigma v,\,
+   \mathcal T_{Z,L}v-K_{Z,L}\ell_\sigma v-h\right)          \label{eq:terminal-history-augmented-event-core}
+\end{equation}
+from
+\(
+ \mathcal X_\sigma^{\rm split}\times\mathcal H_{Z,T}^1
+\)
+to
+\(
+ \mathcal Y_\sigma^{\rm split}\times\mathcal H_{Z,T}^1
+\)
+is an isomorphism if and only if \(L_\sigma^{\rm ea}\) is, and
+\begin{equation}
+ v=(L_\sigma^{\rm ea})^{-1}f,\qquad
+ h=(\mathcal T_{Z,L}-K_{Z,L}\ell_\sigma)v-g.     \label{eq:terminal-history-augmented-inverse}
+\end{equation}
+Its inverse is uniform whenever
+\(L_\sigma^{\rm ea}\), \(\mathcal T_{Z,L}\), and \(K_{Z,L}\) have uniform norms.
+In particular, \(K_{Z,L}\) does not enter the Sherman--Morrison denominator.
+
+For the selector column in
+\cref{eq:endpoint-selector-event-shear}, assume
+\(
+ Z_*\in C^2(I_{*,L};E_N)
+\), where
+\(
+ I_{*,L}=[S_*-L-\theta_m,S_*-L]
+\), and take every norm below on this interval.  If
+\(
+ |q_0(e)/q_{*,e}|\le C
+\), then
+\begin{equation}
+ \|K_{Z,L}\|_{\mathcal L(\mathbb R_{\rho_\delta},
+                \mathcal H_{Z,T}^1)}
+ \le C\frac{\rho_\delta}{\varepsilon}
+   \left\{\frac{\|Z_*'\|_{C^0}}{\delta}
+                  +\|Z_*''\|_{C^0}\right\}.      \label{eq:terminal-history-shear-jet-bound}
+\end{equation}
+Thus the sufficient slow-jet conditions
+\begin{equation}
+ \|Z_*'\|_{C^0}\le C\frac{\varepsilon\delta}{\rho_\delta},
+ \qquad
+ \|Z_*''\|_{C^0}\le C\frac{\varepsilon}{\rho_\delta}         \label{eq:terminal-history-slow-jet-gate}
+\end{equation}
+make this observation shear uniform.  Neither these two selected-window
+derivative bounds nor
+the hypothesis \(\kappa_{p,\delta}=O(1)\) follows from an ordinary terminal
+\(\mathsf T^1\)-bound.  The corollary therefore gives a conditional linear
+event-aligned perturbation of the proved reduced-reference square core.  It
+is not the full derivative at a nonzero endpoint reference, an endpoint RFDE
+reference itself, or a physical family.  The claim that \(K_{Z,L}\) stays out
+of the denominator applies only to this isolated free-interface block.  If
+\(h\) is later coupled to another matching row, the history shear may enter
+the larger global Schur or Woodbury matrix.
+\end{corollary}
 
 \begin{proposition}[Unavoidable \(S_\delta^2\) loss for rough normal data]
 \label[proposition]{prop:rough-normal-prefix-action-obstruction}

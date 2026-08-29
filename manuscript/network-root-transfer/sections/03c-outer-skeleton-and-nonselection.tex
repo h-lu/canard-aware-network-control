@@ -2314,6 +2314,64 @@ supplied fixed envelope and bounded terminal traces; it supplied no hybrid
 upper inverse or nonlinear endpoint family.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{prop:endpoint-normal-shear-identity}]
+The resource calculation in the proof of
+\cref{prop:fold-time-tracker-normal-form} gives, before multiplication by
+the extra factor of \(\delta\), the exact identity
+\begin{equation}
+ p_s=\delta w_{0,N}'(r)Q
+       +\delta\varepsilon q
+          (\mathcal D_{0,c,N}-q_0)'(r).          \label{eq:proof-endpoint-resource-speed}
+\end{equation}
+Evaluate it at \(s=S_*\), where \(r=e\) and \(q=q_{*,e}\), and use
+\(
+ R_{q,N}=\varepsilon q_0
+       (\mathcal D_{0,c,N}-q_0)'
+\).  Substitution in the definition of the selector column gives
+\begin{align*}
+ K_p
+ &=\frac{q_0(e)p_*'(S_*)}{\delta q_{*,e}}\\
+ &=\frac{q_0(e)}{q_{*,e}}w_{0,N}'(e)Q_e
+   +\varepsilon q_0(e)
+       (\mathcal D_{0,c,N}-q_0)'(e)\\
+ &=\frac{q_0(e)}{q_{*,e}}w_{0,N}'(e)Q_e+R_{q,N}(e),
+\end{align*}
+which proves \cref{eq:endpoint-normal-shear-identity}.  The coefficient
+bounds in the stated endpoint annulus, together with
+\(|R_{q,N}(e)|\le C\varepsilon\), now give the first line of
+\cref{eq:endpoint-normal-shear-scale-bound}.  Multiplication by
+\(\rho_\delta/(\varepsilon R_\delta)\) gives its second line and the two
+displayed sufficient conditions.
+
+It remains to identify the local anchor.  In the raw-compatible collar,
+the current voltage agrees with the formal moving core and the Hermite
+correction is supported away from all strict delay reads.  Moreover,
+\cref{eq:moving-core-first-defects} gives
+\(
+ b_{1,e}=-\delta^{-1}R_{z,N}(e)\in E_N
+\), hence \(\pi_N^Tb_{1,e}=0\).  Thus its collective speed at the current
+endpoint is the formal speed:
+\begin{equation*}
+ q_{*,e}=q_0(e),\qquad Q_e=0.
+\end{equation*}
+Moreover, for the resource defect
+\(p=\varpi_e^0-\varpi_e^{\rm rc}\),
+\cref{eq:moving-core-first-defects} gives
+\begin{equation*}
+ p_*'(0)=c_{1,e}^0-c_{1,e}^{\rm rc}
+        =\delta R_{q,N}(e).
+\end{equation*}
+Hence \(K_p^{\rm rc}=R_{q,N}(e)\).  The uniform residual-jet bound gives
+\(|R_{q,N}(e)|\le C\varepsilon\), and therefore
+\(
+ \kappa_{p,\delta}^{\rm rc}
+ \le C\rho_\delta/R_\delta=o(1)
+\)
+by \cref{eq:proof-diagonal-raw-scale-ratios}.  No forward continuation
+of this local collar was used, which proves the final scope statement.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:phase-delay-action-shift}]
 Put \(P=\mathscr P_{c,\sigma,N}a\).  In the algebraic row,
 \begin{equation*}
@@ -4465,6 +4523,234 @@ norm gives
 Finally \(m_{r,T}=R_\delta+\varepsilon/R_\delta^2\asymp R_\delta\),
 which proves \cref{eq:boundary-terminal-column-nonflush} and the stated
 scope boundary.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:source-split-hybrid-phase-core}]
+The formula
+\(
+ a(r)=b_0+(\mathcal P_\sigma k)(r)
+\)
+is forced by \(q_0^2a'=k\) and the causal entry value.  It gives
+\begin{align*}
+ \frac{\|a\|_\infty}{\rho_\delta}
+ &\le \frac{|b_0|}{\rho_\delta}
+   +\frac{\|\mathcal P_\sigma k\|_\infty}{\rho_\delta},\\
+ \sup_{I_\sigma}\frac{|q_0^2a'|}{m_\delta}
+ &=\sup_{I_\sigma}\frac{|k|}{m_\delta}.
+\end{align*}
+Conversely,
+\(
+ \mathcal P_\sigma(q_0^2a')=a-a(e_{\sigma,0})
+\), so the two-sided speed bounds give the forward estimate.  These
+formulas also prove completeness and the uniform isomorphism assertion.
+
+Put \(A=\|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}\).  The weight integral
+in \cref{eq:proof-prefix-action-weight-integrals} and the definition of
+the hybrid norm imply
+\begin{equation}
+ \sup|a|+\int_{I_\sigma}|a'|\,\dd r
+       +\sup_{I_\sigma}|r a'(r)|
+ \le C\{\rho_\delta+M_\delta\}A.               \label{eq:proof-hybrid-A1-embedding}
+\end{equation}
+This is \cref{eq:source-split-hybrid-A1-embedding}.
+
+By \cref{eq:structured-phase-speed-bound}, the formal part of the returned
+action satisfies
+\begin{align}
+ \sup\frac{|\mathfrak A_\sigma^{\rm form}a|}{m_\delta}
+ &\le C(\rho_\delta+M_\delta)A,\notag\\
+ \frac1{\rho_\delta}
+  \sup|\mathcal P_\sigma(\mathfrak A_\sigma^{\rm form}a)|
+ &\le C\frac{M_\delta(\rho_\delta+M_\delta)}
+                 {\rho_\delta}A.                \label{eq:proof-hybrid-formal-return}
+\end{align}
+For the additive raw-compatible collar, the pointwise estimate
+\cref{eq:proof-prefix-action-collar-pointwise} and
+\(|a(e_{\sigma,0})|\le\rho_\delta A\) give
+\begin{align}
+ \sup\frac{|Q_{\sigma,\rm col}a(e_{\sigma,0})|}{m_\delta}
+ &\le C(\rho_\delta+E_\delta)A,\notag\\
+ \frac1{\rho_\delta}\sup
+  |\mathcal P_\sigma\{Q_{\sigma,\rm col}a(e_{\sigma,0})\}|
+ &\le CM_\delta
+       \left(1+\frac{E_\delta}{\rho_\delta}\right)A.       \label{eq:proof-hybrid-collar-return}
+\end{align}
+Here the \(E_\delta\)-integral is bounded by
+\(CM_\delta E_\delta/\rho_\delta\), because
+\(R_\delta\rho_\delta\le R_\delta^2\le M_\delta\).
+Since \(\rho_\delta\le C M_\delta\), the sum of
+\cref{eq:proof-hybrid-formal-return,eq:proof-hybrid-collar-return} is
+bounded by the right-hand side of
+\cref{eq:source-split-hybrid-phase-smallness}.
+
+It remains to verify that the displayed number vanishes.  Direct expansion
+of the diagonal scales gives
+\begin{align*}
+ \frac{M_\delta^2}{\rho_\delta}
+ &=O_\varkappa\left(
+    \delta S_\delta^5+\delta S_\delta
+       +\frac{\delta}{S_\delta^3}\right),\\
+ \frac{M_\delta E_\delta}{\rho_\delta}
+ &=O_\varkappa(S_\delta^2\delta^{2-2\vartheta}),
+\end{align*}
+and \(M_\delta,E_\delta\to0\).  Every term tends to zero, proving
+\(\eta_{\mathrm{hyb},\delta}=o(1)\).
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:diagonal-source-split-hybrid-core}]
+The direct-sum coordinates in
+\cref{eq:source-split-normal-range} make
+\(\widetilde{\mathsf Y}_{\sigma,\mathrm{split}}\) a Banach space before
+any inverse is applied.  The old normal uniqueness gives
+\begin{equation*}
+ \mathscr N_\sigma G_\sigma=I,
+ \qquad G_\sigma\mathscr N_\sigma=I
+ \quad\hbox{on }\mathcal D(\mathscr N_\sigma),
+\end{equation*}
+so its restriction is an isomorphism onto
+\(\mathcal D_{\mathrm{split}}(\mathscr N_\sigma)\) with the stated graph
+norm.
+The old graph-domain estimates and the direct bulk/boundary bounds also give
+\begin{equation}
+ \|G_\sigma f\|_{\mathcal D(\mathscr N_\sigma)}
+ \le C\{\lambda_\delta\|f_{\rm B}\|+\|f_{\rm bd}\|\}
+ \le C\|f\|_{\mathrm{split}},                   \label{eq:proof-source-split-old-graph-embedding}
+\end{equation}
+so this transported domain is continuously embedded in the original normal
+graph domain.
+
+Let \(f=f_{\rm B}+f_{\rm bd}\), \(y=G_\sigma f\), and
+\(Q_y=\mathfrak D_\sigma y\).  The direct bulk estimate
+\cref{eq:bulk-direct-prefix-bound} and the boundary estimate
+\cref{eq:boundary-column-global-action} give
+\begin{align}
+ \sup_{I_\sigma}\frac{|Q_y|}{m_\delta}
+ &\le C\{\lambda_\delta\|f_{\rm B}\|
+                  +\|f_{\rm bd}\|\},\notag\\
+ \frac1{\rho_\delta}\sup_{I_\sigma}
+       |\mathcal P_\sigma Q_y|
+ &\le C\{\|f_{\rm B}\|
+           +\eta_{{\rm bd},\delta}\|f_{\rm bd}\|\}.       \label{eq:proof-source-split-normal-action}
+\end{align}
+All unlabeled data norms in this proof are the two summand norms in
+\cref{eq:source-split-normal-range}.  Thus
+\(\mathfrak D_\sigma G_\sigma\) maps the split range uniformly into
+\(\mathsf H_{\sigma,\mathrm{hyb}}\).
+
+By the preceding lemma and
+\(\eta_{\mathrm{hyb},\delta}=o(1)\), the phase Schur operator
+\begin{equation*}
+ \mathscr S_{\sigma,\mathrm{hyb}}^{\rm rc}
+ =\mathscr B_{\sigma,\mathrm{hyb}}
+       -(\mathfrak A_\sigma^{\rm rc},0)
+\end{equation*}
+is a uniform isomorphism by a Neumann series.  Consequently the formulas
+in \cref{eq:source-split-square-inverse} define a bounded solution.
+Conversely, the first row forces \(y=G_\sigma f\), after which the last
+two rows force the displayed \(a\).  This proves injectivity,
+surjectivity, and the uniform inverse estimate.  The forward bound follows
+from \cref{eq:proof-source-split-normal-action} and
+\cref{eq:source-split-hybrid-phase-smallness}.  The identity
+\(x=T_\sigma^{\rm rc}a+y\) is the raw-compatible reconstruction already
+proved in \cref{thm:raw-compatible-phase-normal-inverse}.
+
+For the normal terminal observation, add the estimates
+\cref{eq:bulk-terminal-interface-bound,eq:bulk-terminal-full-trace-bound,eq:bulk-terminal-local-action}
+to
+\cref{eq:boundary-column-terminal-trace}.  Linearity gives exactly
+\cref{eq:source-split-terminal-observation}; no terminal value has been
+used as range data.
+
+It remains to check the physical terminal trace of the phase column in the
+hybrid scale.  The first part of
+\cref{prop:raw-compatible-terminal-phase-column}, together with
+\cref{eq:proof-hybrid-A1-embedding}, gives the shifted trace bound
+\begin{equation*}
+ \|(Z_{\sigma,T},p_{\sigma,T}^{\sharp})\|_{\mathsf T_{\sigma,T}^1}
+ \le C(\rho_\delta+M_\delta)A.
+\end{equation*}
+On the terminal annulus, the same delay-difference calculation as in
+\cref{eq:proof-terminal-phase-local-difference} now uses
+\(|a'|\le Cm_\delta A\) and yields
+\(
+ \sup(|P|+|P_s|)\le C\delta m_{\sigma,T}A
+\).
+Therefore
+\begin{equation*}
+ \|(0,\varepsilon P)\|_{\mathsf T_{\sigma,T}^1}
+ \le C\delta A
+ \le C(\rho_\delta+M_\delta)A.
+\end{equation*}
+Adding the normal trace first proves the shifted half of
+\cref{eq:source-split-reconstructed-terminal-observation}; subtracting the
+shift proves its physical half.  Finally,
+\(|a(e_{\sigma,1})|/\rho_\delta\le A\), so
+\cref{eq:source-split-terminal-event-row} is a bounded observation.  The
+argument never supplied a right inverse for an arbitrary final history,
+which proves the scope statement.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{cor:conditional-event-aligned-source-split-inverse}]
+Only the repelling branch requires an estimate.  Apply the raw inverse to
+the scalar boundary datum \((0,K_p,0,0)\), with zero phase and entry data,
+and write the response as \((y_p,a_p)\).  Its boundary norm is
+\begin{equation*}
+ D_p=\frac{|K_p|}{\varepsilon R_\delta}
+     =\frac{\kappa_{p,\delta}}{\rho_\delta}.
+\end{equation*}
+The causal entry value of \(a_p\) is zero.  Hence its terminal value is
+the oriented prefix of its phase equation:
+\begin{equation}
+ a_p(e_{r,1})
+ =\mathcal P_r(\mathfrak D_ry_p)(e_{r,1})
+   +\mathcal P_r(\mathfrak A_r^{\rm rc}a_p)(e_{r,1}).       \label{eq:proof-event-alpha-prefix}
+\end{equation}
+The boundary-prefix estimate bounds the first term by
+\(C\rho_\delta\eta_{{\rm bd},\delta}D_p\).  The uniform hybrid phase
+inverse gives \(\|a_p\|_{\mathsf A_{r,\mathrm{hyb}}}\le CD_p\), and
+\cref{eq:source-split-hybrid-phase-smallness} bounds the second term by
+\(C\rho_\delta\eta_{\mathrm{hyb},\delta}D_p\).  Thus
+\begin{equation*}
+ |a_p(e_{r,1})|
+ \le C\kappa_{p,\delta}
+       \{\eta_{{\rm bd},\delta}
+           +\eta_{\mathrm{hyb},\delta}\},
+\end{equation*}
+which is \cref{eq:source-split-event-alpha}.  On the attracting branch it
+is immediate because \(\mathcal K_{p,a}=0\).
+
+The rank-one resolvent identity now gives
+\cref{eq:source-split-Sherman-Morrison}; its denominator stays uniformly
+away from zero because \(\alpha_{p,\sigma}=o(1)\).  Direct substitution
+shows that the lower triangular history block in
+\cref{eq:terminal-history-augmented-event-core} has inverse
+\cref{eq:terminal-history-augmented-inverse}.  Thus its invertibility
+depends only on the scalar core.  The history shear affects the inverse
+norm but never the rank-one denominator.
+
+For completeness, the selector formula gives
+\begin{equation*}
+ (K_{Z,L}\beta)(\theta)
+ =\frac{q_0(e)}{\delta q_{*,e}}
+       Z_*'(S_*-L+\theta)\,\beta.
+\end{equation*}
+If \(|\beta|/\rho_\delta=1\), differentiation in \(\theta\) and the
+definition of \(\mathcal H_{Z,T}^1\) give
+\begin{equation*}
+ \|K_{Z,L}\beta\|_{\mathcal H_{Z,T}^1}
+ \le C\frac{\rho_\delta}{\varepsilon}
+   \left\{\frac{\|Z_*'\|_{C^0}}{\delta}
+                  +\|Z_*''\|_{C^0}\right\}.
+\end{equation*}
+This proves \cref{eq:terminal-history-shear-jet-bound}; the two conditions
+in \cref{eq:terminal-history-slow-jet-gate} make its right-hand side
+uniform.  None of these estimates upgrades a terminal observation to an
+arbitrarily prescribable RFDE boundary history, and no generic
+\(\mathsf T^1\)-bound supplies the required selected-window derivative
+bounds.
 \end{proof}
 
 \begin{proof}[Proof of
