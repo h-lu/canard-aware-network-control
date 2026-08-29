@@ -16,15 +16,19 @@ normal norm incurs the divergent loss
 `R_delta^2/rho_delta = 2 alpha kappa^2 S_delta^2`; thus the old rough norm
 cannot be retained for a normalized causal theorem.  On this global class,
 the weighted-speed term already controls the explicitly recorded prefixes.
-Separately, the attracting
-outer-buffer evolution kernel is controlled through one endpoint derivative
-with rate `exp{-c R_delta Delta s/delta}`, while one zeroth-order
-positive-delay Duhamel generation is `O(epsilon/R_delta)`.  On the repelling
-outer interval `R_delta/2 <= |r_r| <= R_delta`, only the terminal scalar
-kernel is proved to have the same `R_delta/delta` rate scale.  The arbitrary-source
-source-split rough-middle/strong-terminal inverse, its event-aligned upper
-block, the endpoint RFDE family, and the physical root remain open.  The
-fixed-envelope duration-selector algebra on a supplied reference is now
+Separately, the first-order terminal component theorem is now proved on
+both explicit `O(S_delta)` terminal windows.  In the natural
+`m_delta(r)=|r|+epsilon/|r|^2` weight it accepts arbitrary continuous
+incoming histories, one scalar boundary row, and distributed normal sources;
+it resums the current loop, gives strict-delay numbers
+`O(epsilon/m_(a,T))` and `O(epsilon/m_(r,T))`, flushes incoming terminal-interface
+data from the final history window when the distributed sources vanish, and
+controls the reconstructed speed and local terminal phase increment.  This
+closes the terminal propagator input, not
+the rough-middle-to-incoming trace/prefix map.  The structured phase column
+in the same strong norm, the event-aligned `K` correction, the complete
+hybrid upper block, the endpoint RFDE family, and the physical root remain
+open.  The fixed-envelope duration-selector algebra on a supplied reference is now
 closed: its raw terminal
 column factors exactly through the event row, an explicit range shear
 annihilates that column, and the scalar coefficient is the supplied
@@ -222,13 +226,16 @@ The endpoint-centered references `S_sigma^(ep,0)` must be constructed for
 this BVP; they are not obtained by renaming the proved fixed-radius
 interior-hit segments.  Direct substitution
 `r_out=r_out,delta` is now justified only for the fixed-reference
-zeroth-order inverse.  Separately, on the attracting outer buffer the
-evolution kernel is controlled through one endpoint derivative at rate
-`c r_out/delta`, while one zeroth-order positive-delay Duhamel generation
-has size `epsilon/r_out`.  On the repelling outer interval
-`r_out/2 <= |r_r| <= r_out`, only the terminal scalar kernel is proved to
-have the same `r_out/delta` rate scale.  Higher diagonal jets and uniform
-hybrid control of the event shear `K` and the event-aligned terminal rows
+zeroth-order inverse.  Separately, Proposition
+`prop:diagonal-terminal-component-green` now supplies the fixed-reduced-path
+first-order terminal propagator on both branches.  On the terminal annuli it
+uses `m_delta(r)=|r|+epsilon/|r|^2`, accepts arbitrary continuous distributed
+normal sources, and proves the two-sided repelling Green-kernel bound without
+backward RFDE evolution.  Its flushing statement begins with an explicitly
+supplied terminal-interface history; it does not construct that history from
+rough-middle data.  Higher diagonal jets, the rough-middle-to-incoming
+trace/prefix map, the structured phase column in the same strong norm, and
+uniform hybrid control of the event shear `K` and event-aligned terminal rows
 still require new estimates.  That theorem must track at least
 
 ```text
@@ -332,11 +339,14 @@ v       = (L_ent^ea)^(-1) f_ea,
 hat_tau = c_ter^(-1) { b - ell_ter v }.
 ```
 
-The missing analytic estimate is therefore a hybrid rough-middle/strong-terminal
-arbitrary-source inverse for `L_ent^ea`, including the rank-one event-aligned
-terminal rows and the norm of `K`.  It also requires an actual endpoint
-strong buffer with the rectangular `J_phys` jets.  The fixed-reduced-base
-inverse, supplied terminal trace chart, and interior-hit inverse are three
+The terminal arbitrary-source propagator is now available, but the full
+analytic estimate is not.  What remains is the rough-middle-to-incoming
+trace/prefix assembly, the structured phase source in the same first-order
+terminal norm, and the rank-one event-aligned correction with a uniform norm
+for `K`; only their composition can prove that `L_ent^ea` is a hybrid
+isomorphism.  It also requires an actual endpoint strong buffer with the
+rectangular `J_phys` jets.  The fixed-reduced-base inverse, the local terminal
+propagator, supplied terminal trace chart, and interior-hit inverse are
 reusable inputs, not that theorem itself.
 
 This is the implementation target for the open physical-history part of
@@ -765,8 +775,22 @@ epsilon^j partial_T^j = delta^j partial_s^j,
 ```
 
 so the proved endpoint Green boundary-layer derivatives match exactly the
-`delta^j partial_theta^j` collar norm.  The complete nonlinear map must have
-the target contraction number
+`delta^j partial_theta^j` collar norm.
+
+The new terminal component theorem closes the `s=1` fixed-reduced-path
+module on the two terminal annuli.  With `L_0=A S_delta`, its error is
+
+```text
+exp{-c r_(sigma,T) L_0/delta}
+  + {C epsilon/m_(sigma,T)}^M,
+```
+
+and its first derivative is recovered directly from the RFDE rather than by
+differentiating a Green kernel.  This estimate starts from an explicit
+terminal-interface history.  It does not prove the middle-to-interface map,
+the structured phase column, or the following arbitrary-`s` hybrid budget.
+
+The complete nonlinear map must have the target contraction number
 
 ```text
 C { a_boundary + r_out + 1/S_delta
@@ -797,9 +821,9 @@ E_act,s(L_0)
 Its three terms correspond to the outer/terminal scalar layer, the inner
 transverse layer, and the future-slaved inner scalar component.  This
 anisotropic derivative estimate is not yet a consequence of the proved
-uniform action bound and must be established by the finite-generation
-lemma.  The next strict theorem will instead use the coarser tail already
-supported by the proved action estimate,
+first-order terminal theorem and must be established by a higher-order
+hybrid assembly.  A later strict theorem may instead use the coarser tail
+suggested by the proved first-order estimate,
 
 ```text
 E_coarse,s(L)
@@ -854,11 +878,12 @@ where `B_boundary b` is the explicit homogeneous Green boundary layer,
 measured in `(Z,mathfrak p)` rather than the top slow `Q` norm.
 Here `b` is generally a compatible complete collar history in
 `H_cap^(k+3)`, together with the scalar resource compatibility row; it is not
-merely a finite-dimensional endpoint amplitude.  The missing Green lemma
-is now specifically the hybrid coupling: the raw collar chart constructs
+merely a finite-dimensional endpoint amplitude.  The remaining Green step
+is now specifically the hybrid assembly: the raw collar chart constructs
 compatible histories and fixes the exact trace count, but it does not turn
 arbitrary Green data into a compatible lift.  The new lemma must couple its
-bounded trace to the fold-time mixed Green inverse through a finite
+bounded rough-middle trace to the proved fold-time terminal Green inverse
+through a finite
 method-of-steps buffer, prove the order-`s` buffer-to-slow bootstrap, and
 control the physical terminal/endpoint event time, not merely the already
 proved fixed-interior hit time.  The
@@ -1164,10 +1189,15 @@ gauges.
       endpoint, original scalar-coordinate hit, and nonzero exact scalar
       terminal coefficient.
 - [x] Fixed-reference zeroth-order raw-compatible phase--normal inverse on
-      the receding diagonal, plus the attracting outer-buffer evolution
-      kernel through one endpoint derivative, its one zeroth-order
-      positive-delay Duhamel-generation `O(epsilon/R_delta)` bound, and the
-      repelling outer-interval terminal scalar-kernel rate scale.
+      the receding diagonal, together with current-absorbed positive-delay
+      splitting and the forward-transverse/future-scalar component
+      generation calculus.
+- [x] Branchwise first-order terminal component Green theorem on explicit
+      `O(S_delta)` windows: independent arbitrary-source data norm, natural
+      `m_delta` state/source weights, two-sided repelling kernel, strict-delay
+      numbers `O(epsilon/m_(sigma,T))`, incoming-interface flushing for zero
+      distributed source, and local speed/action control.  This does not
+      construct the rough-middle incoming trace.
 - [x] Fixed-reference causal-entry phase--normal inverse in the
       prefix-action graph norm, together with the exact no-delay
       `p=epsilon r` obstruction proving the unavoidable
@@ -1180,12 +1210,13 @@ gauges.
       operator equivalence and a numerical Schur value.
 - [ ] Event-aligned moving-duration phase--normal theorem and the
       corresponding causal-entry/terminal-event action-weighted
-      parameter/gauge result at the original endpoints.  Construct the
-      hybrid arbitrary-source rough-middle/strong-terminal inverse for
-      `L_ent^ea`, split structured bulk data from localized endpoint rows,
-      control the event shear `K`, construct raw-compatible endpoint
-      histories, and obtain the endpoint `J_phys` family before
-      terminal-to-terminal nonlinear tracker reconstruction.
+      parameter/gauge result at the original endpoints.  Assemble the
+      rough-middle-to-incoming trace/prefix map with the proved terminal
+      propagator, prove the structured phase column in that strong norm,
+      split structured bulk data from localized endpoint rows, control the
+      event shear `K`, construct raw-compatible endpoint histories, and
+      obtain the endpoint `J_phys` family before terminal-to-terminal
+      nonlinear tracker reconstruction.
 - [ ] Full action-weighted global nonautonomous quotient theorem, including
       Volterra, moving projection, delay, `q`, and rectangular parameter-jet
       terms.  The local fixed-reference rectangular-jet hit theorem is proved.
@@ -1213,7 +1244,8 @@ receding collar, the exact reference-pulled endpoint conjugacy for every
 prescribed source in the stated structured class, and the fixed-reference
 diagonal order-zero inverse, including its prefix-action causal-entry
 restriction and the exact old-rough-source loss theorem.  The exact
-fixed-envelope selector algebra is also proved, but its event-aligned upper
-block has no hybrid inverse yet.  None of these constructs the endpoint RFDE
+fixed-envelope selector algebra and the local first-order terminal component
+propagator are also proved, but the event-aligned upper block has no hybrid
+inverse yet.  None of these constructs the endpoint RFDE
 family, compares different fixed-reference charts, or compares the full
 reparameterized trackers on a common chart.
