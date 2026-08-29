@@ -48,6 +48,25 @@ The unique source-split causal-entry square core is now closed for the
 terminal-free distributed bulk plus the localized zero-source boundary
 summand.  Its hybrid phase return is `o(1)`, and terminal histories are
 bounded observations rather than illicit final-history boundary rows.  The
+normal Green operator is now also extended directly, without a false density
+argument, to piecewise-`L^\infty` distributed sources supported on the
+terminal buffer.  The natural terminal source norm uses
+`r_(sigma,T)m_(sigma,T)` in the scalar row.  Its whole state and terminal
+`T^1` trace are only `O(1)`, while its causal prefix gains the explicit
+vanishing factor `m_(sigma,T)`.  Combining this summand with the terminal-free
+bulk and zero-source boundary columns gives a unique three-summand
+causal-entry phase--normal isomorphism.  This closes the linear range needed
+for a later nonlinear terminal residual; it does not yet prove that residual
+belongs to the range.
+The repelling future scalar row can now be replaced uniformly by the exact
+speed-aligned row `epsilon Q_e`.  Its pure terminal-column coefficient is
+`1+O(R_delta^2+epsilon/R_delta+E_(r,T))`, hence is bounded away from zero.
+At any nonlinear zero of this row one has exactly `Q_e=0`,
+`q_*,e/q_0(e)=1`, `K_p=R_q(e)=O(epsilon)`, and `kappa_p=o(1)`.  This selects
+the future Green coordinate and removes the scalar-shear hypothesis
+*conditional on existence of the nonlinear zero*; it does not construct that
+zero or supply the terminal voltage second jet needed for `K_Z`.
+The
 exact scalar endpoint shear is
 `K_p=R_q+(q_0/q_*)w_0' Q_e`; the raw-compatible local outer-endpoint germ has
 `Q_e=0`, `K_p=R_q=O(epsilon)`, and `kappa_p=o(1)`.  Under the explicit
@@ -1295,10 +1314,26 @@ gauges.
       raw-collar anchor, conditional scalar rank-one event-aligned inverse,
       and free terminal-history interface with its explicit `K_Z` derivative
       gate.
-- [ ] Actual moving-duration endpoint RFDE family, including verification of
-      its scalar/history shear bounds and structured speed ratio, nonlinear
-      split-range closure, and the original-endpoint `J_phys` parameter/gauge
-      family before terminal-to-terminal tracker reconstruction.
+- [x] Piecewise-`L^\infty` terminal-supported distributed Green extension
+      with direct natural source norm, branchwise state norm, weighted-speed
+      control, `O(m_(sigma,T))` causal-prefix gain, and full terminal `T^1`
+      observation.  No final-window flushing is claimed while the source
+      remains active.
+- [x] Unique bulk/boundary/terminal three-summand causal-entry square core,
+      including the explicit returned-action ledger and the
+      `O(m_(sigma,T))` pure-terminal event return.
+- [x] Speed-aligned repelling terminal scalar row: the future Green column
+      has coefficient `1+o(1)`, and every eventual nonlinear zero of
+      `epsilon Q_e` has exact unit speed ratio and
+      `K_p=R_q=O(epsilon)`.  Existence of that nonlinear zero is not included.
+- [ ] Fixed-envelope nonlinear three-summand residual and contraction,
+      including exact nonlinear split-range membership, affine terminal
+      corrector, and the speed-aligned endpoint zero.
+- [ ] Second-order terminal Green/slow-jet theorem and the selected-window
+      `Z_s,Z_ss` bounds required for the uniform `K_Z` gate.
+- [ ] Actual moving-duration endpoint RFDE family and the original-endpoint
+      `J_phys` parameter/gauge family before terminal-to-terminal tracker
+      reconstruction.
 - [ ] Full action-weighted global nonautonomous quotient theorem, including
       Volterra, moving projection, delay, `q`, and rectangular parameter-jet
       terms.  The local fixed-reference rectangular-jet hit theorem is proved.
@@ -1329,8 +1364,11 @@ restriction and the exact old-rough-source loss theorem.  The exact
 fixed-envelope selector algebra and the local first-order terminal component
 propagator, together with the direct terminal-free
 `lambda_delta`-bulk trace, localized boundary columns, source-split hybrid
-square core, and conditional scalar event-aligned inverse, are also proved.
-The required endpoint shear bounds remain hypotheses until a forward
-endpoint reference is constructed.  None of these constructs the endpoint RFDE
+square core, terminal-supported `L^\infty` Green extension, three-summand
+linear core, speed-aligned future scalar row, and conditional scalar
+event-aligned inverse, are also proved.  The scalar shear is automatically
+small at any eventual speed-aligned nonlinear zero; that zero and the
+history shear remain open until the nonlinear terminal residual and
+second-order terminal slow jet are constructed.  None of these constructs the endpoint RFDE
 family, compares different fixed-reference charts, or compares the full
 reparameterized trackers on a common chart.
