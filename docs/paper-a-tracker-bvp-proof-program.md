@@ -12,7 +12,13 @@ complete hit histories are raw-gauge equivalent through the full rectangular
 `J_phys` jet modulo `O(delta^infinity)` in the natural normalized event
 norm.  The result is local to one reference chart and two separate interior
 sections.  The scalar endpoint-recut obstruction is now proved: these
-inner-anchored results do not imply the original endpoints.**
+inner-anchored results do not imply the original endpoints.  The exact
+prescribed-Eulerian scalar replacement is also proved: on
+`r_out,delta = kappa_ep (delta S_delta^3)^(1/2)`, the flight-time
+coordinate gives a causal scalar-coordinate hit at the original endpoint,
+an `O(S_delta)` duration correction, and a normalized scalar terminal
+Schur inverse.  The
+diagonal-uniform RFDE normal/collar theorem remains open.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -83,7 +89,8 @@ nonlinear `C^2` strong-to-weak coordinate calculus on any already available
 strong terminal buffer, including the nonzero terminal columns and mixed
 event derivatives.  It does not construct the hybrid moving-event residual
 and inverse; the independent proposition above supplies its strong local
-buffer but not the normalized terminal Schur estimate.
+buffer but not the normalized full phase--normal RFDE terminal Schur
+estimate.
 
 Proposition `prop:inner-anchor-endpoint-recut-obstruction` now closes the
 logical audit of the tempting direct route.  An explicit scalar source in
@@ -103,26 +110,91 @@ the existing inner anchor, speed sign, relative inverse, and
 `O(S_delta)` interior window alone cannot justify literal endpoint
 recutting.
 
-### Endpoint-recut gate and the correct next BVP
+Theorem `thm:receding-collar-causal-flight-time` now closes the prescribed
+Eulerian scalar endpoint problem.  For `q=q0+Qhat<0`, define
 
-The next nonlinear problem must release the duration and impose the two
-physical scalar rows in their causal order.  Its target endpoint equations
-are
+```text
+theta_q(r) = integral_(e0)^r 1/q(u) du,
+beta       = theta_0 - theta_q,
+hat_tau    = theta_q(e1) - theta_0(e1).
+```
+
+Then the exact bordered equations are
+
+```text
+q0^2 beta' / (1-q0 beta') = Qhat,
+beta(e0) = 0,
+beta(e1) + hat_tau = 0.
+```
+
+On
+
+```text
+r_out,delta = kappa_ep (delta S_delta^3)^(1/2)
+```
+
+and for
+
+```text
+|Qhat(r)| <= C (r_out,delta + S_delta^(-2))
+                 (|r| + delta^2/|r|^2),
+```
+
+the exact duration satisfies `|hat_tau|=O(rho_delta)` and
+`|hat_tau|/delta=O(S_delta)`.  The source-to-flight-time map is analytic
+in `C0`, and the action-weighted scalar bordered differential has a
+dimension-uniform inverse.  Its normalized scalar terminal Schur
+coefficient is exactly one.
+
+The exact duration is the nonlinear moment
+
+```text
+integral_(e1)^(e0) Qhat / {q0(q0+Qhat)} dr.
+```
+
+Cancelling only `integral Qhat/q0^2` is insufficient because the exact
+quadratic remainder has a fixed sign.  Thus the theorem closes the scalar
+causal event, not merely its linearization.
+
+### Remaining gate: a diagonal-uniform RFDE endpoint BVP
+
+The next nonlinear RFDE problem must put the normal equations and
+raw-compatible histories on the same receding diagonal and impose the two
+physical scalar rows in causal order.  Its target endpoint equations are
 
 ```text
 S_sigma = S_sigma^(ep,0) + hat_tau / delta,
 
-attracting:  r_a(0)    =  r_out,     r_a(S_a) =  rho_delta,
-repelling:   r_r(0)    = -rho_delta, r_r(S_r) = -r_out.
+attracting:  r_a(0)    =  r_out,delta,
+             r_a(S_a) =  rho_delta,
+repelling:   r_r(0)    = -rho_delta,
+             r_r(S_r) = -r_out,delta.
 ```
 
-The endpoint-centered references `S_sigma^(ep,0)` must be constructed
-for this BVP; they are not obtained by renaming the proved interior-hit
-segments.  On the attracting branch, replace the inner phase anchor by the
-causal-entry row and add the terminal event row.  On the repelling branch,
-the inner anchor already is the causal-entry row; add the terminal event row
-and evaluate the existing terminal normal row, including `p(S_r)`, at
-the moving terminal point.  Retaining fixed duration and then adding both
+The endpoint-centered references `S_sigma^(ep,0)` must be constructed for
+this BVP; they are not obtained by renaming the proved fixed-radius
+interior-hit segments.  The existing theorem chain cannot simply substitute
+`r_out=r_out,delta`: the first high-order current-absorbed constants were
+allowed to depend on fixed `r_out`, the true normal rate is
+`c r_out/delta`, the branch and hit margins are `c r_out/delta`, and the
+explicit terminal gate contains `delta/r_out^2`.  A diagonal theorem must
+track at least
+
+```text
+rho_delta/r_out,delta -> 0,
+delta/r_out,delta^2   -> 0,
+delta S_delta/r_out,delta -> 0,
+r_out,delta S_delta^2 -> 0,
+```
+
+write the action lower bound as `c r_out,delta^2`, and retain every
+parameter/gauge jet under those ratios.
+
+On the attracting branch, replace the inner phase anchor by the causal
+entry row and add the terminal event row.  On the repelling branch, the
+inner anchor already is the causal entry row; add the terminal event row
+and evaluate the existing terminal normal row, including `p(S_r)`, at the
+moving terminal point.  Retaining fixed duration and then adding both
 endpoint rows would overdetermine the problem.
 
 On one fixed forward envelope, the nonlinear residual interface is to be
@@ -160,7 +232,9 @@ containing the normal equations, raw-compatible collar, and causal-entry
 phase row but not the terminal event row.  Let `C_ter` be the complete
 bulk/collar/terminal column generated by `hat_tau`, and let `ell_ter`
 be the terminal event differential with nonzero scalar speed `q_e`.
-The missing estimate is
+The scalar flight-time block already has normalized terminal coefficient
+one.  The missing estimate is the off-diagonal correction created after the
+normal equations, collar, and terminal evaluation are coupled:
 
 ```text
 | q_e^(-1) ell_ter L_ent^(-1) C_ter | <= 1/2
@@ -970,7 +1044,8 @@ gauges.
       both physical interior hits, in the natural annular component scales,
       together with a fixed-reference terminal chart window and the safe
       `O(delta^(-2))` raw recut loss.  No second gauge derivative, normalized
-      terminal Schur estimate, or original-endpoint recut is claimed.
+      full phase--normal terminal Schur estimate, or original-endpoint RFDE
+      recut is claimed.
 - [x] RFDE-specific finite-window quotient flushing on both actual
       physical-hit buffers, with attracting left-boundary and repelling
       stable-left/one-dimensional-unstable-right Green estimates and no
@@ -995,13 +1070,20 @@ gauges.
       fold-time scale larger than every fixed `O(S_delta)` window.  This
       proves that direct recutting of the interior-hit family is invalid; it
       does not construct a full RFDE endpoint event.
-- [ ] Normalized terminal phase-to-normal Schur estimate and the corresponding
-      causal-entry/terminal-event action-weighted parameter/gauge theorem at
-      the original endpoints.  Construct a newly centered moving-duration
-      reference, the hybrid arbitrary-source
+- [x] Exact prescribed-Eulerian scalar
+      causal-entry/original-coordinate-endpoint flight-time
+      theorem on the receding collar, including `O(rho_delta)` duration,
+      `O(S_delta)` fold-time correction, analytic source dependence,
+      normalized scalar terminal Schur inverse, and the nonlinear endpoint
+      moment obstruction to first-order cancellation.
+- [ ] Diagonal-uniform normalized phase--normal terminal Schur estimate and
+      the corresponding causal-entry/terminal-event action-weighted
+      parameter/gauge theorem at the original endpoints.  Re-prove the
+      fixed-radius Green/collar/finite-generation chain on the receding
+      corridor, then construct the hybrid arbitrary-source
       rough-middle/strong-terminal inverse, its complete `C_ter` column,
-      and the endpoint `J_phys` family before terminal-to-terminal
-      nonlinear tracker reconstruction.
+      raw-compatible endpoint histories, and the endpoint `J_phys` family
+      before terminal-to-terminal nonlinear tracker reconstruction.
 - [ ] Full action-weighted global nonautonomous quotient theorem, including
       Volterra, moving projection, delay, `q`, and rectangular parameter-jet
       terms.  The local fixed-reference rectangular-jet hit theorem is proved.
@@ -1023,6 +1105,8 @@ terminal-to-terminal physical tracker family, gap, and root do not yet exist
 as theorems.  The raw-gauge fixed-section family, its pointwise
 generated-interior representatives, the common-buffer weak interior hits,
 their fixed-reference `J_phys` raw-gauge-flat complete-history classes, and
-the terminal trace-scale coordinates above are theorems, but they neither
-select physical endpoints, compare different fixed-reference charts, nor
-compare the full reparameterized trackers on a common chart.
+the terminal trace-scale coordinates above are theorems.  So is the
+prescribed-speed scalar original-coordinate-endpoint flight-time theorem on the
+receding collar.  None of these makes the full RFDE endpoint inverse
+diagonal-uniform, compares different fixed-reference charts, or compares
+the full reparameterized trackers on a common chart.

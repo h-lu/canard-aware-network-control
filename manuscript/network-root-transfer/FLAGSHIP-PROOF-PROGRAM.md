@@ -24,7 +24,14 @@ relative to one reference chart and two separate interior sections; they do
 not supply the terminal-to-terminal physical relation.  The scalar
 endpoint-recut obstruction now proves that the inner-anchored estimates,
 strict speed sign, and interior windows alone cannot be promoted to the
-original endpoints by literal recutting.
+original endpoints by literal recutting.  The exact scalar replacement is
+now proved: on the receding collar
+\(r_{{\rm out},\delta}=\varkappa_{\rm ep}(\delta S_\delta^3)^{1/2}\),
+the prescribed Eulerian flight-time phase gives a causal scalar-coordinate
+hit at the original endpoint, \(O(S_\delta)\) duration correction, and a
+normalized scalar terminal Schur inverse.  The existing normal/collar RFDE
+chain is still a fixed-\(r_{\rm out}\) theorem and has not been made uniform
+on that diagonal.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -454,12 +461,17 @@ not the conormal of an independently defined physical maximal-canard locus.
 - [x] Prove the scalar endpoint-recut nonimplication, including the
       wrong-sided outer endpoints and algebraic bordered fold-time scale
       exceeding every fixed $O(S_\delta)$ interior window.
-- [ ] Prove the normalized terminal Schur estimate and the corresponding
-      causal-entry/terminal-event action-weighted parameter/gauge-jet theorem
-      at the original endpoints.  This requires a newly centered
-      moving-duration reference, a hybrid arbitrary-source
-      strong-terminal/weak-middle inverse, and the complete terminal column
-      before the terminal-to-terminal nonlinear outer tracker.
+- [x] Prove the exact Eulerian scalar causal-entry/terminal-event theorem
+      on a receding outer collar, including the nonlinear flight-time
+      moment, $O(\rho_\delta)$ duration, $O(S_\delta)$ fold-time window,
+      analytic source map, and normalized scalar terminal Schur inverse.
+- [ ] Prove the diagonal-uniform phase--normal terminal theorem and its
+      action-weighted parameter/gauge jets at the original endpoints.  This
+      requires re-proving the Green/collar/finite-generation constants on
+      the receding collar, a hybrid arbitrary-source
+      strong-terminal/weak-middle inverse, raw-compatible endpoint
+      histories, and the complete normal terminal column before the
+      terminal-to-terminal nonlinear outer tracker.
 - [ ] Prove the global action-weighted phase-quotiented normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -481,9 +493,12 @@ bound and pointwise true action in an equivalent graph--action norm; the
 unrestricted old-state obstruction remains.  The endpoint-recut obstruction
 additionally proves that this scalar package permits wrong-sided original
 endpoints and a formal bordered duration scale much longer than the local
-hit buffers.  Therefore the next valid construction is a newly centered
-causal-entry/terminal-event moving-duration BVP, not transport of the
-interior chart.  The fixed-reference $C^2$
+hit buffers.  The receding-collar flight-time theorem now closes the exact
+Eulerian scalar endpoint problem and its normalized terminal row; it also
+shows that cancellation of only the linear duration moment is insufficient.
+The next valid construction is the diagonal-uniform normal/collar endpoint
+BVP and its coupling to that scalar row, not transport of the interior
+chart.  The fixed-reference $C^2$
 old-history assembler, including its endpoint/collar second jet and normalized
 quadratic remainder, is now closed.  Its exact fixed-section assembly with the
 nonlinear phase-delay and normal equations is also closed: the base defect is
@@ -505,8 +520,9 @@ normalized event norm.  The fixed-reference rough chart now upgrades this
 local result to the full rectangular parameter jet and the exact mixed gauge
 staircase, while retaining the pure parameter response of one representative.
 This does not compare different reference charts, the full gauge-dependent
-tracker domains, or the original endpoints.  The normalized terminal Schur
-estimate, the original-endpoint action-weighted parameter theorem, the full
+tracker domains, or the original endpoints.  The scalar terminal Schur row
+is now closed, but the diagonal-uniform phase--normal terminal estimate,
+the original-endpoint action-weighted parameter theorem, the full RFDE
 moving-event residual/inverse, terminal-to-terminal nonlinear tracker
 existence, global action-weighted quotient roughness, and the remaining
 parts of G1 stay open.  The generic

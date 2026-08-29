@@ -8,10 +8,14 @@ parameter-coherent complete-history hits, and differentiated local quotient
 flushing gives raw-gauge equivalence through the full rectangular `J_phys`
 jet.  The result remains local to two separate interior hits and one
 reference chart.  A scalar endpoint-recut obstruction now proves that these
-inner-anchored hits cannot be promoted by literal recutting.  The newly
-centered causal-entry/terminal-event Schur theorem, original physical
-endpoints, global nonautonomous quotient, repelling history sheet,
-cross-branch gap, and physical root remain open.**
+inner-anchored hits cannot be promoted by literal recutting.  The correct
+prescribed-Eulerian scalar replacement is now proved on a receding collar:
+it gives an exact causal scalar-coordinate hit at the original endpoint, an
+`O(S_delta)` duration correction, and a normalized scalar terminal Schur
+row.  The diagonal-uniform RFDE
+normal/collar endpoint theorem, original physical endpoint histories,
+global nonautonomous quotient, repelling history sheet, cross-branch gap,
+and physical root remain open.**
 
 This note refines the physical-identification part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -361,7 +365,7 @@ C delta^(-M) exp{-c log(1/delta)/delta},
 which is still smaller than every algebraic power.  No such estimate is yet
 claimed in the manuscript.
 
-## 5. The next new analytic lemma
+## 5. Scalar endpoint row closed; diagonal RFDE theorem still open
 
 Proposition `prop:inner-anchor-endpoint-recut-obstruction` rules out
 the direct route from the fixed interior hits: within the proved scalar
@@ -370,25 +374,54 @@ and the algebraic bordered fold-time scale can exceed every fixed
 `O(S_delta)` window.  It is a scalar nonimplication theorem, not a
 full-RFDE impossibility result.
 
-The next proof must therefore construct a newly centered, moving-duration
-causal-entry/terminal-event BVP.  In fold time its endpoint rows are
+Theorem `thm:receding-collar-causal-flight-time` now proves the correct
+prescribed-speed scalar replacement.  For the Eulerian speed
+`q=q0+Qhat<0`, the flight-time difference satisfies
 
 ```text
-attracting:  r_a(0) = r_out,      r_a(S_a) = rho_delta,
-repelling:   r_r(0) = -rho_delta, r_r(S_r) = -r_out,
+q0^2 beta'/(1-q0 beta') = Qhat,
+beta(e0) = 0,
+beta(e1) + hat_tau = 0.
+```
+
+On
+
+```text
+r_out,delta = kappa_ep (delta S_delta^3)^(1/2),
+```
+
+the structured speed class has `|hat_tau|=O(rho_delta)` and therefore an
+`O(S_delta)` fold-time correction.  The source map is analytic and the
+normalized scalar terminal Schur inverse is uniform.  Its exact nonlinear
+duration moment also shows that cancelling only the first-order moment
+cannot control the event time.
+
+The next proof must put the full RFDE normal/collar problem on that same
+receding diagonal.  In fold time its endpoint rows are
+
+```text
+attracting:  r_a(0) = r_out,delta,
+             r_a(S_a) = rho_delta,
+repelling:   r_r(0) = -rho_delta,
+             r_r(S_r) = -r_out,delta,
 S_sigma = S_sigma^(ep,0) + hat_tau / delta.
 ```
 
 It must establish:
 
-1. an endpoint-centered approximate reference on each branch, rather than a
-   renamed interior-hit segment;
-2. a hybrid arbitrary-source rough-middle/strong-terminal inverse with the
+1. a diagonal-uniform Green/collar/finite-generation theorem tracking
+   `rho_delta/r_out`, `delta/r_out^2`, `delta S_delta/r_out`, and
+   `r_out S_delta^2`, with action and hit margins retaining their explicit
+   powers of `r_out`;
+2. an endpoint-centered approximate reference on each branch, rather than a
+   renamed fixed-radius interior-hit segment;
+3. a hybrid arbitrary-source rough-middle/strong-terminal inverse with the
    causal entry row and the complete moving-terminal column;
-3. the epsilon-normalized terminal Schur estimate in the graph/action norm;
-4. a parameter-coherent original-endpoint tracker family with all
+4. the epsilon-normalized full phase--normal terminal Schur estimate in the
+   graph/action norm; the scalar Schur row alone is already proved;
+5. a parameter-coherent original-endpoint tracker family with all
    `J_phys=(C^1_nu C^2_eta) intersect (C^2_nu C^1_eta)` jets;
-5. only then, the stationary-gauge tangent, nonautonomous quotient
+6. only then, the stationary-gauge tangent, nonautonomous quotient
    roughness, attracting representative, and repelling mixed-boundary sheet.
 
 Only after these lemmas may the mixed Lyapunov--Perron equation in Section 3
@@ -469,9 +502,15 @@ not acceptable.
 - [x] Scalar proof that the inner-anchored hypotheses do not imply literal
       original-endpoint recutting: both endpoint sidedness and the divergent
       algebraic bordered fold-time scale are explicit.
-- [ ] Newly centered causal-entry/terminal-event moving-duration BVP,
-      hybrid arbitrary-source inverse, normalized terminal Schur estimate,
-      and original-endpoint `J_phys` family.
+- [x] Exact prescribed-Eulerian-speed causal flight-time theorem on the
+      receding collar, including the original scalar endpoint,
+      `O(rho_delta)` duration, `O(S_delta)` fold-time correction, nonlinear
+      endpoint moment, and normalized scalar terminal Schur inverse.
+- [ ] Diagonal-uniform RFDE causal-entry/terminal-event theorem, including
+      the Green/collar/finite-generation re-audit, hybrid arbitrary-source
+      inverse, complete normal terminal column, normalized full
+      phase--normal Schur estimate, raw-compatible endpoint histories, and
+      original-endpoint `J_phys` family.
 - [ ] Global phase-quotiented nonautonomous normal splitting from the
       original outer endpoints to the fold-side interfaces.
 - [ ] Attracting representative and repelling codimension-one history sheet

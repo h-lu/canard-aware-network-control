@@ -7,10 +7,13 @@ generated-interior physical trackers are proved.  On the fixed interior
 sections, one reference chart now supports parameter-coherent hit histories
 and raw-gauge equivalence through the full rectangular `J_phys` jet.  The
 scalar endpoint-recut obstruction now proves that these inner-anchored
-objects cannot be promoted by literal recutting.  The newly centered
-causal-entry/terminal-event Schur theorem, original endpoints, repelling
-history sheet, physical gap/root, and selected-to-physical identification
-remain open.**
+objects cannot be promoted by literal recutting.  The exact prescribed
+Eulerian scalar causal-entry/original-coordinate-endpoint flight-time
+theorem and its normalized
+terminal Schur row are now proved on a receding collar.  The
+diagonal-uniform RFDE normal/collar endpoint theorem, original endpoint
+histories, repelling history sheet, physical gap/root, and
+selected-to-physical identification remain open.**
 
 This note tracks
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -233,14 +236,21 @@ additional manuscript claim.
 
 The local generated-interior tracker and quotient parts of G0 are closed,
 including their fixed-reference rectangular jets.  The original-endpoint
-terminal Schur coupling, global nonautonomous roughness, cross-branch sheet
-and gap, and the physical-identification part of G1 remain open.
+full phase--normal terminal coupling, global nonautonomous roughness,
+cross-branch sheet and gap, and the physical-identification part of G1
+remain open.
 The scalar endpoint-recut obstruction is closed: it proves that the current
 speed class, inner anchor, speed sign, and interior windows alone do not
 yield those original endpoints.  Its bordered coordinate is not a
 constructed physical event time, and the result is not a full-RFDE
-impossibility theorem.  The next valid operator must release duration and
-use exactly one causal-entry row and one terminal-event row.
+impossibility theorem.  The correct scalar replacement is also closed:
+on
+`r_out,delta=kappa_ep(delta S_delta^3)^(1/2)`, the exact Eulerian
+flight-time coordinate gives a causal scalar endpoint, `O(S_delta)`
+duration window, nonlinear endpoint moment, and uniform scalar terminal
+Schur row.  The next valid RFDE operator must be diagonal-uniform, release
+duration, and use exactly one causal-entry row and one terminal-event row
+together with the complete normal/collar column.
 The generic nonselection example is not a model-specific impossibility
 theorem for the shared-resource RFDE.
 
@@ -311,9 +321,16 @@ Do not:
       fixed-reference rectangular-jet interior hit classes.
 - [x] Prove the scalar endpoint-recut nonimplication, including endpoint
       sidedness and the divergent algebraic bordered fold-time scale.
-- [ ] Construct a newly centered causal-entry/terminal-event moving-duration
-      BVP with its hybrid arbitrary-source inverse, normalized terminal Schur
-      estimate, and original-endpoint `J_phys` family.
+- [x] Prove the exact prescribed-speed scalar causal flight-time theorem on
+      the receding collar, including `O(rho_delta)` duration,
+      `O(S_delta)` fold-time correction, nonlinear moment, analytic source
+      map, and normalized scalar terminal Schur inverse.
+- [ ] Construct the diagonal-uniform RFDE
+      causal-entry/terminal-event BVP with its re-audited
+      Green/collar/finite-generation chain, hybrid arbitrary-source inverse,
+      complete normal terminal column, normalized full phase--normal Schur
+      estimate, raw-compatible endpoint histories, and original-endpoint
+      `J_phys` family.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting, mixed
       outer-history Lyapunov--Perron construction, and exact fold-graph
       overlap for Paper A.
