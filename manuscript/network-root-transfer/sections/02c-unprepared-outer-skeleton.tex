@@ -3667,6 +3667,122 @@ bound the event shear of a nonzero endpoint reference, or produce a
 moving-duration family, a complete-history connection, or a physical root.
 \end{proposition}
 
+\begin{proposition}[Terminal-supported distributed Green extension]
+\label[proposition]{prop:diagonal-terminal-source-extension}
+Retain
+\cref{prop:diagonal-terminal-component-green,%
+prop:diagonal-boundary-prefix-terminal-trace}
+and the terminal scales and recuts in
+\cref{eq:terminal-component-scales,eq:terminal-component-recut}.  For a
+Banach space \(X\), write
+\[
+ L^\infty_{\rm pw}(I_\sigma;s_{\sigma,T};X)
+ =L^\infty((0,s_{\sigma,T});X)
+   \oplus L^\infty((s_{\sigma,T},S_\sigma);X).
+\]
+Put
+\begin{equation}
+ \mathsf E_{\sigma,\delta}^{T,\infty}
+ =\left\{f_T=(0,0,F_T,H_T):
+ \begin{array}{l}
+   F_T\in L^\infty_{\rm pw}(I_\sigma;s_{\sigma,T};E_N),\\
+   H_T\in L^\infty_{\rm pw}(I_\sigma;s_{\sigma,T};\mathbb R),\\
+   (F_T,H_T)=0\ \text{a.e. on }[0,s_{\sigma,T})
+ \end{array}\right\}.                                      \label{eq:terminal-source-space}
+\end{equation}
+and give this space the direct input norm
+\begin{equation}
+ \|f_T\|_{\mathsf E_{\sigma,\delta}^{T,\infty}}
+ =\frac1\varepsilon
+   \operatorname*{ess\,sup}_{s_{\sigma,T}<s<S_\sigma}
+   \left\{\|F_T(s)\|_N
+       +\frac{|H_T(s)|}{r_{\sigma,T}m_{\sigma,T}}\right\}.    \label{eq:terminal-source-direct-norm}
+\end{equation}
+This norm is specified before solving the normal problem.
+
+For a response \(y=(\gamma_y,Z_y,p_y)\), define the branchwise state norm
+\begin{align}
+ \|y\|_{\mathsf X_{\sigma,T}^{\rm pw}}
+ =\varepsilon^{-1}\bigg\{&
+   \|\gamma_y\|_{N,e_\sigma,\delta}^{\sharp}
+ +\operatorname*{ess\,sup}_{0<s<s_{\sigma,T}}
+     \left(\|Z_y(s)\|_N+
+       \frac{|p_y(s)|}{|\bar r_\sigma(s)|}\right)\notag\\
+ &+\operatorname*{ess\,sup}_{s_{\sigma,T}<s<S_\sigma}
+     \left(\|Z_y(s)\|_N+
+       \frac{|p_y(s)|}{m_{\sigma,T}}\right)\bigg\}.          \label{eq:terminal-source-state-norm}
+\end{align}
+On the repelling branch \(\gamma_y\) is the actual history after closing
+the compatible collar feedback; its prescribed baseline history is zero.
+
+Let \(\mathscr N_\sigma^\infty\) denote the boundary-residual operator in
+\cref{eq:fixed-phase-normal-boundary-operator}, with its differential rows
+interpreted a.e. for piecewise-\(L^\infty\) sources.  The component Green
+formula defines a solution operator
+\begin{equation}
+ G_{\sigma,T}^{\infty}:
+ \mathsf E_{\sigma,\delta}^{T,\infty}
+ \longrightarrow\mathsf X_{\sigma,T}^{\rm pw},              \label{eq:terminal-source-green-extension}
+\end{equation}
+whose response is continuous, piecewise \(W^{1,\infty}\), and agrees with
+\(G_\sigma\) for continuous sources.  It is the unique continuous,
+piecewise-\(W^{1,\infty}\) response with zero prescribed baseline history,
+zero attracting initial scalar row or repelling future scalar row, and
+\begin{equation}
+ \mathscr N_\sigma^\infty y_T=f_T.                         \label{eq:terminal-source-ae-normal-equation}
+\end{equation}
+If
+\(
+y_T=G_{\sigma,T}^{\infty}f_T
+\),
+\(
+Q_T=\mathfrak D_\sigma y_T
+\), and
+\begin{equation}
+ \Pi_{\sigma,T}(r)
+ =\int_{e_{\sigma,0}}^r\frac{Q_T(u)}{q_0(u)^2}\,\dd u,       \label{eq:terminal-source-causal-primitive}
+\end{equation}
+then, uniformly in the dimension, the branch, and the diagonal parameters,
+\begin{align}
+ \|y_T\|_{\mathsf X_{\sigma,T}^{\rm pw}}
+ &\le C\|f_T\|_{\mathsf E_{\sigma,\delta}^{T,\infty}},
+                                                        \label{eq:terminal-source-state-bound}\\
+ \sup_{r\in I_\sigma}\frac{|Q_T(r)|}{m_\delta(r)}
+ &\le C\|f_T\|_{\mathsf E_{\sigma,\delta}^{T,\infty}},
+                                                        \label{eq:terminal-source-speed-bound}\\
+ \frac1{\rho_\delta}\sup_{r\in I_\sigma}|\Pi_{\sigma,T}(r)|
+ &\le C m_{\sigma,T}
+       \|f_T\|_{\mathsf E_{\sigma,\delta}^{T,\infty}}.     \label{eq:terminal-source-action-bound}
+\end{align}
+Moreover, its incoming data and full terminal recut satisfy
+\begin{align}
+ &\varepsilon^{-1}\left\{
+   \|\Gamma_{\sigma,T}y_T\|_{C^0}
+   +\frac{|b_{\sigma,T}(y_T)|}{m_{\sigma,T}}\right\}
+ \le C\|f_T\|_{\mathsf E_{\sigma,\delta}^{T,\infty}},
+                                                        \label{eq:terminal-source-interface-bound}\\
+ &\|(Z_{\sigma,T}[y_T],p_{\sigma,T}[y_T])\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}
+ \le C\|f_T\|_{\mathsf E_{\sigma,\delta}^{T,\infty}}.     \label{eq:terminal-source-trace-bound}
+\end{align}
+Here
+\begin{equation}
+ m_{a,T}=\frac{4\alpha^2}{S_\delta^2}(1+o(1)),
+ \qquad
+ m_{r,T}=R_\delta(1+o(1)),                       \label{eq:terminal-source-small-factors}
+\end{equation}
+so the action factor in \cref{eq:terminal-source-action-bound} vanishes on
+both branches.
+
+The factor \(m_{\sigma,T}\) belongs only to the causal action.  In
+general neither the whole state norm nor the terminal \(\mathsf T^1\)
+trace is \(O(m_{\sigma,T})\).  On the attracting branch an arbitrary
+terminal scalar source also need not embed uniformly into the old global
+state norm, which is why \cref{eq:terminal-source-state-norm} uses the
+terminal scale after the recut.  No final-window flushing is asserted for
+a source which remains active up to the endpoint.
+\end{proposition}
+
 \paragraph{The source-split causal core.}
 The preceding two propositions have deliberately different scales.  To keep
 them distinct, fix \(\varkappa,A>0\) and an integer \(M\ge2\).  All constants
@@ -3855,12 +3971,209 @@ Finally,
 is a bounded scalar observation into \(\mathbb R_{\rho_\delta}\).
 
 This theorem closes the square causal-entry core for terminal-free
-distributed bulk plus zero-source boundary columns.  It does not make an
-arbitrary final voltage history a boundary condition, include
-terminal-supported distributed sources, verify the endpoint shear of a
-nonzero physical reference, construct a moving-duration family, or prove a
+distributed bulk plus zero-source boundary columns.  The distinct
+terminal-source extension is stated next.  Neither result makes an arbitrary
+final voltage history a boundary condition, verifies the endpoint shear of a
+nonzero physical reference, constructs a moving-duration family, or proves a
 physical root.
 \end{theorem}
+
+\begin{corollary}[Three-summand causal core with terminal sources]
+\label[corollary]{cor:terminal-source-split-hybrid-core}
+Retain
+\cref{prop:diagonal-terminal-source-extension,%
+thm:diagonal-source-split-hybrid-core}.
+Because the bulk sources vanish on the terminal buffer and terminal sources
+vanish before it, the a.e. support decomposition
+\begin{equation}
+ \widetilde{\mathsf Y}_{\sigma,\mathrm{split}+T}
+ =\mathsf B_{\sigma,\delta}^{0,\lambda,\mathrm{tf}}
+   \mathbin{\widehat\oplus_1}
+     \mathsf E_{\sigma,\delta}^{\mathrm{bd}}
+   \mathbin{\widehat\oplus_1}
+     \mathsf E_{\sigma,\delta}^{T,\infty}                 \label{eq:terminal-source-three-summand-range}
+\end{equation}
+is unique.  Extend the Green operator linearly by
+\begin{equation}
+ G_\sigma^\infty(f_{\rm B}+f_{\rm bd}+f_T)
+ =G_\sigma(f_{\rm B}+f_{\rm bd})
+   +G_{\sigma,T}^\infty f_T,                               \label{eq:terminal-source-extended-green}
+\end{equation}
+and let
+\begin{equation}
+ \mathcal D_{\mathrm{split}+T}(\mathscr N_\sigma)
+ =G_\sigma^\infty
+    \widetilde{\mathsf Y}_{\sigma,\mathrm{split}+T}        \label{eq:terminal-source-extended-domain}
+\end{equation}
+carry the transported three-summand norm.  Then
+\begin{equation}
+ \mathscr L_{\sigma,\mathrm{ent}}^{\mathrm{split}+T}(y,a)
+ =\left(
+   \mathscr N_\sigma^\infty y,
+   q_0^2a'-\mathfrak D_\sigma y
+      -\mathfrak A_\sigma^{\rm rc}a,
+   a(e_{\sigma,0})\right)                                  \label{eq:terminal-source-extended-square-operator}
+\end{equation}
+is a dimension- and diagonal-uniform isomorphism from
+\begin{equation}
+ \mathcal D_{\mathrm{split}+T}(\mathscr N_\sigma)
+       \times\mathsf A_{\sigma,\mathrm{hyb}}
+ \quad\hbox{onto}\quad
+ \widetilde{\mathsf Y}_{\sigma,\mathrm{split}+T}
+       \times\mathsf H_{\sigma,\mathrm{hyb}}
+       \times\mathbb R_{\rho_\delta}.                     \label{eq:terminal-source-extended-isomorphism}
+\end{equation}
+Its inverse is still
+\begin{equation}
+ y=G_\sigma^\infty f,qquad
+ a=\left\{\mathscr B_{\sigma,\mathrm{hyb}}
+       -(\mathfrak A_\sigma^{\rm rc},0)\right\}^{-1}
+       (k+\mathfrak D_\sigma y,b_0).                        \label{eq:terminal-source-extended-inverse}
+\end{equation}
+
+More precisely, writing
+\(
+f=f_{\rm B}+f_{\rm bd}+f_T
+\), one has
+\begin{align}
+ \sup_{I_\sigma}\frac{|\mathfrak D_\sigma y|}{m_\delta}
+ &\le C\{\lambda_\delta\|f_{\rm B}\|
+       +\|f_{\rm bd}\|+\|f_T\|\},\notag\\
+ \frac1{\rho_\delta}\sup_{I_\sigma}
+       |\mathcal P_\sigma\mathfrak D_\sigma y|
+ &\le C\{\|f_{\rm B}\|
+       +\eta_{{\rm bd},\delta}\|f_{\rm bd}\|
+       +m_{\sigma,T}\|f_T\|\}.                           \label{eq:terminal-source-returned-action-ledger}
+\end{align}
+The left-hand side of the terminal observation in
+\cref{eq:source-split-terminal-observation} is bounded by
+\begin{equation}
+ C\{\lambda_\delta\|f_{\rm B}\|
+       +\|f_{\rm bd}\|+\|f_T\|\}.                         \label{eq:terminal-source-extended-observation}
+\end{equation}
+For a pure terminal source and zero phase and entry data, the returned event
+observation has the sharper bound
+\begin{equation}
+ \frac{|\ell_{\sigma,\mathrm{ter}}
+   (\mathscr L_{\sigma,\mathrm{ent}}^{\mathrm{split}+T})^{-1}
+       (f_T,0,0)|}{\rho_\delta}
+ \le C\{m_{\sigma,T}+\eta_{\mathrm{hyb},\delta}\}
+       \|f_T\|
+ \le C m_{\sigma,T}\|f_T\|.                              \label{eq:terminal-source-event-smallness}
+\end{equation}
+All unlabeled norms in these three displays are the corresponding summand
+norms in \cref{eq:terminal-source-three-summand-range}.
+
+This is an \(L^\infty\)-source extension of the fixed-envelope linear core.
+It does not by itself prove that the nonlinear affine residual belongs to
+this range, close a nonlinear two-point estimate, move the terminal event,
+or construct a physical endpoint reference or root.
+\end{corollary}
+
+\begin{proposition}[Speed-aligned repelling terminal row]
+\label[proposition]{prop:repelling-speed-aligned-terminal-row}
+Retain
+\cref{prop:diagonal-terminal-component-green,%
+lem:repelling-component-generations,%
+prop:diagonal-boundary-prefix-terminal-trace,%
+prop:endpoint-normal-shear-identity,%
+prop:fold-time-tracker-normal-form,%
+lem:endpoint-centered-duration-selector}
+and put \(e_r=-R_\delta\).  If
+\(y=(\gamma_y,Z_y,p_y)\) belongs to the repelling fixed-phase normal
+domain, extend \(Z_y\) by its actual old history and define
+\begin{equation}
+ \mathscr B_{r}^{\rm sp}y
+ =p_y(S_r)-\ell_N(e_r)Z_y(S_r)
+   +\varepsilon\mathscr D_{c,N}^{\rm lin}
+       [\gamma_y,Z_y](S_r).
+                                                        \label{eq:speed-aligned-linear-row}
+\end{equation}
+Thus, exactly,
+\begin{equation}
+ \mathscr B_r^{\rm sp}y
+ =\varepsilon Q_y(e_r).                          \label{eq:speed-aligned-linear-speed}
+\end{equation}
+Give its scalar range the same normalization as the old future row,
+\(\|b_{\rm sp}\|_{\mathbb R_{\varepsilon R_\delta}}
+=|b_{\rm sp}|/(\varepsilon R_\delta)\).  Then
+\begin{equation}
+ \frac{|\mathscr B_r^{\rm sp}y|}{\varepsilon R_\delta}
+ \le C\|y\|_{\mathcal D(\mathscr N_r)}.          \label{eq:speed-aligned-row-bound}
+\end{equation}
+
+Let
+\(\mathfrak u_r^{\rm ter}b=G_r(0,b,0,0)\) be the closed repelling
+terminal scalar column, including its compatible entry feedback, and set
+\begin{equation}
+ \chi_{r,\delta}
+ =\mathscr B_r^{\rm sp}\mathfrak u_r^{\rm ter}1,
+ \qquad
+ \omega_{r,\delta}^{\rm sp}
+ =R_\delta^2+\frac{\varepsilon}{R_\delta}
+       +\mathcal E_{r,T}(\delta).                \label{eq:speed-aligned-row-coefficient}
+\end{equation}
+Then
+\begin{equation}
+ |\chi_{r,\delta}-1|
+ \le C\omega_{r,\delta}^{\rm sp}=o(1).          \label{eq:speed-aligned-row-margin}
+\end{equation}
+Consequently, after replacing the future row \(p_y(S_r)\) by
+\(\mathscr B_r^{\rm sp}y\), the repelling normal operator remains a
+dimension- and diagonal-uniform isomorphism.  More explicitly, if
+\(y_0=G_r(\gamma_0,0,F,H)\), the solution with speed-row datum
+\(b_{\rm sp}\) is
+\begin{equation}
+ y=y_0+\mathfrak u_r^{\rm ter}
+   \frac{b_{\rm sp}-\mathscr B_r^{\rm sp}y_0}
+        {\chi_{r,\delta}}.                       \label{eq:speed-aligned-row-inverse}
+\end{equation}
+The same row replacement is valid on every source-split restriction of the
+normal range for which the old inverse and the terminal observation are
+bounded.
+
+For the exact nonlinear tracker, let a supplied classical selector envelope
+satisfy
+\begin{equation}
+ r_*(S_*)=e_r,\qquad
+ q_{*,e}=\delta^{-1}r_*'(S_*)\ne0,\qquad
+ c_{\rm ter}=\frac{q_{*,e}}{q_0(e_r)},                      \label{eq:speed-aligned-selector-normalization}
+\end{equation}
+and use the original-endpoint row and normalization of
+\cref{lem:endpoint-centered-duration-selector}.  Define
+\begin{equation}
+ \mathscr B_{r}^{\rm sp,nl}(r,Z,p)
+ =p_e-\ell_N(e_r)Z_e-h_{c,N}(e_r,Z_e)
+       +\varepsilon\Delta\mathcal D_{c,N}^{\rm ft}(e_r).
+                                                        \label{eq:speed-aligned-nonlinear-row}
+\end{equation}
+By \cref{eq:fold-time-speed-reconstruction}, this is the exact identity
+\begin{equation}
+ \mathscr B_r^{\rm sp,nl}=\varepsilon Q_e.       \label{eq:speed-aligned-nonlinear-speed}
+\end{equation}
+Hence any classical moving-endpoint RFDE zero satisfying
+\(\mathscr B_r^{\rm sp,nl}=0\) has
+\begin{equation}
+ Q_e=0,
+ \qquad q_{*,e}=q_0(e_r),
+ \qquad c_{\rm ter}=1,
+ \qquad K_p=R_{q,N}(e_r),                        \label{eq:speed-aligned-endpoint-consequences}
+\end{equation}
+and therefore
+\begin{equation}
+ |K_p|\le C\varepsilon,
+ \qquad
+ \kappa_{p,\delta}\le C\frac{\rho_\delta}{R_\delta}=o(1).
+                                                        \label{eq:speed-aligned-endpoint-shear}
+\end{equation}
+This is a uniformly transverse choice of the one future scalar row, not the
+construction of its nonlinear zero.  It removes the scalar endpoint-shear
+hypothesis once such a zero has been obtained, but it neither supplies the
+terminal \(Z\)-jet in
+\cref{eq:terminal-history-slow-jet-gate} nor constructs a past orbit or a
+physical root.
+\end{proposition}
+
 
 \begin{corollary}[Conditional event-aligned scalar core and history interface]
 \label[corollary]{cor:conditional-event-aligned-source-split-inverse}

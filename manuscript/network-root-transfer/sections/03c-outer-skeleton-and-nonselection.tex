@@ -2372,6 +2372,129 @@ by \cref{eq:proof-diagonal-raw-scale-ratios}.  No forward continuation
 of this local collar was used, which proves the final scope statement.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{prop:repelling-speed-aligned-terminal-row}]
+The algebraic row in \cref{eq:fixed-phase-normal-block}, evaluated at
+
+\(
+s=S_r
+\), is
+\begin{equation*}
+ \varepsilon Q_y(e_r)
+ =p_y(S_r)-\ell_N(e_r)Z_y(S_r)
+   +\varepsilon\mathscr D_{c,N}^{\rm lin}
+       [\gamma_y,Z_y](S_r).
+\end{equation*}
+This proves \cref{eq:speed-aligned-linear-speed}.  The terminal point lies
+past every strict delay, and the graph norm controls
+\(p_y(S_r)/(\varepsilon R_\delta)\), the terminal voltage trace, and all
+current delay differences.  On the terminal annulus
+\(
+|\ell_N(e_r)|\le CR_\delta
+\), while the fixed-delay coefficients in
+\(\mathscr D_{c,N}^{\rm lin}\) are uniformly bounded.  The same
+algebraic-row estimate used in
+\cref{eq:normal-phase-pointwise-Q} therefore proves
+\cref{eq:speed-aligned-row-bound}.
+
+It remains to calculate the new row on the old terminal scalar column.
+Write
+\(
+(Z^{\rm ter},p^{\rm ter})
+\)
+for the current part of
+\(
+\mathfrak u_r^{\rm ter}1
+\).
+The current-loop estimate in the proof of
+\cref{prop:diagonal-terminal-component-green} gives, before strict-delay
+generations are inserted,
+\begin{equation}
+ \|Z^{\rm ter}\|_{C^0([S_r-\theta_m,S_r])}
+ \le CR_\delta .                              \label{eq:proof-speed-row-current-column}
+\end{equation}
+Indeed, the terminal scalar datum has size
+\(
+m_{r,T}^{-1}
+\)
+in the local scalar norm and the scalar-to-voltage current-loop kernel has
+size
+\(
+O(R_\delta m_{r,T})
+\).
+Equivalently, in the unscaled
+\(\|Z\|+|p|/R_\delta\) state norm the datum \(p(S_r)=1\) has size
+\(R_\delta^{-1}\), while the terminal scalar-to-voltage block has norm
+\(O(R_\delta^2)\); their product is the \(O(R_\delta)\) bound above.
+Each strict-delay generation costs
+\(
+O(\varepsilon/m_{r,T})=O(\varepsilon/R_\delta)
+\).  After the speed row is applied, the geometric sum of the generated
+terms is therefore bounded by \(C\varepsilon/R_\delta\).  The compatible
+entry-feedback column has bounded normalized amplitude and its final row
+trace is flushed by
+\(
+\mathcal E_{r,T}(\delta)
+\).
+Summing the component series and using
+\(
+p^{\rm ter}(S_r)=1
+\)
+therefore gives
+\begin{equation}
+ \left|
+ -\ell_N(e_r)Z^{\rm ter}(S_r)
+ +\varepsilon\mathscr D_{c,N}^{\rm lin}
+     [\gamma^{\rm ter},Z^{\rm ter}](S_r)
+ \right|
+ \le C\left\{R_\delta^2+\frac{\varepsilon}{R_\delta}
+          +\mathcal E_{r,T}(\delta)\right\}.     \label{eq:proof-speed-row-column-error}
+\end{equation}
+This is exactly
+\cref{eq:speed-aligned-row-margin}.  Since every term in
+\(
+\omega_{r,\delta}^{\rm sp}
+\)
+tends to zero, \(|\chi_{r,\delta}|\ge1/2\) after decreasing
+\(\delta_0\).
+
+For prescribed distributed data and old history, first solve with zero old
+future scalar row, obtaining
+\(
+y_0=G_r(\gamma_0,0,F,H)
+\).
+Adding a multiple of
+\(
+\mathfrak u_r^{\rm ter}
+\)
+does not change those data, and the coefficient forced by the new scalar
+row is precisely the quotient in
+\cref{eq:speed-aligned-row-inverse}.  This proves the row-replacement
+isomorphism and, by restriction, its source-split versions.
+
+Finally, the nonlinear algebraic reconstruction
+\cref{eq:fold-time-speed-reconstruction} gives
+\(
+\mathscr B_r^{\rm sp,nl}=\varepsilon Q_e
+\)
+without approximation.  At a zero of this row,
+\(
+Q_e=0
+\), hence the moving speed is the reduced speed and
+\(
+q_{*,e}=q_0(e_r)
+\).
+The selector normalization in
+\cref{eq:speed-aligned-selector-normalization} first gives
+\(c_{\rm ter}=1\).  Substitution in
+\cref{eq:endpoint-normal-shear-identity} then gives
+\(
+K_p=R_{q,N}(e_r)
+\), and the estimates in
+\cref{eq:speed-aligned-endpoint-shear}.  No nonlinear zero or terminal
+voltage jet was constructed in this argument.
+\end{proof}
+
 \begin{proof}[Proof of \cref{prop:phase-delay-action-shift}]
 Put \(P=\mathscr P_{c,\sigma,N}a\).  In the algebraic row,
 \begin{equation*}
@@ -4526,6 +4649,131 @@ scope boundary.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:diagonal-terminal-source-extension}]
+We use the component Green formulas directly on \(L^\infty\) data.  This is
+important: continuous functions are not dense in \(L^\infty\), so no
+density argument is available.  The current-loop kernels are integrable
+and hence bounded on \(L^\infty\).  The strict-delay component series from
+the proof of \cref{prop:diagonal-terminal-component-green} remains
+absolutely convergent because
+\begin{equation}
+ \beta_{a,T}\le C\frac{\varepsilon}{m_{a,T}}=o(1),
+ \qquad
+ \beta_{r,T}\le C\frac{\varepsilon}{m_{r,T}}=o(1).          \label{eq:proof-terminal-source-generation}
+\end{equation}
+It defines a continuous, piecewise \(W^{1,\infty}\) solution, agrees with
+the original Green formula whenever the source is continuous, and is
+the unique solution of
+\cref{eq:terminal-source-ae-normal-equation} with the displayed zero
+boundary data by the same component contraction.  This proves the asserted
+solution-operator statement.
+
+On the attracting branch, zero initial data and terminal support imply
+\begin{equation*}
+ (Z_T,p_T)=0\qquad(0\le s\le s_{a,T}).
+\end{equation*}
+Thus the recut has zero incoming history and zero initial scalar datum.
+Apply the \(L^\infty\) version of the local component estimate with the
+data norm in \cref{eq:terminal-source-direct-norm}.  It gives
+\cref{eq:terminal-source-state-bound,eq:terminal-source-speed-bound,%
+eq:terminal-source-interface-bound,eq:terminal-source-trace-bound} on this
+branch.  The local-action estimate in
+\cref{prop:diagonal-terminal-component-green} gives directly
+\begin{equation*}
+ \rho_\delta^{-1}\sup|\Pi_{a,T}|
+ \le Cm_{a,T}\|f_T\|.
+\end{equation*}
+
+On the repelling terminal annulus,
+\(
+|\bar r_r|\asymp R_\delta
+\)
+and
+\(
+r_{r,T}m_{r,T}\asymp R_\delta^2
+\).
+Consequently the terminal source norm embeds uniformly into the old
+repelling normal-data norm.  The component-kernel proof of the old global
+inverse, again read on \(L^\infty\) data, yields the prefix part of
+\cref{eq:terminal-source-state-bound}.  Its pointwise algebraic-row bound
+gives
+\begin{equation}
+ |Q_T(r)|\le C\{|r|+E_\delta\}\|f_T\|,
+ \qquad E_\delta=\varepsilon\delta^{-2\vartheta}
+       \le Cm_\delta(r),                                  \label{eq:proof-terminal-source-Q}
+\end{equation}
+which proves \cref{eq:terminal-source-speed-bound}.  Restriction to the
+terminal recut and local uniqueness give
+\cref{eq:terminal-source-interface-bound,eq:terminal-source-trace-bound}.
+
+The repelling action needs a sharper argument than integration of
+\cref{eq:proof-terminal-source-Q}.  The scalar differential row and the
+algebraic row give, a.e.,
+\begin{equation}
+ \{w_{0,N}'(r)+\varepsilon\mathfrak d_N(r)\}Q_T(r)
+ =q_0(r)p_T'(r)-\varepsilon^{-1}H_T(r).           \label{eq:proof-terminal-source-Q-recovery}
+\end{equation}
+Use the action coefficient
+\(
+\mathcal A_{{\rm act},N}
+\)
+from \cref{eq:proof-boundary-action-coefficient}.  Cellwise integration
+by parts, with telescoping seam terms, gives every oriented prefix as
+\begin{align}
+ \Pi_{r,T}(r)={}&
+ \mathcal A_{{\rm act},N}(r)p_T(r)
+ -\mathcal A_{{\rm act},N}(e_{r,0})p_T(e_{r,0})\notag\\
+ &-\int_{e_{r,0}}^r
+       \mathcal A_{{\rm act},N}'(u)p_T(u)\,\dd u\notag\\
+ &-\frac1\varepsilon\int_{e_{r,0}}^r
+   \frac{H_T(u)}{q_0(u)^2
+       \{w_{0,N}'(u)+\varepsilon\mathfrak d_N(u)\}}\,\dd u.
+                                                               \label{eq:proof-terminal-source-action-ibp}
+\end{align}
+The global state bound and
+\cref{eq:proof-boundary-action-coefficient-bounds} bound the first three
+terms by
+\begin{equation*}
+ C\varepsilon\left(1+\log\frac{R_\delta}{\rho_\delta}\right)
+       \|f_T\|
+ =C\rho_\delta\eta_{{\rm bd},\delta}\|f_T\|.
+\end{equation*}
+The last integral is supported on a terminal \(r\)-window of width
+\(O(\delta L_b)=O(\rho_\delta)\).  There
+\begin{equation*}
+ |H_T|\le\varepsilon R_\delta m_{r,T}\|f_T\|,
+ \qquad
+ |w_{0,N}'+\varepsilon\mathfrak d_N|\asymp R_\delta,
+\end{equation*}
+so it is bounded by
+\(
+C\rho_\delta m_{r,T}\|f_T\|
+\).
+Therefore
+\begin{equation}
+ \rho_\delta^{-1}\sup|\Pi_{r,T}|
+ \le C\{m_{r,T}+\eta_{{\rm bd},\delta}\}\|f_T\|.           \label{eq:proof-terminal-source-safe-action}
+\end{equation}
+The scale ledger gives
+\(
+\eta_{{\rm bd},\delta}=O(\delta S_\delta),\qquad
+\eta_{{\rm bd},\delta}=o(m_{a,T}),\qquad
+\eta_{{\rm bd},\delta}=o(m_{r,T})
+\), so this is \cref{eq:terminal-source-action-bound}.
+
+Finally,
+\begin{equation*}
+ m_{a,T}=\rho_\delta+\frac{\varepsilon}{\rho_\delta^2}
+ =\frac{4\alpha^2}{S_\delta^2}(1+o(1)),
+ \qquad
+ m_{r,T}=R_\delta+\frac{\varepsilon}{R_\delta^2}
+ =R_\delta(1+o(1)).
+\end{equation*}
+This proves \cref{eq:terminal-source-small-factors} and all scope
+statements.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{lem:source-split-hybrid-phase-core}]
 The formula
 \(
@@ -4690,6 +4938,81 @@ shift proves its physical half.  Finally,
 \cref{eq:source-split-terminal-event-row} is a bounded observation.  The
 argument never supplied a right inverse for an arbitrary final history,
 which proves the scope statement.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{cor:terminal-source-split-hybrid-core}]
+The three input coordinates are unique before applying an inverse: bulk and
+terminal distributed sources have disjoint a.e. supports, while the
+boundary summand has zero distributed rows.  Each summand is complete in
+its displayed direct norm, so
+\cref{eq:terminal-source-three-summand-range} is a Banach space.  The two
+Green formulas agree on their common continuous core and solve the same
+a.e. normal equations.  Uniqueness of the component construction therefore
+gives
+\begin{equation*}
+ \mathscr N_\sigma^\infty G_\sigma^\infty=I
+\end{equation*}
+on the three-summand range.  Thus the transported normal domain is
+isomorphic to that range.
+
+For
+\(
+y=G_\sigma^\infty(f_{\rm B}+f_{\rm bd}+f_T)
+\), add
+\cref{eq:bulk-direct-prefix-bound,%
+eq:boundary-column-global-action,%
+eq:terminal-source-speed-bound,%
+eq:terminal-source-action-bound}.
+This gives exactly
+\cref{eq:terminal-source-returned-action-ledger}; in particular
+\(
+\mathfrak D_\sigma y\in\mathsf H_{\sigma,\mathrm{hyb}}
+\)
+with a uniform bound.  The phase Schur operator is unchanged from
+\cref{thm:diagonal-source-split-hybrid-core}, so its Neumann inverse and
+the formulas in \cref{eq:terminal-source-extended-inverse} prove
+bijectivity and the uniform forward and inverse estimates.
+
+Add
+\cref{eq:terminal-source-interface-bound,%
+eq:terminal-source-trace-bound}
+to the two old summand estimates in the proof of
+\cref{eq:source-split-terminal-observation}.  The local weighted-speed and
+action terms follow from
+\cref{eq:terminal-source-speed-bound,%
+eq:terminal-source-action-bound}
+on the terminal annulus.  This proves
+\cref{eq:terminal-source-extended-observation}.
+
+For the last assertion take pure terminal data and zero phase and entry
+rows.  The causal entry value of the returned phase is zero, hence its
+event value satisfies
+\begin{equation}
+ a(e_{\sigma,1})
+ =\mathcal P_\sigma(\mathfrak D_\sigma y)(e_{\sigma,1})
+  +\mathcal P_\sigma(\mathfrak A_\sigma^{\rm rc}a)
+       (e_{\sigma,1}).                            \label{eq:proof-terminal-source-event-prefix}
+\end{equation}
+The first term is bounded by
+\(
+C\rho_\delta m_{\sigma,T}\|f_T\|
+\)
+and the uniform phase inverse gives
+\(
+\|a\|_{\mathsf A_{\sigma,\mathrm{hyb}}}\le C\|f_T\|
+\).
+The second term is therefore at most
+\(
+C\rho_\delta\eta_{\mathrm{hyb},\delta}\|f_T\|
+\).
+Direct expansion of the diagonal scales gives
+\begin{equation*}
+ \eta_{\mathrm{hyb},\delta}=o(m_{a,T}),\qquad
+ \eta_{\mathrm{hyb},\delta}=o(m_{r,T}),
+\end{equation*}
+which proves \cref{eq:terminal-source-event-smallness}.  No nonlinear
+range membership or moving endpoint was used.
 \end{proof}
 
 \begin{proof}[Proof of
