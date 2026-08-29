@@ -12,7 +12,8 @@ mixed-BVP and representative-class contract in
 [`../../docs/paper-a-tracker-bvp-proof-program.md`](../../docs/paper-a-tracker-bvp-proof-program.md).
 That contract concerns the still-open terminal-to-terminal family; the
 raw-gauge fixed-section zero family and its pointwise generated-interior
-tracker statement are now proved separately.
+tracker statement, together with the fixed-interior weak-C1 physical-section
+hit maps, are now proved separately.
 
 ## 1. Exact selection cannot be intrinsic under the present hypotheses
 
@@ -418,9 +419,14 @@ not the conormal of an independently defined physical maximal-canard locus.
       raw-gauge zero whose delay collar lies beyond the first maximal delay as
       an exact tracker, and verify the uncut quotient and resource-gauge
       Volterra hypotheses there.
-- [ ] Construct the fixed physical-section hit map and the hybrid
-      strong-terminal/weak-middle moving-event residual and inverse, then the
-      terminal-to-terminal nonlinear outer tracker.
+- [x] On a common generated buffer, construct the fixed interior
+      physical-section hits at $r=\pm r_{\rm out}/2$, with joint weak-history
+      C1 dependence, dimension-uniform scaled hit/history derivatives, and
+      the exact stationary phase-quotient formula.
+- [ ] Upgrade to a common C2 strong terminal buffer at the physical endpoints,
+      and construct the hybrid strong-terminal/weak-middle moving-event
+      residual and inverse, then the terminal-to-terminal nonlinear outer
+      tracker.
 - [ ] Prove the phase-quotiented nonautonomous normal splitting,
       mixed-boundary outer history construction, and fold-graph overlap for
       Paper A itself.
@@ -451,10 +457,12 @@ sign, and finite forward RFDE reconstruction.  This zero extends uniformly
 to a nonempty, infinite-dimensional raw-compatible gauge ball, with a first
 gauge jet and fixed-graph C1/Lipschitz dependence.  The sufficiently deep
 generated interior of each gauge zero is now an exact physical-coordinate
-tracker with the uncut quotient and Volterra realization, but no common-chart
-comparison of gauge-dependent tracker domains is asserted.  Flat forgetting,
-relative-parameter jets,
-the common strong terminal buffer and full moving-event residual/inverse,
+tracker with the uncut quotient and Volterra realization.  The fixed interior
+sections $r=\pm r_{\rm out}/2$ now also have common-buffer weak-history C1
+hit maps with uniform scaled first gauge derivatives and the exact phase
+quotient.  This does not compare the full gauge-dependent tracker domains or
+recut the physical endpoints.  Flat forgetting, relative-parameter jets,
+the common C2 strong terminal buffer and full moving-event residual/inverse,
 terminal-to-terminal nonlinear tracker existence, nonautonomous quotient
 roughness, and G1 remain open.  The generic
 nonselection example is not a model-specific impossibility theorem.

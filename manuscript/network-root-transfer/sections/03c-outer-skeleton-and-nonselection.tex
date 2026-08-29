@@ -4897,6 +4897,192 @@ give \cref{eq:generated-interior-volterra-bound}.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:raw-gauge-physical-hit}]
+Because \(\rho_\delta<r_{\rm out}/4\) and
+\(0<\kappa_h<1/8\), all four values on the right of
+\cref{eq:physical-hit-reference-bracket} lie strictly inside the
+corresponding reduced branch.  The reduced paths are strictly decreasing,
+so the two bracket times exist and have the asserted order.  The temporal
+distance of either time from every branch endpoint is at least
+\(c r_{\rm out}/\delta\).  Hence,
+after decreasing \(\delta_0\),
+\cref{eq:physical-hit-common-buffer} holds.  In particular, the choice
+\(s_0=T_{\sigma,-}\), \(s_1=T_{\sigma,+}\) is admissible in
+\cref{cor:generated-interior-canonical-tracker} for every gauge zero once
+the common gauge ball below has been fixed.
+
+Write \(u_g=(x_g,a_g)\) for that zero.  The uniform derivative estimate in
+\cref{eq:raw-gauge-zero-derivative} and the relative phase part of the graph
+norm give
+\begin{equation}
+ \|D_ga_g k\|_{\phi,\mathrm{rel}}
+ \le C\|k\|_{\mathfrak B_{\sigma,\delta}^h}.       \label{eq:proof-physical-hit-phase-derivative}
+\end{equation}
+Since
+\(r_{\sigma,g}(s)=\Theta_{a_g}(\bar r_\sigma(s))\),
+\cref{eq:nonlinear-phase-chart-a-derivative} gives the exact identity
+\begin{equation}
+ D_gr_{\sigma,g}(s)k
+ =q_0(r_{\sigma,g}(s))
+      (D_ga_gk)(\bar r_\sigma(s)).                 \label{eq:proof-physical-hit-r-derivative}
+\end{equation}
+On the common buffer, \(|\bar r_\sigma|\asymp r_h\).  Thus
+\cref{eq:proof-physical-hit-phase-derivative} and the coefficient bounds
+imply
+\begin{equation}
+ \sup_s|D_gr_{\sigma,g}(s)k|
+ \le Cr_h\|k\|_{\mathfrak B_{\sigma,\delta}^h}.   \label{eq:proof-physical-hit-r-bound}
+\end{equation}
+
+The current-path part of the graph norm in
+\cref{eq:relative-graph-action-norm}, together with
+\(p_g=p_{x_g,a_g}^\sharp
+       -\varepsilon\mathscr P_{c,\sigma,N}a_g\) and
+\cref{eq:relative-phase-delay-profile}, gives on the same buffer
+\begin{equation}
+ \sup_s\left\{
+   \|D_gZ_g(s)k\|_N+|D_gp_g(s)k|\right\}
+ \le C\|k\|_{\mathfrak B_{\sigma,\delta}^h}.     \label{eq:proof-physical-hit-normal-bound}
+\end{equation}
+Here we use only the ordinary unscaled range norm; the graph estimate is
+stronger, with factors \(\varepsilon\) and
+\(\varepsilon|\bar r_\sigma|\) in the two normal components.  The full
+current solution is
+\begin{align*}
+ v_{\sigma,g}(s)
+ &=\mathbf1+r_{\sigma,g}(s)\mathbf1
+       +z_{0,N}(r_{\sigma,g}(s))+Z_g(s),\\
+ w_{\sigma,g}(s)
+ &=w_{\rm seed,N}(r_{\sigma,g}(s))-p_g(s).
+\end{align*}
+The dimension-uniform critical-curve and seed derivative bounds, followed
+by restriction to
+\([s-\theta_m,s]\), now prove the first term of
+\cref{eq:physical-hit-uniform-history-jets}.
+
+We also record why the preceding fixed-time estimate is enough for a moving
+complete history.  Put
+\(B_\sigma=[T_{\sigma,-}-\theta_m,T_{\sigma,+}]\).  On this interval every
+delayed argument is generated.  The graph residual equations, divided by
+the fixed positive \(\delta\), give the local embedding
+\begin{equation}
+ \|Z_y\|_{W^{1,\infty}(B_\sigma;E_N)}
+ +\|p_y\|_{W^{1,\infty}(B_\sigma)}
+ \le C_{\delta,h}\|y\|_{\mathcal D(\mathscr N_\sigma)},
+                                                        \label{eq:proof-physical-hit-local-graph-embedding}
+\end{equation}
+for every graph-domain direction \(y\); the constant is independent of
+\(N\), but may lose powers of \(\delta^{-1}\).  Indeed the right-hand sides
+of \cref{eq:fixed-phase-normal-block} are bounded in \(C^0(B_\sigma)\) by
+the current, delayed-current, algebraic, and residual components of the
+graph norm.  Apply this estimate to
+\(y=x-T_\sigma^{\rm rc}a\).  The defining fixed-phase equations for
+\(T_\sigma^{\rm rc}a\), together with
+\cref{eq:relative-phase-delay-profile}, give the same local
+\(W^{1,\infty}\) bound for the full normal direction \(x\).  The
+\(\mathsf A_{\phi,\mathrm{rel}}^1\)-component of the graph norm and
+\cref{eq:nonlinear-phase-chart-a-derivative} give it for the reconstructed
+phase direction.  Differentiating the smooth reconstruction on the common
+small graph ball and using
+\cref{eq:raw-gauge-zero-derivative} therefore yields
+\begin{equation}
+ \sup_{\|k\|_{\mathfrak B_{\sigma,\delta}^h}\le1}
+ \|\partial_sD_g(v_{\sigma,g},w_{\sigma,g})k\|_
+       {L^\infty(B_\sigma)}
+ \le C_{\delta,h}.                              \label{eq:proof-physical-hit-gauge-W1}
+\end{equation}
+Consequently restriction and translation satisfy the operator-norm bound
+\begin{equation}
+ \|D_g\mathcal Z_{\sigma,g}(s)
+       -D_g\mathcal Z_{\sigma,g}(t)\|_
+       {\mathcal L(\mathfrak B_{\sigma,\delta}^h,\mathscr Y_N)}
+ \le C_{\delta,h}|s-t|.                         \label{eq:proof-physical-hit-translation}
+\end{equation}
+
+The order-\(h\) compatibility at the original seam removes the derivative
+jumps.  Substitution in the exact fold-time RFDE expresses
+\(\partial_s(v_{\sigma,g},w_{\sigma,g})\) as a smooth function of the
+current and finitely many delayed values.  It is therefore continuous
+jointly in \((s,g)\).  The fixed-time gauge derivative is continuous in
+\(g\) by \cref{eq:raw-gauge-zero-derivative}, and its operator-norm
+continuity in \(s\) is \cref{eq:proof-physical-hit-translation}.  The
+continuous-partial-derivative criterion now proves that
+\((s,g)\mapsto\mathcal Z_{\sigma,g}(s)\) is jointly \(C^1\) into
+\(\mathscr Y_N\).  The nonuniform constant in
+\cref{eq:proof-physical-hit-gauge-W1} is used only for this topological
+\(C^1\) assertion; the dimension- and \(\delta\)-uniform weak-history jet
+bound remains \cref{eq:physical-hit-uniform-history-jets}.  No same-space
+differentiability of translation on an arbitrary continuous history is
+being used.
+
+Choose the generated tracker in
+\cref{cor:generated-interior-canonical-tracker} on this common buffer.
+By \cref{eq:exact-outer-history-tangent},
+\begin{equation*}
+ \tau_{\sigma,g}(s)
+ =\partial_r\mathcal H_{V_{\sigma,g},W_{\sigma,g},q_{\sigma,g}}
+       (r_{\sigma,g}(s)).
+\end{equation*}
+The exact backtrack formula and
+\cref{eq:generated-interior-q-bounds,%
+eq:generated-interior-wprime-bounds,%
+eq:generated-interior-Vprime-bound}
+therefore give the second term of
+\cref{eq:physical-hit-uniform-history-jets}.  This step is what prevents a
+spurious \(\delta^{-1}\) loss in the normalized moving-history tangent.
+
+It remains to construct the hit.  The phase-chart smallness and
+\cref{eq:raw-gauge-zero-size} imply, uniformly on the bracket,
+\begin{equation}
+ |r_{\sigma,g}(s)-\bar r_\sigma(s)|
+ \le C\{\lambda_\delta+\|g\|\}
+          |\bar r_\sigma(s)|.                    \label{eq:proof-physical-hit-phase-closeness}
+\end{equation}
+Choose \(\lambda_h\) and \(g_h\) so that the right-hand side is at most
+\(\kappa_hr_h/2\).  The bounds in
+\cref{eq:physical-hit-reference-bracket,%
+eq:proof-physical-hit-phase-closeness}
+then give
+\begin{align}
+ r_{\sigma,g}(T_{\sigma,-})-e_{\sigma,h}
+ &\ge\frac12\kappa_hr_h,\notag\\
+ r_{\sigma,g}(T_{\sigma,+})-e_{\sigma,h}
+ &\le-\frac12\kappa_hr_h.                       \label{eq:proof-physical-hit-signs}
+\end{align}
+The strict speed estimate in
+\cref{eq:fixed-section-zero-speed-sign} makes the left-hand side strictly
+decreasing in \(s\).  The intermediate-value theorem proves existence and
+uniqueness in the bracket, and strict monotonicity proves uniqueness on the
+whole forward branch segment.
+
+The scalar map
+\((s,g)\mapsto r_{\sigma,g}(s)-e_{\sigma,h}\) is \(C^1\), with
+\(\partial_sr_{\sigma,g}=\delta q_{\sigma,g}\) separated from zero.
+The Banach implicit-function theorem therefore gives the \(C^1\) hit time.
+Differentiation gives the first two lines of
+\cref{eq:physical-hit-time-derivative}; here
+\begin{equation*}
+ \varrho_ND_g\mathcal Z_{\sigma,g}(s)k
+ =D_gr_{\sigma,g}(s)k,\qquad
+ \varrho_N\partial_s\mathcal Z_{\sigma,g}(s)
+ =r_{\sigma,g}'(s).
+\end{equation*}
+The chain rule for
+\(\mathcal E_{\sigma,h}(g)=
+  \mathcal Z_{\sigma,g}(S_{\sigma,h}(g))\)
+then gives
+\cref{eq:physical-hit-history-derivative}.  The speed lower bound,
+\cref{eq:physical-hit-uniform-history-jets}, and
+\(\|\varrho_N\|\le1\) prove
+\cref{eq:physical-hit-map-uniform-bound}.  Finally,
+\cref{eq:physical-hit-normalized-tangent} identifies
+\(\Id-\tau_{\sigma,g}\varrho_N\) with
+\cref{eq:physical-quotient-process}.  The construction never compares two
+gauges after an outer endpoint recut and supplies no second gauge
+derivative.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:repelling-component-flushing}]
 The repelling travel time satisfies \(S_r\ge c/\delta\), whereas
 \(L_b=O(S_\delta)\).  Thus

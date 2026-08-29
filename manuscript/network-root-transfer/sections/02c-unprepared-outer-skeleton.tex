@@ -3869,6 +3869,118 @@ a past-complete orbit, produce a repelling stable sheet, or prove a physical
 connection or root.
 \end{corollary}
 
+\begin{proposition}[Common generated buffer and fixed physical-section hit]
+\label[proposition]{prop:raw-gauge-physical-hit}
+Retain
+\cref{thm:raw-gauge-fixed-section-zero,%
+cor:generated-interior-canonical-tracker}
+at order \(h\ge3\), pointwise at one fixed admissible parameter pair.  Put
+\begin{equation}
+ r_h=\frac12r_{\rm out},\qquad
+ e_{a,h}=r_h,\qquad e_{r,h}=-r_h,                 \label{eq:physical-hit-sections}
+\end{equation}
+and fix \(0<\kappa_h<1/8\).  After decreasing \(\delta_0\), assume
+\(\rho_\delta<r_{\rm out}/4\).  Define the reduced bracket times by
+\begin{equation}
+ \bar r_\sigma(T_{\sigma,-})=e_{\sigma,h}+\kappa_hr_h,
+ \qquad
+ \bar r_\sigma(T_{\sigma,+})=e_{\sigma,h}-\kappa_hr_h.
+                                                        \label{eq:physical-hit-reference-bracket}
+\end{equation}
+Then \(T_{\sigma,-}<T_{\sigma,+}\).  After one further decrease of
+\(\delta_0\),
+\begin{equation}
+ 3\theta_m<T_{\sigma,-}<T_{\sigma,+}<S_\sigma,
+ \qquad
+ [T_{\sigma,-}-\theta_m,T_{\sigma,+}]
+ \quad\hbox{is generated interior}.              \label{eq:physical-hit-common-buffer}
+\end{equation}
+
+There are uniform \(g_h,\lambda_h,C_h>0\) such that, whenever
+\begin{equation}
+ \lambda_\delta<\lambda_h,
+ \qquad
+ \|g_\sigma\|_{\mathfrak B_{\sigma,\delta}^h}<g_h,          \label{eq:physical-hit-gauge-ball}
+\end{equation}
+the raw-gauge zero gives the complete physical history
+\begin{equation}
+ \mathcal Z_{\sigma,g}(s)
+ =\left(\theta\longmapsto v_{\sigma,g}(s+\theta),
+                         w_{\sigma,g}(s)\right)\in\mathscr Y_N,
+ \qquad s\in[T_{\sigma,-},T_{\sigma,+}].          \label{eq:physical-hit-history-family}
+\end{equation}
+The map \((s,g)\mapsto\mathcal Z_{\sigma,g}(s)\) is jointly \(C^1\)
+into \(\mathscr Y_N\), and
+\begin{equation}
+ \sup_{s,g}\left\{
+  \|D_g\mathcal Z_{\sigma,g}(s)\|+
+  \|\tau_{\sigma,g}(s)\|_{\mathscr Y_N}\right\}\le C_h, \label{eq:physical-hit-uniform-history-jets}
+\end{equation}
+where
+\begin{equation}
+ \tau_{\sigma,g}(s)
+ =\frac1{r_{\sigma,g}'(s)}
+   \left(\theta\longmapsto v_{\sigma,g}'(s+\theta),
+                         w_{\sigma,g}'(s)\right),
+ \qquad \varrho_N\tau_{\sigma,g}(s)=1.            \label{eq:physical-hit-normalized-tangent}
+\end{equation}
+The first norm in \cref{eq:physical-hit-uniform-history-jets} is the
+operator norm from the normalized gauge space to the ordinary product norm
+on \(\mathscr Y_N\).  Thus this is a dimension-uniform weak complete-history
+buffer estimate, not a \(C^2\) strong-buffer estimate.
+
+For every gauge in \cref{eq:physical-hit-gauge-ball} there is a unique
+selected hit
+\begin{equation}
+ S_{\sigma,h}(g)\in(T_{\sigma,-},T_{\sigma,+}),
+ \qquad r_{\sigma,g}(S_{\sigma,h}(g))=e_{\sigma,h}.           \label{eq:physical-hit-time}
+\end{equation}
+It is the only hit of this section on the monotone forward branch segment.
+The event time, its natural scaled displacement, and the complete-history
+hit
+\begin{align}
+ \widehat\tau_{\sigma,h}(g)
+ &=\delta\{S_{\sigma,h}(g)-S_{\sigma,h}(0)\},\notag\\
+ \mathcal E_{\sigma,h}(g)
+ &=\mathcal Z_{\sigma,g}(S_{\sigma,h}(g))
+   \in\Sigma_{N,e_{\sigma,h}}.                    \label{eq:physical-hit-map}
+\end{align}
+are \(C^1\) in \(g\).  Here
+\begin{equation}
+ \Sigma_{N,e}=\{Y\in\mathscr Y_N:\varrho_NY=1+e\}.          \label{eq:physical-hit-section}
+\end{equation}
+For a gauge direction \(k\), all fixed-time
+derivatives below are evaluated at \(s=S_{\sigma,h}(g)\), and
+\begin{align}
+ DS_{\sigma,h}(g)k
+ &=-\frac{\varrho_ND_g\mathcal Z_{\sigma,g}(s)k}
+          {r_{\sigma,g}'(s)},\notag\\
+ D\widehat\tau_{\sigma,h}(g)k
+ &=-\frac{\varrho_ND_g\mathcal Z_{\sigma,g}(s)k}
+          {q_{\sigma,g}(e_{\sigma,h})},           \label{eq:physical-hit-time-derivative}\\
+ D\mathcal E_{\sigma,h}(g)k
+ &=\bigl(\Id-\tau_{\sigma,g}(s)\varrho_N\bigr)
+       D_g\mathcal Z_{\sigma,g}(s)k.              \label{eq:physical-hit-history-derivative}
+\end{align}
+Consequently
+\begin{equation}
+ \|D\widehat\tau_{\sigma,h}(g)\|
+ +\|D\mathcal E_{\sigma,h}(g)\|\le C_h,          \label{eq:physical-hit-map-uniform-bound}
+\end{equation}
+whereas the unscaled derivative \(DS_{\sigma,h}\) may lose the sharp
+factor \(\delta^{-1}\).  The projection in
+\cref{eq:physical-hit-history-derivative} is exactly the
+stationary-coordinate phase quotient in
+\cref{eq:physical-quotient-process} at the hit.
+
+This proposition constructs a common weak generated buffer and a fixed
+interior physical-section hit map for the fixed-parameter gauge family.  It
+does not construct the \(C^2\) strong terminal buffer required by
+\cref{lem:terminal-relative-trace-scale-chart}, recut either outer branch
+endpoint, prove gauge flatness, produce parameter jets or a repelling sheet,
+or construct a physical connection or root.
+\end{proposition}
+
 \begin{proposition}[Repelling component-kernel finite-generation flushing]
 \label[proposition]{prop:repelling-component-flushing}
 Retain \cref{lem:repelling-component-generations}.  Fix \(d\ge1\), take

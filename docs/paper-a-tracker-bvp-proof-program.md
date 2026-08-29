@@ -2,8 +2,8 @@
 
 Status: **proof contract for the terminal-to-terminal tracker family; the
 raw-gauge fixed-section zero family, its exact pointwise generated-interior
-trackers, and the nonlinear terminal trace-scale coordinate theorem are now
-proved.**
+trackers, the common-buffer weak physical-section hit maps, and the nonlinear
+terminal trace-scale coordinate theorem are now proved.**
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -40,12 +40,18 @@ forward RFDE segments from canonical compatible collars.  Their sufficiently
 deep generated interiors now have exact physical-coordinate tracker,
 quotient, and Volterra realizations.  They do not supply the moving terminal
 family, a past orbit, physical branch endpoints, or the cross-branch tracker
-targeted here.
+targeted here.  Proposition `prop:raw-gauge-physical-hit` does provide the
+strictly weaker common-buffer result: at fixed parameters the interior
+sections `r=+/-r_out/2` have unique raw-gauge `C1` hits, uniform scaled
+hit/history first derivatives, and the exact stationary phase-quotient
+formula.  It is not a `C2` strong terminal buffer or a recut of the physical
+endpoints.
 Lemma `lem:terminal-relative-trace-scale-chart` now supplies the exact
 nonlinear `C^2` strong-to-weak coordinate calculus on any already available
 strong terminal buffer, including the nonzero terminal columns and mixed
-event derivatives.  It does not construct that buffer, the fixed-section hit
-map, or the hybrid moving-event residual and inverse.
+event derivatives.  It does not construct that buffer or the hybrid
+moving-event residual and inverse; the independent proposition above only
+constructs the weaker interior hit map.
 
 This is the implementation target for the open physical-history part of
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
@@ -568,7 +574,8 @@ compatible histories and fixes the exact trace count, but it does not turn
 arbitrary Green data into a compatible lift.  The new lemma must couple its
 bounded trace to the fold-time mixed Green inverse through a finite
 method-of-steps buffer, prove the order-`s` buffer-to-slow bootstrap, and
-control the event time.  The
+control the physical terminal/endpoint event time, not merely the already
+proved fixed-interior hit time.  The
 slow norms apply only to `(Z_slow,Q_slow)`; the boundary layer is measured by
 its history amplitude and the capped Green weight.  Restricting all gauges
 to artificially matched slow boundary values would defeat the
@@ -587,7 +594,8 @@ all eight items below are proved.
    backward RFDE evolution and forward shooting remain forbidden.
 2. Add the slow phase and event equation as a uniformly invertible bordered
    block.  The phase displacement is not part of the causal echo contraction.
-   After the speed sign and event time are closed, apply the weighted `C^k`
+   After the speed sign and physical terminal/endpoint event time are closed
+   (beyond the proved fixed-interior hit time), apply the weighted `C^k`
    bounds for `q -> r_k(q)` and all delayed compositions, including every
    derivative in `J_phys`, to the reparameterized interior.
 3. Bounds for `R_z,R_q` and the nonlinear remainder giving the displayed
@@ -653,10 +661,12 @@ gauge its parameter jets may lose at most
 completion, projected endpoint equality, or parameter oscillations of size
 `exp(c/delta^2)` are not admissible gauges.  The fixed-section theorem now
 exhibits a nonempty raw-compatible boundary gauge ball at the natural
-`O(epsilon)=O(delta^2)` scale.  The terminal-to-terminal construction must
-still lift at least one member to all of the physical endpoint data and
-uniform tame `J_phys` jets above; a full admissible class that could remain
-empty is insufficient.
+`O(epsilon)=O(delta^2)` scale.  Its weak complete histories now also have
+unique gauge-`C1` hits of the fixed interior sections with uniform scaled
+first derivatives.  These hits have not been upgraded to physical endpoint
+data or uniform tame `J_phys` jets.  The terminal-to-terminal construction
+must still lift at least one member to all of the physical endpoint data and
+jets above; a full admissible class that could remain empty is insufficient.
 
 For every two fixed admissible gauges, the theorem must prove
 
@@ -816,12 +826,18 @@ gauges.
       first maximal delay, including exact backtracks, uncut history windows,
       uniform resource-gauge collar bounds, and the `O(S_delta^(-1))`
       Volterra realization.  No common-chart tracker comparison is claimed.
+- [x] Common generated buffer and fixed interior physical-section hits at
+      `r=+/-r_out/2`, with joint weak-history C1 dependence, dimension-uniform
+      scaled hit/history first derivatives, and the exact stationary
+      phase-quotient formula.  No strong terminal buffer or endpoint recut is
+      claimed.
 - [x] Terminal-relative nonlinear `C^2` strong-to-weak moving-window
       coordinates on a supplied strong buffer, including the retained event
       displacement, derived fixed-section row, nonzero-base terminal columns,
       mixed second derivatives, and sharp translation losses.
-- [ ] Terminal-to-terminal nonlinear tracker family and Green--collar
-      reconstruction at the physical endpoints.
+- [ ] Common `C^2` strong terminal buffers, the hybrid moving-event
+      residual/inverse, recutting at both physical endpoints, and the
+      terminal-to-terminal nonlinear tracker/Green--collar reconstruction.
 - [ ] Full action-weighted nonautonomous quotient roughness theorem,
       including Volterra, phase-row, moving-projection, delay, `q`, and
       parameter-jet terms.
@@ -841,6 +857,7 @@ gauges.
 Until the unchecked items are proved, Paper A must continue to say that the
 terminal-to-terminal physical tracker family, gap, and root do not yet exist
 as theorems.  The raw-gauge fixed-section family, its pointwise
-generated-interior representatives, and the terminal trace-scale coordinates
-above are theorems, but they neither select physical endpoints nor compare
-the reparameterized trackers on a common chart.
+generated-interior representatives, the common-buffer weak interior hits,
+and the terminal trace-scale coordinates above are theorems, but they neither
+select physical endpoints nor compare the full reparameterized trackers on a
+common chart.

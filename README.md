@@ -41,7 +41,9 @@ phase-delay core and fixed-`r` event-aligned normal trace are now closed as
 well.  A nonlinear `C^2` terminal-relative strong-to-weak moving-window
 coordinate theorem now retains the event displacement, the nonzero terminal
 columns, and all mixed second derivatives on a supplied strong buffer; it is
-not yet the buffer, hit map, or moving-event inverse.  The raw-compatible phase collar, affine-residual normal column, and
+not yet the buffer or moving-event inverse.  A separate theorem below now
+constructs the weaker fixed-interior hit map, but not a physical-endpoint
+recut.  The raw-compatible phase collar, affine-residual normal column, and
 fixed-base border have since been closed.  An inner-anchored nonlinear phase
 chart and its relative Schur inverse remove the constant mode, while the
 relative phase-to-state estimate recovers normalized state and pointwise
@@ -61,9 +63,14 @@ uniform slice uniqueness, first gauge jet, fixed-graph C1/Lipschitz
 dependence, inverse persistence, strict speed sign, and exact raw-RFDE
 reconstruction.  Every sufficiently deep generated subsegment of every
 gauge zero is an exact pointwise physical-coordinate tracker with the uncut
-quotient and Volterra realization.  No common-chart tracker comparison or
-flat forgetting is yet proved.  It is not yet a parameterized moving-event
-tracker, a past physical orbit, a cross-branch connection, or a
+quotient and Volterra realization.  On a common generated buffer, the fixed
+interior sections `r=+/-r_out/2` now have unique raw-gauge `C1` hits; the
+scaled hit time and complete-history hit have dimension-uniform first
+derivatives, and the latter is exactly the stationary phase quotient of the
+fixed-time gauge derivative.  This is a weak-history interior hit theorem,
+not a `C2` strong terminal buffer or a recutting of the physical branch
+endpoints.  Flat forgetting is not yet proved.  It is not yet a parameterized
+terminal-to-terminal tracker, a past physical orbit, a cross-branch connection, or a
 preparation-independent root; its nonautonomous normal dichotomy and exact
 fold overlap remain open.
 
