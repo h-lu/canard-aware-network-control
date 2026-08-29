@@ -3253,6 +3253,85 @@ does not define a moving-duration normal column, provide a strong terminal
 history, or close the physical endpoint Schur complement.
 \end{theorem}
 
+\begin{proposition}[Terminal first-order trace of the raw-compatible phase column]
+\label[proposition]{prop:raw-compatible-terminal-phase-column}
+Retain
+\cref{prop:diagonal-terminal-component-green,%
+prop:structured-phase-action-green,%
+lem:raw-phase-boundary-column-assembly,%
+thm:diagonal-causal-entry-prefix-action-inverse},
+with the diagonal scales in
+\cref{eq:prefix-action-diagonal-scales} and the terminal recuts in
+\cref{eq:terminal-component-recut}.  For
+\(a\in\mathsf A_\phi^1(I_\sigma)\), write
+\begin{equation}
+ T_\sigma^{\rm rc}a
+   =(\gamma_\sigma[a],Z_\sigma[a],p_\sigma[a]),\qquad
+ P_\sigma[a]=\mathscr P_{c,\sigma,N}a,             \label{eq:terminal-phase-column-components}
+\end{equation}
+and, for \(0\le t\le L_b\), put
+\begin{align}
+ Z_{\sigma,T}[a](t)
+ &=Z_\sigma[a](s_{\sigma,T}+t),\notag\\
+ p_{\sigma,T}[a](t)
+ &=p_\sigma[a](s_{\sigma,T}+t),\notag\\
+ p_{\sigma,T}^{\sharp}[a](t)
+ &=p_{\sigma,T}[a](t)
+     +\varepsilon P_\sigma[a](s_{\sigma,T}+t).    \label{eq:terminal-phase-column-recut}
+\end{align}
+Then the shifted, raw-compatible terminal column satisfies
+\begin{equation}
+ \|(Z_{\sigma,T}[a],p_{\sigma,T}^{\sharp}[a])\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}
+ \le C_{A,M}\|a\|_{\mathsf A_\phi^1(I_\sigma)}.  \label{eq:terminal-shifted-phase-column-bound}
+\end{equation}
+This is the uniform statement on the full action space; in general one
+cannot replace \(p_{\sigma,T}^{\sharp}\) by the physical variable
+\(p_{\sigma,T}\) on the attracting branch.
+
+On the causal-entry phase space the physical column does satisfy a stronger
+bound.  Uniformly in \(N,\delta\), and the branch,
+\begin{equation}
+ \|(Z_{\sigma,T}[a],p_{\sigma,T}[a])\|_
+       {\mathsf T_{\sigma,T}^1([0,L_b])}
+ \le C_{A,M}\rho_\delta
+       \|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}
+ \qquad(a\in\mathsf A_{\sigma,\mathrm{pa}}).      \label{eq:terminal-physical-phase-column-bound}
+\end{equation}
+If
+\(\widehat Q_\sigma^{\rm rc}[a]=\mathfrak A_\sigma^{\rm rc}a\)
+is the true reconstructed speed column in the reduced coordinate, put
+\(\widehat Q_{\sigma,T}^{\rm rc}[a](t)
+ =\widehat Q_\sigma^{\rm rc}[a](\bar r_{\sigma,T}(t))\).
+Then
+\begin{align}
+ \sup_{0\le t\le L_b}
+   |\widehat Q_{\sigma,T}^{\rm rc}[a](t)|
+ &\le C_{A,M}\rho_\delta m_{\sigma,T}
+       \|a\|_{\mathsf A_{\sigma,\mathrm{pa}}},\notag\\
+ \frac1{\rho_\delta}\sup_{0\le t\le L_b}
+ \left|\int_{\bar r_{\sigma,T}(0)}^{\bar r_{\sigma,T}(t)}
+   \frac{\widehat Q_\sigma^{\rm rc}[a](u)}{q_0(u)^2}\,\dd u\right|
+ &\le C_{A,M}\rho_\delta m_{\sigma,T}
+       \|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}.  \label{eq:terminal-phase-column-local-action}
+\end{align}
+
+The additive entry-collar part is separately flushed.  If
+\((Z_{\sigma,\rm col}[a],p_{\sigma,\rm col}[a])\) denotes the terminal
+recut of
+\(\mathfrak R_{\sigma,\rm col}E_{0,\sigma}a\), then
+\begin{equation}
+ \|(Z_{\sigma,\rm col}[a],p_{\sigma,\rm col}[a])\|_
+  {\mathsf T_{\sigma,T}^1([L_b-\theta_m,L_b])}
+ \le C_{A,M}\rho_\delta\mathcal E_{\sigma,T}(\delta)
+       \|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}.  \label{eq:terminal-phase-collar-flush}
+\end{equation}
+The proposition uses one phase derivative only.  It closes the structured
+phase column in the fixed-reduced-path terminal norm, but it does not
+construct the rough-middle-to-incoming trace, an endpoint RFDE reference,
+the event shear \(K\), a moving-duration inverse, or a physical root.
+\end{proposition}
+
 \begin{proposition}[Unavoidable \(S_\delta^2\) loss for rough normal data]
 \label[proposition]{prop:rough-normal-prefix-action-obstruction}
 The old rough norm cannot replace the weighted-speed/action graph norm in

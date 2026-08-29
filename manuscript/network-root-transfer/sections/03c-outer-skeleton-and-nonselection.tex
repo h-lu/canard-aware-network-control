@@ -4053,6 +4053,143 @@ used in this argument, which proves the stated stop line.
 \end{proof}
 
 \begin{proof}[Proof of
+\cref{prop:raw-compatible-terminal-phase-column}]
+Write
+\[
+ \mathcal A=\|a\|_{\mathsf A_\phi^1(I_\sigma)},\qquad
+ P=P_\sigma[a].
+\]
+The formal part of \(T_\sigma^{\rm rc}a\), written in the shifted
+coordinate \(p^\sharp=p+\varepsilon P\), satisfies
+\cref{eq:structured-phase-state-bound}.  The additive collar part satisfies
+\cref{eq:raw-phase-collar-response-bound}, with
+\(|E_{0,\sigma}a|\le\mathcal A\).  Because
+\(s_{\sigma,T}>\theta_m\), its incoming history on the recut problem is a
+current-path segment, not the original entry history.  Consequently, if
+\begin{equation}
+ \gamma_{\sigma,T}[a](\theta)
+ =Z_\sigma[a](s_{\sigma,T}+\theta),\qquad
+ -\theta_m\le\theta\le0,                         \label{eq:proof-terminal-phase-incoming-history}
+\end{equation}
+then
+\begin{equation}
+ \varepsilon^{-1}\left\{
+   \|\gamma_{\sigma,T}[a]\|_{C^0}
+   +\frac{|b_{\sigma,T}^\sharp[a]|}{m_{\sigma,T}}
+             \right\}\le C\mathcal A.          \label{eq:proof-terminal-phase-finite-data}
+\end{equation}
+Here
+\[
+ b_{a,T}^\sharp[a]
+  =p_a^{\rm form,\sharp}(s_{a,T})+p_{a,\rm col}(s_{a,T}),
+ \qquad
+ b_{r,T}^\sharp[a]=\varepsilon P(S_r).
+\]
+The last identity uses the exact rows
+\(p_r^{\rm form,\sharp}(S_r)=\varepsilon P(S_r)\) and
+\(p_{r,\rm col}(S_r)=0\).  Moreover,
+\[
+ \frac{|P(S_r)|}{m_{r,T}}
+ \le C\frac{\delta}{R_\delta^2}\mathcal A
+ \le C\mathcal A.
+\]
+
+The distributed data of the shifted sum are exactly
+\((F_\phi^\sharp,H_\phi^\sharp)\): the collar response is a zero-source
+solution, so it neither deletes nor duplicates the affine-residual phase
+source.  On the terminal annulus,
+\cref{eq:shifted-phase-source-profile} and
+\(r_T^2m_T=r_T^3+\varepsilon\ge\varepsilon\) give
+\begin{equation}
+ \varepsilon^{-1}\sup_{[0,L_b]}
+ \left\{\|F_\phi^\sharp\|_N
+       +\frac{|H_\phi^\sharp|}{r_Tm_T}\right\}
+ \le C\mathcal A,                                \label{eq:proof-terminal-phase-source-data}
+\end{equation}
+where \(r_T=r_{\sigma,T}\) and \(m_T=m_{\sigma,T}\).
+There is no entry-extension seam in this terminal window.  Thus the sources
+are continuous there.  The bounds in
+\cref{eq:proof-terminal-phase-finite-data,%
+eq:proof-terminal-phase-source-data} show directly that the data norm in
+\cref{eq:terminal-component-data-norm} is at most \(C\mathcal A\).
+The unique local solution is the restriction of the global shifted sum, so
+\cref{eq:terminal-component-source-bound} proves
+\cref{eq:terminal-shifted-phase-column-bound}.
+
+Now put
+\(A_{\rm pa}=\|a\|_{\mathsf A_{\sigma,\mathrm{pa}}}\).
+The embedding already proved in
+\cref{eq:proof-prefix-action-A1-embedding} and the entry part of
+\cref{eq:prefix-action-phase-norm} give
+\begin{equation}
+ \mathcal A\le C_\varkappa\rho_\delta A_{\rm pa},
+ \qquad |E_{0,\sigma}a|\le\rho_\delta A_{\rm pa}.  \label{eq:proof-terminal-phase-pa-smallness}
+\end{equation}
+Hence the preceding terminal-data calculation actually bounds the shifted
+trace by \(C\rho_\delta A_{\rm pa}\).
+
+It remains to return from \(p^\sharp\) to the physical coordinate \(p\).
+This is the only place where the causal-entry derivative weight is
+essential.  On the enlarged terminal annulus in
+\cref{eq:terminal-component-annuli}, delay translation preserves
+\(m_\delta\) up to a common factor and
+\begin{equation}
+ |a'(r)|\le\lambda_\delta m_\delta(r)A_{\rm pa},\qquad
+ |\bar r_\sigma(s)-\bar r_\sigma(s-\theta_k)|\le C\delta.  \label{eq:proof-terminal-phase-local-difference-input}
+\end{equation}
+Apply these inequalities term by term in
+\cref{eq:reduced-flow-phase-delay-defect}.  The coefficient and its
+fold-time derivative are uniformly bounded on this annulus.  Differentiating
+the two phase values uses only
+\(a_s=\delta q_0a'\), not \(a''\).  Therefore
+\begin{equation}
+ \sup_{s_{\sigma,T}\le s\le S_\sigma}
+   \{|P(s)|+|P_s(s)|\}
+ \le C\delta\lambda_\delta m_{\sigma,T}A_{\rm pa}.  \label{eq:proof-terminal-phase-local-difference}
+\end{equation}
+Since
+\begin{equation}
+ \frac{\delta\lambda_\delta}{\rho_\delta}
+ =2\alpha\frac{R_\delta+S_\delta^{-2}}{S_\delta}
+ =2\alpha\{\varkappa(\delta S_\delta)^{1/2}
+                  +S_\delta^{-3}\}=o(1),        \label{eq:proof-terminal-phase-shift-ratio}
+\end{equation}
+the definition of the terminal trace norm yields
+\begin{equation}
+ \|(0,\varepsilon P)\|_{\mathsf T_{\sigma,T}^1([0,L_b])}
+ \le C\delta\lambda_\delta A_{\rm pa}
+ \le C\rho_\delta A_{\rm pa}.                  \label{eq:proof-terminal-phase-physical-shift}
+\end{equation}
+Subtracting this shift from
+\cref{eq:terminal-shifted-phase-column-bound} with
+\cref{eq:proof-terminal-phase-pa-smallness} proves
+\cref{eq:terminal-physical-phase-column-bound}.
+
+In the shifted equation the algebraically reconstructed local speed is
+precisely
+\(Q_{\rm n}[T_\sigma^{\rm rc}a]+P
+ =\mathfrak A_\sigma^{\rm rc}a\).
+The two estimates in
+\cref{eq:terminal-component-local-action}, with terminal data norm
+\(C\rho_\delta A_{\rm pa}\), therefore prove
+\cref{eq:terminal-phase-column-local-action}.
+
+Finally isolate the additive collar response.  Its distributed sources
+vanish.  The global collar bound gives terminal-interface data of size
+at most \(C|E_{0,\sigma}a|\); on the repelling branch its terminal scalar
+row is exactly zero.  Apply
+\cref{eq:terminal-component-rough-flush} and then
+\cref{eq:proof-terminal-phase-pa-smallness}.  This proves
+\cref{eq:terminal-phase-collar-flush}.  The physical-coordinate argument
+above also explains the scope statement: the older
+\(\mathsf A_\phi^1\)-bound gives only
+\(|P|/m_{a,T}=O(S_\delta)\) on the attracting terminal window, exactly as
+in the witness for
+\cref{eq:normalized-phase-response-obstruction}.  Thus no stronger
+full-action-space assertion has been used.
+\end{proof}
+
+\begin{proof}[Proof of
 \cref{prop:rough-normal-prefix-action-obstruction}]
 Let \(\bar r_a\) be the attracting reduced path and take the hybrid normal
 direction
