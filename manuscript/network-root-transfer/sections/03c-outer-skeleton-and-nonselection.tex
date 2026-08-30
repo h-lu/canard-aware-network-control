@@ -14259,6 +14259,96 @@ Divide the preceding estimate by the last derivative and use
 Multiplication by the uniformly bounded \(q_{0,\lambda}(e)\), followed
 by division by \(R_\delta\), proves all identities and bounds in
 \cref{eq:oe-family-terminal-speed-shear-bound}.
+
+For completeness, we now retain the two-point information contained in
+the same strong chart.  Apply the mean-value reconstruction estimate
+\cref{eq:proof-oe-family-terminal-reconstruction-map} on the line
+segment joining two family zeros
+\(\mathbf p,\widetilde{\mathbf p}\) in the \(r_{\rm sh}\)-ball.
+The explicit actual-parameter residual, differentiated with the state
+coordinate fixed, obeys
+\begin{equation}
+ \sup_{\mathbf q\in B_{\rm oe}(p^\circ,r_{\rm sh})}
+ \left\|D_2\widehat{\mathbb F}_{r,R}^{\rm oe}
+   (z_r^{\rm oe}(\mathbf q);\mathbf q)
+       [\dot{\mathbf q}]\right\|_
+       {\mathcal Y_{r,R}^{\rm clk}}
+ \le C\|\dot{\mathbf q}\|_{\rm oe}.             \label{eq:proof-oe-family-terminal-partial-external-jet}
+\end{equation}
+This follows row by row from
+\cref{eq:oe-family-distributed-forcing-ledger,%
+eq:oe-family-finite-forcing-ledger}, with the total source formed before
+the fixed splits and shears.  Together with
+\[
+ \sup_{\mathbf q\in B_{\rm oe}(p^\circ,r_{\rm sh})}
+ \left\|[D_z\widehat{\mathbb F}_{r,R}^{\rm oe}
+   (z_r^{\rm oe}(\mathbf q);\mathbf q)]^{-1}\right\|\le C,
+\]
+implicit differentiation makes the zero-map derivative uniform along
+the segment and gives
+\begin{equation}
+ \|w_r^{\rm oe}(\mathbf p)
+       -w_r^{\rm oe}(\widetilde{\mathbf p})\|_
+       {\mathcal X_{r,R}^{\rm up,1}}
+ +\frac{|\beta_{\mathbf p}
+       -\beta_{\widetilde{\mathbf p}}|}
+       {\Lambda_{R,\delta}}
+ \le C d_{\mathbf p,\widetilde{\mathbf p}}.     \label{eq:proof-oe-family-zero-two-point}
+\end{equation}
+Thus, with
+\(\Delta_{\mathbf p,\widetilde{\mathbf p}}\) denoting the difference of
+the two pulled terminal coordinates,
+\begin{align}
+ \sup_{S_*-\theta_m\le s\le S_*}
+ \left\{\|\Delta_{\mathbf p,\widetilde{\mathbf p}}Z(s)\|_N
+ +\frac{|\Delta_{\mathbf p,\widetilde{\mathbf p}}
+              \mathfrak p(s)|}{R_\delta}\right\}
+ &\le C\varepsilon
+       d_{\mathbf p,\widetilde{\mathbf p}},\notag\\
+ \sup_{S_*-\theta_m\le s\le S_*}
+ \left\{\|\partial_s
+          \Delta_{\mathbf p,\widetilde{\mathbf p}}Z(s)\|_N
+ +\frac{|\partial_s
+          \Delta_{\mathbf p,\widetilde{\mathbf p}}
+              \mathfrak p(s)|}{R_\delta}\right\}
+ &\le C\frac{\varepsilon}{\delta}
+       d_{\mathbf p,\widetilde{\mathbf p}}.     \label{eq:proof-oe-family-terminal-two-point-reconstruction}
+\end{align}
+There is no reference remainder in this estimate.
+
+Subtract
+\cref{eq:proof-oe-family-speed-Q-derivative} for the two members.
+Every delayed foot is the same fixed terminal foot because both old
+clocks equal a translation on the unit plateau.  Insert
+\cref{eq:proof-oe-family-terminal-two-point-reconstruction}; the affine
+coefficient, layer, current-speed, and delayed-current differences obey
+the same termwise bounds as
+\cref{eq:proof-oe-family-speed-terminal-difference-ledger}, with
+\(d_{\mathbf p}\) replaced by
+\(d_{\mathbf p,\widetilde{\mathbf p}}\).  Since the reference
+\(C\varepsilon\delta\) term cancels on subtraction, this gives
+\begin{equation}
+ \left|\varepsilon\partial_s
+   \{\widetilde{\mathcal Q}_{\mathbf p}^{\rm sp}
+       -\widetilde{\mathcal Q}_{\widetilde{\mathbf p}}^{\rm sp}\}
+       (S_*)\right|
+ \le C\frac{\varepsilon R_\delta}{\delta}
+       d_{\mathbf p,\widetilde{\mathbf p}}.     \label{eq:proof-oe-family-speed-two-point}
+\end{equation}
+On this plateau \(\partial_s\) is the physical time derivative for both
+members.  Since
+\(\kappa_{\mathbf p,S}^{\rm sp}
+=(\varepsilon/\delta)
+\partial_s\widetilde{\mathcal Q}_{\mathbf p}^{\rm sp}(S_*)\),
+division of
+\cref{eq:proof-oe-family-speed-two-point} by \(\delta\), followed by
+\(\varepsilon=\delta^2\), proves
+\cref{eq:oe-family-terminal-speed-shear-two-point}.  Joint \(C^1\)
+regularity of the strong reconstruction lets the two points coalesce,
+and proves
+\cref{eq:oe-family-terminal-speed-shear-C1}.  This is a scaled
+two-point conclusion; it does not follow merely from existence of a
+parameter derivative.
 \end{proof}
 
 \begin{proof}[Proof of
@@ -14397,6 +14487,572 @@ unstable line prove
 \cref{eq:oe-family-speed-conormal-identities} from the definition
 \cref{eq:oe-family-speed-conormal}.  These are memberwise identities;
 no parameter differentiability on a rough history space has been used.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:oe-family-entry-relative-clock}]
+We first close the all-member parameter ledger.  This step cannot be
+replaced by the reference first-jet formula.  The derivative estimate
+\cref{eq:oe-family-derivative-ledger}, evaluated at the zero
+\(z_r^{\rm oe}(\mathbf p)\), and the final common radius decrease give
+\begin{equation}
+ \sup_{\mathbf p}
+ \left\|
+  [D_z\widehat{\mathbb F}_{r,R}^{\rm oe}
+   (z_r^{\rm oe}(\mathbf p);\mathbf p)]^{-1}
+ \right\|\le C.                                \label{eq:proof-oe-entry-relative-zero-inverse}
+\end{equation}
+At an arbitrary member, differentiate the actual-parameter residual row
+by row before either fixed range shear is applied.  The affine layer
+rows, compatible-collar map, predictor, and finite delay sums have the
+same normalized bounds as
+\cref{eq:oe-family-distributed-forcing-ledger,%
+eq:oe-family-finite-forcing-ledger}; all denominators stay in their
+common compact subranges.  The total-source-first rule and the two fixed
+shears preserve those bounds.  Thus the required all-member derivative
+ledger is
+\begin{equation}
+ \sup_{\mathbf p\in B_{\rm oe}(p^\circ,r_{\rm rel})}
+ \left\|D_2
+ \widehat{\mathbb F}_{r,R}^{\rm oe}
+   (z_r^{\rm oe}(\mathbf p);\mathbf p)
+       [\dot{\mathbf p}]\right\|_{\mathcal Y_{r,R}^{\rm clk}}
+ \le C\|\dot{\mathbf p}\|_{\rm oe}.             \label{eq:proof-oe-entry-relative-all-member-external-jet}
+\end{equation}
+This is the actual-member version of the forcing ledger, rather than an
+appeal to the reference formula by continuity.  Differentiating the zero
+equation therefore yields
+\begin{equation}
+ \|D_{\mathbf p}w_r^{\rm oe}(\mathbf p)
+       \dot{\mathbf p}\|_{\mathcal X_{r,R}^{\rm up,1}}
+ +\frac{|D\beta_{\mathbf p}\dot{\mathbf p}|}
+       {\Lambda_{R,\delta}}
+ \le C\|\dot{\mathbf p}\|_{\rm oe}.             \label{eq:proof-oe-entry-relative-zero-jet}
+\end{equation}
+This is uniform on the whole retained ball.  At \(p^\circ\) it reduces
+to \cref{eq:oe-family-first-jet}, but the latter formula alone would not
+prove \cref{eq:proof-oe-entry-relative-zero-jet}.
+
+We next verify that the shrinking-core hit is untouched by the old
+terminal clock.  On its transition window,
+\cref{eq:outer-clock-terminal-annulus} gives
+\(|r_*|\ge R_\delta/2\), whereas at the hit
+\(|r_{\mathbf p}|=\rho_{b,\delta}=c_b\rho_\delta\).
+The family state bound, speed bounds, and
+\(\rho_\delta/R_\delta=o(1)\) leave a time gap comparable to
+\(R_\delta/\delta\) between the hit collar and that transition.  This
+dominates \(\theta_m\).  The clock displacement is only
+\(O(\Lambda_{R,\delta}/\delta)\), so the same strict separation holds
+over the smaller family ball.  Hence
+\cref{eq:oe-entry-relative-old-zero-plateau} holds before any parameter
+derivative is taken.
+
+On that fixed-clock hit tube the finite algebraic reconstruction used in
+\cref{eq:proof-oe-family-state-clock-columns}, now differentiated at the
+actual zero and combined with
+\cref{eq:proof-oe-entry-relative-zero-jet}, gives the normalized phase
+ledger
+\begin{equation}
+ \sup_{\substack{|\,\widetilde r_{\mathbf p}(s)
+                        +\rho_{b,\delta}\,|
+                        \le c\rho_\delta}}
+ \frac{|D_{\mathbf p}\widetilde r_{\mathbf p}(s)
+                 \dot{\mathbf p}|}{\rho_\delta}
+ \le C\|\dot{\mathbf p}\|_{\rm oe}.             \label{eq:proof-oe-entry-relative-hit-state-jet}
+\end{equation}
+This is an all-member \(C^1\) reconstruction estimate; the finite
+difference phase comparison
+\cref{eq:proof-oe-family-core-phase-comparability} is used only to keep
+the tube common.  Since the clock equals the identity there,
+\[
+ \partial_s\widetilde r_{\mathbf p}(b_{\mathbf p})
+ =r_{\mathbf p}'(b_{\mathbf p})
+ =\delta q_{\mathbf p}(b_{\mathbf p}),\qquad
+ |q_{\mathbf p}(b_{\mathbf p})|\ge q_- .
+\]
+The Banach-space implicit function theorem applied to
+\((\mathbf p,s)\mapsto
+\widetilde r_{\mathbf p}(s)+\rho_{b,\delta}\) proves the first identity
+and both bounds in
+\cref{eq:oe-entry-relative-hit-jet,%
+eq:oe-entry-relative-clock-jet}.  Uniqueness in
+\cref{eq:oe-family-generated-core-hits} patches the local hit functions
+over the ball.
+
+By \cref{eq:oe-family-physical-duration},
+\[
+ \delta(T_{\mathbf p}-T_*)
+ =\beta_{\mathbf p}-\delta(b_{\mathbf p}-b_*).
+\]
+Differentiation proves
+\cref{eq:oe-entry-relative-duration-jet}; integration along the segment
+from \(p^\circ\) to \(\mathbf p\) proves
+\cref{eq:oe-entry-relative-zero-order}.  Integrating
+\(r_{\mathbf p}'=\delta q_{\mathbf p}\) between the fixed sections
+\(-\rho_{b,\delta}\) and \(-R_\delta\) gives
+\(T_{\mathbf p}\asymp R_\delta/\delta\), and
+\(\Lambda_{R,\delta}=\lambda_\delta R_\delta\) gives
+\cref{eq:oe-entry-relative-scales}.
+
+Shift the transition interval in
+\cref{eq:oe-entry-relative-cutoff} by \(b_*\).  It is a strict
+subinterval of the delay-enlarged annulus
+\(J_{R,\delta}\) when \(a_b<a_R\).  The family displacement of this
+interval is bounded by
+\begin{equation}
+ \sup_t|\Phi_{\mathbf p}(t)-(b_*+t)|
+ \le C\frac{\Lambda_{R,\delta}+\rho_\delta}{\delta}
+        d_{\mathbf p}.                          \label{eq:proof-oe-entry-relative-transition-displacement}
+\end{equation}
+Relative to its \(R_\delta/\delta\) length this is
+\(C\lambda_\delta d_{\mathbf p}\).  Thus, after the stated ordered
+decrease, the transition and its swept delay collar remain in the
+generated terminal annulus, while its left endpoint remains more than
+three delay lengths after the entry history.
+
+Now
+\[
+ \Upsilon_{\mathbf p}'(t)
+ =1+\frac{\gamma_{\mathbf p}}{\delta}
+       \chi_{b,\delta}'(t).
+\]
+The cutoff ledger and
+\(|\gamma_{\mathbf p}|/R_\delta\le
+C\lambda_\delta d_{\mathbf p}\) give
+\cref{eq:oe-entry-relative-diffeomorphism}.  At the right endpoint,
+\(\Upsilon_{\mathbf p}(T_*)=T_{\mathbf p}\).  The two constant
+plateaux give
+\cref{eq:oe-entry-relative-history-plateaux}; differentiating their
+fixed cutoff gives
+\cref{eq:oe-entry-relative-clock-parameter-jet}.  On the terminal
+plateau the cancellation is exact:
+\[
+ Db_{\mathbf p}+\delta^{-1}D\gamma_{\mathbf p}
+ =\delta^{-1}D\beta_{\mathbf p}=DS_{\mathbf p}.
+\]
+
+The identity
+\[
+ \Upsilon_{\mathbf p}(\sigma_{\mathbf p,k}(t))
+ =\Upsilon_{\mathbf p}(t)-\theta_k
+\]
+gives the three formulas in
+\cref{eq:oe-entry-relative-foot-identities} by differentiation.  Since
+\[
+ |\chi_{b,\delta}(t)-\chi_{b,\delta}(u)|
+ \le C\frac{\delta}{R_\delta}|t-u|,
+\]
+the diffeomorphism margin and one further \(t\)-derivative prove
+\cref{eq:oe-entry-relative-foot-displacement,%
+eq:oe-entry-relative-foot-jet}.  On the entry plateau both members of
+each delay pair see cutoff value zero; on the last delay interval both
+see value one.  This proves
+\cref{eq:oe-entry-relative-fixed-feet}.
+
+It remains to audit the composition with the old clock.  By definition,
+\[
+ X_{\mathbf p}(\Phi_{\mathbf p}(t))
+ =\widetilde X_{\mathbf p}
+   \bigl(\Xi_{\mathbf p}^{-1}(\Phi_{\mathbf p}(t))\bigr),
+\]
+which is \cref{eq:oe-entry-relative-double-composition}.  The inverse
+clock has the same scaled \(C^1\) bounds as
+\cref{eq:outer-clock-foot-jets}.  On the rough entry collar both clocks
+are the identity up to the common translation \(b_{\mathbf p}-b_*\), and
+no delayed history is translated: the feet are exactly
+\(t-\theta_k\).  The hit occurs more than \((M+2)\theta_m\) after the
+raw seam by \cref{eq:oe-family-generated-core-hits}.  Method-of-steps
+regularization therefore supplies the time derivative used by every
+parameter-dependent composition before the support of
+\(D\sigma_{\mathbf p,k}\) is reached.  On that support the ordinary
+strong-to-weak chain rule is
+\cref{eq:oe-entry-relative-composition-derivative}.  Substitution into
+the physical equation, retaining the full multiplier
+\(\omega_{\mathbf p}=\Upsilon_{\mathbf p}'\), proves
+\cref{eq:oe-entry-relative-pulled-rfde}.  No same-space rough
+translation or full-process differentiability has been used.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:oe-family-fixed-action-selected-bvp}]
+We separate the fixed-action inverse, the coefficient jets, and the
+selected difference quotient.  This separation is what prevents a
+rough-history translation claim from entering the proof.
+
+First, the double composition in
+\cref{eq:oe-entry-relative-double-composition}, the all-member zero jet
+\cref{eq:proof-oe-entry-relative-zero-jet}, and the finite phase
+reconstruction give
+\begin{equation}
+ \sup_{0\le t\le T_*}
+ \frac{|D\widehat r_{\mathbf p}(t)
+               \dot{\mathbf p}|}{a^\circ(t)}
+ \le C\|\dot{\mathbf p}\|_{\rm oe}.             \label{eq:proof-oe-fixed-action-pulled-path-jet}
+\end{equation}
+At \(t=0,T_*\) the numerator is in fact zero because the two \(r\)
+sections are fixed.  In the interior,
+\cref{eq:proof-oe-family-core-phase-comparability} and
+\cref{eq:proof-oe-entry-relative-transition-displacement} keep
+\(\widehat r_{\mathbf p}\) in one relative \(r\)-tube about
+\(r^\circ\).  Hence
+\begin{equation}
+ c_a a^\circ(t)
+ \le\mathfrak a_N(\widehat r_{\mathbf p}(t))
+ \le C_a a^\circ(t).                           \label{eq:proof-oe-fixed-action-path-comparison}
+\end{equation}
+The two estimates are normalized statements.  In particular, the large
+raw derivative \(Db_{\mathbf p}=O(\rho_\delta/\delta)\) has canceled in
+the pulled path; it is not estimated as an \(O(1)\) time translation.
+
+The source norm is written in the reference frame, whereas the diagonal
+Green kernel below uses the actual frame.  Since
+\(\partial_rT_N\) is uniformly bounded and
+\(|\widehat r_{\mathbf p}-r^\circ|
+\le Ca^\circ d_{\mathbf p}\),
+\begin{equation}
+ (T^\circ(t))^{-1}T_{\mathbf p}(t)
+ =\Id+\mathcal E_{\mathbf p}(t),\qquad
+ \|\mathcal E_{\mathbf p}(t)\|
+ \le Ca^\circ(t)d_{\mathbf p}.                 \label{eq:proof-oe-fixed-action-frame-change}
+\end{equation}
+Both stable--unstable off-diagonal blocks have this
+\(a^\circ d_{\mathbf p}\) factor.  A stable input of size
+\(\delta^{-1}\) therefore leaks into the unstable source norm by at most
+\((\delta/a^\circ)(a^\circ d_{\mathbf p})\delta^{-1}
+=d_{\mathbf p}\); the reverse leakage is smaller.  Thus the reference
+and actual anisotropic source norms are uniformly equivalent.  A merely
+unweighted bound on the frame change would not suffice here.
+
+Let
+\[
+ \mathscr M^\circ(t,s)
+ =\int_s^t\frac{a^\circ(\zeta)}{\delta}\,\dd\zeta .
+\]
+From
+\cref{eq:oe-entry-relative-diffeomorphism,%
+eq:proof-oe-fixed-action-path-comparison},
+\begin{equation}
+ c_M\mathscr M^\circ(t,s)
+ \le\int_s^t\omega_{\mathbf p}(\zeta)
+       \frac{\mathfrak a_N(\widehat r_{\mathbf p}(\zeta))}
+            {\delta}\,\dd\zeta
+ \le C_M\mathscr M^\circ(t,s).                 \label{eq:proof-oe-fixed-action-rate-comparison}
+\end{equation}
+The foot displacement in
+\cref{eq:oe-entry-relative-foot-displacement} is a small fixed fraction
+of one transition scale.  Choosing
+\(\vartheta_\diamond\) first and then decreasing the family ball gives
+\begin{equation}
+ \sup_{\mathbf p,t}\ \sup_{\sigma\in J_t^b}
+ \mathscr A^\circ(t,\sigma)
+ \le\vartheta_\dagger\mathscr L_\delta.         \label{eq:proof-oe-fixed-action-foot-envelope}
+\end{equation}
+Only this one-sided domination of a smaller fixed action is used.  The
+moving action in
+\cref{eq:oe-family-core-action-and-norm} is never differentiated or
+declared uniformly equivalent to \(\mathscr A^\circ\).
+
+We now construct the inverse.  Use the actual current frame
+\[
+ T_{\mathbf p}(t)=T_N(\widehat r_{\mathbf p}(t))
+\]
+and retain the factor \(\omega_{\mathbf p}\) in both principal diagonal
+blocks.  In this frame the stable current evolution and inverse
+unstable evolution obey
+\begin{align}
+ \|U_{\mathbf p}^s(t,s)\|
+ &\le Ce^{-c(t-s)/\delta},&&t\ge s,\notag\\
+ |(U_{\mathbf p}^u(t,s))^{-1}|
+ &\le Ce^{-c\mathscr M^\circ(t,s)},&&t\ge s.   \label{eq:proof-oe-fixed-action-diagonal-evolution}
+\end{align}
+The first estimate uses the uniform stable block in
+\cref{eq:generated-core-current-block-rates}; the second uses
+\cref{eq:proof-oe-fixed-action-rate-comparison}.  Thus the oriented
+diagonal Green operator satisfies
+\begin{equation}
+ \|G_{\mathbf p}^0f\|_{\mathcal X^\circ}
+ \le C\|f\|_{\mathcal F^{\circ,\rm an}}.        \label{eq:proof-oe-fixed-action-diagonal-green}
+\end{equation}
+Indeed the stable integral has width \(O(\delta)\), while in the
+unstable integral the factor \(a^\circ/\delta\) is the derivative of
+\(\mathscr M^\circ\).  This is why the two source components in
+\cref{eq:oe-fixed-action-source-norm} have different normalizations.
+
+Conjugating the exact remainder in
+\cref{eq:oe-family-core-quotient-remainder}, including
+\(-T_{\mathbf p}^{-1}T_{\mathbf p}'\), gives the contraction number
+\begin{align}
+ \eta_{\mathbf p}^\circ
+ :=\sup_{0\le t\le T_*}\biggl\{
+ &\frac{\varepsilon\mathfrak b_{\mathbf p}}{a^\circ(t)}
+ +\frac{\delta^2}{a^\circ(t)}
+       (1+\delta^{-2\vartheta_\dagger})
+ +\frac{\delta^3}{a^\circ(t)^2}
+       \delta^{-2\vartheta_\dagger}
+ +\frac{\delta^2}{a^\circ(t)^2}\biggr\}\notag\\
+ &+\sup_{0\le t\le T_*}
+   \frac{\delta}{a^\circ(t)}
+    \|T_{\mathbf p}(t)^{-1}T_{\mathbf p}'(t)\|.             \label{eq:proof-oe-fixed-action-contraction-number}
+\end{align}
+The four displayed terms are, respectively, the current error, ordinary
+delay edge, delayed Volterra edge, and rank-one resource edge.  The foot
+envelope
+\cref{eq:proof-oe-fixed-action-foot-envelope} is the source of
+\(\delta^{-2\vartheta_\dagger}\).  By
+\cref{eq:oe-family-core-contraction-closes}, with the strictly smaller
+fixed exponent chosen above,
+\begin{equation}
+ \sup_{\mathbf p}\eta_{\mathbf p}^\circ=o(1).   \label{eq:proof-oe-fixed-action-contraction-closes}
+\end{equation}
+The compatible entry collar is imposed exactly as in
+\cref{eq:proof-generated-core-compatible-collar}.  The current Green
+map, the fixed entry graph coordinate, and the fixed terminal current
+row therefore define a contraction with constant at most \(1/2\).
+This proves
+\cref{eq:oe-fixed-action-current-isomorphism,%
+eq:oe-fixed-action-green-bound}.  Notice that
+\(\omega_{\mathbf p}-1\) was kept in the principal blocks; treating it
+as an unscaled perturbation would create a false long-action loss.
+The integral form of the pulled RFDE shows that
+\(\widehat{\mathcal L}_{\mathbf p}^{\rm q}\) is closed from
+\(\mathcal X^\circ\) to \(\mathcal F^{\circ,\rm an}\); hence the graph
+norm in \cref{eq:oe-fixed-action-domain-norm} is complete and the
+isomorphism assertion has its usual Banach-space meaning.
+
+We next prove the first-jet ledger.  The current coefficient is a smooth
+finite-dimensional function of
+\((\widehat r_{\mathbf p},\widehat Z_{\mathbf p},\nu,\eta)\).
+Differentiate it using
+\cref{eq:proof-oe-fixed-action-pulled-path-jet} and the strong family
+zero estimate.  Row neutrality removes the stationary collective layer
+part.  This gives the first line of
+\cref{eq:oe-fixed-action-coefficient-jet-ledger}.  For the resource
+coefficients, differentiate the exact identity
+\[
+ q_{\mathbf p}(r)w_{\mathbf p}'(r)=r-\varepsilon\nu.
+\]
+Division is legitimate on the generated core by
+\cref{eq:oe-family-core-graph-ledger}, and gives
+\cref{eq:oe-fixed-action-resource-relative-jet}.  The additional
+composition term is
+\(w_{\mathbf p}''(\widehat r_{\mathbf p})
+ D\widehat r_{\mathbf p}\).  Inserting these relative derivatives in
+the Volterra formula
+\cref{eq:resource-gauge-history-inverse} yields
+\begin{equation}
+ a^\circ\{\|D\widehat H_{\mathbf p}\dot{\mathbf p}\|
+       +\sup_\theta\|D\widehat h_{\mathbf p}(\theta)
+                         \dot{\mathbf p}\|\}
+ +\frac{a^\circ}{\delta}
+       \|D\widehat{\mathcal K}_{\mathbf p}
+                         \dot{\mathbf p}\|
+ \le C\|\dot{\mathbf p}\|_{\rm oe}.             \label{eq:proof-oe-fixed-action-resource-jets}
+\end{equation}
+The last operator norm here is the fixed envelope norm in
+\cref{eq:oe-fixed-action-envelope-history-norm}, uniformly in \(t\);
+the other terms are understood pointwise before taking the displayed
+supremum.  Thus the estimate has a defined intermediate history-space
+type.
+The clock and foot terms are exactly
+\cref{eq:oe-entry-relative-clock-parameter-jet,%
+eq:oe-entry-relative-foot-jet}.  This proves
+\cref{eq:oe-fixed-action-coefficient-jet-ledger}, including the
+dimension-uniform layer directions.
+
+We now account for the rough entry history.  On
+\([-\theta_m,3\theta_m]\), the clock and all feet are fixed by
+\cref{eq:oe-entry-relative-fixed-feet}.  Hence no parameter difference
+quotient translates the prescribed continuous entry history.  The
+integral RFDE gives one time derivative immediately to the right of the
+entry and a second derivative after one further maximal-delay step.
+The support of \(D\sigma_{\mathbf p,\theta}\), enlarged backward by a
+full delay, lies to the right of \(3\theta_m\) by
+\cref{eq:oe-entry-relative-support-margin}.  Differentiating the two
+current frame equations on that support, charging stable derivatives by
+\(\delta\) and unstable derivatives by \(\delta/R_\delta\), gives
+\begin{equation}
+ \|\mathscr S_{\mathbf p}^{u}(\psi,b_u)\|_
+       {\mathcal Z_\chi^2}
+ \le C\{\|\psi\|_{\circ,b}+|b_u|\}.             \label{eq:proof-oe-fixed-action-eventual-C2}
+\end{equation}
+All delayed ancestors used here are already on the generated side of
+the entry seam.  The order-\(h\) coefficient ledger in
+\cref{thm:action-scale-original-endpoint-family} supplies the one
+ordinary time derivative of the coefficients used in this calculation.
+
+Let \(\mathbf p_j\to\mathbf p\) and
+\(y_j=\mathscr S_{\mathbf p_j}^{u}(\psi,b_u)\),
+\(y=\mathscr S_{\mathbf p}^{u}(\psi,b_u)\).  The difference satisfies
+\begin{equation}
+ \widehat{\mathbb L}_{\mathbf p_j}^{u}(y_j-y)
+ =-\left(
+   (\widehat{\mathcal L}_{\mathbf p_j}^{\rm q}
+       -\widehat{\mathcal L}_{\mathbf p}^{\rm q})y,\,
+       0,0\right).                              \label{eq:proof-oe-fixed-action-difference-equation}
+\end{equation}
+On the clock support, split every translated difference into a value
+difference at one foot and a fixed-solution translation difference.
+The latter has the uniform Taylor expansion
+\begin{equation}
+ \frac{y(\sigma_{\mathbf p+h,\theta})
+          -y(\sigma_{\mathbf p,\theta})
+          -y'(\sigma_{\mathbf p,\theta})
+             D\sigma_{\mathbf p,\theta}[h]}
+        {\|h\|_{\rm oe}}
+ \longrightarrow0                              \label{eq:proof-oe-fixed-action-foot-remainder}
+\end{equation}
+in the weak source norm, uniformly for unit
+\((\psi,b_u)\), by
+\cref{eq:proof-oe-fixed-action-eventual-C2}.  Off that support the feet
+are fixed.  Apply the common inverse to
+\cref{eq:proof-oe-fixed-action-difference-equation}, divide by
+\(\|\mathbf p_j-\mathbf p\|_{\rm oe}\), and use
+\cref{eq:oe-fixed-action-coefficient-jet-ledger}.  The quotients converge
+uniformly on the data unit ball to
+\cref{eq:oe-fixed-action-selected-derivative}.  Repeating the estimate
+at two nearby base points proves continuity of the derivative.
+Together with
+\cref{eq:proof-oe-fixed-action-eventual-C2}, this proves
+\cref{eq:oe-fixed-action-selected-C1-map,%
+eq:oe-fixed-action-selected-C1-bound}.  This is a selected-solution
+argument, not differentiability of the rough graph operator.
+
+Finally, differentiate the explicit terminal row
+\cref{eq:oe-family-speed-expanded-row}.  The terminal plateau makes
+every delayed argument literal, so no translation derivative occurs.
+The two-point strong terminal chart gives
+\begin{equation}
+ |D\kappa_{\mathbf p,S}^{\rm sp}
+              \dot{\mathbf p}|
+ \le CR_\delta\|\dot{\mathbf p}\|_{\rm oe}.     \label{eq:proof-oe-fixed-action-speed-shear-jet}
+\end{equation}
+This is precisely
+\cref{eq:oe-family-terminal-speed-shear-C1}, after identifying the old
+and entry-relative literal terminal plateaux.  In particular, the
+\(R_\delta\) scale comes from a two-member Lipschitz estimate and not
+merely from existence of a parameter derivative.  The differentiated
+Volterra formula and
+\cref{eq:proof-oe-fixed-action-resource-jets} give the second term in
+\cref{eq:oe-fixed-action-terminal-row-jet}.  To check the dual scale
+term by term, take \(\|\phi\|_{\circ,T}=1\).  The fixed foot envelope
+gives \(\|\phi\|_\infty\le
+C\delta^{-2\vartheta_\dagger}\).  Differentiating
+\cref{eq:oe-family-speed-expanded-row} gives
+\begin{align}
+ \|D\widehat\ell_{\mathbf p}^{\rm sp,q}
+          \dot{\mathbf p}\|_{(\circ,T)^*}
+ \le C\biggl\{&
+ \frac{\|D\mathcal J_{\mathbf p}(S)
+                   \dot{\mathbf p}\|}{R_\delta}
+ +\frac{\varepsilon}{R_\delta}
+       \delta^{-2\vartheta_\dagger}
+ +\frac{\varepsilon\delta}{R_\delta^2}
+       \delta^{-2\vartheta_\dagger}\notag\\
+ &+\frac{|D\kappa_{\mathbf p,S}^{\rm sp}
+                   \dot{\mathbf p}|}{R_\delta}
+ +\frac{|\kappa_{\mathbf p,S}^{\rm sp}|}{R_\delta}
+       \|\dot{\mathbf p}\|_{\rm oe}
+ +\frac{\varepsilon}{R_\delta}\biggr\}.         \label{eq:proof-oe-fixed-action-row-dual-ledger}
+\end{align}
+Here the second term includes the uniformly bounded layer jets, the
+third includes the differentiated Volterra edge, the fifth is the
+denominator derivative in
+\(\kappa_{\mathbf p,S}^{\rm sp}/q_{0,\mathbf p}(e)\), and the last
+includes the remaining \(q_0,q_0'\) jets.  The
+current jet is \(O(R_\delta)\).  Moreover
+\[
+ \frac{\varepsilon}{R_\delta}
+       \delta^{-2\vartheta_\dagger}=o(1),\qquad
+ \frac{\varepsilon\delta}{R_\delta^2}
+       \delta^{-2\vartheta_\dagger}=o(1)
+\]
+because \(\vartheta_\dagger<\vartheta_*<1/4\) and by the same ordered
+wedge calculation as
+\cref{eq:proof-physical-speed-fading-closes}.  Together with
+\cref{eq:proof-oe-fixed-action-speed-shear-jet}, this closes
+\cref{eq:proof-oe-fixed-action-row-dual-ledger}.  The undifferentiated
+row bound is
+\cref{eq:oe-family-speed-row-bound}, while the fifth term is bounded by
+\cref{eq:oe-family-terminal-speed-shear-bound}; hence both assertions in
+\cref{eq:oe-fixed-action-terminal-row-jet} follow.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:oe-family-C1-generator-entry-conormal}]
+By
+\cref{eq:oe-fixed-action-selected-C1-map},
+\(\widehat{\mathfrak h}_{\mathbf p}^{u}
+=\mathscr S_{\mathbf p}^{u}(0,1)\) is \(C^1\) in the fixed weak space
+and in the terminal strong restriction.  The pulled terminal history is
+literal by
+\cref{eq:oe-entry-relative-history-plateaux}; hence it is the same
+current-normalized unstable history used in
+\cref{eq:oe-family-speed-unstable-coefficient}.  The row \(C^1\)
+statement and the chain rule give the first identity in
+\cref{eq:oe-C1-generator-jets}.  The memberwise estimate
+\cref{eq:oe-family-speed-margin} gives
+\(\alpha\le\mu_{\mathbf p}\le3\alpha\).  Division by this scalar proves
+the physical normalization, the second jet identity, and the uniform
+bounds for the two generators.
+
+For fixed \(\psi\), formula
+\cref{eq:oe-C1-physical-row-kernel-solution} is exactly the row-replacement
+inverse in
+\cref{eq:oe-family-speed-bordered-inverse}, expressed on the fixed
+pullback.  Therefore it has entry graph coordinate \(\psi\) and zero
+terminal physical row, and it is the unique solution with
+\cref{eq:oe-C1-physical-bordered-data}.  Every factor in that formula
+is \(C^1\) as an operator on the data unit ball.  Thus
+\[
+ \mathbf p\longmapsto
+ \widehat u_{\mathbf p}^{\,\rm sp}
+ \in\mathcal L(\mathscr K_b,\mathcal X^\circ)
+\]
+is \(C^1\) with a common bound.  Evaluation at the fixed entry is
+bounded, so the same is true of \(G_{\mathbf p}\).  Equivalently, its
+derivative is obtained from
+\begin{align*}
+ \widehat{\mathbb L}_{\mathbf p}^{\rm sp,q}
+ D_{\mathbf p}\widehat u_{\mathbf p}^{\,\rm sp}[\psi]
+       \dot{\mathbf p}
+ =\bigl(&-D_{\mathbf p}^{\rm sel}
+       \widehat{\mathcal L}_{\mathbf p}^{\rm q}
+         [\dot{\mathbf p}]
+       \widehat u_{\mathbf p}^{\,\rm sp}[\psi],\,0,\\
+ &-(D\widehat\ell_{\mathbf p}^{\rm sp,q}
+       \dot{\mathbf p})
+       (\widehat u_{\mathbf p}^{\,\rm sp}[\psi])_{T_*}\bigr),
+\end{align*}
+followed by
+\[
+ DG_{\mathbf p}[\dot{\mathbf p}]\psi
+ =\ell_b^u
+   D_{\mathbf p}\widehat u_{\mathbf p}^{\,\rm sp}[\psi]
+       \dot{\mathbf p}(0).
+\]
+
+Since \(\Gamma_b\) and \(\ell_b^u\) are fixed,
+\[
+ D\lambda_{\mathbf p}^{\rm ent}
+       [\dot{\mathbf p}]
+ =-(DG_{\mathbf p}[\dot{\mathbf p}])\Gamma_b.
+\]
+This proves the \(C^1\) and uniform dual bounds.  Every entry history has
+the unique decomposition
+\(\phi=\Gamma_b\phi+\jmath_b^u\ell_b^u\phi(0)\).  Therefore
+\(\lambda_{\mathbf p}^{\rm ent}\phi=0\) exactly when
+\[
+ \phi=\psi+\jmath_b^uG_{\mathbf p}\psi,\qquad
+ \psi=\Gamma_b\phi,
+\]
+which proves \cref{eq:oe-C1-entry-graph}.  The uniqueness of the
+physical bordered problem proves the stated trace characterization.
+Since \(\Gamma_b\jmath_b^u1=0\) and
+\(\ell_b^ue_b^u=1\), one also has
+\(\lambda_{\mathbf p}^{\rm ent}(\jmath_b^u1)=1\).
+None of these algebraic conclusions identifies the graph with a
+nonlinear stable sheet or supplies a uniformly bounded backward
+transported terminal covector.
 \end{proof}
 
 \subsection{Why unnormalized backward convergence does not select a history}

@@ -10400,6 +10400,47 @@ speed shear satisfies
  &\le C\left\{d_{\mathbf p}+\frac\varepsilon{R_\delta}\right\}.
                                                         \label{eq:oe-family-terminal-speed-shear-bound}
 \end{align}
+After one further uniform decrease, fix
+\begin{equation}
+ 0<r_{\rm sh}\le r_{\rm core}.                 \label{eq:oe-family-terminal-shear-C1-radius}
+\end{equation}
+More strongly, this is a two-point strong-chart estimate.  For two
+members
+\(\mathbf p,\widetilde{\mathbf p}
+\in B_{\rm oe}(p^\circ,r_{\rm sh})\), let
+\[
+ d_{\mathbf p,\widetilde{\mathbf p}}
+ =\|\mathbf p-\widetilde{\mathbf p}\|_{\rm oe}
+\]
+and pull their speed corrections to the common old terminal plateau:
+\[
+ \widetilde{\mathcal Q}_{\mathbf p}^{\rm sp}(s)
+ =\mathcal Q_{\mathbf p}^{\rm sp}
+       (\Xi_{\beta_{\mathbf p}}(s)).
+\]
+Then
+\begin{align}
+ \left|\varepsilon\partial_s
+   \{\widetilde{\mathcal Q}_{\mathbf p}^{\rm sp}
+        -\widetilde{\mathcal Q}_{\widetilde{\mathbf p}}^{\rm sp}\}
+          (S_*)\right|
+ &\le C\frac{\varepsilon R_\delta}{\delta}
+       d_{\mathbf p,\widetilde{\mathbf p}},\notag\\
+ \frac{|\kappa_{\mathbf p,S}^{\rm sp}
+       -\kappa_{\widetilde{\mathbf p},S}^{\rm sp}|}
+       {R_\delta}
+ &\le C d_{\mathbf p,\widetilde{\mathbf p}}.   \label{eq:oe-family-terminal-speed-shear-two-point}
+\end{align}
+In particular the shear is \(C^1\) and, throughout the ball,
+\begin{equation}
+ \frac{\varepsilon}{\delta R_\delta}
+ \left|D_{\mathbf p}
+   [\partial_s\widetilde{\mathcal Q}_{\mathbf p}^{\rm sp}(S_*)]
+       \dot{\mathbf p}\right|
+ +\frac{|D\kappa_{\mathbf p,S}^{\rm sp}
+       \dot{\mathbf p}|}{R_\delta}
+ \le C\|\dot{\mathbf p}\|_{\rm oe}.            \label{eq:oe-family-terminal-speed-shear-C1}
+\end{equation}
 In particular, the strong chart closes the family shear needed for
 transversality.  It does not prove
 \(\partial_r\mathcal Q_{\mathbf p}^{\rm sp,gr}(e)=O(1)\) on a fixed
@@ -10417,7 +10458,7 @@ lem:oe-family-terminal-speed-shear,%
 prop:exact-resource-gauge-quotient}.
 After a further uniform decrease
 \begin{equation}
- 0<r_{\rm sp}\le r_{\rm core},                  \label{eq:oe-family-speed-radius}
+ 0<r_{\rm sp}\le r_{\rm sh},                    \label{eq:oe-family-speed-radius}
 \end{equation}
 the following statements hold for every
 \(\mathbf p=(\nu,\eta,g)\in B_{\rm oe}(p^\circ,r_{\rm sp})\).
@@ -10618,6 +10659,694 @@ The result does not claim that
 differentiable on the rough \(C\)-history space.  Nor does the result
 identify \(\ker\Lambda_{\mathbf p,t}^{\rm sp}\) with a nonlinear stable
 sheet or construct a past-complete branch.
+\end{theorem}
+
+\begin{lemma}[Entry-relative terminal clock and its strong-to-weak feet]
+\label[lemma]{lem:oe-family-entry-relative-clock}
+Retain
+\cref{thm:action-scale-original-endpoint-family,%
+lem:oe-family-generated-core-ledger,%
+lem:outer-annulus-terminal-clock}
+and decrease the common family radius, if necessary.  This decrease is
+independent of \(N\), of the reference point in
+\(\mathcal P_N^{\rm int}\), and of the retained diagonal wedge.  Put
+\begin{equation}
+ 0<r_{\rm rel}\le r_{\rm sp},                  \label{eq:oe-entry-relative-radius}
+\end{equation}
+and work on \(B_{\rm oe}(p^\circ,r_{\rm rel})\).  Put
+\begin{equation}
+ \beta_{\mathbf p}
+   =\beta_{\rm clk}^{\rm oe}(\mathbf p),\qquad
+ \Xi_{\mathbf p}(s)
+   =s+\frac{\beta_{\mathbf p}}{\delta}
+          \chi_{R,\delta}(s),                  \label{eq:oe-entry-relative-old-clock}
+\end{equation}
+and let
+\[
+ \widetilde r_{\mathbf p}(s)
+ =r_{\mathbf p}(\Xi_{\mathbf p}(s))
+\]
+be the physical slow coordinate pulled to the fixed clock of
+\cref{thm:action-scale-original-endpoint-family}.  Write
+\begin{equation}
+ b_{\mathbf p}=s_b(\mathbf p),\qquad
+ b_*=b_{p^\circ},\qquad
+ T_{\mathbf p}=S_{\mathbf p}-b_{\mathbf p},\qquad
+ T_*=S_*-b_* .                                 \label{eq:oe-entry-relative-times}
+\end{equation}
+The complete hit collar lies in the zero plateau of the old terminal
+clock:
+\begin{equation}
+ [b_{\mathbf p}-\theta_m,b_{\mathbf p}]
+ \subset\{\chi_{R,\delta}=0\}.                 \label{eq:oe-entry-relative-old-zero-plateau}
+\end{equation}
+Consequently \(b_{\mathbf p}\) is at once the physical and fixed-clock
+hit of the section
+\begin{equation}
+ \widetilde r_{\mathbf p}(b_{\mathbf p})
+ =r_{\mathbf p}(b_{\mathbf p})
+ =-\rho_{b,\delta}.                            \label{eq:oe-entry-relative-hit}
+\end{equation}
+
+The maps
+\(\mathbf p\mapsto b_{\mathbf p}\),
+\(\mathbf p\mapsto\beta_{\mathbf p}\), and
+\(\mathbf p\mapsto T_{\mathbf p}\) are \(C^1\) on the retained ball.
+For every external direction \(\dot{\mathbf p}\),
+\begin{align}
+ Db_{\mathbf p}\dot{\mathbf p}
+ &=-\frac{D_{\mathbf p}\widetilde r_{\mathbf p}
+              (b_{\mathbf p})\dot{\mathbf p}}
+          {\delta q_{\mathbf p}(b_{\mathbf p})},
+ &\frac{\delta|Db_{\mathbf p}\dot{\mathbf p}|}{\rho_\delta}
+ &\le C\|\dot{\mathbf p}\|_{\rm oe},           \label{eq:oe-entry-relative-hit-jet}\\
+ \frac{|D\beta_{\mathbf p}\dot{\mathbf p}|}
+          {\Lambda_{R,\delta}}
+ &\le C\|\dot{\mathbf p}\|_{\rm oe},
+ & |q_{\mathbf p}(b_{\mathbf p})|
+ &\ge q_-.                                     \label{eq:oe-entry-relative-clock-jet}
+\end{align}
+These are two different normalized estimates: the unnormalized hit jet
+may be \(O(\rho_\delta/\delta)\) and is not asserted to be \(O(1)\).
+Set
+\begin{equation}
+ \gamma_{\mathbf p}
+ =\delta(T_{\mathbf p}-T_*)
+ =\beta_{\mathbf p}
+       -\delta(b_{\mathbf p}-b_*).             \label{eq:oe-entry-relative-duration}
+\end{equation}
+Then
+\begin{align}
+ |D\gamma_{\mathbf p}\dot{\mathbf p}|
+ &\le C(\Lambda_{R,\delta}+\rho_\delta)
+       \|\dot{\mathbf p}\|_{\rm oe}
+ \le C\Lambda_{R,\delta}\|\dot{\mathbf p}\|_{\rm oe},
+                                                        \label{eq:oe-entry-relative-duration-jet}\\
+ |b_{\mathbf p}-b_*|
+ &\le C\frac{\rho_\delta}{\delta}d_{\mathbf p},&
+ |\gamma_{\mathbf p}|
+ &\le C\Lambda_{R,\delta}d_{\mathbf p},        \label{eq:oe-entry-relative-zero-order}\\
+ c\frac{R_\delta}{\delta}
+ \le T_{\mathbf p}&\le C\frac{R_\delta}{\delta},&
+ \frac{|\gamma_{\mathbf p}|}{R_\delta}
+ &\le C\lambda_\delta d_{\mathbf p},           \label{eq:oe-entry-relative-scales}
+\end{align}
+where \(d_{\mathbf p}=\|\mathbf p-p^\circ\|_{\rm oe}\).  The second
+inequality in \cref{eq:oe-entry-relative-duration-jet} uses the already
+proved \(\rho_\delta/\Lambda_{R,\delta}=o(1)\); it is not obtained by
+discarding the moving-hit term.
+
+Choose \(0<a_b<a_R\), where \(a_R\) is fixed in
+\cref{lem:outer-annulus-terminal-clock}, and put
+\begin{equation}
+ L_{b,\delta}=a_b\frac{R_\delta}{\delta}.       \label{eq:oe-entry-relative-transition-length}
+\end{equation}
+After decreasing \(a_b\) and then the wedge, fix
+\(\chi_{b,\delta}\in C^5([-\theta_m,T_*];[0,1])\) such that
+\begin{align}
+ \chi_{b,\delta}&=0
+ &&\text{on }[-\theta_m,T_*-L_{b,\delta}-2\theta_m],
+                                                        \notag\\
+ \chi_{b,\delta}&=1
+ &&\text{on }[T_*-2\theta_m,T_*],             \notag\\
+ \left(\frac{R_\delta}{\delta}\right)^j
+ \|\chi_{b,\delta}^{(j)}\|_\infty&\le C_j,
+ &&1\le j\le5,                                 \label{eq:oe-entry-relative-cutoff}\\
+ T_*-L_{b,\delta}-2\theta_m&>3\theta_m.        \label{eq:oe-entry-relative-support-margin}
+\end{align}
+In the no-delay case the two plateaux have their evident endpoint
+interpretation.  Define
+\begin{align}
+ \Upsilon_{\mathbf p}(t)
+ &=t+\frac{\gamma_{\mathbf p}}{\delta}
+        \chi_{b,\delta}(t),\notag\\
+ \Phi_{\mathbf p}(t)
+ &=b_{\mathbf p}+\Upsilon_{\mathbf p}(t),
+ \qquad -\theta_m\le t\le T_* .                \label{eq:oe-entry-relative-clock}
+\end{align}
+Then \(\Upsilon_{\mathbf p}\) is an increasing \(C^5\)
+diffeomorphism from \([-\theta_m,T_*]\) onto
+\([-\theta_m,T_{\mathbf p}]\), and
+\begin{equation}
+ \frac12\le\Upsilon_{\mathbf p}'(t)\le\frac32. \label{eq:oe-entry-relative-diffeomorphism}
+\end{equation}
+Both complete history windows are fixed literally:
+\begin{equation}
+ \Phi_{\mathbf p}(\theta)=b_{\mathbf p}+\theta,\qquad
+ \Phi_{\mathbf p}(T_*+\theta)=S_{\mathbf p}+\theta,
+ \qquad-\theta_m\le\theta\le0.                 \label{eq:oe-entry-relative-history-plateaux}
+\end{equation}
+The exact parameter jets are
+\begin{align}
+ D\Upsilon_{\mathbf p}(t)\dot{\mathbf p}
+ &=\frac{D\gamma_{\mathbf p}\dot{\mathbf p}}{\delta}
+       \chi_{b,\delta}(t),\notag\\
+ D\Phi_{\mathbf p}(t)\dot{\mathbf p}
+ &=Db_{\mathbf p}\dot{\mathbf p}
+   +\frac{D\gamma_{\mathbf p}\dot{\mathbf p}}{\delta}
+       \chi_{b,\delta}(t).                    \label{eq:oe-entry-relative-clock-parameter-jet}
+\end{align}
+Thus \(D\Phi_{\mathbf p}=Db_{\mathbf p}\) on the entry plateau and
+\(D\Phi_{\mathbf p}=DS_{\mathbf p}
+=\delta^{-1}D\beta_{\mathbf p}\) on the terminal plateau.
+
+For \(0\le k\le m\), define the pulled delay feet by
+\begin{equation}
+ \sigma_{\mathbf p,k}(t)
+ =\Upsilon_{\mathbf p}^{-1}
+     \{\Upsilon_{\mathbf p}(t)-\theta_k\}.      \label{eq:oe-entry-relative-feet}
+\end{equation}
+They obey the exact identities
+\begin{align}
+ \sigma_{\mathbf p,k}(t)
+ &=t-\theta_k+\frac{\gamma_{\mathbf p}}{\delta}
+   \{\chi_{b,\delta}(t)
+       -\chi_{b,\delta}(\sigma_{\mathbf p,k}(t))\},
+                                                        \notag\\
+ \partial_t\sigma_{\mathbf p,k}(t)
+ &=\frac{1+(\gamma_{\mathbf p}/\delta)
+                 \chi_{b,\delta}'(t)}
+         {1+(\gamma_{\mathbf p}/\delta)
+                 \chi_{b,\delta}'(\sigma_{\mathbf p,k}(t))},
+                                                        \notag\\
+ D\sigma_{\mathbf p,k}(t)\dot{\mathbf p}
+ &=\frac{D\gamma_{\mathbf p}\dot{\mathbf p}}{\delta}
+   \frac{\chi_{b,\delta}(t)
+       -\chi_{b,\delta}(\sigma_{\mathbf p,k}(t))}
+        {1+(\gamma_{\mathbf p}/\delta)
+                 \chi_{b,\delta}'(\sigma_{\mathbf p,k}(t))}.
+                                                        \label{eq:oe-entry-relative-foot-identities}
+\end{align}
+In particular,
+\begin{align}
+ \|\sigma_{\mathbf p,k}-(\,\cdot-\theta_k)\|_{C^0}
+ +\|\partial_t\sigma_{\mathbf p,k}-1\|_{C^0}
+ &\le C\frac{|\gamma_{\mathbf p}|}{R_\delta},
+                                                        \label{eq:oe-entry-relative-foot-displacement}\\
+ \|D\sigma_{\mathbf p,k}\dot{\mathbf p}\|_{C^1}
+ &\le C\frac{|D\gamma_{\mathbf p}\dot{\mathbf p}|}{R_\delta}
+ \le C\lambda_\delta\|\dot{\mathbf p}\|_{\rm oe}.
+                                                        \label{eq:oe-entry-relative-foot-jet}
+\end{align}
+Moreover,
+\begin{equation}
+ \sigma_{\mathbf p,k}(t)=t-\theta_k
+ \quad\text{for }0\le t\le3\theta_m
+ \quad\text{and for }T_*-\theta_m\le t\le T_*.
+                                                        \label{eq:oe-entry-relative-fixed-feet}
+\end{equation}
+
+The new pullback contains a second, explicit composition with the old
+clock.  Namely, if \(\widetilde X_{\mathbf p}\) denotes the strong
+fixed-clock state from
+\cref{thm:action-scale-original-endpoint-family}, then
+\begin{equation}
+ \widehat X_{\mathbf p}(t)
+ :=X_{\mathbf p}(\Phi_{\mathbf p}(t))
+ =\widetilde X_{\mathbf p}(\zeta_{\mathbf p}(t)),
+ \qquad
+ \zeta_{\mathbf p}
+ =\Xi_{\mathbf p}^{-1}\circ\Phi_{\mathbf p}.   \label{eq:oe-entry-relative-double-composition}
+\end{equation}
+This identity is part of the chart, not an implicit identification of
+the two clocks.  For a finite-dimensional Banach space \(E\), the
+composition map
+\begin{equation}
+ (\mathbf p,\phi)\longmapsto
+       \phi\circ\sigma_{\mathbf p,k}            \label{eq:oe-entry-relative-composition-map}
+\end{equation}
+is \(C^1\) from the external ball times
+\(C^1([-\theta_m,T_*];E)\) into \(C([0,T_*];E)\), with
+\begin{equation}
+ D(\phi\circ\sigma_{\mathbf p,k})
+       [\dot{\mathbf p},\dot\phi]
+ =\dot\phi\circ\sigma_{\mathbf p,k}
+  +(\phi'\circ\sigma_{\mathbf p,k})
+       D\sigma_{\mathbf p,k}\dot{\mathbf p}.   \label{eq:oe-entry-relative-composition-derivative}
+\end{equation}
+Consequently, writing
+\(\omega_{\mathbf p}=\Upsilon_{\mathbf p}'\), the physical equation
+pulls back exactly as
+\begin{equation}
+ \delta\widehat X_{\mathbf p}'(t)
+ =\omega_{\mathbf p}(t)\,
+ \mathfrak F_{N,\lambda}
+ \bigl(\widehat X_{\mathbf p}(t),
+       \widehat X_{\mathbf p}(\sigma_{\mathbf p,1}(t)),\ldots,
+       \widehat X_{\mathbf p}(\sigma_{\mathbf p,m}(t))\bigr).
+                                                        \label{eq:oe-entry-relative-pulled-rfde}
+\end{equation}
+The chart is strong-to-weak: it spends one time derivative on delayed
+composition and is used below only along generated solutions.  It does
+not assert same-space differentiability of translation on \(C\)
+histories, \(C^1\) dependence of the full rough-history process or its
+projections, or the existence of a nonlinear stable sheet.
+\end{lemma}
+
+\begin{lemma}[Fixed-action selected mixed problem and coefficient jets]
+\label[lemma]{lem:oe-family-fixed-action-selected-bvp}
+Retain
+\cref{lem:oe-family-entry-relative-clock,%
+thm:oe-family-generated-core-dichotomy,%
+thm:oe-family-physical-speed-transversality}.
+There is a dimension- and diagonal-uniform radius
+\begin{equation}
+ 0<r_{C^1}\le r_{\rm rel}                      \label{eq:oe-fixed-action-radius}
+\end{equation}
+on which the following construction holds.  Put
+\begin{align}
+ r^\circ(t)&=r_{p^\circ}(b_*+t),&
+ a^\circ(t)&=\mathfrak a_N(r^\circ(t)),
+ &&-\theta_m\le t\le T_* .                    \label{eq:oe-fixed-action-reference-path}
+\end{align}
+Choose once and for all
+\begin{equation}
+ 0<\vartheta_\diamond<\vartheta_\dagger
+   <\vartheta_*<\vartheta<\frac14
+                                                        \label{eq:oe-fixed-action-exponents}
+\end{equation}
+where \(\vartheta_*\) is the exponent fixed in
+\cref{lem:repelling-generated-core-action}; define
+\begin{align}
+ \kappa^\circ(t)
+ &=\vartheta_\diamond
+   \left\{\frac{\delta}{a^\circ(t)}
+           +\frac{\theta_m}{\mathscr L_\delta}\right\}^{-1},\notag\\
+ \mathscr A^\circ(t,s)
+ &=\int_s^t\kappa^\circ(\zeta)\,\dd\zeta,
+ \qquad t\ge s.                                \label{eq:oe-fixed-reference-action}
+\end{align}
+As before, the cap and history weights are deleted when
+\(\theta_m=0\).  This is a fixed, deliberately weaker reference action;
+no uniform equivalence of the exponentially weighted moving actions is
+asserted.
+
+For \(-\theta_m\le\theta\le0\), put
+\begin{align}
+ \sigma_{\mathbf p,\theta}(t)
+ &=\Upsilon_{\mathbf p}^{-1}
+       \{\Upsilon_{\mathbf p}(t)+\theta\},\notag\\
+ (\mathcal C_{\mathbf p,t}y)(\theta)
+ &=y(\sigma_{\mathbf p,\theta}(t)),&
+ \widehat r_{\mathbf p}(t)
+ &=r_{\mathbf p}(\Phi_{\mathbf p}(t)),&
+ \omega_{\mathbf p}(t)&=\Upsilon_{\mathbf p}'(t).
+                                                        \label{eq:oe-fixed-action-pulled-objects}
+\end{align}
+For later coefficient estimates, define without ambiguity
+\begin{align}
+ \widehat q_{\mathbf p}(t)
+ &=q_{\mathbf p}(\Phi_{\mathbf p}(t)),&
+ \widehat{\mathcal J}_{\mathbf p}(t)
+ &=\mathcal J_{\mathbf p}(\Phi_{\mathbf p}(t)),\notag\\
+ \widehat H_{\mathbf p,t}
+ &=H_{\mathbf p,\Phi_{\mathbf p}(t)},&
+ \widehat h_{\mathbf p,t}(\theta)
+ &=h_{\mathbf p,\Phi_{\mathbf p}(t)}(\theta),\notag\\
+ \widehat{\mathcal K}_{\mathbf p,t}
+ &=\mathcal K_{\mathbf p,\Phi_{\mathbf p}(t)}. \label{eq:oe-fixed-action-pulled-coefficients}
+\end{align}
+Choose a fixed \(0<\epsilon_b<1/4\) for which
+\(\sup_{\mathbf p}\|\omega_{\mathbf p}-1\|_\infty\le\epsilon_b\), set
+\[
+ d_b=(1-\epsilon_b)^{-1}\theta_m,\qquad
+ J_t^b=[\max\{-\theta_m,t-d_b\},t],
+\]
+and define the fixed weak solution norm
+\begin{equation}
+ \|y\|_{\mathcal X^\circ}
+ =\sup_{0\le t\le T_*}
+   \sup_{\sigma\in J_t^b}
+    e^{-2\mathscr A^\circ(t,\sigma)}\|y(\sigma)\|_N.
+                                                        \label{eq:oe-fixed-action-solution-norm}
+\end{equation}
+Let \(T^\circ(t)=T_N(r^\circ(t))\), and write
+\((f^s,f^u)=(T^\circ)^{-1}f\in E_N\times\mathbb R\).  The fixed
+anisotropic source norm is
+\begin{equation}
+ \|f\|_{\mathcal F^{\circ,\rm an}}
+ =\operatorname*{ess\,sup}_{0\le t\le T_*}
+   \left\{\delta\|f^s(t)\|
+       +\frac{\delta}{a^\circ(t)}|f^u(t)|\right\}.          \label{eq:oe-fixed-action-source-norm}
+\end{equation}
+At the entry use
+\begin{equation}
+ \|\psi\|_{\circ,b}
+ =\sup_{-\theta_m\le\theta\le0}
+ e^{-2\mathscr A^\circ(0,\theta)}\|\psi(\theta)\|_N.
+                                                        \label{eq:oe-fixed-action-entry-norm}
+\end{equation}
+Equip \(\mathscr K_b\) with this norm and
+\(\mathscr K_b\times\mathbb R\) with the corresponding product norm.
+The fixed terminal history norm is
+\begin{equation}
+ \|\phi\|_{\circ,T}
+ =\sup_{-\theta_m\le\theta\le0}
+ e^{-2\mathscr A^\circ(T_*,T_*+\theta)}
+       \|\phi(\theta)\|_N.                     \label{eq:oe-fixed-action-terminal-norm}
+\end{equation}
+For intermediate times use the fixed family-envelope norm
+\begin{equation}
+ \|\phi\|_{\circ,t,\rm env}
+ =\sup_{\mathbf q\in B_{\rm oe}(p^\circ,r_{C^1})}
+   \sup_{-\theta_m\le\theta\le0}
+ e^{-2\mathscr A^\circ
+       (t,\sigma_{\mathbf q,\theta}(t))}
+       \|\phi(\theta)\|_N,\qquad0\le t\le T_* . \label{eq:oe-fixed-action-envelope-history-norm}
+\end{equation}
+This norm is frozen after the family ball is chosen; it is not
+differentiated with \(\mathbf p\).  The foot envelope makes it uniformly
+equivalent to any one member's pulled history norm on a single delay
+window.
+Write
+\begin{equation}
+ \mathcal L_{\circ,t}^{\rm env}
+ =\mathcal L\bigl(
+   (\mathscr X_N,\|\cdot\|_{\circ,t,\rm env}),
+   (\mathscr X_N,\|\cdot\|_{\circ,t,\rm env})\bigr).
+                                                        \label{eq:oe-fixed-action-envelope-operator-space}
+\end{equation}
+
+The pulled quotient operator is
+\begin{align}
+ \widehat{\mathcal L}_{\mathbf p}^{\rm q}y(t)
+={}&y'(t)-\omega_{\mathbf p}(t)
+ \left\{\delta^{-1}
+       \mathcal J_N^{\rm fv}(\widehat r_{\mathbf p}(t))y(t)
+       +\widehat{\mathcal R}_{\mathbf p}(t)
+          \mathcal C_{\mathbf p,t}y\right\},\notag\\
+ \widehat{\mathcal R}_{\mathbf p}(t)
+ &:=\mathcal R_{\mathbf p}(\Phi_{\mathbf p}(t)),           \label{eq:oe-fixed-action-pulled-operator}\\
+ \widehat{\mathbb L}_{\mathbf p}^{u}y
+ &=
+ \left(\widehat{\mathcal L}_{\mathbf p}^{\rm q}y,\,
+       \Gamma_by_0,\,
+       \ell_S^uy(T_*)\right).                  \label{eq:oe-fixed-action-current-bvp}
+\end{align}
+Its graph domain consists of continuous paths on
+\([-\theta_m,T_*]\), locally \(W^{1,\infty}\) for positive time, whose
+displayed residual belongs to \(\mathcal F^{\circ,\rm an}\).
+It carries the complete graph norm
+\begin{equation}
+ \|y\|_{\widehat{\mathscr D}_{\mathbf p}}
+ =\|y\|_{\mathcal X^\circ}
+  +\|\widehat{\mathcal L}_{\mathbf p}^{\rm q}y\|_
+       {\mathcal F^{\circ,\rm an}}.            \label{eq:oe-fixed-action-domain-norm}
+\end{equation}
+Uniformly on \(B_{\rm oe}(p^\circ,r_{C^1})\),
+\begin{equation}
+ \widehat{\mathbb L}_{\mathbf p}^{u}:
+ \widehat{\mathscr D}_{\mathbf p}
+ \longrightarrow
+ \mathcal F^{\circ,\rm an}\times\mathscr K_b\times\mathbb R
+                                                        \label{eq:oe-fixed-action-current-isomorphism}
+\end{equation}
+is an isomorphism and
+\begin{equation}
+ \|y\|_{\mathcal X^\circ}
+ \le C\{\|f\|_{\mathcal F^{\circ,\rm an}}
+       +\|\psi\|_{\circ,b}+|b_u|\}.            \label{eq:oe-fixed-action-green-bound}
+\end{equation}
+
+The fixed pullback has the following normalized first-jet ledger:
+\begin{align}
+ \sup_{0\le t\le T_*}\left\{
+ \frac{|D\widehat r_{\mathbf p}(t)\dot{\mathbf p}|}{a^\circ(t)}
+ +|D\widehat q_{\mathbf p}(t)\dot{\mathbf p}|
+ +\frac{\|D\widehat{\mathcal J}_{\mathbf p}(t)
+                   \dot{\mathbf p}\|}{a^\circ(t)}
+ \right\}
+ &\le C\|\dot{\mathbf p}\|_{\rm oe},\notag\\
+ \sup_{0\le t\le T_*}\left[
+ a^\circ(t)\left\{\|D\widehat H_{\mathbf p,t}
+                   \dot{\mathbf p}\|_N
+       +\sup_\theta\|D\widehat h_{\mathbf p,t}
+                   (\theta)\dot{\mathbf p}\|_N\right\}
+ +\frac{a^\circ(t)}{\delta}
+       \|D\widehat{\mathcal K}_{\mathbf p,t}
+                   \dot{\mathbf p}\|_
+       {\mathcal L_{\circ,t}^{\rm env}}
+ \right]
+ &\le C\|\dot{\mathbf p}\|_{\rm oe},\notag\\
+ \|D\omega_{\mathbf p}\dot{\mathbf p}\|_{C^1}
+ +\sup_{-\theta_m\le\theta\le0}
+   \|D\sigma_{\mathbf p,\theta}
+                   \dot{\mathbf p}\|_{C^1}
+ &\le C\|\dot{\mathbf p}\|_{\rm oe}.           \label{eq:oe-fixed-action-coefficient-jet-ledger}
+\end{align}
+Here hats mean composition with \(\Phi_{\mathbf p}\), and every
+operator norm is taken between the fixed weighted histories just
+defined.  The layer derivatives are measured in
+\(\mathfrak T_N^{\rm red}\) and have the same dimension-uniform bound.
+The relative resource derivative is obtained from the exact identity
+\begin{equation}
+ \frac{D_{\mathbf p}w_{\mathbf p}'(r)
+             \dot{\mathbf p}}{w_{\mathbf p}'(r)}
+ =-\frac{\varepsilon\dot\nu}{r-\varepsilon\nu}
+   -\frac{D_{\mathbf p}q_{\mathbf p}(r)
+             \dot{\mathbf p}}{q_{\mathbf p}(r)},           \label{eq:oe-fixed-action-resource-relative-jet}
+\end{equation}
+followed by the ordinary \(w_{\mathbf p}''D\widehat r_{\mathbf p}\)
+chain term.  Thus no absolute lower bound for \(w_{\mathbf p}'\) is
+silently used.
+
+Let
+\begin{equation}
+ t_\chi=T_*-L_{b,\delta}-2\theta_m,\qquad
+ J_\chi=[t_\chi-\theta_m,T_*],                 \label{eq:oe-fixed-action-smoothing-window}
+\end{equation}
+and, with
+\((y^s,y^u)=(T^\circ)^{-1}y\), put
+\begin{equation}
+ \|y\|_{\mathcal Z_\chi^j}
+ =\max_{0\le k\le j}\sup_{t\in J_\chi}
+ \left\{\delta^k\|\partial_t^ky^s(t)\|
+       +\left(\frac{\delta}{R_\delta}\right)^k
+          |\partial_t^ky^u(t)|\right\},
+ \qquad j=1,2.                                 \label{eq:oe-fixed-action-terminal-strong-norm}
+\end{equation}
+For the homogeneous data selected by the two boundary rows, define
+\begin{equation}
+ \mathscr S_{\mathbf p}^{u}(\psi,b_u)
+ =(\widehat{\mathbb L}_{\mathbf p}^{u})^{-1}
+       (0,\psi,b_u).                           \label{eq:oe-fixed-action-selected-solution}
+\end{equation}
+Then
+\begin{equation}
+ \mathbf p\longmapsto\mathscr S_{\mathbf p}^{u}
+ \in\mathcal L(\mathscr K_b\times\mathbb R,\mathcal X^\circ)
+                                                        \label{eq:oe-fixed-action-selected-C1-map}
+\end{equation}
+is Fr\'echet \(C^1\), and its terminal restriction is \(C^1\) into
+the fixed terminal history space.  More precisely,
+\(\operatorname{Res}_{J_\chi}\mathscr S_{\mathbf p}^{u}\) is \(C^1\)
+into
+\(\mathcal L(\mathscr K_b\times\mathbb R,\mathcal Z_\chi^1)\).
+Moreover,
+\begin{equation}
+ \|\mathscr S_{\mathbf p}^{u}\|
+ +\|D_{\mathbf p}\mathscr S_{\mathbf p}^{u}\|
+ +\|\operatorname{Res}_{J_\chi}\mathscr S_{\mathbf p}^{u}\|_
+      {\mathcal L(\mathscr K_b\times\mathbb R,\mathcal Z_\chi^2)}
+ +\|D_{\mathbf p}
+       \operatorname{Res}_{J_\chi}\mathscr S_{\mathbf p}^{u}\|_
+       {\mathcal L(\mathscr K_b\times\mathbb R,\mathcal Z_\chi^1)}
+ \le C.                                        \label{eq:oe-fixed-action-selected-C1-bound}
+\end{equation}
+Its derivative is characterized by the solution-wise identity
+\begin{equation}
+ D_{\mathbf p}\mathscr S_{\mathbf p}^{u}
+       (\psi,b_u)\dot{\mathbf p}
+ =-(\widehat{\mathbb L}_{\mathbf p}^{u})^{-1}
+ \left(D_{\mathbf p}^{\rm sel}
+       \widehat{\mathcal L}_{\mathbf p}^{\rm q}
+       [\dot{\mathbf p}]\,
+       \mathscr S_{\mathbf p}^{u}(\psi,b_u),\,0,\,0\right).
+                                                        \label{eq:oe-fixed-action-selected-derivative}
+\end{equation}
+The symbol \(D_{\mathbf p}^{\rm sel}\) is deliberate: the derivative is
+formed along these generated homogeneous solutions, and its moving-foot
+term is
+\begin{equation}
+ \partial_t y(\sigma_{\mathbf p,\theta}(t))\,
+       D\sigma_{\mathbf p,\theta}(t)\dot{\mathbf p}.      \label{eq:oe-fixed-action-moving-foot-term}
+\end{equation}
+It is used only on \(J_\chi\), where the selected solution is \(C^2\).
+
+Finally, the terminal physical quotient row pulled through the literal
+terminal plateau,
+\begin{equation}
+ \widehat\ell_{\mathbf p}^{\rm sp,q}\phi
+ =\ell_{\mathbf p,S_{\mathbf p}}^{\rm sp,q}\phi,          \label{eq:oe-fixed-action-physical-row}
+\end{equation}
+is a \(C^1\) map into
+\((\mathscr X_N,\|\cdot\|_{\circ,T})^*\), and
+\begin{align}
+ \|\widehat\ell_{\mathbf p}^{\rm sp,q}\|
+ +\|D\widehat\ell_{\mathbf p}^{\rm sp,q}\|
+ &\le C,\notag\\
+ \frac{|D\kappa_{\mathbf p,S}^{\rm sp}
+              \dot{\mathbf p}|}{R_\delta}
+ +\frac{a^\circ(T_*)}{\delta}
+       \|D\mathcal K_{\mathbf p,S}
+              \dot{\mathbf p}\|_
+       {\mathcal L((\mathscr X_N,\|\cdot\|_{\circ,T}),
+                   (\mathscr X_N,\|\cdot\|_{\circ,T}))}
+ &\le C\|\dot{\mathbf p}\|_{\rm oe}.           \label{eq:oe-fixed-action-terminal-row-jet}
+\end{align}
+Replacing the last current row in
+\cref{eq:oe-fixed-action-current-bvp} by this row defines
+\begin{equation}
+ \widehat{\mathbb L}_{\mathbf p}^{\rm sp,q}y
+ =\left(\widehat{\mathcal L}_{\mathbf p}^{\rm q}y,\,
+       \Gamma_by_0,\,
+       \widehat\ell_{\mathbf p}^{\rm sp,q}y_{T_*}\right).
+                                                        \label{eq:oe-fixed-action-physical-bvp}
+\end{equation}
+It is a uniform isomorphism by
+\cref{eq:oe-family-speed-margin} and the same one-dimensional row
+replacement as
+\cref{eq:oe-family-speed-bordered-inverse}.
+This lemma proves neither
+\(\mathbf p\mapsto\widehat{\mathcal L}_{\mathbf p}^{\rm q}\) nor the
+full RFDE process to be \(C^1\) in an operator topology on rough
+\(C\)-histories.  It proves precisely the selected solution map in
+\cref{eq:oe-fixed-action-selected-C1-map}.
+\end{lemma}
+
+\begin{theorem}[\(C^1\) unstable generator and physical-bordered entry data]
+\label[theorem]{thm:oe-family-C1-generator-entry-conormal}
+Retain \cref{lem:oe-family-fixed-action-selected-bvp}.  Define the
+current-normalized pulled unstable generator by
+\begin{equation}
+ \widehat{\mathfrak h}_{\mathbf p}^{u}
+ =\mathscr S_{\mathbf p}^{u}(0,1),             \label{eq:oe-C1-current-generator}
+\end{equation}
+and put
+\begin{align}
+ \mu_{\mathbf p}
+ &=\widehat\ell_{\mathbf p}^{\rm sp,q}
+       (\widehat{\mathfrak h}_{\mathbf p}^{u})_{T_*},
+                                                        \notag\\
+ \widehat{\mathfrak g}_{\mathbf p}^{\rm sp}
+ &=\mu_{\mathbf p}^{-1}
+       \widehat{\mathfrak h}_{\mathbf p}^{u}.  \label{eq:oe-C1-physical-generator}
+\end{align}
+Then, for each fixed \(N\), the maps
+\begin{equation}
+ \mathbf p\longmapsto
+ \widehat{\mathfrak h}_{\mathbf p}^{u}\in\mathcal X^\circ,\qquad
+ \mathbf p\longmapsto\mu_{\mathbf p}\in\mathbb R,\qquad
+ \mathbf p\longmapsto
+ \widehat{\mathfrak g}_{\mathbf p}^{\rm sp}\in\mathcal X^\circ
+                                                        \label{eq:oe-C1-generator-maps}
+\end{equation}
+are Fr\'echet \(C^1\), their terminal restrictions are \(C^1\) in the
+strong terminal norm, and
+\begin{equation}
+ \alpha\le\mu_{\mathbf p}\le3\alpha,\qquad
+ \widehat\ell_{\mathbf p}^{\rm sp,q}
+       (\widehat{\mathfrak g}_{\mathbf p}^{\rm sp})_{T_*}=1.
+                                                        \label{eq:oe-C1-generator-normalization}
+\end{equation}
+Their first jets are
+\begin{align}
+ D\mu_{\mathbf p}\dot{\mathbf p}
+ &=(D\widehat\ell_{\mathbf p}^{\rm sp,q}
+        \dot{\mathbf p})
+       (\widehat{\mathfrak h}_{\mathbf p}^{u})_{T_*}
+ +\widehat\ell_{\mathbf p}^{\rm sp,q}
+       (D\widehat{\mathfrak h}_{\mathbf p}^{u}
+           \dot{\mathbf p})_{T_*},\notag\\
+ D\widehat{\mathfrak g}_{\mathbf p}^{\rm sp}
+       \dot{\mathbf p}
+ &=\mu_{\mathbf p}^{-1}
+       D\widehat{\mathfrak h}_{\mathbf p}^{u}\dot{\mathbf p}
+   -\mu_{\mathbf p}^{-2}
+       (D\mu_{\mathbf p}\dot{\mathbf p})
+       \widehat{\mathfrak h}_{\mathbf p}^{u}.  \label{eq:oe-C1-generator-jets}
+\end{align}
+
+For \(\psi\in\mathscr K_b\), let
+\begin{align}
+ \widehat u_{\mathbf p}^{\,0}[\psi]
+ &=\mathscr S_{\mathbf p}^{u}(\psi,0),\notag\\
+ \widehat u_{\mathbf p}^{\,\rm sp}[\psi]
+ &=\widehat u_{\mathbf p}^{\,0}[\psi]
+ -\widehat{\mathfrak h}_{\mathbf p}^{u}
+   \frac{\widehat\ell_{\mathbf p}^{\rm sp,q}
+       (\widehat u_{\mathbf p}^{\,0}[\psi])_{T_*}}
+        {\mu_{\mathbf p}},                     \label{eq:oe-C1-physical-row-kernel-solution}\\
+ G_{\mathbf p}\psi
+ &=\ell_b^u\widehat u_{\mathbf p}^{\,\rm sp}[\psi](0).
+                                                        \label{eq:oe-C1-entry-graph-map}
+\end{align}
+Equivalently, \(\widehat u_{\mathbf p}^{\,\rm sp}[\psi]\) is the unique
+homogeneous solution with
+\begin{equation}
+ \Gamma_b(\widehat u_{\mathbf p}^{\,\rm sp}[\psi])_0=\psi,
+ \qquad
+ \widehat\ell_{\mathbf p}^{\rm sp,q}
+       (\widehat u_{\mathbf p}^{\,\rm sp}[\psi])_{T_*}=0. \label{eq:oe-C1-physical-bordered-data}
+\end{equation}
+The maps
+\begin{equation}
+ \mathbf p\longmapsto
+ G_{\mathbf p}\in\mathcal L(\mathscr K_b,\mathbb R),
+ \qquad
+ \mathbf p\longmapsto\lambda_{\mathbf p}^{\rm ent}
+ \in(\mathscr X_N,\|\cdot\|_{\circ,b})^*,
+                                                        \label{eq:oe-C1-entry-conormal-maps}
+\end{equation}
+where
+\begin{equation}
+ \lambda_{\mathbf p}^{\rm ent}\phi
+ =\ell_b^u\phi(0)-G_{\mathbf p}\Gamma_b\phi,    \label{eq:oe-C1-entry-conormal}
+\end{equation}
+are Fr\'echet \(C^1\) in the fixed entry norm.  Uniformly in all
+retained indices and members,
+\begin{align}
+ &\|\widehat{\mathfrak h}_{\mathbf p}^{u}\|
+ +\|D\widehat{\mathfrak h}_{\mathbf p}^{u}\|
+ +|D\mu_{\mathbf p}|
+ +\|\widehat{\mathfrak g}_{\mathbf p}^{\rm sp}\|
+ +\|D\widehat{\mathfrak g}_{\mathbf p}^{\rm sp}\|\notag\\
+ &\qquad
+ +\|G_{\mathbf p}\|+\|DG_{\mathbf p}\|
+ +\|\lambda_{\mathbf p}^{\rm ent}\|
+ +\|D\lambda_{\mathbf p}^{\rm ent}\|
+ \le C_\alpha.                                 \label{eq:oe-C1-all-object-bound}
+\end{align}
+In this display
+\(\widehat{\mathfrak h}^u,\widehat{\mathfrak g}^{\rm sp}\) and their
+parameter derivatives use \(\mathcal X^\circ\);
+\(D\mu\) uses the external-parameter dual norm;
+\(G,DG\) use
+\(\mathcal L((\mathscr K_b,\|\cdot\|_{\circ,b}),\mathbb R)\); and
+\(\lambda^{\rm ent},D\lambda^{\rm ent}\) use the fixed entry dual norm.
+The separate late-window strong restrictions are controlled in
+\cref{eq:oe-fixed-action-selected-C1-bound}.
+Moreover,
+\begin{equation}
+ \ker\lambda_{\mathbf p}^{\rm ent}
+ =\{\psi+\jmath_b^uG_{\mathbf p}\psi:
+               \psi\in\mathscr K_b\}           \label{eq:oe-C1-entry-graph}
+\end{equation}
+is exactly the set of entry traces of homogeneous quotient solutions
+whose terminal physical-speed row vanishes.
+The entry conormal has the fixed nonzero normalization
+\begin{equation}
+ \lambda_{\mathbf p}^{\rm ent}(\jmath_b^u1)=1. \label{eq:oe-C1-entry-conormal-normalization}
+\end{equation}
+
+This is a \(C^1\) theorem for four boundary-value-selected objects on
+one fixed pulled core.  The graph in
+\cref{eq:oe-C1-entry-graph} is the finite-core graph selected by the
+terminal physical row.  It is not identified here with a nonlinear
+stable sheet or with the canonical dichotomy stable bundle.  Nor is an
+operator-norm \(C^1\) theorem asserted for the full rough-history
+process, and no uniform-in-time bound is asserted for the terminally
+normalized backward-transported covector.
 \end{theorem}
 
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
