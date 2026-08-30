@@ -70,7 +70,9 @@ fixed.
 | Fixed-section nonlinear graph--action residual | `thm:fixed-section-nonlinear-graph-residual` | Exact assembly of the nonlinear formal phase delay, canonical zero-core raw-compatible history rows, resource-defect normal equations, and inner phase anchor on one fixed graph space. The map is $C^1$, has base defect $O(r_{\rm out}+S_\delta^{-2})$, linearizes exactly to the existing dimension-uniform anchored Schur isomorphism, and has a uniform quadratic/two-point remainder. It does not assert a zero, a moving terminal event, a past orbit, a physical connection, or a root |
 | Canonical fixed-section zeros | `cor:fixed-section-canonical-zero` | A uniform contraction solves the fixed-section residual at every fixed admissible parameter pair. On each outer branch the zero is unique in the canonical graph slice, is $O(r_{\rm out}+S_\delta^{-2})$, has the displayed first Newton jet and strict speed sign, and reconstructs an exact finite forward segment of the unmodified RFDE. No parameterized branch, moving event, past orbit, invariant sheet, cross-branch handoff, physical connection, or canard root is asserted |
 | Fixed-envelope RFDE segment with vanishing repelling terminal speed correction | `thm:fixed-envelope-speed-row-zero` | Hard-splits the exact nonlinear normal residual into bulk, boundary, and terminal summands, uses the speed-projected phase coordinate, and contracts about the $O(1)$ affine bulk predictor in an anisotropically scaled correction norm.  On the admissible wedge it constructs a unique nearby fixed-envelope RFDE segment in the stated affine causal star ball, preserves strict speed sign, and gives $Q_r^{\rm nl,\flat}(x_r^{\rm fe},a_r^{\rm fe})(e_{r,1})=0$ on the repelling branch.  The normal bulk correction is $O(\mathfrak b)$ but its kinetic state contribution is $O(\lambda_\delta\mathfrak b)$; the phase/slack correction is $O(\mathfrak b^2)$.  The row $\tau=-a(e_1)$ only records the mismatch $\Theta_a(e_1)=\Phi_{q_0}^{-\tau}(e_1)$, so this is not a moving-duration or original-endpoint theorem and gives no past orbit, connection, or root |
-| Post-flushing terminal second slow jet | `thm:fixed-envelope-terminal-slow-jet` | Differentiates the exact physical fold-time tracker once, keeps every tangent and delayed-tangent term inside the component operator, and flushes the incoming transverse tangent before the protected selector window.  The repelling future tangent row is fixed exactly by $p_s(S_r)=\delta R_q(r_r^{\rm fe}(S_r))$, rather than by a coarse $Q_s/\varepsilon$ estimate.  It proves $\|Z_s\|\le C\varepsilon\delta/\rho_\delta$ and $\|Z_{ss}\|\le C\varepsilon/\rho_\delta$ for post-flushing offsets (including the last available left-history window $L=0$), closing the slow-jet size subcondition for a uniform formal normal-history column.  Identifying that column with an actual duration-selector $K_{Z,L}$ still requires the missing right envelope and endpoint family.  The estimate is not a claim about the raw full state, arbitrary terminal $L^\infty$ sources, every selector offset, an original endpoint, a past orbit, a connection, or a root |
+| Post-flushing terminal second slow jet | `thm:fixed-envelope-terminal-slow-jet` | Differentiates the exact physical fold-time tracker once, keeps every tangent and delayed-tangent term inside the component operator, and flushes the incoming transverse tangent before the protected selector window.  The repelling future tangent row is fixed exactly by $p_s(S_r)=\delta R_q(r_r^{\rm fe}(S_r))$, rather than by a coarse $Q_s/\varepsilon$ estimate.  It proves $\|Z_s\|\le C\varepsilon\delta/\rho_\delta$ and $\|Z_{ss}\|\le C\varepsilon/\rho_\delta$ not only at $L=0$ but throughout the reserved offsets $0\le L\le(A-A_{\rm fl})S_\delta+1$.  This closes the slow-jet size condition used by the actual slow-clock history column below.  The estimate is not a claim about the raw full state, arbitrary terminal $L^\infty$ sources, an original endpoint by itself, a past orbit, a connection, or a root |
+| Exact slow terminal clock and physical-event border | `lem:terminal-clock-pullback-border`, `cor:fixed-envelope-terminal-clock-border` | Pulls the unmodified variable-duration RFDE exactly to the old fixed interval by $\Xi_\beta=s+(\beta/\delta)\chi_\delta$, fixes both old and terminal complete histories, and replaces every constant delay by the exact causal foot $\Xi_\beta^{-1}(\Xi_\beta(s)-\theta_k)$.  The fully typed identity is $C_{\rm up}+L_{\rm up}A_\chi=Kc_{\rm ter}$.  Spreading the transition over $a_\chi S_\delta$ makes the foot displacement $O(\mathfrak b)$ and its first two normalized clock derivatives $O(1)$ on the original joint wedge.  The clock lift is not uniformly bounded in the old weighted hybrid phase norm; uniformity is correctly stated in the pullback norm $\|v-A_\chi\beta\|+|\beta|/\rho_\delta$, with the analogous event-aligned range norm, and no raw-product norm equivalence is claimed.  On the explicit closed range of continuous terminal sources, the complete physical-event differential and genuine free history-interface unknown have a dimension-uniform inverse; no right-hand envelope or additional matching subwedge is used.  This is a differential theorem, not yet the nonlinear endpoint segment, parameter family, past orbit, connection, or root |
+| Fixed-parameter original-endpoint RFDE segment | `thm:short-clock-original-endpoint-segment` | A clock-aligned strong-space two-point estimate and local contraction correct the fixed-envelope event defect and produce one exact raw-compatible forward segment of the unmodified RFDE at each fixed admissible parameter pair.  Its physical duration reaches the literal original scalar endpoint, its terminal history is the actual complete history, and on the repelling branch $Q_e=0$, $c_{\rm ter}=1$, and $K_p=R_q(e)=O(\varepsilon)$; the actual $K_Z$ and terminal $Z_s,Z_{ss}$ have the uniform slow scales.  The new segment's sharp jet is not inferred from the coarse zero bound: it is re-proved with the $O(\varepsilon\mathfrak b)$ terminal-state ledger and the explicit scale $\mathcal E^{\rm jet}\mathfrak b\rho_\delta/\delta^2\to0$ on both branches.  Uniqueness is asserted only in the displayed clock-aligned $O(\mathfrak b)$ ball.  The canonical entry is not a past-complete orbit, and no action-weighted parameter/gauge family, branch-to-branch connection, preparation-independent relation, or physical root is constructed |
 | Raw-gauge fixed-section zeros | `thm:raw-gauge-fixed-section-zero` | The canonical zero extends to a nonempty, infinite-dimensional gauge-indexed class of small $O(\varepsilon)$ raw-compatible attracting and repelling boundary data in the stated natural boundary norms. Each gauge slice has a unique small zero, with a uniform first gauge jet, persistent inverse, fixed-graph $C^1$/Lipschitz dependence, strict speed sign, and exact finite raw-RFDE reconstruction. The theorem does not assert past-orbit generation of the gauges, a common recut for comparing trackers, flat forgetting, parameter jets, physical endpoints, a sheet, connection, or root |
 | Generated-interior tracker representatives | `cor:generated-interior-canonical-tracker` | On every retained subsegment whose delay collar lies beyond the first maximal delay, every raw-gauge fixed-section zero admits a physical-coordinate parameterization with exact scalar backtracks, exact uncut outer-history invariance, and the actual generated RFDE history window. Uniform $q$, $V'$, and $W'$ collar bounds realize the stationary and resource quotients, including an $O(S_\delta^{-1})$ Volterra correction. No common-chart gauge comparison is proved for the full reparameterized trackers on their moving domains; only the subsequent fixed interior hit maps have $C^1$ gauge dependence. No flat forgetting, physical endpoints, parameter family, past-complete orbit, branch handoff, connection, or root is asserted |
 | Common generated buffer and physical interior hit | `prop:raw-gauge-physical-hit` | At fixed parameters, the sections $r=\pm r_{\rm out}/2$ lie in a common generated buffer for the raw-gauge family. The weak complete-history family is jointly $C^1$ in time and gauge there; each section has a unique hit, and the scaled hit time and hit history have dimension- and $\delta$-uniform first gauge bounds. The hit derivative is exactly $(I-\tau\varrho_N)D_g\mathcal Z$. This is not a $C^2$ strong terminal buffer, a physical-endpoint recut, flat forgetting, a parameter family, a sheet, connection, or root |
@@ -254,12 +256,20 @@ The limits separate exactly:
   correction norm.  Its zero has strict physical speed sign and
   $Q_r^{\rm nl,\flat}(x_r^{\rm fe},a_r^{\rm fe})(e_{r,1})=0$ as a terminal
   speed correction.  Its phase slack is not shown to vanish, and the
-  original-endpoint normalization is not established, so the endpoint shear
-  identity cannot be invoked.  The fixed-envelope left-window second-order
-  terminal $Z$ jet is now closed and bounds the formal history column.  The
-  next problems are the right-hand endpoint envelope, a separate jet theorem
-  at the actual original endpoint, the moving-duration column, and the
-  original-endpoint family.  The
+  original-endpoint normalization does not hold at that fixed-envelope zero.
+  The fixed-envelope second-order terminal $Z$ jet is now closed on a
+  reserved $O(S_\delta)$ post-flushing window.  An exact slow terminal-clock
+  pullback uses that reserve to avoid a right-hand envelope: its normalized
+  delay-foot derivatives and complete physical-event border are uniform on
+  an explicit continuous-source restriction after the clock direction is
+  split from the old weighted phase norm.  A second contraction in that
+  clock-aligned norm now produces one literal original-endpoint RFDE segment
+  at each fixed parameter pair, with the actual speed/history columns.  Its
+  sharp terminal slow jet is independently re-closed by the
+  $\mathfrak b$-amplitude flushing ledger, not borrowed from the
+  fixed-envelope $\lambda_\delta$ ledger.
+  What remains is the action-weighted parameter/gauge family of these
+  segments, not the fixed-parameter endpoint segment itself.  The
   relative phase-to-state estimate also
   recovers a uniform old-normalized-state bound and pointwise true action on
   this anchored subspace.  The exact nonlinear formal phase-delay remainder
@@ -290,16 +300,15 @@ The limits separate exactly:
   $\mathcal J_{\rm phys}$ raw-gauge-flat class, with the stated
   $\mathcal K_{\rm phys}$ staircase.  No covariance between different
   fixed-reference charts or common-chart comparison of the full
-  gauge-dependent outer domains is asserted.  This does not yet give the
-  normalized full phase--normal RFDE terminal Schur estimate, an
-  action-weighted parameter-jet
-  theorem at the original physical endpoints, physical branch endpoints, a
+  gauge-dependent outer domains is asserted.  This does not yet give an
+  action-weighted parameter-jet theorem at the original physical endpoints,
+  past-complete physical branch endpoints, a
   past-complete history, a cross-branch handoff, or a physical root, and it
   does not prove the global nonautonomous normal bundle.  The generic
   nonselection example is a logical
   counterexample to weak selection criteria, not a model-specific
   impossibility theorem; terminal-to-terminal tracker existence and the
-  original-endpoint parameter-jet part of G1 remains open.
+  original-endpoint parameter-jet part of G1 remain open.
 - A zero leading covector does not rule out higher-order response.
 - The one-delay no-go applies only to the pure-redistribution leading source
   after coincident atoms have been merged.

@@ -832,16 +832,70 @@ normal-voltage bounds
  \|Z_{ss}\|=O(\varepsilon/\rho_\delta),
 \]
 thereby closing the slow-jet size condition that makes the formal
-normal-history column uniformly bounded.  A duration selector centered at
-this same base time and history window inherits the bound once its required
-right envelope and endpoint normalization have been constructed.  A later
-original-endpoint selector requires a separate window identification or
-right-envelope jet theorem.  These are normal,
+normal-history column uniformly bounded.  The flushing length is separated
+from the full terminal buffer, so the same estimates hold on a remaining
+window of length \(O(S_\delta)\); that reserved window is used by the slow
+terminal clock below.  These are normal,
 event-separated estimates: the corresponding claim for the raw full
 voltage or resource history is false because it retains the collective
 physical drift.  The present result itself supplies no right-hand
 \(O(\rho_\delta/\delta)\) envelope, moving endpoint, or original-endpoint
 zero.
+\Cref{lem:terminal-clock-pullback-border} removes the right-envelope
+requirement rather than trying to prove an unstable forward extension.  A
+terminal-supported time diffeomorphism pulls the true variable-duration
+RFDE back to the old fixed interval, gives the exact delayed feet
+\[
+ \sigma_{k,\beta}(s)
+ =\Xi_\beta^{-1}\{\Xi_\beta(s)-\theta_k\},
+\]
+fixes the old history and the complete terminal history simultaneously,
+and identifies the duration column as the exact commutator
+\(C_\chi=-L_0A_\chi\) in the distributed, old-history, and entry rows.
+After adjoining the terminal observations, the full upper commutator is
+\(C_{\rm up}+L_{\rm up}A_\chi=Kc_{\rm ter}\).  Domain and range shears
+then reduce the border to the event-aligned scalar speed ratio.  The
+construction explicitly uses a \(C^1\) terminal restriction:
+a formal translation on a merely \(W^{1,\infty}\) tube would not be
+Fr\'echet differentiable in \(L^\infty\).
+\Cref{cor:fixed-envelope-terminal-clock-border} applies this algebra on
+the original joint wedge.  It spreads the clock transition across a
+reserved interval \(L_{\chi,\delta}=a_\chi S_\delta\), so that
+\[
+ \|\chi_\delta'\|=O(S_\delta^{-1}),\qquad
+ \|\chi_\delta''\|=O(S_\delta^{-2}).
+\]
+The delay-foot displacement is then \(O(\mathfrak b_{\delta,\varkappa})\)
+and its first two normalized clock derivatives are uniformly bounded.
+The strong range is the explicit closed space of continuous terminal
+sources, rather than a transported image norm.  The protected terminal jet
+controls the \emph{actual} clock history column, the repelling scalar column
+is \(O(\varepsilon)\), and the complete physical-event differential is
+uniformly invertible without any right-hand envelope or extra matching
+subwedge.  The time-shift lift is not uniformly bounded in the old weighted
+phase norm; the theorem therefore uses the clock-aligned graph norm
+\(
+ \|v-A_\chi\beta\|+|\beta|/\rho_\delta
+\), which removes that artificial phase gradient before the
+fixed-envelope inverse is applied.  No uniform equivalence with the raw
+product norm is claimed.
+\Cref{thm:short-clock-original-endpoint-segment} proves the corresponding
+clock-aligned strong-range two-point estimate and contracts about the
+fixed-envelope zero.  It produces, at each fixed parameter pair on the
+original joint wedge, a
+raw-compatible exact forward RFDE segment whose variable duration reaches
+the original scalar endpoint.  On the repelling branch its physical
+terminal speed correction vanishes, \(c_{\rm ter}=1\), and the actual
+speed/history duration columns have the claimed uniform bounds.  The sharp
+terminal jet of this new segment is re-proved with its natural
+\(\mathfrak b_{\delta,\varkappa}\)-amplitude ledger; the final flushing
+condition is
+\(
+ \mathcal E^{\rm jet}\mathfrak b_{\delta,\varkappa}
+ \rho_\delta/\delta^2\to0
+\), which holds on the original joint wedge for both branches.  This is
+still a local canonical-entry segment: it is not a past-complete orbit, a
+parameter/gauge family, a branch-to-branch connection, or a physical root.
 \Cref{thm:raw-gauge-fixed-section-zero} replaces the zero-core boundary
 choice by a nonempty, infinite-dimensional ball of small raw-compatible
 attracting and repelling gauges.  Uniform contraction and the gauge implicit

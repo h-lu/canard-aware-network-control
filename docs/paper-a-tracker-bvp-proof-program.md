@@ -104,20 +104,51 @@ uniformity requires the separately stated slow endpoint jets.  The exact
 fixed-envelope zero now satisfies those two jet-size estimates on protected
 post-flushing left-history windows, by a differentiated component theorem
 with the exact future row `p_s(S_r)=delta R_q(r_r(S_r))`.  This
-bounds the formal history column but does not instantiate `K_Z`,
-because no right envelope or original-endpoint selector exists yet.
-An actual forward original-endpoint RFDE reference satisfying the complete
-`K_p`/`K_Z` selector hypotheses, the moving-duration nonlinear
-family, and the physical root remain open.  The
+bounds the formal history column in the old selector chart.  The
 fixed-envelope duration-selector algebra on a supplied reference is now
 closed: its raw terminal column factors exactly through the event row, an explicit range shear
 annihilates that column, and the scalar coefficient is the supplied
 reference terminal-speed ratio.  It becomes the structured physical speed
 ratio only under the corresponding terminal-germ membership.  Thus a
-standalone `C_ter` is chart dependent.  The remaining gate is construction
-of the forward original-endpoint reference which verifies the conditional
-history shear and moving-duration hypotheses, not a coordinate-free estimate
-of `C_ter`.**
+standalone `C_ter` is chart dependent.
+
+The right-envelope gate has now been removed by an exact terminal-clock
+pullback on the original joint wedge.  The post-flushing theorem now leaves
+an `O(S_delta)` protected reserve.  Spreading the clock transition over
+`L_chi=a_chi S_delta` gives
+`chi'=O(S_delta^(-1))` and `chi''=O(S_delta^(-2))`; hence the delay-foot
+displacement is `O(b_(delta,kappa))` and the first two derivatives in the
+normalized clock parameter are `O(1)`.  The time diffeomorphism fixes both
+the raw old history and the complete terminal history, and converts every
+physical constant delay to the exact fixed-domain foot
+`sigma_(k,beta)=Xi_beta^(-1)(Xi_beta(s)-theta_k)`.  Its duration column is
+the exact distributed commutator `C_chi=-L_0 A_chi`; for the complete upper
+block, `C_up+L_up A_chi=K c_ter`.
+The domain/range shears recover the physical speed and history columns,
+with the scalar event-aligned coefficient equal to the terminal speed ratio.
+The fixed-envelope slow jet makes the actual clock `K_Z` bounded, and the
+repelling base column has `K_p=O(epsilon)`.
+The phase part of `A_chi beta` is not uniformly bounded in the old hybrid
+phase norm: its transition derivative is divided by the vanishing terminal
+weight.  The correct uniform statement therefore uses the clock-aligned
+pullback norm
+`||v-A_chi beta||+|beta|/rho` and the corresponding range shear.  It makes
+no uniform-equivalence claim for the raw product norm.
+
+The clock-pulled nonlinear residual is `C1` in this aligned chart on the
+minimal terminal-`C1` restriction into an explicitly defined closed
+continuous-terminal-source range.  Its two-point remainder has small
+coefficient `O(b_(delta,kappa)+||z||+||z_tilde||)`.  A second contraction therefore
+produces, pointwise at each fixed parameter pair, an exact raw-compatible
+variable-duration RFDE segment reaching the original scalar-coordinate
+endpoint.  At the repelling endpoint it has
+`Q_e=0`, `c_ter=1`, `K_p=R_q(e)=O(epsilon)`, and an actual uniformly bounded
+`K_Z`; a new differentiated-component ledger starts from
+`Z=O(epsilon b_(delta,kappa))` and closes the same terminal `Z_s,Z_ss`
+scales through `E_jet b_(delta,kappa) rho/delta^2 -> 0`.  This closes the fixed-parameter
+original-endpoint segment, but not its action-weighted parameter/gauge family,
+a past-complete orbit, a cross-branch history connection, or a physical
+root.
 
 Proposition `prop:principal-tracker-endpoint-green` now proves the principal
 linear Green splitting for finite endpoint traces, including the exact
@@ -1385,13 +1416,22 @@ gauges.
       (including `L=0`) satisfy
       `Z_s=O(epsilon delta/rho_delta)` and
       `Z_ss=O(epsilon/rho_delta)`.  This closes the slow-jet size
-      subcondition for the formal normal-voltage history column.  Realizing
-      it as the actual `K_Z` of a duration selector still requires the
-      right-hand envelope and endpoint family; no raw-full-state shear is
-      claimed.
-- [ ] Actual moving-duration endpoint RFDE family and the original-endpoint
-      `J_phys` parameter/gauge family before terminal-to-terminal tracker
-      reconstruction.
+      subcondition for the formal normal-voltage history column and, through
+      the slow terminal clock below, for the actual pointwise endpoint
+      column.  No raw-full-state shear is claimed.
+- [x] Exact slow terminal-clock pullback on the original joint wedge:
+      explicit continuous terminal-source range, fully typed upper-block
+      commutator, uniform first/second normalized delay-foot derivatives,
+      a clock-aligned (not raw hybrid product) domain/range norm, and a local
+      strong-space contraction producing one fixed-parameter raw-compatible
+      original-endpoint RFDE segment with actual bounded speed/history
+      duration columns.  The segment's sharp terminal jet is separately
+      verified from the `O(epsilon b_(delta,kappa))` base ledger and
+      `E_jet b_(delta,kappa) rho_delta/delta^2 -> 0` on both branches.
+- [ ] Action-weighted parameter/gauge family of the moving-duration
+      original-endpoint segments on `J_phys`, before terminal-to-terminal
+      tracker reconstruction.  The fixed-parameter segment alone does not
+      provide this family.
 - [ ] Full action-weighted global nonautonomous quotient theorem, including
       Volterra, moving projection, delay, `q`, and rectangular parameter-jet
       terms.  The local fixed-reference rectangular-jet hit theorem is proved.
