@@ -8372,6 +8372,99 @@ field on the right.  No moving characteristic function
 or moving rough graph occurs in this statement.
 \end{lemma}
 
+\begin{lemma}[Outer-annulus terminal clock at the \(R_\delta\) scale]
+\label[lemma]{lem:outer-annulus-terminal-clock}
+Retain \cref{thm:short-clock-original-endpoint-segment} on the repelling
+branch, write \(S_*=S_r^{\rm oe}\), and let
+\(r_*:[-\theta_m,S_*]\to\mathbb R\) be its physical collective path.
+There is a fixed \(a_R>0\), independent of \(N\) and the diagonal wedge,
+such that, with
+\begin{equation}
+ L_{R,\delta}=a_R\frac{R_\delta}{\delta},        \label{eq:outer-clock-transition-length}
+\end{equation}
+the delay-enlarged terminal interval
+\begin{equation}
+ J_{R,\delta}=[S_*-L_{R,\delta}-2\theta_m,S_*]  \label{eq:outer-clock-terminal-window}
+\end{equation}
+lies in the generated outer annulus and satisfies
+\begin{equation}
+ -R_\delta\le r_*(s)\le-\frac12R_\delta,
+ \qquad s\in J_{R,\delta}.                      \label{eq:outer-clock-terminal-annulus}
+\end{equation}
+Choose a fixed-shape cutoff \(\chi_{R,\delta}\in C^5\) with
+\begin{align}
+ \chi_{R,\delta}&=0
+ &&\text{on }[-\theta_m,S_*-\theta_m-L_{R,\delta}],\notag\\
+ \chi_{R,\delta}&=1
+ &&\text{on }[S_*-\theta_m,S_*],\notag\\
+ \left(\frac{R_\delta}{\delta}\right)^j
+   \|\chi_{R,\delta}^{(j)}\|_\infty&\le C_j,
+ &&1\le j\le5.                                  \label{eq:outer-clock-cutoff-bounds}
+\end{align}
+For \(|\beta|\le c_RR_\delta\), where \(c_R>0\) is fixed sufficiently
+small, put
+\begin{equation}
+ \Xi_\beta(s)=s+\frac\beta\delta\chi_{R,\delta}(s),
+ \qquad
+ \sigma_{k,\beta}(s)
+ =\Xi_\beta^{-1}\{\Xi_\beta(s)-\theta_k\}.       \label{eq:outer-clock-map-and-feet}
+\end{equation}
+Then \(\Xi_\beta\) is an increasing diffeomorphism, all its delay feet
+remain in the fixed old-history/current interval, and
+\begin{align}
+ \|\sigma_{k,\beta}-(\,\cdot-\theta_k)\|_{C^0}
+ +\|\partial_s\sigma_{k,\beta}-1\|_{C^0}
+ &\le C\frac{|\beta|}{R_\delta},                \label{eq:outer-clock-foot-displacement}\\
+ \max_{1\le j\le4}R_\delta^j
+ \|\partial_\beta^j\sigma_{k,\beta}\|_{C^1}
+ &\le C_j.                                      \label{eq:outer-clock-foot-jets}
+\end{align}
+The conclusions persist after the mixed Banach-space chain rule for a
+clock field \(\beta=\beta(\nu,\eta,g)\), provided its normalized jets are
+measured with \(|\beta|/R_\delta\).  The cutoff, interval, and every hard
+source interface are frozen before those derivatives are taken.
+
+For the physical event row and its terminal clock column use
+\begin{equation}
+ E_R(Y)=\frac{r_Y(S_*)+R_\delta}{q_0(-R_\delta)},
+ \qquad \|b_E\|_{\mathbb R_{R_\delta}}=\frac{|b_E|}{R_\delta}.
+                                                        \label{eq:outer-clock-event-row}
+\end{equation}
+At the exact endpoint zero,
+\begin{equation}
+ c_{R,\rm ter}
+ =\frac{r_*'(S_*)}{\delta q_0(-R_\delta)}=1,
+ \qquad
+ K_{p,R}=R_{q,N}(-R_\delta),                    \label{eq:outer-clock-scalar-column}
+\end{equation}
+and the scalar column is uniformly bounded from
+\(\mathbb R_{R_\delta}\) into the speed-row range normalized by
+\(|b_{\rm sp}|/(\varepsilon R_\delta)\).
+If, on the fixed terminal history window,
+\begin{equation}
+ \|Z_*'\|_{C^0}\le C\frac{\varepsilon\delta}{R_\delta},
+ \qquad
+ \|Z_*''\|_{C^0}\le C\frac{\varepsilon}{R_\delta},          \label{eq:outer-clock-history-jet-gate}
+\end{equation}
+then the actual history shear
+\begin{equation}
+ (K_{Z,R}\beta)(\theta)
+ =\frac{Z_*'(S_*+\theta)}\delta\,\beta,
+ \qquad-\theta_m\le\theta\le0,                 \label{eq:outer-clock-history-column}
+\end{equation}
+is uniformly bounded from \(\mathbb R_{R_\delta}\) to
+\(\mathcal H_{Z,T}^1\).
+
+This is the endpoint clock scale required by a fixed-size parameter and
+raw-gauge family.  It does not assert
+\cref{eq:outer-clock-history-jet-gate}; that action-weighted terminal jet
+and the corresponding strong Green restriction are separate obligations.
+Nor does the lemma attach an event-after tail to the repelling segment.
+It also does not construct the clock-pulled strong nonlinear residual:
+freezing the hard interfaces is necessary but does not by itself provide
+rough-space composition differentiability.
+\end{lemma}
+
 For the same-end repelling boundary problem, let
 \begin{equation}
  J_{r,\delta}^{\rm ev}

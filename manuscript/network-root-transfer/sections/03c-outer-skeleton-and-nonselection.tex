@@ -10685,6 +10685,116 @@ objects differentiated above live on the fixed swept bundle, so no
 characteristic function is differentiated.
 \end{proof}
 
+\begin{proof}[Proof of \cref{lem:outer-annulus-terminal-clock}]
+The exact endpoint segment satisfies
+\[
+ r_*'(s)=\delta q_*(s),
+ \qquad -q_+\le q_*(s)\le-q_-<0,
+\]
+by \cref{eq:fixed-envelope-zero-speed-sign} and the clock converse in
+\cref{thm:short-clock-original-endpoint-segment}.  Choose \(a_R>0\)
+so small that \(a_Rq_+<1/4\).  Since
+\(\delta\theta_m/R_\delta\to0\), backward integration from
+\(r_*(S_*)=-R_\delta\) gives
+\[
+ -R_\delta\le r_*(s)
+ \le -R_\delta+q_+\delta
+       (L_{R,\delta}+2\theta_m)
+ \le-\frac12R_\delta
+\]
+on \(J_{R,\delta}\), after decreasing the joint wedge.  The same
+integration and \(R_\delta/\rho_\delta\to\infty\) show that the left
+endpoint of \(J_{R,\delta}\), together with its delay enlargement,
+occurs strictly after the generated entry at \(-\rho_\delta\).
+This proves
+\cref{eq:outer-clock-terminal-window,eq:outer-clock-terminal-annulus}.
+
+Rescaling a fixed-shape, uniformly \(C^5\) cutoff family over the
+transition length \(L_{R,\delta}\) gives
+\cref{eq:outer-clock-cutoff-bounds}.  On the retained clock ball,
+\[
+ \frac{|\beta|}{\delta}
+       \|\chi_{R,\delta}'\|_\infty
+ \le Cc_R.
+\]
+Decrease \(c_R\) once so that this is at most \(1/4\).  The
+diffeomorphism, causality, fixed-history containment, and exact foot
+identities now follow from
+\cref{lem:terminal-clock-pullback-border}.
+
+We record the scale in the foot estimates rather than suppressing it.
+Put
+\[
+ x=\frac{\delta(s-S_*)}{R_\delta},\qquad
+ y=\frac{\delta(\sigma_{k,\beta}(s)-S_*)}{R_\delta},\qquad
+ B=\frac{\beta}{R_\delta},\qquad
+ \widehat\theta_k=\frac{\delta\theta_k}{R_\delta},
+\]
+and let \(\widehat\chi\) be the fixed rescaled cutoff.  The exact foot
+equation is
+\begin{equation}
+ y=x-\widehat\theta_k
+   +B\{\widehat\chi(x)-\widehat\chi(y)\}.       \label{eq:proof-outer-clock-normalized-foot}
+\end{equation}
+Its \(y\)-derivative is bounded above and away from zero uniformly.
+The mean-value theorem first gives
+\[
+ |x-y|\le C\widehat\theta_k,\qquad
+ \|\widehat\chi(x)-\widehat\chi(y)\|_{C^1_x}
+ \le C\widehat\theta_k.
+\]
+Differentiate
+\cref{eq:proof-outer-clock-normalized-foot} in \(B\).  At every order
+the highest derivative \(\partial_B^j y\) is multiplied by
+\(1+B\widehat\chi'(y)\); all remaining terms are products of lower
+derivatives and fixed derivatives of \(\widehat\chi\).  An induction,
+including one \(x\)-derivative, yields
+\begin{equation}
+ \max_{1\le j\le4}
+ \|\partial_B^j y\|_{C^1_x}
+ \le C_j\widehat\theta_k.                      \label{eq:proof-outer-clock-normalized-jets}
+\end{equation}
+Undoing the normalization, using
+\(\partial_\beta=R_\delta^{-1}\partial_B\), proves
+\cref{eq:outer-clock-foot-jets}; the zeroth-order version and the exact
+quotient for \(\partial_s\sigma_{k,\beta}\) prove
+\cref{eq:outer-clock-foot-displacement}.  The mixed parameter and gauge
+claim is the Banach-space chain rule applied to these fixed-domain
+composition maps.  No moving interface is differentiated.
+
+At the exact endpoint zero the speed row gives
+\(q_*(S_*)=q_0(-R_\delta)\).  Hence the derivative of the normalized
+event in the terminal-clock direction is
+\[
+ c_{R,\rm ter}
+ =\frac{r_*'(S_*)}{\delta q_0(-R_\delta)}=1.
+\]
+The terminal plateau and
+\cref{eq:short-clock-endpoint-speed-identities} give
+\(K_{p,R}=R_{q,N}(-R_\delta)\).  Since
+\(|R_{q,N}|\le C\varepsilon\),
+\[
+ \frac{|K_{p,R}\beta|}{\varepsilon R_\delta}
+ \le C\frac{|\beta|}{R_\delta},
+\]
+which is the asserted scalar-column bound.
+
+The same terminal plateau gives the exact history column
+\cref{eq:outer-clock-history-column}.  Under
+\cref{eq:outer-clock-history-jet-gate},
+\begin{align*}
+ \|K_{Z,R}\beta\|_{\mathcal H_{Z,T}^1}
+ &=\varepsilon^{-1}
+   \max\left\{
+      \frac{|\beta|}{\delta}\|Z_*'\|_{C^0},
+      |\beta|\|Z_*''\|_{C^0}\right\}\\
+ &\le C\frac{|\beta|}{R_\delta}.
+\end{align*}
+This proves precisely the conditional history-shear assertion.  Nothing
+in the clock algebra proves the two slow-jet bounds themselves, and the
+construction has used no value to the right of \(S_*\).
+\end{proof}
+
 \begin{proof}[Proof of \cref{lem:moving-r-event-preimage}]
 Consider
 \begin{equation}
