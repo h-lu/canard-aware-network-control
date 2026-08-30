@@ -13399,6 +13399,273 @@ Only the scalar current factor in
 left.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{thm:generated-core-physical-speed-quotient-transversality}]
+At the terminal point, the two-sided Volterra inverse in
+\cref{eq:resource-gauge-history-inverse} gives, for every full variation,
+\[
+ a=\frac{\omega}{w_*'(e)},\qquad
+ \psi=\xi_S-e_Sa,\qquad
+ u=(\Id-\mathcal K_S)^{-1}\psi.
+\]
+Thus \(\psi=(\Id-\mathcal K_S)u\), and substitution proves
+\cref{eq:physical-speed-full-variation-decomposition}.  It also proves
+uniqueness, because the resource coordinate first fixes \(a\), after which
+the Volterra inverse fixes \(u\).  This establishes the canonical lift
+without choosing a frozen full-system eigendirection.
+
+The differential of the actual event row is
+\cref{eq:oe-family-actual-event-row}.  Since
+\(\pi_N^Te_S(0)=\pi_N^TV_*'(e)=1\) and
+\((\mathcal K_S\phi)(0)=0\), it gives
+\cref{eq:physical-speed-lifted-event-row} and the event part of
+\cref{eq:physical-speed-center-columns}.
+
+We close the speed derivative along the center before defining its shear.
+On the generated \(r\)-graph,
+\(\mathcal Q_*^{\rm sp,gr}(r)=q_*(r)-q_0(r)\), and
+\cref{eq:short-clock-endpoint-speed-identities} gives
+\(\mathcal Q_*^{\rm sp,gr}(e)=\mathcal Q_*^{\rm sp}(S)=0\).
+Differentiate the exact reconstruction
+\cref{eq:fold-time-speed-reconstruction} along the reference segment:
+\begin{align}
+ \varepsilon\partial_s\mathcal Q_*^{\rm sp}
+ ={}&p_*'-\ell_N(r_*)Z_*'
+      -\ell_N'(r_*)r_*'Z_*\notag\\
+ &-D h_{c,N}(r_*,Z_*)[r_*',Z_*']
+   +\varepsilon\partial_s
+       \Delta\mathcal D_{c,N}^{\rm ft}[r_*,Z_*].
+                                                        \label{eq:proof-physical-speed-Q-derivative}
+\end{align}
+The estimates used here can be displayed without suppressing the terminal
+scales.  On the two-delay enlargement of the terminal window,
+\begin{align}
+ |p_*'|&\le C\varepsilon\delta,&
+ \|Z_*'\|_N&\le C\frac{\varepsilon\delta}{R_\delta},\notag\\
+ \|Z_*\|_N&\le C\varepsilon\lambda_\delta,&
+ |r_*'|&\le C\delta,\notag\\
+ \|\ell_N(r_*)\|&\le CR_\delta,&
+ \|\ell_N'(r_*)\|&\le C,\notag\\
+ \|D_Zh_{c,N}(r_*,Z_*)\|&\le C\varepsilon\lambda_\delta,&
+ |\partial_rh_{c,N}(r_*,Z_*)|
+ &\le C\varepsilon^2\lambda_\delta^2,\notag\\
+ \left|\partial_s
+       \Delta\mathcal D_{c,N}^{\rm ft}[r_*,Z_*]\right|
+ &\le C\delta.                                  \label{eq:proof-physical-speed-Q-input-ledger}
+\end{align}
+The first line follows from
+\cref{eq:outer-endpoint-sharp-second-jet,eq:piecewise-kinetic-bound,%
+eq:short-clock-zero-bound}; the coefficient terms are
+\cref{eq:principal-green-coefficients,%
+eq:proof-terminal-jet-coefficient-ledger}.  For the last line,
+differentiate the fixed-delay expression
+\cref{eq:fold-time-tracker-delay}: every current and delayed derivative is
+covered by the first line, the layer sum is uniform by
+\cref{eq:frozen-layer-common-bound}, and the collective perturbation rows
+are neutral by
+\cref{eq:structural-ball-layers}.  In particular, this estimate does not
+sample an unspecified exterior history.  Since
+\(\lambda_\delta\le C\) and
+\(\varepsilon\lambda_\delta/R_\delta\le C\) on the retained wedge,
+substitution in
+\cref{eq:proof-physical-speed-Q-derivative} gives, term by term,
+\begin{equation}
+ |p_*'|
+ +\left|\partial_s\{\ell_N(r_*)Z_*+
+                   h_{c,N}(r_*,Z_*)\}\right|
+ +\varepsilon\left|\partial_s
+       \Delta\mathcal D_{c,N}^{\rm ft}[r_*,Z_*]\right|
+ \le C\varepsilon\delta .                       \label{eq:proof-physical-speed-Q-terminal-ledger}
+\end{equation}
+Since \(r_*'(S)=\delta q_0(e)\) and \(|q_0(e)|\ge q_->0\),
+\begin{equation}
+ |\partial_r\mathcal Q_*^{\rm sp,gr}(e)|
+ =\left|\frac{\partial_s\mathcal Q_*^{\rm sp}(S)}
+                    {r_*'(S)}\right|
+ \le C.                                         \label{eq:proof-physical-speed-Q-r-jet}
+\end{equation}
+Now \(E_S^c=\partial_r\mathcal H_*(e)\), so the chain rule gives
+\[
+ \mathfrak b_S^{\rm sp}E_S^c
+ =D\{\varepsilon Q_e\}[\partial_r\mathcal H_*(e)]
+ =\varepsilon\partial_r\mathcal Q_*^{\rm sp,gr}(e).
+\]
+This proves the remaining center-column identity and
+\cref{eq:physical-speed-center-shear-coefficient}.  By its defining ratio,
+\(\mathfrak b_S^{\rm sp,ea}E_S^c=0\) exactly.  Notice that
+\(\kappa_S^{\rm sp}\) is the speed-row shear.  The distinct coefficient
+\(R_{q,N}(e)\) in \cref{eq:outer-clock-scalar-column} belongs to the
+terminal resource row and is not used here.
+
+We next compute the row on an arbitrary quotient history before estimating
+any term.  Let \(\mathcal A_S^{\rm q}\phi\) denote the right-hand side of
+the standard quotient RFDE
+\cref{eq:resource-gauge-standard-rfde} at \(S\).  On the canonical lift,
+\(a(S)=0\), while \cref{eq:resource-gauge-a} and
+\(\pi_N^TV_*'(e)=1\) give
+\begin{equation}
+ a'(S)=\frac{\delta}{w_*'(e)}\pi_N^T\phi(0),
+ \qquad
+ \pi_N^T\xi'(S)
+ =\pi_N^T\mathcal A_S^{\rm q}\phi+a'(S).        \label{eq:proof-physical-speed-lifted-current-derivative}
+\end{equation}
+The differential of
+\(r_*'=\delta\{q_0(r_*)+\mathcal Q_*^{\rm sp}\}\), together with
+\(\varepsilon=\delta^2\) and
+\(\pi_N^T\xi_S(0)=\pi_N^T\phi(0)\), is the exact identity
+\[
+ D\{\varepsilon Q_e\}
+ =\delta\pi_N^T\xi'(S)
+   -\varepsilon q_0'(e)\pi_N^T\phi(0).
+\]
+Substitution gives
+\begin{equation}
+ \mathfrak b_S^{\rm sp}\mathfrak j_S^{\rm q}\phi
+ =\delta\pi_N^T\mathcal A_S^{\rm q}\phi
+  +\varepsilon\left\{\frac1{w_*'(e)}-q_0'(e)\right\}
+       \pi_N^T\phi(0).                          \label{eq:proof-physical-speed-raw-lifted-row}
+\end{equation}
+This is an identity for the total speed row; no component of the delayed
+source has yet been split.  Insert
+\cref{eq:resource-gauge-standard-rfde}.  Since
+\[
+ \pi_N^TH_S=\frac{\pi_N^TV_*'(e)}{w_*'(e)}
+             =\frac1{w_*'(e)},
+\]
+the rank-one resource term
+\(-\varepsilon\pi_N^TH_S\pi_N^T\phi(0)\) cancels the
+first term in braces in
+\cref{eq:proof-physical-speed-raw-lifted-row}.  Subtracting
+\(\kappa_S^{\rm sp}\mathfrak e_S\mathfrak j_S^{\rm q}\phi\) then gives precisely
+\cref{eq:physical-speed-quotient-expanded-row}.  In particular the
+physical quotient row is divided by \(R_\delta\); the factor
+\(\varepsilon\) has already been consumed by the exact speed differential.
+
+We prove its operator bound with the fading loss visible.  At
+\(e=-R_\delta\), row neutrality and the diagonal form of the frozen current
+matrix give
+\begin{equation}
+ \|\pi_N^T\mathcal J_N^{\rm fv}(e)\|\le CR_\delta,
+ \qquad
+ \|\pi_N^T\mathcal J_*(S)\|
+ \le C\{R_\delta+\varepsilon\mathfrak b_{\delta,\varkappa}\}.
+                                                        \label{eq:proof-physical-speed-current-row-bound}
+\end{equation}
+The second estimate uses
+\cref{eq:generated-core-current-difference}.  Moreover,
+\cref{eq:phase-column-q0-two-jets,%
+eq:physical-speed-center-shear-coefficient,%
+eq:generated-core-moving-volterra}
+give
+\[
+ |q_0'(e)|\le C,\qquad |\kappa_S^{\rm sp}|\le C\varepsilon,
+ \qquad \|\mathcal K_S\|\le C\frac{\delta}{R_\delta}.
+\]
+An arbitrary delayed evaluation pays
+\(\delta^{-2\vartheta_*}\) by
+\cref{eq:repelling-core-history-norm-comparison}.  Therefore
+\begin{equation}
+ |\ell_S^{\rm sp,q}\phi|
+ \le C\left\{1
+  +\frac{\varepsilon\mathfrak b_{\delta,\varkappa}}{R_\delta}
+  +\frac{\varepsilon}{R_\delta}\delta^{-2\vartheta_*}
+  +\frac{\varepsilon}{R_\delta}\right\}
+       \|\phi\|_{S,\sharp}.                    \label{eq:proof-physical-speed-row-ledger}
+\end{equation}
+Here \(0<\vartheta_*<\vartheta<1/4\),
+\(\varepsilon=\delta^2\), and
+\(R_\delta=\varkappa(\delta S_\delta^3)^{1/2}\), so
+\begin{equation}
+ \frac{\varepsilon}{R_\delta}\delta^{-2\vartheta_*}
+ =\frac1\varkappa
+   \delta^{3/2-2\vartheta_*}S_\delta^{-3/2}
+ =\sqrt{\mathfrak w_{\delta,\varkappa}}\,
+   \delta^{3/2-2\vartheta_*}
+ \le\sqrt{\mathfrak w_*}\,
+   \delta^{3/2-2\vartheta_*}=o(1).
+                                                       \label{eq:proof-physical-speed-fading-closes}
+\end{equation}
+This proves \cref{eq:physical-speed-quotient-row-bound}.
+
+It remains to evaluate the row on the true quotient unstable history.
+At \(S\), the terminal current normalization and the stable-graph estimate
+\cref{eq:proof-generated-core-unstable-stable-graph} give
+\begin{equation}
+ \mathfrak h_S^u(0)
+ =e_{c,N}(e)+\widehat\zeta_S^u,\qquad
+ \ell_{c,N}(e)\widehat\zeta_S^u=0,\qquad
+ \|\widehat\zeta_S^u\|_N\le C\eta_*.
+                                                        \label{eq:proof-physical-speed-terminal-unstable-current}
+\end{equation}
+The local unstable control
+\cref{eq:proof-generated-core-local-unstable-control}, with terminal
+current scalar equal to one, bounds every current value on the last delay
+collar directly by a common constant.  This uses the trajectory estimate
+at the earlier times \(S-\theta_k\), not conversion of the terminal fading
+norm to an ordinary supremum.  Thus the delayed and Volterra terms in
+\cref{eq:physical-speed-quotient-expanded-row}, evaluated on
+\(\mathfrak h_S^u\), contribute \(O(\varepsilon/R_\delta)\).
+
+For the leading current term, the right eigenvector equation and
+\cref{eq:outer-eigen-expansion} yield
+\begin{equation}
+ \frac1{R_\delta}\pi_N^T
+     \mathcal J_N^{\rm fv}(e)e_{c,N}(e)
+ =\frac{\lambda_{c,N}(e)}{R_\delta}
+       \pi_N^Te_{c,N}(e)
+ =2\alpha+O(R_\delta).                         \label{eq:proof-physical-speed-leading-current}
+\end{equation}
+The stable current correction does not cost
+\(\eta_*/R_\delta\).  Indeed, left covariance and
+\(\ell_{c,N}(e)\widehat\zeta_S^u=0\) give the exact cancellation
+\begin{align}
+ \pi_N^T\mathcal J_N^{\rm fv}(e)\widehat\zeta_S^u
+ &=\{\pi_N^T-\ell_{c,N}(e)\}
+       \mathcal J_N^{\rm fv}(e)\widehat\zeta_S^u,\notag\\
+ \left|\pi_N^T\mathcal J_N^{\rm fv}(e)
+       \widehat\zeta_S^u\right|
+ &\le CR_\delta\eta_* .                       \label{eq:proof-physical-speed-left-covector-cancellation}
+\end{align}
+The current-matrix perturbation contributes
+\(C\varepsilon\mathfrak b_{\delta,\varkappa}/R_\delta\), while
+\cref{eq:phase-column-q0-two-jets,%
+eq:physical-speed-center-shear-coefficient}
+bound the two finite scalar terms by \(C\varepsilon/R_\delta\).
+Combining these estimates with
+\cref{eq:proof-physical-speed-leading-current} proves
+\cref{eq:physical-speed-unstable-transversality}.  Since \(\alpha>0\),
+one final ordered wedge decrease gives
+\cref{eq:physical-speed-unstable-margin}.
+
+The row replacement is now algebraic but uniform.  Given
+\((f,\psi_b,b_{\rm q})\), let
+\(u_0=\mathbb L_*^{-1}(f,\psi_b,0)\).  The homogeneous solution
+\(\mathfrak h^u\) has zero entry graph coordinate and
+\[
+ \ell_S^{\rm sp,q}\mathfrak h_S^u=\mu_\delta^\circ.
+\]
+Therefore \cref{eq:physical-speed-bordered-inverse} has exactly the
+prescribed three data.  Conversely, the difference of two such solutions
+is a scalar multiple of \(\mathfrak h^u\), and the physical row plus
+\cref{eq:physical-speed-unstable-margin} forces that scalar to vanish.
+The old mixed Green bound, the quotient-row bound, and the same margin give
+the uniform inverse estimate.
+
+Finally, the cocycle identity for \(\mathcal V_*^{\rm q}\) and invariance
+of the unstable line give
+\[
+ \Lambda_s^{\rm sp}\mathcal V_*^{\rm q}(s,t)
+ =\Lambda_t^{\rm sp},
+ \qquad
+ \mathcal V_*^{\rm q}(S,t)\mathfrak h_t^u=\mathfrak h_S^u.
+\]
+The definition of \(\mu_\delta^\circ\) proves the normalization in
+\cref{eq:physical-speed-conormal-identities}.  Transversality makes its
+kernel a transported codimension-one complement to the unstable line, but
+the calculation does not identify that complement with the canonical
+stable bundle or with a nonlinear stable set.  This completes the proof.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem

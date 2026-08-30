@@ -9805,11 +9805,200 @@ In particular \(\Lambda_t\mathfrak h_t^u=1\).  Moreover,
 The inverse in the second line exists only on the transported
 one-dimensional line.  It is not a backward RFDE semiflow.
 
-The theorem uses the canonical current covector \(\ell_S^u\).  Replacing
-it by the physical terminal speed row requires a separate uniform
-transversality comparison with \(E_*^u(S_*)\).  The theorem constructs
-neither that comparison nor a nonlinear invariant sheet or a
-past-complete physical branch.
+The theorem uses the canonical current covector \(\ell_S^u\).  The next
+result compares the physical terminal speed row with \(E_*^u(S_*)\) at the
+reference member.  The present theorem constructs neither that comparison
+nor a nonlinear invariant sheet or a past-complete physical branch.
+\end{theorem}
+
+\begin{theorem}[Physical-speed quotient transversality at the generated endpoint]
+\label[theorem]{thm:generated-core-physical-speed-quotient-transversality}
+Retain
+\cref{prop:exact-resource-gauge-quotient,%
+thm:action-scale-original-endpoint-family,%
+prop:repelling-outer-endpoint-slow-jet,%
+thm:repelling-generated-core-normal-dichotomy}
+and restrict throughout to the reference member \(p=p^\circ\).  Put
+\begin{align}
+ S&=S_*,& e&=-R_\delta,& q_0&=q_{0,\lambda^\circ},
+                                                        \notag\\
+ \mathcal K_S&=\mathcal K_{S_*},&
+ \mathcal Q_*^{\rm sp,gr}(r)&=q_*(r)-q_0(r),&
+ \mathcal Q_*^{\rm sp}(s)
+ &=\mathcal Q_*^{\rm sp,gr}(r_*(s)),            \notag\\
+ \mathcal Q_*^{\rm sp,gr}(e)
+ &=\mathcal Q_*^{\rm sp}(S)=0.                 \label{eq:physical-speed-quotient-terminal-data}
+\end{align}
+For a quotient voltage history \(\phi\in\mathscr X_N\), define the
+canonical full-variation lift
+\begin{equation}
+ \mathfrak j_S^{\rm q}\phi
+ =\bigl((\Id-\mathcal K_S)\phi,0\bigr)\in\mathscr Y_N.
+                                                        \label{eq:physical-speed-canonical-lift}
+\end{equation}
+Every terminal full variation \((\xi_S,\omega)\) then has the unique
+decomposition
+\begin{align}
+ a&=\frac{\omega}{w_*'(e)},&
+ \psi&=\xi_S-e_Sa,&
+ u&=(\Id-\mathcal K_S)^{-1}\psi,\notag\\
+ (\xi_S,\omega)&=\mathfrak j_S^{\rm q}u+aE_S^c.
+                                                        \label{eq:physical-speed-full-variation-decomposition}
+\end{align}
+
+Let \(\mathfrak e_S\) be the differential of the actual event row and let
+\(\mathfrak b_S^{\rm sp}\) be the differential of the exact physical
+speed row at this reference segment:
+\begin{equation}
+ \mathfrak e_S(\xi_S,\omega)
+ =\frac{\pi_N^T\xi_S(0)}{q_0(e)},
+ \qquad
+ \mathfrak b_S^{\rm sp}=D\{\varepsilon Q_e\}.
+                                                        \label{eq:physical-speed-full-rows}
+\end{equation}
+They satisfy
+\begin{align}
+ \mathfrak e_SE_S^c&=\frac1{q_0(e)},&
+ \mathfrak b_S^{\rm sp}E_S^c
+ &=\varepsilon\partial_r\mathcal Q_*^{\rm sp,gr}(e),
+                                                        \label{eq:physical-speed-center-columns}\\
+ \mathfrak e_S\mathfrak j_S^{\rm q}\phi
+ &=\frac{\pi_N^T\phi(0)}{q_0(e)}.               \label{eq:physical-speed-lifted-event-row}
+\end{align}
+Moreover,
+\begin{equation}
+ |\partial_r\mathcal Q_*^{\rm sp,gr}(e)|\le C,\qquad
+ \kappa_S^{\rm sp}
+ :=\frac{\mathfrak b_S^{\rm sp}E_S^c}
+          {\mathfrak e_SE_S^c}
+ =\frac{\varepsilon}{\delta}\partial_s\mathcal Q_*^{\rm sp}(S)
+ =\varepsilon q_0(e)
+       \partial_r\mathcal Q_*^{\rm sp,gr}(e),\qquad
+ |\kappa_S^{\rm sp}|\le C\varepsilon.           \label{eq:physical-speed-center-shear-coefficient}
+\end{equation}
+Consequently the event-aligned row
+\begin{equation}
+ \mathfrak b_S^{\rm sp,ea}
+ =\mathfrak b_S^{\rm sp}-\kappa_S^{\rm sp}\mathfrak e_S
+                                                        \label{eq:physical-speed-event-aligned-row}
+\end{equation}
+annihilates the exact center line.  Its normalized quotient realization is
+\begin{equation}
+ \ell_S^{\rm sp,q}\phi
+ =\frac1{R_\delta}
+   \mathfrak b_S^{\rm sp,ea}\mathfrak j_S^{\rm q}\phi.
+                                                        \label{eq:physical-speed-quotient-row}
+\end{equation}
+The normalization is \(R_\delta^{-1}\), not
+\((\varepsilon R_\delta)^{-1}\).  More precisely, the following identity
+holds for every \(\phi\in\mathscr X_N\):
+\begin{align}
+ R_\delta\ell_S^{\rm sp,q}\phi
+ ={}&\pi_N^T\mathcal J_*(S)\phi(0)\notag\\
+ &+\varepsilon K\sum_{k=0}^m\pi_N^TL_{k,N}(\eta^\circ)
+ \bigl[\phi(0)-\phi(-\theta_k)
+       +(\mathcal K_S\phi)(-\theta_k)\bigr]\notag\\
+ &-\left\{\varepsilon q_0'(e)
+       +\frac{\kappa_S^{\rm sp}}{q_0(e)}\right\}
+       \pi_N^T\phi(0).                          \label{eq:physical-speed-quotient-expanded-row}
+\end{align}
+It defines a dimension- and diagonal-uniform bounded functional on the
+terminal moving history space:
+\begin{equation}
+ \|\ell\|_{(S,\sharp)^*}
+ :=\sup_{0\ne\phi\in\mathscr X_N}
+       \frac{|\ell\phi|}{\|\phi\|_{S,\sharp}}.  \label{eq:terminal-moving-history-dual-norm}
+\end{equation}
+In this notation,
+\begin{equation}
+ \|\ell_S^{\rm sp,q}\|_{(S,\sharp)^*}\le C,
+ \qquad
+ \frac{\varepsilon}{R_\delta}\delta^{-2\vartheta_*}=o(1).
+                                                        \label{eq:physical-speed-quotient-row-bound}
+\end{equation}
+
+Let \(\mathfrak h^u\) be the terminal-current-normalized unstable solution
+in \cref{eq:generated-core-bundle-definitions}, set
+\begin{equation}
+ \eta_*=\eta_{\rm core}+\eta_{\rm fr},
+ \qquad
+ \mu_\delta^\circ
+ =\ell_S^{\rm sp,q}\mathfrak h_S^u,             \label{eq:physical-speed-unstable-coefficient}
+\end{equation}
+and retain the joint-diagonal budget
+\(\mathfrak b_{\delta,\varkappa}\) from
+\cref{eq:joint-diagonal-affine-budget}.  Then
+\begin{equation}
+ \left|\mu_\delta^\circ-2\alpha\right|
+ \le C\left\{
+ R_\delta+\eta_*
+ +\frac{\varepsilon\mathfrak b_{\delta,\varkappa}}{R_\delta}
+ +\frac{\varepsilon}{R_\delta}
+ \right\}=o(1).                                 \label{eq:physical-speed-unstable-transversality}
+\end{equation}
+After the final ordered wedge decrease,
+\begin{equation}
+ \alpha\le\mu_\delta^\circ\le3\alpha.          \label{eq:physical-speed-unstable-margin}
+\end{equation}
+
+Define the distributed quotient operator
+\begin{equation}
+ \mathcal L_*^{\rm q}u
+ =u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_*)u
+       -\mathcal R_*u_\bullet.                  \label{eq:physical-speed-distributed-operator}
+\end{equation}
+Then the physical-speed-bordered operator
+\begin{equation}
+ \mathbb L_*^{\rm sp,q}u
+ =\left(\mathcal L_*^{\rm q}u,\,
+        \Gamma_bu_{s_b},\,
+        \ell_S^{\rm sp,q}u_S\right),
+ \qquad
+ \mathbb L_*^{\rm sp,q}:\mathscr D_*
+ \longrightarrow\mathcal F_*\times\mathscr K_b\times\mathbb R
+                                                        \label{eq:physical-speed-bordered-operator}
+\end{equation}
+is a dimension- and diagonal-uniform isomorphism onto
+\(\mathcal F_*\times\mathscr K_b\times\mathbb R\).  Explicitly, if
+\begin{equation}
+ u_0=\mathbb L_*^{-1}(f,\psi_b,0),
+\end{equation}
+then the solution with physical quotient-speed datum \(b_{\rm q}\) is
+\begin{equation}
+ u=u_0+\mathfrak h^u
+   \frac{b_{\rm q}-\ell_S^{\rm sp,q}\bigl((u_0)_S\bigr)}
+        {\mu_\delta^\circ}.                    \label{eq:physical-speed-bordered-inverse}
+\end{equation}
+In particular,
+\begin{equation}
+ \|u\|_{\mathcal X_*}
+ \le C\left\{\|f\|_{\mathcal F_*}
+       +\|\psi_b\|_{s_b,\sharp}+|b_{\rm q}|\right\}.
+                                                        \label{eq:physical-speed-bordered-green-bound}
+\end{equation}
+
+Finally, for \(s_b\le t\le S\), define the transported physical-speed
+conormal
+\begin{equation}
+ \Lambda_t^{\rm sp}\phi
+ =\frac1{\mu_\delta^\circ}
+   \ell_S^{\rm sp,q}\mathcal V_*^{\rm q}(S,t)\phi.
+                                                        \label{eq:physical-speed-transported-conormal}
+\end{equation}
+It is dual-covariant on the finite generated core and is normalized by
+\begin{equation}
+ \Lambda_s^{\rm sp}\mathcal V_*^{\rm q}(s,t)
+ =\Lambda_t^{\rm sp},
+ \qquad
+ \Lambda_t^{\rm sp}\mathfrak h_t^u=1,
+ \qquad s_b\le t\le s\le S.                   \label{eq:physical-speed-conormal-identities}
+\end{equation}
+Thus the physical speed observation supplies a genuine conormal transverse
+to the quotient unstable line.  No assertion is made that
+\(\ker\Lambda_t^{\rm sp}=E_*^s(t)\), that either kernel is a nonlinear
+stable sheet, or that this reference segment extends to a past-complete
+repelling branch.  The parameter-uniform version requires a separate
+family generated-core ledger and dichotomy.
 \end{theorem}
 
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
