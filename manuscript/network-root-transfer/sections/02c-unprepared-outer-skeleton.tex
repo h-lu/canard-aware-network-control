@@ -8510,6 +8510,125 @@ clock-pulled residual, a nonautonomous RFDE dichotomy, or a full
 moving-endpoint inverse.
 \end{proposition}
 
+\begin{theorem}[Long-window strong restriction at the exact repelling endpoint]
+\label[theorem]{thm:repelling-long-window-strong-restriction}
+Retain
+\cref{thm:speed-bordered-affine-endpoint-core,%
+cor:conditional-event-aligned-source-split-inverse,%
+cor:fixed-envelope-terminal-clock-border,%
+thm:short-clock-original-endpoint-segment,%
+lem:outer-annulus-terminal-clock,%
+prop:repelling-outer-endpoint-slow-jet}
+on the repelling branch.  Conjugate the fixed-envelope coordinates by the
+already selected base clock so that the exact physical endpoint segment is
+written on \([ -\theta_m,S_*]\), and freeze the image of the old hard
+bulk--terminal interface.  This is a fixed base change, not a new clock
+unknown.  All source and domain spaces below are the push-forwards by this
+fixed base diffeomorphism; its derivative and inverse are uniformly bounded,
+so their transported norms are uniformly equivalent to the physical-time
+norms.  We retain the old symbols for these transported spaces.  Retain the
+unique source decomposition
+\[
+ f=f_{\rm B}+f_{\rm bd}+f_T
+ \in\widetilde{\mathsf Y}_{r,\mathrm{split}+T}
+\]
+in these transported coordinates.  Write
+\(f_{\rm B}=(0,0,F_{\rm B},H_{\rm B})\) and
+\(f_T=(0,0,F_T,H_T)\), using zero extensions across the frozen
+interface, and set
+\begin{equation}
+ \Sigma_Rf=(F_{\rm B}+F_T,H_{\rm B}+H_T)|_{J_{R,\delta}}.
+                                                        \label{eq:long-window-total-source}
+\end{equation}
+Define the closed source restriction
+\begin{equation}
+ \widetilde{\mathsf Y}_{r,R}^{\mathrm{tot},0}
+ =\left\{f\in\widetilde{\mathsf Y}_{r,\mathrm{split}+T}:
+ \Sigma_Rf\ \hbox{has one representative in }
+ C(J_{R,\delta};E_N\times\mathbb R)\right\},              \label{eq:long-window-continuous-total-source}
+\end{equation}
+with the inherited three-summand norm.  In particular, the two one-sided
+traces of the \emph{total} distributed source agree at the artificial
+interface.  Neither split summand is required to be continuous there.
+
+Let \(v=(y,a,\tau,h)\) denote the transported fixed-clock upper unknown,
+where
+\begin{equation}
+ y\in\mathcal D_{\mathrm{split}+T}(\mathscr N_r^{\rm sp}),
+ \quad a\in\mathsf A_{r,\mathrm{hyb}},
+ \quad \tau\in\mathbb R_{\rho_\delta},
+ \quad h\in\mathcal H_{Z,T}^1,                           \label{eq:long-window-upper-unknown}
+\end{equation}
+and let \((Z_v,p_v)\) be its reconstructed exact-base normal tangent.
+More precisely, if \(\mathcal Y_*\) denotes the exact physical
+reconstruction at the original-endpoint zero, then
+\begin{equation}
+ (Z_v,p_v)=\operatorname{pr}_{Z,p}
+       D\mathcal Y_*(y,a,\tau).                         \label{eq:long-window-reconstructed-tangent}
+\end{equation}
+Put
+\begin{equation}
+ \mathcal J_{R}^1(v)
+ =\frac1\varepsilon\sup_{J_{R,\delta}}
+    \left\{\|Z_v\|_N+\frac{|p_v|}{R_\delta}\right\}
+ +\frac\delta\varepsilon\sup_{J_{R,\delta}}
+    \left\{\|Z_v'\|_N+\frac{|p_v'|}{R_\delta}\right\},   \label{eq:long-window-strong-normal-norm}
+\end{equation}
+and let \(\mathcal X_{r,R}^{\rm up,1}\) be the subspace of
+\cref{eq:long-window-upper-unknown} for which
+\((Z_v,p_v)|_{J_{R,\delta}}\in C^1\), with norm
+\begin{equation}
+ \|v\|_{\mathcal X_{r,R}^{\rm up,1}}
+ =\|y\|_{\mathcal D_{\mathrm{split}+T}(\mathscr N_r^{\rm sp})}
+  +\|a\|_{\mathsf A_{r,\mathrm{hyb}}}
+  +\frac{|\tau|}{\rho_\delta}
+  +\|h\|_{\mathcal H_{Z,T}^1}
+  +\mathcal J_R^1(v).                           \label{eq:long-window-upper-domain-norm}
+\end{equation}
+Set
+\begin{equation}
+ \mathcal Y_{r,R}^{\rm up,0}
+ =\widetilde{\mathsf Y}_{r,R}^{\mathrm{tot},0}
+  \times\mathsf H_{r,\mathrm{hyb}}
+  \times\mathbb R_{\rho_\delta}^2
+  \times\mathcal H_{Z,T}^1,                   \label{eq:long-window-upper-range}
+\end{equation}
+with the inherited product norm.
+
+Let \(L_{*,\rm up}\) be the exact-base differential of all fixed-clock
+upper rows: the raw-compatible history row, the hard-split distributed
+normal rows, the collective phase row, the causal-entry and phase-slack
+rows, the physical terminal speed row, and the free terminal-history row
+\(\mathcal T_Zv-h\).  Let
+\begin{equation}
+ \ell_*v=DE_R(Y_*)v                                      \label{eq:long-window-event-functional}
+\end{equation}
+be the physical event differential.  Extend the terminal shear
+\(K_R\) by zero in every unchanged row and use its two nonzero components
+\begin{equation}
+ K_{p,R}=R_{q,N}(-R_\delta),\qquad
+ (K_{Z,R}b)(\theta)=\frac{Z_*'(S_*+\theta)}\delta b.
+                                                        \label{eq:long-window-upper-shear}
+\end{equation}
+Then the event-aligned upper operator
+\begin{equation}
+ L_{*,R}^{\rm ea}=L_{*,\rm up}-K_R\ell_*:
+ \mathcal X_{r,R}^{\rm up,1}
+ \longrightarrow\mathcal Y_{r,R}^{\rm up,0}              \label{eq:long-window-event-aligned-isomorphism}
+\end{equation}
+is a dimension- and diagonal-uniform isomorphism.  In particular,
+\begin{equation}
+ \|v\|_{\mathcal X_{r,R}^{\rm up,1}}
+ \le C\|L_{*,R}^{\rm ea}v\|_{\mathcal Y_{r,R}^{\rm up,0}}.
+                                                        \label{eq:long-window-strong-inverse-bound}
+\end{equation}
+
+The theorem is a strong linear restriction at one exact endpoint base.
+It does not yet define the \(R_\delta\)-clock nonlinear residual, prove a
+two-point composition estimate, differentiate a moving \(r\)-chart, or
+construct a parameter/gauge family.
+\end{theorem}
+
 For the same-end repelling boundary problem, let
 \begin{equation}
  J_{r,\delta}^{\rm ev}

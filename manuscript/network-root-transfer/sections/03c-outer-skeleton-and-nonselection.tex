@@ -10899,6 +10899,254 @@ calculation in the proof of
 \cref{lem:outer-annulus-terminal-clock}.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{thm:repelling-long-window-strong-restriction}]
+We first identify the already authorized upper inverse.  At the
+original-endpoint zero, the complete short-clock differential in
+\cref{thm:short-clock-original-endpoint-segment} is a uniform isomorphism
+in its translated short-window strong spaces.  Its triangularization in
+\cref{eq:terminal-clock-triangular-border} is
+\begin{equation}
+ \begin{pmatrix}
+  L_{*,\rm up}-K_0^{\rm oe}\ell_*&0\\
+  \ell_*&1
+ \end{pmatrix}.                                      \label{eq:proof-old-short-clock-triangle}
+\end{equation}
+Indeed the exact speed row gives \(c_{\rm ter}=1\).  Hence invertibility of
+the complete bordered differential implies invertibility of its old
+short-window event-aligned upper block.  The old and the
+\(R_\delta\)-clock cutoffs are both identically one on the whole terminal
+history window.  They therefore have the same physical event \(\ell_*\)
+and the same algebraic terminal column,
+\begin{equation}
+ K_0^{\rm oe}=K_R,
+ \qquad K_{p,R}=R_{q,N}(-R_\delta),\qquad
+ K_{Z,R}b=\delta^{-1}Z_*'b.                    \label{eq:proof-clock-columns-agree}
+\end{equation}
+Thus the upper block in \cref{eq:proof-old-short-clock-triangle} is exactly
+\(L_{*,R}^{\rm ea}\).  This argument uses only the proved short-window
+strong clock theorem; it makes no claim about clock composition on an
+unrestricted rough space.  The two components of \(K_R\) are uniform by
+\cref{eq:outer-clock-scalar-column,eq:outer-endpoint-history-jet}; the free
+history component is an identity block and enters no scalar Schur
+denominator.
+The scalar normalizations are compatible as well:
+\begin{align}
+ \|\ell_*v\|_{\mathbb R_{R_\delta}}
+ &\le \frac{\rho_\delta}{R_\delta}
+       \|\ell_*v\|_{\mathbb R_{\rho_\delta}}
+ \le C\|v\|,\notag\\
+ \frac{|K_{p,R}b|}{\varepsilon R_\delta}
+  +\|K_{Z,R}b\|_{\mathcal H_{Z,T}^1}
+ &\le C\frac{|b|}{R_\delta}.                    \label{eq:proof-long-clock-scalar-ledger}
+\end{align}
+
+The new range is a closed subspace of that old strong range.  In fact, the
+old swept window \(J_{r,\chi}\) lies in \(J_{R,\delta}\) and wholly on the
+terminal side of the frozen hard interface.  There \(f_{\rm B}=0\), so a
+continuous representative of \(\Sigma_Rf\) restricts to the continuous
+terminal source required in \(\mathcal Y_{r,\chi}^0\).  The reserved-buffer
+choice makes this geometry explicit: for sufficiently small \(\delta\),
+\(L_{\chi,\delta}+2\theta_m+1<L_b\).  The fixed base clock has uniformly
+bounded derivative and inverse, and the hard interface
+lies on its zero plateau.  Hence the transported split norm, the
+continuous-total-source condition, and the physical \(C^1\) norm are
+uniformly equivalent to their fixed-clock versions.
+
+For completeness, on \(J_{R,\delta}\), where \(|r_*|\asymp R_\delta\),
+the direct summand norms give
+\begin{equation}
+ \frac1\varepsilon\operatorname*{ess\,sup}_{J_{R,\delta}}
+       \|F_{\rm B}+F_T\|_N
+ +\frac1{\varepsilon R_\delta^2}
+   \operatorname*{ess\,sup}_{J_{R,\delta}}|H_{\rm B}+H_T|
+ \le C\{\|f_{\rm B}\|+\|f_T\|\}.             \label{eq:proof-total-source-sum-map}
+\end{equation}
+The set of \(L^\infty\) functions possessing a continuous representative
+on a compact interval is closed in the essential-supremum norm.  Since the
+direct source decomposition is unique,
+\(\widetilde{\mathsf Y}_{r,R}^{\mathrm{tot},0}\) is consequently a closed
+subspace.
+The trace-matching formulation in
+\cref{eq:long-window-continuous-total-source} is essential: the separate
+zero-extended summands generally jump at the frozen hard interface, even
+when their sum is the restriction of one physical continuous source.
+
+Let a datum in \(\mathcal Y_{r,R}^{\rm up,0}\) be given and solve the old
+short-window event-aligned problem.  The preceding inclusion licenses this
+step.  Put
+\begin{equation}
+ \mathcal R_v=\|L_{*,R}^{\rm ea}v\|_{\mathcal Y_{r,R}^{\rm up,0}}.
+                                                        \label{eq:proof-long-window-range-size}
+\end{equation}
+The old inverse controls the transported graph variables and all finite
+rows by \(C\mathcal R_v\).  On the outer-annulus window,
+\cref{eq:outer-clock-terminal-annulus} and the exact-base perturbation
+bounds give
+\begin{equation}
+ |r_*(s)|\asymp R_\delta,\qquad
+ \|z_{0,N}'\|_N+\|\ell_N\|\le CR_\delta,qquad
+ |w_{0,N}'|\le CR_\delta.                       \label{eq:proof-long-window-coefficients}
+\end{equation}
+The inherited source norms, the component Green estimates, and the old
+inverse first give the normal-data part of
+\begin{align}
+ \sup_{J_{R,\delta}}
+  \left\{\|Z_y\|_N+\frac{|p_y|}{R_\delta}\right\}
+ &\le C\varepsilon\mathcal R_v,
+                                                        \label{eq:proof-long-window-normal-data-state-bound}\\
+ \sup_{J_{R,\delta}}
+  \left\{\|F_{\rm B}+F_T\|_N
+       +\frac{|H_{\rm B}+H_T|}{R_\delta^2}\right\}
+ &\le C\varepsilon\mathcal R_v.                \label{eq:proof-long-window-source-bound}
+\end{align}
+Here
+\((Z_y,p_y)=\operatorname{pr}_{Z,p}D\mathcal Y_*(y,0,0)\) is the
+normal-data component of the exact reconstructed tangent.
+For the bulk summand the sharper factor \(\lambda_\delta\) in its direct
+norm only improves the second estimate;
+for the terminal summand
+\(r_{r,T}m_{r,T}\asymp R_\delta^2\).
+
+We now verify explicitly that the physical reconstruction also contains the
+structured phase column.  Set
+\(A=\|a\|_{\mathsf A_{r,\mathrm{hyb}}}\).  Its phase/action ledger is
+\begin{align}
+ \|a\|_{\mathsf A_\phi^1}
+ &\le C(\rho_\delta+M_\delta)A,\notag\\
+ \sup_{J_{R,\delta}}
+  \left\{\frac{\|Z_{T^{\rm form}a}\|_N}{\varepsilon}
+       +\frac{|p_{T^{\rm form}a}^{\sharp}|}
+                    {\varepsilon R_\delta}\right\}
+ &\le C(\rho_\delta+M_\delta)A,\notag\\
+ \sup_{J_{R,\delta}}
+  \left\{\frac{|P[a]|}{R_\delta}
+       +\frac{\delta|\partial_sP[a]|}{R_\delta}\right\}
+ &\le C(\rho_\delta+M_\delta)A,\notag\\
+ \frac1\varepsilon\sup_{J_{R,\delta}}
+  \left\{\|F_{\phi,*}[a]\|_N
+       +\frac{|H_{\phi,*}[a]|}{R_\delta^2}\right\}
+ &\le CA.                                      \label{eq:proof-long-window-phase-ledger}
+\end{align}
+Here \(P[a]=\mathscr P_{c,r,N}a\),
+\(p^\sharp=p+\varepsilon P[a]\), and
+\((F_{\phi,*},H_{\phi,*})\) is the complete shifted phase-induced source
+in the exact-base physical differential.  The first three lines and the
+formal part of the fourth follow from
+\cref{eq:source-split-hybrid-A1-embedding,%
+eq:structured-phase-state-bound,eq:shifted-phase-source-profile}.  Indeed,
+on this window \(m_\delta(r)\asymp R_\delta\),
+\(\delta/R_\delta^2\le C\), and
+\(\varepsilon/R_\delta^3=o(1)\).  The raw-compatible collar contributes at
+most \(C|a(e_{r,0})|\le C\rho_\delta A\) by
+\cref{eq:raw-phase-collar-response-bound}.  The speed-row projection
+contributes at most
+\(C\rho_\delta\lambda_\delta^{-1}A\) by
+\cref{eq:speed-projected-phase-bounds}.  Finally,
+the componentwise differential estimate underlying
+\cref{eq:proof-clock-two-point}, together with
+\cref{eq:short-clock-zero-bound} and the smooth fixed-base reconstruction,
+changes these columns and sources by an absorbable
+\(O(\mathfrak b_{\delta,\varkappa})A\) perturbation.  That perturbation is
+assembled from continuous exact-base coefficients and continuous state and
+delay columns, so it creates no jump at the frozen hard interface.  Together with
+\cref{eq:joint-diagonal-small-scales}, these estimates prove
+\begin{equation}
+ \sup_{J_{R,\delta}}
+  \left\{\|Z_v\|_N+\frac{|p_v|}{R_\delta}\right\}
+ \le C\varepsilon\mathcal R_v.                  \label{eq:proof-long-window-state-bound}
+\end{equation}
+This converts \(p^\sharp\) back to the physical \(p\) and does not invoke
+the false old normalized estimate excluded by
+\cref{eq:normalized-phase-response-obstruction}.  The auxiliary slack
+\(\tau\) has no \((Z,p)\)-column.
+For the structured phase component the derivative conversion is the exact
+identity
+\begin{equation}
+ p_{T^{\rm form}a}'=(p_{T^{\rm form}a}^{\sharp})'
+       -\varepsilon\partial_sP[a],               \label{eq:proof-long-window-phase-derivative-shift}
+\end{equation}
+and the third line of \cref{eq:proof-long-window-phase-ledger} controls its
+last term in the long-window strong norm.
+
+For clarity, the reduced explicit primitive is not used at the exact base.
+Let \(\mathcal S_{r,*}\) be the exact-base phase operator obtained by
+linearizing the original-endpoint phase row.  In the transported hybrid
+spaces, \cref{eq:fixed-envelope-star-derivative,eq:proof-clock-two-point}
+give the operator estimate in
+\begin{equation}
+ \mathcal S_{r,*}
+ =\left\{\mathscr B_{r,\mathrm{hyb}}
+       -(\mathfrak A_r^{\rm sp},0)\right\}+\mathcal E_*^{\rm ph},
+ \qquad
+ \|\mathcal E_*^{\rm ph}\|
+       \le C\mathfrak b_{\delta,\varkappa}.       \label{eq:proof-long-window-exact-phase-operator}
+\end{equation}
+Its leading differential coefficient is uniformly comparable with
+\(q_0^2\), and all perturbation coefficients are continuous.  The causal
+Volterra inverse, equivalently the Neumann perturbation of the hybrid phase
+Schur inverse used in \cref{eq:terminal-source-extended-inverse}, therefore
+gives exactly
+\begin{equation}
+ a=\mathcal S_{r,*}^{-1}
+    (k+\mathfrak D_{r,*}y,b_0)\in C^1(I_r).       \label{eq:proof-long-window-exact-phase-inverse}
+\end{equation}
+Here \(\mathfrak D_{r,*}\) is the exact-base normal-to-phase action.  Thus
+\(k\in\mathsf H_{r,\mathrm{hyb}}=C(I_r)\), the action estimates, and the
+exact causal inverse preserve the required continuity.  In particular, on
+the generated terminal annulus every delay foot is past the entry seam, and
+the phase-induced sources in
+\cref{eq:proof-long-window-phase-ledger} have a single continuous
+representative across the artificial hard interface.
+
+Use the exact fixed-delay differential, with the two split sources first
+added and with the continuous phase source just displayed.  The coefficient
+ledger in
+\cref{eq:fixed-phase-normal-block}, its exact-base Neumann perturbation,
+\cref{eq:proof-long-window-coefficients}, and either the one-delay
+enlargement of \(J_{R,\delta}\) inside the generated annulus or the global
+state bounds for a delay foot to its left give, pointwise away from the
+artificial interface,
+\begin{equation}
+ \delta\|Z_v'(s)\|_N
+ +\frac\delta{R_\delta}|p_v'(s)|
+ \le C\varepsilon\mathcal R_v.                  \label{eq:proof-long-window-derivative-bound}
+\end{equation}
+All terms have the displayed scale: the current stable row costs
+\(O(\|Z_v\|_N)\), the collective couplings cost
+\(O(R_\delta|p_v|+R_\delta^2\|Z_v\|_N)\), and the total scalar source is
+\(O(\varepsilon R_\delta^2)\).  The delayed rows retain their explicit
+factor \(\varepsilon\), and every delayed state is controlled on the
+generated one-delay enlargement or by the already proved global bound.
+
+The total source has one continuous representative across the hard
+interface.  All base coefficients and assembled delay histories are
+continuous there, as is the phase-induced source.  If \(s_T\) denotes the
+frozen interface, subtraction of the two one-sided equations gives
+\begin{equation}
+ \delta[Z_v']_{s_T}=[F_{\rm B}+F_T]_{s_T}=0,
+ \qquad
+ \delta[p_v']_{s_T}=[H_{\rm B}+H_T]_{s_T}=0.     \label{eq:proof-long-window-seam-jump}
+\end{equation}
+Hence \((Z_v,p_v)\) is actually \(C^1\) on all of \(J_{R,\delta}\), not
+only piecewise \(C^1\).  The estimates in
+\cref{eq:proof-long-window-state-bound,eq:proof-long-window-derivative-bound}
+prove the strong estimate and show that the old short-window inverse maps the
+restricted range into \(\mathcal X_{r,R}^{\rm up,1}\).
+
+Conversely, applying the exact-base differential to a member of
+\(\mathcal X_{r,R}^{\rm up,1}\) shows from the same fixed-delay equations
+that its total distributed source is continuous on the long window.  Thus
+the operator maps into the stated range.  This proves onto-ness and
+injectivity of the restriction.  The graph norm and the preceding
+closed-source observation make the restricted domain complete.  Finally,
+the interface row recovers
+\(h=\mathcal T_Zv-K_{Z,R}\ell_*v-g\) uniquely; its norm is controlled by
+the strong terminal trace and
+\cref{eq:outer-endpoint-history-jet}.  This completes
+\cref{eq:long-window-strong-inverse-bound}.
+\end{proof}
+
 \begin{proof}[Proof of \cref{lem:moving-r-event-preimage}]
 Consider
 \begin{equation}
