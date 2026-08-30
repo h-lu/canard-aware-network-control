@@ -8629,6 +8629,339 @@ two-point composition estimate, differentiate a moving \(r\)-chart, or
 construct a parameter/gauge family.
 \end{theorem}
 
+The geometric clock in \cref{lem:outer-annulus-terminal-clock} exists on
+the larger \(R_\delta\)-ball.  The fixed strong source graph, however,
+has a smaller nonlinear action scale.  Put
+\begin{equation}
+ \Lambda_{R,\delta}=\lambda_\delta R_\delta.     \label{eq:outer-clock-action-scale}
+\end{equation}
+On the retained joint wedge,
+\begin{align}
+ \frac{\rho_\delta}{\Lambda_{R,\delta}}&=o(1),&
+ \frac{\lambda_\delta R_\delta^2}{\rho_\delta}
+ &=2\alpha\varkappa^2
+   +2\alpha\varkappa^3\sqrt\delta\,S_\delta^{7/2}=o_{\rm ord}(1),
+                                                        \notag\\
+ \frac{\delta}{\Lambda_{R,\delta}}
+ &\le\frac{\delta}{R_\delta^2}
+   =\mathfrak w_{\delta,\varkappa}.              \label{eq:outer-clock-action-scale-ledger}
+\end{align}
+Here \(o_{\rm ord}(1)\) means small after the theorem's ordered choice of
+\(\varkappa_0\), followed by the joint wedge decrease.  The first line
+follows from \(\lambda_\delta\ge S_\delta^{-2}\) and
+\(\mathfrak w_{\delta,\varkappa}\le\mathfrak w_*\).
+The distinction between \(R_\delta\) and \(\Lambda_{R,\delta}\) is
+substantive: on the full \(R_\delta\)-ball, a mixed clock--normal term in
+the bulk source can lose \(1/\lambda_\delta\), while a phase prefix can
+lose \(R_\delta^2/\rho_\delta\).  The scale
+\(\Lambda_{R,\delta}\) closes both losses without placing an unproved
+kinetic restriction on an arbitrary strong-space direction.
+
+Write \(u_*=u_r^{\rm oe}\), \(Y_*=\mathcal Y_*(u_*)\), and
+\(h_*=\mathcal T_ZY_*\).  For an algebraic coordinate displacement \(v\)
+for which the relative phase reconstruction is defined, let
+\(Y(v)=\mathcal Y_*(u_*+\operatorname{pr}_{\ne h}v)\).  In every delayed term below use the same
+pulled feet \(\sigma_{k,\beta}\) from
+\cref{eq:outer-clock-map-and-feet}.  Define first, before any hard split,
+\begin{equation}
+ \mathscr R_R^{\rm clk}(v,\beta)(s)
+ =\delta\partial_sY(v)(s)
+ -\left\{1+\frac{\beta}{\delta}\chi_{R,\delta}'(s)\right\}
+ \mathfrak F_N\bigl(Y(v)(s),Y(v)(\sigma_{1,\beta}(s)),\ldots,
+                         Y(v)(\sigma_{m,\beta}(s))\bigr).
+                                                        \label{eq:outer-clock-unsplit-row}
+\end{equation}
+Apply the exact collective/normal decomposition used in
+\cref{eq:fixed-envelope-exact-residual}.  If its two distributed normal
+components are \((F_R,H_R)\), define their bulk and terminal summands by
+multiplication with the two fixed indicators at the transported old hard
+interface.  The boundary summand retains the exact raw-compatible history
+and the current-terminal-state physical speed row.  Retain also the exact
+collective phase, causal-entry, phase-slack, and free interface row
+\(\mathcal T_ZY(v)-(h_*+v_h)\), and append
+\[
+ E_R(v)=\frac{r_{Y(v)}(S_*)+R_\delta}{q_0(-R_\delta)}.
+\]
+This defines the augmented residual
+\begin{equation}
+ \mathbb F_{r,R}^{\rm clk,aug}(v,\beta)
+ \in\mathcal Y_{r,R}^{\rm up,0}
+       \times\mathbb R_{\Lambda_{R,\delta}}
+                                                        \label{eq:outer-clock-raw-augmented-residual}
+\end{equation}
+whenever the displayed membership holds.
+
+For a raw upper residual/event pair \((F,b)\), put
+\begin{equation}
+ \mathscr S_R(F,b)=(F-K_Rb,b).                  \label{eq:outer-clock-range-shear}
+\end{equation}
+Equip the \emph{sheared} product
+\begin{equation}
+ \mathcal Y_{r,R}^{\rm clk}
+ =\mathcal Y_{r,R}^{\rm up,0}
+       \times\mathbb R_{\Lambda_{R,\delta}},
+ \qquad
+ \|(G,b)\|_{\mathcal Y_{r,R}^{\rm clk}}
+ =\|G\|_{\mathcal Y_{r,R}^{\rm up,0}}
+       +\frac{|b|}{\Lambda_{R,\delta}}.         \label{eq:outer-clock-sheared-range-norm}
+\end{equation}
+Thus the corresponding pullback norm of the raw pair is
+\(\|F-K_Rb\|_{\mathcal Y_{r,R}^{\rm up,0}}
++|b|/\Lambda_{R,\delta}\).
+The shear is applied exactly once.
+
+Let
+\begin{equation}
+ \mathsf A_{r,R}^{\rm rel,0}
+ =\{c\in\mathsf A_{\phi,\mathrm{rel}}^1(I_r):
+          c(e_{r,0})=0\}                         \label{eq:outer-clock-relative-zero-entry-space}
+\end{equation}
+carry the inherited relative norm.  Denote by \(\iota_\phi c\) the
+coordinate vector which adds \(c\) in the phase slot, adds
+\(-c(e_{r,1})\) in the triangular phase-slack slot, and is zero in the
+normal and free-history slots.
+
+\begin{proposition}[Relative clock seed and total-source range]
+\label[proposition]{prop:outer-clock-relative-seed}
+Retain \cref{lem:inner-anchored-nonlinear-phase-chart,%
+lem:nonlinear-reduced-flow-phase-delay,%
+lem:outer-annulus-terminal-clock,%
+thm:repelling-long-window-strong-restriction}.  There are uniform
+\(c_{\rm seed},C_{\rm seed}>0\) and a \(C^1\) map
+\begin{equation}
+ c_R^0:(-c_{\rm seed}\Lambda_{R,\delta},
+          c_{\rm seed}\Lambda_{R,\delta})
+       \longrightarrow\mathsf A_{r,R}^{\rm rel,0}          \label{eq:outer-clock-relative-seed-map}
+\end{equation}
+such that the exact collective phase row of
+\(\mathbb F_{r,R}^{\rm clk,aug}(\iota_\phi c_R^0(\beta),\beta)\)
+vanishes.  It is causally anchored by
+\(c_R^0(\beta)(e_{r,0})=0\); its endpoint is absorbed by the phase-slack
+component in \(\iota_\phi\).  Its value is unique in the fixed small
+relative-phase ball used in the proof.  Put
+\[
+ B=\frac{|\beta|}{\Lambda_{R,\delta}},
+ \qquad \widetilde B
+   =\frac{|\widetilde\beta|}{\Lambda_{R,\delta}}.
+\]
+Then
+\begin{align}
+ \|c_R^0(\beta)\|_{\phi,\rm rel}
+ &\le C_{\rm seed}\lambda_\delta B,\notag\\
+ \left\|c_R^0(\beta)-\beta a_{R,*}^{\rm seed}\right\|_
+       {\phi,\rm rel}
+ &\le C_{\rm seed}\lambda_\delta^2B^2,           \label{eq:outer-clock-seed-quadratic}\\
+ \left\|\{c_R^0(\beta)-\beta a_{R,*}^{\rm seed}\}
+       -\{c_R^0(\widetilde\beta)
+               -\widetilde\beta a_{R,*}^{\rm seed}\}\right\|_
+       {\phi,\rm rel}
+ &\le C_{\rm seed}\lambda_\delta^2(B+\widetilde B)
+       \frac{|\beta-\widetilde\beta|}
+            {\Lambda_{R,\delta}},               \label{eq:outer-clock-seed-two-point}
+\end{align}
+where
+\begin{equation}
+ a_{R,*}^{\rm seed}=Dc_R^0(0)1,\qquad
+ \|a_{R,*}^{\rm seed}\|_{\phi,\rm rel}
+ \le\frac{C_{\rm seed}}{R_\delta}.               \label{eq:outer-clock-relative-linear-seed}
+\end{equation}
+This is the phase component of the causal seed with the normal coordinate
+held at its base value.  It need not equal the phase component of the
+full physical clock tangent; the strong correction in the next lemma is
+required before that identification is made.
+
+Let
+\begin{equation}
+ \mathbb G_R^0(\beta)
+ =\operatorname{pr}_{\rm up}\mathscr S_R
+    \mathbb F_{r,R}^{\rm clk,aug}
+       (\iota_\phi c_R^0(\beta),\beta).          \label{eq:outer-clock-seed-upper-forcing}
+\end{equation}
+Then \(\mathbb G_R^0(\beta)\in\mathcal Y_{r,R}^{\rm up,0}\), and
+\begin{align}
+ \|\mathbb G_R^0(\beta)\|_{\mathcal Y_{r,R}^{\rm up,0}}
+ &\le C_{\rm seed}\lambda_\delta B,\notag\\
+ \|[\mathbb G_R^0(\beta)-D\mathbb G_R^0(0)\beta]
+   -[\mathbb G_R^0(\widetilde\beta)
+        -D\mathbb G_R^0(0)\widetilde\beta]\|_
+       {\mathcal Y_{r,R}^{\rm up,0}}
+ &\le C_{\rm seed}\lambda_\delta^2(B+\widetilde B)
+       \frac{|\beta-\widetilde\beta|}
+            {\Lambda_{R,\delta}}.               \label{eq:outer-clock-seed-forcing-two-point}
+\end{align}
+The distributed source in each expression is obtained by first forming
+the one continuous total row in \cref{eq:outer-clock-unsplit-row} and
+only then applying the fixed split.  Thus its two one-sided total traces
+agree even though the hard interface lies inside the long clock
+transition.  No individual split summand is asserted to be continuous.
+
+The exact phase seed is essential.  Replacing it by only its linear part
+would generically leave a pure-clock phase primitive of size
+\(\beta^2/\rho_\delta\).  Since
+\(R_\delta^2/\rho_\delta=2\alpha\varkappa^2S_\delta^2\), it diverges
+for every fixed \(\varkappa>0\); hence a linear-only construction would
+not justify the larger geometric clock ball.  On the action scale used
+here the exact seed additionally provides the strong two-point statement
+needed below; it is not replaced by a merely formal first-order lift.
+\end{proposition}
+
+\begin{lemma}[Exact nonlinear event-sheared outer-clock collar]
+\label[lemma]{lem:exact-outer-clock-phase-collar}
+Retain \cref{prop:outer-clock-relative-seed}.  After decreasing
+\(c_{\rm seed}\), there is a \(C^1\) map
+\begin{equation}
+ w_R^0:(-c_{\rm seed}\Lambda_{R,\delta},
+          c_{\rm seed}\Lambda_{R,\delta})
+       \longrightarrow\mathcal X_{r,R}^{\rm up,1},
+ \qquad w_R^0(0)=0,                              \label{eq:outer-clock-strong-collar-correction}
+\end{equation}
+such that, with
+\begin{equation}
+ \mathfrak C_R(\beta)
+ =\iota_\phi c_R^0(\beta)+w_R^0(\beta),          \label{eq:outer-clock-complete-collar}
+\end{equation}
+one has the exact identity
+\begin{equation}
+ \operatorname{pr}_{\rm up}\mathscr S_R
+ \mathbb F_{r,R}^{\rm clk,aug}
+       (\mathfrak C_R(\beta),\beta)=0.           \label{eq:outer-clock-collar-upper-zero}
+\end{equation}
+Its value is unique in the fixed small strong-space ball used in the
+contraction.
+Moreover,
+\begin{align}
+ \|w_R^0(\beta)\|_{\mathcal X_{r,R}^{\rm up,1}}
+ &\le C_{\rm col}\lambda_\delta B,\notag\\
+ \|[w_R^0(\beta)-Dw_R^0(0)\beta]
+   -[w_R^0(\widetilde\beta)
+        -Dw_R^0(0)\widetilde\beta]\|_
+       {\mathcal X_{r,R}^{\rm up,1}}
+ &\le C_{\rm col}\lambda_\delta(B+\widetilde B)
+       \frac{|\beta-\widetilde\beta|}
+            {\Lambda_{R,\delta}}.               \label{eq:outer-clock-strong-collar-two-point}
+\end{align}
+All causal-entry, phase-slack, speed, and free-interface rows in
+\cref{eq:outer-clock-collar-upper-zero} are literal rows of the same
+boundary-value problem.  In particular the relative seed does not move
+the causal phase anchor, while the normal old history remains governed
+by the same raw-compatible row; no new entry gauge is inserted.
+
+If
+\begin{equation}
+ e_R^{\rm col}(\beta)=E_R(\mathfrak C_R(\beta)), \label{eq:outer-clock-collar-event}
+\end{equation}
+then
+\begin{align}
+ e_R^{\rm col}(0)&=0,&D e_R^{\rm col}(0)&=1,\notag\\
+ \frac{|e_R^{\rm col}(\beta)-\beta|}
+      {\Lambda_{R,\delta}}
+ &\le C_{\rm col}\lambda_\delta B^2,\notag\\
+ \frac{|[e_R^{\rm col}(\beta)-\beta]
+       -[e_R^{\rm col}(\widetilde\beta)-\widetilde\beta]|}
+       {\Lambda_{R,\delta}}
+ &\le C_{\rm col}\lambda_\delta(B+\widetilde B)
+       \frac{|\beta-\widetilde\beta|}
+            {\Lambda_{R,\delta}}.               \label{eq:outer-clock-collar-event-two-point}
+\end{align}
+The derivative identity is the exact clock commutator with
+\(c_{R,\rm ter}=1\), now represented as a relative phase seed plus a
+strong correction.  It does not assert that
+\(\mathfrak C_R(\beta)\) is a physical RFDE zero when \(\beta\ne0\):
+\cref{eq:outer-clock-collar-upper-zero} is event-sheared, and its
+remaining event is precisely \(e_R^{\rm col}(\beta)\).
+\end{lemma}
+
+\begin{theorem}[Exact nonlinear outer-clock residual and two-point inverse]
+\label[theorem]{thm:exact-nonlinear-outer-clock-residual}
+Retain \cref{thm:repelling-long-window-strong-restriction,%
+prop:outer-clock-relative-seed,%
+lem:exact-outer-clock-phase-collar}.  For
+\(w\in\mathcal X_{r,R}^{\rm up,1}\) and
+\(|\beta|<c_{\rm seed}\Lambda_{R,\delta}\), reconstruct the exact state from the
+base coordinate plus
+\begin{equation}
+ v=\mathfrak C_R(\beta)+w .                     \label{eq:outer-clock-aligned-coordinate}
+\end{equation}
+Use the already defined total-source-first augmented residual in
+\cref{eq:outer-clock-raw-augmented-residual}, and define
+\begin{equation}
+ \widehat{\mathbb F}_{r,R}^{\rm clk}(w,\beta)
+ =\mathscr S_R\mathbb F_{r,R}^{\rm clk,aug}
+       (\mathfrak C_R(\beta)+w,\beta).           \label{eq:outer-clock-aligned-nonlinear-residual}
+\end{equation}
+
+There is a dimension- and diagonal-uniform \(r_{R,0}>0\) such that the
+map in \cref{eq:outer-clock-aligned-nonlinear-residual} is well defined
+and \(C^1\) on
+\begin{equation}
+ \|w\|_{\mathcal X_{r,R}^{\rm up,1}}
+       +\frac{|\beta|}{\Lambda_{R,\delta}}<r_{R,0},
+                                                        \label{eq:outer-clock-aligned-ball}
+\end{equation}
+with values in \(\mathcal Y_{r,R}^{\rm clk}\).  It satisfies
+\begin{align}
+ \widehat{\mathbb F}_{r,R}^{\rm clk}(0,0)&=0,\notag\\
+ D\widehat{\mathbb F}_{r,R}^{\rm clk}(0,0)
+ &=\begin{pmatrix}
+     L_{*,R}^{\rm ea}&0\\
+     \ell_*&1
+   \end{pmatrix},                               \label{eq:outer-clock-nonlinear-linearization}
+\end{align}
+where the last scalar domain and range factors carry the
+\(\Lambda_{R,\delta}\)-normalized norm.  In particular this differential and its
+inverse are uniform.
+
+Put \(z=(w,\beta)\),
+\begin{equation}
+ \|z\|_{R,\rm clk}
+ =\|w\|_{\mathcal X_{r,R}^{\rm up,1}}
+       +\frac{|\beta|}{\Lambda_{R,\delta}},\qquad
+ \mathbb Q_{r,R}^{\rm clk}(z)
+ =\widehat{\mathbb F}_{r,R}^{\rm clk}(z)
+  -D\widehat{\mathbb F}_{r,R}^{\rm clk}(0)z .  \label{eq:outer-clock-nonlinear-remainder}
+\end{equation}
+Then, after one uniform decrease of \(r_{R,0}\),
+\begin{equation}
+ \|\mathbb Q_{r,R}^{\rm clk}(z)
+       -\mathbb Q_{r,R}^{\rm clk}(\widetilde z)\|_{
+          \mathcal Y_{r,R}^{\rm clk}}
+ \le C\{\|z\|_{R,\rm clk}+\|\widetilde z\|_{R,\rm clk}\}
+       \|z-\widetilde z\|_{R,\rm clk}.          \label{eq:outer-clock-nonlinear-two-point}
+\end{equation}
+Consequently there are uniform \(r_{R,1},C_{\rm inv}>0\) and a unique local
+right-hand-side solution map
+\begin{equation}
+ \mathfrak Z_R:
+ B_{\mathcal Y_{r,R}^{\rm clk}}(0,r_{R,1})
+ \longrightarrow
+ B_{\mathcal X_{r,R}^{\rm up,1}
+       \times\mathbb R_{\Lambda_{R,\delta}}}
+       (0,r_{R,0})                               \label{eq:outer-clock-local-solution-map}
+\end{equation}
+such that
+\begin{equation}
+ \widehat{\mathbb F}_{r,R}^{\rm clk}
+       (\mathfrak Z_R(d))=d,\qquad
+ \|\mathfrak Z_R(d)\|_{R,\rm clk}
+       \le C_{\rm inv}\|d\|_{\mathcal Y_{r,R}^{\rm clk}}. \label{eq:outer-clock-local-solution-bound}
+\end{equation}
+It is \(C^1\), and the zero at \(d=0\) is unique in the displayed
+clock-aligned ball.
+
+No \(p^\sharp\) variable depending on \(\beta\) is used in the Banach
+chart.  Such a shift is used only as a fixed-\(\beta\) algebraic identity
+inside the proof, with exactly the same feet \(\sigma_{k,\beta}\), and is
+converted back to the physical \(p\) before applying the strong inverse.
+The theorem supplies the nonlinear outer-clock chart needed for later
+forcing by parameters and gauges.  It does not yet differentiate those
+external variables, construct a moving-\(r\) family, or produce a
+past-complete orbit or physical root.
+It is an action-compatible nonlinear chart inside the larger geometric
+\(R_\delta\)-clock domain.  A full \(R_\delta\)-ball strong inverse would
+require an additional clock-covariant source-graph trivialization and is
+not claimed here.
+\end{theorem}
+
 For the same-end repelling boundary problem, let
 \begin{equation}
  J_{r,\delta}^{\rm ev}
@@ -8712,7 +9045,7 @@ After decreasing the phase radius in
 \begin{equation}
  \Psi_a(r)
  =r+\chi_{\rm tr}\left(\frac{r+R_\delta}{R_\delta}\right)
-       \{zeta_r(a)+R_\delta\}.                 \label{eq:moving-r-terminal-trivialization}
+       \{\zeta_r(a)+R_\delta\}.                \label{eq:moving-r-terminal-trivialization}
 \end{equation}
 Then \(\Psi_a\) is an orientation-preserving \(C^4\) diffeomorphism from
 \(I_{r,\delta}^{\rm ref}\) onto

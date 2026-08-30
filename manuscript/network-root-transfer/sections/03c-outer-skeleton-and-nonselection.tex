@@ -11147,6 +11147,588 @@ the strong terminal trace and
 \cref{eq:long-window-strong-inverse-bound}.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:outer-clock-relative-seed}]
+We first construct the scalar seed in a space which measures a phase
+displacement relative to the local outer radius.  This is essential:
+the same seed is not uniformly small in the hybrid norm, whose value
+normalization is \(\rho_\delta\).
+
+Let \(\operatorname{Ph}_R(c,\beta)\) denote the distributed collective
+phase row of
+\[
+ \mathbb F_{r,R}^{\rm clk,aug}(\iota_\phi c,\beta).
+\]
+The entry and slack components have already been fixed by
+\(\iota_\phi\).  At the base,
+\[
+ \operatorname{Ph}_R(0,0)=0.
+\]
+Its \(c\)-differential is the exact-base relative phase Schur operator.
+More precisely, on
+\(\mathsf A_{r,R}^{\rm rel,0}\),
+\begin{equation}
+ D_c\operatorname{Ph}_R(0,0)
+ =\left\{\mathscr B_{\phi,r,*}^0
+       -(\mathfrak A_r^{\rm sp},0)\right\}_{\rm dist}
+       +\mathcal E_{R,*}^{\rm rel},\qquad
+ \|\mathcal E_{R,*}^{\rm rel}\|\le C\mathfrak b_{\delta,\varkappa}.
+                                                        \label{eq:proof-outer-clock-relative-schur}
+\end{equation}
+Here the speed-projected action is compulsory: the upper problem contains
+the physical terminal-speed row, so replacing
+\(\mathfrak A_r^{\rm sp}\) by the earlier raw-compatible action would
+linearize a different boundary-value problem.  We verify its relative
+smallness on the zero-entry space.  If
+\(c(e_{r,0})=0\), then the raw collar column in
+\cref{eq:raw-compatible-true-action} vanishes and
+\(\mathfrak A_r^{\rm rc}c=\mathfrak A_r^{\rm form}c\).  Moreover,
+\cref{eq:relative-phase-A1-embedding,eq:structured-phase-speed-bound},
+used on the receding interval whose outer radius is \(R_\delta\), and
+\(m_\delta(e_{r,1})\asymp R_\delta\) give
+\begin{equation}
+ \frac{|(\mathfrak A_r^{\rm rc}c)(e_{r,1})|}{R_\delta}
+ \le CR_\delta\|c\|_{\phi,\rm rel}.             \label{eq:proof-outer-clock-speed-projection-datum}
+\end{equation}
+The correction in
+\cref{eq:speed-projected-phase-column,eq:speed-projected-phase-action}
+is therefore a localized terminal boundary column whose direct norm is
+at most \(CR_\delta\|c\|_{\phi,\rm rel}\).  Applying
+\cref{eq:boundary-column-global-action} and
+\(\sup_{I_r}m_\delta\le C\lambda_\delta\) yields
+\begin{equation}
+ \|\mathfrak A_r^{\rm sp}c\|_{C^0(I_r)}
+ \le CR_\delta\lambda_\delta
+       \|c\|_{\phi,\rm rel}.                    \label{eq:proof-outer-clock-speed-projected-relative-smallness}
+\end{equation}
+Thus the zero-entry restriction of the leading operator in
+\cref{eq:proof-outer-clock-relative-schur} is a uniform Neumann
+perturbation of \(c\mapsto q_0^2c'\), whose explicit zero-entry inverse
+is the one in
+\cref{eq:inner-anchored-linear-explicit-inverse} with \(b=0\).
+The exact-base perturbation bound
+follows by applying the componentwise differential ledger behind
+\cref{eq:fixed-envelope-star-derivative} before the hybrid prefix
+rescaling, together with the relative state and delay estimates in
+\cref{prop:relative-structured-phase-response,%
+lem:nonlinear-reduced-flow-phase-delay}.  It is a pointwise
+\(C^0\)-range estimate, so no long primitive is taken here.  Hence,
+after the retained ordered decrease, the operator in
+\cref{eq:proof-outer-clock-relative-schur} has a uniform zero-entry
+Neumann inverse from \(C(I_r)\) to
+\(\mathsf A_{r,R}^{\rm rel,0}\).  This inverse is global; only its entry
+value, not its support, is prescribed.
+
+Normalize
+\[
+ \widehat B=\frac{\beta}{\Lambda_{R,\delta}},\qquad
+ B=|\widehat B|,\qquad
+ x=\frac{\delta(s-S_*)}{R_\delta}.
+\]
+Here and below, \(r_*(s)=\pi_N^T\{v_*(s)-\mathbf1\}\) is the physical
+collective coordinate of the exact original-endpoint base \(Y_*\).
+The foot equation in
+\cref{eq:proof-outer-clock-normalized-foot} and the fixed-shape cutoff
+show that the map
+\[
+ (c,\widehat B)\longmapsto
+ \operatorname{Ph}_R(c,\Lambda_{R,\delta}\widehat B)
+\]
+is \(C^1\) from a fixed relative-phase ball to \(C(I_r)\), with uniform
+first derivative and the direct two-point remainder bound.  Indeed,
+on the transition and its one-delay enlargement,
+\begin{align}
+ |c(r_*(s))|
+ &\le CR_\delta\|c\|_{\phi,\rm rel},\notag\\
+ |\partial_sc(r_*(s))|
+ &\le C\delta\|c\|_{\phi,\rm rel},\notag\\
+ |c(r_*(s))-c(r_*(s-\theta_k))|
+ &\le C\delta\|c\|_{\phi,\rm rel}.              \label{eq:proof-outer-clock-relative-seed-ledger}
+\end{align}
+The clock multiplier and every foot have the corresponding normalized
+bounds
+\begin{equation}
+ \left|\frac{\beta}{\delta}\chi_{R,\delta}'\right|
+ +|\sigma_{k,\beta}-(\,\cdot-\theta_k)|
+ +|\partial_s\sigma_{k,\beta}-1|
+ \le C\lambda_\delta B.                        \label{eq:proof-outer-clock-relative-clock-ledger}
+\end{equation}
+The nonlinear \(q_0\)-flow action and the exact clocked phase-delay
+functional use these same feet.  Thus
+\cref{eq:nonlinear-phase-delay-summand-remainder} applies after replacing
+the fixed delay foot by \(\sigma_{k,\beta}\); the extra foot difference
+is estimated by the last two displays and retains the delay increment.
+
+The uniform zero-entry implicit-function theorem applied to
+\(\operatorname{Ph}_R(c,\Lambda_{R,\delta}\widehat B)=0\) now gives
+\(c=c_R^0(\Lambda_{R,\delta}\widehat B)\).  Its first
+\(\widehat B\)-derivative carries
+\(\lambda_\delta\), and the direct two-point remainder carries
+\(\lambda_\delta^2\).  The clock forcing and its moved feet vanish before
+the clock support, but the small normal-to-phase Schur return is global;
+no support preservation of the seed is asserted.  What remains exact is
+the required entry identity
+\begin{equation}
+ c_R^0(\beta)(e_{r,0})=0.                       \label{eq:proof-outer-clock-seed-support}
+\end{equation}
+Differentiating the scalar row at \(\widehat B=0\) defines
+\(a_{R,*}^{\rm seed}=D_\beta c_R^0(0)\).  The uniform inverse in
+\cref{eq:proof-outer-clock-relative-schur} and the normalized clock
+forcing give
+\[
+ \|a_{R,*}^{\rm seed}\|_{\phi,\rm rel}\le C/R_\delta.
+\]
+This phase-only derivative is not identified with the phase component of
+the full physical clock tangent: the latter also has a normal coordinate,
+which is supplied by the strong correction below.
+The two-point form of the relative implicit-function theorem, using
+\cref{eq:proof-outer-clock-relative-seed-ledger,%
+eq:proof-outer-clock-relative-clock-ledger}, proves
+\cref{eq:outer-clock-seed-quadratic,%
+eq:outer-clock-seed-two-point}.
+
+We next prove that the remaining upper forcing belongs to the strong
+range.  Form the unsplit row first.  On \(J_{R,\delta}\), the reconstructed
+seed state is \(C^1\), each clock foot is \(C^1\), and
+\(\mathfrak F_N\) is smooth on the retained relative tube.  Hence the
+two distributed normal components
+\((F_R,H_R)\) have one representative in
+\(C(J_{R,\delta};E_N\times\mathbb R)\).  Multiplication by the two fixed
+indicators gives
+\begin{equation}
+ [F_{\rm B}+F_T]_{s_T^*}=0,\qquad
+ [H_{\rm B}+H_T]_{s_T^*}=0,                    \label{eq:proof-outer-clock-total-source-seam}
+\end{equation}
+where the brackets mean the right trace minus the left trace.  Notice
+that \(s_T^*\) lies inside the long transition; no zero-cutoff statement
+at that artificial seam is used.
+
+We record the cancellation-safe source calculation.  At a fixed
+\(\beta\), let \(P_\beta[c]\) be the linear phase-delay correction formed
+with exactly \(\sigma_{k,\beta}\), and use only for this calculation
+\begin{equation}
+ p_\beta^\sharp=p+\varepsilon P_\beta[c],\qquad
+ Q_\beta^\sharp
+ =\varepsilon^{-1}(p_\beta^\sharp-\ell_{*,N}Z)+D_{c,*},
+ \qquad \ell_{*,N}(s)=\ell_N(r_*(s)).             \label{eq:proof-outer-clock-fixed-beta-shift}
+\end{equation}
+As in the fixed-envelope scalar regrouping, write
+\begin{equation}
+ A_c=w_c'+\varepsilon d_c,\qquad
+ A_*=w_*'+\varepsilon d_*.                       \label{eq:proof-outer-clock-A-coefficients}
+\end{equation}
+Thus the symbols in
+\cref{eq:proof-outer-clock-scalar-regrouping} are physical coefficient
+fields evaluated at the current phase and at the exact base,
+respectively; they are not new unknowns.
+Every \(\beta\)-dependent foot displacement is supported after the entry
+seam; the seed itself may have a global Schur return.  From
+\cref{eq:proof-outer-clock-relative-seed-ledger} and the delay-layer
+bounds,
+\begin{equation}
+ \|P_\beta[c]\|_{C^0}
+ +\|\partial_sP_\beta[c]\|_{C^0}
+ \le C\delta\|c\|_{\phi,\rm rel}.                \label{eq:proof-outer-clock-fixed-beta-P}
+\end{equation}
+The normal equations are estimated only after retaining
+\begin{align}
+ -\Delta z_0'p-\varepsilon\Delta z_0'P_\beta[c]
+ &=-\Delta z_0'p_\beta^\sharp,\notag\\
+ Q_\beta^{\rm nl}-Q_\beta^\sharp
+ &=-\varepsilon^{-1}
+   \{(\ell_c-\ell_{*,N})Z+h_{c,N}\}
+       +\{\Pi_{c,\beta}(c)-P_{c,\beta}[c]\},     \label{eq:proof-outer-clock-speed-regrouping}\\
+ \operatorname{Rem}S_{p,\beta}^{\rm nl}
+ &=
+ \varepsilon(A_c-A_*)Q_\beta^\sharp
+ +\varepsilon A_c\{Q_\beta^{\rm nl}-Q_\beta^\sharp\}
+ +\varepsilon^2\operatorname{Rem}_{c}(q_0d)
+ +\mathcal C_{\rm clk,\beta}.                   \label{eq:proof-outer-clock-scalar-regrouping}
+\end{align}
+Here \(\mathcal C_{\rm clk,\beta}\) is the difference produced by the
+common multiplier and the common clocked feet in
+\cref{eq:outer-clock-unsplit-row}; it vanishes to first order after the
+clock commutator is subtracted.  No summand
+\(\varepsilon w'P_\beta\) is estimated separately.
+
+On the bulk side, the normal seed and every clock-covariance remainder
+retain the factor \(\lambda_\delta\) from the exact-base kinetic tube.
+On the terminal side use
+\(|r|\asymp m_\delta(r)\asymp R_\delta\).
+Equations
+\cref{eq:proof-fixed-envelope-Z-term-classes,%
+eq:proof-fixed-envelope-exact-p-remainder,%
+eq:proof-outer-clock-relative-seed-ledger,%
+eq:proof-outer-clock-relative-clock-ledger}
+then give
+\begin{align}
+ &\frac1{\varepsilon\lambda_\delta}
+ \operatorname*{ess\,sup}_{s<s_T^*}
+ \left\{\|F_R(s)\|_N+\frac{|H_R(s)|}{|r_*(s)|^2}\right\}
+ \le C\lambda_\delta B,\notag\\
+ &\frac1\varepsilon
+ \operatorname*{ess\,sup}_{s>s_T^*}
+ \left\{\|F_R(s)\|_N+\frac{|H_R(s)|}{R_\delta^2}\right\}
+ \le C\lambda_\delta B.                         \label{eq:proof-outer-clock-seed-normal-sources}
+\end{align}
+After subtraction of the derivative at zero, the two left sides obey the
+same estimate with
+\[
+ C\lambda_\delta^2(B+\widetilde B)
+       |\beta-\widetilde\beta|/\Lambda_{R,\delta}
+\]
+on the right.  This calculation is the outer-scale version of
+\cref{eq:proof-fixed-envelope-bulk-remainder,%
+eq:proof-fixed-envelope-boundary-terminal-remainder}; the only new
+terms are \(\mathcal C_{\rm clk,\beta}\), and both their current and
+delayed pieces contain one of the normalized differences in
+\cref{eq:proof-outer-clock-relative-clock-ledger}.
+
+The phase row is zero by the definition of \(c_R^0\).  The entry and
+slack rows are zero by
+\cref{eq:proof-outer-clock-seed-support} and the definition of
+\(\iota_\phi\).  On the endpoint plateau every endpoint delay foot is on
+the same plateau, so the physical speed row has the same bounds as the
+terminal scalar source.  The terminal history is an actual observation
+by \cref{eq:terminal-clock-history-fixed}.  Combining these facts with
+\cref{eq:proof-outer-clock-total-source-seam,%
+eq:proof-outer-clock-seed-normal-sources} proves membership and both
+estimates for \(\mathbb G_R^0\).
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:exact-outer-clock-phase-collar}]
+Set
+\begin{equation}
+ \mathcal H_R(w,\beta)
+ =\operatorname{pr}_{\rm up}\mathscr S_R
+ \mathbb F_{r,R}^{\rm clk,aug}
+       (\iota_\phi c_R^0(\beta)+w,\beta).        \label{eq:proof-outer-clock-upper-collar-map}
+\end{equation}
+Then
+\[
+ \mathcal H_R(0,\beta)=\mathbb G_R^0(\beta),
+ \qquad
+ D_w\mathcal H_R(0,0)=L_{*,R}^{\rm ea}.
+\]
+The second identity follows because \(c_R^0(0)=0\), the hard split is
+fixed, and the range shear is precisely the one in
+\cref{eq:long-window-event-aligned-isomorphism}.
+
+We prove the uniform nonlinear estimate needed to solve
+\(\mathcal H_R(w,\beta)=0\).  Put
+\begin{align*}
+ B&=\frac{|\beta|}{\Lambda_{R,\delta}},&
+ \widetilde B&=\frac{|\widetilde\beta|}{\Lambda_{R,\delta}},\\
+ W&=\|w\|_{\mathcal X_{r,R}^{\rm up,1}},&
+ \widetilde W&=\|\widetilde w\|_{\mathcal X_{r,R}^{\rm up,1}},\\
+ W_{\!d}&=\|w-\widetilde w\|_{\mathcal X_{r,R}^{\rm up,1}},&
+ \Delta&=W_{\!d}
+       +\frac{|\beta-\widetilde\beta|}{\Lambda_{R,\delta}}.
+\end{align*}
+Then let
+\[
+ \mathcal Q_R^{\rm up}(w,\beta)
+ =\mathcal H_R(w,\beta)-\mathcal H_R(0,0)
+      -D_w\mathcal H_R(0,0)w-D_\beta\mathcal H_R(0,0)\beta.
+\]
+On a fixed product ball,
+\begin{equation}
+ \|\mathcal Q_R^{\rm up}(w,\beta)
+       -\mathcal Q_R^{\rm up}(\widetilde w,\widetilde\beta)\|_
+          {\mathcal Y_{r,R}^{\rm up,0}}
+ \le C(B+\widetilde B+W+\widetilde W)\Delta.     \label{eq:proof-outer-clock-upper-two-point}
+\end{equation}
+
+Here is the ledger for the only nonstandard part of this estimate.  Write
+the total phase as
+\[
+ a=c_R^0(\beta)+\widetilde a,
+\]
+where \(\widetilde a\) is the hybrid phase component of \(w\).  The pure
+clock row at \(\widetilde a=0\) vanishes exactly.  Every remaining phase
+monomial therefore contains \(\widetilde a\), a normal component of
+\(w\), or their difference.  Pointwise one uses
+\begin{equation}
+ |\widetilde a|\le\rho_\delta W,\qquad
+ |q_0^2\widetilde a'|\le m_\delta W,\qquad
+ |c_R^0|\le CR_\delta\lambda_\delta B,\qquad
+ |(c_R^0)'|\le C\lambda_\delta B.               \label{eq:proof-outer-clock-cross-phase-scales}
+\end{equation}
+For the hybrid primitive, terms containing
+\((c_R^0)'\widetilde a\) or
+\(c_R^0\widetilde a'\) are kept together and integrated by parts.
+The causal boundary term vanishes because \(c_R^0(e_{r,0})=0\).
+The remaining coefficient derivatives and the clocked delay increments
+give
+\begin{equation}
+ \frac1{\rho_\delta}
+ \sup_r\left|\mathcal P_r
+       \mathcal E_{\phi,R}^{\rm cross}(w,\beta)(r)\right|
+ \le C(B+W)W.                                   \label{eq:proof-outer-clock-cross-prefix}
+\end{equation}
+The worst coefficient integral is controlled by the action-compatible
+ratio
+\begin{equation}
+ \frac{\lambda_\delta R_\delta^2}{\rho_\delta}
+ =2\alpha\varkappa^2
+  +2\alpha\varkappa^3\sqrt\delta\,S_\delta^{7/2}
+ =o_{\rm ord}(1),                              \label{eq:proof-outer-clock-cross-closing-scale}
+\end{equation}
+and the clocked phase-delay remainder retains the factor
+\(c(s)-c(\sigma_{k,\beta}(s))=O(\delta\lambda_\delta B)\).
+Taking differences gives the right side of
+\cref{eq:proof-outer-clock-upper-two-point}.  This is exactly where a
+linear-only clock lift would fail: its pure quadratic primitive would
+instead contain \(R_\delta^2/\rho_\delta\).
+
+For the normal rows use, at each fixed \(\beta\), the shifted quantities
+in \cref{eq:proof-outer-clock-fixed-beta-shift} and the exact groupings
+\cref{eq:proof-outer-clock-speed-regrouping,%
+eq:proof-outer-clock-scalar-regrouping}.  They use \(P_\beta\) and
+\(\Pi_\beta\) formed from the same feet.  We isolate the two estimates
+which fail on the larger geometric clock scale.  The clock/seed
+coefficient displacement and a strong normal direction satisfy, pointwise
+on the preterminal bulk part,
+\begin{equation}
+ |\Delta_\beta A(s)|
+      \le C|r_*(s)|\lambda_\delta B,
+ \qquad |Q_w^\sharp(s)|\le C|r_*(s)|W,
+ \qquad
+ \frac{\varepsilon|\Delta_\beta A|\,|Q_w^\sharp|}
+      {\varepsilon\lambda_\delta|r_*|^2}
+ \le CBW.                                      \label{eq:proof-outer-clock-hostile-bulk-cross}
+\end{equation}
+The second estimate is the algebraic delay-row sharpening behind
+\cref{eq:normal-phase-pointwise-Q,eq:proof-fixed-envelope-bulk-speed-sharpening},
+now applied to an arbitrary strong direction.  For its normal component,
+\cref{eq:normal-phase-pointwise-Q} gives
+\begin{equation}
+ |Q_y^\sharp(r)|
+ \le C\{|r|+\varepsilon\mathfrak e_\delta^{\rm hist}\}W
+ \le C|r|W,\qquad
+ \mathfrak e_\delta^{\rm hist}\le\delta^{-2\vartheta},
+                                                        \label{eq:proof-outer-clock-arbitrary-normal-Q}
+\end{equation}
+because
+\(\varepsilon\mathfrak e_\delta^{\rm hist}
+ \le\delta^{2-2\vartheta}\le C\rho_\delta\le C|r|\)
+on the retained wedge.  Denote the phase component by \(a_w\), split off
+its raw entry
+collar and apply
+\cref{eq:structured-phase-state-bound,eq:speed-projected-phase-bounds,eq:piecewise-kinetic-bound}
+to the zero-entry remainder; the entry term uses
+\(m_\delta(r)\rho_\delta\le C|r|\).  Finally the clocked phase-delay
+increment satisfies
+\begin{equation}
+ |P_\beta[a_w](r)|\le C\delta m_\delta(r)W
+       \le C|r|W.                                \label{eq:proof-outer-clock-arbitrary-phase-P}
+\end{equation}
+These three estimates give \(|Q_w^\sharp(r)|\le C|r|W\) without a false
+\(\lambda_\delta\)-kinetic bound on \(w\).  On the terminal summand
+\(|r_*|\asymp R_\delta\), giving the same estimate in its natural
+normalization.
+For the phase prefix, the corresponding coefficient obeys
+\(|\Delta_\beta\ell_N(s)|\le C|r_*(s)|\lambda_\delta B\), while the swept
+normal estimate gives \(|Z_w(s)|\le C\varepsilon W\).  Consequently,
+integrating from the causal entry to \(r\),
+\begin{equation}
+ \frac1{\rho_\delta}
+ \sup_r\left|\mathcal P_r
+   [\varepsilon^{-1}\Delta_\beta\ell_N\,Z_w](r)\right|
+ \le C\frac{\lambda_\delta R_\delta^2}{\rho_\delta}BW
+ \le CBW.                                      \label{eq:proof-outer-clock-hostile-prefix-cross}
+\end{equation}
+The final inequality is precisely
+\cref{eq:proof-outer-clock-cross-closing-scale}.  Applying the segment
+identity between \((w,\beta)\) and
+\((\widetilde w,\widetilde\beta)\) gives the same bounds with
+\(BW\) replaced by
+\((B+\widetilde B+W+\widetilde W)\Delta\).
+
+For two clock values, value compositions are compared by the telescoping
+identity
+\begin{align}
+ &u(\sigma_{k,\beta})-u(\,\cdot-\theta_k)
+ -\widetilde u(\sigma_{k,\widetilde\beta})
+ +\widetilde u(\,\cdot-\theta_k)\notag\\
+ &\quad=
+ (u-\widetilde u)(\sigma_{k,\beta})
+ -(u-\widetilde u)(\,\cdot-\theta_k)
+ +\widetilde u(\sigma_{k,\beta})
+ -\widetilde u(\sigma_{k,\widetilde\beta}).     \label{eq:proof-outer-clock-composition-telescope}
+\end{align}
+Before range normalization, the first pair costs the strong \(C^1\)
+difference times \(\lambda_\delta B\), and the second costs the strong
+\(C^1\) size times
+\(\lambda_\delta|\beta-\widetilde\beta|/\Lambda_{R,\delta}\).
+The worst bulk range normalization removes this one
+\(\lambda_\delta\), leaving exactly the factors in
+\cref{eq:proof-outer-clock-upper-two-point}.
+No derivative of a translation on an \(L^\infty\) ball occurs.  Nor is
+\(\partial_sP_\beta\) differentiated with respect to \(\beta\):
+\(p_\beta^\sharp\) is only a fixed-\(\beta\) algebraic device.  The
+residual itself remains in the physical \(p\)-coordinate and is
+\(C^0\) on the long window.
+
+The bulk and terminal normalizations now give the two lines in
+\cref{eq:proof-outer-clock-seed-normal-sources} with the right side in
+\cref{eq:proof-outer-clock-upper-two-point}.  The total-source-first
+construction gives the seam identity
+\cref{eq:proof-outer-clock-total-source-seam}.  The finite rows use the
+terminal trace in the strong norm, and the entry and slack rows are
+affine.  This proves
+\cref{eq:proof-outer-clock-upper-two-point} and also proves that
+\(\mathcal H_R\) is \(C^1\) from the fixed product chart into the stated
+range.  Pointwise Fr\'echet differentiability of
+\((u,\beta)\mapsto u\circ\sigma_{k,\beta}\) is from \(C^1\) to \(C^0\);
+the explicit telescope supplies the uniform two-point estimate.
+
+Let
+\[
+ A_R^{\rm up}
+ =-\bigl(L_{*,R}^{\rm ea}\bigr)^{-1}
+       D_\beta\mathbb G_R^0(0).
+\]
+Use \(w=A_R^{\rm up}\beta+\widehat w\) and apply the contraction mapping
+to \(\mathcal H_R(w,\beta)=0\).  The base forcing remainder is quadratic
+by \cref{eq:outer-clock-seed-forcing-two-point}, and the nonlinear
+remainder is controlled by
+\cref{eq:proof-outer-clock-upper-two-point}.  Since
+\(\|A_R^{\rm up}\beta\|\le C\lambda_\delta B\), the sharp mixed
+clock--normal contribution is of order
+\(\lambda_\delta B^2\); no second factor of \(\lambda_\delta\) is
+claimed for the collar jet.  After decreasing
+\(c_{\rm seed}\), uniformly, this gives the unique
+\(w_R^0(\beta)\) and both estimates in
+\cref{eq:outer-clock-strong-collar-correction,%
+eq:outer-clock-strong-collar-two-point}.
+
+It remains to identify the event derivative.  Differentiate
+\cref{eq:outer-clock-collar-upper-zero} at zero.  The relative seed
+derivative in
+\cref{eq:outer-clock-relative-linear-seed}, together with
+\(Dw_R^0(0)\), is the coordinate representation of the classical clock
+tangent
+\begin{equation}
+ D\mathcal Y_*
+   D\mathfrak C_R(0)(s)
+ =\frac{\chi_{R,\delta}(s)}{\delta}Y_*'(s).      \label{eq:proof-outer-clock-collar-tangent}
+\end{equation}
+We justify the strong-space identification rather than assuming it.
+For each fixed \(\delta\), the right side is a classical tangent in the
+unscaled coordinate chart.  Its phase coordinate belongs to the relative
+space with norm \(O(R_\delta^{-1})\), because
+\(|r_*|\asymp R_\delta\) on the clock support and the clock is zero at
+the entry.  Subtract the phase-only seed derivative
+\(a_{R,*}^{\rm seed}\).  The exact commutator shows that the remaining
+unscaled coordinate tangent solves
+\begin{equation}
+ L_{*,R}^{\rm ea}w=-D_\beta\mathbb G_R^0(0).     \label{eq:proof-outer-clock-bootstrap-equation}
+\end{equation}
+The right side belongs to
+\(\mathcal Y_{r,R}^{\rm up,0}\) by
+\cref{eq:outer-clock-seed-forcing-two-point}.  Therefore
+\cref{eq:long-window-event-aligned-isomorphism} produces a strong
+solution of \cref{eq:proof-outer-clock-bootstrap-equation}.  Uniqueness
+of the original unscaled linear boundary-value problem identifies it
+with the classical difference and hence with \(Dw_R^0(0)\).  Thus the
+strong membership in
+\cref{eq:proof-outer-clock-collar-tangent} is bootstrapped through the
+range estimate; no long-window base \(C^2\) estimate is assumed.
+
+At the terminal
+plateau,
+\[
+ DE_R(Y_*)\frac{Y_*'}{\delta}
+ =\frac{r_*'(S_*)}{\delta q_0(-R_\delta)}=1.
+\]
+Thus \(D e_R^{\rm col}(0)=1\).  The terminal strong trace, the
+relative-seed two-point estimate, and
+\cref{eq:proof-outer-clock-upper-two-point} give the remaining event
+bounds in \cref{eq:outer-clock-collar-event-two-point}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:exact-nonlinear-outer-clock-residual}]
+The collar identity gives, exactly,
+\begin{equation}
+ \widehat{\mathbb F}_{r,R}^{\rm clk}(0,\beta)
+ =\bigl(0,e_R^{\rm col}(\beta)\bigr).            \label{eq:proof-outer-clock-pure-collar-residual}
+\end{equation}
+At \(\beta=0\), the collar is zero and the exact endpoint base is a zero,
+which proves the first identity in
+\cref{eq:outer-clock-nonlinear-linearization}.  Differentiation in \(w\)
+gives \((L_{*,R}^{\rm ea}w,\ell_*w)\); differentiation in \(\beta\)
+uses \cref{eq:outer-clock-collar-event-two-point} and gives \((0,\beta)\).
+This proves the triangular differential in
+\cref{eq:outer-clock-nonlinear-linearization}.  The change from the
+geometric event scale to the action scale does not hide a bad border.
+Indeed, the terminal hybrid trace and
+\cref{eq:outer-clock-action-scale-ledger} give
+\begin{equation}
+ \frac{|\ell_*w|}{\Lambda_{R,\delta}}
+ \le \frac{\rho_\delta}{\Lambda_{R,\delta}}
+       \|\ell_*w\|_{\mathbb R_{\rho_\delta}}
+ \le C\|w\|_{\mathcal X_{r,R}^{\rm up,1}},       \label{eq:proof-outer-clock-action-event-border}
+\end{equation}
+whereas
+\(\|K_Rb\|_{\mathcal Y_{r,R}^{\rm up,0}}
+ \le C|b|/R_\delta
+ =C\lambda_\delta|b|/\Lambda_{R,\delta}\).
+Together with \cref{eq:long-window-strong-inverse-bound}, these estimates
+make the triangular differential and its inverse uniform.
+
+For completeness, we verify that no larger space is hidden in the
+nonlinear assertion.  On the long window, the collar belongs to the
+fixed relative phase tube and its strong correction belongs to
+\(\mathcal X_{r,R}^{\rm up,1}\).  Adding \(w\) in the ball
+\cref{eq:outer-clock-aligned-ball} preserves the same-sign phase tube and
+the \(C^1\) swept normal tube.  Thus the composition in
+\cref{eq:outer-clock-unsplit-row} is \(C^1\) into \(C^0\).
+The total row is continuous, and the fixed split places it in
+\(\widetilde{\mathsf Y}_{r,R}^{\rm tot,0}\).  All other rows are the
+already typed boundary and finite observations.  This proves
+well-definedness and \(C^1\) range membership.
+
+Subtract the triangular differential.  The pure-collar part is bounded
+by \cref{eq:outer-clock-collar-event-two-point}.  The terms containing
+at least one \(w\) are exactly the cross and state remainders estimated
+in the proof of
+\cref{eq:proof-outer-clock-upper-two-point}; the event component uses the
+same terminal \(C^1\) trace.  Hence
+\[
+ \|\Delta\mathbb Q_{r,R}^{\rm clk}\|
+ \le C(B+\widetilde B+W+\widetilde W)
+       \left\{W_{\!d}
+          +\frac{|\beta-\widetilde\beta|}
+                 {\Lambda_{R,\delta}}\right\},
+\]
+which is \cref{eq:outer-clock-nonlinear-two-point}.
+
+Let \(\mathbb B_R\) denote the triangular differential in
+\cref{eq:outer-clock-nonlinear-linearization} and let \(M_R\) be a common
+bound for \(\mathbb B_R^{-1}\).  For \(d\) in a sufficiently small fixed
+range ball, solve
+\begin{equation}
+ z=\mathbb B_R^{-1}
+       \{d-\mathbb Q_{r,R}^{\rm clk}(z)\}.       \label{eq:proof-outer-clock-rhs-contraction}
+\end{equation}
+\Cref{eq:outer-clock-nonlinear-two-point} makes the right-hand
+side a contraction on the ball
+\(\|z\|_{R,\rm clk}\le2M_R\|d\|\), after decreasing
+\(r_{R,0}\) and \(r_{R,1}\) uniformly.  It gives
+\cref{eq:outer-clock-local-solution-map,%
+eq:outer-clock-local-solution-bound} and uniqueness.  The ordinary
+Banach-space implicit-function theorem, now in the fixed aligned chart,
+gives \(C^1\) dependence on \(d\).
+
+Finally, the free-history interface row has been retained throughout.
+At a zero it uniquely gives the actual terminal history; eliminating that
+variable only after the contraction is therefore a bijection between the
+augmented and reduced zero sets.  At no point was a value of the fixed
+unknown evaluated to the right of \(S_*\).
+\end{proof}
+
 \begin{proof}[Proof of \cref{lem:moving-r-event-preimage}]
 Consider
 \begin{equation}
