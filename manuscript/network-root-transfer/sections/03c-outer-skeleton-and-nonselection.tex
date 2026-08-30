@@ -11099,6 +11099,421 @@ bound.  When \(\theta_m=0\), the norm comparison is tautological and the
 same lower-action proof applies after deleting the cap term.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:repelling-generated-core-coefficient-ledger}]
+The speed bounds and the generated delay collar are
+\cref{eq:proof-repelling-core-speed-bounds,%
+eq:repelling-generated-core-hits}.  Since \(r_*\) is strictly monotone,
+it has a \(C^1\) inverse \(s_*(r)\) on the core.  Method-of-steps
+smoothing after the \(M+2\) reserved delays gives the regularity required
+to write the exact segment as the displayed \(r\)-graph.  Substitution
+in the unmodified shared-resource RFDE is precisely the equivalence in
+\cref{prop:exact-outer-history-equation}.  We verify the remaining
+nonvanishing hypothesis for the exact quotient below.
+
+The comparison \(a_*(s)\asymp|r_*(s)|\) follows from
+\cref{eq:proof-repelling-core-a-comparison}.  For
+\(-\theta_m\le\theta\le0\),
+\[
+ |r_*(s+\theta)-r_*(s)|\le q_+\delta\theta_m.
+\]
+On \(I_*^-\), the smallest radius is comparable to
+\(\rho_{b,\delta}=c_b\delta S_\delta/(2\alpha)\).
+Thus the relative difference above is \(O(S_\delta^{-1})\), proving the
+delay comparison in
+\cref{eq:generated-core-local-geometry}.
+
+Write
+\[
+ V_*(r)=\mathbf1+r\mathbf1+z_{0,N}(r)+Z_*(r).
+\]
+The fixed-envelope kinetic tube
+\cref{eq:proof-fixed-envelope-kinetic-tube}, including its explicit
+pre-terminal form \cref{eq:proof-fixed-envelope-bulk-state}, the clock-lift estimate
+\cref{eq:proof-slow-clock-normal-shear}, the aligned remainder bound
+\cref{eq:short-clock-zero-bound}, and
+\(\lambda_\delta\le Cb\) from
+\cref{eq:joint-diagonal-small-scales} give
+\begin{equation}
+ \sup_{I_*^-}\|Z_*(r_*(s))\|_N\le C\varepsilon b.            \label{eq:proof-generated-core-normal-size}
+\end{equation}
+Writing \(\Delta\mathcal D_*\) for the delay increment evaluated on the
+exact graph, the individual terms in
+\cref{eq:nonlinear-tracker-Z-normal-form} give the explicit derivative
+ledger
+\begin{align}
+ \varepsilon |q_*|\,\|Z_*'\|_N
+ &\le C\left\{\|Z_*\|_N+|r|\,|p_*|+\|R_{z,N}\|_N
+       +\varepsilon\|\Delta\mathcal D_*\|_N+\|Z_*\|_N^2\right\}
+ \le C\varepsilon.                              \label{eq:proof-generated-core-Z-prime-ledger}
+\end{align}
+The exact normal equation
+\cref{eq:nonlinear-tracker-Z-normal-form}, with the same kinetic bounds,
+then gives a common bound for \(Z_*'\); together with
+\cref{eq:outer-critical-high-regularity}, this proves the first line of
+\cref{eq:generated-core-graph-derivatives}.
+
+The shared-resource identity in the exact graph equation is
+\begin{equation}
+ q_*(r)w_*'(r)=r-\varepsilon\nu.                \label{eq:proof-generated-core-resource-identity}
+\end{equation}
+Because \(|r|\ge c\rho_\delta\), one has
+\(\varepsilon/|r|\le C\delta/S_\delta=o(1)\).
+The uniform speed margins therefore prove the two-sided \(w_*'\) bound.
+They also show that \(w_*'\) never vanishes, as required by
+\cref{prop:exact-resource-gauge-quotient}.
+
+The current matrix in the exact quotient is obtained from the frozen
+matrix by replacing the critical voltage
+\(r\mathbf1+z_{0,N}(r)\) by that voltage plus \(Z_*(r)\).
+The diagonal polynomial derivative is uniformly Lipschitz on the
+structural ball.  Hence
+\cref{eq:proof-generated-core-normal-size} gives
+\cref{eq:generated-core-current-difference}.  The definitions
+\cref{eq:resource-gauge-center-history,eq:resource-gauge-h}, the speed
+ratio, the bound for \(V_*'\), the delay-radius comparison, and the
+\(w_*'\) lower bound give
+\cref{eq:generated-core-resource-quotient-coefficients}.
+
+We prove the moving-weight Volterra estimate explicitly.  Action
+additivity gives, for \(\theta\le\sigma\le0\),
+\[
+ \mathscr A_*(s,s+\theta)
+ =\mathscr A_*(s,s+\sigma)
+   +\mathscr A_*(s+\sigma,s+\theta).
+\]
+Using also \(|r_*(s+\sigma)|\asymp|r_*(s)|\), one obtains
+\begin{align*}
+ &e^{-2\mathscr A_*(s,s+\theta)}
+   \|(\mathcal K_s\phi)(\theta)\|_N\\
+ &\quad\le
+ \frac{C\delta}{|r_*(s)|}
+ \int_\theta^0
+ e^{-2\mathscr A_*(s+\sigma,s+\theta)}
+ \left[
+ e^{-2\mathscr A_*(s,s+\sigma)}
+       \|\phi(\sigma)\|_N\right]\dd\sigma\\
+ &\quad\le
+ C\frac{\delta}{|r_*(s)|}\|\phi\|_{s,\sharp}.
+\end{align*}
+This is \cref{eq:generated-core-moving-volterra}.  Notice that the
+Volterra integral itself pays no fading-norm loss; a later delayed
+evaluation may pay the separate factor
+\(e^{2\mathscr A_*(s,s-\theta_k)}
+\le\delta^{-2\vartheta_*}\).
+
+It remains to construct the current frame and total budget.  In the
+collective/transverse coordinates used in the proof of
+\cref{prop:unprepared-outer-skeleton}, let \(L_N(r)\) be the stable graph
+and set
+\[
+ T_N(r)(h,a)
+ =L_N(r)h\,\mathbf1+h+a\,e_{c,N}(r),
+ \qquad h\in E_N,\quad a\in\mathbb R.
+\]
+The graph equations and
+\cref{eq:outer-eigen-from-graphs,%
+eq:outer-stable-generator-perturbation}
+show that \(T_N\) block diagonalizes the current matrix as in
+\cref{eq:generated-core-current-frame}.  Their uniform finite
+derivatives and the stable semigroup estimate prove all frame and block
+bounds in
+\cref{eq:generated-core-current-block-rates}.  Along the exact path,
+\[
+ \|T_N(r_*)^{-1}\partial_sT_N(r_*)\|
+ \le C|r_*'|\le C\delta.
+\]
+Since \(a_*(s)\ge c|r_*(s)|\ge c\delta S_\delta\), this proves
+\cref{eq:generated-core-frame-number}.
+
+The same lower bound and \(\varepsilon=\delta^2\) give, term by term,
+\begin{align*}
+ \frac{\varepsilon b}{a_*}
+ &\le C\frac{\delta b}{S_\delta},&
+ \frac{\delta^2}{a_*}\delta^{-2\vartheta_*}
+ &\le C\frac{\delta^{1-2\vartheta_*}}{S_\delta},\\
+ \frac{\delta^3}{a_*^2}\delta^{-2\vartheta_*}
+ &\le C\frac{\delta^{1-2\vartheta_*}}{S_\delta^2},&
+ \frac{\delta^2}{a_*^2}
+ &\le\frac{C}{S_\delta^2}.
+\end{align*}
+The omitted unweighted part of the second term is smaller than its
+displayed weighted part.  Adding the frame number proves
+\cref{eq:generated-core-contraction-closes}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:repelling-generated-core-normal-dichotomy}]
+We work with current trajectories and reassemble their histories only
+after the estimates.  This avoids treating evaluation at the RFDE
+boundary as a bounded point injection into \(\mathscr X_N\).
+
+Put \(T(s)=T_N(r_*(s))\) and write \(u(s)=T(s)v(s)\).  For a history
+\(\phi\), use the time-dependent bounded coordinate map
+\[
+ (\mathcal T_s\phi)(\theta)
+ =T(s+\theta)^{-1}\phi(\theta).
+\]
+The frame bounds and
+\cref{eq:repelling-core-history-norm-comparison} make
+\(\mathcal T_s\) and its inverse uniformly bounded in the moving history
+norms.  In these coordinates,
+\cref{eq:generated-core-quotient-forced} is
+\begin{equation}
+ v'(s)=\delta^{-1}
+ \begin{pmatrix}S_N^s(r_*(s))&0\\0&\lambda_{c,N}(r_*(s))\end{pmatrix}v(s)
+ +\widetilde{\mathcal R}_*(s)v_s+\widetilde f(s),            \label{eq:proof-generated-core-frame-equation}
+\end{equation}
+where \(\widetilde{\mathcal R}_*\) is the conjugate of
+\(\mathcal R_*\), together with the current multiplication
+\(-T^{-1}T'\).  Thus the latter term is not discarded as a formal
+coordinate derivative.
+
+We first construct the current Green kernel for the diagonal part.
+The stable block is a dimension-uniform \(O(r_{\rm out})\) perturbation
+of \(A_N\).  Variation of constants, after the already ordered decrease
+of \(r_{\rm out}\), gives its nonautonomous evolution \(U_0^s(s,t)\) with
+\begin{equation}
+ \|U_0^s(s,t)\|\le Ce^{-c(s-t)/\delta},
+ \qquad s\ge t.                                  \label{eq:proof-generated-core-current-stable}
+\end{equation}
+The scalar block has the explicit evolution
+\[
+ U_0^u(s,t)
+ =\exp\left\{\int_t^s
+       \frac{\lambda_{c,N}(r_*(\zeta))}{\delta}\,\dd\zeta\right\}.
+\]
+Its inverse is used only when \(s<t\).  With
+\begin{equation}
+ \mathscr M_*(s,t)
+ =\int_t^s\frac{a_*(\zeta)}{\delta}\,\dd\zeta,
+ \qquad s\ge t,                                  \label{eq:proof-generated-core-uncapped-action}
+\end{equation}
+\cref{eq:generated-core-current-block-rates} and
+\cref{eq:proof-generated-core-current-stable} give the mixed current
+kernel
+\begin{equation}
+ G_0(s,t)=
+ \begin{cases}
+  \diag(U_0^s(s,t),0),&t\le s,\\
+  -\diag(0,U_0^u(s,t)),&t>s,
+ \end{cases}                                     \label{eq:proof-generated-core-current-green}
+\end{equation}
+with
+\begin{equation}
+ \|G_0(s,t)\|
+ \le C
+ \begin{cases}
+  e^{-c\mathscr M_*(s,t)},&t\le s,\\
+  e^{-c\mathscr M_*(t,s)},&t>s.
+ \end{cases}                                     \label{eq:proof-generated-core-current-green-bound}
+\end{equation}
+Here and below the second diagonal entry for \(t>s\) means the inverse
+on its scalar line.
+
+The source normalization is exact for this kernel.  If
+\(F_*=\|f\|_{\mathcal F_*}\), then
+\(\|f(t)\|\le a_*(t)F_*/\delta\), while
+\[
+ \int_{s_b}^s e^{-c\mathscr M_*(s,t)}
+       \frac{a_*(t)}{\delta}\,\dd t\le C,
+ \qquad
+ \int_s^{S_*}e^{-c\mathscr M_*(t,s)}
+       \frac{a_*(t)}{\delta}\,\dd t\le C.
+                                                        \label{eq:proof-generated-core-source-integrals}
+\]
+These are changes of variable by the derivative of
+\(\mathscr M_*\); no freezing of \(a_*\) and no interval-length factor
+is involved.
+
+We now impose the square entry and terminal coordinates.  Transform
+\(\psi_b\) to the frame and let \(v_b^s\) be its stable current
+coordinate at \(\theta=0\).  For a candidate current path \(v\), let
+\(a_v\) be the scalar current coordinate of \(v(s_b)\), and define its
+old collar in physical coordinates by
+\begin{equation}
+ \widehat u_v(s_b+\theta)
+ =\psi_b(\theta)+(\jmath_b^ua_v)(\theta),
+ \qquad-\theta_m\le\theta\le0,                  \label{eq:proof-generated-core-compatible-collar}
+\end{equation}
+while \(\widehat u_v(s)=T(s)v(s)\) for \(s\ge s_b\).  At
+\(\theta=0\) the two definitions agree exactly whenever the current
+fixed-point equation below holds.  Thus the collar prescribes the history
+modulo one unstable coordinate and does not add a second boundary row.
+
+On current paths define
+\begin{align}
+ (\mathfrak T v)(s)
+ ={}&U_0^s(s,s_b)v_b^s
+     +U_0^u(s,S_*)b_u\notag\\
+ &+\int_{s_b}^{S_*}G_0(s,t)
+   \left\{T(t)^{-1}
+      \mathcal R_*(t)(\widehat u_v)_t
+      -T(t)^{-1}T'(t)v(t)
+      +T(t)^{-1}f(t)\right\}\dd t .             \label{eq:proof-generated-core-fixed-point}
+\end{align}
+The first term is inserted only in the stable block and the second only
+in the scalar block.  Consequently its stable coordinate at \(s_b\) is
+\(v_b^s\), its terminal scalar coordinate is \(b_u\), and its remaining
+entry scalar is exactly the \(a_v\) used in
+\cref{eq:proof-generated-core-compatible-collar}.
+
+Use the trajectory norm obtained from
+\cref{eq:generated-core-solution-norm}, including the prescribed collar
+when a delay foot precedes \(s_b\).  The one-delay action bound gives
+\[
+ \|\phi(-\theta_k)\|_N
+ \le\delta^{-2\vartheta_*}\|\phi\|_{s,\sharp}.
+\]
+The ordinary delay row, the moving Volterra estimate, the rank-one
+resource row, and the current coefficient difference then give
+\begin{align}
+ \frac{\delta}{a_*(s)}
+ \|\mathcal R_*(s)\|_{s,\sharp\to N}
+ \le C\biggl\{
+ &\frac{\varepsilon b}{a_*(s)}
+ +\frac{\delta^2}{a_*(s)}
+       (1+\delta^{-2\vartheta_*})\notag\\
+ &+\frac{\delta^3}{a_*(s)^2}\delta^{-2\vartheta_*}
+ +\frac{\delta^2}{a_*(s)^2}\biggr\}.            \label{eq:proof-generated-core-remainder-number}
+\end{align}
+The frame multiplication contributes
+\(\eta_{\rm fr}\).  Combining
+\cref{eq:proof-generated-core-current-green-bound,%
+eq:proof-generated-core-source-integrals,%
+eq:generated-core-contraction-closes}
+therefore yields
+\begin{equation}
+ \|\mathfrak Tv-\mathfrak T\widetilde v\|_{\mathcal X_*}
+ \le C\{\eta_{\rm core}+\eta_{\rm fr}\}
+       \|v-\widetilde v\|_{\mathcal X_*}.        \label{eq:proof-generated-core-contraction}
+\end{equation}
+Decrease the joint wedge so that the coefficient is at most \(1/2\).
+The same estimates bound the affine stable, unstable, source, and collar
+terms.  Banach's fixed-point theorem produces a unique current path and
+then the compatible history
+\(\widehat u_v\).  Formula
+\cref{eq:proof-generated-core-fixed-point} gives
+\cref{eq:generated-core-mixed-green-bound}.
+Conversely, projecting any solution of
+\cref{eq:generated-core-quotient-forced} onto the two current blocks and
+applying variation of constants recovers
+\cref{eq:proof-generated-core-fixed-point}; hence the constructed
+solution is the unique solution of the mixed problem.  This proves
+surjectivity and injectivity.  The equation supplies the asserted local
+\(W^{1,\infty}\) regularity and the graph norm makes the operator closed.
+All estimates use only the common lower radius on \(I_*\), so the same
+construction applies, with no changed constant, on every
+\([t_0,t_1]\subset I_*\), using the instantaneous entry graph coordinate
+and terminal covector.
+
+For completeness, we obtain the bundle estimates without appealing to a
+backward history evolution.  Repeat the same fixed-point argument in the
+two norms
+\begin{align*}
+ \|u\|_{+,t}
+ &=\sup_{t\le s\le S_*}
+ e^{c_0\mathscr A_*(s,t)}\|u_s\|_{s,\sharp},\\
+ \|u\|_{-,t}
+ &=\sup_{s_b\le s\le t}
+ e^{c_0\mathscr A_*(t,s)}\|u_s\|_{s,\sharp}.
+\end{align*}
+Choose \(c_0>0\) so small that
+\((2+c_0)\vartheta_*<2\vartheta\).  The unused fading margin then absorbs
+the extra one-delay weight, and the contraction number still tends to
+zero.  With \(\Lambda_t\) and \(\mathfrak h^u\) defined in
+\cref{eq:generated-core-bundle-definitions}, uniqueness gives
+\[
+ \Lambda_t\mathfrak h_t^u=1,\qquad
+ \mathcal V_*^{\rm q}(s,t)E_*^s(t)\subset E_*^s(s),
+ \qquad
+ \mathcal V_*^{\rm q}(s,t)E_*^u(t)=E_*^u(s).
+\]
+We next prove that the terminal-normalized unstable solution has no
+vanishing current scalar, without comparing it over the whole core to an
+unperturbed orbit.  Write its moving-frame current as
+\(v^u(s)=(\zeta^u(s),a(s))\) and put
+\(\eta_*=\eta_{\rm core}+\eta_{\rm fr}\).  For any
+\(t\in(s_b,S_*]\), apply the already proved subinterval mixed inverse on
+\([s_b,t]\) with zero source, zero entry graph coordinate, and terminal
+datum \(a(t)\).  Uniqueness identifies that solution with the restriction
+of \(\mathfrak h^u\), and hence
+\begin{equation}
+ \sup_{s_b\le s\le t}\|\mathfrak h_s^u\|_{s,\sharp}
+ \le C|a(t)|.                                  \label{eq:proof-generated-core-local-unstable-control}
+\end{equation}
+If \(a(t)=0\), this mixed solution is identically zero through time
+\(t\); forward uniqueness for the RFDE would then make its terminal
+normalization zero, a contradiction.  Thus \(a(t)\ne0\) for every
+\(t>s_b\).  At \(t=s_b\), the same conclusion follows directly from
+\(\Gamma_b\mathfrak h_{s_b}^u=0\): if also \(a(s_b)=0\), then the whole
+entry history is zero and forward uniqueness gives the same
+contradiction.  Hence \(a(t)\ne0\) on all of \(I_*\), and
+\(\|\mathfrak h_t^u\|_{t,\sharp}\asymp|a(t)|\).
+
+Division of the scalar remainder by this now-proved nonzero coordinate,
+together with
+\cref{eq:proof-generated-core-local-unstable-control,eq:proof-generated-core-remainder-number},
+defines \(\rho_u\) and gives the exact scalar equation
+\begin{equation}
+ a'(s)=\left\{\frac{\lambda_{c,N}(r_*(s))}{\delta}
+                  +\rho_u(s)\right\}a(s),
+ \qquad
+ |\rho_u(s)|
+ \le C\eta_*
+       \frac{a_*(s)}{\delta}.                  \label{eq:proof-generated-core-unstable-amplitude}
+\end{equation}
+After the final wedge decrease,
+\begin{equation}
+ |a(s)|\ge
+ e^{c\mathscr M_*(s,t)}|a(t)|,\qquad s\ge t.   \label{eq:proof-generated-core-unstable-lower}
+\end{equation}
+The full unstable history norm is already uniformly equivalent to
+\(|a(s)|\) by
+\cref{eq:proof-generated-core-local-unstable-control}; its reverse
+inequality follows from bounded current evaluation and the current
+covector.  Hence
+\cref{eq:proof-generated-core-unstable-lower} proves the inverse estimate
+in \cref{eq:generated-core-dichotomy-bounds}, since
+\(\mathscr A_*(s,t)\le\vartheta_*\mathscr M_*(s,t)\).
+The stable current Green formula, now using the just-proved scalar
+cocycle on every past subinterval, further gives
+\begin{equation}
+ \|\zeta_s^u\|_{s,\sharp}
+ \le C\eta_*|a(s)|.                            \label{eq:proof-generated-core-unstable-stable-graph}
+\end{equation}
+At the entry collar this also follows directly: its current stable
+coordinate at \(s_b\) is zero, while the \(C^1\) frame variation and
+\(|r_*(s_b+\theta)-r_*(s_b)|\le C\delta\) make the older stable-history
+coordinates at most \(C\delta|a(s_b)|\); the joint wedge gives
+\(\delta\le C\eta_*\).
+The positive weighted fixed-point norm gives the stable estimate.  Applied
+on \([t,S_*]\) with terminal scalar zero, it gives a bounded functional
+\(F_t^s:\mathscr K_t\to\mathbb R\) such that
+\begin{align}
+ E_*^s(t)
+ &=\{\psi+\jmath_t^uF_t^s\psi:\psi\in\mathscr K_t\},
+ &\|F_t^s\|&\le C\eta_*,\notag\\
+ g_t^u&=\frac{\mathfrak h_t^u}{a(t)}
+       =\jmath_t^u+\Gamma_tg_t^u,
+ &\|\Gamma_tg_t^u\|_{t,\sharp}&\le C .         \label{eq:proof-generated-core-two-graphs}
+\end{align}
+Here \(\mathscr K_t,\jmath_t^u,\Gamma_t\) are the instantaneous objects
+in \cref{eq:generated-core-subinterval-entry-coordinate}.  The first
+bound is the unstable current component of the same mixed fixed-point
+formula; the second follows from
+\cref{eq:proof-generated-core-local-unstable-control} after current
+normalization.  The full past scalar shape need only be bounded; it is not
+claimed to be \(O(\eta_*)\)-close to the constant boundary right inverse.
+Thus \(E_*^u(t)\) is the complementary graph over the current scalar line,
+and \(\|F_t^s\|\,\|\Gamma_tg_t^u\|<1/2\) after the final wedge decrease.
+Consequently the two graphs are uniformly transverse and the projections
+in \cref{eq:generated-core-bundle-projections} are uniformly bounded.
+Only the scalar current factor in
+\cref{eq:proof-generated-core-current-green} was ever inverted to the
+left.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem

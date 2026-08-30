@@ -8726,6 +8726,276 @@ turn the repelling reference segment into a past-complete orbit.  Those
 steps require the exact resource/phase quotient and a forward entry seam.
 \end{lemma}
 
+\begin{lemma}[Generated-core quotient coefficient ledger]
+\label[lemma]{lem:repelling-generated-core-coefficient-ledger}
+Retain
+\cref{prop:unprepared-outer-skeleton,%
+prop:exact-resource-gauge-quotient,%
+thm:short-clock-original-endpoint-segment,%
+lem:repelling-generated-core-action}
+for the shared-resource law.  Put
+\begin{equation}
+ I_*=[s_b,S_*],\qquad
+ I_*^-=[s_b-\theta_m,S_*],\qquad
+ a_*(s)=\mathfrak a_N(r_*(s)),\qquad
+ b=\mathfrak b_{\delta,\varkappa}.              \label{eq:generated-core-ledger-intervals}
+\end{equation}
+The monotone exact segment, restricted to \(I_*^-\), has an
+\(r\)-graph representation
+\[
+ \mathcal H_*(r)=(V_*(r)_\bullet,w_*(r)),
+ \qquad q_*(r)=\delta^{-1}r_*'(s_*(r)),
+\]
+which satisfies the exact outer graph equations.  The nonvanishing
+resource derivative proved below then makes
+\cref{prop:exact-resource-gauge-quotient} applicable.  Uniformly on the
+retained joint wedge,
+\begin{align}
+ c_a|r_*(s)|\le a_*(s)&\le C_a|r_*(s)|,\notag\\
+ -q_+\le q_*(r_*(s))&\le-q_-<0,\notag\\
+ \frac12|r_*(s)|\le |r_*(s+\theta)|
+ &\le2|r_*(s)|,
+ &&\substack{s\in I_*,\ -\theta_m\le\theta\le0,\\
+             s+\theta\in I_*^-},               \label{eq:generated-core-local-geometry}\\
+ \sup_{I_*^-}\|V_*'(r_*(s))\|_N&\le C,\notag\\
+ c_w|r_*(s)|\le |w_*'(r_*(s))|
+ &\le C_w|r_*(s)|,
+ &&s\in I_*^-.                                  \label{eq:generated-core-graph-derivatives}
+\end{align}
+The \(q_*\)-line in
+\cref{eq:generated-core-local-geometry} holds on all of \(I_*^-\);
+the \(a_*\)-comparison is used on \(I_*\).
+
+Let \(\mathcal J_*(s)\), \(H_s\), \(h_s\), and \(\mathcal K_s\) be the
+exact quotient coefficients in
+\cref{eq:resource-gauge-current-matrix,%
+eq:resource-gauge-h,eq:resource-gauge-volterra}.
+Then, for \(s\in I_*\),
+\begin{align}
+ \|\mathcal J_*(s)
+       -\mathcal J_N^{\rm fv}(r_*(s))\|
+ &\le C\varepsilon b,                            \label{eq:generated-core-current-difference}\\
+ |r_*(s)|\left\{\|H_s\|_N
+       +\sup_{-\theta_m\le\theta\le0}
+          \|h_s(\theta)\|_N\right\}
+ &\le C,                                         \label{eq:generated-core-resource-quotient-coefficients}\\
+ \|\mathcal K_s\|_
+  {\mathcal L((\mathscr X_N,\|\cdot\|_{s,\sharp}),
+              (\mathscr X_N,\|\cdot\|_{s,\sharp}))}
+ &\le C\frac{\delta}{|r_*(s)|}
+ \le C\frac{\delta}{a_*(s)}.                    \label{eq:generated-core-moving-volterra}
+\end{align}
+
+There is a dimension-uniform \(C^2\) current spectral frame
+\begin{equation}
+ T_N(r):E_N\times\mathbb R\longrightarrow\mathbb R^N,
+ \qquad
+ T_N(r)^{-1}\mathcal J_N^{\rm fv}(r)T_N(r)
+ =\begin{pmatrix}S_N^s(r)&0\\0&\lambda_{c,N}(r)\end{pmatrix}, \label{eq:generated-core-current-frame}
+\end{equation}
+such that \(T_N,T_N^{-1},\partial_rT_N\) are uniformly bounded,
+\[
+ \|e^{S_N^s(r)t}\|\le Ce^{-D\gamma t/2},
+ \qquad
+ c_\lambda|r|\le\lambda_{c,N}(r)\le C_\lambda|r|
+ \quad(r<0),
+                                                               \label{eq:generated-core-current-block-rates}
+\]
+and, along the generated path,
+\begin{equation}
+ \eta_{\rm fr}(\delta)
+ :=\sup_{s\in I_*}
+   \frac{\delta}{a_*(s)}
+   \|T_N(r_*(s))^{-1}\partial_sT_N(r_*(s))\|
+ \le C\frac{\delta}{S_\delta}=o(1).             \label{eq:generated-core-frame-number}
+\end{equation}
+
+Finally, set
+\begin{align}
+ \eta_{\rm core}(\delta)
+ :=\sup_{s\in I_*}\biggl\{
+ &\frac{\varepsilon b}{a_*(s)}
+ +\frac{\delta^2}{a_*(s)}
+       (1+\delta^{-2\vartheta_*})
+ +\frac{\delta^3}{a_*(s)^2}\delta^{-2\vartheta_*}
+ +\frac{\delta^2}{a_*(s)^2}\biggr\}.             \label{eq:generated-core-contraction-number}
+\end{align}
+Then
+\begin{equation}
+ \eta_{\rm core}(\delta)+\eta_{\rm fr}(\delta)
+ \le C\left\{
+    \frac{\delta b}{S_\delta}
+   +\frac{\delta^{1-2\vartheta_*}}{S_\delta}
+   +\frac{\delta^{1-2\vartheta_*}}{S_\delta^2}
+   +\frac1{S_\delta^2}
+   +\frac{\delta}{S_\delta}\right\}
+ =o(1).                                          \label{eq:generated-core-contraction-closes}
+\end{equation}
+The lemma collects the exact coefficients and the smallness budget.  It
+does not itself construct a stable or unstable RFDE bundle, a mixed Green
+inverse, or a physical speed-row replacement.
+\end{lemma}
+
+\begin{theorem}[Action-weighted normal dichotomy on the generated repelling core]
+\label[theorem]{thm:repelling-generated-core-normal-dichotomy}
+Retain
+\cref{prop:frozen-voltage-history-splitting,%
+prop:exact-resource-gauge-quotient,%
+lem:repelling-generated-core-action,%
+lem:repelling-generated-core-coefficient-ledger}.
+Write the exact standard quotient RFDE on \(I_*=[s_b,S_*]\) as
+\begin{equation}
+ u'(s)=\delta^{-1}\mathcal J_N^{\rm fv}(r_*(s))u(s)
+       +\mathcal R_*(s)u_s+f(s),                \label{eq:generated-core-quotient-forced}
+\end{equation}
+where, exactly,
+\begin{align}
+ \mathcal R_*(s)\phi
+={}&\delta^{-1}
+  \{\mathcal J_*(s)-\mathcal J_N^{\rm fv}(r_*(s))\}\phi(0)\notag\\
+ &+\delta K\sum_{k=0}^mL_{k,N}(\eta)
+ \left[\phi(0)-\phi(-\theta_k)
+       +(\mathcal K_s\phi)(-\theta_k)\right]
+ -\delta H_s\pi_N^T\phi(0).                    \label{eq:generated-core-quotient-remainder}
+\end{align}
+
+At \(s_b\), put
+\[
+ e_b^u=e_{c,N}(r_*(s_b)),\qquad
+ \ell_b^u=\ell_{c,N}(r_*(s_b)),
+\]
+and define the bounded history embedding and graph coordinate
+\begin{align}
+ (\jmath_b^ua)(\theta)&=e_b^ua,
+ &&-\theta_m\le\theta\le0,\notag\\
+ \mathscr K_b
+ &=\{\psi\in\mathscr X_N:\ell_b^u\psi(0)=0\},\notag\\
+ \Gamma_b\phi
+ &=\phi-\jmath_b^u\ell_b^u\phi(0)\in\mathscr K_b.           \label{eq:generated-core-entry-graph-coordinate}
+\end{align}
+Here \(\jmath_b^u\) is only a bounded right inverse for the current
+boundary coordinate; it is not asserted to be an invariant unstable RFDE
+history.  Thus a full entry history is prescribed modulo exactly one current
+unstable coordinate, not together with an additional copy of that
+coordinate.  At the true terminal point put
+\[
+ \ell_S^u=\ell_{c,N}(-R_\delta).
+\]
+
+Let \(\mathcal F_*\) be the space of measurable sources with
+\begin{equation}
+ \|f\|_{\mathcal F_*}
+ =\operatorname*{ess\,sup}_{s\in I_*}
+       \frac{\delta}{a_*(s)}\|f(s)\|_N<\infty,   \label{eq:generated-core-source-norm}
+\end{equation}
+and let \(\mathscr D_*\) consist of
+\(u\in C([s_b-\theta_m,S_*];\mathbb R^N)\), locally
+\(W^{1,\infty}\) on \(I_*\), for which
+\[
+ u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_*)u
+       -\mathcal R_*u_\bullet\in\mathcal F_*.
+\]
+Put
+\begin{equation}
+ \|u\|_{\mathcal X_*}
+ =\sup_{s_b\le s\le S_*}\|u_s\|_{s,\sharp}.     \label{eq:generated-core-solution-norm}
+\end{equation}
+Equip \(\mathscr D_*\) with the graph norm
+\[
+ \|u\|_{\mathscr D_*}
+ =\|u\|_{\mathcal X_*}
+ +\left\|u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_*)u
+       -\mathcal R_*u_\bullet\right\|_{\mathcal F_*}.
+\]
+Then, after decreasing the same joint wedge, the mixed operator
+\begin{equation}
+ \mathbb L_*u
+ =\left(
+ u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_*)u
+       -\mathcal R_*u_\bullet,\,
+ \Gamma_bu_{s_b},\,
+ \ell_S^uu(S_*)\right)                           \label{eq:generated-core-mixed-operator}
+\end{equation}
+is a dimension- and diagonal-uniform isomorphism
+\begin{equation}
+ \mathbb L_*:\mathscr D_*
+ \longrightarrow\mathcal F_*\times\mathscr K_b\times\mathbb R,
+                                                               \label{eq:generated-core-mixed-isomorphism}
+\end{equation}
+and its inverse satisfies
+\begin{equation}
+ \|u\|_{\mathcal X_*}
+ \le C\left\{\|f\|_{\mathcal F_*}
+       +\|\psi_b\|_{s_b,\sharp}+|b_u|\right\}.    \label{eq:generated-core-mixed-green-bound}
+\end{equation}
+The same constant works on every subinterval
+\([t_0,t_1]\subset I_*\).  More precisely, with
+\begin{equation}
+\begin{aligned}
+ e_{t_0}^u&=e_{c,N}(r_*(t_0)),&
+ \ell_{t_0}^u&=\ell_{c,N}(r_*(t_0)),\\
+ (\jmath_{t_0}^ua)(\theta)&=e_{t_0}^ua,
+ &&-\theta_m\le\theta\le0,\\
+ \mathscr K_{t_0}
+ &=\{\psi\in\mathscr X_N:\ell_{t_0}^u\psi(0)=0\},\\
+ \Gamma_{t_0}\phi
+ &=\phi-\jmath_{t_0}^u\ell_{t_0}^u\phi(0)
+ \in\mathscr K_{t_0}.
+\end{aligned}                                    \label{eq:generated-core-subinterval-entry-coordinate}
+\end{equation}
+the same estimate holds with entry coordinate \(\Gamma_{t_0}\) and
+terminal current covector \(\ell_{c,N}(r_*(t_1))\).
+
+Denote by \(\mathcal V_*^{\rm q}(s,t)\) the homogeneous solution process
+of \cref{eq:generated-core-quotient-forced} on the voltage quotient
+history space.  This is not the full voltage--resource process
+\(\mathcal U_*\) used in
+\cref{prop:physical-history-phase-quotient}.  The homogeneous exact
+quotient process has a finite-core
+invariant splitting
+\begin{equation}
+ \mathscr X_N=E_*^s(s)\oplus E_*^u(s),\qquad
+ \operatorname{codim}E_*^s(s)=1,\qquad
+ \dim E_*^u(s)=1,                                \label{eq:generated-core-normal-splitting}
+\end{equation}
+with uniformly bounded projections
+\(\Pi_*^{s/u}(s)\), such that
+\begin{align}
+ \Lambda_t\phi
+ &=\ell_S^u
+   \bigl\{\mathcal V_*^{\rm q}(S_*,t)\phi\bigr\}(0),\notag\\
+ E_*^s(t)&=\ker\Lambda_t,\notag\\
+ E_*^u(t)&=\operatorname{span}\{\mathfrak h_t^u\},          \label{eq:generated-core-bundle-definitions}\\
+ \Pi_*^u(t)\phi&=\mathfrak h_t^u\Lambda_t\phi,
+ \qquad
+ \Pi_*^s(t)=\Id-\Pi_*^u(t),                    \label{eq:generated-core-bundle-projections}
+\end{align}
+where \(\mathfrak h^u\) is the unique homogeneous mixed solution on
+\(I_*\) with
+\[
+ \Gamma_b\mathfrak h_{s_b}^u=0,\qquad
+ \ell_S^u\mathfrak h^u(S_*)=1.
+\]
+In particular \(\Lambda_t\mathfrak h_t^u=1\).  Moreover,
+\begin{align}
+ \|\mathcal V_*^{\rm q}(s,t)\Pi_*^s(t)\|_
+   {s,\sharp\leftarrow t,\sharp}
+ &\le Ce^{-c\mathscr A_*(s,t)},&&s\ge t,\notag\\
+ \left\|
+ \bigl(\mathcal V_*^{\rm q}(s,t)|_{E_*^u(t)}\bigr)^{-1}
+ \right\|_{t,\sharp\leftarrow s,\sharp}
+ &\le Ce^{-c\mathscr A_*(s,t)},&&s\ge t.         \label{eq:generated-core-dichotomy-bounds}
+\end{align}
+The inverse in the second line exists only on the transported
+one-dimensional line.  It is not a backward RFDE semiflow.
+
+The theorem uses the canonical current covector \(\ell_S^u\).  Replacing
+it by the physical terminal speed row requires a separate uniform
+transversality comparison with \(E_*^u(S_*)\).  The theorem constructs
+neither that comparison nor a nonlinear invariant sheet or a
+past-complete physical branch.
+\end{theorem}
+
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
 fold-time variational equation is removed exactly only after the genuine
 tracker tangent is known.  The remaining Volterra coordinate correction is
