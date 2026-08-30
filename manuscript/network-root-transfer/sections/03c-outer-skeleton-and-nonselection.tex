@@ -13666,6 +13666,425 @@ the calculation does not identify that complement with the canonical
 stable bundle or with a nonlinear stable set.  This completes the proof.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:oe-family-generated-core-ledger}]
+We first recover physical estimates from the fixed-reference family chart.
+At every family zero the causal-entry row retained in
+\cref{thm:action-scale-original-endpoint-family} is the fixed inner phase
+row in \cref{eq:fixed-reference-inner-endpoints}; undoing the clock leaves
+that row unchanged.  Together with
+\cref{eq:oe-family-physical-endpoint-identities}, this gives the two
+endpoint identities in
+\cref{eq:oe-family-core-speed-geometry}.
+
+Let \(\beta_{\mathbf p}=\beta_{\rm clk}^{\rm oe}(\mathbf p)\), let
+\(\Xi_{\mathbf p}=\Xi_{\beta_{\mathbf p}}\), and write the physical
+solution in the fixed clock as
+\[
+ \widetilde X_{\mathbf p}(s)
+ =X_{\mathbf p}(\Xi_{\mathbf p}(s)),
+ \qquad -\theta_m\le s\le S_*.
+\]
+Thus \(\widetilde Z_{\mathbf p}=Z_{\mathbf p}\circ\Xi_{\mathbf p}\),
+and the same convention applies to the resource-defect coordinate below.
+The difference form of
+\cref{eq:piecewise-kinetic-bound}, the zero estimate
+\cref{eq:oe-family-zero-bound}, and the centered state ledger
+\cref{eq:oe-family-external-state-split-ledger} give, uniformly on the
+entire fixed current interval \(0\le s\le S_*\),
+\begin{equation}
+ \sup\frac{\|\widetilde Z_{\mathbf p}-Z_*\|_N}{\varepsilon}
+ +\sup\frac{|\widetilde{\mathfrak p}_{\mathbf p}-p_*|}
+                  {\varepsilon |r_*|}
+ \le Cd_{\mathbf p}.                            \label{eq:proof-oe-family-core-pulled-difference}
+\end{equation}
+Here \(\widetilde{\mathfrak p}_{\mathbf p}\) is the family
+resource-defect coordinate; the symbol is chosen to distinguish it from
+the external variable \(\mathbf p\).  More explicitly, the zero bound
+first gives bulk, boundary, terminal, and relative-phase inputs of size
+\(Cd_{\mathbf p}\) in the fixed chart; the difference version of
+\cref{eq:piecewise-kinetic-bound} converts those four inputs into the two
+physical quantities displayed above.  The centered operator estimate is
+used only to keep this conversion uniform along the small zero family; it
+is not being treated as a state estimate by itself.
+
+The relative-phase component of the same chart gives
+\begin{equation}
+ |\widetilde r_{\mathbf p}(s)-r_*(s)|
+ \le C d_{\mathbf p}
+       \{\rho_\delta+\lambda_\delta|r_*(s)|\}               \label{eq:proof-oe-family-core-phase-comparison}
+\end{equation}
+on the fixed generated interval.  This follows directly from
+\cref{eq:oe-family-zero-bound,eq:long-window-upper-domain-norm}; the
+state and complete-clock columns have precisely the two scales recorded
+in \cref{eq:proof-oe-family-state-clock-columns}.  After decreasing
+\(r_{\rm core}\), it implies
+\begin{equation}
+ c_r|r_*(s)|\le|\widetilde r_{\mathbf p}(s)|
+       \le C_r|r_*(s)|                         \label{eq:proof-oe-family-core-phase-comparability}
+\end{equation}
+whenever either path belongs to the generated core or its one-delay
+enlargement.  Here the entry-time margin in
+\cref{eq:proof-repelling-core-entry-time} keeps the physical family
+collar inside the current interval, while
+\cref{eq:outer-clock-terminal-window,eq:outer-clock-terminal-annulus,eq:outer-clock-cutoff-bounds}
+contains the only nonidentity clock support.
+
+Define the physical reduced speed in the fixed clock by
+\[
+ \widetilde q_{\mathbf p}(s)
+ :=q_{\mathbf p}(\Xi_{\mathbf p}(s)).
+\]
+This is the state speed in the physical vector field, not the derivative
+\(\delta^{-1}\partial_s\widetilde r_{\mathbf p}\); the latter equals
+\(\Xi_{\mathbf p}'\widetilde q_{\mathbf p}\).  The exact speed
+reconstruction \cref{eq:fold-time-speed-reconstruction}, the same kinetic
+difference estimate, and the actual-parameter predictor bounds used in
+\cref{eq:proof-oe-family-resource-exact-factorization} show that
+\begin{equation}
+ \sup_{0\le s\le S_*}
+       |\widetilde q_{\mathbf p}(s)-q_*(s)|
+ \le Cd_{\mathbf p}.                           \label{eq:proof-oe-family-core-speed-difference}
+\end{equation}
+on the fixed generated interval.  Decrease \(r_{\rm core}\) first and
+then the retained wedge.  The reference margin in
+\cref{eq:proof-repelling-core-speed-bounds} gives the same strict sign for
+\(\widetilde q_{\mathbf p}\).  Since \(\Xi_{\mathbf p}\) is an increasing
+diffeomorphism by
+\cref{eq:outer-clock-map-and-feet,eq:outer-clock-cutoff-bounds}, composition
+with \(\Xi_{\mathbf p}^{-1}\) gives the common physical speed bounds in
+\cref{eq:oe-family-core-speed-geometry}.  This order is uniform for
+reference points in \(\mathcal P_N^{\rm int}\); it does not enlarge the
+family chart toward the boundary of \(\mathcal P_N\).
+
+The proof of the hit geometry is now genuinely memberwise but has common
+constants.  Strict monotonicity gives the unique hits.  Integrating the
+speed bound from \(r=-\rho_\delta\) to
+\(r=-\rho_{b,\delta}\) gives
+\begin{equation}
+ s_b(\mathbf p)
+ \ge\frac{(c_b-1)\rho_\delta}{\delta q_+}
+ =\frac{c_b-1}{2\alpha q_+}S_\delta.            \label{eq:proof-oe-family-core-entry-margin}
+\end{equation}
+The distance from \(-\rho_{c,\delta}\) to \(-R_\delta\), divided by
+\(\delta q_+\), gives the common terminal margin.  The scale separation
+\cref{eq:proof-repelling-core-scale-separation} proves
+\cref{eq:oe-family-generated-core-hits}.  In particular, the delayed
+collar is generated forward and contains no value from the raw gauge
+history.  The trajectory still depends on that gauge; only direct sampling
+of the raw collar has disappeared.
+
+For the reference member, the preterminal kinetic tube, the swept
+terminal ledger, and the original-endpoint correction give the full
+current-interval estimate
+\begin{equation}
+ \sup_{0\le s\le S_*}\|Z_*(s)\|_N
+ \le C\varepsilon\mathfrak b_{\delta,\varkappa}.           \label{eq:proof-oe-family-core-reference-global-normal}
+\end{equation}
+Indeed, use
+\cref{eq:proof-fixed-envelope-bulk-state} before the terminal interface,
+\cref{eq:proof-clock-terminal-base-ledger} on its swept one-delay
+enlargement, and
+\cref{eq:short-clock-zero-bound,eq:proof-slow-clock-normal-shear,%
+eq:joint-diagonal-small-scales} for the clock lift, the
+original-endpoint remainder, and \(\lambda_\delta\le
+C\mathfrak b_{\delta,\varkappa}\).
+
+Now define the fixed-clock preimage
+\[
+ \widetilde I_{\mathbf p}^-
+ :=\Xi_{\mathbf p}^{-1}(I_{\mathbf p}^-).
+\]
+Because \(s_b(\mathbf p)-\theta_m>0\) and
+\(\Xi_{\mathbf p}:[0,S_*]\to[0,S_{\mathbf p}]\) is an increasing
+diffeomorphism, \(\widetilde I_{\mathbf p}^-\subset[0,S_*]\).  Moreover,
+composition preserves a \(C^0\) supremum exactly:
+\[
+ \sup_{I_{\mathbf p}^-}\|Z_{\mathbf p}\|_N
+ =\sup_{\widetilde I_{\mathbf p}^-}
+       \|\widetilde Z_{\mathbf p}\|_N.
+\]
+Thus no derivative estimate on the long clock transition is needed, and
+\cref{eq:proof-oe-family-core-pulled-difference,%
+eq:proof-oe-family-core-reference-global-normal} give
+\begin{equation}
+ \sup_{I_{\mathbf p}^-}\|Z_{\mathbf p}\|_N
+ \le C\varepsilon
+       (\mathfrak b_{\delta,\varkappa}+d_{\mathbf p}).       \label{eq:proof-oe-family-core-normal-size}
+\end{equation}
+
+The action proof is likewise uniform.  The current spectral quantity
+\(\mathfrak a_N(r)\) is independent of the external parameter and obeys
+\cref{eq:proof-repelling-core-a-comparison}.  The speed margin gives
+\begin{equation}
+ |r_{\mathbf p}(s+\theta)-r_{\mathbf p}(s)|
+ \le q_+\delta\theta_m.                        \label{eq:proof-oe-family-core-delay-radius}
+\end{equation}
+Since the minimum radius is comparable to \(\delta S_\delta\), this
+proves the delay-radius comparison.  On the subinterval between the hits
+of \(-\rho_{c,\delta}\) and \(-\rho_{c,\delta}/2\), the rate is at least
+\(c\mathscr L_\delta\) and the physical duration is at least
+\(c\mathscr L_\delta\).  Their product proves the two action lower bounds.
+The one-delay cap proves the norm comparison, and the logarithmic
+calculation in \cref{eq:proof-repelling-core-flat-log} is unchanged.
+
+We next verify the quotient hypotheses without using the quotient itself.
+The reserved method-of-steps margins and the order-\(h\) compatibility in
+the family theorem make the current segment smooth enough to invert its
+strictly monotone \(r\)-coordinate.  It therefore gives the graph in
+\cref{eq:oe-family-core-r-graph}.  Substitution in the unmodified RFDE is
+the exact graph equivalence in
+\cref{prop:exact-outer-history-equation}.  In the exact normal equation,
+the family version of
+\cref{eq:proof-generated-core-Z-prime-ledger} reads
+\begin{align}
+ \varepsilon|q_{\mathbf p}|\,\|Z_{\mathbf p}'\|_N
+ \le C\{&\|Z_{\mathbf p}\|_N
+       +|r|\,|\mathfrak p_{\mathbf p}|
+       +\|R_{z,N}\|_N
+       +\varepsilon\|\Delta\mathcal D_{\mathbf p}\|_N
+       +\|Z_{\mathbf p}\|_N^2\}
+ \le C\varepsilon.                             \label{eq:proof-oe-family-core-Z-prime}
+\end{align}
+The first inequality is an identity-level term ledger, while the second
+uses
+\cref{eq:proof-oe-family-core-pulled-difference,%
+eq:proof-oe-family-core-phase-comparability,%
+eq:proof-oe-family-core-normal-size,%
+eq:proof-oe-family-affine-defect-ledger,%
+eq:proof-oe-family-resource-factor-bounds}, the fixed structural ball,
+and the common layer bound.  In particular, the actual-parameter affine
+defect and resource coordinate are estimated before the final
+\(C\varepsilon\) bound; they are not absorbed into an unnamed structural
+remainder.  Hence \(\|V_{\mathbf p}'\|_N\le C\).  Only now use
+the shared-resource graph identity
+\begin{equation}
+ q_{\mathbf p}(r)w_{\mathbf p}'(r)
+ =r-\varepsilon\nu.                            \label{eq:proof-oe-family-core-resource-identity}
+\end{equation}
+Because \(|r|\ge c\delta S_\delta\), the numerator is comparable to
+\(r\), uniformly for \(|\nu|\le\nu_+\).  The speed margin proves the
+two-sided \(w_{\mathbf p}'\) estimate and its nonvanishing.  This closes,
+rather than assumes, the last hypothesis needed to invoke
+\cref{prop:exact-resource-gauge-quotient} for each family member.
+
+The exact quotient current matrix is obtained from the frozen current
+matrix by evaluating the polynomial voltage derivative at the critical
+voltage plus \(Z_{\mathbf p}\).  Its uniform Lipschitz bound and
+\cref{eq:proof-oe-family-core-normal-size} prove
+\cref{eq:oe-family-core-current-difference}.  The definitions of
+\(H_{\mathbf p,s},h_{\mathbf p,s}\), the graph-derivative bound, the
+delay-radius comparison, and the lower bound on \(w_{\mathbf p}'\) prove
+\cref{eq:oe-family-core-resource-coefficients}.  Action additivity gives
+exactly the Volterra calculation in the proof of
+\cref{eq:generated-core-moving-volterra}, now with
+\(\mathscr A_{\mathbf p}\), and proves
+\cref{eq:oe-family-core-volterra}.  No fading loss occurs inside that
+Volterra integral.
+
+The current frame is the same \(T_N(r)\) because the current matrix,
+eigenline, and stable graph are independent of \((\nu,\eta,g)\); the
+layer parameter occurs only in the delayed remainder.  Along a family
+path,
+\begin{equation}
+ \|T_N(r_{\mathbf p})^{-1}
+      \partial_sT_N(r_{\mathbf p})\|
+ \le C|r_{\mathbf p}'|\le C\delta.             \label{eq:proof-oe-family-core-frame-rate}
+\end{equation}
+Finally \(\mathfrak a_{\mathbf p}\ge c\delta S_\delta\).  The new first
+term in the contraction ledger is therefore
+\begin{equation}
+ \frac{\varepsilon\mathfrak b_{\mathbf p}}
+      {\mathfrak a_{\mathbf p}}
+ \le C\frac{\delta
+       (\mathfrak b_{\delta,\varkappa}+r_{\rm core})}
+       {S_\delta}.                              \label{eq:proof-oe-family-core-new-smallness}
+\end{equation}
+The other four terms are the termwise estimates in the proof of
+\cref{eq:generated-core-contraction-closes}.  Taking the supremum over the
+fixed family ball proves
+\cref{eq:oe-family-core-contraction-closes} and completes the ledger.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:oe-family-generated-core-dichotomy}]
+Fix one family member, suppress \(\mathbf p\) only inside this proof, and
+put \(T(s)=T_N(r_{\mathbf p}(s))\).  Set
+\(v(s)=T(s)^{-1}u(s)\).  On histories this is the exact conjugacy
+\[
+ (\mathcal T_{\mathbf p,s}^{-1}\phi)(\theta)
+ =T_N(r_{\mathbf p}(s+\theta))^{-1}\phi(\theta),
+ \qquad -\theta_m\le\theta\le0.
+\]
+The frame and its inverse are uniformly bounded, so these history maps
+are uniformly bounded in the memberwise moving norms.  The exact quotient
+equation becomes
+\begin{equation}
+ v'=\delta^{-1}
+ \begin{pmatrix}S_N^s(r_{\mathbf p})&0\\0&\lambda_{c,N}(r_{\mathbf p})
+ \end{pmatrix}v
+ +\widetilde{\mathcal R}_{\mathbf p}v_\bullet
+ +\widetilde f,                                 \label{eq:proof-oe-family-core-frame-equation}
+\end{equation}
+where the remainder contains both the conjugate of
+\(\mathcal R_{\mathbf p}\) and the multiplication
+\(-T^{-1}T'\).  The current stable evolution and scalar unstable evolution
+therefore have the same oriented Green kernel as
+\cref{eq:proof-generated-core-current-green}, with the memberwise
+uncapped action
+\begin{equation}
+ \mathscr M_{\mathbf p}(s,t)
+ =\int_t^s\frac{\mathfrak a_{\mathbf p}(\zeta)}\delta\,\dd\zeta.
+                                                        \label{eq:proof-oe-family-core-uncapped-action}
+\end{equation}
+All kernel bounds have common constants.  Moreover, the source
+normalization remains exact:
+\begin{align}
+ \int_{s_b(\mathbf p)}^s
+ e^{-c\mathscr M_{\mathbf p}(s,t)}
+       \frac{\mathfrak a_{\mathbf p}(t)}\delta\,\dd t
+ &\le C,\notag\\
+ \int_s^{S_{\mathbf p}}
+ e^{-c\mathscr M_{\mathbf p}(t,s)}
+       \frac{\mathfrak a_{\mathbf p}(t)}\delta\,\dd t
+ &\le C.                                         \label{eq:proof-oe-family-core-source-integrals}
+\end{align}
+These are changes of variable by \(\partial_t\mathscr M_{\mathbf p}\),
+so neither the moving interval length nor a parameter-dependent freezing
+constant appears.
+
+For prescribed data \((f,\psi_b,b_u)\), reconstruct the entry collar as
+\begin{equation}
+ \widehat u_v(s_b(\mathbf p)+\theta)
+ =\psi_b(\theta)+e_b^u a_v,\qquad
+ -\theta_m\le\theta\le0,                       \label{eq:proof-oe-family-core-entry-collar}
+\end{equation}
+where \(a_v\) is the scalar current coordinate of \(v(s_b(\mathbf p))\).
+The current value agrees at \(\theta=0\); hence this is one graph
+coordinate, not an extra boundary condition.  Insert this collar into the
+oriented current Green formula, with stable current data at the entry and
+scalar current data \(b_u\) at \(S_{\mathbf p}\).  This defines a
+memberwise affine fixed-point map \(\mathfrak T_{\mathbf p}\).
+
+The coefficient ledger gives its exact normalized remainder bound
+\begin{align}
+ \frac\delta{\mathfrak a_{\mathbf p}(s)}
+ \|\mathcal R_{\mathbf p}(s)\|_{{\mathbf p,s,\sharp}\to N}
+ \le C\biggl\{
+ &\frac{\varepsilon\mathfrak b_{\mathbf p}}
+        {\mathfrak a_{\mathbf p}(s)}
+ +\frac{\delta^2}{\mathfrak a_{\mathbf p}(s)}
+       (1+\delta^{-2\vartheta_*})\notag\\
+ &+\frac{\delta^3}{\mathfrak a_{\mathbf p}(s)^2}
+       \delta^{-2\vartheta_*}
+ +\frac{\delta^2}{\mathfrak a_{\mathbf p}(s)^2}\biggr\}.
+                                                        \label{eq:proof-oe-family-core-remainder-number}
+\end{align}
+The four terms are respectively the current-matrix error, the ordinary
+delay row, the delay evaluation of the Volterra correction, and the
+rank-one resource row.  The frame multiplication costs
+\(\eta_{{\rm fr},\mathbf p}\).  Therefore
+\begin{equation}
+ \|\mathfrak T_{\mathbf p}v
+       -\mathfrak T_{\mathbf p}\widetilde v\|_{
+          \mathcal X_{\mathbf p}}
+ \le C\eta_{\mathbf p}
+       \|v-\widetilde v\|_{\mathcal X_{\mathbf p}},
+ \qquad
+ \eta_{\mathbf p}
+ =\eta_{{\rm core},\mathbf p}+\eta_{{\rm fr},\mathbf p}.  \label{eq:proof-oe-family-core-contraction}
+\end{equation}
+By \cref{eq:oe-family-core-contraction-closes}, one ordered wedge decrease
+makes the right-hand coefficient at most \(1/2\) simultaneously for every
+family member.  The affine terms obey the same Green bounds, so the fixed
+point gives the mixed inverse and
+\cref{eq:oe-family-core-mixed-green-bound}.  Projecting an arbitrary
+solution onto the current stable and scalar blocks recovers that fixed
+point, which proves injectivity as well as surjectivity.  The equation and
+graph norm make the operator closed.  All lower-radius and contraction
+bounds remain valid on subintervals, proving the subinterval assertion.
+
+We construct the splitting without a backward RFDE history map.  Run the
+same subinterval fixed point in the two extra norms weighted by
+\(e^{c_0\mathscr A_{\mathbf p}}\), choosing
+\((2+c_0)\vartheta_*<2\vartheta\).  The unused fading margin absorbs the
+one-delay weight uniformly.  Define
+\(\Lambda_{\mathbf p,t}\), \(E_{\mathbf p}^{s/u}(t)\), and
+\(\mathfrak h_{\mathbf p}^u\) by
+\cref{eq:oe-family-core-unstable-normalization,%
+eq:oe-family-core-bundles}.  Mixed uniqueness gives invariance.
+
+It remains to prove the inverse estimate on the unstable line.  Write the
+moving-frame coordinate of \(\mathfrak h_{\mathbf p}^u\) as
+\((\zeta_{\mathbf p}^u(s),a_{\mathbf p}^u(s))\), and let
+\((\zeta_{\mathbf p}^u)_s\) denote its stable history coordinate.  The
+subinterval mixed
+inverse, applied with terminal scalar \(a_{\mathbf p}^u(t)\), gives
+\begin{equation}
+ \sup_{s_b(\mathbf p)\le s\le t}
+ \|(\mathfrak h_{\mathbf p}^u)_s\|_{
+      \mathbf p,s,\sharp}
+ \le C|a_{\mathbf p}^u(t)|.                    \label{eq:proof-oe-family-core-local-unstable-control}
+\end{equation}
+If this scalar vanished at some \(t>s_b(\mathbf p)\), mixed uniqueness on
+\([s_b(\mathbf p),t]\), followed by forward RFDE uniqueness, would
+contradict the terminal normalization.  At \(t=s_b(\mathbf p)\), the same
+conclusion follows directly: the entry condition
+\(\Gamma_b(\mathfrak h_{\mathbf p}^u)_{s_b(\mathbf p)}=0\) and a zero
+current scalar would make the entire entry history zero.  The scalar is
+therefore nowhere zero.  Dividing its scalar equation by this coordinate
+yields
+\begin{equation}
+ (a_{\mathbf p}^u)'(s)
+ =\left\{\frac{\lambda_{c,N}(r_{\mathbf p}(s))}\delta
+       +\rho_{\mathbf p}^u(s)\right\}a_{\mathbf p}^u(s),
+ \qquad
+ |\rho_{\mathbf p}^u(s)|
+ \le C\eta_{\mathbf p}
+       \frac{\mathfrak a_{\mathbf p}(s)}\delta.             \label{eq:proof-oe-family-core-unstable-amplitude}
+\end{equation}
+The current eigenvalue satisfies
+\(\lambda_{c,N}(r_{\mathbf p})\ge
+c_\lambda\mathfrak a_{\mathbf p}\).  After the uniform wedge decrease,
+\(C\eta_{\mathbf p}<c_\lambda/2\), and integration gives, for
+\(t\le s\),
+\begin{equation}
+ |a_{\mathbf p}^u(s)|
+ \ge e^{c\mathscr M_{\mathbf p}(s,t)}
+       |a_{\mathbf p}^u(t)|.                   \label{eq:proof-oe-family-core-unstable-growth}
+\end{equation}
+Since \(\kappa_{\mathbf p}\le
+\vartheta_*\mathfrak a_{\mathbf p}/\delta\), one has
+\(\mathscr A_{\mathbf p}\le
+\vartheta_*\mathscr M_{\mathbf p}\); hence the last display proves the
+unstable inverse estimate in
+\cref{eq:oe-family-core-dichotomy-bounds}.  The positively weighted fixed
+point gives the stable estimate.  The stable current Green formula gives
+\begin{equation}
+ \|\zeta_{\mathbf p,s}^u\|_{
+       \mathbf p,s,\sharp}
+ \le C\eta_{\mathbf p}|a_{\mathbf p}^u(s)|.     \label{eq:proof-oe-family-core-unstable-stable-graph}
+\end{equation}
+At the terminal normalization \(a_{\mathbf p}^u(S_{\mathbf p})=1\), put
+\[
+ \widehat\zeta_{\mathbf p,S}^u
+ =T_N(-R_\delta)(\zeta_{\mathbf p}^u(S_{\mathbf p}),0).
+\]
+Current evaluation of the last estimate and the uniformly bounded frame
+give \(\|\widehat\zeta_{\mathbf p,S}^u\|_N\le C\eta_{\mathbf p}\);
+the stable-frame range is annihilated by
+\(\ell_{c,N}(-R_\delta)\).  This is exactly
+\cref{eq:oe-family-core-terminal-unstable-current}.  The complementary
+stable graph has norm at most \(C\eta_{\mathbf p}\), while the normalized
+unstable history graph is uniformly bounded by
+\cref{eq:proof-oe-family-core-local-unstable-control}.  Their product is
+less than \(1/2\) after the same wedge decrease.  Hence the projections are
+uniformly bounded and all assertions in
+\cref{eq:oe-family-core-splitting,eq:oe-family-core-dichotomy-bounds}
+follow.  Only the scalar factor on the constructed unstable line has been
+inverted to the left.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem

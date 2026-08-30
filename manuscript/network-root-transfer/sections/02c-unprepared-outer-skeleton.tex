@@ -9997,8 +9997,348 @@ Thus the physical speed observation supplies a genuine conormal transverse
 to the quotient unstable line.  No assertion is made that
 \(\ker\Lambda_t^{\rm sp}=E_*^s(t)\), that either kernel is a nonlinear
 stable sheet, or that this reference segment extends to a past-complete
-repelling branch.  The parameter-uniform version requires a separate
-family generated-core ledger and dichotomy.
+repelling branch.  The next two results supply a memberwise
+parameter-uniform generated-core ledger and dichotomy.  Parameter
+differentiability and the family physical-speed row require the later
+strong-to-weak trivialization.
+\end{theorem}
+
+\begin{lemma}[Uniform generated-core ledger for the original-endpoint family]
+\label[lemma]{lem:oe-family-generated-core-ledger}
+Retain
+\cref{thm:action-scale-original-endpoint-family,%
+lem:oe-family-external-state-split,%
+prop:exact-resource-gauge-quotient,%
+lem:repelling-generated-core-action,%
+lem:repelling-generated-core-coefficient-ledger}
+and the fixed choices \(M,c_b,c_c,\vartheta_*\) made there.  There is a
+dimension- and diagonal-uniform radius
+\begin{equation}
+ 0<r_{\rm core}\le r_{\rm oe}                 \label{eq:oe-family-core-radius}
+\end{equation}
+such that the following statements hold for every
+\(\mathbf p=(\nu,\eta,g)\in B_{\rm oe}(p^\circ,r_{\rm core})\).  Write
+\begin{equation}
+ d_{\mathbf p}=\|\mathbf p-p^\circ\|_{\rm oe},
+ \qquad
+ \mathfrak b_{\mathbf p}
+ =\mathfrak b_{\delta,\varkappa}+d_{\mathbf p},             \label{eq:oe-family-core-distance}
+\end{equation}
+and denote the exact physical segment supplied by
+\cref{thm:action-scale-original-endpoint-family} by
+\begin{equation}
+ X_{\mathbf p}(s)
+ =(V_{\mathbf p}(s),w_{\mathbf p}(s)),
+ \qquad -\theta_m\le s\le S_{\mathbf p},
+ \qquad S_{\mathbf p}=S_r^{\rm oe}(\mathbf p).              \label{eq:oe-family-core-segment}
+\end{equation}
+Its slow coordinate and exact speed satisfy
+\begin{equation}
+ r_{\mathbf p}(0)=-\rho_\delta,\qquad
+ r_{\mathbf p}(S_{\mathbf p})=-R_\delta,\qquad
+ r_{\mathbf p}'(s)=\delta q_{\mathbf p}(s),\qquad
+ -q_+\le q_{\mathbf p}(s)\le-q_-<0.             \label{eq:oe-family-core-speed-geometry}
+\end{equation}
+There are unique hit times
+\begin{align}
+ r_{\mathbf p}(s_b(\mathbf p))&=-\rho_{b,\delta},&
+ r_{\mathbf p}(s_c(\mathbf p))&=-\rho_{c,\delta},\notag\\
+ (M+2)\theta_m&<s_b(\mathbf p)<s_c(\mathbf p)
+       <S_{\mathbf p}-\theta_m.                 \label{eq:oe-family-generated-core-hits}
+\end{align}
+Consequently every delayed value based at
+\([s_b(\mathbf p),S_{\mathbf p}]\) belongs to this same forward segment.
+Put
+\begin{equation}
+ I_{\mathbf p}=[s_b(\mathbf p),S_{\mathbf p}],
+ \qquad
+ I_{\mathbf p}^-=[s_b(\mathbf p)-\theta_m,S_{\mathbf p}],
+ \qquad
+ \mathfrak a_{\mathbf p}(s)=\mathfrak a_N(r_{\mathbf p}(s)).
+                                                        \label{eq:oe-family-core-intervals}
+\end{equation}
+On \(I_{\mathbf p}^-\), the segment has an exact \(r\)-graph
+\begin{equation}
+ \mathcal H_{\mathbf p}(r)
+ =(V_{\mathbf p}(r)_\bullet,w_{\mathbf p}(r)),
+ \qquad
+ V_{\mathbf p}(r)
+ =\mathbf1+r\mathbf1+z_{0,N}(r)+Z_{\mathbf p}(r),           \label{eq:oe-family-core-r-graph}
+\end{equation}
+and, uniformly in \(\mathbf p\),
+\begin{align}
+ c_a|r_{\mathbf p}(s)|
+ \le\mathfrak a_{\mathbf p}(s)
+ &\le C_a|r_{\mathbf p}(s)|,
+ &-q_+\le q_{\mathbf p}(r_{\mathbf p}(s))&\le-q_-,\notag\\
+ \frac12|r_{\mathbf p}(s)|
+ \le |r_{\mathbf p}(s+\theta)|
+ &\le2|r_{\mathbf p}(s)|,
+ &&\substack{s\in I_{\mathbf p},\ -\theta_m\le\theta\le0,\\
+             s+\theta\in I_{\mathbf p}^-},               \label{eq:oe-family-core-local-geometry}\\
+ \sup_{I_{\mathbf p}^-}\|Z_{\mathbf p}\|_N
+ &\le C\varepsilon\mathfrak b_{\mathbf p},&
+ \sup_{I_{\mathbf p}^-}\|V_{\mathbf p}'\|_N&\le C,\notag\\
+ c_w|r|\le |w_{\mathbf p}'(r)|
+ &\le C_w|r|,&
+ q_{\mathbf p}(r)w_{\mathbf p}'(r)&=r-\varepsilon\nu.
+                                                        \label{eq:oe-family-core-graph-ledger}
+\end{align}
+In particular \(w_{\mathbf p}'\) never vanishes on the generated core, so
+the exact resource-gauge quotient is available member by member.
+
+Define the memberwise capped rate, action, and history norm by
+\begin{align}
+ \kappa_{\mathbf p}(s)
+ &=\vartheta_*
+   \left\{\frac{\delta}{\mathfrak a_{\mathbf p}(s)}
+           +\frac{\theta_m}{\mathscr L_\delta}\right\}^{-1},\notag\\
+ \mathscr A_{\mathbf p}(s,t)
+ &=\int_t^s\kappa_{\mathbf p}(u)\,\dd u,\qquad s\ge t,\notag\\
+ \|\phi\|_{\mathbf p,s,\sharp}
+ &=\sup_{-\theta_m\le\theta\le0}
+   e^{-2\mathscr A_{\mathbf p}(s,s+\theta)}
+       \|\phi(\theta)\|_N.                    \label{eq:oe-family-core-action-and-norm}
+\end{align}
+As before, the cap term and history weights are deleted when
+\(\theta_m=0\).  Uniformly in the family,
+\begin{align}
+ \|\phi\|_{\mathbf p,s,\sharp}
+ &\le\|\phi\|_{\infty,N}
+ \le\delta^{-2\vartheta_*}
+       \|\phi\|_{\mathbf p,s,\sharp},\notag\\
+ \mathscr A_{\mathbf p}(s_c(\mathbf p),s_b(\mathbf p))
+ &\ge c_{bc}\mathscr L_\delta^2,
+ &\mathscr A_{\mathbf p}(S_{\mathbf p},s_b(\mathbf p))
+ &\ge c_{bc}\mathscr L_\delta^2.              \label{eq:oe-family-core-action-bounds}
+\end{align}
+The all-orders flat envelope in
+\cref{eq:repelling-core-action-flat-envelope} holds with
+\(\mathscr A_*\) replaced by \(\mathscr A_{\mathbf p}\), with one common
+constant.
+
+Let
+\(\mathcal J_{\mathbf p}(s),H_{\mathbf p,s},h_{\mathbf p,s}\), and
+\(\mathcal K_{\mathbf p,s}\) be the exact quotient coefficients on this
+graph.  Then
+\begin{align}
+ \|\mathcal J_{\mathbf p}(s)
+       -\mathcal J_N^{\rm fv}(r_{\mathbf p}(s))\|
+ &\le C\varepsilon\mathfrak b_{\mathbf p},     \label{eq:oe-family-core-current-difference}\\
+ |r_{\mathbf p}(s)|\left\{
+       \|H_{\mathbf p,s}\|_N
+       +\sup_{-\theta_m\le\theta\le0}
+          \|h_{\mathbf p,s}(\theta)\|_N\right\}
+ &\le C,                                        \label{eq:oe-family-core-resource-coefficients}\\
+ \|\mathcal K_{\mathbf p,s}\|_{
+  \mathcal L((\mathscr X_N,\|\cdot\|_{\mathbf p,s,\sharp}))}
+ &\le C\frac{\delta}{|r_{\mathbf p}(s)|}
+ \le C\frac{\delta}{\mathfrak a_{\mathbf p}(s)}.
+                                                        \label{eq:oe-family-core-volterra}
+\end{align}
+
+The same current frame \(T_N(r)\) as in
+\cref{eq:generated-core-current-frame} is valid along every member.  Put
+\begin{align}
+ \eta_{{\rm fr},\mathbf p}
+ &:=\sup_{s\in I_{\mathbf p}}
+   \frac{\delta}{\mathfrak a_{\mathbf p}(s)}
+   \|T_N(r_{\mathbf p}(s))^{-1}
+         \partial_sT_N(r_{\mathbf p}(s))\|,\notag\\
+ \eta_{{\rm core},\mathbf p}
+ &:=\sup_{s\in I_{\mathbf p}}\biggl\{
+ \frac{\varepsilon\mathfrak b_{\mathbf p}}
+      {\mathfrak a_{\mathbf p}(s)}
+ +\frac{\delta^2}{\mathfrak a_{\mathbf p}(s)}
+       (1+\delta^{-2\vartheta_*})\notag\\
+ &\hspace{32mm}
+ +\frac{\delta^3}{\mathfrak a_{\mathbf p}(s)^2}
+       \delta^{-2\vartheta_*}
+ +\frac{\delta^2}{\mathfrak a_{\mathbf p}(s)^2}
+ \biggr\}.                                      \label{eq:oe-family-core-contraction-number}
+\end{align}
+Then the smallness is uniform on the fixed family ball:
+\begin{align}
+ \sup_{\mathbf p\in B_{\rm oe}(p^\circ,r_{\rm core})}
+ \{\eta_{{\rm core},\mathbf p}
+       +\eta_{{\rm fr},\mathbf p}\}
+ &\le C\left\{
+  \frac{\delta(\mathfrak b_{\delta,\varkappa}+r_{\rm core})}
+       {S_\delta}
+ +\frac{\delta^{1-2\vartheta_*}}{S_\delta}
+ +\frac{\delta^{1-2\vartheta_*}}{S_\delta^2}
+ +\frac1{S_\delta^2}+\frac\delta{S_\delta}\right\}
+ =o(1).                                         \label{eq:oe-family-core-contraction-closes}
+\end{align}
+The fixed radius \(r_{\rm core}\) is not required to decrease with
+\(\delta\).  Its contribution is small only after it is multiplied by
+\(\varepsilon/\mathfrak a_{\mathbf p}\); omitting this factor would give
+an incorrect family contraction estimate.
+\end{lemma}
+
+\begin{theorem}[Parameter-uniform quotient dichotomy on the generated family core]
+\label[theorem]{thm:oe-family-generated-core-dichotomy}
+Retain \cref{lem:oe-family-generated-core-ledger}.  For each
+\(\mathbf p=(\nu,\eta,g)\in B_{\rm oe}(p^\circ,r_{\rm core})\), write the
+exact quotient equation on \(I_{\mathbf p}\) as
+\begin{equation}
+ u'(s)=\delta^{-1}\mathcal J_N^{\rm fv}(r_{\mathbf p}(s))u(s)
+       +\mathcal R_{\mathbf p}(s)u_s+f(s),      \label{eq:oe-family-core-quotient-equation}
+\end{equation}
+where
+\begin{align}
+ \mathcal R_{\mathbf p}(s)\phi
+={}&\delta^{-1}\{\mathcal J_{\mathbf p}(s)
+       -\mathcal J_N^{\rm fv}(r_{\mathbf p}(s))\}\phi(0)\notag\\
+ &+\delta K\sum_{k=0}^mL_{k,N}(\eta)
+ \left[\phi(0)-\phi(-\theta_k)
+       +(\mathcal K_{\mathbf p,s}\phi)(-\theta_k)\right]
+ -\delta H_{\mathbf p,s}\pi_N^T\phi(0).       \label{eq:oe-family-core-quotient-remainder}
+\end{align}
+At the two fixed \(r\)-sections put
+\begin{align}
+ e_b^u&=e_{c,N}(-\rho_{b,\delta}),&
+ \ell_b^u&=\ell_{c,N}(-\rho_{b,\delta}),&
+ \ell_S^u&=\ell_{c,N}(-R_\delta),\notag\\
+ (\jmath_b^ua)(\theta)&=e_b^ua,&
+ \mathscr K_b&=\{\psi\in\mathscr X_N:
+                    \ell_b^u\psi(0)=0\},&
+ \Gamma_b\phi&=\phi-\jmath_b^u\ell_b^u\phi(0).
+                                                        \label{eq:oe-family-core-entry-coordinate}
+\end{align}
+Let \(\mathcal F_{\mathbf p}\) have norm
+\begin{equation}
+ \|f\|_{\mathcal F_{\mathbf p}}
+ =\operatorname*{ess\,sup}_{s\in I_{\mathbf p}}
+   \frac{\delta}{\mathfrak a_{\mathbf p}(s)}\|f(s)\|_N, \label{eq:oe-family-core-source-norm}
+\end{equation}
+let \(\mathscr D_{\mathbf p}\) be the corresponding graph domain, and set
+\begin{equation}
+ \|u\|_{\mathcal X_{\mathbf p}}
+ =\sup_{s\in I_{\mathbf p}}
+       \|u_s\|_{\mathbf p,s,\sharp}.           \label{eq:oe-family-core-solution-norm}
+\end{equation}
+Explicitly, \(\mathscr D_{\mathbf p}\) consists of
+\[
+ u\in C([s_b(\mathbf p)-\theta_m,S_{\mathbf p}];\mathbb R^N)
+\]
+which are locally \(W^{1,\infty}\) on \(I_{\mathbf p}\) and for which
+the distributed residual in the first component of
+\cref{eq:oe-family-core-mixed-operator} belongs to
+\(\mathcal F_{\mathbf p}\).  It carries the graph norm
+\begin{equation}
+ \|u\|_{\mathscr D_{\mathbf p}}
+ =\|u\|_{\mathcal X_{\mathbf p}}
+ +\left\|u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_{\mathbf p})u
+       -\mathcal R_{\mathbf p}u_\bullet\right\|_{
+          \mathcal F_{\mathbf p}}.             \label{eq:oe-family-core-domain-graph-norm}
+\end{equation}
+Then
+\begin{equation}
+ \mathbb L_{\mathbf p}u
+ =\left(u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_{\mathbf p})u
+       -\mathcal R_{\mathbf p}u_\bullet,\,
+       \Gamma_bu_{s_b(\mathbf p)},\,
+       \ell_S^uu(S_{\mathbf p})\right)         \label{eq:oe-family-core-mixed-operator}
+\end{equation}
+is an isomorphism
+\begin{equation}
+ \mathbb L_{\mathbf p}:\mathscr D_{\mathbf p}
+ \longrightarrow
+ \mathcal F_{\mathbf p}\times\mathscr K_b\times\mathbb R
+                                                        \label{eq:oe-family-core-mixed-isomorphism}
+\end{equation}
+with one inverse constant for all \(N,\delta,\varkappa\), reference points
+in \(\mathcal P_N^{\rm int}\), and family members in the displayed ball:
+\begin{equation}
+ \|u\|_{\mathcal X_{\mathbf p}}
+ \le C\left\{\|f\|_{\mathcal F_{\mathbf p}}
+       +\|\psi_b\|_{\mathbf p,s_b(\mathbf p),\sharp}
+       +|b_u|\right\}.                         \label{eq:oe-family-core-mixed-green-bound}
+\end{equation}
+The same constant works on every subinterval of \(I_{\mathbf p}\), using
+the instantaneous current graph coordinate and terminal current covector.
+Explicitly, on \([t_0,t_1]\subset I_{\mathbf p}\), replace the entry
+objects in \cref{eq:oe-family-core-entry-coordinate} by
+\begin{align*}
+ e_{\mathbf p,t_0}^u&=e_{c,N}(r_{\mathbf p}(t_0)),&
+ \ell_{\mathbf p,t_0}^u&=\ell_{c,N}(r_{\mathbf p}(t_0)),\\
+ (\jmath_{\mathbf p,t_0}^ua)(\theta)&=e_{\mathbf p,t_0}^ua,&
+ \Gamma_{\mathbf p,t_0}\phi
+ &=\phi-\jmath_{\mathbf p,t_0}^u
+       \ell_{\mathbf p,t_0}^u\phi(0),
+\end{align*}
+use
+\[
+ \mathscr K_{\mathbf p,t_0}
+ =\{\psi\in\mathscr X_N:
+       \ell_{\mathbf p,t_0}^u\psi(0)=0\},
+\]
+and use
+\(\ell_{c,N}(r_{\mathbf p}(t_1))\) as the terminal row.  The inverse
+constant is unchanged.
+
+Let \(\mathcal V_{\mathbf p}^{\rm q}(s,t)\) be the homogeneous quotient
+solution process.  It has a finite-core invariant splitting
+\begin{equation}
+ \mathscr X_N=E_{\mathbf p}^s(s)\oplus E_{\mathbf p}^u(s),
+ \qquad \operatorname{codim}E_{\mathbf p}^s(s)=1,
+ \qquad \dim E_{\mathbf p}^u(s)=1,             \label{eq:oe-family-core-splitting}
+\end{equation}
+with uniformly bounded projections.  More precisely, if
+\(\mathfrak h_{\mathbf p}^u\) is the unique homogeneous mixed solution
+with
+\begin{equation}
+ \Gamma_b(\mathfrak h_{\mathbf p}^u)_{s_b(\mathbf p)}=0,
+ \qquad
+ \ell_S^u\mathfrak h_{\mathbf p}^u(S_{\mathbf p})=1,       \label{eq:oe-family-core-unstable-normalization}
+\end{equation}
+then
+\begin{align}
+ \Lambda_{\mathbf p,t}\phi
+ &=\ell_S^u\{\mathcal V_{\mathbf p}^{\rm q}
+        (S_{\mathbf p},t)\phi\}(0),\notag\\
+ E_{\mathbf p}^s(t)&=\ker\Lambda_{\mathbf p,t},&
+ E_{\mathbf p}^u(t)&=\operatorname{span}
+       \{(\mathfrak h_{\mathbf p}^u)_t\},       \label{eq:oe-family-core-bundles}\\
+ \Pi_{\mathbf p}^u(t)\phi
+ &=(\mathfrak h_{\mathbf p}^u)_t
+       \Lambda_{\mathbf p,t}\phi,&
+ \Pi_{\mathbf p}^s(t)&=\Id-\Pi_{\mathbf p}^u(t).
+                                                        \label{eq:oe-family-core-projections}
+\end{align}
+There are common \(c,C>0\) such that, for
+\(s_b(\mathbf p)\le t\le s\le S_{\mathbf p}\),
+\begin{align}
+ \|\mathcal V_{\mathbf p}^{\rm q}(s,t)
+       \Pi_{\mathbf p}^s(t)\|_{
+       \mathbf p,s,\sharp\leftarrow\mathbf p,t,\sharp}
+ &\le Ce^{-c\mathscr A_{\mathbf p}(s,t)},\notag\\
+ \left\|\left(
+  \mathcal V_{\mathbf p}^{\rm q}(s,t)
+     |_{E_{\mathbf p}^u(t)}\right)^{-1}\right\|_{
+       \mathbf p,t,\sharp\leftarrow\mathbf p,s,\sharp}
+ &\le Ce^{-c\mathscr A_{\mathbf p}(s,t)}.       \label{eq:oe-family-core-dichotomy-bounds}
+\end{align}
+Writing
+\(\eta_{\mathbf p}=\eta_{{\rm core},\mathbf p}
+ +\eta_{{\rm fr},\mathbf p}\), the terminal current has the uniform
+normal form
+\begin{equation}
+ (\mathfrak h_{\mathbf p}^u)_{S_{\mathbf p}}(0)
+ =e_{c,N}(-R_\delta)+\widehat\zeta_{\mathbf p,S}^u,
+ \qquad
+ \ell_{c,N}(-R_\delta)\widehat\zeta_{\mathbf p,S}^u=0,
+ \qquad
+ \|\widehat\zeta_{\mathbf p,S}^u\|_N\le C\eta_{\mathbf p}.  \label{eq:oe-family-core-terminal-unstable-current}
+\end{equation}
+This theorem is uniform over the parameter/gauge ball member by member.
+It does not assert Fr\'{e}chet differentiability in \(\mathbf p\) of the
+process, projections, or conormal.  Such a statement must first identify
+the moving times \(s_b(\mathbf p),S_{\mathbf p}\) by a strong-to-weak
+trivialization; translation is not differentiable on the rough
+\(C\)-history space.  Nor does the theorem construct a nonlinear
+repelling sheet or a past-complete physical branch.
 \end{theorem}
 
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
