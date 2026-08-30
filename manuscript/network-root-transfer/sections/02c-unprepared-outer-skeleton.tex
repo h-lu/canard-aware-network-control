@@ -4108,7 +4108,7 @@ is a dimension- and diagonal-uniform isomorphism from
 \end{equation}
 Its inverse is still
 \begin{equation}
- y=G_\sigma^\infty f,qquad
+ y=G_\sigma^\infty f,\qquad
  a=\left\{\mathscr B_{\sigma,\mathrm{hyb}}
        -(\mathfrak A_\sigma^{\rm rc},0)\right\}^{-1}
        (k+\mathfrak D_\sigma y,b_0).                        \label{eq:terminal-source-extended-inverse}
@@ -6389,11 +6389,14 @@ a physical connection, or a canard root.
 Retain
 \cref{prop:diagonal-terminal-component-green,%
 thm:fixed-envelope-speed-row-zero}
-at order \(h\ge4\), with \(M\ge2\).  There is a fixed
-\(A_{\rm jet}>0\) such that the following conclusions hold if the constant
+at order \(h\ge4\), with \(M\ge2\).  There is a fixed flushing constant
+\(A_{\rm fl}>0\) such that the following conclusions hold if the constant
 \(A\) in
-\cref{eq:terminal-component-scales} is chosen at least
-\(A_{\rm jet}\), before \(L_0=AS_\delta\) and \(L_b\) are frozen.
+\cref{eq:terminal-component-scales} is chosen strictly larger than
+\(A_{\rm fl}\), before \(L_0=AS_\delta\) and \(L_b\) are frozen.  Put
+\begin{equation}
+ L_{\rm fl}=A_{\rm fl}S_\delta.                 \label{eq:terminal-slow-jet-flush-length}
+\end{equation}
 All constants are uniform in \(N\), the branch, the retained parameters,
 and the admissible joint wedge of
 \cref{eq:joint-diagonal-admissible-wedge}.
@@ -6409,11 +6412,15 @@ be the physical fold-time segment reconstructed from the zero in
 \cref{thm:fixed-envelope-speed-row-zero}.  For a selector offset \(L\ge0\)
 assume the post-flushing margin
 \begin{equation}
- L_b-L-(M+2)\theta_m\ge L_0.                     \label{eq:terminal-slow-jet-selector-margin}
+ L_b-L-(M+2)\theta_m\ge L_{\rm fl}.             \label{eq:terminal-slow-jet-selector-margin}
 \end{equation}
 With the definition of \(L_b\) in
-\cref{eq:terminal-component-scales}, this includes every \(0\le L\le1\),
-in particular the actual terminal-history window \(L=0\).  Put
+\cref{eq:terminal-component-scales}, this includes every
+\begin{equation}
+ 0\le L\le (A-A_{\rm fl})S_\delta+1,             \label{eq:terminal-slow-jet-offset-range}
+\end{equation}
+in particular the actual terminal-history window \(L=0\) and a terminal
+transition zone of length proportional to \(S_\delta\).  Put
 \begin{align}
  \widetilde J_{\sigma,L}
  &=[S_\sigma-L-2\theta_m,S_\sigma-L],\notag\\
@@ -6480,6 +6487,498 @@ nonzero physical drift.  The theorem supplies neither a right-hand
 fixed envelope of length \(O(\rho_\delta/\delta)\), nor a moving-duration
 or original-endpoint zero, parameter jets, a past orbit, a connection, or
 a canard root.
+\end{theorem}
+
+\begin{lemma}[Terminal-clock pullback and exact duration border]
+\label[lemma]{lem:terminal-clock-pullback-border}
+Let \(\mathcal E\) be a finite-dimensional state space and consider an
+autonomous discrete-delay equation
+\begin{equation}
+ \delta X'(t)=\mathfrak F
+   \bigl(X(t),X(t-\theta_1),\ldots,X(t-\theta_m)\bigr),
+ \qquad 0=\theta_0<\theta_1<\cdots<\theta_m.     \label{eq:clock-physical-rfde}
+\end{equation}
+For each allowed clock parameter below, the equation is imposed for
+\(0\le t\le S+d_\beta\), with history on \([-\theta_m,0]\).
+Assume that \(\mathfrak F\) is \(C^2\) on the relevant tube.  The case
+with no positive delay is obtained by deleting all delayed slots.  Choose
+\(L_\chi>0\), assume \(S>\theta_m+L_\chi\), and choose
+\(\chi\in C^2([-\theta_m,S])\), \(0\le\chi\le1\), with
+\begin{equation}
+ \chi=0\quad\hbox{on }[-\theta_m,S-\theta_m-L_\chi],
+ \qquad
+ \chi=1\quad\hbox{on }[S-\theta_m,S],           \label{eq:clock-cutoff-plateaux}
+\end{equation}
+where in the no-delay case the second plateau reduces to the endpoint.
+For a physical phase-length parameter \(\beta\), put
+\begin{equation}
+ d_\beta=\frac{\beta}{\delta},\qquad
+ \Xi_\beta(s)=s+d_\beta\chi(s),                 \label{eq:terminal-clock-map}
+\end{equation}
+and assume
+\begin{equation}
+ |d_\beta|\,\|\chi'\|_\infty\le\frac14.         \label{eq:terminal-clock-diffeomorphism-margin}
+\end{equation}
+Then \(\Xi_\beta\) is an increasing \(C^2\) diffeomorphism from
+\([-\theta_m,S]\) onto
+\([-\theta_m,S+d_\beta]\).  Its pulled-back delay feet are
+\begin{equation}
+ \sigma_{k,\beta}(s)
+ =\Xi_\beta^{-1}\bigl(\Xi_\beta(s)-\theta_k\bigr),          \label{eq:terminal-clock-delay-feet}
+\end{equation}
+and satisfy, exactly,
+\begin{align}
+ \sigma_{k,\beta}(s)
+ &=s-\theta_k+d_\beta
+      \{\chi(s)-\chi(\sigma_{k,\beta}(s))\},\notag\\
+ \partial_s\sigma_{k,\beta}(s)
+ &=\frac{1+d_\beta\chi'(s)}
+        {1+d_\beta\chi'(\sigma_{k,\beta}(s))},\notag\\
+ \partial_\beta\sigma_{k,\beta}(s)
+ &=\frac{\chi(s)-\chi(\sigma_{k,\beta}(s))}
+  {\delta\{1+d_\beta\chi'(\sigma_{k,\beta}(s))\}}.
+                                                        \label{eq:terminal-clock-foot-identities}
+\end{align}
+In particular \(\sigma_{0,\beta}(s)=s\) and
+\(\sigma_{k,\beta}(s)<s\) for every positive delay \(k\ge1\); every foot
+remains in the fixed old-history/current interval, and
+\begin{equation}
+ \Xi_\beta^{-1}(\Xi_\beta(S)+\theta)=S+\theta,
+ \qquad -\theta_m\le\theta\le0.                \label{eq:terminal-clock-history-fixed}
+\end{equation}
+
+For \(0\le s\le S\) and \(Y=X\circ\Xi_\beta\),
+\cref{eq:clock-physical-rfde} is equivalent, without an extension of
+\(Y\) to the right of \(S\), to the fixed-interval equation
+\begin{equation}
+ \delta Y_s(s)=\{1+d_\beta\chi'(s)\}
+ \mathfrak F\bigl(Y(s),Y(\sigma_{1,\beta}(s)),\ldots,
+                         Y(\sigma_{m,\beta}(s))\bigr).
+                                                        \label{eq:terminal-clock-pulled-rfde}
+\end{equation}
+The old history and every causal-entry row are unchanged exactly.  The
+history in \cref{eq:terminal-clock-history-fixed} is the actual physical
+history at time \(S+d_\beta\), not a moving-window surrogate.
+
+Let \(Y_*\in C^2\) solve \cref{eq:clock-physical-rfde} on the fixed
+interval at \(\beta=0\), and write \(L_0\) for the linearization of the
+distributed left-minus-right residual in
+\cref{eq:terminal-clock-pulled-rfde}, together with its unchanged
+old-history and causal-entry rows.  The
+duration column at fixed \(Y_*\) is
+\begin{align}
+ C_\chi(s)={}&-\frac{\chi'(s)}{\delta}\mathfrak F_*(s)\notag\\
+ &-\frac1\delta\sum_{k=1}^m
+ D_k\mathfrak F_*(s)Y_*'(s-\theta_k)
+       \{\chi(s)-\chi(s-\theta_k)\}.            \label{eq:terminal-clock-duration-column}
+\end{align}
+In operator identities, \(C_\chi\) is augmented by zero components in the
+unchanged old-history and causal-entry rows.
+Define the infinitesimal clock shear
+\begin{equation}
+ A_\chi(s)=\frac{\chi(s)}{\delta}Y_*'(s).        \label{eq:terminal-clock-domain-shear}
+\end{equation}
+Then the exact commutator identity is
+\begin{equation}
+ C_\chi+L_0A_\chi=0                             \label{eq:terminal-clock-commutator}
+\end{equation}
+in the distributed equation, the old-history row, and the causal-entry
+rows.
+
+Let the remaining upper rows be genuine terminal observations \(B(Y_S)\),
+including, when present, a finite normal row and a terminal-history
+observation, and append the normalized physical event
+\begin{equation}
+ E(Y)=\frac{r_Y(S)-e}{q_{0,e}},\qquad q_{0,e}\ne0.          \label{eq:terminal-clock-event-row}
+\end{equation}
+If that terminal history is to be a free interface, introduce an
+additional unknown \(h\) in its history space and replace the corresponding
+row by \(\mathcal T(Y_S)-h\).  In the formulas below one then reads
+\(v\) as \((v,h)\), \(A_\chi\) as \((A_\chi,0)\), and \(DB\) as the
+derivative of this augmented row.  Thus a ``free interface'' is an actual
+triangular unknown, not an observation disguised as boundary data.
+Define the complete upper block and its raw clock column by
+\begin{equation}
+ L_{\rm up}v=(L_0v,DB(Y_*)v),\qquad
+ C_{\rm up}=(C_\chi,0),                           \label{eq:terminal-clock-upper-block}
+\end{equation}
+and suppose that \(L_{\rm up}\) is an isomorphism.  Put
+\begin{equation}
+ \ell v=DE(Y_*)v,\qquad
+ c_{\rm ter}=\ell A_\chi
+ =\frac{r_*'(S)}{\delta q_{0,e}}.               \label{eq:terminal-clock-event-coefficient}
+\end{equation}
+Assume \(q_{*,e}=\delta^{-1}r_*'(S)\ne0\).  If the terminal column
+factors as
+\begin{equation}
+ DB(Y_*)A_\chi=Kc_{\rm ter},                    \label{eq:terminal-clock-column-factorization}
+\end{equation}
+then the full upper commutator is
+\begin{equation}
+ C_{\rm up}+L_{\rm up}A_\chi=Kc_{\rm ter}.      \label{eq:terminal-clock-full-commutator}
+\end{equation}
+The complete clock-bordered differential is conjugate, by the domain
+lift \(v=w+A_\chi\beta\) and the range shear
+\((f,b)\mapsto(f-Kb,b)\), to
+\begin{equation}
+ \begin{pmatrix}L_{\rm up}-K\ell&0\\ \ell&c_{\rm ter}\end{pmatrix}.
+                                                        \label{eq:terminal-clock-triangular-border}
+\end{equation}
+Consequently its raw Schur scalar is
+\begin{equation}
+ -\ell L_{\rm up}^{-1}C_{\rm up}
+ =c_{\rm ter}\{1-\ell L_{\rm up}^{-1}K\},    \label{eq:terminal-clock-raw-schur}
+\end{equation}
+whereas the event-aligned Schur coefficient in
+\cref{eq:terminal-clock-triangular-border} is exactly \(c_{\rm ter}\).
+On the terminal plateau the two displayed components of \(K\) are
+\begin{equation}
+ K_p=\frac{q_{0,e}p_*'(S)}{\delta q_{*,e}},\qquad
+ (K_Z\beta)(\theta)
+ =\frac{q_{0,e}Z_*'(S+\theta)}{\delta q_{*,e}}\,\beta,
+ \quad q_{*,e}=\delta^{-1}r_*'(S).              \label{eq:terminal-clock-physical-shears}
+\end{equation}
+
+The composition map in \cref{eq:terminal-clock-pulled-rfde} is \(C^1\)
+from a \(C^2\) swept terminal tube to a \(W^{1,\infty}\) terminal
+residual, and from a \(C^1\) swept tube to a \(C^0\) residual.  Merely
+placing the tube in \(W^{1,\infty}\) does not justify a Fr\'echet
+derivative in the \(L^\infty\) operator topology.  Thus
+\cref{eq:terminal-clock-triangular-border} is an operator theorem only on
+the corresponding strong terminal restriction; it is not licensed by a
+formal translation of a rough history.
+\end{lemma}
+
+\begin{corollary}[Uniform physical-event border on a reserved slow-clock buffer]
+\label[corollary]{cor:fixed-envelope-terminal-clock-border}
+Retain
+\cref{thm:fixed-envelope-speed-row-zero,%
+thm:fixed-envelope-terminal-slow-jet}
+at order \(h\ge4\).  Choose the terminal-buffer constant
+\(A>A_{\rm fl}\), fix
+\begin{equation}
+ 0<a_\chi<A-A_{\rm fl},\qquad
+ L_{\chi,\delta}=a_\chi S_\delta,               \label{eq:slow-clock-transition-length}
+\end{equation}
+and reserve this part of the post-flushing buffer for the clock.  Choose
+the cutoff in \cref{lem:terminal-clock-pullback-border} so that
+\begin{align}
+ \chi_\delta&=0
+   &&\text{on }[-\theta_m,S_\sigma-\theta_m-L_{\chi,\delta}],\notag\\
+ \chi_\delta&=1
+   &&\text{on }[S_\sigma-\theta_m,S_\sigma],\notag\\
+ S_\delta\|\chi_\delta'\|_\infty
+   +S_\delta^2\|\chi_\delta''\|_\infty&\le C_\chi .
+                                                        \label{eq:slow-clock-cutoff-bounds}
+\end{align}
+Write \(\chi=\chi_\delta\) in the formulas below.
+This choice uses the original admissible joint wedge; no additional
+relation between \(S_\delta\) and \(\mathfrak b_{\delta,\varkappa}\) is
+imposed.
+
+Let \(Y_\sigma^{\rm fe}=(r_\sigma^{\rm fe},Z_\sigma^{\rm fe},
+p_\sigma^{\rm fe})\) be the exact fixed-envelope segment, let
+\(S_\sigma\) be its fixed fold-time duration, and put
+\begin{equation}
+ \widehat e_\sigma=r_\sigma^{\rm fe}(S_\sigma),\qquad
+ e_\sigma=e_{\sigma,1},\qquad
+ E_\sigma^{\rm fe}
+ =\frac{\widehat e_\sigma-e_\sigma}{q_0(e_\sigma)}.
+                                                        \label{eq:fixed-envelope-original-event-defect}
+\end{equation}
+Then
+\begin{align}
+ \frac{|E_\sigma^{\rm fe}|}{\rho_\delta}
+ &\le C\mathfrak b_{\delta,\varkappa},&
+ \frac{|\tau_\sigma^{\rm fe}|}{\rho_\delta}
+ +\frac{|\tau_\sigma^{\rm fe}|}{\delta S_\delta}
+ &\le C\mathfrak b_{\delta,\varkappa}.         \label{eq:short-clock-base-defect}
+\end{align}
+The protected offset range in
+\cref{eq:terminal-slow-jet-offset-range} contains the cutoff, its delayed
+feet, and one fixed safety collar.  Throughout the normalized ball
+\begin{equation}
+ |\beta|\le C_\beta\rho_\delta
+       \mathfrak b_{\delta,\varkappa}.           \label{eq:short-clock-parameter-ball}
+\end{equation}
+the clock is a diffeomorphism after the usual ordered decrease of the
+joint wedge.  Moreover, uniformly for \(0\le s\le S_\sigma\),
+\begin{align}
+ \|\sigma_{k,\beta}-(\,\cdot-\theta_k)\|_{C^0}
+ &\le C\mathfrak b_{\delta,\varkappa},\notag\\
+ \|\partial_s\sigma_{k,\beta}-1\|_{C^0}
+ &\le C S_\delta^{-1}\mathfrak b_{\delta,\varkappa},\notag\\
+ \rho_\delta\|\partial_\beta\sigma_{k,\beta}\|_{C^0}
+ +\rho_\delta^2\|\partial_\beta^2\sigma_{k,\beta}\|_{C^0}
+ &\le C.                                         \label{eq:slow-clock-foot-bounds}
+\end{align}
+
+Let
+\begin{equation}
+ J_{\sigma,\chi}
+ =[S_\sigma-L_{\chi,\delta}-2\theta_m-1,S_\sigma],         \label{eq:slow-clock-swept-window}
+\end{equation}
+intersected with the last branch interval if necessary.  Let
+\(\mathsf E_{\sigma,\delta}^{T,0}(J_{\sigma,\chi})\) be the closed
+subspace of
+\(\mathsf E_{\sigma,\delta}^{T,\infty}\) whose two distributed source
+components have continuous representatives on \(J_{\sigma,\chi}\), with
+the inherited direct sup norm.  Define \(\mathcal Y_{\sigma,\chi}^0\) by
+replacing the terminal-source summand in
+\cref{eq:terminal-source-three-summand-range} by this subspace and retaining
+the same continuous phase source and finite rows.
+
+On the causal tangent space at the fixed-envelope zero require the
+reconstructed terminal normal tangent to be \(C^1\) on
+\(J_{\sigma,\chi}\), and define
+\begin{equation}
+ \|v\|_{\mathcal J_{\sigma,\chi}^1}
+ =\frac1\varepsilon\sup_{J_{\sigma,\chi}}
+   \left\{\|Z_v\|_N+\frac{|p_v|}{m_{\sigma,T}}\right\}
+ +\frac\delta\varepsilon\sup_{J_{\sigma,\chi}}
+   \left\{\|Z_v'\|_N+\frac{|p_v'|}{m_{\sigma,T}}\right\}.
+                                                        \label{eq:short-clock-strong-terminal-norm}
+\end{equation}
+Write \(\mathcal X_{\sigma,\chi}^1\) for the intersection of the
+source-split causal domain of the fixed-envelope differential with the
+finite norm in \cref{eq:short-clock-strong-terminal-norm}, and give it the
+sum of the old transported natural graph norm and this terminal norm.
+These are explicit closed source and solution restrictions: the continuous
+terminal-source Green formula maps \(\mathcal Y_{\sigma,\chi}^0\) onto
+\(\mathcal X_{\sigma,\chi}^1\) with the uniform estimate in
+\cref{eq:terminal-component-source-bound}.  In particular the range is not
+defined as the image of the operator.  The restriction charges exactly
+the one continuous derivative required by the clock composition and does
+not strengthen the old history at the causal entry.
+
+Let \(\mathscr A_{\chi,\sigma}^{\rm fe}\) be the coordinate lift of the
+physical clock tangent: under the exact fixed-envelope reconstruction,
+\begin{equation}
+ D_u(r,Z,p)\big|_{u_\sigma^{\rm fe}}
+       \mathscr A_{\chi,\sigma}^{\rm fe}=A_\chi,\qquad
+ (\mathscr A_{\chi,\sigma}^{\rm fe})_a(e_{\sigma,0})=0,\qquad
+ (\mathscr A_{\chi,\sigma}^{\rm fe})_\tau
+ =-(\mathscr A_{\chi,\sigma}^{\rm fe})_a(e_{\sigma,1}).   \label{eq:slow-clock-coordinate-lift}
+\end{equation}
+The exact collective/normal chart determines its \((y,a)\)-components
+uniquely; the last equality determines the auxiliary slack component and
+makes the triangular phase--slack row vanish on the lift.
+
+The clock lift is not uniformly bounded in the old hybrid phase norm.
+Indeed, its phase component changes by order one across an
+\(O(\rho_\delta)\) spatial interval, whereas that norm divides the phase
+derivative by the vanishing terminal weight.  The correct moving-duration
+space is therefore the clock-aligned pullback space.  If \(v\) is a
+fixed-envelope coordinate tangent, \(h\in\mathcal H_{Z,T}^1\) is the free
+terminal-history interface, and \(\beta\in\mathbb R_{\rho_\delta}\), set
+\begin{equation}
+ \|(v,h,\beta)\|_{\mathcal X_{\sigma,\chi}^{\rm clk}}
+ :=\|v-\mathscr A_{\chi,\sigma}^{\rm fe}\beta\|_
+          {\mathcal X_{\sigma,\chi}^1}
+   +\|h\|_{\mathcal H_{Z,T}^1}
+   +\frac{|\beta|}{\rho_\delta}.                \label{eq:slow-clock-aligned-domain-norm}
+\end{equation}
+Write \(K_\sigma^{\rm fe}\) for the complete upper shear in
+\cref{eq:terminal-clock-column-factorization}; it has the displayed
+finite normal and terminal-history components and zero components in all
+unchanged rows.  For an upper datum \(F\), interface datum \(g\), and
+event datum \(b\), put
+\begin{equation}
+ \|(F,g,b)\|_{\mathcal Y_{\sigma,\chi}^{\rm clk}}
+ :=\|(F,g)-K_\sigma^{\rm fe}b\|_
+          {\mathcal Y_{\sigma,\chi}^0\times\mathcal H_{Z,T}^1}
+   +\frac{|b|}{\rho_\delta}.                    \label{eq:slow-clock-aligned-range-norm}
+\end{equation}
+For each fixed \(\delta\) these norms describe the same algebraic domain
+and range as the raw products.  Their point is uniformity: they quotient
+the artificial phase gradient of a terminal time change before applying
+the fixed-envelope estimates.  No uniform equivalence with the raw
+product norms is asserted.
+
+At \((u_\sigma^{\rm fe},0)\), the complete physical-event differential,
+including the repelling speed-aligned finite row and a free terminal normal
+history interface, is a dimension- and diagonal-uniform isomorphism from
+the clock-aligned domain in
+\cref{eq:slow-clock-aligned-domain-norm} onto the clock-aligned range in
+\cref{eq:slow-clock-aligned-range-norm}.  More precisely, the two norms
+are the pullbacks by the domain and range shears that give
+\cref{eq:terminal-clock-triangular-border}, with the physical
+\(A_\chi\) represented by \(\mathscr A_{\chi,\sigma}^{\rm fe}\), and with
+\begin{equation}
+ \frac12\le |c_{\sigma,\rm ter}^{\rm fe}|\le\frac32,
+ \qquad
+ \kappa_{p,\delta}^{\rm fe}=o(1),
+ \qquad
+ \|K_{Z,0}^{\rm fe}\|_
+  {\mathcal L(\mathbb R_{\rho_\delta},\mathcal H_{Z,T}^1)}
+ \le C.                                          \label{eq:short-clock-border-bounds}
+\end{equation}
+Here the repelling scalar shear is evaluated at the actual base endpoint
+\(\widehat e_r\); explicitly,
+\begin{equation}
+ K_{p,r}^{\rm fe}
+ =\frac{q_0(e_r)}{q_0(\widehat e_r)}
+       R_{q,N}(\widehat e_r),                   \label{eq:short-clock-base-scalar-shear}
+\end{equation}
+because the fixed-envelope speed correction vanishes there.  The normal
+history shear in \cref{eq:short-clock-border-bounds} is the actual clock
+column on the fixed terminal history, not the formal column of
+\cref{eq:fixed-envelope-formal-history-column}.
+
+This corollary closes the previously conditional moving-duration
+\emph{differential} without a right-hand physical envelope or a
+separate matching subwedge.  It does not
+apply an implicit-function theorem to
+\cref{eq:fixed-envelope-original-event-defect}; therefore it does not yet
+construct an original-endpoint nonlinear zero, a parameter family, a past
+orbit, a connection, or a physical root.
+\end{corollary}
+
+\begin{theorem}[Original-endpoint RFDE segment from the slow terminal clock]
+\label[theorem]{thm:short-clock-original-endpoint-segment}
+Retain
+\cref{thm:fixed-envelope-speed-row-zero,%
+thm:fixed-envelope-terminal-slow-jet,%
+cor:fixed-envelope-terminal-clock-border}
+and the strong terminal spaces in
+\cref{eq:short-clock-strong-terminal-norm}.  Work pointwise at one
+admissible parameter pair and let
+\(\mathcal Y_\sigma(u)\) denote the full physical old-history/current
+trajectory reconstructed from the fixed-envelope coordinates
+\(u=(y,a,\tau)\).  Thus at \(\beta=0\) its exact RFDE residual, after the
+normal/phase splitting, is \(\mathbb F_\sigma^{\rm fe}(u)\).
+Write \(\mathfrak F_N\) for the full discrete-delay right-hand side of the
+reconstructed fold-time system in
+\cref{eq:fold-time-tracker-r,eq:fold-time-tracker-Z,%
+eq:fold-time-tracker-p}.
+
+For \(\beta\) in \cref{eq:short-clock-parameter-ball}, impose the exact
+fixed-interval equation \cref{eq:terminal-clock-pulled-rfde} on the whole
+interval \(0\le s\le S_\sigma\), using
+\(Y=\mathcal Y_\sigma(u)\).  It agrees with the fixed-clock equation where
+all relevant clock values are on the same plateau; its unsplit physical
+row is
+\begin{equation}
+ \mathscr R_{\sigma,\rm RFDE}^{\rm clk}(Y,\beta)(s)
+ =\delta Y_s(s)-\{1+d_\beta\chi'(s)\}
+  \mathfrak F_N\bigl(Y(s),Y(\sigma_{1,\beta}(s)),\ldots,
+                         Y(\sigma_{m,\beta}(s))\bigr).
+                                                        \label{eq:short-clock-unsplit-rfde-row}
+\end{equation}
+Apply the same exact collective/normal decomposition and hard source split
+as in \cref{eq:fixed-envelope-exact-residual}.  Keep the raw-compatible old-history row, the
+causal-entry row, the phase gauge, the attracting entry row, and the
+repelling speed-aligned terminal row, with every coefficient in that row
+evaluated at the current terminal state \(r_Y(S_\sigma)\).  Evaluate the
+terminal history on the fixed plateau in
+\cref{eq:terminal-clock-history-fixed}, but do not prescribe it as boundary
+data.  For the square augmented operator, adjoin a free interface unknown
+\(h\in\mathcal H_{Z,T}^1\) and the row
+\(\mathcal T_Z(Y)-h\), exactly as in
+\cref{cor:conditional-event-aligned-source-split-inverse}.  Denote the
+resulting square residual by
+\(\mathbb F_\sigma^{\rm clk,aug}(u,h,\beta)\).  Retain the triangular
+fixed-envelope phase-slack row and
+append
+\begin{equation}
+ E_\sigma(u)=
+ \frac{r_{\mathcal Y_\sigma(u)}(S_\sigma)-e_\sigma}
+      {q_0(e_\sigma)}.                           \label{eq:short-clock-nonlinear-event}
+\end{equation}
+Let \(\operatorname{pr}_{\ne\mathrm{int}}\) delete the interface row and
+define the reduced exact fixed-domain residual by the unique identity-row
+elimination
+\begin{equation}
+ \mathbb F_\sigma^{\rm clk}(u,\beta)
+ :=\operatorname{pr}_{\ne\mathrm{int}}
+ \mathbb F_\sigma^{\rm clk,aug}
+  \bigl(u,\mathcal T_Z(\mathcal Y_\sigma(u)),\beta\bigr).
+                                                        \label{eq:short-clock-exact-residual}
+\end{equation}
+Thus the augmented and reduced zeros correspond bijectively: the deleted
+row uniquely recovers the actual terminal history.  The proof retains the
+augmented variable through every inverse and contraction estimate and
+projects only afterward.
+No equation is cut off in this definition: the cutoff changes only the
+clock chart, and zeros are conjugate to zeros of the unmodified physical
+RFDE by \(\Xi_\beta\).
+
+There is a joint constant \(C_{\rm oe}>0\) such that, after the ordered
+decrease of the original joint wedge, the residual in
+\cref{eq:short-clock-exact-residual} has a unique zero
+\begin{equation}
+ (u_\sigma^{\rm oe},\beta_\sigma^{\rm oe})
+ \quad\hbox{with}\quad
+ \|u_\sigma^{\rm oe}-u_\sigma^{\rm fe}
+       -\mathscr A_{\chi,\sigma}^{\rm fe}
+          \beta_\sigma^{\rm oe}\|_
+       {\mathcal X_{\sigma,\chi}^1}
+ +\frac{|\beta_\sigma^{\rm oe}|}{\rho_\delta}
+ \le C_{\rm oe}\mathfrak b_{\delta,\varkappa}.  \label{eq:short-clock-zero-bound}
+\end{equation}
+The zero is unique in the displayed clock-aligned strong
+\(C_{\rm oe}\mathfrak b_{\delta,\varkappa}\)-ball (after enlarging
+\(C_{\rm oe}\) once in the proof), and its differential is a dimension-
+and diagonal-uniform isomorphism between the corresponding translated
+clock-aligned spaces at that zero.  No uniform raw-product estimate and no
+uniqueness outside this local clock-aligned ball are asserted.
+
+Define
+\begin{equation}
+ S_\sigma^{\rm oe}
+ =S_\sigma+\frac{\beta_\sigma^{\rm oe}}{\delta},
+ \qquad
+ X_\sigma^{\rm oe}(t)
+ =\mathcal Y_\sigma(u_\sigma^{\rm oe})
+       \bigl(\Xi_{\beta_\sigma^{\rm oe}}^{-1}(t)\bigr).
+                                                        \label{eq:short-clock-physical-segment}
+\end{equation}
+Then \(X_\sigma^{\rm oe}\) is a classical forward segment of the
+unmodified RFDE on
+\([-\theta_m,S_\sigma^{\rm oe}]\), has exactly the same raw-compatible
+old history and causal entry as its fixed-clock representative, and
+satisfies
+\begin{equation}
+ r_\sigma^{\rm oe}(S_\sigma^{\rm oe})=e_{\sigma,1}.
+                                                        \label{eq:short-clock-original-endpoint}
+\end{equation}
+Its scalar speed is strictly negative on the whole segment.  The terminal
+history
+\[
+ \theta\longmapsto
+ X_\sigma^{\rm oe}(S_\sigma^{\rm oe}+\theta),
+ \qquad-\theta_m\le\theta\le0,
+\]
+is exactly the fixed plateau history of
+\(\mathcal Y_\sigma(u_\sigma^{\rm oe})\).
+
+On the repelling branch the nonlinear speed row gives
+\begin{equation}
+ Q_r^{\rm oe}(e_{r,1})=0,\qquad
+ c_{r,\rm ter}^{\rm oe}=1,\qquad
+ K_{p,r}^{\rm oe}=R_{q,N}(e_{r,1}),\qquad
+ \kappa_{p,\delta}^{\rm oe}=o(1).               \label{eq:short-clock-endpoint-speed-identities}
+\end{equation}
+On both branches the actual terminal normal history satisfies
+\begin{align}
+ \|\partial_s Z_\sigma^{\rm oe}\|_{C^0}
+ &\le C\frac{\varepsilon\delta}{\rho_\delta},&
+ \|\partial_s^2 Z_\sigma^{\rm oe}\|_{C^0}
+ &\le C\frac{\varepsilon}{\rho_\delta},          \label{eq:short-clock-endpoint-slow-jet}\\
+ \|K_{Z,0}^{\rm oe}\|_
+  {\mathcal L(\mathbb R_{\rho_\delta},\mathcal H_{Z,T}^1)}
+ &\le C.                                         \label{eq:short-clock-actual-history-shear}
+\end{align}
+The derivative norms are taken on the fixed pulled-back terminal window;
+by the terminal plateau this is the actual physical terminal-history
+window.
+
+This theorem closes a fixed-parameter, raw-compatible,
+original-coordinate-endpoint RFDE segment and its actual moving-duration
+speed/history columns.  Its raw old history is still the canonical local
+assembler.  It does not construct a past-complete attracting orbit, a
+repelling invariant history sheet, a branch-to-branch complete-history
+connection, a parameter/gauge family, or a physical canard root.
 \end{theorem}
 
 \begin{theorem}[Raw-gauge family of fixed-section outer zeros]

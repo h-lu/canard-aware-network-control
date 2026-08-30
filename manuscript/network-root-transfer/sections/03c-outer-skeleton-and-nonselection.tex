@@ -606,7 +606,7 @@ an open product neighborhood.  More explicitly, writing
 \cref{eq:backtrack-weighted-norm}, it is a map
 \[
  \mathscr H_\tau:
- C^{k+2}_\rho(J)\times\mathcal U_k(I,J_0)longrightarrow C^k_\rho(I),
+ C^{k+2}_\rho(J)\times\mathcal U_k(I,J_0)\longrightarrow C^k_\rho(I),
 \]
 where \(\mathcal U_k(I,J_0)\) is the open set of \(C^k\) maps whose range
 lies in \(\operatorname{int}J_0\).
@@ -8050,8 +8050,11 @@ Repeat the \(M\)-generation expansion in the proof of
 \cref{eq:terminal-component-rough-flush} for \(X_{\rm in}\).  The
 extra one-delay enlargement in
 \cref{eq:terminal-slow-jet-windows} leaves the current travel length
-\(L_0+1-L\ge L_0\) after all direct-history and strict-delay edges have
-been removed.  Boundary-face words have the same root and edge count.
+\[
+ L_{\rm trav}=L_0+1-L\ge L_{\rm fl}
+\]
+after all direct-history and strict-delay edges have been removed.
+Boundary-face words have the same root and edge count.
 Together with
 \cref{eq:proof-terminal-jet-source-ledger,%
 eq:proof-terminal-jet-incoming-data,eq:proof-terminal-jet-future-size},
@@ -8065,7 +8068,7 @@ this gives
        \frac{\varepsilon\lambda_\delta}{\delta}\right\},
                                                         \label{eq:proof-terminal-jet-flushed-tangent}\\
  \mathcal E_{\sigma,T}^{\rm jet}(\delta)
- =\exp\{-cr_{\sigma,T}L_0/\delta\}
+ =\exp\{-cr_{\sigma,T}L_{\rm fl}/\delta\}
    +\left(\frac{C\varepsilon}{m_{\sigma,T}}\right)^M.
                                                         \label{eq:proof-terminal-jet-flush-error}
 \end{align}
@@ -8083,7 +8086,7 @@ Now
 \]
 On the attracting branch the exponential in
 \cref{eq:proof-terminal-jet-flush-error} is a sufficiently high power of
-\(\delta\) after \(A\ge A_{\rm jet}\) is fixed, and
+\(\delta\) after \(A_{\rm fl}\) is fixed sufficiently large, and
 \(\varepsilon/m_{a,T}=O(\delta^2S_\delta^2)\).  On the repelling branch
 the wedge gives \(R_\delta S_\delta/\delta\to\infty\) faster than every
 logarithmic power and
@@ -8119,6 +8122,634 @@ here.  The raw full state
 retains the collective time tangent and is therefore outside the normal
 history space used in this calculation.  The stated scope restrictions
 follow.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:terminal-clock-pullback-border}]
+The derivative of the clock is
+\[
+ \Xi_\beta'(s)=1+d_\beta\chi'(s).
+\]
+Thus \cref{eq:terminal-clock-diffeomorphism-margin}, the endpoint values of
+\(\chi\), and the one-dimensional inverse-function theorem give the stated
+global diffeomorphism and its range.  Applying \(\Xi_\beta\) to
+\cref{eq:terminal-clock-delay-feet} gives
+\[
+ \sigma_{k,\beta}+d_\beta\chi(\sigma_{k,\beta})
+ =s+d_\beta\chi(s)-\theta_k,
+\]
+which is the first identity in
+\cref{eq:terminal-clock-foot-identities}.  Differentiation in \(s\) and
+\(\beta\) gives the other two.  Since \(\Xi_\beta\) is increasing and
+\(\theta_k>0\), its inverse preserves the strict causal inequality.
+Moreover \(\Xi_\beta\) is the identity on the complete old history.  On
+the terminal plateau,
+\[
+ \Xi_\beta(S+\theta)=S+\theta+d_\beta
+                    =\Xi_\beta(S)+\theta,
+ \qquad-\theta_m\le\theta\le0,
+\]
+which proves \cref{eq:terminal-clock-history-fixed}.  The chain rule now
+proves the equivalence of
+\cref{eq:clock-physical-rfde,eq:terminal-clock-pulled-rfde} in both
+directions.  In particular, this argument never evaluates the fixed-domain
+unknown at a point larger than \(S\).
+
+At \(\beta=0\),
+\begin{equation}
+ \left.\partial_\beta\sigma_{k,\beta}(s)\right|_{\beta=0}
+ =\frac{\chi(s)-\chi(s-\theta_k)}{\delta}.       \label{eq:proof-clock-foot-derivative}
+\end{equation}
+Differentiating the left-minus-right residual at fixed \(Y_*\), using
+\(\mathfrak F_*=\delta Y_*'\), gives
+\cref{eq:terminal-clock-duration-column}.  On the other hand,
+\begin{align*}
+ L_0 A_\chi
+ &=
+ \delta\left(\frac{\chi Y_*'}{\delta}\right)'
+ -\sum_{k=0}^mD_k\mathfrak F_*
+       \frac{\chi(\,\cdot-\theta_k)Y_*'(\,\cdot-\theta_k)}
+            {\delta}\\
+ &=\chi'Y_*'
+ +\frac1\delta\sum_{k=0}^mD_k\mathfrak F_*
+       \{\chi(\,\cdot)-\chi(\,\cdot-\theta_k)\}
+                  Y_*'(\,\cdot-\theta_k).
+\end{align*}
+Here differentiation of the base equation was used in the second line;
+the \(k=0\) difference vanishes.  Substitution of
+\(\delta Y_*'=\mathfrak F_*\) proves the commutator identity
+\cref{eq:terminal-clock-commutator}.  Because \(A_\chi=0\) on the old
+history and at the causal entry, the same identity includes those rows.
+
+In the fixed clock chart a terminal observation has no explicit
+\(\beta\)-column.  After the domain lift \(v=w+A_\chi\beta\), however, its
+column is \(DB(Y_*)A_\chi\), while the event row becomes
+\[
+ \ell w+(\ell A_\chi)\beta=\ell w+c_{\rm ter}\beta.
+\]
+The terminal plateau gives
+\[
+ A_{\chi,p}(S)=\frac{p_*'(S)}{\delta},\qquad
+ A_{\chi,Z}(S+\theta)=\frac{Z_*'(S+\theta)}{\delta}.
+\]
+This proves
+\cref{eq:terminal-clock-event-coefficient,%
+eq:terminal-clock-column-factorization,%
+eq:terminal-clock-physical-shears}.  Subtracting \(K\) times the event
+row from the upper row, using
+\cref{eq:terminal-clock-full-commutator}, produces
+\cref{eq:terminal-clock-triangular-border}.  Direct block elimination,
+or \cref{eq:endpoint-selector-domain-schur-invariance}, then gives
+\cref{eq:terminal-clock-raw-schur}.
+
+For completeness, the regularity assertion is not an appeal to formal
+translation.  On the swept tube the map
+\((Y,\beta)\mapsto Y(\sigma_{k,\beta})\) has first differential
+\[
+ (v,\zeta)\longmapsto
+ v(\sigma_{k,\beta})
+ +Y'(\sigma_{k,\beta})
+       \partial_\beta\sigma_{k,\beta}\,\zeta.
+\]
+The identities in \cref{eq:terminal-clock-foot-identities} and the
+diffeomorphism margin bound this map in \(C^0\) from a \(C^1\) tube.
+Differentiating once in \(s\) uses one further derivative of \(Y\), giving
+the \(C^2\)-to-\(W^{1,\infty}\) assertion.  The integral mean-value formula
+for \(Y'\) and the uniform continuity of \(Y''\) prove the Fr\'echet
+remainder estimate.  In contrast, a translated jump of a merely
+\(W^{1,\infty}\) derivative has an \(L^\infty\) difference of order one;
+there is no corresponding operator-norm derivative.  This proves the
+stated strong-space boundary.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{cor:fixed-envelope-terminal-clock-border}]
+Put \(b=\mathfrak b_{\delta,\varkappa}\).  From
+\cref{eq:fixed-envelope-slack-mismatch},
+\[
+ \widehat e_\sigma
+ =\Phi_{q_0}^{-\tau_\sigma^{\rm fe}}(e_\sigma).
+\]
+The uniform speed bounds for \(q_0\), the mean-value theorem, and the
+fixed-envelope phase estimate therefore give
+\[
+ |\widehat e_\sigma-e_\sigma|
+ \le C|\tau_\sigma^{\rm fe}|,\qquad
+ \frac{|E_\sigma^{\rm fe}|}{\rho_\delta}
+ +\frac{|\tau_\sigma^{\rm fe}|}{\rho_\delta}
+ \le Cb.
+\]
+Because \(\rho_\delta/(\delta S_\delta)=(2\alpha)^{-1}\), this is
+\cref{eq:short-clock-base-defect}.
+
+A fixed rescaling of a \(C^2\) cutoff on \([0,1]\) gives
+\cref{eq:slow-clock-cutoff-bounds}.  Since
+\(a_\chi<A-A_{\rm fl}\), the offset range in
+\cref{eq:terminal-slow-jet-offset-range}, with its extra unit collar,
+contains \(J_{\sigma,\chi}\) for all sufficiently small \(\delta\).
+On \cref{eq:short-clock-parameter-ball},
+\[
+ |d_\beta|\le CS_\delta b,
+ \qquad
+ |d_\beta|\|\chi_\delta'\|_\infty\le Cb.
+\]
+The ordered choice of \(\varkappa_0\) and then \(\delta_0\) makes the
+second quantity at most \(1/4\), so the clock is a diffeomorphism on the
+original joint wedge.
+
+For a positive delay foot, monotonicity first gives
+\(|s-\sigma_{k,\beta}(s)|\le 2\theta_m\).  The mean-value theorem and
+\cref{eq:slow-clock-cutoff-bounds} then give
+\[
+ |\chi(s)-\chi(\sigma_{k,\beta}(s))|\le C S_\delta^{-1},
+ \qquad
+ |\chi'(s)-\chi'(\sigma_{k,\beta}(s))|
+       \le C S_\delta^{-2}.
+\]
+Substitution into \cref{eq:terminal-clock-foot-identities} proves the
+first three bounds in \cref{eq:slow-clock-foot-bounds}.  Differentiating
+the last foot identity once more in \(\beta\), put
+\[
+ N=\chi(s)-\chi(\sigma_{k,\beta}(s)),\qquad
+ D=1+d_\beta\chi'(\sigma_{k,\beta}(s)).
+\]
+The exact formula is
+\begin{equation}
+ \partial_\beta^2\sigma_{k,\beta}
+ =-\frac{2N\chi'(\sigma_{k,\beta})}{\delta^2D^2}
+  -\frac{d_\beta N^2\chi''(\sigma_{k,\beta})}
+          {\delta^2D^3}.                       \label{eq:proof-slow-clock-second-foot}
+\end{equation}
+Here the essential numerator factor is
+\(N=O(S_\delta^{-1})\); omitting it would create a spurious
+\(S_\delta\)-loss.  Since
+\(\rho_\delta\asymp\delta S_\delta\), the cutoff bounds and
+\(|d_\beta|\le CS_\delta\mathfrak b_{\delta,\varkappa}\) give
+\(\rho_\delta^2\|\partial_\beta^2\sigma\|_\infty\le C\), completing
+\cref{eq:slow-clock-foot-bounds}.
+
+The continuous terminal-source subspace is closed in its direct sup norm.
+The continuous-source version of
+\cref{prop:diagonal-terminal-source-extension} and
+\cref{eq:terminal-component-source-bound} gives a \(C^1\) response on
+\(J_{\sigma,\chi}\); conversely applying the fixed-envelope differential
+to a member of \(\mathcal X_{\sigma,\chi}^1\) gives a continuous source
+there.  The bulk source vanishes on this window, the boundary columns are
+classical there, and the phase and finite rows are unchanged.  Thus the
+complete fixed-envelope upper block is a uniform isomorphism from
+\(\mathcal X_{\sigma,\chi}^1\) onto
+\(\mathcal Y_{\sigma,\chi}^0\), with the explicitly defined norms.
+
+Write
+\(q_\sigma^{\rm fe}=\delta^{-1}(r_\sigma^{\rm fe})'\).  Because the
+phase chart is \(r_\sigma^{\rm fe}(s)
+=\Theta_{a_\sigma^{\rm fe}}(\bar r_\sigma(s))\), the phase component of
+the coordinate lift in \cref{eq:slow-clock-coordinate-lift} is exactly
+\begin{equation}
+ (\mathscr A_{\chi,\sigma}^{\rm fe})_a
+       (\bar r_\sigma(s))
+ =\chi(s)\frac{q_\sigma^{\rm fe}(s)}
+                 {q_0(r_\sigma^{\rm fe}(s))}.             \label{eq:proof-slow-clock-phase-lift}
+\end{equation}
+It vanishes at the causal entry.  The normal coordinate component is the
+physical \((Z,p)\) clock tangent minus the exact structured phase column,
+and the slack component is the last one in
+\cref{eq:slow-clock-coordinate-lift}.  Thus this is an actual tangent of
+the fixed-envelope coordinate domain, not an untyped full-state vector.
+
+The normal and slack parts of this lift are uniformly controlled after
+multiplication by the clock scale:
+\begin{equation}
+ \|D_u(Z,p)\mathscr A_{\chi,\sigma}^{\rm fe}\beta\|_
+       {\mathcal J_{\sigma,\chi}^1}
+ +\frac{|(\mathscr A_{\chi,\sigma}^{\rm fe})_\tau\beta|}
+       {\rho_\delta}
+ \le C\frac{|\beta|}{\rho_\delta}.             \label{eq:proof-slow-clock-normal-shear}
+\end{equation}
+Indeed the undifferentiated term uses
+\(Z'=O(\varepsilon\delta/\rho_\delta)\), while its derivative is
+\(\delta^{-1}\{\chi'Z'+\chi Z''\}\) and uses both estimates in
+\cref{eq:fixed-envelope-terminal-slow-jet}.  The speed ratio in
+\cref{eq:proof-slow-clock-phase-lift} and the clock cutoff instead give
+only the unweighted physical-chart estimate
+\begin{equation}
+ \frac{\|(\mathscr A_{\chi,\sigma}^{\rm fe})_a\beta\|_{C^0}}
+          {\rho_\delta}
+ +\|\partial_r\{(\mathscr A_{\chi,\sigma}^{\rm fe})_a\beta\}\|_{C^0}
+ \le C\frac{|\beta|}{\rho_\delta}.             \label{eq:proof-slow-clock-phase-admissibility}
+\end{equation}
+The derivative estimate follows because the transition has fold-time
+length \(O(S_\delta)\), hence spatial width
+\(O(\delta S_\delta)=O(\rho_\delta)\).  It keeps the nonlinear phase
+chart admissible when
+\(|\beta|/\rho_\delta=O(\mathfrak b_{\delta,\varkappa})\), but it does
+\emph{not} bound the old hybrid phase norm: its vanishing terminal weight
+can make that raw norm grow like \(m_{\sigma,T}^{-1}\).  This is exactly
+why \cref{eq:slow-clock-aligned-domain-norm} measures the remainder after
+subtracting the clock lift.
+
+The physical terminal voltage component of the lift is exactly
+\(\widehat K_{Z,0}^{\rm fe}\), with
+\[
+ c_{q,\sigma}=\frac{q_0(e_\sigma)}
+ {\delta^{-1}(r_\sigma^{\rm fe})'(S_\sigma)}.
+\]
+The physical speed sign and the small phase collar make this factor
+uniformly bounded.  Consequently
+\cref{eq:fixed-envelope-history-shear-bound} gives the last estimate in
+\cref{eq:short-clock-border-bounds}.
+
+At the nonlinear fixed-envelope zero the causal-slice differential is a
+uniform Neumann perturbation of the affine star inverse by
+\cref{thm:fixed-envelope-speed-row-zero}.  On the repelling branch,
+\cref{eq:fixed-envelope-terminal-speed-correction-zero} and the exact
+speed reconstruction give
+\[
+ q_{*,e}=\delta^{-1}(r_r^{\rm fe})'(S_r)
+         =q_0(\widehat e_r).
+\]
+The future row in
+\cref{eq:terminal-tangent-future-row} gives
+\[
+ \frac{q_0(e_r)(p_r^{\rm fe})'(S_r)}
+      {\delta q_0(\widehat e_r)}
+ =\frac{q_0(e_r)}{q_0(\widehat e_r)}
+       R_{q,N}(\widehat e_r),
+\]
+which is \cref{eq:short-clock-base-scalar-shear}.  The coefficient bounds,
+\(|\widehat e_r|\asymp|e_r|\asymp R_\delta\), and
+\(|R_{q,N}|\le C\varepsilon\) imply
+\[
+ \kappa_{p,\delta}^{\rm fe}
+ \le C\frac{\rho_\delta}{R_\delta}=o(1).
+\]
+On the attracting branch there is no future scalar shear.  On both
+branches the total terminal speed and \(q_0(e_\sigma)\) have the same sign
+and ratio \(1+o(1)\), proving the first estimate in
+\cref{eq:short-clock-border-bounds}.
+
+We may therefore apply the rank-one event-aligned inverse in
+\cref{cor:conditional-event-aligned-source-split-inverse}, now with the
+actual clock columns just computed.  The scalar denominator is bounded
+away from zero, and the free normal-history interface is triangular and
+does not enter it.  By definition,
+\cref{eq:slow-clock-aligned-domain-norm,eq:slow-clock-aligned-range-norm}
+make the two shears isometries; no uniform equivalence with the raw hybrid
+product norm is used.  Conjugating by these shears and using the fully
+typed upper-block identity
+\cref{eq:terminal-clock-full-commutator,eq:terminal-clock-triangular-border}
+proves the claimed uniform isomorphism.  Since no nonlinear
+range-membership or two-point estimate for the clock-pulled residual has
+been invoked, the final scope sentence is necessary.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:short-clock-original-endpoint-segment}]
+We first verify that the fixed-domain map is a genuine strong-space
+residual.  The support of \(\chi'\) lies strictly inside the terminal
+source interval, while \(\chi=0\) on the old history, causal entry, and
+hard bulk/terminal interface.  Hence the old source split is unchanged.
+The entire swept set of current arguments and delay feet lies in
+\(J_{\sigma,\chi}\) by
+\cref{eq:slow-clock-foot-bounds,eq:slow-clock-swept-window}.  In
+particular, the normalized first and second clock derivatives are
+uniform; no factor \(S_\delta\) remains.
+
+Retain through the contraction the augmented terminal-history interface
+defined in the theorem.  Put
+\[
+ h_\sigma^{\rm fe}
+ =\mathcal T_Z\bigl(\mathcal Y_\sigma(u_\sigma^{\rm fe})\bigr),
+\]
+and use the square residual
+\(\mathbb F_\sigma^{\rm clk,aug}(u,h,\beta)\), whose interface row is
+\(\mathcal T_Z(\mathcal Y_\sigma(u))-h\).  Let
+\(\mathscr S_\sigma^{\rm fe}\) be the fixed range
+shear
+\[
+ \mathscr S_\sigma^{\rm fe}(F,g,b)
+   =((F,g)-K_\sigma^{\rm fe}b,b),
+\]
+where \(g\) is the interface row.  In clock-aligned
+variables define
+\begin{equation}
+ \widehat{\mathbb F}_\sigma^{\rm clk}(w,\eta,\beta)
+ =\mathscr S_\sigma^{\rm fe}
+   \mathbb F_\sigma^{\rm clk,aug}
+    \bigl(u_\sigma^{\rm fe}
+       +\mathscr A_{\chi,\sigma}^{\rm fe}\beta+w,
+       h_\sigma^{\rm fe}+\eta,\beta\bigr).
+                                                        \label{eq:proof-clock-aligned-residual}
+\end{equation}
+The \(C^1\)-to-\(C^0\) composition statement in
+\cref{lem:terminal-clock-pullback-border}, the coefficient \(C^2\) bounds,
+\cref{eq:proof-slow-clock-normal-shear,eq:proof-slow-clock-phase-admissibility},
+and the exact normal/phase splitting show that this is a \(C^1\) map from
+the ordinary product norm
+\[
+ \|w\|_{\mathcal X_{\sigma,\chi}^1}
+       +\|\eta\|_{\mathcal H_{Z,T}^1}
+       +|\beta|/\rho_\delta
+\]
+to the sheared strong range norm.  Its domain is a fixed ball in
+\((w,\eta)\),
+intersected with \cref{eq:short-clock-parameter-ball}; it is not a fixed
+ball in the old raw hybrid norm of
+\(\mathscr A_{\chi,\sigma}^{\rm fe}\beta+w\).  This is a genuine extension
+of the earlier fixed-envelope chart, not an invocation of its old star
+tube: the clock lift vanishes on the old history, causal entry, and hard
+source interface, so every row constructed there is unchanged; on the
+terminal source interval the direct physical chart is admissible by
+\cref{eq:proof-slow-clock-phase-admissibility} and the coefficient tube is
+closed by \cref{eq:proof-slow-clock-normal-shear}.  One can also see the range
+membership directly, without an image norm: the pulled current and delayed
+state slots are continuous on \(J_{\sigma,\chi}\), so the two distributed
+source components belong to
+\(\mathsf E_{\sigma,\delta}^{T,0}(J_{\sigma,\chi})\).  The remaining
+terminal, phase, and finite rows belong to the explicitly retained range
+factors.  No seam measure is created because \(\chi'\) vanishes near the
+hard source interface.
+
+Let
+\[
+ \widehat{\mathbb B}_\sigma^{\rm clk}
+ =D\widehat{\mathbb F}_\sigma^{\rm clk}(0,0,0).
+\]
+By \cref{cor:fixed-envelope-terminal-clock-border}, this is a uniform
+isomorphism in the aligned norms.  At the raw base point all upper rows
+vanish and only the physical event remains, so after the range shear
+\begin{equation}
+ \widehat{\mathbb F}_\sigma^{\rm clk}(0,0,0)
+ =(-K_\sigma^{\rm fe}E_\sigma^{\rm fe},E_\sigma^{\rm fe}),\qquad
+ \|\widehat{\mathbb F}_\sigma^{\rm clk}(0,0,0)\|
+ \le C\mathfrak b_{\delta,\varkappa}.           \label{eq:proof-clock-base-residual}
+\end{equation}
+Here the event row has its \(\rho_\delta\)-normalization.  The estimate
+uses \cref{eq:short-clock-border-bounds}: the history part of \(K\) is
+uniform, and the repelling finite part has normalized size
+\(\kappa_{p,\delta}^{\rm fe}=o(1)\).
+
+We record the nonlinear estimate rather than hiding it inside an abstract
+implicit-function theorem.  There is a joint \(r_{\rm clk}>0\) such that,
+for
+\[
+ z=(w,\eta,\beta),\qquad
+ \widetilde z=(\widetilde w,\widetilde\eta,\widetilde\beta),
+\]
+with
+\(
+ \|z\|=\|w\|_{\mathcal X_{\sigma,\chi}^1}
+          +\|\eta\|_{\mathcal H_{Z,T}^1}
+          +|\beta|/\rho_\delta
+\),
+in the \(r_{\rm clk}\)-ball about zero and satisfying
+\cref{eq:short-clock-parameter-ball}, the remainder
+\[
+ \widehat{\mathbb Q}_\sigma^{\rm clk}(z)
+ =\widehat{\mathbb F}_\sigma^{\rm clk}(z)
+ -\widehat{\mathbb F}_\sigma^{\rm clk}(0)
+ -\widehat{\mathbb B}_\sigma^{\rm clk}z
+\]
+belongs to the strong range and obeys
+\begin{equation}
+ \|\widehat{\mathbb Q}_\sigma^{\rm clk}(z)
+       -\widehat{\mathbb Q}_\sigma^{\rm clk}(\widetilde z)\|
+ \le C\{\mathfrak b_{\delta,\varkappa}
+          +\|z\|+\|\widetilde z\|\}
+       \|z-\widetilde z\|.                      \label{eq:proof-clock-two-point}
+\end{equation}
+To prove this, outside \(J_{\sigma,\chi}\) use the componentwise two-point
+ledger underlying
+\cref{eq:fixed-envelope-star-two-point,%
+eq:fixed-envelope-remainder-components}, before the anisotropic star
+rescaling.  Inside that interval use the
+integral mean-value formula in the state slots of \(\mathfrak F\), followed
+by \cref{eq:slow-clock-foot-bounds}.  A state--state remainder is
+quadratic in the strong graph distance.  A state--clock remainder has one
+factor \(|\beta|/\rho_\delta\) and a uniformly bounded normalized foot
+derivative.  A clock--clock remainder is controlled by
+\(\rho_\delta^2\partial_\beta^2\sigma=O(1)\).  The displacement of a
+delay foot and the clock-speed defect are both
+\(O(\mathfrak b_{\delta,\varkappa})\), rather than
+\(O(S_\delta\mathfrak b_{\delta,\varkappa})\).  The first state derivative
+in the clock composition is charged in
+\cref{eq:short-clock-strong-terminal-norm}; the uniform continuity of the
+first derivative is quantified by the terminal \(C^2\) coefficient and
+solution jets.  In the delayed normal rows each first foot variation is
+multiplied by the original \(O(\varepsilon)\) transverse coefficient, and
+in the scalar row by \(O(\varepsilon r_{\sigma,T})\); the second foot
+variation has the same factors.  After the source normalizations these
+give respectively
+\(C(|\beta|/\rho_\delta+|\widetilde\beta|/\rho_\delta)\)
+times the aligned distance.  Thus no bare modulus-of-continuity assertion
+and no derivative of a rough translation in the \(L^\infty\) operator
+topology is being used.  In the collective phase row the affine clock
+terms cancel by
+\cref{eq:terminal-clock-full-commutator}.  Its remaining Taylor monomials
+contain either a physical phase displacement
+\(O(\rho_\delta\|z\|)\) multiplied by a coefficient derivative
+\(O(1)\), or one of the delayed normal factors just listed.
+Since
+\(\rho_\delta/m_{\sigma,T}\le C\), their weighted-speed and
+prefix-action range norms obey the same two-point bound.  The finite speed
+row and terminal history have the same estimates by
+\cref{eq:short-clock-border-bounds}; the history row is triangular.  The
+entry and fixed phase-slack rows are affine.  These observations prove
+\cref{eq:proof-clock-two-point} component by component and also prove
+strong range membership.
+
+Choose \(C_{\rm ctr}>2\|(\widehat{\mathbb B}_\sigma^{\rm clk})^{-1}\|C\), where
+\(C\) is the base constant in \cref{eq:proof-clock-base-residual}, and
+enlarge the fixed constant \(C_\beta\) in
+\cref{eq:short-clock-parameter-ball} once so that
+\(C_\beta\ge C_{\rm ctr}\).
+Consider
+\begin{equation}
+ \mathcal T_\sigma^{\rm clk}(z)
+ =-(\widehat{\mathbb B}_\sigma^{\rm clk})^{-1}
+   \left\{\widehat{\mathbb F}_\sigma^{\rm clk}(0)
+       +\widehat{\mathbb Q}_\sigma^{\rm clk}(z)\right\}. \label{eq:proof-clock-contraction}
+\end{equation}
+On the ball
+\(\|z\|\le C_{\rm ctr}\mathfrak b_{\delta,\varkappa}\), the coefficient in
+\cref{eq:proof-clock-two-point} is made uniformly small by the ordered
+choice of \(\varkappa_0\) and then \(\delta_0\).  Thus
+\(\mathcal T_\sigma^{\rm clk}\) maps this ball into itself and has
+Lipschitz constant at most \(1/2\).  Its unique fixed point in this ball is
+\[
+ (w_\sigma^{\rm oe},\eta_\sigma^{\rm oe},
+       \beta_\sigma^{\rm oe}),
+ \qquad \eta_\sigma^{\rm oe}\in\mathcal H_{Z,T}^1,
+\]
+and
+\[
+ u_\sigma^{\rm oe}-u_\sigma^{\rm fe}
+ =\mathscr A_{\chi,\sigma}^{\rm fe}\beta_\sigma^{\rm oe}
+       +w_\sigma^{\rm oe},
+\]
+The triangular interface row gives uniquely
+\[
+ h_\sigma^{\rm fe}+\eta_\sigma^{\rm oe}
+ =\mathcal T_Z\bigl(\mathcal Y_\sigma(u_\sigma^{\rm oe})\bigr).
+\]
+Eliminating this uniquely recovered variable and projecting the fixed point
+to \((u,\beta)\) proves
+\cref{eq:short-clock-zero-bound}.  The same estimate and a Neumann series
+give the uniform inverse in the translated clock-aligned norms at the new
+zero.  Conversely, every reduced zero in the projected local ball has the
+unique augmented lift
+\(h=\mathcal T_Z(\mathcal Y_\sigma(u))\).  Local Lipschitz continuity of
+this trace in the strong chart gives
+\[
+ \|h-h_\sigma^{\rm fe}\|_{\mathcal H_{Z,T}^1}
+ \le C\left(
+     \|u-u_\sigma^{\rm fe}
+       -\mathscr A_{\chi,\sigma}^{\rm fe}\beta\|_
+          {\mathcal X_{\sigma,\chi}^1}
+       +\frac{|\beta|}{\rho_\delta}
+       \right).
+\]
+Enlarging the fixed uniqueness constant once therefore places this lift
+inside the same contraction ball and proves the asserted uniqueness for
+the reduced residual, rather than only for its augmentation.
+
+It remains to identify the zero.  Apply the exact converse in
+\cref{lem:terminal-clock-pullback-border}.  The pulled-back distributed
+row becomes the unmodified RFDE on the physical interval, the old history
+is fixed because \(\chi=0\) there, and
+\cref{eq:terminal-clock-history-fixed} identifies the retained terminal
+history with the physical one.  The event row gives
+\cref{eq:short-clock-original-endpoint}.  Since
+\(\Xi_{\beta_\sigma^{\rm oe}}'>0\), the physical and pulled-back scalar
+velocities have the same sign; the strict fixed-envelope margin and
+\cref{eq:fixed-envelope-zero-speed-sign,eq:short-clock-zero-bound,%
+eq:proof-slow-clock-phase-admissibility} therefore preserve strict
+negativity in the unweighted physical chart.
+
+On the repelling branch the retained nonlinear finite row is precisely
+\(\varepsilon Q_e\).  At the original endpoint it gives \(Q_e=0\), so
+\cref{prop:repelling-speed-aligned-terminal-row} gives every identity in
+\cref{eq:short-clock-endpoint-speed-identities}.
+
+It remains to prove, rather than merely inherit, the sharp terminal jet of
+the new physical segment.  Put
+\(b=\mathfrak b_{\delta,\varkappa}\).  The aligned zero bound,
+\cref{eq:proof-slow-clock-normal-shear}, the fixed-envelope kinetic
+estimate, and \(\lambda_\delta\le Cb\) from
+\cref{eq:joint-diagonal-small-scales} give on the one-delay enlargement of
+the swept terminal buffer
+\begin{align}
+ |r|&\asymp r_{\sigma,T},& |r_s|&\le C\delta,\notag\\
+ \|Z\|_N&\le C\varepsilon b,&
+ |p|+|D|&\le C\varepsilon m_{\sigma,T}b,\notag\\
+ \|\Delta\|_N+\|g_\Delta\|_N&\le C\delta.      \label{eq:proof-clock-terminal-base-ledger}
+\end{align}
+This is deliberately a \(b\)-ledger, not the stronger
+\(\lambda_\delta\)-ledger of the fixed-envelope reference.  The clock
+direction itself can change \(Z\) by \(O(\varepsilon b)\), so replacing
+\(b\) by \(\lambda_\delta\) here would be unjustified.
+
+Differentiate the exact unmodified tracker equations.  The operator is
+again
+\cref{eq:proof-terminal-jet-Z-system,eq:proof-terminal-jet-p-system}; the
+coefficient perturbations remain inside the open absorption margin in
+\cref{eq:proof-terminal-tangent-operator-ledger}.  Substitution of
+\cref{eq:proof-clock-terminal-base-ledger} into the explicit expressions
+\cref{eq:proof-terminal-jet-F1,eq:proof-terminal-jet-H1} gives
+\begin{equation}
+ \|F_1^{\rm oe}\|_N\le C\varepsilon\delta,
+ \qquad
+ |H_1^{\rm oe}|
+ \le C r_{\sigma,T}m_{\sigma,T}
+             \frac{\varepsilon\delta}{\rho_\delta}.      \label{eq:proof-clock-terminal-source-ledger}
+\end{equation}
+Here are the only changes from the old source calculation.  The terms
+\(\mathcal C_N'r_sZ\), \(z_{0,N}''r_sp\), and the differentiated graph
+terms in \(F_1^{\rm oe}\) are \(O(\varepsilon\delta b)\).  In
+\(H_1^{\rm oe}\), the two newly coarsened groups satisfy
+\[
+ |a_p'r_sD|\le C\varepsilon\delta m_{\sigma,T}b,
+ \qquad
+ |a_p\ell_N'r_sZ|\le C\varepsilon\delta r_{\sigma,T}b.
+\]
+They fit the two targets in
+\cref{eq:proof-clock-terminal-source-ledger} because the ordered wedge has
+\(b\le b_0\), \(\rho_\delta\le Cr_{\sigma,T}\), and
+\(\rho_\delta b\le Cm_{\sigma,T}\).  The delay, residual, and quadratic
+graph terms keep the bounds already checked in
+\cref{eq:proof-terminal-jet-source-ledger}.  Thus no hidden
+\(b/\lambda_\delta\) comparison is used.
+
+The exact tracker equations applied to
+\cref{eq:proof-clock-terminal-base-ledger} give the incoming tangent root
+\begin{equation}
+ \mathcal I_{\sigma,T}^{(1),\rm oe}
+ \le C\frac{\varepsilon b}{\delta}.             \label{eq:proof-clock-terminal-incoming}
+\end{equation}
+On the repelling branch the future row is instead the exact physical
+identity
+\begin{equation}
+ \partial_t p_r^{\rm oe}(S_r^{\rm oe})
+ =\partial_s\{p_r^{\rm oe}\circ\Xi_{\beta_r^{\rm oe}}\}(S_r)
+ =\delta R_{q,N}(e_{r,1}),                     \label{eq:proof-clock-terminal-future}
+\end{equation}
+where the first equality uses the terminal plateau
+\(\Xi_{\beta_r^{\rm oe}}'=1\).
+
+Before the clock transition, \(\Xi_\beta\) is the identity.  Across the
+transition its derivative is \(1+O(\mathfrak b_{\delta,\varkappa})\).
+Consequently the incoming tangent still travels through at least a fixed
+fraction of \(L_{\rm fl}\) before reaching the swept clock window.  The
+exponential term in \cref{eq:proof-terminal-jet-flush-error} is therefore
+unchanged up to its fixed constant.  The source/future/incoming
+decomposition now yields
+\begin{equation}
+ \sup\left\{\|Z_s^{\rm oe}\|_N
+       +\frac{|p_s^{\rm oe}|}{m_{\sigma,T}}\right\}
+ \le C\left\{\frac{\varepsilon\delta}{\rho_\delta}
+       +\mathcal E_{\sigma,T}^{\rm jet}(\delta)
+          \frac{\varepsilon b}{\delta}\right\}.          \label{eq:proof-clock-terminal-flushed-tangent}
+\end{equation}
+The new final scale is
+\begin{equation}
+ \mathcal E_{\sigma,T}^{\rm jet}(\delta)
+       \frac{b\rho_\delta}{\delta^2}\longrightarrow0     \label{eq:proof-clock-terminal-final-scale}
+\end{equation}
+uniformly on the original joint wedge.  We verify it explicitly.  The
+exponential term has exponent at least
+\(cA_{\rm fl}S_\delta^2\) on the attracting branch and an even larger
+exponent on the repelling branch, so it dominates
+\(b\rho_\delta/\delta^2\); if necessary, increase the already fixed
+constant \(A_{\rm fl}\) once before the final ordered decrease of the
+joint wedge.  For the generation term, using \(M\ge2\),
+\(m_{a,T}\asymp S_\delta^{-2}\), and
+\(\rho_\delta\asymp\delta S_\delta\),
+\[
+ \left(\frac{C\varepsilon}{m_{a,T}}\right)^M
+       \frac{b\rho_\delta}{\delta^2}
+ \le Cb\,\delta^{2M-1}S_\delta^{2M+1}\longrightarrow0.
+\]
+On the repelling branch, \(m_{r,T}\asymp R_\delta\) and
+\(R_\delta^2=\varkappa^2\delta S_\delta^3\), hence
+\[
+ \left(\frac{C\varepsilon}{m_{r,T}}\right)^M
+       \frac{b\rho_\delta}{\delta^2}
+ \le Cb\frac{\delta^2}{\varkappa^2S_\delta^2}
+ \le C\mathfrak w_*b\delta^2S_\delta\longrightarrow0.
+\]
+This proves \cref{eq:proof-clock-terminal-final-scale} without a new
+subwedge.  Consequently
+\cref{eq:proof-clock-terminal-flushed-tangent} has the required first
+derivative size.  The differentiated equations, the one-delay smaller
+window, and \cref{eq:proof-clock-terminal-source-ledger} then give the
+second derivative exactly as in the final step of
+\cref{thm:fixed-envelope-terminal-slow-jet}.  This proves
+\cref{eq:short-clock-endpoint-slow-jet}.  On the terminal plateau the
+pulled and physical derivatives agree exactly.  Substitution in
+\cref{eq:terminal-history-shear-jet-bound} proves
+\cref{eq:short-clock-actual-history-shear}.  The construction is entirely
+forward after its raw-compatible entry history; none of these steps
+constructs a past-complete orbit or a cross-branch connection.
 \end{proof}
 
 \begin{proof}[Proof of
