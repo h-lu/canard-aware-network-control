@@ -8297,7 +8297,8 @@ original-endpoint problem put
    =\mathfrak B_{a,\delta}^h,\notag\\
  \mathfrak G_{r,\delta}^{\rm oe,h}
  &=E_N\times\mathscr K_{N,\delta}^h,
- &g_r^{\rm oe}&=(\beta_r,\widehat\gamma_r),     \label{eq:endpoint-admissible-gauge-spaces}
+ &g_r^{\rm oe}&=(\beta_r^{\rm in},\widehat\gamma_r),
+                                                        \label{eq:endpoint-admissible-gauge-spaces}
 \end{align}
 with the norms inherited from \cref{eq:raw-gauge-norms} after deleting
 the last scalar summand on the repelling branch.  Thus an attracting
@@ -8961,6 +8962,369 @@ It is an action-compatible nonlinear chart inside the larger geometric
 require an additional clock-covariant source-graph trivialization and is
 not claimed here.
 \end{theorem}
+
+\begin{theorem}[Original-endpoint family on the action scale]
+\label[theorem]{thm:action-scale-original-endpoint-family}
+Retain
+\cref{lem:fixed-reference-parameter-residual,%
+def:endpoint-admissible-raw-gauges,%
+prop:endpoint-repelling-row-allocation,%
+thm:exact-nonlinear-outer-clock-residual}
+on the repelling branch at order \(h\ge8\).  Fix numbers
+\begin{equation}
+ 0<\nu_{\rm int}<\nu_+<\nu_*,\qquad
+ 0<\eta_{\rm int}<\eta_+<\eta_*,
+ \qquad
+ \mathcal P_N^{\rm int}
+ =[-\nu_{\rm int},\nu_{\rm int}]
+   \times\overline B_{\eta_{\rm int}}^{\mathfrak T_N^{\rm red}}(0)
+ \Subset\mathcal P_N,                            \label{eq:oe-family-interior-parameter-box}
+\end{equation}
+and define the common compactly contained enlargement
+\begin{equation}
+ \mathcal P_N^+
+ =[-\nu_+,\nu_+]
+   \times\overline B_{\eta_+}^{\mathfrak T_N^{\rm red}}(0),
+ \qquad
+ \mathcal P_N^{\rm int}\Subset\mathcal P_N^+
+       \Subset\mathcal P_N.                     \label{eq:oe-family-intermediate-parameter-box}
+\end{equation}
+where the two gaps to the boundary of \(\mathcal P_N\) are fixed
+independently of \(N\).  Fix a reference parameter
+\begin{equation}
+ \lambda^\circ=(\nu^\circ,\eta^\circ)
+ \in\mathcal P_N^{\rm int}.                       \label{eq:oe-family-reference-parameter}
+\end{equation}
+Use the exact original-endpoint zero at that parameter as the base of the
+clock-aligned chart.  Freeze, before varying any external variable, its
+fold-time interval, delay enlargement, terminal clock cutoff, transported
+hard source interface, total-source split, free terminal-history row, and
+the two range shears described below.  Denote the transported hard
+interface by \(s_T^*\).
+
+For
+\begin{equation}
+ p=(\nu,\eta,g)\in
+       \mathcal P_N\times\mathfrak G_{r,\delta}^{\rm oe,h},
+ \qquad
+ g=(\beta_r^{\rm in},\widehat\gamma_r)
+       \in\mathfrak G_{r,\delta}^{\rm oe,h},     \label{eq:oe-family-external-variable}
+\end{equation}
+put
+\begin{equation}
+ \|p-p^\circ\|_{\rm oe}
+ =|\nu-\nu^\circ|
+   +\|\eta-\eta^\circ\|_{\mathfrak T_N}
+   +\|g\|_{\mathfrak G_{r,\delta}^{\rm oe,h}},
+ \qquad p^\circ=(\nu^\circ,\eta^\circ,0).       \label{eq:oe-family-external-norm}
+\end{equation}
+For later use, for \(t>0\) write
+\begin{equation}
+ B_{\rm oe}(p^\circ,t)
+ =\left\{p\in\mathcal P_N
+       \times\mathfrak G_{r,\delta}^{\rm oe,h}:
+       \|p-p^\circ\|_{\rm oe}<t\right\}.        \label{eq:oe-family-external-ball}
+\end{equation}
+The radius below is chosen smaller than the fixed distance from
+\(\mathcal P_N^{\rm int}\) to the boundary of \(\mathcal P_N^+\).
+Thus every layer direction
+in this ball belongs to \(\mathfrak T_N^{\rm red}\), every layer remains
+row neutral, and the whole external ball lies in the common admissible
+enlargement \(\mathcal P_N^+\).  The asserted radius is uniform only for reference points
+in \(\mathcal P_N^{\rm int}\), not for points approaching
+\(\partial\mathcal P_N\).
+In particular, \(g\) contains no future resource scalar.  That scalar
+Fredholm slot remains occupied by the physical terminal speed-correction
+row
+\begin{equation}
+ \mathscr B_r^{\rm sp,nl}=\varepsilon Q_e=0.     \label{eq:oe-family-speed-row}
+\end{equation}
+
+There are dimension- and diagonal-uniform \(r_{\rm oe},C_{\rm oe}>0\)
+and a fixed-reference residual
+\begin{equation}
+ \widehat{\mathbb F}_{r,R}^{\rm oe}:
+ B_{\mathcal X_{r,R}^{\rm up,1}
+       \times\mathbb R_{\Lambda_{R,\delta}}}(0,r_{R,0})
+ \times B_{\rm oe}(p^\circ,r_{\rm oe})
+ \longrightarrow\mathcal Y_{r,R}^{\rm clk}       \label{eq:oe-family-residual-map}
+\end{equation}
+with the following properties.
+
+First, its definition uses the actual-parameter algebraic reconstruction
+\begin{equation}
+ w=w_{{\rm seed},N,\nu,\eta}(r)-p_x              \label{eq:oe-family-actual-parameter-resource}
+\end{equation}
+and the actual-parameter compatible old collar, not their reference
+counterparts.  If \(\mathscr H_p(z)\) is that collar and \(\gamma_z\) is the trial
+old-history coordinate, put
+\begin{equation}
+ R_\gamma(z,p)=\gamma_z-\mathscr H_p(z).        \label{eq:oe-family-collar-mismatch}
+\end{equation}
+Form the two unmodified fold-time equations with \(\mathscr H_p(z)\) in every
+negative-time delayed slot, before making any hard split, and denote their
+distributed normal row by \(R_{\rm bulk}^{H}(z,p)\).  With
+\(\mathcal J_{\lambda^\circ}^{\rm old}\) the fixed-reference old-history
+injection from
+\cref{eq:fixed-reference-old-history-injection}, apply exactly once the
+triangular row isomorphism
+\begin{equation}
+ \mathscr U_{\lambda^\circ}^{\rm old}
+       (R_\gamma,R_{\rm bulk}^{H})
+ =\left(R_\gamma,
+     R_{\rm bulk}^{H}
+       +\mathcal J_{\lambda^\circ}^{\rm old}R_\gamma\right).
+                                                        \label{eq:oe-family-old-history-shear}
+\end{equation}
+Only after the resulting total source has been formed is it multiplied by
+the two fixed indicators at the transported hard interface.  Append the
+literal causal-entry, phase-slack, speed-correction, free terminal-history,
+and outer event rows, and finally apply the event range shear
+\(\mathscr S_R\) in
+\cref{eq:outer-clock-range-shear} exactly once.  In the clock-aligned
+coordinate \(z=(w,\beta_{\rm clk})\), this is
+\begin{equation}
+ \widehat{\mathbb F}_{r,R}^{\rm oe}
+       (w,\beta_{\rm clk};p)
+ =\mathscr S_R\mathbb F_{r,R}^{\rm clk,aug}
+   \bigl(\mathfrak C_R(\beta_{\rm clk})+w,
+                \beta_{\rm clk};p\bigr),        \label{eq:oe-family-aligned-residual}
+\end{equation}
+where the semicolon records that the physical field, layer law, algebraic
+predictor, and compatible collar use \(p\).  At \(p=p^\circ\), this is
+exactly \cref{eq:outer-clock-aligned-nonlinear-residual}; no third shear or
+hidden change of the physical \(p_x\)-coordinate is present.
+
+Second, the map in \cref{eq:oe-family-residual-map} is jointly \(C^1\)
+from the displayed strong domain and normalized external space into
+\(\mathcal Y_{r,R}^{\rm clk}\).  At the reference zero,
+\begin{equation}
+ \widehat{\mathbb F}_{r,R}^{\rm oe}(0,0;p^\circ)=0,
+ \qquad
+ D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(0,0;p^\circ)
+ =\mathbb B_R
+ :=\begin{pmatrix}L_{*,R}^{\rm ea}&0\\ \ell_*&1\end{pmatrix}.
+                                                        \label{eq:oe-family-reference-linearization}
+\end{equation}
+More explicitly, let
+\begin{equation}
+ (F_p,G_p;k_p,R_{\gamma,p},b_{{\rm sp},p},b_{h,p})
+                                                        \label{eq:oe-family-forcing-components}
+\end{equation}
+denote, at \(z=0\), the external change from the reference residual in,
+respectively, the transverse and resource distributed rows, the collective
+phase row, the old-history row, the speed-correction row, and the free
+terminal-history row.  The subscripts \({\rm B}\) and \(T\) below denote
+the fixed bulk and terminal restrictions formed from the one total source.
+The causal-entry, phase-slack, free terminal-history, and event base
+forcings are identically zero:
+\begin{equation}
+ b_{{\rm ce},p}=b_{{\rm sl},p}=b_{h,p}=b_{E,p}=0.           \label{eq:oe-family-zero-base-rows}
+\end{equation}
+The external-forcing ledger is
+\begin{align}
+ \frac1{\varepsilon\lambda_\delta}
+ \operatorname*{ess\,sup}_{s<s_T^*}
+ \left\{\|F_{p,{\rm B}}(s)\|_N
+       +\frac{|G_{p,{\rm B}}(s)|}{|r_*(s)|^2}\right\}
+ &\le C_{\rm oe}\|p-p^\circ\|_{\rm oe},\notag\\
+ \frac1\varepsilon
+ \operatorname*{ess\,sup}_{s>s_T^*}
+ \left\{\|F_{p,T}(s)\|_N
+       +\frac{|G_{p,T}(s)|}{R_\delta^2}\right\}
+ &\le C_{\rm oe}\|p-p^\circ\|_{\rm oe},         \label{eq:oe-family-distributed-forcing-ledger}\\
+ \sup_{I_r}\frac{|k_p|}{m_\delta}
+ +\frac1{\rho_\delta}\sup_{I_r}|\mathcal P_rk_p|
+ &\le C_{\rm oe}\|p-p^\circ\|_{\rm oe},\notag\\
+ \|R_{\gamma,p}\|_{\mathsf E_{r,\delta}^{\rm bd}}
+ +\frac{|b_{{\rm sp},p}|}{\varepsilon R_\delta}
+ +\|b_{h,p}\|_{\mathcal H_{Z,T}^1}
+ &\le C_{\rm oe}\|p-p^\circ\|_{\rm oe}.         \label{eq:oe-family-finite-forcing-ledger}
+\end{align}
+In particular, the old-history injection in
+\cref{eq:oe-family-old-history-shear} obeys
+\begin{equation}
+ \|\mathcal J_{\lambda^\circ}^{\rm old}R_\gamma\|_
+  {\mathsf B_{r,\delta}^{0,\lambda,\mathrm{tf},\infty}}
+ \le C_{\rm oe}\|R_\gamma\|_
+       {\mathsf E_{r,\delta}^{\rm bd}}.          \label{eq:oe-family-old-injection-bound}
+\end{equation}
+The event row uses the actual denominator
+\begin{equation}
+ E_{R,p}(Y)=
+   \frac{r_Y(S_*)+R_\delta}
+        {q_{0,\lambda}(-R_\delta)},\qquad
+ \lambda=(\nu,\eta).                            \label{eq:oe-family-actual-event-row}
+\end{equation}
+At the centered coordinate the phase remains the frozen reference phase,
+and therefore
+\begin{equation}
+ r_{Y(0;p)}(S_*)=r_*(S_*)=-R_\delta,\qquad
+ E_{R,p}(Y(0;p))=0,\qquad
+ D_pE_{R,p}(Y(0;p))\big|_{p=p^\circ}=0.          \label{eq:oe-family-event-centering}
+\end{equation}
+Thus the event row has no direct external forcing there.  At any family
+zero its derivative along the raw geometric clock column through that
+physical zero is exactly one after the physical speed row has imposed
+\(Q_e=0\).  In the one frozen reference-aligned coordinate in
+\cref{eq:oe-family-aligned-residual}, however, the
+\(\beta_{\rm clk}\)-coefficient equals one only at \(p^\circ\).  Along the
+zero family it instead obeys the sufficient uniform estimate
+\begin{equation}
+ \left|\partial_{\beta_{\rm clk}}
+ E_{R,p}\bigl(Y(z_r^{\rm oe}(p);p)\bigr)-1\right|
+ \le C_{\rm oe}\|p-p^\circ\|_{\rm oe}.          \label{eq:oe-family-frozen-clock-coefficient}
+\end{equation}
+
+After one uniform decrease of \(r_{\rm oe}\) and \(r_{R,0}\),
+\begin{align}
+ \|\widehat{\mathbb F}_{r,R}^{\rm oe}(0,0;p)\|_
+       {\mathcal Y_{r,R}^{\rm clk}}
+ &\le C_{\rm oe}\|p-p^\circ\|_{\rm oe},         \label{eq:oe-family-base-forcing}\\
+ \|D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)
+       -\mathbb B_R\|_{
+       \mathcal L(\mathcal X_{r,R}^{\rm up,1}
+          \times\mathbb R_{\Lambda_{R,\delta}},
+          \mathcal Y_{r,R}^{\rm clk})}
+ &\le C_{\rm oe}
+       \{\|z\|_{R,\rm clk}+\|p-p^\circ\|_{\rm oe}\}.
+                                                        \label{eq:oe-family-derivative-ledger}
+\end{align}
+The constants in these estimates do not deteriorate with \(N\), with the
+retained parameter point, or on the joint diagonal wedge.  The estimate is
+on the action clock scale
+\(\Lambda_{R,\delta}=\lambda_\delta R_\delta\); it is not a full
+\(R_\delta\)-ball assertion.
+
+Consequently, after a final uniform decrease of \(r_{\rm oe}\), there is a
+unique \(C^1\) zero map
+\begin{equation}
+ p\longmapsto z^{\rm oe}_r(p)
+   =(w^{\rm oe}_r(p),\beta_{\rm clk}^{\rm oe}(p))
+                                                        \label{eq:oe-family-zero-map}
+\end{equation}
+in the displayed clock-aligned ball, and
+\begin{equation}
+ \|w^{\rm oe}_r(p)\|_{\mathcal X_{r,R}^{\rm up,1}}
+ +\frac{|\beta_{\rm clk}^{\rm oe}(p)|}{\Lambda_{R,\delta}}
+ \le C_{\rm oe}\|p-p^\circ\|_{\rm oe}.          \label{eq:oe-family-zero-bound}
+\end{equation}
+For an external direction \(\dot p\), its first jet is
+\begin{align}
+ D_pw_r^{\rm oe}(p^\circ)\dot p
+ &=-\bigl(L_{*,R}^{\rm ea}\bigr)^{-1}
+       D_p\widehat{\mathbb F}^{\rm oe}_{r,R,{\rm up}}
+          (0,0;p^\circ)\dot p,\notag\\
+ D_p\beta_{\rm clk}^{\rm oe}(p^\circ)\dot p
+ &=\ell_*\bigl(L_{*,R}^{\rm ea}\bigr)^{-1}
+       D_p\widehat{\mathbb F}^{\rm oe}_{r,R,{\rm up}}
+          (0,0;p^\circ)\dot p,                 \label{eq:oe-family-first-jet}
+\end{align}
+and hence
+\begin{equation}
+ \|D_pw_r^{\rm oe}(p^\circ)\dot p\|
+ +\frac{|D_p\beta_{\rm clk}^{\rm oe}(p^\circ)\dot p|}
+       {\Lambda_{R,\delta}}
+ \le C_{\rm oe}\|\dot p\|_{\rm oe}.             \label{eq:oe-family-first-jet-bound}
+\end{equation}
+The absent direct event term in
+\cref{eq:oe-family-first-jet} is precisely the centering property of
+\cref{eq:oe-family-actual-event-row}.
+
+Undoing the fixed clock gives an exact solution of the unmodified physical
+RFDE on
+\begin{equation}
+ [-\theta_m,S_r^{\rm oe}(p)],\qquad
+ S_r^{\rm oe}(p)=S_*+
+       \frac{\beta_{\rm clk}^{\rm oe}(p)}{\delta},         \label{eq:oe-family-physical-duration}
+\end{equation}
+with raw-compatible entry history generated by \(g\), the solved
+compatible value \(p_x(0;p)\), and the solved phase coordinate, and with
+literal terminal section
+\begin{equation}
+ r_r^{\rm oe}(S_r^{\rm oe}(p);p)=-R_\delta,\qquad
+ Q_e(p)=0,                                      \label{eq:oe-family-physical-endpoint-identities}
+\end{equation}
+and terminal voltage history equal to the solved free-interface history.
+At the entry seam,
+\begin{equation}
+ Z_r^{\rm oe}(0;p)=\beta_r^{\rm in},             \label{eq:oe-family-entry-gauge-identity}
+\end{equation}
+whereas the compatible resource value \(p_x(0;p)\) is an output of the
+same triangular recursion, not another gauge.  No independent future
+resource value or terminal voltage history has been prescribed.
+
+The theorem supplies the \(C^1\) original-endpoint family required before a
+parameterized quotient dichotomy can be formed.  It does not yet provide
+the rectangular class \(\mathcal J_{\rm phys}\), replace the canonical
+terminal covector by the physical speed row on the quotient unstable line,
+construct a nonlinear repelling sheet, or produce a past-complete
+connection or physical root.
+\end{theorem}
+
+\begin{lemma}[Centered external--state split and uniform state ledger]
+\label[lemma]{lem:oe-family-external-state-split}
+Retain the fixed residual, spaces, and small product ball in
+\cref{thm:action-scale-original-endpoint-family}.  Before the event shear,
+write its distributed, phase, old-history, speed, terminal-history, and
+event rows as
+\[
+ (F,G;k,R_\gamma,b_{\rm sp},b_h,E_R).
+\]
+For any such row \(\mathscr R\) and any direction \(\dot z\), put
+\[
+ \Delta_pD_z\mathscr R(0)[\dot z]
+ :=D_z\mathscr R(0;p)[\dot z]
+       -D_z\mathscr R(0;p^\circ)[\dot z].
+\]
+Then, after the same uniform decrease of the product ball, the centered
+mixed ledger is
+\begin{align}
+ &\frac1{\varepsilon\lambda_\delta}
+  \operatorname*{ess\,sup}_{s<s_T^*}
+  \left\{\|\Delta_pD_zF_{\rm B}(0)[\dot z](s)\|_N
+       +\frac{|\Delta_pD_zG_{\rm B}(0)[\dot z](s)|}
+                    {|r_*(s)|^2}\right\}\notag\\
+ &\quad+\frac1\varepsilon
+  \operatorname*{ess\,sup}_{s>s_T^*}
+  \left\{\|\Delta_pD_zF_T(0)[\dot z](s)\|_N
+       +\frac{|\Delta_pD_zG_T(0)[\dot z](s)|}{R_\delta^2}\right\}
+ +\|\Delta_pD_zk(0)[\dot z]\|_{\mathsf H_{r,\mathrm{hyb}}}\notag\\
+ &\quad+\|\Delta_pD_zR_\gamma(0)[\dot z]\|_
+                  {\mathsf E_{r,\delta}^{\rm bd}}
+ +\frac{|\Delta_pD_zb_{\rm sp}(0)[\dot z]|}
+                  {\varepsilon R_\delta}
+ +\|\Delta_pD_zb_h(0)[\dot z]\|_{\mathcal H_{Z,T}^1}
+ +\frac{|\Delta_pD_zE_R(0)[\dot z]|}{\Lambda_{R,\delta}}\notag\\
+ &\hspace{42mm}\le
+ C_{\rm oe}\|p-p^\circ\|_{\rm oe}\|\dot z\|_{R,\rm clk}.
+                                                        \label{eq:oe-family-external-state-split-ledger}
+\end{align}
+The causal-entry and phase-slack mixed rows, as well as the
+terminal-voltage-history mixed row, vanish identically.  Applying the
+fixed event shear gives the corresponding centered operator estimate.
+
+For each fixed \(p\in B_{\rm oe}(p^\circ,r_{\rm oe})\), the same
+total-source-first clock calculation, now with \(p\) held fixed, obeys
+the uniform state estimate
+\begin{equation}
+ \|D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)
+       -D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(0;p)\|
+ \le C_{\rm oe}\|z\|_{R,\rm clk}.              \label{eq:oe-family-fixed-parameter-state-operator}
+\end{equation}
+Consequently
+\begin{equation}
+ \|D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)
+       -D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p^\circ)\|
+ \le C_{\rm oe}\|p-p^\circ\|_{\rm oe}
+       +2C_{\rm oe}\|z\|_{R,\rm clk}.          \label{eq:oe-family-external-state-operator}
+\end{equation}
+All operator norms are between the strong action-clock domain and the
+sheared range in the theorem.  In particular this is a split-range
+estimate for arbitrary strong directions.  The proof treats the state and
+clock columns separately; it does not use the false bound
+\(|\dot r|=O(\rho_\delta)\) on a unit action-clock direction.
+\end{lemma}
 
 For the same-end repelling boundary problem, let
 \begin{equation}

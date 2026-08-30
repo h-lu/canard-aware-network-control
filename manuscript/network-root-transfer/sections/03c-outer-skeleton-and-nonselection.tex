@@ -10985,7 +10985,7 @@ rows by \(C\mathcal R_v\).  On the outer-annulus window,
 bounds give
 \begin{equation}
  |r_*(s)|\asymp R_\delta,\qquad
- \|z_{0,N}'\|_N+\|\ell_N\|\le CR_\delta,qquad
+ \|z_{0,N}'\|_N+\|\ell_N\|\le CR_\delta,\qquad
  |w_{0,N}'|\le CR_\delta.                       \label{eq:proof-long-window-coefficients}
 \end{equation}
 The inherited source norms, the component Green estimates, and the old
@@ -11727,6 +11727,1061 @@ At a zero it uniquely gives the actual terminal history; eliminating that
 variable only after the contraction is therefore a bijection between the
 augmented and reduced zero sets.  At no point was a value of the fixed
 unknown evaluated to the right of \(S_*\).
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:oe-family-external-state-split}]
+This proof and the proof of
+\cref{thm:action-scale-original-endpoint-family} form one topologically
+ordered argument.  The logical order is: construct the fixed external
+chart and prove the base coefficient/source factorizations
+\cref{eq:proof-oe-family-predictor-difference,%
+eq:proof-oe-family-affine-defect-ledger,%
+eq:proof-oe-family-resource-exact-factorization} without using this
+lemma; perform the centered mixed calculation below; then invoke it only
+for the derivative ledger and the implicit-function step of the theorem.
+The displayed order keeps the long source calculation next to the other
+clock estimates, but no conclusion of the theorem is used to prove the
+lemma.
+
+The mixed estimate is taken at the centered state \(z=0\).  Split every
+direction before estimating it:
+\begin{equation}
+ \dot z=\dot z_w+\dot z_\beta=(\dot w,0)+(0,\dot\beta),
+ \qquad
+ W=\|\dot w\|_{\mathcal X_{r,R}^{\rm up,1}},
+ \qquad
+ B=\frac{|\dot\beta|}{\Lambda_{R,\delta}}.       \label{eq:proof-oe-family-direction-split}
+\end{equation}
+Thus \(W+B=\|\dot z\|_{R,\rm clk}\).  Decrease the product ball once so
+that every segment and parameter lies in the same coefficient, collar,
+and swept-foot tubes.  All row operations and both hard indicators are
+fixed before \(p\) is varied.
+
+The strong state column and the differentiated complete clock collar obey
+the distinct estimates
+\begin{align}
+ |\dot r_w(r)|&\le C\rho_\delta W,&
+ \|\dot Z_w(r)\|_N&\le C\varepsilon W,&
+ |\dot Q_w^\sharp(r)|&\le C|r|W,\notag\\
+ |\dot r_\beta(r)|&\le C\lambda_\delta|r|B,&
+ \|\dot Z_\beta(r)\|_N&\le C\varepsilon\lambda_\delta B,&
+ |\dot Q_\beta^\sharp(r)|&\le C\lambda_\delta|r|B.
+                                                        \label{eq:proof-oe-family-state-clock-columns}
+\end{align}
+The first line is
+\cref{eq:proof-outer-clock-arbitrary-normal-Q,%
+eq:proof-outer-clock-arbitrary-phase-P} in the strong state direction.
+For the second, differentiate
+\cref{eq:outer-clock-complete-collar}; the relative seed contributes
+\(C\lambda_\delta|r|B\), the strong correction contributes the last two
+bounds, and the fixed feet satisfy
+\begin{equation}
+ \max_k\|D_\beta\sigma_{k,0}\dot\beta\|_{C^1}
+ \le C\lambda_\delta B.                         \label{eq:proof-oe-family-clock-foot-column}
+\end{equation}
+At the terminal plateau
+\(|\dot r_\beta(S_*)|\asymp\Lambda_{R,\delta}B\); hence it cannot be
+replaced by \(O(\rho_\delta B)\).
+
+\paragraph{Distributed rows.}
+For the transverse voltage row, differentiating the total unsplit source
+produces exactly five external--state classes:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+\item \(\Delta L_k\) multiplying
+      \(\dot V(s)-\dot V(\sigma_{k,\beta})\);
+\item \(L_k^\circ\) multiplying the mixed compatible-collar derivative;
+\item \(D_z\Delta R_{z,N}^{\lambda}(r_z)\dot z\);
+\item the foot telescope containing \(\dot\beta_{\rm clk}\);
+\item \(D_\beta a_0\dot\beta\) multiplying the centered external
+      voltage-field difference, together with the current-state predictor
+      covariance of the complete clock collar.
+\end{enumerate}
+The first class uses
+\(\|\Delta L_k\|\le C\|p-p^\circ\|_{\rm oe}\) and the delay increment of
+an arbitrary strong direction.  For the second and third,
+\begin{align}
+ \varepsilon^{-1}
+ \|D_z\mathscr H_{\lambda,g}
+       -D_z\mathscr H_{\lambda^\circ,0}\|_{\mathrm{cap},1}
+ &\le C\|p-p^\circ\|_{\rm oe},\notag\\
+ |r|^j\|\partial_r^j
+       (R_{z,N}^{\lambda}-R_{z,N}^{\lambda^\circ})\|_N
+ &\le C\varepsilon|r|\|p-p^\circ\|_{\rm oe},
+ \qquad j=0,1.                                  \label{eq:proof-oe-family-mixed-collar-affine}
+\end{align}
+The fourth is the fixed-foot calculation in
+\cref{eq:proof-outer-clock-composition-telescope}; it retains
+\(\delta/\Lambda_{R,\delta}\).  For the fifth,
+\(|D_\beta a_0\dot\beta|\le C\lambda_\delta B\).  The affine part of the
+centered external voltage field is
+\(O(\varepsilon|r|\|p-p^\circ\|_{\rm oe})\), and its delayed/predictor
+part is \(O(\varepsilon\delta\|p-p^\circ\|_{\rm oe})\).  Their products,
+and the corresponding predictor covariance, are therefore bounded by
+\(C\varepsilon\lambda_\delta(|r|+\delta)
+\|p-p^\circ\|_{\rm oe}B\).  This has both the bulk
+\(\varepsilon\lambda_\delta\) and terminal \(\varepsilon\)
+normalizations.  Stationary-row neutrality prevents a
+changed coefficient from multiplying a constant collective history.
+Thus the four output normalizations can be read directly as
+\begin{equation}
+\begin{array}{c|cc}
+ &\displaystyle
+   \frac{\|\Delta_pD_zF_{\rm B}(0)[\,\cdot\,]\|}
+        {\varepsilon\lambda_\delta}
+ &\displaystyle
+   \frac{\|\Delta_pD_zF_T(0)[\,\cdot\,]\|}
+        {\varepsilon}\\[2mm]\hline
+ \dot z_w
+ &C\|p-p^\circ\|_{\rm oe}W
+ &C\|p-p^\circ\|_{\rm oe}W\\
+ \dot z_\beta
+ &C\|p-p^\circ\|_{\rm oe}B
+ &C\|p-p^\circ\|_{\rm oe}B
+\end{array}                                      \label{eq:proof-oe-family-mixed-voltage-grid}
+\end{equation}
+where the two column norms are the essential-supremum bulk and terminal
+norms in \cref{eq:oe-family-external-state-split-ledger}.  These are the
+two normalized voltage terms in that ledger.
+
+For the resource row, first hold the clock fixed at its centered value
+\(\beta=0\).  Let \(\Delta_p\Delta_c\) denote the difference of the
+actual and reference collective fixed-delay defects, and use analogous
+notation for \(R_q\) and \(Qd\).  Only in the state column does direct
+differentiation of the unclocked left-minus-right normal form give
+\begin{align}
+ \Delta_pD_wG(0)[\dot w]
+ ={}&-\varepsilon D_w
+    [w_{0,N}'(r)\Delta_p\Delta_c(0)]\dot w\notag\\
+ &-\varepsilon D_w[\Delta_pR_q(r)]\dot w
+   -\varepsilon^2D_w[\Delta_p(Qd)(0)]\dot w .
+                                                        \label{eq:proof-oe-family-mixed-resource-state-identity}
+\end{align}
+The compatible-collar, backtrack, and algebraic-speed calculations give
+the factorwise mixed estimates
+\begin{align}
+ |D_w\Delta_p\Delta_c(0)[\dot w]|
+ &\le C\frac{\varepsilon}{|r|}
+       \|p-p^\circ\|_{\rm oe}W,&
+ |D_w\Delta_p(Qd)(0)[\dot w]|
+ &\le C\|p-p^\circ\|_{\rm oe}W,\notag\\
+ |D_\beta\Delta_p\Delta_c^{\rm pull}(0)[\dot\beta]|
+ &\le C\frac{\varepsilon\lambda_\delta}{|r|}
+       \|p-p^\circ\|_{\rm oe}B,&
+ |D_\beta\Delta_p(Qd)^{\rm pull}(0)[\dot\beta]|
+ &\le C\lambda_\delta
+       \|p-p^\circ\|_{\rm oe}B.                \label{eq:proof-oe-family-mixed-resource-factors}
+\end{align}
+Here ``pull'' means that the common multiplier and all common feet are
+differentiated before the parameter difference is estimated.  In
+addition,
+\begin{equation}
+ |r|^j|\partial_r^j\Delta_pR_q(r)|
+ \le C\varepsilon\|p-p^\circ\|_{\rm oe},
+ \qquad j=0,1.                                  \label{eq:proof-oe-family-mixed-Rq}
+\end{equation}
+In particular, the first product in
+\cref{eq:proof-oe-family-mixed-resource-state-identity} is not estimated
+as an undifferentiated black box.  Its exact product rule is
+\begin{equation}
+ D_w[w_{0,N}'(r)\Delta_p\Delta_c(0)]\dot w
+ =w_{0,N}''(r)\dot r_w\,\Delta_p\Delta_c(0)
+   +w_{0,N}'(r)D_w\Delta_p\Delta_c(0)[\dot w],   \label{eq:proof-oe-family-mixed-resource-product-rule}
+\end{equation}
+where
+\[
+ |\Delta_p\Delta_c(0)|
+ \le C\frac{\varepsilon}{|r|}
+       \|p-p^\circ\|_{\rm oe},\qquad
+ |w_{0,N}''(r)|\le C,\qquad
+ |w_{0,N}'(r)|\le C|r|.
+\]
+Together with \(|\dot r_w|\le C\rho_\delta W\le C|r|W\), both
+terms in \cref{eq:proof-oe-family-mixed-resource-product-rule} are
+\(O(\varepsilon\|p-p^\circ\|_{\rm oe}W)\).
+
+We now account for the clock column of the \emph{full} unsplit row
+\cref{eq:outer-clock-unsplit-row}.  Put
+\(a_\beta=1+(\beta/\delta)\chi_{R,\delta}'\), let
+\(\boldsymbol\sigma_\beta=(\sigma_{1,\beta},\ldots,
+\sigma_{m,\beta})\), and let \(\mathscr W_{p,\beta}(z)\) collect the
+complete physical collar and the actual-parameter algebraic predictor.
+Temporarily regard these as three independent slots and denote by
+\[
+ \mathscr G_p^{\rm slot}
+       (a,\boldsymbol\sigma,\mathscr W)
+\]
+the scalar resource component obtained from the unsplit physical row,
+followed by the fixed collective--normal row operation.  Thus, exactly,
+\[
+ G_p^{\rm clk}(z,\beta)
+ =\mathscr G_p^{\rm slot}
+   (a_\beta,\boldsymbol\sigma_\beta,\mathscr W_{p,\beta}(z)).
+\]
+All slot derivatives below are evaluated at \((z,\beta)=(0,0)\), at
+the corresponding actual-parameter centered data.  The chain rule gives
+the disjoint definitions
+\begin{align}
+ \mathfrak M_p[\dot\beta]
+ &:=
+ \{D_a\mathscr G_p^{\rm slot}
+       -D_a\mathscr G_{p^\circ}^{\rm slot}\}
+       [D_\beta a_0\dot\beta],\notag\\
+ \mathfrak F_p[\dot\beta]
+ &:=
+ D_{\boldsymbol\sigma}\mathscr G_p^{\rm slot}
+       [D_\beta\boldsymbol\sigma_0\dot\beta]
+ -D_{\boldsymbol\sigma}\mathscr G_{p^\circ}^{\rm slot}
+       [D_\beta\boldsymbol\sigma_0\dot\beta],\notag\\
+ \mathfrak P_p[\dot\beta]
+ &:=
+ D_{\mathscr W}\mathscr G_p^{\rm slot}
+       [D_\beta\mathscr W_{p,0}\dot\beta]
+ -D_{\mathscr W}\mathscr G_{p^\circ}^{\rm slot}
+       [D_\beta\mathscr W_{p^\circ,0}\dot\beta].
+                                                        \label{eq:proof-oe-family-mixed-resource-clock-slots}
+\end{align}
+There is no fourth term: after the fixed row operation, the clock enters
+the unsplit row only through the multiplier, the pulled feet, and the
+complete collar/predictor.  Hence
+\begin{equation}
+ \Delta_pD_\beta G^{\rm clk}(0)[\dot\beta]
+ =\mathfrak M_p[\dot\beta]
+  +\mathfrak F_p[\dot\beta]
+  +\mathfrak P_p[\dot\beta],                    \label{eq:proof-oe-family-mixed-resource-clock-partition}
+\end{equation}
+with no overlap between the three terms.  Direct substitution in the
+three chain-rule summands gives the following \emph{output} table:
+\begin{center}
+\begin{tabular}{c|c|c}
+slot & clock input & resulting scalar output\\ \hline
+\(a\) &
+ \(|D_\beta a_0\dot\beta|\le C\lambda_\delta B\) &
+ \(|\mathfrak M_p|\le
+   C\varepsilon^2\lambda_\delta
+       \|p-p^\circ\|_{\rm oe}B\)\\
+\(\boldsymbol\sigma\) &
+ \(\max_k\|D_\beta\sigma_{k,0}\dot\beta\|_{C^1}
+       \le C\lambda_\delta B\) &
+ \(|\mathfrak F_p|\le
+   C\varepsilon^2\lambda_\delta
+       \|p-p^\circ\|_{\rm oe}B\)\\
+\(\mathscr W\) &
+ complete collar/predictor covariance &
+ \(|\mathfrak P_p|\le
+   C\varepsilon^2\lambda_\delta
+       \|p-p^\circ\|_{\rm oe}B\)
+\end{tabular}
+\end{center}
+The \(a\)-row follows by inserting its displayed clock input directly
+into the exact source factorization
+\cref{eq:proof-oe-family-resource-exact-factorization}.  The estimate in
+the \(\boldsymbol\sigma\)-row is support-restricted and does not assert a
+false bound for an arbitrary foot direction.  Indeed,
+\(D_\beta\boldsymbol\sigma_0\) is supported in \(J_{R,\delta}\) by
+\cref{eq:outer-clock-terminal-window,%
+eq:outer-clock-cutoff-bounds,%
+eq:outer-clock-map-and-feet,%
+eq:outer-clock-terminal-annulus}; every foot there lies in the generated
+terminal current segment by the containment part of
+\cref{lem:outer-annulus-terminal-clock}, so no external old collar is
+sampled.  At
+\(z=0\) that forward voltage segment is the fixed centered segment for
+every \(p\), and stationary-row neutrality
+\(\pi_N^TE_k=0\) removes the direct collective layer change.  Put
+\[
+ H_{\boldsymbol\sigma}
+ =D_{\boldsymbol\sigma}\mathcal D_{c,N}^{\rm ft}[Y_*]
+       [D_\beta\boldsymbol\sigma_0\dot\beta].
+\]
+Then the exact remaining foot identities are
+\begin{equation}
+ D_{\boldsymbol\sigma}\Delta_p\Delta_c(0)
+       [D_\beta\boldsymbol\sigma_0\dot\beta]=0,
+ \qquad
+ \mathfrak F_p[\dot\beta]
+ =-\varepsilon^2H_{\boldsymbol\sigma}
+       (d_\lambda-d_{\lambda^\circ}).          \label{eq:proof-oe-family-mixed-resource-actual-foot}
+\end{equation}
+The second term is the residual \(Qd\) product and must not be discarded.
+On the terminal clock support,
+\[
+ |H_{\boldsymbol\sigma}|\le C\lambda_\delta B,
+ \qquad
+ |d_\lambda-d_{\lambda^\circ}|
+ \le C\|p-p^\circ\|_{\rm oe},
+\]
+which proves the table entry.  The \(\mathscr W\)-row is then recovered
+from the exact partition
+\cref{eq:proof-oe-family-mixed-resource-clock-partition}: subtract the
+already controlled \(a\)- and foot rows from the complete
+composed pullback.  The latter is bounded by
+\cref{eq:proof-oe-family-mixed-resource-factors,%
+eq:proof-oe-family-mixed-Rq}.  Thus no bound for a naked slot is inferred
+from the composed estimate.  The last row includes, in particular, the
+\(\mathscr W\)-derivative at fixed \(a\) and fixed feet.  By contrast, the
+term obtained by differentiating
+\((1-a_\beta)\delta\partial_s
+ (w_{{\rm seed},\lambda}-w_{{\rm seed},\lambda^\circ})\)
+belongs entirely to \(\mathfrak M_p\), because \(1-a_0=0\).  It is
+combined there with the other multiplier terms before the exact
+normal-form estimate; estimating it alone would destroy the
+\(\varepsilon^2\)-cancellation.
+Consequently
+\begin{equation}
+ |\mathfrak M_p[\dot\beta]|
+ +|\mathfrak F_p[\dot\beta]|
+ +|\mathfrak P_p[\dot\beta]|
+ \le C\varepsilon^2\lambda_\delta
+       \|p-p^\circ\|_{\rm oe}B.                \label{eq:proof-oe-family-mixed-resource-clock-bound}
+\end{equation}
+The second estimate uses the last two factor bounds in
+\cref{eq:proof-oe-family-mixed-resource-factors}; thus none of the
+clock-pullback terms has been hidden in the unclocked identity.
+
+Together,
+\cref{eq:proof-oe-family-mixed-resource-state-identity,%
+eq:proof-oe-family-mixed-resource-factors,%
+eq:proof-oe-family-mixed-Rq,%
+eq:proof-oe-family-mixed-resource-clock-bound} give
+\begin{align}
+ |\Delta_pD_wG(0)[\dot w]|
+ &\le C\varepsilon^2\|p-p^\circ\|_{\rm oe}W,\notag\\
+ |\Delta_pD_\beta G^{\rm clk}(0)[\dot\beta]|
+ &\le C\varepsilon^2\lambda_\delta
+       \|p-p^\circ\|_{\rm oe}B.                \label{eq:proof-oe-family-mixed-resource-column-bounds}
+\end{align}
+On the bulk side
+\(\varepsilon\le C\lambda_\delta|r|^2\); on the terminal side
+\(\varepsilon\le CR_\delta^2\).  More explicitly, the four normalized
+quotients are bounded by
+\begin{align}
+ \frac{\varepsilon^2}
+      {\varepsilon\lambda_\delta|r|^2}
+ &=\frac{\varepsilon}{\lambda_\delta|r|^2}\le C,
+&
+ \frac{\varepsilon^2\lambda_\delta}
+      {\varepsilon\lambda_\delta|r|^2}
+ &=\frac{\varepsilon}{|r|^2}\le C,\notag\\
+ \frac{\varepsilon^2}{\varepsilon R_\delta^2}
+ &=\frac{\varepsilon}{R_\delta^2}\le C,
+&
+ \frac{\varepsilon^2\lambda_\delta}
+      {\varepsilon R_\delta^2}
+ &=\frac{\varepsilon\lambda_\delta}{R_\delta^2}\le C.
+                                                        \label{eq:proof-oe-family-mixed-resource-four-quotients}
+\end{align}
+The first and third entries are the state column on the bulk and terminal
+summands; the second and fourth are the clock column.  This proves the two
+centered resource terms after the one total source is split.
+
+\paragraph{Phase and finite rows.}
+In the state column the fixed phase row gives the exact centered identity
+\begin{align}
+ \Delta_pD_wk(0)[\dot w]
+ ={}&-\Delta_pD_w\mathcal D_c^{\rm ft}[0]\dot w\notag\\
+ &+\partial_r\!\left\{
+       (\mathcal D_{0,c,N,\lambda}-q_{0,\lambda})
+       -(\mathcal D_{0,c,N,\lambda^\circ}
+                    -q_{0,\lambda^\circ})\right\}(r)\dot r_w .
+                                                        \label{eq:proof-oe-family-mixed-phase-identity}
+\end{align}
+The parameter-independent
+\(\varepsilon^{-1}(\mathfrak p-\ell Z-h_c)\) terms cancel.  The first
+term is supported on the fixed entry delay image and is controlled by the
+first line of \cref{eq:proof-oe-family-mixed-collar-affine}; the second
+uses
+\begin{align}
+ |\partial_r(\mathcal D_{0,c,N,\lambda}
+       -\mathcal D_{0,c,N,\lambda^\circ})(r)|
+ &\le C\frac{\varepsilon\delta}{|r|^2}
+          \|p-p^\circ\|_{\rm oe},\notag\\
+ |\partial_r(q_{0,\lambda}-q_{0,\lambda^\circ})(r)|
+ &\le C\frac{\varepsilon}{|r|^2}
+          \|p-p^\circ\|_{\rm oe}.             \label{eq:proof-oe-family-mixed-phase-coefficients}
+\end{align}
+For the clock column, differentiate the common pulled feet and the
+actual-parameter predictor, including the total-speed multiplier, before
+taking the difference.  By
+\cref{eq:proof-outer-clock-collar-tangent}, it is the complete physical
+clock collar---not the separately constructed global phase seed---that is
+causally zero on the entry delay image.  Thus
+\cref{eq:proof-oe-family-state-clock-columns,%
+eq:proof-oe-family-clock-foot-column} gives
+\begin{align}
+ |\Delta_pD_wk(0)[\dot w]|
+ &\le C\|p-p^\circ\|_{\rm oe}W
+   \left\{
+      \varepsilon\mathbf1_{[0,\theta_m]}
+      +\frac{\varepsilon\rho_\delta}{|r|^2}
+   \right\},\notag\\
+ |\Delta_pD_\beta k(0)[\dot\beta]|
+ &\le C\frac{\varepsilon\lambda_\delta}{|r|}
+       \|p-p^\circ\|_{\rm oe}B.                \label{eq:proof-oe-family-mixed-phase-columns}
+\end{align}
+The first line contains the old-collar, backtrack, and reduced-speed
+pieces separately; the second contains all clock-foot,
+total-speed-multiplier, and predictor-covariance pieces.  In particular it
+is not obtained by inserting the clock column into the state estimate.
+Direct integration, using
+\(\log(R_\delta/\rho_\delta)\le CS_\delta^2\), gives
+\begin{align}
+ \frac1{\rho_\delta}\sup_r
+   |\mathcal P_r\Delta_pD_wk(0)[\dot w]|
+ &\le C\|p-p^\circ\|_{\rm oe}W,\notag\\
+ \frac1{\rho_\delta}\sup_r
+   |\mathcal P_r\Delta_pD_\beta k(0)[\dot\beta]|
+ &\le C\frac{\varepsilon\lambda_\delta}{\rho_\delta}
+       \log\frac{R_\delta}{\rho_\delta}
+       \|p-p^\circ\|_{\rm oe}B
+ \le C\|p-p^\circ\|_{\rm oe}B.                \label{eq:proof-oe-family-mixed-phase-prefix}
+\end{align}
+The corresponding pointwise ratios by \(m_\delta\) are bounded by the
+same right sides.  This proves the centered mixed hybrid phase term.
+
+The first line of
+\cref{eq:proof-oe-family-mixed-collar-affine} also proves the old-history
+row after the fixed injection.  For the speed row, differentiate the exact
+terminal identity \(b_{\rm sp}=\varepsilon Q_e\) using
+\cref{eq:fold-time-speed-reconstruction}.  The Banach coordinates
+\(\mathfrak p_e,Z_e\) and the terms
+\(\mathfrak p_e-\ell_N(e)Z_e-h_{c,N}(e,Z_e)\) have no direct external
+coefficient.  Moreover \(\pi_N^TE_k=0\) removes the direct collective
+\(\eta\)-column.  Therefore, at the centered state, the exact parameter
+difference is
+\begin{equation}
+ \Delta_pD_zb_{\rm sp}(0)[\dot z]
+ =\varepsilon\,\Delta_pD_z
+   [\mathcal D_{c,N}^{\rm ft}
+       -\mathcal D_{0,c,N,\lambda}](0)[\dot z].
+                                                        \label{eq:proof-oe-family-mixed-speed-cancellation}
+\end{equation}
+In each column its right side separates into: a coefficient/layer
+difference multiplying the terminal increment; a mixed collar, foot, or
+predictor derivative; and the current-coefficient derivative caused by
+the endpoint displacement.
+The terminal trace in
+\cref{eq:proof-oe-family-state-clock-columns}, the factor bounds in
+\cref{eq:proof-oe-family-mixed-collar-affine,%
+eq:proof-oe-family-mixed-resource-factors}, and
+\(|r|=R_\delta\) give the two columns separately:
+\begin{align}
+ |\Delta_pD_wb_{\rm sp}(0)[\dot w]|
+ &\le C\frac{\varepsilon^2}{R_\delta}
+       \|p-p^\circ\|_{\rm oe}W,\notag\\
+ |\Delta_pD_\beta b_{\rm sp}(0)[\dot\beta]|
+ &\le C\frac{\varepsilon^2\lambda_\delta}{R_\delta}
+       \|p-p^\circ\|_{\rm oe}B.                 \label{eq:proof-oe-family-mixed-speed-columns}
+\end{align}
+Consequently
+\begin{equation}
+ \frac{|\Delta_pD_zb_{\rm sp}(0)[\dot z]|}
+      {\varepsilon R_\delta}
+ \le C\frac{\varepsilon}{R_\delta^2}
+       \|p-p^\circ\|_{\rm oe}(W+\lambda_\delta B)
+ \le C\|p-p^\circ\|_{\rm oe}(W+B).              \label{eq:proof-oe-family-mixed-speed}
+\end{equation}
+The voltage reconstruction and interface row
+\(\mathcal T_ZY-h\) do not depend on external field coefficients, so
+\[
+ \Delta_pD_zb_h(0)[\dot z]=0;
+\]
+the causal-entry and phase-slack mixed rows vanish for the same
+fixed-coordinate reason.  Finally the event difference is exactly
+\begin{equation}
+ \Delta_pD_zE_R(0)[\dot z]
+ =D_zr_Y(S_*;0)[\dot z]
+ \left\{\frac1{q_{0,\lambda}(-R_\delta)}
+       -\frac1{q_{0,\lambda^\circ}(-R_\delta)}\right\}.
+                                                        \label{eq:proof-oe-family-mixed-event}
+\end{equation}
+Since
+\[
+ |q_{0,\lambda}(-R_\delta)
+       -q_{0,\lambda^\circ}(-R_\delta)|
+ \le C\frac{\varepsilon}{R_\delta}
+       \|p-p^\circ\|_{\rm oe},
+\]
+while
+\begin{equation}
+ |D_wr_Y(S_*;0)[\dot w]|\le C\rho_\delta W,
+ \qquad
+ |D_\beta r_Y(S_*;0)[\dot\beta]|
+       \le C\Lambda_{R,\delta}B.                \label{eq:proof-oe-family-mixed-event-columns}
+\end{equation}
+Thus the two normalized event ratios are, explicitly,
+\begin{align}
+ \frac{\varepsilon\rho_\delta}
+      {\Lambda_{R,\delta}R_\delta}
+ &=\frac{\varepsilon\rho_\delta}
+        {\lambda_\delta R_\delta^2}\le C,\notag\\
+ \frac{\varepsilon\Lambda_{R,\delta}}
+      {\Lambda_{R,\delta}R_\delta}
+ &=\frac{\varepsilon}{R_\delta}\le C.           \label{eq:proof-oe-family-mixed-event-ratios}
+\end{align}
+Hence the action-clock event normalization closes separately in the state
+and clock columns.
+Together,
+\cref{eq:proof-oe-family-mixed-collar-affine,%
+eq:proof-oe-family-mixed-resource-column-bounds,%
+eq:proof-oe-family-mixed-phase-identity,%
+eq:proof-oe-family-mixed-phase-columns,%
+eq:proof-oe-family-mixed-speed,%
+eq:proof-oe-family-mixed-event} prove
+\cref{eq:oe-family-external-state-split-ledger}.  The fixed event shear
+obeys its already proved action-scale border and gives the centered
+operator estimate.
+
+It remains to justify the state estimate away from the center.  Hold one
+\(p\in B_{\rm oe}(p^\circ,r_{\rm oe})\) fixed and repeat the
+total-source-first calculation in the proof of
+\cref{eq:outer-clock-nonlinear-two-point}.  Every coefficient, collar,
+foot, predictor, and Nemytskii bound used there is uniform on the compactly
+contained admissible enlargement
+\(\mathcal P_N^+\) in
+\cref{eq:oe-family-intermediate-parameter-box}; row neutrality is retained
+because \(\eta\in\mathfrak T_N^{\rm red}\).  For \(p\ne p^\circ\), the
+frozen reference collar need not annihilate the pure-clock residual
+exactly.  After polarization, its additional external-parameter--clock
+quadratic remainder satisfies
+\begin{equation}
+ \|\mathscr R_{p,\beta^2}\|
+ \le C\|p-p^\circ\|_{\rm oe}
+       \left(\frac{|\beta|}{\Lambda_{R,\delta}}\right)^2
+ \le C\|p-p^\circ\|_{\rm oe}\|z\|_{R,\rm clk}^2,
+                                                        \label{eq:proof-oe-family-parameter-clock-quadratic}
+\end{equation}
+so it is absorbed by the same action-scale quadratic constant, uniformly
+on \(\mathcal P_N^+\).  Consequently, if
+\begin{equation*}
+ \mathbb Q_p(z)=
+ \widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)
+ -\widehat{\mathbb F}_{r,R}^{\rm oe}(0;p)
+ -D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(0;p)z,
+\end{equation*}
+then
+\begin{equation}
+ \|\mathbb Q_p(z)-\mathbb Q_p(\widetilde z)\|
+ \le C\{\|z\|_{R,\rm clk}+\|\widetilde z\|_{R,\rm clk}\}
+       \|z-\widetilde z\|_{R,\rm clk}.          \label{eq:proof-oe-family-uniform-state-two-point}
+\end{equation}
+Taking a directional difference quotient proves
+\cref{eq:oe-family-fixed-parameter-state-operator}.  Finally insert and
+subtract the two centered differentials at \(p\) and \(p^\circ\); the
+centered mixed estimate and two applications of the fixed-parameter state
+estimate give \cref{eq:oe-family-external-state-operator}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:action-scale-original-endpoint-family}]
+We separate range membership from the implicit-function argument.  This is
+necessary because boundedness of the older rough parameter residual does
+not by itself imply boundedness in the bulk
+\((\varepsilon\lambda_\delta)^{-1}\)-norm or in the strong terminal
+history row.  In the logical dependency order stated at the start of the
+proof of \cref{lem:oe-family-external-state-split}, the chart and base
+factorizations below are preliminary: they do not use that lemma.  Only
+after those identities and its independent centered calculation have been
+established do we use the lemma in the derivative and
+implicit-function steps.
+
+\paragraph{The fixed external chart.}
+Write \(\lambda=(\nu,\eta)\).  All intervals, feet, cutoffs, indicators,
+and reference row operations in this proof are those frozen at
+\(\lambda^\circ\).  In the algebraic reconstruction, however, use
+\[
+ q_{0,\lambda}
+ =\frac{r-\delta^2\nu}{w_{0,N}'(r)},\qquad
+ \mathcal D_{0,N,\lambda}
+ =\mathcal D_N(r,z_{0,N},q_{0,\lambda},\eta)
+\]
+and abbreviate
+\[
+ \|\lambda-\lambda^\circ\|
+ =|\nu-\nu^\circ|
+   +\|\eta-\eta^\circ\|_{\mathfrak T_N}.
+\]
+and hence
+\begin{equation}
+ w_{{\rm seed},N,\lambda}
+ =w_{0,N}
+   +\varepsilon\mathcal D_{0,c,N,\lambda}
+   -\varepsilon q_{0,\lambda}.                 \label{eq:proof-oe-family-actual-predictor}
+\end{equation}
+Thus changing \(\nu\) or \(\eta\) changes the predictor before a residual is
+formed.  It is not inserted as a raw constant source against the reference
+predictor.  The weighted backtrack calculus in
+\cref{prop:physical-backtrack-calculus} and the coefficient bounds in
+\cref{prop:nonlinear-resource-defect-normal-form} give, on the common
+collar,
+\begin{align}
+ \|q_{0,\lambda}-q_{0,\lambda^\circ}\|_{4,\rho}
+ &\le C\frac{\delta^2}{\rho_\delta}
+       |\nu-\nu^\circ|,\notag\\
+ \|\mathcal D_{0,N,\lambda}
+       -\mathcal D_{0,N,\lambda^\circ}\|_{3,\rho}
+ &\le C\delta\{
+       |\nu-\nu^\circ|
+       +\|\eta-\eta^\circ\|_{\mathfrak T_N}\},\notag\\
+ \|w_{{\rm seed},N,\lambda}
+       -w_{{\rm seed},N,\lambda^\circ}\|_{3,\rho}
+ &\le C\varepsilon\delta\{
+       |\nu-\nu^\circ|
+       +\|\eta-\eta^\circ\|_{\mathfrak T_N}\}.   \label{eq:proof-oe-family-predictor-difference}
+\end{align}
+Here and below the weighted norms are restricted to the appropriate bulk
+or terminal collar.  The apparently singular first line is always used
+inside a backtrack or multiplied by \(w_{0,N}'\); it is not used as a
+standalone bulk source.
+
+The decisive cancellation is clearer in the two affine defects.  Put
+\begin{align}
+ R_{z,N}^{\lambda}
+ &=\varepsilon\{q_{0,\lambda}z_{0,N}'
+       -\mathcal D_{0,\perp,N,\lambda}\},\notag\\
+ R_{q,N}^{\lambda}
+ &=\varepsilon q_{0,\lambda}
+       (\mathcal D_{0,c,N,\lambda}-q_{0,\lambda})'.
+                                                        \label{eq:proof-oe-family-affine-defects}
+\end{align}
+Direct differentiation of these formulas, using
+\(\pi_N^TE_k=0\), \(\|z_{0,N}'(r)\|_N\le C|r|\), and
+\cref{eq:backtrack-first-variation,eq:backtrack-frechet-bounds}, gives
+\begin{align}
+ \max_{0\le j\le3}|r|^j
+ \|\partial_r^j(R_{z,N}^{\lambda}
+       -R_{z,N}^{\lambda^\circ})(r)\|_N
+ &\le C\varepsilon |r|
+       \|\lambda-\lambda^\circ\|,\notag\\
+ \max_{0\le j\le2}|r|^j
+ |\partial_r^j(R_{q,N}^{\lambda}
+       -R_{q,N}^{\lambda^\circ})(r)|
+ &\le C\varepsilon
+       \|\lambda-\lambda^\circ\|.               \label{eq:proof-oe-family-affine-defect-ledger}
+\end{align}
+The same bounds hold for one external derivative.  They are the
+actual-predictor cancellation which permits a fixed external parameter
+ball; without \cref{eq:proof-oe-family-actual-predictor}, the first line
+would contain an inadmissible unweighted constant source.
+
+Let \(\mathscr H_{\lambda,g}(z)\) be the compatible collar generated by the actual
+predictor and the endpoint-admissible raw gauge.  The compatibility
+recursion and \cref{eq:raw-gauge-norms} give
+\begin{equation}
+ \varepsilon^{-1}
+ \|\mathscr H_{\lambda,g}(z)-\mathscr H_{\lambda^\circ,0}(z)\|_
+       {\mathrm{cap},1,-\rho_\delta}
+ \le C\|p-p^\circ\|_{\rm oe}.                  \label{eq:proof-oe-family-collar-external-bound}
+\end{equation}
+This estimate includes its current trace and first strong seam jet.  It is
+the \(C^1\) part of the triangular induction used in the proof of
+\cref{lem:fixed-reference-parameter-residual}.
+
+\paragraph{The old-history border.}
+If \(\rho\) is an old-history mismatch, its only unprojected distributed
+component is
+\[
+ \delta K\sum_{k:s-\theta_k<0}
+       L_{k,N}(\eta^\circ)\rho(s-\theta_k).
+\]
+It is supported in the fixed entry collar and has zero resource component.
+The direct boundary normalization gives
+\(\|\rho\|_{\rm cap}\le
+C\varepsilon\|\rho\|_{\mathsf E_{r,\delta}^{\rm bd}}\).
+Consequently
+\begin{align}
+ \|\mathcal J_{\lambda^\circ}^{\rm old}\rho\|_
+  {\mathsf B_{r,\delta}^{0,\lambda,\mathrm{tf},\infty}}
+ &\le
+ C\frac{\delta}{\lambda_\delta}
+       \|\rho\|_{\mathsf E_{r,\delta}^{\rm bd}}\notag\\
+ &\le C\|\rho\|_{\mathsf E_{r,\delta}^{\rm bd}},           \label{eq:proof-oe-family-old-border}
+\end{align}
+because \(\lambda_\delta\ge S_\delta^{-2}\) and
+\(\delta S_\delta^2=o(1)\).  This proves
+\cref{eq:oe-family-old-injection-bound}.  Notice that the shear is applied
+before the hard split.  Treating the same \(O(\varepsilon)\) mismatch as an
+unstructured bulk source would omit the factor \(\delta\) in
+\cref{eq:proof-oe-family-old-border} and would indeed lose
+\(\lambda_\delta^{-1}\).
+
+\paragraph{The distributed forcing ledger.}
+We form the unsplit actual-parameter residual and subtract the reference
+one at the centered state.  Every voltage term is a sum of the following
+three types:
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+\item a coefficient difference multiplying the exact current-minus-delayed
+      increment;
+\item a fixed coefficient multiplying the difference of actual and
+      reference backtracks or predictors;
+\item the old-collar term already placed by
+      \cref{eq:proof-oe-family-old-border}.
+\end{enumerate}
+The stationary-row-neutral identity removes the direct collective part of
+type~\textup{(i)}.  The affine parts are exactly
+\(-\Delta R_{z,N}^{\lambda}\) and
+\(\varepsilon\Delta R_{q,N}^{\lambda}\), and therefore already satisfy
+the two bulk source norms:
+\begin{align}
+ \frac{\|\Delta R_{z,N}^{\lambda}(r)\|_N}
+       {\varepsilon\lambda_\delta}
+ &\le C\frac{|r|}{\lambda_\delta}
+       \|\lambda-\lambda^\circ\|
+ \le C\|\lambda-\lambda^\circ\|,\notag\\
+ \frac{\varepsilon|\Delta R_{q,N}^{\lambda}(r)|}
+       {\varepsilon\lambda_\delta|r|^2}
+ &\le C\frac{\varepsilon}{\lambda_\delta|r|^2}
+       \|\lambda-\lambda^\circ\|
+ \le C\|\lambda-\lambda^\circ\|.                \label{eq:proof-oe-family-affine-source-norms}
+\end{align}
+Indeed, \(|r|\le R_\delta\le\lambda_\delta\),
+\(|r|\ge\rho_\delta\), and
+\(\varepsilon/\rho_\delta^2=4\alpha^2S_\delta^{-2}
+\le C\lambda_\delta\).
+On the generated bulk,
+\begin{equation}
+ \|Y_*(s)-Y_*(s-\theta_k)\|
+ \le C\delta\theta_k,                            \label{eq:proof-oe-family-generated-delay-difference}
+\end{equation}
+and the same bound, with the external norm as an extra factor, holds for
+types~\textup{(i)}--\textup{(ii)} by
+\cref{eq:proof-oe-family-predictor-difference} and
+\cref{prop:physical-backtrack-calculus}.  The physical delayed field has
+the prefactor \(\varepsilon=\delta^2\).  Hence the unsplit voltage source
+created by \((\nu,\eta)\) is bounded by
+\begin{equation}
+ C\varepsilon\delta\|p-p^\circ\|_{\rm oe}.       \label{eq:proof-oe-family-voltage-source-size}
+\end{equation}
+On the part assigned to the bulk summand, division by
+\(\varepsilon\lambda_\delta\) costs
+\[
+ \frac{\delta}{\lambda_\delta}
+ \le\delta S_\delta^2=o(1).
+\]
+On the terminal part, division only by \(\varepsilon\) is harmless.
+
+For the nonlinear resource component one must use the exact normal form
+before estimating; a termwise estimate would leave a false bare
+\(O(\varepsilon)\) source.  On the centered state define
+\begin{align}
+ \Delta_{c,\lambda,g}^*(s)
+ &:=\mathcal D_{c,N}^{\rm ft}
+       [Y_*;\mathscr H_{\lambda,g}](s)
+       -\mathcal D_{0,c,N,\lambda}(r_*(s)),\notag\\
+ d_\lambda&:=(\mathcal D_{0,c,N,\lambda}
+                    -q_{0,\lambda})',\qquad
+ R_{q,N}^{\lambda}:=\varepsilon q_{0,\lambda}d_\lambda,\notag\\
+ Q_{\lambda,g}^*
+ &:=\varepsilon^{-1}
+    \{\mathfrak p_*-\ell_NZ_*
+                  -h_{c,N}(r_*,Z_*)\}
+       +\Delta_{c,\lambda,g}^*.                 \label{eq:proof-oe-family-centered-resource-data}
+\end{align}
+Here \(\mathfrak p_*\) is the frozen physical resource-defect coordinate,
+not the external datum \(p\).  Subtracting the exact \(p\)-normal identity
+\cref{eq:fold-time-tracker-p} at
+\((\lambda,g)\) and \((\lambda^\circ,0)\), with the left-minus-right
+residual convention, gives
+\begin{align}
+ G_p={}&-\varepsilon w_{0,N}'(r_*)
+       \{\Delta_{c,\lambda,g}^*
+              -\Delta_{c,\lambda^\circ,0}^*\}\notag\\
+ &-\varepsilon
+       \{R_{q,N}^{\lambda}-R_{q,N}^{\lambda^\circ}\}(r_*)
+ -\varepsilon^2
+       \{Q_{\lambda,g}^*d_\lambda
+          -Q_{\lambda^\circ,0}^*d_{\lambda^\circ}\}.
+                                                        \label{eq:proof-oe-family-resource-exact-factorization}
+\end{align}
+This is the required exact factorization.  In particular, the direct
+algebraic \(w_{0,N}'\Delta q_0=O(\varepsilon)\) term has cancelled.
+The remaining \(q_0\)-dependence is carried only by the backtracks inside
+\(\Delta_c\), by \(\varepsilon\Delta R_q\), and by
+\(\varepsilon^2\Delta(Qd)\); each retains the factor displayed in the
+next ledger.
+
+The stationary-row-neutral identity \(\pi_N^TE_k=0\) annihilates the
+direct \(\eta\)-change in both collective delayed expressions.  The
+compatible-collar and backtrack estimates give
+\begin{align}
+ |\Delta_{c,\lambda,g}^*
+       -\Delta_{c,\lambda^\circ,0}^*|
+ &\le C\frac{\varepsilon}{|r_*|}
+       \|p-p^\circ\|_{\rm oe},\notag\\
+ |R_{q,N}^{\lambda}-R_{q,N}^{\lambda^\circ}|
+ &\le C\varepsilon\|\lambda-\lambda^\circ\|,\notag\\
+ |Q_{\lambda,g}^*d_\lambda
+       -Q_{\lambda^\circ,0}^*d_{\lambda^\circ}|
+ &\le C\|p-p^\circ\|_{\rm oe}.                 \label{eq:proof-oe-family-resource-factor-bounds}
+\end{align}
+For the first line, the actual-collar difference is
+\(O(\varepsilon\|p-p^\circ\|_{\rm oe})\) and is supported on the fixed
+entry delay image, while
+\[
+ |\mathcal D_{0,c,N,\lambda}
+       -\mathcal D_{0,c,N,\lambda^\circ}|
+ \le C\frac{\varepsilon\delta}{|r|}
+        |\nu-\nu^\circ|
+\]
+is the backtrack first-variation estimate.  Since
+\(|w_{0,N}'(r)|\asymp|r|\), every term in
+\cref{eq:proof-oe-family-resource-exact-factorization} is consequently
+\(O(\varepsilon^2\|p-p^\circ\|_{\rm oe})\).  In particular, no bare
+\(O(\varepsilon)\) term remains.  Using
+\[
+ \lambda_\delta|r|^2
+ \ge S_\delta^{-2}\rho_\delta^2
+ =\frac{\varepsilon}{4\alpha^2},
+ \qquad
+ \frac{\varepsilon}{R_\delta^2}
+ =\delta\mathfrak w_{\delta,\varkappa}\le C,
+\]
+and combining with the affine transverse estimate in
+\cref{eq:proof-oe-family-affine-source-norms} gives
+\begin{align}
+ |G_{p,{\rm B}}(s)|
+ &\le C\varepsilon\lambda_\delta |r_*(s)|^2
+       \|p-p^\circ\|_{\rm oe},\notag\\
+ |G_{p,T}(s)|
+ &\le C\varepsilon R_\delta^2
+       \|p-p^\circ\|_{\rm oe}.                 \label{eq:proof-oe-family-resource-source-size}
+\end{align}
+
+Together,
+\cref{eq:proof-oe-family-affine-source-norms,%
+eq:proof-oe-family-voltage-source-size,%
+eq:proof-oe-family-resource-source-size} prove
+\cref{eq:oe-family-distributed-forcing-ledger}.  The one unsplit source is
+continuous because it is obtained by substituting a compatible collar and
+a \(C^1\) current segment into the unmodified RFDE.  Multiplication by the
+two fixed indicators therefore produces the unique three-summand range
+element in \cref{eq:long-window-continuous-total-source}.  We do not assert
+that either summand is separately continuous at the artificial interface.
+
+\paragraph{Phase and finite rows.}
+The phase forcing is estimated directly; it is not an application of a
+Green returned-action estimate.  In the fixed-reference phase chart its
+nonlinear action row and its reduced speed are frozen.  Put
+\begin{equation}
+ \Delta q_{0,p}(r)=q_{0,\lambda}(r)-q_{0,\lambda^\circ}(r).
+                                                        \label{eq:proof-oe-family-reduced-speed-difference}
+\end{equation}
+With the notation in
+\cref{eq:proof-oe-family-centered-resource-data}, the physical speed is
+the total speed \(q_{0,\lambda}+Q_{\lambda,g}^*\), and therefore the exact
+fixed-chart forcing is
+\begin{align}
+ k_p
+ &:=(\mathscr B_\phi^\circ
+             -\{\Delta q_{0,p}+Q_{\lambda,g}^*\}^{\flat})
+       -(\mathscr B_\phi^\circ
+             -Q_{\lambda^\circ,0}^{*,\flat})\notag\\
+ &=-\{\Delta q_{0,p}+Q_{\lambda,g}^*
+             -Q_{\lambda^\circ,0}^*\}^{\flat}.   \label{eq:proof-oe-family-phase-exact-factorization}
+\end{align}
+The frozen \(\mathfrak p_*,Z_*,h_c,\ell_N\) terms cancel exactly, leaving
+\begin{align}
+ k_p(r_*(s))
+ ={}&-\{\mathcal D_{c,N}^{\rm ft}
+       [Y_*;\mathscr H_{\lambda,g}]
+       -\mathcal D_{c,N}^{\rm ft}
+       [Y_*;\mathscr H_{\lambda^\circ,0}]\}(s)\notag\\
+ &+\{\mathcal D_{0,c,N,\lambda}
+       -\mathcal D_{0,c,N,\lambda^\circ}\}(r_*(s))
+ -\Delta q_{0,p}(r_*(s))\notag\\
+ ={}&k_p^{\rm old}(s)+k_p^{\rm bt}(r_*(s))
+       +k_p^{\rm red}(r_*(s)).
+                                                        \label{eq:proof-oe-family-phase-old-backtrack-speed-split}
+\end{align}
+Here \(k_p^{\rm red}=-\Delta q_{0,p}\).  The identity
+\(\pi_N^TE_k=0\) deletes the direct \(\eta\)-column from the delayed
+collective defect; it does not delete the \(\nu\)-dependent reduced-speed
+term.  Compatibility, backtrack variation, and
+\(q_{0,\lambda}=(r-\varepsilon\nu)/w_{0,N}'(r)\) give
+\begin{align}
+ |k_p^{\rm old}(s)|
+ &\le C\varepsilon\|p-p^\circ\|_{\rm oe},
+ &&\operatorname{supp}k_p^{\rm old}\subset[0,\theta_m],
+ \quad |r_*(s)|\asymp\rho_\delta,\notag\\
+ |k_p^{\rm bt}(r)|
+ &\le C\frac{\varepsilon\delta}{|r|}
+       |\nu-\nu^\circ|,\qquad
+ |\partial_rk_p^{\rm bt}(r)|
+ \le C\frac{\varepsilon\delta}{|r|^2}
+       |\nu-\nu^\circ|,\notag\\
+ |k_p^{\rm red}(r)|
+ &\le C\frac{\varepsilon}{|r|}|\nu-\nu^\circ|,\qquad
+ |\partial_rk_p^{\rm red}(r)|
+ \le C\frac{\varepsilon}{|r|^2}|\nu-\nu^\circ|.
+                                                        \label{eq:proof-oe-family-phase-piece-bounds}
+\end{align}
+Since \(m_\delta(r)=|r|+\varepsilon/|r|^2\) and
+\(\sup_{I_r}\varepsilon/(|r|m_\delta(r))\le C\), these estimates prove
+the pointwise half of
+\begin{equation}
+ \sup_{I_r}\frac{|k_p|}{m_\delta}
+ +\frac1{\rho_\delta}\sup_{I_r}|\mathcal P_rk_p|
+ \le C\|p-p^\circ\|_{\rm oe}.                  \label{eq:proof-oe-family-phase-source}
+\end{equation}
+For the primitive half, the old-history term has \(r\)-support
+\(O(\delta)\), while the backtrack and reduced-speed terms are integrated
+explicitly.  Thus
+\begin{equation}
+ \frac1{\rho_\delta}\sup_{I_r}|\mathcal P_rk_p|
+ \le C\left\{
+    \frac{\varepsilon\delta}{\rho_\delta}
+   +\frac{\varepsilon\delta}{\rho_\delta}
+        \log\frac{R_\delta}{\rho_\delta}
+   +\frac{\varepsilon}{\rho_\delta}
+        \log\frac{R_\delta}{\rho_\delta}\right\}
+       \|p-p^\circ\|_{\rm oe}
+ \le C\|p-p^\circ\|_{\rm oe}.                 \label{eq:proof-oe-family-phase-prefix-direct}
+\end{equation}
+The final inequality uses
+\(\log(R_\delta/\rho_\delta)\le CS_\delta^2\) and
+\(\varepsilon/\rho_\delta=2\alpha\delta/S_\delta\).  Thus the newly
+retained reduced-speed term fits the same hybrid phase range without a
+parameter-dependent shrinkage.
+The history row follows from
+\cref{eq:proof-oe-family-collar-external-bound}.  The terminal speed row is
+a current-state observation on the \(R_\delta\)-annulus.  The actual
+parameter predictor and the exact identity
+\(Q_e=0\) at the reference base give
+\begin{equation}
+ |b_{{\rm sp},p}|
+ \le C\varepsilon R_\delta\|p-p^\circ\|_{\rm oe}.           \label{eq:proof-oe-family-speed-source}
+\end{equation}
+The causal-entry and phase-slack rows are frozen coordinate rows and hence
+have zero base forcing.  The free terminal-history row is
+\(\mathcal T_ZY-h\).  At \(z=0\), both the physical voltage segment and
+the interface variable are their fixed reference values, so, independently
+of \(p\),
+\begin{equation}
+ b_{{\rm ce},p}=b_{{\rm sl},p}=b_{h,p}=0.       \label{eq:proof-oe-family-fixed-zero-rows}
+\end{equation}
+Together,
+\cref{eq:proof-oe-family-old-border,%
+eq:proof-oe-family-phase-source,%
+eq:proof-oe-family-speed-source,%
+eq:proof-oe-family-fixed-zero-rows}
+prove \cref{eq:oe-family-finite-forcing-ledger}.
+
+Indeed the centered phase is independent of the external data and
+\[
+ r_{Y(0;p)}(S_*)=r_*(S_*)=-R_\delta.
+\]
+Hence the event numerator vanishes at the centered state for every
+external parameter and its direct \(p\)-derivative at \(p^\circ\) is zero,
+while
+\[
+ -q_+\le q_{0,\lambda}(-R_\delta)\le-q_-<0.
+\]
+Thus \cref{eq:oe-family-actual-event-row} is a uniformly equivalent event
+normalization and contributes no direct external forcing.  At a physical
+family zero, differentiation along the raw translation clock column gives
+the terminal physical speed divided by
+\(q_{0,\lambda}(-R_\delta)\), hence exactly one by \(Q_e=0\).  The
+reference collar \(\mathfrak C_R\) is frozen, so its aligned clock column
+agrees with that raw column only at \(p^\circ\).  Joint \(C^1\) control and
+the zero bound give
+\cref{eq:oe-family-frozen-clock-coefficient}; smallness, rather than a
+false family-wide identity, preserves the event border.  The component
+ledger now proves \cref{eq:oe-family-base-forcing}.
+
+\paragraph{Joint differentiability and the \(z\)-border.}
+All trial translations remain fixed; only the smooth feet
+\(\sigma_{k,\beta_{\rm clk}}\) vary.  The actual collar recursion is
+\(C^1\) in normalized data, and the polynomial current field and affine
+layer law are \(C^1\) Nemytskii maps on the common strong tube.  Hence the
+joint residual is \(C^1\).  For the derivative estimate, split
+\begin{align*}
+ D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)-\mathbb B_R
+ ={}&\{D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)
+        -D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p^\circ)\}\\
+ &+\{D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p^\circ)
+        -\mathbb B_R\}.
+\end{align*}
+The first bracket is
+\cref{eq:oe-family-external-state-operator}; the second is the
+differential form of
+\cref{eq:outer-clock-nonlinear-two-point}.  This proves
+\cref{eq:oe-family-derivative-ledger}.  In particular the genuine
+external factor
+\(\|p-p^\circ\|_{\rm oe}\|\dot z\|_{R,\rm clk}\) is proved at the
+centered state, while displacement from that state is paid separately by
+the uniform fixed-parameter two-point estimate.  No action-clock direction
+is charged at the \(\rho_\delta\) state scale.
+
+\paragraph{The parameter contraction.}
+Let \(M_B\) be a common bound for \(\mathbb B_R^{-1}\).
+For fixed \(p\), write
+\[
+ \widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)
+ =\widehat{\mathbb F}_{r,R}^{\rm oe}(0;p)
+    +\mathbb B_Rz+\mathbb R_R(z;p).
+\]
+The derivative ledger gives
+\[
+ \|\mathbb R_R(z;p)-\mathbb R_R(\widetilde z;p)\|
+ \le C\{\|z\|+\|\widetilde z\|
+          +\|p-p^\circ\|_{\rm oe}\}\|z-\widetilde z\|.
+\]
+On the ball
+\(\|z\|_{R,\rm clk}\le
+2M_BC_{\rm oe}\|p-p^\circ\|_{\rm oe}\), solve
+\begin{equation}
+ z=-\mathbb B_R^{-1}
+ \{\widehat{\mathbb F}_{r,R}^{\rm oe}(0;p)
+       +\mathbb R_R(z;p)\}.                    \label{eq:proof-oe-family-contraction}
+\end{equation}
+Uniformly decreasing \(r_{\rm oe}\) makes this a self-map and a
+contraction.  It gives the unique zero and
+\cref{eq:oe-family-zero-bound}.  The ordinary parameter-dependent
+implicit-function theorem in this fixed strong-to-weak chart gives its
+\(C^1\) dependence.
+
+This contraction initially gives uniqueness in its \(p\)-dependent inner
+ball.  It also gives the whole displayed-ball assertion in the theorem.
+Indeed, after the final common decrease of \(r_{R,0}\) and \(r_{\rm oe}\),
+\cref{eq:oe-family-derivative-ledger} gives
+\[
+ \sup_{\|z\|_{R,\rm clk}<r_{R,0}}
+ \left\|\mathbb B_R^{-1}
+   \{D_z\widehat{\mathbb F}_{r,R}^{\rm oe}(z;p)-\mathbb B_R\}
+ \right\|\le\frac12.
+\]
+If \(z_1,z_2\) are two zeros in that ball, integrate the derivative on the
+line segment joining them and apply this estimate to obtain
+\(\|z_1-z_2\|\le\frac12\|z_1-z_2\|\).  Hence \(z_1=z_2\).
+
+Differentiate the zero equation at \(p^\circ\).  Because the event row has
+no direct \(p\)-derivative, the two triangular rows are
+\[
+ L_{*,R}^{\rm ea}D_pw
+   +D_p\widehat{\mathbb F}_{r,R,{\rm up}}^{\rm oe}=0,
+ \qquad
+ \ell_*D_pw+D_p\beta_{\rm clk}=0.
+\]
+This proves \cref{eq:oe-family-first-jet}; the uniform inverse and event
+border give \cref{eq:oe-family-first-jet-bound}.
+
+\paragraph{Physical meaning.}
+The old-history shear
+\cref{eq:oe-family-old-history-shear} and the event shear
+\(\mathscr S_R\) are invertible.  At a zero,
+\(R_\gamma=0\), and reversing the two row operations gives the unmodified
+RFDE with its actual compatible collar.  The clock is the identity at the
+entry and equals translation by
+\(\beta_{\rm clk}^{\rm oe}/\delta\) on the terminal plateau.  Hence the
+physical duration and endpoint are
+\cref{eq:oe-family-physical-duration,%
+eq:oe-family-physical-endpoint-identities}.  The seam row gives
+\cref{eq:oe-family-entry-gauge-identity}; compatibility, rather than a new
+gauge row, returns \(p_x(0)\).  The speed row uses the only future scalar
+slot, while the terminal voltage history is recovered from the
+free-interface identity after the contraction.
+
+This completes the proof.
 \end{proof}
 
 \begin{proof}[Proof of \cref{lem:moving-r-event-preimage}]
