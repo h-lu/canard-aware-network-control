@@ -10341,6 +10341,285 @@ trivialization; translation is not differentiable on the rough
 repelling sheet or a past-complete physical branch.
 \end{theorem}
 
+\begin{lemma}[Terminal speed shear extracted from the strong family chart]
+\label[lemma]{lem:oe-family-terminal-speed-shear}
+Retain
+\cref{thm:action-scale-original-endpoint-family,%
+lem:oe-family-generated-core-ledger,%
+prop:repelling-outer-endpoint-slow-jet}.
+For
+\(\mathbf p=(\nu,\eta,g)\in
+B_{\rm oe}(p^\circ,r_{\rm core})\), put
+\(\lambda=(\nu,\eta)\),
+\(d_{\mathbf p}=\|\mathbf p-p^\circ\|_{\rm oe}\), let
+\(\widetilde Z_{\mathbf p}\) and
+\(\widetilde{\mathfrak p}_{\mathbf p}\) denote the normal and resource
+defect coordinates pulled to the fixed clock of
+\cref{thm:action-scale-original-endpoint-family}, and retain the reference
+coordinates \(Z_*,p_*\).  On the last complete delay plateau,
+\begin{align}
+ \sup_{S_*-\theta_m\le s\le S_*}
+ \left\{\|\widetilde Z_{\mathbf p}-Z_*\|_N
+       +\frac{|\widetilde{\mathfrak p}_{\mathbf p}-p_*|}{R_\delta}
+ \right\}
+ &\le C\varepsilon d_{\mathbf p},\notag\\
+ \sup_{S_*-\theta_m\le s\le S_*}
+ \left\{\|\partial_s(\widetilde Z_{\mathbf p}-Z_*)\|_N
+       +\frac{|\partial_s(\widetilde{\mathfrak p}_{\mathbf p}-p_*)|}
+                    {R_\delta}
+ \right\}
+ &\le C\frac{\varepsilon}{\delta}d_{\mathbf p}.
+                                                        \label{eq:oe-family-terminal-strong-difference}
+\end{align}
+Write \(e=-R_\delta\), \(S=S_{\mathbf p}\), and
+\begin{equation}
+ \mathcal Q_{\mathbf p}^{\rm sp,gr}(r)
+ =q_{\mathbf p}(r)-q_{0,\lambda}(r),\qquad
+ \mathcal Q_{\mathbf p}^{\rm sp}(s)
+ =\mathcal Q_{\mathbf p}^{\rm sp,gr}(r_{\mathbf p}(s)).
+                                                        \label{eq:oe-family-terminal-speed-correction}
+\end{equation}
+Then \(\mathcal Q_{\mathbf p}^{\rm sp,gr}(e)=0\), and the exact physical
+speed shear satisfies
+\begin{align}
+ \left|\varepsilon\partial_s
+       \mathcal Q_{\mathbf p}^{\rm sp}(S)\right|
+ &\le C\left\{\varepsilon\delta
+       +\frac{\varepsilon R_\delta}{\delta}d_{\mathbf p}\right\},
+                                                        \label{eq:oe-family-terminal-speed-time-jet}\\
+ \left|\varepsilon\partial_r
+       \mathcal Q_{\mathbf p}^{\rm sp,gr}(e)\right|
+ +|\kappa_{\mathbf p,S}^{\rm sp}|
+ &\le C\{\varepsilon+R_\delta d_{\mathbf p}\},\notag\\
+ \kappa_{\mathbf p,S}^{\rm sp}
+ &:=\varepsilon q_{0,\lambda}(e)
+       \partial_r\mathcal Q_{\mathbf p}^{\rm sp,gr}(e)
+ =\frac{\varepsilon}{\delta}
+       \partial_s\mathcal Q_{\mathbf p}^{\rm sp}(S),\notag\\
+ \frac{|\kappa_{\mathbf p,S}^{\rm sp}|}{R_\delta}
+ &\le C\left\{d_{\mathbf p}+\frac\varepsilon{R_\delta}\right\}.
+                                                        \label{eq:oe-family-terminal-speed-shear-bound}
+\end{align}
+In particular, the strong chart closes the family shear needed for
+transversality.  It does not prove
+\(\partial_r\mathcal Q_{\mathbf p}^{\rm sp,gr}(e)=O(1)\) on a fixed
+nonshrinking family ball; that sharper assertion would require a
+parameter-uniform terminal second-jet theorem.
+\end{lemma}
+
+\begin{theorem}[Memberwise physical-speed transversality over the original-endpoint family]
+\label[theorem]{thm:oe-family-physical-speed-transversality}
+Retain
+\cref{thm:action-scale-original-endpoint-family,%
+lem:oe-family-generated-core-ledger,%
+thm:oe-family-generated-core-dichotomy,%
+lem:oe-family-terminal-speed-shear,%
+prop:exact-resource-gauge-quotient}.
+After a further uniform decrease
+\begin{equation}
+ 0<r_{\rm sp}\le r_{\rm core},                  \label{eq:oe-family-speed-radius}
+\end{equation}
+the following statements hold for every
+\(\mathbf p=(\nu,\eta,g)\in B_{\rm oe}(p^\circ,r_{\rm sp})\).
+Write \(\lambda=(\nu,\eta)\),
+\(d_{\mathbf p}=\|\mathbf p-p^\circ\|_{\rm oe}\),
+\begin{equation}
+ S=S_{\mathbf p},\qquad e=-R_\delta,\qquad
+ q_{0,\mathbf p}=q_{0,\lambda},\qquad
+ \mathcal K_{\mathbf p,S}=\mathcal K_{\mathbf p,S_{\mathbf p}},
+                                                        \label{eq:oe-family-speed-terminal-data}
+\end{equation}
+and define the exact graph speed correction by
+\begin{equation}
+ \mathcal Q_{\mathbf p}^{\rm sp,gr}(r)
+ =q_{\mathbf p}(r)-q_{0,\mathbf p}(r),\qquad
+ \mathcal Q_{\mathbf p}^{\rm sp,gr}(e)=Q_e(\mathbf p)=0.
+                                                        \label{eq:oe-family-speed-correction}
+\end{equation}
+
+For \(\phi\in\mathscr X_N\), put
+\begin{equation}
+ \mathfrak j_{\mathbf p,S}^{\rm q}\phi
+ =\bigl((\Id-\mathcal K_{\mathbf p,S})\phi,0\bigr).
+                                                        \label{eq:oe-family-speed-canonical-lift}
+\end{equation}
+Put, for \(-\theta_m\le\theta\le0\),
+\begin{align}
+ r_{\mathbf p,S+\theta}
+ &=r_{\mathbf p}(S+\theta),&
+ e_{\mathbf p,S}(\theta)
+ &=\frac{q_{\mathbf p}(r_{\mathbf p,S+\theta})}
+          {q_{\mathbf p}(e)}
+       V_{\mathbf p}'(r_{\mathbf p,S+\theta}),\notag\\
+ E_{\mathbf p,S}^c
+ &:=(e_{\mathbf p,S},w_{\mathbf p}'(e))
+   =\partial_r\mathcal H_{\mathbf p}(e).
+                                                        \label{eq:oe-family-speed-center-history}
+\end{align}
+Then every full terminal variation has the unique decomposition
+\begin{align}
+ a&=\frac{\omega}{w_{\mathbf p}'(e)},&
+ \psi&=\xi_S-e_{\mathbf p,S}a,&
+ u&=(\Id-\mathcal K_{\mathbf p,S})^{-1}\psi,\notag\\
+ (\xi_S,\omega)
+ &=\mathfrak j_{\mathbf p,S}^{\rm q}u
+       +aE_{\mathbf p,S}^c.                    \label{eq:oe-family-speed-full-decomposition}
+\end{align}
+
+Let
+\begin{align}
+ \mathfrak e_{\mathbf p,S}(\xi_S,\omega)
+ &=\frac{\pi_N^T\xi_S(0)}{q_{0,\mathbf p}(e)},&
+ \mathfrak b_{\mathbf p,S}^{\rm sp}
+ &=D_Y\{\varepsilon Q_e\}\big|_{X_{\mathbf p}}.
+                                                        \label{eq:oe-family-speed-full-rows}
+\end{align}
+They obey the exact center-column identities
+\begin{equation}
+ \mathfrak e_{\mathbf p,S}E_{\mathbf p,S}^c
+ =\frac1{q_{0,\mathbf p}(e)},\qquad
+ \mathfrak b_{\mathbf p,S}^{\rm sp}E_{\mathbf p,S}^c
+ =\varepsilon\partial_r
+       \mathcal Q_{\mathbf p}^{\rm sp,gr}(e).
+                                                        \label{eq:oe-family-speed-center-columns}
+\end{equation}
+The member-specific physical shear is
+\begin{align}
+ \kappa_{\mathbf p,S}^{\rm sp}
+ &:=
+ \frac{\mathfrak b_{\mathbf p,S}^{\rm sp}E_{\mathbf p,S}^c}
+      {\mathfrak e_{\mathbf p,S}E_{\mathbf p,S}^c}\notag\\
+ &=\varepsilon q_{0,\mathbf p}(e)
+       \partial_r\mathcal Q_{\mathbf p}^{\rm sp,gr}(e)
+ =\frac{\varepsilon}{\delta}
+       \partial_s\mathcal Q_{\mathbf p}^{\rm sp}(S),
+ \qquad
+ |\kappa_{\mathbf p,S}^{\rm sp}|
+ \le C\{\varepsilon+R_\delta d_{\mathbf p}\}.
+                                                        \label{eq:oe-family-speed-shear}
+\end{align}
+It is not the terminal resource-row coefficient
+\(R_{q,N}^{\lambda}(e)\), and it is not frozen at \(p^\circ\).
+The exact event-aligned row
+\begin{equation}
+ \mathfrak b_{\mathbf p,S}^{\rm sp,ea}
+ =\mathfrak b_{\mathbf p,S}^{\rm sp}
+       -\kappa_{\mathbf p,S}^{\rm sp}\mathfrak e_{\mathbf p,S}
+                                                        \label{eq:oe-family-speed-event-row}
+\end{equation}
+annihilates \(E_{\mathbf p,S}^c\).  Define its quotient realization by
+\begin{equation}
+ \ell_{\mathbf p,S}^{\rm sp,q}\phi
+ =\frac1{R_\delta}
+   \mathfrak b_{\mathbf p,S}^{\rm sp,ea}
+       \mathfrak j_{\mathbf p,S}^{\rm q}\phi.    \label{eq:oe-family-speed-quotient-row}
+\end{equation}
+For every quotient history,
+\begin{align}
+ R_\delta\ell_{\mathbf p,S}^{\rm sp,q}\phi
+={}&\pi_N^T\mathcal J_{\mathbf p}(S)\phi(0)\notag\\
+&+\varepsilon K\sum_{k=0}^m\pi_N^TL_{k,N}(\eta)
+ \left[\phi(0)-\phi(-\theta_k)
+       +(\mathcal K_{\mathbf p,S}\phi)(-\theta_k)\right]\notag\\
+&-\left\{\varepsilon q_{0,\mathbf p}'(e)
+       +\frac{\kappa_{\mathbf p,S}^{\rm sp}}
+                    {q_{0,\mathbf p}(e)}\right\}
+       \pi_N^T\phi(0).                          \label{eq:oe-family-speed-expanded-row}
+\end{align}
+For a terminal row define
+\begin{equation}
+ \|\ell\|_{(\mathbf p,S,\sharp)^*}
+ :=\sup_{0\ne\phi\in\mathscr X_N}
+       \frac{|\ell\phi|}
+            {\|\phi\|_{\mathbf p,S,\sharp}}.
+                                                        \label{eq:oe-family-speed-dual-norm}
+\end{equation}
+Uniformly on the family ball,
+\begin{equation}
+ \|\ell_{\mathbf p,S}^{\rm sp,q}\|_
+       {(\mathbf p,S,\sharp)^*}\le C.           \label{eq:oe-family-speed-row-bound}
+\end{equation}
+
+Let \(\mathfrak h_{\mathbf p}^u\) be the terminal-current-normalized
+unstable solution in
+\cref{eq:oe-family-core-unstable-normalization}, and put
+\begin{equation}
+ \mu_{\mathbf p,\delta}
+ =\ell_{\mathbf p,S}^{\rm sp,q}
+       (\mathfrak h_{\mathbf p}^u)_S.           \label{eq:oe-family-speed-unstable-coefficient}
+\end{equation}
+Then
+\begin{align}
+ |\mu_{\mathbf p,\delta}-2\alpha|
+ &\le C\left\{
+ R_\delta+\eta_{\mathbf p}
+ +\frac{\varepsilon\mathfrak b_{\mathbf p}}{R_\delta}
+ +\frac{\varepsilon}{R_\delta}
+ +d_{\mathbf p}\right\},                       \label{eq:oe-family-speed-transversality}\\
+ \sup_{\mathbf p\in B_{\rm oe}(p^\circ,r_{\rm sp})}
+ |\mu_{\mathbf p,\delta}-2\alpha|
+ &\le Cr_{\rm sp}+o(1).                        \label{eq:oe-family-speed-transversality-uniform}
+\end{align}
+Choose \(r_{\rm sp}\) first, sufficiently small relative to \(\alpha\),
+and then decrease the ordered wedge.  One obtains
+\begin{equation}
+ \alpha\le\mu_{\mathbf p,\delta}\le3\alpha
+ \quad\hbox{for every displayed family member}.             \label{eq:oe-family-speed-margin}
+\end{equation}
+
+Let \(\mathcal L_{\mathbf p}^{\rm q}\) denote the distributed operator
+in \cref{eq:oe-family-core-mixed-operator}.  Replacing only its terminal
+current row by the physical quotient-speed row gives an isomorphism
+\begin{equation}
+ \mathbb L_{\mathbf p}^{\rm sp,q}u
+ =\left(\mathcal L_{\mathbf p}^{\rm q}u,\,
+        \Gamma_bu_{s_b(\mathbf p)},\,
+        \ell_{\mathbf p,S}^{\rm sp,q}u_S\right):
+ \mathscr D_{\mathbf p}\longrightarrow
+ \mathcal F_{\mathbf p}\times\mathscr K_b\times\mathbb R
+                                                        \label{eq:oe-family-speed-bordered-operator}
+\end{equation}
+with one inverse constant.  If
+\(u_0=\mathbb L_{\mathbf p}^{-1}(f,\psi_b,0)\), its inverse is
+\begin{equation}
+ u=u_0+\mathfrak h_{\mathbf p}^u
+ \frac{b_{\rm q}
+       -\ell_{\mathbf p,S}^{\rm sp,q}(u_0)_S}
+      {\mu_{\mathbf p,\delta}},                 \label{eq:oe-family-speed-bordered-inverse}
+\end{equation}
+and obeys the family version of
+\cref{eq:oe-family-core-mixed-green-bound}.
+
+Finally, define, member by member,
+\begin{equation}
+ \Lambda_{\mathbf p,t}^{\rm sp}\phi
+ =\frac1{\mu_{\mathbf p,\delta}}
+   \ell_{\mathbf p,S}^{\rm sp,q}
+     \mathcal V_{\mathbf p}^{\rm q}(S_{\mathbf p},t)\phi.
+                                                        \label{eq:oe-family-speed-conormal}
+\end{equation}
+It is a bounded functional for each member and core time, its terminal
+norm is uniformly bounded, and it is dual-covariant:
+\begin{equation}
+ \Lambda_{\mathbf p,s}^{\rm sp}
+       \mathcal V_{\mathbf p}^{\rm q}(s,t)
+ =\Lambda_{\mathbf p,t}^{\rm sp},\qquad
+ \Lambda_{\mathbf p,t}^{\rm sp}
+       (\mathfrak h_{\mathbf p}^u)_t=1.         \label{eq:oe-family-speed-conormal-identities}
+\end{equation}
+The terminal normalization and the bordered inverse are uniform but
+memberwise.  No uniform-in-time norm is asserted for the backward
+transported covector; its normalization on the terminally normalized
+unstable generator naturally permits action growth toward the entry.
+The result does not claim that
+\(\mathbf p\mapsto\mathcal V_{\mathbf p}^{\rm q}\),
+\(\mathbf p\mapsto\mathfrak h_{\mathbf p}^u\), or
+\(\mathbf p\mapsto\Lambda_{\mathbf p,t}^{\rm sp}\) is Fr\'{e}chet
+differentiable on the rough \(C\)-history space.  Nor does the result
+identify \(\ker\Lambda_{\mathbf p,t}^{\rm sp}\) with a nonlinear stable
+sheet or construct a past-complete branch.
+\end{theorem}
+
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
 fold-time variational equation is removed exactly only after the genuine
 tracker tangent is known.  The remaining Volterra coordinate correction is

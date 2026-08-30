@@ -14085,6 +14085,320 @@ follow.  Only the scalar factor on the constructed unstable line has been
 inverted to the left.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{lem:oe-family-terminal-speed-shear}]
+Let \(\beta_{\mathbf p}=\beta_{\rm clk}^{\rm oe}(\mathbf p)\) and
+\(\Xi_{\mathbf p}=\Xi_{\beta_{\mathbf p}}\).  The fixed-clock state is
+\[
+ \widetilde X_{\mathbf p}(s)
+ =X_{\mathbf p}(\Xi_{\mathbf p}(s)).
+\]
+On \(S_*-\theta_m\le s\le S_*\), the cutoff in
+\cref{eq:outer-clock-cutoff-bounds} is identically one.  Hence
+\(\Xi_{\mathbf p}(s)=s+\beta_{\mathbf p}/\delta\),
+\(\Xi_{\mathbf p}'(s)=1\), and the pulled terminal history is a literal
+translation of the physical terminal history.  In particular, no
+derivative of a moving rough history occurs on this plateau.
+
+The strong normal coordinate in
+\cref{eq:long-window-strong-normal-norm} controls the current and first
+clock derivatives of the reconstructed normal and resource-defect
+coordinates.  We record the finite reconstruction estimate rather than
+confusing it with a residual two-point bound.  On the fixed terminal
+window, the exact coordinate reconstruction is assembled from the
+algebraic normal variables, the relative phase composition, and the
+actual-parameter predictor.  The first component is measured by
+\cref{eq:long-window-strong-normal-norm}; the relative phase and clock
+components obey
+\cref{eq:outer-clock-seed-two-point,%
+eq:outer-clock-strong-collar-two-point}; and the predictor differences,
+including one clock derivative, obey
+\cref{eq:proof-oe-family-predictor-difference}.  The weighted composition
+calculus in
+\cref{eq:backtrack-composition-bound,eq:backtrack-composition-difference}
+then gives the local reconstruction estimate
+\begin{align}
+ &\frac1\varepsilon\sup_{S_*-\theta_m\le s\le S_*}
+ \left\{\|\Delta Z(s)\|_N+\frac{|\Delta\mathfrak p(s)|}{R_\delta}\right\}
+ \notag\\
+ &\quad+\frac\delta\varepsilon
+ \sup_{S_*-\theta_m\le s\le S_*}
+ \left\{\|\partial_s\Delta Z(s)\|_N
+       +\frac{|\partial_s\Delta\mathfrak p(s)|}{R_\delta}\right\}
+ \le C\left\{\|w\|_{\mathcal X_{r,R}^{\rm up,1}}
+       +\frac{|\beta|}{\Lambda_{R,\delta}}
+       +\|\mathbf p-p^\circ\|_{\rm oe}\right\}.
+                                                        \label{eq:proof-oe-family-terminal-reconstruction-map}
+\end{align}
+Here \((\Delta Z,\Delta\mathfrak p)\) is the reconstructed displacement
+from the reference state.  The estimate is a direct mean-value bound for
+the displayed algebraic chart: its derivative is precisely the
+reconstructed tangent used in
+\cref{eq:long-window-reconstructed-tangent}, while the preceding
+composition and predictor estimates keep that derivative uniformly
+bounded throughout the small product ball.  No estimate for the nonlinear
+residual is used in this step.
+
+Apply
+\cref{eq:proof-oe-family-terminal-reconstruction-map} to the zero bound
+\cref{eq:oe-family-zero-bound}, including the complete clock collar.
+The action-scale clock satisfies
+\(|\beta_{\mathbf p}|/\Lambda_{R,\delta}\le Cd_{\mathbf p}\).
+The definition of the domain norm then gives, on the last delay plateau,
+\begin{align}
+ \sup\left\{\|\widetilde Z_{\mathbf p}-Z_*\|_N
+       +R_\delta^{-1}
+          |\widetilde{\mathfrak p}_{\mathbf p}-p_*|\right\}
+ &\le C\varepsilon d_{\mathbf p},\notag\\
+ \sup\left\{\|\partial_s(
+          \widetilde Z_{\mathbf p}-Z_*)\|_N
+       +R_\delta^{-1}
+          |\partial_s(
+          \widetilde{\mathfrak p}_{\mathbf p}-p_*)|\right\}
+ &\le C\frac{\varepsilon}{\delta}d_{\mathbf p}.
+                                                        \label{eq:proof-oe-family-terminal-strong-difference}
+\end{align}
+This is \cref{eq:oe-family-terminal-strong-difference}.  Notice that it
+is a finite strong-chart displacement estimate, not a derivative inferred
+from the \(C^0\) family ledger.
+
+We now use the physical equation only after the endpoint derivative has
+been recovered.  Along the memberwise graph, differentiating the exact
+speed reconstruction gives
+\begin{align}
+ \varepsilon\partial_s\mathcal Q_{\mathbf p}^{\rm sp}
+={}&\mathfrak p_{\mathbf p}'
+ -\ell_N(r_{\mathbf p})Z_{\mathbf p}'
+ -\ell_N'(r_{\mathbf p})r_{\mathbf p}'Z_{\mathbf p}\notag\\
+&-Dh_{c,N}(r_{\mathbf p},Z_{\mathbf p})
+       [r_{\mathbf p}',Z_{\mathbf p}']
+ +\varepsilon\partial_s
+       \Delta\mathcal D_{c,N,\mathbf p}^{\rm ft}.
+                                                        \label{eq:proof-oe-family-speed-Q-derivative}
+\end{align}
+At the endpoint and all of its delayed feet the fixed clock lies on the
+same unit plateau.  Therefore
+\cref{eq:proof-oe-family-terminal-strong-difference} may be inserted
+directly in this physical identity.  Compare it term by term with the
+reference ledger
+\cref{eq:proof-physical-speed-Q-input-ledger}.  The actual-parameter
+coefficient differences obey
+\cref{eq:proof-oe-family-affine-defect-ledger,%
+eq:proof-oe-family-resource-factor-bounds}; the layer sum remains
+uniform and collective parameter rows remain neutral.  More explicitly,
+on the terminal plateau and its delayed feet, with \(\Delta\) denoting
+the pulled family expression minus its reference counterpart,
+\begin{align}
+ \max_{0\le k\le m}\bigl\{
+ |\partial_s\widetilde r_{\mathbf p}(S_*-\theta_k)
+          -r_*'(S_*-\theta_k)|
+ +\|\partial_s\widetilde V_{\mathbf p}(S_*-\theta_k)
+          -V_*'(S_*-\theta_k)\|_N\bigr\}
+ &\le C\delta d_{\mathbf p},\notag\\
+ \left|\partial_s\left\{
+   \Delta\mathcal D_{c,N,\mathbf p}^{\rm ft}
+       [\widetilde r_{\mathbf p},\widetilde Z_{\mathbf p}]
+  -\Delta\mathcal D_{c,N,\lambda^\circ}^{\rm ft}
+       [r_*,Z_*]\right\}\right|
+ &\le C\delta d_{\mathbf p},\notag\\
+ \left|\Delta\{\ell_N'(r)r'Z\}\right|
+ +\left|\Delta\{Dh_{c,N}(r,Z)[r',Z']\}\right|
+ &\le C\varepsilon\delta d_{\mathbf p}.
+                                                        \label{eq:proof-oe-family-speed-terminal-difference-ledger}
+\end{align}
+For the collective derivative in the first line, use
+\cref{eq:proof-oe-family-core-speed-difference} and
+\(\Xi_{\mathbf p}'=1\) on the terminal plateau:
+\(\partial_s\widetilde r_{\mathbf p}
+ -r_*'=\delta(\widetilde q_{\mathbf p}-q_*)=O(\delta d_{\mathbf p})\).
+The current derivative then follows from the exact reconstruction and the
+terminal \(Z\)-derivative part of
+\cref{eq:proof-oe-family-terminal-reconstruction-map}.  The second line follows
+by differentiating the finite fixed-delay sum
+\cref{eq:fold-time-tracker-delay}; every current and delayed derivative is
+covered by the first line, and the actual layer differences use
+\cref{eq:proof-oe-family-affine-defect-ledger}.  The last line uses
+\cref{eq:proof-oe-family-terminal-strong-difference}, the normal-size
+bound, and the coefficient ledger in
+\cref{eq:proof-physical-speed-Q-input-ledger}.
+
+Thus the two dominant differences,
+\(\partial_s(\widetilde{\mathfrak p}_{\mathbf p}-p_*)\) and
+\(\ell_N\partial_s(\widetilde Z_{\mathbf p}-Z_*)\), cost at most
+\(C\varepsilon R_\delta d_{\mathbf p}/\delta\).  All terms in
+\cref{eq:proof-oe-family-speed-terminal-difference-ledger} enter
+\cref{eq:proof-oe-family-speed-Q-derivative} with an additional
+\(\varepsilon\) where displayed.  Finally
+\(\delta/R_\delta^2\le\mathfrak w_*\) implies
+\(\varepsilon\delta d_{\mathbf p}
+ \le C\varepsilon R_\delta d_{\mathbf p}/\delta\).
+Together with the reference \(C\varepsilon\delta\) estimate this yields
+\[
+ \left|\varepsilon\partial_s
+       \mathcal Q_{\mathbf p}^{\rm sp}(S_{\mathbf p})\right|
+ \le C\left\{\varepsilon\delta
+       +\frac{\varepsilon R_\delta}{\delta}d_{\mathbf p}\right\}.
+\]
+
+At a family zero,
+\cref{eq:oe-family-physical-endpoint-identities,%
+eq:oe-family-core-speed-geometry} give
+\[
+ \mathcal Q_{\mathbf p}^{\rm sp,gr}(e)=0,\qquad
+ r_{\mathbf p}'(S_{\mathbf p})
+ =\delta q_{0,\lambda}(e),\qquad
+ |q_{0,\lambda}(e)|\ge q_-.
+\]
+Divide the preceding estimate by the last derivative and use
+\(\varepsilon=\delta^2\).  This proves
+\[
+ \left|\varepsilon\partial_r
+       \mathcal Q_{\mathbf p}^{\rm sp,gr}(e)\right|
+ \le C\{\varepsilon+R_\delta d_{\mathbf p}\}.
+\]
+Multiplication by the uniformly bounded \(q_{0,\lambda}(e)\), followed
+by division by \(R_\delta\), proves all identities and bounds in
+\cref{eq:oe-family-terminal-speed-shear-bound}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{thm:oe-family-physical-speed-transversality}]
+Fix a family member.  The two-sided Volterra inverse in
+\cref{eq:resource-gauge-history-inverse} gives
+\[
+ a=\frac{\omega}{w_{\mathbf p}'(e)},\qquad
+ \psi=\xi_S-e_{\mathbf p,S}a,\qquad
+ u=(\Id-\mathcal K_{\mathbf p,S})^{-1}\psi.
+\]
+Thus
+\((\xi_S,\omega)=\mathfrak j_{\mathbf p,S}^{\rm q}u
++aE_{\mathbf p,S}^c\), and uniqueness follows first from the resource
+coordinate and then from the Volterra inverse.
+
+The differential of the actual event row is
+\cref{eq:oe-family-actual-event-row}.  Since
+\(\pi_N^Te_{\mathbf p,S}(0)=1\) and
+\((\mathcal K_{\mathbf p,S}\phi)(0)=0\),
+\[
+ \mathfrak e_{\mathbf p,S}E_{\mathbf p,S}^c
+ =q_{0,\mathbf p}(e)^{-1},\qquad
+ \mathfrak e_{\mathbf p,S}
+       \mathfrak j_{\mathbf p,S}^{\rm q}\phi
+ =q_{0,\mathbf p}(e)^{-1}\pi_N^T\phi(0).
+\]
+The chain rule along the exact graph gives
+\[
+ \mathfrak b_{\mathbf p,S}^{\rm sp}E_{\mathbf p,S}^c
+ =\varepsilon\partial_r
+       \mathcal Q_{\mathbf p}^{\rm sp,gr}(e).
+\]
+Consequently the defining ratio of
+\(\kappa_{\mathbf p,S}^{\rm sp}\) is exactly the one in
+\cref{eq:oe-family-speed-shear}, its bound is
+\cref{eq:oe-family-terminal-speed-shear-bound}, and
+\(\mathfrak b_{\mathbf p,S}^{\rm sp,ea}\) annihilates the center line.
+The coefficient \(R_{q,N}^{\lambda}(e)\) is the distinct terminal
+resource-row coefficient in \cref{eq:outer-clock-scalar-column}; it is
+not used in this ratio.
+
+The calculation of the quotient row is algebraic and remains valid with
+the actual family coefficients.  On the canonical lift, let
+\(\mathcal A_{\mathbf p,S}^{\rm q}\phi\) be the quotient RFDE
+right-hand side.  The resource-gauge identity gives
+\[
+ a'(S)=\frac{\delta}{w_{\mathbf p}'(e)}\pi_N^T\phi(0),
+ \qquad
+ \pi_N^T\xi'(S)
+ =\pi_N^T\mathcal A_{\mathbf p,S}^{\rm q}\phi+a'(S).
+\]
+Differentiate the total physical speed and use
+\(\varepsilon=\delta^2\).  The rank-one resource term in the quotient
+RFDE cancels the displayed \(1/w_{\mathbf p}'(e)\) contribution exactly.
+Subtracting the member-specific event shear yields
+\cref{eq:oe-family-speed-expanded-row}.  This also proves that its
+normalization is \(R_\delta^{-1}\), not
+\((\varepsilon R_\delta)^{-1}\).
+
+We next estimate the row before using it as a border.  At
+\(e=-R_\delta\), row neutrality, the frozen-current diagonal form, and
+\cref{eq:oe-family-core-current-difference} give
+\[
+ \|\pi_N^T\mathcal J_{\mathbf p}(S)\|
+ \le C\{R_\delta+\varepsilon\mathfrak b_{\mathbf p}\}.
+\]
+The family Volterra estimate is
+\cref{eq:oe-family-core-volterra}; delayed evaluation pays at most
+\(\delta^{-2\vartheta_*}\) by
+\cref{eq:oe-family-core-action-bounds}.  The reduced speeds and their
+first \(r\)-derivatives are uniformly bounded on the retained parameter
+box.  Finally,
+\cref{eq:oe-family-terminal-speed-shear-bound} gives
+\[
+ \frac{|\kappa_{\mathbf p,S}^{\rm sp}|}{R_\delta}
+ \le C\left\{d_{\mathbf p}+\frac{\varepsilon}{R_\delta}\right\}.
+\]
+Hence
+\begin{equation}
+ \|\ell_{\mathbf p,S}^{\rm sp,q}\|_
+       {(\mathbf p,S,\sharp)^*}
+ \le C\left\{1+d_{\mathbf p}
+ +\frac{\varepsilon\mathfrak b_{\mathbf p}}{R_\delta}
+ +\frac{\varepsilon}{R_\delta}\delta^{-2\vartheta_*}
+ +\frac{\varepsilon}{R_\delta}\right\}\le C.   \label{eq:proof-oe-family-speed-row-bound}
+\end{equation}
+The fading term tends to zero by the calculation in
+\cref{eq:proof-physical-speed-fading-closes}.  This proves
+\cref{eq:oe-family-speed-row-bound}.
+
+It remains to evaluate the row on the true unstable history.  The terminal
+normal form \cref{eq:oe-family-core-terminal-unstable-current} is
+\[
+ (\mathfrak h_{\mathbf p}^u)_S(0)
+ =e_{c,N}(e)+\widehat\zeta_{\mathbf p,S}^u,\qquad
+ \ell_{c,N}(e)\widehat\zeta_{\mathbf p,S}^u=0,\qquad
+ \|\widehat\zeta_{\mathbf p,S}^u\|_N\le C\eta_{\mathbf p}.
+\]
+The subinterval estimate
+\cref{eq:proof-oe-family-core-local-unstable-control} bounds every
+current value on the last delay collar, so the delayed and Volterra terms
+contribute \(O(\varepsilon/R_\delta)\).  The eigenvalue expansion gives
+\[
+ R_\delta^{-1}\pi_N^T
+ \mathcal J_N^{\rm fv}(e)e_{c,N}(e)
+ =2\alpha+O(R_\delta).
+\]
+For the stable current correction, left covariance gives the same exact
+cancellation as
+\cref{eq:proof-physical-speed-left-covector-cancellation}, now with
+\(\widehat\zeta_{\mathbf p,S}^u\), and hence a contribution
+\(O(\eta_{\mathbf p})\), not \(O(\eta_{\mathbf p}/R_\delta)\).
+The current perturbation contributes
+\(C\varepsilon\mathfrak b_{\mathbf p}/R_\delta\); the two scalar rows
+contribute \(C\{\varepsilon/R_\delta+d_{\mathbf p}\}\).  This proves
+\cref{eq:oe-family-speed-transversality} and, after taking the family
+supremum, \cref{eq:oe-family-speed-transversality-uniform}.
+Choose \(r_{\rm sp}\) first so that the fixed \(Cr_{\rm sp}\) error is
+smaller than a fixed fraction of \(\alpha\), and then decrease the ordered
+wedge.  The margin \cref{eq:oe-family-speed-margin} follows.
+
+The row replacement is now uniform algebra.  Given
+\((f,\psi_b,b_{\rm q})\), set
+\(u_0=\mathbb L_{\mathbf p}^{-1}(f,\psi_b,0)\).
+The homogeneous solution has zero entry graph coordinate and physical
+terminal value \(\mu_{\mathbf p,\delta}\).  Formula
+\cref{eq:oe-family-speed-bordered-inverse} therefore has the prescribed
+data.  Mixed uniqueness and the positive margin give injectivity, while
+the old mixed Green bound, the quotient-row bound, and the same margin
+give the common inverse constant.
+
+Finally, the cocycle identity for
+\(\mathcal V_{\mathbf p}^{\rm q}\) and invariance of the one-dimensional
+unstable line prove
+\cref{eq:oe-family-speed-conormal-identities} from the definition
+\cref{eq:oe-family-speed-conormal}.  These are memberwise identities;
+no parameter differentiability on a rough history space has been used.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem
