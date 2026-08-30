@@ -8286,6 +8286,308 @@ root.  Nor does it identify the classes produced from two different
 reference charts.
 \end{theorem}
 
+\begin{definition}[Endpoint-admissible raw gauges]
+\label[definition]{def:endpoint-admissible-raw-gauges}
+Retain the normalized raw-gauge spaces in
+\cref{eq:raw-gauge-spaces,eq:raw-gauge-norms}.  For the moving-duration
+original-endpoint problem put
+\begin{align}
+ \mathfrak G_{a,\delta}^{\rm oe,h}
+ &=E_N\times\R\times\mathscr K_{N,\delta}^h
+   =\mathfrak B_{a,\delta}^h,\notag\\
+ \mathfrak G_{r,\delta}^{\rm oe,h}
+ &=E_N\times\mathscr K_{N,\delta}^h,
+ &g_r^{\rm oe}&=(\beta_r,\widehat\gamma_r),     \label{eq:endpoint-admissible-gauge-spaces}
+\end{align}
+with the norms inherited from \cref{eq:raw-gauge-norms} after deleting
+the last scalar summand on the repelling branch.  Thus an attracting
+endpoint gauge still contains its physical entry resource datum \(b_a\).
+On the repelling branch the future scalar datum \(b_r\) is not a gauge:
+the unique future scalar freedom is used instead by the physical speed
+row
+\begin{equation}
+ \mathscr B_r^{\rm sp,nl}=\varepsilon Q_e=0.     \label{eq:endpoint-repelling-speed-allocation}
+\end{equation}
+The terminal voltage history remains a free triangular interface unknown;
+it is not an additional Fredholm boundary condition.
+\end{definition}
+
+\begin{proposition}[The repelling terminal scalar is a row, not a gauge]
+\label[proposition]{prop:endpoint-repelling-row-allocation}
+Retain \cref{prop:repelling-speed-aligned-terminal-row}, including its
+receding joint-diagonal hypotheses and uniform source-split restrictions.
+At the repelling original endpoint, the speed row in
+\cref{eq:endpoint-repelling-speed-allocation} and the old future resource
+row occupy the same one-dimensional terminal Fredholm slot.  More
+precisely, on the closed terminal scalar column
+\(\mathfrak u_r^{\rm ter}b=G_r(0,b,0,0)\),
+\begin{equation}
+ \mathscr B_r^{\rm sp}\mathfrak u_r^{\rm ter}b
+ =\chi_{r,\delta}b,
+ \qquad
+ |\chi_{r,\delta}-1|
+ \le C\omega_{r,\delta}^{\rm sp}=o(1).          \label{eq:endpoint-row-allocation-isomorphism}
+\end{equation}
+Consequently, in the linear bordered problem, after all other data have
+been fixed, the speed row determines the terminal scalar uniquely.  If a
+later nonlinear construction supplies a classical moving-endpoint zero,
+this row is its transverse differential for the constraint \(Q_e=0\).
+The proposition itself does not construct that zero.  Prescribing an
+independent \(b_r\) as well
+would overdetermine the bordered problem;
+deleting the speed row would instead produce a transversal family and
+would lose the endpoint identities in
+\cref{eq:speed-aligned-endpoint-consequences,eq:speed-aligned-endpoint-shear}.
+The allocation in
+\cref{def:endpoint-admissible-raw-gauges} is therefore forced by the
+linear Fredholm geometry rather than chosen as a normalization.
+\end{proposition}
+
+\begin{lemma}[Higher slow-clock feet in a fixed swept bundle]
+\label[lemma]{lem:higher-slow-clock-feet}
+Retain \cref{lem:terminal-clock-pullback-border,cor:fixed-envelope-terminal-clock-border},
+but choose the fixed terminal cutoff in \(C^5\) so that
+\begin{equation}
+ S_\delta^j\|\chi_\delta^{(j)}\|_\infty\le C_j,
+ \qquad 1\le j\le5.                            \label{eq:higher-clock-cutoff-bounds}
+\end{equation}
+Freeze the interval, cutoff, swept window, and hard source interface
+before varying parameters.  On every fixed normalized clock ball
+\(|\beta|\le c_\beta\rho_\delta\) for which both the fixed swept-window
+containment and \cref{eq:terminal-clock-diffeomorphism-margin} hold, the
+implicit feet
+in \cref{eq:terminal-clock-foot-identities} have the uniform jets
+\begin{equation}
+ \max_{1\le j\le4}
+ \rho_\delta^j
+ \|\partial_\beta^j\sigma_{k,\beta}\|_{C^1}
+ \le C,
+ \qquad 0\le k\le m.                            \label{eq:higher-clock-foot-jets}
+\end{equation}
+The same conclusion holds after any mixed parameter or gauge derivative
+which reaches a foot only through a Banach-space clock field
+\(\beta=\beta(\nu,\eta,g)\), with the ordinary Banach-space chain-rule
+products of the displayed \(\beta\)-derivatives and the jets of the clock
+field on the right.  No moving characteristic function
+or moving rough graph occurs in this statement.
+\end{lemma}
+
+For the same-end repelling boundary problem, let
+\begin{equation}
+ J_{r,\delta}^{\rm ev}
+ =[-3R_\delta/2,-R_\delta/2]                   \label{eq:moving-r-event-tube}
+\end{equation}
+and equip \(C^4(J_{r,\delta}^{\rm ev})\) with the scaled relative norm
+\begin{equation}
+ \|a\|_{\phi,\rm rel}^{(4)}
+ =\sup_{J_{r,\delta}^{\rm ev}}\frac{|a(r)|}{|r|}
+   +\sum_{j=1}^4R_\delta^{j-1}
+       \|a^{(j)}\|_{C^0(J_{r,\delta}^{\rm ev})}.             \label{eq:moving-r-event-phase-norm}
+\end{equation}
+
+\begin{lemma}[Uniform physical-event preimage in the relative phase chart]
+\label[lemma]{lem:moving-r-event-preimage}
+Retain the reduced-flow phase map
+\begin{equation}
+ \Theta_a(r)=\Phi_{q_0}^{a(r)}(r)               \label{eq:moving-r-event-phase-map}
+\end{equation}
+on the tube \cref{eq:moving-r-event-tube}, where
+\begin{equation}
+ -q_+\le q_0(r)\le-q_-<0,
+ \qquad
+ \max_{0\le j\le5}R_\delta^j\|q_0^{(j)}\|_{C^0}
+ \le C_q.                                        \label{eq:moving-r-event-speed-bounds}
+\end{equation}
+There are uniform
+\(\chi_{\rm ev},C_{\rm ev}>0\) such that, whenever
+\(\|a\|_{\phi,\rm rel}^{(4)}<\chi_{\rm ev}\), the equation
+\begin{equation}
+ \Theta_a(\zeta_r(a))=-R_\delta                 \label{eq:moving-r-event-preimage-equation}
+\end{equation}
+has a unique solution in
+\([-5R_\delta/4,-3R_\delta/4]\).  The map
+\begin{equation}
+ a\longmapsto\zeta_r(a)                         \label{eq:moving-r-event-preimage-map}
+\end{equation}
+is four times Fr\'{e}chet differentiable from the displayed scaled phase
+ball to \(\mathbb R\), and
+\begin{align}
+ \frac{|\zeta_r(a)+R_\delta|}{R_\delta}
+ &\le C_{\rm ev}\|a\|_{\phi,\rm rel}^{(4)},\notag\\
+ \frac{|D^j\zeta_r(a)[h_1,\ldots,h_j]|}{R_\delta}
+ &\le C_{{\rm ev},j}
+       \prod_{k=1}^j\|h_k\|_{\phi,\rm rel}^{(4)},
+ \qquad1\le j\le4.                             \label{eq:moving-r-event-preimage-jets}
+\end{align}
+At the unshifted chart,
+\begin{equation}
+ \zeta_r(0)=-R_\delta,
+ \qquad
+ D\zeta_r(0)h=-q_0(-R_\delta)h(-R_\delta).      \label{eq:moving-r-event-preimage-first-jet}
+\end{equation}
+
+Thus the literal section \(r=-R_\delta\) can be used as the future
+boundary of a fixed-tube graph problem without a rough time translation.
+The lemma only constructs its phase preimage.  It neither supplies the
+truncated phase--normal inverse nor permits a terminal scalar placed at a
+different, more remote endpoint to be used in the speed row.
+\end{lemma}
+
+For a Banach space \(X\), an interval \(J\) of size \(O(R_\delta)\), and
+an integer \(k\ge0\), write
+\begin{equation}
+ \|f\|_{C^k_{R_\delta}(J;X)}
+ =\max_{0\le j\le k}R_\delta^j
+       \|\partial_r^jf\|_{C^0(J;X)}.            \label{eq:moving-r-scaled-strong-norm}
+\end{equation}
+
+\begin{lemma}[Generated terminal trivialization of the moving \(r\)-endpoint]
+\label[lemma]{lem:moving-r-terminal-trivialization}
+Choose a fixed \(\chi_{\rm tr}\in C^8([0,\infty);[0,1])\) such that
+\begin{equation}
+ \chi_{\rm tr}(0)=1,
+ \qquad
+ \chi_{\rm tr}(x)=0\quad(x\ge1/4).              \label{eq:moving-r-terminal-cutoff}
+\end{equation}
+After decreasing the phase radius in
+\cref{lem:moving-r-event-preimage}, define, on
+\(I_{r,\delta}^{\rm ref}=[-R_\delta,-\rho_\delta]\),
+\begin{equation}
+ \Psi_a(r)
+ =r+\chi_{\rm tr}\left(\frac{r+R_\delta}{R_\delta}\right)
+       \{zeta_r(a)+R_\delta\}.                 \label{eq:moving-r-terminal-trivialization}
+\end{equation}
+Then \(\Psi_a\) is an orientation-preserving \(C^4\) diffeomorphism from
+\(I_{r,\delta}^{\rm ref}\) onto
+\([\zeta_r(a),-\rho_\delta]\), satisfies
+\begin{equation}
+ \Psi_a(-R_\delta)=\zeta_r(a),
+ \qquad
+ \Psi_a(r)=r\quad
+ \left(r\ge-\frac34R_\delta\right),
+ \qquad
+ \frac12\le\Psi_a'(r)\le\frac32,               \label{eq:moving-r-terminal-trivialization-properties}
+\end{equation}
+and has, for \(1\le j\le4\), the uniform parameter bounds
+\begin{equation}
+ \|D^j(\Psi_a-\Id)[h_1,\ldots,h_j]\|_
+      {C^4_{R_\delta}(I_{r,\delta}^{\rm ref})}
+ \le C_jR_\delta
+       \prod_{k=1}^j\|h_k\|_{\phi,\rm rel}^{(4)}.          \label{eq:moving-r-terminal-trivialization-jets}
+\end{equation}
+
+For every Banach space \(X\), the pullback
+\begin{equation}
+ (a,f)\longmapsto f\circ\Psi_a                  \label{eq:moving-r-terminal-composition-map}
+\end{equation}
+is four times Fr\'{e}chet differentiable from the product of the phase
+ball and the scaled \(C^8\) ball on the fixed enlargement
+\begin{equation}
+ J_{r,\delta}^{\rm tr}=[-3R_\delta/2,-\rho_\delta]          \label{eq:moving-r-terminal-fixed-enlargement}
+\end{equation}
+into \(C^4_{R_\delta}(I_{r,\delta}^{\rm ref};X)\).  Its
+derivatives satisfy the ordinary scaled Fa\`a di Bruno bounds, uniformly
+in \(N\), \(\delta\), and the diagonal wedge.
+
+The trivialization is the identity on the entry side of the outer graph.
+Thus it moves neither the raw old-history collar nor any fixed finite
+method-of-steps seam.  It is a strong-to-weak terminal chart; no
+same-space differentiability of translation on a rough history space is
+asserted.
+\end{lemma}
+
+The preceding endpoint statements deliberately stop before a parameterized
+original-endpoint theorem.  A direct replacement of the raw compatible
+collar by a parameter-dependent boundary lift would be circular: the
+compatible collar also depends on the unknown segment, and the star range
+charges its boundary row by \(\lambda_\delta^{-1}\).  Any subsequent
+construction must therefore separate two operations.  At a fixed outer
+radius, recutting an already existing raw-gauge zero can at most regard the
+speed correction at an interior physical section as an observable; it does
+not supply the joint-diagonal endpoint family.  The diagonal condition
+\(Q_e=0\) must instead be imposed in a moving-(r) boundary-value problem
+whose future scalar row is located at that same endpoint; only there does
+\cref{prop:endpoint-repelling-row-allocation} apply.  In particular, the
+proposition does not justify shooting from a remote raw future row to a
+moving interior event.  This order keeps the hard interfaces fixed and
+never differentiates a moving characteristic function.
+
+\begin{lemma}[Generated repelling core and logarithmic-square action]
+\label[lemma]{lem:repelling-generated-core-action}
+Retain
+\cref{prop:unprepared-outer-skeleton,thm:short-clock-original-endpoint-segment}
+on the repelling branch, fix an integer \(M\ge1\), and put
+\begin{equation}
+ \mathscr L_\delta=\log(1/\delta)=\frac{S_\delta^2}{2p}.   \label{eq:repelling-core-large-log}
+\end{equation}
+Denote its exact physical fold-time path by
+\(r_*:[0,S_r^{\rm oe}]\to[-R_\delta,-\rho_\delta]\), oriented from
+\(-\rho_\delta\) to \(-R_\delta\).  Choose fixed constants
+\begin{equation}
+ 1<c_b,
+ \qquad c_c>0,                                   \label{eq:repelling-core-section-constants}
+\end{equation}
+and put
+\begin{equation}
+ \rho_{b,\delta}=c_b\rho_\delta,
+ \qquad
+ \rho_{c,\delta}=c_c\delta\mathscr L_\delta.    \label{eq:repelling-core-section-radii}
+\end{equation}
+After decreasing \(\delta_*\), the exact repelling endpoint segment has
+unique hit times
+\begin{equation}
+ r_*(s_b)=-\rho_{b,\delta},
+ \qquad
+ r_*(s_c)=-\rho_{c,\delta},
+ \qquad
+ (M+2)\theta_m<s_b<s_c<S_r^{\rm oe}-\theta_m.   \label{eq:repelling-generated-core-hits}
+\end{equation}
+In particular, every delay window based at
+\(s\in[s_b,S_r^{\rm oe}]\) is generated by the same forward RFDE segment; no raw
+old-history value enters it.
+
+Fix \(0<\vartheta_*<\vartheta\).  On
+\([s_b-\theta_m,S_r^{\rm oe}]\) define
+\begin{align}
+ \kappa_*(s)
+ &=\vartheta_*
+   \left\{
+    \frac{\delta}{\mathfrak a_N(r_*(s))}
+       +\frac{\theta_m}{\mathscr L_\delta}
+   \right\}^{-1},\notag\\
+ \mathscr A_*(s,t)
+ &=\int_t^s\kappa_*(u)\,\dd u,
+ \qquad s\ge t,                                 \label{eq:repelling-core-moving-action}\\
+ \|\phi\|_{s,\sharp}
+ &=\sup_{-\theta_m\le\theta\le0}
+    e^{-2\mathscr A_*(s,s+\theta)}
+       \|\phi(\theta)\|_N.                     \label{eq:repelling-core-moving-history-norm}
+\end{align}
+If \(\theta_m=0\), the second term in braces and the history weights are
+deleted.  Otherwise, uniformly in \(N\) and the retained diagonal wedge,
+\begin{align}
+ \|\phi\|_{s,\sharp}
+ &\le\|\phi\|_{\infty,N}
+ \le\delta^{-2\vartheta_*}\|\phi\|_{s,\sharp},
+ &&s_b\le s\le S_r^{\rm oe},                    \label{eq:repelling-core-history-norm-comparison}\\
+ \mathscr A_*(s_c,s_b)
+ &\ge c_{bc}\mathscr L_\delta^2,
+ &\mathscr A_*(S_r^{\rm oe},s_b)&\ge c_{bc}\mathscr L_\delta^2.  \label{eq:repelling-core-action-lower-bound}
+\end{align}
+Consequently, for every \(P>0\),
+\begin{equation}
+ \delta^{-M_0}e^{c_0S_\delta^3}
+ e^{-c_1\mathscr A_*(S_r^{\rm oe},s_b)}
+ \le C_{P,M_0,c_0,c_1}\delta^P                 \label{eq:repelling-core-action-flat-envelope}
+\end{equation}
+for arbitrary fixed \(M_0,c_0,c_1>0\).
+
+This lemma supplies geometry and a moving norm, not a dichotomy.  It does
+not invert the RFDE semiflow, construct a nonautonomous stable bundle, or
+turn the repelling reference segment into a past-complete orbit.  Those
+steps require the exact resource/phase quotient and a forward entry seam.
+\end{lemma}
+
 Thus the apparently large term \(-\omega\mathbf1/\delta\) in the raw
 fold-time variational equation is removed exactly only after the genuine
 tracker tangent is known.  The remaining Volterra coordinate correction is

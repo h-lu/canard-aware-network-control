@@ -10614,6 +10614,277 @@ follow because the argument never relates the attracting and repelling
 sections.
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{prop:endpoint-repelling-row-allocation}]
+The old future resource row has the closed terminal column
+\(\mathfrak u_r^{\rm ter}\).  By definition of
+\(\chi_{r,\delta}\) in
+\cref{eq:speed-aligned-row-coefficient}, its image under the replacement
+row is exactly
+\[
+ \mathscr B_r^{\rm sp}\mathfrak u_r^{\rm ter}b
+ =\chi_{r,\delta}b.
+\]
+The estimate and nonvanishing in
+\cref{eq:endpoint-row-allocation-isomorphism} are
+\cref{eq:speed-aligned-row-margin}.  Formula
+\cref{eq:speed-aligned-row-inverse} then shows that, for fixed remaining
+data, the speed row determines the coefficient of
+\(\mathfrak u_r^{\rm ter}\) uniquely.  Thus the old value of \(b_r\) and
+the speed datum are two coordinate descriptions of the same scalar
+Fredholm slot, not two independent rows.  At a nonlinear physical zero,
+\cref{eq:speed-aligned-nonlinear-speed} identifies the replacement datum
+with \(\varepsilon Q_e\), and
+\cref{eq:speed-aligned-endpoint-consequences,eq:speed-aligned-endpoint-shear}
+give the stated consequences.  This proves the proposition.
+\end{proof}
+
+\begin{proof}[Proof of \cref{lem:higher-slow-clock-feet}]
+Put \(B=\beta/\rho_\delta\) and
+\(d(B)=\rho_\delta B/\delta\).  Since
+\(\rho_\delta/\delta=S_\delta/(2\alpha)\), the foot identity becomes
+\begin{equation}
+ \sigma=s-\theta_k+d(B)\{\chi(s)-\chi(\sigma)\}.             \label{eq:proof-scaled-clock-foot}
+\end{equation}
+On the retained clock ball,
+\(1+d(B)\chi'(\sigma)\) is bounded above and away from zero.  The mean
+value theorem applied first to
+\cref{eq:proof-scaled-clock-foot}, together with the same denominator
+margin, gives
+\begin{equation}
+ |s-\sigma|\le C\theta_k\le C\theta_m.            \label{eq:proof-scaled-clock-foot-distance}
+\end{equation}
+The mean value theorem and \cref{eq:higher-clock-cutoff-bounds} then give
+\begin{equation}
+ |d'(B)|\,|\chi(s)-\chi(\sigma)|\le C,
+ \qquad
+ |d(B)|\,\|\chi^{(j)}\|_\infty\le C S_\delta^{1-j}
+ \quad(1\le j\le5).                              \label{eq:proof-scaled-clock-coefficients}
+\end{equation}
+Differentiate \cref{eq:proof-scaled-clock-foot} in \(B\).  At every
+order the only occurrence of the highest derivative
+\(\partial_B^j\sigma\) is multiplied by
+\(1+d(B)\chi'(\sigma)\); all other terms are finite products of lower
+foot derivatives and the coefficients in
+\cref{eq:proof-scaled-clock-coefficients}.  Induction gives
+\begin{equation}
+ \max_{1\le j\le4}\|\partial_B^j\sigma\|_{C^0}\le C.       \label{eq:proof-scaled-clock-B-jets}
+\end{equation}
+Differentiating first in \(s\), or equivalently using the exact quotient
+for \(\partial_s\sigma\) in
+\cref{eq:terminal-clock-foot-identities}, repeats the same induction; the
+one extra cutoff derivative is why five derivatives were reserved.  Hence
+the \(C^1\) norm in
+\cref{eq:proof-scaled-clock-B-jets} is also bounded.  Since
+\(\partial_\beta=\rho_\delta^{-1}\partial_B\), this is
+\cref{eq:higher-clock-foot-jets}.  Composition with a parameter-dependent
+Banach-space clock is the ordinary Banach-space chain rule: every mixed
+derivative is a finite product of an explicit \(\partial_\beta^j\sigma\)
+and jets of the clock field.  All
+objects differentiated above live on the fixed swept bundle, so no
+characteristic function is differentiated.
+\end{proof}
+
+\begin{proof}[Proof of \cref{lem:moving-r-event-preimage}]
+Consider
+\begin{equation}
+ \mathfrak e(a,r)=\Phi_{q_0}^{a(r)}(r)+R_\delta.             \label{eq:proof-moving-r-event-function}
+\end{equation}
+Put \(x=r/R_\delta\),
+\(\widehat q_\delta(x)=q_0(R_\delta x)\), and
+\(\widehat a(x)=a(R_\delta x)/R_\delta\).  Then
+\cref{eq:moving-r-event-speed-bounds} gives uniform \(C^5\) bounds and the
+same-sign margin for \(\widehat q_\delta\) on a fixed \(x\)-interval, while
+\cref{eq:moving-r-event-phase-norm} gives uniform \(C^4\) bounds for
+\(\widehat a\).  In these variables,
+\begin{equation}
+ \frac{1}{R_\delta}\Phi_{q_0}^{a(R_\delta x)}(R_\delta x)
+ =\Phi_{\widehat q_\delta}^{\widehat a(x)}(x).              \label{eq:proof-moving-r-rescaled-flow}
+\end{equation}
+Decrease \(\chi_{\rm ev}\) so that every flow arc issued from the middle
+half of the event tube with time \(a(r)\) remains inside
+\(J_{r,\delta}^{\rm ev}\).  Consequently the rescaled flow and its
+derivatives through order five are uniform on the fixed \(x\)-image of
+that tube.  The scaled evaluation map
+\begin{equation}
+ (a,r)\longmapsto a(r)                           \label{eq:proof-moving-r-scaled-evaluation}
+\end{equation}
+is \(C^4\) on the product of the ball in
+\cref{eq:moving-r-event-phase-norm} and the event tube.  Its derivatives
+have the expected scale: after division of the output by \(R_\delta\),
+each phase direction is charged by its displayed relative norm and each
+ordinary \(r\)-direction by \(R_\delta^{-1}\).
+
+At \((a,r)=(0,-R_\delta)\),
+\begin{equation}
+ \mathfrak e(0,-R_\delta)=0,
+ \qquad
+ \partial_r\mathfrak e(0,-R_\delta)=1.          \label{eq:proof-moving-r-event-base-margin}
+\end{equation}
+By the flow variational equation and the scaled evaluation bound, after
+decreasing \(\chi_{\rm ev}\), uniformly
+\begin{equation}
+ \frac12\le\partial_r\mathfrak e(a,r)\le\frac32             \label{eq:proof-moving-r-event-derivative-margin}
+\end{equation}
+on the middle half of the event tube.  Also
+\begin{equation}
+ |\mathfrak e(a,-R_\delta)|
+ \le C R_\delta\|a\|_{\phi,\rm rel}^{(4)}.       \label{eq:proof-moving-r-event-base-defect}
+\end{equation}
+The intermediate value theorem and
+\cref{eq:proof-moving-r-event-derivative-margin} give the unique root in
+the claimed interval and the zeroth estimate in
+\cref{eq:moving-r-event-preimage-jets}.
+
+Equivalently apply the Banach-space implicit-function theorem to
+\(R_\delta^{-1}\mathfrak e(a,R_\delta x)\).  It gives four Fr\'{e}chet
+derivatives with constants uniform in the scaled variables.
+At each order, the only top derivative of \(\zeta_r\) is multiplied by
+\(\partial_r\mathfrak e\); every other term is a finite Fa\`a di Bruno
+product of lower derivatives, scaled evaluations of the phase directions,
+and uniformly bounded flow derivatives.  Induction, using
+\cref{eq:proof-moving-r-event-derivative-margin}, proves the second line of
+\cref{eq:moving-r-event-preimage-jets}.  Finally,
+\begin{equation}
+ D_a\mathfrak e(0,-R_\delta)h
+ =q_0(-R_\delta)h(-R_\delta),                   \label{eq:proof-moving-r-event-a-derivative}
+\end{equation}
+because the derivative of \(t\mapsto\Phi_{q_0}^t(r)\) at \(t=0\) is
+\(q_0(r)\).  Implicit differentiation and
+\cref{eq:proof-moving-r-event-base-margin} give
+\cref{eq:moving-r-event-preimage-first-jet}.
+\end{proof}
+
+\begin{proof}[Proof of
+\cref{lem:moving-r-terminal-trivialization}]
+Put \(\Delta_a=\zeta_r(a)+R_\delta\).  The preimage estimate gives
+\begin{equation}
+ |\Delta_a|\le C_{\rm ev}\chi_{\rm ev}R_\delta.             \label{eq:proof-moving-r-trivialization-shift}
+\end{equation}
+The derivative of \cref{eq:moving-r-terminal-trivialization} is
+\begin{equation}
+ \Psi_a'(r)
+ =1+\frac{\Delta_a}{R_\delta}
+   \chi_{\rm tr}'\left(\frac{r+R_\delta}{R_\delta}\right). \label{eq:proof-moving-r-trivialization-derivative}
+\end{equation}
+Decrease \(\chi_{\rm ev}\) once so that the second term has absolute
+value at most \(1/2\).  The derivative margin, the two endpoint values,
+and monotonicity prove the diffeomorphism and all identities in
+\cref{eq:moving-r-terminal-trivialization-properties}.  The support
+identity follows directly from
+\cref{eq:moving-r-terminal-cutoff}.
+
+For \(m\le4\), the \(m\)-th \(r\)-derivative of the cutoff costs
+\(R_\delta^{-m}\).  Every positive phase derivative of
+\(\Psi_a-\Id\) is that fixed cutoff multiplied by the corresponding
+derivative of \(\zeta_r\).  Multiplying by the factor \(R_\delta^m\) in
+\cref{eq:moving-r-scaled-strong-norm} and applying
+\cref{eq:moving-r-event-preimage-jets} proves
+\cref{eq:moving-r-terminal-trivialization-jets}.
+
+Finally, differentiate \(f(\Psi_a(r))\).  An output derivative of order
+at most four and a parameter derivative of order at most four contain at
+most eight derivatives of \(f\).  Every derivative of \(\Psi_a\) is
+controlled in the matching scaled norm by the preceding paragraph, so
+the scaled Fa\`a di Bruno formula has constants independent of
+\(R_\delta\).  Difference quotients in the fixed enlargement
+\cref{eq:moving-r-terminal-fixed-enlargement} prove that these formal
+derivatives are Fr\'{e}chet derivatives.  This proves the composition
+claim and also explains why it is stated from \(C^8\) into \(C^4\), not
+as a same-regularity translation theorem.
+\end{proof}
+
+\begin{proof}[Proof of \cref{lem:repelling-generated-core-action}]
+The exact endpoint segment satisfies
+\(r_*'(s)=\delta q_*(s)\) and, by
+\cref{eq:fixed-envelope-zero-speed-sign} together with the clock
+converse in \cref{thm:short-clock-original-endpoint-segment},
+\begin{equation}
+ -q_+\le q_*(s)\le-q_-<0.                       \label{eq:proof-repelling-core-speed-bounds}
+\end{equation}
+The constants are independent of \(N\) and the diagonal indices.  Moreover,
+\begin{equation}
+ \frac{\mathscr L_\delta}{S_\delta}\longrightarrow\infty,
+ \qquad
+ \frac{R_\delta}{\delta\mathscr L_\delta}\longrightarrow\infty.   \label{eq:proof-repelling-core-scale-separation}
+\end{equation}
+Hence the two radii in
+\cref{eq:repelling-core-section-radii} lie strictly between
+\(\rho_\delta\) and \(R_\delta\), in the stated order, for all sufficiently
+small \(\delta\).  Strict monotonicity gives unique hit times.
+
+Integrating \cref{eq:proof-repelling-core-speed-bounds} between the inner
+endpoint and either hit gives
+\begin{equation}
+ s_b\ge
+ \frac{\rho_{b,\delta}-\rho_\delta}{\delta q_+}
+ =\frac{c_b-1}{2\alpha q_+}S_\delta.             \label{eq:proof-repelling-core-entry-time}
+\end{equation}
+The distance from \(-\rho_{c,\delta}\) to the outer endpoint is at least
+a fixed multiple of \(R_\delta\); divided by \(\delta q_+\), it tends to
+infinity faster than \(\mathscr L_\delta\).  Thus, after one decrease of
+\(\delta_*\), both time margins in
+\cref{eq:repelling-generated-core-hits} hold.  Since
+\(s_b>(M+2)\theta_m\), every delayed argument based at
+\([s_b,S_r^{\rm oe}]\) is nonnegative and belongs to the already generated forward
+segment.  Notice that this is a method-of-steps statement, not a backward
+extension.
+
+For \(\theta_m>0\), the definition of \(\kappa_*\) immediately gives
+\begin{equation}
+ 0<\kappa_*(s)\le\frac{\vartheta_*\mathscr L_\delta}{\theta_m},
+ \qquad
+ \mathscr A_*(s,s+\theta)\le\vartheta_*\mathscr L_\delta
+ \quad(-\theta_m\le\theta\le0).                 \label{eq:proof-repelling-core-one-delay-action}
+\end{equation}
+The two inequalities in
+\cref{eq:repelling-core-history-norm-comparison} follow from
+\(e^{-2\mathscr A_*}\le1\) and
+\(e^{2\vartheta_*\mathscr L_\delta}=\delta^{-2\vartheta_*}\).
+
+It remains to prove the lower action bound.  On the compact outer
+critical branch, \cref{prop:unprepared-outer-skeleton} gives
+\begin{equation}
+ c_a|r|\le\mathfrak a_N(r)\le C_a|r|.           \label{eq:proof-repelling-core-a-comparison}
+\end{equation}
+Let \(s_{c/2}\) be the unique hit of
+\(r=-\rho_{c,\delta}/2\).  By
+\cref{eq:proof-repelling-core-scale-separation},
+\(s_b<s_{c/2}<s_c\) for small \(\delta\).  On
+\([s_{c/2},s_c]\), one has
+\(|r_*(s)|\asymp\delta\mathscr L_\delta\).  Therefore
+\begin{equation}
+ \frac{\delta}{\mathfrak a_N(r_*(s))}
+       +\frac{\theta_m}{\mathscr L_\delta}
+ \le\frac{C_{bc}}{\mathscr L_\delta},
+ \qquad
+ \kappa_*(s)\ge c_{bc}'\mathscr L_\delta.       \label{eq:proof-repelling-core-rate-lower}
+\end{equation}
+Another integration of
+\cref{eq:proof-repelling-core-speed-bounds} yields
+\begin{equation}
+ s_c-s_{c/2}
+ \ge\frac{\rho_{c,\delta}}
+          {2\delta q_+}
+ =\frac{c_c}{2q_+}\mathscr L_\delta.           \label{eq:proof-repelling-core-duration-lower}
+\end{equation}
+Multiplying
+\cref{eq:proof-repelling-core-rate-lower,eq:proof-repelling-core-duration-lower}
+proves the first inequality in
+\cref{eq:repelling-core-action-lower-bound}; positivity of the action
+proves the second.  Finally, the logarithm of the left side of
+\cref{eq:repelling-core-action-flat-envelope} is bounded above by
+\begin{equation}
+ -c\mathscr L_\delta^2+C c_0\mathscr L_\delta^{3/2}
+       +M_0\mathscr L_\delta,
+                                                        \label{eq:proof-repelling-core-flat-log}
+\end{equation}
+which is at most \(-P\mathscr L_\delta+O_P(1)\).  Exponentiation proves
+the claimed all-orders
+bound.  When \(\theta_m=0\), the norm comparison is tautological and the
+same lower-action proof applies after deleting the cap term.
+\end{proof}
+
 \subsection{Why unnormalized backward convergence does not select a history}
 
 The next elementary RFDE example makes precise why an outer-history theorem
