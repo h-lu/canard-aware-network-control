@@ -10795,6 +10795,110 @@ in the clock algebra proves the two slow-jet bounds themselves, and the
 construction has used no value to the right of \(S_*\).
 \end{proof}
 
+\begin{proof}[Proof of
+\cref{prop:repelling-outer-endpoint-slow-jet}]
+We sharpen only the repelling half of the differentiated-component
+calculation in the proof of
+\cref{thm:short-clock-original-endpoint-segment}.  On the one-delay
+enlargement of its true terminal window,
+\[
+ |r|\asymp r_{r,T}\asymp m_{r,T}\asymp R_\delta.
+\]
+The exact differentiated equations are
+\cref{eq:proof-terminal-jet-Z-system,%
+eq:proof-terminal-jet-p-system}.  The original-endpoint base ledger and
+coefficient ledger used there give, with the same notation for their
+distributed sources,
+\begin{align}
+ \|F_1^{\rm oe}\|_N&\le C\varepsilon\delta,\notag\\
+ |H_1^{\rm oe}|
+ &\le C\left\{
+   \varepsilon\delta R_\delta b
+  +\varepsilon\delta^2
+  +\varepsilon\delta R_\delta
+  +\frac{\varepsilon^2\delta}{R_\delta}\right\}
+ \le C\varepsilon\delta R_\delta,               \label{eq:proof-outer-endpoint-sharp-source}
+\end{align}
+where \(b=\mathfrak b_{\delta,\varkappa}\).  The last inequality uses
+the already retained bounds \(b\le b_0\),
+\(\delta/R_\delta=o(1)\), and
+\(\varepsilon/R_\delta^2=o(1)\).  This is the estimate that was
+deliberately weakened to the common two-branch
+\(\rho_\delta^{-1}\) target in
+\cref{eq:proof-clock-terminal-source-ledger}.
+
+Apply the current-loop and strict-delay Green decomposition in
+\cref{prop:diagonal-terminal-component-green}.  The transverse current
+kernel has a uniform denominator, whereas the scalar current kernel has
+denominator comparable to \(R_\delta\).  Consequently
+\cref{eq:proof-outer-endpoint-sharp-source} gives
+\begin{equation}
+ \sup\left\{\|(X_{\rm src})_Z\|_N
+       +\frac{|(X_{\rm src})_p|}{R_\delta}\right\}
+ \le C\frac{\varepsilon\delta}{R_\delta}.       \label{eq:proof-outer-endpoint-source-output}
+\end{equation}
+No backward RFDE evolution is used in this step: the scalar factor is the
+future component Green line of that proposition.
+
+At the true endpoint, the exact speed row remains
+\[
+ p_*'(S_*)=\delta R_{q,N}(-R_\delta).
+\]
+Since \(|R_{q,N}|\le C\varepsilon\), its future lift has the same target
+size:
+\begin{equation}
+ \frac{|p_*'(S_*)|}{R_\delta}
+ \le C\frac{\varepsilon\delta}{R_\delta}.       \label{eq:proof-outer-endpoint-future-output}
+\end{equation}
+The incoming tangent root obeys
+\begin{equation}
+ \mathcal I_{r,T}^{(1),\rm oe}
+ \le C\frac{\varepsilon b}{\delta},             \label{eq:proof-outer-endpoint-incoming}
+\end{equation}
+by \cref{eq:proof-clock-terminal-incoming}.
+Its final-window contribution is multiplied by
+\[
+ \mathcal E_{r,T}^{\rm jet}(\delta)
+ =\exp\{-cR_\delta L_{\rm fl}/\delta\}
+  +\left(C\frac{\varepsilon}{R_\delta}\right)^M.
+\]
+For the sharper target it is enough to verify
+\begin{equation}
+ \mathcal E_{r,T}^{\rm jet}(\delta)
+       \frac{bR_\delta}{\delta^2}\longrightarrow0.          \label{eq:proof-outer-endpoint-sharp-final-scale}
+\end{equation}
+The exponential term satisfies this on the retained joint wedge because
+\(R_\delta S_\delta/\delta\) dominates every logarithmic power.  For the
+generation term and \(M\ge2\),
+\[
+ \left(C\frac{\varepsilon}{R_\delta}\right)^M
+       \frac{bR_\delta}{\delta^2}
+ \le Cb\frac{\delta^2}{R_\delta}=o(1),
+\]
+where the right side is the \(M=2\) upper bound; every further generation
+adds the vanishing factor \(C\varepsilon/R_\delta\).
+Combining the source, future, and incoming summands proves the
+first-derivative part of
+\cref{eq:outer-endpoint-sharp-second-jet}.
+
+On the one-delay smaller window all delayed arguments remain in the
+first-derivative window.  Substitution in
+\cref{eq:proof-terminal-jet-Z-system,%
+eq:proof-terminal-jet-p-system}, using
+\cref{eq:proof-outer-endpoint-sharp-source}, gives, after division by
+\(\delta\),
+\[
+ \|Z_*''\|_N\le C\frac{\varepsilon}{R_\delta},
+ \qquad
+ |p_*''|\le C\varepsilon R_\delta\le C\varepsilon.
+\]
+This is the second-derivative part.  It proves
+\cref{eq:outer-endpoint-sharp-second-jet,%
+eq:outer-endpoint-history-jet}.  The last assertion follows from the
+calculation in the proof of
+\cref{lem:outer-annulus-terminal-clock}.
+\end{proof}
+
 \begin{proof}[Proof of \cref{lem:moving-r-event-preimage}]
 Consider
 \begin{equation}

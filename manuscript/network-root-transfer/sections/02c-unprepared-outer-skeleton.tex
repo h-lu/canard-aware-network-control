@@ -8465,6 +8465,51 @@ freezing the hard interfaces is necessary but does not by itself provide
 rough-space composition differentiability.
 \end{lemma}
 
+\begin{proposition}[True-end repelling second jet at the outer scale]
+\label[proposition]{prop:repelling-outer-endpoint-slow-jet}
+Retain
+\cref{prop:diagonal-terminal-component-green,%
+thm:short-clock-original-endpoint-segment}
+at order \(h\ge4\), with \(M\ge2\), on the repelling branch.  Write
+\[
+ S_*=S_r^{\rm oe},\qquad
+ Z_*=Z_r^{\rm oe},\qquad p_*=p_r^{\rm oe},
+\]
+for the exact physical fold-time segment ending at
+\(r_*(S_*)=-R_\delta\), and put
+\begin{align}
+ \widetilde J_{R,\delta}^{\rm ter}
+ &=[S_*-2\theta_m,S_*],\notag\\
+ J_{R,\delta}^{\rm ter}
+ &=[S_*-\theta_m,S_*].                          \label{eq:outer-endpoint-jet-windows}
+\end{align}
+After the ordered decrease of the same joint wedge,
+\begin{align}
+ &\sup_{\widetilde J_{R,\delta}^{\rm ter}}
+   \left\{\|Z_*'(s)\|_N+\frac{|p_*'(s)|}{R_\delta}\right\}
+ +\delta\sup_{J_{R,\delta}^{\rm ter}}
+   \left\{\|Z_*''(s)\|_N+\frac{|p_*''(s)|}{R_\delta}\right\}
+ \le C\frac{\varepsilon\delta}{R_\delta}.       \label{eq:outer-endpoint-sharp-second-jet}
+\end{align}
+In particular,
+\begin{equation}
+ \|Z_*'\|_{C^0(J_{R,\delta}^{\rm ter})}
+ \le C\frac{\varepsilon\delta}{R_\delta},
+ \qquad
+ \|Z_*''\|_{C^0(J_{R,\delta}^{\rm ter})}
+ \le C\frac{\varepsilon}{R_\delta}.             \label{eq:outer-endpoint-history-jet}
+\end{equation}
+Thus \cref{eq:outer-clock-history-jet-gate} holds for the exact base
+segment, and the history column in
+\cref{eq:outer-clock-history-column} is a uniform map
+\(\mathbb R_{R_\delta}\to\mathcal H_{Z,T}^1\).
+
+This is a sharper terminal estimate for the already constructed
+fixed-parameter base trajectory.  It does not construct a parameterized
+clock-pulled residual, a nonautonomous RFDE dichotomy, or a full
+moving-endpoint inverse.
+\end{proposition}
+
 For the same-end repelling boundary problem, let
 \begin{equation}
  J_{r,\delta}^{\rm ev}
