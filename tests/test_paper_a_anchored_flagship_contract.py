@@ -27,9 +27,13 @@ def test_submission_split_keeps_one_flagship_model_in_main() -> None:
     assert "Projection-Blind Delay Redistribution" in main
     assert r"\input{sections/02d-anchored-physical-connection}" in main
     assert r"\input{sections/02b-sensed-recovery}" not in main
-    assert r"\input{sections/02b-sensed-recovery}" in supplement
-    assert r"\input{sections/02c-unprepared-outer-skeleton}" in supplement
-    assert r"\input{sections/03d-anchored-physical-connection-proofs}" in supplement
+    assert r"\input{sections/02b-sensed-recovery}" not in supplement
+    assert r"\input{sections/03c-anchor-local-toolkit}" in supplement
+    assert r"\input{sections/03d-anchored-lean-proofs}" in supplement
+    assert r"\input{sections/02c-unprepared-outer-skeleton}" not in supplement
+    assert r"\input{sections/03c-outer-skeleton-and-nonselection}" not in supplement
+    assert r"\input{sections/03d-anchored-physical-connection-proofs}" not in supplement
+    assert r"\input{sections/03e-broken-lin-gluing}" not in supplement
 
 
 def test_flagship_front_matter_states_the_fixed_model_root_and_boundary() -> None:
@@ -38,7 +42,7 @@ def test_flagship_front_matter_states_the_fixed_model_root_and_boundary() -> Non
         "manuscript/network-root-transfer/sections/01-introduction.tex"
     )
 
-    assert "genuine complete-history canard" in main
+    assert "exact complete-history heteroclinic canard" in main
     assert r"D_\eta\mu_c(\delta,\eta)" in main
     flat_main = compact(main)
     assert "Exact roots may differ between admissible global anchors" in flat_main
@@ -68,23 +72,33 @@ def test_anchored_statement_has_exact_membership_root_and_full_dual_jet() -> Non
     assert "exact finite-\\(\\delta\\) baselines may differ" in compact(anchored)
 
 
-def test_halfline_proof_keeps_the_non_circularity_ledger() -> None:
+def test_lean_halfline_proof_keeps_the_non_circularity_contract() -> None:
     proof = source(
-        "manuscript/network-root-transfer/sections/03d-anchored-physical-connection-proofs.tex"
+        "manuscript/network-root-transfer/sections/03d-anchored-lean-proofs.tex"
     )
 
     required = {
-        r"\label{eq:anchor-positive-causal-Green}",
-        r"\label{eq:anchor-positive-Green-component-ledger}",
-        "The five differentiated remainder rows are not hidden",
-        "the time of the first generated cut",
-        "one-dimensional scalar cocycle",
-        r"\label[lemma]{lem:anchor-actual-central-defect}",
-        r"\label[lemma]{lem:anchor-endpoint-tail-completion}",
-        "The coefficient allocation before any",
+        r"\label[lemma]{lem:lean-anchor-history-objects}",
+        r"\label[lemma]{lem:lean-anchor-generated-cut-sheets}",
+        r"\label[lemma]{lem:lean-anchor-action-intersection}",
+        r"\label[lemma]{lem:lean-anchor-gap-comparison}",
+        r"\mathbb X_{bL}=\mathscr D_{bL}^{0;2}",
+        r"\frac{\delta}{s_b^\#}E_b",
+        "The finite graph is used only for comparison",
+        "No history holonomy is inverted",
     }
     for item in required:
         assert item in proof
+
+    toolkit = source(
+        "manuscript/network-root-transfer/sections/03c-anchor-local-toolkit.tex"
+    )
+    assert "No small-curvature claim is made" in compact(proof)
+    # The restored typed residual and two half-line ledgers fit in one
+    # sub-1000-line proof spine; this guards against a return to the old ledger.
+    assert len(proof.splitlines()) < 1000
+    assert len(toolkit.splitlines()) < 900
+    assert "No flat bound on the second derivative" in toolkit
 
 
 def test_figure_and_notation_disclose_the_scope_boundary() -> None:

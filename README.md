@@ -3,8 +3,8 @@
 Research repository containing the original JNS manuscript and its focused
 successors.  The active Paper A target is:
 
-> **Two-Delay Blind Controllability and Selected Fold-Response Readout in
-> Retarded Markov Networks**
+> **Projection-Blind Delay Redistribution Moves Anchored Heteroclinic
+> Canards in Retarded Markov Networks**
 
 The original complete LaTeX manuscript, figures, appendices, cover letter,
 and submission checklist are in [manuscript/jns](manuscript/jns).  The former
@@ -24,6 +24,23 @@ The workspace, branch, and eventual public-release policy is recorded in
 [manuscript/README.md](manuscript/README.md).  The supporting integrated
 research design remains in
 [docs/flagship-research-design.md](docs/flagship-research-design.md).
+
+## Current Paper A status
+
+Paper A now proves the full fixed-model anchored connection theorem.  For
+every fixed member of a declared bounded anchor class, it constructs the
+past-complete incoming branch, the intrinsic future-asymptotic stable history
+sheet, their unique local complete-history heteroclinic-canard root, and the
+full-dual-norm response
+`D_eta mu_c=delta^3 Lambda_N+O(delta^4+delta^3||eta||)`, uniformly in finite
+network size.  Exact roots may differ across anchors; after modelwise
+centering, their weighted conormals converge uniformly to `(1,-Lambda_N)`.
+The original unanchored recovery law is separately proved not to provide the
+required outer equilibria.  The source of truth for the submission unit is
+[manuscript/network-root-transfer/README.md](manuscript/network-root-transfer/README.md)
+and its claim map.  The long development ledger below records historical
+checkpoints and other paper programs; earlier statements there that the Paper
+A anchored connection remained open are superseded by this status block.
 
 Paper A now also proves a positive-`delta`, capped-rate full-history
 splitting for the frozen-resource outer voltage RFDE, uniformly in finite

@@ -5,6 +5,10 @@ and the weighted-connection upgrade in
 [Issue #32](https://github.com/h-lu/canard-aware-network-control/issues/32).
 It is not part of the submitted paper.
 
+The submission proof spine is only
+`03c-anchor-local-toolkit.tex` plus `03d-anchored-lean-proofs.tex`; the older
+outer-passage and endpoint-tail development ledgers are not build inputs.
+
 ## Central theorem package
 
 ```text
@@ -28,8 +32,8 @@ same uniform limit `(1,-Lambda_N)` over the declared bounded anchor class.
 | Integrated flagship theorem | `thm:flagship-synthesis` | Exact blindness, two-delay source dichotomy, fixed anchored-model heteroclinic root, full-dual-norm response, dual recovery, and anchor-universality boundary |
 | Anchored global model and exact equilibria | `prop:anchor-central-identity-equilibria` | Nonempty bounded anchor class, literal equality with the original RFDE on the retained history tube, and exact structural-parameter-independent equilibria `E_N^+`, `E_N^-` |
 | Hyperbolic history objects | `thm:anchor-indices-manifolds` | Uniform anchor root counts, `dim W^u(E_N^+)=1`, `codim W^s(E_N^-)=1`, past-complete incoming branch, and intrinsic local stable history sheet |
-| Half-line stable sheet and tail forgetting | `thm:anchor-annulus-flat-forgetting` | Stable-forward/one-dimensional-unstable-backward Lyapunov--Perron graph, forward central preimage, and full-history capped-action comparison through the declared mixed jets |
-| Exact membership relation | `prop:anchor-gap-comparison` | Chart-independent zero fiber equivalent to the complete heteroclinic `E_N^+ -> E_N^-`, with direct anchored gap and endpoint-tail completion |
+| Half-line stable sheet and tail forgetting | `thm:anchor-annulus-flat-forgetting` | Compressed local toolkit `03c` and concise anchored proof `03d`: stable-forward/one-dimensional-unstable-backward Lyapunov--Perron graph, forward central preimage, and full-history capped-action comparison |
+| Exact membership relation | `prop:anchor-gap-comparison` | Concise proof `03d`: chart-independent zero fiber equivalent to the complete heteroclinic `E_N^+ -> E_N^-`, with direct same-core selected-to-intrinsic comparison |
 | Fixed-model canard root and conormal | `thm:anchored-physical-root-conormal` | Unique local root, quantitative canard tracking, `D_eta mu_c=delta^3 Lambda_N+O(delta^4+delta^3||eta||)` in full dual norm, and weighted conormal limit |
 | Section/cut/anchor naturality | `prop:anchor-physical-naturality-composition` | Phase, defining-function, regular forward-section, and finite-cut naturality; exact roots across anchors may differ, while centered first conormals share the same uniform limit |
 | Abstract two-atom source criterion | `prop:abstract-two-atom-source` | General moment-source norm, explicit extreme-atom right inverse, minimum probe cost, dual isometry, and one-atom no-go |

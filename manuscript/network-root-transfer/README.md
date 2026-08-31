@@ -47,9 +47,9 @@ outer equilibria, so the paper makes no maximal-canard claim for that law.
 - `main.tex` contains the flagship theorem, precise literature/novelty
   boundary, source and dual-recovery results, local RFDE mechanism, compact
   local-to-global interface, and the anchored complete-history theorem.
-- `supplement.tex` contains the secondary recovery-sensing realization and
-  the detailed preparation, invariant-history, original-endpoint,
-  half-line, stable-sheet, and endpoint-tail proofs.
+- `supplement.tex` contains only the preparation, invariant-history,
+  finite-gap, compressed outer-passage, stable-sheet, and complete-history
+  proofs required by the flagship theorem.
 - `CLAIM-MAP.md` maps theorem claims to proof locations and records scope
   boundaries.
 - `../../docs/paper-a-anchored-recovery-heteroclinic-contract.md` records the
@@ -59,8 +59,9 @@ outer equilibria, so the paper makes no maximal-canard claim for that law.
 
 The selected finite-core roots retained in the paper are comparison devices
 and secondary readouts.  They are not substituted for the fixed-model
-heteroclinic root.  The recovery-sensing companion is kept in the supplement
-so that the main article has one model and one flagship geometric object.
+heteroclinic root.  The recovery-sensing companion and the long development
+ledgers are excluded from the submission build, so the article has one model
+and one flagship geometric object.
 
 ## Build
 
