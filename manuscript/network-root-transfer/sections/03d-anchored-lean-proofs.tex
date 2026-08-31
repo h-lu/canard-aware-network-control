@@ -15,6 +15,46 @@ the finite selected problem.  The finite-gap estimate of
 \cref{prop:finite-gap-bridge} can then be transferred directly to the
 intrinsic physical gap.
 
+Throughout this section, \(M_{\rm loss},R_b,Q_*,p_o\), and
+\(\mathbf p_{\rm sel}\) are chosen once, in that order, as in
+\cref{prop:anchor-central-finite-shooting}; \(p_c\) is the central Gaussian
+exponent of this one preparation.  Every selected object below---the attracting trace, the repelling
+trace \(C_{b,p}\), the finite graph, and
+\(\mathscr D_N^{\rm sel}\)---comes from this same datum.  The auxiliary
+outer exponent \(p_o=(\chi_b/c_b)^2p_c\) fixes only the independently
+generated physical reference; it is not a second preparation.  We also use
+\[
+ \mathscr Y_N=C([-\theta_m,0];\mathbb R^N)\times\mathbb R
+\]
+for a fold-time voltage history and its current resource value.  The exact
+anchored fold-time field used below is
+\[
+ x_\phi:=\phi(0)-\mathbf1.
+\]
+\begin{align*}
+ \mathscr V^{\rm f}_{N,\delta,p}(\phi,w)
+ &=
+ \delta^{-1}\!\left[
+  \frac23\mathbf1-w\mathbf1
+  -c_N\circ x_\phi^{\circ2}
+  -\frac\beta3x_\phi^{\circ3}
+  +D(P_N-\Id)\phi(0)\right]\\
+ &\quad
+  +\delta K\sum_{k=0}^mL_{k,N}(\eta)
+       \{\phi(0)-\phi(-\theta_k)\},\\
+ \mathscr F^{\rm f}_{N,\delta,p}(\phi,w)
+ &=\left(\mathscr V^{\rm f}_{N,\delta,p}(\phi,w),
+  \delta\,\sigma_{\rm anc}
+   \bigl(\pi_N^Tx_\phi;\delta,\nu\bigr)\right).
+\end{align*}
+The symbol \(\mathcal I_p\) denotes the exact invariant-history lift from
+\cref{lem:shared-graph-trace}, followed by reconstruction in this physical
+fold-time history chart.
+Every \(D_\eta\) and \(J_p^1\) below is a Fr\'echet derivative on
+\(\mathfrak T_N^{\rm red}\), measured in the full operator norm; the
+selected solution jets are obtained first on affine parameter lines and
+then polarized, as in the structural-ball finite-gap theorem.
+
 \begin{proof}[Proof of
   \cref{prop:anchor-central-identity-equilibria}]
 On the depth-two retained tube one has \(g_{\rm anc}=1\), so the anchored
@@ -46,12 +86,15 @@ prop:anchor-toolkit-resource-phase-quotient,%
 prop:anchor-toolkit-reference-hits,prop:anchor-toolkit-generated-core}.
 
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item The equilibria \(E_N^+\) and \(E_N^-\) have respectively one and two
-open-right-half-plane characteristic roots.  The unique small root is
-\cref{eq:anchor-slow-roots}; at \(E_N^-\) the other unstable root is the
-simple strong voltage root.  Their local invariant manifolds have the
-dimensions, radii, and selected first parameter jets asserted in
-\cref{thm:anchor-indices-manifolds}.
+\item Each equilibrium \(E_N^\pm\) has exactly one
+open-right-half-plane characteristic root.  At \(E_N^+\) it is the unique
+small slow root in \cref{eq:anchor-slow-roots}; at \(E_N^-\) that slow root
+is stable and the unique unstable root is the simple strong voltage root.  Thus
+\(\dim W^u(E_N^+)=1\) and \(\operatorname{codim}W^s(E_N^-)=1\).
+The local invariant manifolds are \(C^2\) on
+\(\rho_{A,\delta}=c_A\delta^4\), with
+\(d_{A,\delta}=\rho_{A,\delta}/2\); in the scaled charts their state norms
+and selected first parameter jets are at most \(C\delta^{-M_A}\).
 
 \item The inward component of \(W^u(E_N^+)\) has a unique past-complete
 orbit.  Evolving it only forward gives a unique hit \(A^0_p\) of
@@ -96,16 +139,15 @@ Consequently
 The membership value at \(O_{L,p}\), with its selected first parameter
 jet, has the same bound.
 
-\item Fix any one admissible selected attracting trace and recut it, after
+\item Recut the attracting trace of \(\mathbf p_{\rm sel}\), after
 literal agreement has begun, on the same positive regular section as the
 physical incoming branch.  Write its hit of \(\Sigma_0\) as
 \(\mathfrak C_{0,p}(\bar\psi_p,u_p^a)\), and write the physical hit as
 \(\mathfrak C_{0,p}(\psi_A,u_A)\).  After the common attracting buffer,
-for every prescribed finite \(Q\),
 \begin{equation}
  \bigl\|J_p^1\{(\psi_A,u_A)
        -(\bar\psi_p,u_p^a)\}\bigr\|
- \le C_Q\delta^Q,
+ \le C\delta^{Q_*+M_{\rm loss}+4},
  \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.
  \label{eq:lean-anchor-positive-selected-flatness}
 \end{equation}
@@ -114,6 +156,12 @@ The exponent is fixed before \(\delta_0\) is decreased.
 \end{lemma}
 
 \begin{proof}
+Put
+\[
+ J_\pm=\mathcal J_N^{\rm fv}(\pm r_A),\qquad
+ A_\pm(\lambda)=J_\pm+\delta^2K\sum_{k=0}^mL_{k,N}(\eta)
+       \{1-e^{-\lambda\theta_k/\delta}\}.
+\]
 At either anchor the modal equations are
 \begin{align*}
  (\lambda\Id-A_\pm(\lambda))u&=-\omega\mathbf1,\\
@@ -135,20 +183,85 @@ The uniform resolvent estimate in
        +O(\delta^4),\qquad \Delta_\pm'=1+O(\delta^2).
 \]
 Rouch\'{e}'s theorem gives the small simple root.  The bordered homotopy
-which switches the second row from zero to \(\delta^2\sigma_\pm'\pi_N^T u\)
-has no imaginary-axis zero by the same uniform resolvent bound.  Hence all
-other right-half-plane roots have the frozen voltage count.  This proves
+which switches the second row from zero to
+\(\delta^2\sigma_\pm'\pi_N^T u\) is made explicit by
+\[
+ \Delta_{\pm,\varepsilon}(\lambda)
+ =\lambda+\varepsilon\sigma_\pm'\pi_N^T
+  (\lambda\Id-A_\pm(\lambda))^{-1}\mathbf1,
+ \qquad 0\le\varepsilon\le\delta^2.
+\]
+The frozen current dichotomy and the \(O(\delta^2)\) delay pencil give
+\[
+ \sup_{\xi\in\mathbb R}
+ \|(i\xi\Id-A_\pm(i\xi))^{-1}\|\le C.
+\]
+On a fixed pole-free imaginary segment,
+\[
+ \Delta_{\pm,\varepsilon}(i\xi)
+ =i\xi-\varepsilon
+   \frac{\sigma_\pm'}{w'_{0,N}(\pm r_A)}
+   +\varepsilon R_\pm(i\xi),\qquad
+ |R_\pm(i\xi)|\le C|\xi|.
+\]
+The real term excludes zeros for
+\(|\xi|\le C_0\varepsilon\); after \(C_0\) is chosen large, \(i\xi\)
+dominates for \(C_0\varepsilon\le|\xi|\le r_*\); and the uniform
+imaginary-axis resolvent excludes them for \(|\xi|\ge r_*\).
+Moreover,
+\[
+ \det(\lambda\Id-A_\pm(\lambda))
+       \Delta_{\pm,\varepsilon}(\lambda)
+\]
+is the entire bordered characteristic determinant, and the same resolvent
+estimate on a common right half disk prevents roots from escaping through
+infinity.  Removing the small half disk containing the moving root and
+applying the argument principle therefore preserves every other
+right-half-plane root count along the homotopy.  Hence all other roots have
+the frozen voltage count.  This proves
 the first sentence of (i); the signs follow from
 \cref{eq:anchor-toolkit-frozen-identities,%
 eq:anchor-source-derivative-sign}.
 
 The frozen history splitting in
-\cref{prop:anchor-toolkit-critical-splitting}, followed by the bounded
-resource shear in \cref{prop:anchor-toolkit-resource-phase-quotient}, gives
-the local trichotomy.  Its scaled Lyapunov--Perron contraction is uniform after
+\cref{prop:anchor-toolkit-critical-splitting}, the bordered characteristic
+count above, and exponential-trichotomy roughness give the local trichotomy
+at each hyperbolic anchor.  The resource shear in
+\cref{prop:anchor-toolkit-resource-phase-quotient} is used only on fixed
+regular subannuli separated from the zeros of \(q\); it is not used at an
+anchor, where \(q^{-1}\) is unbounded.  The scaled local
+Lyapunov--Perron contraction is uniform after
 the slow coordinate is divided by \(\rho_{A,\delta}\), proving the rest of
-(i).  The positive causal Green estimate gives (ii) without a backward
-semiflow.  For the negative side, choose a regular seed section between the
+(i).  Let \(\rho_+\) be the signed slow coordinate at \(E_N^+\), \(Q_+\) the
+fast complementary projection, and \(\Gamma_+\) its finite slow expansion.
+On the local collar,
+\[
+ \rho_+'=\delta\rho_+\{\chi_++O(\rho_+)+O(\delta)\},\quad \chi_+\ge c>0,
+ \qquad
+ \|Q_+(Z_+-Z_{+,{\rm crit}})\|_\sharp\le C\delta^2|\rho_+|.
+\]
+Continue the exact inward local-manifold hit to a fixed regular section using
+\(\Gamma_+\) and the causal
+event-normal Green operator.  The local-to-regular continuation and its
+selected first jet have only the fixed loss \(\delta^{-2}\), and the
+component ledger is
+\begin{equation}
+ \|R_{\Gamma_+}\|+\|D_pR_{\Gamma_+}\|\le C\delta^5,\qquad
+ \|\mathbb G_+\|\le C\delta^{-2},\qquad
+ C\delta^{-2}\|R_{\Gamma_+}\|\le\tfrac14c_+\delta^2,\qquad
+ \operatorname{Lip}\{\mathbb G_+\mathcal N_{\Gamma_+}\}\le\tfrac13.
+ \label{eq:lean-anchor-positive-ledger}
+\end{equation}
+The contraction is taken on the radius-\(c_+\delta^2\) component ball.
+On the first fixed subannulus the fast displacement is \(O(\delta^2)\), the
+delay drift is \(O(\delta)\), and the reference event speed is at least
+\(c\delta\), with an \(O(\delta^2)\) correction.  Thus first exit through a
+side boundary is impossible, and the continuation overlaps the regular
+resource quotient with one transverse hit.
+After three generated delay buffers, forward uniqueness and the event
+implicit-function theorem give (ii), without a backward semiflow.
+
+For the negative side, choose a regular seed section between the
 fold and \(E_N^-\).  Successive solution of the frozen voltage-resource
 border and the scalar recovery row gives a finite slow expansion
 \(\Gamma_-\) whose literal-history residual, including the old-history
@@ -156,7 +269,7 @@ interval, is \(O(\delta^9)\) with one selected parameter derivative.  More
 explicitly, on the fixed seed annulus the border
 \[
  (Z,Q)\longmapsto
- \mathcal J_N^{\rm fv}(r)Z-Q\mathbf1,qquad
+ \mathcal J_N^{\rm fv}(r)Z-Q\mathbf1,\qquad
  (Z,Q)\in E_N\times\mathbb R,
 \]
 has a uniform inverse.  Starting with
@@ -164,12 +277,29 @@ has a uniform inverse.  Starting with
 flow of the already known truncation of \(q\).  At order \(j\), coefficient
 extraction in the voltage equation determines \((Z_j,Q_j)\) through this
 border, and the resource equation then determines \(q_j\) through the
-nonzero factor \(w'_{0,N}(r)\).  Eight steps leave the displayed residual;
+nonzero factor \(w'_{0,N}(r)\).  Ten steps leave the displayed residual;
 Taylor's formula applies equally on the prescribed old-history interval
-because every delayed foot stays in the fixed annulus.  The
-resource-phase quotient and generated-core dichotomy in the outer toolkit,
-matched to the local splitting in (i), give a half-line mixed Green
-operator of polynomial norm.  It propagates the stable complement forward
+because every delayed foot stays in the fixed annulus.  On the part ending at
+the regular seed section, the generalized resource-phase quotient retains
+the factor \(\sigma_{\rm anc}'\).  Concatenating its dichotomy with the local
+anchor trichotomy from (i), whose bundles agree there by forward uniqueness,
+across their common regular section gives a
+half-line mixed Green operator.  In the fading solution and
+\(\delta^{-1}\)-scaled range norms, put
+\(R_{{\rm hl},\delta}=c_{\rm hl}\delta^6\).  The quantitative ledger is
+\begin{align}
+ \|\mathbb G_-\|&\le C_G\delta^{-2},&
+ \|R_{\Gamma_-}\|+\|D_pR_{\Gamma_-}\|&\le C_R\delta^9,\notag\\
+ C_G\delta^{-2}C_R\delta^9
+ &\le\tfrac14R_{{\rm hl},\delta},&
+ \sup_{\|z\|,\|y\|\le R_{{\rm hl},\delta}}
+ \frac{\|\mathbb G_-\{\mathcal N_{\Gamma_-}(z)
+             -\mathcal N_{\Gamma_-}(y)\}\|}
+      {\|z-y\|}
+ &\le Cc_{\rm hl}\delta^{6-2-2}\le\tfrac13 .
+ \label{eq:lean-anchor-negative-ledger}
+\end{align}
+It propagates the stable complement forward
 and inverts only the one-dimensional unstable coefficient.  Therefore
 \[
  z=\mathbb G_-\bigl\{-R_{\Gamma_-}+\mathcal N_{\Gamma_-}(z)\bigr\}
@@ -203,8 +333,8 @@ capped action at least \(c\log(1/\delta)/\delta\).  The nonlinear Volterra
 term is absorbed by the toolkit's common contraction margin.  Continuing
 through the exact central graph and using its selected trace estimate gives
 \(C\delta^{-M}e^{-c\log(1/\delta)/\delta}\), plus the Gaussian collar tail
-\(C\delta^{-M}e^{-S_c^2/2+cS_c}\).  Choose \(p_c\) after \(Q\) and the
-finite losses.  Both terms are then bounded by \(C_Q\delta^Q\), proving
+\(C\delta^{-M}e^{-S_c^2/2+cS_c}\).  The ordered inequalities for \(p_c\)
+make both terms at most \(C\delta^{Q_*+M_{\rm loss}+4}\), proving
 \cref{eq:lean-anchor-positive-selected-flatness}.
 \end{proof}
 
@@ -276,8 +406,8 @@ Retain the scales in
 \(s_b^\#=\chi_bS_c=c_bS_o\), and put
 \begin{equation}
  E_b=e^{(s_b^\#)^2/2},\qquad
- \mathcal A_{b,\delta}=\frac{\delta}{s_b^\#}E_b,qquad
- \varkappa_\delta=S_o^{-1},qquad
+ \mathcal A_{b,\delta}=\frac{\delta}{s_b^\#}E_b,\qquad
+ \varkappa_\delta=S_o^{-1},\qquad
  \mathfrak b_\delta
  =\varkappa_\delta^2+S_o^{-2}+\sqrt\delta S_o^{7/2}.
  \label{eq:lean-anchor-projective-scale}
@@ -295,12 +425,12 @@ There is a compatible chart
  \Phi_{b,p}(\psi_b,u_b),\qquad \Phi_{b,p}(0,0)=O_{b,p},
 \]
 whose \(u_b\)-column is the oriented event-normal outer unstable column.
-For every fixed \(R<\infty\), its domain contains the radius
-\(R\mathfrak b_\delta\) ball for all sufficiently small \(\delta\), and
+Its domain contains the one required radius
+\(R_b\mathfrak b_\delta\) ball for all sufficiently small \(\delta\), and
 \begin{equation}
- \|J_p^1\Phi_{b,p}^{-1}(C_{b,p})\|
- \le C\mathfrak b_\delta,
- \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.
+ \|\Phi_{b,p}^{-1}(C_{b,p})\|\le C\mathfrak b_\delta,\qquad
+ \|D_p^{\rm sel}\{\Phi_{b,p}^{-1}(C_{b,p})\}\|
+ \le C\delta^{-M}\mathfrak b_\delta .
  \label{eq:lean-anchor-b-overlap}
 \end{equation}
 In this chart:
@@ -319,15 +449,14 @@ The graph is \(C^2\) in state, has a selected first \(p\)-jet, and its
 individual \(C^2\) norm is at most \(C\delta^{-M}\).  No small-curvature
 claim is made.
 
-\item For every prescribed finite order \(Q\), one may choose the central
-preparation exponent before decreasing \(\delta_0\) so that a finite graph
+\item With the single ordered exponent choice fixed above, a finite graph
 \(F_{b,p}^{\rm sel}\) on the same physical core satisfies
 \begin{align}
  C_{b,p}&=\Phi_{b,p}
    (\zeta_{C,p},F_{b,p}^{\rm sel}(\zeta_{C,p})),
  \label{eq:lean-anchor-selected-incidence}\\
  \|J_p^1(F_{b,p}^--F_{b,p}^{\rm sel})\|_{C^1}
- &\le C\delta^Q,
+ &\le C\delta^{Q_*+M_{\rm loss}+4},
  \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.
  \label{eq:lean-anchor-sheet-comparison}
 \end{align}
@@ -363,12 +492,14 @@ voltage estimate in \cref{prop:anchor-toolkit-reference-hits} and the exact
 resource quotient in \cref{prop:anchor-toolkit-resource-phase-quotient}
 give, after the event projection and in the triangular quotient chart,
 \begin{align*}
- \|J_p^1\Delta_b^{\rm pl}\|_{b,\sharp}
+ \|\Delta_b^{\rm pl}\|_{b,\sharp}
  &\le C\delta e^{cS_c}\langle S_c\rangle^M,\\
- \|J_p^1\Delta_b^{\perp}\|_{b,\sharp}
-       +|J_p^1\Delta_b^a|
+ \|\Delta_b^{\perp}\|_{b,\sharp}+|\Delta_b^a|
  &\le C\mathfrak b_\delta .
 \end{align*}
+Their selected first \(p\)-derivatives are bounded by
+\(C\delta^{-M}\{\delta e^{cS_c}\langle S_c\rangle^M+
+\mathfrak b_\delta\}\).
 Here \(\Delta_b^a\) is the exact resource-quotient component and the other
 two terms are respectively the planar and complementary history
 components.  These bounds imply \cref{eq:lean-anchor-b-overlap}; the
@@ -379,8 +510,43 @@ projection before differentiating and using
 bounds.  This is an overlap in one compatible chart, not equality of the
 two histories.
 
-Use a fixed clock from \(b\) to the regular terminal section \(L\).  The
-typed domain and range are
+Use a fixed \(C^2\) clock \(\chi_\beta\) from \(b\) to the regular terminal
+section \(L\), equal to the physical fold-time clock on the initial history
+window and with its scalar variation supported in a reserved event buffer.
+For a path \(Z=(Z_v,Z_w)\), set
+\[
+ \mathcal H_\beta Z(s)
+ =\left(\vartheta\mapsto
+ Z_v\!\left[\chi_\beta^{-1}
+   \{\chi_\beta(s)+\vartheta\}\right],Z_w(s)\right),
+ \qquad
+ \mathcal E_p(Z,\beta)
+ =Z'-\chi_\beta'\mathscr F^{\rm f}_{N,\delta,p}
+       (\mathcal H_\beta Z).
+\]
+Here \(\mathscr D_{bL}^{0;2}\) consists of paths continuous on the complete
+delay enlargement, locally \(W^{1,\infty}\), and \(W^{2,\infty}\) on the
+reserved entry, event, and generated terminal windows.  The entry trace is
+measured in the weak compatible space \(\mathscr Y_N\), while the terminal
+trace lies in the compatible \(C^2\) space \(\mathscr H_L^2\).
+\(\mathscr F_{bL}\) is the corresponding distributed-source space with the
+action norm of \cref{prop:anchor-toolkit-generated-core}.  For fixed
+\(\psi_b\), extend \(\mathfrak m_{L,p}\) to the fixed event tube by the
+event-normal projection onto \(L\), constant along the time coordinate; its
+restriction and differential on \(L\) are unchanged.  The square residual is
+\begin{equation}
+ \mathscr R_{bL,p}(Z,\beta,u_b;\psi_b)
+ =\left(
+ \mathcal E_p(Z,\beta),\
+ \mathcal H_\beta Z(0)-\Phi_{b,p}(\psi_b,u_b),\
+ r(\mathcal H_\beta Z(T))+r_L,\
+ \mathfrak m_{L,p}(\mathcal H_\beta Z(T))
+ \right).
+ \label{eq:lean-anchor-bL-residual}
+\end{equation}
+The second row is equality of literal complete histories, not equality of
+current values or finite jets.  The typed domain and range of its
+linearization are
 \begin{equation}
  \mathbb X_{bL}=\mathscr D_{bL}^{0;2}
        \times\mathbb R_\beta\times\mathbb R_u,
@@ -389,14 +555,22 @@ typed domain and range are
        \times\mathbb R_{\rm ev}\times\mathbb R_{\rm ter}.
  \label{eq:lean-anchor-bL-spaces}
 \end{equation}
-Here the literal initial-history row uses the weak compatible history norm;
-only the generated terminal window carries the localized \(C^2\) trace
-norm.  The quotient dichotomy solves the stable data; the exact resource
+The quotient dichotomy solves the stable data; the exact resource
 shear solves the longitudinal scalar; and the event row removes the time
-column.  If \(\widehat y_0\) is the full terminal-history lift of the
-particular quotient, resource, and clock solution, while
-\(\widehat h^{u,o}\) is the corresponding lift of the homogeneous unstable
-column, the terminal replacement is
+column.  Denote by
+\[
+ \mathfrak L^{\rm phys}_{L,p}:
+  (y,a,\beta)\longmapsto\widehat y\in\mathscr H_L^2
+\]
+the inverse resource-quotient shear followed by physical event recutting on
+the generated terminal window.  This is a bounded lift by
+\cref{prop:anchor-toolkit-resource-phase-quotient}; it includes the current
+resource component and the entire terminal voltage history.  If
+\(\widehat y_0=\mathfrak L^{\rm phys}_{L,p}(y_0,a[y_0],\beta)\) is the
+lift of the particular solution and
+\(\widehat h^{u,o}=\mathfrak L^{\rm phys}_{L,p}
+(h^{u,o},a[h^{u,o}],0)\) is the lift of the homogeneous unstable column,
+the terminal replacement is
 \begin{equation}
  \widehat y=\widehat y_0+\widehat h^{u,o}
  \frac{b-D\mathfrak m_{L,p}(O_{L,p})\widehat y_0}
@@ -407,14 +581,21 @@ Thus the covector and both columns in this formula belong to the same full
 terminal-history tangent-dual pair.  The denominator is exactly the scalar
 in
 \cref{eq:lean-anchor-terminal-crossing}.  The linearization is therefore a
-bounded isomorphism in the action-scaled norms of
-\cref{prop:anchor-toolkit-generated-core}.  Its nonlinear two-point bound has
-Lipschitz number \(O(R\mathfrak b_\delta)=o(1)\).  The parameterized
+bounded isomorphism, with the sharp \(C\mathscr L_\delta\) coupled loss, in
+the action-scaled norms of
+\cref{prop:anchor-toolkit-generated-core}.  Its nonlinear two-point bound is
+at most
+\[
+ C_{\rm N}R_b\mathscr L_\delta\mathfrak b_\delta<\frac13,
+\]
+because
+\(\mathscr L_\delta\mathfrak b_\delta=p_o^{-1}+o(1)\) and \(p_o\)
+was chosen after the fixed construction radius.  The parameterized
 contraction theorem applies because the terminal trace satisfies
 \begin{equation}
  \|\operatorname{Tr}_L(X-\bar X)\|
  \le C\delta^{-M}e^{-c\mathscr L_\delta^2}
-       R\mathfrak b_\delta+C\delta^{-M}e^{-a/\delta}
+       R_b\mathfrak b_\delta+C\delta^{-M}e^{-a/\delta}
  <\tfrac1{16}R_{{\rm hl},\delta}.
  \label{eq:lean-anchor-terminal-localization}
 \end{equation}
@@ -441,8 +622,8 @@ Backward propagation of that scalar gives
        \langle S_c\rangle^M.
 \]
 Since
-\(\mathscr A_{bc}=p_c(1-\chi_b^2)\log(1/\delta)+O(S_c)\), choosing
-\(p_c\) after the finite loss exponents proves
+\(\mathscr A_{bc}=p_c(1-\chi_b^2)\log(1/\delta)+O(S_c)\), the ordered
+inequality for \(p_c\) in \cref{prop:anchor-central-finite-shooting} proves
 \cref{eq:lean-anchor-sheet-comparison}.
 
 It remains to compute the typed scalar pairing.  The singular central
@@ -460,18 +641,22 @@ quotient divides this by
 history dual, the positive-\(\delta\) graph-tangent trace equation and exact
 event recut give
 \begin{equation}
- \lambda_{b,p}^{\rm sel}k_{b,p}^c
- =a_b^0\frac{\delta}{s_b^\#}E_b(1+\mathcal E_{b,p}),
- \quad 0<c_0\le a_b^0\le C_0,
- \quad
- |J_p^1\mathcal E_{b,p}|
- \le C\{\delta e^{cS_c}\langle S_c\rangle^M
-              +\mathfrak b_\delta\}=o(1).
+ \begin{aligned}
+  \lambda_{b,p}^{\rm sel}k_{b,p}^c
+  &=a_b^0\frac{\delta}{s_b^\#}E_b(1+\mathcal E_{b,p}),
+      &0<c_0&\le a_b^0\le C_0,\\
+  |\mathcal E_{b,p}|
+  &\le C\{\delta e^{cS_c}\langle S_c\rangle^M
+               +\mathfrak b_\delta\}=o(1),\\
+  |D_p^{\rm sel}\mathcal E_{b,p}|&\le C\delta^{-M}.
+ \end{aligned}
  \label{eq:lean-anchor-projective-relative-ledger}
 \end{equation}
 This is a full row--column pairing; the current covector is applied only
-after the resource/history lift.  Replacing the finite row by the intrinsic row costs
-\(C\delta^Q\|k_{b,p}^c\|\); take \(Q\) larger than this finite column loss.
+after the resource/history lift.  Replacing the finite row by the intrinsic
+row costs
+\(C\delta^{Q_*+M_{\rm loss}+4}\|k_{b,p}^c\|\), which is absorbed by the
+definition of \(M_{\rm loss}\).
 This proves the two-sided estimate and, after differentiating the two
 selected trace equations, its logarithmic first-jet bound.
 \end{proof}
@@ -511,41 +696,41 @@ Put
 The graph-tangent estimate in \cref{lem:shared-graph-trace}, the causal
 normal inverse in \cref{lem:lean-anchor-central-normal-inverse}, the
 polynomial \(C^2\) graph bound, and
-\cref{eq:lean-anchor-projective-pairing} give one finite \(M_*\) such
-that, on
+\cref{eq:lean-anchor-projective-pairing} give, by the definition of
+\(M_{\rm loss}\), on
 \[
- \|\psi-\bar\psi_p\|\le c_r\delta^{Q_*+M_*+2},
+ \|\psi-\bar\psi_p\|\le c_r\delta^{Q_*+M_{\rm loss}+2},
  \qquad |\xi|\le C_\rho\delta^{Q_*},
 \]
 one has
 \begin{equation}
- \|D_\psi H_p\|\le C\delta^{-M_*},\qquad
- |\partial_\xi H_p-1|\le\frac12,qquad
+ \|D_\psi H_p\|\le C\delta^{-M_{\rm loss}},\qquad
+ |\partial_\xi H_p-1|\le\frac12,\qquad
  \|D_{(\psi,\xi)}\partial_\xi H_p\|
-       \le C\delta^{-M_*}.
+       \le C\delta^{-M_{\rm loss}}.
  \label{eq:lean-anchor-rectangle-derivatives}
 \end{equation}
 The physical central displacement produced by \(\xi\) is at most
 \((s_b^\#/\delta)|\xi|\).  The graph-tangent and causal normal estimates
 bound the contribution of \(\psi-\bar\psi_p\) by
-\(C\delta^{-M_*}\|\psi-\bar\psi_p\|\).  With
+\(C\delta^{-M_{\rm loss}}\|\psi-\bar\psi_p\|\).  With
 \(d=V+sU-\alpha U^2\), throughout the
 rectangle,
 \begin{align}
  \|\Phi_{b,p}^{-1}\mathcal P_{0\to b,p}
        \mathfrak C_{0,p}(\psi,\bar u_p+A_{0b,p}^{-1}\xi)\|
  &\le C\left\{\mathfrak b_\delta
-       +\delta^{-M_*}\|\psi-\bar\psi_p\|
+       +\delta^{-M_{\rm loss}}\|\psi-\bar\psi_p\|
        +\frac{s_b^\#}{\delta}|\xi|\right\}
  <R\mathfrak b_\delta,\notag\\
  \sup_{\text{delay hull}}|d|
  &\le C\left\{\delta e^{cS_c}\langle S_c\rangle^M
-       +\delta^{-M_*}\|\psi-\bar\psi_p\|
+       +\delta^{-M_{\rm loss}}\|\psi-\bar\psi_p\|
        +\frac{s_b^\#}{\delta}|\xi|\right\}<\delta^\kappa.
  \label{eq:lean-anchor-rectangle-containment}
 \end{align}
-Taking \(Q_*\) after the finite
-losses therefore keeps the event speed inside its declared margin and puts the \(b\)-hit inside the chart
+The ordered inequality \(Q_*>M_{\rm loss}+12\) therefore keeps the event
+speed inside its declared margin and puts the \(b\)-hit inside the chart
 of \cref{lem:lean-anchor-generated-cut-sheets}.  Choose \(c_r\) small and
 then \(C_\rho\) larger than the
 constant in \cref{eq:lean-anchor-reference-membership}.  The
@@ -569,12 +754,12 @@ intrinsic graph.  The action-balanced intersection and all its radii are
 and \cref{eq:lean-anchor-intrinsic-b-sheet} give convergence to \(E_N^-\).
 
 Finally, \cref{eq:lean-anchor-positive-selected-flatness}, with its
-comparison order chosen larger than the shooting loss, gives
+fixed comparison margin, gives
 \[
  \|\psi_A-\bar\psi_p\|
- \le C\delta^{Q_{\rm in}}.
+ \le C\delta^{Q_*+M_{\rm loss}+4}.
 \]
-Choose \(Q_{\rm in}>M_{\rm sh}+1\).  This is smaller than the algebraic shooting radius, so the actual incoming
+This is smaller than the algebraic shooting radius, so the actual incoming
 history belongs to the graph domain.  No finite terminal row appears in
 the definition of that domain or its zero set.
 \end{proof}
@@ -582,7 +767,7 @@ the definition of that domain or its zero set.
 \begin{proof}[Proof of \cref{thm:anchor-annulus-flat-forgetting}]
 The positive history and the intrinsic negative half-line are
 \cref{lem:lean-anchor-history-objects}(ii)--(iii).  Forward event holonomy
-from the generated cut to \(\Sigma_0\), together with
+from \(\Sigma_0\) to the generated cut, together with
 \cref{lem:lean-anchor-action-intersection}, gives the graph
 \(u=F_{N,\delta,p}^{-,0}(\psi)\).  Differentiating its zero identity gives
 the pullback formula
@@ -604,7 +789,8 @@ the quotient rule gives
 \subsection{The physical gap as a direct perturbation of the selected gap}
 
 Fix one structural-ball admissible preparation, solely as a comparison
-device.  Let
+device; by the convention at the start of this section it is precisely
+\(\mathbf p_{\rm sel}\), not a new choice.  Let
 \(A^{\rm sel}_{0,p}\) and \(B^{\rm sel}_{0,p}\) be its attracting and
 repelling selected histories on \(\Sigma_0\).  In the tubular chart write
 \[
@@ -617,18 +803,19 @@ coordinate of that lift is zero before parameter trivialization and hence
 is the same \(\bar\psi_p\) in the displayed chart.  By
 \cref{eq:anchor-central-chart-identities},
 \begin{equation}
+ \bar u_p=u_p^r,\qquad
  \mathscr D_N^{\rm sel}=u^a_p-u^r_p.
  \label{eq:lean-anchor-selected-gap-coordinate}
 \end{equation}
 
 \begin{lemma}[Selected-to-intrinsic gap comparison]
 \label[lemma]{lem:lean-anchor-gap-comparison}
-For every prescribed finite \(Q\), the scale exponents may be fixed so
-that, uniformly in \(N\) and on the common \((\nu,\eta)\)-box,
+Uniformly in \(N\) and on the common \((\nu,\eta)\)-box, the single ordered
+choice in \cref{prop:anchor-central-finite-shooting} gives
 \begin{equation}
  \bigl|J_p^1\{G^{\rm anc}_{N,\delta}
           -\mathscr D_N^{\rm sel}\}\bigr|
- \le C\delta^Q,
+ \le C\delta^{Q_*},
  \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.
  \label{eq:lean-anchor-gap-C1-comparison}
 \end{equation}
@@ -641,7 +828,7 @@ Write \(A^0_p=\mathfrak C_{0,p}(\psi_A,u_A)\).  The positive common-core
 comparison \cref{eq:lean-anchor-positive-selected-flatness} gives
 \begin{equation}
  \bigl\|J_p^1\{(\psi_A,u_A)-(\bar\psi_p,u^a_p)\}\bigr\|
- \le C\delta^Q.
+ \le C\delta^{Q_*+M_{\rm loss}+4}.
  \label{eq:lean-anchor-positive-selected-comparison}
 \end{equation}
 Here and below a superalgebraic capped-action estimate has been weakened to
@@ -657,15 +844,16 @@ loss, while their \(u\)-derivatives are bounded below by
 \(c(\delta/s_b^\#)E_b\).  Choose the comparison order larger than this
 finite loss and the reciprocal action exponent.  The scalar implicit
 estimate then gives
-\begin{equation}
+ \begin{equation}
  \bigl|J_p^1\{F_{N,\delta,p}^{-,0}(\bar\psi_p)-u^r_p\}\bigr|
- \le C\delta^Q.
+ \le C\delta^{Q_*+4}.
  \label{eq:lean-anchor-negative-selected-comparison}
-\end{equation}
-The individual graph may have polynomial slope.  Choose the comparison
-order before weakening
-\cref{eq:lean-anchor-positive-selected-comparison} so that this polynomial
-loss times \(\|\psi_A-\bar\psi_p\|\) is still \(O(\delta^Q)\).  Then
+ \end{equation}
+The individual graph may have polynomial slope.  The margin
+\(M_{\rm loss}+4\) in
+\cref{eq:lean-anchor-positive-selected-comparison} ensures that this
+polynomial loss times \(\|\psi_A-\bar\psi_p\|\) is still
+\(O(\delta^{Q_*})\).  Then
 \begin{align*}
  G^{\rm anc}-\mathscr D_N^{\rm sel}
   &=(u_A-u^a_p)
@@ -692,7 +880,7 @@ orbit.  The converse follows by recutting any such orbit at \(\Sigma_0\).
 This proves the exact zero-fiber statement and the declared local
 uniqueness.
 
-For the estimates, take \(Q>6\) plus every finite first-jet loss.  The
+For the estimates, use the fixed \(Q_*>M_{\rm loss}+12\).  The
 structural-ball version of the finite-gap bridge is
 \cref{eq:full-ball-gap-response}; together with
 \cref{eq:gap-bridge-expansion,eq:gap-bridge-nu} it gives
@@ -706,16 +894,12 @@ structural-ball version of the finite-gap bridge is
  &\le C\{\delta^3+\delta^2\|\eta\|\}.
 \end{align*}
 Insert \cref{eq:lean-anchor-gap-C1-comparison}.  This proves
-\cref{eq:anchor-physical-gap-estimates}.  Since the comparison can be made
-at any prescribed finite order, choose first the exponent \(p_g\) in the
-Gaussian gap tail and then choose \(p_c\) so that
-\(p_c(1-\chi_b^2)\) exceeds \(p_g\) plus every finite jet loss.  The
-generated-core graph error is then bounded by the Gaussian tail, while the
-fixed-annulus comparison has the capped-action rate.  Thus the two sources
-may equivalently be recorded as
-\(\mathfrak f_\delta+\mathfrak t_\delta\) in
-\cref{eq:anchor-total-comparison-error}; no separate endpoint-tail identity
-is needed.
+\cref{eq:anchor-physical-gap-estimates}.  The ordered choice in
+\cref{prop:anchor-central-finite-shooting} makes both the Gaussian
+selected-gap tail and the common-core action dominate \(Q_*\) and all finite
+first-jet losses.  The fixed-annulus comparison has the separate
+capped-action rate.  No second preparation exponent or endpoint-tail
+recalculation is used.
 \end{proof}
 
 \begin{proof}[Proof of \cref{thm:anchored-physical-root-conormal}]
@@ -744,7 +928,16 @@ After centering and dividing by \(\delta^3\), this is
 
 The tracking assertions are already part of the two history objects in
 \cref{lem:lean-anchor-history-objects}; the central estimate follows from
-\cref{lem:shared-graph-trace,lem:lean-anchor-central-normal-inverse}.  On a fixed outer subannulus the
+\cref{lem:shared-graph-trace,lem:lean-anchor-central-normal-inverse}.
+At \(b\), the root history and the negative chart center lie on the same
+stable graph and differ by \(O(\mathfrak b_\delta)\).  The generated-core
+stable dichotomy contracts this difference over the \(b\)-to-\(c\) action:
+\[
+ C\mathfrak b_\delta e^{-c\mathscr L_\delta^2}=O(\delta^P)
+ \quad\text{for every fixed }P.
+\]
+It may therefore be joined to the outer chart-center bound on every fixed
+repelling subannulus.  On a fixed outer subannulus the
 resource speed is \(O(\delta^2)\) in original time, so its traversal takes
 at least \(c\delta^{-2}\).  At the root, forward uniqueness identifies the
 two one-sided restrictions with the same orbit.  Finally, the factorization,
@@ -756,9 +949,9 @@ conormal.
 \begin{proof}[Proof of
   \cref{prop:anchor-physical-naturality-composition}]
 Two regular sections reached by forward holonomy describe the same local
-parameter zero set.  Their defining functions therefore differ, near a
-root, by a nowhere-zero \(C^1\) factor; their differentials span the same
-conormal line.  If a passage is split into forward maps
+regular parameter zero set.  On that set their differentials have the same
+tangent kernel and hence span the same conormal line.  If a passage is split
+into forward maps
 \(P_j\circ\cdots\circ P_1\), the ordinary chain rule gives
 \(D(P_j\circ\cdots\circ P_1)=DP_j\cdots DP_1\).  No inverse history
 holonomy occurs.  A nonsingular parameter change acts by cotangent pullback.

@@ -7,6 +7,8 @@ of the admitted Markov and delay layers.  We use fold time \(s=\delta t\), so
 the delays are the fixed translations \(s\mapsto s-\theta_k\).  No backward
 RFDE semiflow is used: backward estimates occur only on a transported
 one-dimensional unstable line.
+Throughout, \(0<\delta<\delta_0<1\) and \(\eta\) lies in the fixed structural
+ball of the main theorem.
 
 Put
 \begin{equation}
@@ -21,6 +23,7 @@ Assume \cref{eq:shared-markov,eq:shared-curvature,eq:shared-layer-bounds}.
 There are \(r_0,C>0\), independent of \(N\), such that for \(|r|\le r_0\)
 the equation
 \begin{equation}
+ z_{0,N}(r)\in E_N,\qquad
  A_Nz_{0,N}(r)=P_{\perp,N}\mathcal N_N
        \bigl(r\mathbf1+z_{0,N}(r)\bigr),
  \qquad \|z_{0,N}(r)\|_N\le Cr^2,
@@ -177,9 +180,25 @@ fixed graph equations twice in \(\eta\) proves the asserted uniform jets.
 
 \begin{proposition}[Exact phase and resource quotient]
 \label[proposition]{prop:anchor-toolkit-resource-phase-quotient}
-Let \(Z_*(s)=\mathcal H_{V,w,q}(r_s)\) be an exact generated history of the
-shared-resource RFDE on a delay-enlarged interval, with
-\(r_s'=\delta q(r_s)\), \(q\ne0\), and \(w'(r_s)\ne0\).  If
+Let \(V,w,q,\sigma\) be \(C^2\) on the delay-enlarged interval, let
+\(\Phi_q^T\) be the flow of \(\dot r=q(r)\), and assume
+\[
+ r=\pi_N^T\{V(r)-\mathbf1\},\qquad
+ \mathcal H_{V,w,q}(r)
+ =\left(\theta\mapsto V(\Phi_q^{\delta\theta}(r)),w(r)\right).
+\]
+Thus \(\pi_N^TV'(r)=1\).  Put
+\(V_s(\theta)=V(\Phi_q^{\delta\theta}(r_s))\) and \(w_s=w(r_s)\).
+Let \(Z_*(s)=\mathcal H_{V,w,q}(r_s)\) be an exact generated history on a
+delay-enlarged interval of an RFDE whose fold-time resource row is
+\[
+ w_s'=\delta\sigma(r_s),\qquad r_s'=\delta q(r_s),
+ \qquad q(r)w'(r)=\sigma(r).
+\]
+Assume \(q\ne0\) and \(w'(r_s)\ne0\) on that interval.  This includes the
+unanchored collar with \(\sigma(r)=r-\delta^2\nu\) and every regular
+subannulus of the anchored equation with
+\(\sigma=\sigma_{\rm anc}\).  If
 \(\mathcal U_*(s,t)\) is the full variational process, then
 \begin{equation}
  E_s^c:=\partial_r\mathcal H_{V,w,q}(r_s),\qquad
@@ -190,13 +209,20 @@ Writing \(\varrho_N(\phi,\omega)=\pi_N^T\phi(0)\), the normalized time
 tangent and exact phase quotient are
 \begin{equation}
  \tau_s=\frac{(\partial_sV_s,\partial_sw_s)}{r_s'},\qquad
- Q_s=\Id-\tau_s\varrho_N,qquad
+ Q_s=\Id-\tau_s\varrho_N,\qquad
  \widehat{\mathcal U}_*(s,t)
  =Q_s\mathcal U_*(s,t)|_{\ker\varrho_N}.
  \label{eq:anchor-toolkit-phase-quotient}
 \end{equation}
 They satisfy \(\varrho_N\tau_s=1\) and the cocycle identity on
 \(\ker\varrho_N\).
+
+Write the current linearization along the generated voltage as
+\[
+ \mathcal J_*(s)=\mathcal A_N-\diag\!\left(
+  2c_N\circ\{V(r_s)-\mathbf1\}
+  +\beta\{V(r_s)-\mathbf1\}^{\circ2}\right).
+\]
 
 For a full variation \(\bigl(\xi_s,\omega(s)\bigr)\), put
 \begin{align}
@@ -209,20 +235,23 @@ For a full variation \(\bigl(\xi_s,\omega(s)\bigr)\), put
 Then \(\psi_s\) is unchanged on adding a multiple of \(E_s^c\), and the
 quotient equations are exactly
 \begin{align}
- a'&=\delta q'(r_s)a+\frac\delta{w'(r_s)}\pi_N^Tu,\notag\\
+ a'&=\delta q'(r_s)a
+       +\delta\frac{\sigma'(r_s)}{w'(r_s)}\pi_N^Tu,\notag\\
  (\partial_s-\partial_\theta)\psi_s(\theta)
- &=-\delta\frac{e_s(\theta)}{w'(r_s)}\pi_N^Tu,\notag\\
+ &=-\delta\frac{\sigma'(r_s)e_s(\theta)}{w'(r_s)}
+       \pi_N^Tu,\notag\\
  u'&=\delta^{-1}\mathcal J_*(s)u
  +\delta K\sum_{k=0}^mL_{k,N}(\eta)
        \{u(s)-\psi_s(-\theta_k)\}
- -\delta\frac{V'(r_s)}{w'(r_s)}\pi_N^Tu.
+ -\delta\frac{\sigma'(r_s)V'(r_s)}{w'(r_s)}\pi_N^Tu.
  \label{eq:anchor-toolkit-resource-system}
 \end{align}
 On the voltage history space define
 \begin{equation}
  (\mathcal K_s\phi)(\theta)=\delta\int_\theta^0
- \frac{e_{s+\sigma}(\theta-\sigma)}{w'(r_{s+\sigma})}
-       \pi_N^T\phi(\sigma)\,\dd\sigma.
+ \frac{\sigma'(r_{s+\zeta})
+       e_{s+\zeta}(\theta-\zeta)}{w'(r_{s+\zeta})}
+       \pi_N^T\phi(\zeta)\,\dd\zeta.
  \label{eq:anchor-toolkit-volterra-operator}
 \end{equation}
 Then
@@ -235,7 +264,7 @@ line of \cref{eq:anchor-toolkit-resource-system} by replacing
 \(\psi_s(-\theta_k)\) with
 \(u(s-\theta_k)-(\mathcal K_su_s)(-\theta_k)\).
 
-If \(q,q^{-1},V'\) are uniformly bounded and
+If \(q,q^{-1},V'\), and \(\sigma'\) are uniformly bounded and
 \(|w'(r)|\ge c_w|r|\ge c_w c_\rho\rho_\delta\) on the collar, then in every
 fading norm of \cref{eq:anchor-toolkit-fading-norm},
 \begin{equation}
@@ -250,33 +279,93 @@ Thus the full anisotropic norm
 \end{proposition}
 
 \begin{proof}
-The derivative of an exact generated history is \(E_s^c\); invariance of
-the autonomous time tangent gives \cref{eq:anchor-toolkit-center-cocycle}.
+The \(r\)-derivative of an exact generated history is \(E_s^c\), whereas
+its \(s\)-derivative is \(\delta q(r_s)E_s^c\).  Invariance of this
+autonomous time tangent gives \cref{eq:anchor-toolkit-center-cocycle}.
 The cocycle identity in \cref{eq:anchor-toolkit-phase-quotient} follows
 because the omitted term is transported into the time-tangent line and is
 annihilated by \(Q_s\).
 
-The full variational resource row is \(\omega'=\delta\pi_N^T\xi(0)\).
+The full variational resource row is
+\(\omega'=\delta\sigma'(r_s)\pi_N^T\xi_s(0)\).
 Differentiate \(a=\omega/w'(r_s)\) and use the exact resource identity
 \[
- q(r)w'(r)=r-\delta^2\nu,
- \qquad q'w'+qw''=1=\pi_N^TV'.
+ q(r)w'(r)=\sigma(r),
+ \qquad q'w'+qw''=\sigma'(r),\qquad \pi_N^TV'=1.
 \]
 This gives the first line of \cref{eq:anchor-toolkit-resource-system}.
 Subtracting \(aE_s^c\) from the full variational equation gives the other
-two lines; all tangent terms cancel.  Integration of the transport equation
+two lines; all tangent terms cancel.  In particular, the factors
+\(\sigma'(r_s)\) are retained outside the central region and equal one
+throughout the exact agreement region.  Integration of the transport equation
 along the characteristic
-\(\sigma\mapsto(s+\sigma,\theta-\sigma)\) proves
+\(\zeta\mapsto(s+\zeta,\theta-\zeta)\) proves
 \cref{eq:anchor-toolkit-history-conjugacy} with the sign displayed in
 \cref{eq:anchor-toolkit-volterra-operator}.  Finally,
-\(\|e_s/w'(r_s)\|\le C/|r_s|\); the weighted integral over one fixed delay
+\(\|\sigma'(r_s)e_s/w'(r_s)\|\le C/|r_s|\); the weighted integral over one fixed delay
 gives the first bound in \cref{eq:anchor-toolkit-volterra-bounds}, and the
 second follows from its Neumann series.
 \end{proof}
 
+For the next proposition we record the exact residual rather than referring
+to a construction ledger.  On a fixed branch interval \(I_\sigma\) and its
+one-delay enlargement, let
+\[
+ X=(z,\wp,a,\tau,\gamma)\in\mathbb X_\sigma^{\rm raw}
+ :=W_{\rm loc}^{1,\infty}(I_\sigma^-;E_N)
+   \times W^{1,\infty}(I_\sigma)^2\times\mathbb R
+   \times\mathfrak J_\sigma^8 .
+\]
+Here \(z\) is the transverse-current path, \(\wp\) the resource-defect path,
+\(a\) the scalar clock path, \(\tau\) the terminal event displacement, and
+\(\gamma\) a finite entry jet.  Here \(\mathfrak S_\sigma^8\) is the
+compatible old-history \(W^{8,\infty}\) space with its maximum derivative
+norm, and \(\mathfrak J_\sigma^8\) carries the induced finite-jet norm.
+The bounded affine map
+\(\Gamma_{\sigma,p}^{\rm raw}:\mathfrak J_\sigma^8\to\mathfrak S_\sigma^8\)
+is the literal old-history reconstruction satisfying the RFDE compatibility
+recursion through order eight.  Substitution into the unmodified voltage,
+resource, and clock equations defines the exact residual
+\[
+ \mathbb Y_\sigma^{\rm raw}
+ =L^\infty(I_\sigma;E_N)\times L^\infty(I_\sigma)^2
+  \times\mathfrak S_\sigma^8\times\mathbb R^3,
+\]
+\begin{equation}
+ \mathscr R_{\sigma,p}^{\rm raw}(X)
+ =(\mathcal E_v,\mathcal E_w,\mathcal E_\phi,\,
+   \operatorname{Tr}_{\rm old}X-\Gamma_{\sigma,p}^{\rm raw}(\gamma),\,
+   B_{\rm ent}X,B_{\rm ev}X,B_{\rm fin}X)
+ \in\mathbb Y_\sigma^{\rm raw},                       \label{eq:anchor-toolkit-raw-residual}
+\end{equation}
+where the three scalar rows are normalized entry, terminal-event, and
+branch finite rows.  Put
+\(\|f\|_{1,\delta}=\|f\|_\infty+\delta\|f'\|_\infty\) and use
+\begin{align*}
+ \|X\|_*&=\max\{\delta^{-2}\|z\|_{1,\delta},
+   \delta^{-2}\|\wp\|_{1,\delta},
+   \rho_\delta^{-1}\|a\|_{1,\delta},
+   \rho_\delta^{-1}|\tau|,\|\gamma\|_{\mathfrak J_\sigma^8}\},\\
+ \|Y\|_*^{\rm ran}&=\max\{\delta^{-1}\|\mathcal E_v\|_\infty,
+   \delta^{-2}\|\mathcal E_w\|_\infty,
+   \rho_\delta^{-1}\|\mathcal E_\phi\|_\infty,
+   \|\mathcal E_{\rm old}\|_{\mathfrak S_\sigma^8},
+   |b_{\rm ent}|,|b_{\rm ev}|,|b_{\rm fin}|\}.
+\end{align*}
+The affine predictor \(X_{\sigma,p}^{\rm aff}\) is the critical-current,
+resource-defect, and reduced-clock predictor with its compatible entry jet;
+equivalently it solves the affine part of
+\(\mathscr R_{\sigma,p}^{\rm raw}=0\).  Thus every space, trace, and norm
+below is fixed before the contraction is applied.
+
 \begin{proposition}[Canonical exact outer reference and coherent hits]
 \label[proposition]{prop:anchor-toolkit-reference-hits}
-Fix a compact structural parameter box
+Fix the compact structural parameter box
+\[
+ \mathcal P_N=I_\nu\times
+ B_{\eta_*}(0)\subset\mathbb R\times\mathfrak T_N^{\rm red}
+\]
+with the fixed boundary margins of the main theorem, a parameter
 \(p=(\nu,\eta)\in\mathcal P_N\), a branch
 \(\sigma\in\{a,r\}\), and a compatible raw-collar chart of order at least
 eight at the near-fold section.  Put
@@ -284,6 +373,7 @@ eight at the near-fold section.  Put
  \mathfrak b_{\delta,\varkappa}
  =\varkappa^2+S_\delta^{-2}+\sqrt\delta\,S_\delta^{7/2},
  \qquad
+ \varkappa=o(1),\qquad
  \frac1{\varkappa^2S_\delta^3}=o(1).
  \label{eq:anchor-toolkit-diagonal-wedge}
 \end{equation}
@@ -296,7 +386,8 @@ after one delay are generated by that same segment.  The result remains true
 for compatible raw-collar perturbations of bounded normalized size, but only
 the canonical zero is used below.
 
-The nonlinear correction \(h_{\sigma,p}\) satisfies, in the component norm
+The nonlinear correction
+\(h_{\sigma,p}:=X_{\sigma,p}-X_{\sigma,p}^{\rm aff}\) satisfies, in the component norm
 used by the central--outer overlap,
 \begin{equation}
  \|h_{\sigma,p}\|_*
@@ -328,7 +419,9 @@ In particular, for \(r=-c_b\rho_\delta\), with fixed \(c_b>1\),
  \label{eq:anchor-toolkit-dynamic-overlap}
 \end{equation}
 
-Fix \(c_c>0\), and let
+Fix \(c_c>0\), a regular terminal section
+\(L=\{r=-r_L\}\) with \(0<r_L<r_{\rm loc}\), and a finite compatibility
+depth \(n_{\rm gen}\ge5\) for the chosen strong event chart.  Let
 \begin{equation}
  \rho_{b,\delta}=c_b\rho_\delta,
  \qquad \rho_{c,\delta}=c_c\delta\mathscr L_\delta.
@@ -338,13 +431,15 @@ On the repelling reference there are unique hits
 \begin{equation}
  r_p(s_b)=-\rho_{b,\delta},\qquad
  r_p(s_c)=-\rho_{c,\delta},\qquad
- (M+2)\theta_m<s_b<s_c<S_p-\theta_m.
+ r_p(S_p)=-r_L,\qquad
+ n_{\rm gen}\theta_m<s_b<s_c<S_p-\theta_m.
  \label{eq:anchor-toolkit-generated-hits}
 \end{equation}
 Every delay window based between \(s_b\) and \(S_p\) is therefore a literal
-generated history.
+generated history.  The event-relative terminal history at \(S_p\) is
+denoted \(O_{L,p}\), and its event speed has a common nonzero margin.
 
-If \(e_h\) is any fixed regular section crossed by the reference and
+If \(\{r=e_h\}\) is any fixed regular section crossed by the reference and
 \(S_h(p)\) is its hit time, then the event-relative history
 \begin{equation}
  \mathcal E_h(p)=
@@ -352,7 +447,14 @@ If \(e_h\) is any fixed regular section crossed by the reference and
  \label{eq:anchor-toolkit-event-hit}
 \end{equation}
 has the selected jets \(1,\partial_\nu,D_\eta\) in one fixed strong-to-weak
-chart.  More generally, for the rectangular parameter jet used in the
+chart.  On this generated event window write
+\[
+ \|(\phi,\omega)\|_{\mathfrak S^3}
+ :=\max_{0\le j\le3}
+   \{\|\partial_s^j\phi\|_{L^\infty}+|\partial_s^j\omega|\},
+\]
+with the compatibility identities imposed at the current endpoint and full
+multilinear operator norms in the \(\eta\)-slots.  More generally, for the rectangular parameter jet used in the
 anchored proof and \(b=i+j\le3\),
 \begin{equation}
  \|\partial_\nu^iD_\eta^j\mathcal E_h(p)\|_{\mathfrak S^3}
@@ -377,12 +479,23 @@ on the single current-unstable line.  The resource row is then integrated
 forward and the nonzero endpoint speed closes the phase row.  In the
 anisotropic norm in which a distributed bulk source, a compatible collar,
 and a phase displacement have their natural scales, this triangular inverse
-has norm bounded by one constant.
+shows that
+\[
+ \mathbb L_{\sigma,p}^{\rm raw}
+ :=D\mathscr R_{\sigma,p}^{\rm raw}(X_{\sigma,p}^{\rm aff})
+ :\mathbb X_\sigma^{\rm raw}\longrightarrow\mathbb Y_\sigma^{\rm raw}
+\]
+has inverse norm bounded by one constant on the normalized causal slices.
 
 The voltage nonlinearity is cubic, the delay supports are fixed, and the
 finite compatibility recursion is polynomial.  Consequently the nonlinear
-remainder \(\mathcal Q_{\sigma,p}\), at the affine predictor
-\(X^{\rm aff}_{\sigma,p}\), obeys
+remainder, defined by
+\[
+ \mathcal Q_{\sigma,p}(X_{\sigma,p}^{\rm aff}+h)
+ :=\mathscr R_{\sigma,p}^{\rm raw}(X_{\sigma,p}^{\rm aff}+h)
+   -\mathbb L_{\sigma,p}^{\rm raw}h,
+\]
+obeys
 \begin{align}
  \|\mathcal Q_{\sigma,p}(X^{\rm aff}_{\sigma,p})\|_*^{\rm ran}
  &\le C\mathfrak b_{\delta,\varkappa},\notag\\
@@ -429,7 +542,8 @@ Retain the repelling reference of
    e^{-2\mathscr A_p(s,s+\theta)}\|\phi(\theta)\|_N.
  \label{eq:anchor-toolkit-core-action-norm}
 \end{align}
-Then \(a_p(s)\asymp|r_p(s)|\), \(q_p\) is bounded away from zero, and
+Then \(a_p(s)\asymp|r_p(s)|\),
+\(q_p(s):=q(r_p(s))\) is bounded away from zero.  Moreover,
 \begin{equation}
  \mathscr A_p(s_c,s_b)\ge c\mathscr L_\delta^2,
  \qquad
@@ -463,7 +577,8 @@ Its coefficient and frame perturbation number satisfies
  \label{eq:anchor-toolkit-core-perturbation}
 \end{equation}
 
-At \(s_b\), let
+At \(s_b\), let \(e_b^u,\ell_b^u\) be the unstable current right and left
+objects in the frame above, normalized by \(\ell_b^ue_b^u=1\), and let
 \begin{equation}
  \mathscr K_b=\{\phi:\ell_b^u\phi(0)=0\},\qquad
  \Gamma_b\phi=\phi-\jmath_b^u\ell_b^u\phi(0),
@@ -483,8 +598,21 @@ With the source norm
        \frac\delta{a_p(s)}\|f(s)\|_N,
  \label{eq:anchor-toolkit-source-norm}
 \end{equation}
-the mixed operator
+let \(\mathcal X_p\) be the paths
+\(u\in W_{\rm loc}^{1,\infty}
+([s_b-\theta_m,S_p];\mathbb R^N)\) for which
+\[
+ \|u\|_{\mathcal X_p}:=
+ \max\left\{\sup_{s_b\le s\le S_p}\|u_s\|_{p,s,\sharp},
+ \|u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_p)u
+            -\mathcal R_pu_\bullet\|_{\mathcal F_p}\right\}<\infty ,
+\]
+and let
+\(\mathcal Y_p=\mathcal F_p\times\mathscr K_b\times\mathbb R\), with
+the maximum of the displayed source, entry-history, and terminal norms.
+Then the mixed operator
 \begin{equation}
+ \mathbb L_p:\mathcal X_p\longrightarrow\mathcal Y_p,\qquad
  \mathbb L_pu=
  \left(u'-\delta^{-1}\mathcal J_N^{\rm fv}(r_p)u
              -\mathcal R_pu_\bullet,
@@ -510,17 +638,46 @@ one-dimensional unstable bundle, with
 \end{align}
 
 The inverse is stable under the nonlinear fixed-clock problems used to
-construct the intrinsic sheet.  More precisely, use the action-balanced
-domain and range norms obtained from
-\cref{eq:anchor-toolkit-core-action-norm,eq:anchor-toolkit-source-norm} and
-the natural entry and terminal trace scales.  If \(\mathscr R_p(X)\) is the
-exact nonlinear residual, \(\bar X_p\) its reference path, and
+construct the intrinsic sheet.  The scalar resource shear is slow, so its
+range must be measured by its Volterra output rather than only by the fast
+current weight.  Since \(q(r_p)\) is bounded above and away from zero on
+\(I_p\), set
+\[
+ (\mathcal V_p^ag)(s)
+ :=q(r_p(s))\int_{s_b}^{s}\frac{g(t)}{q(r_p(t))}\,\dd t,
+ \qquad
+ \|g\|_{\mathcal F_p^{a,V}}
+ :=\|\mathcal V_p^ag\|_\infty
+   +\operatorname*{ess\,sup}_{s\in I_p}
+       \frac{\delta}{a_p(s)}|g(s)|.
+\]
+This is a Banach norm on the weighted \(L^\infty\) source space; its first
+term is the exact zero-entry solution norm for
+\(\alpha'-\delta q'(r_p)\alpha=g\).
+Write \(X=(u,\alpha,\beta)\) after the exact resource shear, with
+\(\beta\) divided by the terminal event speed.  Set
+\begin{align*}
+ X_p^A&=\mathcal X_p\times W^{1,\infty}(I_p)\times\mathbb R,\\
+ \|X\|_{X_p^A}
+ &=\max\bigl\{\|u\|_{\mathcal X_p},\|\alpha\|_\infty,
+   \|\alpha'-\delta q'(r_p)\alpha\|_{\mathcal F_p^{a,V}},
+   |\beta|\bigr\},\\
+ Y_p^A&=\mathcal F_p\times\mathcal F_p^{a,V}\times
+   \mathscr K_b\times\mathbb R_{\rm ent}\times
+   \mathbb R_{\rm ev}\times\mathbb R_{\rm ter}.
+\end{align*}
+Equip \(Y_p^A\) with the maximum of the displayed bulk, entry, event, and
+terminal norms.  Thus literal entry history, the resource entry scalar, the event
+row, and the terminal unstable row are distinct components.  If
+\(\mathscr R_p(X)\) is this exact nonlinear residual, \(\bar X_p\) its
+reference path, and
 \(\mathbb B_p=D\mathscr R_p(\bar X_p)\), then
 \begin{align}
- \|\mathbb B_p^{-1}\|_{Y_p^A\to X_p^A}&\le C,\notag\\
+ \|\mathbb B_p^{-1}\|_{Y_p^A\to X_p^A}
+ &\le C\mathscr L_\delta,\notag\\
  \|\mathbb B_p^{-1}\{D\mathscr R_p(X)
                   -D\mathscr R_p(Y)\}\|_{X_p^A\to X_p^A}
- &\le C\|X-Y\|_{X_p^A},
+ &\le C\mathscr L_\delta\|X-Y\|_{X_p^A},
  \label{eq:anchor-toolkit-balanced-two-point}
 \end{align}
 as long as \(X,Y\) remain in the declared compatible-history tube.
@@ -529,11 +686,16 @@ Consequently, on a ball
 \begin{equation}
  \sup_X\|\mathbb B_p^{-1}
        \{D\mathscr R_p(X)-\mathbb B_p\}\|
- \le CR\mathfrak b_{\delta,\varkappa}<\frac13.
+ \le CR\mathscr L_\delta\mathfrak b_{\delta,\varkappa}<\frac13,
  \label{eq:anchor-toolkit-balanced-newton}
 \end{equation}
+provided the fixed construction radius and diagonal sequence satisfy the
+last displayed inequality.  In the application
+\(\varkappa=S_o^{-1}\) and
+\(\mathscr L_\delta\mathfrak b_{\delta,\varkappa}
+=p_o^{-1}+o(1)\), so \(p_o\) is chosen after the one required radius.
 No flat bound on the second derivative of the stable graph is asserted.
-For fixed (N), the selected mixed solution, unstable generator, and entry
+For fixed \(N\), the selected mixed solution, unstable generator, and entry
 conormal are \(C^1\) in \(p\) in fixed strong-to-weak charts, with uniform
 first-jet bounds after the displayed action scaling.
 \end{proposition}
@@ -569,13 +731,34 @@ operation: if \(u_0\) has zero unstable terminal datum, then
 The margin \cref{eq:anchor-toolkit-terminal-margin} proves
 \cref{eq:anchor-toolkit-mixed-inverse}.
 
-Finally, the RFDE field is polynomial in current values and bounded linear
-in each delayed value.  Compatible-history reconstruction and event
-evaluation are bounded on the declared strong windows.  Taylor's formula
-therefore gives \cref{eq:anchor-toolkit-balanced-two-point}; the action
-weights are precisely those already used by the Green inverse, so no
-additional unstable factor appears.  The Newton estimate follows on the
-stated ball.  Differentiating the selected equation after solving it gives
-the \(C^1\) assertion; this again avoids an operator-topology derivative of
-the rough-history process.
+For the resource row, variation of constants gives
+\[
+ \alpha(s)=\frac{q(r_p(s))}{q(r_p(s_b))}\alpha(s_b)
+             +(\mathcal V_p^ag)(s).
+\]
+Thus its entry-to-path and source-to-path inverses are uniform in the
+declared norm.  In particular, the fast-current source norm is not reused
+as a stand-alone norm for this slow scalar equation.
+
+The coupled resource source is
+\(C_pu=\delta\sigma'(r_p)\pi_N^Tu/w'(r_p)\).  Since
+\(\dd s=\dd r/\{\delta q(r)\}\), the regular-core bounds give the sharp
+accumulated estimate
+\[
+ \|\mathcal V_p^a(C_pu)\|_\infty
+ \le C\int_{\rho_{b,\delta}}^{r_L}\frac{\dd r}{r}
+       \|u\|_{\mathcal X_p}
+ \le C\mathscr L_\delta\|u\|_{\mathcal X_p}.
+\]
+The same calculation after one coefficient difference gives the
+\(\mathscr L_\delta\) factor in the two-point bound.  The remaining RFDE
+field is polynomial in current values and bounded linear in each delayed
+value; compatible-history reconstruction and event evaluation are bounded
+on the declared strong windows.  Taylor's formula together with this
+accumulated-source estimate proves
+\cref{eq:anchor-toolkit-balanced-two-point}.  The action weights already
+used by the current Green inverse introduce no additional unstable factor.
+The Newton estimate follows on the stated ball.  Differentiating the
+selected equation after solving it gives the \(C^1\) assertion; this again
+avoids an operator-topology derivative of the rough-history process.
 \end{proof}

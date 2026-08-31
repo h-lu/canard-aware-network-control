@@ -124,11 +124,12 @@ required.
 
 \begin{theorem}[Dimension-uniform anchor indices and physical history objects]
 \label[theorem]{thm:anchor-indices-manifolds}
-Fix one bounded admissible class
-\(\mathfrak G_{\rm anc}(r_A;g_*,G_*)\) and one compact structural parameter
-ball.  After
-decreasing \(r_A\), then the parameter ball and \(\delta_0\), independently
-of \(N\) and of the member of \(\mathfrak G_{\rm anc}\), the equilibria
+There is \(r_A^*>0\) such that, for every fixed
+\(0<r_A<r_A^*\), every bounded admissible class
+\(\mathfrak G_{\rm anc}(r_A;g_*,G_*)\), and every compact structural
+parameter ball, the following holds after decreasing only that parameter
+ball and \(\delta_0\), independently of \(N\) and of the member of
+\(\mathfrak G_{\rm anc}\).  The equilibria
 \(E_N^\pm\) are hyperbolic.  Their Morse indices are
 \begin{equation}
  \dim W^u(E_N^+)=1,
@@ -341,13 +342,31 @@ same-equation shooting result.
 
 \begin{proposition}[Intrinsic stable-sheet shooting at a generated cut]
 \label[proposition]{prop:anchor-central-finite-shooting}
-Fix \(0<\chi_b<1<c_b\).  Instantiate the central and outer constructions
-with Gaussian exponents \(p_c,p_o\) satisfying
+Fix \(0<\chi_b<1<c_b\).  Let \(M_{\rm loss}<\infty\) be the maximum of
+the fixed polynomial losses in the central trace, generated-core inverse,
+graph comparison, selected first-parameter jets, action-normalized rectangle
+derivatives, and central holonomy and domain bounds.  These loss exponents
+belong to the fixed preparation template and action-normalized operators and
+are independent of the later choices \(p_c,p_o\); those choices enter only
+the displayed actions and subalgebraic \(e^{cS}\)-factors.  Fix once a
+construction radius \(R_b\) large enough to contain the uniform overlap
+constants below, and let \(C_{\rm N}\) be the structural constant in the
+generated-core Newton estimate.  Choose
+\[
+ Q_*>M_{\rm loss}+12,
+\]
+then choose one structural-ball admissible preparation
+\(\mathbf p_{\rm sel}\), with Gaussian exponent \(p_c\), and one auxiliary
+outer exponent \(p_o\) so that
 \begin{equation}
- p_c=\left(\frac{c_b}{\chi_b}\right)^2p_o,\qquad
- S_\iota=\sqrt{2p_\iota\log(1/\delta)}\quad(\iota=c,o),
- \qquad
- s_b^\#=\chi_bS_c=c_bS_o.                            \label{eq:anchor-main-reserved-scales}
+ \begin{aligned}
+  p_c&=\left(\frac{c_b}{\chi_b}\right)^2p_o,
+       &p_o&>\max\{4,12C_{\rm N}R_b\},\\
+  p_c(1-\chi_b^2)&>Q_*+2M_{\rm loss}+8,
+       &\chi_b^2p_c&>M_{\rm loss}+8,\\
+  S_\iota&=\sqrt{2p_\iota\log(1/\delta)}\quad(\iota=c,o),
+       &s_b^\#&=\chi_bS_c=c_bS_o.
+ \end{aligned}                                        \label{eq:anchor-main-reserved-scales}
 \end{equation}
 The common physical cut is
 \begin{equation}
@@ -358,7 +377,8 @@ Its complete delay enlargement lies strictly inside the unmodified central
 history tube, while the independently constructed outer reference has
 generated its own literal history there.
 
-Let the selected central repelling trace start at
+Let the selected central repelling trace of this same
+\(\mathbf p_{\rm sel}\) start at
 \begin{equation}
  Z^{c}_{p,0}
  =\mathfrak C_{0,p}(\bar\psi_p,\bar u_p),             \label{eq:anchor-reference-central-data}
@@ -395,11 +415,11 @@ Pulling that row back over the common physical core produces a finite graph
 and finite graphs satisfy, for \(J_p^1\in\{1,\partial_\nu,D_\eta\}\),
 \begin{equation}
  \|J_p^1(F_{b,p}^--F_{b,p}^{\rm sel})\|_{C^1}
- \le\varepsilon_{bc,\delta}\le\delta^{Q_*+M_{\rm gl}+4}.          \label{eq:anchor-main-finite-intrinsic-comparison}
+ \le\varepsilon_{bc,\delta}\le\delta^{Q_*+M_{\rm loss}+4}.        \label{eq:anchor-main-finite-intrinsic-comparison}
 \end{equation}
-Here \(Q_*\) is any prescribed finite order after the preparation exponent
-is chosen.  The assertion concerns the difference of two graphs; neither
-graph is claimed to have small curvature.
+The assertion concerns the difference of two graphs; neither graph is
+claimed to have small curvature.  The ordered choice above is made once;
+the comparison does not change preparation as the proof proceeds.
 
 The forward hit \(\mathcal P_{0\to b,p}\) stays inside the exact central
 tube.  Define
@@ -420,9 +440,7 @@ At the selected reference its scalar derivative has the positive
  E_b:=e^{(s_b^\#)^2/2}=\delta^{-c_b^2p_o},\qquad
  |D_p^{\rm sel}\log A_{0b,p}|\le C\delta^{-M_A}.     \label{eq:anchor-main-projective-action}
 \end{align}
-Choose \(Q_*>M_{\rm gl}+12\), then choose \(p_o\) after all finite
-jet-loss exponents so that \cref{eq:anchor-main-finite-intrinsic-comparison}
-and \(c_b^2p_o>M_{\rm gl}+8\) hold.  There are a fixed
+With this ordered choice there are a fixed
 \(M_{\rm sh}<\infty\) and radii
 \begin{equation}
  r_{{\rm sh},\delta}\ge c\delta^{M_{\rm sh}},\qquad
@@ -458,17 +476,16 @@ The two strip faces have opposite signs.  Hence
 which is \(C^2\) in state and has the selected first \(p\)-jet.  Moreover,
  \begin{equation}
  \left|J_p^1\{F^{-,0}_{N,\delta,p}(\bar\psi_p)-\bar u_p\}\right|
- \le C\delta^{Q_*-M_{\rm gl}}\frac{s_b^\#}{\delta E_b}
+ \le C\delta^{Q_*-M_{\rm loss}}\frac{s_b^\#}{\delta E_b}
  =o(\delta^8).                                       \label{eq:anchor-main-intrinsic-root-flatness}
 \end{equation}
 At every zero, equality in \cref{eq:anchor-main-intrinsic-b-sheet} is literal
 equality of the full voltage history and current resource.  Forward
 uniqueness therefore gives one exact orbit converging to \(E_N^-\).  Finally,
-for every prescribed finite \(Q_{\rm in}\), after the preparation exponent is
-chosen beyond the finite trace losses, the incoming normal coordinate obeys
+with the same fixed preparation, the incoming normal coordinate obeys
 \begin{equation}
  \|\psi_A-\bar\psi_p\|
- \le C\delta^{Q_{\rm in}}
+ \le C\delta^{Q_*+M_{\rm loss}+4}
  <\tfrac12r_{{\rm sh},\delta}.                       \label{eq:anchor-incoming-in-shooting-ball}
 \end{equation}
 Thus the graph domain contains the actual incoming history used below.
@@ -548,10 +565,10 @@ fixed by \cref{eq:anchor-central-chart-identities}; no unspecified nonzero
 multiplier remains.
 The tubular chart is an auxiliary proof device: another admissible local
 normal-history chart may change \(G^{\rm anc}\) away from its zero fiber.
-Because both are \(C^1\) defining functions with the same exact membership
-fiber, they differ locally by a nowhere-zero \(C^1\) factor.  The physical
-root and its conormal line are therefore chart independent; no equality of
-the two off-zero gap functions is asserted.
+On their common regular zero set, the two differentials have the same tangent
+kernel and therefore span the same conormal line.  The physical root and its
+conormal line are chart independent; no equality of the two off-zero gap
+functions is asserted.
 
 \begin{proposition}[Exact zero fiber and anchored finite-gap bridge]
 \label[proposition]{prop:anchor-gap-comparison}
@@ -572,16 +589,17 @@ translation, for which
 in the corresponding history norms.
 
 The scalar normalization in \cref{eq:anchor-physical-gap} is the same one
-used for the selected gap.  The two-sided common-core comparison gives, for
-any prescribed finite \(Q\),
+used for the selected gap.  The two-sided common-core comparison for the
+single ordered choice in
+\cref{prop:anchor-central-finite-shooting} gives
 \begin{equation}
  \bigl|J_p^1\{G^{\rm anc}_{N,\delta}
                  -\mathscr D_N^{\rm sel}\}\bigr|
- \le C\delta^Q,
+ \le C\delta^{Q_*},
  \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.          \label{eq:anchor-total-comparison-error}
 \end{equation}
 The exact selected gap is only a proof comparator; it does not define the
-zero fiber on the left.  Choose \(Q>6\).  The already proved selected-gap
+zero fiber on the left.  Since \(Q_*>12\), the already proved selected-gap
 Melnikov estimates and \cref{eq:anchor-total-comparison-error} then give
 \begin{align}
  \frac{G^{\rm anc}}\delta
