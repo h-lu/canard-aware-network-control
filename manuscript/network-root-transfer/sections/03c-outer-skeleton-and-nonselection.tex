@@ -15199,6 +15199,50 @@ which tends to \(+\infty\).  The two derivative norms with exponent
 \((2b-a)/\delta^2\) diverge still faster, proving all four assertions.
 \end{proof}
 
+\begin{proof}[Proof of \cref{prop:original-recovery-anchor-no-go}]
+At an equilibrium, \cref{eq:shared-rfde-w} gives
+\(0=\delta^2(\pi_N^Tv-a)\).  Since
+\(a=1+\delta^2\nu\), this is exactly
+\cref{eq:original-anchor-equilibrium-coordinate}.  On the common bounded
+\(\nu\)-window,
+\[
+ \frac{|\delta^2\nu|}{\rho_\delta}
+ =\frac{2\alpha|\nu|\delta}{S_\delta}\longrightarrow0.
+\]
+Hence \(|r|<\rho_\delta\) for every equilibrium once \(\delta\) is small,
+which excludes both displayed outer components.
+
+For the subclass \cref{eq:original-anchor-homogeneous-subclass}, synchrony
+is invariant and every current-minus-delay term vanishes identically because
+all layers are zero.  Substitution proves
+\cref{eq:original-anchor-homogeneous-equilibrium}.  Write the collective
+voltage perturbation as \(u\mathbf1\) and the resource perturbation as
+\(\omega\).  Their linearized equations in the original time are
+\begin{equation}
+ \dot u=j_\delta u-\omega,
+ \qquad
+ \dot\omega=\delta^2u,
+ \qquad
+ j_\delta=-2\alpha\delta^2\nu-\beta\delta^4\nu^2.  \label{eq:original-anchor-collective-linearization}
+\end{equation}
+Thus the characteristic polynomial is
+\begin{equation}
+ p_\delta(\lambda)=\lambda^2-j_\delta\lambda+\delta^2.
+                                                               \label{eq:original-anchor-characteristic-polynomial}
+\end{equation}
+If \(\nu\) ranges in a fixed compact subset of \(( -\infty,0)\), then
+\(j_\delta>0\) and
+\(j_\delta^2-4\delta^2<0\) for all sufficiently small \(\delta\), uniformly
+on that subset.  The two roots are a complex-conjugate pair with real part
+\(j_\delta/2>0\).  Every transverse mode has voltage eigenvalue \(-D\) in
+this subclass and is stable, so the equilibrium has a two-dimensional real
+unstable manifold.  The ordinary unstable-manifold theorem applies because
+this member of the class is an ODE.  A regular scalar phase row restricts to
+a regular codimension-one level set on that two-dimensional manifold and
+therefore leaves a one-dimensional family.  If the restriction is not
+regular, it supplies no stronger local selection.  This proves every claim.
+\end{proof}
+
 Thus the words ``complete backward'', ``bounded'', and ``convergent in an
 unnormalized history norm'', even with the displayed phase row, do not by
 themselves select a complete history.  Nor may tame parameter jets be

@@ -1,0 +1,544 @@
+\section{A globally anchored physical connection}
+\label{sec:anchored-physical-connection}
+
+The original shared-resource equation has no equilibrium on either outer
+branch, by \cref{prop:original-recovery-anchor-no-go}.  We now specify a
+global model class for which the missing physical objects do exist.  This is
+an enlargement of the physical recovery law, not a preferred preparation of
+the old equation.  The enlargement agrees literally with the old equation on
+a fixed neighborhood of every retained fold and delay-history tube.  It
+therefore leaves the blind redistribution mechanism and its local response
+covector unchanged.
+
+\subsection{Anchored recovery data and exact equilibria}
+
+Fix numbers
+\begin{equation}
+ 0<r_{\rm loc}<r_A<r_0,                              \label{eq:anchor-radii}
+\end{equation}
+where \(r_0\) is supplied by
+\cref{prop:unprepared-outer-skeleton}.  An \emph{anchor multiplier} is a
+function \(g_{\rm anc}\in C^{12}(\mathbb R)\) satisfying
+\begin{align}
+ g_{\rm anc}(r)&=1 &&(|r|\le r_{\rm loc}),\notag\\
+ g_{\rm anc}(r)&>0 &&(-r_A<r<r_A),\notag\\
+ g_{\rm anc}(\pm r_A)&=0,&
+ g_{\rm anc}'(-r_A)&>0>g_{\rm anc}'(r_A).           \label{eq:anchor-multiplier}
+\end{align}
+The simple zeros are crossed; in particular, the multiplier is not continued
+as zero outside the anchor interval.  Such functions exist, for example by
+smoothly joining the constant function on the central interval to
+\(1-r^2/r_A^2\) near the two anchors.
+
+For a completely explicit nonempty class, choose
+\(r_{\rm loc}<r_{\rm mid}<r_A\), set
+\begin{equation}
+ h(x)=\begin{cases}0,&x\le0,\\ e^{-1/x},&x>0,\end{cases}
+ \qquad
+ S(x)=\frac{h(x)}{h(x)+h(1-x)},                    \label{eq:anchor-smooth-step}
+\end{equation}
+and define
+\begin{equation}
+ \chi_{\rm anc}(r)
+ =S\left(\frac{r^2-r_{\rm loc}^2}
+                 {r_{\rm mid}^2-r_{\rm loc}^2}\right),
+ \qquad
+ g_{\rm anc}(r)=1-\chi_{\rm anc}(r)\frac{r^2}{r_A^2}.       \label{eq:anchor-explicit-multiplier}
+\end{equation}
+Then \(g_{\rm anc}=1\) on the central interval,
+\(g_{\rm anc}=1-r^2/r_A^2\) near and beyond the anchors, and all conditions
+in \cref{eq:anchor-multiplier} hold.  This formula is fixed as part of the
+physical equation; it is not varied during matching.
+
+For the uniform results, fix \(g_*,G_*>0\) and let
+\(\mathfrak G_{\rm anc}(r_A;g_*,G_*)\) be any closed collection of such
+multipliers for which
+\begin{equation}
+\begin{aligned}
+ \|g_{\rm anc}\|_{C^{12}([-r_0,r_0])}&\le G_*,
+ &g_{\rm anc}'(-r_A)&\ge g_*,
+ &-g_{\rm anc}'(r_A)&\ge g_* ,\\
+ g_{\rm anc}(r)&\ge
+ g_*\min\{1,r_A-|r|\},&& |r|<r_A .
+\end{aligned}                                      \label{eq:anchor-admissible-class}
+\end{equation}
+The last line is the quantitative lower envelope used in every annular
+clock and Green estimate; it replaces an implicit ``common lower bound on
+compact subannuli''.  These are quantitative conditions, and
+\cref{eq:anchor-explicit-multiplier} belongs to such a class after its radii
+and a sufficiently small \(g_*\) are fixed.  The theorem therefore concerns a
+nonempty class of global completions, not one interpolation formula chosen
+after a root.  Asymmetric anchors are treated by the same proof but are not
+included in the notation.
+
+Put
+\begin{equation}
+ r(\phi)=\pi_N^T\{\phi(0)-\mathbf1\},\qquad
+ \sigma_{\rm anc}(r;\delta,\nu)
+  =(r-\delta^2\nu)g_{\rm anc}(r),                   \label{eq:anchor-source}
+\end{equation}
+and replace only \cref{eq:shared-rfde-w} by
+\begin{equation}
+ \dot w(t)=\delta^2\sigma_{\rm anc}(r(v_t);\delta,\nu).
+                                                               \label{eq:anchored-recovery-law}
+\end{equation}
+The voltage equation \cref{eq:shared-rfde-v}, including every structural
+redistribution, is unchanged.  We call the resulting equation the
+\emph{globally anchored shared-resource RFDE} associated with
+\(g_{\rm anc}\).
+
+\begin{proposition}[Central identity and physical anchor equilibria]
+\label[proposition]{prop:anchor-central-identity-equilibria}
+After decreasing the common diagonal wedge, the anchored and original
+shared-resource RFDEs agree as maps on the full depth-two retained history
+tube.  In particular,
+\cref{prop:projection-blindness,thm:shared-resource,%
+thm:joint-redistribution-conormal} and the two-delay range and no-go results
+apply there without a coefficient change.
+
+For every admitted \(N,\delta,\nu,\eta\), the constant histories
+\begin{equation}
+ E_{N}^{\pm}
+ =\left(\theta\longmapsto V_{0,N}(\pm r_A),\,
+                   w_{0,N}(\pm r_A)\right)          \label{eq:anchor-equilibria}
+\end{equation}
+are exact equilibria of the anchored RFDE.  They are independent of the
+redistribution \(\eta\).  If \(|\delta^2\nu|<r_A/2\), then
+\begin{equation}
+ \sigma_\pm'
+ :=\partial_r\sigma_{\rm anc}(\pm r_A;\delta,\nu)<0. \label{eq:anchor-source-derivative-sign}
+\end{equation}
+\end{proposition}
+
+The adjective ``physical'' below always refers to the fixed anchored RFDE.
+Changing \(g_{\rm anc}\) changes the global physical equation and need not
+preserve the exact finite-\(\delta\) root.  What will be independent of the
+anchor choice is the centered front-face conormal.
+
+\subsection{Hyperbolic anchors and their history objects}
+
+Let \(\mathcal H_{N,\delta}\) be the original-time history space in
+\cref{eq:shared-parameters}.  The solution manifold of compatible
+\(C^1\) histories is used whenever a differentiable event holonomy is
+required.
+
+\begin{theorem}[Dimension-uniform anchor indices and physical history objects]
+\label[theorem]{thm:anchor-indices-manifolds}
+Fix one bounded admissible class
+\(\mathfrak G_{\rm anc}(r_A;g_*,G_*)\) and one compact structural parameter
+ball.  After
+decreasing \(r_A\), then the parameter ball and \(\delta_0\), independently
+of \(N\) and of the member of \(\mathfrak G_{\rm anc}\), the equilibria
+\(E_N^\pm\) are hyperbolic.  Their Morse indices are
+\begin{equation}
+ \dim W^u(E_N^+)=1,
+ \qquad \operatorname{codim}W^s(E_N^-)=1.           \label{eq:anchor-Morse-indices}
+\end{equation}
+More precisely, each equilibrium has one simple slow root
+\begin{equation}
+ \lambda_{s,N}^{\pm}
+ =\delta^2\frac{\sigma_\pm'}{w_{0,N}'(\pm r_A)}
+       +O_{\rm unif}(\delta^4),                     \label{eq:anchor-slow-roots}
+\end{equation}
+so \(\lambda_{s,N}^+>0\) and \(\lambda_{s,N}^-<0\).
+At \(E_N^+\) every remaining characteristic root is stable.  At
+\(E_N^-\) there is exactly one further open-right-half-plane root, the real
+simple strong voltage root, and every remaining root is stable.  The stable
+part is measured in the capped fading norm of
+\cref{prop:frozen-voltage-history-splitting}; no \(\delta\)-independent
+spectral gap is asserted for the long-delay tail.
+
+There are common \(c_A>0\) and \(M_A<\infty\) for which one may take
+\begin{equation}
+ \rho_{A,\delta}=c_A\delta^4,
+ \qquad d_{A,\delta}=\tfrac12\rho_{A,\delta}.       \label{eq:anchor-local-manifold-scale}
+\end{equation}
+The inward branch of \(W^u(E_N^+)\) consists of histories with a unique
+past-complete extension converging to \(E_N^+\).  It meets every sufficiently
+nearby section \(r=r_A-d_A\), in particular the section with
+\(d_A=d_{A,\delta}\), in one point and transversely.
+The local stable manifold of \(E_N^-\) is a codimension-one
+\(C^2\) history sheet.  In the slow coordinate divided by
+\(\rho_{A,\delta}\), the local unstable and stable graph charts have a
+common radius and contraction margin.  The incoming point, the stable
+sheet, and their graph charts are \(C^1\) in \((\nu,\eta)\) in the
+fixed strong-to-weak charts used below; their unscaled first-jet bounds are
+at most \(C\delta^{-M_A}\), uniformly in \(N\).  No unscaled
+\(\delta\)-independent local-manifold radius is claimed.
+
+The point denoted \(C^-_{A,N,\delta,\nu,\eta}\) is selected later: it is
+the first local-chart hit of the exact half-line orbit constructed in
+\cref{thm:anchor-annulus-flat-forgetting}.  Thus no local coordinate is
+silently continued backward to the inner section.  This later selection is
+one chart center only; it does not define an invariant one-dimensional
+weak-stable family, a preferred strong-stable foliation, or a monotone
+\(r\)-clock on the full stable sheet.
+
+Only the incoming branch is asserted to be past complete away from a
+connection.  The later selected chart-center orbit and every history in the
+local stable sheet are future asymptotic to \(E_N^-\).  At a root the incoming
+branch belongs to that sheet and gives one orbit complete in both time
+directions; no ambient backward RFDE semiflow is used to define the stable
+sheet.
+\end{theorem}
+
+\begin{theorem}[Anchored annuli, nonlinear stable sheet, and flat forgetting]
+\label[theorem]{thm:anchor-annulus-flat-forgetting}
+Retain \cref{thm:anchor-indices-manifolds}.  There are fixed inner sections
+in \(|r|<r_{\rm loc}\), one common complete-history central chart on the
+phase section
+\begin{equation}
+ \Sigma_0=\{X=0\},                                  \label{eq:anchor-central-section}
+\end{equation}
+constants \(M_{\rm anc}\ge0\), and
+\(C_{\rm anc},c_{\rm anc}>0\), all independent of \(N\), with the following
+properties.
+
+The inward unstable branch of \(E_N^+\) has an exact forward hit
+\(A^0_{N,\delta,\nu,\eta}\) of \(\Sigma_0\), constructed before any
+connection condition is imposed.  The central-section histories whose
+forward orbits remain in the declared channel and converge to \(E_N^-\)
+form, in the common chart \((\psi,u)\), the nonlinear graph
+\begin{equation}
+ \mathcal S^-_{N,\delta,\nu,\eta}
+ =\{(\psi,u):u=F^{-,0}_{N,\delta,\nu,\eta}(\psi)\}, \label{eq:anchor-stable-sheet-graph}
+\end{equation}
+where the superscript \(0\) distinguishes the central-section graph from
+the entry graph used in its construction, and \(F^{-,0}\) is \(C^2\) in
+its state variable and \(C^1\) in
+\((\nu,\eta)\), in the fixed strong-to-weak parameter chart used below.
+The intrinsic entry graph is constructed directly on the fixed fold-time
+half-line by a stable-forward/one-dimensional-unstable-backward
+Lyapunov--Perron problem.  The central graph is its exact preimage under a
+forward event holonomy.  Its terminal condition is convergence as
+\(s\to+\infty\), not a row at a finite outer section and not a backward
+RFDE semiflow.
+
+The following finite-core comparison is made inside one fixed anchored
+RFDE.  Choose a common buffer time \(L_\delta\) on the negative channel so
+that the exact and truncated problems use the same compatible entry chart,
+phase row, coefficients, and generated delay histories on
+\([0,L_\delta]\), and so that the capped unstable action satisfies
+\begin{equation}
+ \mathcal A_{\rm cap}(L_\delta,0)\ge
+ \frac{c_{\rm anc}\log(1/\delta)}{\delta}.       \label{eq:anchor-comparison-buffer-action}
+\end{equation}
+An admissible finite-core tail selector is a scalar terminal graph row at
+\(L_\delta\), \(C^2\) in state and \(C^1\) in \((\nu,\eta)\), whose graph
+stays in the declared tube, whose row and first parameter derivative have
+at most polynomial \(\delta^{-1}\) size, and whose value on the transported
+unstable column has a polynomially bounded inverse.  Let
+\(F^{-,L}_{N,\delta,\nu,\eta}\) be the resulting finite-core entry graph and
+let \(\lambda^{L}_{\rm ent}\) be its first conormal, normalized on the
+same entry column as the intrinsic half-line row
+\(\lambda_{\rm ent}\).  Then their entry/inner restrictions differ by at
+most
+\begin{equation}
+ \mathfrak f_\delta
+ :=C_{\rm anc}\delta^{-M_{\rm anc}}
+       \exp\left\{-\frac{c_{\rm anc}\log(1/\delta)}{\delta}\right\}.
+                                                               \label{eq:anchor-flat-envelope}
+\end{equation}
+This is the full-history capped-action envelope.  It is weaker than the
+\(e^{-A/\delta^2}\) decay of the generated current core when a nonzero
+delay is present, but it is \(O(\delta^P)\) for every fixed \(P\) and is
+the rate justified by the long-delay fading norm.
+For histories and nonlinear graph maps, the same estimate holds for the
+operators
+\begin{equation}
+ 1,\quad \partial_\nu,\quad D_\eta,\quad D_\psi,\quad
+ \partial_{(\nu,\eta)}D_\psi.                       \label{eq:anchor-flat-jet-list}
+\end{equation}
+in the normalized entry and inner-history norms.  In particular,
+\begin{equation}
+ \|\lambda_{\rm ent}-\lambda^{L}_{\rm ent}\|
+ +\|D_{(\nu,\eta)}
+       (\lambda_{\rm ent}-\lambda^{L}_{\rm ent})\|
+ \le \mathfrak f_\delta .                           \label{eq:anchor-flat-conormal-comparison}
+\end{equation}
+The comparison permits only coefficient or asymptotic differences supported
+after \(L_\delta\).  Changing the entry stable coordinate, phase row, or
+chart is not a forgettable tail change.  Such a post-buffer difference is
+an auxiliary realization of the finite tail selector; the intrinsic graph
+on the other side of the comparison always belongs to the one fixed
+anchored RFDE.  This is not a comparison of exact roots of two different
+global physical models.
+
+The finite-core row \(\lambda_{\mathbf p}^{\rm ent}\) in
+\cref{thm:oe-family-C1-generator-entry-conormal} is not identified with
+\(\lambda_{\rm ent}\) here.  It is a linear graph selected by a physical
+speed row on a different pulled finite core; the cited theorem explicitly
+does not construct its nonlinear stable-sheet graph.  The physical gap and
+its response below use the intrinsic half-line sheet and therefore do not
+require that additional identification.
+\end{theorem}
+
+The proof is carried out in fold time \(s=\delta t\).  Every delay is the
+literal fixed translation \(s\mapsto s-\theta_k\).  No division by an outer
+speed and no state-dependent delay foot occurs.  The old
+original-endpoint family is invoked only after the exact anchored histories
+have entered \(|r|<r_{\rm loc}\).
+
+\subsection{The anchored membership gap and heteroclinic root}
+
+We now fix the scalar coordinate without identifying a domain column with
+a codomain cokernel.  Let \(\mathcal M_{\Sigma_0}^2\) be the compatible
+\(C^2\) solution-manifold section.  In its raw central chart, write
+\(z(\phi)=(0,Y(\phi))\) for the planar coordinate and let
+\(\mathfrak n_p(\phi)\) collect the complete normal-history coordinate
+\(h-H_{N,\delta,\nu,\eta}(z)\), together with all remaining compatible
+history coordinates; here \(p=(\nu,\eta)\).  Present evaluation returns
+\(z\), so these coordinates have a fixed Banach model space
+\(\mathscr K_0\).  To avoid confusion with the Hermite-collar support
+constant used elsewhere, put
+\begin{equation}
+ c_{\mathscr H}:=\frac{2}{\alpha e}.                 \label{eq:anchor-first-integral-normalization}
+\end{equation}
+On the declared chart,
+\begin{equation}
+ D_Y\{c_{\mathscr H}\mathscr H_\alpha(0,Y)\}
+ =1+O(\delta)\ne0.                                  \label{eq:anchor-first-integral-local-invertibility}
+\end{equation}
+The Banach inverse-function theorem therefore gives an exact,
+parameter-trivialized tubular chart
+\begin{equation}
+ \mathfrak C_{0,p}:B_{\mathscr K_0}(0,r_0)\times(-u_0,u_0)
+   \longrightarrow\mathcal M_{\Sigma_0}^2,\qquad
+ \phi=\mathfrak C_{0,p}(\psi,u),                    \label{eq:anchor-central-history-chart}
+\end{equation}
+which is \(C^2\) in \((\psi,u)\), \(C^1\) in \(p\), and is characterized by
+\begin{equation}
+ \mathfrak n_p(\mathfrak C_{0,p}(\psi,u))=\psi,
+ \qquad
+ c_{\mathscr H}\mathscr H_\alpha
+   (z(\mathfrak C_{0,p}(\psi,u)))=u.                \label{eq:anchor-central-chart-identities}
+\end{equation}
+Thus varying \(u\) holds the entire normal/history coordinate fixed.  At
+the singular base point put
+\(\jmath_0^u=D_u\mathfrak C_{0,p}(0,0)\); this is the normalized transported
+scalar column.
+
+Let
+\begin{equation}
+ \mathcal P_{0\to{\rm ent},p}:\mathcal U_{0,p}
+       \longrightarrow\mathcal U_{{\rm ent},p}       \label{eq:anchor-forward-central-entry-holonomy}
+\end{equation}
+be the first-hit map from \(\Sigma_0\) to
+\(\Sigma_-^{\rm ent}\), defined only on the declared physical tube by
+forward RFDE evolution and event recutting.  The travel contains the three
+reserved delay buffers, so this map is \(C^2\) in the compatible state chart
+and \(C^1\) in \(p\).  If \(\mathfrak m_{{\rm ent},p}\) denotes the exact
+entry membership function of the intrinsic half-line sheet, define
+\begin{equation}
+ \mathfrak M_{0,p}(\psi,u)
+ =\mathfrak m_{{\rm ent},p}\!\left(
+    \mathcal P_{0\to{\rm ent},p}
+       (\mathfrak C_{0,p}(\psi,u))\right).           \label{eq:anchor-forward-preimage-membership}
+\end{equation}
+No inverse of \(\mathcal P_{0\to{\rm ent},p}\) occurs.  The exact
+transport-column splitting in the proof gives, after shrinking the common
+chart,
+\begin{equation}
+ \mathfrak M_{0,p}(\psi,u)=0
+ \quad\Longrightarrow\quad
+ |\partial_u\mathfrak M_{0,p}(\psi,u)|\ge c_{\rm tr}>0             \label{eq:anchor-forward-membership-transversality}
+\end{equation}
+uniformly in \(N\).  Consequently the exact forward preimage of the entry
+sheet is the graph in \cref{eq:anchor-stable-sheet-graph}, characterized by
+\begin{equation}
+ \mathfrak M_{0,p}(\psi,F^{-,0}_{N,\delta,p}(\psi))=0.             \label{eq:anchor-central-graph-preimage-identity}
+\end{equation}
+The transported stable sheet in
+\cref{eq:anchor-stable-sheet-graph} has the exact nonlinear-chart form
+\(u=F^{-,0}_{N,\delta,\nu,\eta}(\psi)\).  Its normalized conormal as a covector
+on the physical history section is
+\begin{equation}
+ \lambda^-_{0,p}
+ =\{\dd u-D_\psi F^{-,0}_{N,\delta,p}(\psi)\}
+      \circ D\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))^{-1},
+ \qquad
+ \lambda^-_{0,p}
+   (D_u\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))1)=1.    \label{eq:anchor-central-physical-conormal}
+\end{equation}
+Thus coordinate and history covectors are not identified without the
+displayed pullback.  More precisely, at
+\(\phi_0=\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))\),
+\begin{equation}
+ D\mathfrak m_{{\rm ent},p}
+   (\mathcal P_{0\to{\rm ent},p}\phi_0)
+     \circ D\mathcal P_{0\to{\rm ent},p}(\phi_0)
+ =\partial_u\mathfrak M_{0,p}(\psi,F^{-,0}(\psi))
+      \lambda^-_{0,p}.                              \label{eq:anchor-central-conormal-forward-pullback}
+\end{equation}
+The left side is the ordinary covector pullback by a forward map; it does
+not contain \(D\mathcal P_{0\to{\rm ent},p}^{-1}\).
+
+Write the incoming hit as
+\[
+ A^0=\mathfrak C_{0,p}(\psi_A,u_A)
+\]
+and pair it with the unique point of the stable sheet having the same
+complete normal/history coordinate,
+\begin{equation}
+ B^0=\mathfrak C_{0,p}
+   (\psi_A,F^{-,0}_{N,\delta,\nu,\eta}(\psi_A)).     \label{eq:anchor-paired-stable-point}
+\end{equation}
+Let \(z^a(0)\) and \(z^r(0)\) be the exact planar core coordinates of
+\(A^0\) and \(B^0\), respectively.  Both have \(X=0\).  Define
+\begin{equation}
+ G^{\rm phys}_{N,\delta}(\nu,\eta)
+ :=c_{\mathscr H}\{\mathscr H_\alpha(z^a(0))
+               -\mathscr H_\alpha(z^r(0))\}.       \label{eq:anchor-physical-gap}
+\end{equation}
+Let \(\widehat G(\psi,u;\nu,\eta)\) denote the same first-integral
+difference with the stable-sheet point paired at fixed \(\psi\).  The chart
+identities give, exactly,
+\begin{equation}
+ \widehat G(\psi,u;\nu,\eta)
+ =u-F^{-,0}_{N,\delta,\nu,\eta}(\psi),\qquad
+ \partial_u\widehat G=1 .                           \label{eq:anchor-gap-coordinate-transversality}
+\end{equation}
+Hence this is the exact local membership coordinate.  Its orientation is
+fixed by \cref{eq:anchor-central-chart-identities}; no unspecified nonzero
+multiplier remains.
+The tubular chart is an auxiliary proof device: another admissible local
+normal-history chart may change \(G^{\rm phys}\) away from its zero fiber.
+Because both are \(C^1\) defining functions with the same exact membership
+fiber, they differ locally by a nowhere-zero \(C^1\) factor.  The physical
+root and its conormal line are therefore chart independent; no equality of
+the two off-zero gap functions is asserted.
+
+\begin{proposition}[Exact zero fiber and anchored finite-gap bridge]
+\label[proposition]{prop:anchor-gap-comparison}
+The map \(G^{\rm phys}_{N,\delta}\) is a scalar \(C^1\) defining function,
+and
+\begin{equation}
+ G^{\rm phys}_{N,\delta}(\nu,\eta)=0                \label{eq:anchor-gap-zero}
+\end{equation}
+if and only if the inward branch of \(W^u(E_N^+)\) belongs to
+\(W^s(E_N^-)\) after the phase is fixed.  Equivalently, there is an anchored
+RFDE orbit \(Z^{\rm het}\), unique in the declared tube and modulo time
+translation, for which
+\begin{equation}
+ \lim_{t\to-\infty}Z^{\rm het}_t=E_N^+,
+ \qquad
+ \lim_{t\to+\infty}Z^{\rm het}_t=E_N^-             \label{eq:anchor-heteroclinic-limits}
+\end{equation}
+in the corresponding history norms.
+
+Use the exact first-integral normalization
+\cref{eq:anchor-physical-gap}; it is not a choice of outer preparation.
+The two paired anchored traces then satisfy an exact finite-gap decomposition.
+Its anchor-dependent and Gaussian-tail remainders, in the \(C^1\) gap norm,
+are bounded by
+\begin{align}
+ \mathfrak e_\delta
+ &=\mathfrak f_\delta+\mathfrak t_\delta,\notag\\
+ \mathfrak t_\delta
+ &=C_{\rm anc}\delta^{-M_{\rm anc}}
+   e^{-S_\delta^2/2+c_{\rm anc}S_\delta}
+       \langle S_\delta\rangle^{M_{\rm anc}}.       \label{eq:anchor-total-comparison-error}
+\end{align}
+Choose the exponent in
+\(S_\delta=\sqrt{2p\log(1/\delta)}\) after the finite jet-loss exponent,
+with \(p>M_{\rm anc}+6\).  Then
+\(\mathfrak e_\delta=o(\delta^6)\).  The first summand is physical
+outer-annulus forgetting; the second is the distinct Gaussian
+finite-section tail.  The local coefficient calculation is performed
+directly on the anchored physical traces and gives
+\begin{align}
+ \frac{G^{\rm phys}}\delta
+ &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),\notag\\
+ \partial_\nu G^{\rm phys}
+ &=\delta\sqrt{2\pi}+O(\delta^2),\notag\\
+ \|D_\eta G^{\rm phys}
+       +\delta^2\sqrt{2\pi}\Lambda_N\|
+ &\le C\{\delta^3+\delta^2\|\eta\|\}.             \label{eq:anchor-physical-gap-estimates}
+\end{align}
+All constants are independent of \(N\); the flat term has been absorbed
+after decreasing \(\delta_0\).
+\end{proposition}
+
+\begin{theorem}[Preparation-independent physical root and intrinsic conormal]
+\label[theorem]{thm:anchored-physical-root-conormal}
+There are common \(c_0,\eta_0,\delta_0>0\) such that, for every admitted
+network and \(0<\delta<\delta_0\), the anchored physical equation has a
+unique root
+\begin{equation}
+ \mu^{\rm phys}_{c,N}(\delta,\eta)
+ =\delta^2\nu^{\rm phys}_{c,N}(\delta,\eta),
+ \qquad |\nu^{\rm phys}_{c,N}-\nu_{0,N}|<c_0,       \label{eq:anchor-physical-root}
+\end{equation}
+at which the complete-history heteroclinic
+\cref{eq:anchor-heteroclinic-limits} exists.  The root is a property of the
+fixed anchored RFDE and is independent of every preparation used to prove
+it.  It is jointly \(C^1\) in the structural ball and satisfies
+\begin{align}
+ \|D_\eta\mu^{\rm phys}_{c,N}(\delta,\eta)
+       -\delta^3\Lambda_N\|
+ &\le C\{\delta^4+\delta^3\|\eta\|\},             \label{eq:anchor-physical-root-jets}\\
+ |\mu^{\rm phys}_{c,N}(\delta,\eta)
+  -\mu^{\rm phys}_{c,N}(\delta,0)
+  -\delta^3\Lambda_N(\eta)|
+ &\le C\{\delta^4\|\eta\|
+               +\delta^3\|\eta\|^2\}.            \label{eq:anchor-physical-root-increment}
+\end{align}
+The derivative estimate holds in the full dual operator norm and is
+uniform in \(N\).
+
+The connecting orbit is a canard in the following quantitative sense.
+On each fixed attracting and repelling anchored subannulus, its compatible
+voltage history is within \(C\delta^2\), in the fading norm
+\cref{eq:anchor-annulus-fading-norm}, of the corresponding exact tracked
+slow-history graph.  It remains in each such subannulus for at least
+\(c\delta^{-2}\) units of original time.  In the central fold window
+\(|s|\le S_\delta\), its solved planar core satisfies
+\begin{equation}
+ \|z^{\rm het}(s)-\gamma_0(s)\|
+ \le C\delta e^{c|s|}\langle s\rangle^M,            \label{eq:anchor-heteroclinic-canard-tracking}
+\end{equation}
+and all reconstructed transverse histories obey the corresponding graph
+bound.  Thus “canard” refers to a proved attracting-to-repelling
+slow-history passage, not merely to the existence of an arbitrary
+heteroclinic.
+
+Define
+\begin{equation}
+ \Xi^{\rm phys}_{N,\delta}(\eta)
+ =\delta^{-3}\{\mu^{\rm phys}_{c,N}(\delta,\eta)
+                   -\mu^{\rm phys}_{c,N}(\delta,0)\}.          \label{eq:anchor-weighted-physical-graph}
+\end{equation}
+Then the intrinsic weighted conormal satisfies
+\begin{equation}
+ \|(1,-D_\eta\Xi^{\rm phys}_{N,\delta}(0))
+       -(1,-\Lambda_N)\|\le C\delta.               \label{eq:anchor-physical-conormal-limit}
+\end{equation}
+It inherits the hidden-return factorization, the sharp two-delay right
+inverse and dual reconstruction, the merged-single-delay leading no-go, and
+the asynchronous nonvanishing examples already proved for \(\Lambda_N\).
+Thus a redistribution that is exactly invisible under the stationary
+projection moves an exact, globally defined complete-history heteroclinic
+canard at order \(\delta^3\).
+\end{theorem}
+
+\begin{proposition}[Naturality, intermediate cuts, and anchor universality]
+\label[proposition]{prop:anchor-physical-naturality-composition}
+The conormal line in
+\cref{eq:anchor-physical-conormal-limit} is unchanged by a phase shift, by
+replacing either regular history section with another section joined by
+forward holonomy, and by multiplying \(G^{\rm phys}\) by a nowhere-zero
+\(C^1\) scalar.  Under a fixed nonsingular parameter change it pulls back as
+a covector.  If the physical passage is split by finitely many intermediate
+sections, the derivative of the composite holonomy is the ordered product of
+the derivatives of its factors, and the normalized final membership
+conormal is independent of the cuts.
+
+For two fixed anchor multipliers satisfying
+\cref{eq:anchor-multiplier}, the exact finite-\(\delta\) baselines may differ.
+After each physical locus is centered at its own baseline, their weighted
+first conormals are each within \(C\delta\) of
+\((1,-\Lambda_N)\), uniformly over the bounded completion class.  Hence
+two such conormals differ by at most \(2C\delta\) and have the same uniform
+limit.  No pairwise flat comparison and no equality of the two exact roots
+is asserted.
+\end{proposition}

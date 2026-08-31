@@ -1,0 +1,2542 @@
+\section{Proofs for the globally anchored connection}
+\label{sec:supplementary-anchored-connection}
+
+This section proves the results of
+\cref{sec:anchored-physical-connection}.  The proof uses the long-delay
+fading-space splitting already established in
+\cref{prop:frozen-voltage-history-splitting}; it does not replace the RFDE by
+a current-state system.
+
+\begin{proof}[Proof of \cref{prop:anchor-central-identity-equilibria}]
+Every retained fold coordinate and every member of its depth-two delay hull
+tends to zero with the common diagonal wedge.  Hence all their collective
+coordinates lie in \(|r|<r_{\rm loc}\) after decreasing that wedge.  There
+\(g_{\rm anc}=1\), so \cref{eq:anchored-recovery-law} is literally
+\cref{eq:shared-rfde-w}.  The voltage equation was not changed.  This proves
+the full-history identity and transfers every local statement listed in the
+proposition.
+
+At a constant history all current-minus-delay differences in
+\cref{eq:shared-rfde-v} vanish.  The two identities in
+\cref{eq:outer-critical-transverse,eq:outer-critical-curve} say precisely
+that its remaining voltage field vanishes at
+\((V_{0,N}(r),w_{0,N}(r))\).  At \(r=\pm r_A\), the recovery field vanishes
+because \(g_{\rm anc}(\pm r_A)=0\), proving
+\cref{eq:anchor-equilibria}.  Finally,
+\[
+ \sigma_\pm'=(\pm r_A-\delta^2\nu)g_{\rm anc}'(\pm r_A).
+\]
+The first factor has the sign of \(\pm r_A\) and the two derivatives have
+the signs in \cref{eq:anchor-multiplier}; both products are negative.
+\end{proof}
+
+\subsection{The characteristic Schur count}
+
+At either anchor abbreviate
+\begin{equation}
+ J_\pm=\mathcal J^{\rm fv}_N(\pm r_A),\qquad
+ A_\pm(\lambda)
+ =J_\pm+\delta^2K\sum_{k=0}^mL_{k,N}(\eta)
+       \{1-e^{-\lambda\theta_k/\delta}\}.           \label{eq:anchor-characteristic-voltage-pencil}
+\end{equation}
+
+\begin{lemma}[Uniform bordered characteristic count]
+\label[lemma]{lem:anchor-characteristic-count}
+Under the hypotheses of \cref{thm:anchor-indices-manifolds}, the full
+characteristic equation at \(E_N^\pm\) has one simple root in
+\(|\lambda|\le C\delta^2\), namely
+\cref{eq:anchor-slow-roots}.  Outside that disk its open-right-half-plane
+root count equals the frozen-resource voltage count: zero at \(E_N^+\) and
+one at \(E_N^-\).  All constants and contour resolvent bounds are uniform in
+\(N\); the count below uses one common half-disk boundary and does not
+separate individual long-delay clusters.
+\end{lemma}
+
+\begin{proof}
+For a modal ansatz \((u,\omega)e^{\lambda t}\), the characteristic equations
+are
+\begin{align}
+ (\lambda\Id-A_\pm(\lambda))u&=-\omega\mathbf1,\notag\\
+ \lambda\omega&=\delta^2\sigma_\pm'\pi_N^Tu.        \label{eq:anchor-full-characteristic-system}
+\end{align}
+On a fixed disk about zero that excludes the voltage spectrum, eliminate
+\(u\).  The scalar Schur function is
+\begin{equation}
+ \Delta_\pm(\lambda)
+ =\lambda+\delta^2\sigma_\pm'\pi_N^T
+   (\lambda\Id-A_\pm(\lambda))^{-1}\mathbf1.        \label{eq:anchor-slow-Schur-function}
+\end{equation}
+The exact critical-curve identities
+\begin{equation}
+ J_\pm V_{0,N}'(\pm r_A)=w_{0,N}'(\pm r_A)\mathbf1,
+ \qquad \pi_N^TV_{0,N}'(\pm r_A)=1                 \label{eq:anchor-critical-resolvent-identity}
+\end{equation}
+give
+\begin{equation}
+ \pi_N^T(-J_\pm)^{-1}\mathbf1
+ =-\frac1{w_{0,N}'(\pm r_A)}.                       \label{eq:anchor-zero-resolvent-value}
+\end{equation}
+The fixed-radius voltage splitting and the common layer bound imply, for
+\(|\lambda|\le C\delta^2\),
+\begin{equation}
+ \left\|(\lambda\Id-A_\pm(\lambda))^{-1}
+          -(-J_\pm)^{-1}\right\|\le C\delta^2.     \label{eq:anchor-small-disk-resolvent}
+\end{equation}
+Indeed
+\(|1-e^{-\lambda\theta_k/\delta}|\le C\delta\) on this disk, so the delayed
+part is even \(O(\delta^3)\); the displayed weaker bound is convenient.
+Thus
+\begin{equation}
+ \Delta_\pm(\lambda)
+ =\lambda-\delta^2\frac{\sigma_\pm'}
+                         {w_{0,N}'(\pm r_A)}
+       +O(\delta^4),\qquad
+ \Delta_\pm'(\lambda)=1+O(\delta^2).               \label{eq:anchor-Schur-expansion}
+\end{equation}
+Rouch\'{e}'s theorem on a circle of radius \(C\delta^2\), followed by the
+implicit-function estimate, proves the unique slow root and
+\cref{eq:anchor-slow-roots}.  The sign follows from
+\cref{eq:outer-eigen-identity,eq:anchor-source-derivative-sign}.
+
+It remains to prove the index without separating the long-delay
+characteristic clusters.  We use a bordered homotopy.  For
+\(0\le\varepsilon\le\delta^2\), replace the second row of
+\cref{eq:anchor-full-characteristic-system} by
+\(\lambda\omega=\varepsilon\sigma_\pm'\pi_N^Tu\) and set
+\begin{equation}
+ \Delta_{\pm,\varepsilon}(\lambda)
+ =\lambda+\varepsilon\sigma_\pm'\pi_N^T
+   (\lambda\Id-A_\pm(\lambda))^{-1}\mathbf1.       \label{eq:anchor-homotopy-Schur}
+\end{equation}
+Although this quotient is written only off the voltage roots, the product
+\begin{equation}
+ D_{\pm,\varepsilon}(\lambda)
+ =\det(\lambda\Id-A_\pm(\lambda))
+       \Delta_{\pm,\varepsilon}(\lambda)              \label{eq:anchor-bordered-characteristic-function}
+\end{equation}
+extends to the entire bordered characteristic determinant.  Thus poles in
+the displayed Schur quotient create no missing or additional roots.
+
+We record the boundary estimate used in the homotopy.  The fixed-anchor
+current matrices have a common hyperbolicity margin.  The current-state
+dichotomy in \cref{eq:frozen-current-attracting,eq:frozen-current-repelling}
+and its Laplace transform give, for one \(C_A\) independent of
+\(N,\delta,\eta\),
+\begin{equation}
+ \sup_{\xi\in\mathbb R}
+ \|(i\xi\Id-A_\pm(i\xi))^{-1}\|\le C_A. \label{eq:anchor-imaginary-voltage-resolvent}
+\end{equation}
+Here is a direct verification that does not infer the estimate from a
+spectral abscissa.  On \(|\xi|\le R_A\), the resolvent of
+\(i\xi\Id-J_\pm\) is uniformly bounded by the fixed-anchor current
+dichotomy, while
+\(\|\delta^2K\sum_kL_{k,N}(1-e^{-i\xi\theta_k/\delta})\|\le
+2b_*\delta^2\); a Neumann series applies after decreasing
+\(\delta_0\).  Choose \(R_A\) larger than twice the common norms of
+\(J_\pm\) and the delay layers.  For \(|\xi|>R_A\), factor
+\(i\xi\) and use a second Neumann series.  This proves
+\cref{eq:anchor-imaginary-voltage-resolvent} and, in particular, proves
+that the voltage determinant has no imaginary-axis zero.
+
+The same two-region argument shows that every zero of
+\(D_{\pm,\varepsilon}\) in \(\Re\lambda\ge0\) lies in a
+fixed half disk: for \(\Re\lambda\ge0\), all delay exponentials have
+modulus at most one, and the current and scalar rows cannot balance a
+\(\lambda\) of sufficiently large modulus.  Hence roots cannot escape
+through infinity during the homotopy.
+
+It remains only to exclude a crossing of the imaginary axis.  Uniformly
+for the imaginary segment \(\lambda=i\xi\), \(|\xi|\le r_*\), and
+\(0\le\varepsilon\le\delta^2\), the calculation leading to
+\cref{eq:anchor-Schur-expansion} gives
+\begin{equation}
+ \Delta_{\pm,\varepsilon}(\lambda)
+ =\lambda-\varepsilon
+       \frac{\sigma_\pm'}{w_{0,N}'(\pm r_A)}
+ +\varepsilon\mathcal R_\pm(\lambda,\delta),
+ \qquad
+ |\mathcal R_\pm(\lambda,\delta)|\le C|\lambda|,
+ \qquad
+ |\partial_\xi\mathcal R_\pm(i\xi,\delta)|\le C. \label{eq:anchor-homotopy-small-expansion}
+\end{equation}
+This estimate is deliberately restricted to the pole-free imaginary
+segment supplied by \cref{eq:anchor-imaginary-voltage-resolvent}; no Schur
+quotient is claimed analytic on a fixed complex disk containing long-delay
+voltage roots.
+The quotient \(\sigma_\pm'/w_{0,N}'(\pm r_A)\) is separated
+from zero.  Consequently there is no imaginary zero in
+\(|\xi|\le C_0\varepsilon\) when \(\varepsilon>0\): the real
+part of \cref{eq:anchor-homotopy-small-expansion} has the fixed nonzero
+sign of its second term.  For
+\(C_0\varepsilon\le|\xi|\le r_*\), choose \(C_0>2C_A|\sigma_\pm'|\);
+then \(|i\xi|\) dominates the second term in
+\cref{eq:anchor-homotopy-Schur}.  On \(|\xi|\ge r_*\), first
+decrease \(\delta_0\) and use
+\cref{eq:anchor-imaginary-voltage-resolvent}.  These three regions
+exclude every imaginary-axis zero for \(0<\varepsilon\le\delta^2\).
+
+At \(\varepsilon=0\),
+\(D_{\pm,0}(\lambda)=\lambda\det(\lambda\Id-A_\pm(\lambda))\).
+For \(\varepsilon>0\), its zero at the origin moves to
+\(\lambda=\varepsilon\sigma_\pm'/w_{0,N}'(\pm r_A)
++O(\varepsilon\delta^2+\varepsilon^2)\).  Remove a small half-disk around
+this moving simple zero and apply the argument principle on the remaining
+common right-half-disk boundary.  The small boundary counts exactly that
+one root, while the outer boundary is uniformly root free.  The preceding
+no-crossing estimate therefore
+show that every other open-right-half-plane root count equals the voltage
+count in \cref{prop:frozen-voltage-history-splitting}.  At the negative
+anchor the real simple strong root satisfies, in original time,
+\begin{equation}
+ \lambda_{\mathrm{su},N}^{\mathrm{orig}}
+ =\delta\lambda^u_{N,\delta,-r_A,\eta}+O(\delta^2)
+ =\lambda_{c,N}(-r_A)+O(\delta^2),          \label{eq:anchor-strong-root-original-time}
+\end{equation}
+and remains real because it is the continuation of a real algebraically
+simple voltage root.  This proves the asserted counts without a contour
+exhaustion or an individual long-delay cluster separation.
+\end{proof}
+
+\begin{lemma}[Scaled local charts at the two anchors]
+\label[lemma]{lem:anchor-scaled-local-manifolds}
+Let \(\tau_\delta=\theta_m/\delta\) and equip
+\(\mathcal H_{N,\delta}=C([-\tau_\delta,0];\mathbb R^N)\times\mathbb R\)
+with the voltage fading norm obtained from
+\cref{eq:frozen-history-norm} by the change \(s=\delta t\).  Put
+\begin{equation}
+ h_\pm=J_\pm^{-1}\mathbf1
+       =\frac{V_{0,N}'(\pm r_A)}{w_{0,N}'(\pm r_A)},
+ \qquad
+ \|(\phi,\omega)\|_{\pm,\delta}^{\rm ph}
+ =\|\phi-\omega h_\pm\|_{N,\pm r_A,\delta}^{\sharp}
+       +|\omega|.                                  \label{eq:anchor-phase-norm}
+\end{equation}
+The linearized anchored semiflow has invariant projections
+\(P_\pm^s,P_\pm^{\rm sl},P_\pm^{\rm su}\), with the last projection zero
+at the positive anchor, such that
+\begin{align}
+ \|P_\pm^j\|&\le C,\notag\\
+ \|T_+(t)P_+^s\|&\le Ce^{-c\delta\kappa_A t},
+ &\|T_+(-t)P_+^{\rm sl}\|&\le Ce^{-c\delta^2t},\notag\\
+ \|T_-(t)(P_-^s+P_-^{\rm sl})\|&\le Ce^{-c\delta^2t},
+ &\|T_-(-t)P_-^{\rm su}\|&\le Ce^{-c t},          \label{eq:anchor-full-linear-trichotomy}
+\end{align}
+for \(t\ge0\), where
+\(\kappa_A=\min_\pm\kappa_{N,\delta}(\pm r_A)\).
+The projections and their first \((\nu,\eta)\)-derivatives have
+norm at most \(C\delta^{-M_{\rm sp}}\) for one fixed
+\(M_{\rm sp}\).  On the phase ball of radius
+\(\rho_{A,\delta}=c_A\delta^4\), the Lyapunov--Perron maps for
+\(W^u(E_N^+)\) and \(W^s(E_N^-)\), after the slow coordinate is divided
+by \(\rho_{A,\delta}\), have a common contraction constant at most
+\(1/3\).  Their first differentiated fixed-point equations have inverse
+norm at most \(3/2\) and only a fixed polynomial loss in \(\delta^{-1}\).
+All assertions are uniform in \(N\).  This local theorem does not select a
+distinguished orbit on the stable sheet.  The chart-center point used below
+is instead defined by the exact half-line construction, so no local stable
+coordinate is continued backward through the RFDE.
+\end{lemma}
+
+\begin{proof}
+At zero recovery feedback, meaning that the second row in
+\cref{eq:anchor-full-characteristic-system} is replaced by
+\(\dot\omega=0\), the phase isomorphism
+\begin{equation}
+ \mathcal C_{\pm,0}(\phi,\omega)
+   =(\phi-\omega h_\pm,\omega)                         \label{eq:anchor-zero-feedback-phase-isomorphism}
+\end{equation}
+conjugates the variational semiflow to the direct product of the
+frozen-resource voltage RFDE and one scalar center line.  This statement is
+on the actual phase space \(C\times\mathbb R\): it subtracts the current
+resource from the stored voltage history and does not introduce a fictitious
+resource history.  It is exact because the resource is constant at zero
+feedback, \(J_\pm h_\pm=\mathbf1\), and delayed differences annihilate the
+constant history \(h_\pm\).
+
+Turning on \(0\le\varepsilon\le\delta^2\) adds the bounded retarded
+vector-field row
+\((\phi,\omega)\mapsto(0,\varepsilon\sigma_\pm'\pi_N^T\phi(0))\).
+Variation of constants in the norm
+\cref{eq:anchor-phase-norm}, together with
+\cref{eq:frozen-attracting-history-estimate,eq:frozen-repelling-stable-estimate,eq:frozen-unstable-inverse-estimate},
+has perturbation number
+\begin{equation}
+ q_{\rm sp}
+ \le C\delta^2
+   \left(1+\frac{1}{\delta\kappa_A}\right)=o(1).  \label{eq:anchor-full-splitting-smallness}
+\end{equation}
+The center graph is obtained with a neutral boundary row rather than by
+integrating the center kernel to infinity.  The graph equations for the
+stable, voltage-unstable, and center columns are triangular; solving them
+in that order gives bounded projections and a one-dimensional center
+bundle.  The small-circle Schur calculation in
+\cref{eq:anchor-Schur-expansion} identifies this bundle with the simple
+slow eigenspace.  Its sign, and the half-plane count in
+\cref{lem:anchor-characteristic-count}, convert the center bundle into the
+splittings displayed in \cref{eq:anchor-full-linear-trichotomy}.  Notice
+that the slow Green integral is \(O(\delta^{-2})\); this is recorded
+rather than hidden in a claim of a common spectral gap.
+
+For parameter jets, differentiate the three graph equations just described
+once.
+The layer map is affine in \(\eta\), its operator-sum norm is common, and
+the anchor source and current matrices have common derivatives.  The first
+derivative solves
+\begin{equation}
+ (I-D\mathcal T_{\rm sp})X_p
+     =\partial_p\mathcal T_{\rm sp},                \label{eq:anchor-spectral-first-jet}
+\end{equation}
+Every Green convolution costs at most \(C\delta^{-2}\).  Thus one fixed
+power \(M_{\rm sp}\) bounds all three projections and their first
+rectangular jets.
+This gives the claimed strong-to-weak bounds without differentiating a
+moving evaluation atom or a family of long-delay contours.
+
+In compatible solution-manifold coordinates centered at either equilibrium,
+write the nonlinear equation as
+\(x'=\mathcal A_\pm x+\mathcal N_\pm(x;\nu,\eta)\).  On a common
+unit phase ball,
+\begin{equation}
+ \mathcal N_\pm(0)=D_x\mathcal N_\pm(0)=0,
+ \qquad
+ \|D_x\mathcal N_\pm(x)\|\le C\|x\|_{\pm,\delta}^{\rm ph},
+ \qquad \|D_x^2\mathcal N_\pm(x)\|\le C.          \label{eq:anchor-local-nonlinear-bounds}
+\end{equation}
+The standard past Lyapunov--Perron formula on
+\(P_+^{\rm sl}\oplus P_+^s\) and the future mixed formula on
+\((P_-^s+P_-^{\rm sl})\oplus P_-^{\rm su}\) use exactly the kernels in
+\cref{eq:anchor-full-linear-trichotomy}.  Their Lipschitz number on a ball
+of radius \(\rho\) is at most
+\(C\delta^{-2}\rho\).  With
+\(\rho=c_A\delta^4\) and then \(c_A\) small it is at most \(1/3\).
+The differentiated equation has the form
+\begin{equation}
+ (I-D\mathcal T_{\rm nl})x_p
+   =\partial_p\mathcal T_{\rm nl}.                  \label{eq:anchor-local-manifold-jets}
+\end{equation}
+Its inverse norm is at most \(3/2\); the projection bounds and the
+finite Green factors leave only a fixed polynomial loss.  This proves the
+local graph assertions.
+
+The first differentiated graph equation and the fixed parameter
+trivializations give the stated \(C^1\) family of local sheets.  No
+one-dimensional stable submanifold is selected here.  This proves the
+lemma.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:anchor-indices-manifolds}]
+The spectral assertions are \cref{lem:anchor-characteristic-count}.  The
+sign identity \cref{eq:outer-eigen-identity} gives
+\(w_{0,N}'(r)<0\) at \(r=r_A\) and
+\(w_{0,N}'(r)>0\) at \(r=-r_A\), after decreasing \(r_A\).  Together with
+\(\sigma_\pm'<0\), this proves the signs of the slow roots.  The scaled
+construction in \cref{lem:anchor-scaled-local-manifolds} gives a
+one-dimensional \(W^u(E_N^+)\) and a codimension-one \(W^s(E_N^-)\) on
+the compatible solution manifold.  For the fixed-system
+invariant-manifold theorem used inside that uniform construction, see
+\citet[Chs.~7 and~10]{hale1993introduction}.
+
+The slow eigenvectors converge, in the fixed graph chart, to
+\begin{equation}
+ \left(V_{0,N}'(\pm r_A),w_{0,N}'(\pm r_A)\right),  \label{eq:anchor-slow-eigenvector}
+\end{equation}
+whose stationary current coordinate is one.  The normalized exact slow
+eigenhistory therefore has stationary current coordinate
+\(1+O(\delta^2)\).  The inward unstable hit at the scale
+\cref{eq:anchor-local-manifold-scale} is transverse.  The negative local
+sheet is represented in a fixed phase chart through the chart-center point;
+no monotone \(r\)-clock is assigned to that sheet.  A point on the local unstable
+manifold has the unique complete negative-time orbit supplied by the
+unstable-manifold chart.  The stable manifold is defined by forward
+convergence and makes no backward-completeness assertion.
+
+Applying the event implicit-function theorem inside the scaled chart costs
+only a fixed power of \(\delta^{-1}\), because the section speed is nonzero
+there.  Equations
+\cref{eq:anchor-spectral-first-jet,eq:anchor-local-manifold-jets}
+give the first parameter derivatives and the asserted polynomial bound.  This
+proves the stated rectangular regularity and uniformity.
+\end{proof}
+
+\subsection{Fold-time half-lines and the physical stable sheet}
+\label{sec:anchored-fold-time-half-lines}
+
+All constructions in this subsection use physical fold time \(s=\delta t\).
+Put
+\begin{equation}
+ \mathscr X_N=C([-\theta_m,0];\mathbb R^N),
+ \qquad
+ \mathscr Y_N=\mathscr X_N\times\mathbb R.          \label{eq:anchor-fixed-delay-space}
+\end{equation}
+If \(\Phi\) is an original-time voltage history, its fold-time
+representative is
+\begin{equation}
+ (\mathcal R_\delta\Phi)(\vartheta)
+ =\Phi(\vartheta/\delta),\qquad -\theta_m\le\vartheta\le0.
+                                                               \label{eq:anchor-history-rescaling}
+\end{equation}
+Thus the delayed values below are literally \(v(s-\theta_k)\).  The second
+factor in \(\mathscr Y_N\) is the current resource value; no resource
+history is adjoined.
+
+For later reference, set
+\[
+ \mathscr V_N(v,w)
+ =\frac23\mathbf1-w\mathbf1
+  -c_N\circ(v-\mathbf1)^{\circ2}
+  -\frac\beta3(v-\mathbf1)^{\circ3}
+  +D(P_N-\Id)v .
+\]
+The raw fold-time equation is
+\begin{align}
+ v'(s)
+ &=\delta^{-1}\mathscr V_N(v(s),w(s))
+   +\delta K\sum_{k=0}^mL_{k,N}(\eta)
+       \{v(s)-v(s-\theta_k)\},\notag\\
+ w'(s)
+ &=\delta\,\sigma_{\rm anc}
+       \bigl(\pi_N^T(v(s)-\mathbf1);\delta,\nu\bigr).
+                                                               \label{eq:anchor-raw-fold-time-rfde}
+\end{align}
+Denote the right-hand side, acting on a literal sliding history and the
+current resource, by
+\(\mathscr F^{\rm f}_{N,\delta,p}:\mathscr Y_N\to\mathbb R^{N+1}\).
+For a current path write
+\(Z_s=(\vartheta\mapsto v(s+\vartheta),w(s))\).
+The weak half-line domain is
+\begin{equation}
+ \mathscr D_-^0
+ =\left\{(v,w):
+ \begin{array}{l}
+ v\in C([-\theta_m,\infty);\mathbb R^N),\
+ w\in C([0,\infty);\mathbb R),\\
+ (v,w)\in W^{1,\infty}_{\rm loc}((0,\infty))
+ \end{array}\right\}.                                \label{eq:anchor-half-line-weak-domain}
+\end{equation}
+Every occurrence of a delayed path in what follows means the literal
+sliding history \(v_s\).
+
+Fix \(0<r_{\rm seed}<r_{\rm in}<r_{\rm loc}\).  The preliminary negative
+seed section is
+\(\Sigma_-^{\rm seed}=\{r=-r_{\rm seed}\}\), while the strong entry
+section is \(\Sigma_-^{\rm ent}=\{r=-r_{\rm in}\}\).  Their separation is
+fixed.  An exact orbit starting at the seed section therefore accumulates
+more than three complete delay buffers before it reaches the entry section
+when \(\delta\) is small.  Fix also the corresponding positive inner
+section at \(r=r_{\rm in}\).  All three sections stay a fixed distance from
+the fold and the anchors.  Their physical event speeds on the declared
+channels have a common nonzero margin after the channel estimates below.
+Write \(\ell_{\rm seed}\) and \(\ell_{\rm ph}\) for their constant phase
+rows, respectively.
+
+\begin{lemma}[Exact fold-time anchor half-lines]
+\label[lemma]{lem:anchor-annulus-Green-graphs}
+There are constants \(M_\lambda<\infty\) and
+\begin{equation}
+ M_G=2,\qquad B_{\rm hl}=6,\qquad
+ R_\delta=c_{\rm hl}\delta^6,                         \label{eq:anchor-half-line-radius}
+\end{equation}
+and \(c_{\rm hl}>0\), all independent of \(N\), with the following
+properties.
+
+\smallskip
+\noindent
+\emph{Positive side.}
+Let \(\Phi_+^{\rm col}(p)\) be the exact inward hit of the local
+\(W^u(E_N^+)\) at the collar scale
+\cref{eq:anchor-local-manifold-scale}.  The raw RFDE
+\cref{eq:anchor-raw-fold-time-rfde} has a unique forward solution
+\(Z_+(s;p)\) from this history.  Before a connection condition is imposed,
+this solution stays in the positive anchored channel and its depth-three
+delay enlargement, crosses the positive inner section exactly once, and
+has a common event-speed margin there.  It then continues through the
+already proved central family to \(\Sigma_0\).  After three full delay
+buffers, its recut compatible history and its inner event holonomy are
+\(C^1\) in \(p=(\nu,\eta)\), with norm at most
+\(C\delta^{-M_G}\).
+
+Let \(\vartheta_+\) be the fixed channel phase function that equals the
+local unstable coordinate on the anchor collar and the collective current
+coordinate on the compact outer subannulus, joined on their common monotone
+overlap.  With \(q_+(s)=\partial_sZ_+(s)\), define
+\begin{equation}
+ \ell_+(s)
+ =\frac{D\vartheta_+(Z_{+,s})}
+        {D\vartheta_+(Z_{+,s})q_+(s)},\qquad
+ Q_+(s)=I-q_+(s)\ell_+(s).                            \label{eq:anchor-positive-event-projection}
+\end{equation}
+The denominator is nonzero by the collar and first-exit ledgers below, and
+\(\ell_+(s)q_+(s)=1\) exactly.  The event-normal variational quotient, not
+the full variational equation, has a causal current-path Green kernel
+\(G_{+,\perp}^s(s,u):\mathbb R^{N+1}\to Q_+(s)\mathscr Y_N\).  On every fixed
+positive outer subannulus,
+\begin{equation}
+ \|G_{+,\perp}^s(s,u)\|_{\sharp}
+ \le C\delta^{-M_G}
+       e^{-c_G\kappa_\delta(s-u)},\qquad s\ge u,       \label{eq:anchor-positive-causal-Green}
+\end{equation}
+where endpoint event correction removes the time tangent.  No decay is
+claimed for the full variational process.
+where, for \(\theta_m>0\),
+\begin{equation}
+ \kappa_\delta
+ =\frac{\vartheta_0\log(1/\delta)}{\theta_m},
+ \qquad
+ \|\phi\|_\delta^\sharp
+ =\sup_{-\theta_m\le\vartheta\le0}
+       e^{2\kappa_\delta\vartheta}\|\phi(\vartheta)\|_N,
+                                                               \label{eq:anchor-annulus-fading-norm}
+\end{equation}
+with \(0<\vartheta_0<1/8\).  If \(\theta_m=0\), take
+\(\kappa_\delta=\vartheta_0a_*/\delta\).  In the delayed case,
+\begin{equation}
+ \|\phi\|_\delta^\sharp\le\|\phi\|_\infty
+ \le\delta^{-2\vartheta_0}\|\phi\|_\delta^\sharp.     \label{eq:anchor-annulus-norm-equivalence}
+\end{equation}
+
+\smallskip
+\noindent
+\emph{Negative reference problem and exact chart center.}
+The seed is now fixed explicitly.  Fix
+\(0<\epsilon_{\rm seed}<r_{\rm seed}/2\) and work on the buffered interval
+\[
+ I_-^{\rm buf}=[-r_A,-r_{\rm seed}+\epsilon_{\rm seed}],
+\]
+which stays a fixed distance from the fold.  On this interval put
+\begin{equation}
+ \mathscr B_N(r)(Z,Q)
+ =\mathcal J_N^{\rm fv}(r)Z-Q\mathbf1,\qquad
+ (Z,Q)\in E_N\times\mathbb R .                       \label{eq:anchor-seed-normal-block}
+\end{equation}
+The critical-curve equations and
+\(\inf_{I_-^{\rm buf}}|w_{0,N}'|>0\) give
+\begin{equation}
+ \sup_{N,r\in I_-^{\rm buf}}
+ \|\mathscr B_N(r)^{-1}\|_{\mathbb R^N\to E_N\times\mathbb R}
+ \le C_B .                                           \label{eq:anchor-seed-normal-inverse}
+\end{equation}
+Set \(J_*=10\).  Starting with
+\(Z_0=Q_0=0\) and
+\(q_0(r)=r g_{\rm anc}(r)/w_{0,N}'(r)\), define
+\begin{align}
+ V^{[j]}(r)&=V_{0,N}(r)+\sum_{a=1}^j\delta^aZ_a(r),\notag\\
+ W^{[j]}(r)&=w_{0,N}(r)+\sum_{a=1}^j\delta^aQ_a(r),\notag\\
+ q^{[j]}(r)&=q_0(r)+\sum_{a=1}^j\delta^aq_a(r).       \label{eq:anchor-seed-truncations}
+\end{align}
+Here \(Z_a(r)\in E_N\), \(Q_a(r),q_a(r)\in\mathbb R\), and none of these
+coefficient functions depends on \(\delta\).  Write
+\(j^\flat=\max\{0,j-2\}\), and let
+\(\varphi_{q^{[j]}}^\tau(r)\) denote the local flow of
+\(\dot r=q^{[j]}(r)\) in its time variable \(\tau\).  Define the literal
+backward delay foot at fixed current by
+\begin{equation}
+ \Theta_k^{[j]}(r;\delta)
+ =\varphi_{q^{[j]}}^{-\delta\theta_k}(r),
+ \qquad 0\le k\le m .                                \label{eq:anchor-seed-fixed-current-foot}
+\end{equation}
+After decreasing \(\delta_0\), every such foot used below remains in
+\(I_-^{\rm buf}\).  For an expression \(H(r;\delta,p)\), the notation
+\begin{equation}
+ [\delta^j]_rH
+ :=\frac1{j!}\,\partial_\delta^jH(r;0,p)              \label{eq:anchor-seed-fixed-current-coefficient}
+\end{equation}
+means coefficient extraction with \(r\) and \(p\) held fixed.  For
+\(1\le j\le J_*\), choose \((Z_j,Q_j)\) as the unique solution of
+\begin{multline}
+ [\delta^j]_r\biggl[
+ \delta^2\partial_rV^{[j]}(r)q^{[j^\flat]}(r)
+ -\mathscr V_N(V^{[j]}(r),W^{[j]}(r))\\
+ {}-\delta^2K\sum_{k=0}^mL_{k,N}(\eta)
+ \{V^{[j]}(r)-V^{[j]}(\Theta_k^{[j^\flat]}(r;\delta))\}
+ \biggr]=0,                                          \label{eq:anchor-seed-voltage-recursion}
+\end{multline}
+and then choose \(q_j\) from
+\begin{equation}
+ [\delta^j]_r\left[
+ \partial_rW^{[j]}(r)q^{[j]}(r)
+ -(r-\delta^2\nu)g_{\rm anc}(r)
+ \right]=0.                                          \label{eq:anchor-seed-resource-recursion}
+\end{equation}
+In \cref{eq:anchor-seed-voltage-recursion} the only order-\(j\) unknown is
+acted on by \(-\mathscr B_N(r)\); after it is found,
+\cref{eq:anchor-seed-resource-recursion} has the nonzero coefficient
+\(w_{0,N}'(r)q_j\).  These two displayed rows are therefore a genuine
+triangular recursion, not a formal appeal to an unspecified corrector.
+They also give \(Z_j(-r_A)=Q_j(-r_A)=q_j(-r_A)=0\).
+
+Let \(r_\Gamma\) solve
+\begin{equation}
+ r_\Gamma'=\delta q^{[J_*]}(r_\Gamma),\qquad
+ r_\Gamma(0)=-r_{\rm seed},                          \label{eq:anchor-seed-slow-path}
+\end{equation}
+on \([ -\theta_m,\infty)\), and define
+\begin{equation}
+ \Gamma_-(s;p)
+ =\bigl(V^{[J_*]}(r_\Gamma(s)),W^{[J_*]}(r_\Gamma(s))\bigr).
+                                                               \label{eq:anchor-explicit-time-seed}
+\end{equation}
+The simple zero of \(q^{[J_*]}\) at \(-r_A\) implies
+\(r_\Gamma(s)\to-r_A\), so this is a \(C^1\) family in
+\(\mathscr D_-^0\), starts on \(\Sigma_-^{\rm seed}\), and converges to
+\(E_N^-\).  It is only an approximate half-line path.  Its literal residual
+\begin{equation}
+ R_\Gamma(s;p)
+ =\Gamma_-'(s;p)
+  -\mathscr F^{\rm f}_{N,\delta,p}(\Gamma_{-,s}(p))   \label{eq:anchor-seed-residual}
+\end{equation}
+is computed with \cref{eq:anchor-raw-fold-time-rfde}.  Taylor's formula in
+the two recursions, including the literal old-history interval
+\(-\theta_m\le s-\theta_k<0\), gives
+\begin{equation}
+ \|R_\Gamma\|_{\mathscr F_\beta}
+ +\|D_pR_\Gamma\|_{\mathscr F_\beta}
+ \le C_R\delta^9
+ \le\frac{c_{\rm hl}}{12C_G}
+       \delta^{M_G}R_\delta .                         \label{eq:anchor-seed-residual-smallness}
+\end{equation}
+More precisely, for \(s\ge0\),
+\begin{align}
+ |r_\Gamma(s)+r_A|&\le Ce^{-c_q\delta s},\notag\\
+ |D_pr_\Gamma(s)|&\le C(1+\delta s)e^{-c_q\delta s},               \label{eq:anchor-seed-tail-decay}\\
+ \|R_\Gamma(s)\|+\|D_pR_\Gamma(s)\|
+ &\le C\delta^{10}(1+\delta s)e^{-c_q\delta s}.       \label{eq:anchor-seed-tail-residual}
+\end{align}
+The weight is chosen with
+\(\beta_\delta\le\min\{c_s,c_q\}\delta/4\), so these pointwise bounds
+imply the first inequality in
+\cref{eq:anchor-seed-residual-smallness}.  On the old-history interval,
+\(\sup_{-\theta_m\le s\le0}|r_\Gamma(s)+r_{\rm seed}|
+\le C\delta\theta_m<\epsilon_{\rm seed}\), so every prescribed old-history
+value lies in \(I_-^{\rm buf}\); the coefficient recursion is never
+evaluated outside its declared domain.
+Here \(C_G\) is the Green constant below and the range norm is
+\begin{equation}
+ \|f\|_{\mathscr F_\beta}
+ =\sup_{s\ge0}e^{\beta_\delta s}\delta^{-1}
+       \{\|f_v(s)\|_N+|f_w(s)|\},
+ \qquad 0<\beta_\delta\le\frac14c_s\delta.            \label{eq:anchor-half-line-range-norm}
+\end{equation}
+The order ten construction uses at most eleven ordinary derivatives of the
+coefficients, including one parameter derivative.  It therefore stays
+strictly inside the declared \(C^{12}\) anchor budget.  No splice to an
+independently chosen local tail occurs.
+
+The variational equation along \(\Gamma_-\) has a reference dichotomy on
+\([0,\infty)\) with projections
+\(P_\Gamma^s(s),P_\Gamma^u(s)\), where
+\(\dim\Ran P_\Gamma^u(s)=1\).  Its forced
+current-path kernels
+\[
+ G_{\Gamma}^s(s,u),\quad G_{\Gamma}^u(s,u):
+       \mathbb R^{N+1}\longrightarrow\mathscr Y_N
+\]
+are obtained by variation of constants for the current path followed by
+sliding-history reassembly.  They are not defined through a fictitious
+bounded injection of current forcing into \(C\)-history space.  With
+\begin{equation}
+ \|z\|_{\mathscr Z_\beta}
+ =\sup_{s\ge0}e^{\beta_\delta s}
+       \|z_s\|_{s,\delta}^{\rm ph},                   \label{eq:anchor-half-line-solution-norm}
+\end{equation}
+where the displayed phase/fading norms are polynomially equivalent to the
+ambient history norm, first put
+\begin{equation}
+ (\widetilde{\mathbb G}_\Gamma f)(s)
+ =\int_0^sG_\Gamma^s(s,u)f(u)\,\dd u
+  -\int_s^\infty G_\Gamma^u(s,u)f(u)\,\dd u.          \label{eq:anchor-reference-mixed-Green}
+\end{equation}
+Choose
+\(e_\Gamma^{\rm ph}\in\Ran P_\Gamma^s(0)\) with
+\(\ell_{\rm seed}e_\Gamma^{\rm ph}=1\), and let
+\(U_\Gamma^s(s,0)e_\Gamma^{\rm ph}\) be its stable evolution.  The
+phase-bordered reference Green operator is
+\begin{equation}
+ (\mathbb G_\Gamma^{\rm ent}f)(s)
+ =(\widetilde{\mathbb G}_\Gamma f)(s)
+ -U_\Gamma^s(s,0)e_\Gamma^{\rm ph}\,
+      \ell_{\rm seed}(\widetilde{\mathbb G}_\Gamma f)(0).        \label{eq:anchor-reference-phase-border}
+\end{equation}
+It solves the same forced equation, has zero entry coordinate in
+\(\Ran P_\Gamma^s(0)\cap\ker\ell_{\rm seed}\), and satisfies
+\(\ell_{\rm seed}(\mathbb G_\Gamma^{\rm ent}f)(0)=0\).  Thus its initial
+correction is tangent to \(\Sigma_-^{\rm seed}\); this border is imposed
+before the exact base orbit is available.
+Then
+\begin{equation}
+ \|\mathbb G_\Gamma^{\rm ent} f\|_{\mathscr Z_\beta}
+ \le C_G\delta^{-M_G}\|f\|_{\mathscr F_\beta}.        \label{eq:anchor-reference-Green-bound}
+\end{equation}
+The second integral uses only the inverse on the transported
+one-dimensional unstable bundle.
+
+Let \(\mathcal N_\Gamma(z)\) be the exact nonlinear remainder about the
+seed.  With zero stable entry coordinate in
+\(\Ran P_\Gamma^s(0)\cap\ker\ell_{\rm seed}\), the contraction
+\begin{equation}
+ \bar z
+ =\mathbb G_\Gamma^{\rm ent}
+       \{-R_\Gamma+\mathcal N_\Gamma(\bar z)\}         \label{eq:anchor-chart-center-fixed-point}
+\end{equation}
+has a unique solution in
+\(\|\bar z\|_{\mathscr Z_\beta}\le R_\delta/3\).
+Consequently
+\begin{equation}
+ \widehat Z_-(s;p)=\Gamma_-(s;p)+\bar z(s;p)
+                                                               \label{eq:anchor-exact-seed-orbit}
+\end{equation}
+solves the raw anchored RFDE exactly, starts in
+\(\Sigma_-^{\rm seed}\), and converges to \(E_N^-\).
+It crosses \(\Sigma_-^{\rm ent}\) once at a \(C^1\) time
+\(s_{\rm ent}(p)>3\theta_m\).  Reindex at that generated event:
+\begin{equation}
+ \bar Z_-(s;p)=\widehat Z_-(s+s_{\rm ent}(p);p),
+ \qquad s\ge-\theta_m .                              \label{eq:anchor-exact-chart-center-orbit}
+\end{equation}
+This exact orbit starts in the compatible \(C^3\) part of
+\(\Sigma_-^{\rm ent}\) and converges to \(E_N^-\).  It is the selected
+chart-center orbit.  No invariant family is inferred from that selection.
+Writing \(\widehat Z_-=(\widehat v_-,\widehat w_-)\), its entry time-tangent
+history is the literal generated history
+\begin{equation}
+ \tau_{\rm ent}
+ =\left(\vartheta\longmapsto
+       \partial_s\widehat v_-(s_{\rm ent}+\vartheta),\
+       \partial_s\widehat w_-(s_{\rm ent})\right),
+ \qquad-\theta_m\le\vartheta\le0.                    \label{eq:anchor-compatible-entry-tangent}
+\end{equation}
+Because \(s_{\rm ent}>3\theta_m\), every term in this row and its first two
+seam derivatives is generated by the RFDE.  Hence
+\(\tau_{\rm ent}\) belongs to the tangent space of the compatible
+\(C^3\) solution-manifold chart at \(\bar Z_-(0)\).  No time tangent is
+used in the preceding weak seed-space phase border.
+Its first hit of the local stable chart is, by definition,
+\(C^-_{A,N,\delta,p}\); convergence and local stable-set identification
+put that hit in \(W^s_{\rm loc}(E_N^-)\).
+
+\smallskip
+\noindent
+\emph{Exact dichotomy and intrinsic stable-entry graph.}
+Let \(U_-(s,u)\) be the variational solution process along
+\(\bar Z_-\).  It has invariant projections \(P_-^s(s),P_-^u(s)\) on
+\(\mathscr Y_N\), with \(\dim\Ran P_-^u(s)=1\), satisfying
+\begin{align}
+ \|U_-(s,u)P_-^s(u)\|
+ &\le C\delta^{-M_G}e^{-c_s\delta(s-u)},&&s\ge u,\notag\\
+ \|U_-(s,u)P_-^u(u)\|
+ &\le C\delta^{-M_G}e^{-\mathcal A_u(u,s)},&&0\le s\le u,
+                                                               \label{eq:anchor-annulus-Green-kernels}\\
+ \mathcal A_u(u,s)&\ge c_u(u-s)/\delta
+ \quad\hbox{on each fixed negative outer subannulus}. \notag
+\end{align}
+The second line again denotes only the inverse on the unstable line.
+The projections, kernels, and their first parameter derivatives have one
+common polynomial bound.
+
+This is not inferred from the raw frozen voltage--resource system.  On
+every fixed outer part ending before the anchor, parameterize the exact
+orbit by its monotone collective coordinate and write
+\[
+ \bar Z_-(s)=\mathcal H_{\bar V,\bar w,\bar q}(\bar r(s)),
+ \qquad \bar r'=\delta\bar q(\bar r).
+\]
+The exact resource-gauge coordinates of
+\cref{prop:exact-resource-gauge-quotient} give
+\begin{equation}
+ (\xi_s,\omega)
+ =(\psi_s,0)+a(s)E_s^c,\qquad
+ a'=\delta\bar q'(\bar r)a
+       +\frac{\delta}{\bar w'(\bar r)}\pi_N^Tu .       \label{eq:anchor-exact-resource-phase-splitting}
+\end{equation}
+The quotient history \(\psi\) has one strong-unstable line and a stable
+current complement; \(aE^c\) is the longitudinal slow-stable column.
+The Volterra history conjugacy in that proposition and its inverse are
+uniformly bounded there because the interval stays away from the fold and
+from the zero of \(\bar q\).  On the final anchor tail,
+\cref{eq:anchor-full-linear-trichotomy} and asymptotic dichotomy roughness
+give the same slow-stable/strong-unstable splitting; uniqueness on the
+overlap identifies the bundles.  Thus the quotient dichotomy plus the slow
+column is equivalent to the full \(\mathscr Y_N\) dichotomy displayed
+above.  Intersecting with the
+transverse entry section removes the longitudinal phase degree of freedom.
+In particular, the extra frozen resource instability identified in
+\cref{rem:frozen-resource-phase-quotient} is not being discarded.
+
+Let \(\mathcal M_{{\rm ent},p}^2\) be the compatible \(C^2\)
+solution-manifold chart at \(\bar Z_-(0;p)\), with the two seam rows obtained
+from \cref{eq:anchor-raw-fold-time-rfde} and its first time derivative.
+The base history is in its compatible \(C^3\) part by
+\cref{eq:anchor-compatible-entry-tangent}.  We use the \(C^2\) graph norm
+on its tangent space and the ambient fading \(C\)-norm on the range of all
+half-line Green maps.  Sliding-history evolution across the three reserved
+buffers maps the weak dichotomy bundles into this tangent space.  The graph
+projections restrict to the generated \(C^2\) subspace, with a fixed
+polynomial strong-to-weak loss; this follows directly by differentiating the
+raw RFDE twice on the last two buffers, not by differentiating a translation
+on arbitrary \(C\)-histories.
+
+Here is a fixed coordinate realization of that compatible chart.  For
+\(\theta_m>0\), choose
+\(0<\theta_\dagger<\min\{\theta_k:\theta_k>0\}\), put
+\(x=(\vartheta+\theta_\dagger)/\theta_\dagger\), and define on
+\(-\theta_\dagger\le\vartheta\le0\)
+\begin{align*}
+ H_0(x)&=10x^3-15x^4+6x^5,\\
+ H_1(x)&=-4x^3+7x^4-3x^5,\\
+ H_2(x)&=\tfrac12(x^3-2x^4+x^5).
+\end{align*}
+Extend these functions by zero on
+\([-\theta_m,-\theta_\dagger]\).  The Hermite seam lift
+\begin{equation}
+ \mathfrak H_\dagger(y_0,y_1,y_2)(\vartheta)
+ =H_0(x)y_0+\theta_\dagger H_1(x)y_1
+       +\theta_\dagger^2H_2(x)y_2                 \label{eq:anchor-entry-Hermite-seam-lift}
+\end{equation}
+is \(C^2\), is supported in the last buffer, and has endpoint jets
+\((y_0,y_1,y_2)\).  On
+\(C^2([-\theta_m,0];\mathbb R^N)\times\mathbb R\), define the section--seam
+map
+\begin{equation}
+ \mathfrak C_{{\rm seam},p}(\phi,w)
+ =\begin{pmatrix}
+   \pi_N^T\{\phi(0)-\mathbf1\}+r_{\rm in}\\
+   \phi'(0)-\mathscr F_v^{\rm f}(\phi,w)\\
+   \phi''(0)-D\mathscr F_v^{\rm f}(\phi,w)
+       [\phi',\delta\sigma_{\rm anc}(r(\phi))]
+  \end{pmatrix}.                                    \label{eq:anchor-entry-section-seam-map}
+\end{equation}
+Its derivative on the lift
+\(\mathfrak H_\dagger(a\mathbf1,y_1,y_2)\) is block lower triangular:
+the three diagonal maps are \(a\mapsto a\), \(y_1\mapsto y_1\), and
+\(y_2\mapsto y_2\).  Solving those rows in this order gives a fixed
+right inverse \(\mathfrak R_{\rm seam}\), with a common polynomial bound,
+at the base parameter.  The same triangular recursion gives
+\(\mathfrak R_{{\rm seam},p}\) after shrinking the parameter chart.  Put
+\begin{equation}
+ \mathscr N_{\rm seam}
+ =\operatorname{Ran}\mathfrak R_{\rm seam},\qquad
+ \mathscr T_{{\rm ent},p}
+ =\ker D\mathfrak C_{{\rm seam},p}(\bar Z_-(0;p)).
+                                                               \label{eq:anchor-entry-explicit-complement}
+\end{equation}
+Thus the strong section tangent is explicitly the graph of
+\(\mathscr T_{{\rm ent},p}\) over the fixed complement
+\(\mathscr N_{\rm seam}\).  When \(\theta_m=0\), the same construction is
+the ordinary finite-dimensional section chart and no seam lift is needed.
+
+Let \(\ell_{\rm ph}\) define \(\Sigma_-^{\rm ent}\).  The exact time
+tangent belongs to the stable bundle because
+\(\partial_s\bar Z_-(s)\to0\).  Put
+\begin{equation}
+ e_-^{\rm ph}
+ =\frac{\tau_{\rm ent}}
+        {\ell_{\rm ph}\tau_{\rm ent}},
+ \qquad
+ \jmath_{\rm ent}^u
+ =h_-^u-\ell_{\rm ph}(h_-^u)e_-^{\rm ph},             \label{eq:anchor-exact-phase-projected-column}
+\end{equation}
+Here \(h_-^u\) is normalized in the fixed entry-history norm used in
+\cref{eq:anchor-half-line-radius}; this normalization keeps the
+radius-\(R_\delta\) nonlinear chart and its contraction unchanged.  Thus
+\(\jmath_{\rm ent}^u\) is the exact unstable
+history projected into the section along an exact stable column.  Then
+\begin{equation}
+ \begin{aligned}
+ \mathcal K_{\rm ent}(p)
+ &=T_{\bar Z_-(0;p)}\mathcal M_{{\rm ent},p}^2
+   \cap T_{\bar Z_-(0;p)}\Sigma_-^{\rm ent}
+   \cap\Ran P_-^s(0),\\
+ T_{\bar Z_-(0;p)}\mathcal M_{{\rm ent},p}^2
+   \cap T_{\bar Z_-(0;p)}\Sigma_-^{\rm ent}
+ &=\mathcal K_{\rm ent}\oplus
+       \operatorname{span}\{\jmath_{\rm ent}^u\}.
+ \end{aligned}                                         \label{eq:anchor-entry-splitting}
+\end{equation}
+The intersections and coordinate projections have norm at most a fixed
+power of \(\delta^{-1}\).  Let
+\(\Pi_{{\rm ent},p}^{s,\Sigma}\) be the projection of the strong section
+tangent in \cref{eq:anchor-entry-splitting} onto \(\mathcal K_{\rm ent}(p)\)
+along \(\jmath_{\rm ent}^u(p)\).  After fixing a base parameter \(p_0\), set
+\begin{equation}
+ \mathfrak J_p^s
+ =\Pi_{{\rm ent},p}^{s,\Sigma}\big|_{\mathcal K_{\rm ent}(p_0)},
+ \qquad
+ \mathfrak J_p^u a=\jmath_{\rm ent}^u(p)a .           \label{eq:anchor-entry-fixed-trivialization}
+\end{equation}
+The first map is an isomorphism after shrinking the parameter chart; these
+two explicit graph maps trivialize the domain before parameter
+differentiation.  In the compatible solution-manifold entry chart,
+\begin{equation}
+ \Phi_{\rm ent}(\psi,u;p)
+ =\bar Z_-(0;p)+\mathfrak J_p^s\psi
+  +\jmath_{\rm ent}^u(p)u+\mathcal Q_{\rm ent}(\psi,u;p),
+                                                               \label{eq:anchor-compatible-entry-chart}
+\end{equation}
+where \(\mathcal Q_{\rm ent}(\psi,u;p)\in\mathscr N_{\rm seam}\) is the
+unique solution of
+\[
+ \mathfrak C_{{\rm seam},p}
+   \bigl(\bar Z_-(0;p)+\mathfrak J_p^s\psi
+       +\jmath_{\rm ent}^u(p)u+\mathcal Q_{\rm ent}(\psi,u;p)\bigr)=0.
+\]
+The tangent terms lie in \(\mathscr T_{{\rm ent},p}\), so
+\(\mathcal Q_{\rm ent}(0,0;p)=0\),
+\(D_{(\psi,u)}\mathcal Q_{\rm ent}(0,0;p)=0\), and the parameterized
+implicit-function theorem gives
+\(\mathcal Q_{\rm ent}=O((\|\psi\|+|u|)^2)\) with the stated fixed-chart
+first-parameter bounds.  This formula specifies the complement and the
+coordinate correction rather than invoking an unspecified compatible
+Banach chart.
+
+Recenter the raw RFDE at the exact orbit \(\bar Z_-\), and denote its
+nonlinear remainder by \(\mathcal N_-(s,z;p)\).  Write
+\begin{align}
+ (\widetilde{\mathbb G}_-f)(s)
+ &=\int_0^sG_-^s(s,u)f(u)\,\dd u
+   -\int_s^\infty G_-^u(s,u)f(u)\,\dd u,\notag\\
+ U_-^s(s,0)&=U_-(s,0)P_-^s(0),                       \label{eq:anchor-exact-mixed-Green}
+\end{align}
+and abbreviate the chart displacement in
+\cref{eq:anchor-compatible-entry-chart} by
+\(\mathfrak C_p(\psi,u)\).  For
+\(\psi\in\mathcal K_{\rm ent}(p_0)\), solve the coupled infinite-horizon
+system
+\begin{align}
+ z(s)
+ &=U_-^s(s,0)P_-^s(0)\mathfrak C_p(\psi,u)
+   +(\widetilde{\mathbb G}_-
+          \mathcal N_-(\cdot,z;p))(s),\notag\\
+ P_-^u(0)\mathfrak C_p(\psi,u)
+ &=-\int_0^\infty G_-^u(0,t)
+          \mathcal N_-(t,z;p)\,\dd t .               \label{eq:anchor-annulus-nonlinear-map}
+\end{align}
+The second row is the entry boundary row: it makes the value of the first
+row at \(s=0\) equal to the compatible section history
+\(\mathfrak C_p(\psi,u)\).  Since
+\(P_-^u(0)D_u\mathfrak C_p(0,0)\) is an isomorphism onto the unstable
+line, the two rows are a contraction for \((z,u)\).  The fold-time vector
+field and the extra \(\delta^{-1}\) in
+\cref{eq:anchor-half-line-range-norm} give
+\begin{equation}
+ \operatorname{Lip}_{\mathscr Z_\beta\to\mathscr F_\beta}
+       (\mathcal N_-;R_\delta)
+ \le C\delta^{-2}R_\delta,\qquad
+ \|\widetilde{\mathbb G}_-\|
+       \operatorname{Lip}_z(\mathcal N_-;R_\delta)
+ \le Cc_{\rm hl}\delta^{B_{\rm hl}-M_G-2}
+ =Cc_{\rm hl}\delta^2
+ \le\frac13.                                         \label{eq:anchor-half-line-contraction-ledger}
+\end{equation}
+The second row uniquely gives the entry graph
+\(u=F^{-,\rm ent}_{N,\delta,p}(\psi)\).  Hence
+\begin{equation}
+ \mathcal S_-^{\rm ent}(p)
+ =\{\Phi_{\rm ent}(\psi,F^{-,\rm ent}_{N,\delta,p}(\psi);p):
+                         \|\psi\|<R_\delta\}.         \label{eq:anchor-intrinsic-entry-sheet}
+\end{equation}
+A zero displacement is the exact chart-center orbit, so
+\(F^{-,\rm ent}_{N,\delta,p}(0)=0\).
+A history in this graph has a forward orbit converging to \(E_N^-\).
+Conversely, every history in the declared tube whose forward orbit
+converges to \(E_N^-\) eventually enters the local stable-manifold ball of
+\cref{lem:anchor-scaled-local-manifolds}.  The local stable-set theorem and
+\cref{eq:anchor-full-linear-trichotomy} then give decay at rate at least
+\(c_s\delta/2>\beta_\delta\).  Its displacement therefore belongs to
+\(\mathscr Z_\beta\).  Variation of constants on \([0,S]\), followed by
+\(S\to\infty\) on the one-dimensional unstable component, gives exactly
+the future integral in \cref{eq:anchor-annulus-nonlinear-map}; the terminal
+term vanishes by that decay.  It hence satisfies the same weighted mixed
+equation and belongs to this graph by uniqueness.  Thus the graph is
+intrinsic and is independent of the approximate seed and the chosen chart
+center.
+
+The graph is \(C^2\) in \(\psi\) and \(C^1\) in \(p\).  In the fixed
+parameter chart put \(x=(z,u)\),
+\(\mathcal A=D_x\mathcal T_{\psi,p}(x)\), and
+\(\mathcal B=D_\psi\mathcal T_{\psi,p}(x)\).  Its required rectangular
+jets are the unique solutions of
+\begin{align}
+ (I-\mathcal A)x_p&=\partial_p\mathcal T_{\psi,p}(x),\notag\\
+ (I-\mathcal A)x_\psi&=\mathcal B,\notag\\
+ (I-\mathcal A)x_{\psi p}
+ &=\mathcal B_p+\mathcal A_p x_\psi,
+ \qquad
+ \|(I-\mathcal A)^{-1}\|\le\frac32 .                \label{eq:anchor-annulus-jet-equations}
+\end{align}
+Here \(\mathcal A_p\) and \(\mathcal B_p\) are total first parameter
+derivatives, including the already solved \(x_p\).  Thus the last row uses
+only the first parameter derivative of the kernels and the second state
+derivative of the nonlinear remainder; no second parameter derivative is
+present.
+Here \(\mathcal T_{\psi,p}\) denotes the coupled right-hand side of
+\cref{eq:anchor-annulus-nonlinear-map}.  Let
+\(\Pi_{\rm ent,p}=(\Pi_{\psi,p},\Pi_{u,p})\) be the local inverse-coordinate
+map of \(\Phi_{\rm ent}\), and define on its physical-history image
+\begin{equation}
+ \mathfrak m_{\rm ent,p}(\phi)
+ =\Pi_{u,p}\phi
+   -F^{-,\rm ent}_{N,\delta,p}(\Pi_{\psi,p}\phi).
+                                                               \label{eq:anchor-entry-membership-function}
+\end{equation}
+This scalar vanishes exactly on \(\mathcal S_-^{\rm ent}(p)\).  Its
+normalized differential at the graph point with coordinate \(\psi\) is the
+physical-history covector
+\begin{align}
+ \lambda_{\rm ent}(\psi;p)
+ &=\{\dd u-D_\psi F^{-,\rm ent}_{N,\delta,p}(\psi)\}
+     \circ D\Phi_{\rm ent}
+       (\psi,F^{-,\rm ent}_{N,\delta,p}(\psi);p)^{-1},\notag\\
+ \lambda_{\rm ent}(\psi;p)&
+   D_u\Phi_{\rm ent}
+       (\psi,F^{-,\rm ent}_{N,\delta,p}(\psi);p)1=1.   \label{eq:anchor-dual-row-pullback}
+\end{align}
+At \(\psi=0\), this normalization reads
+\(\lambda_{\rm ent}(0;p)(\jmath_{\rm ent}^u(p))=1\).
+Moreover,
+\begin{equation}
+ \sup_{\|\psi\|<R_\delta}
+ \{\|\lambda_{\rm ent}(\psi;\cdot)\|
+       +\|D_p\lambda_{\rm ent}(\psi;\cdot)\|\}
+ \le C\delta^{-M_\lambda}.                           \label{eq:anchor-half-line-conormal-bound}
+\end{equation}
+This row is obtained by differentiating the infinite mixed equation; there
+is no finite terminal pullback denominator.
+
+\smallskip
+\noindent
+\emph{Finite-core tail replacement and flat forgetting.}
+This comparison is internal to one anchored RFDE.  Choose
+\(L_\delta>0\) on the future part of the negative channel, after the common
+entry and before the anchor collar, so that all delayed ancestors on
+\([0,L_\delta]\) are generated by the same equation.  The comparison
+section lies in a fixed compact subannulus on which
+\(\bar r'=\delta\bar q(\bar r)\) and
+\(0<q_-\le|\bar q|\le q_+\).  Hence
+\begin{equation}
+ \frac{c_L}{\delta}\le L_\delta\le\frac{C_L}{\delta},
+ \qquad
+ \mathcal A_u(L_\delta,0)\ge\frac{c_uL_\delta}{\delta}.
+                                                        \label{eq:anchor-tail-buffer-time}
+\end{equation}
+Consequently
+\begin{equation}
+ \mathcal A_{\rm cap}(L_\delta,0)
+ :=\min\{\mathcal A_u(L_\delta,0),\kappa_\delta L_\delta\}
+ \ge c_{\rm cap}\frac{\log(1/\delta)}{\delta}.       \label{eq:anchor-tail-capped-action}
+\end{equation}
+Here \(\mathcal A_u\) is the action of the inverse on the exact
+one-dimensional unstable bundle.  A finite-core tail selector is a scalar
+row \(b_L(\cdot;p)\) in the compatible terminal chart at \(L_\delta\)
+satisfying
+\begin{equation}
+ \|b_L\|_{C^2_{\rm state}C^1_p}
+ +|D b_L(\jmath_L^u)|^{-1}
+ \le C\delta^{-M_b},\qquad
+ |D b_L(\jmath_L^u)|>0,                              \label{eq:anchor-admissible-tail-selector}
+\end{equation}
+whose selected terminal graph stays in the radius-\(R_\delta\) tube.
+Here \(\jmath_L^u\) is the exact unstable column transported from the
+entry to \(L_\delta\) and normalized in the fixed terminal chart.
+This class is nonempty: the exact terminal splitting supplies the
+coordinate row
+\[
+ b_L^{\rm can}(\phi;p)
+ =\ell_L^u(p)\{\phi-\bar Z_{-,L_\delta}(p)\},
+ \qquad \ell_L^u(p)\jmath_L^u(p)=1,
+\]
+restricted to a sufficiently small compatible terminal chart.
+The entry chart, phase row, stable coordinate \(\psi\), and every
+coefficient on \([0,L_\delta]\) are held fixed.  Thus a literal change of
+tail coefficients or asymptotic data is supported in
+\([L_\delta,\infty)\); after truncation it appears only through \(b_L\).
+
+Eliminate \(s>L_\delta\) in the first problem by its exact
+future-asymptotic tail graph and in the second by the row \(b_L=0\).
+Let \(\mathscr Z_{\beta,L}\) be the restriction of
+\(\mathscr Z_\beta\) to compatible current paths on \([0,L_\delta]\),
+with the induced weighted norm, and put
+\begin{equation}
+ \mathscr W_{L,\beta}:=\mathscr Z_{\beta,L}\times\mathbb R,       \label{eq:anchor-common-core-product-space}
+\end{equation}
+where the scalar is the entry unstable coordinate.  Both problems are then
+fixed-point maps on this same Banach space.  Let
+\(Y_\infty=(z_\infty,u_\infty)\) and
+\(Y_L=(z_L,u_L)\) be their fixed points, and denote the two reduced maps,
+in the same trivialization, by
+\(\mathcal T_\infty\) and \(\mathcal T_L\).  With
+\(\Delta Y=Y_\infty-Y_L\), one has the exact value identity
+\begin{align}
+ \Delta Y
+ &=\{I-\overline{\mathcal A}\}^{-1}
+       \mathcal E_L(Y_L),\notag\\
+ \overline{\mathcal A}
+ &=\int_0^1D_Y\mathcal T_\infty
+       (Y_L+t\Delta Y)\,\dd t,\qquad
+ \mathcal E_L(Y)
+ :=\mathcal T_\infty(Y)-\mathcal T_L(Y).
+                                                        \label{eq:anchor-tail-value-difference}
+\end{align}
+For \(q=\nu\) or a direction in \(\eta\), set
+\[
+ \mathcal A_i=D_Y\mathcal T_i(Y_i),\qquad
+ b_{i,q}=\partial_q\mathcal T_i(Y_i),\qquad
+ \mathcal B_i=D_\psi\mathcal T_i(Y_i),
+ \quad i\in\{\infty,L\}.
+\]
+Differentiating the two fixed-point equations separately and then
+subtracting gives
+\begin{align}
+ (I-\mathcal A_\infty)\Delta Y_q
+  &=(b_{\infty,q}-b_{L,q})
+       +(\mathcal A_\infty-\mathcal A_L)Y_{L,q},
+       &&q\in\{\nu,\eta\},                          \label{eq:anchor-tail-parameter-difference}\\
+ (I-\mathcal A_\infty)\Delta(D_\psi Y)
+  &=(\mathcal B_\infty-\mathcal B_L)
+       +(\mathcal A_\infty-\mathcal A_L)D_\psi Y_L .
+                                                        \label{eq:anchor-tail-state-difference}
+\end{align}
+Put \(W_i=D_\psi Y_i\), and let
+\(\mathcal A_{i,p}=D_p[\mathcal A_i]\) and
+\(\mathcal B_{i,p}=D_p[\mathcal B_i]\) denote total derivatives, including
+the dependence through \(Y_i\).  A further differentiation, performed
+separately before subtraction, gives the exact mixed equation
+\begin{multline}
+ (I-\mathcal A_\infty)\Delta W_p
+ =(\mathcal B_{\infty,p}-\mathcal B_{L,p})
+   +(\mathcal A_{\infty,p}-\mathcal A_{L,p})W_L\\
+ \hspace{2.2cm}
+   +\mathcal A_{\infty,p}(W_\infty-W_L)
+   +(\mathcal A_\infty-\mathcal A_L)W_{L,p}.
+                                                        \label{eq:anchor-tail-mixed-state-parameter-difference}
+\end{multline}
+These are identities in the common mixed domain.  The terms containing
+\(\mathcal T_\infty-\mathcal T_L\) are precisely the future unstable
+integral from \(L_\delta\), together with the fading-history tail.  If
+\(\mathscr R_{\rm in}\) denotes entry evaluation followed by any fixed
+inner event holonomy before the comparison buffer, then
+\begin{multline}
+ \bigl\|\mathscr R_{\rm in}
+   (I-\overline{\mathcal A})^{-1}\mathcal E_L(Y_L)\bigr\|
+ +\sum_{q\in\{\nu,\eta\}}
+  \bigl\|\mathscr R_{\rm in}
+    (I-\mathcal A_\infty)^{-1}
+       \{(b_{\infty,q}-b_{L,q})
+          +(\mathcal A_\infty-\mathcal A_L)Y_{L,q}\}\bigr\|\\
+ +\bigl\|\mathscr R_{\rm in}
+    (I-\mathcal A_\infty)^{-1}
+       \{(\mathcal B_\infty-\mathcal B_L)
+          +(\mathcal A_\infty-\mathcal A_L)D_\psi Y_L\}\bigr\|
+ \le C\delta^{-M_{\rm cmp}}
+       e^{-\mathcal A_{\rm cap}(L_\delta,0)}.         \label{eq:anchor-tail-Green-difference-bound}
+\end{multline}
+Equation
+\cref{eq:anchor-tail-mixed-state-parameter-difference} gives the mixed
+\(\partial_pD_\psi\) bound; it uses only the first parameter derivative of
+the kernels and the \(C^2\) state derivative of the nonlinear remainder.
+
+For clarity, the dual comparison is performed after the two graph rows
+have been pulled back to the same physical entry space.  Put
+\[
+ F_\infty=F^{-,\rm ent}_{N,\delta,p},
+ \qquad F_L=F^{-,L}_{N,\delta,p},
+\]
+and
+\begin{align}
+ \ell_i
+ &=\{\dd u-D_\psi F_i(0;p)\}
+       \circ D\Phi_{\rm ent}(0,F_i(0;p);p)^{-1},\notag\\
+ a_i&=\ell_i(\jmath_{\rm ent}^u),\qquad
+ \lambda_i=a_i^{-1}\ell_i,\qquad i\in\{\infty,L\}.
+                                                        \label{eq:anchor-tail-conormal-normalization}
+\end{align}
+For the intrinsic row \(a_\infty=1\) at the chart center.  The finite row
+is evaluated on the same fixed column; its denominator is
+\(1+O(\mathfrak f_\delta)\), rather than being silently set equal to one.
+The displayed normalization also covers a transported terminal row.  Its
+first parameter equation is
+\begin{align}
+ \partial_p\lambda_i
+ &=a_i^{-1}\partial_p\ell_i
+   -a_i^{-2}(\partial_pa_i)\ell_i,\notag\\
+ \partial_pa_i
+ &=(\partial_p\ell_i)(\jmath_{\rm ent}^u)
+   +\ell_i(\partial_p\jmath_{\rm ent}^u).          \label{eq:anchor-tail-conormal-parameter}
+\end{align}
+Consequently
+\cref{eq:anchor-tail-state-difference,eq:anchor-tail-conormal-parameter}
+give
+\begin{equation}
+ \|\lambda_\infty-\lambda_L\|
+ +\|D_p(\lambda_\infty-\lambda_L)\|
+ \le C\delta^{-M_{\rm cmp}}
+       e^{-\mathcal A_{\rm cap}(L_\delta,0)}.         \label{eq:anchor-tail-conormal-difference}
+\end{equation}
+
+On the positive side, take two entrance representatives only after they
+have entered one common physical equation.  If \(\Delta Z_+\) is their
+event-aligned difference, then the exact normal equation is
+\begin{equation}
+ Q_+(s)\Delta Z_+(s)
+ =G_{+,\perp}^s(s,s_0)Q_+(s_0)\Delta Z_+(s_0)
+  +\int_{s_0}^sG_{+,\perp}^s(s,t)
+       \Delta\mathcal N_+(t)\,\dd t
+  +\mathcal E_{\rm ev}(s),                         \label{eq:anchor-positive-value-difference}
+\end{equation}
+where \(\mathcal E_{\rm ev}\) is the endpoint event correction and removes
+only the time tangent.  In this display the two section times have been
+frozen by the common event pullback; its moving-endpoint terms are included
+in \(\mathcal E_{\rm ev}\).  Differentiating this identity once gives the
+separate \(\partial_\nu\Delta Z_+\) and \(D_\eta\Delta Z_+\) equations:
+\begin{align}
+ \partial_q\{Q_+(s)\Delta Z_+(s)\}
+={}&(\partial_qG_{+,\perp}^s)(s,s_0)
+       Q_+(s_0)\Delta Z_+(s_0)\notag\\
+ &+G_{+,\perp}^s(s,s_0)
+       \partial_q\{Q_+(s_0)\Delta Z_+(s_0)\}\notag\\
+ &+\int_{s_0}^s\bigl\{
+       (\partial_qG_{+,\perp}^s)(s,t)
+          \Delta\mathcal N_+(t)
+       +G_{+,\perp}^s(s,t)
+          \partial_q\Delta\mathcal N_+(t)\bigr\}\,\dd t\notag\\
+ &+\partial_q\mathcal E_{\rm ev}(s),
+ \qquad q\in\{\nu,\eta\}.                         \label{eq:anchor-positive-parameter-difference}
+\end{align}
+The causal estimate \cref{eq:anchor-positive-causal-Green} on a common
+attracting buffer gives the same capped-action rate.
+
+Combining the negative and positive estimates yields, for the indicated
+entry and inner restrictions,
+\begin{equation}
+ C\delta^{-M_{\rm cmp}}
+ \exp\left\{-\frac{c_{\rm anc}\log(1/\delta)}{\delta}\right\}.
+                                                               \label{eq:anchor-annulus-capped-action}
+\end{equation}
+A change of entry stable coordinate, phase row, or compatible chart is not
+a forgettable tail difference.  In particular,
+\(\lambda_{\mathbf p}^{\rm ent}\) from
+\cref{thm:oe-family-C1-generator-entry-conormal} is not covered merely
+because it is normalized: that row is selected on a different pulled
+finite core, and no nonlinear terminal graph on the exact anchored common
+segment has been constructed for it.
+\end{lemma}
+
+\begin{proof}
+We prove the assertions in the order in which the physical objects are
+constructed.
+
+For the positive side, use \(\Phi_+^{\rm col}\) as the prescribed old
+history in \cref{eq:anchor-raw-fold-time-rfde}.  The ordinary RFDE
+variation-of-constants formula separates the interval
+\(0\le s<\theta_k\), where \(v(s-\theta_k)\) belongs to that prescribed
+history, from \(s\ge\theta_k\), where it is generated by the current path.
+The frozen current estimate
+\cref{eq:frozen-current-attracting}, a continuous moving current frame,
+and one Volterra--Neumann series give the event-normal quotient estimate
+\cref{eq:anchor-positive-causal-Green}.  Its perturbation number is
+\[
+ C\delta^2\{1+\delta^{-2\vartheta_0}\}<\frac14.
+\]
+More explicitly, after the time column has been separated, the conjugated
+normal equation has the form
+\[
+ y'=\mathcal A_{+,c}^0(s)y+
+   \{\mathcal R_{+,{\rm fr}}+\mathcal R_{+,{\rm cor}}
+      +\mathcal R_{+,{\rm del}}^{\rm gen}\}y_\bullet+f
+   +\mathcal B_{+,{\rm del}}\phi_{\rm old}.
+\]
+The principal causal current kernel has width \(C\delta\).  In the fading
+history norm the moving-frame and graph-corrector convolutions are bounded
+by \(C\delta\), the generated-delay convolution by
+\(C\delta^2e^{\beta_\delta\theta_m}\), and the old-history lift by
+\(C\delta^2\delta^{-2\vartheta_0}\|\phi_{\rm old}\|_\infty\).  Thus
+\begin{equation}
+ \eta_{+,{\rm fr}}+\eta_{+,{\rm cor}}
+   +\eta_{+,{\rm del}}^{\rm gen}
+ \le C\{\delta+\delta^2(1+\delta^{-2\vartheta_0})\}<\tfrac14,
+                                                               \label{eq:anchor-positive-Green-component-ledger}
+\end{equation}
+while \(\mathcal B_{+,{\rm del}}\phi_{\rm old}\) is a causal boundary
+source and is not included in the operator contraction number.  Sliding the
+resulting current path reassembles the literal \(C\)-history and gives
+\cref{eq:anchor-positive-causal-Green}.  Differentiating this Neumann
+identity once in \(p\) produces two causal current convolutions and the
+derivative of the event row; the first costs \(C\delta^{-1}\) after source
+normalization and the second costs the inverse section-speed factor
+\(C\delta^{-1}\).  Hence the \(C^1\) kernel and event-holonomy bound is
+\(C\delta^{-2}\), the same declared value \(M_G=2\) as on the negative
+side.
+The phase column \(q_+\) is retained exactly and is removed only by
+\(Q_+\) and the endpoint event row; the proof never assigns decay to that
+column.
+In the scaled local unstable chart its slow coordinate \(\rho_+\) obeys
+\begin{equation}
+ \rho_+'=\delta\rho_+
+   \{\chi_++O(\rho_+)+O(\delta)\},\qquad \chi_+\ge c_\chi>0,
+ \qquad
+ \|Q_+(Z_+-Z_{+,{\rm crit}})\|_{\sharp}
+       \le C\delta^2|\rho_+| .                         \label{eq:anchor-positive-collar-ledger}
+\end{equation}
+The first row follows by dividing the exact slow eigenvalue in original
+time by \(\delta\); the second is the local graph equation with the
+event-normal Green cost \(O(\delta)\).  At
+\(|\rho_+|=\rho_{A,\delta}\) these estimates are a fixed relative fraction
+of the collar size.  They supply both the collar event-speed margin and the
+initial channel bootstrap used below.
+The critical current seed has a raw normal residual of size \(O(\delta)\);
+the current Green convolution costs \(O(\delta)\), so the exact IVP is
+\(O(\delta^2)\) from that seed in the resource-defect boundary-layer norm.
+Near the local collar the exact unstable chart supplies the sharper
+relative bound required to keep the solution inside the anchor interval.
+Write \(q_+^{\rm red}(r)\) for the scalar reduced speed of the declared
+positive reference current path, so its reference current satisfies
+\(r'=\delta q_+^{\rm red}(r)\).  This scalar is distinct from the
+history-valued time tangent \(q_+(s)=\partial_sZ_+(s)\) above.
+Here is the first-exit ledger on the remaining compact subannulus.  Choose
+the channel and its depth-three enlargement so that the reference current
+path has distance at least \(d_{\rm ch}>0\) from their non-event boundary.
+The causal estimate gives, up to a hypothetical first exit,
+\begin{equation}
+ \|Q_+(Z_+-Z_{+,\rm crit})\|_\sharp\le C\delta^2
+       <\frac14d_{\rm ch},\qquad
+ \max_{1\le j\le3}|r(s)-r(s-j\theta_m)|
+       \le3C\delta\theta_m<\frac14d_{\rm ch}.        \label{eq:anchor-positive-first-exit-ledger}
+\end{equation}
+The differentiated current-row estimate in the same causal argument gives
+\(|r'/\delta-q_+^{\rm red}(r)|\le C\delta\); integrating it over at most three
+delay lengths gives the second estimate.  It is used only when the delayed
+feet are generated; prescribed old feet were already estimated separately.
+Thus neither a current state nor any of its three
+delay ancestors can be the first point to leave the declared hull.  Together
+with the relative collar estimate
+\cref{eq:anchor-positive-collar-ledger}, this closes the first-exit
+argument.  On the compact passage the reduced speed has
+\(|q_+^{\rm red}|\ge q_->0\), so the same derivative estimate gives
+\begin{equation}
+ \frac{|r'(s)|}{\delta}\ge\frac12q_-               \label{eq:anchor-positive-event-speed-ledger}
+\end{equation}
+through the fixed inner section.  Monotonicity gives the unique crossing,
+and the event implicit-function theorem gives its \(C^1\) dependence.  No
+inverse RFDE evolution is used.
+
+For the negative reference problem, the block
+\(\mathscr B_N(r)\) is square because \(E_N\) supplies the \(N-1\) normal
+voltage coordinates and \(Q\) supplies the missing collective row.
+Consequently \cref{eq:anchor-seed-voltage-recursion} first determines
+\((Z_j,Q_j)\); the resource row then determines \(q_j\).  Induction,
+Taylor's formula with integral remainder, and
+\cref{eq:anchor-seed-normal-inverse} give
+\[
+ \max_{j\le10}\bigl(
+ \|Z_j\|_{C^{11-j}}+\|Q_j\|_{C^{11-j}}
+       +\|q_j\|_{C^{11-j}}\bigr)\le C .
+\]
+The same induction after one \(p\)-derivative uses at most the twelfth
+coefficient derivative.  The fixed-current convention in
+\cref{eq:anchor-seed-fixed-current-foot,eq:anchor-seed-fixed-current-coefficient}
+is essential here: it defines every Taylor coefficient before the long
+half-line orbit is introduced.
+
+To retain the weight at the asymptotic end, define the two graph residuals
+at fixed \(r\) by
+\begin{align}
+ \mathcal E_v^{[10]}(r)
+ &:=\delta^2\partial_rV^{[10]}(r)q^{[10]}(r)
+   -\mathscr V_N(V^{[10]}(r),W^{[10]}(r))\notag\\
+ &\quad-\delta^2K\sum_{k=0}^mL_{k,N}(\eta)
+   \{V^{[10]}(r)-V^{[10]}(\Theta_k^{[10]}(r;\delta))\},\notag\\
+ \mathcal E_w^{[10]}(r)
+ &:=\partial_rW^{[10]}(r)q^{[10]}(r)
+     -(r-\delta^2\nu)g_{\rm anc}(r).                \label{eq:anchor-seed-fixed-current-residuals}
+\end{align}
+Because the voltage delay row carries the prefactor \(\delta^2\), its
+order-\(j\) coefficient uses only \(q_0,\ldots,q_{j-2}\).  Hence the
+triangular recursion kills precisely the coefficients through order ten
+of the two residuals just displayed.  Taylor's formula, also after one
+\(r\)-derivative and one \(p\)-derivative, gives
+\begin{equation}
+ \|\partial_r\mathcal E_v^{[10]}\|
+ +\|D_p\partial_r\mathcal E_v^{[10]}\|
+ +|\partial_r\mathcal E_w^{[10]}|
+ +|D_p\partial_r\mathcal E_w^{[10]}|
+ \le C\delta^{11}.                                  \label{eq:anchor-seed-residual-r-jet}
+\end{equation}
+Every corrector vanishes at \(-r_A\), and every backward foot fixes
+\(-r_A\).  Thus both residuals and their first \(p\)-derivatives vanish
+there.  The mean-value theorem upgrades
+\cref{eq:anchor-seed-residual-r-jet} to
+\begin{equation}
+ \|\mathcal E_v^{[10]}(r)\|+
+   \|D_p\mathcal E_v^{[10]}(r)\|
+ +|\mathcal E_w^{[10]}(r)|+|D_p\mathcal E_w^{[10]}(r)|
+ \le C\delta^{11}|r+r_A|.                           \label{eq:anchor-seed-residual-anchor-factor}
+\end{equation}
+
+The simple stable zero gives
+\(q^{[10]}(r)=-\gamma_\delta(r)(r+r_A)\), with
+\(0<\gamma_-\le\gamma_\delta\le\gamma_+\) on the relevant tail.
+Differentiating the scalar flow in \(p\), and using
+\(D_pq^{[10]}(-r_A)=0\), yields
+\begin{equation}
+ |r_\Gamma(s)+r_A|\le Ce^{-c_q\delta s},
+ \qquad
+ |D_pr_\Gamma(s)|\le C(1+\delta s)e^{-c_q\delta s}.
+                                                               \label{eq:proof-anchor-seed-tail-decay}
+\end{equation}
+Along this orbit the exact backward foot is
+\(r_\Gamma(s-\theta_k)=
+\Theta_k^{[10]}(r_\Gamma(s);\delta)\).  Consequently
+\begin{equation}
+ R_{\Gamma,v}(s)=\delta^{-1}
+     \mathcal E_v^{[10]}(r_\Gamma(s)),
+ \qquad
+ R_{\Gamma,w}(s)=\delta
+     \mathcal E_w^{[10]}(r_\Gamma(s)).               \label{eq:anchor-seed-residual-factorization}
+\end{equation}
+Equations
+\cref{eq:anchor-seed-residual-anchor-factor,eq:proof-anchor-seed-tail-decay,eq:anchor-seed-residual-factorization}
+give \cref{eq:anchor-seed-tail-residual}.  Since
+\(\beta_\delta\le c_q\delta/4\), multiplication by the range weight and
+its additional factor \(\delta^{-1}\) costs no power beyond
+\(\delta^{-1}\).  The voltage row is therefore \(O(\delta^9)\) in
+\(\mathscr F_\beta\), while the resource row is smaller.  This proves
+\cref{eq:anchor-seed-residual-smallness} directly, with no tail splice.
+
+We next prove the reference dichotomy rather than infer it from frozen
+spectra.  In the moving current frame \(T_N(r_\Gamma(s))\), use the
+critical tangent to eliminate the leading resource-to-current column.
+More explicitly, with
+\(E_{\Gamma,s}^c=\partial_r(V^{[10]},W^{[10]})(r_\Gamma(s))\), write
+\begin{equation}
+ (\xi_s,\omega)=(\psi_s,0)+a(s)E_{\Gamma,s}^c,\qquad
+ a'=\delta(q^{[10]})'(r_\Gamma)a
+       +\delta b_\Gamma(s)\pi_N^Tu+\mathcal E_\Gamma(s)(\psi,a),
+                                                               \label{eq:anchor-reference-resource-phase-row}
+\end{equation}
+where \(b_\Gamma\) is uniformly bounded.  The accompanying Volterra
+history coordinate is the finite-order version of
+\cref{eq:resource-gauge-history-conjugacy}; its norm and inverse norm are
+bounded on \(I_-^{\rm buf}\).  The full term
+\(\delta b_\Gamma\pi_N^Tu\) is included in the principal operator: after a
+slow convolution it is not a small perturbation.  The operator
+\(\mathcal E_\Gamma\) contains only the uncancelled resource-gauge
+remainder, whose coefficient norm is \(O(\delta^2)\), and the differentiated
+seed residual, whose normalized norm is \(O(\delta^9)\) by
+\cref{eq:anchor-seed-residual-smallness}.
+
+In the frame of \cref{eq:generated-core-current-frame}, the current part of
+the principal operator is the explicit nonautonomous ODE
+\begin{equation}
+ x'=\mathcal A_{\Gamma,c}^0(s)x,\qquad
+ \mathcal A_{\Gamma,c}^0(s)
+ =\delta^{-1}
+   \begin{pmatrix}
+    S_N^s(r_\Gamma(s))&0\\0&\lambda_{c,N}(r_\Gamma(s))
+   \end{pmatrix}.                                    \label{eq:anchor-reference-principal-current-operator}
+\end{equation}
+Let \(U_{\Gamma,c}^{s}(s,u)\) denote its stable evolution and let
+\(U_{\Gamma,c}^{u}(s,u)\) denote the inverse on its one-dimensional current
+unstable line.  The moving-frame derivative, exact current correctors,
+Volterra/delay rows, and residual rows are retained below in
+\(\mathcal R_\Gamma\); none is silently absorbed into this diagonal ODE.
+Put
+\begin{equation}
+ U_\Gamma^{\rm ph}(s,u)
+ =\frac{q^{[10]}(r_\Gamma(s))}
+        {q^{[10]}(r_\Gamma(u))},\qquad s\ge u.          \label{eq:anchor-reference-phase-evolution}
+\end{equation}
+The diagonal evolutions satisfy
+\begin{align}
+ \|U_{\Gamma,c}^{s}(s,u)\|
+ &\le Ce^{-c(s-u)/\delta},&&s\ge u,\notag\\
+ \|U_{\Gamma,c}^{u}(s,u)\|
+ &\le Ce^{-c(u-s)/\delta},&&0\le s\le u,\notag\\
+ |U_\Gamma^{\rm ph}(s,u)|
+ \le Ce^{-c_s\delta(s-u)},&&s\ge u.                  \label{eq:anchor-reference-principal-evolution}
+\end{align}
+For the last bound, split \(I_-\) into a fixed compact part and a
+neighborhood of the simple stable zero at \(-r_A\).  On the compact part
+the transit time is \(O(\delta^{-1})\) and the ratio is uniformly bounded;
+near the anchor the simple-zero estimate gives the displayed exponential.
+This proves the slow stable block on the whole half-line.
+
+The full principal stable evolution is lower triangular.  Its phase
+component, for stable current data \(x\) and phase data \(a\), is
+\begin{multline}
+ U_{\Gamma,0}^{s,{\rm ph}}(s,u)(x,a)
+ =U_\Gamma^{\rm ph}(s,u)a\\
+ \quad+\int_u^sU_\Gamma^{\rm ph}(s,\zeta)
+       \delta b_\Gamma(\zeta)\pi_N^T
+       U_{\Gamma,c}^{s}(\zeta,u)x\,\dd\zeta .          \label{eq:anchor-reference-stable-offdiagonal}
+\end{multline}
+The fast width is \(O(\delta)\), and therefore
+\begin{equation}
+ \left\|\int_u^sU_\Gamma^{\rm ph}(s,\zeta)
+       \delta b_\Gamma(\zeta)\pi_N^T
+       U_{\Gamma,c}^{s}(\zeta,u)\,\dd\zeta\right\|
+ \le C\delta^2e^{-c_s'\delta(s-u)}.                  \label{eq:anchor-reference-stable-offdiagonal-bound}
+\end{equation}
+
+The principal unstable bundle is a graph over the current unstable line.
+Pull its row on the asymptotic anchor tail backward and denote the result by
+\(H_\Gamma^u(0)\).  Invariance gives, for \(s\ge0\),
+\begin{multline}
+ H_\Gamma^u(s)=U_\Gamma^{\rm ph}(s,0)H_\Gamma^u(0)
+       U_{\Gamma,c}^{u}(0,s)\\
+ \quad+\int_0^sU_\Gamma^{\rm ph}(s,\zeta)
+       \delta b_\Gamma(\zeta)\pi_N^T
+       U_{\Gamma,c}^{u}(\zeta,s)\,\dd\zeta .          \label{eq:anchor-reference-unstable-graph-row}
+\end{multline}
+Both the tail row and the integral are bounded by \(C\delta^2\), since the
+current inverse has width \(O(\delta)\).  Thus
+\begin{equation}
+ \sup_{s\ge0}\|H_\Gamma^u(s)\|\le C\delta^2,          \label{eq:anchor-reference-unstable-graph-bound}
+\end{equation}
+and
+\begin{equation}
+ U_{\Gamma,0}^{u}(s,u)
+  \binom{x}{H_\Gamma^u(u)x}
+ =\binom{U_{\Gamma,c}^{u}(s,u)x}
+          {H_\Gamma^u(s)U_{\Gamma,c}^{u}(s,u)x},
+ \qquad 0\le s\le u.                                 \label{eq:anchor-reference-full-unstable-inverse}
+\end{equation}
+The inverse on this graph has the same strong exponential bound.  Hence the
+normal quotient has one current unstable line and the longitudinal phase is
+stable; the second raw frozen resource instability in
+\cref{rem:frozen-resource-phase-quotient} has not been silently discarded.
+
+Let \(\Pi_{\Gamma,0}^{s/u}(s)\) be the resulting graph projections.  For a
+conjugated current/phase forcing define
+\begin{equation}
+ (\mathbb G_{\Gamma,0}f)(s)
+ =\int_0^sU_{\Gamma,0}^s(s,u)\Pi_{\Gamma,0}^s(u)f(u)\,\dd u
+ -\int_s^\infty U_{\Gamma,0}^u(s,u)
+       \Pi_{\Gamma,0}^u(u)f(u)\,\dd u .                \label{eq:anchor-reference-principal-Green}
+\end{equation}
+In the normalized source norm of
+\cref{eq:anchor-half-line-range-norm}, the forcing has current size
+\(\delta\|f\|_{\mathscr F_\beta}\).  The two current kernels have width
+\(C\delta\), the direct phase kernel has width \(C\delta^{-1}\), the
+stable-current-to-phase kernel has amplitude \(C\delta^2\) and slow width
+\(C\delta^{-1}\), and the unstable graph has norm \(C\delta^2\).  Hence
+\begin{equation}
+ \|\mathbb G_{\Gamma,0}\|_{\mathscr F_\beta\to\mathscr Z_\beta}
+ \le C.                                               \label{eq:anchor-reference-principal-Green-bound}
+\end{equation}
+
+Write the remaining conjugated operator as
+\[
+ \mathcal R_\Gamma
+ =\mathcal R_{\rm fr}+\mathcal R_{\rm cor}
+  +\mathcal R_{\rm rg}+\mathcal R_{\rm del}
+  +\mathcal R_{\rm res}.
+\]
+The five terms are respectively the moving-frame row, the finite current
+correctors, the resource-gauge remainder after the complete triangular
+term in \cref{eq:anchor-reference-resource-phase-row} has been removed,
+the literal delay translation, and the differentiated seed residual.
+Convolution with \(\mathbb G_{\Gamma,0}\) gives the whole-half-line
+perturbation number
+\begin{equation}
+ \begin{split}
+ \eta_j&:=\|\mathbb G_{\Gamma,0}\mathcal R_j\|_
+       {\mathscr Z_\beta\to\mathscr Z_\beta},
+       \qquad j\in\{{\rm fr,cor,rg,del,res}\},\\
+ \eta_\Gamma
+ &\le\eta_{\rm fr}+\eta_{\rm cor}+\eta_{\rm rg}
+       +\eta_{\rm del}+\eta_{\rm res},\\
+ \eta_{\rm fr}&\le C\delta,\qquad
+ \eta_{\rm cor}\le C\delta,\qquad
+ \eta_{\rm rg}\le C\delta,\qquad
+ \eta_{\rm del}\le
+ C\delta^2(1+\delta^{-2\vartheta_0}),\qquad
+ \eta_{\rm res}\le C\delta^7,\\
+ \eta_\Gamma
+ &\le C\{\delta+\delta^2(1+\delta^{-2\vartheta_0})\}
+ \le\tfrac14.                                        \label{eq:anchor-reference-dichotomy-number}
+ \end{split}
+\end{equation}
+The fast current Green width is \(O(\delta)\).  The only resource-gauge
+coefficient convolved with the slow width \(O(\delta^{-1})\) is now the
+uncancelled \(O(\delta^2)\) remainder, so its contribution is
+\(O(\delta)\).  The full \(\delta b_\Gamma\pi_N^Tu\) term has already been
+included in \(\mathbb G_{\Gamma,0}\).  This proves the first line
+component by component.
+Here a generated delayed value costs
+\(e^{\beta_\delta\theta_m}\), whereas on
+\(0\le s<\theta_k\) the prescribed seed history is estimated directly by
+\(\delta^{-2\vartheta_0}\).  Thus old and generated histories are not
+identified: on the first delay interval write the delay row as
+\(\mathcal R_{\rm del}^{\rm gen}z+\mathcal B_{\rm del}\phi_0\), where the
+first term contains only \(s-\theta_k\ge0\) and the second is a boundary
+lifting of the prescribed history.  Only
+\(\mathcal R_{\rm del}^{\rm gen}\) enters \(\eta_{\rm del}\); the lifting
+obeys the same displayed polynomial old-history bound.  The whole-half-line
+Neumann series is
+\begin{equation}
+ \mathbb G_\Gamma
+ =(I-\mathbb G_{\Gamma,0}\mathcal R_\Gamma)^{-1}
+       \mathbb G_{\Gamma,0},\qquad
+ \|(I-\mathbb G_{\Gamma,0}\mathcal R_\Gamma)^{-1}\|
+ \le\frac43 .                                        \label{eq:anchor-reference-Green-Neumann}
+\end{equation}
+It gives \(P_\Gamma^{s/u}\) and the forced current-path kernels, and
+sliding-history reassembly gives
+\cref{eq:anchor-reference-Green-bound}.
+
+For a parameter direction \(\dot p\), differentiation of
+\(\mathbb G_\Gamma=\mathbb G_{\Gamma,0}
+ +\mathbb G_{\Gamma,0}\mathcal R_\Gamma\mathbb G_\Gamma\) gives
+\begin{multline}
+ D_p\mathbb G_\Gamma[\dot p]
+ =(I-\mathbb G_{\Gamma,0}\mathcal R_\Gamma)^{-1}
+ \bigl\{D_p\mathbb G_{\Gamma,0}[\dot p]
+ +D_p\mathbb G_{\Gamma,0}[\dot p]
+       \mathcal R_\Gamma\mathbb G_\Gamma\\
+ \hspace{42mm}
+ +\mathbb G_{\Gamma,0}D_p\mathcal R_\Gamma[\dot p]
+       \mathbb G_\Gamma\bigr\}.                    \label{eq:anchor-reference-Green-first-jet}
+\end{multline}
+Differentiating a current kernel produces at most two fast convolutions;
+differentiating \cref{eq:anchor-reference-phase-evolution} produces at
+most two slow convolutions.  After the source factor \(\delta\), their
+combined cost is at most \(C\delta^{-1}\).  Differentiating a graph
+projection or the seed-section phase normalization may cost one further
+factor \(\delta^{-1}\), because the physical section speed is of order
+\(\delta\).  The first parameter derivatives of the five remainder rows
+therefore satisfy
+\begin{equation}
+ \|D_p\mathbb G_{\Gamma,0}\|
+ +\|D_p\mathbb G_{\Gamma,0}\mathcal R_\Gamma\|
+ \le C\delta^{-2}.                                   \label{eq:anchor-reference-principal-first-jet-bound}
+\end{equation}
+The five differentiated remainder rows are not hidden in the last display:
+\begin{align}
+ \|\mathbb G_{\Gamma,0}D_p\mathcal R_{\rm fr}\|
+ +\|\mathbb G_{\Gamma,0}D_p\mathcal R_{\rm cor}\|
+ +\|\mathbb G_{\Gamma,0}D_p\mathcal R_{\rm rg}\|
+ &\le C\delta^{-2},\notag\\
+ \|\mathbb G_{\Gamma,0}D_p\mathcal R_{\rm del}\|
+ &\le C\delta^{-2}
+      \{1+\delta^{2-2\vartheta_0}\},\notag\\
+ \|\mathbb G_{\Gamma,0}D_p\mathcal R_{\rm res}\|
+ &\le C\delta^5.                                      \label{eq:anchor-reference-five-remainder-jets}
+\end{align}
+For the delay row the generated and prescribed-old-history pieces are
+differentiated separately as above; the displayed bound is deliberately
+weaker than their component bounds but uniform in the common parameter
+norm.  Summing these five rows recovers
+\(\|\mathbb G_{\Gamma,0}D_p\mathcal R_\Gamma\|\le C\delta^{-2}\).
+Together with
+\cref{eq:anchor-reference-Green-Neumann,eq:anchor-reference-Green-first-jet},
+this proves the declared common bound \(C_G\delta^{-2}\), namely
+\(M_G=2\), for the Green operator, the projections, and their first
+parameter derivatives.
+The same construction supplies a stable phase column
+\(e_\Gamma^{\rm ph}\) transverse to the seed section, proving that
+\cref{eq:anchor-reference-phase-border} is bounded.  Current forcing was
+handled throughout by the displayed current-path kernels, never by a
+history-space injection.
+
+The residual bound and
+\cref{eq:anchor-reference-Green-bound} put the affine term in
+\cref{eq:anchor-chart-center-fixed-point} inside the \(R_\delta/12\)
+ball.  Moreover,
+\[
+ \|\mathbb G_\Gamma^{\rm ent}\|
+ \operatorname{Lip}_{\mathscr Z_\beta\to\mathscr F_\beta}
+       (\mathcal N_\Gamma;R_\delta)
+ \le Cc_{\rm hl}\delta^{6-2-2}
+ =Cc_{\rm hl}\delta^2<\frac13.
+\]
+Thus the fixed point exists before an exact center orbit or its dichotomy
+is used.  It makes \(\widehat Z_-\) an exact orbit.  The phase border makes
+\(\ell_{\rm seed}\bar z(0)=0\), so this exact orbit starts on
+\(\Sigma_-^{\rm seed}\).
+
+On the fixed segment
+\(-r_{\rm in}\le r\le-r_{\rm seed}\), the reference slow speed has
+\(-q^{[10]}\ge c_q>0\).  The correction to the physical event speed is at
+most \(C\delta^{-1}R_\delta=C\delta^5\), whereas the reference speed has
+size \(c_q\delta\).  Hence \(\widehat Z_-\) crosses
+\(\Sigma_-^{\rm ent}\) exactly once, and
+\[
+ s_{\rm ent}\ge\frac{r_{\rm in}-r_{\rm seed}}{C\delta}
+       >3\theta_m .
+\]
+The event implicit-function theorem gives its \(C^1\) parameter
+dependence.  Recutting at this generated event gives
+\(\bar Z_-\) in \cref{eq:anchor-exact-chart-center-orbit}.
+
+The variational coefficients along \(\widehat Z_-\), and hence along the
+reindexed \(\bar Z_-\), differ from the reference coefficients by
+\(O(R_\delta/\delta)\).  In the normalized source norm the corresponding
+Green perturbation number is at most
+\(C\delta^{-M_G-2}R_\delta=C\delta^2\).  Dichotomy roughness therefore
+transfers the reference splitting and Green bounds to that exact orbit.
+This order removes both the base-orbit and the entry-phase circularities.
+
+For completeness, this roughness statement is interpreted in the exact
+resource-phase quotient, not in the raw frozen full system.  The
+monotonicity estimate used for the entry crossing persists up to a fixed
+local anchor section.  Hence \(\bar Z_-\) has the exact graph
+parameterization required by
+\cref{prop:exact-resource-gauge-quotient} on that outer portion.  In its
+coordinates the normal RFDE is the whole-half-line Neumann perturbation
+already estimated above, while the longitudinal column is the exact
+tangent with cocycle
+\(\bar q(\bar r(s))/\bar q(\bar r(u))\).  The bounded Volterra conjugacy
+and the transverse phase row lift these two pieces to the full section.
+On the final tail, asymptotic roughness of
+\cref{eq:anchor-full-linear-trichotomy} gives the same bundles; overlap
+uniqueness concatenates them without a terminal boundary row.  This
+supplies the quotient/full equivalence that a frozen current root count
+alone would not provide.
+
+The exact time tangent is a stable solution and is transverse to
+\(\Sigma_-^{\rm ent}\).  Hence
+\cref{eq:anchor-exact-phase-projected-column,eq:anchor-entry-splitting}
+follow from the exact one-dimensional unstable bundle.  Standard graph
+formulas give the fixed
+trivializations \(\mathfrak J_p^{s/u}\) with the declared polynomial
+bounds.  The exact mixed equation
+\cref{eq:anchor-annulus-nonlinear-map} is then a contraction by
+\cref{eq:anchor-half-line-contraction-ledger}.  Its second row equates the
+chart's unstable component to the infinite future integral; it is not a
+hidden finite terminal row.  This proves both directions of the membership
+statement without a backward RFDE semiflow.
+
+The reference path remains a fixed distance inside the negative channel
+until it enters the local anchor ball.  The base correction is at most
+\(R_\delta/3\), and the graph correction for
+\(\|\psi\|\le R_\delta\) is at most \(CR_\delta\).  The phase/fading norm
+controls every literal delayed value on the depth-three hull.  Decreasing
+\(c_{\rm hl}\) therefore gives negative channel containment for the base
+and the whole graph before either is continued into the central chart.
+Convergence places the local hit on \(W^s_{\rm loc}(E_N^-)\), which
+justifies the later chart-center notation.
+
+After three complete delay buffers, recut an exact weak path by
+\begin{equation}
+ \mathfrak S_3Z
+ =\bigl(\vartheta\mapsto v(3\theta_m+\vartheta),
+                   w(3\theta_m)\bigr).               \label{eq:anchor-three-buffer-recut}
+\end{equation}
+The image lies in the compatible \(C^3\) solution-manifold chart.  With
+\(\mathscr F_v^{\rm f}\) denoting the voltage component of the raw field,
+its three seam rows are
+\begin{equation}
+ \phi(0)=v(3\theta_m),\qquad
+ \phi'(0)=\mathscr F_v^{\rm f}(\phi,w),\qquad
+ \phi''(0)=D\mathscr F_v^{\rm f}(\phi,w)
+       [\phi',\delta\sigma_{\rm anc}(r(\phi))].        \label{eq:anchor-three-seam-rows}
+\end{equation}
+They follow directly by differentiating
+\cref{eq:anchor-raw-fold-time-rfde}; all delayed ancestors are generated
+after the third buffer.  This is the
+fixed strong chart at the preliminary seed flow.  The remaining regular
+forward segment to \(s_{\rm ent}>3\theta_m\), followed by the fixed event
+pullback, transports it to \(\mathcal M_{{\rm ent},p}^2\) and to the
+explicit trivialization
+\cref{eq:anchor-entry-fixed-trivialization}.  This is the chart in which the first parameter equation
+\cref{eq:anchor-annulus-jet-equations} and the conormal derivative are
+taken.  Differentiating the contraction once gives the \(3/2\) inverse
+bound and \cref{eq:anchor-half-line-conormal-bound}.
+
+It remains to prove the tail-replacement assertions.  Choose the comparison
+section in a fixed compact subannulus of the negative channel.  Since
+\(\bar r'=\delta\bar q(\bar r)\) there and \(\bar q\) is bounded above and
+below away from zero, its fold-time distance from the entry is at least
+\(c/\delta\).  The inverse unstable estimate and sliding-history
+reassembly therefore give
+\begin{equation}
+ \|U_-^u(0,L_\delta)\|
+ +\sup_{t\ge L_\delta}
+    e^{\beta_\delta(t-L_\delta)}
+      \|G_-^u(0,t)\|
+ \le C\delta^{-M_G}
+       e^{-\mathcal A_{\rm cap}(L_\delta,0)}.        \label{eq:anchor-tail-entry-kernel-bound}
+\end{equation}
+The event pullback freezes this section before parameter differentiation.
+Differentiating the kernel once changes only the polynomial prefactor.
+
+To see exactly where a terminal selector enters, solve
+\(b_L=0\) for its terminal unstable coordinate
+\(\gamma_L\) by
+\cref{eq:anchor-admissible-tail-selector}.  It and its two state
+derivatives and first parameter derivative are bounded by a fixed power of
+\(\delta^{-1}\).  The entry-unstable component of the difference between
+the infinite and finite mixed maps is
+\begin{equation}
+ \mathcal E_L^{\rm ent}(Y)
+ =-\int_{L_\delta}^{\infty}
+       G_-^u(0,t)\mathcal N_-
+          (t,\operatorname{Ext}_\infty Y;p)\,\dd t
+   -U_-^u(0,L_\delta)\jmath_L^u
+       \gamma_L(Y_{L_\delta};p)
+   +\mathcal E_L^{\rm coef}(Y).                    \label{eq:anchor-tail-explicit-defect}
+\end{equation}
+The last term is zero for a literal truncation.  More generally it is the
+same future unstable integral with the coefficient difference inserted,
+and its support is \(t\ge L_\delta\).  The entry-stable component is zero
+because \(\psi\), the phase row, and the entry chart are fixed.  Equations
+\cref{eq:anchor-tail-entry-kernel-bound,eq:anchor-tail-explicit-defect}
+give the value defect in
+\cref{eq:anchor-tail-Green-difference-bound}.
+
+Subtracting
+\(Y_i=\mathcal T_i(Y_i)\) and applying the mean-value formula proves
+\cref{eq:anchor-tail-value-difference}.  Differentiation of each fixed-point
+equation gives
+\[
+ (I-\mathcal A_i)Y_{i,q}=b_{i,q},\qquad
+ (I-\mathcal A_i)D_\psi Y_i=\mathcal B_i .
+\]
+Subtracting these two pairs gives
+\cref{eq:anchor-tail-parameter-difference,eq:anchor-tail-state-difference}
+with their displayed types.  The contraction estimate
+\cref{eq:anchor-half-line-contraction-ledger} bounds every inverse by
+\(3/2\).  Differentiating
+\cref{eq:anchor-tail-explicit-defect} once in \(p\), and once in \(p\)
+after one state derivative, preserves its future support and costs only a
+fixed power of \(\delta^{-1}\).  In particular, each difference
+\(\mathcal B_{\infty,p}-\mathcal B_{L,p}\) and
+\(\mathcal A_{\infty,p}-\mathcal A_{L,p}\) in
+\cref{eq:anchor-tail-mixed-state-parameter-difference} is the corresponding
+state derivative of the future-supported defect, plus terms already
+containing \(\Delta Y\), \(\Delta Y_p\), or \(\Delta W\).  Thus
+\begin{multline}
+ \bigl\|\mathscr R_{\rm in}(I-\mathcal A_\infty)^{-1}
+ \{(\mathcal B_{\infty,p}-\mathcal B_{L,p})
+   +(\mathcal A_{\infty,p}-\mathcal A_{L,p})W_L\\
+ \hspace{2.1cm}
+   +\mathcal A_{\infty,p}(W_\infty-W_L)
+   +(\mathcal A_\infty-\mathcal A_L)W_{L,p}\}\bigr\|
+ \le C\delta^{-M_{\rm cmp}}
+       e^{-\mathcal A_{\rm cap}(L_\delta,0)}.       \label{eq:anchor-tail-mixed-Green-bound}
+\end{multline}
+Together with
+\cref{eq:anchor-tail-Green-difference-bound}, this proves the value,
+the two first-parameter, the state-derivative, and the mixed
+state--parameter estimates.
+
+Here \(\operatorname{Ext}_\infty Y\) is the exact tail-graph extension
+used when the infinite problem is reduced to the common core.  The chart
+pullback in
+\cref{eq:anchor-tail-conormal-normalization} is common to the two rows.
+The normalization formula and its derivative are the ordinary quotient
+rule, which gives \cref{eq:anchor-tail-conormal-parameter}.  Insert the
+\(D_\psi F\) and \(\partial_pD_\psi F\) estimates just proved.  The
+intrinsic denominator is one in the compatible chart.  The finite
+denominator differs from it by the just-proved graph-jet bound and is
+therefore bounded away from zero; the same remains true after any admitted
+common transport.  This proves
+\cref{eq:anchor-tail-conormal-difference}.
+
+Finally, \cref{eq:anchor-positive-value-difference} is the ordinary
+current-path variation-of-constants identity projected by \(Q_+\).
+The event correction is obtained by differentiating the common section
+equation, so it removes the time column and no stable current column.
+The nonlinear difference in its integral is absorbed with the same
+Volterra--Neumann margin used for
+\cref{eq:anchor-positive-causal-Green}.  Its \(\nu\)- and \(\eta\)-derivatives
+satisfy the differentiated causal identity and incur polynomial losses
+only.  Since the positive comparison buffer also has fold-time length at
+least \(c/\delta\), the fading cap proves
+\cref{eq:anchor-annulus-capped-action}.  This completes the proof.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:anchor-annulus-flat-forgetting}]
+The positive half-line lemma gives the exact incoming hit of the inner
+section using only forward RFDE evolution.  Continue it through the
+attracting original-endpoint chart after it enters
+\(|r|<r_{\rm loc}\).  Forward uniqueness identifies the chart segment with
+the same anchored orbit and gives its exact hit \(A^0\) of \(\Sigma_0\).
+
+On the negative side,
+\cref{eq:anchor-intrinsic-entry-sheet} is exactly the set of histories on
+\(\Sigma_-^{\rm ent}\) whose forward orbits remain in the declared channel
+and converge to \(E_N^-\).  The physical-speed central family and the
+three reserved delay buffers define the first-hit map
+\(\mathcal P_{0\to{\rm ent},p}\) in
+\cref{eq:anchor-forward-central-entry-holonomy}.  It evolves a compatible
+history on \(\Sigma_0\) forward until its first regular hit of
+\(\Sigma_-^{\rm ent}\); no backward continuation is part of its definition.
+The strong event theorem makes this map \(C^2\) in state and \(C^1\) in the
+fixed parameter chart on the declared tube.
+
+The raw compatible central coordinates make
+\[
+ \phi\longmapsto
+ \bigl(\mathfrak n_p(\phi),
+       c_{\mathscr H}\mathscr H_\alpha(z(\phi))\bigr)
+\]
+a \(C^2\)-in-state, \(C^1\)-in-parameter map into
+\(\mathscr K_0\times\mathbb R\).  Its differential is block triangular:
+the first diagonal block is the normal/history coordinate identity, and
+the scalar block is nonzero by
+\cref{eq:anchor-first-integral-local-invertibility}.  The parameterized
+Banach inverse-function theorem therefore gives the exact chart
+\cref{eq:anchor-central-history-chart,eq:anchor-central-chart-identities}.
+
+Compose the exact entry membership function
+\cref{eq:anchor-entry-membership-function} with this forward hit and the
+central chart.  This is precisely \(\mathfrak M_{0,p}\) in
+\cref{eq:anchor-forward-preimage-membership}; its zero set is the forward
+preimage of the intrinsic entry sheet.  We next verify its scalar
+transversality without identifying that sheet with a finite-core terminal
+row.
+
+At a zero of \(\mathfrak M_{0,p}\), put
+\begin{align}
+ k_0^u&=D_u\mathfrak C_{0,p}(\psi,u)1,\notag\\
+ \phi_{\rm ent}
+   &=\mathcal P_{0\to{\rm ent},p}
+        (\mathfrak C_{0,p}(\psi,u)),
+ & (\psi_{\rm ent},u_{\rm ent})
+   &=\Pi_{\rm ent,p}\phi_{\rm ent}.                \label{eq:anchor-central-entry-column-data}
+\end{align}
+The exact entry splitting gives the unique decomposition
+\begin{equation}
+ D\mathcal P_{0\to{\rm ent},p}k_0^u
+ =k_{\rm ent}^s+a_u\,
+   D_u\Phi_{\rm ent}
+      (\psi_{\rm ent},F^{-,\rm ent}(\psi_{\rm ent});p)1,
+ \qquad
+ k_{\rm ent}^s\in T_{\phi_{\rm ent}}\mathcal S_-^{\rm ent}(p).
+                                                               \label{eq:anchor-central-entry-column-splitting}
+\end{equation}
+Applying \(D\mathfrak m_{{\rm ent},p}=\lambda_{\rm ent}\) and using
+\cref{eq:anchor-dual-row-pullback} gives the exact typed identity
+\begin{equation}
+ \partial_u\mathfrak M_{0,p}(\psi,u)
+ =\lambda_{\rm ent}(\psi_{\rm ent};p)
+      D\mathcal P_{0\to{\rm ent},p}k_0^u
+ =a_u.                                                \label{eq:anchor-forward-column-coefficient-identity}
+\end{equation}
+We prove that this coefficient is nonzero without comparing two long
+exponential products.  Use first the exact resource-gauge quotient of
+\cref{prop:exact-resource-gauge-quotient}.  The generated segment through
+the zero determines, in the fixed original-endpoint chart, its actual
+entry/old-history gauge \(g_{\phi,p}\) from
+\cref{prop:parameter-coherent-physical-hit-family}.  After the already
+permitted common shrink of the parameter box and the declared tube,
+\begin{equation}
+ \mathbf p_\phi:=(\nu,\eta,g_{\phi,p})
+       \in B_{\rm oe}(p^\circ,r_{\rm sp});             \label{eq:anchor-actual-oe-member}
+\end{equation}
+no assertion that \(g_{\phi,p}=0\) is made.  The anchored and original
+equations agree on this segment; the gauge only records which member of the
+original-endpoint chart represents the generated history.
+
+Let \(s_b\) be the time of the first generated cut
+\(r=-\rho_{b,\delta}\), let
+\(s_{\rm hit}>s_b\) be the fold time of the subsequent entry hit, let
+\(Y_p(s)=D\mathcal P_{0\to s,p}k_0^u\) be the event-normal variational
+column, and let \(\lambda_p^u(s)\) be the dual row of the exact
+one-dimensional unstable bundle along the zero orbit, normalized on an
+oriented generator \(h_p^u(s)\).  This bundle is the
+\(C\delta^{-2}R_\delta\)-roughness continuation of the chart-center
+half-line dichotomy to the stable-sheet orbit through the zero.  On the
+overlap with the generated core
+this is the bundle of
+\cref{eq:oe-family-core-bundles}; on the outer continuation it is the
+bundle in \cref{eq:anchor-annulus-Green-kernels}.  Uniqueness of a
+one-dimensional dichotomy bundle identifies the two on their common cut.
+Put
+\begin{equation}
+ \gamma_p(s)=\lambda_p^u(s)Y_p(s),\qquad
+ Y_p(s)=Y_p^s(s)+\gamma_p(s)h_p^u(s).              \label{eq:anchor-central-column-scalar-splitting}
+\end{equation}
+The stable and unstable summands are invariant.  Consequently there is a
+scalar cocycle \(\chi_p(s,t)>0\), with the orientation fixed at \(s_b\), such
+that
+\begin{equation}
+ \gamma_p(s)=\chi_p(s,s_b)\gamma_p(s_b),\qquad
+ \chi_p(s,t)=
+   \exp\!\left\{\int_t^s\varkappa_p^u(\zeta)\,\dd\zeta\right\}.
+                                                               \label{eq:anchor-central-column-scalar-cocycle}
+\end{equation}
+On the fixed overlap the integral is bounded below, and on every outer
+repelling subannulus
+\(\varkappa_p^u\ge c/\delta\).  Hence
+\begin{equation}
+ \chi_p(s_{\rm hit},s_b)\ge c_\chi>0                 \label{eq:anchor-central-column-cocycle-lower-bound}
+\end{equation}
+uniformly; the factor may be exponentially large, but it is never compared
+additively with an \(O(\delta)\) remainder.
+
+It remains only to estimate the coefficient at the first cut.  Let
+\(Y_0\) be the singular planar variational column generated by a unit
+\(Y\)-variation at \(\Sigma_0\), and let \(\gamma_0^u(s_b)\) be its
+coefficient on the oriented repelling mode.  Since the central chart uses
+\(u=c_{\mathscr H}\mathscr H_\alpha(0,Y)\),
+\begin{equation}
+ \gamma_0^u(s_b)
+ =\mathcal A_{0\to b}^{u,(0)}
+   \bigl[D_Y\{c_{\mathscr H}\mathscr H_\alpha(0,Y)\}\bigr]^{-1},
+ \qquad |\gamma_0^u(s_b)|\ge c_b^u>0.                \label{eq:anchor-first-cut-singular-coefficient}
+\end{equation}
+The last inequality is the explicit repelling-mode coefficient of the
+planar fold fundamental solution and uses
+\cref{eq:anchor-first-integral-local-invertibility}.
+
+For completeness, factor the common singular unstable scalar fundamental
+from the exact and singular columns on the interval from \(\Sigma_0\) to
+\(s_b\).  Variation of constants for the remaining projective coefficient
+gives
+\begin{equation}
+ \left|\frac{\gamma_p(s_b)}{\gamma_0^u(s_b)}-1\right|
+ \le C\left\{
+   \delta e^{cS_\delta}\langle S_\delta\rangle^M
+   +\eta_{{\rm core},\mathbf p_\phi}
+   +\eta_{{\rm fr},\mathbf p_\phi}
+   +\delta^{-2}R_\delta\right\}
+ =: \varepsilon_b(\delta)=o(1).                   \label{eq:anchor-first-cut-projective-comparison}
+\end{equation}
+Indeed, the first term is the integral of the central trace-coefficient
+difference after the singular scalar has been factored out; the next two
+are precisely the moving-frame and generated-core projective Green
+numbers in
+\cref{eq:oe-family-core-mixed-green-bound,eq:oe-family-core-dichotomy-bounds};
+the last is the roughness number for the radius-\(R_\delta\) stable-sheet
+orbit.  Exponential separation makes the stable-to-unstable projective
+kernel integrable, so no factor equal to the total unstable action occurs
+in this estimate.  This is a scalar variation-of-constants estimate for the
+coefficient at \(s_b\), not a relative comparison of the complete
+fold-to-entry amplitudes.
+
+After decreasing \(\delta_0\),
+\(|\gamma_p(s_b)|\ge c_b^u/2\).  At the entry graph point the tangent space
+of the intrinsic nonlinear stable sheet is exactly the set of variational
+data converging at \(+\infty\); hence its normalized annihilator is
+\(\lambda_{\rm ent}\).  Equations
+\cref{eq:anchor-forward-column-coefficient-identity,eq:anchor-central-column-scalar-cocycle}
+therefore give, exactly,
+\begin{equation}
+ |a_u|=|\gamma_p(s_{\rm hit})|
+ =\chi_p(s_{\rm hit},s_b)|\gamma_p(s_b)|
+ \ge \tfrac12c_\chi c_b^u.                         \label{eq:anchor-direct-column-transversality-ledger}
+\end{equation}
+Shrinking the state chart preserves half this margin and proves
+\cref{eq:anchor-forward-membership-transversality}.  The argument uses
+only the exact intrinsic dichotomy and its one-dimensional scalar cocycle;
+it neither identifies the finite physical-speed row with the nonlinear
+stable sheet nor hides an exponentially scaled column in an absolute
+\(O(\delta)\) comparison.
+
+The parameterized implicit-function theorem now gives the central graph
+\(u=F^{-,0}_{N,\delta,p}(\psi)\), proving
+\cref{eq:anchor-stable-sheet-graph,eq:anchor-central-graph-preimage-identity}.
+It is \(C^2\) in state and \(C^1\) in parameters.  Differentiating the
+composition gives the forward covector pullback
+\cref{eq:anchor-central-conormal-forward-pullback}; no inverse holonomy is
+used.  For an admissible finite-core tail selector, apply
+\cref{eq:anchor-tail-value-difference,eq:anchor-tail-parameter-difference,%
+eq:anchor-tail-state-difference} and then the common forward event
+holonomies.  This gives every history and graph operator in
+\cref{eq:anchor-flat-jet-list}.  The normalized row calculation
+\cref{eq:anchor-tail-conormal-normalization,%
+eq:anchor-tail-conormal-parameter} gives
+\cref{eq:anchor-flat-conormal-comparison}.  Taking the smallest capped
+action among the finitely many forward concatenations gives
+\cref{eq:anchor-flat-envelope} and proves the theorem.  At no point is the
+finite physical-speed row of
+\cref{thm:oe-family-C1-generator-entry-conormal} used as a defining row for
+the intrinsic stable sheet.
+\end{proof}
+
+\subsection{The zero fiber and its response}
+
+\begin{lemma}[Actual central traces and normal defect]
+\label[lemma]{lem:anchor-actual-central-defect}
+Let \(A^0\) be the incoming hit and \(B^0\) its paired stable-sheet point
+from \cref{eq:anchor-paired-stable-point}.  Their exact RFDE orbit
+segments admit the raw central coordinates
+\((z^\sigma,h^\sigma)\), \(\sigma\in\{a,r\}\).  On the retained delay
+hull define the current normal defect and its sliding history by
+\[
+ \rho^\sigma(s)
+ =h^\sigma(s)-H_{N,\delta,\nu,\eta}(z^\sigma(s)),
+ \qquad
+ \rho_s^\sigma(\vartheta)=\rho^\sigma(s+\vartheta).
+\]
+Put
+\begin{equation}
+ J_{a,S}=[-S_\delta,0],\qquad J_{r,S}=[0,S_\delta],
+ \qquad
+ \|\rho\|_{\mathcal X_{\sigma,S}^\sharp}
+ =\sup_{s\in J_{\sigma,S}}\|\rho_s\|_\delta^\sharp .
+                                                               \label{eq:anchor-retained-defect-space}
+\end{equation}
+These intervals, including every delay foot used in the displayed sliding
+histories, lie in the uncut
+retained physical tube on which the graph
+\(H_{N,\delta,\nu,\eta}\) is an exact invariant graph of the unmodified
+RFDE.  The preceding defect identity is used only on these intervals.  For
+\(\mathfrak A_1=\{1,\partial_\nu,D_\eta\}\),
+\begin{equation}
+ \|\mathscr D\rho^\sigma\|_{\mathcal X_{\sigma,S}^\sharp}
+ \le C\mathfrak f_\delta,\qquad
+ \mathscr D\in\mathfrak A_1.                       \label{eq:anchor-actual-graph-defect-flat}
+\end{equation}
+The exact planar field has the solution-wise expansion
+\begin{equation}
+ \frac{\dd}{\dd s}z^{\sigma,\rm phys}
+ =q_0+\delta q_{1,N}+\delta^2q_{2,N}
+   +\delta^3\mathcal R_{3,N}
+   +\mathcal B_N^\sigma\rho^\sigma
+   +\mathcal N_N^\sigma(\rho^\sigma),              \label{eq:anchor-actual-field-expansion}
+\end{equation}
+where
+\(\|\mathcal B_N^\sigma\|\le C\langle s\rangle^Me^{c|s|}\) and
+\(\mathcal N_N^\sigma=O(\|\rho^\sigma\|^2)\), with the same three
+solution-wise \(C^1\) parameter operators.
+\end{lemma}
+
+\begin{proof}
+The attracting orbit is flushed through a fixed physical subannulus before
+it reaches \(-S_\delta\).  The causal Green column in
+\cref{eq:anchor-annulus-capped-action} therefore puts its normal defect at
+\(-S_\delta\), together with its first parameter derivatives, below
+\(C\mathfrak f_\delta\).
+
+Subtract the exact invariance equation for \(H\) from the raw normal equation.
+On \(J_{\sigma,S}\) the defect satisfies
+\begin{equation}
+ \mathcal L_{\rho,\sigma}\rho^\sigma
+ =\mathcal N_{\rho,\sigma}(\rho^\sigma),\qquad
+ \|D_\rho\mathcal N_{\rho,\sigma}\|
+ \le C\|\rho^\sigma\|_{\mathcal X_{\sigma,S}^\sharp},          \label{eq:anchor-central-defect-equation}
+\end{equation}
+The generated-core normal Green operator is the
+restriction of the physical current dichotomy to these fixed retained
+intervals; its norm and its first strong-to-weak parameter derivative lose
+at most a fixed power of \(\delta^{-1}\).  Apply its causal version first on
+\(J_{a,S}\) to the flat input at \(-S_\delta\).  The contraction on the ball
+\(\|\rho^a\|\le2C\mathfrak f_\delta\) gives the asserted bound through
+\(s=0\).
+
+The nonlinear chart identities
+\cref{eq:anchor-central-chart-identities,eq:anchor-paired-stable-point}
+now give the exact equality
+\begin{equation}
+ \mathfrak n_p(A^0)=\psi_A=\mathfrak n_p(B^0),
+ \qquad \rho_0^a=\rho_0^r .                           \label{eq:anchor-paired-normal-coordinate}
+\end{equation}
+Thus the repelling defect problem has the already bounded input history at
+zero.  Its forward normal Green problem gives the same bound on \(J_{r,S}\).
+Differentiating the exact equality above and using the averaged derivative
+of \cref{eq:anchor-central-defect-equation} proves the two first-parameter
+bounds.  The conclusion concerns this paired point, not an arbitrary point
+of the stable sheet.  This is a normal, solution-wise Green problem on the
+exact physical graph; no ambient inverse is inferred from
+\cref{lem:shared-graph-trace}, and no claim is made outside its uncut tube.
+
+The central equations of the anchored and original models agree exactly.
+Substituting the defining defect identity above into their raw planar
+coordinate equation and applying Taylor's formula in the normal variable
+gives \cref{eq:anchor-actual-field-expansion}.  The coefficient bounds
+follow from the \(C^{12}\) raw chart and the retained-tube envelopes.
+Accordingly, the perturbation used in every first-integral identity is
+\[
+ Q^{\sigma,\rm phys}
+ =z^{\sigma,\rm phys\,\prime}-q_0(z^{\sigma,\rm phys})
+ =\delta q_{1,N}+\delta^2q_{2,N}
+  +\delta^3\mathcal R_{3,N}
+  +\mathcal B_N^\sigma\rho^\sigma
+  +\mathcal N_N^\sigma(\rho^\sigma).
+\]
+\end{proof}
+
+\begin{lemma}[Anchored endpoint-tail completion]
+\label[lemma]{lem:anchor-endpoint-tail-completion}
+Put \(R=S_\delta+B\), and let \(z^{a,\rm phys}\) and \(z^{r,\rm phys}\)
+be the planar core traces of the exact paired histories through
+\(A^0\) and \(B^0\).  Define
+\begin{align}
+ \mathcal B_{\rm out}:={}&
+ c_{\mathscr H}\{\mathscr H_\alpha(z^{a,\rm phys}(-R))
+       -\mathscr H_\alpha(z^{r,\rm phys}(R))\}\notag\\
+ &+c_{\mathscr H}\int_{-R}^{-S_\delta}
+   \nabla\mathscr H_\alpha(z^{a,\rm phys})^T
+       Q^{a,\rm phys}\,\dd s
+ +c_{\mathscr H}\int_{S_\delta}^{R}
+   \nabla\mathscr H_\alpha(z^{r,\rm phys})^T
+       Q^{r,\rm phys}\,\dd s .                     \label{eq:anchor-outer-endpoint-strip}
+\end{align}
+Here \(Q^{\sigma,\rm phys}=z^{\sigma,\rm phys\,\prime}
+-q_0(z^{\sigma,\rm phys})\) is the exact planar perturbation of the actual
+RFDE trace.  Define the linear structural profile by
+\[
+ a^{\rm phys}_{2,N}(s)[\eta]
+ =-e^{-s^2/2}s^2\Lambda_N(\eta).
+\]
+It is oriented so that
+\[
+ \int_{\mathbb R}a^{\rm phys}_{2,N}(s)[\eta]\,\dd s
+ =-\sqrt{2\pi}\Lambda_N(\eta).
+\]
+Then
+\begin{align}
+ \mathcal B_{\rm out}
+={}&\delta\int_{|s|>S_\delta}
+       a^{\rm phys}_{1,N}(s,\nu)\,\dd s
+ +\delta^2\int_{|s|>S_\delta}
+       a^{\rm phys}_{2,N}(s)[\eta]\,\dd s\notag\\
+ &+E_{\partial,N}^{\rm alg}+E_{\partial,N}^{\rm anc}.          \label{eq:anchor-endpoint-tail-completion}
+\end{align}
+For \(\mathfrak A_1=\{1,\partial_\nu,D_\eta\}\),
+\begin{align}
+ \sum_{\mathscr D\in\mathfrak A_1}
+   \|\mathscr D E_{\partial,N}^{\rm anc}\|
+ &\le C\mathfrak f_\delta,\notag\\
+ |E_{\partial,N}^{\rm alg}|
+ +|\partial_\nu E_{\partial,N}^{\rm alg}|
+ &\le C\delta^2,\notag\\
+ \|D_\eta E_{\partial,N}^{\rm alg}\|
+ &\le C\{\delta^3+\delta^2\|\eta\|\}.             \label{eq:anchor-endpoint-tail-errors}
+\end{align}
+In particular, the physical endpoint values are Gaussian-tail carriers;
+they are not individually \(O(\mathfrak f_\delta)\).
+\end{lemma}
+
+\begin{proof}
+Let \(s_{\rm loc}^\pm\) be the fold-coordinate cuts at
+\(r=\pm r_{\rm loc}\).  They satisfy
+\(|s_{\rm loc}^\pm|\ge c/\delta\).  On the interval between these cuts the
+anchored and original equations are identical.  The raw original-endpoint
+chart fixes the \(s\)-clock and exact planar coordinate on
+\([s_{\rm loc}^+,0]\) and \([0,s_{\rm loc}^-]\).  The annular mixed
+inverse and the three smoothing buffers in
+\cref{lem:anchor-annulus-Green-graphs} put both exact histories in this
+strong chart with one strong-to-weak parameter derivative.
+
+Write
+\[
+ \mathcal I^\sigma(s)
+ =c_{\mathscr H}\nabla\mathscr H_\alpha(z^{\sigma,\rm phys}(s))^T
+       Q^{\sigma,\rm phys}(s).
+\]
+Direct substitution in the raw physical chart gives the following
+single-Gaussian ledger on
+\(S_\delta<|s|<|s_{\rm loc}^\pm|\):
+\begin{align}
+ \mathcal I^\sigma(s)
+  -\delta a^{\rm phys}_{1,N}(s,\nu)
+  -\delta^2a^{\rm phys}_{2,N}(s)[\eta]
+ &=e^{-s^2/2}\widehat{\mathcal E}_{\rm alg}^\sigma(s)
+      +\mathcal E_{\rm anc}^\sigma(s),             \label{eq:anchor-outer-integrand-decomposition}\\
+ |\widehat{\mathcal E}_{\rm alg}^\sigma(s)|
+  +|\partial_\nu\widehat{\mathcal E}_{\rm alg}^\sigma(s)|
+ &\le C\delta^2e^{c|s|}\langle s\rangle^M,\notag\\
+ \|D_\eta\widehat{\mathcal E}_{\rm alg}^\sigma(s)\|
+ &\le C\{\delta^3+\delta^2\|\eta\|\}
+          e^{c|s|}\langle s\rangle^M,              \label{eq:anchor-outer-coefficient-ledger}\\
+ \sum_{\mathscr D\in\mathfrak A_1}
+  \int_{S_\delta<|s|<|s_{\rm loc}^\pm|}
+       \|\mathscr D\mathcal E_{\rm anc}^\sigma(s)\|\,\dd s
+ &\le C\mathfrak f_\delta .                        \label{eq:anchor-outer-boundary-ledger}
+\end{align}
+There is exactly one Gaussian factor in
+\cref{eq:anchor-outer-integrand-decomposition}.  The hatted remainder is a
+de-Gaussianized coefficient remainder, not the first-integral integrand
+itself.
+
+To verify the ledger, use the \(C^1\) actual-parameter original-endpoint
+family and its physical-speed bordered inverse to bound the raw trace and
+its first parameter derivative.  The coefficient allocation before any
+integration is
+\begin{align}
+ c_{\mathscr H}\nabla\mathscr H_\alpha(\gamma_0)^T
+       \delta q_{1,N}(\gamma_0,\nu)
+   &=\delta a^{\rm phys}_{1,N}(s,\nu),\notag\\
+ c_{\mathscr H}\nabla\mathscr H_\alpha(\gamma_0)^T
+       \delta^2D_\eta q_{2,N}(\gamma_0,\nu,0)[\eta]
+   &=\delta^2a^{\rm phys}_{2,N}(s)[\eta],            \label{eq:anchor-endpoint-coefficient-table}\\
+ \mathcal E_{\rm tr}^\sigma
+   &:=c_{\mathscr H}
+     \{\nabla\mathscr H_\alpha(z^{\sigma,\rm phys})^T
+          q_{1,N}(z^{\sigma,\rm phys},\nu)
+       -\nabla\mathscr H_\alpha(\gamma_0)^T
+          q_{1,N}(\gamma_0,\nu)\},\notag\\
+ \mathcal E_{\rm str}^\sigma
+   &:=c_{\mathscr H}\nabla\mathscr H_\alpha
+        (z^{\sigma,\rm phys})^T
+       \{q_{2,N}(z^{\sigma,\rm phys},\nu,\eta)
+          -D_\eta q_{2,N}(\gamma_0,\nu,0)[\eta]\},\notag\\
+ \mathcal E_{\rm jet}^\sigma
+   &:=c_{\mathscr H}\nabla\mathscr H_\alpha
+        (z^{\sigma,\rm phys})^T\delta^3\mathcal R_{3,N}.
+\end{align}
+Taylor's formula and the actual trace bounds give, with the Gaussian removed,
+\begin{align}
+ \sum_{\mathscr D\in\{1,\partial_\nu\}}
+   \{|\mathscr D(\delta\mathcal E_{\rm tr}^\sigma)|
+      +|\mathscr D(\delta^2\mathcal E_{\rm str}^\sigma)|\}
+   &\le C\delta^2e^{c|s|}\langle s\rangle^M,\notag\\
+ \|D_\eta(\delta\mathcal E_{\rm tr}^\sigma)\|
+   +\|D_\eta(\delta^2\mathcal E_{\rm str}^\sigma)\|
+   &\le C\{\delta^3+\delta^2\|\eta\|\}
+          e^{c|s|}\langle s\rangle^M,\notag\\
+ \sum_{\mathscr D\in\mathfrak A_1}
+   |\mathscr D\mathcal E_{\rm jet}^\sigma|
+   &\le C\delta^3e^{c|s|}\langle s\rangle^M.         \label{eq:anchor-endpoint-coefficient-errors}
+\end{align}
+The terms
+\(\mathcal B_N^\sigma\rho^\sigma+
+  \mathcal N_N^\sigma(\rho^\sigma)\) in
+\cref{eq:anchor-actual-field-expansion} are assigned to
+\(\mathcal E_{\rm anc}^\sigma\), not counted again in the hatted algebraic
+remainder.  Their three \(C^1\) solution-wise integrals are bounded by
+\cref{eq:anchor-actual-graph-defect-flat}.  The part depending on the anchor
+collar is propagated through a fixed physical subannulus and has the same
+bound.  This proves
+\cref{eq:anchor-outer-coefficient-ledger,eq:anchor-outer-boundary-ledger}
+term by term.  The calculation uses
+\cref{eq:shared-q1,eq:q2-physical-continuation} only for the two displayed
+physical profiles; it does not use
+\cref{lem:anchor-actual-central-defect} outside its retained tube and does
+not use a selected endpoint trace.
+
+Apply
+\[
+ \frac{d}{ds}\mathscr H_\alpha(z(s))
+ =\nabla\mathscr H_\alpha(z(s))^T
+       \{z'(s)-q_0(z(s))\}
+\]
+first from \(s_{\rm loc}^+\) to \(-R\) on the attracting trace and then
+from \(R\) to \(s_{\rm loc}^-\) on the repelling trace.  The first-integral
+values at the two \(r_{\rm loc}\)-cuts split into the singular critical
+value and the boundary-dependent normal column.  The first is
+\(O(e^{-c/\delta^2})\); the second is bounded by
+\cref{eq:anchor-annulus-capped-action}.  Together with
+\cref{eq:anchor-outer-boundary-ledger}, these terms form
+\(E_{\partial,N}^{\rm anc}\).
+
+Add and subtract the explicit physical profiles on
+\(S_\delta<|s|<|s_{\rm loc}^\pm|\).  Their portions beyond the two
+\(r_{\rm loc}\)-cuts are \(O(e^{-c/\delta^2})\), with the three displayed
+\(C^1\) parameter operators.
+Consequently the endpoint values plus the two outer-strip integrals equal
+the profile integrals over \(|s|>S_\delta\), with the signs in
+\cref{eq:anchor-endpoint-tail-completion}.  Integrating the single Gaussian
+in \cref{eq:anchor-outer-integrand-decomposition} and using
+\begin{equation}
+ \int_{S_\delta}^{\infty}
+ e^{-s^2/2+cs}\langle s\rangle^M\,\dd s
+ \le C e^{-S_\delta^2/2+cS_\delta}
+       \langle S_\delta\rangle^M                   \label{eq:anchor-single-Gaussian-tail}
+\end{equation}
+gives \cref{eq:anchor-endpoint-tail-errors}.  Thus endpoint terms and outer
+strips are neither discarded nor double counted, and no selected
+preparation is used.  This proves the lemma.
+\end{proof}
+
+\begin{lemma}[Paired exact traces and anchored finite-gap bridge]
+\label[lemma]{lem:anchor-fold-gap-conjugacy}
+Before the scalar root is sought, the inward unstable branch has a unique
+forward hit of \(\Sigma_0\), depending \(C^1\) on \((\nu,\eta)\), and the
+future-asymptotic mixed problem
+represents \(W^s(E_N^-)\) as the graph
+\cref{eq:anchor-stable-sheet-graph} on the same section throughout the common
+parameter box.  Pairing the incoming point with the stable-sheet point in
+\cref{eq:anchor-paired-stable-point} gives two exact RFDE traces and the
+first-integral gap \cref{eq:anchor-physical-gap}.  It has the zero-fiber
+interpretation in \cref{prop:anchor-gap-comparison}, and its exact
+finite-section decomposition gives
+\cref{eq:anchor-physical-gap-estimates}
+without a cokernel/domain identification and without an admissible
+preparation.
+\end{lemma}
+
+\begin{proof}
+The incoming orbit lies in the raw-compatible attracting chart by
+\cref{thm:anchor-annulus-flat-forgetting}.  Eventual smoothing over the
+reserved delay buffers and the strict physical speed sign give a \(C^1\)
+parameter family of forward hits of \(X=0\).  The moving-time derivative is divided only by the
+uniformly nonzero section speed.  No assertion that an off-root orbit already
+traverses the repelling channel is used.
+
+On the future side, the infinite mixed Green problem in
+\cref{lem:anchor-annulus-Green-graphs} solves every stable entry coordinate
+and removes the one unstable coefficient by future boundedness.  Its
+intrinsic entry graph \cref{eq:anchor-intrinsic-entry-sheet}, pulled back by
+the forward membership composition
+\cref{eq:anchor-forward-preimage-membership}, gives
+\(u=F^{-,0}(\psi)\) before a gap is evaluated.  The direct column identity
+\cref{eq:anchor-forward-column-coefficient-identity} proves the required
+transversality.  This is the explicit ambient range construction used here;
+the graph-tangent operator in \cref{lem:shared-graph-trace} is not misused as
+an ambient RFDE inverse.
+
+By \cref{eq:anchor-central-chart-identities,eq:anchor-paired-stable-point},
+the two points \(A^0,B^0\) have the same exact normal/history coordinate and
+their normalized first-integral coordinates are, respectively,
+\(u_A\) and \(F^{-,0}(\psi_A)\).  Consequently
+\begin{equation}
+ G^{\rm phys}=u_A-F^{-,0}(\psi_A)                     \label{eq:anchor-gap-exact-coordinate-identity}
+\end{equation}
+with no Taylor multiplier.  Since \(\mathfrak C_{0,p}\) is injective,
+\(G^{\rm phys}=0\) if and only if \(A^0=B^0\), which is exactly membership
+of the incoming history in the future stable sheet.  Its past is the
+unstable orbit from \(E_N^+\), and its future is supplied by the stable
+sheet.  RFDE forward uniqueness gives one global heteroclinic.  Conversely
+every heteroclinic using the inward branch and lying in
+\(\mathcal U_{\rm anc}\) has this fixed-phase hit and therefore has zero
+gap.  This proves only the declared local uniqueness, not uniqueness among
+all global connections.
+
+Let \(z^{a,\rm phys}\) and \(z^{r,\rm phys}\) be the planar coordinates of
+the exact orbit segments through \(A^0\) and \(B^0\), and define
+\[
+ Q^{\sigma,\rm phys}(s)
+ =\frac{d}{ds}z^{\sigma,\rm phys}(s)-q_0(z^{\sigma,\rm phys}(s)).
+\]
+The definition \cref{eq:anchor-physical-gap} and the fundamental theorem of
+calculus give the exact identity
+\begin{align}
+ G^{\rm phys}={}&c_{\mathscr H}\{\mathscr H_\alpha
+       (z^{a,\rm phys}(-R))
+       -\mathscr H_\alpha(z^{r,\rm phys}(R))\}\notag\\
+ &+c_{\mathscr H}\int_{-R}^0\nabla\mathscr H_\alpha
+       (z^{a,\rm phys}(s))^TQ^{a,\rm phys}(s)\,\dd s\notag\\
+ &+c_{\mathscr H}\int_0^R\nabla\mathscr H_\alpha
+       (z^{r,\rm phys}(s))^TQ^{r,\rm phys}(s)\,\dd s
+                                                        \label{eq:anchor-exact-finite-gap-identity}
+\end{align}
+with no additional ambient term: all transverse histories enter the exact
+fields \(Q^{\sigma,\rm phys}\).  Splitting the two integrals at
+\(\pm S_\delta\) gives, literally,
+\begin{align}
+ G^{\rm phys}
+ =\mathcal B_{\rm out}
+ &+c_{\mathscr H}\int_{-S_\delta}^{0}
+   \nabla\mathscr H_\alpha(z^{a,\rm phys})^T
+      Q^{a,\rm phys}\,\dd s\notag\\
+ &+c_{\mathscr H}\int_{0}^{S_\delta}
+   \nabla\mathscr H_\alpha(z^{r,\rm phys})^T
+      Q^{r,\rm phys}\,\dd s .                     \label{eq:anchor-exact-central-outer-split}
+\end{align}
+This equation both fixes all signs and shows that the outer strips are
+counted once.
+
+The coefficient transfer on these actual, not prepared, traces is
+\cref{lem:anchor-actual-central-defect}.  It is solution-wise after three
+smoothing buffers and does not assert operator differentiability on rough
+histories.  The planar one-sided trace inverses in
+\cref{lem:shared-graph-trace} are used only for the planar equations with
+the last two terms as known sources.  Their Gaussian pairing norm and
+\cref{eq:anchor-actual-graph-defect-flat} give the same trace estimates as
+\cref{eq:shared-trace-jets} for the value and first parameter derivatives,
+up to \(C\mathfrak f_\delta\).
+
+On \(|s|\le S_\delta\), the anchored and original physical equations agree
+literally.  The coefficient calculation
+\cref{eq:shared-leading-gap,eq:shared-melnikov} therefore applies to the
+integrands in \cref{eq:anchor-exact-finite-gap-identity}, giving
+\begin{align}
+ \delta\sqrt{2\pi}(\nu-\nu_{0,N}),\qquad
+ -\delta^2\sqrt{2\pi}\Lambda_N(\eta)               \label{eq:anchor-physical-Melnikov-pairings}
+\end{align}
+for the first parameter and structural pairings.  The half-line Green
+estimates put only the anchor-dependent part below
+\(\mathfrak f_\delta\).  The endpoint values themselves are combined with
+the two outer strips by
+\cref{lem:anchor-endpoint-tail-completion}; this supplies exactly the
+missing whole-line tails in
+\cref{eq:anchor-physical-Melnikov-pairings}.  The residual Gaussian
+tail error is bounded by
+\begin{equation}
+ C\delta^{-M}e^{-S_\delta^2/2+cS_\delta}
+       \langle S_\delta\rangle^M=\mathfrak t_\delta.           \label{eq:anchor-physical-tail-bound}
+\end{equation}
+The moving-trace, parameter-Taylor, and graph remainders are estimated by
+applying Taylor's formula to
+\cref{eq:anchor-actual-field-expansion}.  The resulting integrals are the
+same local multilinear expressions as
+\cref{eq:gap-error-moving-nu,eq:gap-error-moving-zeta,%
+eq:gap-error-jet-bound,eq:gap-error-parameter-derivatives}, restricted to
+their value and first parameter derivatives, plus the
+explicit flat defect in \cref{eq:anchor-actual-graph-defect-flat}.  Thus no
+selected endpoint or selected trace estimate is transferred by assertion.
+Enlarge \(M_{\rm anc}\), if necessary, to dominate the finite \(C^1\)
+loss exponent \(M_*\).  Choosing \(p>M_{\rm anc}+6\) then absorbs
+\(\mathfrak e_\delta=\mathfrak f_\delta+\mathfrak t_\delta\) below every
+displayed algebraic order and yields
+\cref{eq:anchor-physical-gap-estimates}.
+This proves the lemma.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:anchor-gap-comparison}]
+Both the zero-fiber statement and the direct physical estimates are
+\cref{lem:anchor-fold-gap-conjugacy}.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:anchored-physical-root-conormal}]
+Choose \(c_0\) strictly inside the common \(\nu\)-window.  The first two
+lines of \cref{eq:anchor-physical-gap-estimates} give opposite signs at
+\(\nu_{0,N}\pm c_0\) and
+\begin{equation}
+ \partial_\nu G^{\rm phys}
+ \ge\frac12\delta\sqrt{2\pi}>0                     \label{eq:anchor-physical-parameter-transversality}
+\end{equation}
+after decreasing \(\delta_0,\eta_0\).  The intermediate-value theorem and
+strict monotonicity give the unique root.  By
+\cref{prop:anchor-gap-comparison}, it is precisely the heteroclinic root of
+the fixed physical equation, so its definition contains no preparation.
+The tracking-ball estimate in
+\cref{lem:anchor-annulus-Green-graphs} gives the \(C\delta^2\) outer
+history bound.  Crossing a fixed \(r\)-subannulus under
+\(\dot r=\delta^2q_0+O(\delta^4)\) takes at least
+\(c\delta^{-2}\) original time.  On the central window the range inverse
+for the planar trace, the actual normal-defect estimate
+\cref{lem:anchor-actual-central-defect}, and
+\cref{eq:shared-trace-jets} give
+\cref{eq:anchor-heteroclinic-canard-tracking}.  At the root the two
+one-sided histories are restrictions of the same orbit.
+
+Implicit differentiation gives
+\begin{equation}
+ D_\eta\nu_c^{\rm phys}
+ =-\frac{D_\eta G^{\rm phys}}
+          {\partial_\nu G^{\rm phys}}
+ =\delta\Lambda_N+O(\delta^2+\delta\|\eta\|).       \label{eq:anchor-root-implicit-derivative}
+\end{equation}
+Multiplication by \(\delta^2\) proves
+\cref{eq:anchor-physical-root-jets}.  Integrating the first derivative
+on the structural segment proves \cref{eq:anchor-physical-root-increment}.
+Dividing by \(\delta^3\) gives
+\cref{eq:anchor-physical-conormal-limit}.
+
+Finally, \(\Lambda_N\) is already identified with the hidden-return Schur
+factorization in \cref{eq:joint-schur-hyperplane}, and all the range,
+tomography, one-delay, and witness statements concern that same covector.
+They therefore transfer verbatim to the intrinsic limiting conormal.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:anchor-physical-naturality-composition}]
+A phase or section change is used only on the constructed incoming orbit and
+future-asymptotic sheet.  The restricted event holonomies between two regular
+cuts are \(C^1\) bijections; their inverse means recutting the same already
+constructed complete or future-asymptotic solutions, not inverting the
+ambient RFDE semiflow.  They carry the incoming point and stable sheet
+together, so their scalar defining functions differ by a nowhere-zero
+factor.  At a zero, multiplication by that factor multiplies the differential
+and leaves its line unchanged.  A parameter change acts by the ordinary
+covector pullback.
+
+For intermediate sections write the total forward holonomy as
+\(P=P_j\circ\cdots\circ P_1\).  The chain rule gives
+\(DP=DP_j\cdots DP_1\).  Inserting or deleting a factor and its adjoining
+section identification leaves the transported stable-sheet membership row
+unchanged; this is the complete-history transition-jet composition law.
+
+For each anchor multiplier, apply the direct gap estimates
+\cref{eq:anchor-physical-gap-estimates} and the implicit derivative
+\cref{eq:anchor-root-implicit-derivative}.  Their constants are uniform over
+the bounded completion class because the clock lower envelope is part of
+\cref{eq:anchor-admissible-class}.  After centering at its own baseline,
+each weighted conormal is therefore within \(C\delta\) of
+\((1,-\Lambda_N)\).  The triangle inequality gives the stated
+\(2C\delta\) pairwise bound.  This argument does not claim a pairwise flat
+gap comparison or equality of exact roots.
+\end{proof}
