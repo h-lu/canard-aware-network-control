@@ -1,0 +1,1101 @@
+\section{The broken-orbit Lin closure}
+\label{sec:broken-lin-closure}
+
+This appendix replaces a tempting but invalid shortcut in which a selected
+central history is declared to be the old history of an independently
+constructed outer boundary-value solution.  A retarded semiflow is not
+invertible on an open history set, and neither the graph-tangent inverse in
+\cref{lem:shared-graph-trace} nor the raw-gauge inverse in
+\cref{thm:raw-gauge-fixed-section-zero} supplies that missing identification.
+We instead retain the literal history jump between two separately exact
+segments as a Lin residual.  The first ingredient is the ambient causal
+inverse on the central segment.
+
+\subsection{An ambient causal inverse after the exact graph shear}
+
+Let \(I_c=[0,T_c]\), where \(T_c\le S_\delta\), and let
+\begin{equation}
+ Z^c_{p,s}=\mathcal I_p(u_p^c(s)),
+ \qquad -\theta_m\le s\le T_c,                    \label{eq:anchor-central-exact-graph-member}
+\end{equation}
+be an exact retained member of the invariant history graph in
+\cref{lem:shared-graph-trace}; here \(p=(\nu,\eta)\) belongs to the
+structural ball of \cref{def:structural-ball-preparation}.  Throughout this
+subsection the full delay enlargement of the segment and the tubular
+neighborhood under consideration are required to lie in the uncut agreement
+region.  This containment is a hypothesis of the local lemma, not a
+consequence of a later Newton argument.
+
+Write \(\mathscr Y_N=C([ -\theta_m,0];\mathbb R^N)\times\mathbb R\) as in
+\cref{eq:anchor-fixed-delay-space}.  On the raw fold chart define the affine
+present planar evaluation and its linear part by
+\begin{equation}
+ \mathbf e_{\rm pl}(\phi,w)
+ =\left(\delta^{-1}\{\pi_N^T\phi(0)-1\},
+        \delta^{-2}\{2/3-w\}\right),
+ \qquad e_{\rm pl}=D\mathbf e_{\rm pl}.             \label{eq:anchor-central-planar-evaluation}
+\end{equation}
+The symbol \(\mathcal I_p\) below means the exact physical-history lift:
+the lift in \cref{eq:invdet-history-lift}, followed by the raw fold-chart
+reconstruction and the fold-time history rescaling.
+
+\begin{lemma}[Exact ambient shear and causal normal inverse]
+\label[lemma]{lem:anchor-central-ambient-shear}
+On a common neighborhood of \cref{eq:anchor-central-exact-graph-member},
+the map
+\begin{equation}
+ \mathfrak G_p(\phi)
+ =\bigl(\mathbf e_{\rm pl}\phi,
+        \phi-\mathcal I_p(\mathbf e_{\rm pl}\phi)\bigr)
+ =:(u,\omega)                                      \label{eq:anchor-central-exact-history-shear}
+\end{equation}
+is a \(C^2\)-in-state, \(C^1\)-in-\(p\) diffeomorphism onto an open
+subset of
+\[
+ \mathbb R^2\times\mathscr K^\perp,
+ \qquad \mathscr K^\perp:=\ker e_{\rm pl},
+\]
+with inverse \((u,\omega)\mapsto\mathcal I_p(u)+\omega\).  If
+\(\mathscr R_p^\perp(u,\omega)\) denotes the normal component of the
+fold-time path residual after this shear, then
+\begin{equation}
+ \mathscr R_p^\perp(u,0)=0,
+ \qquad D_u\mathscr R_p^\perp(u,0)=0.              \label{eq:anchor-central-shear-invariance}
+\end{equation}
+
+There are fixed-clock graph spaces \(\mathscr D_c^\perp\) and
+\(\mathscr F_c^\perp=C(I_c;E_N)\), defined in the proof, for which
+\begin{equation}
+ \mathcal L_{c,p}^\perp\omega
+ :=\left(D_\omega\mathscr R_p^\perp(u_p^c,0)\omega,
+         \omega_0\right):
+ \mathscr D_c^\perp\longrightarrow
+ \mathscr F_c^\perp\times\mathscr K^\perp          \label{eq:anchor-central-ambient-operator}
+\end{equation}
+is a causal bounded isomorphism.  For fixed \(M_\perp<\infty\), independent
+of \(N\),
+\begin{equation}
+ \| (\mathcal L_{c,p}^\perp)^{-1}\|
+ \le C\delta^{-M_\perp}.                           \label{eq:anchor-central-ambient-inverse}
+\end{equation}
+If \(f_p\) and \(\omega_{0,p}\) are selected \(C^1\) families in the
+fixed strong-to-weak parameter trivialization, their selected solutions
+obey
+\begin{equation}
+ \|J_p^1\omega_p\|_{\mathscr D_c^\perp}
+ \le C\delta^{-M_\perp}
+ \left(\|J_p^1f_p\|_{\mathscr F_c^\perp}
+       +\|J_p^1\omega_{0,p}\|_{\mathscr K^\perp}\right),
+ \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.          \label{eq:anchor-central-ambient-selected-jets}
+\end{equation}
+This is a selected-solution jet statement; it does not assert
+operator-topology differentiability of an inverse on a rough history space.
+\end{lemma}
+
+\begin{proof}
+The left-inverse identity is \cref{eq:invdet-left-inverse}.  The resource
+past discarded by the RFDE phase space is recovered, only for the purpose of
+the chart calculation, by \cref{eq:invdet-recover-resource-history}; no
+independent resource history is adjoined.  On the retained delay hull the
+lift solves the unmodified physical RFDE by
+\cref{lem:invdet-to-main-lemma}.  Thus
+\(\mathbf e_{\rm pl}\mathcal I_p=\Id\), and the inverse displayed after
+\cref{eq:anchor-central-exact-history-shear} is exact.
+
+We expose the causal structure of the normal fiber.  Write
+\(\omega_s=(\omega_{v,s},\omega_{w,s})\in\ker e_{\rm pl}\) and, along
+the base trace, put
+\begin{align}
+ \kappa_s^X(\vartheta)
+  &=\delta^{-1}\pi_N^T\omega_{v,s}(\vartheta),\notag\\
+ \kappa_s^Y(\vartheta)
+  &=\int_\vartheta^0\kappa_s^X(r)\,\dd r,\notag\\
+ \rho_s(\vartheta)
+  &=\delta^{-2}P_{\perp,N}\omega_{v,s}(\vartheta)
+    -2g_NX_p^c(s+\vartheta)\kappa_s^X(\vartheta)
+    -DH_p(u_p^c(s+\vartheta))\kappa_s(\vartheta).
+                                                               \label{eq:anchor-central-normal-fiber-coordinates}
+\end{align}
+The middle line is the linearization of
+\cref{eq:invdet-recover-resource-history}; it is an estimate coordinate.
+The exact fold chart, \cref{eq:shared-products}, and the graph-jet bounds
+show that \(\omega_s\mapsto(\kappa_s,\rho_s)\) and its inverse have one
+fixed polynomial loss in \(\delta^{-1}\), uniformly in \(N\).  We use the
+induced maximum norm on \(\mathscr K^\perp\).
+
+Write the exact current equations in the \((u,h)\)-chart in the form
+\[
+ u'=q_0(u)+\delta F_p(u_\bullet,h_\bullet),
+ \qquad
+ h'=\delta^{-1}A_Nh+G_p(u_\bullet,h_\bullet),
+\]
+which is the factorization in \cref{eq:invdet-raw-normal-form}.  If
+\((\mathscr R^u,\mathscr R^h)\) is its path residual, set
+\begin{equation}
+ \mathscr R_p^\perp
+ :=\mathscr R^h-DH_p(u)\mathscr R^u.               \label{eq:anchor-central-normal-row-shear}
+\end{equation}
+The invariance equation for \(H_p\) makes this expression identically zero
+on the lifted graph.  Differentiating that identity in \(u\) proves both
+parts of \cref{eq:anchor-central-shear-invariance}.
+
+At \(Z_p^c\), the sheared linearization has the exact triangular form
+\begin{align}
+ b(s)&=\mathscr B_p(s)[\kappa_s,\rho_s],
+ &\|\mathscr B_p(s)\|&\le\delta\mathfrak A_\delta,
+                                                        \label{eq:anchor-central-planar-normal-source}\\
+ \rho'(s)&=\delta^{-1}A_N\rho(s)
+       +\mathscr C_p(s)[\kappa_s,\rho_s]+f(s),
+ &\|\mathscr C_p(s)\|&\le\mathfrak A_\delta,       \label{eq:anchor-central-fast-normal-equation}
+\end{align}
+where
+\begin{equation}
+ \mathfrak A_\delta
+ =C\langle S_\delta\rangle^{M_c}e^{c_cS_\delta}.    \label{eq:anchor-central-ambient-tame-factor}
+\end{equation}
+The same bound, after changing \(C,M_c,c_c\), holds for the selected first
+\(p\)-jets.  The factor \(\delta\) in
+\cref{eq:anchor-central-planar-normal-source} is the exact outer factor in
+the planar row of \cref{eq:invdet-raw-normal-form}; it would be lost in an
+unscaled raw norm.  The remaining bounds follow from
+\cref{eq:shared-products,eq:shared-evaluation-TV}, the mixed graph jets in
+\cref{prop:invdet-mixed-jets}, and
+\cref{eq:invdet-coefficient-envelope,eq:invdet-tame-flow}.  The affine-line
+construction in the proof of \cref{lem:structural-ball-preparation} gives
+the same statement for \(D_\eta\); the delay locations remain fixed.
+
+Let \(V_p(s,t)\) be the reduced graph-tangent variational process.  If
+\(\kappa_0\) is the zero-present planar-memory part of the initial normal
+history, variation of constants gives
+\begin{equation}
+ \kappa_s(\vartheta)
+ =\mathbf1_{\{s+\vartheta\le0\}}\kappa_0(s+\vartheta)
+ -\int_{\max\{0,s+\vartheta\}}^s
+       V_p(s+\vartheta,t)b(t)\,\dd t.              \label{eq:anchor-central-free-shift}
+\end{equation}
+Indeed, for a planar variation \(y\), subtract the graph-tangent value
+\(V_p(s+\vartheta,s)y(s)\) from \(y(s+\vartheta)\).  Its current value
+cancels, so \(\kappa_s(0)=0\), and the displayed formula follows.  It is a
+left shift followed by an ordinary time integral; no point-value forcing is
+inserted into a \(C\)-history space.  Every integral has length at most
+\(\theta_m\), hence
+\begin{equation}
+ \sup_{s\in I_c}\|\kappa_s\|
+ \le \|\kappa_0\|
+   +C\mathfrak A_\delta\sup_{0\le t\le T_c}|b(t)|. \label{eq:anchor-central-shift-bound}
+\end{equation}
+
+For an initial transverse history \(\rho_0\) and a current path \(\rho\),
+let literal method-of-steps reassembly mean
+\begin{equation}
+ [\mathfrak J_{\rho_0}\rho]_s(\vartheta)
+ =\begin{cases}
+   \rho_0(s+\vartheta),&s+\vartheta\le0,\\
+   \rho(s+\vartheta),&s+\vartheta\ge0.
+  \end{cases}                                      \label{eq:anchor-central-history-reassembly}
+\end{equation}
+By \cref{eq:poisson-bound}, the free current Green operator satisfies
+\begin{equation}
+ \left\|\int_0^s e^{A_N(s-t)/\delta}g(t)\,\dd t\right\|_{C(I_c;E_N)}
+ \le\frac{\delta}{D\gamma}\|g\|_{C(I_c;E_N)}.     \label{eq:anchor-central-current-Green-bound}
+\end{equation}
+The source is integrated in \(E_N\) first; only then is the sliding history
+assembled by \cref{eq:anchor-central-history-reassembly}.
+
+We may now specify the domain in
+\cref{eq:anchor-central-ambient-operator}.  A normal path belongs to
+\(\mathscr D_c^\perp\) precisely when: (i) its planar-memory component
+satisfies \cref{eq:anchor-central-free-shift} with
+\(b=\mathscr B_p[\kappa,\rho]\); (ii) its transverse histories have the
+form \(\rho_s=\mathfrak J_{\rho_0}\rho\) for a current path locally in
+\(W^{1,\infty}(I_c;E_N)\); and (iii) the left side of
+\cref{eq:anchor-central-fast-normal-equation} belongs to
+\(\mathscr F_c^\perp\).  Give it the supremum normal-history norm plus the
+\(\mathscr F_c^\perp\)-norm of that residual.  This is a fixed-clock graph
+domain, and its compatibility at every delay seam is the literal
+method-of-steps compatibility above.
+
+For data \((f,\omega_0)\), the two normal equations are equivalent to
+\begin{align}
+ \kappa
+ &=\mathfrak S\kappa_0
+   +\mathfrak K_p\mathscr B_p
+        [\kappa,\mathfrak J_{\rho_0}\rho],\notag\\
+ \rho(s)
+ &=e^{A_Ns/\delta}\rho_0(0)
+   +\int_0^s e^{A_N(s-t)/\delta}
+       \{f(t)+\mathscr C_p(t)
+           [\kappa_t,\mathfrak J_{\rho_0}\rho_t]\}\,\dd t,
+                                                        \label{eq:anchor-central-ambient-fixed-point}
+\end{align}
+where \(\mathfrak S\) is free left shift and \(\mathfrak K_p\) is the
+integral in \cref{eq:anchor-central-free-shift}.  For two pairs with the
+same initial history,
+\cref{eq:anchor-central-planar-normal-source,eq:anchor-central-shift-bound,eq:anchor-central-current-Green-bound}
+give
+\begin{equation}
+ \|\mathcal T_p(W)-\mathcal T_p(\widetilde W)\|
+ \le q_{\perp,\delta}\|W-\widetilde W\|,
+ \qquad q_{\perp,\delta}\le C\delta\mathfrak A_\delta^3.     \label{eq:anchor-central-ambient-perturbation-number}
+\end{equation}
+By \cref{eq:invdet-subpower}, this number is at most \(1/2\) after an
+ordered decrease of \(\delta_0\).  The fixed point is therefore unique and
+\(\|(I-\mathcal T_p)^{-1}\|\le2\).  The affine part has only a tame
+polynomial--exponential factor; it is bounded by one fixed power of
+\(\delta^{-1}\).  The graph norm now proves
+\cref{eq:anchor-central-ambient-inverse}.  Zero data give injectivity, the
+fixed-point construction gives surjectivity, and every integral at time
+\(s\) uses only data on \([0,s]\), which proves causality.
+
+Finally, construct a selected family first and differentiate
+\cref{eq:anchor-central-ambient-fixed-point} afterward.  Its derivative
+satisfies
+\[
+ (I-D_W\mathcal T_p)W_p
+ =D_p\mathcal T_p(W)+D_p(\hbox{affine data}).
+\]
+The inverse still has norm at most two.  The selected derivatives of
+\(V_p,\mathscr B_p,\mathscr C_p\) have the tame bounds cited above, and
+the fixed atomic support in \cref{eq:shared-evaluation-TV} prevents a
+moving-Dirac derivative.  Absorbing the finite tame factors into one power
+of \(\delta^{-1}\) proves
+\cref{eq:anchor-central-ambient-selected-jets}.
+\end{proof}
+
+The triangular order forced by this lemma is worth recording.  One first
+solves the ambient normal block.  Its source
+\(\mathscr B_p\omega\) is then inserted into the graph-tangent planar trace
+problem of \cref{lem:shared-graph-trace}.  Only after these two central
+rows have been solved are their generated seam data passed to an outer
+mixed problem.  Reversing the first two steps would treat a graph-tangent
+inverse as an ambient RFDE inverse.
+
+\subsection{A reserved physical overlap}
+
+We next separate the two logarithmic scales which had previously been
+denoted by the same symbol.  This is a proof-scale choice and changes
+neither the equation nor the root.  Fix
+\begin{equation}
+ 0<\chi_b<1,\qquad c_b>1,\qquad p_o>4,
+ \qquad p_c=\left(\frac{c_b}{\chi_b}\right)^2p_o,       \label{eq:anchor-reserved-scale-constants}
+\end{equation}
+and set
+\begin{align}
+ \mathscr L_\delta&=\log(1/\delta),\notag\\
+ S_c&=\sqrt{2p_c\mathscr L_\delta},&
+ S_o&=\sqrt{2p_o\mathscr L_\delta},\notag\\
+ s_b^\#&=\chi_bS_c=c_bS_o,&
+ \rho_o&=\frac{\delta S_o}{2\alpha},&
+ \rho_b&=c_b\rho_o=\frac{\delta s_b^\#}{2\alpha}.
+                                                               \label{eq:anchor-reserved-scale-identities}
+\end{align}
+The central construction is instantiated with exponent \(p_c\), whereas
+the outer construction is instantiated with exponent \(p_o\).  We take the
+diagonal outer parameter
+\begin{equation}
+ \varkappa_\delta=S_o^{-1},qquad
+ \mathfrak b_\delta
+ =\varkappa_\delta^2+S_o^{-2}
+       +\sqrt\delta\,S_o^{7/2}.                         \label{eq:anchor-reserved-diagonal-choice}
+\end{equation}
+Then \(\mathfrak b_\delta=O(S_o^{-2})+o(1)\), and
+\(1/(\varkappa_\delta^2S_o^3)=S_o^{-1}\to0\), so this choice belongs to
+the joint wedge in \cref{eq:joint-diagonal-admissible-wedge}.
+
+Let \(C_{b,p}\) be the literal complete history obtained by cutting the
+exact selected repelling central trace at \(r=-\rho_b\).  Let
+\(O_p\) be the canonical exact repelling raw-gauge segment supplied by
+\cref{thm:raw-gauge-fixed-section-zero,prop:parameter-coherent-physical-hit-family},
+and let \(O_{b,p}\) be its history at the same physical section.  The
+letter \(O\) denotes an independently constructed outer reference; no
+claim that \(C_{b,p}=O_{b,p}\) is made.
+
+\begin{lemma}[Scale-reserved complete-history overlap]
+\label[lemma]{lem:anchor-reserved-physical-overlap}
+After decreasing the common parameter box and then \(\delta_0\), the
+following statements hold uniformly in \(N\).
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The full delay enlargement of the central cut \(r=-\rho_b\) lies in
+the uncut exact-graph agreement region.  The outer cut is generated by its
+own forward RFDE segment through more than the prescribed number of delay
+buffers.  Thus both \(C_{b,p}\) and \(O_{b,p}\) are literal compatible
+histories of the same unmodified anchored RFDE.
+
+\item There is one compatible strong section chart
+\(\Theta_{b,p}=(\zeta_b,u_b)\), centered at \(O_{b,p}\), with fixed model
+space and selected first \(p\)-jet.  After the exact resource quotient
+\cref{eq:resource-gauge-coordinates,eq:resource-gauge-history-conjugacy},
+its scalar coordinate is
+\[
+ u_b(\phi)=\ell_b^u\psi_\phi(0),
+ \qquad \ell_b^ue_b^u=1,
+\]
+and \(\zeta_b\) contains the complementary compatible history and resource
+coordinates.  Put
+\begin{equation}
+ \mathfrak a_{c,\delta}
+ :=C\delta e^{cS_c}\langle S_c\rangle^{M_b}
+ =\delta^{1-o(1)}.                                  \label{eq:anchor-reserved-central-error}
+\end{equation}
+Then, for \(J_p^1\in\{1,\partial_\nu,D_\eta\}\),
+\begin{equation}
+ \|J_p^1\Theta_{b,p}(C_{b,p})\|_{b,\sharp}
+ \le C\mathfrak b_\delta.                         \label{eq:anchor-reserved-component-overlap}
+\end{equation}
+This is only a common-chart overlap estimate.  It does not say that the
+stable displacement has no quadratic image in the unstable coordinate.
+
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+The identity \(s_b^\#=\chi_bS_c\), with \(\chi_b<1\), leaves a distance
+\((1-\chi_b)S_c\to\infty\) from the prepared boundary.  Every fixed delay
+collar is therefore contained in the open agreement neighborhood in
+\cref{def:admissible-preparation}.  On the outer side,
+\(s_b^\#=c_bS_o\) is exactly the section
+\(r=-c_b\rho_o\) in
+\cref{eq:repelling-core-section-radii}; the generated-buffer assertion is
+\cref{eq:repelling-generated-core-hits}.  This proves (i).
+
+We spell out the leading overlap because omitting one term here changes the
+answer by order one in the fold resource coordinate.  On the central
+singular trace,
+\begin{equation}
+ r=-\frac{\delta s}{2\alpha},qquad
+ w=\frac23-\alpha r^2+\frac{\delta^2}{2\alpha}.     \label{eq:anchor-central-leading-overlap}
+\end{equation}
+For the outer tracker, the exact seed in
+\cref{eq:nonlinear-resource-defect} is
+\[
+ w_{\rm seed,N}=w_{0,N}
+       +\delta^2\mathcal D_{0,c,N}-\delta^2q_0.
+\]
+Now \(q_0=-1/(2\alpha)+O(|r|+\delta^2/|r|)\) by
+\cref{eq:outer-reduced-speed}, while the backtrack estimate
+\cref{eq:backtrack-composition-difference} and row neutrality give
+\(\mathcal D_{0,c,N}=O(\delta S_o^2)\) on the reserved collar.  Hence
+\begin{equation}
+ w_{\rm seed,N}(r)
+ =w_{0,N}(r)+\frac{\delta^2}{2\alpha}
+       +O(\delta^3S_o^2),                           \label{eq:anchor-outer-dynamic-overlap}
+\end{equation}
+which is precisely the dynamic correction missing from the frozen critical
+curve in \cref{eq:outer-critical-fold-offset}.  The voltage expansion
+\cref{eq:outer-critical-expansion}, the central graph estimate
+\cref{eq:shared-trace-jets}, and the outer component estimates
+\cref{eq:joint-diagonal-affine-budget,eq:fixed-envelope-zero-component-correction}
+therefore have the same leading physical history at \(r=-\rho_b\).
+The exact quotient is triangular, with resource coefficient
+\(a=(w-w_O)/w_O'\) and
+\(w_O'(-\rho_b)=\delta s_b^\#\{1+o(1)\}\).  The central trace remainder,
+the outer component bounds, and the bounded triangular chart therefore give
+\cref{eq:anchor-reserved-component-overlap}.  Literal history evaluation
+costs only \cref{eq:shared-evaluation-TV}.  Differentiate the two separately
+constructed exact traces and the explicit triangular quotient; the selected
+central trace jets \cref{eq:shared-trace-jets}, the outer
+selected hit jets \cref{eq:parameter-coherent-event-buffer-jets}, and the
+fixed delay supports give the same estimate.  No derivative
+of an arbitrary rough-history inverse is used.
+
+\end{proof}
+
+\subsection{The intrinsic stable sheet at the generated cut}
+
+Choose fixed negative sections
+\begin{equation}
+ 0<r_{\rm seed}<r_-<r_{\rm in}<r_L<r_+<r_{\rm loc}                 \label{eq:anchor-broken-fixed-section-order}
+\end{equation}
+as in the anchored channel construction.  The outer reference \(O_p\)
+crosses all of them.  The exact half-line center \(\bar Z_-\) starts at
+\(r=-r_{\rm in}\) and crosses \(r=-r_L\) and \(r=-r_+\).  We use \(L\)
+for the common event at \(r=-r_L\).
+
+\begin{lemma}[Same-core terminal sheet and cross conormal]
+\label[lemma]{lem:anchor-same-core-intrinsic-terminal}
+There is one compatible terminal chart \(\Theta_{L,p}\), with state space
+\(\mathscr H_L^2\), in which the histories whose forward orbits converge to
+\(E_N^-\) form an intrinsic \(C^2\) graph with selected first \(p\)-jet.
+Let \(\mathfrak m_{L,p}\) be its membership function and
+\(\Lambda_{L,p}^\infty:=D\mathfrak m_{L,p}\) its full physical-history
+covector, normalized by
+\[
+ \Lambda_{L,p}^\infty\jmath_{L,p}^{u,\infty}=1.
+\]
+
+Let \(O_{L,p}\) be the independently exact outer reference at the same
+event, and let \(\widehat h_{L,p}^{u,o}\in\mathscr H_L^2\) be its fully
+lifted event-normal unstable column.  Then, for some \(a_*>0\),
+\begin{align}
+ \|J_p^1\{\Theta_{L,p}(O_{L,p})
+          -\Theta_{L,p}(\bar Z_{-,L})\}\|_{\mathscr H_L^2}
+ &\le \epsilon_{L,\delta}:=C\delta^{-M_L}e^{-a_*/\delta},
+                                                               \label{eq:anchor-independent-outer-halfline-tracking}\\
+ |J_p^1\mathfrak m_{L,p}(O_{L,p})|
+ +\|J_p^1(\widehat h_{L,p}^{u,o}
+                  -\jmath_{L,p}^{u,\infty})\|_{\mathscr H_L^2}
+ &\le C\delta^{-M_L}\epsilon_{L,\delta}.             \label{eq:anchor-independent-terminal-defect}
+\end{align}
+Consequently,
+\begin{equation}
+ \mu_{L,p}:=
+ D\mathfrak m_{L,p}(O_{L,p})\widehat h_{L,p}^{u,o}
+ \ge\frac34.                                         \label{eq:anchor-independent-cross-conormal}
+\end{equation}
+Every object in this pairing belongs to the same full-history tangent or
+dual space.
+\end{lemma}
+
+\begin{proof}
+Reindex the half-line mixed equation
+\cref{eq:anchor-annulus-nonlinear-map} at \(L\).
+\Cref{eq:anchor-annulus-Green-kernels,eq:anchor-half-line-contraction-ledger}
+gives the intrinsic graph and its full-history membership row.
+
+For the comparison use the exact seed orbit \(\widehat Z_-\) from
+\cref{eq:anchor-exact-seed-orbit}; its event recut at \(L\) is
+\(\bar Z_{-,L}\).  Parameterize both \(O_p\) and \(\widehat Z_-\) by the
+same regular \(r\)-clock on \([-r_+,-r_-]\), quotienting only the time
+tangent.  Thus no separate moving-event error remains.  Their difference
+satisfies
+\begin{multline}
+ \Delta(r)
+ =\mathcal V^q(r,r_-)\Pi^s(r_-)\Delta(r_-)
+  +\mathcal V^q(r,r_+)\Pi^u(r_+)\Delta(r_+)\\
+  +\int_{r_-}^{r_+}G^{\rm mix}(r,\rho)
+       \{\mathcal N(O_\rho)-\mathcal N(\widehat Z_{-,\rho})\}\,\dd\rho .
+                                                               \label{eq:anchor-independent-two-sided-identity}
+\end{multline}
+Only the transported one-dimensional unstable line is evolved backward.
+The fixed section gaps give stable-left and unstable-right actions at least
+\(a_*/\delta\).  With the broad-channel Volterra number at most \(1/3\),
+absorption proves the first estimate; differentiating the two selected
+fixed-clock equations proves its \(p\)-jet.
+
+The full event-normal columns solve the corresponding variational equations.
+Generated-core roughness, regular-channel dichotomy roughness, and the
+just-proved center estimate put
+\(\widehat h_{L,p}^{u,o}\) within the same envelope of
+\(\jmath_{L,p}^{u,\infty}\) in \(\mathscr H_L^2\), including the selected
+jet.  Taylor's formula in the common chart gives the membership defect.
+Pairing with the bounded full-history covector and using its exact
+normalization yields \(\mu_{L,p}=1+o(1)\), hence the stated margin.
+\end{proof}
+
+We now build the stable sheet at the generated cut, rather than pull a
+finite terminal row backward.  Let
+\(\mathcal M^2_{\Sigma_b,p}\) be the compatible solution-manifold section
+at \(r=-\rho_b\).  Project the exact time tangent out along the section
+row.  The quotient dichotomy and the exact resource coordinate give a
+splitting
+\begin{equation}
+ T_{O_{b,p}}\mathcal M^2_{\Sigma_b,p}
+ =\mathcal K_{b,p}^{s,\Sigma}
+   \oplus\operatorname{span}\{\jmath_{b,p}^{u,o}\}.            \label{eq:anchor-b-compatible-splitting}
+\end{equation}
+As at the half-line entry, a fixed Hermite seam complement gives a chart
+\begin{equation}
+ \Phi_{b,p}:B_{\mathcal K_b^{s,\Sigma}}(0,r_b)
+       \times(-u_b,u_b)\longrightarrow
+       \mathcal M^2_{\Sigma_b,p},
+ \qquad \Phi_{b,p}(0,0)=O_{b,p},                  \label{eq:anchor-b-compatible-chart}
+\end{equation}
+whose \(u\)-column is \(\jmath_{b,p}^{u,o}\).
+
+\begin{lemma}[Intrinsic stable sheet at the reserved cut]
+\label[lemma]{lem:anchor-intrinsic-sheet-at-b}
+For every prescribed \(R_b<\infty\), after decreasing \(\delta_0\) there
+are radii \(r_{b,\delta},u_{b,\delta}>0\), with
+\begin{equation}
+ \min\{r_{b,\delta},u_{b,\delta}\}
+ \ge R_b\mathfrak b_\delta,                                    \label{eq:anchor-b-sheet-radii}
+\end{equation}
+and a unique graph
+\begin{equation}
+ \mathcal S_b^-(p)
+ =\{\Phi_{b,p}(\psi,F_{b,p}^-(\psi)):
+           \|\psi\|<r_{b,\delta}\},               \label{eq:anchor-b-intrinsic-sheet}
+\end{equation}
+with the following properties.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item A history belongs to this graph if and only if its forward orbit,
+while it stays in the declared tube, reaches the intrinsic sheet at \(L\);
+equivalently its forward orbit converges to \(E_N^-\).  Thus the graph is
+intrinsic to the anchored RFDE.
+
+\item The map \(F_{b,p}^-\) is \(C^2\) in \(\psi\) and has the selected
+first \(p\)-jet.  Its canonically normalized membership function is
+\begin{equation}
+ \mathfrak m_{b,p}(\Phi_{b,p}(\psi,u))
+ =u-F_{b,p}^-(\psi),qquad
+ \lambda_{b,p}^o:=D\mathfrak m_{b,p},             \label{eq:anchor-b-membership-normalization}
+\end{equation}
+so \(\lambda_{b,p}^oD_u\Phi_{b,p}=1\) on the graph.
+
+\item On every prescribed \(R_b\mathfrak b_\delta\)-ball from
+\cref{eq:anchor-b-sheet-radii},
+\begin{equation}
+ \|J_p^1F_{b,p}^-\|_{C^2}
+ \le C\delta^{-M_b}.                                \label{eq:anchor-b-sheet-C2-bound}
+\end{equation}
+No smallness of \(D^2F_{b,p}^-\) is asserted.  In the natural physical
+coordinates this curvature is generically of order one.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Use a fixed clock on the exact outer reference from \(b\) to \(L\), with
+literal histories
+\begin{equation}
+ \mathcal H_\beta Z(s)
+ =\left(\vartheta\mapsto
+ Z_v\!\left[\chi_\beta^{-1}
+       \{\chi_\beta(s)+\vartheta\}\right],Z_w(s)\right),       \label{eq:anchor-b-literal-history}
+\end{equation}
+and residual
+\begin{equation}
+ \mathcal E_p(Z,\beta)
+ =Z'-\chi_\beta'\mathscr F^{\rm f}_{N,\delta,p}
+       (\mathcal H_\beta Z).                       \label{eq:anchor-b-fixed-clock-residual}
+\end{equation}
+Let \(\mathscr D_{bL}^2\) be the fixed-clock graph domain: it is continuous
+on the complete delay enlargement, locally \(W^{1,\infty}\), and
+\(W^{2,\infty}\) on the reserved entry, event, and terminal windows.  Its
+range \(\mathscr F_{bL}\) is the distributed current-source space.  For
+fixed \(\psi\), the square residual for \((Z,\beta,u)\) is
+\begin{equation}
+ \mathscr R_{bL,p}(Z,\beta,u;\psi)
+ =\left(
+   \mathcal E_p(Z,\beta),
+   \mathcal H_\beta Z(0)-\Phi_{b,p}(\psi,u),
+   r(\mathcal H_\beta Z(T))+r_L,
+   \mathfrak m_{L,p}(\mathcal H_\beta Z(T))
+  \right).                                         \label{eq:anchor-b-sheet-residual}
+\end{equation}
+The second component is equality in the literal complete-history space;
+no current-value or finite-jet substitute is used.
+
+The linearization is taken between the typed spaces
+\begin{equation}
+ \mathbb X_{bL}
+ :=\mathscr D_{bL}^2\times\mathbb R_\beta\times\mathbb R_u,
+ \qquad
+ \mathbb Y_{bL}
+ :=\mathscr F_{bL}\times\mathscr Y_N
+       \times\mathbb R_{\rm ev}\times\mathbb R_{\rm ter}.
+                                                               \label{eq:anchor-bL-typed-spaces}
+\end{equation}
+The initial row uses the compatible weak history norm, whereas the generated
+terminal window carries the localized strong trace norm of
+\(\mathfrak m_{L,p}\).
+
+We record the inverse rather than hiding it in a Fredholm count.  Apply the
+exact resource shear
+\cref{eq:resource-gauge-coordinates,eq:resource-gauge-history-conjugacy}.
+The quotient diagonal is the mixed operator
+\cref{eq:generated-core-mixed-isomorphism} on the generated core, followed
+by its regular-channel continuation.  The resource/phase diagonal is
+\begin{equation}
+ a'=\delta q'(r)a+f_a,qquad a(b)=a_b,              \label{eq:anchor-b-resource-diagonal}
+\end{equation}
+which is solved after the quotient.  In the balanced coordinate
+\(a/q(r)\), its inverse is bounded on the \(O(\delta^{-1})\) regular
+channel.  The clock/event diagonal is the ordinary nonzero event-speed
+row.  The only terminal row replacement has scalar Schur coefficient
+\begin{equation}
+ \mu_{L,p}=\lambda_{L,p}^{\infty}h_{L,p}^{u,o}\ge\frac34          \label{eq:anchor-b-terminal-Schur}
+\end{equation}
+by \cref{eq:anchor-independent-cross-conormal}.  Lift a quotient solution
+and its homogeneous unstable column to the same terminal history space by
+\[
+ \widehat y_0=\mathfrak L^{\rm phys}_{L,p}(y_0,a[y_0],\beta),
+ \qquad
+ \widehat h^{u,o}
+ =\mathfrak L^{\rm phys}_{L,p}(h^{u,o},a[h^{u,o}],0).
+\]
+The replacement is explicitly
+\begin{equation}
+ \widehat y=\widehat y_0+\widehat h^{u,o}
+   \frac{b-D\mathfrak m_{L,p}(O_{L,p})\widehat y_0}
+        {D\mathfrak m_{L,p}(O_{L,p})\widehat h^{u,o}}.          \label{eq:anchor-b-terminal-row-replacement}
+\end{equation}
+The exact solve order is quotient stable data, terminal unstable scalar,
+resource/phase, and clock/event.  Conjugating back by the bounded Volterra
+history map gives
+\begin{equation}
+ \|\mathbb B_{bL,p}^{-1}\|_{\mathbb Y_{bL}\to\mathbb X_{bL}}
+ \le C\delta^{-M_{bL}}.                            \label{eq:anchor-b-full-linear-inverse}
+\end{equation}
+For selected data, the differentiated solution is defined by
+\begin{equation}
+ \mathbb B_{bL,p}\dot X_p
+ =-D_p^{\rm sel}\mathscr R_{bL,p}(X_p),
+ \qquad
+ \|\dot X_p\|_{\mathbb X_{bL}}
+ \le C\delta^{-M_{bL}}
+       \|D_p^{\rm sel}\mathscr R_{bL,p}(X_p)\|_{\mathbb Y_{bL}}.
+                                                               \label{eq:anchor-b-selected-solution-equation}
+\end{equation}
+
+For nonlinear estimates use the star/action norm of
+\cref{eq:fixed-envelope-star-domain-norm} on the near-fold part and the
+fading norm of \cref{eq:anchor-annulus-fading-norm} on the regular part.
+Denote the resulting scaled versions of
+\cref{eq:anchor-bL-typed-spaces} by \(\mathbb X_{bL}^A\) and
+\(\mathbb Y_{bL}^A\).  The diagonal scaling is chosen from the same
+quotient Green factors, so the quantitative Newton ledger is
+\begin{align}
+ \|\mathbb B_{bL,p}^{-1}\|_{\mathbb Y_{bL}^A\to\mathbb X_{bL}^A}
+ &\le C,\notag\\
+ \sup_{\|X-\bar X\|_{\mathbb X_{bL}^A}\le R_b\mathfrak b_\delta}
+ \|\mathbb B_{bL,p}^{-1}
+       \{D\mathscr R_{bL,p}(X)-\mathbb B_{bL,p}\}\|
+ &\le CR_b\mathfrak b_\delta\le\frac13,            \label{eq:anchor-b-balanced-Newton-ledger}\\
+ \|\operatorname{Tr}_L(X-\bar X)\|_{\mathscr H_L^2}
+ &\le C\delta^{-M}e^{-c\mathscr L_\delta^2}
+          R_b\mathfrak b_\delta+C\delta^{-M}\epsilon_{L,\delta}
+ \le\frac1{16}R_{\rm hl,\delta}.                   \label{eq:anchor-b-terminal-localization}
+\end{align}
+The exact two-point estimate
+\cref{eq:fixed-envelope-star-two-point}, the quotient perturbation number
+\cref{eq:oe-family-core-contraction-closes}, and the half-line contraction
+\cref{eq:anchor-half-line-contraction-ledger} give one fixed contraction
+margin on an \(R_b\mathfrak b_\delta\)-entry ball for every fixed
+\(R_b\): all terms newly multiplied by \(R_b\) still tend to zero, so
+\(\delta_0\) is decreased after \(R_b\) is prescribed.  The stable entry
+component is not charged by a forward unstable action.  It is propagated
+to the distinct outer cut \(\rho_{c,\delta}=c_c\delta\mathscr L_\delta\),
+where
+\cref{eq:oe-family-core-action-bounds} gives logarithmic-square decay;
+thereafter the fixed-channel action puts its terminal trace inside the
+radius-\(R_{\rm hl,\delta}\) chart.  This is why a seam discrepancy of
+order \(\mathfrak b_\delta\), rather than a superalgebraic complete-history
+discrepancy, is admissible.
+
+At \((O_p,0,0;0)\), every residual row vanishes except the intrinsic
+terminal membership row.  Its defect is bounded by
+\cref{eq:anchor-independent-terminal-defect}; after the mixed inverse it is
+smaller than every power of \(\delta\).  The frozen-inverse Newton map is
+therefore a contraction.  A first-exit argument using the componentwise
+entry, event, channel, and terminal trace bounds shows that every iterate
+stays in the declared domains.  At the zero, the entry row is literal
+history equality, so forward uniqueness identifies the path with the
+forward orbit of \(\Phi_{b,p}(\psi,u)\).  The terminal history belongs to
+the intrinsic sheet at \(L\), hence it converges to \(E_N^-\).  Conversely,
+any convergent orbit in the tube satisfies the same terminal membership
+row and hence the same mixed problem; uniqueness puts its entry history on
+the graph.  This proves (i).
+
+Differentiate the selected zero equation after solving it.  The inverse in
+\cref{eq:anchor-b-full-linear-inverse}, the state second derivative in the
+two-point ledger, and the selected first coefficient derivative give the
+claimed regularity and \cref{eq:anchor-b-sheet-C2-bound} without asserting
+operator-topology differentiability of a rough RFDE process.  The exact normalization
+\cref{eq:anchor-b-membership-normalization} is a definition in the
+compatible chart, not a division by an unrelated terminal row.  The
+near-entry quadratic forcing is retained; this is why no flat curvature
+estimate is claimed.
+\end{proof}
+
+\begin{lemma}[Finite selected sheet and common-core tail comparison]
+\label[lemma]{lem:anchor-selected-finite-sheet-comparison}
+Fix \(0<\sigma_c<1\), put
+\begin{equation}
+ s_c^\#=S_c-\sigma_c,
+ \qquad
+ \Sigma_c=\left\{r=-\frac{\delta s_c^\#}{2\alpha}\right\},
+ \qquad
+ \mathscr A_{bc}
+ =\frac{(s_c^\#)^2-(s_b^\#)^2}{2}.                \label{eq:anchor-selected-comparison-action}
+\end{equation}
+After decreasing \(\delta_0\), the complete histories between
+\(\Sigma_b\) and \(\Sigma_c\) lie in the exact agreement region.  There is
+a finite-tail graph in the same chart \(\Phi_{b,p}\),
+\begin{equation}
+ \mathcal S_b^{\rm sel}(p)
+ =\{\Phi_{b,p}(\psi,F_{b,p}^{\rm sel}(\psi))\},     \label{eq:anchor-selected-finite-sheet}
+\end{equation}
+which contains the selected repelling history exactly:
+\begin{equation}
+ \Theta_{b,p}(C_{b,p})
+ =\bigl(\zeta_{C,p},F_{b,p}^{\rm sel}(\zeta_{C,p})\bigr).       \label{eq:anchor-selected-history-on-finite-sheet}
+\end{equation}
+Both \(F_{b,p}^{\rm sel}\) and \(F_{b,p}^-\) have polynomially bounded
+\(C^2\) state norm and selected first \(p\)-jet.  Their difference obeys
+the common-chart estimate
+\begin{equation}
+ \|J_p^1(F_{b,p}^--F_{b,p}^{\rm sel})\|_{C^1}
+ \le \varepsilon_{bc,\delta},
+ \qquad
+ \varepsilon_{bc,\delta}
+ :=C\delta^{-M_{bc}}e^{-\mathscr A_{bc}+cS_c}
+       \langle S_c\rangle^{M_{bc}}.                \label{eq:anchor-selected-sheet-comparison}
+\end{equation}
+Here \(J_p^1\in\{1,\partial_\nu,D_\eta\}\).  In particular, for every
+prescribed \(Q<\infty\), the preparation exponent \(p_c\) may be fixed
+large enough that
+\begin{equation}
+ \varepsilon_{bc,\delta}\le\delta^Q.              \label{eq:anchor-selected-sheet-preassigned-order}
+\end{equation}
+This is a preassigned finite algebraic order, not an all-orders flatness
+claim and not a small-curvature claim.
+\end{lemma}
+
+\begin{proof}
+The selected repelling trace and all of its delayed ancestors are exact
+histories of the anchored RFDE up to \(s=s_c^\#\), by the depth-two
+agreement in \cref{def:admissible-preparation}.  Denote its recut history
+there by \(C_{c,p}\).  In a compatible terminal chart choose the affine row
+\begin{equation}
+ b_{c,p}^{\rm sel}(\phi)
+ =\ell_{c,p}^{\rm sel}(\phi-C_{c,p}),
+ \qquad
+ \ell_{c,p}^{\rm sel}\jmath_{c,p}^{u}=1.           \label{eq:anchor-selected-terminal-row}
+\end{equation}
+The graph-tangent trace--phase--endpoint inverse in
+\cref{lem:shared-graph-trace}, followed by the causal ambient normal solve
+in \cref{lem:anchor-central-ambient-shear}, supplies the full compatible
+row and gives it, its first selected parameter jet, and the reciprocal
+displayed normalization a fixed polynomial bound.  Thus
+\(b_{c,p}^{\rm sel}\) is an admissible finite tail selector.  Solving the
+literal-history mixed problem on \([b,c]\), with this row in place of the
+intrinsic future condition, gives \cref{eq:anchor-selected-finite-sheet}.
+The selected trace is an exact zero of that problem, which proves
+\cref{eq:anchor-selected-history-on-finite-sheet}; no assertion about its
+future after \(c\) is used.
+
+The intrinsic and finite problems have the same entry chart, phase row,
+stable coordinate, literal histories, and RFDE coefficients on \([b,c]\).
+After their stable rows are identified, the difference of their fixed-point
+maps has only one entry-unstable component.  The inverse on that component
+satisfies
+\begin{equation}
+ \|U^u_{bc}(b,c)\|
+ \le C\delta^{-M}e^{-\mathscr A_{bc}+cS_c}
+       \langle S_c\rangle^M.                       \label{eq:anchor-selected-backward-action}
+\end{equation}
+The terminal rows and their selected first jets have polynomial size.  The
+mean-value fixed-point identity, and then its state and selected-parameter
+derivatives, therefore give \cref{eq:anchor-selected-sheet-comparison}.
+Only one state derivative of the graph difference is used; the individual
+second derivatives remain under the polynomial two-point bound.  Finally,
+\(s_b^\#=\chi_bS_c\) and
+\(S_c^2=2p_c\log(1/\delta)\), so
+\[
+ \mathscr A_{bc}
+ =p_c(1-\chi_b^2)\log(1/\delta)+O(S_c).
+\]
+Choosing \(p_c\) after the finite loss exponents proves
+\cref{eq:anchor-selected-sheet-preassigned-order}.
+\end{proof}
+
+\begin{corollary}[Two-sided selected-to-physical gap comparison]
+\label[corollary]{cor:anchor-two-sided-gap-comparison}
+Let \(A_p^0\) be the central hit of the anchored incoming branch, let
+\(A_p^{\rm sel}\) be the complete-history lift of the selected attracting
+trace at the same phase section, and let \(G^{\rm anc}_{N,\delta}\) and
+\(\mathscr D_N^{\rm sel}\) use the common first-integral normalization.
+For every prescribed finite \(Q\), the two preparation exponents may be
+chosen so that, uniformly in \(N\),
+\begin{align}
+ \|J_p^1(A_p^0-A_p^{\rm sel})\|_{\mathscr H_0^2}
+ &\le C\delta^Q,                                    \label{eq:anchor-positive-selected-comparison}\\
+ \bigl|J_p^1\{G^{\rm anc}_{N,\delta}
+                  -\mathscr D_N^{\rm sel}\}\bigr|
+ &\le C\delta^Q,
+ \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.        \label{eq:anchor-gap-selected-comparison}
+\end{align}
+The selected gap is used only as an auxiliary comparator; the zero fiber of
+\(G^{\rm anc}\) is the intrinsic heteroclinic membership condition.
+\end{corollary}
+
+\begin{proof}
+On the attracting side, cut both histories at the first section after which
+the preparation and anchored RFDE agree literally.  The event-normal
+positive Green operator is causal, and the stable action from that cut to
+\(\Sigma_0\) is
+\(p_a\log(1/\delta)+O(S_a)\).  The terminal discrepancy and its selected
+first parameter jet have polynomial size, so choosing \(p_a\) after the
+finite losses proves \cref{eq:anchor-positive-selected-comparison}.
+
+On the repelling side, pair the anchored incoming point with the intrinsic
+sheet at fixed normal/history coordinate.  Pair the selected attracting
+point with the finite selected sheet in the same coordinate.  The positive
+estimate above, the \(C^1\) graph comparison
+\cref{eq:anchor-selected-sheet-comparison}, and the polynomial chart bounds
+put both paired points within \(C\delta^Q\).  The chart identities identify
+the normalized first-integral differences with the two scalar gaps exactly.
+Their selected first parameter derivatives satisfy the differentiated
+pairing identities, which proves \cref{eq:anchor-gap-selected-comparison}.
+\end{proof}
+
+\begin{lemma}[Central projective coefficient against the intrinsic sheet]
+\label[lemma]{lem:anchor-central-intrinsic-projective-coefficient}
+Let
+\begin{equation}
+ E_b:=\exp\!\left(\frac{(s_b^\#)^2}{2}\right)
+     =\delta^{-c_b^2p_o},\qquad
+ \mathcal A_{b,\delta}:=\frac{\delta}{s_b^\#}E_b.     \label{eq:anchor-reserved-Gaussian-action}
+\end{equation}
+Let
+\[
+ k_{b,p}^c
+ :=D\mathcal P_{0\to b,p}(\bar\psi_p,\bar u_p)
+       D_u\mathfrak C_{0,p}(\bar\psi_p,\bar u_p)
+\]
+be the full compatible central scalar column at \(b\), and put
+\begin{equation}
+ A_{0b,p}:=D\mathfrak m_{b,p}(C_{b,p})k_{b,p}^c.      \label{eq:anchor-reserved-projective-action-definition}
+\end{equation}
+With the orientation fixed by \(\ell_b^ue_b^u=1\), there are constants
+independent of \(N\) such that
+\begin{equation}
+ 0<c_A\mathcal A_{b,\delta}
+ \le A_{0b,p}\le C_A\mathcal A_{b,\delta},            \label{eq:anchor-reserved-projective-action}
+\end{equation}
+and
+\begin{equation}
+ |D_p^{\rm sel}\log A_{0b,p}|\le C\delta^{-M_A}.      \label{eq:anchor-reserved-projective-action-jet}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The singular central column, normalized by the first-integral coordinate at
+\(\Sigma_0\), is
+\begin{equation}
+ n(s)=\binom{I(s)}{E(s)-sI(s)},\qquad
+ E(s)=e^{s^2/2},\qquad
+ I(s)=\int_0^sE(t)\,\dd t.                           \label{eq:anchor-reserved-singular-column}
+\end{equation}
+Fixed-\(r\) event recutting removes the \(I(s)\) time column and leaves the
+transverse planar component \(E(s)\).  In physical variables its resource
+variation is \(-\delta^2E(s)\{1+o(1)\}\).  Since
+\(w_O'(-\rho_b)=\delta s_b^\#\{1+o(1)\}\), the exact resource quotient
+\cref{eq:resource-gauge-coordinates} and the current normalization
+\(\ell_b^ue_b^u=1\) give
+\begin{equation}
+ \ell_b^u\psi_{k^c_{b,p}}(0)
+ =a_b^0\frac{\delta}{s_b^\#}E_b
+   \{1+\mathcal E_{b,p}\},\qquad
+ 0<c_*\le a_b^0\le C_* .                             \label{eq:anchor-reserved-typed-singular-pairing}
+\end{equation}
+Here \(a_b^0>0\) is the fixed conversion between the normalized
+first-integral column and the oriented current row.
+
+Let
+\[
+ \lambda_{b,p}^{\rm sel}
+ =\dd u_b-D F_{b,p}^{\rm sel}(\zeta_{C,p})\dd\zeta_b.
+\]
+Because \(C_{b,p}\) lies exactly on the finite selected sheet, applying
+this row to \(k_{b,p}^c\) is the derivative of the selected terminal
+matcher with respect to the normalized central first-integral coordinate.
+The trace--phase--endpoint isomorphism and variation of constants for the
+positive-\(\delta\) central trace therefore give
+\begin{equation}
+ \lambda_{b,p}^{\rm sel}k_{b,p}^c
+ =a_b^0\frac{\delta}{s_b^\#}E_b
+       \{1+\mathcal E_{b,p}^{\rm sel}\},
+ \qquad
+ |J_p^1\mathcal E_{b,p}^{\rm sel}|
+ \le C\left\{\mathfrak a_{c,\delta}
+       +\mathfrak b_\delta\right\}=o(1).             \label{eq:anchor-reserved-projective-error}
+\end{equation}
+By \cref{eq:anchor-selected-sheet-comparison}, the intrinsic and selected
+rows at \(C_{b,p}\) differ by at most \(\varepsilon_{bc,\delta}\) in the
+full history dual norm.  The central column has at most a polynomial factor
+times \(E_b\).  Choose the preassigned order in
+\cref{eq:anchor-selected-sheet-preassigned-order} larger than that factor
+and the extra \(s_b^\#/\delta\).  The row replacement is then a relative
+\(o(1)\) error in the preceding display.  This is a typed row--column
+pairing, not a current covector acting directly on \(n(s)\).  Decreasing
+\(\delta_0\) proves
+\cref{eq:anchor-reserved-projective-action}.
+
+Differentiate the two exact trace equations, the event recut, and the
+explicit resource quotient after their selected solutions have been
+constructed.  The selected finite-row estimate and its intrinsic
+comparison then give
+\cref{eq:anchor-reserved-projective-action-jet}; no operator derivative of
+a rough RFDE process is asserted.
+\end{proof}
+
+\subsection{Central intersection and exact full-history gluing}
+
+The forward hit from \(\Sigma_0\) to \(\Sigma_b=\{r=-\rho_b\}\) remains
+strictly inside the exact central tube.  Define its outer-chart coordinates
+by
+\begin{equation}
+ (\Psi_{b,p}(\psi,u),U_{b,p}(\psi,u))
+ =\Phi_{b,p}^{-1}\mathcal P_{0\to b,p}
+       \mathfrak C_{0,p}(\psi,u),                  \label{eq:anchor-central-to-b-coordinates}
+\end{equation}
+and define the intrinsic central membership function
+\begin{equation}
+ \mathcal M_{0,p}^{\rm int}(\psi,u)
+ =U_{b,p}(\psi,u)
+   -F_{b,p}^-(\Psi_{b,p}(\psi,u)).                 \label{eq:anchor-central-intrinsic-membership}
+\end{equation}
+This is already canonically normalized at the generated cut.  No finite
+terminal defining function occurs.
+
+\begin{theorem}[Action-balanced intrinsic Lin intersection]
+\label[theorem]{thm:anchor-intrinsic-Lin-intersection}
+Choose an integer \(Q_*\) after all finite state and selected-parameter
+losses, with \(Q_*>M_{\rm gl}+12\), and then choose \(p_o\), hence
+\(p_c\), so that
+\begin{equation}
+ c_b^2p_o>M_{\rm gl}+8,
+ \qquad
+ \varepsilon_{bc,\delta}\le\delta^{Q_*+M_{\rm gl}+4}.          \label{eq:anchor-Lin-action-choice}
+\end{equation}
+There are fixed \(M_{\rm sh}<\infty\) and radii satisfying
+\begin{equation}
+ r_{{\rm sh},\delta}\ge c\delta^{M_{\rm sh}},\qquad
+ c\delta^{Q_*}\le\rho_{{\rm sh},\delta}
+ \le C\delta^{Q_*}.                                  \label{eq:anchor-intrinsic-strip-radii}
+\end{equation}
+Put
+\begin{equation}
+ \xi=A_{0b,p}(u-\bar u_p).                           \label{eq:anchor-intrinsic-action-coordinate}
+\end{equation}
+On
+\begin{equation}
+ \|\psi-\bar\psi_p\|<r_{{\rm sh},\delta},\qquad
+ |\xi|<\rho_{{\rm sh},\delta},                       \label{eq:anchor-intrinsic-shooting-strip}
+\end{equation}
+the intrinsic membership is defined and
+\begin{equation}
+ \partial_\xi\mathcal M_{0,p}^{\rm int}(\psi,u)
+ \ge\frac12.                                         \label{eq:anchor-intrinsic-Lin-orientation}
+\end{equation}
+It has exactly one zero
+\begin{equation}
+ u=F_{N,\delta,p}^{-,0}(\psi),                       \label{eq:anchor-intrinsic-central-graph}
+\end{equation}
+which is \(C^2\) in \(\psi\) and has the selected first \(p\)-jet.  At the
+selected central reference,
+\begin{align}
+ A_{0b,p}|F_{N,\delta,p}^{-,0}(\bar\psi_p)-\bar u_p|
+ &\le C\delta^{Q_*},                                 \label{eq:anchor-intrinsic-central-root-distance}\\
+ \left|J_p^1\{F_{N,\delta,p}^{-,0}(\bar\psi_p)-\bar u_p\}\right|
+ &\le C\delta^{Q_*-M_{\rm gl}}\frac{s_b^\#}{\delta E_b}
+ =o(\delta^8).                                       \label{eq:anchor-intrinsic-central-flat-envelope}
+\end{align}
+At a zero, the history at \(b\) belongs literally to
+\(\mathcal S_b^-(p)\); its forward continuation is the exact orbit
+converging to \(E_N^-\).  Thus this graph is intrinsic to the fixed anchored
+RFDE and contains no preparation-dependent terminal condition.
+\end{theorem}
+
+\begin{proof}
+By \cref{eq:anchor-selected-history-on-finite-sheet}, the selected trace is
+an exact zero of the finite membership function.  Hence
+\[
+ \mathcal M_{0,p}^{\rm int}(\bar\psi_p,\bar u_p)
+ =F_{b,p}^{\rm sel}(\zeta_{C,p})-F_{b,p}^-(\zeta_{C,p}).
+\]
+The common-core comparison, with its order fixed by
+\cref{eq:anchor-Lin-action-choice}, gives
+\begin{equation}
+ |J_p^1\mathcal M_{0,p}^{\rm int}(\bar\psi_p,\bar u_p)|
+ \le C\delta^{Q_*}.                                  \label{eq:anchor-intrinsic-reference-gap}
+\end{equation}
+
+Set
+\[
+ H_p(\psi,\xi)
+ :=\mathcal M_{0,p}^{\rm int}
+   \left(\psi,\bar u_p+A_{0b,p}^{-1}\xi\right).
+\]
+The central fixed-clock two-point estimate, the exact quotient chart, the
+polynomial \(C^2\) bound \cref{eq:anchor-b-sheet-C2-bound}, and the
+projective coefficient lemma give a finite \(M_*\) for which, on
+\[
+ r_{{\rm sh},\delta}=c_r\delta^{Q_*+M_*+2},
+ \qquad
+ \rho_{{\rm sh},\delta}=C_\rho\delta^{Q_*},
+\]
+\begin{align}
+ |H_p(\bar\psi_p,0)|&\le C\delta^{Q_*},&
+ \|D_\psi H_p\|&\le C\delta^{-M_*},\notag\\
+ |\partial_\xi H_p-1|&\le\tfrac12,&
+ \sup_{\rm strip}|d|
+ &\le C\left\{\mathfrak a_{c,\delta}
+       +\frac{s_b^\#}{\delta}|\xi|
+       +\delta^{-M_*}\|\psi-\bar\psi_p\|\right\}
+ <\delta^\kappa.                                     \label{eq:anchor-intrinsic-rectangle-ledger}
+\end{align}
+Here \(d=V+sU-\alpha U^2\) is followed on the full delay enlargement, not
+only at \(b\).  The central scalar column has endpoint action \(E_b\),
+whereas \(A_{0b,p}\asymp(\delta/s_b^\#)E_b\); consequently an
+action-coordinate displacement \(\xi\) contributes at most
+\((s_b^\#/\delta)|\xi|\) to \(d\).  The choice of \(Q_*\), together with
+\(\mathfrak a_{c,\delta}=\delta^{1-o(1)}=o(\delta^\kappa)\), closes the
+last inequality.  The causal ambient block in
+\cref{lem:anchor-central-ambient-shear} gives the displayed \(\psi\)-term.
+The same estimates preserve the event-speed, delay-hull, and chart margins.
+
+The typed scalar derivative is
+\[
+ \partial_u\mathcal M_{0,p}^{\rm int}
+ =\lambda_{b,p}^oD\mathcal P_{0\to b,p}
+       D_u\mathfrak C_{0,p}.
+\]
+At the reference it is \(A_{0b,p}\) by
+\cref{lem:anchor-central-intrinsic-projective-coefficient}; the second
+line of \cref{eq:anchor-intrinsic-rectangle-ledger} proves
+\cref{eq:anchor-intrinsic-Lin-orientation}.
+
+Choose \(c_r\) small and then \(C_\rho\) larger than four times the value
+constant in \cref{eq:anchor-intrinsic-reference-gap}.  The
+\(D_\psi H_p\)-bound makes the change from \(\bar\psi_p\) smaller than one
+quarter of the face height.  Integrating the oriented \(\xi\)-derivative
+then gives opposite signs on the two faces for every admitted \(\psi\).
+The intermediate-value theorem gives a zero and the orientation gives
+uniqueness; only then is the parameterized implicit-function theorem used.
+The mean-value estimate proves
+\cref{eq:anchor-intrinsic-central-root-distance}.  Dividing
+\(\delta^{Q_*}\) by
+\(A_{0b,p}\asymp(\delta/s_b^\#)E_b\) gives
+\cref{eq:anchor-intrinsic-central-flat-envelope}.
+
+Finally, zero membership is equality with the intrinsic graph in the same
+compatible complete-history chart.  RFDE forward uniqueness supplies one
+orbit and graph membership supplies convergence to \(E_N^-\).  No inverse
+semiflow or finite-selector multiplier appears.
+\end{proof}
+
+\begin{corollary}[Intrinsic conormal and forward transition jet]
+\label[corollary]{cor:anchor-intrinsic-transition-jet}
+On the graph in \cref{eq:anchor-intrinsic-central-graph}, the normalized
+physical-history conormal is
+\begin{equation}
+ \lambda_{0,p}^-
+ =\{\dd u-D_\psi F_{N,\delta,p}^{-,0}\}
+     \circ D\mathfrak C_{0,p}^{-1}.               \label{eq:anchor-intrinsic-central-conormal-new}
+\end{equation}
+It obeys the exact forward covariance identity
+\begin{equation}
+ \lambda_{b,p}^oD\mathcal P_{0\to b,p}
+ =\partial_u\mathcal M_{0,p}^{\rm int}\,\lambda_{0,p}^-.
+                                                               \label{eq:anchor-intrinsic-forward-conormal}
+\end{equation}
+If the passage is split at further regular forward cuts, its derivative is
+the ordered product of the forward derivatives and the conormal is pulled
+back by that product.  No inverse of any history holonomy is formed.  This
+covector germ is the preparation-independent transition/scattering jet used
+in the parameter-space root theorem.
+\end{corollary}
+
+\begin{proof}
+Differentiate the identity
+\(\mathcal M_{0,p}^{\rm int}
+  (\psi,F_{N,\delta,p}^{-,0}(\psi))=0\), use
+\cref{eq:anchor-central-intrinsic-membership}, and pull the coordinate
+covector back through the exact central chart.  Factoring the nonzero scalar
+\(\partial_u\mathcal M_{0,p}^{\rm int}\) gives the displayed normalization;
+the composition statement is the ordinary forward chain rule.
+\end{proof}
