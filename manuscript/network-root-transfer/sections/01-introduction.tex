@@ -1,948 +1,341 @@
 \section{Introduction}
 \label{sec:introduction}
 
-Suppose a parameter changes a delayed network while leaving a prescribed
-projected vector field exactly unchanged at every full history.  Can that
-parameter nevertheless be detected by a dynamical matching measurement?  If
-the projection closes the dynamics, the quotient system answers the question.
-If it does not, an invisible perturbation can first displace unresolved
-histories and later return to a resolved matching condition.  This paper shows
-that, for a class of finite retarded networks, the returned information is not
-only detectable: two separated delays make the entire compressed transverse
-return functional recoverable, with estimates independent of network size.
+Suppose that a parameter changes the delay architecture of a network while
+leaving the stationary projection of its vector field exactly unchanged when
+evaluated at the same full history.  Must that parameter also be invisible to
+the dynamics?  The answer
+is no when the aggregate variables do not form a closed quotient.  An
+unresolved displacement may be created by the delay redistribution, propagated
+through transverse history modes, and returned to a scalar connection
+condition.  For a fixed globally anchored RFDE that agrees with the original
+network throughout the retained fold-history tube, we prove that this return
+moves a complete-history heteroclinic canard even though the perturbation is
+annihilated by the stationary vector-field projection at every common input
+history.  The unanchored recovery law is treated separately and is proved not
+to possess the outer equilibria used by this connection.
 
-The setting is a family of directed Markov networks with a common Dobrushin
-gap and finitely many fixed delay locations.  A structural parameter
-redistributes coupling between delay layers in stationary-row-neutral
-directions.  If \(\mathcal F_{N,\delta,\nu,\zeta}\) is the full history vector
-field and \(\Pi_N(x,y)=(\pi_N^Tx,y)\), then
+The mechanism occurs in finite retarded Markov networks with a common
+Dobrushin gap.  Let \(P_N\) be the Markov matrix, \(\pi_N\) its stationary
+probability, and
+\[
+ \Pi_N(v,w)=(\pi_N^Tv,w)
+\]
+the stationary projection.  The structural parameter redistributes a fixed
+aggregate coupling between delay layers in directions
+\(\eta=(R_{0,N},\ldots,R_{m,N})\) satisfying
 \begin{equation}
- \Pi_N\mathcal F_{N,\delta,\nu,\zeta}(\Phi)
- =\Pi_N\mathcal F_{N,\delta,\nu,0}(\Phi)              \label{eq:intro-blindness}
+ \pi_N^TR_{k,N}=0,
+ \qquad \sum_{k=0}^mR_{k,N}=0.                     \label{eq:intro-blind-directions}
 \end{equation}
-for every unreduced history \(\Phi\).  This is equality at the same full
-history, not exact lumpability and not equality of projected trajectories.
-Nevertheless, a selected complete-history fold-matching root has a nonzero
-leading response.  The mechanism is
+For the RFDE vector field \(\mathcal F_{N,\delta,\nu,\eta}\), these two
+identities imply
+\begin{equation}
+ \Pi_N\mathcal F_{N,\delta,\nu,\eta}(\Phi)
+ =\Pi_N\mathcal F_{N,\delta,\nu,0}(\Phi)           \label{eq:intro-blindness}
+\end{equation}
+for every unreduced history \(\Phi\), not merely on a synchronous subspace.
+This is \emph{same-history projection blindness}.  It is not lumpability:
+the common projected functional still depends on unresolved history
+coordinates, so projected trajectories need not agree.
+
+The information path proved below is
 \begin{equation}
  \begin{aligned}
   \text{blind delay redistribution}
   &\longrightarrow \text{transverse source}
-   \longrightarrow \text{stable history lift}\\
-  &\longrightarrow \text{collective cokernel}
-   \longrightarrow \text{root response}.
+   \longrightarrow \text{history lift}\\
+  &\longrightarrow \text{return covector}
+   \longrightarrow \text{heteroclinic-canard displacement}.
  \end{aligned}                                      \label{eq:intro-return-chain}
 \end{equation}
+Two features make this more than an adjoint sensitivity calculation.  First,
+the admissible perturbations span no visible stationary row at any delay
+atom.  Second, two distinct delay locations are exactly what allow their
+first delay moment to span the entire transverse space.  The source right
+inverse, its stable lift, the return covector, and the nonlinear root estimate
+all have constants independent of \(N\).
 
-The perturbations have a concrete network interpretation.  A designer may
-redistribute a fixed aggregate interaction between communication, transport,
-or feedback channels with different latencies while preserving stationary
-balance at every channel.  An observer that records only the stationary
-average then sees the same projected right-hand side, even though hidden
-disagreement modes retain the latency information.  Near a fold, small
-hidden displacements can change where attracting and repelling slow-passage
-histories meet.  The selected root studied here is a rigorous local
-transition sensitivity for that meeting problem.  It is not asserted to be
-a biological onset or a globally defined switching threshold; its value is
-that it tests whether an aggregate-only description has discarded
-dynamically recoverable delay information.
+\subsection{Flagship theorem}
 
-\paragraph{Reusable verification interface.}
-To transport \cref{eq:intro-return-chain} to another RFDE, one must verify
-five independent inputs: exact blindness on the full history space; a
-factored source \(\mathsf S_N\) with a dimension-uniform right inverse on
-the admitted probe space; a dimension-uniform transverse history inverse
-\(L_{\perp,N}^{-1}\); a return map \(\mathsf B_N\) into a collective
-matching operator with one-dimensional cokernel and nonzero parameter class;
-and a \(C^2\) history lift, zero-fiber identification, and finite-section
-remainder bounds.  The abstract two-atom source criterion in
-\cref{prop:abstract-two-atom-source}, the hidden-return result
-\cref{thm:hidden-return-schur}, and the range-to-root result
-\cref{thm:abstract-root-response} separate these checks.  The two concrete
-models below verify the same source and range interfaces but realize
-inequivalent return covectors.
+We state the synthesis in the notation defined precisely in
+\cref{sec:model-results,sec:abstract-response,sec:anchored-physical-connection}.
+The merged delay support is \(\Theta\),
+\(\Delta_\theta=\max\Theta-\min\Theta\),
+\(E_N=\ker\pi_N^T\), and \(\mathfrak T_N^{\rm red}\) is the
+stationary-row-neutral pure-redistribution space.  The first-moment source is
+\(\mathsf S_N:\mathfrak T_N^{\rm red}\to E_N\), its stable lift is
+\(\mathsf T_N=A_N^{-1}\mathsf S_N\), and the returned covector is
+\begin{equation}
+ \Lambda_N=\mathfrak r_N\mathsf T_N
+ \in(\mathfrak T_N^{\rm red})^*.                  \label{eq:intro-return-covector}
+\end{equation}
+All norms in the next statement are the dimension-uniform norms fixed in
+\cref{sec:model-results}.
 
-\subsection{Main theorem}
-
-The next statement collects the operator dichotomy, the RFDE range
-construction, and the nonlinear measurement in one result for the two model
-families treated here.  It is a model-family synthesis theorem, not a
-replacement for the abstract portability criteria just listed.  Its
-constituent statements are separated in later sections so that the source
-theorem and the range-to-root theorem can be reused independently.
-
-For this statement, call a model family \emph{uniformly admissible} when the
-following data are fixed independently of \(N\): constants
-\(D,\gamma,\alpha,\beta>0\), \(K\ne0\), and finitely many merged delay
-locations; row-stochastic \(P_N\) with strictly positive stationary
-probability \(\pi_N\) and \(\tau(P_N)\le1-\gamma\); curvature vectors with
-\(0<c_-\le c_{i,N}\le c_+\) and \(\pi_N^Tc_N=\alpha\); and delay layers
-and stationary-row-neutral pure-redistribution directions satisfying one
-common sum of operator-norm bounds.  The physical RFDE is either
-\cref{eq:shared-rfde-v,eq:shared-rfde-w} or
-\cref{eq:shared-rfde-v,eq:sensed-recovery-law}; in the second case the
-sensing coefficients also obey \cref{eq:sensing-bounds}.  A compact
-\(\nu\)-interval contains all corresponding fold centers with one positive
-boundary distance.  Finally, one selection datum is fixed: it agrees with
-the physical history equation on the retained fold tube, supplies the stated
-uniformly bounded smooth history completion, and fixes the endpoint and
-phase rows; the full, nonempty class is specified by \textup{(S1)}--\textup{(S4)}
-in \cref{def:admissible-preparation}.
-
-\begin{theorem}[Projection-blind two-delay fold-response readout]
+\begin{theorem}[Projection-blind heteroclinic-canard response]
 \label[theorem]{thm:flagship-synthesis}
-Consider a uniformly admissible family in the preceding sense.  Let
-\(\mathfrak T_N^{\rm red}\) be the stationary-row-neutral
-pure-redistribution space, let
-\(\mathsf S_N:\mathfrak T_N^{\rm red}\to E_N\) be the first-delay-moment
-source, and put \(\mathsf T_N=A_N^{-1}\mathsf S_N\).  If
-\(\Theta\) is the merged delay support, set
-\(\Delta_\theta=\max\Theta-\min\Theta\).
+Fix the shared-resource network class of \cref{sec:model-results}, with a
+common Dobrushin gap \(\tau(P_N)\le1-\gamma\), and fix a bounded admissible
+anchor class in \cref{eq:anchor-admissible-class}.  After reducing one common
+parameter wedge, the following assertions hold for every admitted finite
+network.
 
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item Every admitted redistribution is exactly invisible to the stationary
-projection at every unreduced history:
-\[
- \Pi_N\mathcal F_{N,\delta,\nu,\zeta}
- =\Pi_N\mathcal F_{N,\delta,\nu,0}.
-\]
-If \(\Delta_\theta>0\), then \(\mathsf S_N\) is onto \(E_N\), has an explicit
+\item Every \(\eta\in\mathfrak T_N^{\rm red}\) is exactly
+projection blind in the sense of \cref{eq:intro-blindness}.  If
+\(\Delta_\theta>0\), then \(\mathsf S_N\) is onto \(E_N\), has an explicit
 two-layer right inverse \(\mathsf Q_N\), and
-\[
+\begin{equation}
  \|\mathsf S_N\|=\frac{|K|\Delta_\theta}{4\alpha},
  \qquad
- \|\mathsf Q_N\|=\frac{4\alpha}{|K|\Delta_\theta}.
-\]
-If the merged support contains only one location, then
-\(\mathsf S_N=0\) on \(\mathfrak T_N^{\rm red}\).
-This last assertion is a no-go statement only for the leading
-first-delay-moment source on the pure-redistribution space; it does not
-exclude higher-order responses or responses outside
-\(\mathfrak T_N^{\rm red}\).
-
-\item For each uniformly bounded family
-\(\mathbf R_N\in\mathfrak T_N^{\rm red}\), there exist
-\(\delta_0,\zeta_0,c_0,C>0\), depending on the common model bounds, the
-common direction bound, and the fixed preparation datum, but not on \(N\),
-such that for every \(N\ge2\), \(0<\delta<\delta_0\), and
-\(|\zeta|<\zeta_0\), the corresponding selected gap has exactly one zero
-\(\nu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,\zeta)\) in
-\[
- |\nu-\nu_{0,N}^{\rm mod}|<c_0,
-\]
-where \(\nu_{0,N}^{\rm mod}=\nu_{0,N}\) in the curvature model and
-\(\nu_{0,N}^{\rm mod}=\nu_{0,N}^{\rm rec}\) in the recovery-sensing
-model.  No assertion is made about zeros outside this window.  At this zero
-the two retained complete RFDE histories agree.  Put
-\(\mu_{c,N}^{\mathbf p,\mathbf R_N}
-=\delta^2\nu_{c,N}^{\mathbf p,\mathbf R_N}\).  With
-\(\mathfrak r_N\in E_N^*\) denoting the curvature or recovery return
-covector and
-\(\Lambda_N=\mathfrak r_N\mathsf T_N\),
-\[
- \Delta_{N,\mathbf R}^{\mathbf p}(\delta,\zeta)
- :=\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,\zeta)
-   -\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0),
- \qquad
- \left|\Delta_{N,\mathbf R}^{\mathbf p}(\delta,\zeta)
-   -\delta^3\zeta\Lambda_N(\mathbf R_N)\right|
- \le C\{\delta^4|\zeta|+\delta^3\zeta^2\},
-\]
-on one parameter box with one constant for all \(N\).
-
-\item In the case \(\Delta_\theta>0\), the observation map
-\(\mathcal O_N\mathfrak r_N=\mathfrak r_N\mathsf T_N\) is injective and
-\[
- \mathfrak r_N(z)
-  =(\mathcal O_N\mathfrak r_N)(\mathsf Q_NA_Nz),
- \qquad
- \operatorname{cond}(\mathcal O_N|_{\operatorname{Ran}\mathcal O_N})
- \le\frac{2-\gamma}{\gamma},
-\]
-where the range has the inherited dual norm.  Consequently limiting
-normalized root increments on a probe family whose transverse images span
-\(E_N\) determine the compressed return covector.  Finite-scale increments
-approximate the corresponding covector evaluations with error
-\(O(\delta+|\zeta|)\).  Under the additional irreducibility,
-compatible-base-layer, and common unit-probe preparation hypotheses of
-\cref{cor:curvature-tomography,cor:recovery-tomography}, that error bound is
-uniform in \(N\) and over \(\|d_N\|_N\le1\).
-
-\item For either model, after fixing the physical model, stationary
-projection, phase and endpoint conditions, and normalization
-\(\mu=\delta^2\nu\), baseline-subtracted increments from any two fixed
-admissible preparation data satisfy
-\[
- |\Delta^{\mathbf p_1}_{N,\mathbf R}
-   -\Delta^{\mathbf p_2}_{N,\mathbf R}|
- \le C_{\mathbf p_1,\mathbf p_2}
-       \{\delta^4|\zeta|+\delta^3\zeta^2\}
-\]
-on their common parameter box.  Here
-\(C_{\mathbf p_1,\mathbf p_2}\) is independent of \(N\), but may depend on
-the fixed pair of preparations.  Hence they define the same
-dimension-uniform leading response germ
-\([\,\delta^3\zeta\Lambda_N(\mathbf R_N)\,]_{\rm resp}\).  For each fixed
-preparation and each uniformly bounded direction family, the normalized
-derivative converges to the limiting covector evaluation
-\(\Lambda_N(\mathbf R_N)\) uniformly in \(N\); no uniformity over the whole
-preparation class is asserted.  Equivalently, after each selected connection curve is
-centered at its own \(\zeta=0\) root and its physical-parameter difference is
-divided by \(\delta^3\), its baseline conormal converges to
-\[
- \operatorname{span}\{\dd\xi
-       -\Lambda_N(\mathbf R_N)\,\dd\zeta\}.
-\]
-For the shared-resource family, if the selection rule is structural-ball
-admissible in the sense of
-\cref{def:structural-ball-preparation}, these raywise loci are restrictions of
-one \(C^2\) Fr\'{e}chet graph on a common ball in
-\(\mathfrak T_N^{\rm red}\), and its \(\dd\xi\)-calibrated baseline conormal
-satisfies
-\[
- \|(1,-D_\eta\Xi^{\mathbf p}_{N,\delta}(0))-(1,-\Lambda_N)\|
- \le C\delta
-\]
-in the full dual norm, with one constant for all \(N\).  This conclusion is
-proved by a uniform affine-line Picard-jet argument and polarization, not by
-identifying compatible directional derivatives.
-This weighted conormal is a statement about the selected complete-history
-connection relation, not a physical outer maximal canard.  For the
-shared-resource family, moreover, the exact
-finite-\(\delta\) roots are not preparation independent: at every fixed
-\(N_0\) and sufficiently small fixed target, an admissible localized change
-of the outer completion can move the selected baseline root.
-\end{enumerate}
-
-No preparation-independent maximal-canard claim, full-network reconstruction,
-or \(N\)-uniform inversion from an arbitrary finite noisy probe frame is part
-of the theorem.
-\end{theorem}
-
-\begin{proof}
-For the shared-resource model, exact blindness is
-\cref{prop:projection-blindness}; for the recovery-sensing model the same
-voltage identity holds and the modified recovery law has no direct
-\(\zeta\)-dependence.  The source dichotomy and dual reconstruction are
-\cref{thm:hidden-return-tomography}.  The two model-specific root statements
-are \cref{thm:shared-resource,thm:sensed-recovery-response}.  The finite-scale
-generator-probe conclusions, under their additional hypotheses, are
-\cref{cor:curvature-tomography,cor:recovery-tomography}.  Preparation
-universality for the shared-resource model is
-\cref{cor:preparation-universality,thm:canonical-response-germ}; the
-recovery-sensing germ is \cref{eq:sensing-canonical-germ}, the raywise
-weighted-conormal realization is \cref{thm:weighted-connection-jet}, and the
-shared-resource full-ball realization is
-\cref{thm:joint-redistribution-conormal}.  The final
-finite-section noncanonicity assertion, as stated here for the
-shared-resource family, is \cref{prop:finite-section-noncanonicity}.
-\end{proof}
-
-\subsection{Blind controllability and dual recovery}
-
-Let \(E_N=\ker\pi_N^T\) be the transverse space and let
-\(\mathfrak T_N^{\rm red}\) contain delay-layer directions
-\(\mathbf R=(R_0,\ldots,R_m)\) satisfying
-\(\pi_N^TR_k=0\) for each layer and \(\sum_kR_k=0\).  The second identity
-keeps the aggregate coupling fixed.  The leading transverse source and its
-stable lift are
-\begin{equation}
- \mathsf S_N\mathbf R
- =\frac{K}{2\alpha}P_{\perp,N}
-   \left(\sum_k\theta_kR_k\right)\mathbf1,
- \qquad
- \mathsf T_N\mathbf R=A_N^{-1}\mathsf S_N\mathbf R. \label{eq:intro-source-lift}
+ \|\mathsf Q_N\|=\frac{4\alpha}{|K|\Delta_\theta}. \label{eq:intro-sharp-source}
 \end{equation}
-Thus the zeroth delay moment is erased exactly, while the first moment may
-survive.
+If \(\Theta\) consists of one location, then \(\mathsf S_N=0\) on
+\(\mathfrak T_N^{\rm red}\).  The latter is a leading first-moment no-go
+inside this structural class, not a claim about arbitrary perturbations or
+higher orders.
 
-Our first main result, \cref{thm:hidden-return-tomography}, proves a sharp
-dichotomy.  If two delay locations differ by
-\(\Delta_\theta>0\), then \(\mathsf S_N\) maps the projection-blind
-redistributions onto all of \(E_N\).  An explicit two-layer right inverse
-\(\mathsf Q_N\) satisfies
+\item For each fixed anchor multiplier, the globally anchored RFDE possesses
+two hyperbolic constant histories \(E_N^+\) and \(E_N^-\), with
 \begin{equation}
- \mathsf S_N\mathsf Q_N=\Id_{E_N},
- \qquad
- \|\mathsf S_N\|\,\|\mathsf Q_N\|=1,               \label{eq:intro-sharp-source}
+ \dim W^u(E_N^+)=1,
+ \qquad \operatorname{codim}W^s(E_N^-)=1.          \label{eq:intro-anchor-indices}
 \end{equation}
-with each norm given exactly and independently of \(N\).  After coincident
-atoms are merged, a single-point delay support instead gives
-\(\mathsf S_N=0\) on \(\mathfrak T_N^{\rm red}\).  This is a sharp no-go
-statement for the leading source generated by pure delay redistributions; it
-does not concern moving delays, general row-neutral perturbations, or
-higher-order mechanisms.  Dependence of stability on delay distributions and
-their moments has a separate history \citep{kiss2010stability}; what is sharp
-here is the projection-blind source map on matrix redistributions.  We use
-``blind controllability'' only for this
-algebraic ability of admissible parameter directions to span the leading
-transverse source, not for time-dependent state control in the classical
-sense \citep{hermann1977nonlinear}.
+There are \(c_0,\eta_0,\delta_0>0\), independent of \(N\) and uniform over
+the bounded anchor class, such that for
+\(0<\delta<\delta_0\) and \(\|\eta\|<\eta_0\) there is exactly one root
+\begin{equation}
+ \mu_{c,N}^{\rm anc}(\delta,\eta)
+ =\delta^2\nu_{c,N}^{\rm anc}(\delta,\eta),
+ \qquad |\nu_{c,N}^{\rm anc}-\nu_{0,N}|<c_0,      \label{eq:intro-physical-root}
+\end{equation}
+at which, modulo time translation, a unique orbit in the declared tube obeys
+\begin{equation}
+ \lim_{t\to-\infty}Z_t=E_N^+,
+ \qquad \lim_{t\to+\infty}Z_t=E_N^-.              \label{eq:intro-complete-connection}
+\end{equation}
+The orbit follows the attracting and repelling slow-history graphs for at
+least \(c\delta^{-2}\) units of original time on each fixed outer
+subannulus and satisfies the quantitative central canard estimate
+\cref{eq:anchor-heteroclinic-canard-tracking}.
 
-Let \(\mathfrak r_N\in E_N^*\) be the transverse return covector compressed
-by the collective matching equation.  The observed response covector is
-\begin{equation}
- \Lambda_N=\mathcal O_N\mathfrak r_N
- :=\mathfrak r_N\mathsf T_N.
-\end{equation}
-The same theorem gives the coordinate-free reconstruction
+\item The root is intrinsic to that fixed anchored RFDE and is jointly
+\(C^1\) on the full structural ball.  Its hidden response is
+\begin{align}
+ \|D_\eta\mu_{c,N}^{\rm anc}(\delta,\eta)
+       -\delta^3\Lambda_N\|
+ &\le C\{\delta^4+\delta^3\|\eta\|\},             \label{eq:intro-root-jet}\\
+ |\mu_{c,N}^{\rm anc}(\delta,\eta)
+  -\mu_{c,N}^{\rm anc}(\delta,0)-\delta^3\Lambda_N(\eta)|
+ &\le C\{\delta^4\|\eta\|+\delta^3\|\eta\|^2\}. \label{eq:intro-root-increment}
+\end{align}
+Both estimates hold uniformly in \(N\), the first in the full dual operator
+norm.  Thus a direction annihilated by the stationary projection at every
+history moves an exact complete-history canard at order \(\delta^3\).
+
+\item If \(\Delta_\theta>0\), root derivatives recover the compressed
+transverse return covector by
 \begin{equation}
  \mathfrak r_N(z)=\Lambda_N(\mathsf Q_NA_Nz),
- \qquad z\in E_N,                                   \label{eq:intro-reconstruction}
-\end{equation}
-and bounds the condition number of \(\mathcal O_N\), as an isomorphism onto
-its range with the inherited dual norm, by \((2-\gamma)/\gamma\).  Once the
-right inverse is known, injectivity and \cref{eq:intro-reconstruction} are
-standard duality.  The mathematical content is the exactly
-projection-blind source realization, its sharp two-delay inverse, and the
-dimension-uniform return bounds---not a new principle of Banach-space duality.
-
-\subsection{Nonlinear complete-history readout}
-
-The operator statement becomes a dynamical measurement only after an
-infinite-dimensional range problem is solved.  Near a collective fold we
-construct an invariant RFDE history graph and attracting and repelling
-one-sided traces.  A zero of their scalar gap is equality of the retained
-complete RFDE histories on the phase section, not merely equality of a
-projected observable.  Fix a uniformly bounded blind direction family
-\(\mathbf R=(\mathbf R_N)\).  The root theorem proves
-\begin{equation}
- \Delta_{N,\mathbf R}^{\mathbf p}(\delta,\zeta)
- :=\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,\zeta)
-     -\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0)
- =\delta^3\zeta\Lambda_N(\mathbf R_N)
-   +O(\delta^4|\zeta|+\delta^3\zeta^2),             \label{eq:intro-response}
-\end{equation}
-with one parameter box and one remainder constant for all admitted network
-sizes and every bounded probe family.  Consequently, normalized finite-scale
-root increments recover the pairings of \(\mathfrak r_N\) with error
-\(C(\delta+|\zeta|)\).  This is the nonlinear bridge from
-\cref{eq:intro-reconstruction} to an input--output quantity.
-
-For generator-supported probes \(\mathsf G_N(d)\), the two model
-realizations give the explicit pairings
-\begin{align}
- \Lambda_N^{\rm curv}(\mathsf G_N(d))
- &=\frac{K\Delta_\theta}{2\alpha^2D}
-   \langle c_N-\alpha\mathbf1,d\rangle_{\pi_N},
-                                                               \label{eq:intro-curvature-pairing}\\
- \Lambda_N^{\rm rec}(\mathsf G_N(d))
- &=-\frac{K\Delta_\theta}{2\alpha D}
-   \left\langle\varpi_N-\frac{c_N}{\alpha},d
-   \right\rangle_{\pi_N}.                         \label{eq:intro-recovery-pairing}
-\end{align}
-Thus any \(N-1\) probes spanning \(E_N\) determine the relevant centered
-return profile at fixed \(N\).  The pairing estimates are uniform over the
-unit probe ball.  Without a uniform lower frame bound, however, we do not
-claim an \(N\)-uniform condition number for reconstructing a coordinate
-vector from finitely many noisy pairings.  Likewise, an absolute measurement
-error in the root increment is amplified by
-\(\delta^{-3}|\zeta|^{-1}\); the theorem establishes asymptotic
-identifiability, not noise robustness as \(\delta\downarrow0\).
-
-We use ``tomography'' descriptively for the recovery of this one compressed
-return covector from directional root responses.  The network skeleton,
-stationary weights, delay locations, and scalar coefficients are treated as
-known.  We neither reconstruct the full hidden network nor infer all
-coefficients of the RFDE.
-
-\subsection{What is intrinsic, and what is not}
-
-The scalar readout in \cref{eq:intro-response} is selected by finite
-endpoints and an outer planar completion.  It would be incorrect simply to
-rename its exact finite-\(\delta\) zero an intrinsic maximal canard.
-For the shared-resource family,
-\cref{prop:finite-section-noncanonicity} constructs localized admissible
-changes of the artificial completion which leave the physical RFDE, retained
-fold tube, phase row, and endpoint equation fixed but move that exact root.
-This is an obstruction result, not a missing uniqueness proof.
-
-There is nevertheless a relative-canonical object within a precisely fixed
-comparison class.  Hold fixed the physical RFDE family, stationary projection, phase and
-endpoint conditions, and normalization \(\mu=\delta^2\nu\).  Subtract each
-admissible preparation's own \(\zeta=0\) baseline.  For any two fixed
-preparations, \cref{thm:canonical-response-germ} gives
-\begin{equation}
- [\Delta_{N,\mathbf R}^{\mathbf p}]_{\rm resp}
- =[(\delta,\zeta)\mapsto
-    \delta^3\zeta\Lambda_N(\mathbf R_N)]_{\rm resp}, \label{eq:intro-canonical-germ}
-\end{equation}
-on their common parameter box, and
-\(\delta^{-3}\partial_\zeta
-\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0)
-\to\Lambda_N(\mathbf R_N)\)
-uniformly in \(N\).  In the weighted coordinate
-\[
- \xi=\delta^{-3}\{\mu-\mu^{\mathbf p}_{c,N}(\delta,0)\},
-\]
-the selected connection graph satisfies
-\(\xi=\zeta\Lambda_N(\mathbf R_N)
- +O(\delta|\zeta|+\zeta^2)\); its baseline tangent has slope
-\(\Lambda_N(\mathbf R_N)+O(\delta)\), and its conormal converges to
-\(\operatorname{span}\{\dd\xi-
-\Lambda_N(\mathbf R_N)\dd\zeta\}\).  For the shared-resource family,
-\cref{thm:joint-redistribution-conormal} proves, rather than infers from those
-raywise limits, that before restriction to a ray the tangent hyperplane is
-the kernel of the cokernel-valued map
-\[
- (\xi,R)\longmapsto
- \xi[f_{\nu,N}]
- +[\mathsf B_NL_{\perp,N}^{-1}\mathsf S_NR].
-\]
-This formulation removes the arbitrary scalar representative of the
-collective cokernel.  The baseline-subtracted response germ, limiting
-covector, and weighted conormal are preparation independent in the stated
-relative sense; the finite-section representative root is not.  They remain
-objects of the selected local connection problem until physical outer
-history families are constructed and compared with it.  The quantitative
-criterion \cref{prop:physical-weighted-c1-transfer} isolates the direct
-obligation: a preparation-free physical root whose weighted structural
-derivative agrees with that of the selected root.  One sufficient gap-level
-route additionally asks that the two root locations converge and that their
-defining gaps differ by \(o(\delta)\) in the \(\nu\)-gap slope and by
-\(o(\delta^2)\) in the structural derivative.
-
-\subsection{Two inequivalent return channels}
-
-The shared-resource model returns the transverse history through heterogeneous
-fast curvature:
-\begin{equation}
- \mathfrak r_N^{\rm curv}(h)
- =-\frac1\alpha\pi_N^T(c_N\circ h).
-                                                               \label{eq:intro-curvature-return}
-\end{equation}
-Its response is nonzero on the full blind redistribution space exactly when
-the node curvatures are not stationary-homogeneous.  The second RFDE family
-changes the recovery law and has
-\begin{equation}
- \mathfrak r_N^{\rm rec}(h)
- =\left\langle\varpi_N-\frac{c_N}{\alpha},h
-   \right\rangle_{\pi_N}.                           \label{eq:intro-sensing-return}
-\end{equation}
-With \(c_N=\alpha\mathbf1\), the curvature channel vanishes identically
-while heterogeneous recovery sensing remains active.  For each fixed \(N\),
-varying the positive sensing weights realizes every nonzero ray in \(E_N^*\).
-This makes the second family a genuinely different return operator, not a
-renaming of the first model.
-
-The generator probes are supported on \(\Id+P_N\) and therefore preserve the
-support of the chosen base layers
-\(B_{0,N}=B_{m,N}=(\Id+P_N)/2\).  For sufficiently small signed
-amplitudes the perturbed layers remain entrywise nonnegative; for an open
-dense set of directions the nonzero probe layers have rank \(N-1\).  Sparse directed
-reset--cycle networks then give \(O(N)\)-edge realizations with common
-Dobrushin gap, uniformly nonzero response, and no nontrivial synchrony
-polydiagonal in the curvature family.  Thus the result is not an arbitrary-size
-copy of a lower-dimensional synchronous fold-matching problem.
-
-\subsection{Relation to existing theory and the novelty boundary}
-
-Exact lumpability requires the full vector field to descend to a closed
-quotient, equivalently to intertwine full and quotient flows under appropriate
-hypotheses \citep{horstmeyer2016lumpability}.
-\Cref{eq:intro-blindness} is weaker in a different direction: it compares two
-projected vector-field functionals at the same unreduced history, but the
-common functional need not factor through the projected history.  We prove
-projection blindness, not exact lumpability.  Nor does same-history equality
-assert invariance of an entire measured output trajectory under parameter
-changes, as in structural unidentifiability or dynamical compensation
-\citep{bearup2013inputoutput,villaverde2017dynamical}.  Mori--Zwanzig theory supplies a
-broad conceptual precedent for unresolved modes returning through memory
-\citep{chorin2002optimal,herrera2020tractable}; here the return is instead a
-deterministic first-delay-moment source, a stable transverse inverse, and a
-one-dimensional matching cokernel.
-
-Writing a first-order splitting displacement as a normal-bundle section is
-already a canonical construction in Melnikov theory
-\citep{lomeli2008canonical}.  Accordingly,
-\cref{thm:weighted-connection-jet} is not presented as a new principle merely
-because it replaces a scalar defining function by a conormal line.  Its role
-is to show that the nonlinear selected connection curves realize the same
-cokernel-valued object as the blind-source factorization and that this object
-retains the two-delay and network-size-uniform recovery structure.  A
-preparation-free physical connection manifold would require the additional
-outer-history theorem and weighted \(C^1\) selected-to-physical comparison.
-\Cref{prop:physical-weighted-c1-transfer} records the formal naturality under
-an exact parameter-coherent section holonomy; constructing and verifying such
-a physical holonomy for this model remain outside the present theorem.
-
-Adjoint sensitivity already represents scalar response derivatives as
-covector pairings, including for functional differential systems with
-time lags \citep{cacuci1981sensitivity,rihan2003sensitivity}, and sufficiently many
-directional measurements can of course recover a finite-dimensional
-functional.  Network reconstruction from response dynamics
-\citep{timme2007revealing}, from delayed noisy interactions
-\citep{zhang2019reconstruction}, and from long noisy time series
-\citep{pereira2025robust} addresses the more ambitious problem of recovering
-interaction structure, delays, or dynamics.  We make no such claim.  The
-principal conjunction here is narrower: admissible probes annihilate the entire
-stationary projection at every delay atom and preserve aggregate coupling;
-two separated delays nevertheless span the transverse source with sharp
-dimension-free cost; and a nonlinear complete-history root reads out the
-resulting covector with a uniform remainder.  The Schur elimination,
-one-dimensional cokernel projection, and dual reconstruction after a right
-inverse are standard operations and are not presented as new principles.
-
-Observability and parameter identifiability for nonlinear delay systems ask
-whether states, histories, or model parameters can be recovered from an
-input--output behavior
-\citep{xia2002analysis,zhang2006parameter,anguelova2010analytic,verduynlunel2001parameter}.
-Our result is not an observability test and does not recover the delay layers,
-delay locations, or an arbitrary RFDE state.  The network skeleton and
-coefficients are known; the probes recover only the finite-dimensional return
-covector compressed by the chosen fold-matching equation.  Equality of the
-two retained complete histories at a selected root is a zero-fiber property
-of that matching construction, not analytic observability of the underlying
-delay system.
-
-The fold chart and singular orbit are classical planar canard objects
-\citep{krupa2001relaxation,krupa2001extending}.  Canard explosions and more
-complicated canard-induced oscillations occur in delay equations
-\citep{campbell2009delay,krupa2016complex,krupa2016explosion}, and local
-infinite-dimensional fast--slow theory includes DDE examples
-\citep{avitabile2020local}.  Network canards arise in consensus,
-nonlinear-diffusion, adaptive mean-field, and tipping settings
-\citep{jardon2020consensus,bonetto2024nonlinear,balzer2024cascading,qin2023tipping}.
-We do not claim a first network canard, a preparation-independent maximal
-canard, or a new infinite-dimensional center-manifold theorem.
-\Cref{prop:unprepared-outer-skeleton} is a model-specific,
-dimension-uniform critical-layer calculation.
-\Cref{prop:frozen-voltage-history-splitting} upgrades its voltage layer to a
-positive-\(\delta\), fixed-history-space splitting with a capped rate; the
-resource is frozen, and the theorem is neither a nonautonomous RFDE slow
-manifold nor a physical outer-history construction.  The exact uncut
-invariance equation and the quotient identities in
-\cref{prop:exact-outer-history-equation,prop:physical-history-phase-quotient,%
-prop:exact-resource-gauge-quotient} show what changes once a genuine monotone
-history is available: time translation supplies the transported longitudinal
-line, and an adapted resource gauge removes the singular resource coupling
-through an \(O(S_\delta^{-1})\) Volterra history correction.  These identities
-are conditional at the level of an arbitrary tracker.  The canonical
-fixed-section zero is only the zero-gauge member of a larger class:
-\cref{thm:raw-gauge-fixed-section-zero} admits a nonempty,
-infinite-dimensional gauge ball of small raw-compatible attracting and
-repelling boundary data, proves a uniform zero for every such gauge, and
-gives its first gauge jet, fixed-graph Lipschitz dependence, strict speed
-sign, and exact forward RFDE reconstruction.  For every zero in that ball,
-\cref{cor:generated-interior-canonical-tracker} verifies the tracker
-hypotheses on each generated subsegment whose full delay collar lies beyond
-the first maximal delay.  Thus the quotient and Volterra coordinates there
-belong to an exact RFDE orbit rather than a formal history graph.
-\Cref{prop:raw-gauge-physical-hit} restricts these orbit segments, on one
-gauge-independent generated buffer per branch, to the unique hits of the
-fixed interior sections \(r=\pm r_{\rm out}/2\).  The scaled hit-time and
-phase-quotiented history derivatives are dimension uniform.
-\Cref{prop:raw-gauge-strong-hit-buffer} upgrades the common interior
-neighborhood to a \(C^1\)-in-gauge family of time-\(C_\delta^3\) generated
-buffers in the natural annular component scales.  It supplies the strong
-input required by the terminal-relative trace chart, including a
-\(\delta^{-2}\) safe loss for the raw moving recut.  Thus gauges can now be
-compared in one local strong chart around the fixed physical hit, but not on
-the full outer domains or at the original branch endpoints.
-\Cref{prop:physical-hit-quotient-flushing} then performs an RFDE-specific
-finite-window Lyapunov--Perron argument on that actual nonlinear tracker:
-after quotienting the genuine time tangent, endpoint influence at either
-fixed physical hit is
-\(\exp\{-cS_\delta\log(1/\delta)\}\).  The repelling estimate inverts only
-the one-dimensional current unstable line and never the ambient RFDE
-semiflow.  Through the exact event bridge,
-\cref{thm:physical-hit-first-order-flatness} proves that the complete hit
-history is raw-gauge independent modulo \(O(\delta^\infty)\), uniformly in
-network size and in the natural \(\varepsilon\)-normalized event norm.
-This is a nonlinear variational forgetting theorem for the actual raw-gauge
-family, but it is fixed-parameter and first order at the two
-interior hits.  The fixed-reference residual in
-\cref{lem:fixed-reference-parameter-residual} avoids translating the rough
-piecewise-$W^{1,\infty}$ graph: an explicit triangular collar/bulk row
-isomorphism gives an exact $C^4$ forward-RFDE chart.
-\Cref{prop:parameter-coherent-physical-hit-family} constructs its
-parameter-coherent complete-history hit maps with the rectangular parameter
-jet and the exact mixed gauge staircase.  Differentiating the centered
-Lyapunov--Perron equation then gives
-\cref{thm:physical-hit-rectangular-flatness}: every derivative containing a
-gauge slot is $O(\delta^\infty)$, and any two uniformly tame gauge fields
-give the same
-$\mathcal J_{\rm phys}=(C_\nu^1C_\eta^2)\cap(C_\nu^2C_\eta^1)$ hit jet
-modulo $O(\delta^\infty)$.  The pure parameter response of one representative
-is not removed.  These are two separate local classes relative to one
-reference chart; they supply neither covariance between reference charts,
-the original physical endpoints, a past-complete history, nor a connection
-between the two branches.
-
-The dimension-uniform range estimates use Dobrushin contraction in the
-oscillation seminorm \citep{gaubert2015dobrushin}, in the context of a broad
-literature on delayed consensus
-\citep{moreau2004consensus,munz2010delay,atay2013consensus,haskovec2021consensus,proskurnikov2023delay}.
-Fredholm and Lin methods already provide finite-codimension matching theories
-for RFDEs and mixed-type equations
-\citep{hale1986heteroclinic,lin1986exponential,malletparet1999fredholm,hupkes2009lin}.
-Our range construction is model specific: it combines a Dobrushin-controlled
-complete-history graph, selected traces, and a finite-section estimate.  It is
-not a new general Fredholm or Lin theorem.  Synchrony polydiagonals are
-organized by balanced relations and common invariant subspaces
-\citep{golubitsky2005patterns,neuberger2020invariant}; the sparse curvature
-family rules them out by distinct node curvatures.
-
-\subsection{Proof architecture and organization}
-
-The proof has five load-bearing steps.  First, stationary-row cancellation
-gives exact blindness.  Second, the Dobrushin gap supplies a dimension-free
-transverse inverse, while two delay atoms give the sharp source right inverse.
-Third, a special-flow transform constructs an injective invariant graph of
-complete RFDE histories and two selected traces.  Fourth, Gaussian cokernel
-pairings and a finite-section error estimate transfer the whole-line return
-coefficient to the nonlinear root.  Fifth, the structural-ball Fr\'{e}chet
-estimate identifies the selected shared-resource connection hyperplane with
-the kernel of the Schur map and its limiting conormal with
-\((1,-\Lambda_N)\).  The two model calculations identify the curvature and
-recovery covectors, while the localized bump construction proves exact-root
-noncanonicity for the shared-resource family.
-
-\Cref{sec:model-results} defines the shared-resource model and states the
-blind-controllability, root-readout, tomography, and obstruction results.
-\Cref{sec:abstract-response} records the supporting Schur and range-to-root
-machinery.  \Cref{sec:sensed-recovery} supplies the second return channel.
-\Cref{sec:network-mechanism} proves the model-specific graph, trace, and
-coefficient calculations.  After the main proof,
-\cref{sec:unprepared-outer-skeleton} records a preparation-independent
-critical curve, a positive-\(\delta\) frozen-voltage full-history splitting,
-truncated reduced actions, the exact uncut tracker equation, and two exact
-realizations of the quotient along any genuine monotone tracker.  It also
-shows why the unquotiented voltage--resource system has the wrong unstable
-count, and gives an exact counterexample showing why convergence in an
-unnormalized history norm and a phase row do not by themselves select a tame
-RFDE history.  The same section proves the fixed-delay fold-time normal form,
-a compatible endpoint-history chart, and a fixed-phase \(C^0\)
-Green--collar inverse for a prescribed RFDE history segment.  Its boundary
-traces are \((Z(0),p(0))\) on the attracting branch and
-\((Z(0),p(S_r))\) on the repelling branch.  The last result is only the
-\((Z,p)\) normal block.  The scalar phase--event core has an explicit
-dimension-uniform inverse in the naturally scaled event-time variable, but
-the phase displacement is not part of a causal echo contraction.  On the
-attracting outer buffer, an exact current/positive-delay splitting and a
-finite-generation argument now flush arbitrary strong collar data into a
-genuine order-\(d\) slow exit trace, with a dimension-uniform operator norm
-tending to zero.  On the repelling branch, the current loop is first
-resummed into forward transverse and future scalar component kernels; a
-decorated-word/first-exit argument then flushes both the inner-history and
-terminal-scalar components into genuine order-\(d\) handoff histories, again
-with normalized operator norms tending to zero uniformly in \(N\).
-This closes the fixed-parameter, fixed-phase component bootstrap on both
-outer branches.  The raw-compatible repelling \(p(0)\)-to-collar feedback
-is now closed in the same high-order handoff class, including the
-feedback-generated history cross-column at the terminal window.  Moreover,
-the algebraically reconstructed normal speed maps into the zeroth-order
-phase-action space with norm
-\(O(r_{\rm out}^2+\delta^{2-2\vartheta})\), even for endpoint boundary
-layers.  In the reverse direction, exact differentiation of the reduced
-delay row produces a phase-delay operator of size
-\(O(\delta\{1+\log(r_{\rm out}/\rho_\delta)\})\) in phase action; it
-annihilates constant phase exactly and gives a dimension-uniform inverse for
-the formal delayed phase--event core.  The same calculation identifies the
-two phase-to-normal sources, including the nonzero affine-residual column.
-The exact shift and structured Green estimate in
-\cref{prop:phase-delay-action-shift,prop:structured-phase-action-green}
-show that this reverse phase column need not be uniformly bounded in the old
-normalized state norm, while its reconstructed true-speed action is
-\(O(r_{\rm out}^2+\delta/S_\delta)\).
-An event-aligned fixed-\(r\) trace theorem removes the scaled event-time
-unknown from the normal terminal rows at the reduced base and proves the
-sharp \(\delta^{-2}\) strong-norm loss incurred by differentiating a raw
-moving trace instead.
-At a nonzero terminal base,
-\cref{lem:terminal-relative-trace-scale-chart} upgrades this calculation to
-an exact nonlinear strong-to-weak \(C^2\) moving-window coordinate package.
-It retains the event displacement as a coordinate, makes the fixed physical
-section a derived event row, preserves the nonzero terminal columns, and
-records all mixed second derivatives together with the
-\(\delta^{-2}\)/\(\delta^{-4}\) translation losses.  It assumes an already
-available strong terminal buffer and does not construct a parameterized
-solution family or a moving-event inverse.
-\Cref{lem:raw-phase-boundary-column-assembly,%
-thm:raw-compatible-phase-normal-inverse} then assemble the raw-compatible
-entry-collar column, retain the affine-residual bulk response, and close a
-dimension-uniform zeroth-order phase--normal inverse on each fixed reduced
-branch in a graph/action norm.  The total Schur action is
-\(O(r_{\rm out}^2+\delta/S_\delta+\delta^{2-2\vartheta})\).
-Independently, a preparatory refinement shows that the base raw-collar
-correction itself is smaller:
-\(O(\varepsilon|e|)\), hence \(O(\delta^3S_\delta)\) at either inner
-section, although its moving-endpoint derivative remains sharply
-\(O(\varepsilon)\).  This base estimate is not used to replace the sharp
-moving-endpoint column in the Schur inverse.  To remove the constant-phase
-obstruction in the scalar phase coordinate, an inner-anchored
-\(q_0\)-flow chart is constructed next.
-Its phase action is exact, it preserves the sign and orientation of both
-outer branches for a prescribed pulled-back scalar speed residual in the
-natural weighted class, and its one-row relative-phase linearization has a
-dimension-uniform fixed-base Schur inverse.  In that relative norm the
-fixed-base linear raw true-speed action is
-\[
- O\!\left(r_{\rm out}
-   \{r_{\rm out}+S_\delta^{-2}+\delta^{2-2\vartheta}\}\right).
-\]
-\Cref{prop:inner-anchor-endpoint-recut-obstruction} proves that this
-fixed-section result cannot be promoted to an original-endpoint theorem by
-literal recutting.  Already in the scalar phase core, an admissible source
-\(\widehat Q=D_\delta|r|\) makes the attracting chart stop inside
-\(r_{\rm out}\) and leaves the repelling chart short of
-\(-r_{\rm out}\).  Its algebraic bordered terminal coordinate obeys
-\[
- \frac{|\widehat\tau|}{\rho_\delta}\longrightarrow\infty,
  \qquad
- \frac{(|\widehat\tau|/\delta)}{S_\delta}\longrightarrow\infty
-\]
-on both branches for fixed \(r_{\rm out}\).  Thus strict speed sign, the
-inner-anchored relative inverse, and the existing \(O(S_\delta)\) interior
-buffers do not imply a physical endpoint recut.  This is a nonimplication
-for the proved phase-core hypotheses, not a full-RFDE impossibility theorem,
-and \(\widehat\tau/\delta\) here is only the fold-time scale represented by
-the scalar row.
-\Cref{thm:receding-collar-causal-flight-time} then closes the genuinely
-causal scalar problem in a different coordinate.  For a prescribed
-Eulerian scalar speed \(q=q_0+\widehat Q<0\), the difference of the perturbed and
-unperturbed flight-time coordinates satisfies the exact nonlinear bulk row
-\[
- \frac{q_0^2\beta'}{1-q_0\beta'}=\widehat Q,
- \qquad \beta(e_0)=0,\qquad
- \beta(e_1)+\widehat\tau=0.
-\]
-On the receding collar
-\(r_{{\rm out},\delta}
- =\varkappa_{\rm ep}(\delta S_\delta^3)^{1/2}\), every source in the
-structured class
-\(|\widehat Q|\le
- C(r_{{\rm out},\delta}+S_\delta^{-2})
- (|r|+\varepsilon/|r|^2)\)
-has an exact scalar-coordinate hit at the original endpoint with
-\(|\widehat\tau|=O(\rho_\delta)\) and
-\(|\widehat\tau|/\delta=O(S_\delta)\).  The associated action-weighted
-terminal Schur inverse is dimension uniform.  The duration is the full
-nonlinear flight-time moment; cancelling only its linear part is proved
-insufficient because the quadratic remainder has a fixed sign.
-\Cref{thm:reference-pulled-causal-endpoint} closes the scalar
-coordinate-conjugacy seam for every prescribed structured
-reference-coordinate source satisfying
-\cref{eq:reference-pulled-source-class}: it solves the causal phase
-problem, conjugates that source to an Eulerian speed, and reaches the
-original scalar-coordinate endpoint.  Its
-exact terminal coefficient is
-\(q_\sigma^E(e_{\sigma,1})/q_0(e_{\sigma,1})\), uniformly separated from
-zero.  Moreover,
-\cref{cor:diagonal-raw-compatible-phase-normal-inverse} re-audits the
-fixed-reference raw-compatible phase--normal graph inverse at order zero on
-the same receding diagonal.
-\Cref{thm:diagonal-causal-entry-prefix-action-inverse,prop:rough-normal-prefix-action-obstruction}
-then identify its correct causal range: charging the weighted speed controls
-every recorded prefix, whereas the old unrestricted rough norm has the sharp
-loss \(R_\delta^2/\rho_\delta\asymp S_\delta^2\).
-Separately,
-\cref{lem:current-absorbed-delay-splitting} controls the attracting
-outer-buffer evolution kernel through one endpoint derivative with rate
-\(\exp\{-c r_{{\rm out},\delta}\Delta s/\delta\}\), while one zeroth-order
-positive-delay Duhamel generation is
-\(O(\varepsilon/r_{{\rm out},\delta})\).
-On the repelling outer interval
-\(r_{{\rm out},\delta}/2\le |r_r|\le r_{{\rm out},\delta}\),
-\cref{lem:repelling-component-generations} proves only that the terminal
-scalar kernel has the same \(r_{{\rm out},\delta}/\delta\) rate scale.
-On these kernels,
-\cref{prop:diagonal-terminal-component-green,%
-prop:raw-compatible-terminal-phase-column,%
-prop:diagonal-bulk-terminal-prefix-trace}
-give the first-order terminal propagator, the structured phase column, and
-the direct terminal-free bulk-to-prefix-to-trace composition.  The remaining
-localized normal boundary columns are closed by
-\cref{prop:diagonal-boundary-prefix-terminal-trace}.  For
-\(f_\sigma^{\rm bd}=(\gamma_0,b_\sigma,0,0)\), the exact vanishing of the
-distributed scalar source yields
-\[
- \rho_\delta^{-1}\sup_r
- \left|\int_{e_{\sigma,0}}^r\frac{Q_\sigma^{\rm bd}}{q_0^2}\,\dd u\right|
- \le C\eta_{{\rm bd},\delta}D_\sigma^{\rm bd},
- \qquad
- \eta_{{\rm bd},\delta}=O(\delta S_\delta)=o(1),
-\]
-as well as a uniform first-order terminal trace.  The attracting column and
-repelling entry-history column flush from the final window; the repelling
-terminal scalar column provably does not, because its endpoint value is the
-prescribed row.  The bulk, boundary, and terminal summands are assembled
-below in one hybrid linear core.  The remaining physical theorem must still
-control the complete terminal event/history shear and moving-duration
-normal column and bound the full terminal Schur factor.  None of the linear
-results alone proves that the source produced by that open moving RFDE BVP
-satisfies \cref{eq:reference-pulled-source-class}, or places a
-fixed-envelope RFDE zero at the original endpoint.
-Finally, the delay profile itself is \(O(\delta)\) in the relative phase
-norm.  Feeding its exact original-variable sources through the closed normal
-Green inverse recovers the previously unavailable normalized state and
-pointwise true action, both with the sharper factor
-\(O(r_{\rm out}+S_\delta^{-1})\).  This yields a uniformly equivalent
-relative graph--action norm.  The unrestricted old-state obstruction remains
-valid; the recovery uses essentially the fold-side anchor
-\(|a(r)|\le |r|\|a\|_{\phi,\mathrm{rel}}\).
-For the same formal \(q_0\)-flow history, the exact nonlinear delay
-functional is then identified.  Its linearization is precisely the delayed
-phase column, while its value and piecewise derivative have a two-point
-quadratic remainder of size
-\(O(\delta|r|\|a\|_{\phi,\mathrm{rel}}^2)\).
-Together these results remove the constant-phase obstruction at the
-fixed-base linear level and close the formal phase-only delay nonlinearity.
-\Cref{lem:second-jet-raw-history-assembler} then constructs the nonlinear
-raw-compatible old-history assembler directly in a fixed-reference chart.
-It covers the four closed endpoint collars, supplies the second endpoint
-jet, agrees with the original moving-weight collar chart on their overlap,
-and has a dimension-uniform normalized quadratic graph remainder.  It is a
-compatible history segment, not a past orbit.
-\Cref{thm:fixed-section-nonlinear-graph-residual} then assembles this
-boundary chart with the exact phase-delay functional and the nonlinear
-resource-defect equations on one common graph--action space.  The resulting
-fixed-parameter, inner-anchored residual is \(C^1\), its differential is
-exactly the already inverted raw-compatible Schur block, its base defect is
-\(O(r_{\rm out}+S_\delta^{-2})\), and its nonlinear remainder satisfies a
-dimension-uniform two-point quadratic estimate.
-\Cref{cor:fixed-section-canonical-zero} solves that residual pointwise at
-each fixed admissible parameter pair.  On each outer branch it gives a
-unique small zero in the canonical graph slice, its first Newton jet, a
-strict speed sign, and an exact finite forward segment of the unmodified
-RFDE.  On the receding diagonal,
-\cref{lem:joint-diagonal-wedge-kinetic} replaces the misleading
-fixed-\(\delta\) rectangle \(0<\varkappa\le\varkappa_0\) by the admissible wedge
-\(\delta/R_\delta^2\le\mathfrak w_*\), makes the affine constants joint in
-\((N,\delta,\varkappa)\), and proves the causal-slice kinetic estimate.
-\Cref{thm:fixed-envelope-speed-row-zero} then hard-splits the exact
-nonlinear residual into bulk, boundary, and terminal sources and contracts
-about the non-small affine bulk predictor in an anisotropic correction
-norm.  It gives an exact fixed-envelope forward RFDE segment with strict
-speed sign and, on the repelling branch, vanishing terminal speed
-correction \(Q_r(e_{r,1})=0\).  Its triangular slack satisfies only
-\(\tau=-a(e_{\sigma,1})\): the physical terminal coordinate is
-\(\Phi_{q_0}^{-\tau}(e_{\sigma,1})\) and is not shown to equal
-\(e_{\sigma,1}\), so this is not yet an original-endpoint or
-moving-duration theorem.
-\Cref{thm:fixed-envelope-terminal-slow-jet} differentiates the exact
-fold-time tracker rather than attempting a false derivative gain for
-arbitrary terminal \(L^\infty\) sources.  The incoming transverse tangent
-is flushed on a protected terminal window, while the repelling future
-scalar tangent is fixed by the exact identity
-\(p_s(S_r)=\delta R_{q,N}(r_r(S_r))\).  This yields the selected-window
-normal-voltage bounds
-\[
- \|Z_s\|=O(\varepsilon\delta/\rho_\delta),\qquad
- \|Z_{ss}\|=O(\varepsilon/\rho_\delta),
-\]
-thereby closing the slow-jet size condition that makes the formal
-normal-history column uniformly bounded.  The flushing length is separated
-from the full terminal buffer, so the same estimates hold on a remaining
-window of length \(O(S_\delta)\); that reserved window is used by the slow
-terminal clock below.  These are normal,
-event-separated estimates: the corresponding claim for the raw full
-voltage or resource history is false because it retains the collective
-physical drift.  The present result itself supplies no right-hand
-\(O(\rho_\delta/\delta)\) envelope, moving endpoint, or original-endpoint
-zero.
-\Cref{lem:terminal-clock-pullback-border} removes the right-envelope
-requirement rather than trying to prove an unstable forward extension.  A
-terminal-supported time diffeomorphism pulls the true variable-duration
-RFDE back to the old fixed interval, gives the exact delayed feet
-\[
- \sigma_{k,\beta}(s)
- =\Xi_\beta^{-1}\{\Xi_\beta(s)-\theta_k\},
-\]
-fixes the old history and the complete terminal history simultaneously,
-and identifies the duration column as the exact commutator
-\(C_\chi=-L_0A_\chi\) in the distributed, old-history, and entry rows.
-After adjoining the terminal observations, the full upper commutator is
-\(C_{\rm up}+L_{\rm up}A_\chi=Kc_{\rm ter}\).  Domain and range shears
-then reduce the border to the event-aligned scalar speed ratio.  The
-construction explicitly uses a \(C^1\) terminal restriction:
-a formal translation on a merely \(W^{1,\infty}\) tube would not be
-Fr\'echet differentiable in \(L^\infty\).
-\Cref{cor:fixed-envelope-terminal-clock-border} applies this algebra on
-the original joint wedge.  It spreads the clock transition across a
-reserved interval \(L_{\chi,\delta}=a_\chi S_\delta\), so that
-\[
- \|\chi_\delta'\|=O(S_\delta^{-1}),\qquad
- \|\chi_\delta''\|=O(S_\delta^{-2}).
-\]
-The delay-foot displacement is then \(O(\mathfrak b_{\delta,\varkappa})\)
-and its first two normalized clock derivatives are uniformly bounded.
-The strong range is the explicit closed space of continuous terminal
-sources, rather than a transported image norm.  The protected terminal jet
-controls the \emph{actual} clock history column, the repelling scalar column
-is \(O(\varepsilon)\), and the complete physical-event differential is
-uniformly invertible without any right-hand envelope or extra matching
-subwedge.  The time-shift lift is not uniformly bounded in the old weighted
-phase norm; the theorem therefore uses the clock-aligned graph norm
-\(
- \|v-A_\chi\beta\|+|\beta|/\rho_\delta
-\), which removes that artificial phase gradient before the
-fixed-envelope inverse is applied.  No uniform equivalence with the raw
-product norm is claimed.
-\Cref{thm:short-clock-original-endpoint-segment} proves the corresponding
-clock-aligned strong-range two-point estimate and contracts about the
-fixed-envelope zero.  It produces, at each fixed parameter pair on the
-original joint wedge, a
-raw-compatible exact forward RFDE segment whose variable duration reaches
-the original scalar endpoint.  On the repelling branch its physical
-terminal speed correction vanishes, \(c_{\rm ter}=1\), and the actual
-speed/history duration columns have the claimed uniform bounds.  The sharp
-terminal jet of this new segment is re-proved with its natural
-\(\mathfrak b_{\delta,\varkappa}\)-amplitude ledger; the final flushing
-condition is
-\(
- \mathcal E^{\rm jet}\mathfrak b_{\delta,\varkappa}
- \rho_\delta/\delta^2\to0
-\), which holds on the original joint wedge for both branches.  This is
-still a local canonical-entry segment: it is not a past-complete orbit, a
-parameter/gauge family, a branch-to-branch connection, or a physical root.
-\Cref{thm:raw-gauge-fixed-section-zero} replaces the zero-core boundary
-choice by a nonempty, infinite-dimensional ball of small raw-compatible
-attracting and repelling gauges.  Uniform contraction and the gauge implicit
-function theorem give one zero in every gauge slice, its first gauge jet,
-fixed-graph Lipschitz dependence, inverse persistence, the same speed sign,
-and exact raw-RFDE reconstruction.  Each sufficiently deep generated
-subsegment is then reparameterized as an exact tracker by
-\cref{cor:generated-interior-canonical-tracker}.  At the fixed interior
-sections \(r=\pm r_{\rm out}/2\),
-\cref{prop:raw-gauge-physical-hit} further constructs one common generated
-buffer, proves joint \(C^1\) dependence of its weak complete histories on
-time and raw gauge, and obtains a unique section hit.  The scaled event time
-and hit history have dimension-uniform first gauge derivatives, with the
-history derivative given exactly by the stationary phase quotient.
-\Cref{prop:raw-gauge-strong-hit-buffer} then proves a common time-\(C^3\)
-generated buffer for both branches, \(C^1\) gauge dependence with
-dimension- and \(\delta\)-uniform annular scaled bounds, and compatibility
-with the \(C^2\) strong-to-weak terminal chart.  The raw moving recut retains
-the sharp safe loss \(O(\delta^{-2})\).
-\Cref{prop:physical-hit-quotient-flushing} freezes the current matrix at the
-actual hit and closes the delayed, Volterra, and moving-coefficient terms by
-a finite-window trajectory-space contraction.  It gives one-sided
-attracting and stable-left/unstable-right repelling flushing at the
-superalgebraic scale.  The exact resource/event reconstruction in
-\cref{thm:physical-hit-first-order-flatness} upgrades this to
-\(O(\delta^\infty)\) first-order raw-gauge equivalence of the complete
-histories at each fixed physical hit.  This is not a \(C^2\)-in-gauge
-theorem by itself.  The fixed-reference construction in
-\cref{lem:fixed-reference-parameter-residual,prop:parameter-coherent-physical-hit-family}
-adds the full rectangular parameter jet and the necessary higher gauge
-staircase without moving the rough graph domain.  The differentiated
-finite-window argument in
-\cref{thm:physical-hit-rectangular-flatness} then proves
-$\mathcal J_{\rm phys}$ pairwise raw-gauge flatness for uniformly tame
-gauge fields, using $D_g^3$ but no $D_g^4$.  This remains local to one
-reference chart and the two separate interior hits.  It is not an
-action-weighted original-endpoint dichotomy, an
-\(\varepsilon\)-normalized full phase--normal RFDE terminal Schur inverse,
-or a physical-endpoint
-recut.  No compatible collar is shown to be cut from a past orbit.  Thus no
-cross-branch handoff, physical connection, or canard root follows.  Detailed
-history-graph and finite-section bookkeeping is placed in the supplementary
-material.
+ \operatorname{cond}(\mathfrak r_N\mapsto\Lambda_N)
+ \le\frac{2-\gamma}{\gamma},                       \label{eq:intro-dual-reconstruction}
+\end{equation}
+where the observation range carries its inherited dual norm.  This is
+recovery of a return covector, not reconstruction of the network or the full
+RFDE state.
 
-\Cref{fig:root-mechanism} summarizes the information flow from exact blindness
-to the two-delay source, nonlinear root responses, and recovered return
-covector.
+\item Put
+\begin{equation}
+ \Xi_{N,\delta}^{\rm anc}(\eta)
+ =\delta^{-3}\{\mu_{c,N}^{\rm anc}(\delta,\eta)
+                 -\mu_{c,N}^{\rm anc}(\delta,0)\}.
+\end{equation}
+Its calibrated conormal satisfies
+\begin{equation}
+ \|(1,-D_\eta\Xi_{N,\delta}^{\rm anc}(0))
+      -(1,-\Lambda_N)\|\le C\delta.                \label{eq:intro-conormal-limit}
+\end{equation}
+The conormal line is natural under phase shifts, regular forward section
+changes, and nonsingular parameter changes.  Exact finite-\(\delta\) roots
+for two different anchors need not coincide.  After each model is centered
+at its own baseline, however, both weighted conormals have the same uniform
+limit \((1,-\Lambda_N)\).
+\end{enumerate}
+\end{theorem}
+
+Part~\textup{(i)} is \cref{prop:projection-blindness,thm:hidden-return-tomography};
+parts~\textup{(ii)}--\textup{(iii)} are
+\cref{thm:anchor-indices-manifolds,thm:anchor-annulus-flat-forgetting,%
+prop:anchor-gap-comparison,thm:anchored-physical-root-conormal}; and
+parts~\textup{(iv)}--\textup{(v)} combine
+\cref{thm:hidden-return-tomography,prop:anchor-physical-naturality-composition}.
+Sparse reset--cycle networks in \cref{cor:reset-cycle-response} show that the
+response can stay uniformly nonzero on \(O(N)\)-edge directed graphs with no
+nontrivial synchrony polydiagonal.  Hence the theorem is not obtained by
+copying a lower-dimensional synchronous canard across nodes.
 
 \input{figures/root-mechanism}
-\clearpage
+
+\subsection{Why the global anchor is not a preparation}
+
+The original recovery equation has a genuine obstruction: every equilibrium
+lies on the near-fold relation
+\(\pi_N^T(v-\mathbf1)=\delta^2\nu\), so it supplies no equilibrium on the
+two fixed outer components.  In a homogeneous admissible subclass the
+near-fold equilibrium also has a two-dimensional real unstable manifold;
+past convergence plus one phase row therefore fails to select a history.
+This is proved in \cref{prop:main-original-recovery-anchor-no-go}, rather than
+hidden inside a choice of cutoff.
+
+We resolve that obstruction by declaring a different, global model class.
+An anchor multiplier \(g_{\rm anc}\) is fixed as part of the recovery law
+before any root is sought.  The class is nonempty, bounded in \(C^{12}\), and
+has prescribed simple zeros at \(\pm r_A\).  Every member equals one on a
+fixed central interval, so the anchored and original RFDEs agree literally as
+maps on the full retained depth-two history tube.  Outside that tube the
+multiplier creates the two exact hyperbolic equilibria used in
+\cref{eq:intro-complete-connection}.  The incoming orbit is the positive-time
+image of \(W^u(E_N^+)\); the outgoing object is an intrinsic nonlinear stable
+history sheet obtained from a half-line terminal condition at \(+\infty\).
+Neither is supplied by a finite terminal row or an ambient backward RFDE
+semiflow.
+
+Consequently, for a fixed \(g_{\rm anc}\), the zero in
+\cref{eq:intro-physical-root} is a property of one autonomous RFDE and not of
+a proof preparation.  Changing \(g_{\rm anc}\) changes the global equation,
+so equality of exact roots across anchors would be neither expected nor
+geometrically natural.  What survives the entire bounded anchor class is the
+modelwise-centered leading conormal.  This distinction is essential: we prove
+an intrinsic root for every fixed anchored model and an anchor-robust response
+jet, but no maximal canard for the unanchored recovery law.
+
+\subsection{Precise novelty and relation to earlier work}
+
+Classical geometric singular perturbation theory explains planar fold
+canards and canard explosions
+\citep{krupa2001relaxation,krupa2001extending}.  Delayed canards occur in
+machining and FitzHugh--Nagumo-type equations, and infinite-dimensional local
+fast--slow theory now covers broad evolution-equation settings
+\citep{campbell2009delay,krupa2016complex,krupa2016explosion,%
+avitabile2020local,hummel2022slow}.  Canards and canard-mediated transitions
+also occur in stochastic, adaptive, consensus, and mean-field networks
+\citep{touboul2015noise,ciszak2021collective,jardon2020consensus,%
+qin2023tipping,balzer2024cascading}.  We therefore do not claim the first
+delayed canard, the first network canard, or a new general theory of
+infinite-dimensional slow manifolds.
+
+Invariant-manifold and heteroclinic theory for RFDE semiflows is well
+established, as are exponential dichotomies and Lin/Fredholm matching
+\citep{hale1986heteroclinic,lin1986exponential,magalhaes1987persistence,%
+bates1998invariant,malletparet1999fredholm,hupkes2009lin}.  Connections for
+delay equations can also be formulated and computed as projected boundary
+value problems with stable and unstable manifold data
+\citep{henot2023homoclinic}.  We use these ideas, but do not present the
+Banach-space stable-manifold theorem, Lyapunov--Perron method, Fredholm
+alternative, or implicit-function theorem as independent novelties.
+
+The projection issue is different from exact lumpability, which requires a
+vector field to descend to a closed quotient
+\citep{horstmeyer2016lumpability}.  It is also different from structural
+unidentifiability, where an entire input--output behavior is invariant under a
+parameter change
+\citep{bearup2013inputoutput,villaverde2017dynamical}.  Mori--Zwanzig memory
+provides a broad precedent for unresolved variables leaving and returning to a
+subnetwork
+\citep{chorin2002optimal,herrera2018memory,herrera2020tractable}.  Here the
+return is resolved explicitly into a delay-moment source, a
+Dobrushin-controlled history inverse, and a one-dimensional connection
+conormal.  Standard adjoint sensitivity expresses scalar responses as
+covector pairings, including for time-lagged systems
+\citep{cacuci1981sensitivity,rihan2003sensitivity}; our point is that the
+covector remains fully recoverable from a parameter class that is exactly
+invisible to the chosen projection.
+
+The new contribution is therefore the following conjunction, not any one of
+its standard tools:
+\begin{enumerate}[label=\textup{N\arabic*.},leftmargin=3.2em]
+\item exact same-full-history projection blindness for delay-layer
+redistributions, together with a sharp two-delay range theorem and a
+merged-one-delay leading no-go;
+\item a dimension-uniform transverse lift and hidden return covector under a
+common Dobrushin gap;
+\item a fixed-model complete-history heteroclinic canard whose structural
+derivative is the same covector, with a uniform nonlinear remainder in the
+full dual norm;
+\item naturality of the resulting connection conormal and its uniform,
+modelwise-centered limit over a declared class of global anchors.
+\end{enumerate}
+To our knowledge, no result in the cited literature combines these four
+properties.  The statement is deliberately narrower than general network
+observability or reconstruction
+\citep{timme2007revealing,zhang2019reconstruction,pereira2025robust}: the
+network skeleton, stationary weights, delay locations, and scalar
+coefficients are known, and the recovered object is only the compressed
+transverse return covector.  Likewise, the two-delay necessity statement is
+confined to stationary-row-neutral pure redistribution and its leading
+first-moment source.
+
+\subsection{Proof architecture and reusable interface}
+
+The proof has five load-bearing layers.
+
+\begin{enumerate}[label=\textup{P\arabic*.},leftmargin=3.2em]
+\item \emph{Blind source algebra.}  Stationary-row cancellation proves
+\cref{eq:intro-blindness}.  A two-atom construction realizes each vector in
+\(E_N\) and proves the exact constants in
+\cref{eq:intro-sharp-source}; a single merged atom cancels.
+
+\item \emph{Dimension-uniform hidden return.}  Dobrushin contraction gives
+the stable transverse inverse without reversing the RFDE semiflow.  The
+collective/transverse operator is upper triangular rather than an orthogonal
+direct sum; Schur elimination produces \(\Lambda_N\) and the dual recovery
+formula \cref{eq:intro-dual-reconstruction}.
+
+\item \emph{Local fold passage.}  An invariant complete-history graph,
+event-aligned traces, and a Gaussian cokernel calculation transfer the
+transverse source through the fold.  Finite-core selected problems are used
+as comparison devices, not as the definition of the final root.
+
+\item \emph{Global history objects.}  The anchor indices select one incoming
+past-complete branch and one codimension-one future-asymptotic history sheet.
+The latter is built directly on a half-line by a stable-forward and
+one-dimensional-unstable-backward Lyapunov--Perron problem.  Forward event
+holonomy pulls this sheet to the central section.  A capped-action estimate
+shows that admissible finite tails and the intrinsic half-line conormal differ
+by \(O(\delta^P)\) for every fixed \(P\).
+
+\item \emph{Exact membership and root transfer.}  A compatible tubular chart
+separates the complete normal/history coordinate from one scalar canard
+coordinate.  Its stable-sheet membership function has derivative exactly one
+in that scalar coordinate.  The zero fiber is therefore precisely
+\(W^u(E_N^+)\cap W^s(E_N^-)\).  The local coefficient calculation and the
+implicit-function theorem yield \cref{eq:intro-root-jet}; forward-holonomy
+pullback proves section and conormal naturality.
+\end{enumerate}
+
+This factorization is also a portability checklist.  To use the mechanism in
+another RFDE, one must verify: exact blindness on the full history space; a
+source map with a controlled right inverse; a transverse history inverse; a
+one-dimensional collective return cokernel; genuine incoming and outgoing
+complete-history objects; and a weighted \(C^1\) comparison connecting the
+local coefficient to their exact membership relation.  The abstract source,
+Schur, and root-transfer statements are separated in
+\cref{sec:abstract-response} so that these obligations can be checked without
+copying the present model.
+
+\subsection{Organization}
+
+\Cref{sec:model-results} defines the shared-resource network and proves the
+blind-source dichotomy, dual reconstruction, finite-scale probes, and sparse
+examples.  \Cref{sec:abstract-response} isolates the reusable source--Schur--root
+interface.  \Cref{sec:network-mechanism} constructs the invariant history
+graph and computes the local return coefficient.  The compact
+local-to-global interface in \cref{sec:main-outer-interface} records both the
+exact original-endpoint passage and the obstruction in the unanchored
+recovery law.  \Cref{sec:anchored-physical-connection} constructs the global
+anchors, half-line stable sheet, exact membership gap, heteroclinic root, and
+intrinsic conormal.  The supplement contains the full outer-passage and
+half-line proofs and a secondary recovery-sensing realization; none of those
+secondary results is needed to state the flagship theorem.

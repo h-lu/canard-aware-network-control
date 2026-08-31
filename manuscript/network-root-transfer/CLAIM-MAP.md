@@ -12,18 +12,26 @@ exact projection blindness
     + two separated delay moments span the transverse source
     + transverse full-history inverse and collective return
     = uniformly identifiable hidden-return covector
-    -> nonlinear complete-history root readout.
+    -> fixed-model complete-history heteroclinic-canard displacement.
 ```
 
-In the shared-resource family, the exact finite-section root is not intrinsic
-under the present axioms.  The relative-canonical selected object is the
-baseline-subtracted response germ, its covector, and its weighted conormal,
-with the physical model, projection, matching data, and parameter calibration
-fixed.
+The finite-section selected root remains nonintrinsic and is retained only as
+a comparison object.  The flagship root is instead the exact membership
+relation between the past-complete incoming branch of `E_N^+` and the
+future-asymptotic stable history sheet of `E_N^-` in one fixed anchored RFDE.
+Exact roots may change when the global anchor (and hence the RFDE) changes;
+after each model is centered at its own baseline, the weighted conormal has the
+same uniform limit `(1,-Lambda_N)` over the declared bounded anchor class.
 
 | Flagship requirement | Statement | Proof location |
 | --- | --- | --- |
-| Integrated flagship theorem | `thm:flagship-synthesis` | Exact blindness, two-delay source dichotomy, selected-root readout, dual recovery, and the canonicity boundary |
+| Integrated flagship theorem | `thm:flagship-synthesis` | Exact blindness, two-delay source dichotomy, fixed anchored-model heteroclinic root, full-dual-norm response, dual recovery, and anchor-universality boundary |
+| Anchored global model and exact equilibria | `prop:anchor-central-identity-equilibria` | Nonempty bounded anchor class, literal equality with the original RFDE on the retained history tube, and exact structural-parameter-independent equilibria `E_N^+`, `E_N^-` |
+| Hyperbolic history objects | `thm:anchor-indices-manifolds` | Uniform anchor root counts, `dim W^u(E_N^+)=1`, `codim W^s(E_N^-)=1`, past-complete incoming branch, and intrinsic local stable history sheet |
+| Half-line stable sheet and tail forgetting | `thm:anchor-annulus-flat-forgetting` | Stable-forward/one-dimensional-unstable-backward Lyapunov--Perron graph, forward central preimage, and full-history capped-action comparison through the declared mixed jets |
+| Exact membership relation | `prop:anchor-gap-comparison` | Chart-independent zero fiber equivalent to the complete heteroclinic `E_N^+ -> E_N^-`, with direct anchored gap and endpoint-tail completion |
+| Fixed-model canard root and conormal | `thm:anchored-physical-root-conormal` | Unique local root, quantitative canard tracking, `D_eta mu_c=delta^3 Lambda_N+O(delta^4+delta^3||eta||)` in full dual norm, and weighted conormal limit |
+| Section/cut/anchor naturality | `prop:anchor-physical-naturality-composition` | Phase, defining-function, regular forward-section, and finite-cut naturality; exact roots across anchors may differ, while centered first conormals share the same uniform limit |
 | Abstract two-atom source criterion | `prop:abstract-two-atom-source` | General moment-source norm, explicit extreme-atom right inverse, minimum probe cost, dual isometry, and one-atom no-go |
 | Sharp two-delay controllability | `thm:hidden-return-tomography` | Exact source norm, explicit right inverse, and merged-single-delay no-go |
 | Dimension-uniform dual recovery | `thm:hidden-return-tomography` | `r(z)=Lambda(Q A z)` and condition bound `(2-gamma)/gamma` |
@@ -31,7 +39,7 @@ fixed.
 | Finite-scale recovery pairings | `cor:recovery-tomography` | Second-model pairing formula and arbitrary fixed-`N` covector rays |
 | Preparation-relative canonical response germ | `thm:canonical-response-germ` | Pairwise fixed-preparation expansion and uniform derivative limit |
 | Selected weighted connection conormal | `thm:weighted-connection-jet`, `thm:structural-ball-connection`, `cor:schur-full-conormal`, `thm:joint-redistribution-conormal` | Both models raywise; shared-resource full structural ball under an admissible rule; cokernel-valued jet; pairwise preparation-independent limiting conormal; fixed-chart covariance with the front-face qualification for chart families |
-| Physical-identification interface | `prop:physical-weighted-c1-transfer` | Weighted `C^1` root criterion, gap-level sufficient conditions, and conditional section/defining-function naturality; no physical root existence is asserted |
+| Abstract selected-to-physical interface | `prop:physical-weighted-c1-transfer` | Conditional weighted `C^1` criterion retained as a reusable abstract result.  The proposition itself asserts no root; the anchored root is constructed directly by the later half-line membership theorem and does not depend on this criterion |
 | Critical-layer precursor | `prop:unprepared-outer-skeleton` | Preparation-independent constant-history critical curve and dimension-uniform leading frozen-resource fast-voltage splitting |
 | Positive-`delta` frozen voltage histories | `prop:frozen-voltage-history-splitting`, `rem:frozen-resource-phase-quotient` | Capped-rate full-history stability/splitting for the frozen-resource voltage RFDE, uniform structural `C^2` bounds, and an exact obstruction to the raw full-system one-unstable formulation; no nonautonomous slow tracker |
 | Exact tracker/quotient interface | `prop:exact-outer-history-equation`, `prop:physical-history-phase-quotient`, `prop:exact-resource-gauge-quotient` | Uncut if-and-only-if tracker equation; genuine transported longitudinal history; exact stationary-gauge quotient; resource-gauge triangularization and $O(S_\delta^{-1})$ Volterra realization. Conditional on tracker existence and collar bounds; no tracker or dichotomy existence claim |
@@ -114,11 +122,11 @@ fixed.
   from finitely many noisy probes is not `N`-uniform without a lower frame
   bound, and root measurement noise is amplified by
   `delta^(-3)|zeta|^(-1)`.
-- The weighted conormal is a geometric realization of the proved selected
-  response, not a novelty claim for conormal or Melnikov geometry in
-  isolation.  The paper's principal conjunction remains exact projection blindness,
-  transverse return, sharp two-delay recovery, and `N`-uniform nonlinear
-  realization.
+- Conormal and Melnikov geometry are not priority claims in isolation.  The
+  new conjunction is exact projection blindness, sharp two-delay transverse
+  range, dimension-uniform history return, and identification of that same
+  covector as the derivative of a fixed-model complete-history heteroclinic
+  canard.
 
 ## Two model dictionaries
 
@@ -167,17 +175,19 @@ The limits separate exactly:
 ## Quantifier boundaries
 
 - Uniformity is over finite networks with common Dobrushin, delay-support,
-  coefficient, direction, and fixed-preparation bounds.
+  coefficient, structural-ball, and bounded anchor-class constants.
 - Preparation independence is pairwise for fixed preparations on intersected
   parameter boxes; it is not a single bound over an unbounded preparation
   class.
 - The no-go theorem concerns the stated finite-section axioms.  It does not
   rule out a canard selected by physical outer invariant manifolds.
-- The conormal theorem concerns selected complete-history connection loci
-  centered at their own baselines.  A preparation-free physical connection
-  locus and selected-to-physical weighted `C^1` identification remain open
-  under Issue #32.  Issue #11 concerns a different Paper III model and is not
-  an input to Paper A.
+- The flagship conormal belongs to the exact fixed anchored-model
+  complete-history connection locus.  It is independent of proof preparation.
+  Exact baselines for different anchor multipliers are not identified; after
+  modelwise centering, their first weighted conormals converge uniformly to
+  `(1,-Lambda_N)`.  No root or maximal canard is claimed for the original
+  unanchored recovery law.  Issue #11 concerns a different Paper III model and
+  is not an input to Paper A.
 - The preparation-independent critical curve, frozen-resource
   positive-`delta` voltage-history splitting, truncated reduced actions,
   exact tracker/quotient identities, physical-backtrack calculus, and

@@ -1,8 +1,8 @@
-\section{A globally anchored physical connection}
+\section{A globally anchored complete-history connection}
 \label{sec:anchored-physical-connection}
 
 The original shared-resource equation has no equilibrium on either outer
-branch, by \cref{prop:original-recovery-anchor-no-go}.  We now specify a
+branch, by \cref{prop:main-original-recovery-anchor-no-go}.  We now specify a
 global model class for which the missing physical objects do exist.  This is
 an enlargement of the physical recovery law, not a preferred preparation of
 the old equation.  The enlargement agrees literally with the old equation on
@@ -17,7 +17,7 @@ Fix numbers
  0<r_{\rm loc}<r_A<r_0,                              \label{eq:anchor-radii}
 \end{equation}
 where \(r_0\) is supplied by
-\cref{prop:unprepared-outer-skeleton}.  An \emph{anchor multiplier} is a
+\cref{prop:anchor-toolkit-critical-splitting}.  An \emph{anchor multiplier} is a
 function \(g_{\rm anc}\in C^{12}(\mathbb R)\) satisfying
 \begin{align}
  g_{\rm anc}(r)&=1 &&(|r|\le r_{\rm loc}),\notag\\
@@ -145,7 +145,7 @@ At \(E_N^+\) every remaining characteristic root is stable.  At
 \(E_N^-\) there is exactly one further open-right-half-plane root, the real
 simple strong voltage root, and every remaining root is stable.  The stable
 part is measured in the capped fading norm of
-\cref{prop:frozen-voltage-history-splitting}; no \(\delta\)-independent
+\cref{prop:anchor-toolkit-critical-splitting}; no \(\delta\)-independent
 spectral gap is asserted for the long-delay tail.
 
 There are common \(c_A>0\) and \(M_A<\infty\) for which one may take
@@ -264,13 +264,12 @@ on the other side of the comparison always belongs to the one fixed
 anchored RFDE.  This is not a comparison of exact roots of two different
 global physical models.
 
-The finite-core row \(\lambda_{\mathbf p}^{\rm ent}\) in
-\cref{thm:oe-family-C1-generator-entry-conormal} is not identified with
-\(\lambda_{\rm ent}\) here.  It is a linear graph selected by a physical
-speed row on a different pulled finite core; the cited theorem explicitly
-does not construct its nonlinear stable-sheet graph.  The physical gap and
-its response below use the intrinsic half-line sheet and therefore do not
-require that additional identification.
+The finite-core row used in the outer interface is not identified with
+\(\lambda_{\rm ent}\) here.  It is a linear graph selected on a different
+pulled finite core and does not by itself construct the nonlinear stable
+sheet of the fixed anchored RFDE.  The physical gap and its response below
+use the intrinsic half-line sheet and therefore do not require that
+additional identification.
 \end{theorem}
 
 The proof is carried out in fold time \(s=\delta t\).  Every delay is the
@@ -336,42 +335,188 @@ entry membership function of the intrinsic half-line sheet, define
        (\mathfrak C_{0,p}(\psi,u))\right).           \label{eq:anchor-forward-preimage-membership}
 \end{equation}
 No inverse of \(\mathcal P_{0\to{\rm ent},p}\) occurs.  The exact
-transport-column splitting in the proof gives, after shrinking the common
-chart,
+transport-column splitting alone would give only conditional transversality
+at a zero.  The missing nonemptiness is supplied by the following
+same-equation shooting result.
+
+\begin{proposition}[Intrinsic stable-sheet shooting at a generated cut]
+\label[proposition]{prop:anchor-central-finite-shooting}
+Fix \(0<\chi_b<1<c_b\).  Instantiate the central and outer constructions
+with Gaussian exponents \(p_c,p_o\) satisfying
 \begin{equation}
- \mathfrak M_{0,p}(\psi,u)=0
- \quad\Longrightarrow\quad
- |\partial_u\mathfrak M_{0,p}(\psi,u)|\ge c_{\rm tr}>0             \label{eq:anchor-forward-membership-transversality}
+ p_c=\left(\frac{c_b}{\chi_b}\right)^2p_o,\qquad
+ S_\iota=\sqrt{2p_\iota\log(1/\delta)}\quad(\iota=c,o),
+ \qquad
+ s_b^\#=\chi_bS_c=c_bS_o.                            \label{eq:anchor-main-reserved-scales}
 \end{equation}
-uniformly in \(N\).  Consequently the exact forward preimage of the entry
-sheet is the graph in \cref{eq:anchor-stable-sheet-graph}, characterized by
+The common physical cut is
+\begin{equation}
+ \Sigma_b=\{r=-\rho_b\},\qquad
+ \rho_b=\frac{\delta s_b^\#}{2\alpha}.               \label{eq:anchor-main-generated-cut}
+\end{equation}
+Its complete delay enlargement lies strictly inside the unmodified central
+history tube, while the independently constructed outer reference has
+generated its own literal history there.
+
+Let the selected central repelling trace start at
+\begin{equation}
+ Z^{c}_{p,0}
+ =\mathfrak C_{0,p}(\bar\psi_p,\bar u_p),             \label{eq:anchor-reference-central-data}
+\end{equation}
+and denote its history at \(\Sigma_b\) by \(C_{b,p}\).  Let \(O_{b,p}\)
+be the independently constructed exact outer reference at that section.
+There is one compatible chart
+\[
+ \Phi_{b,p}(\psi_b,u_b),\qquad \Phi_{b,p}(0,0)=O_{b,p},
+\]
+whose scalar column is the oriented outer unstable current column.  In this
+chart the histories whose forward orbits stay in the declared channel and
+converge to \(E_N^-\) form the intrinsic graph
+\begin{equation}
+ \mathcal S_b^-(p)
+ =\{\Phi_{b,p}(\psi_b,F_{b,p}^-(\psi_b))\}.           \label{eq:anchor-main-intrinsic-b-sheet}
+\end{equation}
+It is \(C^2\) in \(\psi_b\), has the selected first \(p\)-jet, and is
+defined by the canonically normalized membership function
+\begin{equation}
+ \mathfrak m_{b,p}(\Phi_{b,p}(\psi_b,u_b))
+ =u_b-F_{b,p}^-(\psi_b),\qquad
+ \lambda_{b,p}^o:=D\mathfrak m_{b,p}.                \label{eq:anchor-main-b-membership}
+\end{equation}
+This graph is obtained from a literal-history mixed problem whose terminal
+condition is membership in the exact future-decaying sheet.  It is therefore
+intrinsic to the fixed anchored RFDE and does not depend on a finite
+completion or terminal selector.
+
+At a later cut still inside the exact preparation--physical agreement
+region, place an affine terminal row through the selected repelling trace.
+Pulling that row back over the common physical core produces a finite graph
+\(F_{b,p}^{\rm sel}\) which contains \(C_{b,p}\) exactly.  The intrinsic
+and finite graphs satisfy, for \(J_p^1\in\{1,\partial_\nu,D_\eta\}\),
+\begin{equation}
+ \|J_p^1(F_{b,p}^--F_{b,p}^{\rm sel})\|_{C^1}
+ \le\varepsilon_{bc,\delta}\le\delta^{Q_*+M_{\rm gl}+4}.          \label{eq:anchor-main-finite-intrinsic-comparison}
+\end{equation}
+Here \(Q_*\) is any prescribed finite order after the preparation exponent
+is chosen.  The assertion concerns the difference of two graphs; neither
+graph is claimed to have small curvature.
+
+The forward hit \(\mathcal P_{0\to b,p}\) stays inside the exact central
+tube.  Define
+\begin{equation}
+ \mathcal M_{0,p}^{\rm int}(\psi,u)
+ :=\mathfrak m_{b,p}\!\left(
+   \mathcal P_{0\to b,p}\mathfrak C_{0,p}(\psi,u)\right).          \label{eq:anchor-main-intrinsic-membership}
+\end{equation}
+At the selected reference its scalar derivative has the positive
+ action factor
+\begin{align}
+ A_{0b,p}
+ &:=D\mathfrak m_{b,p}(C_{b,p})
+       D\mathcal P_{0\to b,p}
+       D_u\mathfrak C_{0,p}(\bar\psi_p,\bar u_p),\notag\\
+ c_E\frac{\delta}{s_b^\#}E_b
+ &\le A_{0b,p}\le C_E\frac{\delta}{s_b^\#}E_b,\qquad
+ E_b:=e^{(s_b^\#)^2/2}=\delta^{-c_b^2p_o},\qquad
+ |D_p^{\rm sel}\log A_{0b,p}|\le C\delta^{-M_A}.     \label{eq:anchor-main-projective-action}
+\end{align}
+Choose \(Q_*>M_{\rm gl}+12\), then choose \(p_o\) after all finite
+jet-loss exponents so that \cref{eq:anchor-main-finite-intrinsic-comparison}
+and \(c_b^2p_o>M_{\rm gl}+8\) hold.  There are a fixed
+\(M_{\rm sh}<\infty\) and radii
+\begin{equation}
+ r_{{\rm sh},\delta}\ge c\delta^{M_{\rm sh}},\qquad
+ c\delta^{Q_*}\le\rho_{{\rm sh},\delta}
+ \le C\delta^{Q_*},                                  \label{eq:anchor-main-shooting-radii}
+\end{equation}
+such that, with
+\begin{equation}
+ \xi=A_{0b,p}(u-\bar u_p),\qquad
+ \|\psi-\bar\psi_p\|<r_{{\rm sh},\delta},\quad
+ |\xi|<\rho_{{\rm sh},\delta},                       \label{eq:anchor-finite-shooting-strip}
+\end{equation}
+the whole strip lies in the central and intrinsic-sheet charts and
+\begin{equation}
+ \partial_\xi\mathcal M_{0,p}^{\rm int}\ge\kappa_0>0. \label{eq:anchor-finite-shooting-orientation}
+\end{equation}
+The amplified unstable displacement at the \(b\)-section associated with the
+whole action strip is
+\begin{equation}
+ E_b\rho_{{\rm sh},\delta}A_{0b,p}^{-1}
+ \le C\frac{s_b^\#}{\delta}\delta^{Q_*}
+ <\tfrac14\delta^\kappa,                            \label{eq:anchor-main-action-strip-containment}
+\end{equation}
+so the strip remains strictly inside the retained central tube.
+
+The two strip faces have opposite signs.  Hence
+\(\mathcal M_{0,p}^{\rm int}=0\) has one and only one graph
+ \begin{equation}
+ u=F^{-,0}_{N,\delta,p}(\psi),\qquad
+ A_{0b,p}|F^{-,0}_{N,\delta,p}(\bar\psi_p)-\bar u_p|
+ \le C\delta^{Q_*},                                  \label{eq:anchor-main-intrinsic-root-distance}
+\end{equation}
+which is \(C^2\) in state and has the selected first \(p\)-jet.  Moreover,
+ \begin{equation}
+ \left|J_p^1\{F^{-,0}_{N,\delta,p}(\bar\psi_p)-\bar u_p\}\right|
+ \le C\delta^{Q_*-M_{\rm gl}}\frac{s_b^\#}{\delta E_b}
+ =o(\delta^8).                                       \label{eq:anchor-main-intrinsic-root-flatness}
+\end{equation}
+At every zero, equality in \cref{eq:anchor-main-intrinsic-b-sheet} is literal
+equality of the full voltage history and current resource.  Forward
+uniqueness therefore gives one exact orbit converging to \(E_N^-\).  Finally,
+for every prescribed finite \(Q_{\rm in}\), after the preparation exponent is
+chosen beyond the finite trace losses, the incoming normal coordinate obeys
+\begin{equation}
+ \|\psi_A-\bar\psi_p\|
+ \le C\delta^{Q_{\rm in}}
+ <\tfrac12r_{{\rm sh},\delta}.                       \label{eq:anchor-incoming-in-shooting-ball}
+\end{equation}
+Thus the graph domain contains the actual incoming history used below.
+\end{proposition}
+
+The proof of
+\cref{prop:anchor-central-finite-shooting} first constructs the intrinsic
+sheet at \(\Sigma_b\), then proves a sign-changing bracket for
+\(\mathcal M_{0,p}^{\rm int}\), and only afterwards differentiates its
+unique zero.  In particular,
+\begin{equation}
+ \mathcal M_{0,p}^{\rm int}(\psi,u)=0
+ \quad\Longrightarrow\quad
+ \partial_u\mathcal M_{0,p}^{\rm int}(\psi,u)
+ \ge c_E\frac{\delta}{2s_b^\#}E_b>0.               \label{eq:anchor-forward-membership-transversality}
+\end{equation}
+Membership in the sheet at \(b\), convergence to \(E_N^-\), and membership
+in the later intrinsic entry sheet describe the same forward orbit.
+Consequently the entry pullback \(\mathfrak M_{0,p}\) in
+\cref{eq:anchor-forward-preimage-membership} has exactly the same zero graph,
+and
 \begin{equation}
  \mathfrak M_{0,p}(\psi,F^{-,0}_{N,\delta,p}(\psi))=0.             \label{eq:anchor-central-graph-preimage-identity}
 \end{equation}
-The transported stable sheet in
-\cref{eq:anchor-stable-sheet-graph} has the exact nonlinear-chart form
-\(u=F^{-,0}_{N,\delta,\nu,\eta}(\psi)\).  Its normalized conormal as a covector
-on the physical history section is
+Thus the graph in \cref{eq:anchor-stable-sheet-graph} is an intrinsic
+stable-set germ, rather than a graph selected by a finite terminal row.
+
+Its normalized conormal as a covector on the physical history section is
 \begin{equation}
  \lambda^-_{0,p}
  =\{\dd u-D_\psi F^{-,0}_{N,\delta,p}(\psi)\}
       \circ D\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))^{-1},
  \qquad
  \lambda^-_{0,p}
-   (D_u\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))1)=1.    \label{eq:anchor-central-physical-conormal}
+   (D_u\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))1)=1.     \label{eq:anchor-central-physical-conormal}
 \end{equation}
-Thus coordinate and history covectors are not identified without the
+Coordinate and history covectors are therefore not identified without the
 displayed pullback.  More precisely, at
-\(\phi_0=\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))\),
+\(\phi_0=\mathfrak C_{0,p}(\psi,F^{-,0}(\psi))\), differentiation of the
+intrinsic membership identity gives the exact forward covariance law
 \begin{equation}
- D\mathfrak m_{{\rm ent},p}
-   (\mathcal P_{0\to{\rm ent},p}\phi_0)
-     \circ D\mathcal P_{0\to{\rm ent},p}(\phi_0)
- =\partial_u\mathfrak M_{0,p}(\psi,F^{-,0}(\psi))
-      \lambda^-_{0,p}.                              \label{eq:anchor-central-conormal-forward-pullback}
+ D\mathfrak m_{b,p}(\mathcal P_{0\to b,p}\phi_0)
+   \circ D\mathcal P_{0\to b,p}(\phi_0)
+ =\partial_u\mathcal M_{0,p}^{\rm int}
+     (\psi,F^{-,0}(\psi))\,\lambda^-_{0,p}.           \label{eq:anchor-central-conormal-forward-pullback}
 \end{equation}
-The left side is the ordinary covector pullback by a forward map; it does
-not contain \(D\mathcal P_{0\to{\rm ent},p}^{-1}\).
+This is an ordinary covector pullback by a forward map; it contains no
+inverse history holonomy.
 
 Write the incoming hit as
 \[
@@ -386,7 +531,7 @@ complete normal/history coordinate,
 Let \(z^a(0)\) and \(z^r(0)\) be the exact planar core coordinates of
 \(A^0\) and \(B^0\), respectively.  Both have \(X=0\).  Define
 \begin{equation}
- G^{\rm phys}_{N,\delta}(\nu,\eta)
+ G^{\rm anc}_{N,\delta}(\nu,\eta)
  :=c_{\mathscr H}\{\mathscr H_\alpha(z^a(0))
                -\mathscr H_\alpha(z^r(0))\}.       \label{eq:anchor-physical-gap}
 \end{equation}
@@ -402,7 +547,7 @@ Hence this is the exact local membership coordinate.  Its orientation is
 fixed by \cref{eq:anchor-central-chart-identities}; no unspecified nonzero
 multiplier remains.
 The tubular chart is an auxiliary proof device: another admissible local
-normal-history chart may change \(G^{\rm phys}\) away from its zero fiber.
+normal-history chart may change \(G^{\rm anc}\) away from its zero fiber.
 Because both are \(C^1\) defining functions with the same exact membership
 fiber, they differ locally by a nowhere-zero \(C^1\) factor.  The physical
 root and its conormal line are therefore chart independent; no equality of
@@ -410,10 +555,10 @@ the two off-zero gap functions is asserted.
 
 \begin{proposition}[Exact zero fiber and anchored finite-gap bridge]
 \label[proposition]{prop:anchor-gap-comparison}
-The map \(G^{\rm phys}_{N,\delta}\) is a scalar \(C^1\) defining function,
+The map \(G^{\rm anc}_{N,\delta}\) is a scalar \(C^1\) defining function,
 and
 \begin{equation}
- G^{\rm phys}_{N,\delta}(\nu,\eta)=0                \label{eq:anchor-gap-zero}
+ G^{\rm anc}_{N,\delta}(\nu,\eta)=0                \label{eq:anchor-gap-zero}
 \end{equation}
 if and only if the inward branch of \(W^u(E_N^+)\) belongs to
 \(W^s(E_N^-)\) after the phase is fixed.  Equivalently, there is an anchored
@@ -426,32 +571,24 @@ translation, for which
 \end{equation}
 in the corresponding history norms.
 
-Use the exact first-integral normalization
-\cref{eq:anchor-physical-gap}; it is not a choice of outer preparation.
-The two paired anchored traces then satisfy an exact finite-gap decomposition.
-Its anchor-dependent and Gaussian-tail remainders, in the \(C^1\) gap norm,
-are bounded by
+The scalar normalization in \cref{eq:anchor-physical-gap} is the same one
+used for the selected gap.  The two-sided common-core comparison gives, for
+any prescribed finite \(Q\),
+\begin{equation}
+ \bigl|J_p^1\{G^{\rm anc}_{N,\delta}
+                 -\mathscr D_N^{\rm sel}\}\bigr|
+ \le C\delta^Q,
+ \qquad J_p^1\in\{1,\partial_\nu,D_\eta\}.          \label{eq:anchor-total-comparison-error}
+\end{equation}
+The exact selected gap is only a proof comparator; it does not define the
+zero fiber on the left.  Choose \(Q>6\).  The already proved selected-gap
+Melnikov estimates and \cref{eq:anchor-total-comparison-error} then give
 \begin{align}
- \mathfrak e_\delta
- &=\mathfrak f_\delta+\mathfrak t_\delta,\notag\\
- \mathfrak t_\delta
- &=C_{\rm anc}\delta^{-M_{\rm anc}}
-   e^{-S_\delta^2/2+c_{\rm anc}S_\delta}
-       \langle S_\delta\rangle^{M_{\rm anc}}.       \label{eq:anchor-total-comparison-error}
-\end{align}
-Choose the exponent in
-\(S_\delta=\sqrt{2p\log(1/\delta)}\) after the finite jet-loss exponent,
-with \(p>M_{\rm anc}+6\).  Then
-\(\mathfrak e_\delta=o(\delta^6)\).  The first summand is physical
-outer-annulus forgetting; the second is the distinct Gaussian
-finite-section tail.  The local coefficient calculation is performed
-directly on the anchored physical traces and gives
-\begin{align}
- \frac{G^{\rm phys}}\delta
+ \frac{G^{\rm anc}}\delta
  &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),\notag\\
- \partial_\nu G^{\rm phys}
+ \partial_\nu G^{\rm anc}
  &=\delta\sqrt{2\pi}+O(\delta^2),\notag\\
- \|D_\eta G^{\rm phys}
+ \|D_\eta G^{\rm anc}
        +\delta^2\sqrt{2\pi}\Lambda_N\|
  &\le C\{\delta^3+\delta^2\|\eta\|\}.             \label{eq:anchor-physical-gap-estimates}
 \end{align}
@@ -459,26 +596,26 @@ All constants are independent of \(N\); the flat term has been absorbed
 after decreasing \(\delta_0\).
 \end{proposition}
 
-\begin{theorem}[Preparation-independent physical root and intrinsic conormal]
+\begin{theorem}[Fixed-model heteroclinic-canard root and intrinsic conormal]
 \label[theorem]{thm:anchored-physical-root-conormal}
 There are common \(c_0,\eta_0,\delta_0>0\) such that, for every admitted
 network and \(0<\delta<\delta_0\), the anchored physical equation has a
 unique root
 \begin{equation}
- \mu^{\rm phys}_{c,N}(\delta,\eta)
- =\delta^2\nu^{\rm phys}_{c,N}(\delta,\eta),
- \qquad |\nu^{\rm phys}_{c,N}-\nu_{0,N}|<c_0,       \label{eq:anchor-physical-root}
+ \mu^{\rm anc}_{c,N}(\delta,\eta)
+ =\delta^2\nu^{\rm anc}_{c,N}(\delta,\eta),
+ \qquad |\nu^{\rm anc}_{c,N}-\nu_{0,N}|<c_0,       \label{eq:anchor-physical-root}
 \end{equation}
 at which the complete-history heteroclinic
 \cref{eq:anchor-heteroclinic-limits} exists.  The root is a property of the
 fixed anchored RFDE and is independent of every preparation used to prove
 it.  It is jointly \(C^1\) in the structural ball and satisfies
 \begin{align}
- \|D_\eta\mu^{\rm phys}_{c,N}(\delta,\eta)
+ \|D_\eta\mu^{\rm anc}_{c,N}(\delta,\eta)
        -\delta^3\Lambda_N\|
  &\le C\{\delta^4+\delta^3\|\eta\|\},             \label{eq:anchor-physical-root-jets}\\
- |\mu^{\rm phys}_{c,N}(\delta,\eta)
-  -\mu^{\rm phys}_{c,N}(\delta,0)
+ |\mu^{\rm anc}_{c,N}(\delta,\eta)
+  -\mu^{\rm anc}_{c,N}(\delta,0)
   -\delta^3\Lambda_N(\eta)|
  &\le C\{\delta^4\|\eta\|
                +\delta^3\|\eta\|^2\}.            \label{eq:anchor-physical-root-increment}
@@ -486,11 +623,18 @@ it.  It is jointly \(C^1\) in the structural ball and satisfies
 The derivative estimate holds in the full dual operator norm and is
 uniform in \(N\).
 
-The connecting orbit is a canard in the following quantitative sense.
-On each fixed attracting and repelling anchored subannulus, its compatible
-voltage history is within \(C\delta^2\), in the fading norm
-\cref{eq:anchor-annulus-fading-norm}, of the corresponding exact tracked
-slow-history graph.  It remains in each such subannulus for at least
+For this statement, let \(\mathcal Q^+_{N,\delta,p}\) be the exact incoming
+history curve obtained by recutting the inward branch of \(W^u(E_N^+)\), and
+let \(\mathcal Q^-_{N,\delta,p}\) be the exact negative chart-center history
+curve used in the half-line construction of
+\cref{thm:anchor-annulus-flat-forgetting}; on a regular subannulus both are
+parameterized by the physical coordinate \(r\).  These are specified RFDE
+orbits, not unnamed slow manifolds.  The connecting orbit is a canard in the
+following quantitative sense.  On each fixed attracting or repelling anchored
+subannulus, after matching the common \(r\)-section, its compatible voltage
+history is within \(C\delta^2\), in the same capped fading norm used in the
+half-line and annulus constructions, of \(\mathcal Q^+\) or
+\(\mathcal Q^-\), respectively.  It remains in each such subannulus for at least
 \(c\delta^{-2}\) units of original time.  In the central fold window
 \(|s|\le S_\delta\), its solved planar core satisfies
 \begin{equation}
@@ -504,13 +648,13 @@ heteroclinic.
 
 Define
 \begin{equation}
- \Xi^{\rm phys}_{N,\delta}(\eta)
- =\delta^{-3}\{\mu^{\rm phys}_{c,N}(\delta,\eta)
-                   -\mu^{\rm phys}_{c,N}(\delta,0)\}.          \label{eq:anchor-weighted-physical-graph}
+ \Xi^{\rm anc}_{N,\delta}(\eta)
+ =\delta^{-3}\{\mu^{\rm anc}_{c,N}(\delta,\eta)
+                   -\mu^{\rm anc}_{c,N}(\delta,0)\}.          \label{eq:anchor-weighted-physical-graph}
 \end{equation}
 Then the intrinsic weighted conormal satisfies
 \begin{equation}
- \|(1,-D_\eta\Xi^{\rm phys}_{N,\delta}(0))
+ \|(1,-D_\eta\Xi^{\rm anc}_{N,\delta}(0))
        -(1,-\Lambda_N)\|\le C\delta.               \label{eq:anchor-physical-conormal-limit}
 \end{equation}
 It inherits the hidden-return factorization, the sharp two-delay right
@@ -525,13 +669,15 @@ canard at order \(\delta^3\).
 \label[proposition]{prop:anchor-physical-naturality-composition}
 The conormal line in
 \cref{eq:anchor-physical-conormal-limit} is unchanged by a phase shift, by
-replacing either regular history section with another section joined by
-forward holonomy, and by multiplying \(G^{\rm phys}\) by a nowhere-zero
-\(C^1\) scalar.  Under a fixed nonsingular parameter change it pulls back as
-a covector.  If the physical passage is split by finitely many intermediate
-sections, the derivative of the composite holonomy is the ordered product of
-the derivatives of its factors, and the normalized final membership
-conormal is independent of the cuts.
+evaluating the same constructed orbit and future-asymptotic sheet on another
+regular section reached by forward holonomy, and by multiplying
+\(G^{\rm anc}\) by a nowhere-zero \(C^1\) scalar.  This assertion concerns
+the common local zero locus in parameter space; it does not assert that an
+RFDE holonomy is invertible on an open history set.  Under a fixed nonsingular
+parameter change the line pulls back as a covector.  If the physical passage
+is split by finitely many intermediate sections, the derivative of the
+forward composite is the ordered product of the derivatives of its factors,
+and the final parameter-space conormal is independent of the cuts.
 
 For two fixed anchor multipliers satisfying
 \cref{eq:anchor-multiplier}, the exact finite-\(\delta\) baselines may differ.
@@ -542,3 +688,42 @@ two such conormals differ by at most \(2C\delta\) and have the same uniform
 limit.  No pairwise flat comparison and no equality of the two exact roots
 is asserted.
 \end{proposition}
+
+\subsection{Proof map and logical dependence}
+
+For readability, the concise estimates are collected in the supplement; the
+dependence needed to audit the flagship theorem is short.  The literal
+central identity and the two equilibria in \cref{prop:anchor-central-identity-equilibria}
+follow directly from the support of \(g_{\rm anc}-1\) and from cancellation of
+all current-minus-delay terms on constant histories.  The bordered
+characteristic determinant is then counted in the anchored history-object
+construction summarized by \cref{lem:lean-anchor-history-objects}.  Its
+homotopy never reverses the RFDE semiflow and, together with the scaled
+Lyapunov--Perron charts built there, proves
+\cref{thm:anchor-indices-manifolds}.
+
+The global history objects are constructed in
+\cref{lem:lean-anchor-history-objects,lem:lean-anchor-generated-cut-sheets}.
+On the positive side one evolves the
+one-dimensional unstable branch only forward.  On the negative side the
+mixed half-line inverse propagates the stable complement forward and inverts
+only the scalar unstable cocycle.  Nonlinear contraction, event recutting,
+and capped-action comparison give
+\cref{thm:anchor-annulus-flat-forgetting}; no inverse of the ambient RFDE
+semiflow is used.
+
+Finally, the intrinsic sheet at the generated cut is compared with a finite
+selected sheet only over the interval on which both use the identical
+physical RFDE; this is \cref{lem:lean-anchor-generated-cut-sheets}.  The
+action-balanced rectangle in \cref{lem:lean-anchor-action-intersection}
+proves existence and uniqueness of the intrinsic sheet intersection before
+any implicit differentiation.  The two-sided comparison in
+\cref{lem:lean-anchor-gap-comparison} then transfers the already proved
+selected Melnikov estimates to the intrinsic physical gap; it does not
+transfer the selected zero fiber.  That fiber comes from stable-sheet
+membership and forward uniqueness.  The strict \(\nu\)-slope yields the
+unique root, and differentiating the comparison gives
+\cref{eq:anchor-physical-root-jets}, and the tracking bounds already built
+into the two half-lines give \cref{eq:anchor-heteroclinic-canard-tracking}.
+Forward holonomy and the ordinary covector chain rule then prove
+\cref{prop:anchor-physical-naturality-composition}.

@@ -1,0 +1,82 @@
+\section{Notation and logical status}
+\label{sec:notation-status}
+
+The paper uses three levels of description: the full RFDE history, the
+stationary collective projection, and its transverse complement.  The symbols
+used throughout are collected below.
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.22\linewidth}%
+>{\raggedright\arraybackslash}p{0.70\linewidth}@{}}
+\toprule
+Symbol & Meaning\\
+\midrule
+\(N,P_N,\pi_N\) &
+Finite network size, row-stochastic Markov matrix, and its strictly positive
+stationary probability.\\
+\(E_N,A_N\) &
+Transverse space \(E_N=\ker\pi_N^T\) and stable Markov generator
+\(A_N=D(P_N-\Id)|_{E_N}\).\\
+\(\Pi_N,\mathcal F\) &
+Stationary projection \(\Pi_N(v,w)=(\pi_N^Tv,w)\) and the full RFDE vector
+field on the unreduced history space.\\
+\(\Theta,\Delta_\theta\) &
+Merged delay support and its diameter
+\(\Delta_\theta=\max\Theta-\min\Theta\).\\
+\(\eta=(R_k)_k\) &
+Structural delay-layer redistribution in
+\(\mathfrak T_N^{\rm red}\), with \(\pi_N^TR_k=0\) and
+\(\sum_kR_k=0\).  A ray is written \(\eta=\zeta R\).\\
+\(\mathsf S_N,\mathsf Q_N\) &
+First-delay-moment transverse source and its explicit two-atom right inverse.\\
+\(\mathsf T_N,\mathfrak r_N,\Lambda_N\) &
+Stable transverse lift \(\mathsf T_N=A_N^{-1}\mathsf S_N\), collective
+return covector \(\mathfrak r_N\), and hidden structural response
+\(\Lambda_N=\mathfrak r_N\mathsf T_N\).\\
+\(\delta,\nu,\mu\) &
+Small fold parameter, order-one detuning, and physical parameter
+\(\mu=\delta^2\nu\).\\
+\(g_{\rm anc},E_N^\pm\) &
+Fixed global anchor multiplier and the resulting exact constant-history
+equilibria.  The multiplier equals one on the retained fold-history tube.\\
+\(\mu_{c,N}^{\rm anc}\) &
+The unique local heteroclinic-canard root of one fixed anchored RFDE.  The
+superscript ``phys'' always means fixed-model membership in this paper; it
+does not mean a root of the original unanchored law.\\
+\(\Xi_{N,\delta}^{\rm anc}\) &
+Modelwise-centered weighted graph
+\(\delta^{-3}[\mu_{c,N}^{\rm anc}(\delta,\eta)
+-\mu_{c,N}^{\rm anc}(\delta,0)]\).\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The logical distinction between the connection objects is equally important.
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.24\linewidth}%
+>{\raggedright\arraybackslash}p{0.34\linewidth}%
+>{\raggedright\arraybackslash}p{0.32\linewidth}@{}}
+\toprule
+Object & What is proved & What is not inferred\\
+\midrule
+Original unanchored law &
+Exact projection blindness and the complete local fold-response mechanism;
+also an outer-equilibrium/nonselection obstruction. &
+No anchored heteroclinic root or maximal canard.\\
+Finite-core selected root &
+A uniform local comparison problem and the same leading response covector. &
+Its exact finite-\(\delta\) value is not intrinsic.\\
+One fixed anchored RFDE &
+Past-complete incoming branch, intrinsic stable history sheet, unique local
+heteroclinic-canard root, and its conormal. &
+No global uniqueness outside the declared channel.\\
+Bounded anchor class &
+After centering each model at its own baseline, all first weighted conormals
+converge uniformly to \((1,-\Lambda_N)\). &
+Exact roots for different anchors need not agree.\\
+\bottomrule
+\end{tabular}
+\end{center}

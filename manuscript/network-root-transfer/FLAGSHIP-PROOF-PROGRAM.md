@@ -7,6 +7,21 @@ sensed-recovery model have now been inserted in the manuscript.  Items
 below retain the design history; the final checklist records the current
 verification state.
 
+> **Current proof-audit note (2026-08-31).**  The past-complete incoming
+> branch, intrinsic half-line stable sheet, and local response calculation
+> are constructed.  A hostile reread found that the attempted pullback of
+> the stable sheet to the central section was still conditional: it assumed
+> an exact central-to-outer reference zero and an ambient RFDE inverse that
+> the cited graph-tangent theorem does not supply.  The physical connection
+> and root must therefore remain marked **open** until an action-scaled
+> broken-orbit Lin problem has been closed.  The replacement proof keeps the
+> literal compatible-history seam as a residual, proves a causal
+> normal-history isomorphism after the invariant-graph shear, uses reserved
+> Gaussian and outer-action buffers, closes the resulting two-scalar Schur
+> complement, and only then applies Newton and the intrinsic tail
+> replacement.  Editorial/release work is downstream of that mathematical
+> gate; no completion claim in this historical ledger overrides this note.
+
 The separate physical-history implementation under Issue #32 now has a fixed
 mixed-BVP and representative-class contract in
 [`../../docs/paper-a-tracker-bvp-proof-program.md`](../../docs/paper-a-tracker-bvp-proof-program.md).

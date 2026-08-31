@@ -2,8 +2,8 @@
 \input{preamble}
 \IfFileExists{supplement.aux}{\externaldocument[][nocite]{supplement}}{}
 
-\newcommand{\papertitle}{Two-Delay Blind Controllability and Selected
-Fold-Response Readout in Retarded Markov Networks}
+\newcommand{\papertitle}{Projection-Blind Delay Redistribution Moves
+Anchored Heteroclinic Canards in Retarded Markov Networks}
 
 \title{\papertitle}
 \author{Haibo Lu\\
@@ -12,86 +12,91 @@ Fold-Response Readout in Retarded Markov Networks}
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={Two-Delay Blind Controllability and Selected Fold-Response Readout in Retarded Markov Networks},
+  pdftitle={Projection-Blind Delay Redistribution Moves Anchored Heteroclinic Canards in Retarded Markov Networks},
   pdfauthor={Haibo Lu},
-  pdfsubject={Uniform recovery of hidden transverse return from nonlinear root responses},
-  pdfkeywords={blind controllability, hidden-return response, projection blindness,
+  pdfsubject={Projection-invisible delay structure moves complete-history heteroclinic canards through transverse network return},
+  pdfkeywords={projection blindness, delay redistribution, heteroclinic canard,
     retarded functional differential equation, Dobrushin network,
-    complete-history matching}
+    complete-history connection}
 }
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We study finite retarded networks in which a redistribution of delayed
-coupling is exactly invisible to a stationary projected vector-field
-functional at every unreduced history.  With two distinct delay locations,
-these projection-blind redistributions nevertheless generate every transverse
-forcing direction, with sharp right-inverse and dual condition bounds uniform
-in network size under a common Dobrushin gap; the dual bound uses the inherited
-norm on the observation range.  Near a collective fold, we construct an
-invariant RFDE history graph and selected one-sided traces.  For each fixed
-admissible preparation and uniformly bounded blind direction family
-\(\mathbf R_N\), their nonlinear complete-history matching root satisfies
+We exhibit a delay redistribution that leaves the stationary projection of
+an RFDE vector field unchanged at every fixed full history yet moves a
+complete-history canard in a fixed globally anchored RFDE.  The setting is a
+finite retarded Markov network with a common Dobrushin gap.
+Redistributing coupling between
+delay layers in stationary-row-neutral directions leaves the stationary
+projection of the RFDE vector field exactly unchanged at every full history;
+this is stronger than agreement on synchronized states but does not make the
+projection dynamically closed.  With two distinct delay locations, the same
+redistributions generate every transverse source direction.  We give an
+explicit sharp right inverse and a dual reconstruction bound, both independent
+of network size.  With only one merged delay location, the leading transverse
+source vanishes identically on the pure-redistribution class.
+
+To turn this hidden source into an intrinsic nonlinear observable, we construct
+a globally anchored shared-resource RFDE which agrees exactly with the original
+equation on the entire retained fold-history tube.  Its two hyperbolic anchor
+equilibria carry a one-dimensional incoming unstable branch and a
+codimension-one outgoing stable history sheet.  A forward RFDE construction,
+a half-line Lyapunov--Perron problem, and quantitative tail forgetting produce
+a unique local parameter root at which these objects form a complete
+heteroclinic orbit.  The orbit follows attracting and repelling slow-history
+graphs for times of order \(\delta^{-2}\), so the connection is a canard in a
+quantitative dynamical sense.  If \(\eta\) denotes a blind redistribution and
+\(\mu_c(\delta,\eta)\) the fixed-model root, then
 \[
- \mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,\zeta)
- -\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0)
- =\delta^3\zeta\Lambda_N(\mathbf R_N)
-  +O(\delta^4|\zeta|+\delta^3\zeta^2)
+ D_\eta\mu_c(\delta,\eta)
+   =\delta^3\Lambda_N+O(\delta^4+\delta^3\|\eta\|),
 \]
-uniformly in network size.  Normalized root increments recover evaluations of
-the response covector with error \(O(\delta+|\zeta|)\), and a spanning probe
-family reconstructs the compressed transverse return covector.  Generator
-probes preserve the chosen base-layer support and, at each fixed \(N\), recover
-centered curvature or recovery-sensing profiles from weighted pairings.  When
-the merged delay support contains only one location, pure redistributions
-generate no transverse source, giving a sharp no-go result for this mechanism.
-Fast curvature and heterogeneous recovery sensing give inequivalent
-realizations.  Sparse reset--cycle examples have entrywise nonnegative
-perturbed layers and rank-\(N-1\) structural directions.  In the
-shared-resource family, the exact finite-section root depends on the
-outer completion.  After each selected
-connection locus is centered at its own baseline, however, its
-\(\delta^{-3}\)-weighted conormal along \(\zeta\mathbf R_N\) converges to
-\(\operatorname{span}\{\dd\xi-\Lambda_N(\mathbf R_N)\dd\zeta\}\), where
-\(\xi=\delta^{-3}\{\mu-\mu_{c,N}^{\mathbf p,\mathbf R_N}(\delta,0)\}\).
-For any two fixed admissible preparations the limiting line is the same within
-the fixed projection, matching, and parameter normalization; no remainder
-uniform over the whole preparation class is claimed.  This is a selected
-connection jet, not a physical maximal-canard claim.
+in the full dual norm, uniformly in network size.  The covector \(\Lambda_N\)
+is precisely the dimension-uniform transverse return covector obtained from
+the projection-blind source.  Hence a same-history projection-neutral
+parameter moves an exact complete-history heteroclinic canard at order
+\(\delta^3\).  Exact roots
+may differ between admissible global anchors, but after modelwise baseline
+centering their weighted conormals converge uniformly to
+\((1,-\Lambda_N)\).  No maximal-canard claim is made for the unanchored
+recovery law, which is proved not to supply the required outer equilibria.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
-blind controllability; hidden-return covector; projection blindness; retarded
-functional differential equation; Dobrushin contraction; fold matching
+projection blindness; delay redistribution; heteroclinic canard; retarded
+functional differential equation; Dobrushin contraction; hidden return
 
 \medskip
 \noindent\textbf{Mathematics Subject Classification (2020).}
 34K26; 34E17; 37G10
 
 \input{sections/01-introduction}
+\input{sections/01a-notation-and-status}
 \input{sections/02-model-and-results}
 \input{sections/02a-abstract-response}
-\input{sections/02b-sensed-recovery}
 \input{sections/03-network-mechanism}
-\input{sections/02c-unprepared-outer-skeleton}
+\input{sections/02c-main-outer-interface}
 \input{sections/02d-anchored-physical-connection}
 \input{sections/04-conclusion}
 
 \section*{Supplementary material}
-Detailed preparation, invariant-history, and finite-section proofs are supplied
-in the companion file \emph{Supplementary Material for \papertitle}.
+The companion supplement contains the secondary recovery-sensing realization
+and the detailed preparation, invariant-history, outer-passage, half-line, and
+finite-section proofs.
 
 \section*{Acknowledgements}
-OpenAI Codex was used to draft and revise portions of the \LaTeX{} source,
-generate the reproducible Matplotlib source for \cref{fig:root-mechanism},
-suggest symbolic rearrangements, audit sign and scaling consistency, and
-organize literature searches.  No AI output is treated as a proof or a
-numerical certificate.  The submission release will identify AI-modified
-source files and record human checks of the algebra, citations, assumptions,
-and figure semantics.  The author assumes responsibility for every
-mathematical claim and for the final manuscript.
+OpenAI Codex was used interactively to propose and revise theorem statements,
+proof prose, and \LaTeX{} organization; to generate the reproducible
+Matplotlib source for \cref{fig:root-mechanism}; to suggest symbolic
+rearrangements; and to assist with sign, scaling, cross-reference, and
+literature audits.  AI-assisted hostile rereads were used as error-finding
+tools, not as independent peer review.  No AI output is treated as a proof or
+as a numerical certificate: every retained claim is supported by the explicit
+argument in the manuscript and remains the author's responsibility.  The
+submission release will identify AI-modified source files and the checks
+performed on algebra, citations, assumptions, code, and figure semantics.
 
 \section*{Declarations}
 \paragraph{Funding.} No funding was received for conducting this study.

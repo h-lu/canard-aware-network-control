@@ -2,8 +2,8 @@
 \input{preamble}
 \IfFileExists{main.aux}{\externaldocument[][nocite]{main}}{}
 
-\newcommand{\papertitle}{Two-Delay Blind Controllability and Selected
-Fold-Response Readout in Retarded Markov Networks}
+\newcommand{\papertitle}{Projection-Blind Delay Redistribution Moves
+Anchored Heteroclinic Canards in Retarded Markov Networks}
 
 \title{Supplementary Material for\\[2mm]\papertitle}
 \author{Haibo Lu\\
@@ -11,7 +11,7 @@ Fold-Response Readout in Retarded Markov Networks}
   \small \href{mailto:luhaibo1985@gmail.com}{luhaibo1985@gmail.com}}
 \date{}
 \hypersetup{
-  pdftitle={Supplementary Material for Two-Delay Blind Controllability and Selected Fold-Response Readout in Retarded Markov Networks},
+  pdftitle={Supplementary Material for Projection-Blind Delay Redistribution Moves Anchored Heteroclinic Canards in Retarded Markov Networks},
   pdfauthor={Haibo Lu},
   pdfsubject={Detailed preparation, invariant-history, and finite-section proofs}
 }
@@ -19,20 +19,21 @@ Fold-Response Readout in Retarded Markov Networks}
 \begin{document}
 \maketitle
 
-This supplement contains the construction and bookkeeping proofs used in the
-main article.  The numbering and notation of the main article are retained in
-cross-references.  Section A gives the preparation and noncanonicity
-constructions, Section B the invariant complete-history graph, Section C
-the finite-section bridge, and Section D the critical-layer geometry and
-positive-\(\delta\) frozen-voltage history splitting, exact
-tracker-quotient identities, and the history-selection obstruction.
+This supplement contains one secondary model realization and the construction
+and bookkeeping proofs used in the main article.  The numbering and notation
+of the main article are retained in cross-references.  The first appendix
+records the heterogeneous recovery-sensing realization.  It is followed by
+the preparation and invariant-history arguments, a compressed outer-passage
+toolkit, and concise anchored half-line, stable-sheet, and
+complete-history connection proofs.
 
 \appendix
+\input{sections/02b-sensed-recovery}
 \input{sections/supplementary-proofs}
 \input{sections/03a-invariant-history-details}
 \input{sections/03b-gap-estimates}
-\input{sections/03c-outer-skeleton-and-nonselection}
-\input{sections/03d-anchored-physical-connection-proofs}
+\input{sections/03c-anchor-local-toolkit}
+\input{sections/03d-anchored-lean-proofs}
 
 \begingroup
 \small

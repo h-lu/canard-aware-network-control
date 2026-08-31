@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-"""Generate the exact/schematic mechanism figure for Paper A.
+"""Generate the flagship mechanism figure for Paper A.
 
-Panel (a) is a fold-matching schematic built around the exact singular
-parabola.  Panel (b) is a dependency diagram of the proved two-delay source,
-nonlinear readout, and dual reconstruction identities.
+The artifact is deliberately mixed rather than numerical evidence:
+
+* panel (a) is a schematic history-space channel populated by invariant
+  objects proved in the paper;
+* panel (b) places proved identities and estimates in a schematic dependency
+  diagram;
+* panel (c) schematically realizes the proved modelwise centering and conormal
+  limit.
+
+Reproduce from ``manuscript/network-root-transfer`` with ``make figure``.
 """
 
 from __future__ import annotations
@@ -14,110 +21,589 @@ from pathlib import Path
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.patches import FancyArrowPatch
+from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, PathPatch
+from matplotlib.path import Path as MplPath
 
 
 BLUE = "#2369A0"
-ORANGE = "#C84E2F"
-DARK = "#222222"
-MID = "#696969"
-LIGHT = "#B7B7B7"
-PALE = "#F5F5F3"
+VERMILION = "#C84E2F"
+PURPLE = "#6A4C93"
+DARK = "#202020"
+MID = "#666666"
+LIGHT = "#B8B8B8"
+PALE = "#F3F3F0"
+PALE_BLUE = "#EAF2F8"
+PALE_ORANGE = "#FAEEE9"
 
 
-def flow_arrow(ax, start, end, color, *, scale=8.5, linewidth=1.35):
-    """Arrow in data coordinates, used only for the schematic traces."""
+def axes_arrow(ax, start, end, *, color=DARK, lw=1.0, style="-|>", zorder=5):
+    """Draw an arrow whose coordinates are fractions of an axes."""
     ax.add_patch(
         FancyArrowPatch(
             start,
             end,
-            arrowstyle="-|>",
-            mutation_scale=scale,
-            linewidth=linewidth,
+            transform=ax.transAxes,
+            arrowstyle=style,
+            mutation_scale=8.5,
+            linewidth=lw,
             color=color,
             shrinkA=0,
             shrinkB=0,
-            zorder=6,
+            zorder=zorder,
         )
     )
 
 
-def diagram_box(
+def labelled_box(
     ax,
-    xy,
+    center,
+    width,
+    height,
     text,
     *,
-    edge=DARK,
     face="white",
-    linewidth=0.85,
+    edge=DARK,
     linestyle="solid",
-    fontsize=7.0,
-    pad=0.30,
-    linespacing=1.22,
+    fontsize=6.65,
+    linewidth=0.9,
 ):
-    """Directly labelled rounded box in axes coordinates."""
+    """Draw a rounded dependency box in axes coordinates."""
+    x, y = center
+    patch = FancyBboxPatch(
+        (x - width / 2, y - height / 2),
+        width,
+        height,
+        transform=ax.transAxes,
+        boxstyle="round,pad=0.014,rounding_size=0.018",
+        facecolor=face,
+        edgecolor=edge,
+        linewidth=linewidth,
+        linestyle=linestyle,
+        zorder=2,
+    )
+    ax.add_patch(patch)
     ax.text(
-        *xy,
+        x,
+        y,
         text,
         transform=ax.transAxes,
         ha="center",
         va="center",
         fontsize=fontsize,
-        linespacing=linespacing,
+        linespacing=1.20,
         color=DARK,
-        bbox={
-            "boxstyle": f"round,pad={pad}",
-            "facecolor": face,
-            "edgecolor": edge,
-            "linewidth": linewidth,
-            "linestyle": linestyle,
-        },
-        zorder=4,
+        zorder=3,
     )
 
 
-def diagram_arrow(
-    ax,
-    start,
-    end,
-    *,
-    color=DARK,
-    style="-|>",
-    linewidth=0.9,
-    linestyle="solid",
-    label=None,
-    label_xy=None,
-    label_size=6.5,
-):
-    """Dependency arrow in axes coordinates, with an optional direct label."""
-    ax.annotate(
-        "",
-        xy=end,
-        xytext=start,
-        xycoords=ax.transAxes,
-        textcoords=ax.transAxes,
-        arrowprops={
-            "arrowstyle": style,
-            "color": color,
-            "linewidth": linewidth,
-            "linestyle": linestyle,
-            "shrinkA": 2,
-            "shrinkB": 2,
-        },
+def curve_patch(ax, vertices, codes, *, color, lw, linestyle="solid", zorder=4):
+    """Draw a Bezier curve in axes coordinates."""
+    patch = PathPatch(
+        MplPath(vertices, codes),
+        transform=ax.transAxes,
+        facecolor="none",
+        edgecolor=color,
+        linewidth=lw,
+        linestyle=linestyle,
+        capstyle="round",
+        zorder=zorder,
+    )
+    ax.add_patch(patch)
+    return patch
+
+
+def panel_history_channel(ax) -> None:
+    """Panel (a): one fixed anchored RFDE and its complete connection."""
+    ax.set_axis_off()
+    ax.set_title(
+        "(a) One fixed anchored RFDE",
+        loc="left",
+        fontweight="bold",
+        fontsize=8.2,
+        pad=4,
+    )
+
+    # Regions are schematic.  The central rectangle means literal equality of
+    # the anchored and unanchored vector fields on the retained history tube.
+    ax.add_patch(
+        FancyBboxPatch(
+            (0.34, 0.20),
+            0.32,
+            0.64,
+            transform=ax.transAxes,
+            boxstyle="round,pad=0.012,rounding_size=0.02",
+            facecolor=PALE,
+            edgecolor=LIGHT,
+            linewidth=0.75,
+            zorder=0,
+        )
+    )
+    ax.text(
+        0.50,
+        0.78,
+        r"retained fold-history tube",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.6,
+        color=MID,
+    )
+    ax.text(
+        0.50,
+        0.70,
+        r"$g_{\rm anc}=1$: exact original law",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.5,
+        color=MID,
+    )
+    ax.text(
+        0.14,
+        0.82,
+        "anchor-modified\nouter law",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.3,
+        color=MID,
+    )
+    ax.text(
+        0.86,
+        0.82,
+        "anchor-modified\nouter law",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.3,
+        color=MID,
+    )
+
+    # A single schematic orbit, split only to identify the attracting,
+    # central, and repelling tracking portions.
+    codes = [MplPath.MOVETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4]
+    incoming = [(0.10, 0.54), (0.20, 0.57), (0.31, 0.47), (0.47, 0.42)]
+    central = [(0.47, 0.42), (0.50, 0.40), (0.53, 0.40), (0.56, 0.43)]
+    outgoing = [(0.56, 0.43), (0.68, 0.50), (0.78, 0.61), (0.90, 0.55)]
+    curve_patch(ax, incoming, codes, color=BLUE, lw=2.35)
+    curve_patch(ax, central, codes, color=DARK, lw=2.35)
+    curve_patch(
+        ax,
+        outgoing,
+        codes,
+        color=VERMILION,
+        lw=2.35,
+        linestyle=(0, (5, 1.6, 1.2, 1.6)),
+    )
+
+    # Forward-time arrows, one on each slow tracking segment.
+    axes_arrow(ax, (0.25, 0.535), (0.31, 0.485), color=BLUE, lw=1.25)
+    axes_arrow(ax, (0.70, 0.525), (0.76, 0.585), color=VERMILION, lw=1.25)
+
+    # Exact equilibria are represented by labelled markers; their positions
+    # and distances in this schematic have no metric meaning.
+    ax.scatter(
+        [0.085, 0.915],
+        [0.54, 0.55],
+        transform=ax.transAxes,
+        s=34,
+        facecolors=["white", "white"],
+        edgecolors=[BLUE, VERMILION],
+        linewidths=1.35,
+        zorder=7,
+    )
+    ax.text(
+        0.115,
+        0.43,
+        r"$E_N^+$" "\n" r"$\dim W^u=1$",
+        transform=ax.transAxes,
+        ha="center",
+        va="top",
+        fontsize=6.5,
+        color=BLUE,
+    )
+    ax.text(
+        0.925,
+        0.43,
+        r"$E_N^-$" "\n" r"$\operatorname{codim}W^s=1$",
+        transform=ax.transAxes,
+        ha="center",
+        va="top",
+        fontsize=6.5,
+        color=VERMILION,
+    )
+
+    # A projected cue for the codimension-one stable history sheet.  It is
+    # not drawn as a basin boundary and is explicitly labelled schematic.
+    sheet_codes = [MplPath.MOVETO, MplPath.CURVE4, MplPath.CURVE4, MplPath.CURVE4]
+    curve_patch(
+        ax,
+        [(0.83, 0.23), (0.88, 0.34), (0.88, 0.73), (0.84, 0.86)],
+        sheet_codes,
+        color=VERMILION,
+        lw=1.05,
+        linestyle=(0, (4, 2)),
         zorder=2,
     )
-    if label is not None and label_xy is not None:
-        ax.text(
-            *label_xy,
-            label,
-            transform=ax.transAxes,
-            ha="center",
-            va="center",
-            fontsize=label_size,
-            color=color,
-            bbox={"facecolor": "white", "edgecolor": "none", "pad": 0.45},
-            zorder=3,
-        )
+    ax.text(
+        0.80,
+        0.67,
+        r"intrinsic $W^s(E_N^-)$" "\n" "history sheet",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.35,
+        color=VERMILION,
+    )
+    ax.text(
+        0.22,
+        0.25,
+        "attracting slow-history tracking",
+        transform=ax.transAxes,
+        ha="center",
+        fontsize=6.05,
+        color=BLUE,
+    )
+    ax.text(
+        0.76,
+        0.25,
+        "repelling slow-history tracking",
+        transform=ax.transAxes,
+        ha="center",
+        fontsize=6.05,
+        color=VERMILION,
+    )
+    ax.text(
+        0.515,
+        0.345,
+        "fold",
+        transform=ax.transAxes,
+        ha="center",
+        fontsize=6.2,
+        color=DARK,
+    )
+    axes_arrow(ax, (0.10, 0.10), (0.90, 0.10), color=MID, lw=0.75)
+    ax.text(
+        0.50,
+        0.045,
+        r"forward time; collective coordinate $r:+r_A\ \longrightarrow\ -r_A$",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.3,
+        color=MID,
+    )
+    ax.text(
+        0.99,
+        0.96,
+        "schematic history-space projection",
+        transform=ax.transAxes,
+        ha="right",
+        va="top",
+        fontsize=6.0,
+        color=MID,
+    )
+
+
+def panel_mechanism(ax) -> None:
+    """Panel (b): exact algebra and estimates in a dependency layout."""
+    ax.set_axis_off()
+    ax.set_title(
+        "(b) Blind source and returned root response",
+        loc="left",
+        fontweight="bold",
+        fontsize=8.2,
+        pad=4,
+    )
+    ax.text(
+        0.99,
+        0.97,
+        "identities: exact/proved\nlayout: schematic",
+        transform=ax.transAxes,
+        ha="right",
+        va="top",
+        fontsize=5.9,
+        color=MID,
+    )
+
+    labelled_box(
+        ax,
+        (0.35, 0.86),
+        0.61,
+        0.145,
+        "same-full-history blindness\n"
+        r"$\Pi_N\mathcal{F}_{\eta}(\Phi)=\Pi_N\mathcal{F}_0(\Phi)$",
+        face=PALE,
+        fontsize=6.6,
+    )
+    labelled_box(
+        ax,
+        (0.35, 0.635),
+        0.61,
+        0.17,
+        "two distinct delays\n"
+        r"$\mathsf{S}_N:\mathfrak{T}_N^{\rm red}\twoheadrightarrow E_N$"
+        r" with sharp $\mathsf{Q}_N$",
+        face=PALE_BLUE,
+        edge=BLUE,
+        fontsize=6.45,
+        linewidth=1.0,
+    )
+    labelled_box(
+        ax,
+        (0.35, 0.405),
+        0.61,
+        0.17,
+        "transverse lift and return\n"
+        r"$h=\mathsf{T}_N\eta=A_N^{-1}\mathsf{S}_N\eta,$"
+        "  "
+        r"$\Lambda_N=\mathfrak{r}_N\mathsf{T}_N$",
+        fontsize=6.4,
+    )
+    labelled_box(
+        ax,
+        (0.35, 0.17),
+        0.64,
+        0.18,
+        "fixed anchored-model heteroclinic root\n"
+        r"$D_\eta\mu_{c,N}^{\rm phys}="
+        r"\delta^3\Lambda_N+O(\delta^4+\delta^3\|\eta\|)$",
+        face=PALE_ORANGE,
+        edge=VERMILION,
+        fontsize=6.35,
+        linewidth=1.05,
+    )
+    for y0, y1 in [(0.775, 0.72), (0.55, 0.49), (0.32, 0.26)]:
+        axes_arrow(ax, (0.35, y0), (0.35, y1), color=DARK, lw=0.9)
+
+    labelled_box(
+        ax,
+        (0.81, 0.635),
+        0.31,
+        0.17,
+        "one merged delay\n"
+        r"$\mathsf{S}_N=0$"
+        "\n(leading no-go)",
+        face=PALE,
+        edge=MID,
+        linestyle=(0, (4, 2)),
+        fontsize=6.25,
+    )
+    axes_arrow(ax, (0.66, 0.86), (0.81, 0.72), color=MID, lw=0.8, style="-|>")
+    ax.text(
+        0.80,
+        0.82,
+        "one delay",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=5.9,
+        color=MID,
+    )
+
+    labelled_box(
+        ax,
+        (0.835, 0.30),
+        0.30,
+        0.20,
+        "compressed dual recovery\n"
+        r"$\mathfrak{r}_N(z)="
+        r"\Lambda_N(\mathsf{Q}_NA_Nz)$"
+        "\n(not the full network)",
+        face="white",
+        edge=MID,
+        fontsize=6.2,
+    )
+    axes_arrow(ax, (0.66, 0.405), (0.65, 0.34), color=MID, lw=0.8)
+
+
+def draw_small_axes(ax, origin, xend, yend, *, xlabel, ylabel):
+    axes_arrow(ax, origin, xend, color=MID, lw=0.75)
+    axes_arrow(ax, origin, yend, color=MID, lw=0.75)
+    ax.text(
+        xend[0],
+        xend[1] - 0.055,
+        xlabel,
+        transform=ax.transAxes,
+        ha="right",
+        va="top",
+        fontsize=6.2,
+        color=MID,
+    )
+    ax.text(
+        yend[0] - 0.012,
+        yend[1],
+        ylabel,
+        transform=ax.transAxes,
+        ha="right",
+        va="top",
+        fontsize=6.2,
+        color=MID,
+    )
+
+
+def panel_anchor_centering(ax) -> None:
+    """Panel (c): exact baselines may differ; centered conormals agree."""
+    ax.set_axis_off()
+    ax.set_title(
+        "(c) What is and is not universal across global anchors",
+        loc="left",
+        fontweight="bold",
+        fontsize=8.2,
+        pad=4,
+    )
+
+    # Left mini-panel: absolute roots for two different global RFDEs.
+    draw_small_axes(
+        ax,
+        (0.055, 0.17),
+        (0.445, 0.17),
+        (0.055, 0.88),
+        xlabel=r"$\zeta$ in $\eta=\zeta R$",
+        ylabel=r"$\mu_c$",
+    )
+    x = np.linspace(-1.0, 1.0, 160)
+    x_plot = 0.25 + 0.17 * x
+    y_a = 0.48 + 0.16 * x + 0.025 * x**2
+    y_b = 0.67 + 0.145 * x - 0.020 * x**2
+    ax.plot(x_plot, y_a, transform=ax.transAxes, color=DARK, linewidth=1.45)
+    ax.plot(
+        x_plot,
+        y_b,
+        transform=ax.transAxes,
+        color=MID,
+        linewidth=1.35,
+        linestyle=(0, (5, 2)),
+    )
+    ax.scatter(
+        [0.25, 0.25],
+        [0.48, 0.67],
+        transform=ax.transAxes,
+        s=14,
+        facecolor="white",
+        edgecolor=[DARK, MID],
+        linewidth=0.9,
+        zorder=5,
+    )
+    ax.text(
+        0.405,
+        0.73,
+        "anchor B (dashed)",
+        transform=ax.transAxes,
+        ha="right",
+        fontsize=6.1,
+        color=MID,
+    )
+    ax.text(
+        0.405,
+        0.42,
+        "anchor A (solid)",
+        transform=ax.transAxes,
+        ha="right",
+        fontsize=6.1,
+        color=DARK,
+    )
+    ax.text(
+        0.25,
+        0.94,
+        "different autonomous RFDEs: exact baselines may differ",
+        transform=ax.transAxes,
+        ha="center",
+        va="top",
+        fontsize=6.45,
+        color=DARK,
+    )
+
+    # Centering arrow between mini-panels.
+    axes_arrow(ax, (0.465, 0.52), (0.535, 0.52), color=PURPLE, lw=1.1)
+    ax.text(
+        0.50,
+        0.61,
+        "center each\n" r"model at $\zeta=0$",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.0,
+        color=PURPLE,
+    )
+
+    # Right mini-panel: centered weighted graphs and limiting tangent/conormal.
+    draw_small_axes(
+        ax,
+        (0.74, 0.50),
+        (0.965, 0.50),
+        (0.74, 0.91),
+        xlabel=r"$\zeta$",
+        ylabel=r"$\xi=\delta^{-3}[\mu_c(\zeta R)-\mu_c(0)]$",
+    )
+    xr = np.linspace(-1.0, 1.0, 160)
+    xp = 0.74 + 0.19 * xr
+    limit = 0.50 + 0.25 * xr
+    ca = 0.50 + 0.27 * xr + 0.020 * xr**2
+    cb = 0.50 + 0.23 * xr - 0.018 * xr**2
+    ax.plot(
+        xp,
+        limit,
+        transform=ax.transAxes,
+        color=PURPLE,
+        linewidth=1.15,
+        linestyle=(0, (1.2, 2.0)),
+        zorder=1,
+    )
+    ax.plot(xp, ca, transform=ax.transAxes, color=DARK, linewidth=1.45, zorder=3)
+    ax.plot(
+        xp,
+        cb,
+        transform=ax.transAxes,
+        color=MID,
+        linewidth=1.35,
+        linestyle=(0, (5, 2)),
+        zorder=3,
+    )
+    ax.scatter(
+        [0.74],
+        [0.50],
+        transform=ax.transAxes,
+        s=15,
+        facecolor="white",
+        edgecolor=DARK,
+        linewidth=0.9,
+        zorder=5,
+    )
+    # A normal cue to the limiting tangent, labelled as a covector rather than
+    # a metric vector equality.
+    axes_arrow(ax, (0.74, 0.50), (0.68, 0.68), color=PURPLE, lw=1.15)
+    ax.text(
+        0.655,
+        0.74,
+        "limiting conormal\n"
+        r"$\mathrm{d}\xi-\Lambda_N(R)\,\mathrm{d}\zeta$",
+        transform=ax.transAxes,
+        ha="center",
+        va="center",
+        fontsize=6.15,
+        color=PURPLE,
+    )
+    ax.text(
+        0.84,
+        0.94,
+        r"both slopes $=\Lambda_N(R)+O(\delta)$",
+        transform=ax.transAxes,
+        ha="center",
+        va="top",
+        fontsize=6.4,
+        color=DARK,
+    )
+    ax.text(
+        0.99,
+        0.06,
+        "curves and distances schematic; tangent and error statement proved",
+        transform=ax.transAxes,
+        ha="right",
+        va="bottom",
+        fontsize=5.9,
+        color=MID,
+    )
 
 
 def make_figure(output: Path) -> None:
@@ -130,299 +616,20 @@ def make_figure(output: Path) -> None:
             "ps.fonttype": 42,
         }
     )
-
-    # The manuscript reduces this 7.15-inch source to a 6.5-inch text block.
-    fig = plt.figure(figsize=(7.15, 4.05), constrained_layout=True)
-    grid = fig.add_gridspec(1, 2, width_ratios=(0.78, 1.52), wspace=0.14)
-
-    # Panel (a): exact parabola, schematic retained traces and preparation tails.
-    ax = fig.add_subplot(grid[0, 0])
-    x = np.linspace(-1.66, 1.66, 400)
-    singular_y = x**2 - 0.50
-    ax.plot(x, singular_y, color=LIGHT, linewidth=1.15, zorder=1)
-
-    xa = np.linspace(1.38, 0.0, 160)
-    xr = np.linspace(0.0, -1.38, 160)
-    ya = xa**2 - 0.445 + 0.018 * xa
-    yr = xr**2 - 0.445 - 0.018 * xr
-    ax.plot(xa, ya, color=BLUE, linewidth=2.2, zorder=4)
-    ax.plot(xr, yr, color=ORANGE, linewidth=2.2, zorder=4)
-
-    xat = np.linspace(1.63, 1.38, 45)
-    xrt = np.linspace(-1.38, -1.63, 45)
-    ax.plot(
-        xat,
-        xat**2 - 0.445 + 0.018 * xat,
-        color=MID,
-        linewidth=1.6,
-        linestyle=(0, (1.0, 2.0)),
-        zorder=2,
+    fig = plt.figure(figsize=(7.15, 5.25), constrained_layout=True)
+    grid = fig.add_gridspec(
+        2,
+        2,
+        width_ratios=(1.02, 1.18),
+        height_ratios=(1.20, 0.80),
+        hspace=0.10,
+        wspace=0.08,
     )
-    ax.plot(
-        xrt,
-        xrt**2 - 0.445 - 0.018 * xrt,
-        color=MID,
-        linewidth=1.6,
-        linestyle=(0, (1.0, 2.0)),
-        zorder=2,
-    )
-
-    flow_arrow(
-        ax,
-        (0.77, 0.77**2 - 0.445 + 0.018 * 0.77),
-        (0.49, 0.49**2 - 0.445 + 0.018 * 0.49),
-        BLUE,
-    )
-    flow_arrow(
-        ax,
-        (-0.49, 0.49**2 - 0.445 + 0.018 * 0.49),
-        (-0.77, 0.77**2 - 0.445 + 0.018 * 0.77),
-        ORANGE,
-    )
-
-    ax.axvline(0.0, color=MID, linewidth=0.75, linestyle=(0, (4, 3)), zorder=0)
-    ax.scatter([0.0], [-0.445], s=19, facecolor="white", edgecolor=DARK,
-               linewidth=0.9, zorder=7)
-
-    ax.text(
-        0.0,
-        2.34,
-        "exact singular curve; schematic traces",
-        color=MID,
-        fontsize=6.7,
-        ha="center",
-    )
-    ax.text(
-        1.02,
-        1.72,
-        r"$\gamma_0\subset\{\mathcal{H}_\alpha=0\}$",
-        color=MID,
-        fontsize=6.8,
-        ha="center",
-        rotation=20,
-    )
-    ax.text(0.72, 0.16, r"retained $z^a$", color=BLUE, fontsize=7.0, ha="center")
-    ax.text(-0.72, 0.16, r"retained $z^r$", color=ORANGE, fontsize=7.0, ha="center")
-    ax.text(
-        0.055,
-        1.05,
-        r"phase section $X=0$",
-        color=MID,
-        fontsize=6.7,
-        rotation=90,
-        va="center",
-    )
-    ax.annotate(
-        "selected match",
-        xy=(0.0, -0.445),
-        xytext=(0.55, -0.69),
-        fontsize=6.8,
-        color=DARK,
-        ha="center",
-        arrowprops={"arrowstyle": "-", "color": DARK, "linewidth": 0.65},
-    )
-    ax.text(
-        0.0,
-        2.58,
-        "dotted: preparation tails",
-        color=MID,
-        fontsize=6.6,
-        ha="center",
-    )
-
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.set_xlim(-1.78, 1.78)
-    ax.set_ylim(-0.78, 2.72)
-    ax.set_xlabel(r"$\widehat X=\alpha X$", labelpad=1)
-    ax.set_ylabel(r"$\widehat Y=\alpha Y$", labelpad=1)
-    ax.set_xticks([])
-    ax.set_yticks([])
-    ax.set_title(
-        "(a) Complete-history fold match",
-        loc="left",
-        fontweight="bold",
-        fontsize=8.4,
-    )
-
-    # Panel (b): exact source/reconstruction identities and proved root readout.
-    bx = fig.add_subplot(grid[0, 1])
-    bx.set_axis_off()
-    bx.set_title(
-        "(b) Blind probes and compressed-return recovery",
-        loc="left",
-        fontweight="bold",
-        fontsize=8.2,
-    )
-    bx.text(
-        0.995,
-        0.985,
-        "equations: proved\nlayout: schematic",
-        transform=bx.transAxes,
-        ha="right",
-        va="top",
-        fontsize=6.5,
-        color=MID,
-    )
-
-    diagram_box(
-        bx,
-        (0.34, 0.895),
-        "projection-blind pure redistributions\n"
-        r"$\pi_N^TR_k=0\ (\mathrm{all}\ k),\qquad \sum_kR_k=0$",
-        face=PALE,
-        linewidth=1.0,
-        fontsize=7.0,
-    )
-    bx.text(
-        0.34,
-        0.815,
-        "exact collective blindness; zeroth delay moment vanishes",
-        transform=bx.transAxes,
-        ha="center",
-        va="center",
-        fontsize=6.5,
-        color=MID,
-    )
-
-    diagram_box(
-        bx,
-        (0.34, 0.675),
-        "two distinct delay locations\n"
-        r"$\mathsf{S}_N\mathbf{R}="
-        r"\frac{K}{2\alpha}P_{\perp,N}"
-        r"(\sum_k\theta_kR_k)\mathbf{1}$"
-        "\n"
-        r"$\mathsf{S}_N:\mathfrak{T}_N^{\rm red}\to E_N$ is onto",
-        linewidth=1.15,
-        fontsize=6.65,
-    )
-    diagram_arrow(
-        bx,
-        (0.34, 0.795),
-        (0.34, 0.755),
-        label=r"$\theta_0<\theta_m$",
-        label_xy=(0.34, 0.778),
-    )
-
-    diagram_box(
-        bx,
-        (0.79, 0.685),
-        "sharp right inverse\n"
-        r"$(\mathsf{Q}_Ny)_{0,m}=\mp"
-        r"\frac{2\alpha}{K\Delta_\theta}y\pi_N^T$"
-        "\n"
-        r"$\|\mathsf{S}_N\|=\frac{|K|\Delta_\theta}{4\alpha},\quad"
-        r"\|\mathsf{Q}_N\|=\frac{4\alpha}{|K|\Delta_\theta}$",
-        edge="#525252",
-        fontsize=6.5,
-        pad=0.28,
-    )
-    diagram_arrow(bx, (0.64, 0.685), (0.51, 0.685), style="-|>", color=MID)
-
-    diagram_box(
-        bx,
-        (0.34, 0.485),
-        "stable transverse lift\n"
-        r"$h=\mathsf{T}_N\mathbf{R}=A_N^{-1}\mathsf{S}_N\mathbf{R}\in E_N$"
-        "\n"
-        r"$\mathsf{T}_N\mathsf{Q}_NA_Nz=z$",
-        fontsize=6.7,
-    )
-    diagram_arrow(bx, (0.34, 0.596), (0.34, 0.555))
-
-    diagram_box(
-        bx,
-        (0.80, 0.485),
-        "one merged delay location: no-go\n"
-        r"$\sum_k\theta_kR_k=\theta_*\sum_kR_k=0$"
-        "\n"
-        r"$\Longrightarrow\ \mathsf{S}_N=0$",
-        edge=MID,
-        face=PALE,
-        linestyle=(0, (3, 2)),
-        fontsize=6.5,
-    )
-    # Route the no-go branch around the main chain and the right-inverse box.
-    diagram_arrow(
-        bx,
-        (0.51, 0.895),
-        (0.975, 0.895),
-        color=MID,
-        style="-",
-        linestyle=(0, (3, 2)),
-        label="one merged delay",
-        label_xy=(0.78, 0.875),
-        label_size=6.5,
-    )
-    diagram_arrow(
-        bx,
-        (0.975, 0.895),
-        (0.975, 0.485),
-        color=MID,
-        style="-",
-        linestyle=(0, (3, 2)),
-    )
-    diagram_arrow(
-        bx,
-        (0.975, 0.485),
-        (0.915, 0.485),
-        color=MID,
-        linestyle=(0, (3, 2)),
-    )
-
-    diagram_box(
-        bx,
-        (0.34, 0.285),
-        "nonlinear selected-root responses\n"
-        r"$\frac{\mu_{c,N}(\delta,\zeta)-\mu_{c,N}(\delta,0)}"
-        r"{\delta^3\zeta}"
-        r"=\Lambda_N(\mathbf{R})+O(\delta+|\zeta|)$",
-        linewidth=1.1,
-        fontsize=6.55,
-    )
-    diagram_arrow(bx, (0.34, 0.415), (0.34, 0.365))
-
-    diagram_box(
-        bx,
-        (0.34, 0.085),
-        "dual reconstruction of the compressed return\n"
-        r"$\mathfrak{r}_N(z)=\Lambda_N(\mathsf{Q}_NA_Nz),\qquad z\in E_N$"
-        "\n"
-        r"$\dim E_N=N-1$: use a spanning probe family",
-        linewidth=1.35,
-        fontsize=6.55,
-    )
-    diagram_arrow(bx, (0.34, 0.205), (0.34, 0.16))
-
-    diagram_box(
-        bx,
-        (0.80, 0.205),
-        "two separate realization profiles\n"
-        r"curvature: $-\alpha^{-1}\pi_N^T(c_N\circ h)$"
-        "\n"
-        r"recovery: $\pi_N^T[(\varpi_N-c_N/\alpha)\circ h]$",
-        edge=MID,
-        linestyle=(0, (4, 2)),
-        fontsize=6.5,
-        pad=0.26,
-    )
-    # Redundant color cues: the boxes remain intelligible in grayscale.
-    bx.plot([0.665, 0.705], [0.195, 0.195], transform=bx.transAxes,
-            color=BLUE, linewidth=2.0, solid_capstyle="round", zorder=5)
-    bx.plot([0.665, 0.705], [0.163, 0.163], transform=bx.transAxes,
-            color=ORANGE, linewidth=2.0, linestyle=(0, (3, 1.5)), zorder=5)
-    diagram_arrow(
-        bx,
-        (0.70, 0.13),
-        (0.55, 0.105),
-        color=MID,
-        style="-|>",
-        linestyle=(0, (2, 2)),
-        linewidth=0.8,
-    )
-
+    panel_history_channel(fig.add_subplot(grid[0, 0]))
+    panel_mechanism(fig.add_subplot(grid[0, 1]))
+    panel_anchor_centering(fig.add_subplot(grid[1, :]))
     output.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(output, format="pdf", bbox_inches="tight", pad_inches=0.025)
+    fig.savefig(output, format="pdf", bbox_inches="tight", pad_inches=0.035)
     plt.close(fig)
 
 
