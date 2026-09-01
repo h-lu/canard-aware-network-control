@@ -52,8 +52,6 @@ outer equilibria, so the paper makes no maximal-canard claim for that law.
   proofs required by the flagship theorem.
 - `CLAIM-MAP.md` maps theorem claims to proof locations and records scope
   boundaries.
-- `../../docs/paper-a-anchored-recovery-heteroclinic-contract.md` records the
-  A0--A10 completion gates.
 - `../../docs/paper-a-flagship-figure-contract.md` records the semantics and
   review contract for the main mechanism figure.
 

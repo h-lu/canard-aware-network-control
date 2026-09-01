@@ -16,6 +16,7 @@ Reproduce from ``manuscript/network-root-transfer`` with ``make figure``.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 from pathlib import Path
 
 import matplotlib as mpl
@@ -34,6 +35,16 @@ LIGHT = "#B8B8B8"
 PALE = "#F3F3F0"
 PALE_BLUE = "#EAF2F8"
 PALE_ORANGE = "#FAEEE9"
+PDF_TIMESTAMP = datetime(2026, 8, 31, tzinfo=timezone.utc)
+PDF_METADATA = {
+    "Title": "Projection-blind delay redistribution and anchored canard response",
+    "Author": "Haibo Lu",
+    "Subject": "Schematic of the proved mechanism",
+    "Creator": "root_mechanism.py",
+    "Producer": "Matplotlib",
+    "CreationDate": PDF_TIMESTAMP,
+    "ModDate": PDF_TIMESTAMP,
+}
 
 
 def axes_arrow(ax, start, end, *, color=DARK, lw=1.0, style="-|>", zorder=5):
@@ -629,7 +640,13 @@ def make_figure(output: Path) -> None:
     panel_mechanism(fig.add_subplot(grid[0, 1]))
     panel_anchor_centering(fig.add_subplot(grid[1, :]))
     output.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(output, format="pdf", bbox_inches="tight", pad_inches=0.035)
+    fig.savefig(
+        output,
+        format="pdf",
+        bbox_inches="tight",
+        pad_inches=0.035,
+        metadata=PDF_METADATA,
+    )
     plt.close(fig)
 
 

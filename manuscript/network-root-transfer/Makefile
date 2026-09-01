@@ -44,4 +44,4 @@ clean:
 		$(LATEXMK) -C supplement.tex; \
 	fi
 	$(RM) main.bbl supplement.bbl
-	find build -type f -delete
+	@if [ -d build ]; then find build -type f -delete; fi
