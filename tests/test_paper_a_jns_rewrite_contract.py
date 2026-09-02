@@ -183,6 +183,12 @@ def test_numerical_figure_is_scoped_as_a_finite_section_diagnostic() -> None:
     figure = compact(
         source("manuscript/network-root-transfer/figures/three-node-finite-section.tex")
     )
+    introduction = compact(
+        source("manuscript/network-root-transfer/rewrite-sections/01-introduction.tex")
+    )
+    plot_source = source(
+        "manuscript/network-root-transfer/figures/three_node_finite_section.py"
+    )
     contract = source(
         "manuscript/network-root-transfer/figures/three-node-finite-section-contract.md"
     )
@@ -191,3 +197,6 @@ def test_numerical_figure_is_scoped_as_a_finite_section_diagnostic() -> None:
     assert r"is not \(D_3^{\rm fin}\)" in figure
     assert "does not compute a heteroclinic connection or a maximal canard" in figure
     assert "Status: `MIXED`" in contract
+    assert "the horizontal gray line is the zero level" in introduction
+    assert "Delay redistribution shifts the zero" in plot_source
+    assert "Scaled shift versus theory" in plot_source

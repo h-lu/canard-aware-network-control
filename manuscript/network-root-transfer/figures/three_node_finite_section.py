@@ -93,9 +93,15 @@ def plot_exit_gap(ax: plt.Axes, payload: dict[str, object]) -> None:
         )
 
     ax.axhline(0.0, color=GRAY, linewidth=0.75, zorder=0)
-    ax.set_xlabel(r"$10^3[\nu-\widehat\nu_{\rm sec}(\delta,0;S)]$")
-    ax.set_ylabel(r"outgoing gap $\widehat E_S$")
-    ax.set_title(r"(a)  Finite-section zero", loc="left", fontweight="bold")
+    ax.set_xlabel(
+        r"centered parameter $10^3[\nu-\widehat\nu_{\rm sec}(\delta,0;S)]$"
+    )
+    ax.set_ylabel(r"section mismatch $\widehat E_S$")
+    ax.set_title(
+        r"(a)  Delay redistribution shifts the zero",
+        loc="left",
+        fontweight="bold",
+    )
     ax.legend(loc="upper left", frameon=False, handlelength=2.5)
     ax.text(
         0.97,
@@ -107,6 +113,16 @@ def plot_exit_gap(ax: plt.Axes, payload: dict[str, object]) -> None:
         va="bottom",
         color=GRAY,
         fontsize=7.35,
+    )
+    ax.text(
+        0.97,
+        0.515,
+        "zero level",
+        transform=ax.transAxes,
+        ha="right",
+        va="bottom",
+        color=GRAY,
+        fontsize=7.2,
     )
     ax.grid(axis="y", color=LIGHT_GRAY, linewidth=0.55, alpha=0.65)
 
@@ -134,14 +150,14 @@ def plot_response(ax: plt.Axes, payload: dict[str, object]) -> None:
         markersize=4.5,
         markerfacecolor="white",
         markeredgewidth=1.05,
-        label=r"two distinct delays",
+        label=r"distinct delays",
     )
     ax.axhline(
         predicted,
         color=INK,
         linewidth=1.15,
         linestyle=(0, (5, 2)),
-        label=r"$\Lambda_3=-1/3$",
+        label=r"theory: $\Lambda_3=-1/3$",
     )
     ax.plot(
         delta,
@@ -153,12 +169,12 @@ def plot_response(ax: plt.Axes, payload: dict[str, object]) -> None:
         markersize=4.3,
         markerfacecolor="white",
         markeredgewidth=1.0,
-        label=r"coincident-delay control",
+        label=r"same-delay control (zero)",
     )
-    ax.set_xlabel(r"$\delta$")
-    ax.set_ylabel(r"$\widehat q_{\delta}$")
+    ax.set_xlabel(r"scale parameter $\delta$")
+    ax.set_ylabel(r"scaled zero shift $\widehat q_{\delta}$")
     ax.set_title(
-        r"(b)  Normalized zero displacement", loc="left", fontweight="bold"
+        r"(b)  Scaled shift versus theory", loc="left", fontweight="bold"
     )
     ax.set_xlim(0.0, 0.128)
     ax.set_ylim(-0.365, 0.035)

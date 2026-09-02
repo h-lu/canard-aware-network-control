@@ -18,16 +18,21 @@
   method of steps with SciPy Radau, and tune `nu` until
   outgoing section function `E_hat_S=Y(S)-X(S)^2+1/2=0`.  The displayed root is named
   `nu_hat_sec(delta,zeta;S)`.
-- Panels and reading order: (a) three exit-gap curves and their zeros at one
-  fixed `(delta,S)`; (b) the centered normalized zero displacement along a
+- Panels and reading order: (a) three section-mismatch curves and their marked
+  zero crossings at one fixed `(delta,S)`; the horizontal movement of the
+  markers is the visual focus.  (b) the scaled zero displacement along a
   diagonal `(delta,S)` sequence, the exact Fredholm coefficient, and the
   zero coincident-delay control.  The five pairs are
   `(0.12,2.5)`, `(0.08,2.75)`, `(0.05,3)`, `(0.02,3.5)`, and `(0.01,4)`.
+- Panel titles and axis language: `(a) Delay redistribution shifts the zero`
+  and `(b) Scaled shift versus theory`; the axes pair ordinary descriptions
+  (`centered parameter`, `section mismatch`, `scale parameter`, and `scaled
+  zero shift`) with the mathematical symbols.
 - Line, marker, and color meanings: blue circles, black squares, and orange
   triangles distinguish `zeta=-h,0,+h` in panel (a).  In panel (b), blue
   circles are the two-distinct-delay computation, the black dashed line is
   the exact coefficient, and green triangles are the coincident-delay
-  control.  Every distinction also uses line style or marker shape.
+  same-delay control.  Every distinction also uses line style or marker shape.
 - What the figure must not imply: the prescribed history is not the
   parameter-dependent invariant history graph; the one-orbit outgoing
   condition is not the two-trace boundary-value definition of `D_3^fin`;
