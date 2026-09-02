@@ -11,9 +11,30 @@ Tracking issue: <https://github.com/h-lu/canard-aware-network-control/issues/34>
 
 The frozen tag and release are provenance records. Rewriting must occur on a separate branch and must not alter the frozen baseline.
 
-## Editorial diagnosis
+## Rewrite outcome (2026-09-02)
 
-The mathematical result is now closed, but the current exposition still has a high desk-rejection risk at *Journal of Nonlinear Science*. The principal problem is no longer missing mathematics. It is the order and relative weight of the mathematics:
+The source audit performed during the rewrite found that the frozen draft did
+not prove the network-size-uniform global invariant-manifold construction and
+the weighted (C^1) comparison needed for an unconditional heteroclinic
+connection in the displayed modified RFDE.  The rewritten paper therefore
+narrows its claims instead of carrying that gap into a new presentation.
+
+The first-moment range theorem, its explicit right inverse, the
+dimension-uniform transverse inverse, the abstract Fredholm sensitivity
+formula, and its local fold realization are unconditional.  Existence and
+parameter sensitivity of a heteroclinic connection for the modified RFDE are
+stated as a conditional corollary whose global invariant-manifold, defining-
+function, comparison, and tracking assumptions must be verified in each
+application.  No root of the unmodified biological model and no general
+network-canard theory is claimed.
+
+The checklist below records the original rewrite brief.  Any item that asked
+the rewrite merely to present an unconditional exact connection has been
+superseded by the narrower, audited claim boundary above.
+
+## Initial editorial diagnosis
+
+The frozen draft presented the mathematical result as closed, but still had a high desk-rejection risk at *Journal of Nonlinear Science*. The source audit later corrected that status as described above. Its initial expository problems were:
 
 1. The main theorem appears before the reader has seen the network or the globally modified RFDE to which the exact heteroclinic root belongs.
 2. The elementary source--transverse inverse--Fredholm pairing that explains the parameter response appears much later than the formal theorem.
@@ -23,9 +44,9 @@ The mathematical result is now closed, but the current exposition still has a hi
 6. The reusable Fredholm argument is divided among many statements, whereas the model-specific construction of the exact connection has no comparably concise interface for a new application.
 7. The current first figure combines three different reader tasks and mixes exact and schematic layers at a size that is difficult to read.
 
-## Mathematical claim that must be preserved
+## Initial mathematical claim target
 
-For the stated finite Markov RFDE networks with a network-size-uniform Dobrushin gap, a class of delay-layer redistributions is annihilated exactly by the stationary projection on every full history. With at least two distinct delays, its first delay moment can generate arbitrary transverse forcing with a network-size-uniform right inverse. The transverse response is returned to the collective Fredholm obstruction by node heterogeneity. For each fixed admissible globally modified RFDE constructed in the paper, this pairing is the leading derivative of an exact complete-history heteroclinic canard parameter:
+For the stated finite Markov RFDE networks with a network-size-uniform Dobrushin gap, a class of constrained perturbations of the delay layers is annihilated exactly by the stationary projection on every full history. With at least two distinct delays, its first delay moment can generate arbitrary transverse forcing with a network-size-uniform right inverse. The transverse response contributes to the collective Fredholm solvability condition through node heterogeneity. The frozen draft further aimed to identify this pairing with the leading derivative of a heteroclinic-connection parameter:
 
 \[
 D_\eta\mu_{c,N}^{\mathrm{anc}}
@@ -34,7 +55,12 @@ D_\eta\mu_{c,N}^{\mathrm{anc}}
 
 with constants uniform in the network size. With a single merged delay, this first-moment mechanism vanishes on the redistribution class.
 
-The rewrite must preserve all hypotheses, quantifier order, uniformity statements, signs, scales, remainder bounds, and distinctions between exact, asymptotic, and comparison objects.
+The first three conclusions are proved unconditionally in the rewrite.  The
+displayed sensitivity statement is retained only under the explicit global
+hypotheses described in the rewrite outcome.  Within that corrected scope,
+the rewrite preserves all hypotheses, quantifier order, uniformity statements,
+signs, scales, remainder bounds, and distinctions between exact, asymptotic,
+and comparison objects.
 
 ## Hard terminology constraint
 

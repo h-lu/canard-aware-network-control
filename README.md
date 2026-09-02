@@ -1,120 +1,67 @@
 # Canard-aware network dynamics and control
 
-Private research repository for retarded fast--slow networks, complete-history
-canards, and delayed FitzHugh--Nagumo pulse dynamics.
-
-The completed Paper A manuscript is
-
-> **Projection-Blind Delay Redistribution Moves Anchored Heteroclinic
-> Canards in Retarded Markov Networks**
-
-It is the current submission candidate.  Model-specific pulse thresholds and
-general RFDE return-map methods are maintained as separate research units.
-
-## Repository status
+This repository contains three separate research programs for delayed
+fast--slow systems. They share code and references but are not presented as
+one paper.
 
 | Workspace | Role | Status |
 | --- | --- | --- |
-| [`manuscript/network-root-transfer`](manuscript/network-root-transfer) | Paper A: projection-blind delay redistribution and anchored complete-history canards | Complete compact manuscript: 60-page article plus 41-page supplement |
-| [`manuscript/pulse-threshold`](manuscript/pulse-threshold) | Paper B: delayed-FHN stable-sheet pulse threshold | Active research draft; quantitative graph, crossing, and two-sided routing remain open |
-| [`manuscript/rfde-methods-notes`](manuscript/rfde-methods-notes) | Paper C: selected-event RFDE return methods | Working notes; independent novelty and literature gates remain open |
-| [`manuscript/jns`](manuscript/jns) | Original two-module paper | Historical submission package |
-| [`manuscript/flagship`](manuscript/flagship) | Former integrated network/pulse draft | Frozen provenance only; not a submission manuscript |
+| [`manuscript/network-root-transfer`](manuscript/network-root-transfer) | Paper A: a Fredholm formula for constrained delayed-coupling perturbations | Rewritten article and supplement |
+| [`manuscript/pulse-threshold`](manuscript/pulse-threshold) | Paper B: stable-manifold pulse threshold in a delayed FitzHugh--Nagumo equation | Research draft; proof chain incomplete |
+| [`manuscript/rfde-methods-notes`](manuscript/rfde-methods-notes) | Paper C: regularity and event maps for RFDEs | Working notes; independent novelty still under review |
 
-The proof-spine split and release policy are described in
-[`manuscript/README.md`](manuscript/README.md).
+## Paper A
 
-## Paper A result and boundary
+Paper A studies finite networks of retarded functional differential
+equations with a row-stochastic instantaneous coupling and additional
+feedback distributed among several delays. A perturbation that preserves
+the sum of the delayed-coupling matrices and has zero
+stationary row leaves the stationary projection of the vector field
+unchanged at every history. Nevertheless, two distinct delay locations
+generate every transverse first-order forcing direction. The paper gives an
+explicit right inverse, dimension-independent bounds, and the resulting
+bounded linear functional from the Fredholm solvability condition.
 
-For finite retarded Markov networks with a uniform Dobrushin gap, Paper A
-constructs delay-layer redistributions that are invisible to the stationary
-projection at every full history but produce a nonzero transverse-return
-response.  Two distinct delay locations give a sharp, dimension-uniform
-right inverse and dual reconstruction; merging the locations destroys the
-leading redistribution source.
+The paper then proves a sensitivity theorem for any defining function for a
+codimension-one heteroclinic condition satisfying explicit uniform hypotheses. For the
+polynomial fast--slow network it constructs a local invariant graph of compatible histories
+and a finite-interval matching function, and computes the leading
+coefficient. Applying that coefficient to a heteroclinic orbit in a specified
+modified equation is conditional on a separate uniform invariant-manifold and
+`C^1` comparison estimate. That global verification is not claimed here. The
+paper neither proves a maximal canard for the unmodified recovery law nor
+identifies an experimental threshold.
 
-For every fixed member of a declared bounded anchor class, the paper further
-constructs:
-
-1. exact hyperbolic outer equilibria;
-2. a past-complete incoming branch and an intrinsic future-decaying stable
-   history sheet;
-3. a unique complete-history heteroclinic-canard root; and
-4. its full-dual response and centered conormal, uniformly in finite network
-   size.
-
-The physical root is intrinsic to each fixed anchored RFDE and independent of
-the finite preparation used in the proof.  Exact roots for different global
-anchors need not agree.  The original unanchored recovery law does not supply
-the required outer equilibria, so no unanchored maximal-canard claim is made.
-
-The theorem-to-proof map and all scope exclusions are in
-[`CLAIM-MAP.md`](manuscript/network-root-transfer/CLAIM-MAP.md).
+The manuscript preceding the rewrite is preserved at the immutable tag
+`paper-a-pre-rewrite-2026-09-02` and its associated GitHub release.
 
 ## Build and verify Paper A
 
 Requirements are a recent TeX Live installation, Python 3.11 or newer, and
-[`uv`](https://docs.astral.sh/uv/).  From the Paper A directory run:
+[`uv`](https://docs.astral.sh/uv/). Run:
 
 ```sh
 cd manuscript/network-root-transfer
-make
+make paper
 make check
 ```
 
-`make` regenerates the vector mechanism figure and builds `main.pdf` and
-`supplement.pdf` with cross-document references.  Generated article PDFs and
-LaTeX intermediates are ignored by Git.
-
-`make check` runs the focused analytic/static Paper A test slice.  It does not
-replay the model-specific interval certificates belonging to Paper B.
-
-To build all current manuscript workspaces:
-
-```sh
-make -C manuscript split
-```
-
-Historical fixed-epsilon certificate records remain available for provenance:
-
-- [`docs/fixed-epsilon-frozen-graph-operator.md`](docs/fixed-epsilon-frozen-graph-operator.md)
-  records a frozen operator enclosure: no graph fixed point, positive-amplitude hull open.
-- [`docs/fixed-epsilon-singular-reachable-hull.md`](docs/fixed-epsilon-singular-reachable-hull.md)
-  records the singular reachable-hull audit and its explicit scope limits.
+The build regenerates two vector figures and produces `main.pdf` and
+`supplement.pdf`. The test target checks the public theorem architecture and
+the analytic identities used by Paper A; it is not a substitute for the
+proofs.
 
 ## Repository map
 
-- [`src/canard_control`](src/canard_control) -- symbolic, analytic, and
-  certificate-building modules;
-- [`tests`](tests) -- regression, contract, and source-binding tests;
-- [`experiments`](experiments) -- reproducible drivers and tracked result
-  records;
-- [`docs`](docs) -- theorem contracts and validation records still relevant
-  to active work;
-- [`docs/literature-map.md`](docs/literature-map.md) -- primary-literature
-  novelty boundary and closest mathematical baselines;
-- [`docs/physical-root-literature-audit.md`](docs/physical-root-literature-audit.md)
-  -- evidence map separating physical parameters, experimental thresholds,
-  reduced or spectral roots, and complete-history connection roots;
-- [`references/references.bib`](references/references.bib) -- shared primary
-  bibliography;
-- [`manuscript`](manuscript) -- submission units and historical manuscripts.
+- [`src/canard_control`](src/canard_control): symbolic and analytic modules;
+- [`tests`](tests): regression and manuscript-contract tests;
+- [`experiments`](experiments): reproducible exploratory calculations;
+- [`docs`](docs): research records and literature maps;
+- [`references/references.bib`](references/references.bib): shared bibliography;
+- [`manuscript`](manuscript): current and historical manuscript workspaces.
 
-Many numerical artifacts bind exact source hashes and software versions.
-Use the requirement file or command recorded beside each artifact rather than
-assuming that the entire historical certificate archive replays under one
-modern Python environment.
-
-## Branch and release policy
-
-`main` is the only long-lived branch.  Bounded work uses short-lived branches
-which are merged and deleted.  Completed or superseded states are retained as
-immutable tags rather than abandoned branches:
-
-- `paper-a-complete-2026-08-31` -- completed compact Paper A source;
-- `archive-paper-a-proof-ledgers-2026-08-31` -- superseded long Paper A proof
-  ledgers excluded from the submission build.
-
-The development repository remains private.  Before submission, Paper A must
-be exported to a minimal public repository with a locked runtime, independent
-checker where feasible, immutable release, and permanent archive identifier.
+The closest-literature summaries are in
+[`docs/literature-map.md`](docs/literature-map.md) and
+[`docs/physical-root-literature-audit.md`](docs/physical-root-literature-audit.md).
+Historical numerical artifacts retain their original environments and should
+not be interpreted as inputs to the analytic theorem in Paper A.
