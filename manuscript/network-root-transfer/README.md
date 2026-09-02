@@ -1,15 +1,15 @@
-# A Fredholm formula for heteroclinic-connection sensitivity
+# Sensitivity of heteroclinic connections in networks of RFDEs
 
 This directory contains Paper A:
 
-> **A Fredholm Formula for Heteroclinic-Connection Sensitivity to Constrained
-> Delayed-Coupling Perturbations in Retarded Networks**
+> **Sensitivity of Heteroclinic Connections to Constrained Delayed Coupling
+> in Networks of RFDEs**
 
 ## Main results
 
 The instantaneous network matrix is row stochastic. Additional linear
-feedback is distributed among finitely many delay layers. Admissible
-perturbations preserve the sum of those layers and have zero stationary row
+feedback is distributed among finitely many delayed-coupling matrices. Admissible
+perturbations preserve the sum of those matrices and have zero stationary row
 at each delay. Therefore the stationary projection
 of the RFDE vector field is unchanged at every history, although the projected
 variables do not satisfy a closed equation.
@@ -49,13 +49,14 @@ experimental threshold.
 
 ## Source layout
 
-- `main.tex`: article front matter and declarations;
+- `main.tex`: article front matter, main text, appendices, declarations, and bibliography;
 - `rewrite-sections/`: introduction, model and results, abstract Fredholm
   theorem, fold calculation, heteroclinic-connection hypotheses, and application
   conditions;
-- `supplement.tex` and `rewrite-supplement/`: detailed estimates for the
+- `appendices/`: detailed estimates for the
   locally invariant manifold near the fold and the
-  functional-analytic form of the global connection hypotheses;
+  functional-analytic form of the global connection hypotheses; these are
+  included in `main.pdf`, not issued as a separate supplement;
 - `figures/`: editable Python sources, figure contracts, and generated vector
   PDFs;
 - `CLAIM-MAP.md`: theorem-to-proof map and scope boundaries.
@@ -73,11 +74,9 @@ make check
 Useful final checks are:
 
 ```sh
-rg -n 'Warning|undefined|Overfull|Underfull' main.log supplement.log
+rg -n 'Warning|undefined|Overfull|Underfull' main.log
 pdfinfo main.pdf
-pdfinfo supplement.pdf
 pdffonts main.pdf
-pdffonts supplement.pdf
 ```
 
 The theorem is analytic and does not rely on a numerical certificate. A

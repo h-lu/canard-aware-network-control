@@ -11,12 +11,26 @@ modified equation is
 fixed before the connection parameter is sought and agrees with the original
 RFDE on the history-space neighborhood used in the local calculation.
 
+Let \(\mathcal F^g_{N,\delta,\vartheta}\) denote the fixed modified RFDE in
+fold time.  We use the solution-manifold notation
+\begin{equation}
+ \mathcal M_{N,\delta,\vartheta}^2
+ =\mathcal M^2(\mathcal F^g_{N,\delta,\vartheta}),
+ \qquad
+ \mathcal M_{\Sigma,N,\delta,\vartheta}^2
+ =\mathcal M_\Sigma^2(\mathcal F^g_{N,\delta,\vartheta})
+ \label{eq:connection-solution-manifold-notation}
+\end{equation}
+from \cref{eq:C2-solution-manifold,eq:C2-solution-manifold-section}.  When
+the parameters are fixed, the subscripts \((N,\delta,\vartheta)\) are
+suppressed.
+
 Write \(\vartheta=(\nu,\eta)\), and, for fixed \(\delta\), set
 \[
  \mathcal P_{N,\delta}
  =\left\{(\nu,\eta):
    \abs{\nu-\nu_{0,N}}\le c_0,\ 
-   \norm{\eta}_{\mathfrak T_N}\le\eta_0\right\}.
+   \norm{\eta}_{\mathcal T_N}\le\eta_0\right\}.
 \]
 The scalar parameter norm is defined in
 \cref{eq:connection-parameter-C1-norm}.  For a graph function
@@ -27,7 +41,7 @@ The scalar parameter norm is defined in
   \max\left\{\norm{F_\vartheta}_{C^1(B)},
    \norm{\partial_\nu F_\vartheta}_{C^1(B)},
    \norm{D_\eta F_\vartheta}_{
-     \cL(\mathfrak T_N^{\rm red},C^1(B))}\right\}.
+     \cL(\mathcal T_N,C^1(B))}\right\}.
  \label{eq:connection-graph-C1-norm}
 \end{equation}
 
@@ -44,8 +58,8 @@ bounds independent of \(N\).  Assume that the inward component of
 \(W^u(Z_N^+)\) intersects \(\Sigma_0=\{X=0\}\) transversally at
 \(A_\vartheta^0\), and that
 \(W^s(Z_N^-)\cap\mathcal M_{\Sigma_0}^2\) is a codimension-one \(C^1\)
-submanifold in the common chart of the compatible-history section used
-below.  The hit and the stable section are assumed to depend \(C^1\) on
+submanifold in the common chart of the solution-manifold section used below.
+The intersection point and the stable section are assumed to depend \(C^1\) on
 \(\vartheta\) in the
 norms \cref{eq:connection-parameter-C1-norm,eq:connection-graph-C1-norm}.
 These are hypotheses of the conditional result, not consequences proved in
@@ -63,7 +77,7 @@ Fix \(Q_*>12\), \(0<\chi<1\), and
  b_\delta=S_\delta^{-2}+\sqrt\delta\,S_\delta^{7/2}.
  \label{eq:connection-common-section-scales}
 \end{equation}
-Assume that the history charts, event maps, and one parameter derivative
+Assume that the history charts, transition maps, and one parameter derivative
 have a common loss bounded by \(C\delta^{-M_1}\) for some fixed
 \(M_1\ge0\).  Choose the exponent \(p_0\) in \(S_\delta\) so that
 \begin{equation}
@@ -71,11 +85,11 @@ have a common loss bounded by \(C\delta^{-M_1}\) for some fixed
        \langle S_\delta\rangle^{M_1}
  \le C\delta^{Q_*}.                                  \label{eq:connection-overlap-decay}
 \end{equation}
-Let \(\Sigma_b\) and \(\Sigma_c\) be the regular event sections met by the
+Let \(\Sigma_b\) and \(\Sigma_c\) be the regular transverse sections met by the
 reference repelling trace at fold times \(s_b\) and \(s_c\), and let
-\(\mathcal M_\Sigma^2\) denote the compatible \(C^2\) histories whose
-present state lies on a regular section \(\Sigma\).  Assume that on
-\(\Sigma_b\) there is a chart of the compatible-history section
+\(\mathcal M_\Sigma^2\) be the solution-manifold section defined in
+\cref{eq:connection-solution-manifold-notation}.  Assume that on
+\(\Sigma_b\) there is a chart
 \[
  \Phi_{b,\vartheta}:
  B_{\Psi_b}(0,Rb_\delta)\times(-Rb_\delta,Rb_\delta)
@@ -153,7 +167,7 @@ Normalize the defining function on \(\Sigma_b\) by
    (\Phi_{b,\vartheta}(\psi,u))
  =u-F_{b,\vartheta}^-(\psi),
 \]
-and pull it back by the forward event map:
+and pull it back by the forward transition map:
 \[
  \mathcal M_{0,\vartheta}(\psi,u)
  =\mathfrak m_{b,\vartheta}\!\left(
@@ -202,11 +216,11 @@ Its domain contains
  =B_{\mathscr K_0}
    (\bar\psi_\vartheta,c_r\delta^{Q_*+M_1+2}),        \label{eq:connection-central-common-domain}
 \end{equation}
-and the global invariant-manifold hypotheses require the incoming hit below
+and the global invariant-manifold hypotheses require the incoming intersection point below
 to belong to this
 ball for all \(\vartheta\in\mathcal P_{N,\delta}\).
 
-Write the incoming hit as
+Write the incoming intersection point as
 \[
  A_\vartheta^0=\mathfrak C_{0,\vartheta}(\psi_A,u_A).
 \]
@@ -249,7 +263,7 @@ translation.  Moreover,
  \bigl\|D_\eta G_{N,\delta}^{g}
        +\delta^2\sqrt{2\pi}\Lambda_N\bigr\|
  &\le C\{\delta^3+\delta^2
-       \norm{\eta}_{\mathfrak T_N}\}.             \label{eq:connection-function-estimates}
+       \norm{\eta}_{\mathcal T_N}\}.             \label{eq:connection-function-estimates}
 \end{align}
 All constants are independent of \(N\).
 \end{proposition}
@@ -295,19 +309,19 @@ heteroclinic orbit in RFDE phase space.  Implicit differentiation gives
  =-\frac{D_\eta G_{N,\delta}^{g}}
           {\partial_\nu G_{N,\delta}^{g}}
  =\delta\Lambda_N
-   +O\!\left(\delta^2+\delta\norm{\eta}_{\mathfrak T_N}\right).
+   +O\!\left(\delta^2+\delta\norm{\eta}_{\mathcal T_N}\right).
                                                         \label{eq:connection-root-nu-derivative}
 \end{equation}
 Since \(\mu=\delta^2\nu\), this proves
 \begin{align}
  \bigl\|D_\eta\mu_{c,N}^{g}
        -\delta^3\Lambda_N\bigr\|
- &\le C\{\delta^4+\delta^3\norm{\eta}_{\mathfrak T_N}\},
+ &\le C\{\delta^4+\delta^3\norm{\eta}_{\mathcal T_N}\},
                                                         \label{eq:connection-root-mu-derivative}\\
  \left|\mu_{c,N}^{g}(\delta,\eta)
    -\mu_{c,N}^{g}(\delta,0)-\delta^3\Lambda_N(\eta)\right|
- &\le C\{\delta^4\norm{\eta}_{\mathfrak T_N}
-       +\delta^3\norm{\eta}_{\mathfrak T_N}^2\}.
+ &\le C\{\delta^4\norm{\eta}_{\mathcal T_N}
+       +\delta^3\norm{\eta}_{\mathcal T_N}^2\}.
                                                         \label{eq:connection-root-increment}
 \end{align}
 These are the estimates stated in

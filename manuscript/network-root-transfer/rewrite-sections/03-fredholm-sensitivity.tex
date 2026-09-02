@@ -1,4 +1,4 @@
-\section{Fredholm reduction and a conditional heteroclinic-sensitivity theorem}
+\section{Fredholm reduction and a conditional theorem for heteroclinic sensitivity}
 \label{sec:fredholm-sensitivity}
 
 This section identifies the part of the argument that can be used without
@@ -10,21 +10,25 @@ first delay moment enters the network-transverse block, and a one-dimensional
 Lyapunov--Schmidt reduction evaluates its contribution to the collective
 solvability condition.  Third, if a defining function for a heteroclinic connection
 has been constructed and has the stated expansion, the implicit-function
-theorem converts the Fredholm coefficient into the derivative of the
+theorem converts the Fredholm sensitivity functional into the derivative of the
 connection parameter associated with that defining function.  The last step assumes the defining function; it does
 not assert that a general RFDE automatically possesses the required global
 stable and unstable objects.
 
 \subsection{The stationary projection and the first delay moment}
 
-Retain the network data, projections, norm, and constraint space
-\(\mathfrak T_N^{\rm red}\) from
-\cref{eq:rw-markov-assumptions,eq:rw-collective-transverse,%
-eq:rw-network-norm,eq:rw-structural-parameter-space}.  When differentiating with
+For this subsection, fix only a strictly positive probability vector
+\(\pi_N\), the space \(E_N=\ker\pi_N^T\), scalars \(\alpha>0\) and
+\(K\ne0\), and the delay values.  Put
+\(P_{\perp,N}=\Id-\mathbf1\pi_N^T\), and use the norm and constrained
+perturbation space \(\mathcal T_N\) from
+\cref{eq:rw-network-norm,eq:rw-structural-parameter-space}.
+No property of \(P_N\) or its Dobrushin
+coefficient is used in the first-moment result.  When differentiating with
 respect to the delayed-coupling matrices, write a tangent direction as
-\(R=(R_0,\ldots,R_m)\in\mathfrak T_N^{\rm red}\).  Thus the \(R_k\) below
+\(R=(R_0,\ldots,R_m)\in\mathcal T_N\).  Thus the \(R_k\) below
 are tangent matrices satisfying the same constraints as the components
-\(E_k\) in \cref{eq:rw-structural-parameter-space}; they are not a second
+\(\Delta B_k\) in \cref{eq:rw-structural-parameter-space}; they are not a second
 perturbation space.  The stationary projection identity is already
 \cref{eq:rw-projection-identity}.
 
@@ -43,9 +47,9 @@ network-transverse equation is the first delay moment
 The following proposition gives its exact range and shows precisely where
 two distinct delay locations enter.
 
-\begin{proposition}[Inversion of the first delay moment]
+\begin{proposition}[A right inverse for the first delay moment]
 \label[proposition]{prop:fredholm-two-delay-inverse}
-Merge coincident delay atoms and put
+Combine terms with the same delay and put
 
 \[
  \theta_-:=\min_k\theta_k,\qquad
@@ -56,7 +60,7 @@ Merge coincident delay atoms and put
 If \(\Delta_\theta>0\), then
 
 \[
- \mathsf S_N:\mathfrak T_N^{\rm red}\longrightarrow E_N
+ \mathsf S_N:\mathcal T_N\longrightarrow E_N
 \]
 
 is onto.  If \(k_-\) and \(k_+\) index the two extreme locations, a right
@@ -87,10 +91,10 @@ Moreover,
  \label{eq:fredholm-delay-sharp-norms}
 \end{equation}
 
-If the merged support consists of one location, then
-\(\mathsf S_N=0\) on \(\mathfrak T_N^{\rm red}\).  Thus two distinct
+If only one delay value remains after the terms are combined, then
+\(\mathsf S_N=0\) on \(\mathcal T_N\).  Thus two distinct
 locations are necessary and sufficient for surjectivity of this
-first-moment map on \(\mathfrak T_N^{\rm red}\).  No assertion
+first-moment map on \(\mathcal T_N\).  No assertion
 is made about higher delay moments or other perturbation spaces.
 \end{proposition}
 
@@ -117,7 +121,7 @@ Indeed, the upper bound follows from
 \(\mathsf v_N\mathsf j_N=\Id_{E_N}\).
 
 Let \(\bar\theta=(\theta_-+\theta_+)/2\).  For
-\(R\in\mathfrak T_N^{\rm red}\),
+\(R\in\mathcal T_N\),
 
 \[
  \mathsf S_NR
@@ -130,10 +134,11 @@ and hence
 \[
  \norm{\mathsf S_NR}_N
  \le\frac{|K|\Delta_\theta}{4\alpha}
-      \norm{R}_{\mathfrak T_N}.
+      \norm{R}_{\mathcal T_N}.
 \]
 
-The tuple in \cref{eq:fredholm-delay-right-inverse} has zero layer sum and
+The matrices in the tuple \cref{eq:fredholm-delay-right-inverse} sum to zero,
+and the tuple
 satisfies \(\mathsf S_N\mathsf Q_Ny=y\).  Its norm is the second quantity
 in \cref{eq:fredholm-delay-sharp-norms}.  Since a right inverse satisfies
 \(1\le\norm{\mathsf S_N}\norm{\mathsf Q_N}\), the preceding upper bound
@@ -314,7 +319,7 @@ derivatives of the phase, endpoint, or matching conditions with respect to
 the delayed-coupling matrices.  Such terms
 must either vanish or belong to the collective range.
 
-\begin{theorem}[Collective--transverse Fredholm reduction]
+\begin{theorem}[Lyapunov--Schmidt reduction for a triangular block system]
 \label{thm:fredholm-reduction}
 For each \(N\), let
 
@@ -353,7 +358,8 @@ For the first-variation equations
  \label{eq:fredholm-block-system}
 \end{equation}
 
-there is a unique scalar functional \(\Lambda_N\in\mathcal T_N^*\) such
+there is a unique scalar-valued sensitivity functional
+\(\Lambda_N\in\mathcal T_N^*\) such
 that the solvability condition is \(\lambda=\Lambda_N(R)\).  If
 \(\ell_N\in\mathcal Y_{\parallel,N}^*\setminus\{0\}\) satisfies
 \(\Ker\ell_N=\Ran L_{\parallel,N}\), then
@@ -365,6 +371,8 @@ that the solvability condition is \(\lambda=\Lambda_N(R)\).  If
           {\ell_Nf_{\nu,N}}.
  \label{eq:fredholm-lambda}
 \end{equation}
+For a fixed direction \(R\), the scalar \(\Lambda_N(R)\) is the corresponding
+first-order coefficient.
 
 The quotient is independent of the nonzero normalization of \(\ell_N\), of
 the range-valued term \(d_NR\), and of adding any further element of
@@ -448,8 +456,8 @@ Assume
 For \(0<\delta<\bar\delta\), \(\nu\in I\), and
 \(\eta\in B_{2\eta_*}(0)\subset\mathcal T_N\), suppose that a specified
 incoming branch and a codimension-one local stable manifold have already
-been constructed on a common phase section.  Denote the incoming hit by
-\(q_N^{\rm in}(\delta,\nu,\eta)\) and the section of the stable manifold by
+been constructed on a common phase section.  Denote the incoming intersection
+point by \(q_N^{\rm in}(\delta,\nu,\eta)\) and the section of the stable manifold by
 \(\mathcal S_N^-(\delta,\nu,\eta)\).  Let
 
 \[
@@ -612,13 +620,14 @@ so its normalized conormal is
 \cref{eq:fredholm-conormal-limit}.
 \end{proof}
 
-\subsection{The network-transverse functional and the quadratic coefficients}
+\subsection{The induced functional on the transverse subspace}
 
-The connection derivative determines only the transverse functional that
-has entered the one-dimensional Fredholm equation.  It does not determine
+The connection derivative determines only the linear functional on the
+transverse subspace that has entered the one-dimensional Fredholm equation.
+It does not determine
 the coupling matrix \(P_N\) or an arbitrary history state.
 
-\begin{proposition}[Recovery of the transverse linear functional]
+\begin{proposition}[Reconstruction of the transverse linear functional]
 \label[proposition]{prop:fredholm-dual-recovery}
 Under \cref{thm:fredholm-reduction}, define
 
@@ -725,7 +734,7 @@ Since
       \pi_N^T\diag(c_N)h,
 \]
 
-the corresponding transverse functional is
+the corresponding linear functional on \(E_N\) is
 
 \begin{equation}
  \mathfrak r_N^{\rm curv}(h)
@@ -746,7 +755,7 @@ For the network equation in \cref{eq:rw-voltage-rfde},
 \end{equation}
 
 If \(P_N\) is irreducible and \(d\in E_N\), let
-\(R(d)\in\mathfrak T_N^{\rm red}\) be the tangent direction with
+\(R(d)\in\mathcal T_N\) be the tangent direction with
 
 \begin{equation}
  R_{k_-}(d)=(P_N-\Id)\diag(d),

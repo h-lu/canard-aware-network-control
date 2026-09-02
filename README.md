@@ -6,7 +6,7 @@ one paper.
 
 | Workspace | Role | Status |
 | --- | --- | --- |
-| [`manuscript/network-root-transfer`](manuscript/network-root-transfer) | Paper A: a Fredholm formula for constrained delayed-coupling perturbations | Rewritten article and supplement |
+| [`manuscript/network-root-transfer`](manuscript/network-root-transfer) | Paper A: a Fredholm formula for constrained delayed-coupling perturbations | Rewritten single-PDF article |
 | [`manuscript/pulse-threshold`](manuscript/pulse-threshold) | Paper B: stable-manifold pulse threshold in a delayed FitzHugh--Nagumo equation | Research draft; proof chain incomplete |
 | [`manuscript/rfde-methods-notes`](manuscript/rfde-methods-notes) | Paper C: regularity and event maps for RFDEs | Working notes; independent novelty still under review |
 
@@ -46,8 +46,8 @@ make paper
 make check
 ```
 
-The build regenerates two vector figures and produces `main.pdf` and
-`supplement.pdf`. The test target checks the public theorem architecture and
+The build regenerates the vector figure and produces the single submission
+file `main.pdf`, including both proof appendices. The test target checks the public theorem architecture and
 the analytic identities used by Paper A; it is not a substitute for the
 proofs.
 

@@ -19,10 +19,12 @@ Except in the characteristic-root calculation at the equilibria, we use
 fold time \(s=\delta t\), so the delay translations are
 \(s\mapsto s-\theta_k\).  The spectral parameter in that calculation is
 explicitly denoted \(\lambda_t\) and belongs to the original time \(t\).
-If \(\Sigma\) is a regular event section, then
-\(\mathscr H_\Sigma^2\) denotes the compatible \(C^2\) history section and
-\(\mathcal P_{\Sigma_1\Sigma_2,p}\) denotes the forward event map between
-two such sections.  The event map is used only where the crossing speed has
+If \(\Sigma\) is a regular transverse section, then
+\(\mathcal M_\Sigma^2\) denotes the solution-manifold section from
+\cref{eq:C2-solution-manifold-section}, and
+\(\mathcal P_{\Sigma_1\Sigma_2,p}\) denotes the forward transition map
+between two such sections.  The transition map is used only where the
+crossing speed has
 a common nonzero lower bound.
 
 Fix \(0<r_L<r_{\rm loc}\) and write
@@ -91,14 +93,14 @@ For a map depending on \(p=(\nu,\eta)\), write
  =\max\{\norm F,\norm{\partial_\nu F},\norm{D_\eta F}\}.
 \]
 The last norm is the full operator norm on
-\(\mathfrak T_N^{\rm red}\).
+\(\mathcal T_N\).
 Every statement below that uses a global orbit segment or an invariant
 manifold associated with \(Z_N^\pm\) is conditional on
 \(\mathrm{(H_{\rm glob})}\) in
 \cref{hyp:supp-outer-manifolds}.  The local spectral calculation verifies
 only item~\textup{(i)} of that hypothesis.
 Throughout the estimates, \(M\ge0\) denotes a fixed exponent larger than
-the finitely many losses caused by history traces, event maps, and one
+the finitely many losses caused by history traces, transition maps, and one
 parameter derivative.  For each prescribed algebraic order, \(p_0\) in
 \cref{eq:supp-central-cuts} is then chosen to satisfy
 \cref{eq:supp-central-action-choice}.
@@ -129,8 +131,8 @@ voltage root.
 \(C^1\) in \(p\), on a ball of radius \(c_A\delta^4\) in the scaled history
 chart.  Its inward component contains a unique orbit defined
 for all negative time and converging to \(Z_N^+\) as \(s\to-\infty\).
-Forward continuation gives a unique transverse hit
-\(A_p^0\in\mathscr H_{\Sigma_0}^2\).  On each fixed positive regular
+Forward continuation gives a unique transverse intersection point
+\(A_p^0\in\mathcal M_{\Sigma_0}^2\).  On each fixed positive regular
 subinterval, the orbit and its first parameter derivatives are bounded in
 the norm \cref{eq:supp-fading-history-norm}.
 
@@ -214,7 +216,7 @@ taken in the original time \(t\).  Put
 and
 \begin{equation}
  A_\pm(\lambda_t)
- =J_\pm+\delta^2K\sum_{k=0}^m(B_{k,N}+E_{k,N})
+ =J_\pm+\delta^2K\sum_{k=0}^m(B_{k,N}+\Delta B_{k,N})
        \{1-e^{-\lambda_t\theta_k/\delta}\}.
  \label{eq:supp-original-time-characteristic-block}
 \end{equation}
@@ -240,7 +242,7 @@ therefore gives the same imaginary-axis resolvent bound for
  \le C_A,
  \label{eq:supp-outer-imaginary-resolvent}
 \end{equation}
-where \(C_A\) is independent of \(N\), \(\delta\), and the admitted
+where \(C_A\) is independent of \(N\), \(\delta\), and the admissible
 constrained perturbation (with the fixed choice of \(r_A\)).
 
 The modal equations are
@@ -292,8 +294,8 @@ Lyapunov--Perron map, in \cref{eq:supp-fading-history-norm} and with the slow
 coordinate divided by \(\delta^4\), is a uniform contraction on the stated
 ball; that its inward one-dimensional branch exists for all negative time;
 and that its forward continuation reaches \(\Sigma_0\) with a uniformly
-nonzero crossing speed.  The RFDE invariant-manifold theorem and the event
-implicit-function theorem then give the regularity asserted in
+nonzero crossing speed.  The RFDE invariant-manifold theorem and the
+implicit-function theorem for transverse intersections then give the regularity asserted in
 item~\textup{(ii)}.  This verification uses only forward continuation from
 the local unstable manifold.
 
@@ -378,7 +380,7 @@ by the mean-value identity for the two Lyapunov--Perron fixed points, yields
 estimate.
 
 For item~\textup{(v)}, it is sufficient that the two attracting histories,
-once they satisfy the same RFDE and use the same event clock, obey a forward
+once they satisfy the same RFDE and use the same time parametrization, obey a forward
 variation-of-constants estimate with polynomially bounded initial
 difference, attracting factor
 \(e^{-c\log(1/\delta)/\delta}\), and fold-passage tail
@@ -396,9 +398,9 @@ additional power loss, which is absorbed by the same choice.
 
 \begin{lemma}[Normal variational equation in the fold chart]
 \label[lemma]{lem:supp-central-boundary-inverse}
-Let \(\mathcal I_p\) be the history lift associated with the invariant graph in
-\cref{prop:fold-invariant-histories}, and let \(e_{\rm pl}\) denote present
-evaluation of the two fold variables.  Let
+Let \(\mathcal I_p\) be the phase-space embedding associated with the invariant graph in
+\cref{prop:fold-invariant-histories}, and let \(e_{\rm pl}\) denote evaluation
+at \(\theta=0\) of the two fold variables.  Let
 \(I=[s_-,s_+]\subset[-S_\delta,S_\delta]\) be a closed fold-chart interval such
 that its delay enlargement
 \(I^-=[s_--\theta_m,s_+]\) remains in the region where the original and
@@ -494,8 +496,8 @@ Fix \(0<\chi<1\) and \(\sigma_0>\theta_m+1\).  With
 \begin{equation}
  s_b=\chi S_\delta,\qquad
  s_c=S_\delta-\sigma_0,\qquad
- E_b=e^{s_b^2/2},\qquad
- a_{b,\delta}=\frac{\delta}{s_b}E_b,
+ \mathcal E_b=e^{s_b^2/2},\qquad
+ a_{b,\delta}=\frac{\delta}{s_b}\mathcal E_b,
  \label{eq:supp-central-cuts}
 \end{equation}
 and
@@ -513,9 +515,9 @@ For every prescribed \(q>0\), choose \(p_0\) so that
 \end{equation}
 for every finite loss \(M\) occurring below.
 
-\begin{lemma}[Stable-manifold graph on a common event section]
+\begin{lemma}[Stable-manifold graph on a common transverse section]
 \label[lemma]{lem:supp-intermediate-section-graphs}
-Assume \(\mathrm{(H_{\rm glob})}\).  Let \(\Sigma_b\) be the event section
+Assume \(\mathrm{(H_{\rm glob})}\).  Let \(\Sigma_b\) be the transverse section
 corresponding to \(s_b\), and let
 \(O_{b,p}\) be the intersection of the half-line orbit in
 \cref{hyp:supp-outer-manifolds}.  Let \(C_{b,p}^{\rm fin}\) be the
@@ -525,7 +527,7 @@ compatible history chart
  \Phi_{b,p}(\psi,u),\qquad \Phi_{b,p}(0,0)=O_{b,p},
 \]
 whose \(u\)-direction is the oriented unstable tangent vector normal to the
-event section.  Its domain contains a ball of radius \(Rb_\delta\), with
+section.  Its domain contains a ball of radius \(Rb_\delta\), with
 \(R\) independent of \(N\) and \(\delta\).  With the fixed exponent \(M\)
 above,
 \begin{equation}
@@ -564,7 +566,7 @@ and, for every \(q>0\), after choosing \(p_0\) as in
 
 If \(k_{b,p}^c\) is the tangent vector in the compatible-history section
 obtained by transporting from \(\Sigma_0\) to \(\Sigma_b\) the normalized
-tangent vector normal to the event section, then
+tangent vector normal to the section, then
 \begin{equation}
  a_{0b,p}:=D\mathfrak m_{b,p}(C_{b,p}^{\rm fin})k_{b,p}^c
  \label{eq:supp-central-terminal-pairing}
@@ -582,7 +584,8 @@ satisfies
 First continue the orbit from
 \cref{hyp:supp-outer-manifolds}(iii) forward until all histories on
 \(\Sigma_b\) are formed by the same forward RFDE segment.  The half-line
-stable manifold and the event implicit-function theorem give a local
+stable manifold and the implicit-function theorem for transverse
+intersections give a local
 codimension-one manifold on \(\Sigma_b\).  We now record the mixed
 boundary-value formulation because it supplies both the domain of the
 graph and the comparison estimate.
@@ -594,8 +597,8 @@ expansion used in \cref{eq:supp-negative-residual} give
      +O(\delta^3S_\delta^2+\delta^2b_\delta)
 \]
 for the two reference histories.  Their voltage histories differ by
-\(O(b_\delta)\) in \cref{eq:supp-fading-history-norm}.  Applying the event
-map and differentiating its defining equation gives
+\(O(b_\delta)\) in \cref{eq:supp-fading-history-norm}.  Applying the
+transition map and differentiating its defining equation gives
 \cref{eq:supp-common-section-distance}.  Thus both histories lie in the
 same compatible chart before either graph equation is solved.
 
@@ -694,7 +697,8 @@ This defines a map
              _{\mathbb Y_{bL,p}}.
  \label{eq:supp-mixed-residual-spaces}
 \end{equation}
-The entry row is equality in the compatible history space.  The event row
+The entry row is equality in the compatible history space.  The
+terminal-section row
 places the terminal history on \(\Sigma_L\), and the last row imposes the
 stable-manifold condition there.  If
 \((\bar Z_p,0,\bar u_p;\bar\psi_p)\) is the reference zero corresponding to
@@ -728,7 +732,7 @@ continuity on the stated neighborhood, its denominator is at least
 \(3/4\) for small \(\delta\).
 
 The exponential-dichotomy Green operator, the scalar recovery
-variation-of-constants formula, and the event row therefore make the
+variation-of-constants formula, and the terminal-section row therefore make the
 linearization of \cref{eq:supp-mixed-residual} an isomorphism.  In the
 norms weighted by the integrated rate \(\mathcal A_u\), its inverse is bounded by
 \(C\log(1/\delta)\).  On the radius-\(Rb_\delta\) ball, Taylor's formula
@@ -757,26 +761,27 @@ bundle yields
 \Cref{eq:supp-central-action-choice,eq:supp-finite-trace-incidence}
 give \cref{eq:supp-stable-finite-comparison}.
 
-It remains to evaluate the event-normal tangent vector at \(\Sigma_0\).  For
+It remains to evaluate the section-normal tangent vector at \(\Sigma_0\).  For
 the singular fold equation
 the independent solution normalized by the first integral is
 \[
- n(s)=\binom{I(s)}{E(s)-sI(s)},\qquad
- E(s)=e^{s^2/2},\qquad I(s)=\int_0^sE(\zeta)\,\dd\zeta.
+ n(s)=\binom{I(s)}{\mathcal E(s)-sI(s)},\qquad
+ \mathcal E(s)=e^{s^2/2},\qquad
+ I(s)=\int_0^s\mathcal E(\zeta)\,\dd\zeta.
 \]
-Intersecting with a fixed-\(r\) event section removes the time component
+Intersecting with a fixed-\(r\) transverse section removes the time component
 \(I(s)\) and leaves
-\(E(s)\) in the event-normal direction.  In the variables of
+\(\mathcal E(s)\) in the section-normal direction.  In the variables of
 \cref{eq:rw-fold-coordinates}, the recovery component is
-\(-\delta^2E(s)\{1+o(1)\}\).  Division by
+\(-\delta^2\mathcal E(s)\{1+o(1)\}\).  Division by
 \[
  w_{0,N}'(-\delta s_b/(2\alpha))
  =\delta s_b\{1+o(1)\}
 \]
 after normalization by the recovery-coordinate derivative gives
-\(a_{0b,p}\asymp\delta E_b/s_b\).  The fold graph bounds, the
+\(a_{0b,p}\asymp\delta\mathcal E_b/s_b\).  The fold graph bounds, the
 boundary-value inverse in \cref{lem:supp-central-boundary-inverse}, and the
-\(C^1\) event map give the logarithmic derivative estimate in
+\(C^1\) transition map give the logarithmic derivative estimate in
 \cref{eq:supp-central-terminal-pairing-bound}.
 \end{proof}
 
@@ -862,7 +867,7 @@ The state displacement produced by \(\xi\) is bounded by
 smaller than the chart radius
 \(Rb_\delta\).  The same estimates applied to all translated history
 segments required by the delay terms keep the orbit inside the fold
-neighborhood and preserve the event-speed margin.
+neighborhood and preserve the transversality margin.
 
 Choose \(c_r\) small and then \(C_r\) larger than the constant in
 \cref{eq:supp-reference-membership}.  The \(\psi\)-variation is less than
@@ -908,7 +913,7 @@ and the finite-interval construction gives
  D_N^{\rm fin}=u_p^a-u_p^r.
  \label{eq:supp-finite-coordinate-difference}
 \end{equation}
-Write the incoming hit as
+Write the incoming intersection point as
 \[
  A_p^0=\mathfrak C_{0,p}(\psi_A,u_A).
 \]
@@ -926,8 +931,8 @@ On the negative side,
 lem:supp-stable-manifold-intersection} compare the stable manifold supplied by
 \(\mathrm{(H_{\rm glob})}\) and the graph defined by the truncated boundary
 condition on a common forward orbit segment.  Pulling both
-membership functions back to \(\Sigma_0\), without inverting a history
-event map, gives
+membership functions back to \(\Sigma_0\), without inverting a history-space
+transition map, gives
 \begin{equation}
  \norm{\mathbf D_p^1
    \{F_{N,\delta,p}^-(\bar\psi_p)-u_p^r\}}

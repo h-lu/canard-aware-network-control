@@ -2,7 +2,7 @@
 \label{sec:introduction}
 
 Consider a finite network with row-stochastic instantaneous coupling and
-additional linear feedback distributed among several delay layers.  Let
+additional linear feedback acting at several delays.  Let
 \(P_N\) have stationary probability \(\pi_N\), and
 write
 \[
@@ -19,11 +19,11 @@ representative system considered below is
 \end{align}
 where \(0\leq\theta_0<\cdots<\theta_m\), the node nonlinearities may be
 heterogeneous, and \(0<\delta\ll1\).  We perturb the delayed-coupling
-matrices by writing \(B_{k,N}(\eta)=B_{k,N}+E_{k,N}\) and imposing
+matrices by writing \(B_{k,N}(\eta)=B_{k,N}+\Delta B_{k,N}\) and imposing
 \begin{equation}
- \pi_N^TE_{k,N}=0\quad(0\leq k\leq m),
+ \pi_N^T\Delta B_{k,N}=0\quad(0\leq k\leq m),
  \qquad
- \sum_{k=0}^mE_{k,N}=0.                              \label{eq:intro-neutrality}
+ \sum_{k=0}^m\Delta B_{k,N}=0.                       \label{eq:intro-neutrality}
 \end{equation}
 Thus each perturbation vanishes after left multiplication by \(\pi_N^T\),
 and the sum of the delayed-coupling matrices is unchanged.
@@ -52,17 +52,17 @@ uniformly as \(N\) grows.
 The answer is governed first by the delay locations.  The first-moment term
 entering the network-mean-zero equation near the fold is
 \begin{equation}
- \mathsf S_N(E)
+ \mathsf S_N(\eta)
  =\frac{K}{2\alpha}P_{\perp,N}
-   \left(\sum_{k=0}^m\theta_kE_{k,N}\right)\mathbf1,
+   \left(\sum_{k=0}^m\theta_k\Delta B_{k,N}\right)\mathbf1,
  \qquad
  P_{\perp,N}=\Id-\mathbf1\pi_N^T.                    \label{eq:intro-delay-moment}
 \end{equation}
 If two distinct delay locations are present, every vector in \(E_N\) is
 obtained from \(\mathsf S_N\) by perturbing the matrices at two distinct
 delays with opposite signs.
-If coincident atoms are merged and only one location remains, then
-\(\mathsf S_N=0\).  Under the uniform Dobrushin condition
+If terms with the same delay are combined and only one delay value remains,
+then \(\mathsf S_N=0\).  Under the uniform Dobrushin condition
 \begin{equation}
  \tau(P_N)\leq1-\gamma,
  \qquad \gamma>0,                                    \label{eq:intro-dobrushin-gap}
@@ -73,12 +73,12 @@ the transverse generator
 \]
 has an inverse bounded independently of \(N\).  If \(\mathfrak r_N\in E_N^*\)
 is the bounded linear functional obtained from the scalar Fredholm
-solvability condition, the local Fredholm coefficient is therefore
+solvability condition, the local Fredholm sensitivity functional is therefore
 \begin{equation}
  \boxed{\quad
- E\ \longmapsto\ \mathsf S_N(E)\ \longmapsto\
- A_N^{-1}\mathsf S_N(E)\ \longmapsto\
- \Lambda_N(E),\qquad
+ \eta\ \longmapsto\ \mathsf S_N(\eta)\ \longmapsto\
+ A_N^{-1}\mathsf S_N(\eta)\ \longmapsto\
+ \Lambda_N(\eta),\qquad
  \Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N .\quad}  \label{eq:intro-response-covector}
 \end{equation}
 The two-delay right inverse also makes the map
@@ -86,11 +86,11 @@ The two-delay right inverse also makes the map
 Thus cancellation in the projected vector field removes the direct projected
 derivative, but the off-diagonal Fredholm block can still contribute through
 the network-mean-zero equation.  At this point \(\Lambda_N\) is a local
-solvability coefficient; identifying it with the derivative of a
+sensitivity functional for the solvability condition; for a fixed
+perturbation direction, its value is the corresponding first-order
+coefficient.  Identifying this functional with the derivative of a
 heteroclinic-connection parameter requires the additional invariant-manifold
 hypotheses stated below.
-
-\input{figures/delay-moment-map}
 
 This calculation is already nontrivial for three nodes.  Set
 \[
@@ -221,7 +221,7 @@ with \(C\) independent of \(N\).  In particular,
 \]
 
 The proof first combines the two-delay right inverse with the Dobrushin
-estimate and the collective/transverse Fredholm reduction.  An invariant graph
+estimate and a triangular-block Lyapunov--Schmidt reduction.  An invariant graph
 then converts the transverse displacement into a forcing of the scalar fold
 equation, whose one-dimensional cokernel is represented by an explicit
 Gaussian adjoint solution.  A finite-interval problem supplies a matching
@@ -230,7 +230,7 @@ for a defining function for the invariant-manifold intersection on a common
 phase section and a uniform \(C^1\) estimate comparing it with this
 finite-interval function.
 Under those hypotheses, the general sensitivity theorem transfers the
-Fredholm coefficient to the heteroclinic defining function and proves
+Fredholm sensitivity functional to the heteroclinic defining function and proves
 \eqref{eq:intro-root-derivative}.  We do not claim here that the chosen
 modified recovery equation satisfies the required uniform invariant-manifold
 estimates.
@@ -247,5 +247,5 @@ factorization.  Section~4 analyzes the fold passage.  Section~5 formulates the
 additional hypotheses needed to identify a parameter value yielding a
 heteroclinic connection and proves
 their consequences.  Section~6 explains how the calculation can be used in
-another RFDE and records the limitations; technical estimates are given
-in the supplement.
+another RFDE and records the limitations; technical estimates are given in
+Appendices~A and~B.

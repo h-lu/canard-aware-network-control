@@ -7,13 +7,13 @@ proofs. It is a maintenance aid, not part of the submitted article.
 
 | Claim | Public statement | Proof |
 | --- | --- | --- |
-| Exact projection identity | Equation `eq:rw-projection-identity` | Directly from `pi_N^T E_k=0` in Section 2 |
+| Exact projection identity | Equation `eq:rw-projection-identity` | Directly from `pi_N^T Delta B_k=0` in Section 2 |
 | Range of the first delay moment | Theorem `thm:rw-first-moment-map` | `prop:fredholm-two-delay-inverse` |
 | Sharp, dimension-independent inverse bounds | Theorem `thm:rw-first-moment-map` and Corollary `cor:rw-fold-fredholm-coefficient` | Rank-one norm calculation and `lem:fredholm-dobrushin-inverse` in Section 3 |
 | Fredholm solvability formula | `thm:fredholm-reduction` | Collective/network-transverse block elimination and Gaussian cokernel pairing in Section 3 |
 | Sensitivity theorem from a defining function | `thm:fredholm-heteroclinic-sensitivity` | Quantitative implicit-function argument in Section 3 |
-| Fold reduction and locally invariant manifold | `prop:fold-invariant-histories` | Section 4 and Supplement A |
-| Finite-interval matching function | `prop:finite-comparison` | `prop:finite-gap-bridge` in Supplement A |
+| Fold reduction and locally invariant manifold | `prop:fold-invariant-histories` | Section 4 and Appendix A |
+| Finite-interval matching function | `prop:finite-comparison` | `prop:finite-gap-bridge` in Appendix A |
 | Global invariant manifolds and heteroclinic defining function | Explicit hypotheses in Section 5 | Application-specific input; not proved for the displayed smooth modification |
 | `C^1` comparison with the finite-interval matching function | Explicit hypothesis in Section 5 | Application-specific input; the required estimate is stated, not verified |
 | Conditional heteroclinic parameter value | `cor:rw-conditional-connection` | General sensitivity theorem plus the Section 5 hypotheses |

@@ -3,8 +3,8 @@
 
 This section supplies the functional-analytic details used in
 \cref{prop:fold-invariant-histories,prop:finite-comparison}.  We first
-construct the invariant graph as a graph of compatible RFDE histories, then
-solve the two finite-interval trace problems, and finally compare their
+construct the locally invariant phase-space manifold, then solve the two
+finite-interval boundary-value problems, and finally compare their
 first-integral difference with the whole-line Gaussian pairings.  All norms
 and constants are uniform in the number of nodes.  We use only the network
 assumptions and notation of \cref{sec:rw-model-results} and the exact fold
@@ -35,7 +35,8 @@ Put \(S=S_\delta=\sqrt{2p_0\log(1/\delta)}\), with \(p_0>4\), and let
 \(R=S+B\), where \(B>2\Theta_*+2\) is fixed.  Choose
 \(\omega\in C_c^\infty(\mathbb R)\), equal to one on \([-1,1]\) and
 zero outside \((-2,2)\).  Fixed constants \(B_*>B+2\Theta_*+3\) and
-\(d_*>0\) may be chosen so that the retained fold neighborhood and all points obtained
+\(d_*>0\) may be chosen so that the fold neighborhood on which the cutoff is
+the identity, and all points obtained
 from it by at most two delay translations lie in
 \begin{equation}
  \abs{\chi}<R+B_* ,\qquad \abs d<d_*.
@@ -75,10 +76,11 @@ saturation in each transverse slot, followed by \(P_{\perp,N}\).  The
 cutoffs and saturation maps are chosen to be the identity on the set in
 \eqref{eq:supp-extension-region} and its twofold delay enlargement.  These
 auxiliary maps are independent of \((\nu,\eta)\), and the perturbation tuple
-continues to enter only through \(B_{k,N}+E_k\).
+continues to enter only through \(B_{k,N}+\Delta B_k\).
 
 The product estimate following \cref{eq:fold-poisson-bound}, the uniform
-layer bound, and the fixed number of delay atoms give a common majorant
+bound on the delayed-coupling matrices, and the fixed number of delay values
+give a common majorant
 \begin{equation}
  A_\delta=P(R)e^{cR}
  \label{eq:supp-global-majorant}
@@ -91,10 +93,11 @@ all fixed \(a>0\) and \(j\in\mathbb N\),
  \label{eq:supp-subpower-property}
 \end{equation}
 No derivative of a delay evaluation is needed: the delay locations are
-fixed and all parameter dependence remains in the layer matrices.
+fixed and all parameter dependence remains in the delayed-coupling matrices.
 
 For a complete planar field \(Q\) and a map \(H:\mathbb R^2\to E_N\),
-define the history lift and the finite evaluation tuple by
+define the phase-space embedding in fold coordinates and the finite
+evaluation tuple by
 \begin{align}
  \mathcal I_{Q,H}(u)(\vartheta)
  &=\bigl(\Phi_Q^\vartheta u,H(\Phi_Q^\vartheta u)\bigr),
@@ -109,7 +112,7 @@ define the history lift and the finite evaluation tuple by
 The norm of this evaluation map is bounded by \(m+2\), independently of
 \(N\).
 
-\subsection{The invariant graph and its finite jets}
+\subsection{The invariant graph and its derivatives}
 
 On the product of bounded continuous planar fields and bounded continuous
 maps into \(E_N\), define
@@ -171,7 +174,7 @@ For
 \end{equation}
 order the blocks first by total order and then by total parameter order.
 Here \(D_\eta^j\) is the symmetric Fr\'echet derivative in the norm of
-\(\mathfrak T_N^{\rm red}\).  The flow variational equations and the
+\(\mathcal T_N\).  The flow variational equations and the
 finite Fa\`a di Bruno formula put every current block in the form
 \begin{equation}
  \mathbf J_\ell\mathcal T(Z)
@@ -182,7 +185,7 @@ finite Fa\`a di Bruno formula put every current block in the form
 \end{equation}
 If a parameter derivative falls on a flow argument, the derivative of the
 vector field gains one state slot and loses one parameter derivative, so it
-belongs to an earlier block.  A product containing two positive-order jets
+belongs to an earlier block.  A product containing two positive-order derivatives
 also contains only lower total orders.  These observations prove
 \eqref{eq:supp-triangular-jet-equation}; importantly, its diagonal term
 retains the factor \(\rho\).
@@ -228,8 +231,8 @@ For each fixed \(\delta\), the weights may depend on \(\delta\), but not on
 \(N\).
 
 Taylor's formula at \(\rho=0\), followed by the inverse coordinate change
-\(\mathcal K^{-1}\), gives on the retained fold neighborhood where the
-original equation is used
+\(\mathcal K^{-1}\), gives on the fold neighborhood where the cutoff field
+equals the original equation
 \begin{equation}
  Q_{N,\delta,\nu,\eta}
  =q_0+\delta q_{1,N}+\delta^2q_{2,N}
@@ -246,7 +249,7 @@ component has the corresponding expansion
  =\left.\partial_\rho H_{N,\rho,\nu,\eta}\right|_{\rho=0},
  \label{eq:supp-first-graph-coefficient}
 \end{equation}
-in the prolonged weighted norm.  Split
+in the weighted product norm.  Split
 the stable convolution at \(L\log(1/\delta)\).  The tail is bounded by
 \begin{equation}
  CA_\delta\{1+L\log(1/\delta)\}^M
@@ -273,7 +276,7 @@ and
  \abs\xi\le C_0\delta e^{c_0\abs s}\langle s\rangle^{M_0}.
  \label{eq:supp-input-tube}
 \end{equation}
-The same estimate holds on the retained normal strip
+The same estimate holds on the normal strip where the cutoff is the identity,
 \(\mathcal K(\gamma_0(s)+\xi)=(s,d)\), \(\abs d\le\delta^\kappa\).
 The same block induction applied directly to
 \cref{eq:supp-graph-transform-H}, together with its prefactor \(\rho\), gives
@@ -299,14 +302,14 @@ The first coefficient has zero derivative with respect to \(\eta\):
 \end{equation}
 At \(\rho=0\), the only direct term involving \(\eta\) in the collective equation
 is
-\(K\pi_N^T\sum_kE_k\mathbf1(X_0-X_k)\), which vanishes because
-\(\pi_N^TE_k=0\) for every \(k\).  The base flow and the zeroth graph are
+\(K\pi_N^T\sum_k\Delta B_k\mathbf1(X_0-X_k)\), which vanishes because
+\(\pi_N^T\Delta B_k=0\) for every \(k\).  The base flow and the zeroth graph are
 independent of \(\eta\), proving \eqref{eq:supp-q1-structural-zero} in the
 full operator norm.  The first two coefficients sample at most two delay
-translations, so their values in the retained fold neighborhood use only the original
+translations, so their values in the fold neighborhood use only the original
 equations, not the global extension.
 
-\subsection{Compatible and injective RFDE histories}
+\subsection{Compatibility and injectivity of the phase-space embedding}
 
 Fix \(\rho=\delta>0\), suppress the remaining parameters, and let
 \(u(s)=\Phi_Q^su_*\), \(h(s)=H(u(s))\).  Changing variables in
@@ -329,12 +332,12 @@ the semiconjugacy
 as long as the orbit and its delay translates remain in the region where
 the extension agrees with \cref{eq:fold-exact-system}.
 
-Present evaluation is a left inverse:
+Evaluation at \(\vartheta=0\) is a left inverse:
 \begin{equation}
  \pi_{\mathbb R^2}\mathcal I_{Q,H}(u)(0)=u.
  \label{eq:supp-present-left-inverse}
 \end{equation}
-Hence the history lift is injective.  To see the same fact in the original
+Hence the phase-space embedding is injective.  To see the same fact in the original
 phase space, put \(\vartheta=\delta t\).  The voltage history recovers
 \begin{equation}
  X(\vartheta)=\delta^{-1}\{\pi_N^Tv(\vartheta/\delta)-1\},\qquad
@@ -349,15 +352,15 @@ current coordinate follow from the exact equation \(Y'=-X+\delta\nu\):
                          +\delta\nu\vartheta.
  \label{eq:supp-recover-Y-history}
 \end{equation}
-Thus equality of two lifted histories is equality in the full RFDE state,
+Thus equality of two embedded histories is equality in the full RFDE state,
 not merely equality after the stationary projection.  This proves the
 existence, compatibility, injectivity, expansion, and derivative assertions
 used in \cref{prop:fold-invariant-histories}.
 
-\subsection{The two one-sided trace problems}
+\subsection{The left and right boundary-value problems}
 
 The finite-interval calculation needs two planar traces that agree with the
-invariant graph on \([-S,S]\).  Extend its reduced field from the retained
+invariant graph on \([-S,S]\).  Extend its reduced field from the indicated
 normal strip to a bounded \(C^3\) planar field
 \(\widetilde Q_{N,\delta,\nu,\eta}\) such that it equals the graph field on
 that strip and equals \(q_0\) near \(\gamma_0(\pm R)\).  A bounded linear
@@ -396,9 +399,9 @@ the weighted norms
 \end{align}
 where we fix \(d_0=3\) and take \(M\ge d_0+3\).  Put
 \begin{equation}
- E(s)=e^{s^2/2},\qquad I(s)=\int_0^sE(t)\,\dd t,\qquad
+ \mathcal E(s)=e^{s^2/2},\qquad I(s)=\int_0^s\mathcal E(t)\,\dd t,\qquad
  \tau(s)=(-1,s)^T,\qquad
- n(s)=(I(s),E(s)-sI(s))^T.
+ n(s)=(I(s),\mathcal E(s)-sI(s))^T.
  \label{eq:supp-fold-fundamental-pair}
 \end{equation}
 If \(\xi=a\tau+bn\) and \(L_0\xi=f\), then
@@ -419,8 +422,8 @@ coordinate at the outer endpoint is \(\beta\), the two Green formulas are
 \end{align}
 The estimates
 \begin{equation}
- \abs{I(s)}\le CE(s)\langle s\rangle^{-1},\qquad
- \abs{E(s)-sI(s)}\le CE(s)
+ \abs{I(s)}\le C\mathcal E(s)\langle s\rangle^{-1},\qquad
+ \abs{\mathcal E(s)-sI(s)}\le C\mathcal E(s)
  \label{eq:supp-I-estimates}
 \end{equation}
 and the one-sided Gaussian tail bound imply
@@ -449,7 +452,7 @@ It satisfies
 At either endpoint, the equation
 \(\mathscr H_\alpha(\gamma_0+\xi)=0\) is exactly
 \begin{equation}
- E(s)b=\alpha\{-a+I(s)b\}^2.
+ \mathcal E(s)b=\alpha\{-a+I(s)b\}^2.
  \label{eq:supp-endpoint-equation}
 \end{equation}
 It determines \(b=\mathcal B_\sigma(a)\) with
@@ -568,7 +571,7 @@ Also set
 \begin{proposition}[Finite-interval Gaussian comparison]
 \label[proposition]{prop:finite-gap-bridge}
 On a common neighborhood of \(I_\nu\times\{0\}\) in
-\(I_\nu\times\mathfrak T_N^{\rm red}\), the matching function has the
+\(I_\nu\times\mathcal T_N\), the matching function has the
 exact decomposition
 \begin{align}
  D_N^{\rm fin}
@@ -600,9 +603,9 @@ in \(N\),
  +\norm{D_\eta E_{3,N}}&\le C\delta^3,
  \label{eq:supp-comparison-third-order-bound}\\
  \abs{E_{{\rm nl},N}}+\abs{\partial_\nu E_{{\rm nl},N}}
- &\le C\delta^2\norm{\eta}_{\mathfrak T_N}^2,
+ &\le C\delta^2\norm{\eta}_{\mathcal T_N}^2,
  &\norm{D_\eta E_{{\rm nl},N}}&
- \le C\delta^2\norm{\eta}_{\mathfrak T_N}.
+ \le C\delta^2\norm{\eta}_{\mathcal T_N}.
  \label{eq:supp-comparison-nonlinear-bound}
 \end{align}
 Moreover, \(B_{2,N}^S\) and its first \(\nu\)-derivative are uniformly
@@ -616,7 +619,7 @@ bounded.  Consequently,
  \label{eq:supp-finite-nu-slope}\\
  \norm{D_\eta D_N^{\rm fin}
           +\delta^2\sqrt{2\pi}\Lambda_N}
- &\le C\{\delta^3+\delta^2\norm{\eta}_{\mathfrak T_N}\}.
+ &\le C\{\delta^3+\delta^2\norm{\eta}_{\mathcal T_N}\}.
  \label{eq:supp-finite-structural-slope}
 \end{align}
 \end{proposition}
@@ -709,7 +712,7 @@ The same chain-rule estimate with
 \eqref{eq:supp-comparison-third-order-bound}.
 
 Taylor's formula with integral remainder in the Banach space
-\(\mathfrak T_N^{\rm red}\) gives
+\(\mathcal T_N\) gives
 \begin{equation}
  A_{2,N}(\eta)-A_{2,N}(0)-D_\eta A_{2,N}(0)[\eta]
  =\int_0^1(1-t)D_{\eta\eta}^2A_{2,N}(t\eta)[\eta,\eta]\,\dd t.

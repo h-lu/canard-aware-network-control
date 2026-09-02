@@ -1,9 +1,7 @@
 LATEXMK ?= latexmk
 PYTHON ?= python3
 UV ?= uv
-PAPER_FIGURES := \
-	figures/delay-moment-map.pdf \
-	figures/connection-geometry.pdf
+PAPER_FIGURES := figures/connection-geometry.pdf
 PAPER_A_TESTS := \
 	tests/test_paper_a_jns_rewrite_contract.py \
 	tests/test_block_schur_response.py \
@@ -28,17 +26,11 @@ all: paper
 
 figure: $(PAPER_FIGURES)
 
-figures/delay-moment-map.pdf: figures/delay_moment_map.py
-	$(PYTHON) figures/delay_moment_map.py --output $@
-
 figures/connection-geometry.pdf: figures/connection_geometry.py
 	$(PYTHON) figures/connection_geometry.py --output $@
 
 paper: $(PAPER_FIGURES)
 	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
-	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error supplement.tex
-	$(LATEXMK) -g -pdf -interaction=nonstopmode -halt-on-error main.tex
-	$(LATEXMK) -g -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 
 check:
 	cd ../.. && $(UV) run --extra test pytest -q $(PAPER_A_TESTS)
@@ -46,7 +38,8 @@ check:
 clean:
 	@if command -v $(LATEXMK) >/dev/null 2>&1; then \
 		$(LATEXMK) -C main.tex; \
-		$(LATEXMK) -C supplement.tex; \
 	fi
-	$(RM) main.bbl supplement.bbl
+	$(RM) main.bbl supplement.aux supplement.bbl supplement.blg \
+		supplement.fdb_latexmk supplement.fls supplement.log supplement.out \
+		supplement.pdf supplement.synctex.gz
 	@if [ -d build ]; then find build -type f -delete; fi

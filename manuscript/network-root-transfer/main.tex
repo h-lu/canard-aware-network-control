@@ -1,9 +1,8 @@
 \documentclass[11pt]{article}
 \input{preamble}
-\IfFileExists{supplement.aux}{\externaldocument[][nocite]{supplement}}{}
 
-\newcommand{\papertitle}{A Fredholm Formula for Heteroclinic-Connection
-Sensitivity to Constrained Delayed-Coupling Perturbations in Retarded Networks}
+\newcommand{\papertitle}{Sensitivity of Heteroclinic Connections to
+Constrained Delayed Coupling in Networks of RFDEs}
 
 \title{\papertitle}
 \author{Haibo Lu\\
@@ -12,7 +11,7 @@ Sensitivity to Constrained Delayed-Coupling Perturbations in Retarded Networks}
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={A Fredholm Formula for Heteroclinic-Connection Sensitivity to Constrained Delayed-Coupling Perturbations in Retarded Networks},
+  pdftitle={Sensitivity of Heteroclinic Connections to Constrained Delayed Coupling in Networks of RFDEs},
   pdfauthor={Haibo Lu},
   pdfsubject={A Fredholm formula for heteroclinic-connection sensitivity to constrained perturbations of delayed coupling},
   pdfkeywords={retarded functional differential equation, delayed coupling,
@@ -24,48 +23,41 @@ Sensitivity to Constrained Delayed-Coupling Perturbations in Retarded Networks}
 \maketitle
 
 \begin{abstract}
-We study finite networks of retarded functional differential equations with
-row-stochastic instantaneous coupling and linear feedback distributed over
-several delays.  The admissible perturbations preserve the sum of the delayed
-coupling matrices and are annihilated by the stationary row vector at each
-delay.  The stationary projection of the vector field is therefore unchanged
-at every history, although the projected variables need not form a closed
-system.  We prove that, when two distinct delays are present, the first moment
-of the perturbation matrices maps onto the full transverse space.  The map has
-an explicit right inverse, and its norm and the relevant transverse inverse
-bound are independent of network size.  With only one delay, the first-moment
-map vanishes.
+We study how a constrained change in the distribution of delayed coupling
+affects a codimension-one connection condition in finite networks of retarded
+functional differential equations.  The perturbations preserve the sum of
+the delayed-coupling matrices and are annihilated by the stationary row
+vector.  Consequently, the stationary projection of the vector field is
+unchanged at every history, although the projected variables need not form a
+closed system.  With two distinct delay values, we prove that the first delay
+moment of these perturbations maps onto the network-transverse space and has
+an explicit sharp right inverse.  Combining this map with a Dobrushin
+estimate gives a transverse inverse and a Fredholm sensitivity functional
+whose bounds are independent of network size.  With one delay value, the
+first-moment map vanishes on the same perturbation space.
 
-We next give a Lyapunov--Schmidt formula for the derivative of any
-codimension-one heteroclinic connection condition satisfying stated uniform
-regularity and transversality hypotheses.  For a polynomial fast--slow
-network, a two-dimensional locally invariant manifold in the RFDE phase
-space, represented as a graph over the fold variables, and a finite-interval
-matching problem determine the coefficient explicitly:
-\[
- \Lambda_N=-\frac1\alpha\pi_N^T\operatorname{diag}(c_N)
- A_N^{-1}\mathsf S_N.
-\]
-If a specified smooth modification of the recovery equation outside the fold
-neighborhood has uniform stable
-and unstable manifold sections and its heteroclinic defining function is
-\(C^1\)-close to the finite-interval matching function, the implicit-function theorem gives
+We then give a Lyapunov--Schmidt formula for the derivative of a
+codimension-one heteroclinic defining function under uniform regularity and
+transversality hypotheses.  For a polynomial fast--slow network, we construct
+a two-dimensional locally invariant manifold in the RFDE phase space and use
+a finite-interval boundary-value problem to compute the local sensitivity
+functional.  If a fixed smooth modification outside the fold neighborhood
+has the required stable and unstable manifold sections and its heteroclinic
+defining function is \(C^1\)-close to the finite-interval matching function,
+then the connection parameter satisfies
 \[
  D_\eta\mu_{c,N}(\delta,\eta)
  =\delta^3\Lambda_N+O(\delta^4+\delta^3\|\eta\|)
 \]
-uniformly in \(N\).  These global invariant-manifold and comparison
-properties are explicit hypotheses, not conclusions of the local fold
-calculation.  Thus the unconditional results are the first-moment range
-theorem, the dimension-uniform Fredholm solvability formula, and the local
-coefficient; the existence of a parameter value yielding a heteroclinic
-connection must be established separately for each global equation.
+uniformly in \(N\).  The global invariant-manifold and comparison properties
+are hypotheses; the paper does not prove a heteroclinic connection for the
+unmodified recovery equation.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
 retarded functional differential equation; delayed coupling;
-heteroclinic connection; canard; row-stochastic coupling; Fredholm alternative;
-parameter sensitivity
+heteroclinic connection; fast--slow system; Lyapunov--Schmidt reduction;
+Dobrushin coefficient; sensitivity analysis
 
 \medskip
 \noindent\textbf{Mathematics Subject Classification (2020).}
@@ -78,16 +70,11 @@ parameter sensitivity
 \input{rewrite-sections/05-heteroclinic-connection}
 \input{rewrite-sections/06-scope-and-transfer}
 
-\section*{Supplementary material}
-The supplement supplies the cutoff extension, the locally invariant manifold near the fold,
-finite-interval remainder estimates, and a precise formulation of the global
-connection hypotheses used in the conditional application.
-
 \section*{Acknowledgements}
 OpenAI Codex was used interactively to reorganize the manuscript, revise
 proof prose and \LaTeX{}, generate editable figure sources, and assist with
 algebraic, scaling, cross-reference, and literature checks.  The author
-checked the retained equations, hypotheses, signs, estimates, citations,
+checked the equations, hypotheses, signs, estimates, citations,
 source changes, and test outputs and remains responsible for every claim.
 
 \section*{Declarations}
@@ -97,6 +84,12 @@ non-financial interests to disclose.
 \paragraph{Data and code availability.} The results are analytic; no data sets
 were generated or analyzed.  The \LaTeX{} sources and figure code will be
 archived with the published version.
+
+\clearpage
+\appendix
+\numberwithin{equation}{section}
+\input{appendices/01-fold-details}
+\input{appendices/02-connection-details}
 
 \begingroup
 \small

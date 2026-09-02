@@ -44,27 +44,23 @@ uniform comparison estimate.
 
 \begin{table}[t]
 \centering
-\caption{The abstract quantities in
-\cref{thm:fredholm-heteroclinic-sensitivity}, the quantities computed for the
-network equation in \cref{eq:rw-voltage-rfde,eq:rw-modified-recovery}, and the
-additional verification required for a heteroclinic application.}
+\caption{Identification of the abstract quantities in
+\cref{thm:fredholm-heteroclinic-sensitivity} for the network model.}
 \label{tab:application-dictionary}
 \small
 \begin{tabular}{@{}
- >{\raggedright\arraybackslash}p{0.18\textwidth}
- >{\raggedright\arraybackslash}p{0.35\textwidth}
- >{\raggedright\arraybackslash}p{0.37\textwidth}@{}}
+ >{\raggedright\arraybackslash}p{0.17\textwidth}
+ >{\raggedright\arraybackslash}p{0.33\textwidth}
+ >{\raggedright\arraybackslash}p{0.40\textwidth}@{}}
 \toprule
-Abstract quantity & Quantity computed here & Required for a heteroclinic application\\
+Abstract object & Network realization & Additional hypothesis\\
 \midrule
-\(\Pi\) & stationary projection \((v,w)\mapsto(\pi_N^Tv,w)\) & a specified history-space projection and an exact equality of projected vector fields\\
-\(S\) & first delay moment in \cref{eq:rw-transverse-source} & the transverse derivative left after the projected derivative vanishes\\
-\(L_\perp^{-1}\) & \(A_N^{-1}\) on the finite-dimensional transverse space, controlled by the Dobrushin gap & a bounded inverse for the transverse block in the chosen reduction\\
-\(\ell\mathcal B\) & curvature contribution paired with the Gaussian adjoint solution & the transverse-to-collective coupling and a normalized cokernel functional\\
-\(f_\nu\) & the parameter term in the collective fold equation, with Gaussian pairing \(\sqrt{2\pi}\) & a parameter direction outside \(\operatorname{Ran}L_\parallel\), uniformly separated from that range\\
-\(G\) & no heteroclinic defining function \(G\) is constructed;
-\(D_N^{\rm fin}\) is the computed finite-interval matching function & invariant-manifold sections, a
-defining function, and the stated uniform \(C^1\) comparison\\
+\(\Pi\) & \((v,w)\mapsto(\pi_N^Tv,w)\) & exact projected-vector-field identity\\
+\(S\) & first delay moment \(\mathsf S_N\) & specified perturbation space\\
+\(L_\perp^{-1}\) & \(A_N^{-1}:E_N\to E_N\) & common inverse bound\\
+\(\ell\mathcal B\) & Gaussian adjoint paired with the curvature term & one-dimensional cokernel\\
+\(\ell f_\nu\) & \(\sqrt{2\pi}\) & uniform transversality\\
+\(G\) & finite-interval approximation \(D_N^{\rm fin}\) & invariant-manifold sections and uniform \(C^1\) comparison\\
 \bottomrule
 \end{tabular}
 \end{table}

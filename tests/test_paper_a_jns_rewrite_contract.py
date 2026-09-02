@@ -33,7 +33,6 @@ def visible_prose(text: str) -> str:
 
 def test_active_submission_uses_only_the_rewrite_sources() -> None:
     main = source("manuscript/network-root-transfer/main.tex")
-    supplement = source("manuscript/network-root-transfer/supplement.tex")
 
     for name in (
         "01-introduction",
@@ -45,21 +44,21 @@ def test_active_submission_uses_only_the_rewrite_sources() -> None:
     ):
         assert rf"\input{{rewrite-sections/{name}}}" in main
     assert r"\input{sections/" not in main
-    assert r"\input{rewrite-supplement/01-fold-details}" in supplement
-    assert r"\input{rewrite-supplement/02-connection-details}" in supplement
-    assert r"\input{sections/" not in supplement
+    assert r"\appendix" in main
+    assert r"\input{appendices/01-fold-details}" in main
+    assert r"\input{appendices/02-connection-details}" in main
+    assert not (PAPER / "supplement.tex").exists()
+    makefile = source("manuscript/network-root-transfer/Makefile")
+    assert "supplement.tex" not in makefile
 
 
 def test_front_matter_states_the_model_change_and_scope_boundary() -> None:
     main = compact(source("manuscript/network-root-transfer/main.tex"))
 
-    assert "A Fredholm Formula for Heteroclinic-Connection Sensitivity" in main
-    assert "specified smooth modification of the recovery equation" in main
-    assert "global invariant-manifold and comparison properties are explicit hypotheses" in main
-    assert (
-        "existence of a parameter value yielding a heteroclinic connection "
-        "must be established separately for each global equation"
-    ) in main
+    assert "Sensitivity of Heteroclinic Connections" in main
+    assert "fixed smooth modification outside the fold neighborhood" in main
+    assert "global invariant-manifold and comparison properties are hypotheses" in main
+    assert "does not prove a heteroclinic connection for the unmodified recovery equation" in main
     assert "The results are analytic; no data sets were generated or analyzed" in main
     assert "research draft" not in main.lower()
 
@@ -82,7 +81,7 @@ def test_reusable_theorem_requires_an_exact_connection_defining_function() -> No
     }
     for item in required:
         assert item in abstract_compact
-    assert "required for a heteroclinic application" in scope.lower()
+    assert "additional hypothesis" in scope.lower()
 
 
 def test_first_moment_and_fredholm_statements_have_separate_interfaces() -> None:
@@ -91,9 +90,9 @@ def test_first_moment_and_fredholm_statements_have_separate_interfaces() -> None
     )
 
     assert r"\label{thm:rw-first-moment-map}" in model
-    assert "Range and sharp bounds for the first-moment map" in model
+    assert "Surjectivity and a sharp right inverse for the first delay moment" in model
     assert r"\label[corollary]{cor:rw-fold-fredholm-coefficient}" in model
-    assert "Dimension-uniform Fredholm coefficient for the fold problem" in model
+    assert "Dimension-uniform Fredholm sensitivity functional for the" in model
 
 
 def test_model_connection_statement_is_explicitly_conditional() -> None:
@@ -123,12 +122,10 @@ def test_model_connection_statement_is_explicitly_conditional() -> None:
 
 
 def test_active_reader_facing_sources_avoid_project_vocabulary() -> None:
-    paths = [PAPER / "main.tex", PAPER / "supplement.tex"]
+    paths = [PAPER / "main.tex"]
     paths.extend(sorted((PAPER / "rewrite-sections").glob("*.tex")))
-    paths.extend(sorted((PAPER / "rewrite-supplement").glob("*.tex")))
-    paths.extend(
-        [PAPER / "figures" / "delay-moment-map.tex", PAPER / "figures" / "connection-geometry.tex"]
-    )
+    paths.extend(sorted((PAPER / "appendices").glob("*.tex")))
+    paths.append(PAPER / "figures" / "connection-geometry.tex")
     prose = " ".join(visible_prose(path.read_text(encoding="utf-8")) for path in paths)
 
     banned = (
@@ -157,19 +154,13 @@ def test_active_reader_facing_sources_avoid_project_vocabulary() -> None:
         assert phrase not in prose
 
 
-def test_figures_disclose_exact_and_schematic_content() -> None:
-    delay = compact(source("manuscript/network-root-transfer/figures/delay-moment-map.tex"))
+def test_figure_discloses_projected_and_schematic_content() -> None:
     connection = compact(source("manuscript/network-root-transfer/figures/connection-geometry.tex"))
-    delay_contract = source(
-        "manuscript/network-root-transfer/figures/delay-moment-map-contract.md"
-    )
     connection_contract = source(
         "manuscript/network-root-transfer/figures/connection-geometry-contract.md"
     )
 
-    assert "displayed linear maps are exact" in delay
-    assert "connection statement is conditional and asymptotic" in delay
     assert "figure does not prove existence" in connection
+    assert "collective coordinates" in connection.lower()
     assert "positions and distances are not quantitative" in connection.lower()
-    assert "Status: `MIXED`" in delay_contract
     assert "Status: `SCHEMATIC`" in connection_contract

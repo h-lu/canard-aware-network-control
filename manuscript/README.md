@@ -6,7 +6,7 @@ permanently divergent Git branches.
 
 | Workspace | Question | Status |
 | --- | --- | --- |
-| `network-root-transfer/` | How can constrained perturbations of delayed coupling enter a Fredholm solvability condition when the stationary projection is unchanged? | Rewritten article and supplement |
+| `network-root-transfer/` | How can constrained perturbations of delayed coupling enter a Fredholm solvability condition when the stationary projection is unchanged? | Rewritten single-PDF article |
 | `pulse-threshold/` | Can a physical pulse threshold in a delayed FitzHugh--Nagumo model be proved through a stable-manifold crossing and two-sided routing? | Incomplete research draft |
 | `rfde-methods-notes/` | Which regularity and event-map statements for RFDEs are independently reusable? | Working notes |
 | `jns/`, `flagship/` | Earlier combined manuscripts | Historical material only |
@@ -20,7 +20,7 @@ experimental threshold or a maximal canard for the unmodified law.
 
 The pre-rewrite state is frozen at `paper-a-pre-rewrite-2026-09-02`. Current
 Paper A sources are under `network-root-transfer/rewrite-sections/` and
-`network-root-transfer/rewrite-supplement/`.
+`network-root-transfer/appendices/`; both are built into one PDF.
 
 Build all active paper workspaces with:
 

@@ -45,7 +45,7 @@ In these coordinates the transverse singular graph is \(h=0\).  For a
 fold-time history \(\phi\), write
 \[
  \mathcal L_{N,\eta}[\phi](s)
- =\sum_{k=0}^m(B_{k,N}+E_{k,N})
+ =\sum_{k=0}^m(B_{k,N}+\Delta B_{k,N})
        \{\phi(s)-\phi(s-\theta_k)\}.
 \]
 Direct substitution gives the following identities; there is no Taylor
@@ -104,18 +104,60 @@ Fix \(C_0>0\) and \(p_0>4\), put
 The extra \(\theta_m\) is the history buffer for the delay translations in
 fold time.
 
+We use the standard solution-manifold formulation for smooth RFDEs.  For a
+fold-time equation
+\(x'=\mathcal F_v(\phi,\omega)\),
+\(w'=\mathcal F_w(\phi,\omega)\), define
+\begin{equation}
+ \begin{split}
+ \mathcal M^2(\mathcal F)=\{(\phi,\omega)\in
+ C^2([-\theta_m,0];\mathbb R^N)\times\mathbb R:\ {}
+ &\phi'(0)=\mathcal F_v(\phi,\omega),\\
+ &\phi''(0)=D\mathcal F_v(\phi,\omega)
+       [\phi',\mathcal F_w(\phi,\omega)]\}.
+ \end{split}                                      \label{eq:C2-solution-manifold}
+\end{equation}
+Thus elements of \(\mathcal M^2(\mathcal F)\) satisfy the two compatibility
+conditions needed for a \(C^2\) solution across the current time.  For a
+regular transverse section \(\Sigma\) in the current-state space, write
+\begin{equation}
+ \mathcal M_\Sigma^2(\mathcal F)
+ =\{\Phi\in\mathcal M^2(\mathcal F):
+       \operatorname{ev}_0\Phi\in\Sigma\},
+ \qquad \operatorname{ev}_0(\phi,\omega)=(\phi(0),\omega).
+ \label{eq:C2-solution-manifold-section}
+\end{equation}
+
 \begin{proposition}[Locally invariant manifold near the fold]
 \label[proposition]{prop:fold-invariant-histories}
-Assume the hypotheses of \cref{thm:rw-first-moment-map} and the uniform
-base-layer bound \eqref{eq:rw-base-layer-bound}.  Fix a compact interval
+Assume \eqref{eq:rw-markov-assumptions}--\eqref{eq:rw-base-layer-bound}.
+Fix a compact interval
 \(I_\nu\) and \(\eta_*>0\).  Uniformly for \(\nu\in I_\nu\) and
-\(\norm{\eta}_{\mathfrak T_N}\le\eta_*\), and for all sufficiently small
+\(\norm{\eta}_{\mathcal T_N}\le\eta_*\), and for all sufficiently small
 \(\delta\), there is a two-dimensional locally invariant manifold in the
-RFDE phase space, represented by an injective graph of compatible histories
-over \(\mathcal U_\delta(C_0)\),
+RFDE phase space, represented over \(\mathcal U_\delta(C_0)\) by the graph
 \[
  h=H_{N,\delta,\nu,\eta}(X,Y).
 \]
+Let \(Q_{N,\delta,\nu,\eta}\) be its reduced vector field and
+\(\Phi_Q^s\) its flow.  In fold coordinates the corresponding phase-space
+embedding is
+\begin{equation}
+ \begin{split}
+ \iota_{N,\delta,\nu,\eta}:\mathcal U_\delta(C_0)
+   &\longrightarrow \mathcal M^2(\mathcal F_{N,\delta,\nu,\eta}^{\rm loc}),\\
+ \iota_{N,\delta,\nu,\eta}(u)(\theta)
+   &=\bigl(\Phi_Q^\theta u,
+      H_{N,\delta,\nu,\eta}(\Phi_Q^\theta u)\bigr),
+      \qquad -\theta_m\le\theta\le0,
+ \end{split}                                      \label{eq:fold-phase-space-embedding}
+\end{equation}
+followed by the inverse fold-coordinate change.  Here
+\(\mathcal F^{\rm loc}\) is the cutoff RFDE used in the construction.  It
+coincides with the original RFDE whenever the orbit and its delayed histories
+remain in \(\mathcal U_\delta(C_0)\) and its delay enlargement.  The map
+\(\iota_{N,\delta,\nu,\eta}\) is injective, and evaluation at \(\theta=0\),
+followed by projection onto \((X,Y)\), is its left inverse.
 On \(\gamma_0([-S_\delta,S_\delta])\) it satisfies
 \[
  \|H_{N,\delta,\nu,\eta}(\gamma_0(s)+\xi)\|_N
@@ -137,15 +179,15 @@ the reduced field obey a common bound
 on \(\mathcal U_\delta(C_0)\).  Here \(D_\eta^j\) is the symmetric
 Fr\'echet derivative in the norm of
 \cref{eq:rw-structural-parameter-norm}.  In
-particular,
-\(D_\eta q_{1,N}=0\).  Present evaluation is a left inverse of the history
-lift, so every retained graph member is an actual RFDE history and the lift
-is injective.
+particular, \(D_\eta q_{1,N}=0\).  Every embedded history whose orbit and
+delay translates remain in the unchanged region is therefore an actual
+history of the original RFDE.
 \end{proposition}
 
 \begin{proof}
 Here \(\Phi_Q^s\) denotes the flow of the planar field \(Q\),
-\(\mathcal I_{Q,H}\) is the associated history lift, and \(G_N\) is the
+\(\mathcal I_{Q,H}=\iota_{N,\delta,\nu,\eta}\) is the associated phase-space
+embedding in fold coordinates, and \(G_N\) is the
 transverse right-hand side after the fold-coordinate change.  These objects
 and their domains are defined in
 \cref{eq:supp-history-lift,eq:supp-extended-normal-form}.
@@ -198,7 +240,7 @@ The auxiliary parameter \(\rho\) used in the graph construction in
 in the weighted \(C^3\) norm used for the invariant graph.  Setting
 \(\rho=\delta\) recovers the graph of the RFDE.
 
-Let \(R=(R_0,\ldots,R_m)\in\mathfrak T_N^{\rm red}\) be an admissible
+Let \(R=(R_0,\ldots,R_m)\in\mathcal T_N\) be an admissible
 perturbation direction and differentiate the
 first graph coefficient with respect to \(\eta\) at \(\eta=0\), in the
 direction \(R\), along \(\gamma_0\).  Since
@@ -271,24 +313,39 @@ integration gives
 
 \subsection{A finite-interval matching function}
 
-Choose two one-sided traces on the locally invariant manifold, impose the phase
-\(X(0)=0\), and place the endpoints on the same regular level of the first
-integral of \(q_0\).  Denote the resulting scalar matching function by
-\(D_N^{\rm fin}(\delta,\nu,\eta)\).  If \(z^a\) and \(z^r\) are the
-attracting and repelling traces at the phase section, its normalization is
+Put \(S=S_\delta\) and \(R=S+B\), with the fixed buffer \(B\) from
+Appendix~A.  Let \(z^a:[-R,0]\to\mathbb R^2\) and
+\(z^r:[0,R]\to\mathbb R^2\) be the unique solutions of the two reduced
+boundary-value problems
+\begin{equation}
+ \begin{gathered}
+ (z^a)'=\widetilde Q_{N,\delta,\nu,\eta}(z^a),
+ \quad (z^r)'=\widetilde Q_{N,\delta,\nu,\eta}(z^r),\\
+ X^a(0)=X^r(0)=0,
+ \qquad
+ \mathscr H_\alpha(z^a(-R))
+  =\mathscr H_\alpha(z^r(R))=0.
+ \end{gathered}                                    \label{eq:finite-trace-BVP}
+\end{equation}
+The extension \(\widetilde Q\) is defined in Appendix~A.  The scalar matching
+function is
 \begin{equation}
  D_N^{\rm fin}
  =\frac{2}{\alpha e}
    \{\mathscr H_\alpha(z^a(0))-\mathscr H_\alpha(z^r(0))\}.
  \label{eq:finite-matching-definition}
 \end{equation}
-The traces are exact histories on the retained interval.  Outside that
+The traces are exact histories of the original RFDE on the interval where
+they and their delayed histories remain in the unchanged region.  Outside that
 interval, their auxiliary completion serves only to close the two finite
 boundary-value problems.
 
 \begin{proposition}[Derivative estimates for the finite-interval matching function]
 \label[proposition]{prop:finite-comparison}
-On a common parameter neighborhood, independently of \(N\),
+There exist \(\delta_0>0\), \(\eta_*>0\), and a compact interval
+\(I_\nu\), independent of \(N\), such that for
+\(0<\delta<\delta_0\), \(\nu\in I_\nu\), and
+\(\norm{\eta}_{\mathcal T_N}\le\eta_*\),
 \begin{align}
  \frac{D_N^{\rm fin}}{\delta}
  &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),
@@ -301,7 +358,7 @@ On a common parameter neighborhood, independently of \(N\),
  &\le C\{\delta^3+\delta^2\|\eta\|\}.             \label{eq:finite-comparison-structural}
 \end{align}
 The derivatives are taken in the operator norm on
-\((\mathfrak T_N^{\rm red})^*\).  These estimates do
+\(\mathcal T_N^*\).  These estimates do
 not assert that the zero set of \(D_N^{\rm fin}\) is a heteroclinic
 connection of the globally modified RFDE.
 \end{proposition}

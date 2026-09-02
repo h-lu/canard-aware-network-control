@@ -41,7 +41,24 @@ def draw(output: Path) -> None:
     ax.set_ylim(-1.35, 1.45)
     ax.axis("off")
 
-    # The central rectangle represents a neighborhood in RFDE phase space.
+    # Coordinate arrows identify the two-dimensional projection; no metric is
+    # implied by the drawing.
+    ax.annotate(
+        "",
+        xy=(9.65, -1.22),
+        xytext=(0.32, -1.22),
+        arrowprops=dict(arrowstyle="->", linewidth=0.8, color=INK),
+    )
+    ax.annotate(
+        "",
+        xy=(0.32, 1.28),
+        xytext=(0.32, -1.22),
+        arrowprops=dict(arrowstyle="->", linewidth=0.8, color=INK),
+    )
+    ax.text(9.74, -1.22, r"$-r$", ha="left", va="center", fontsize=8.5)
+    ax.text(0.32, 1.34, r"$w$", ha="center", va="bottom", fontsize=8.5)
+
+    # The central rectangle is only the projected image of the fold chart.
     ax.add_patch(
         Rectangle(
             (2.95, -1.0),
@@ -56,7 +73,7 @@ def draw(output: Path) -> None:
     ax.text(
         5.025,
         1.15,
-        "neighborhood in RFDE phase space where the equations agree",
+        "fold neighborhood (the equations agree)",
         ha="center",
         va="bottom",
         fontsize=8.2,
@@ -108,7 +125,7 @@ def draw(output: Path) -> None:
             zorder=2,
         )
     )
-    ax.text(8.61, -0.78, r"section of $W^s(Z_N^-)$", ha="center", fontsize=7.9, color=ORANGE)
+    ax.text(8.61, -0.78, r"projected section of $W^s(Z_N^-)$", ha="center", fontsize=7.9, color=ORANGE)
 
     ax.annotate(
         "connection if $G=0$",
@@ -118,16 +135,6 @@ def draw(output: Path) -> None:
         fontsize=8.3,
         arrowprops=dict(arrowstyle="->", linewidth=0.9, color=INK),
     )
-    ax.text(
-        9.95,
-        -1.30,
-        "conditional schematic; horizontal direction is forward time",
-        ha="right",
-        va="bottom",
-        fontsize=6.8,
-        color=GRAY,
-    )
-
     fig.savefig(output, bbox_inches="tight", pad_inches=0.03)
     plt.close(fig)
 
