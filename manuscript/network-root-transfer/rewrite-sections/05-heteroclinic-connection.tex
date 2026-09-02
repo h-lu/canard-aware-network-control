@@ -1,0 +1,348 @@
+\section{Defining functions for heteroclinic connections in RFDE phase space}
+\label{sec:heteroclinic-connection}
+
+We now work with the RFDE having the fixed modified recovery law from
+\cref{subsec:global-modification}.  The local fold calculation in
+\cref{sec:fold-passage} is complete, but a dimension-uniform construction of
+the required global invariant manifolds is not established here.  This
+section states the global invariant-manifold and comparison hypotheses and
+derives conditional existence and sensitivity conclusions from them.  The
+modified equation is
+fixed before the connection parameter is sought and agrees with the original
+RFDE on the history-space neighborhood used in the local calculation.
+
+Write \(\vartheta=(\nu,\eta)\), and, for fixed \(\delta\), set
+\[
+ \mathcal P_{N,\delta}
+ =\left\{(\nu,\eta):
+   \abs{\nu-\nu_{0,N}}\le c_0,\ 
+   \norm{\eta}_{\mathfrak T_N}\le\eta_0\right\}.
+\]
+The scalar parameter norm is defined in
+\cref{eq:connection-parameter-C1-norm}.  For a graph function
+\(F=F_\vartheta\) on a Banach ball \(B\), set
+\begin{equation}
+ \norm{F}_{C_\vartheta^1(B)}
+ =\sup_{\vartheta\in\mathcal P_{N,\delta}}
+  \max\left\{\norm{F_\vartheta}_{C^1(B)},
+   \norm{\partial_\nu F_\vartheta}_{C^1(B)},
+   \norm{D_\eta F_\vartheta}_{
+     \cL(\mathfrak T_N^{\rm red},C^1(B))}\right\}.
+ \label{eq:connection-graph-C1-norm}
+\end{equation}
+
+\subsection{Global invariant-manifold hypotheses}
+
+For every \(\vartheta\in\mathcal P_{N,\delta}\), assume that the equilibria
+\(Z_N^\pm\) are hyperbolic with
+\begin{equation}
+ \dim W^u(Z_N^+)=1,
+ \qquad \operatorname{codim}W^s(Z_N^-)=1,           \label{eq:connection-morse-indices}
+\end{equation}
+and that these invariant manifolds form \(C^1\) parameter families with
+bounds independent of \(N\).  Assume that the inward component of
+\(W^u(Z_N^+)\) intersects \(\Sigma_0=\{X=0\}\) transversally at
+\(A_\vartheta^0\), and that
+\(W^s(Z_N^-)\cap\mathcal M_{\Sigma_0}^2\) is a codimension-one \(C^1\)
+submanifold in the common chart of the compatible-history section used
+below.  The hit and the stable section are assumed to depend \(C^1\) on
+\(\vartheta\) in the
+norms \cref{eq:connection-parameter-C1-norm,eq:connection-graph-C1-norm}.
+These are hypotheses of the conditional result, not consequences proved in
+this paper.
+
+\subsection{A common domain for the stable-manifold and finite-interval conditions}
+
+Fix \(Q_*>12\), \(0<\chi<1\), and
+\(\sigma_0>\theta_m+1\).  With \(S_\delta\) from
+\cref{cor:rw-conditional-connection}, set
+\begin{equation}
+ s_b=\chi S_\delta,\qquad
+ s_c=S_\delta-\sigma_0,\qquad
+ \mathcal A_{bc}=\frac12(s_c^2-s_b^2),\qquad
+ b_\delta=S_\delta^{-2}+\sqrt\delta\,S_\delta^{7/2}.
+ \label{eq:connection-common-section-scales}
+\end{equation}
+Assume that the history charts, event maps, and one parameter derivative
+have a common loss bounded by \(C\delta^{-M_1}\) for some fixed
+\(M_1\ge0\).  Choose the exponent \(p_0\) in \(S_\delta\) so that
+\begin{equation}
+ \delta^{-M_1}e^{-\mathcal A_{bc}+cS_\delta}
+       \langle S_\delta\rangle^{M_1}
+ \le C\delta^{Q_*}.                                  \label{eq:connection-overlap-decay}
+\end{equation}
+Let \(\Sigma_b\) and \(\Sigma_c\) be the regular event sections met by the
+reference repelling trace at fold times \(s_b\) and \(s_c\), and let
+\(\mathcal M_\Sigma^2\) denote the compatible \(C^2\) histories whose
+present state lies on a regular section \(\Sigma\).  Assume that on
+\(\Sigma_b\) there is a chart of the compatible-history section
+\[
+ \Phi_{b,\vartheta}:
+ B_{\Psi_b}(0,Rb_\delta)\times(-Rb_\delta,Rb_\delta)
+ \longrightarrow\mathcal M_{\Sigma_b}^2,
+\]
+where \(R>0\) is independent of \(N\) and \(\delta\), and that on this
+common domain the stable-manifold section and the finite terminal boundary
+condition are the graphs
+\begin{equation}
+ u=F_{b,\vartheta}^-(\psi),
+ \qquad
+ u=F_{b,\vartheta}^{\rm fin}(\psi),                  \label{eq:connection-common-graphs}
+\end{equation}
+and
+\begin{equation}
+ \norm{F_{b,\vartheta}^--F_{b,\vartheta}^{\rm fin}}
+       _{C_\vartheta^1(B_{\Psi_b}(0,Rb_\delta))}
+ \le C\delta^{-M_1}e^{-\mathcal A_{bc}+cS_\delta}
+       \langle S_\delta\rangle^{M_1}
+ \le C\delta^{Q_*}.                                  \label{eq:connection-common-graph-comparison}
+\end{equation}
+This is a hypothesis comparing two graph functions in the same chart and
+the same state and parameter norms.  It is the graph-level form of the
+global comparison required below.
+
+\subsection{A defining function on the fold section}
+
+On the Banach manifold \(\mathcal M_{\Sigma_0}^2\), define
+\[
+ \mathcal U(\phi)=\frac{2}{\alpha e}
+   \mathscr H_\alpha(z(\phi)),
+\]
+where \(z(\phi)=(X(\phi),Y(\phi))\) is the present fold-coordinate
+evaluation.  It is defined on the ambient section of compatible histories and
+does not require \(\phi\) to lie on the invariant graph.  At the reference
+orbit, \(D_Y\mathcal U=1\).  Let \(\mathscr K_0\) be the kernel of
+\(D\mathcal U\) inside the tangent space to \(\mathcal M_{\Sigma_0}^2\).
+The Banach-space inverse-function theorem gives constants \(r_0,u_0>0\)
+and a chart
+\begin{equation}
+ \mathfrak C_{0,\vartheta}:B_{\mathscr K_0}(0,r_0)\times(-u_0,u_0)
+ \longrightarrow\mathcal M_{\Sigma_0}^2,
+ \qquad \phi=\mathfrak C_{0,\vartheta}(\psi,u),
+                                                        \label{eq:connection-central-chart}
+\end{equation}
+such that
+\begin{equation}
+ \frac{2}{\alpha e}\mathscr H_\alpha
+   (z(\mathfrak C_{0,\vartheta}(\psi,u)))=u.
+                                                        \label{eq:connection-chart-normalization}
+\end{equation}
+Thus \(\psi\) is a Banach-space coordinate tangent to a level set of
+\(\mathcal U\), while \(u\) is the scalar normal coordinate.
+
+As an additional matching hypothesis, assume that the chart and the
+tangential component of the finite problem have been chosen so that the
+attracting and repelling traces used in \(D_N^{\rm fin}\) have the same
+\(\psi\)-coordinate.  Write them as
+\[
+ A_\vartheta^{\rm fin}
+ =\mathfrak C_{0,\vartheta}(\bar\psi_\vartheta,u_\vartheta^a),
+ \qquad
+ C_\vartheta^{\rm fin}
+ =\mathfrak C_{0,\vartheta}(\bar\psi_\vartheta,u_\vartheta^r).
+\]
+This equality is not implied by the phase condition \(X(0)=0\) and is not
+asserted for arbitrary histories on \(\Sigma_0\).
+The normalization in \cref{eq:connection-chart-normalization} gives
+\begin{equation}
+ D_N^{\rm fin}=u_\vartheta^a-u_\vartheta^r.          \label{eq:connection-finite-coordinate-gap}
+\end{equation}
+Normalize the defining function on \(\Sigma_b\) by
+\[
+ \mathfrak m_{b,\vartheta}
+   (\Phi_{b,\vartheta}(\psi,u))
+ =u-F_{b,\vartheta}^-(\psi),
+\]
+and pull it back by the forward event map:
+\[
+ \mathcal M_{0,\vartheta}(\psi,u)
+ =\mathfrak m_{b,\vartheta}\!\left(
+   \mathcal P_{\Sigma_0\Sigma_b,\vartheta}
+      \mathfrak C_{0,\vartheta}(\psi,u)\right).
+\]
+At the finite repelling trace put
+\[
+ a_{0b,\vartheta}
+ =\partial_u\mathcal M_{0,\vartheta}
+       (\bar\psi_\vartheta,u_\vartheta^r),
+ \qquad
+ \xi=a_{0b,\vartheta}(u-u_\vartheta^r).
+\]
+Choose the orientation of \(u\) so that \(a_{0b,\vartheta}>0\), and assume
+the uniform comparison
+\(a_{0b,\vartheta}\asymp\delta e^{s_b^2/2}/s_b\).  The normalized function
+\[
+ \widehat{\mathcal M}_{0,\vartheta}(\psi,\xi)
+ =\mathcal M_{0,\vartheta}
+   (\psi,u_\vartheta^r+a_{0b,\vartheta}^{-1}\xi)
+\]
+is assumed to satisfy
+\begin{equation}
+ \partial_\xi\widehat{\mathcal M}_{0,\vartheta}\ge\frac12
+ \label{eq:connection-normalized-membership-slope}
+\end{equation}
+on
+\[
+ \norm{\psi-\bar\psi_\vartheta}
+ \le c_r\delta^{Q_*+M_1+2},
+ \qquad \abs\xi\le C_r\delta^{Q_*}.
+\]
+Assume also that \(\widehat{\mathcal M}_{0,\vartheta}\) has opposite signs
+on the two faces \(\xi=\pm C_r\delta^{Q_*}\), uniformly over the displayed
+\(\psi\)-ball.  Under these assumptions the section of \(W^s(Z_N^-)\) is
+required to be the unique
+\(C^1\) graph
+\begin{equation}
+ u=F_{N,\delta,\vartheta}^-(\psi).
+                                                        \label{eq:connection-stable-graph}
+\end{equation}
+Its domain contains
+\begin{equation}
+ \mathcal B_{0,\vartheta}
+ =B_{\mathscr K_0}
+   (\bar\psi_\vartheta,c_r\delta^{Q_*+M_1+2}),        \label{eq:connection-central-common-domain}
+\end{equation}
+and the global invariant-manifold hypotheses require the incoming hit below
+to belong to this
+ball for all \(\vartheta\in\mathcal P_{N,\delta}\).
+
+Write the incoming hit as
+\[
+ A_\vartheta^0=\mathfrak C_{0,\vartheta}(\psi_A,u_A).
+\]
+Define
+\begin{equation}
+ G_{N,\delta}^{g}(\nu,\eta)
+ =u_A-F_{N,\delta,\vartheta}^-(\psi_A).
+                                                        \label{eq:connection-defining-function}
+\end{equation}
+The superscript records the fixed recovery function \(g\).  The final comparison
+hypothesis is
+\begin{equation}
+ \norm{G_{N,\delta}^{g}-D_N^{\rm fin}}
+       _{C_\vartheta^1(\mathcal P_{N,\delta})}
+ \le C\delta^{Q_*}.
+                                                        \label{eq:connection-C1-comparison}
+\end{equation}
+This uniform estimate, which includes the parameter derivatives in
+\cref{eq:connection-parameter-C1-norm}, is not proved here.
+
+\begin{proposition}[Connection criterion under the global invariant-manifold hypotheses]
+\label[proposition]{prop:connection-comparison}
+Assume the global invariant-manifold and comparison hypotheses above.
+The function \(G_{N,\delta}^{g}\) is \(C^1\) on
+\(\mathcal P_{N,\delta}\), and
+\begin{equation}
+ G_{N,\delta}^{g}(\nu,\eta)=0
+ \quad\Longleftrightarrow\quad
+ W_{\rm in}^u(Z_N^+)\subset W^s(Z_N^-)               \label{eq:connection-zero-set}
+\end{equation}
+for the specified inward component and the fold-section domain
+\cref{eq:connection-central-common-domain}.  At a zero this component is a
+heteroclinic orbit in \(\mathcal H_{N,\delta}\), unique modulo time
+translation.  Moreover,
+\begin{align}
+ \frac{G_{N,\delta}^{g}}{\delta}
+ &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),\notag\\
+ \partial_\nu G_{N,\delta}^{g}
+ &=\delta\sqrt{2\pi}+O(\delta^2),\notag\\
+ \bigl\|D_\eta G_{N,\delta}^{g}
+       +\delta^2\sqrt{2\pi}\Lambda_N\bigr\|
+ &\le C\{\delta^3+\delta^2
+       \norm{\eta}_{\mathfrak T_N}\}.             \label{eq:connection-function-estimates}
+\end{align}
+All constants are independent of \(N\).
+\end{proposition}
+
+\begin{proof}
+The chart identities give
+\(G_{N,\delta}^{g}=u_A-F_{N,\delta,\vartheta}^-(\psi_A)\)
+exactly.  Its vanishing means that the incoming history belongs to the
+section of \(W^s(Z_N^-)\).  That history lies on an orbit converging to
+\(Z_N^+\) in backward time and to \(Z_N^-\) in forward time.  Conversely,
+intersecting this orbit with \(\Sigma_0\) gives the same equality.  This
+proves \cref{eq:connection-zero-set} without replacing the stable manifold
+by a finite terminal condition.
+
+In the common fold-section coordinates,
+\begin{equation}
+ G_{N,\delta}^{g}-D_N^{\rm fin}
+ =(u_A-u_\vartheta^a)
+  -\{F_{N,\delta,\vartheta}^-(\psi_A)-u_\vartheta^r\}.
+ \label{eq:connection-coordinate-comparison}
+\end{equation}
+The bound for this expression and its parameter derivatives is precisely
+the assumed estimate \cref{eq:connection-C1-comparison}.  Inserting
+\cref{eq:finite-comparison-level,eq:finite-comparison-slope,%
+eq:finite-comparison-structural} proves
+\cref{eq:connection-function-estimates}.
+\end{proof}
+
+\subsection{Consequences of the conditional comparison}
+
+The first two lines of \cref{eq:connection-function-estimates} give opposite
+signs at the ends of a common \(\nu\)-interval and
+\[
+ \partial_\nu G_{N,\delta}^{g}
+ \ge\tfrac12\delta\sqrt{2\pi}>0.
+\]
+There is therefore one and only one local parameter value
+\(\nu_{c,N}^{g}(\delta,\eta)\) satisfying \(G_{N,\delta}^{g}=0\).  By
+\cref{eq:connection-zero-set}, it yields a
+heteroclinic orbit in RFDE phase space.  Implicit differentiation gives
+\begin{equation}
+ D_\eta\nu_{c,N}^{g}
+ =-\frac{D_\eta G_{N,\delta}^{g}}
+          {\partial_\nu G_{N,\delta}^{g}}
+ =\delta\Lambda_N
+   +O\!\left(\delta^2+\delta\norm{\eta}_{\mathfrak T_N}\right).
+                                                        \label{eq:connection-root-nu-derivative}
+\end{equation}
+Since \(\mu=\delta^2\nu\), this proves
+\begin{align}
+ \bigl\|D_\eta\mu_{c,N}^{g}
+       -\delta^3\Lambda_N\bigr\|
+ &\le C\{\delta^4+\delta^3\norm{\eta}_{\mathfrak T_N}\},
+                                                        \label{eq:connection-root-mu-derivative}\\
+ \left|\mu_{c,N}^{g}(\delta,\eta)
+   -\mu_{c,N}^{g}(\delta,0)-\delta^3\Lambda_N(\eta)\right|
+ &\le C\{\delta^4\norm{\eta}_{\mathfrak T_N}
+       +\delta^3\norm{\eta}_{\mathfrak T_N}^2\}.
+                                                        \label{eq:connection-root-increment}
+\end{align}
+These are the estimates stated in
+\cref{cor:rw-root-sensitivity}.
+
+The phase-fixed orbit estimate used here is the additional hypothesis
+\cref{eq:rw-fold-neighborhood-tracking}; it is not derived from the
+connection condition.
+
+\begin{corollary}[Conormal of the centered connection locus]
+\label[corollary]{cor:modified-conormal}
+Under the hypotheses of \cref{cor:rw-conditional-connection}, for
+\[
+ \Xi_{N,\delta}^{g}(\eta)
+ =\delta^{-3}\{\mu_{c,N}^{g}(\delta,\eta)
+                  -\mu_{c,N}^{g}(\delta,0)\},
+\]
+one has
+\begin{equation}
+ \bigl\|(1,-D_\eta\Xi_{N,\delta}^{g}(0))
+             -(1,-\Lambda_N)\bigr\|\le C\delta.     \label{eq:connection-conormal}
+\end{equation}
+The conormal line is unchanged by a regular change of phase section or by
+multiplying the defining function by a nowhere-zero \(C^1\) factor; under a
+nonsingular parameter change it pulls back as a covector.  If two fixed
+recovery functions satisfy the same uniform hypotheses, their
+finite-\(\delta\) connection parameters may differ, but their separately
+centered conormals
+both satisfy \cref{eq:connection-conormal}.
+\end{corollary}
+
+\begin{proof}
+The estimate is \cref{eq:connection-root-mu-derivative} at \(\eta=0\),
+after centering and division by \(\delta^3\).  The remaining assertions are
+the ordinary pullback rule for a regular level set.  The statement about two
+recovery functions applies the same estimate separately to their defining
+functions; it does not identify their baselines.
+\end{proof}

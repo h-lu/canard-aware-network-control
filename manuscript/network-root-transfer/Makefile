@@ -1,9 +1,11 @@
 LATEXMK ?= latexmk
 PYTHON ?= python3
 UV ?= uv
-ROOT_FIGURE := figures/root-mechanism.pdf
+PAPER_FIGURES := \
+	figures/delay-moment-map.pdf \
+	figures/connection-geometry.pdf
 PAPER_A_TESTS := \
-	tests/test_paper_a_anchored_flagship_contract.py \
+	tests/test_paper_a_jns_rewrite_contract.py \
 	tests/test_block_schur_response.py \
 	tests/test_canard_conditioning.py \
 	tests/test_heterogeneous_curvature_root.py \
@@ -24,12 +26,15 @@ PAPER_A_TESTS := \
 
 all: paper
 
-figure: $(ROOT_FIGURE)
+figure: $(PAPER_FIGURES)
 
-$(ROOT_FIGURE): figures/root_mechanism.py
-	$(PYTHON) figures/root_mechanism.py --output $(ROOT_FIGURE)
+figures/delay-moment-map.pdf: figures/delay_moment_map.py
+	$(PYTHON) figures/delay_moment_map.py --output $@
 
-paper: $(ROOT_FIGURE)
+figures/connection-geometry.pdf: figures/connection_geometry.py
+	$(PYTHON) figures/connection_geometry.py --output $@
+
+paper: $(PAPER_FIGURES)
 	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
 	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error supplement.tex
 	$(LATEXMK) -g -pdf -interaction=nonstopmode -halt-on-error main.tex

@@ -1,0 +1,551 @@
+\section{Networks with row-stochastic coupling and main results}
+\label{sec:rw-model-results}
+\label{sec:model-results}
+
+This section defines the class of retarded networks considered in the paper
+and states the main results.  The first result is linear: constrained
+perturbations at distinct delays produce every network-transverse forcing
+direction, and the resulting network-transverse correction enters the scalar Fredholm solvability
+condition.  The second result identifies the same coefficient in the local
+fold problem.  A conditional application shows that it is the derivative of
+a parameter value yielding a heteroclinic connection whenever a fixed global
+modification of the recovery equation satisfies the stated uniform
+invariant-manifold and comparison hypotheses.  The global modification is
+part of the differential equation and is fixed before the connection
+parameter is varied.
+
+\subsection{Network, phase space, and projection}
+
+For each \(N\geq2\), let \(P_N\) be a nonnegative row-stochastic matrix and
+let \(\pi_N\) be a strictly positive stationary probability vector.  We
+assume that there are constants \(D>0\) and \(\gamma>0\), independent of
+\(N\), such that
+\begin{equation}
+ P_N\mathbf1=\mathbf1,
+ \qquad \pi_N^TP_N=\pi_N^T,
+ \qquad \pi_N^T\mathbf1=1,
+ \qquad \tau(P_N)\leq1-\gamma .
+ \label{eq:rw-markov-assumptions}
+\end{equation}
+Here \(\tau(P_N)\) is the Dobrushin contraction coefficient.  Define the
+collective and transverse projections and the transverse generator by
+\begin{equation}
+ P_{c,N}=\mathbf1\pi_N^T,
+ \qquad P_{\perp,N}=\Id-P_{c,N},
+ \qquad E_N=\Ker\pi_N^T,
+ \qquad A_N=D(P_N-\Id)|_{E_N}.
+ \label{eq:rw-collective-transverse}
+\end{equation}
+We use the dimension-independent norm
+\begin{equation}
+ \norm{x}_N=\abs{\pi_N^Tx}+\osc(x),
+ \qquad
+ \osc(x)=\max_i x_i-\min_i x_i.
+ \label{eq:rw-network-norm}
+\end{equation}
+In this norm the Dobrushin assumption gives
+\begin{equation}
+ \norm{A_N^{-1}}_{E_N\to E_N}\leq\frac1{D\gamma},
+ \qquad
+ \norm{A_Nz}_N\leq D(2-\gamma)\norm{z}_N
+ \quad (z\in E_N).
+ \label{eq:rw-dobrushin-resolvent}
+\end{equation}
+
+Let \(c_N=(c_{1,N},\ldots,c_{N,N})^T\) be the vector of quadratic
+coefficients.  We impose the uniform bounds
+\begin{equation}
+ 0<c_-\leq c_{i,N}\leq c_+,
+ \qquad \pi_N^Tc_N=\alpha>0,
+ \label{eq:rw-curvature-assumptions}
+\end{equation}
+where \(c_-\), \(c_+\), and \(\alpha\) do not depend on \(N\).  Fix
+\(\beta>0\), \(K\neq0\), and delay locations
+\begin{equation}
+ 0\leq\theta_0<\theta_1<\cdots<\theta_m\leq\Theta_*.
+ \label{eq:rw-delay-support}
+\end{equation}
+The matrices \(B_{k,N}\) are fixed base layers satisfying
+\begin{equation}
+ \sup_{N\geq2}\sum_{k=0}^m
+ \norm{B_{k,N}}_{\cL(\mathbb R^N,\norm{\cdot}_N)}<\infty.
+ \label{eq:rw-base-layer-bound}
+\end{equation}
+
+An admissible perturbation of the delayed-coupling matrices is a tuple
+\(\eta=(E_0,\ldots,E_m)\) in
+\begin{align}
+ \mathfrak T_N^{\rm red}
+ &=\left\{\eta=(E_0,\ldots,E_m):
+       \pi_N^TE_k=0\ \text{for every }k,
+       \quad \sum_{k=0}^mE_k=0\right\},
+ \label{eq:rw-structural-parameter-space}\\
+ \norm{\eta}_{\mathfrak T_N}
+ &=\sum_{k=0}^m
+   \norm{E_k}_{\cL(\mathbb R^N,\norm{\cdot}_N)},
+ \qquad B_{k,N}(\eta)=B_{k,N}+E_k.
+ \label{eq:rw-structural-parameter-norm}
+\end{align}
+Thus the sum is unchanged:
+\(\sum_kB_{k,N}(\eta)=\sum_kB_{k,N}\).  The stronger identities
+\(\pi_N^TE_k=0\) imply that the perturbation vanishes after application of
+the stationary projection.
+
+For \(\eps=\delta^2\), \(a=1+\delta^2\nu\), and
+\(\mu=a-1=\delta^2\nu\), consider
+\begin{align}
+ \dot v(t)={}&\frac23\mathbf1-w(t)\mathbf1
+ -c_N\circ(v(t)-\mathbf1)^{\circ2}
+ -\frac\beta3(v(t)-\mathbf1)^{\circ3}
+ +D(P_N-\Id)v(t)\notag\\
+ &+\delta^2K\sum_{k=0}^mB_{k,N}(\eta)
+ \left[v(t)-v\left(t-\frac{\theta_k}{\delta}\right)\right],
+ \label{eq:rw-voltage-rfde}\\
+ \dot w(t)={}&\delta^2\{\pi_N^Tv(t)-a\}.
+ \label{eq:rw-original-recovery}
+\end{align}
+The phase space at fixed \(\delta\) is
+\begin{equation}
+ \mathcal H_{N,\delta}
+ =C([ -\theta_m/\delta,0];\mathbb R^N)\times\mathbb R.
+ \label{eq:rw-phase-space}
+\end{equation}
+For \(\Phi=(\phi,\omega)\in\mathcal H_{N,\delta}\), we use the norm
+\begin{equation}
+ \norm{\Phi}_{\mathcal H_{N,\delta}}
+ =\sup_{-\theta_m/\delta\leq\theta\leq0}\norm{\phi(\theta)}_N
+   +\abs{\omega}.
+ \label{eq:rw-phase-space-norm}
+\end{equation}
+Let \(\mathcal F_{N,\delta,\nu,\eta}\) denote the right-hand side of
+\cref{eq:rw-voltage-rfde,eq:rw-original-recovery}, evaluated on a full
+history, and let
+\begin{equation}
+ \Pi_N(x,y)=(\pi_N^Tx,y).
+ \label{eq:rw-stationary-projection}
+\end{equation}
+Then, for every \(\Phi\in\mathcal H_{N,\delta}\),
+\begin{equation}
+ \Pi_N\mathcal F_{N,\delta,\nu,\eta}(\Phi)
+ =\Pi_N\mathcal F_{N,\delta,\nu,0}(\Phi).
+ \label{eq:rw-projection-identity}
+\end{equation}
+Indeed, left multiplication by \(\pi_N^T\) annihilates each
+\(E_k\)-term separately.  Equation \eqref{eq:rw-projection-identity}
+compares the two projected vector fields at the same full vector history.
+It does not define a closed RFDE for \(\pi_N^Tv\): through the heterogeneous
+quadratic terms, a network-mean-zero component can contribute to the
+collective equation.
+
+\subsection{A fixed global recovery equation}
+\label{subsec:global-modification}
+
+The recovery equation \eqref{eq:rw-original-recovery} does not provide two
+equilibria on prescribed components outside the fold neighborhood.  At every equilibrium it forces
+\(\pi_N^T(v-\mathbf1)=\delta^2\nu\).  To formulate a heteroclinic connection
+between two equilibria, we therefore specify a global recovery equation
+that agrees with \eqref{eq:rw-original-recovery} near the fold but has two
+fixed equilibria outside that neighborhood.  This is a change of model, not a choice made during
+the proof.
+
+Write
+\begin{equation}
+ \mathcal N_N(x)=c_N\circ x^{\circ2}+\frac\beta3x^{\circ3}.
+ \label{eq:rw-fast-nonlinearity}
+\end{equation}
+The uniform implicit-function argument based on
+\eqref{eq:rw-dobrushin-resolvent} gives \(r_0>0\), independent of \(N\),
+and a unique \(z_{0,N}(r)\in E_N\), \(\abs r\leq r_0\), satisfying
+\begin{equation}
+ A_Nz_{0,N}(r)=P_{\perp,N}\mathcal N_N
+     (r\mathbf1+z_{0,N}(r)),
+ \qquad \norm{z_{0,N}(r)}_N\leq C r^2.
+ \label{eq:rw-critical-curve-equation}
+\end{equation}
+Set
+\begin{equation}
+ V_{0,N}(r)=\mathbf1+r\mathbf1+z_{0,N}(r),
+ \qquad
+ w_{0,N}(r)=\frac23-\pi_N^T\mathcal N_N
+     (r\mathbf1+z_{0,N}(r)).
+ \label{eq:rw-critical-curve}
+\end{equation}
+Because every current-minus-delay difference vanishes on a constant
+history, \((V_{0,N}(r),w_{0,N}(r))\) is an exact equilibrium of the frozen
+voltage equation for every admitted perturbation.
+
+Fix
+\begin{equation}
+ 0<r_{\rm loc}<r_A<r_0
+ \label{eq:rw-recovery-radii}
+\end{equation}
+and choose once and for all a function \(g\in C^{12}(\mathbb R)\) such
+that
+\begin{equation}
+ \begin{aligned}
+ g(r)&=1 &&(\abs r\leq r_{\rm loc}),
+ &g(r)&>0 &&(-r_A<r<r_A),\\
+ g(\pm r_A)&=0,
+ &g'(-r_A)&>0>g'(r_A).
+ \end{aligned}
+ \label{eq:rw-global-recovery-multiplier}
+\end{equation}
+For uniform statements we take \(g\) from a fixed nonempty bounded class
+\(\mathfrak G(r_A;g_*,G_*)\) satisfying
+\begin{equation}
+ \begin{aligned}
+ \norm{g}_{C^{12}([-r_0,r_0])}&\leq G_*,
+ &g'(-r_A)&\geq g_* ,
+ &-g'(r_A)&\geq g_* ,\\
+ g(r)&\geq g_*\min\{1,r_A-\abs r\},
+ &&&\hspace{-4em}\abs r<r_A.
+ \end{aligned}
+ \label{eq:rw-global-recovery-class}
+\end{equation}
+Such functions are obtained, for example, by smoothly joining the constant
+function on \([-r_{\rm loc},r_{\rm loc}]\) to
+\(1-r^2/r_A^2\) near \(\pm r_A\).  The chosen function is not varied with
+\(N\), \(\delta\), \(\nu\), or \(\eta\).
+
+For a history \(\phi\), put
+\begin{equation}
+ r(\phi)=\pi_N^T\{\phi(0)-\mathbf1\}
+ \label{eq:rw-collective-coordinate}
+\end{equation}
+and replace only the recovery equation by
+\begin{equation}
+ \dot w(t)=\delta^2
+ \bigl(r(v_t)-\delta^2\nu\bigr)g(r(v_t)).
+ \label{eq:rw-modified-recovery}
+\end{equation}
+Equations \eqref{eq:rw-voltage-rfde} and
+\eqref{eq:rw-modified-recovery} define the globally modified RFDE used in
+the heteroclinic theorem below.  It agrees exactly with the original RFDE
+whenever \(\abs{r(v_t)}\leq r_{\rm loc}\), and the projection identity
+\eqref{eq:rw-projection-identity} remains valid.  Moreover,
+\begin{equation}
+ Z_N^\pm=
+ \left(\theta\longmapsto V_{0,N}(\pm r_A),
+       w_{0,N}(\pm r_A)\right)
+ \label{eq:rw-outer-equilibria}
+\end{equation}
+are exact equilibria for every \(\delta\), \(\nu\), and \(\eta\).
+
+The coefficients entering the finite-interval fold expansion are
+\begin{equation}
+ z_{2,N}=A_N^{-1}P_{\perp,N}c_N,
+ \qquad
+ \kappa_N=\frac\beta3+2\pi_N^T\diag(c_N)z_{2,N},
+ \qquad
+ \nu_{0,N}=-\frac{3\kappa_N}{8\alpha^3}.
+ \label{eq:rw-fold-center}
+\end{equation}
+
+\subsection{The first-moment map and the local Fredholm coefficient}
+
+For \(\eta=(E_0,\ldots,E_m)\in\mathfrak T_N^{\rm red}\), define
+\begin{equation}
+ \mathsf S_N\eta
+ =\frac{K}{2\alpha}P_{\perp,N}
+    \left(\sum_{k=0}^m\theta_kE_k\right)\mathbf1,
+ \qquad
+ \mathsf T_N\eta=A_N^{-1}\mathsf S_N\eta.
+ \label{eq:rw-transverse-source}
+\end{equation}
+The first map is the first moment of the perturbation matrices with respect
+to the delay locations, evaluated in the network-mean-zero space; the second
+is the corresponding solution of the network-transverse equation.
+All operator and dual norms below are induced by
+\eqref{eq:rw-network-norm} and \eqref{eq:rw-structural-parameter-norm}.
+The quadratic-coefficient-dependent bounded linear functional and the
+resulting scalar functional are
+\begin{equation}
+ \mathfrak r_N(h)
+ =-\frac1\alpha\pi_N^T\diag(c_N)h,
+ \qquad
+ \Lambda_N=\mathfrak r_N\mathsf T_N,
+ \label{eq:rw-return-functional-definition}
+\end{equation}
+or, explicitly,
+\begin{equation}
+ \Lambda_N(\eta)
+ =-\frac{K}{2\alpha^2}\pi_N^T\diag(c_N)A_N^{-1}P_{\perp,N}
+   \left(\sum_{k=0}^m\theta_kE_k\right)\mathbf1.
+ \label{eq:rw-return-functional}
+\end{equation}
+
+\begin{theorem}[Range and sharp bounds for the first-moment map]
+\label{thm:rw-first-moment-map}
+Assume \eqref{eq:rw-markov-assumptions}--\eqref{eq:rw-delay-support}, and
+write \(\Delta_\theta=\theta_m-\theta_0>0\).  Then
+\(\mathsf S_N:\mathfrak T_N^{\rm red}\to E_N\) is surjective.  A right
+inverse is
+\begin{equation}
+ \begin{aligned}
+  (\mathsf Q_Ny)_0
+   &=-\frac{2\alpha}{K\Delta_\theta}y\pi_N^T,
+  & (\mathsf Q_Ny)_m
+   &= \frac{2\alpha}{K\Delta_\theta}y\pi_N^T,\\
+  (\mathsf Q_Ny)_k&=0
+  &&(k\notin\{0,m\}),
+ \end{aligned}
+ \qquad y\in E_N,
+ \label{eq:rw-source-right-inverse}
+\end{equation}
+and the operator norms are sharp:
+\begin{equation}
+ \norm{\mathsf S_N}
+ =\frac{\abs{K}\Delta_\theta}{4\alpha},
+ \qquad
+ \norm{\mathsf Q_N}
+ =\frac{4\alpha}{\abs{K}\Delta_\theta}.
+ \label{eq:rw-source-sharp-norms}
+\end{equation}
+If coincident delay atoms are first merged and the remaining support consists
+of one point, then \(\mathsf S_N=0\) on
+\(\mathfrak T_N^{\rm red}\).
+\end{theorem}
+
+\begin{corollary}[Dimension-uniform Fredholm coefficient for the fold problem]
+\label[corollary]{cor:rw-fold-fredholm-coefficient}
+Under the assumptions of \cref{thm:rw-first-moment-map} and the uniform
+base-layer bound \eqref{eq:rw-base-layer-bound}, linearization at \(\eta=0\)
+of the local fold problem in \cref{sec:fold-passage}, followed by elimination
+of the network-transverse equation and pairing with the one-dimensional
+collective cokernel, gives the bounded linear functional
+\(\Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N\) from
+\eqref{eq:rw-return-functional}.  Its norm satisfies
+\begin{equation}
+ \abs{\Lambda_N(\eta)}
+ \leq\frac{\abs{K}c_+\Theta_*}{2\alpha^2D\gamma}
+        \norm{\eta}_{\mathfrak T_N}.
+ \label{eq:rw-functional-uniform-bound}
+\end{equation}
+More generally, for any \(\mathfrak r\in E_N^*\), let
+\(\Lambda_{\mathfrak r}=\mathfrak r A_N^{-1}\mathsf S_N\).  Then
+\begin{equation}
+ \mathfrak r(z)=\Lambda_{\mathfrak r}(\mathsf Q_NA_Nz),
+ \qquad z\in E_N,
+ \label{eq:rw-dual-recovery}
+\end{equation}
+and
+\begin{equation}
+ \frac{\abs{K}\Delta_\theta}{4\alpha D(2-\gamma)}
+       \norm{\mathfrak r}
+ \leq\norm{\Lambda_{\mathfrak r}}
+ \leq
+ \frac{\abs{K}\Delta_\theta}{4\alpha D\gamma}
+       \norm{\mathfrak r}.
+ \label{eq:rw-dual-condition}
+\end{equation}
+Thus the condition number of
+\(\mathfrak r\mapsto\Lambda_{\mathfrak r}\), as a map onto its range,
+is at most \((2-\gamma)/\gamma\), uniformly in \(N\).
+\end{corollary}
+
+The theorem is proved in
+Proposition~\ref{prop:fredholm-two-delay-inverse}; the
+dimension-independent transverse inverse is
+Lemma~\ref{lem:fredholm-dobrushin-inverse}.  The collective cokernel and the
+Lyapunov--Schmidt calculation are given in
+Lemma~\ref{lem:fredholm-collective-cokernel} and
+Theorem~\ref{thm:fredholm-reduction}.  Its realization for the fold problem
+is \cref{eq:fold-return-source,eq:fold-return-pairing}; the last two bounds in
+the corollary follow from
+Proposition~\ref{prop:fredholm-dual-recovery}.
+
+\subsection{A conditional heteroclinic connection}
+
+In fold time \(s=\delta t\), use the local coordinates
+\begin{equation}
+ w=\frac23-\delta^2Y,
+ \qquad
+ v=\mathbf1+\delta\mathbf1X
+       +\delta^2\{z_{2,N}X^2+h\},
+ \qquad h\in E_N.
+ \label{eq:rw-fold-coordinates}
+\end{equation}
+The singular collective system is
+\begin{equation}
+ X'=Y-\alpha X^2,
+ \qquad Y'=-X,
+ \label{eq:rw-singular-fold-system}
+\end{equation}
+and its distinguished complete orbit is
+\begin{equation}
+ \gamma_0(s)=
+ \left(-\frac{s}{2\alpha},\frac{s^2-2}{4\alpha}\right).
+ \label{eq:rw-singular-canard}
+\end{equation}
+
+Write \(Z_t=(v_t,w(t))\in\mathcal H_{N,\delta}\).  Whenever \(Z_N^+\) is
+hyperbolic with a one-dimensional unstable manifold, let
+\(W_{\rm in}^u(Z_N^+)\) be the component of
+\(W^u(Z_N^+)\setminus\{Z_N^+\}\) on which the collective coordinate \(r\)
+initially decreases from \(r_A\).  This component is one orbit modulo time
+translation.  A connection below means this specified orbit with
+\[
+ \norm{Z_t-Z_N^+}_{\mathcal H_{N,\delta}}\longrightarrow0
+ \quad(t\to-\infty),
+ \qquad
+ \norm{Z_t-Z_N^-}_{\mathcal H_{N,\delta}}\longrightarrow0
+ \quad(t\to+\infty).
+\]
+Local uniqueness refers to the parameter set
+\[
+ \abs{\nu-\nu_{0,N}}<c_0,
+ \qquad
+ \norm{\eta}_{\mathfrak T_N}<\eta_0,
+\]
+where \(c_0,\eta_0\) are the constants in the theorem, and to this inward
+component; it does not concern the other unstable component or zeros of the
+defining function outside this parameter set.
+
+\begin{corollary}[Conditional heteroclinic connection for the modified RFDE]
+\label[corollary]{cor:rw-conditional-connection}
+Assume \eqref{eq:rw-markov-assumptions}--\eqref{eq:rw-base-layer-bound},
+with all displayed bounds common in \(N\).  Fix
+\(0<r_{\rm loc}<r_A<r_0\), one
+\(g\in\mathfrak G(r_A;g_*,G_*)\), and a compact interval \(I_\nu\)
+containing every \(\nu_{0,N}\) in its interior with a common positive
+distance to \(\partial I_\nu\).  Suppose there are constants
+\begin{equation}
+ c_0>0,\qquad \eta_0>0,\qquad \delta_0>0,
+ \qquad C>0,\qquad c_{\rm tr}>0,\qquad M\geq0,
+ \qquad Q_*>12,\qquad p_0>4,
+ \label{eq:rw-root-uniform-constants}
+\end{equation}
+independent of \(N\), with \(c_0\) smaller than the common distance to
+\(\partial I_\nu\), such that the following hypotheses hold for
+\(0<\delta<\delta_0\) on
+\[
+ \mathcal P_{N,\delta}
+ =\{(\nu,\eta):\abs{\nu-\nu_{0,N}}\leq c_0,
+                   \ \norm{\eta}_{\mathfrak T_N}\leq\eta_0\}.
+\]
+For a scalar \(C^1\) function \(H\) on this parameter set, write
+\begin{equation}
+ \norm{H}_{C_\vartheta^1(\mathcal P_{N,\delta})}
+ =\sup_{\mathcal P_{N,\delta}}
+   \max\left\{\abs H,\abs{\partial_\nu H},
+      \norm{D_\eta H}_{(\mathfrak T_N^{\rm red})^*}\right\}.
+ \label{eq:connection-parameter-C1-norm}
+\end{equation}
+First, the equilibria \(Z_N^\pm\) are hyperbolic with
+\begin{equation}
+ \dim W^u(Z_N^+)=1,
+ \qquad \operatorname{codim}W^s(Z_N^-)=1.
+ \label{eq:rw-equilibrium-indices}
+\end{equation}
+Their specified invariant-manifold sections and event hits form \(C^1\)
+families in a common chart of the compatible-history section through the
+fold region.
+Second, there is a scalar \(C^1\) defining function
+\(G_{N,\delta}^{g}\) on \(\mathcal P_{N,\delta}\) such that
+\begin{equation}
+ G_{N,\delta}^{g}(\nu,\eta)=0
+ \quad\Longleftrightarrow\quad
+ W_{\rm in}^u(Z_N^+)\subset W^s(Z_N^-),
+ \qquad
+ \norm{G_{N,\delta}^{g}-D_N^{\rm fin}}
+ _{C_\vartheta^1(\mathcal P_{N,\delta})}
+ \leq C\delta^{Q_*},
+ \label{eq:rw-conditional-connection-hypothesis}
+\end{equation}
+where \(D_N^{\rm fin}\) is the finite-interval matching function in
+\cref{prop:finite-comparison} and the norm is defined in
+\cref{eq:connection-parameter-C1-norm}.  The estimates proved for that
+matching function are
+\begin{equation}
+ \frac{D_N^{\rm fin}}{\delta}
+ =\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),
+ \qquad
+ \partial_\nu D_N^{\rm fin}
+ =\delta\sqrt{2\pi}+O(\delta^2),
+ \label{eq:rw-finite-matching-summary}
+\end{equation}
+uniformly on the parameter set; these are
+\cref{eq:finite-comparison-level,eq:finite-comparison-slope}.  Finally, whenever
+\(G_{N,\delta}^{g}(\nu,\eta)=0\), assume that the corresponding orbit has a
+phase choice \(X^{\rm het}(0)=0\) and,
+in the fold chart, satisfies
+\begin{equation}
+ \norm{z^{\rm het}(s)-\gamma_0(s)}
+ \leq C\delta e^{c_{\rm tr}\abs s}\langle s\rangle^M,
+ \qquad \abs s\leq S_\delta,
+ \label{eq:rw-fold-neighborhood-tracking}
+\end{equation}
+with \(S_\delta=\sqrt{2p_0\log(1/\delta)}\).  This is an additional
+orbit-tracking hypothesis, not a consequence of \(G_{N,\delta}^{g}=0\)
+alone.
+
+Under these hypotheses there is a unique
+\(\nu=\nu_{c,N}^{g}(\delta,\eta)\) in the local window
+\begin{equation}
+ \mu_{c,N}^{g}(\delta,\eta)
+ =\delta^2\nu_{c,N}^{g}(\delta,\eta),
+ \qquad
+ \abs{\nu_{c,N}^{g}(\delta,\eta)-\nu_{0,N}}<c_0,
+ \label{eq:rw-exact-root}
+\end{equation}
+for which
+\[
+ W_{\rm in}^u(Z_N^+)\subset W^s(Z_N^-).
+\]
+The specified inward orbit is a heteroclinic orbit in
+\(\mathcal H_{N,\delta}\), unique modulo time translation.
+By the final hypothesis, its phase-fixed collective coordinates satisfy
+\cref{eq:rw-fold-neighborhood-tracking} on a fold-time interval whose length
+tends to infinity as \(\delta\to0\).
+\end{corollary}
+
+\begin{corollary}[Parameter sensitivity of the connection]
+\label[corollary]{cor:rw-root-sensitivity}
+Under the assumptions of \cref{cor:rw-conditional-connection}, the locally
+defined connection-parameter map is \(C^1\) in \(\eta\) for fixed \(\delta\),
+and
+\begin{align}
+ \norm{D_\eta\mu_{c,N}^{g}(\delta,\eta)
+       -\delta^3\Lambda_N}
+ &\leq C\{\delta^4+\delta^3\norm{\eta}_{\mathfrak T_N}\},
+ \label{eq:rw-root-derivative}\\
+ \abs{\mu_{c,N}^{g}(\delta,\eta)
+       -\mu_{c,N}^{g}(\delta,0)-\delta^3\Lambda_N(\eta)}
+ &\leq C\{\delta^4\norm{\eta}_{\mathfrak T_N}
+       +\delta^3\norm{\eta}_{\mathfrak T_N}^2\}.
+ \label{eq:rw-root-increment}
+\end{align}
+These estimates hold in the operator norm on
+\((\mathfrak T_N^{\rm red})^*\).  Define the centered, rescaled
+connection-parameter function
+\begin{equation}
+ \Xi_{N,\delta}^{g}(\eta)
+ =\delta^{-3}\{\mu_{c,N}^{g}(\delta,\eta)
+                   -\mu_{c,N}^{g}(\delta,0)\}.
+ \label{eq:rw-centered-root-graph}
+\end{equation}
+Its conormal satisfies
+\begin{equation}
+ \norm{(1,-D_\eta\Xi_{N,\delta}^{g}(0))
+       -(1,-\Lambda_N)}\leq C\delta.
+ \label{eq:rw-conormal-limit}
+\end{equation}
+\end{corollary}
+
+\input{figures/connection-geometry}
+
+The corollary is conditional: this paper proves the local Fredholm coefficient
+and the finite-interval estimates, but does not establish the uniform global
+invariant-manifold families or the \(C^1\) comparison in
+\eqref{eq:rw-conditional-connection-hypothesis} for the modified RFDE.  Even
+under those hypotheses, the conclusion is local in the connection parameter
+and does not exclude zeros outside the window in \eqref{eq:rw-exact-root}.
+Different fixed functions \(g\) define different global RFDEs, so their
+finite-\(\delta\) connection parameters need not coincide.  No heteroclinic
+connection for the unmodified
+recovery equation \eqref{eq:rw-original-recovery} is claimed.
+
+The three-node calculation in \cref{sec:introduction} is a direct
+specialization of \cref{eq:rw-return-functional,eq:rw-root-derivative}; it is
+placed there so that the nonzero effect is visible before the general
+proofs.

@@ -2,8 +2,8 @@
 \input{preamble}
 \IfFileExists{supplement.aux}{\externaldocument[][nocite]{supplement}}{}
 
-\newcommand{\papertitle}{Projection-Blind Delay Redistribution Moves
-Anchored Heteroclinic Canards in Retarded Markov Networks}
+\newcommand{\papertitle}{A Fredholm Formula for Heteroclinic-Connection
+Sensitivity to Constrained Delayed-Coupling Perturbations in Retarded Networks}
 
 \title{\papertitle}
 \author{Haibo Lu\\
@@ -12,100 +12,91 @@ Anchored Heteroclinic Canards in Retarded Markov Networks}
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={Projection-Blind Delay Redistribution Moves Anchored Heteroclinic Canards in Retarded Markov Networks},
+  pdftitle={A Fredholm Formula for Heteroclinic-Connection Sensitivity to Constrained Delayed-Coupling Perturbations in Retarded Networks},
   pdfauthor={Haibo Lu},
-  pdfsubject={Projection-invisible delay structure moves complete-history heteroclinic canards through transverse network return},
-  pdfkeywords={projection blindness, delay redistribution, heteroclinic canard,
-    retarded functional differential equation, Dobrushin network,
-    complete-history connection}
+  pdfsubject={A Fredholm formula for heteroclinic-connection sensitivity to constrained perturbations of delayed coupling},
+  pdfkeywords={retarded functional differential equation, delayed coupling,
+    heteroclinic connection, canard, row-stochastic matrix, Fredholm alternative,
+    parameter sensitivity}
 }
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We exhibit a delay redistribution that leaves the stationary projection of
-an RFDE vector field unchanged at every fixed full history yet moves a
-complete-history canard in a fixed globally anchored RFDE.  The setting is a
-finite retarded Markov network with a common Dobrushin gap.
-Redistributing coupling between
-delay layers in stationary-row-neutral directions leaves the stationary
-projection of the RFDE vector field exactly unchanged at every full history;
-this is stronger than agreement on synchronized states but does not make the
-projection dynamically closed.  With two distinct delay locations, the same
-redistributions generate every transverse source direction.  We give an
-explicit sharp right inverse and a dual reconstruction bound, both independent
-of network size.  With only one merged delay location, the leading transverse
-source vanishes identically on the pure-redistribution class.
+We study finite networks of retarded functional differential equations with
+row-stochastic instantaneous coupling and linear feedback distributed over
+several delays.  The admissible perturbations preserve the sum of the delayed
+coupling matrices and are annihilated by the stationary row vector at each
+delay.  The stationary projection of the vector field is therefore unchanged
+at every history, although the projected variables need not form a closed
+system.  We prove that, when two distinct delays are present, the first moment
+of the perturbation matrices maps onto the full transverse space.  The map has
+an explicit right inverse, and its norm and the relevant transverse inverse
+bound are independent of network size.  With only one delay, the first-moment
+map vanishes.
 
-To turn this hidden source into an intrinsic nonlinear observable, we construct
-a globally anchored shared-resource RFDE which agrees exactly with the original
-equation on the entire retained fold-history tube.  Its two hyperbolic anchor
-equilibria carry a one-dimensional incoming unstable branch and a
-codimension-one outgoing stable history sheet.  A forward RFDE construction,
-a half-line Lyapunov--Perron problem, and quantitative tail forgetting produce
-a unique local parameter root at which these objects form a complete
-heteroclinic orbit.  The orbit follows attracting and repelling slow-history
-graphs for times of order \(\delta^{-2}\), so the connection is a canard in a
-quantitative dynamical sense.  If \(\eta\) denotes a blind redistribution and
-\(\mu_c(\delta,\eta)\) the fixed-model root, then
+We next give a Lyapunov--Schmidt formula for the derivative of any
+codimension-one heteroclinic connection condition satisfying stated uniform
+regularity and transversality hypotheses.  For a polynomial fast--slow
+network, a two-dimensional locally invariant manifold in the RFDE phase
+space, represented as a graph over the fold variables, and a finite-interval
+matching problem determine the coefficient explicitly:
 \[
- D_\eta\mu_c(\delta,\eta)
-   =\delta^3\Lambda_N+O(\delta^4+\delta^3\|\eta\|),
+ \Lambda_N=-\frac1\alpha\pi_N^T\operatorname{diag}(c_N)
+ A_N^{-1}\mathsf S_N.
 \]
-in the full dual norm, uniformly in network size.  The covector \(\Lambda_N\)
-is precisely the dimension-uniform transverse return covector obtained from
-the projection-blind source.  Hence a same-history projection-neutral
-parameter moves an exact complete-history heteroclinic canard at order
-\(\delta^3\).  Exact roots
-may differ between admissible global anchors, but after modelwise baseline
-centering their weighted conormals converge uniformly to
-\((1,-\Lambda_N)\).  No maximal-canard claim is made for the unanchored
-recovery law, which is proved not to supply the required outer equilibria.
+If a specified smooth modification of the recovery equation outside the fold
+neighborhood has uniform stable
+and unstable manifold sections and its heteroclinic defining function is
+\(C^1\)-close to the finite-interval matching function, the implicit-function theorem gives
+\[
+ D_\eta\mu_{c,N}(\delta,\eta)
+ =\delta^3\Lambda_N+O(\delta^4+\delta^3\|\eta\|)
+\]
+uniformly in \(N\).  These global invariant-manifold and comparison
+properties are explicit hypotheses, not conclusions of the local fold
+calculation.  Thus the unconditional results are the first-moment range
+theorem, the dimension-uniform Fredholm solvability formula, and the local
+coefficient; the existence of a parameter value yielding a heteroclinic
+connection must be established separately for each global equation.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
-projection blindness; delay redistribution; heteroclinic canard; retarded
-functional differential equation; Dobrushin contraction; hidden return
+retarded functional differential equation; delayed coupling;
+heteroclinic connection; canard; row-stochastic coupling; Fredholm alternative;
+parameter sensitivity
 
 \medskip
 \noindent\textbf{Mathematics Subject Classification (2020).}
 34K26; 34E17; 37G10
 
-\input{sections/01-introduction}
-\input{sections/01a-notation-and-status}
-\input{sections/02-model-and-results}
-\input{sections/02a-abstract-response}
-\input{sections/03-network-mechanism}
-\input{sections/02c-main-outer-interface}
-\input{sections/02d-anchored-physical-connection}
-\input{sections/04-conclusion}
+\input{rewrite-sections/01-introduction}
+\input{rewrite-sections/02-model-results}
+\input{rewrite-sections/03-fredholm-sensitivity}
+\input{rewrite-sections/04-fold-passage}
+\input{rewrite-sections/05-heteroclinic-connection}
+\input{rewrite-sections/06-scope-and-transfer}
 
 \section*{Supplementary material}
-The companion supplement contains the preparation, invariant-history,
-finite-gap, compressed outer-passage, and complete-history connection proofs.
+The supplement supplies the cutoff extension, the locally invariant manifold near the fold,
+finite-interval remainder estimates, and a precise formulation of the global
+connection hypotheses used in the conditional application.
 
 \section*{Acknowledgements}
-OpenAI Codex was used interactively to propose and revise theorem statements,
-proof prose, and \LaTeX{} organization; to generate the reproducible
-Matplotlib source for \cref{fig:root-mechanism}; to suggest symbolic
-rearrangements; and to assist with sign, scaling, cross-reference, and
-literature audits.  AI-assisted hostile rereads were used as error-finding
-tools, not as independent peer review.  No AI output is treated as a proof or
-as a numerical certificate: every retained claim is supported by the explicit
-argument in the manuscript and remains the author's responsibility.  The
-submission release will identify AI-modified source files and the checks
-performed on algebra, citations, assumptions, code, and figure semantics.
+OpenAI Codex was used interactively to reorganize the manuscript, revise
+proof prose and \LaTeX{}, generate editable figure sources, and assist with
+algebraic, scaling, cross-reference, and literature checks.  The author
+checked the retained equations, hypotheses, signs, estimates, citations,
+source changes, and test outputs and remains responsible for every claim.
 
 \section*{Declarations}
 \paragraph{Funding.} No funding was received for conducting this study.
 \paragraph{Competing interests.} The author has no relevant financial or
 non-financial interests to disclose.
-\paragraph{Data and code availability.} The present result is analytic and
-does not depend on a numerical certificate.  Development sources, figure
-code, and build instructions are maintained in a private repository during
-revision.  A public paper-specific source release and an immutable archive
-will be deposited before submission.
+\paragraph{Data and code availability.} The results are analytic; no data sets
+were generated or analyzed.  The \LaTeX{} sources and figure code will be
+archived with the published version.
 
 \begingroup
 \small

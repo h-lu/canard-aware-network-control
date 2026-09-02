@@ -1,0 +1,333 @@
+\section{Fold passage and the local sensitivity coefficient}
+\label{sec:fold-passage}
+
+This section computes the coefficient that later appears in the conditional
+heteroclinic-connection parameter derivative.  The computation is performed on an
+invariant graph of compatible RFDE histories.  A finite-interval matching
+problem is used only to obtain a defining function with controlled
+derivatives; it is not the definition of the heteroclinic connection in
+\cref{sec:heteroclinic-connection}.
+
+\subsection{A locally invariant manifold near the fold}
+
+Set
+\[
+ s=\delta t,\qquad
+ w=\frac23-\delta^2Y,\qquad
+ v=\mathbf1+\delta\mathbf1X
+       +\delta^2\{z_{2,N}X^2+h\},
+ \qquad h\in E_N,
+\]
+where \(z_{2,N}\) is defined in \cref{eq:rw-fold-center}.
+Put
+\[
+ Z_N(X,h)=z_{2,N}X^2+h.
+\]
+The singular planar field and its distinguished complete orbit are
+\begin{equation}
+ q_0(X,Y)=(Y-\alpha X^2,-X),
+ \qquad
+ \gamma_0(s)=\left(-\frac{s}{2\alpha},
+                    \frac{s^2-2}{4\alpha}\right).
+ \label{eq:fold-singular-orbit}
+\end{equation}
+The function
+\begin{equation}
+ \mathscr H_\alpha(X,Y)
+ =\frac12e^{-2\alpha Y}
+   \left(\alpha Y-\alpha^2X^2+\frac12\right)
+ \label{eq:fold-first-integral}
+\end{equation}
+is a first integral of \(q_0\), and
+\(\nabla\mathscr H_\alpha(\gamma_0(s))
+ =(\alpha e/2)e^{-s^2/2}(s,1)^T\).
+In these coordinates the transverse singular graph is \(h=0\).  For a
+fold-time history \(\phi\), write
+\[
+ \mathcal L_{N,\eta}[\phi](s)
+ =\sum_{k=0}^m(B_{k,N}+E_{k,N})
+       \{\phi(s)-\phi(s-\theta_k)\}.
+\]
+Direct substitution gives the following identities; there is no Taylor
+remainder in this change of variables:
+\begin{subequations}\label{eq:fold-exact-system}
+\begin{align}
+ X'={}&Y-\alpha X^2\notag\\
+ &+\delta\left[-2X\pi_N^T\diag(c_N)Z_N
+          -\frac\beta3X^3
+          +K\pi_N^T\mathcal L_{N,\eta}[\mathbf1X]\right]\notag\\
+ &+\delta^2\left[-\pi_N^T\diag(c_N)Z_N^{\circ2}
+          +K\pi_N^T\mathcal L_{N,\eta}[Z_N]\right]
+ -\delta^3\beta X\pi_N^TZ_N^{\circ2}
+ -\frac{\delta^4\beta}{3}\pi_N^TZ_N^{\circ3},
+                                                        \label{eq:fold-exact-X}\\
+ Y'={}&-X+\delta\nu,                                  \label{eq:fold-exact-Y}\\
+ \delta h'={}&A_Nh\notag\\
+ &+\delta\left\{P_{\perp,N}\left[-2X\diag(c_N)Z_N
+               +K\mathcal L_{N,\eta}[\mathbf1X]\right]
+               -2z_{2,N}X X'\right\}\notag\\
+ &+\delta^2P_{\perp,N}\left[-\diag(c_N)Z_N^{\circ2}
+             -\beta X^2Z_N+K\mathcal L_{N,\eta}[Z_N]\right]
+ -\delta^3\beta X P_{\perp,N}Z_N^{\circ2}
+ -\frac{\delta^4\beta}{3}P_{\perp,N}Z_N^{\circ3}.
+                                                        \label{eq:fold-exact-h}
+\end{align}
+\end{subequations}
+The term \(-2z_{2,N}XX'\) differentiates the translation
+\(z_{2,N}X^2\).
+The identity
+\(A_Nz_{2,N}X^2=P_{\perp,N}c_NX^2\) makes \(h=0\) the transverse
+singular graph.
+
+The Dobrushin estimate gives
+\begin{equation}
+ \|e^{A_Nt}\|_{E_N\to E_N}\le e^{-D\gamma t},
+ \qquad
+ \|A_N^{-1}\|_{E_N\to E_N}\le(D\gamma)^{-1}.
+ \label{eq:fold-poisson-bound}
+\end{equation}
+Together with the product inequality
+\begin{equation}
+ \|x_1\circ\cdots\circ x_j\|_N
+ \le3\prod_{\ell=1}^j\|x_\ell\|_N,
+ \label{eq:fold-product-bound}
+\end{equation}
+this makes every multilinear bound below independent of \(N\).
+
+Fix \(C_0>0\) and \(p_0>4\), put
+\(S_\delta=\sqrt{2p_0\log(1/\delta)}\), and define
+\begin{equation*}
+ \mathcal U_\delta(C_0)
+ =\{\gamma_0(s)+\xi:|s|\le S_\delta+\theta_m,
+                         |\xi|\le C_0\delta\}.
+\end{equation*}
+The extra \(\theta_m\) is the history buffer for the delay translations in
+fold time.
+
+\begin{proposition}[Locally invariant manifold near the fold]
+\label[proposition]{prop:fold-invariant-histories}
+Assume the hypotheses of \cref{thm:rw-first-moment-map} and the uniform
+base-layer bound \eqref{eq:rw-base-layer-bound}.  Fix a compact interval
+\(I_\nu\) and \(\eta_*>0\).  Uniformly for \(\nu\in I_\nu\) and
+\(\norm{\eta}_{\mathfrak T_N}\le\eta_*\), and for all sufficiently small
+\(\delta\), there is a two-dimensional locally invariant manifold in the
+RFDE phase space, represented by an injective graph of compatible histories
+over \(\mathcal U_\delta(C_0)\),
+\[
+ h=H_{N,\delta,\nu,\eta}(X,Y).
+\]
+On \(\gamma_0([-S_\delta,S_\delta])\) it satisfies
+\[
+ \|H_{N,\delta,\nu,\eta}(\gamma_0(s)+\xi)\|_N
+ \le C\delta e^{c|s|}\langle s\rangle^M,
+ \qquad |\xi|\le C_0\delta,
+\]
+and its reduced field has the expansion
+\begin{equation}
+ Q_{N,\delta,\nu,\eta}
+ =q_0+\delta q_{1,N}+\delta^2q_{2,N}
+       +\delta^3\mathcal R_{3,N}.                   \label{eq:fold-reduced-expansion}
+\end{equation}
+For \(0\le a\le3\) and \(0\le i,j\le2\), the derivatives
+\(D_{X,Y}^a\partial_\nu^iD_\eta^jH\) and the corresponding derivatives of
+the reduced field obey a common bound
+\[
+ C e^{c|s|}\langle s\rangle^M
+\]
+on \(\mathcal U_\delta(C_0)\).  Here \(D_\eta^j\) is the symmetric
+Fr\'echet derivative in the norm of
+\cref{eq:rw-structural-parameter-norm}.  In
+particular,
+\(D_\eta q_{1,N}=0\).  Present evaluation is a left inverse of the history
+lift, so every retained graph member is an actual RFDE history and the lift
+is injective.
+\end{proposition}
+
+\begin{proof}
+Here \(\Phi_Q^s\) denotes the flow of the planar field \(Q\),
+\(\mathcal I_{Q,H}\) is the associated history lift, and \(G_N\) is the
+transverse right-hand side after the fold-coordinate change.  These objects
+and their domains are defined in
+\cref{eq:supp-history-lift,eq:supp-extended-normal-form}.
+The invariant graph is the fixed point of the variation-of-constants map
+\[
+ H(u)=\delta\int_0^\infty e^{A_Nr}
+ G_N\bigl(\mathcal I_{Q,H}(\Phi_Q^{-\delta r}u)\bigr)\,dr.
+\]
+The history evaluation contains only the finitely many fixed translations
+\(-\theta_k\).  By \cref{eq:fold-poisson-bound}, the Lipschitz constant is
+bounded by
+\[
+ C\delta P(S_\delta)e^{cS_\delta}
+ \int_0^\infty(1+r^M)e^{-D\gamma r/2}\,dr=o(1).
+\]
+The same estimate applied successively to the finite list of state and
+parameter derivatives gives \cref{eq:fold-reduced-expansion}.  Splitting the
+stable convolution at \(L\log(1/\delta)\) gives the stated pointwise bounds.
+The construction, including the mixed-derivative induction and the exact
+history reconstruction, is given in
+\cref{subsec:invariant-history-details}.  The auxiliary cutoff used there is
+fixed independently of \((\nu,\eta)\) and agrees with the original RFDE on
+\(\mathcal U_\delta(C_0)\) and its delay enlargement.
+\end{proof}
+
+\subsection{The one-dimensional Fredholm obstruction}
+
+Linearization of \(q_0\) along \(\gamma_0\) gives
+\begin{equation}
+ L_0(U,V)=(U'-sU-V,V'+U).                            \label{eq:fold-linear-operator}
+\end{equation}
+The phase condition is \(U(0)=0\).  By
+\cref{lem:fredholm-collective-cokernel}, its range has codimension one and is
+annihilated by the Gaussian functional in
+\cref{eq:fredholm-gaussian-cokernel}; in particular
+\(\ell_0(0,1)=\sqrt{2\pi}\).
+
+\subsection{From the delay moment to the collective equation}
+
+The auxiliary parameter \(\rho\) used in the graph construction in
+\cref{subsec:invariant-history-details} gives the Taylor expansion
+\begin{equation}
+ H_{N,\rho,\nu,\eta}
+ =\rho H_{1,N,\nu,\eta}+O(\rho^2),
+ \qquad
+ H_{1,N,\nu,\eta}
+ =\left.\partial_\rho H_{N,\rho,\nu,\eta}\right|_{\rho=0},
+ \label{eq:fold-first-graph-coefficient}
+\end{equation}
+in the weighted \(C^3\) norm used for the invariant graph.  Setting
+\(\rho=\delta\) recovers the graph of the RFDE.
+
+Let \(R=(R_0,\ldots,R_m)\in\mathfrak T_N^{\rm red}\) be an admissible
+perturbation direction and differentiate the
+first graph coefficient with respect to \(\eta\) at \(\eta=0\), in the
+direction \(R\), along \(\gamma_0\).  Since
+\[
+ X_0(s)-X_0(s-\theta_k)=-\frac{\theta_k}{2\alpha},
+\]
+the transverse equation is
+\[
+ A_N\left.D_\eta H_{1,N}[R]\right|_{\eta=0}
+       -\frac{K}{2\alpha}P_{\perp,N}
+       \sum_{k=0}^m\theta_kR_k\mathbf1=0.
+\]
+Thus
+\begin{equation}
+ \left.D_\eta H_{1,N}[R]\right|_{\eta=0}
+ =A_N^{-1}\mathsf S_NR.                            \label{eq:fold-transverse-variation}
+\end{equation}
+The row identities \(\pi_N^TR_k=0\) eliminate every direct
+delayed-coupling derivative from the collective equation.  More explicitly, write
+\(h=\delta H_{1,N}+O(\delta^2)\) on the invariant graph.  The only
+contribution from this perturbation to the coefficient of \(\delta^2\) in the first
+collective equation is then
+\begin{equation*}
+ -2X\pi_N^T\diag(c_N)
+      \left.D_\eta H_{1,N}[R]\right|_{\eta=0};
+\end{equation*}
+the direct derivative of
+\(K\pi_N^T\mathcal L_{N,\eta}[Z_N]\) vanishes because
+\(\pi_N^TR_k=0\).  Since \(X_0(s)=-s/(2\alpha)\),
+\cref{eq:fold-transverse-variation,eq:rw-return-functional} give
+\begin{equation}
+ \left.D_\eta q_{2,N}(\gamma_0(s),\nu,\eta)[R]\right|_{\eta=0}
+   =(-\Lambda_N(R)s,0).                             \label{eq:fold-return-source}
+\end{equation}
+Pairing with \cref{eq:fredholm-gaussian-cokernel} yields
+\begin{equation}
+ \left.\ell_0\!\left(D_\eta q_{2,N}[R]\right)\right|_{\eta=0}
+ =-\sqrt{2\pi}\Lambda_N(R).                        \label{eq:fold-return-pairing}
+\end{equation}
+This is the concrete realization of the Fredholm expression in
+\cref{thm:fredholm-heteroclinic-sensitivity}.  The cancellation takes place
+before the delay moment is formed; hence
+\cref{eq:fold-return-source} is an identity for the derivatives of the graph
+representing the locally invariant manifold, not a current-state formal
+expansion.
+
+The order-\(\delta\) collective coefficient is equally explicit.  Along
+\(\gamma_0\),
+\begin{equation*}
+ q_{1,N}(s)
+ =\left(\frac{\kappa_N}{8\alpha^3}s^3+C_N,\,\nu\right),
+ \qquad
+ C_N=-\frac{K}{2\alpha}\pi_N^T
+           \left(\sum_{k=0}^m\theta_kB_{k,N}\right)\mathbf1.
+\end{equation*}
+The constant \(C_N\) has zero pairing with the odd Gaussian factor in
+\cref{eq:fredholm-gaussian-cokernel}.  With
+\[
+ \kappa_N=\frac\beta3
+   +2\pi_N^T\diag(c_N)A_N^{-1}P_{\perp,N}c_N,
+ \qquad
+ \nu_{0,N}=-\frac{3\kappa_N}{8\alpha^3},
+\]
+and
+\(\int_{\mathbb R}s^4e^{-s^2/2}\,\dd s=3\sqrt{2\pi}\), Gaussian
+integration gives
+\begin{equation}
+ \ell_0(q_{1,N})=\sqrt{2\pi}(\nu-\nu_{0,N}).        \label{eq:fold-parameter-pairing}
+\end{equation}
+
+\subsection{A finite-interval matching function}
+
+Choose two one-sided traces on the locally invariant manifold, impose the phase
+\(X(0)=0\), and place the endpoints on the same regular level of the first
+integral of \(q_0\).  Denote the resulting scalar matching function by
+\(D_N^{\rm fin}(\delta,\nu,\eta)\).  If \(z^a\) and \(z^r\) are the
+attracting and repelling traces at the phase section, its normalization is
+\begin{equation}
+ D_N^{\rm fin}
+ =\frac{2}{\alpha e}
+   \{\mathscr H_\alpha(z^a(0))-\mathscr H_\alpha(z^r(0))\}.
+ \label{eq:finite-matching-definition}
+\end{equation}
+The traces are exact histories on the retained interval.  Outside that
+interval, their auxiliary completion serves only to close the two finite
+boundary-value problems.
+
+\begin{proposition}[Derivative estimates for the finite-interval matching function]
+\label[proposition]{prop:finite-comparison}
+On a common parameter neighborhood, independently of \(N\),
+\begin{align}
+ \frac{D_N^{\rm fin}}{\delta}
+ &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),
+                                                        \label{eq:finite-comparison-level}\\
+ \partial_\nu D_N^{\rm fin}
+ &=\delta\sqrt{2\pi}+O(\delta^2),
+                                                        \label{eq:finite-comparison-slope}\\
+ \bigl\|D_\eta D_N^{\rm fin}
+       +\delta^2\sqrt{2\pi}\Lambda_N\bigr\|
+ &\le C\{\delta^3+\delta^2\|\eta\|\}.             \label{eq:finite-comparison-structural}
+\end{align}
+The derivatives are taken in the operator norm on
+\((\mathfrak T_N^{\rm red})^*\).  These estimates do
+not assert that the zero set of \(D_N^{\rm fin}\) is a heteroclinic
+connection of the globally modified RFDE.
+\end{proposition}
+
+\begin{proof}
+Differentiate the first integral along the attracting and repelling traces
+and integrate from their endpoints to the phase section.  The leading terms
+are exactly \cref{eq:fold-parameter-pairing,eq:fold-return-pairing}.  The
+remaining terms consist of the omitted Gaussian tails, the moving traces,
+the graph remainder in \cref{eq:fold-reduced-expansion}, and the fixed
+finite-interval boundary conditions.  The graph and trace inverse bounds give
+\[
+ Ce^{-S_\delta^2/2+cS_\delta}\langle S_\delta\rangle^M
+   =C\delta^{p_0-o(1)}=o(\delta^4)
+\]
+for the tails, while the other first-derivative remainders have the orders
+shown in \cref{eq:finite-comparison-level,eq:finite-comparison-structural}.
+The exact decomposition and all mixed estimates are proved in
+\cref{prop:finite-gap-bridge}.  Combining them with the two Gaussian
+pairings proves the proposition.
+\end{proof}
+
+The next section states the additional invariant-manifold hypotheses needed
+to define a scalar function for the stable/unstable manifold intersection.
+If that function and
+\(D_N^{\rm fin}\) satisfy the stated uniform \(C^1\) comparison, the abstract
+sensitivity theorem transfers \cref{eq:fold-return-pairing} to the
+heteroclinic parameter.  The comparison is not a consequence of the
+finite-interval calculation alone.

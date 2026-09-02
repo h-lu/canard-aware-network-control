@@ -1,0 +1,954 @@
+\section{Hypotheses for the global connection problem}
+\label{sec:supp-connection-details}
+
+This section gives a precise functional-analytic form of the additional
+hypotheses used in
+\cref{sec:heteroclinic-connection,prop:connection-comparison}.  We work
+with the globally modified equation defined by
+\cref{eq:rw-voltage-rfde,eq:rw-modified-recovery}; the function \(g\) is
+fixed throughout.  Uniformity in \(N\) and in the parameter box from
+\cref{cor:rw-conditional-connection} is part of each stated hypothesis.
+Let \(\mathcal F_p^g\) denote this equation's fold-time RFDE vector field,
+where \(p=(\nu,\eta)\), and put
+\[
+ \sigma(r)=(r-\delta^2\nu)g(r),
+ \qquad \sigma_\pm'=\sigma'(\pm r_A).
+\]
+
+Except in the characteristic-root calculation at the equilibria, we use
+fold time \(s=\delta t\), so the delay translations are
+\(s\mapsto s-\theta_k\).  The spectral parameter in that calculation is
+explicitly denoted \(\lambda_t\) and belongs to the original time \(t\).
+If \(\Sigma\) is a regular event section, then
+\(\mathscr H_\Sigma^2\) denotes the compatible \(C^2\) history section and
+\(\mathcal P_{\Sigma_1\Sigma_2,p}\) denotes the forward event map between
+two such sections.  The event map is used only where the crossing speed has
+a common nonzero lower bound.
+
+Fix \(0<r_L<r_{\rm loc}\) and write
+\begin{equation}
+ \Sigma_L=\{\phi:r(\phi)=-r_L\}.
+ \label{eq:supp-negative-regular-section}
+\end{equation}
+A \emph{negative reference branch} below is a \(C^2\) orbit segment
+\(Z_p^-(s)=(v_p^-(s),w_p^-(s))\) of the fixed modified RFDE, parameterized in
+fold time, for which
+\[
+ r_p(s):=\pi_N^T\{v_p^-(s)-\mathbf1\}<0,
+ \qquad r_p'(s)<0,
+\]
+and whose forward continuation converges to \(Z_N^-\).  The branch used in
+the proofs is the one obtained from the stable manifold in
+\cref{hyp:supp-outer-manifolds}(iii).  On an attracting positive reference
+segment we use the same notation \(r_p(s)\), now with \(r_p(s)>0\) and
+\(r_p'(s)<0\).  Let
+\begin{equation}
+ \mathcal J_N^{\rm fv}(r)
+ =D(P_N-\Id)-\diag\!\left(
+ 2c_N\circ\{V_{0,N}(r)-\mathbf1\}
+ +\beta\{V_{0,N}(r)-\mathbf1\}^{\circ2}\right)
+ \label{eq:supp-frozen-voltage-jacobian}
+\end{equation}
+and denote by \(\lambda_{c,N}(r)\) its simple real eigenvalue near zero; it
+is positive for \(-r_A<r<0\) and negative for \(0<r<r_A\).  On either
+regular branch set
+\begin{equation}
+ a_p(s)=\left\{\abs{\lambda_{c,N}(r_p(s))}^{-1}
+                    +2(D\gamma)^{-1}\right\}^{-1}.
+ \label{eq:supp-capped-voltage-rate}
+\end{equation}
+Thus \(a_p(s)\) is comparable to
+\(\min\{\abs{\lambda_{c,N}(r_p(s))},D\gamma\}\), and hence to
+\(\abs{r_p(s)}\) on either regular branch.  Choose a fixed
+\(c_\sharp\in(0,1/4)\) and
+set
+\begin{equation}
+ \kappa_u(s)=c_\sharp
+ \left\{\frac{\delta}{a_p(s)}
+       +\frac{\theta_m}{\log(1/\delta)}\right\}^{-1},
+ \qquad
+ \mathcal A_u(s,t)=\int_t^s\kappa_u(\zeta)\,\dd\zeta,
+ \label{eq:supp-dichotomy-action}
+\end{equation}
+For a voltage history \(\phi\), and for a full history
+\((\phi,\omega)\) in which \(\omega\) is the present recovery component,
+define
+\begin{align}
+ \norm{\phi}_{p,s,\sharp}^{v}
+ &=\sup_{-\theta_m\le\theta\le0}
+   e^{-2\mathcal A_u(s,s+\theta)}\norm{\phi(\theta)}_N,\notag\\
+ \norm{(\phi,\omega)}_{p,s,\sharp}
+ &=\max\left\{\norm{\phi}_{p,s,\sharp}^{v},
+       \frac{\abs\omega}{\abs{w_{0,N}'(r_p(s))}}\right\}.
+ \label{eq:supp-fading-history-norm}
+\end{align}
+This scaling separates the slow tangential direction from the voltage
+dichotomy.
+
+For a map depending on \(p=(\nu,\eta)\), write
+\[
+ \norm{\mathbf D_p^1F}
+ =\max\{\norm F,\norm{\partial_\nu F},\norm{D_\eta F}\}.
+\]
+The last norm is the full operator norm on
+\(\mathfrak T_N^{\rm red}\).
+Every statement below that uses a global orbit segment or an invariant
+manifold associated with \(Z_N^\pm\) is conditional on
+\(\mathrm{(H_{\rm glob})}\) in
+\cref{hyp:supp-outer-manifolds}.  The local spectral calculation verifies
+only item~\textup{(i)} of that hypothesis.
+Throughout the estimates, \(M\ge0\) denotes a fixed exponent larger than
+the finitely many losses caused by history traces, event maps, and one
+parameter derivative.  For each prescribed algebraic order, \(p_0\) in
+\cref{eq:supp-central-cuts} is then chosen to satisfy
+\cref{eq:supp-central-action-choice}.
+
+\subsection{Invariant manifolds at the two equilibria}
+
+\begin{assumption}[Global invariant-manifold and comparison hypotheses]
+\label[assumption]{hyp:supp-outer-manifolds}
+Fix \(r_A\), \(\delta_0\), and the parameter box in
+\cref{cor:rw-conditional-connection}.  We say that
+\(\mathrm{(H_{\rm glob})}\) holds when the following objects and estimates are
+available uniformly in \(N\) and in that parameter box.
+
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item The characteristic roots at \(Z_N^\pm\) are separated from the
+imaginary axis.  At \(Z_N^+\) the only unstable root is the simple slow
+root
+\begin{equation}
+ \lambda_{s,\pm}^{t}
+ =\delta^2\frac{\sigma_\pm'}{w_{0,N}'(\pm r_A)}+O(\delta^4),
+ \label{eq:supp-outer-slow-roots}
+\end{equation}
+where the superscript indicates the original-time spectral parameter.  At
+\(Z_N^-\) this root is stable, and the only unstable root is the simple
+voltage root.
+
+\item The local unstable manifold of \(Z_N^+\) is \(C^2\) in the state and
+\(C^1\) in \(p\), on a ball of radius \(c_A\delta^4\) in the scaled history
+chart.  Its inward component contains a unique orbit defined
+for all negative time and converging to \(Z_N^+\) as \(s\to-\infty\).
+Forward continuation gives a unique transverse hit
+\(A_p^0\in\mathscr H_{\Sigma_0}^2\).  On each fixed positive regular
+subinterval, the orbit and its first parameter derivatives are bounded in
+the norm \cref{eq:supp-fading-history-norm}.
+
+\item The local stable manifold of \(Z_N^-\) is \(C^2\) in the state and
+\(C^1\) in \(p\), on a ball of radius \(c_A\delta^4\) in the scaled history
+chart.  On a fixed negative regular section \(\Sigma_L\), the histories whose
+forward orbits converge to \(Z_N^-\) form a codimension-one \(C^2\)
+stable manifold.  There is a \(C^1\) defining function
+\(\mathfrak m_{L,p}\) and a normalized vector in the unstable tangent space
+\(\jmath_{L,p}^{u,\infty}\) such that, at a reference point
+\(\bar Z_{-,L}\) of this manifold,
+\begin{equation}
+ \Lambda_{L,p}^{\infty}
+ :=D\mathfrak m_{L,p}(\bar Z_{-,L}),
+ \qquad
+ \Lambda_{L,p}^{\infty}\jmath_{L,p}^{u,\infty}=1.
+ \label{eq:supp-terminal-normalization}
+\end{equation}
+The orbit through \(\bar Z_{-,L}\) is defined on a negative half-line and
+converges to \(Z_N^-\).
+
+\item Replace the asymptotic condition at \(Z_N^-\) by a boundary condition
+on a truncated interval whose endpoint lies a distance \(L_\delta\) beyond
+\(\Sigma_L\) along the negative branch.  The integrated unstable
+rate
+satisfies
+\begin{equation}
+ \mathcal A_u(L_\delta,0)
+ \ge c\frac{\log(1/\delta)}{\delta}.
+ \label{eq:supp-integrated-unstable-rate}
+\end{equation}
+Consequently, replacing the stable-manifold condition at infinity by a
+boundary functional at the truncated endpoint, with polynomially bounded
+first derivatives, changes the
+pulled-back defining covector, after normalization on the same transported
+unstable tangent vector, by at most
+\begin{equation}
+ C\delta^{-M}
+ \exp\left\{-c\frac{\log(1/\delta)}{\delta}\right\}.
+ \label{eq:supp-terminal-decay}
+\end{equation}
+The same estimate holds for the defining-function value and after one
+state or parameter derivative.
+
+\item Let \(A_p^{\rm fin}\) be the attracting trace used to define
+\(D_N^{\rm fin}\) in \cref{prop:finite-comparison}, intersected with
+\(\Sigma_0\) after both forward orbits have entered the region where the
+two equations agree.  For every \(q>0\), the endpoint in the
+finite-interval construction may be placed at a sufficiently large value of
+\(S_\delta\) that the Gaussian tail estimate gives
+\begin{equation}
+ \norm{\mathbf D_p^1(A_p^0-A_p^{\rm fin})}
+ \le C_q\delta^q.
+ \label{eq:supp-positive-history-comparison}
+\end{equation}
+\end{enumerate}
+\end{assumption}
+
+Only the spectral condition in item~\textup{(i)} is verified below from the
+displayed network assumptions.  Items~\textup{(ii)}--\textup{(v)} are
+additional hypotheses; local hyperbolicity alone does not supply the global
+orbit segments, their intersection, or the comparison estimates.
+
+\begin{lemma}[Spectral condition at the two equilibria]
+\label[lemma]{lem:supp-outer-spectral}
+Under the assumptions of \cref{cor:rw-conditional-connection}, after
+\(r_A\) and \(\delta_0\) are decreased, item~\textup{(i)} of
+\(\mathrm{(H_{\rm glob})}\) holds.
+\end{lemma}
+
+\begin{proof}
+For this spectral calculation only, derivatives and characteristic roots are
+taken in the original time \(t\).  Put
+\begin{equation}
+ J_\pm=D(P_N-\Id)-\diag\!\left(
+ 2c_N\circ\{V_{0,N}(\pm r_A)-\mathbf1\}
+ +\beta\{V_{0,N}(\pm r_A)-\mathbf1\}^{\circ2}\right)
+ =\mathcal J_N^{\rm fv}(\pm r_A)
+ \label{eq:supp-outer-voltage-jacobian}
+\end{equation}
+and
+\begin{equation}
+ A_\pm(\lambda_t)
+ =J_\pm+\delta^2K\sum_{k=0}^m(B_{k,N}+E_{k,N})
+       \{1-e^{-\lambda_t\theta_k/\delta}\}.
+ \label{eq:supp-original-time-characteristic-block}
+\end{equation}
+The Dobrushin inverse on \(E_N\), followed by the two invariant-graph
+equations for the splitting
+\(\R^N=\operatorname{span}\{\mathbf1\}\oplus E_N\), gives one simple real
+eigenvalue
+\[
+ \lambda_{c,N}(r)=-2\alpha r+O(r^2)
+\]
+of \(\mathcal J_N^{\rm fv}(r)\); the complementary semigroup decays at rate
+at least \(D\gamma/2\).  Thus, after \(r_A\) is fixed sufficiently small,
+\(J_+\) has no unstable eigenvalue, \(J_-\) has exactly the simple unstable
+eigenvalue \(\lambda_{c,N}(-r_A)\), and the resolvents on the imaginary axis
+are bounded uniformly in \(N\).  On \(\Re\lambda_t\ge0\), the delay term in
+\cref{eq:supp-original-time-characteristic-block} is an
+\(O(\delta^2)\) perturbation in the layer norm.  A Neumann-series argument
+therefore gives the same imaginary-axis resolvent bound for
+\(\lambda_t\Id-A_\pm(\lambda_t)\) when \(\delta\) is small; explicitly,
+\begin{equation}
+ \sup_{\omega\in\R}
+ \norm{(i\omega\Id-A_\pm(i\omega))^{-1}}
+ \le C_A,
+ \label{eq:supp-outer-imaginary-resolvent}
+\end{equation}
+where \(C_A\) is independent of \(N\), \(\delta\), and the admitted
+constrained perturbation (with the fixed choice of \(r_A\)).
+
+The modal equations are
+\[
+ (\lambda_t\Id-A_\pm(\lambda_t))u=-\omega\mathbf1,
+ \qquad
+ \lambda_t\omega=\delta^2\sigma_\pm'\pi_N^Tu.
+\]
+Eliminating \(u\) near zero gives
+\[
+ \Delta_\pm(\lambda_t)
+ =\lambda_t+\delta^2\sigma_\pm'\pi_N^T
+   (\lambda_t\Id-A_\pm(\lambda_t))^{-1}\mathbf1.
+\]
+Differentiating \cref{eq:rw-critical-curve-equation} yields
+\[
+ \pi_N^T(-J_\pm)^{-1}\mathbf1
+ =-\frac1{w_{0,N}'(\pm r_A)}.
+\]
+It follows that
+\[
+ \Delta_\pm(\lambda_t)
+ =\lambda_t-\delta^2
+   \frac{\sigma_\pm'}{w_{0,N}'(\pm r_A)}+O(\delta^4),
+ \qquad
+ \Delta_\pm'(\lambda_t)=1+O(\delta^2).
+\]
+This proves the simple-root expansion in
+\cref{eq:supp-outer-slow-roots}.  To count the other roots, replace
+\(\delta^2\) in the second modal equation by
+\(\varepsilon\in[0,\delta^2]\).  The same imaginary-axis resolvent
+excludes a crossing outside a small neighborhood of zero.  Inside that
+neighborhood the real part of
+\(\varepsilon\sigma_\pm'/w_{0,N}'(\pm r_A)\) excludes a crossing away
+from the simple root.  The argument principle therefore preserves the
+remaining right-half-plane count.  The contour is taken in the original-time
+\(\lambda_t\)-plane; the uniform voltage resolvent excludes imaginary-axis
+zeros along the homotopy, and standard retarded-equation root bounds close
+the contour in a common right half-plane.  The signs of \(w_{0,N}'\),
+\(g'\), and \(\sigma_\pm'\) give the indices in (i).  All subsequent orbit
+and dichotomy estimates return to fold time \(s=\delta t\).
+\end{proof}
+
+\begin{remark}[Sufficient quantitative data for the remaining hypotheses]
+The following conditions are sufficient for the later comparison argument;
+they are not derived here from the local spectral calculation.  For
+item~\textup{(ii)}, it is sufficient to verify that the local
+Lyapunov--Perron map, in \cref{eq:supp-fading-history-norm} and with the slow
+coordinate divided by \(\delta^4\), is a uniform contraction on the stated
+ball; that its inward one-dimensional branch exists for all negative time;
+and that its forward continuation reaches \(\Sigma_0\) with a uniformly
+nonzero crossing speed.  The RFDE invariant-manifold theorem and the event
+implicit-function theorem then give the regularity asserted in
+item~\textup{(ii)}.  This verification uses only forward continuation from
+the local unstable manifold.
+
+For item~\textup{(iii)}, one checkable sufficient condition on a fixed
+negative regular interval and its delay enlargement is as follows.  Require
+an approximate orbit segment of the form
+\begin{equation}
+ \Gamma_{-,p}^{[10]}(s)=\sum_{j=0}^{9}\delta^j\Gamma_{j,p}(s)
+ \label{eq:supp-negative-slow-expansion}
+\end{equation}
+with \(\Gamma_{0,p}\) on the critical curve
+\cref{eq:rw-critical-curve}.  The coefficient equations obtained by
+substitution into the fold-time RFDE must be solvable successively.  At each
+order, it is enough that the voltage coefficient and scalar speed correction
+solve the bordered equation associated with
+\begin{equation}
+ \mathscr B_N(r):E_N\times\R\longrightarrow\R^N,
+ \qquad
+ \mathscr B_N(r)(Z,Q)=\mathcal J_N^{\rm fv}(r)Z-Q\mathbf1.
+ \label{eq:supp-negative-bordered-map}
+\end{equation}
+At \(r=0\), projection by \(\pi_N^T\) determines \(Q\), while projection by
+\(P_{\perp,N}\) determines \(Z\) through \(A_N^{-1}\); the Dobrushin bound
+therefore gives a uniform inverse for \(\mathscr B_N(0)\).  A sufficient
+regular-interval condition is
+\[
+ \sup_{N,p,\,r\in[-r_A,-r_L]}
+ \norm{\mathscr B_N(r)^{-1}}<\infty,
+ \qquad
+ \inf_{N,p,\,r\in[-r_A,-r_L]}\abs{w_{0,N}'(r)}>0.
+\]
+Together with the fixed delay translations and the uniform layer bounds,
+these inequalities make the coefficient recursion and its first
+\(p\)-derivative uniform.  Write \(\Gamma_-=\Gamma_{-,p}^{[10]}\) and define
+\begin{align}
+ R_{\Gamma_-}(s)
+ &=\Gamma_-'(s)-\mathcal F_p^g((\Gamma_-)_s),\notag\\
+ \mathcal N_{\Gamma_-}(z)
+ &=\mathcal F_p^g((\Gamma_-+z)_s)
+   -\mathcal F_p^g((\Gamma_-)_s)
+   -D\mathcal F_p^g((\Gamma_-)_s)z_s.
+ \label{eq:supp-negative-residual-definition}
+\end{align}
+The required residual estimate is
+\begin{equation}
+ \norm{R_{\Gamma_-}}+\norm{D_pR_{\Gamma_-}}\le C\delta^9.
+ \label{eq:supp-negative-residual}
+\end{equation}
+In addition, require an exponential dichotomy on the negative half-line with
+a Green operator that propagates the stable complement forward and evaluates
+the unstable coefficient by
+\begin{equation}
+ (\mathbb G_-f)_u(s)
+ =-\int_s^\infty U_u(s,\zeta)P_u(\zeta)f(\zeta)\,\dd\zeta.
+ \label{eq:supp-half-line-green}
+\end{equation}
+and satisfies, in the scaled range and history norms,
+\[
+ \norm{\mathbb G_-}\le C\delta^{-2}.
+\]
+Finally require that, on a ball of radius \(c\delta^6\), the map
+\[
+ z\longmapsto
+ \mathbb G_-\{-R_{\Gamma_-}+\mathcal N_{\Gamma_-}(z)\}
+\]
+maps the ball into itself and has Lipschitz constant at most \(1/3\), with the
+same bounds after one parameter derivative.  These conditions imply the
+stable manifold and its \(C^1\) parameter dependence through the standard
+Lyapunov--Perron theorem; varying the stable entry coordinate supplies the
+local graph, and \cref{eq:supp-terminal-normalization} fixes its scalar
+normalization.  They are a verification route for item~\textup{(iii)}, not a
+consequence of item~\textup{(i)} alone.
+
+For item~\textup{(iv)}, it is sufficient to verify the action lower bound
+\cref{eq:supp-integrated-unstable-rate}, a polynomial bound for the endpoint
+functional and its first derivatives, and the corresponding roughness bound
+for the dichotomy.  The difference between the infinite unstable integral in
+\cref{eq:supp-half-line-green} and its truncated counterpart is then confined
+to the omitted tail.  Applying the dichotomy estimate to this tail, followed
+by the mean-value identity for the two Lyapunov--Perron fixed points, yields
+\cref{eq:supp-terminal-decay}; differentiation yields the stated derivative
+estimate.
+
+For item~\textup{(v)}, it is sufficient that the two attracting histories,
+once they satisfy the same RFDE and use the same event clock, obey a forward
+variation-of-constants estimate with polynomially bounded initial
+difference, attracting factor
+\(e^{-c\log(1/\delta)/\delta}\), and fold-passage tail
+\[
+ C\delta^{-M}e^{-S_\delta^2/2+cS_\delta}
+       \langle S_\delta\rangle^M.
+\]
+For each fixed \(q>0\), choosing the exponent in \(S_\delta\) sufficiently
+large makes both terms \(O(\delta^q)\).  The differentiated equations have
+only a finite
+additional power loss, which is absorbed by the same choice.
+\end{remark}
+
+\subsection{A bounded solution operator for the normal variational equation}
+
+\begin{lemma}[Normal variational equation in the fold chart]
+\label[lemma]{lem:supp-central-boundary-inverse}
+Let \(\mathcal I_p\) be the history lift associated with the invariant graph in
+\cref{prop:fold-invariant-histories}, and let \(e_{\rm pl}\) denote present
+evaluation of the two fold variables.  Let
+\(I=[s_-,s_+]\subset[-S_\delta,S_\delta]\) be a closed fold-chart interval such
+that its delay enlargement
+\(I^-=[s_--\theta_m,s_+]\) remains in the region where the original and
+modified equations agree.  Along an orbit \(u_p:I\to\R^2\) on the invariant
+graph, the map
+\begin{equation}
+ \phi\longmapsto
+ \bigl(e_{\rm pl}\phi,\,
+       \phi-\mathcal I_p(e_{\rm pl}\phi)\bigr)=:(u,\omega)
+ \label{eq:supp-central-shear}
+\end{equation}
+is a local \(C^2\)-in-state and \(C^1\)-in-\(p\) diffeomorphism.  Put
+\[
+ \mathscr H_{\perp,p}=\Ker e_{\rm pl}
+ \subset C([ -\theta_m,0];\R^{N+1})
+\]
+in the fold-coordinate history chart, with the maximum history norm, and let
+\(\mathscr N_{\perp,p}\) be the corresponding current normal-coordinate
+space.  Denote by \(\mathcal A_{\perp,p}(s)\) the derivative of the RFDE in
+the normal coordinate furnished by \cref{eq:supp-central-shear}.  Define
+\begin{align}
+ \mathscr F_{\perp,p}(I)
+ &=L^\infty(I;\mathscr N_{\perp,p}),\notag\\
+ \mathscr X_{\perp,p}(I)
+ &=\left\{\omega\in C(I^-;\mathscr N_{\perp,p}):
+       \omega|_I\in W^{1,\infty},\
+       \omega_{s_-}\in\mathscr H_{\perp,p}\right\},
+ \label{eq:supp-central-normal-spaces}
+\end{align}
+with graph norm
+\[
+ \norm\omega_{\mathscr X_{\perp,p}}
+ =\sup_{s\in I}\norm{\omega_s}_{\mathscr H_{\perp,p}}
+  +\norm{\omega'-\mathcal A_{\perp,p}(\cdot)\omega_\bullet}
+          _{\mathscr F_{\perp,p}}.
+\]
+Then the initial-value operator
+\begin{equation}
+ \mathbf L_{\perp,p,I}:\mathscr X_{\perp,p}(I)
+ \longrightarrow
+ \mathscr F_{\perp,p}(I)\times\mathscr H_{\perp,p},
+ \qquad
+ \omega\longmapsto
+ \left(\omega'-\mathcal A_{\perp,p}(\cdot)\omega_\bullet,
+       \omega_{s_-}\right)
+ \label{eq:supp-central-normal-path-operator}
+\end{equation}
+is an isomorphism.  There exist \(M_\perp\ge0\) and \(C>0\), independent of
+\(N\), such that both \(\mathbf L_{\perp,p,I}^{-1}\) and its first derivative
+with respect to \(p\) have norm at most \(C\delta^{-M_\perp}\).
+\end{lemma}
+
+\begin{proof}
+Since \(e_{\rm pl}\mathcal I_p=\Id\), the inverse of
+\cref{eq:supp-central-shear} is
+\[
+ (u,\omega)\longmapsto\mathcal I_p(u)+\omega.
+\]
+Subtract the derivative of the graph invariance equation from the full
+variational RFDE.  The normal equation is triangular up to a Volterra
+term.  Its history-translation component in the fold variables is the
+left-translation equation with
+an integral over at most one maximal delay, while its transverse present
+component has the form
+\begin{equation}
+ \rho'(s)=\delta^{-1}A_N\rho(s)
+          +\mathcal C_p(s)[\kappa_s,\rho_s]+f(s).
+ \label{eq:supp-central-normal-equation}
+\end{equation}
+By the Dobrushin estimate,
+\begin{equation}
+ \sup_s\norm{\int_0^s
+ e^{A_N(s-\zeta)/\delta}f(\zeta)\,\dd\zeta}_N
+ \le\frac{\delta}{D\gamma}\norm f_\infty.
+ \label{eq:supp-central-poisson}
+\end{equation}
+Feedback from the normal history into this history-translation component carries
+one factor \(\delta\).  On \(I\) its Volterra norm is
+\[
+ C\delta e^{cS_\delta}\langle S_\delta\rangle^M=o(1).
+\]
+A Neumann series therefore gives the bounded solution operator, with at most a fixed
+power of \(\delta^{-1}\) from the trace norms.  Differentiating the solved
+Volterra equation in \(p\) uses the same inverse.  This proves a bound for
+solution derivatives; no differentiability assertion for an inverse RFDE
+semiflow is involved.
+\end{proof}
+
+\subsection{The stable manifold and a truncated boundary-value problem}
+
+Fix \(0<\chi<1\) and \(\sigma_0>\theta_m+1\).  With
+\(S_\delta=\sqrt{2p_0\log(1/\delta)}\), set
+\begin{equation}
+ s_b=\chi S_\delta,\qquad
+ s_c=S_\delta-\sigma_0,\qquad
+ E_b=e^{s_b^2/2},\qquad
+ a_{b,\delta}=\frac{\delta}{s_b}E_b,
+ \label{eq:supp-central-cuts}
+\end{equation}
+and
+\begin{equation}
+ b_\delta=S_\delta^{-2}+\sqrt\delta\,S_\delta^{7/2},
+ \qquad
+ \mathcal A_{bc}=\frac12(s_c^2-s_b^2).
+ \label{eq:supp-central-overlap-scale}
+\end{equation}
+For every prescribed \(q>0\), choose \(p_0\) so that
+\begin{equation}
+ \delta^{-M}e^{-\mathcal A_{bc}+cS_\delta}
+       \langle S_\delta\rangle^M\le C_q\delta^q
+ \label{eq:supp-central-action-choice}
+\end{equation}
+for every finite loss \(M\) occurring below.
+
+\begin{lemma}[Stable-manifold graph on a common event section]
+\label[lemma]{lem:supp-intermediate-section-graphs}
+Assume \(\mathrm{(H_{\rm glob})}\).  Let \(\Sigma_b\) be the event section
+corresponding to \(s_b\), and let
+\(O_{b,p}\) be the intersection of the half-line orbit in
+\cref{hyp:supp-outer-manifolds}.  Let \(C_{b,p}^{\rm fin}\) be the
+repelling trace used in \cref{prop:finite-comparison}.  There is a
+compatible history chart
+\[
+ \Phi_{b,p}(\psi,u),\qquad \Phi_{b,p}(0,0)=O_{b,p},
+\]
+whose \(u\)-direction is the oriented unstable tangent vector normal to the
+event section.  Its domain contains a ball of radius \(Rb_\delta\), with
+\(R\) independent of \(N\) and \(\delta\).  With the fixed exponent \(M\)
+above,
+\begin{equation}
+ \norm{\mathbf D_p^1\{\Phi_{b,p}^{-1}(C_{b,p}^{\rm fin})\}}
+ \le C\delta^{-M}b_\delta.
+ \label{eq:supp-common-section-distance}
+\end{equation}
+
+In this chart the stable manifold is
+\begin{equation}
+ \mathcal S_b^-(p)
+ =\{\Phi_{b,p}(\psi,F_{b,p}^-(\psi))\},
+ \qquad
+ \mathfrak m_{b,p}(\Phi_{b,p}(\psi,u))
+ =u-F_{b,p}^-(\psi).
+ \label{eq:supp-stable-graph-b}
+\end{equation}
+The graph is \(C^2\) in the state and \(C^1\) in \(p\), and its
+\(C^2\) norm is at most \(C\delta^{-M}\).
+
+Let \(F_{b,p}^{\rm fin}\) be the graph obtained by imposing an affine
+boundary functional at the truncated endpoint \(\Sigma_c\).  Then
+\begin{equation}
+ C_{b,p}^{\rm fin}
+ =\Phi_{b,p}(\zeta_{C,p},
+                  F_{b,p}^{\rm fin}(\zeta_{C,p})),
+ \label{eq:supp-finite-trace-incidence}
+\end{equation}
+and, for every \(q>0\), after choosing \(p_0\) as in
+\cref{eq:supp-central-action-choice},
+\begin{equation}
+ \norm{\mathbf D_p^1(F_{b,p}^--F_{b,p}^{\rm fin})}_{C^1}
+ \le C_q\delta^q.
+ \label{eq:supp-stable-finite-comparison}
+\end{equation}
+
+If \(k_{b,p}^c\) is the tangent vector in the compatible-history section
+obtained by transporting from \(\Sigma_0\) to \(\Sigma_b\) the normalized
+tangent vector normal to the event section, then
+\begin{equation}
+ a_{0b,p}:=D\mathfrak m_{b,p}(C_{b,p}^{\rm fin})k_{b,p}^c
+ \label{eq:supp-central-terminal-pairing}
+\end{equation}
+satisfies
+\begin{equation}
+ c_0a_{b,\delta}\le a_{0b,p}\le C_0a_{b,\delta},
+ \qquad
+ \abs{D_p\log a_{0b,p}}\le C\delta^{-M}.
+ \label{eq:supp-central-terminal-pairing-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+First continue the orbit from
+\cref{hyp:supp-outer-manifolds}(iii) forward until all histories on
+\(\Sigma_b\) are formed by the same forward RFDE segment.  The half-line
+stable manifold and the event implicit-function theorem give a local
+codimension-one manifold on \(\Sigma_b\).  We now record the mixed
+boundary-value formulation because it supplies both the domain of the
+graph and the comparison estimate.
+
+At \(r=-\delta s_b/(2\alpha)\), the fold tracking estimate and the slow
+expansion used in \cref{eq:supp-negative-residual} give
+\[
+ w=w_{0,N}(r)+\frac{\delta^2}{2\alpha}
+     +O(\delta^3S_\delta^2+\delta^2b_\delta)
+\]
+for the two reference histories.  Their voltage histories differ by
+\(O(b_\delta)\) in \cref{eq:supp-fading-history-norm}.  Applying the event
+map and differentiating its defining equation gives
+\cref{eq:supp-common-section-distance}.  Thus both histories lie in the
+same compatible chart before either graph equation is solved.
+
+Fix \(T>2\theta_m\) and represent the reference orbit segment from
+\(\Sigma_b\) to \(\Sigma_L\) on \([0,T]\).  Choose a strictly increasing
+\(C^2\) reference clock
+\(\chi_0:[-\theta_m,T]\to\R\) which agrees with fold time on the entry and
+terminal history intervals.  Let \(I_{\rm ev}\Subset(0,T)\) be a fixed
+interval, and choose \(\rho_{\rm ev}\in C^2([ -\theta_m,T])\) such that
+\(\rho_{\rm ev}=0\) on \([ -\theta_m,0]\),
+\(\rho_{\rm ev}=1\) on \([T-\theta_m,T]\), and
+\(\operatorname{supp}\rho_{\rm ev}'\subset I_{\rm ev}\).  The scalar
+\(\beta_{\rm clk}\) varies the
+travel time through
+\begin{equation}
+ \chi_{\beta_{\rm clk}}(s)
+ =\chi_0(s)+\beta_{\rm clk}\rho_{\rm ev}(s),
+ \qquad \abs{\beta_{\rm clk}}<\beta_0,
+ \label{eq:supp-clock-family}
+\end{equation}
+where \(\beta_0\) is chosen so that every \(\chi_{\beta_{\rm clk}}\) is
+increasing.  The subscript distinguishes this clock parameter from the fixed
+cubic coefficient \(\beta\) in the RFDE.
+For a path \(Z=(Z_v,Z_w)\), define
+\begin{align}
+ \mathcal H_{\beta_{\rm clk}} Z(s)
+ &=\left(\theta\mapsto
+ Z_v\!\left[\chi_{\beta_{\rm clk}}^{-1}
+       \{\chi_{\beta_{\rm clk}}(s)+\theta\}\right],Z_w(s)\right),\notag\\
+ \mathcal E_p(Z,\beta_{\rm clk})
+ &=Z'-\chi_{\beta_{\rm clk}}'\mathcal F_p^g
+       (\mathcal H_{\beta_{\rm clk}} Z).
+ \label{eq:supp-clocked-history-residual}
+\end{align}
+
+The path space is
+\begin{equation}
+ \mathscr D_{bL}^{0;2}
+ =\left\{Z\in C([ -\theta_m,T];\R^{N+1}):
+ Z|_{[0,T]}\in W^{1,\infty},\quad
+ Z|_{[-\theta_m,0]\cup I_{\rm ev}\cup[T-\theta_m,T]}
+       \in W^{2,\infty}\right\}.
+ \label{eq:supp-mixed-path-space}
+\end{equation}
+Let \(\mathscr Y_b=C([ -\theta_m,0];\R^N)\times\R\) be the entry-history
+space in the scaled fold chart.  To specify the source norm, put
+\[
+ \widehat r_p(s)=r_p(\chi_0(s)),\qquad
+ \widehat a_p(s)=a_p(\chi_0(s)),\qquad
+ q_p(s)=\{\delta\chi_0'(s)\}^{-1}\widehat r_p'(s)
+\]
+along the negative reference branch, expressed in the computational clock on
+\([0,T]\).  Let
+\(\mathscr F_{bL,p}=L^\infty([0,T];\R^{N+1})\), and for
+\(F=(F_v,F_w)\in\mathscr F_{bL,p}\) set
+\begin{align}
+ (\mathcal V_pF_w)(s)
+ &=q_p(s)\int_0^s\frac{F_w(\zeta)}{q_p(\zeta)}\,\dd\zeta,\notag\\
+ \norm F_{\mathscr F_{bL,p}}
+ &=\max\left\{
+   \operatorname*{ess\,sup}_{0\le s\le T}
+        \frac{\delta}{\widehat a_p(s)}\norm{F_v(s)}_N,\
+   \norm{\mathcal V_pF_w}_\infty
+   +\operatorname*{ess\,sup}_{0\le s\le T}
+        \frac{\delta}{\widehat a_p(s)}\abs{F_w(s)}\right\}.
+ \label{eq:supp-mixed-source-norm}
+\end{align}
+Here the second component is the variation-of-constants norm for the scalar
+recovery equation after removal of the time-tangent direction.  Equip
+\(\mathscr D_{bL}^{0;2}\) with the graph norm formed from the supremum of
+\(\norm{\mathcal H_0Z(s)}_{p,\chi_0(s),\sharp}\),
+\(\norm{Z'}_{\mathscr F_{bL,p}}\), and the displayed
+\(W^{2,\infty}\) window norms.
+
+Extend \(\mathfrak m_{L,p}\) from \(\mathscr H_{\Sigma_L}^2\) to a fixed
+tubular neighborhood by making it constant in the flow-normal coordinate.
+For fixed \(\psi\), define
+\begin{equation}
+ \mathcal R_{bL,p}(Z,\beta_{\rm clk},u;\psi)
+ =\left(
+ \mathcal E_p(Z,\beta_{\rm clk}),\
+ \mathcal H_{\beta_{\rm clk}} Z(0)-\Phi_{b,p}(\psi,u),\
+ r(\mathcal H_{\beta_{\rm clk}} Z(T))+r_L,\
+ \mathfrak m_{L,p}(\mathcal H_{\beta_{\rm clk}} Z(T))
+ \right).
+ \label{eq:supp-mixed-residual}
+\end{equation}
+This defines a map
+\begin{equation}
+ \mathcal R_{bL,p}:
+ \underbrace{\mathscr D_{bL}^{0;2}\times\R_{\beta_{\rm clk}}\times\R_u}
+             _{\mathbb X_{bL,p}}
+ \longrightarrow
+ \underbrace{\mathscr F_{bL,p}\times\mathscr Y_b
+             \times\R_{\rm ev}\times\R_{\rm st}}
+             _{\mathbb Y_{bL,p}}.
+ \label{eq:supp-mixed-residual-spaces}
+\end{equation}
+The entry row is equality in the compatible history space.  The event row
+places the terminal history on \(\Sigma_L\), and the last row imposes the
+stable-manifold condition there.  If
+\((\bar Z_p,0,\bar u_p;\bar\psi_p)\) is the reference zero corresponding to
+the stable-manifold orbit, set
+\begin{equation}
+ \mathbb B_p
+ =D_{(Z,\beta_{\rm clk},u)}\mathcal R_{bL,p}
+       (\bar Z_p,0,\bar u_p;\bar\psi_p)
+ :\mathbb X_{bL,p}\longrightarrow\mathbb Y_{bL,p}.
+ \label{eq:supp-mixed-linearization}
+\end{equation}
+
+The quotient variational equation has an exponential dichotomy with a
+codimension-one stable bundle and a one-dimensional unstable bundle.
+Stable data are propagated forward.  Only the unstable scalar is
+determined from the terminal boundary functional.  To see the latter
+explicitly, let
+\(\widehat y_0\) be the terminal history of a particular solution and
+\(\widehat h^u\) the terminal history of the homogeneous unstable solution.
+For prescribed terminal value \(b\), the replacement
+\begin{equation}
+ \widehat y=\widehat y_0+\widehat h^u
+ \frac{b-D\mathfrak m_{L,p}(\bar Z_{-,L})\widehat y_0}
+      {D\mathfrak m_{L,p}(\bar Z_{-,L})\widehat h^u}
+ \label{eq:supp-terminal-schur}
+\end{equation}
+solves the final row.  All three objects in
+\cref{eq:supp-terminal-schur} lie in the same compatible terminal-history
+tangent--dual pairing.  By \cref{eq:supp-terminal-normalization}, and by
+continuity on the stated neighborhood, its denominator is at least
+\(3/4\) for small \(\delta\).
+
+The exponential-dichotomy Green operator, the scalar recovery
+variation-of-constants formula, and the event row therefore make the
+linearization of \cref{eq:supp-mixed-residual} an isomorphism.  In the
+norms weighted by the integrated rate \(\mathcal A_u\), its inverse is bounded by
+\(C\log(1/\delta)\).  On the radius-\(Rb_\delta\) ball, Taylor's formula
+gives
+\[
+ \sup_X\norm{\mathbb B_p^{-1}
+       \{D\mathcal R_{bL,p}(X)-\mathbb B_p\}}
+ \le CR\log(1/\delta)b_\delta<\frac13
+\]
+after \(R\) is fixed and \(\delta_0\) is decreased.  The
+parameter-dependent contraction theorem proves
+\cref{eq:supp-stable-graph-b}, its stated domain, and its derivatives.
+
+For the truncated boundary-value problem, replace the last component in
+\cref{eq:supp-mixed-residual} by the affine row at \(\Sigma_c\) that
+vanishes on \(C_{b,p}^{\rm fin}\).  The two problems have the same
+equation, entry trace, phase row, and stable coordinate between
+\(\Sigma_b\) and \(\Sigma_c\).  They differ only in the terminal unstable
+scalar.  Propagating that scalar backward on the one-dimensional unstable
+bundle yields
+\[
+ \norm{\mathbf D_p^1(F_{b,p}^--F_{b,p}^{\rm fin})}_{C^1}
+ \le C\delta^{-M}e^{-\mathcal A_{bc}+cS_\delta}
+       \langle S_\delta\rangle^M.
+\]
+\Cref{eq:supp-central-action-choice,eq:supp-finite-trace-incidence}
+give \cref{eq:supp-stable-finite-comparison}.
+
+It remains to evaluate the event-normal tangent vector at \(\Sigma_0\).  For
+the singular fold equation
+the independent solution normalized by the first integral is
+\[
+ n(s)=\binom{I(s)}{E(s)-sI(s)},\qquad
+ E(s)=e^{s^2/2},\qquad I(s)=\int_0^sE(\zeta)\,\dd\zeta.
+\]
+Intersecting with a fixed-\(r\) event section removes the time component
+\(I(s)\) and leaves
+\(E(s)\) in the event-normal direction.  In the variables of
+\cref{eq:rw-fold-coordinates}, the recovery component is
+\(-\delta^2E(s)\{1+o(1)\}\).  Division by
+\[
+ w_{0,N}'(-\delta s_b/(2\alpha))
+ =\delta s_b\{1+o(1)\}
+\]
+after normalization by the recovery-coordinate derivative gives
+\(a_{0b,p}\asymp\delta E_b/s_b\).  The fold graph bounds, the
+boundary-value inverse in \cref{lem:supp-central-boundary-inverse}, and the
+\(C^1\) event map give the logarithmic derivative estimate in
+\cref{eq:supp-central-terminal-pairing-bound}.
+\end{proof}
+
+\subsection{Intersection on the fold section}
+
+\begin{lemma}[Unique local intersection with the stable manifold]
+\label[lemma]{lem:supp-stable-manifold-intersection}
+Assume \(\mathrm{(H_{\rm glob})}\).  Let \(\mathfrak C_{0,p}\) be the chart in
+\cref{eq:connection-central-chart}.  Define the stable-manifold membership
+function pulled back from \(\Sigma_b\) by
+\begin{equation}
+ \mathcal M_{0,p}(\psi,u)
+ =\mathfrak m_{b,p}\!\left(
+   \mathcal P_{\Sigma_0\Sigma_b,p}
+      \mathfrak C_{0,p}(\psi,u)\right).
+ \label{eq:supp-pulled-membership}
+\end{equation}
+Write the finite repelling trace as
+\(\mathfrak C_{0,p}(\bar\psi_p,\bar u_p)\), and introduce
+\begin{equation}
+ \xi=a_{0b,p}(u-\bar u_p).
+ \label{eq:supp-scaled-unstable-coordinate}
+\end{equation}
+For every prescribed \(Q>12\), the exponent \(p_0\) in
+\cref{eq:supp-central-cuts} can be fixed so that, on
+\begin{equation}
+ \norm{\psi-\bar\psi_p}
+ \le c_r\delta^{Q+M+2},
+ \qquad
+ \abs{\xi}\le C_r\delta^Q,
+ \label{eq:supp-intersection-rectangle}
+\end{equation}
+one has
+\begin{equation}
+ \partial_\xi
+ \mathcal M_{0,p}\!\left(
+ \psi,\bar u_p+a_{0b,p}^{-1}\xi\right)\ge\frac12.
+ \label{eq:supp-membership-slope}
+\end{equation}
+The two \(\xi\)-faces have opposite signs.  Hence the zero set is a unique
+\(C^1\) graph
+\[
+ u=F_{N,\delta,p}^-(\psi)
+\]
+on the indicated \(\psi\)-ball.  Every history in this graph, together with
+every translated history segment required by the delay terms, remains in the
+stated fold neighborhood.
+\end{lemma}
+
+\begin{proof}
+By \cref{eq:supp-finite-trace-incidence,%
+eq:supp-stable-finite-comparison}, applied with exponent \(Q+M+4\),
+\begin{equation}
+ \norm{\mathbf D_p^1
+   \mathcal M_{0,p}(\bar\psi_p,\bar u_p)}
+ \le C\delta^{Q+M+4}.
+ \label{eq:supp-reference-membership}
+\end{equation}
+Put
+\[
+ H_p(\psi,\xi)=
+ \mathcal M_{0,p}
+   (\psi,\bar u_p+a_{0b,p}^{-1}\xi).
+\]
+The fold graph estimates, the boundary-value inverse in
+\cref{lem:supp-central-boundary-inverse}, and
+\cref{eq:supp-central-terminal-pairing-bound} imply
+\begin{equation}
+ \norm{D_\psi H_p}\le C\delta^{-M},
+ \qquad
+ \abs{\partial_\xi H_p-1}\le\frac12,
+ \qquad
+ \norm{D_{(\psi,\xi)}\partial_\xi H_p}
+ \le C\delta^{-M}
+ \label{eq:supp-rectangle-derivatives}
+\end{equation}
+on \cref{eq:supp-intersection-rectangle}.
+
+The state displacement produced by \(\xi\) is bounded by
+\(C(s_b/\delta)\abs{\xi}\), and the displacement produced by
+\(\psi-\bar\psi_p\) is bounded by
+\(C\delta^{-M}\norm{\psi-\bar\psi_p}\).  Since \(Q>12\), both are
+smaller than the chart radius
+\(Rb_\delta\).  The same estimates applied to all translated history
+segments required by the delay terms keep the orbit inside the fold
+neighborhood and preserve the event-speed margin.
+
+Choose \(c_r\) small and then \(C_r\) larger than the constant in
+\cref{eq:supp-reference-membership}.  The \(\psi\)-variation is less than
+one quarter of the face height.  Integrating
+\cref{eq:supp-rectangle-derivatives} in \(\xi\) gives opposite signs on
+the two faces, while \cref{eq:supp-membership-slope} gives uniqueness.
+The parameter-dependent implicit-function theorem now yields the asserted
+graph.
+\end{proof}
+
+\subsection{Comparison with the finite-interval function}
+
+\begin{lemma}[Comparison of the two defining functions]
+\label[lemma]{lem:supp-defining-function-comparison}
+Assume \(\mathrm{(H_{\rm glob})}\).  Let \(G_{N,\delta}^{g}\) be the
+stable-manifold defining function in
+\cref{eq:connection-defining-function}, and let \(D_N^{\rm fin}\) be the
+finite-interval function in \cref{prop:finite-comparison}.  For every
+prescribed \(Q>12\), after choosing \(p_0\) in
+\cref{eq:supp-central-action-choice} with exponent larger than \(Q+M+4\),
+\begin{equation}
+ \norm{\mathbf D_p^1
+       \{G_{N,\delta}^{g}-D_N^{\rm fin}\}}
+ \le C\delta^Q.
+ \label{eq:supp-defining-function-comparison}
+\end{equation}
+This estimate compares a defining function for the stable-manifold
+connection of one fixed RFDE with a finite-interval calculation.  It does
+not identify the zero set of the latter with a heteroclinic connection.
+\end{lemma}
+
+\begin{proof}
+Use the chart normalization in
+\cref{eq:connection-chart-normalization}.  The attracting and repelling
+finite traces have coordinates
+\[
+ A_p^{\rm fin}=\mathfrak C_{0,p}(\bar\psi_p,u_p^a),
+ \qquad
+ C_p^{\rm fin}=\mathfrak C_{0,p}(\bar\psi_p,u_p^r),
+\]
+and the finite-interval construction gives
+\begin{equation}
+ D_N^{\rm fin}=u_p^a-u_p^r.
+ \label{eq:supp-finite-coordinate-difference}
+\end{equation}
+Write the incoming hit as
+\[
+ A_p^0=\mathfrak C_{0,p}(\psi_A,u_A).
+\]
+By \cref{eq:supp-positive-history-comparison}, applied with exponent
+\(Q+M+4\) to absorb the polynomial chart bounds,
+\begin{equation}
+ \norm{\mathbf D_p^1
+   \{(\psi_A,u_A)-(\bar\psi_p,u_p^a)\}}
+ \le C\delta^{Q+M+4}.
+ \label{eq:supp-positive-coordinate-comparison}
+\end{equation}
+
+On the negative side,
+\cref{lem:supp-intermediate-section-graphs,%
+lem:supp-stable-manifold-intersection} compare the stable manifold supplied by
+\(\mathrm{(H_{\rm glob})}\) and the graph defined by the truncated boundary
+condition on a common forward orbit segment.  Pulling both
+membership functions back to \(\Sigma_0\), without inverting a history
+event map, gives
+\begin{equation}
+ \norm{\mathbf D_p^1
+   \{F_{N,\delta,p}^-(\bar\psi_p)-u_p^r\}}
+ \le C\delta^{Q+4}.
+ \label{eq:supp-negative-coordinate-comparison}
+\end{equation}
+The state and parameter derivatives of \(F_{N,\delta,p}^-\) may have a
+fixed polynomial loss.  The extra margin in
+\cref{eq:supp-positive-coordinate-comparison} absorbs that loss when the
+mean-value theorem is applied between \(\psi_A\) and \(\bar\psi_p\).
+
+Finally,
+\[
+ G_{N,\delta}^{g}-D_N^{\rm fin}
+ =(u_A-u_p^a)
+  -\{F_{N,\delta,p}^-(\psi_A)-u_p^r\}
+\]
+by \cref{eq:connection-defining-function,%
+eq:supp-finite-coordinate-difference}.  Insert
+\cref{eq:supp-positive-coordinate-comparison,%
+eq:supp-negative-coordinate-comparison} and differentiate the already
+constructed \(C^1\) families.  This proves
+\cref{eq:supp-defining-function-comparison}.
+\end{proof}

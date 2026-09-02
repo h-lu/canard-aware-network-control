@@ -1,0 +1,251 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Consider a finite network with row-stochastic instantaneous coupling and
+additional linear feedback distributed among several delay layers.  Let
+\(P_N\) have stationary probability \(\pi_N\), and
+write
+\[
+ \Pi_N(v,w)=(\pi_N^Tv,w)
+\]
+for the stationary network average together with a shared scalar variable.  A
+representative system considered below is
+\begin{align}
+ \dot v(t)={}&f_N(v(t),w(t))+D(P_N-\Id)v(t) \notag\\
+ &+\delta^2K\sum_{k=0}^m B_{k,N}(\eta)
+   \left\{v(t)-v\left(t-\frac{\theta_k}{\delta}\right)\right\},
+                                                        \label{eq:intro-network-form}\\
+ \dot w(t)={}&\delta^2\{\pi_N^Tv(t)-a\},              \label{eq:intro-recovery-form}
+\end{align}
+where \(0\leq\theta_0<\cdots<\theta_m\), the node nonlinearities may be
+heterogeneous, and \(0<\delta\ll1\).  We perturb the delayed-coupling
+matrices by writing \(B_{k,N}(\eta)=B_{k,N}+E_{k,N}\) and imposing
+\begin{equation}
+ \pi_N^TE_{k,N}=0\quad(0\leq k\leq m),
+ \qquad
+ \sum_{k=0}^mE_{k,N}=0.                              \label{eq:intro-neutrality}
+\end{equation}
+Thus each perturbation vanishes after left multiplication by \(\pi_N^T\),
+and the sum of the delayed-coupling matrices is unchanged.
+
+Equation \eqref{eq:intro-network-form} is schematic; the polynomial voltage
+field and the RFDE phase space used in the theorems are defined in
+\cref{sec:model-results}.
+
+Let \(\mathcal F_{N,\delta,\nu,\eta}\) be the RFDE vector field on its phase
+space.  Conditions~\eqref{eq:intro-neutrality} imply the exact identity
+\begin{equation}
+ \Pi_N\mathcal F_{N,\delta,\nu,\eta}(\Phi)
+ =\Pi_N\mathcal F_{N,\delta,\nu,0}(\Phi)              \label{eq:intro-projected-identity}
+\end{equation}
+for every admissible history \(\Phi\).  This identity does not make the
+projected variables a closed subsystem: the common projected functional can
+still depend on transverse histories in
+\[
+ E_N=\ker\pi_N^T.
+\]
+Our question is whether a constrained perturbation satisfying
+\eqref{eq:intro-projected-identity} can change the parameter at which a
+heteroclinic connection occurs, and whether that change can be estimated
+uniformly as \(N\) grows.
+
+The answer is governed first by the delay locations.  The first-moment term
+entering the network-mean-zero equation near the fold is
+\begin{equation}
+ \mathsf S_N(E)
+ =\frac{K}{2\alpha}P_{\perp,N}
+   \left(\sum_{k=0}^m\theta_kE_{k,N}\right)\mathbf1,
+ \qquad
+ P_{\perp,N}=\Id-\mathbf1\pi_N^T.                    \label{eq:intro-delay-moment}
+\end{equation}
+If two distinct delay locations are present, every vector in \(E_N\) is
+obtained from \(\mathsf S_N\) by perturbing the matrices at two distinct
+delays with opposite signs.
+If coincident atoms are merged and only one location remains, then
+\(\mathsf S_N=0\).  Under the uniform Dobrushin condition
+\begin{equation}
+ \tau(P_N)\leq1-\gamma,
+ \qquad \gamma>0,                                    \label{eq:intro-dobrushin-gap}
+\end{equation}
+the transverse generator
+\[
+ A_N=D(P_N-\Id)|_{E_N}
+\]
+has an inverse bounded independently of \(N\).  If \(\mathfrak r_N\in E_N^*\)
+is the bounded linear functional obtained from the scalar Fredholm
+solvability condition, the local Fredholm coefficient is therefore
+\begin{equation}
+ \boxed{\quad
+ E\ \longmapsto\ \mathsf S_N(E)\ \longmapsto\
+ A_N^{-1}\mathsf S_N(E)\ \longmapsto\
+ \Lambda_N(E),\qquad
+ \Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N .\quad}  \label{eq:intro-response-covector}
+\end{equation}
+The two-delay right inverse also makes the map
+\(\mathfrak r_N\mapsto\Lambda_N\) injective, with bounds independent of \(N\).
+Thus cancellation in the projected vector field removes the direct projected
+derivative, but the off-diagonal Fredholm block can still contribute through
+the network-mean-zero equation.  At this point \(\Lambda_N\) is a local
+solvability coefficient; identifying it with the derivative of a
+heteroclinic-connection parameter requires the additional invariant-manifold
+hypotheses stated below.
+
+\input{figures/delay-moment-map}
+
+This calculation is already nontrivial for three nodes.  Set
+\[
+ \pi=\tfrac13(1,1,1)^T,
+ \qquad P=\mathbf1\pi^T,
+ \qquad c=(1-\sigma,1,1+\sigma)^T,
+ \qquad s=(-1,0,1)^T,
+\]
+where \(0<\sigma<1\).  For delays \(\theta_0=0\), \(\theta_1=1\), take
+\[
+ R_0=s\pi^T,
+ \qquad R_1=-s\pi^T.
+\]
+Then \(\pi^TR_k=0\) and \(R_0+R_1=0\), while
+\[
+ \theta_0R_0\mathbf1+\theta_1R_1\mathbf1=-s\neq0.
+\]
+For \(D=1\), \(K=2\), and \(\alpha=\pi^Tc=1\), the restriction of the
+transverse generator is \(A=-\Id\), and the Fredholm calculation below gives
+\begin{equation}
+ \Lambda(R_0,R_1)=-\pi^T\diag(c)s=-\frac{2\sigma}{3}. \label{eq:intro-three-node-response}
+\end{equation}
+If \(B_0=B_1=P\), the matrices \(B_k+\zeta R_k\) remain nonnegative for
+\(|\zeta|<1\).  Moreover, the unequal components of \(c\) exclude every
+coordinate-equality subspace associated with a nontrivial partition of the
+nodes.  The response in
+\eqref{eq:intro-three-node-response} is therefore not produced by copying a
+lower-dimensional synchronous solution across the network.
+
+\subsection{Relation to existing theory}
+
+Canards in finite-dimensional fast--slow systems are organized by the
+interaction of attracting and repelling slow manifolds near loss of normal
+hyperbolicity \citep{krupa2001relaxation,krupa2001extending}.  Canard phenomena
+have also been established in delay equations, and local fast--slow theory is
+available for broad classes of infinite-dimensional evolution equations
+\citep{campbell2009delay,krupa2016complex,krupa2016explosion,%
+avitabile2020local,hummel2022slow}.  Related transitions have been studied in
+stochastic, adaptive, consensus, and mean-field networks
+\citep{touboul2015noise,ciszak2021collective,jardon2020consensus,%
+qin2023tipping,balzer2024cascading}.  This literature supplies the fast--slow
+setting, but it does not determine the response of a connection when a
+perturbation of the delayed-coupling matrices vanishes identically under a
+fixed network projection.
+
+Invariant manifolds, exponential dichotomies, Fredholm operators, and Lin-type
+constructions provide a general framework for heteroclinic connections in
+RFDEs \citep{hale1986heteroclinic,lin1986exponential,%
+magalhaes1987persistence,bates1998invariant,malletparet1999fredholm,%
+hupkes2009lin,henot2023homoclinic}.  These results do not by themselves identify
+how the constrained perturbations in \eqref{eq:intro-neutrality} enter the
+connection equation, nor do they supply estimates uniform over a sequence of
+growing network phase spaces.
+The closest functional-differential-equation baseline is the Lin reduction of
+\citet{hupkes2009lin}, built on Fredholm theory such as
+\citet{malletparet1999fredholm}: it reduces a prescribed orbit-matching problem
+for a given equation to finite-dimensional bifurcation equations, but it does
+not produce the constrained first-moment map or estimates uniform in network
+size.  The Dobrushin theory of \citet{gaubert2015dobrushin} controls contraction
+of Markov operators on the mean-zero space; it contains neither the
+delay-moment map nor the heteroclinic Fredholm pairing.
+The abstract Lyapunov--Schmidt step used here is standard.  The additional
+result is the explicit passage from perturbations annihilated by the
+stationary projection to the first-moment map \(\mathsf S_N\), its two-delay
+surjectivity and sharp right inverse, and the dimension-uniform factorization
+through \(A_N^{-1}\).  The rank-one right inverse is elementary linear
+algebra; its role is to make the full map to the Fredholm solvability
+condition quantitative and independent of \(N\).
+
+The issue is also different from exact lumpability, where the projection
+defines a closed quotient \citep{horstmeyer2016lumpability}, and from structural
+unidentifiability, where a parameter transformation preserves an entire
+input--output behavior
+\citep{bearup2013inputoutput,villaverde2017dynamical}.  Mori--Zwanzig
+representations express the return of unresolved variables to resolved ones
+\citep{chorin2002optimal,herrera2018memory,herrera2020tractable}, while adjoint
+sensitivity formulas express scalar responses by covector pairings
+\citep{cacuci1981sensitivity,rihan2003sensitivity}.  The problem addressed here
+is to identify the first variation that remains after the projected
+perturbation has vanished, and to determine how it enters a codimension-one
+connection equation.  The resulting factorization has constants that do not
+deteriorate with \(N\).  Its use for an RFDE heteroclinic connection requires a
+separately verified invariant-manifold connection condition; this global
+hypothesis is kept distinct from the local fold calculation.
+
+\subsection{Results and proof outline}
+
+The first main theorem makes the linear factorization
+\eqref{eq:intro-response-covector} precise.  With two separated delay
+locations, \(\mathsf S_N\) maps the admissible perturbation tuples onto
+\(E_N\) and has an explicit sharp right inverse; with one merged location it
+vanishes.  Dobrushin contraction supplies the dimension-independent inverse of
+\(A_N\), and elimination of the transverse variable in the upper-triangular
+Fredholm problem gives \(\Lambda_N\).  Conversely, its values on admissible
+perturbations determine the bounded linear functional \(\mathfrak r_N\).  The known network
+matrix, stationary distribution, delay locations, and scalar coefficients are
+inputs to this reconstruction; the theorem does not identify an unknown
+network from data.
+
+For the nonlinear result, a global connection must first be well defined.  The
+unmodified recovery equation \eqref{eq:intro-recovery-form} does not provide
+the two equilibria outside the fold neighborhood used in the conditional
+application.  We therefore fix an
+autonomous modified recovery equation that agrees identically with
+\eqref{eq:intro-recovery-form} throughout the phase-space neighborhood used in
+the fold analysis and has two hyperbolic constant solutions outside that
+neighborhood.  This modification is part of the equation, not a boundary
+condition.  We state explicit uniform hypotheses under which the relevant
+unstable and stable manifold sections define a scalar defining function for
+their intersection.  If that function is \(C^1\)-close to the finite-interval
+matching function constructed near the fold, the implicit-function theorem
+gives a unique local parameter value
+\[
+ \mu_{c,N}(\delta,\eta)=\delta^2\nu_{c,N}(\delta,\eta).
+\]
+Under these hypotheses, the resulting connection-parameter map is
+continuously Fr\'echet differentiable in the delayed-coupling perturbations
+and satisfies
+\begin{equation}
+ \bigl\|D_\eta\mu_{c,N}(\delta,\eta)-\delta^3\Lambda_N\bigr\|
+ \leq C\{\delta^4+\delta^3\|\eta\|\},                \label{eq:intro-root-derivative}
+\end{equation}
+with \(C\) independent of \(N\).  In particular,
+\eqref{eq:intro-three-node-response} yields
+\[
+ \partial_\zeta\mu_{c,3}(\delta,0)
+ =-\frac{2\sigma}{3}\delta^3+O(\delta^4).
+\]
+
+The proof first combines the two-delay right inverse with the Dobrushin
+estimate and the collective/transverse Fredholm reduction.  An invariant graph
+then converts the transverse displacement into a forcing of the scalar fold
+equation, whose one-dimensional cokernel is represented by an explicit
+Gaussian adjoint solution.  A finite-interval problem supplies a matching
+function and its parameter derivatives.  The separate global hypotheses ask
+for a defining function for the invariant-manifold intersection on a common
+phase section and a uniform \(C^1\) estimate comparing it with this
+finite-interval function.
+Under those hypotheses, the general sensitivity theorem transfers the
+Fredholm coefficient to the heteroclinic defining function and proves
+\eqref{eq:intro-root-derivative}.  We do not claim here that the chosen
+modified recovery equation satisfies the required uniform invariant-manifold
+estimates.
+
+The finite-\(\delta\) parameter value belongs to the specified modified RFDE
+and may depend on the recovery equation outside the fold neighborhood.  The
+assumptions, uniformity class, and limitations are collected in
+\cref{sec:scope-transfer}.
+
+Section~2 defines the model and states the unconditional results and the
+conditional connection corollary.  Section~3 proves
+the delay-moment range theorem and the dimension-independent Fredholm
+factorization.  Section~4 analyzes the fold passage.  Section~5 formulates the
+additional hypotheses needed to identify a parameter value yielding a
+heteroclinic connection and proves
+their consequences.  Section~6 explains how the calculation can be used in
+another RFDE and records the limitations; technical estimates are given
+in the supplement.
