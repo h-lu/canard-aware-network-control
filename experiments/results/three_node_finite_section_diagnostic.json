@@ -1,0 +1,199 @@
+{
+  "checks": {
+    "maximum_root_residual": 5.863487473334317e-10,
+    "projection_rhs_residual": 0.0,
+    "refinements": {
+      "tight_solver_difference": 3.6987427010082286e-09,
+      "tight_solver_quotient": -0.3328784868375165,
+      "zeta_step_quotients": {
+        "zeta_0.02": -0.33287849384618096,
+        "zeta_0.04": -0.3328784905362592,
+        "zeta_0.08": -0.33287848749136845
+      }
+    }
+  },
+  "coincident_delay_control": {
+    "description": "opposite perturbation layers combined at one delay",
+    "nu_minus": -0.21661982351899192,
+    "nu_plus": -0.21661982351899192,
+    "quotient": 0.0
+  },
+  "convergence_rows": [
+    {
+      "absolute_error": 0.013387634816313387,
+      "delta": 0.12,
+      "nu_minus": -0.19316523441891378,
+      "nu_plus": -0.1964937557131504,
+      "nu_zero": -0.19482907866122492,
+      "predicted_coefficient": -0.3333333333333333,
+      "quotient": -0.3467209681496467,
+      "relative_error": 0.04016290444894016,
+      "root_residual_max": 5.863487473334317e-10,
+      "section_half_width": 2.5,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.007563260090305279,
+      "delta": 0.08,
+      "nu_minus": -0.2038715577035497,
+      "nu_plus": -0.206053295901461,
+      "nu_zero": -0.20496234516425138,
+      "predicted_coefficient": -0.3333333333333333,
+      "quotient": -0.3408965934236386,
+      "relative_error": 0.022689780270915838,
+      "root_residual_max": 4.196643033083092e-14,
+      "section_half_width": 2.75,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.0023808815458999932,
+      "delta": 0.05,
+      "nu_minus": -0.2159484076136017,
+      "nu_plus": -0.21729126447311864,
+      "nu_zero": -0.21661982351899192,
+      "predicted_coefficient": -0.3333333333333333,
+      "quotient": -0.3357142148792333,
+      "relative_error": 0.00714264463769998,
+      "root_residual_max": 2.5985613660850504e-10,
+      "section_half_width": 3.0,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.0004154796795516891,
+      "delta": 0.02,
+      "nu_minus": -0.23533184450429903,
+      "nu_plus": -0.23586451307014508,
+      "nu_zero": -0.23559817845025546,
+      "predicted_coefficient": -0.3333333333333333,
+      "quotient": -0.3329178536537816,
+      "relative_error": 0.0012464390386550672,
+      "root_residual_max": 2.5845992013273644e-13,
+      "section_half_width": 3.5,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.00045484279707413977,
+      "delta": 0.01,
+      "nu_minus": -0.24375624718563976,
+      "nu_plus": -0.24402254997806877,
+      "nu_zero": -0.24388939855365646,
+      "predicted_coefficient": -0.3333333333333333,
+      "quotient": -0.3328784905362592,
+      "relative_error": 0.0013645283912224193,
+      "root_residual_max": 1.0674128247956105e-11,
+      "section_half_width": 4.0,
+      "zeta_step": 0.04
+    }
+  ],
+  "definition": {
+    "history": "singular orbit gamma_0 with h=0 on [-S-1,-S]",
+    "not_computed": [
+      "D_3^fin",
+      "G_3,delta^g",
+      "heteroclinic connection",
+      "maximal canard"
+    ],
+    "outgoing_condition": "Y(S)-X(S)^2+1/2=0",
+    "root_name": "nu_hat_sec(delta,zeta;S)"
+  },
+  "git": {
+    "head": "20c48a247335b255d4459823872f9adda1be6b30",
+    "worktree_dirty_at_generation": true
+  },
+  "left_panel": {
+    "delta": 0.05,
+    "exit_gap_curves": {
+      "minus": [
+        -0.05048534003622751,
+        -0.043424921035838615,
+        -0.036398525517932656,
+        -0.029405968365129986,
+        -0.022447065650303744,
+        -0.015521634607352564,
+        -0.008629493621889361,
+        -0.0017704622525631653,
+        0.0050556388121405504,
+        0.01184898774483778,
+        0.018609761588653795,
+        0.0253381362681524,
+        0.03203428660118823
+      ],
+      "plus": [
+        -0.03275383663707121,
+        -0.025782882192520118,
+        -0.018845447751089983,
+        -0.011941351478412354,
+        -0.005070412695139526,
+        0.0017675481331662635,
+        0.008572709400780809,
+        0.015345248380307597,
+        0.022085341216622867,
+        0.02879316294823031,
+        0.035468887503278035,
+        0.042112687719781494,
+        0.04872473534378585
+      ],
+      "zero": [
+        -0.04159018412887616,
+        -0.034574668891852234,
+        -0.027592924252016093,
+        -0.020644766742753173,
+        -0.013730014067963703,
+        -0.006848485082621147,
+        2.0090817898221758e-10,
+        0.00681562063759622,
+        0.013598553944627723,
+        0.020348976718544298,
+        0.027067064440202904,
+        0.03375299148111943,
+        0.04040693111350535
+      ]
+    },
+    "nu_values": [
+      -0.21981982351899193,
+      -0.2192864901856586,
+      -0.21875315685232527,
+      -0.21821982351899194,
+      -0.21768649018565858,
+      -0.21715315685232525,
+      -0.21661982351899192,
+      -0.2160864901856586,
+      -0.21555315685232526,
+      -0.2150198235189919,
+      -0.21448649018565857,
+      -0.21395315685232524,
+      -0.2134198235189919
+    ],
+    "roots": {
+      "minus": -0.2159484076136017,
+      "plus": -0.21729126447311864,
+      "zero": -0.21661982351899192
+    },
+    "section_half_width": 3.0
+  },
+  "parameters": {
+    "D": 1.0,
+    "K": 2.0,
+    "beta": 3.0,
+    "predicted_coefficient": -0.3333333333333333,
+    "sigma": 0.5,
+    "singular_center": -0.25,
+    "theta_0": 0.0,
+    "theta_1": 1.0,
+    "zeta_step": 0.04
+  },
+  "solver": {
+    "atol": 2e-11,
+    "max_step": 0.08,
+    "method": "literal method of steps with scipy.integrate.solve_ivp Radau",
+    "numpy": "2.5.2",
+    "python": "3.14.4",
+    "rtol": 2e-09,
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "experiments/three_node_finite_section_diagnostic.py": "00c9342fc607a5052d55e63fd77c9c67d5d225258d00039fcfe7c244e502c15a",
+    "src/canard_control/three_node_finite_section.py": "cb86f575dfec6a6383c1f4c87a1ac75fde88b64cc2dc2f865da22856476b0cee"
+  },
+  "status": "numerical diagnostic; not used in any proof"
+}
