@@ -46,10 +46,11 @@ make paper
 make check
 ```
 
-The build regenerates the vector figure and produces the single submission
+The build regenerates the vector figures and produces the single submission
 file `main.pdf`, including both proof appendices. The test target checks the public theorem architecture and
-the analytic identities used by Paper A; it is not a substitute for the
-proofs.
+the analytic identities used by Paper A, together with a lightweight
+regression check for the illustrative three-node calculation; it is not a
+substitute for the proofs.
 
 ## Repository map
 
@@ -64,4 +65,7 @@ The closest-literature summaries are in
 [`docs/literature-map.md`](docs/literature-map.md) and
 [`docs/physical-root-literature-audit.md`](docs/physical-root-literature-audit.md).
 Historical numerical artifacts retain their original environments and should
-not be interpreted as inputs to the analytic theorem in Paper A.
+not be interpreted as inputs to the analytic theorem in Paper A.  The current
+three-node finite-section diagnostic is reproducible from
+`experiments/three_node_finite_section_diagnostic.py` and is explicitly not
+used as a proof of the global hypotheses.

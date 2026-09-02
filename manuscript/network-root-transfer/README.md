@@ -59,6 +59,8 @@ experimental threshold.
   included in `main.pdf`, not issued as a separate supplement;
 - `figures/`: editable Python sources, figure contracts, and generated vector
   PDFs;
+- `../../experiments/results/three_node_finite_section_diagnostic.json`:
+  reproducible values for the three-node numerical illustration;
 - `CLAIM-MAP.md`: theorem-to-proof map and scope boundaries.
 
 The former manuscript is preserved at the immutable tag
@@ -71,6 +73,12 @@ make paper
 make check
 ```
 
+To regenerate the three-node values separately, run:
+
+```sh
+make diagnostic-data
+```
+
 Useful final checks are:
 
 ```sh
@@ -79,6 +87,9 @@ pdfinfo main.pdf
 pdffonts main.pdf
 ```
 
-The theorem is analytic and does not rely on a numerical certificate. A
-public source release and permanent archive identifier are still required
-before submission.
+The theorem is analytic and does not rely on a numerical certificate.
+Figure 2 is a prescribed-history finite-section illustration of the sign and
+scale of the local coefficient; it is not the matching function in the
+proof, a heteroclinic computation, or a maximal-canard computation.  A public
+source release and permanent archive identifier are still required before
+submission.

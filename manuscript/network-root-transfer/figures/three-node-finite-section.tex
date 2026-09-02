@@ -1,0 +1,35 @@
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/three-node-finite-section.pdf}
+\caption{Numerical illustration for the three-node direction in
+\eqref{eq:intro-three-node-response}.  We set
+\(\sigma=1/2\), \(\beta=3\), \(D=1\), \(K=2\),
+\((\theta_0,\theta_1)=(0,1)\), and \(\zeta_*=0.04\).  Starting from the prescribed
+singular history \((X,Y,h)=(-s/2,(s^2-2)/4,0)\) on
+\([-S-1,-S]\), the exact fold-coordinate RFDE is integrated by the method of
+steps with a Radau solver, and \(\nu\) is adjusted until the normalized
+outgoing section function
+\(\widehat E_S=Y(S)-X(S)^2+1/2\) vanishes.
+\textbf{(a)} At \((\delta,S)=(0.05,3)\), the computed zero
+\(\widehat\nu_{\rm sec}(\delta,\zeta;S)\) moves with \(\zeta\), although the
+stationary projection of the RFDE vector field is exactly independent of
+\(\zeta\) at every fixed full history.  Symbols mark the three zeros.
+\textbf{(b)} The centered quotient
+\(\widehat q_{\delta}
+ =\{\widehat\nu_{\rm sec}(\delta,\zeta_*;S)
+             -\widehat\nu_{\rm sec}(\delta,-\zeta_*;S)\}
+            /(2\zeta_*\delta)\), equivalently the centered difference of
+\(\widehat\mu_{\rm sec}=\delta^2\widehat\nu_{\rm sec}\) divided by
+\(\delta^3\),
+is compared with the exact Fredholm coefficient
+\(\Lambda_3=-2\sigma/3=-1/3\) along
+\((\delta,S)=(0.12,2.5),(0.08,2.75),(0.05,3),(0.02,3.5),(0.01,4)\).
+When the two opposite perturbation terms are evaluated at the same delayed
+state, they cancel while the baseline coupling is retained, and the control
+quotient is exactly zero.  Curves and
+symbols are numerical; the projection identity, coefficient, and control
+cancellation are exact.  This prescribed-history, finite-section calculation
+is not \(D_3^{\rm fin}\), does not construct the invariant history graph, and
+does not compute a heteroclinic connection or a maximal canard.}
+\label{fig:three-node-finite-section}
+\end{figure}

@@ -1,9 +1,13 @@
 LATEXMK ?= latexmk
 PYTHON ?= python3
 UV ?= uv
-PAPER_FIGURES := figures/connection-geometry.pdf
+THREE_NODE_DATA := ../../experiments/results/three_node_finite_section_diagnostic.json
+PAPER_FIGURES := \
+	figures/connection-geometry.pdf \
+	figures/three-node-finite-section.pdf
 PAPER_A_TESTS := \
 	tests/test_paper_a_jns_rewrite_contract.py \
+	tests/test_three_node_finite_section.py \
 	tests/test_block_schur_response.py \
 	tests/test_canard_conditioning.py \
 	tests/test_heterogeneous_curvature_root.py \
@@ -20,7 +24,7 @@ PAPER_A_TESTS := \
 	tests/test_transverse_lin_sweep.py \
 	tests/test_transverse_modes.py
 
-.PHONY: all paper figure check clean
+.PHONY: all paper figure diagnostic-data check clean
 
 all: paper
 
@@ -28,6 +32,19 @@ figure: $(PAPER_FIGURES)
 
 figures/connection-geometry.pdf: figures/connection_geometry.py
 	$(PYTHON) figures/connection_geometry.py --output $@
+
+$(THREE_NODE_DATA): \
+		../../experiments/three_node_finite_section_diagnostic.py \
+		../../src/canard_control/three_node_finite_section.py
+	cd ../.. && PYTHONPATH=src $(UV) run --extra numeric \
+		python experiments/three_node_finite_section_diagnostic.py
+
+diagnostic-data: $(THREE_NODE_DATA)
+
+figures/three-node-finite-section.pdf: \
+		figures/three_node_finite_section.py $(THREE_NODE_DATA)
+	$(PYTHON) figures/three_node_finite_section.py \
+		--data $(THREE_NODE_DATA) --output $@
 
 paper: $(PAPER_FIGURES)
 	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex

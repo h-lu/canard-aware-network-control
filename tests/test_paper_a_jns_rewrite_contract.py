@@ -60,7 +60,8 @@ def test_front_matter_states_the_model_change_and_scope_boundary() -> None:
     assert "global invariant-manifold and comparison properties are hypotheses" in main
     assert "does not prove a heteroclinic connection for the unmodified recovery equation" in main
     assert "does not by itself force the first variation of the collective solvability condition to vanish" in main
-    assert "The results are analytic; no data sets were generated or analyzed" in main
+    assert "The theorem statements are analytic and do not rely on numerical data" in main
+    assert "is not used in any proof" in main
     assert "research draft" not in main.lower()
 
 
@@ -137,6 +138,7 @@ def test_active_reader_facing_sources_avoid_project_vocabulary() -> None:
     paths.extend(sorted((PAPER / "rewrite-sections").glob("*.tex")))
     paths.extend(sorted((PAPER / "appendices").glob("*.tex")))
     paths.append(PAPER / "figures" / "connection-geometry.tex")
+    paths.append(PAPER / "figures" / "three-node-finite-section.tex")
     prose = " ".join(visible_prose(path.read_text(encoding="utf-8")) for path in paths)
 
     banned = (
@@ -175,3 +177,17 @@ def test_figure_discloses_projected_and_schematic_content() -> None:
     assert "collective coordinates" in connection.lower()
     assert "positions and distances are not quantitative" in connection.lower()
     assert "Status: `SCHEMATIC`" in connection_contract
+
+
+def test_numerical_figure_is_scoped_as_a_finite_section_diagnostic() -> None:
+    figure = compact(
+        source("manuscript/network-root-transfer/figures/three-node-finite-section.tex")
+    )
+    contract = source(
+        "manuscript/network-root-transfer/figures/three-node-finite-section-contract.md"
+    )
+
+    assert r"\widehat E_S=Y(S)-X(S)^2+1/2" in figure
+    assert r"is not \(D_3^{\rm fin}\)" in figure
+    assert "does not compute a heteroclinic connection or a maximal canard" in figure
+    assert "Status: `MIXED`" in contract

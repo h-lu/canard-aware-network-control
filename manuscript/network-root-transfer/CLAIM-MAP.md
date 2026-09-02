@@ -64,3 +64,8 @@ displayed extension and must be proved in every concrete application.
   perturbation classes.
 - Uniformity is over finite networks satisfying the common Dobrushin,
   coefficient, delay-support, and parameter bounds written in the theorem.
+- Figure 2 integrates one prescribed incoming history and imposes a scalar
+  outgoing-section condition.  It checks the sign and scale of the three-node
+  coefficient but is not the two-trace function `D_3^fin`, the connection
+  defining function `G`, or evidence for the global invariant-manifold
+  hypotheses.
