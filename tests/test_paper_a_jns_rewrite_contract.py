@@ -59,6 +59,7 @@ def test_front_matter_states_the_model_change_and_scope_boundary() -> None:
     assert "fixed smooth modification outside the fold neighborhood" in main
     assert "global invariant-manifold and comparison properties are hypotheses" in main
     assert "does not prove a heteroclinic connection for the unmodified recovery equation" in main
+    assert "does not by itself force the first variation of the collective solvability condition to vanish" in main
     assert "The results are analytic; no data sets were generated or analyzed" in main
     assert "research draft" not in main.lower()
 
@@ -85,14 +86,24 @@ def test_reusable_theorem_requires_an_exact_connection_defining_function() -> No
 
 
 def test_first_moment_and_fredholm_statements_have_separate_interfaces() -> None:
+    introduction = compact(
+        source("manuscript/network-root-transfer/rewrite-sections/01-introduction.tex")
+    )
     model = compact(
         source("manuscript/network-root-transfer/rewrite-sections/02-model-results.tex")
+    )
+    scope = compact(
+        source("manuscript/network-root-transfer/rewrite-sections/06-scope-and-transfer.tex")
     )
 
     assert r"\label{thm:rw-first-moment-map}" in model
     assert "Surjectivity and a sharp right inverse for the first delay moment" in model
     assert r"\label[corollary]{cor:rw-fold-fredholm-coefficient}" in model
     assert "Dimension-uniform Fredholm sensitivity functional for the" in model
+    assert r"\label{eq:intro-full-factorization}" in introduction
+    assert r"\ell_N\mathcal B_NA_N^{-1}\mathsf S_N" in introduction
+    assert r"defining function \(G_{N,\delta}^{g}\) for the stable-manifold section" in scope
+    assert r"finite-interval approximation \(D_N^{\rm fin}\)" not in scope
 
 
 def test_model_connection_statement_is_explicitly_conditional() -> None:

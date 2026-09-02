@@ -81,11 +81,29 @@ solvability condition, the local Fredholm sensitivity functional is therefore
  \Lambda_N(\eta),\qquad
  \Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N .\quad}  \label{eq:intro-response-covector}
 \end{equation}
+In the upper-triangular Fredholm problem used below, once every remaining
+direct perturbation term belongs to the range of the collective
+linearization, the last arrow has the standard form
+\begin{equation}
+ \mathfrak r_N=-\frac{\ell_N\mathcal B_N}{\ell_Nf_{\nu,N}},
+ \qquad
+ \Lambda_N
+ =-\frac{\ell_N\mathcal B_NA_N^{-1}\mathsf S_N}
+         {\ell_Nf_{\nu,N}}.                         \label{eq:intro-full-factorization}
+\end{equation}
+Here \(\mathcal B_N\) is the off-diagonal block through which a transverse
+correction enters the collective equation, \(\ell_N\) annihilates the range
+of the collective linearization, and \(f_{\nu,N}\) is the parameter
+direction, with \(\ell_Nf_{\nu,N}\ne0\).  Thus \(\mathsf S_N\) produces a
+transverse forcing, \(A_N^{-1}\) solves for the transverse correction, and
+\(\mathcal B_N\) and \(\ell_N\) measure its contribution to the collective
+solvability condition.  Cancellation of the direct perturbation under the
+stationary projection therefore does not force this first variation to
+vanish.
+
 The two-delay right inverse also makes the map
 \(\mathfrak r_N\mapsto\Lambda_N\) injective, with bounds independent of \(N\).
-Thus cancellation in the projected vector field removes the direct projected
-derivative, but the off-diagonal Fredholm block can still contribute through
-the network-mean-zero equation.  At this point \(\Lambda_N\) is a local
+At this point \(\Lambda_N\) is a local
 sensitivity functional for the solvability condition; for a fixed
 perturbation direction, its value is the corresponding first-order
 coefficient.  Identifying this functional with the derivative of a
