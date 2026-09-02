@@ -11,10 +11,11 @@
 - System, parameters, coordinates, and time convention: the specialized
   exact fold-coordinate RFDE in equation (4.2), with `N=3`,
   `pi=(1,1,1)/3`, `P=1 pi^T`, `c=(1/2,1,3/2)`, `D=1`, `K=2`,
-  `beta=3`, delays `(0,1)`, and perturbation amplitude `zeta`.  Increasing
+  `beta=3`, two positive delays `(1,2)`, base delay layers `P/2`, and
+  perturbation amplitude `zeta`.  Increasing
   `s` is forward fold time.
 - Numerical definition: prescribe the singular history
-  `(X,Y,h)=(-s/2,(s^2-2)/4,0)` on `[-S-1,-S]`, integrate to `S` by a literal
+  `(X,Y,h)=(-s/2,(s^2-2)/4,0)` on `[-S-2,-S]`, integrate to `S` by a literal
   method of steps with SciPy Radau, and tune `nu` until
   outgoing section function `E_hat_S=Y(S)-X(S)^2+1/2=0`.  The displayed root is named
   `nu_hat_sec(delta,zeta;S)`.
@@ -22,10 +23,12 @@
   zero crossings at one fixed `(delta,S)`; the horizontal movement of the
   markers is the visual focus.  (b) the scaled zero displacement along a
   diagonal `(delta,S)` sequence, the exact Fredholm coefficient, and the
-  zero coincident-delay control.  The five pairs are
+  zero coincident-delay control.  (c) the same diagnostic quotient for the
+  explicit growing family at `N=3,5,9,17,33`, compared with its common exact
+  coefficient `-1/2`.  The five pairs in panel (b) are
   `(0.12,2.5)`, `(0.08,2.75)`, `(0.05,3)`, `(0.02,3.5)`, and `(0.01,4)`.
-- Panel titles and axis language: `(a) Delay redistribution shifts the zero`
-  and `(b) Scaled shift versus theory`; the axes pair ordinary descriptions
+- Panel titles and axis language: `(a) Delay redistribution shifts the zero`,
+  `(b) Scaled shift versus theory`, and `(c) Shift persists as N grows`; the axes pair ordinary descriptions
   (`centered parameter`, `section mismatch`, `scale parameter`, and `scaled
   zero shift`) with the mathematical symbols.
 - Line, marker, and color meanings: blue circles, black squares, and orange
@@ -44,7 +47,10 @@
   `src/canard_control/three_node_finite_section.py`; data driver
   `experiments/three_node_finite_section_diagnostic.py`; archived JSON
   `experiments/results/three_node_finite_section_diagnostic.json`; Matplotlib
-  source `figures/three_node_finite_section.py`.
+  source `figures/three_node_finite_section.py`.  Panel (c) additionally uses
+  `src/canard_control/growing_network_finite_section.py`,
+  `experiments/growing_network_finite_section_diagnostic.py`, and
+  `experiments/results/growing_network_finite_section_diagnostic.json`.
 - Final placement and size: full text width immediately after the
   finite-interval derivative proposition, with a forward reference after the
   three-node calculation in the introduction.

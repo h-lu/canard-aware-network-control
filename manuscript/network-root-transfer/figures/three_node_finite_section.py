@@ -32,6 +32,12 @@ DEFAULT_DATA = (
     / "results"
     / "three_node_finite_section_diagnostic.json"
 )
+DEFAULT_GROWING_DATA = (
+    REPOSITORY
+    / "experiments"
+    / "results"
+    / "growing_network_finite_section_diagnostic.json"
+)
 
 INK = "#202124"
 BLUE = "#2F6F9F"
@@ -98,7 +104,7 @@ def plot_exit_gap(ax: plt.Axes, payload: dict[str, object]) -> None:
     )
     ax.set_ylabel(r"section mismatch $\widehat E_S$")
     ax.set_title(
-        r"(a)  Delay redistribution shifts the zero",
+        r"(a)  Invisible redistribution moves the zero",
         loc="left",
         fontweight="bold",
     )
@@ -174,7 +180,7 @@ def plot_response(ax: plt.Axes, payload: dict[str, object]) -> None:
     ax.set_xlabel(r"scale parameter $\delta$")
     ax.set_ylabel(r"scaled zero shift $\widehat q_{\delta}$")
     ax.set_title(
-        r"(b)  Scaled shift versus theory", loc="left", fontweight="bold"
+        r"(b)  Scaled shift approaches theory", loc="left", fontweight="bold"
     )
     ax.set_xlim(0.0, 0.128)
     ax.set_ylim(-0.365, 0.035)
@@ -183,17 +189,74 @@ def plot_response(ax: plt.Axes, payload: dict[str, object]) -> None:
     ax.grid(axis="y", color=LIGHT_GRAY, linewidth=0.55, alpha=0.65)
 
 
+def plot_network_size(ax: plt.Axes, payload: dict[str, object]) -> None:
+    """Plot the diagnostic quotient for the explicit growing family."""
+
+    rows = payload["network_size_rows"]
+    parameters = payload["parameters"]
+    assert isinstance(rows, list) and isinstance(parameters, dict)
+    node_count = np.asarray([row["node_count"] for row in rows], dtype=int)
+    quotient = np.asarray([row["quotient"] for row in rows], dtype=float)
+    predicted = float(parameters["predicted_coefficient"])
+
+    ax.plot(
+        node_count,
+        quotient,
+        color=ORANGE,
+        linestyle="none",
+        marker="o",
+        markersize=4.7,
+        markerfacecolor="white",
+        markeredgewidth=1.15,
+        label=r"computed sequence",
+    )
+    ax.axhline(
+        predicted,
+        color=INK,
+        linewidth=1.15,
+        linestyle=(0, (5, 2)),
+        label=r"theory: $\Lambda_N=-1/2$",
+    )
+    ax.set_xlabel(r"network size $N$")
+    ax.set_ylabel(r"scaled zero shift $\widehat q_{N}$")
+    ax.set_title(
+        r"(c)  Coefficient persists with $N$", loc="left", fontweight="bold"
+    )
+    ax.set_xticks(node_count)
+    ax.set_ylim(-0.51, -0.49)
+    ax.legend(loc="lower right", frameon=False, handlelength=2.35)
+    ax.grid(axis="y", color=LIGHT_GRAY, linewidth=0.55, alpha=0.65)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA)
+    parser.add_argument(
+        "--growing-data", type=Path, default=DEFAULT_GROWING_DATA
+    )
     parser.add_argument("--output", type=Path, required=True)
     arguments = parser.parse_args()
     payload = load_payload(arguments.data)
+    growing_payload = load_payload(arguments.growing_data)
 
-    figure, axes = plt.subplots(1, 2, figsize=(7.05, 3.12))
+    figure = plt.figure(figsize=(7.05, 5.35))
+    grid = figure.add_gridspec(2, 2, height_ratios=(0.88, 1.0))
+    axes = (
+        figure.add_subplot(grid[0, :]),
+        figure.add_subplot(grid[1, 0]),
+        figure.add_subplot(grid[1, 1]),
+    )
     plot_exit_gap(axes[0], payload)
     plot_response(axes[1], payload)
-    figure.subplots_adjust(left=0.085, right=0.985, bottom=0.18, top=0.92, wspace=0.31)
+    plot_network_size(axes[2], growing_payload)
+    figure.subplots_adjust(
+        left=0.09,
+        right=0.985,
+        bottom=0.105,
+        top=0.955,
+        wspace=0.34,
+        hspace=0.52,
+    )
     arguments.output.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(arguments.output, bbox_inches="tight", pad_inches=0.02)
     plt.close(figure)

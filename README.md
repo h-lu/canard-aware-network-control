@@ -22,13 +22,15 @@ generate every transverse first-order forcing direction. The paper gives an
 explicit right inverse, dimension-independent bounds, and the resulting
 bounded linear functional from the Fredholm solvability condition.
 
-The paper then proves a sensitivity theorem for any defining function for a
-codimension-one heteroclinic condition satisfying explicit uniform hypotheses. For the
-polynomial fast--slow network it constructs a local invariant graph of compatible histories
-and a finite-interval matching function, and computes the leading
-coefficient. Applying that coefficient to a heteroclinic orbit in a specified
-modified equation is conditional on a separate uniform invariant-manifold and
-`C^1` comparison estimate. That global verification is not claimed here. The
+For a prescribed linear matrix pattern, the paper identifies the exact range
+of the first-moment map and gives a fixed-support realization. It also
+constructs a local invariant graph of compatible RFDE histories for the
+polynomial fast--slow network, computes the coefficient in a finite-interval
+matching function, and exhibits a growing family whose nonzero coefficient is
+independent of network size. Applying that coefficient to a heteroclinic
+orbit in a specified modified equation is a separate, conditional result: it
+requires uniform invariant-manifold sections and a `C^1` comparison estimate.
+That global verification is not claimed here. The
 paper neither proves a maximal canard for the unmodified recovery law nor
 identifies an experimental threshold.
 
@@ -48,8 +50,9 @@ make check
 
 The build regenerates the vector figures and produces the single submission
 file `main.pdf`, including both proof appendices. The test target checks the public theorem architecture and
-the analytic identities used by Paper A, together with a lightweight
-regression check for the illustrative three-node calculation; it is not a
+the analytic identities used by Paper A, together with lightweight
+regression checks for the illustrative three-node and growing-network
+calculations; it is not a
 substitute for the proofs.
 
 ## Repository map
@@ -65,7 +68,8 @@ The closest-literature summaries are in
 [`docs/literature-map.md`](docs/literature-map.md) and
 [`docs/physical-root-literature-audit.md`](docs/physical-root-literature-audit.md).
 Historical numerical artifacts retain their original environments and should
-not be interpreted as inputs to the analytic theorem in Paper A.  The current
-three-node finite-section diagnostic is reproducible from
-`experiments/three_node_finite_section_diagnostic.py` and is explicitly not
-used as a proof of the global hypotheses.
+not be interpreted as inputs to the analytic theorem in Paper A. The current
+finite-section diagnostics are reproducible from
+`experiments/three_node_finite_section_diagnostic.py` and
+`experiments/growing_network_finite_section_diagnostic.py`; neither is used as
+a proof of the global hypotheses.

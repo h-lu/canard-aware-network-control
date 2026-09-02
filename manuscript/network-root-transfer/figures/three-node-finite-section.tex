@@ -1,7 +1,7 @@
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/three-node-finite-section.pdf}
-\caption{How to read the three-node numerical illustration.
+\caption{Finite-section diagnostics for the local Fredholm coefficient.
 \textbf{(a)} The open symbols are the intersections of the three computed
 section-mismatch curves
 \(\widehat E_S=Y(S)-X(S)^2+1/2\) with the gray zero level.  Their horizontal movement
@@ -16,15 +16,24 @@ field is exactly unchanged at every fixed full history.
 agreement in sign and scale with the exact Fredholm coefficient
 \(\Lambda_3=-1/3\).  In the green same-delay control, the perturbation terms
 cancel and the displacement is exactly zero.
-We use \(\sigma=1/2\), \(\beta=3\), \(D=1\), \(K=2\),
-\((\theta_0,\theta_1)=(0,1)\), and \(\zeta_*=0.04\).  The exact
+\textbf{(c)} For the growing family in
+\cref{eq:rw-mixing-family,eq:rw-growing-curvature}, the open circles show the
+same quotient at \(N=3,5,9,17,33\); all remain close to the exact value
+\(\Lambda_N=-1/2\) although the curvature coefficients are distinct at every
+node.
+Panels~\textbf{(a)}--\textbf{(b)} use
+\(\sigma=1/2\), \(\beta=3\), \(D=1\), \(K=2\),
+\((\theta_0,\theta_1)=(1,2)\), \(B_0=B_1=P/2\), and
+\(\zeta_*=0.04\).  Thus both delay layers are dynamically active.  The exact
 fold-coordinate RFDE is integrated from the prescribed singular history by a
 method-of-steps Radau solver.  Panel~\textbf{(a)} uses
 \((\delta,S)=(0.05,3)\); panel~\textbf{(b)} uses
 \((\delta,S)=(0.12,2.5),(0.08,2.75),(0.05,3),(0.02,3.5),(0.01,4)\).
+Panel~\textbf{(c)} uses \(\rho=1\), \((\delta,S)=(0.02,3.5)\), and the same
+\(\sigma,\beta,D,K,(\theta_0,\theta_1),\zeta_*\).
 Curves and symbols are numerical; the projection identity, coefficient, and
 same-delay cancellation are exact.  This prescribed-history calculation is
-not \(D_3^{\rm fin}\) and does not compute a heteroclinic connection or a
+not \(D_N^{\rm fin}\) and does not compute a heteroclinic connection or a
 maximal canard.}
 \label{fig:three-node-finite-section}
 \end{figure}

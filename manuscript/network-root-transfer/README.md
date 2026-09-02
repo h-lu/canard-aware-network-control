@@ -1,9 +1,8 @@
-# Sensitivity of heteroclinic connections in networks of RFDEs
+# Fredholm sensitivity to constrained delayed coupling in networks of RFDEs
 
 This directory contains Paper A:
 
-> **Sensitivity of Heteroclinic Connections to Constrained Delayed Coupling
-> in Networks of RFDEs**
+> **Fredholm Sensitivity to Constrained Delayed Coupling in Networks of RFDEs**
 
 ## Main results
 
@@ -14,20 +13,20 @@ at each delay. Therefore the stationary projection
 of the RFDE vector field is unchanged at every history, although the projected
 variables do not satisfy a closed equation.
 
-The paper contains proved linear and local results, an abstract theorem under
-explicit hypotheses, and a conditional model application.
+The paper contains unconditional linear and local results, followed by a
+clearly separated conditional model application.
 
-1. With two distinct delay locations, the first moment of the constrained
-   perturbation matrices maps onto the network-transverse space. The paper
-   gives a sharp explicit right inverse and dimension-independent bounds.
-   Eliminating the network-transverse equation in a Fredholm reduction yields
-   a bounded linear functional `Lambda_N`.
-2. A general Lyapunov--Schmidt theorem gives the derivative of a scalar
-   defining function for a codimension-one connection once its invariant manifolds,
-   transversality, and uniform expansion have been verified. For the
-   polynomial network, the local fold calculation identifies the coefficient
-   `Lambda_N`.
-3. If a fixed smooth modification outside the fold neighborhood has the
+1. With two distinct delay locations, the first delay moment maps the
+   unrestricted admissible perturbation space onto the network-transverse
+   space. The paper computes its norm and a norm-optimal right inverse in the
+   stated norms. For a prescribed matrix pattern, it gives the exact range
+   and a fixed-support realization with uniform bounds under Dobrushin mixing.
+2. Eliminating the transverse equation gives the dimension-uniform Fredholm
+   functional `Lambda_N`. A local RFDE invariant-manifold construction near a
+   fast--slow fold identifies this coefficient in the derivative of a
+   finite-interval matching function. Explicit growing families show both a
+   nonzero response uniform in `N` and the loss of uniformity on local cycles.
+3. Separately, if a fixed smooth modification outside the fold neighborhood has the
    required uniform stable and unstable manifold sections and its
    heteroclinic defining function is `C^1`-close to the finite-interval
    matching function, its local connection parameter
@@ -40,7 +39,7 @@ explicit hypotheses, and a conditional model application.
 
    uniformly in the finite network size.
 
-The third statement is an application theorem under explicit hypotheses; the
+Only the third statement is conditional. The
 global invariant-manifold verification for the displayed modified equation is
 not claimed complete. Different modified recovery equations may have
 different finite-`delta` connection parameters. The paper does not prove a heteroclinic or
@@ -61,6 +60,8 @@ experimental threshold.
   PDFs;
 - `../../experiments/results/three_node_finite_section_diagnostic.json`:
   reproducible values for the three-node numerical illustration;
+- `../../experiments/results/growing_network_finite_section_diagnostic.json`:
+  reproducible values for the growing-network illustration;
 - `CLAIM-MAP.md`: theorem-to-proof map and scope boundaries.
 
 The former manuscript is preserved at the immutable tag
@@ -73,7 +74,7 @@ make paper
 make check
 ```
 
-To regenerate the three-node values separately, run:
+To regenerate both numerical illustrations, run:
 
 ```sh
 make diagnostic-data
@@ -88,8 +89,9 @@ pdffonts main.pdf
 ```
 
 The theorem is analytic and does not rely on a numerical certificate.
-Figure 2 is a prescribed-history finite-section illustration of the sign and
-scale of the local coefficient; it is not the matching function in the
-proof, a heteroclinic computation, or a maximal-canard computation.  A public
+Figure 2 contains prescribed-history finite-section illustrations of the sign,
+scale, and network-size persistence of the local coefficient; it is not the
+matching function in the proof, a heteroclinic computation, or a
+maximal-canard computation. A public
 source release and permanent archive identifier are still required before
 submission.

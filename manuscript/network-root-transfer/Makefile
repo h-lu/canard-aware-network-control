@@ -2,11 +2,13 @@ LATEXMK ?= latexmk
 PYTHON ?= python3
 UV ?= uv
 THREE_NODE_DATA := ../../experiments/results/three_node_finite_section_diagnostic.json
+GROWING_NETWORK_DATA := ../../experiments/results/growing_network_finite_section_diagnostic.json
 PAPER_FIGURES := \
 	figures/connection-geometry.pdf \
 	figures/three-node-finite-section.pdf
 PAPER_A_TESTS := \
 	tests/test_paper_a_jns_rewrite_contract.py \
+	tests/test_growing_network_finite_section.py \
 	tests/test_three_node_finite_section.py \
 	tests/test_block_schur_response.py \
 	tests/test_canard_conditioning.py \
@@ -39,12 +41,19 @@ $(THREE_NODE_DATA): \
 	cd ../.. && PYTHONPATH=src $(UV) run --extra numeric \
 		python experiments/three_node_finite_section_diagnostic.py
 
-diagnostic-data: $(THREE_NODE_DATA)
+$(GROWING_NETWORK_DATA): \
+		../../experiments/growing_network_finite_section_diagnostic.py \
+		../../src/canard_control/growing_network_finite_section.py
+	cd ../.. && PYTHONPATH=src $(UV) run --extra numeric \
+		python experiments/growing_network_finite_section_diagnostic.py
+
+diagnostic-data: $(THREE_NODE_DATA) $(GROWING_NETWORK_DATA)
 
 figures/three-node-finite-section.pdf: \
-		figures/three_node_finite_section.py $(THREE_NODE_DATA)
+		figures/three_node_finite_section.py $(THREE_NODE_DATA) $(GROWING_NETWORK_DATA)
 	$(PYTHON) figures/three_node_finite_section.py \
-		--data $(THREE_NODE_DATA) --output $@
+		--data $(THREE_NODE_DATA) \
+		--growing-data $(GROWING_NETWORK_DATA) --output $@
 
 paper: $(PAPER_FIGURES)
 	$(LATEXMK) -pdf -interaction=nonstopmode -halt-on-error main.tex
