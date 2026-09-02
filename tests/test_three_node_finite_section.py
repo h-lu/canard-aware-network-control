@@ -31,15 +31,21 @@ def test_exact_three_node_coefficient_and_projection_cancellation() -> None:
     assert parameters.predicted_coefficient == pytest.approx(-1.0 / 3.0)
     assert parameters.singular_center == pytest.approx(-0.25)
     varied = ThreeNodeParameters(
-        delta=0.05, sigma=0.4, coupling_gain=1.5, delay=2.0
+        delta=0.05,
+        sigma=0.4,
+        coupling_gain=1.5,
+        delay_0=1.0,
+        delay_1=3.0,
     )
     assert varied.predicted_coefficient == pytest.approx(-0.4)
 
     current = np.array([0.2, -0.3, 0.10, -0.04, -0.06])
-    delayed = np.array([-0.1, 0.2, -0.02, 0.03, -0.01])
+    delayed_0 = np.array([-0.1, 0.2, -0.02, 0.03, -0.01])
+    delayed_1 = np.array([-0.25, 0.35, 0.01, -0.02, 0.01])
+    delayed_states = (delayed_0, delayed_1)
     assert projected_rhs_difference(
         current,
-        delayed,
+        delayed_states,
         parameters=parameters,
         zeta=0.04,
         nu=-0.25,
@@ -47,7 +53,7 @@ def test_exact_three_node_coefficient_and_projection_cancellation() -> None:
 
     control_minus = exact_fold_rhs(
         current,
-        delayed,
+        delayed_states,
         parameters=parameters,
         zeta=-0.04,
         nu=-0.25,
@@ -55,7 +61,7 @@ def test_exact_three_node_coefficient_and_projection_cancellation() -> None:
     )
     control_plus = exact_fold_rhs(
         current,
-        delayed,
+        delayed_states,
         parameters=parameters,
         zeta=0.04,
         nu=-0.25,
@@ -82,6 +88,8 @@ def test_current_equation_gives_the_predicted_sign_and_scale() -> None:
 def test_archived_figure_values_preserve_scope_and_overall_trend() -> None:
     payload = json.loads(ARCHIVE.read_text(encoding="utf-8"))
     assert payload["status"] == "numerical diagnostic; not used in any proof"
+    assert payload["parameters"]["theta_0"] == 1.0
+    assert payload["parameters"]["theta_1"] == 2.0
     assert "D_3^fin" in payload["definition"]["not_computed"]
     rows = payload["convergence_rows"]
     assert len(rows) >= 5

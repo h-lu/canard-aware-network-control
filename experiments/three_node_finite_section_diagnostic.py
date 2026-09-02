@@ -149,10 +149,15 @@ def main() -> None:
     ) / (2.0 * zeta_step * panel_delta)
 
     representative_current = np.array([0.2, -0.3, 0.10, -0.04, -0.06])
-    representative_delayed = np.array([-0.1, 0.2, -0.02, 0.03, -0.01])
+    representative_delayed_0 = np.array(
+        [-0.1, 0.2, -0.02, 0.03, -0.01]
+    )
+    representative_delayed_1 = np.array(
+        [-0.25, 0.35, 0.01, -0.02, 0.01]
+    )
     projection_residual = projected_rhs_difference(
         representative_current,
-        representative_delayed,
+        (representative_delayed_0, representative_delayed_1),
         parameters=panel_parameters,
         zeta=zeta_step,
         nu=panel_roots["zero"],
@@ -203,7 +208,7 @@ def main() -> None:
     payload = {
         "status": "numerical diagnostic; not used in any proof",
         "definition": {
-            "history": "singular orbit gamma_0 with h=0 on [-S-1,-S]",
+            "history": "singular orbit gamma_0 with h=0 on [-S-2,-S]",
             "outgoing_condition": "Y(S)-X(S)^2+1/2=0",
             "root_name": "nu_hat_sec(delta,zeta;S)",
             "not_computed": [
@@ -218,8 +223,8 @@ def main() -> None:
             "beta": panel_parameters.beta,
             "D": 1.0,
             "K": panel_parameters.coupling_gain,
-            "theta_0": 0.0,
-            "theta_1": panel_parameters.delay,
+            "theta_0": panel_parameters.delay_0,
+            "theta_1": panel_parameters.delay_1,
             "zeta_step": zeta_step,
             "predicted_coefficient": panel_parameters.predicted_coefficient,
             "singular_center": panel_parameters.singular_center,

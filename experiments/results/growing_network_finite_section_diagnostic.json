@@ -1,0 +1,216 @@
+{
+  "checks": {
+    "family_identities": {
+      "17": {
+        "curvature_mean": 1.0,
+        "curvature_minimum": 0.18350341907227397,
+        "direction_mean": 2.6122894697062506e-17,
+        "direction_mean_square": 1.0,
+        "direction_minimum_spacing": 0.20412414523193134,
+        "dobrushin_coefficient": 0.0,
+        "graph_coefficient_mean": -1.3061447348531253e-17,
+        "predicted_coefficient": -0.5
+      },
+      "3": {
+        "curvature_mean": 1.0,
+        "curvature_minimum": 0.38762756430420553,
+        "direction_mean": 0.0,
+        "direction_mean_square": 0.9999999999999999,
+        "direction_minimum_spacing": 1.224744871391589,
+        "dobrushin_coefficient": 0.0,
+        "graph_coefficient_mean": 0.0,
+        "predicted_coefficient": -0.5
+      },
+      "33": {
+        "curvature_mean": 1.0,
+        "curvature_minimum": 0.15983194958319413,
+        "direction_mean": 1.3457248783335231e-17,
+        "direction_mean_square": 1.0,
+        "direction_minimum_spacing": 0.10502100630210065,
+        "dobrushin_coefficient": 0.0,
+        "graph_coefficient_mean": -6.7286243916676156e-18,
+        "predicted_coefficient": -0.5
+      },
+      "5": {
+        "curvature_mean": 1.0,
+        "curvature_minimum": 0.2928932188134524,
+        "direction_mean": -4.4408920985006264e-17,
+        "direction_mean_square": 1.0000000000000002,
+        "direction_minimum_spacing": 0.7071067811865476,
+        "dobrushin_coefficient": 0.0,
+        "graph_coefficient_mean": 2.2204460492503132e-17,
+        "predicted_coefficient": -0.5
+      },
+      "9": {
+        "curvature_mean": 1.0,
+        "curvature_minimum": 0.2254033307585166,
+        "direction_mean": 0.0,
+        "direction_mean_square": 1.0000000000000002,
+        "direction_minimum_spacing": 0.3872983346207417,
+        "dobrushin_coefficient": 0.0,
+        "graph_coefficient_mean": 0.0,
+        "predicted_coefficient": -0.5
+      }
+    },
+    "maximum_projection_rhs_residual": 0.0,
+    "maximum_root_residual": 8.430061093633867e-10,
+    "maximum_transverse_mean": 4.718447854656915e-16,
+    "projection_rhs_residuals": {
+      "17": 0.0,
+      "3": 0.0,
+      "33": 0.0,
+      "5": 0.0,
+      "9": 0.0
+    },
+    "quotient_spread": 0.00010716496129725694
+  },
+  "definition": {
+    "history": "singular orbit gamma_0 with h=0 on [-S-theta_1,-S]",
+    "not_computed": [
+      "D_N^fin",
+      "G_N,delta^g",
+      "stable/unstable manifold intersection",
+      "heteroclinic connection",
+      "maximal canard"
+    ],
+    "outgoing_condition": "Y(S)-X(S)^2+1/2=0",
+    "quotient": "[nu_hat_sec(+zeta)-nu_hat_sec(-zeta)]/(2*zeta*delta)",
+    "root_name": "nu_hat_sec(N,delta,zeta;S)"
+  },
+  "git": {
+    "head": "5ba0c5bb4e3ccbbbeb9772c74276742afee93ea4",
+    "worktree_dirty_at_generation": true
+  },
+  "network_family": {
+    "curvature": "c_N=1+sigma*q_N",
+    "delay_layers": "B_0=P_N/2+zeta*q_N*pi_N^T; B_1=P_N/2-zeta*q_N*pi_N^T",
+    "direction": "q_i,N=sqrt(12/(N^2-1))*(i-(N+1)/2)",
+    "direction_identities": "pi_N^T q_N=0; pi_N^T q_N^2=1",
+    "fredholm_coefficient": "Lambda_N=-K*sigma*(theta_1-theta_0)/(2*D*rho)",
+    "markov_matrix": "P_N=(1-rho)I+rho*1*pi_N^T",
+    "stationary_distribution": "pi_N=(1/N)1",
+    "transverse_generator": "A_N=D(P_N-I)=-D*rho*I on ker(pi_N^T)"
+  },
+  "network_size_rows": [
+    {
+      "absolute_error": 0.003534395896124809,
+      "delta": 0.02,
+      "function_evaluations": 182811,
+      "node_count": 3,
+      "nu_minus": -0.17843475817458293,
+      "nu_plus": -0.17924041320801673,
+      "nu_zero": -0.17883758361136787,
+      "orbit_integrations": 39,
+      "predicted_coefficient": -0.5,
+      "quotient": -0.5035343958961248,
+      "relative_error": 0.007068791792249618,
+      "root_residual_max": 8.087903680120689e-10,
+      "section_half_width": 3.5,
+      "transverse_mean_max": 3.0531133177191805e-16,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.003606334824168611,
+      "delta": 0.02,
+      "function_evaluations": 186427,
+      "node_count": 5,
+      "nu_minus": -0.17840627635737075,
+      "nu_plus": -0.17921204649308942,
+      "nu_zero": -0.1788091593802975,
+      "orbit_integrations": 39,
+      "predicted_coefficient": -0.5,
+      "quotient": -0.5036063348241686,
+      "relative_error": 0.007212669648337222,
+      "root_residual_max": 8.31661406408557e-10,
+      "section_half_width": 3.5,
+      "transverse_mean_max": 4.718447854656915e-16,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.0036315472206447375,
+      "delta": 0.02,
+      "function_evaluations": 194295,
+      "node_count": 9,
+      "nu_minus": -0.17839629367465126,
+      "nu_plus": -0.1792021041502043,
+      "nu_zero": -0.1787991968823803,
+      "orbit_integrations": 39,
+      "predicted_coefficient": -0.5,
+      "quotient": -0.5036315472206447,
+      "relative_error": 0.007263094441289475,
+      "root_residual_max": 8.385332428417769e-10,
+      "section_half_width": 3.5,
+      "transverse_mean_max": 1.9120507646322142e-16,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.003639351763177756,
+      "delta": 0.02,
+      "function_evaluations": 198419,
+      "node_count": 17,
+      "nu_minus": -0.17839320231740444,
+      "nu_plus": -0.17919902528022552,
+      "nu_zero": -0.17879611177473068,
+      "orbit_integrations": 39,
+      "predicted_coefficient": -0.5,
+      "quotient": -0.5036393517631778,
+      "relative_error": 0.007278703526355512,
+      "root_residual_max": 8.423164388204896e-10,
+      "section_half_width": 3.5,
+      "transverse_mean_max": 2.3837141411069537e-16,
+      "zeta_step": 0.04
+    },
+    {
+      "absolute_error": 0.003641560857422066,
+      "delta": 0.02,
+      "function_evaluations": 202608,
+      "node_count": 33,
+      "nu_minus": -0.1783923279365954,
+      "nu_plus": -0.17919815443396728,
+      "nu_zero": -0.1787952391602387,
+      "orbit_integrations": 39,
+      "predicted_coefficient": -0.5,
+      "quotient": -0.5036415608574221,
+      "relative_error": 0.007283121714844132,
+      "root_residual_max": 8.430061093633867e-10,
+      "section_half_width": 3.5,
+      "transverse_mean_max": 3.061524098208765e-16,
+      "zeta_step": 0.04
+    }
+  ],
+  "parameters": {
+    "D": 1.0,
+    "K": 2.0,
+    "beta": 3.0,
+    "delta": 0.02,
+    "node_counts": [
+      3,
+      5,
+      9,
+      17,
+      33
+    ],
+    "predicted_coefficient": -0.5,
+    "rho": 1.0,
+    "section_half_width": 3.5,
+    "sigma": 0.5,
+    "singular_center": -0.1875,
+    "theta_0": 1.0,
+    "theta_1": 2.0,
+    "zeta_step": 0.04
+  },
+  "solver": {
+    "atol": 2e-11,
+    "max_step": 0.08,
+    "method": "literal two-delay method of steps with scipy.integrate.solve_ivp Radau",
+    "numpy": "2.5.2",
+    "python": "3.14.4",
+    "rtol": 2e-09,
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "experiments/growing_network_finite_section_diagnostic.py": "8c1793e82dfdd6b0617d8a193580c565fb0b95ca46d1395e501f038c73798613",
+    "src/canard_control/growing_network_finite_section.py": "945eea20209c6bc75f6577d51ea0e9871eb9a7681eea278591e4ecdddefa8acb"
+  },
+  "status": "numerical diagnostic; not used in any proof"
+}
