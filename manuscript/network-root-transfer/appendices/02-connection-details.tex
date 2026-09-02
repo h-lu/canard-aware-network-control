@@ -15,10 +15,9 @@ where \(p=(\nu,\eta)\), and put
  \qquad \sigma_\pm'=\sigma'(\pm r_A).
 \]
 
-Except in the characteristic-root calculation at the equilibria, we use
-fold time \(s=\delta t\), so the delay translations are
-\(s\mapsto s-\theta_k\).  The spectral parameter in that calculation is
-explicitly denoted \(\lambda_t\) and belongs to the original time \(t\).
+We use fold time \(s=\delta t\), so the delay translations are
+\(s\mapsto s-\theta_k\).  Characteristic roots in the hypothesis below are
+denoted by \(\lambda_t\) and refer to the original time \(t\).
 If \(\Sigma\) is a regular transverse section, then
 \(\mathcal M_\Sigma^2\) denotes the solution-manifold section from
 \cref{eq:C2-solution-manifold-section}, and
@@ -51,9 +50,15 @@ segment we use the same notation \(r_p(s)\), now with \(r_p(s)>0\) and
  +\beta\{V_{0,N}(r)-\mathbf1\}^{\circ2}\right)
  \label{eq:supp-frozen-voltage-jacobian}
 \end{equation}
-and denote by \(\lambda_{c,N}(r)\) its simple real eigenvalue near zero; it
-is positive for \(-r_A<r<0\) and negative for \(0<r<r_A\).  On either
-regular branch set
+Item~\textup{(i)} of \(\mathrm{(H_{\rm glob})}\) below assumes that this
+matrix has a simple real eigenvalue \(\lambda_{c,N}(r)\) near zero and
+constants \(0<c_f<C_f\), independent of \(N\) and the parameter box, such
+that
+\[
+ \operatorname{sgn}\lambda_{c,N}(r)=-\operatorname{sgn}r,
+ \qquad c_f|r|\le|\lambda_{c,N}(r)|\le C_f|r|.
+\]
+Under that hypothesis, on either regular branch set
 \begin{equation}
  a_p(s)=\left\{\abs{\lambda_{c,N}(r_p(s))}^{-1}
                     +2(D\gamma)^{-1}\right\}^{-1}.
@@ -94,11 +99,10 @@ For a map depending on \(p=(\nu,\eta)\), write
 \]
 The last norm is the full operator norm on
 \(\mathcal T_N\).
-Every statement below that uses a global orbit segment or an invariant
-manifold associated with \(Z_N^\pm\) is conditional on
+Every statement below that uses a global orbit segment, a characteristic-root
+count, or an invariant manifold associated with \(Z_N^\pm\) is conditional on
 \(\mathrm{(H_{\rm glob})}\) in
-\cref{hyp:supp-outer-manifolds}.  The local spectral calculation verifies
-only item~\textup{(i)} of that hypothesis.
+\cref{hyp:supp-outer-manifolds}.
 Throughout the estimates, \(M\ge0\) denotes a fixed exponent larger than
 the finitely many losses caused by history traces, transition maps, and one
 parameter derivative.  For each prescribed algebraic order, \(p_0\) in
@@ -115,9 +119,17 @@ Fix \(r_A\), \(\delta_0\), and the parameter box in
 available uniformly in \(N\) and in that parameter box.
 
 \begin{enumerate}[label=\textup{(\roman*)}]
-\item The characteristic roots at \(Z_N^\pm\) are separated from the
-imaginary axis.  At \(Z_N^+\) the only unstable root is the simple slow
-root
+\item On the two regular reference intervals, the frozen voltage matrix
+\(\mathcal J_N^{\rm fv}(r)\) has a simple real eigenvalue
+\[
+ \lambda_{c,N}(r)=-2\alpha r+O(r^2),
+\]
+with the sign stated above; the remainder and the complementary exponential
+dichotomy are uniform in \(N\) and in the parameter box.  For every fixed
+\(0<\delta<\delta_0\), the characteristic equation at \(Z_N^\pm\) has no
+root on the imaginary axis.  Apart from the slow root below, the relevant
+stable and unstable roots have a common positive separation from that axis.
+At \(Z_N^+\) the only unstable root is the simple slow root
 \begin{equation}
  \lambda_{s,\pm}^{t}
  =\delta^2\frac{\sigma_\pm'}{w_{0,N}'(\pm r_A)}+O(\delta^4),
@@ -178,7 +190,7 @@ The same estimate holds for the defining-function value and after one
 state or parameter derivative.
 
 \item Let \(A_p^{\rm fin}\) be the attracting trace used to define
-\(D_N^{\rm fin}\) in \cref{prop:finite-comparison}, intersected with
+\(D_N^{\rm fin}\) in \cref{thm:rw-local-fold-matching}, intersected with
 \(\Sigma_0\) after both forward orbits have entered the region where the
 two equations agree.  For every \(q>0\), the endpoint in the
 finite-interval construction may be placed at a sufficiently large value of
@@ -191,104 +203,15 @@ finite-interval construction may be placed at a sufficiently large value of
 \end{enumerate}
 \end{assumption}
 
-Only the spectral condition in item~\textup{(i)} is verified below from the
-displayed network assumptions.  Items~\textup{(ii)}--\textup{(v)} are
-additional hypotheses; local hyperbolicity alone does not supply the global
-orbit segments, their intersection, or the comparison estimates.
-
-\begin{lemma}[Spectral condition at the two equilibria]
-\label[lemma]{lem:supp-outer-spectral}
-Under the assumptions of \cref{cor:rw-conditional-connection}, after
-\(r_A\) and \(\delta_0\) are decreased, item~\textup{(i)} of
-\(\mathrm{(H_{\rm glob})}\) holds.
-\end{lemma}
-
-\begin{proof}
-For this spectral calculation only, derivatives and characteristic roots are
-taken in the original time \(t\).  Put
-\begin{equation}
- J_\pm=D(P_N-\Id)-\diag\!\left(
- 2c_N\circ\{V_{0,N}(\pm r_A)-\mathbf1\}
- +\beta\{V_{0,N}(\pm r_A)-\mathbf1\}^{\circ2}\right)
- =\mathcal J_N^{\rm fv}(\pm r_A)
- \label{eq:supp-outer-voltage-jacobian}
-\end{equation}
-and
-\begin{equation}
- A_\pm(\lambda_t)
- =J_\pm+\delta^2K\sum_{k=0}^m(B_{k,N}+\Delta B_{k,N})
-       \{1-e^{-\lambda_t\theta_k/\delta}\}.
- \label{eq:supp-original-time-characteristic-block}
-\end{equation}
-The Dobrushin inverse on \(E_N\), followed by the two invariant-graph
-equations for the splitting
-\(\R^N=\operatorname{span}\{\mathbf1\}\oplus E_N\), gives one simple real
-eigenvalue
-\[
- \lambda_{c,N}(r)=-2\alpha r+O(r^2)
-\]
-of \(\mathcal J_N^{\rm fv}(r)\); the complementary semigroup decays at rate
-at least \(D\gamma/2\).  Thus, after \(r_A\) is fixed sufficiently small,
-\(J_+\) has no unstable eigenvalue, \(J_-\) has exactly the simple unstable
-eigenvalue \(\lambda_{c,N}(-r_A)\), and the resolvents on the imaginary axis
-are bounded uniformly in \(N\).  On \(\Re\lambda_t\ge0\), the delay term in
-\cref{eq:supp-original-time-characteristic-block} is an
-\(O(\delta^2)\) perturbation in the layer norm.  A Neumann-series argument
-therefore gives the same imaginary-axis resolvent bound for
-\(\lambda_t\Id-A_\pm(\lambda_t)\) when \(\delta\) is small; explicitly,
-\begin{equation}
- \sup_{\omega\in\R}
- \norm{(i\omega\Id-A_\pm(i\omega))^{-1}}
- \le C_A,
- \label{eq:supp-outer-imaginary-resolvent}
-\end{equation}
-where \(C_A\) is independent of \(N\), \(\delta\), and the admissible
-constrained perturbation (with the fixed choice of \(r_A\)).
-
-The modal equations are
-\[
- (\lambda_t\Id-A_\pm(\lambda_t))u=-\omega\mathbf1,
- \qquad
- \lambda_t\omega=\delta^2\sigma_\pm'\pi_N^Tu.
-\]
-Eliminating \(u\) near zero gives
-\[
- \Delta_\pm(\lambda_t)
- =\lambda_t+\delta^2\sigma_\pm'\pi_N^T
-   (\lambda_t\Id-A_\pm(\lambda_t))^{-1}\mathbf1.
-\]
-Differentiating \cref{eq:rw-critical-curve-equation} yields
-\[
- \pi_N^T(-J_\pm)^{-1}\mathbf1
- =-\frac1{w_{0,N}'(\pm r_A)}.
-\]
-It follows that
-\[
- \Delta_\pm(\lambda_t)
- =\lambda_t-\delta^2
-   \frac{\sigma_\pm'}{w_{0,N}'(\pm r_A)}+O(\delta^4),
- \qquad
- \Delta_\pm'(\lambda_t)=1+O(\delta^2).
-\]
-This proves the simple-root expansion in
-\cref{eq:supp-outer-slow-roots}.  To count the other roots, replace
-\(\delta^2\) in the second modal equation by
-\(\varepsilon\in[0,\delta^2]\).  The same imaginary-axis resolvent
-excludes a crossing outside a small neighborhood of zero.  Inside that
-neighborhood the real part of
-\(\varepsilon\sigma_\pm'/w_{0,N}'(\pm r_A)\) excludes a crossing away
-from the simple root.  The argument principle therefore preserves the
-remaining right-half-plane count.  The contour is taken in the original-time
-\(\lambda_t\)-plane; the uniform voltage resolvent excludes imaginary-axis
-zeros along the homotopy, and standard retarded-equation root bounds close
-the contour in a common right half-plane.  The signs of \(w_{0,N}'\),
-\(g'\), and \(\sigma_\pm'\) give the indices in (i).  All subsequent orbit
-and dichotomy estimates return to fold time \(s=\delta t\).
-\end{proof}
+All spectral and global properties in \(\mathrm{(H_{\rm glob})}\) are
+hypotheses of the conditional application; none is deduced here from the
+displayed network assumptions.  In particular, local hyperbolicity alone
+does not supply the global orbit segments, their intersection, or the
+comparison estimates.
 
 \begin{remark}[Sufficient quantitative data for the remaining hypotheses]
 The following conditions are sufficient for the later comparison argument;
-they are not derived here from the local spectral calculation.  For
+they are not derived here from the local fold calculation.  For
 item~\textup{(ii)}, it is sufficient to verify that the local
 Lyapunov--Perron map, in \cref{eq:supp-fading-history-norm} and with the slow
 coordinate divided by \(\delta^4\), is a uniform contraction on the stated
@@ -521,7 +444,7 @@ Assume \(\mathrm{(H_{\rm glob})}\).  Let \(\Sigma_b\) be the transverse section
 corresponding to \(s_b\), and let
 \(O_{b,p}\) be the intersection of the half-line orbit in
 \cref{hyp:supp-outer-manifolds}.  Let \(C_{b,p}^{\rm fin}\) be the
-repelling trace used in \cref{prop:finite-comparison}.  There is a
+repelling trace used in \cref{thm:rw-local-fold-matching}.  There is a
 compatible history chart
 \[
  \Phi_{b,p}(\psi,u),\qquad \Phi_{b,p}(0,0)=O_{b,p},
@@ -885,7 +808,7 @@ graph.
 Assume \(\mathrm{(H_{\rm glob})}\).  Let \(G_{N,\delta}^{g}\) be the
 stable-manifold defining function in
 \cref{eq:connection-defining-function}, and let \(D_N^{\rm fin}\) be the
-finite-interval function in \cref{prop:finite-comparison}.  For every
+finite-interval function in \cref{thm:rw-local-fold-matching}.  For every
 prescribed \(Q>12\), after choosing \(p_0\) in
 \cref{eq:supp-central-action-choice} with exponent larger than \(Q+M+4\),
 \begin{equation}

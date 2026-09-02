@@ -1,8 +1,8 @@
 \documentclass[11pt]{article}
 \input{preamble}
 
-\newcommand{\papertitle}{Sensitivity of Heteroclinic Connections to
-Constrained Delayed Coupling in Networks of RFDEs}
+\newcommand{\papertitle}{Fredholm Sensitivity to Constrained Delayed Coupling
+in Networks of RFDEs}
 
 \title{\papertitle}
 \author{Haibo Lu\\
@@ -11,55 +11,47 @@ Constrained Delayed Coupling in Networks of RFDEs}
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={Sensitivity of Heteroclinic Connections to Constrained Delayed Coupling in Networks of RFDEs},
+  pdftitle={Fredholm Sensitivity to Constrained Delayed Coupling in Networks of RFDEs},
   pdfauthor={Haibo Lu},
-  pdfsubject={A Fredholm formula for heteroclinic-connection sensitivity to constrained perturbations of delayed coupling},
+  pdfsubject={A dimension-uniform Fredholm formula for constrained perturbations of delayed coupling},
   pdfkeywords={retarded functional differential equation, delayed coupling,
-    heteroclinic connection, canard, row-stochastic matrix, Fredholm alternative,
-    parameter sensitivity}
+    row-stochastic matrix, Fredholm alternative, Dobrushin coefficient,
+    fast-slow system, parameter sensitivity}
 }
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-We study how a constrained change in the distribution of delayed coupling
-affects a codimension-one connection condition in finite networks of retarded
-functional differential equations.  The perturbations preserve the sum of
-the delayed-coupling matrices and are annihilated by the stationary row
-vector.  Consequently, the stationary projection of the vector field is
-unchanged at every history, although the projected variables need not form a
-closed system.  With two distinct delay values, we prove that the first delay
-moment of these perturbations maps onto the network-transverse space and has
-an explicit sharp right inverse.  Combining this map with a Dobrushin
-estimate gives a transverse inverse and a Fredholm sensitivity functional
-whose bounds are independent of network size.  With one delay value, the
-first-moment map vanishes on the same perturbation space.
-Thus cancellation of the direct perturbation under the stationary projection
-does not by itself force the first variation of the collective solvability
-condition to vanish.
-
-We then give a Lyapunov--Schmidt formula for the derivative of a
-codimension-one heteroclinic defining function under uniform regularity and
-transversality hypotheses.  For a polynomial fast--slow network, we construct
-a two-dimensional locally invariant manifold in the RFDE phase space and use
-a finite-interval boundary-value problem to compute the local sensitivity
-functional.  If a fixed smooth modification outside the fold neighborhood
-has the required stable and unstable manifold sections and its heteroclinic
-defining function is \(C^1\)-close to the finite-interval matching function,
-then the connection parameter satisfies
+We study finite networks of retarded functional differential equations with
+row-stochastic instantaneous coupling and several delayed-coupling layers.
+The perturbations preserve the sum of the layer matrices and are annihilated
+by the stationary row at each delay.  Hence the stationary projection of the
+vector field is unchanged at every history, although the projected variables
+need not form a closed system.  We determine the transverse first variation
+entering a codimension-one Fredholm solvability condition near a fast--slow
+fold.  With two distinct delays, the first delay moment maps onto the
+stationary-mean-zero subspace on the full matrix tangent space defined only by
+those linear constraints; sparsity, symmetry, layerwise row sums, and signs
+are unrestricted.  We compute its norm and a norm-optimal right inverse.  For
+a prescribed linear matrix pattern, the range is the image of
+\(R\mapsto R\mathbf1\); a generator-supported pattern has a uniform right
+inverse under Dobrushin contraction.  Block elimination gives
 \[
- D_\eta\mu_{c,N}(\delta,\eta)
- =\delta^3\Lambda_N+O(\delta^4+\delta^3\|\eta\|)
+ \Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N.
 \]
-uniformly in \(N\).  The global invariant-manifold and comparison properties
-are hypotheses; the paper does not prove a heteroclinic connection for the
-unmodified recovery equation.
+For a polynomial fast--slow network, we construct a local invariant manifold
+and identify \(\Lambda_N\) in the derivative of a finite-interval matching
+function.  A positive-delay computation and an explicit growing family
+illustrate a nonzero coefficient uniform in network size.  A final conditional
+theorem transfers this coefficient to a heteroclinic parameter if the global
+invariant manifolds and a uniform \(C^1\) comparison are constructed
+independently; those properties are not verified here.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
 retarded functional differential equation; delayed coupling;
-heteroclinic connection; fast--slow system; Lyapunov--Schmidt reduction;
+Fredholm alternative; fast--slow system; row-stochastic matrix;
 Dobrushin coefficient; sensitivity analysis
 
 \medskip
@@ -75,8 +67,10 @@ Dobrushin coefficient; sensitivity analysis
 
 \section*{Acknowledgements}
 OpenAI Codex was used interactively to reorganize the manuscript, revise
-proof prose and \LaTeX{}, generate editable figure sources, and assist with
-algebraic, scaling, cross-reference, and literature checks.  The author
+proof prose and \LaTeX{}, assist with Matplotlib figure-source code, and
+assist with algebraic, scaling, cross-reference, and literature checks.  The
+scientific data, parameter choices, and rendered figures were checked by the
+author.  The author
 checked the equations, hypotheses, signs, estimates, citations,
 source changes, and test outputs and remains responsible for every claim.
 
@@ -88,8 +82,10 @@ non-financial interests to disclose.
 and do not rely on numerical data, and no external data sets were used.
 Figure~\ref{fig:three-node-finite-section} is a reproducible numerical
 illustration generated from the displayed model and parameters and is not
-used in any proof.  The \LaTeX{} sources, numerical and figure code, and
-generated values will be archived with the published version.
+used in any proof.  The \LaTeX{} sources, numerical and figure code, generated
+values, and reproduction instructions are publicly available at
+\url{https://github.com/h-lu/canard-aware-network-control}.  A versioned
+archival record will be supplied with the submitted version.
 
 \clearpage
 \appendix

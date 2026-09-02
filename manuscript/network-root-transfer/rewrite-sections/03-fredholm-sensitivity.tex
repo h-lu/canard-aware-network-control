@@ -1,4 +1,4 @@
-\section{Fredholm reduction and a conditional theorem for heteroclinic sensitivity}
+\section{Fredholm reduction and sensitivity of a defining function}
 \label{sec:fredholm-sensitivity}
 
 This section identifies the part of the argument that can be used without
@@ -47,7 +47,7 @@ network-transverse equation is the first delay moment
 The following proposition gives its exact range and shows precisely where
 two distinct delay locations enter.
 
-\begin{proposition}[A right inverse for the first delay moment]
+\begin{proposition}[A norm-optimal right inverse for the first delay moment]
 \label[proposition]{prop:fredholm-two-delay-inverse}
 Combine terms with the same delay and put
 
@@ -110,7 +110,7 @@ For \(R\) satisfying \(\pi_N^TR=0\), set
 If \(y\in E_N\), then
 
 \begin{equation}
- \norm{y\pi_N^T}_{\cL(\R^N,\norm{\cdot}_N)}=\norm y_N.
+ \norm{y\pi_N^T}_{\cL(\R^N,\norm{\cdot}_N)}=\norm{y}_N.
  \label{eq:fredholm-rank-one-norm}
 \end{equation}
 
@@ -149,6 +149,112 @@ is sharp as well.  If all \(\theta_k=\theta_*\), then
 \]
 
 which proves the last statement.
+\end{proof}
+
+The full-range right inverse above answers the unconstrained matrix problem.
+For a fixed topology or another linear matrix restriction, its replacement is
+the following elementary range criterion.
+
+\begin{proposition}[First-moment range under prescribed matrix patterns]
+\label[proposition]{prop:fredholm-structured-delay-range}
+Let \(k_-\) and \(k_+\) index two delay values with
+\(\theta_{k_-}<\theta_{k_+}\), and let
+\[
+ \mathcal U_N\subset
+ \{R\in\mathbb R^{N\times N}:\pi_N^TR=0\}
+\]
+be a linear space.  On the restricted tuples
+\[
+ R_{k_-}=R,\qquad R_{k_+}=-R,
+ \qquad R\in\mathcal U_N,
+\]
+with all other components zero, one has
+\begin{equation}
+ \operatorname{Ran}\mathsf S_N
+ =-\frac{K(\theta_{k_+}-\theta_{k_-})}{2\alpha}
+       \{R\mathbf1:R\in\mathcal U_N\}.               \label{eq:fredholm-structured-range}
+\end{equation}
+Hence this restriction is onto \(E_N\) precisely when the evaluation map
+\begin{equation}
+ \mathsf e_N:\mathcal U_N\longrightarrow E_N,
+ \qquad \mathsf e_N(R)=R\mathbf1                     \label{eq:fredholm-pattern-evaluation}
+\end{equation}
+is onto.  It is zero whenever the allowed matrices have zero row sums.
+
+If \(P_N\) is irreducible, the space
+\begin{equation}
+ \mathcal U_N^{\rm gen}
+ =\{(P_N-\Id)\diag(d):d\in E_N\}                    \label{eq:fredholm-generator-pattern}
+\end{equation}
+has an onto evaluation map and is supported on the entries of
+\(P_N-\Id\).  If the two base delay layers are nonnegative and strictly
+positive on that support, then sufficiently small scalar multiples of any
+direction in \(\mathcal U_N^{\rm gen}\) remain nonnegative and preserve the
+existing support of both layers.  No dimension-uniform bound for a right inverse of
+\(\mathsf e_N\) is asserted without a corresponding uniform hypothesis on
+the prescribed pattern.
+
+If \(\tau(P_N)\le1-\gamma\), define
+\begin{equation}
+ \mathsf J_Ny=(P_N-\Id)\diag(d_y),
+ \qquad
+ d_y=\{(P_N-\Id)|_{E_N}\}^{-1}y.                    \label{eq:fredholm-generator-right-inverse}
+\end{equation}
+Then \(\mathsf J_Ny\,\mathbf1=y\) and
+\begin{equation}
+ \norm{\mathsf J_N}\le\frac{2(2-\gamma)}{\gamma}.
+ \label{eq:fredholm-generator-right-inverse-bound}
+\end{equation}
+The resulting right inverse of the structured first-moment map has norm at
+most
+\begin{equation}
+ \frac{8\alpha(2-\gamma)}
+      {|K|(\theta_{k_+}-\theta_{k_-})\gamma}.         \label{eq:fredholm-structured-source-inverse-bound}
+\end{equation}
+For the base layers
+\(B_{k_-}=B_{k_+}=(P_N+\Id)/2\), the two perturbed layers associated with
+\(R=(P_N-\Id)\diag(d)\) preserve nonnegativity and the common support when
+\(|\zeta|\norm{d}_\infty<1/2\).
+\end{proposition}
+
+\begin{proof}
+For the displayed tuple,
+\[
+ \sum_k\theta_kR_k
+ =-(\theta_{k_+}-\theta_{k_-})R.
+\]
+Since \(\pi_N^TR=0\), one has \(R\mathbf1\in E_N\), and
+\cref{eq:fredholm-structured-range} follows from
+\cref{eq:fredholm-delay-moment}.  This also proves the range criterion and
+the row-sum statement.  For
+\(R=(P_N-\Id)\diag(d)\),
+\[
+ \pi_N^TR=0,\qquad R\mathbf1=(P_N-\Id)d.
+\]
+Irreducibility makes the eigenvalue \(1\) of \(P_N\) simple, so
+\((P_N-\Id)|_{E_N}\) is invertible.  The support and local nonnegativity
+claims follow directly from the form of \(R\).
+
+Under the Dobrushin hypothesis,
+\[
+ \norm{d_y}_N\le\gamma^{-1}\norm{y}_N.
+\]
+For \(d\in E_N\) and arbitrary \(x\),
+\[
+ \osc(d\circ x)\le2\norm{d}_N\norm{x}_N.
+\]
+Together with
+\(\osc\{(P_N-\Id)u\}\le(2-\gamma)\osc(u)\), this gives
+\cref{eq:fredholm-generator-right-inverse-bound}.  Multiplying
+\(\mathsf J_N\) by \(-2\alpha/
+\{K(\theta_{k_+}-\theta_{k_-})\}\) in layer \(k_-\), and by the opposite
+coefficient in layer \(k_+\), gives
+\cref{eq:fredholm-structured-source-inverse-bound}.  Finally, every off-diagonal
+entry of the two base layers is \(P_{ij}/2\), while the corresponding entry of
+\(R\) is \(P_{ij}d_j\); on the diagonal the base entry is
+\((1+P_{jj})/2\) and the perturbation is
+\((P_{jj}-1)d_j\).  The condition
+\(|\zeta|\norm d_\infty<1/2\) therefore proves the last assertion.
 \end{proof}
 
 \subsection{The transverse inverse and the collective cokernel}
@@ -212,6 +318,59 @@ and the inverse bound follows.  Finally,
  \le D\{\norm{P_Nz}_N+\norm z_N\}
  \le D(2-\gamma)\norm z_N.
 \]
+\end{proof}
+
+\begin{proposition}[Uniform mixing and degeneration on a local cycle]
+\label[proposition]{prop:fredholm-growing-families}
+The two network families in \cref{prop:rw-growing-families} satisfy
+\cref{eq:rw-growing-response,eq:rw-cycle-degeneration}.
+\end{proposition}
+
+\begin{proof}
+For the mixing family,
+\[
+ \osc(P_N^{\rm mix}x)=(1-\rho)\osc(x),
+ \qquad
+ A_N=-D\rho\Id\quad\hbox{on }E_N.
+\]
+Thus \(\tau(P_N^{\rm mix})=1-\rho\).  Direct summation gives
+\[
+ \pi_N^Tq_N=0,
+ \qquad \pi_N^Tq_N^{\circ2}=1,
+ \qquad \max_i|q_{i,N}|<\sqrt3.
+\]
+For \((\theta_0,\theta_1)=(1,2)\) and
+\((R_0,R_1)=(q_N\pi_N^T,-q_N\pi_N^T)\),
+\[
+ P_{\perp,N}\left(\theta_0R_0+\theta_1R_1\right)\mathbf1=-q_N.
+\]
+Since \(\alpha=\pi_N^Tc_N=1\), insertion in
+\cref{eq:fredholm-curvature-lambda} yields
+\[
+ \Lambda_N(R_0,R_1)
+ =-\frac{K}{2D\rho}\pi_N^T\diag(\mathbf1+\sigma q_N)q_N
+ =-\frac{K\sigma}{2D\rho}.
+\]
+The strict bound on \(q_N\) proves the common positivity of \(c_N\), and its
+entries are distinct by construction.  By
+\cref{eq:fredholm-rank-one-norm},
+\[
+ \norm{(R_0,R_1)}_{\mathcal T_N}
+ =2\norm{q_N\pi_N^T}=2\osc(q_N)<4\sqrt3,
+\]
+which proves the uniform bound on the perturbation direction.
+
+For the cyclic family, two rows with disjoint supports give
+\(\tau(P_N^{\rm cyc})=1\) when \(N\ge4\).  Let \(N=2n\), and take
+\(y_i=1\) for \(1\le i\le n\) and \(y_i=-1\) otherwise.  Then
+\(y\in E_N\) and \(\norm{y}_N=2\).  With the convention
+\((C_Nz)_i=z_{i+1}\) and cyclic indices, solving
+\[
+ D\rho(C_N-\Id)z=y
+\]
+gives, up to an additive constant, a sequence whose oscillation is
+\(n/(D\rho)\).  Consequently the inverse norm is at least
+\(n/(2D\rho)=N/(4D\rho)\), as claimed.
 \end{proof}
 
 For the collective fold equation, the relevant whole-line operator is
@@ -391,7 +550,7 @@ the range-valued term \(d_NR\), and of adding any further element of
 \end{theorem}
 
 \begin{proof}
-The first equation in \cref{eq:fredholm-block-system} gives
+The first line of \eqref{eq:fredholm-block-system} gives
 \(h=L_{\perp,N}^{-1}\mathsf S_NR\).  Applying \(\ell_N\) to the second
 equation kills \(L_{\parallel,N}x\) and \(d_NR\), and gives
 
@@ -683,7 +842,7 @@ row-stochastic coupling, with
 \end{proposition}
 
 \begin{proof}
-Equation \cref{eq:fredholm-return-factorization} is
+Equation~\eqref{eq:fredholm-return-factorization} is
 \cref{eq:fredholm-lambda} rewritten using
 \cref{eq:fredholm-return-functional}.  If
 \(\mathsf S_N\mathsf Q_N=\Id\), then

@@ -1,11 +1,12 @@
 \section{Fold passage and the local sensitivity coefficient}
 \label{sec:fold-passage}
 
-This section computes the coefficient that later appears in the conditional
-heteroclinic-connection parameter derivative.  The computation is performed on an
-invariant graph of compatible RFDE histories.  A finite-interval matching
-problem is used only to obtain a defining function with controlled
-derivatives; it is not the definition of the heteroclinic connection in
+This section realizes the Fredholm functional in the polynomial fast--slow
+network.  The computation is performed on an invariant graph of compatible
+RFDE histories and gives controlled derivatives of a finite-interval
+matching function.  This local conclusion is unconditional within the model
+assumptions.  Its later identification with a heteroclinic-connection
+parameter requires the separate hypotheses in
 \cref{sec:heteroclinic-connection}.
 
 \subsection{A locally invariant manifold near the fold}
@@ -340,30 +341,7 @@ they and their delayed histories remain in the unchanged region.  Outside that
 interval, their auxiliary completion serves only to close the two finite
 boundary-value problems.
 
-\begin{proposition}[Derivative estimates for the finite-interval matching function]
-\label[proposition]{prop:finite-comparison}
-There exist \(\delta_0>0\), \(\eta_*>0\), and a compact interval
-\(I_\nu\), independent of \(N\), such that for
-\(0<\delta<\delta_0\), \(\nu\in I_\nu\), and
-\(\norm{\eta}_{\mathcal T_N}\le\eta_*\),
-\begin{align}
- \frac{D_N^{\rm fin}}{\delta}
- &=\sqrt{2\pi}(\nu-\nu_{0,N})+O(\delta),
-                                                        \label{eq:finite-comparison-level}\\
- \partial_\nu D_N^{\rm fin}
- &=\delta\sqrt{2\pi}+O(\delta^2),
-                                                        \label{eq:finite-comparison-slope}\\
- \bigl\|D_\eta D_N^{\rm fin}
-       +\delta^2\sqrt{2\pi}\Lambda_N\bigr\|
- &\le C\{\delta^3+\delta^2\|\eta\|\}.             \label{eq:finite-comparison-structural}
-\end{align}
-The derivatives are taken in the operator norm on
-\(\mathcal T_N^*\).  These estimates do
-not assert that the zero set of \(D_N^{\rm fin}\) is a heteroclinic
-connection of the globally modified RFDE.
-\end{proposition}
-
-\begin{proof}
+\begin{proof}[Proof of \cref{thm:rw-local-fold-matching}]
 Differentiate the first integral along the attracting and repelling traces
 and integrate from their endpoints to the phase section.  The leading terms
 are exactly \cref{eq:fold-parameter-pairing,eq:fold-return-pairing}.  The
@@ -378,20 +356,26 @@ for the tails, while the other first-derivative remainders have the orders
 shown in \cref{eq:finite-comparison-level,eq:finite-comparison-structural}.
 The exact decomposition and all mixed estimates are proved in
 \cref{prop:finite-gap-bridge}.  Combining them with the two Gaussian
-pairings proves the proposition.
+pairings proves the theorem.
 \end{proof}
 
 For the three-node parameters in the introduction,
 \cref{fig:three-node-finite-section} illustrates the preceding derivative
 estimate with a one-orbit finite-section calculation.  In panel~\textbf{(a)},
-the vertical coordinate is a scalar section mismatch; only the horizontal
-locations of its marked zero crossings are being compared.  Panel~\textbf{(b)}
+the vertical coordinate is a scalar section mismatch, the gray horizontal
+line is its zero level, and only the horizontal locations of the marked
+crossings are being compared.  Panel~\textbf{(b)}
 centers the two perturbed zeros, converts from \(\nu\) to
 \(\mu=\delta^2\nu\), and divides by \(\delta^3\), so the dashed line is the
 Fredholm coefficient predicted by \eqref{eq:fold-return-pairing}.  Because the
 incoming history is prescribed rather than taken from the invariant history
 graph, the displayed zeros are numerical diagnostics and are not zeros of
-\(D_3^{\rm fin}\).
+\(D_3^{\rm fin}\).  The green same-delay control is exactly zero because its
+two perturbation terms cancel.  Panel~\textbf{(c)} repeats the quotient for the explicit
+growing family in \cref{prop:rw-growing-families}.  The computed values for
+\(N=3,5,9,17,33\) lie within \(0.008\) of the common exact coefficient
+\(-1/2\), illustrating that the normalized response does not decay with
+network size in this uniformly mixing family.
 
 \input{figures/three-node-finite-section}
 
