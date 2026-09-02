@@ -2,6 +2,16 @@
 
 Search date: **2026-08-24**. This is a targeted primary-literature boundary search, not a bibliometric systematic review. It covers five intersections: delayed canards, slow--fast networks and tipping, frequency--amplitude control, noninvasive delayed feedback and excitable pulses, and DDE threshold numerics.
 
+A companion audit dated **2026-09-02** separately asks whether published RFDE,
+fast--slow, network-reduction, and observability papers identify an
+experimentally measured threshold with a rigorous root of the original
+system.  See
+[Experimental physical meaning of roots in delayed and network dynamics](physical-root-literature-audit.md).
+Its focused search finds many experimentally real thresholds and several
+rigorous roots, but no example combining a natural experimental control,
+a proved complete-history connection root in the original RFDE/network, and
+an experimental identification theorem.
+
 ## Executive conclusion
 
 The ingredients are individually occupied:

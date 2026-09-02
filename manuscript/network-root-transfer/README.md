@@ -54,6 +54,9 @@ outer equilibria, so the paper makes no maximal-canard claim for that law.
   boundaries.
 - `../../docs/paper-a-flagship-figure-contract.md` records the semantics and
   review contract for the main mechanism figure.
+- `../../docs/physical-root-literature-audit.md` separates the anchored
+  connection root proved here from experimental thresholds, spectral roots,
+  and reduced-model tipping points in the closest application literature.
 
 The selected finite-core roots retained in the paper are comparison devices
 and secondary readouts.  They are not substituted for the fixed-model

@@ -91,6 +91,11 @@ Historical fixed-epsilon certificate records remain available for provenance:
   records;
 - [`docs`](docs) -- theorem contracts and validation records still relevant
   to active work;
+- [`docs/literature-map.md`](docs/literature-map.md) -- primary-literature
+  novelty boundary and closest mathematical baselines;
+- [`docs/physical-root-literature-audit.md`](docs/physical-root-literature-audit.md)
+  -- evidence map separating physical parameters, experimental thresholds,
+  reduced or spectral roots, and complete-history connection roots;
 - [`references/references.bib`](references/references.bib) -- shared primary
   bibliography;
 - [`manuscript`](manuscript) -- submission units and historical manuscripts.
