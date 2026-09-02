@@ -1,6 +1,6 @@
 LATEXMK ?= latexmk
-PYTHON ?= python3
 UV ?= uv
+PAPER_PYTHON ?= $(UV) run --extra paper python
 THREE_NODE_DATA := ../../experiments/results/three_node_finite_section_diagnostic.json
 GROWING_NETWORK_DATA := ../../experiments/results/growing_network_finite_section_diagnostic.json
 PAPER_FIGURES := \
@@ -33,7 +33,7 @@ all: paper
 figure: $(PAPER_FIGURES)
 
 figures/connection-geometry.pdf: figures/connection_geometry.py
-	$(PYTHON) figures/connection_geometry.py --output $@
+	$(PAPER_PYTHON) figures/connection_geometry.py --output $@
 
 $(THREE_NODE_DATA): \
 		../../experiments/three_node_finite_section_diagnostic.py \
@@ -51,7 +51,7 @@ diagnostic-data: $(THREE_NODE_DATA) $(GROWING_NETWORK_DATA)
 
 figures/three-node-finite-section.pdf: \
 		figures/three_node_finite_section.py $(THREE_NODE_DATA) $(GROWING_NETWORK_DATA)
-	$(PYTHON) figures/three_node_finite_section.py \
+	$(PAPER_PYTHON) figures/three_node_finite_section.py \
 		--data $(THREE_NODE_DATA) \
 		--growing-data $(GROWING_NETWORK_DATA) --output $@
 

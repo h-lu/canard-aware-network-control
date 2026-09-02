@@ -1,17 +1,20 @@
 \documentclass[11pt]{article}
 \input{preamble}
 
-\newcommand{\papertitle}{Fredholm Sensitivity to Constrained Delayed Coupling
-in Networks of RFDEs}
+\newcommand{\papertitle}{Fredholm sensitivity to constrained delayed coupling
+in networks of RFDEs}
 
 \title{\papertitle}
 \author{Haibo Lu\\
-  \small Shanghai Institute of Technology, Shanghai, China\\
-  \small \href{mailto:luhaibo1985@gmail.com}{luhaibo1985@gmail.com}\\
+  \small Department of Management Science and Engineering,\\
+  \small School of Economics and Management, Shanghai Institute of Technology,\\
+  \small Shanghai, China\\
+  \small Corresponding author:
+  \href{mailto:luhaibo1985@gmail.com}{luhaibo1985@gmail.com}\\
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={Fredholm Sensitivity to Constrained Delayed Coupling in Networks of RFDEs},
+  pdftitle={Fredholm sensitivity to constrained delayed coupling in networks of RFDEs},
   pdfauthor={Haibo Lu},
   pdfsubject={A dimension-uniform Fredholm formula for constrained perturbations of delayed coupling},
   pdfkeywords={retarded functional differential equation, delayed coupling,
@@ -20,33 +23,30 @@ in Networks of RFDEs}
 }
 
 \begin{document}
+\linenumbers
 \maketitle
 
 \begin{abstract}
 We study finite networks of retarded functional differential equations with
-row-stochastic instantaneous coupling and several delayed-coupling layers.
-The perturbations preserve the sum of the layer matrices and are annihilated
-by the stationary row at each delay.  Hence the stationary projection of the
-vector field is unchanged at every history, although the projected variables
-need not form a closed system.  We determine the transverse first variation
-entering a codimension-one Fredholm solvability condition near a fast--slow
-fold.  With two distinct delays, the first delay moment maps onto the
-stationary-mean-zero subspace on the full matrix tangent space defined only by
-those linear constraints; sparsity, symmetry, layerwise row sums, and signs
-are unrestricted.  We compute its norm and a norm-optimal right inverse.  For
-a prescribed linear matrix pattern, the range is the image of
-\(R\mapsto R\mathbf1\); a generator-supported pattern has a uniform right
-inverse under Dobrushin contraction.  Block elimination gives
-\[
- \Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N.
-\]
-For a polynomial fast--slow network, we construct a local invariant manifold
-and identify \(\Lambda_N\) in the derivative of a finite-interval matching
-function.  A positive-delay computation and an explicit growing family
-illustrate a nonzero coefficient uniform in network size.  A final conditional
-theorem transfers this coefficient to a heteroclinic parameter if the global
-invariant manifolds and a uniform \(C^1\) comparison are constructed
-independently; those properties are not verified here.
+row-stochastic instantaneous and multilayer delayed coupling.  Perturbations
+preserve the layer sum and are annihilated by the stationary row at each
+delay.  Thus the stationary projection of the vector field is
+unchanged at every history, although the projected variables need not form a
+closed system.  We determine the transverse first variation entering a
+codimension-one Fredholm solvability condition near a fast--slow fold.  With
+two distinct delays, the first delay moment maps the full admissible matrix
+tangent space onto the stationary-mean-zero subspace and admits a norm-optimal
+right inverse.  Under a prescribed matrix pattern, its range is the image of
+\(R\mapsto R\mathbf1\); a generator-supported pattern admits a uniform right
+inverse under Dobrushin contraction.  Block elimination yields
+\(\Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N\).  For a polynomial fast--slow
+network, we construct a local invariant manifold and identify \(\Lambda_N\)
+in the derivative of a finite-interval matching function.  A computation with
+two positive delays and a growing network family exhibits a nonzero
+coefficient uniform in network size.  A conditional theorem transfers this
+coefficient to a heteroclinic parameter if global invariant manifolds and the
+required uniform \(C^1\) comparison are independently established; neither is
+verified here.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
@@ -56,7 +56,7 @@ Dobrushin coefficient; sensitivity analysis
 
 \medskip
 \noindent\textbf{Mathematics Subject Classification (2020).}
-34K26; 34E17; 37G10
+Primary: 34K26; Secondary: 34K19, 34K27, 37G10
 
 \input{rewrite-sections/01-introduction}
 \input{rewrite-sections/02-model-results}
@@ -65,14 +65,15 @@ Dobrushin coefficient; sensitivity analysis
 \input{rewrite-sections/05-heteroclinic-connection}
 \input{rewrite-sections/06-scope-and-transfer}
 
-\section*{Acknowledgements}
+\section*{Use of Generative-AI tools declaration}
 OpenAI Codex was used interactively to reorganize the manuscript, revise
-proof prose and \LaTeX{}, assist with Matplotlib figure-source code, and
-assist with algebraic, scaling, cross-reference, and literature checks.  The
-scientific data, parameter choices, and rendered figures were checked by the
-author.  The author
-checked the equations, hypotheses, signs, estimates, citations,
-source changes, and test outputs and remains responsible for every claim.
+expository and proof prose throughout, assist with \LaTeX{}, Python numerical
+code, and Matplotlib figure-source code, and assist with algebraic, scaling,
+cross-reference, and literature checks.  No generative-image or synthetic-data
+tool was used; the plotted values were produced deterministically by the
+disclosed numerical scripts.  The author checked the equations, hypotheses,
+signs, estimates, citations, source changes, parameter choices, code, rendered
+figures, and test outputs and remains responsible for every claim.
 
 \section*{Declarations}
 \paragraph{Funding.} No funding was received for conducting this study.
@@ -84,8 +85,9 @@ Figure~\ref{fig:three-node-finite-section} is a reproducible numerical
 illustration generated from the displayed model and parameters and is not
 used in any proof.  The \LaTeX{} sources, numerical and figure code, generated
 values, and reproduction instructions are publicly available at
-\url{https://github.com/h-lu/canard-aware-network-control}.  A versioned
-archival record will be supplied with the submitted version.
+\url{https://github.com/h-lu/canard-aware-network-control}.  The source state
+used for submission is preserved in the versioned release
+\url{https://github.com/h-lu/canard-aware-network-control/releases/tag/paper-a-dcds-submission-v1}.
 
 \clearpage
 \appendix

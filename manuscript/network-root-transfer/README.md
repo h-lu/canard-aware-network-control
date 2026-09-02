@@ -2,7 +2,7 @@
 
 This directory contains Paper A:
 
-> **Fredholm Sensitivity to Constrained Delayed Coupling in Networks of RFDEs**
+> **Fredholm sensitivity to constrained delayed coupling in networks of RFDEs**
 
 ## Main results
 
@@ -88,10 +88,25 @@ pdfinfo main.pdf
 pdffonts main.pdf
 ```
 
+The locked reference environment is in `../../uv.lock`.  The committed JSON
+files record Python 3.14.4, NumPy 2.5.2, and SciPy 1.18.1.  The calculations
+use a literal method of steps with the Radau solver (`rtol=2e-9`,
+`atol=2e-11`, `max_step=0.08`) and Brent root finding
+(`xtol=rtol=2e-10`).  From the repository root, the complete numerical and
+figure regeneration commands are
+
+```sh
+uv sync --extra numeric --extra paper
+make -B -C manuscript/network-root-transfer paper
+```
+
+The Brent bracket starts with half-width `0.4` and is doubled at most four
+times.  The three-node refinement uses `rtol=5e-10`, `atol=5e-12`, and
+`max_step=0.04`.
+
 The theorem is analytic and does not rely on a numerical certificate.
 Figure 2 contains prescribed-history finite-section illustrations of the sign,
 scale, and network-size persistence of the local coefficient; it is not the
 matching function in the proof, a heteroclinic computation, or a
-maximal-canard computation. A public
-source release and permanent archive identifier are still required before
-submission.
+maximal-canard computation.  The public DCDS submission source is frozen at
+the tag and release `paper-a-dcds-submission-v1`.

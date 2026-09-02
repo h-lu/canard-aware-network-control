@@ -55,13 +55,12 @@ def test_active_submission_uses_only_the_rewrite_sources() -> None:
 def test_front_matter_states_the_unconditional_result_and_scope_boundary() -> None:
     main = compact(source("manuscript/network-root-transfer/main.tex"))
 
-    assert "Fredholm Sensitivity to Constrained Delayed Coupling" in main
-    assert "full matrix tangent space defined only by those linear constraints" in main
-    assert "sparsity, symmetry, layerwise row sums, and signs are unrestricted" in main
-    assert r"the range is the image of \(R\mapsto R\mathbf1\)" in main
+    assert "Fredholm sensitivity to constrained delayed coupling" in main
+    assert "full admissible matrix tangent space" in main
+    assert r"its range is the image of \(R\mapsto R\mathbf1\)" in main
     assert r"\Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N" in main
-    assert "explicit growing family illustrate a nonzero coefficient uniform in network size" in main
-    assert "those properties are not verified here" in main
+    assert "growing network family exhibits a nonzero coefficient" in main
+    assert "neither is verified here" in main
     assert "The theorem statements are analytic and do not rely on numerical data" in main
     assert "is not used in any proof" in main
     assert "research draft" not in main.lower()

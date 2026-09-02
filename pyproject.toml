@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "canard-aware-network-control"
 version = "0.1.0"
-description = "Reproducible calculations for RFDE Lin-gap canard-threshold transfer"
+description = "Reproducible calculations for Fredholm sensitivity in delayed RFDE networks"
 requires-python = ">=3.11"
 dependencies = ["mpmath>=1.3", "sympy>=1.13"]
 

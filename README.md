@@ -37,6 +37,9 @@ identifies an experimental threshold.
 The manuscript preceding the rewrite is preserved at the immutable tag
 `paper-a-pre-rewrite-2026-09-02` and its associated GitHub release.
 
+The DCDS submission source is preserved at the immutable tag and release
+`paper-a-dcds-submission-v1`.
+
 ## Build and verify Paper A
 
 Requirements are a recent TeX Live installation, Python 3.11 or newer, and
@@ -54,6 +57,32 @@ the analytic identities used by Paper A, together with lightweight
 regression checks for the illustrative three-node and growing-network
 calculations; it is not a
 substitute for the proofs.
+
+### Numerical reproduction details
+
+The locked Python environment is recorded in `uv.lock`.  The reference JSON
+files were generated with Python 3.14.4, NumPy 2.5.2, and SciPy 1.18.1; each
+JSON file also records these versions and SHA-256 hashes of its numerical
+source files.  Both diagnostics use a literal method of steps with
+`scipy.integrate.solve_ivp(method="Radau", dense_output=True)`, relative
+tolerance `2e-9`, absolute tolerance `2e-11`, and maximum step `0.08`.
+The scalar outgoing-section zero is found with Brent's method
+(`scipy.optimize.root_scalar(method="brentq")`) using absolute and relative
+root tolerances `2e-10`.  The full data and Figure 2 can be regenerated from
+the repository root by running
+
+```sh
+uv sync --extra numeric --extra paper
+make -B -C manuscript/network-root-transfer paper
+```
+
+The root bracket starts with half-width `0.4` about the singular center and is
+doubled at most four times.  The three-node refinement additionally uses
+`rtol=5e-10`, `atol=5e-12`, and `max_step=0.04`.
+The three-node sweep uses
+`(delta,S)=(0.12,2.5),(0.08,2.75),(0.05,3),(0.02,3.5),(0.01,4)`, and the
+growing-family sweep uses `delta=0.02`, `S=3.5`, and
+`N=3,5,9,17,33`.  In both cases the centered perturbation step is `0.04`.
 
 ## Repository map
 
