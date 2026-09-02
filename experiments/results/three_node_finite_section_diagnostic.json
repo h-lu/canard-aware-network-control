@@ -97,8 +97,8 @@
     "root_name": "nu_hat_sec(delta,zeta;S)"
   },
   "git": {
-    "head": "5ba0c5bb4e3ccbbbeb9772c74276742afee93ea4",
-    "worktree_dirty_at_generation": true
+    "head": "ebbe826ddb0071d3c905cca4729ca6a2344f9db4",
+    "worktree_dirty_at_generation": false
   },
   "left_panel": {
     "delta": 0.05,
