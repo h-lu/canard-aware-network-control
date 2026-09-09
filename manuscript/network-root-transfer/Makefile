@@ -3,11 +3,9 @@ UV ?= uv
 PAPER_PYTHON ?= $(UV) run --extra paper python
 THREE_NODE_DATA := ../../experiments/results/three_node_finite_section_diagnostic.json
 GROWING_NETWORK_DATA := ../../experiments/results/growing_network_finite_section_diagnostic.json
-PAPER_FIGURES := \
-	figures/connection-geometry.pdf \
-	figures/three-node-finite-section.pdf
+PAPER_FIGURES := figures/three-node-finite-section.pdf
 PAPER_A_TESTS := \
-	tests/test_paper_a_jns_rewrite_contract.py \
+	tests/test_paper_a_sources.py \
 	tests/test_growing_network_finite_section.py \
 	tests/test_three_node_finite_section.py \
 	tests/test_block_schur_response.py \
@@ -32,9 +30,6 @@ all: paper
 
 figure: $(PAPER_FIGURES)
 
-figures/connection-geometry.pdf: figures/connection_geometry.py
-	$(PAPER_PYTHON) figures/connection_geometry.py --output $@
-
 $(THREE_NODE_DATA): \
 		../../experiments/three_node_finite_section_diagnostic.py \
 		../../src/canard_control/three_node_finite_section.py
@@ -47,7 +42,14 @@ $(GROWING_NETWORK_DATA): \
 	cd ../.. && PYTHONPATH=src $(UV) run --extra numeric \
 		python experiments/growing_network_finite_section_diagnostic.py
 
-diagnostic-data: $(THREE_NODE_DATA) $(GROWING_NETWORK_DATA)
+WINDOW_DATA := ../../experiments/results/three_node_window_diagnostic.json
+
+$(WINDOW_DATA): ../../experiments/three_node_window_diagnostic.py \
+               ../../src/canard_control/three_node_finite_section.py
+	cd ../.. && PYTHONPATH=src $(UV) run --extra numeric \
+		python experiments/three_node_window_diagnostic.py --workers 3
+
+diagnostic-data: $(THREE_NODE_DATA) $(GROWING_NETWORK_DATA) $(WINDOW_DATA)
 
 figures/three-node-finite-section.pdf: \
 		figures/three_node_finite_section.py $(THREE_NODE_DATA) $(GROWING_NETWORK_DATA)

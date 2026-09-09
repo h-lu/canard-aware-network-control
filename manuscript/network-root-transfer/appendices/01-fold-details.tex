@@ -109,13 +109,16 @@ evaluation tuple by
           \mathcal I_{Q,H}(u)(-\theta_m)\bigr).
  \label{eq:supp-history-evaluation}
 \end{align}
-The norm of this evaluation map is bounded by \(m+2\), independently of
-\(N\).
+Evaluation of an already supplied history at these \(m+2\) slots is a
+bounded linear map, of norm at most \(m+2\) for the sum norm on the tuple,
+independently of \(N\).  The dependence of \(\mathcal E_{Q,H}\) on
+\((Q,H)\) additionally uses the flow estimates below.
 
 \subsection{The invariant graph and its derivatives}
 
-On the product of bounded continuous planar fields and bounded continuous
-maps into \(E_N\), define
+On the closed set of bounded globally Lipschitz planar fields and bounded
+globally Lipschitz maps into \(E_N\) satisfying
+\cref{eq:supp-graph-ball}, use the uniform product metric and define
 \begin{align}
  \mathcal T_Q(Q,H)(u)
  &=q_{0,\delta}(u)+\rho F_{N,\delta}
@@ -130,7 +133,7 @@ maps into \(E_N\), define
 The negative values of \(\rho\) are used only to take a Taylor expansion;
 the RFDE graph corresponds to \(\rho=\delta>0\).
 
-For every field in the ball
+The ball is specified by
 \begin{equation}
  \norm{Q-q_{0,\delta}}_\infty+\norm H_\infty
  \le C\delta A_\delta,\qquad
@@ -138,16 +141,22 @@ For every field in the ball
  \le C\delta A_\delta,
  \label{eq:supp-graph-ball}
 \end{equation}
-the flow variational equations and \eqref{eq:supp-singular-lipschitz} give,
-for each member \(\mathscr J\) of the finite derivative list used below,
+For pairs in this ball, the global Lipschitz bound gives a unique complete
+flow and the corresponding uniform flow-difference estimates.  For smooth
+Picard iterates, the flow variational equations and
+\eqref{eq:supp-singular-lipschitz} additionally give, for each member
+\(\mathscr J\) of the finite derivative list used below,
 \begin{equation}
  \norm{\mathscr J\Phi_Q^{\vartheta-\rho r}}
  \le A_\delta(1+r^M)e^{C(1+R)\abs{\rho}r},
  \qquad -\Theta_*\le\vartheta\le0,\quad r\ge0.
  \label{eq:supp-flow-jet-bound}
 \end{equation}
-The corresponding difference estimate has the same right-hand side times
-the differences of the current and preceding derivative blocks.  Combining
+The constants for the higher derivatives are taken on the derivative balls
+constructed successively below; no high-order differentiability is asserted
+for an arbitrary Lipschitz candidate.  The corresponding difference estimate
+has the same right-hand side times the differences of the current and
+preceding derivative blocks.  Combining
 this estimate with
 \(\norm{e^{A_Nr}}\le e^{-D\gamma r}\) yields the contraction factor
 \begin{equation}
@@ -378,7 +387,7 @@ then join this extension to \(q_0\) near the two endpoints.  This gives
  &\le C\delta^2e^{c\abs s}\langle s\rangle^M,
  \label{eq:supp-planar-extension-structural}
 \end{align}
-for \(a\le3\), \(i\le2\), and \(-R\le s\le R\).  The extension and all
+for \(a\le3\), \(i\le2\), and \(-R\le s\le R\).  The extension operator and all
 cutoffs are fixed independently of \((\nu,\eta)\); using the unscaled
 normal coordinate on each collar prevents inverse powers of \(\delta\).
 

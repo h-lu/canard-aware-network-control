@@ -101,3 +101,57 @@ def test_archived_figure_values_preserve_scope_and_overall_trend() -> None:
     for relative, expected in payload["source_sha256"].items():
         digest = hashlib.sha256((REPOSITORY / relative).read_bytes()).hexdigest()
         assert digest == expected
+
+
+def test_archived_window_grid_and_refinements_are_consistent() -> None:
+    """Check archived arithmetic and provenance without rerunning the grid."""
+    path = REPOSITORY / "experiments/results/three_node_window_diagnostic.json"
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    rows, refinements = payload["rows"], payload["refinements"]
+    expected_grid = {
+        (delta, section)
+        for delta in (0.05, 0.02, 0.01)
+        for section in (3.0, 3.5, 4.0)
+    }
+    expected_refinements = {(0.05, 4.0), (0.01, 3.0), (0.01, 3.5)}
+    key = lambda row: (row["delta"], row["section_half_width"])
+    assert len(rows) == 9
+    assert {key(row) for row in rows} == expected_grid
+    assert len(refinements) == 3
+    assert {key(row) for row in refinements} == expected_refinements
+    assert all(row["refined"] is False for row in rows)
+    assert all(row["refined"] is True for row in refinements)
+
+    zeta_step = payload["fixed_parameters"]["zeta_step"]
+    assert zeta_step == 0.04
+    for row in rows + refinements:
+        assert len(row["roots"]) == 2
+        minus, plus = row["roots"]
+        assert (minus["zeta"], plus["zeta"]) == (-zeta_step, zeta_step)
+        assert all(np.isfinite(root[field])
+                   for root in row["roots"] for field in ("nu", "residual"))
+        quotient = (plus["nu"] - minus["nu"]) / (2.0 * zeta_step * row["delta"])
+        assert row["quotient"] == pytest.approx(quotient, rel=1e-12, abs=1e-15)
+        assert row["predicted_coefficient"] == pytest.approx(-1.0 / 3.0)
+        assert row["absolute_error"] == pytest.approx(
+            abs(quotient - row["predicted_coefficient"]), rel=1e-12, abs=1e-15
+        )
+
+    baseline = {key(row): row for row in rows}
+    changes = []
+    for row in refinements:
+        change = abs(row["quotient"] - baseline[key(row)]["quotient"])
+        assert row["quotient_change"] == pytest.approx(change, rel=1e-12, abs=1e-15)
+        changes.append(change)
+    assert payload["maximum_refinement_change"] == pytest.approx(
+        max(changes), rel=1e-12, abs=1e-15
+    )
+    assert max(changes) < 1.5e-8
+
+    sources = payload["source_sha256"]
+    assert set(sources) == {
+        "experiments/three_node_window_diagnostic.py",
+        "src/canard_control/three_node_finite_section.py",
+    }
+    for relative, expected in sources.items():
+        assert hashlib.sha256((REPOSITORY / relative).read_bytes()).hexdigest() == expected

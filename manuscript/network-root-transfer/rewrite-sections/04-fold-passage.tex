@@ -186,19 +186,36 @@ history of the original RFDE.
 \end{proposition}
 
 \begin{proof}
-Here \(\Phi_Q^s\) denotes the flow of the planar field \(Q\),
-\(\mathcal I_{Q,H}=\iota_{N,\delta,\nu,\eta}\) is the associated phase-space
-embedding in fold coordinates, and \(G_N\) is the
-transverse right-hand side after the fold-coordinate change.  These objects
-and their domains are defined in
-\cref{eq:supp-history-lift,eq:supp-extended-normal-form}.
-The invariant graph is the fixed point of the variation-of-constants map
+The unknowns are both the graph \(H\) and its planar vector field \(Q\):
+the delayed states on the graph are determined by the past flow of \(Q\).
+Use the coordinates \(u=(\chi,d)\) from
+\cref{eq:supp-fold-coordinates} and a smooth complete extension
+\(q_{0,\delta}\) of the singular field.  The cutoffs are fixed independently
+of \((\nu,\eta)\).  In these coordinates the extended exact equations read
 \[
- H(u)=\delta\int_0^\infty e^{A_Nr}
- G_N\bigl(\mathcal I_{Q,H}(\Phi_Q^{-\delta r}u)\bigr)\,dr.
+ u'=q_{0,\delta}(u)+\delta F_{N,\delta},\qquad
+ \delta h'=A_Nh+\delta G_{N,\delta},
 \]
-The history evaluation contains only the finitely many fixed translations
-\(-\theta_k\).  By \cref{eq:fold-poisson-bound}, the Lipschitz constant is
+where \(F_{N,\delta}\) and \(G_{N,\delta}\) are the cutoff versions of the
+polynomial terms in \cref{eq:fold-exact-system}.  For a candidate pair
+\((Q,H)\), let \(\Phi_Q\) be its complete planar flow and form the finite
+tuple
+\[
+ \mathcal E_{Q,H}(u)=
+ \bigl((u,H(u)),\,
+       (\Phi_Q^{-\theta_k}u,H(\Phi_Q^{-\theta_k}u))_{k=0}^m\bigr).
+\]
+The two fixed-point equations are
+\begin{align*}
+ Q(u)&=q_{0,\delta}(u)+\delta F_{N,\delta}
+                (\mathcal E_{Q,H}(u);\delta,\nu,\eta),\\
+ H(u)&=\delta\int_0^\infty e^{A_Nr}G_{N,\delta}
+       (\mathcal E_{Q,H}(\Phi_Q^{-\delta r}u);\delta,\nu,\eta)\,dr.
+\end{align*}
+The first equation enforces the collective RFDE on every embedded history;
+the second is the stable variation-of-constants equation.  Solving them
+together, then undoing the coordinate change, produces the required
+invariant manifold.  By \cref{eq:fold-poisson-bound}, their Lipschitz factor is
 bounded by
 \[
  C\delta P(S_\delta)e^{cS_\delta}
@@ -282,7 +299,7 @@ Pairing with \cref{eq:fredholm-gaussian-cokernel} yields
  =-\sqrt{2\pi}\Lambda_N(R).                        \label{eq:fold-return-pairing}
 \end{equation}
 This is the concrete realization of the Fredholm expression in
-\cref{thm:fredholm-heteroclinic-sensitivity}.  The cancellation takes place
+\cref{thm:fredholm-reduction}.  The cancellation takes place
 before the delay moment is formed; hence
 \cref{eq:fold-return-source} is an identity for the derivatives of the graph
 representing the locally invariant manifold, not a current-state formal
@@ -314,10 +331,13 @@ integration gives
 
 \subsection{A finite-interval matching function}
 
-Put \(S=S_\delta\) and \(R=S+B\), with the fixed buffer \(B\) from
-Appendix~A.  Let \(z^a:[-R,0]\to\mathbb R^2\) and
-\(z^r:[0,R]\to\mathbb R^2\) be the unique solutions of the two reduced
-boundary-value problems
+Put \(S=S_\delta\), choose a fixed buffer \(B>2\Theta_*+2\), and set
+\(R=S+B\).  Extend the reduced field to \(\widetilde Q\) so that it equals
+the invariant-manifold field on the normal strip containing the fold traces
+and their delay translates, and equals \(q_0\) near \(\gamma_0(\pm R)\).
+The extension operator and cutoffs are fixed independently of \((\nu,\eta)\).
+Let \(z^a:[-R,0]\to\mathbb R^2\) and
+\(z^r:[0,R]\to\mathbb R^2\) solve the two reduced boundary-value problems
 \begin{equation}
  \begin{gathered}
  (z^a)'=\widetilde Q_{N,\delta,\nu,\eta}(z^a),
@@ -328,8 +348,14 @@ boundary-value problems
   =\mathscr H_\alpha(z^r(R))=0.
  \end{gathered}                                    \label{eq:finite-trace-BVP}
 \end{equation}
-The extension \(\widetilde Q\) is defined in Appendix~A.  The scalar matching
-function is
+The solutions are unique in a fixed weighted neighborhood
+\[
+ \sup_{s\in J_\sigma}e^{-c|s|}\langle s\rangle^{-M}
+       |z^\sigma(s)-\gamma_0(s)|\le C\delta,
+ \qquad J_a=[-R,0],\quad J_r=[0,R].
+\]
+Their construction and the uniform inverse estimates are given in
+Appendix~A.  The scalar matching function is
 \begin{equation}
  D_N^{\rm fin}
  =\frac{2}{\alpha e}
@@ -356,35 +382,90 @@ for the tails, while the other first-derivative remainders have the orders
 shown in \cref{eq:finite-comparison-level,eq:finite-comparison-structural}.
 The exact decomposition and all mixed estimates are proved in
 \cref{prop:finite-gap-bridge}.  Combining them with the two Gaussian
-pairings proves the theorem.
+pairings proves the three matching estimates.
+
+The uniform bounds on \(A_N^{-1}\) and \(c_N\) bound \(\nu_{0,N}\), so
+\(I_\nu\) can be chosen with a common positive buffer around all centers.
+Fix \(c_0\) smaller than this buffer.  At
+\(\nu=\nu_{0,N}\pm c_0\), the leading terms in
+\cref{eq:finite-comparison-level} have opposite signs for small \(\delta\).
+Moreover, \cref{eq:finite-comparison-slope} gives
+\(\partial_\nu D_N^{\rm fin}\ge\delta\sqrt{2\pi}/2\) on the window.
+There is therefore exactly one zero \(\nu_N^{\rm fin}\), and the
+Banach implicit-function theorem makes it \(C^1\) in \(\eta\).  On its graph,
+\[
+ D_\eta\mu_N^{\rm fin}
+ =-\delta^2\frac{D_\eta D_N^{\rm fin}}{\partial_\nu D_N^{\rm fin}}
+ =\delta^3\Lambda_N+
+       O(\delta^4+\delta^3\norm{\eta}_{\mathcal T_N}).
+\]
+This proves \cref{eq:rw-local-root-sensitivity}; integrating along
+\(t\mapsto t\eta\), \(0\le t\le1\), gives
+\cref{eq:rw-local-root-increment}.
 \end{proof}
 
-For the three-node parameters in the introduction,
-\cref{fig:three-node-finite-section} illustrates the preceding derivative
-estimate with a one-orbit finite-section calculation.  In panel~\textbf{(a)},
-the vertical coordinate is a scalar section mismatch, the gray horizontal
-line is its zero level, and only the horizontal locations of the marked
-crossings are being compared.  Panel~\textbf{(b)}
-centers the two perturbed zeros, converts from \(\nu\) to
-\(\mu=\delta^2\nu\), and divides by \(\delta^3\), so the dashed line is the
-Fredholm coefficient predicted by \eqref{eq:fold-return-pairing}.  Because the
-incoming history is prescribed rather than taken from the invariant history
-graph, the displayed zeros are numerical diagnostics and are not zeros of
-\(D_3^{\rm fin}\).  The green same-delay control is exactly zero because its
-two perturbation terms cancel.  Panel~\textbf{(c)} repeats the quotient for the explicit
-growing family in \cref{prop:rw-growing-families}.  The computed values for
-\(N=3,5,9,17,33\) lie within \(0.008\) of the common exact coefficient
-\(-1/2\), illustrating that the normalized response does not decay with
-network size in this uniformly mixing family.
+\subsection{Prescribed-history numerical diagnostics}
+
+For the three-node example in the introduction, set
+\(\sigma=1/2\), \(\beta=3\), \(D=1\), \(K=2\),
+\((\theta_0,\theta_1)=(1,2)\), and \(B_0=B_1=P/2\).
+Prescribe \((X,Y,h)=(-s/2,(s^2-2)/4,0)\) on \([-S-2,-S]\), and integrate
+\cref{eq:fold-exact-system} to \(S\).  Let
+\(\widehat\nu_{\rm sec}(\delta,\zeta;S)\) be a zero of the outgoing
+condition \(\widehat E_S=Y(S)-X(S)^2+1/2\).  With \(\zeta_*=0.04\), define
+\begin{equation}
+ \widehat q(\delta,S)=
+ \frac{\widehat\nu_{\rm sec}(\delta,\zeta_*;S)
+       -\widehat\nu_{\rm sec}(\delta,-\zeta_*;S)}{2\zeta_*\delta}.
+ \label{eq:numerical-section-quotient}
+\end{equation}
+The incoming history is prescribed and is not obtained from the invariant
+history graph; hence these zeros are defined by a different problem from
+the finite matching zeros \(\nu_N^{\rm fin}\).  Their purpose is to test whether the sign and scale of
+the analytically computed response can be observed in a direct RFDE
+integration.
+
+Figure~\ref{fig:three-node-finite-section} shows the displacement of the
+section zeros and the quotient compared with \(\Lambda_3=-1/3\).  The
+diagonal schedule in panel~\textbf{(b)} varies both \(\delta\) and \(S\).
+Table~\ref{tab:window-grid} separates these effects.  At \(S=3.5\) and
+\(S=4\), the displayed decreasing values of \(\delta\) improve agreement
+with \(-1/3\).  At \(S=3\), the quotient crosses this value and then moves
+away; dependence on \(S\) is also not uniformly monotone.  The results retain
+finite-history and finite-section bias and do not establish an asymptotic
+error bound for the invariant-manifold matching problem.
+
+\begin{table}[tb]
+\centering
+\caption{Prescribed-history quotient \(\widehat q(\delta,S)\) on a
+rectangular parameter grid.  The analytic reference is \(\Lambda_3=-1/3\).
+The perturbation step is fixed at \(\zeta_*=0.04\).}
+\label{tab:window-grid}
+\begin{tabular}{@{}rrrr@{}}
+\toprule
+\(\delta\) & \(S=3\) & \(S=3.5\) & \(S=4\)\\
+\midrule
+0.05 & -0.340829 & -0.344640 & -0.337948\\
+0.02 & -0.330866 & -0.336188 & -0.334582\\
+0.01 & -0.327618 & -0.333655 & -0.333703\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The computations use the method of steps with the Radau solver, relative and
+absolute tolerances \(2\times10^{-9}\) and \(2\times10^{-11}\), maximum
+step \(0.08\), and Brent root tolerances \(2\times10^{-10}\).
+At \((\delta,S)=(0.05,4),(0.01,3),(0.01,3.5)\), tightening these to
+\(5\times10^{-10}\), \(5\times10^{-12}\), \(0.04\), and
+\(10^{-11}\), respectively, changes the quotient by less than
+\(1.5\times10^{-8}\).  This is a numerical refinement check, not a rigorous
+enclosure.  The source archive records the parameters, source hashes,
+software versions, and all computed roots.
+
+Panel~\textbf{(c)} uses the growing family in \cref{prop:rw-growing-families}
+with \(\rho=1\), \((\delta,S)=(0.02,3.5)\), and the same remaining
+parameters.  The values at \(N=3,5,9,17,33\) stay within \(0.008\) of
+\(\Lambda_N=-1/2\), illustrating persistence of the response under uniform
+mixing.
 
 \input{figures/three-node-finite-section}
-
-The next section states the additional invariant-manifold hypotheses needed
-to define a scalar function for the stable/unstable manifold intersection.
-If that function and
-\(D_N^{\rm fin}\) satisfy the stated uniform \(C^1\) comparison, the abstract
-sensitivity theorem transfers \cref{eq:fold-return-pairing} to the
-heteroclinic parameter.  The comparison is not a consequence of the
-finite-interval calculation alone.
-
-\clearpage

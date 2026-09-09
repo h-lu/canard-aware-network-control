@@ -1,86 +1,119 @@
-# Fredholm sensitivity to constrained delayed coupling in networks of RFDEs
+# Local fold matching in RFDE networks with constrained delayed coupling
 
 This directory contains Paper A:
 
-> **Fredholm sensitivity to constrained delayed coupling in networks of RFDEs**
+> **Local fold matching in RFDE networks with constrained delayed coupling**
 
-## Main results
+## Main result and mechanism
 
-The instantaneous network matrix is row stochastic. Additional linear
-feedback is distributed among finitely many delayed-coupling matrices. Admissible
-perturbations preserve the sum of those matrices and have zero stationary row
-at each delay. Therefore the stationary projection
-of the RFDE vector field is unchanged at every history, although the projected
-variables do not satisfy a closed equation.
+Paper A constructs a two-dimensional locally invariant manifold of compatible
+histories near a fold in a polynomial fast–slow RFDE network. Two specified
+finite boundary-value problems define a matching function `D_N^fin` and a
+unique nearby zero `nu_N^fin`. For `mu_N^fin = delta^2 nu_N^fin`, the main
+theorem gives
 
-The paper contains unconditional linear and local results, followed by a
-clearly separated conditional model application.
+```text
+D_eta mu_N^fin(delta, eta)
+  = delta^3 Lambda_N + O(delta^4 + delta^3 ||eta||),
+```
 
-1. With two distinct delay locations, the first delay moment maps the
-   unrestricted admissible perturbation space onto the network-transverse
-   space. The paper computes its norm and a norm-optimal right inverse in the
-   stated norms. For a prescribed matrix pattern, it gives the exact range
-   and a fixed-support realization with uniform bounds under Dobrushin mixing.
-2. Eliminating the transverse equation gives the dimension-uniform Fredholm
-   functional `Lambda_N`. A local RFDE invariant-manifold construction near a
-   fast--slow fold identifies this coefficient in the derivative of a
-   finite-interval matching function. Explicit growing families show both a
-   nonzero response uniform in `N` and the loss of uniformity on local cycles.
-3. Separately, if a fixed smooth modification outside the fold neighborhood has the
-   required uniform stable and unstable manifold sections and its
-   heteroclinic defining function is `C^1`-close to the finite-interval
-   matching function, its local connection parameter
-   satisfies
+with neighborhoods and bounds independent of the finite network size `N`
+under common Dobrushin mixing, coefficient, and delay bounds. The matching
+zero is selected by these finite boundary-value problems. It is not
+identified with a global RFDE connection.
 
-   ```text
-   D_eta mu_c(delta,eta)
-     = delta^3 Lambda_N + O(delta^4 + delta^3 ||eta||),
-   ```
+The delayed-coupling perturbations preserve the layer sum and satisfy
+`pi_N^T Delta B_k = 0` at every delay. They leave the stationary projection of
+the vector field unchanged at each full history, while changing the histories
+themselves. Their first delay moment produces transverse forcing; the inverse
+transverse generator and the heterogeneous quadratic coefficients give
+`Lambda_N = r_N A_N^{-1} S_N`.
 
-   uniformly in the finite network size.
+The supporting results compute a norm-optimal unrestricted two-delay right
+inverse, the attainable range under prescribed matrix patterns, and uniform
+bounds from Dobrushin contraction. Explicit growing families exhibit a
+nonzero response with uniformly bounded perturbations and the loss of
+uniformity for local cycles. Section 3 proves these results without repeating
+their Section 2 statements.
 
-Only the third statement is conditional. The
-global invariant-manifold verification for the displayed modified equation is
-not claimed complete. Different modified recovery equations may have
-different finite-`delta` connection parameters. The paper does not prove a heteroclinic or
-maximal canard for the unmodified recovery equation and does not identify an
-experimental threshold.
+## Conditional connection application
+
+Section 5 specifies a smooth modification of the recovery equation away from
+the fold. A heteroclinic conclusion additionally assumes actual hyperbolic
+invariant-manifold sections and a scalar defining function `G` for their
+intersection. For `E = G - D_N^fin`, the required comparison is
+
+```text
+|E| + |partial_nu E| <= C delta^2,
+||D_eta E|| <= C delta^3.
+```
+
+Under these separate hypotheses, direct implicit differentiation gives the
+same leading sensitivity for the modified equation's connection parameter.
+The invariant-manifold and comparison estimates are not verified for that
+modification. Different recovery laws can have different finite-`delta`
+connection parameters. The paper does not prove a heteroclinic or maximal
+canard for the unmodified recovery law or identify an experimental threshold.
 
 ## Source layout
 
-- `main.tex`: article front matter, main text, appendices, declarations, and bibliography;
-- `rewrite-sections/`: introduction, model and results, abstract Fredholm
-  theorem, fold calculation, heteroclinic-connection hypotheses, and application
-  conditions;
-- `appendices/`: detailed estimates for the
-  locally invariant manifold near the fold and the
-  functional-analytic form of the global connection hypotheses; these are
-  included in `main.pdf`, not issued as a separate supplement;
-- `figures/`: editable Python sources, figure contracts, and generated vector
-  PDFs;
+- `main.tex`: front matter, six main sections, Appendix A, declarations, and
+  bibliography in one PDF;
+- `rewrite-sections/`: introduction, model and local results, delay-moment and
+  Fredholm proofs, fold matching, conditional connection application, and
+  discussion;
+- `appendices/01-fold-details.tex`: detailed compatible-history graph and
+  finite-interval matching estimates; the former connection Appendix B is
+  removed from the revised manuscript;
+- `figures/three_node_finite_section.py` and
+  `figures/three-node-finite-section.pdf`: source and generated vector PDF for
+  the article's single figure, Figure 1; the older connection-geometry figure
+  is not an input to the normal paper build;
 - `../../experiments/results/three_node_finite_section_diagnostic.json`:
-  reproducible values for the three-node numerical illustration;
+  three-node finite-section illustration;
 - `../../experiments/results/growing_network_finite_section_diagnostic.json`:
-  reproducible values for the growing-network illustration;
-- `CLAIM-MAP.md`: theorem-to-proof map and scope boundaries.
+  growing-network illustration;
+- `../../experiments/results/three_node_window_diagnostic.json`:
+  independently varied fold parameter/window grid and solver refinements,
+  reported in the numerical table;
+- `CLAIM-MAP.md`: current statement-to-proof map and scope boundaries.
 
-The former manuscript is preserved at the immutable tag
-`paper-a-pre-rewrite-2026-09-02` and is not an input to the current build.
+The immutable tags `paper-a-pre-rewrite-2026-09-02` and
+`paper-a-dcds-submission-v1` preserve earlier versions. Neither describes the
+present revision, which is not a tagged release.
 
-## Build and tests
+## Build and checks
+
+From this directory, run:
 
 ```sh
 make paper
 make check
 ```
 
-To regenerate both numerical illustrations, run:
+`make paper` produces `main.pdf` with one appendix and one numerical figure.
+`make check` runs `tests/test_paper_a_sources.py` to check active TeX inputs,
+labels, citations, and graphics, together with the analytic-identity and
+numerical regression tests listed in the Makefile. The source checks replace
+the former prose-contract test; they do not freeze editorial wording or
+verify the RFDE proofs.
+
+Generate all three numerical data files with:
 
 ```sh
 make diagnostic-data
 ```
 
-Useful final checks are:
+Make only regenerates out-of-date targets. To force all data and the figure
+from the repository root, run:
+
+```sh
+uv sync --extra numeric --extra paper
+make -B -C manuscript/network-root-transfer diagnostic-data
+make -C manuscript/network-root-transfer paper
+```
+
+Useful PDF checks are:
 
 ```sh
 rg -n 'Warning|undefined|Overfull|Underfull' main.log
@@ -88,25 +121,27 @@ pdfinfo main.pdf
 pdffonts main.pdf
 ```
 
-The locked reference environment is in `../../uv.lock`.  The committed JSON
-files record Python 3.14.4, NumPy 2.5.2, and SciPy 1.18.1.  The calculations
-use a literal method of steps with the Radau solver (`rtol=2e-9`,
-`atol=2e-11`, `max_step=0.08`) and Brent root finding
-(`xtol=rtol=2e-10`).  From the repository root, the complete numerical and
-figure regeneration commands are
+## Numerical reproduction and scope
 
-```sh
-uv sync --extra numeric --extra paper
-make -B -C manuscript/network-root-transfer paper
-```
+`../../uv.lock` records the Python dependencies. Each diagnostic JSON records
+the Python, NumPy, and SciPy versions used for that run, together with source
+hashes and solver settings. Regenerated artifacts may therefore report a
+different Python patch version while retaining the locked numerical packages.
 
-The Brent bracket starts with half-width `0.4` and is doubled at most four
-times.  The three-node refinement uses `rtol=5e-10`, `atol=5e-12`, and
-`max_step=0.04`.
+The diagnostics use a literal method of steps with Radau (`rtol=2e-9`,
+`atol=2e-11`, `max_step=0.08`) and Brent roots (`xtol=rtol=2e-10`). The root
+bracket starts with half-width `0.4` about the singular center and is doubled
+at most four times. The new script
+`../../experiments/three_node_window_diagnostic.py` crosses
+`delta = 0.05, 0.02, 0.01` with window half-width `S = 3, 3.5, 4`, giving nine
+points. Three points are repeated with `rtol=5e-10`, `atol=5e-12`,
+`max_step=0.04`, and root tolerances `1e-11`; the largest change of the
+normalized quotient is approximately `1.43e-8`. This is a floating-point
+refinement comparison, not a rigorous error bound.
 
-The theorem is analytic and does not rely on a numerical certificate.
-Figure 2 contains prescribed-history finite-section illustrations of the sign,
-scale, and network-size persistence of the local coefficient; it is not the
-matching function in the proof, a heteroclinic computation, or a
-maximal-canard computation.  The public DCDS submission source is frozen at
-the tag and release `paper-a-dcds-submission-v1`.
+Figure 1 and the window table use prescribed incoming histories and an
+outgoing-section condition. They illustrate the coefficient's sign, scale,
+network-size persistence, and dependence on the finite window. Their zeros
+are not those of `D_N^fin`, and the computations neither establish a
+heteroclinic connection nor verify the global hypotheses. The analytic
+results do not rely on these diagnostics.

@@ -1,8 +1,8 @@
 \documentclass[11pt]{article}
 \input{preamble}
 
-\newcommand{\papertitle}{Fredholm sensitivity to constrained delayed coupling
-in networks of RFDEs}
+\newcommand{\papertitle}{Local fold matching in RFDE networks
+with constrained delayed coupling}
 
 \title{\papertitle}
 \author{Haibo Lu\\
@@ -14,9 +14,9 @@ in networks of RFDEs}
   \small ORCID: \href{https://orcid.org/0009-0000-2717-5968}{0009-0000-2717-5968}}
 \date{}
 \hypersetup{
-  pdftitle={Fredholm sensitivity to constrained delayed coupling in networks of RFDEs},
+  pdftitle={Local fold matching in RFDE networks with constrained delayed coupling},
   pdfauthor={Haibo Lu},
-  pdfsubject={A dimension-uniform Fredholm formula for constrained perturbations of delayed coupling},
+  pdfsubject={Dimension-uniform sensitivity of local RFDE fold matching},
   pdfkeywords={retarded functional differential equation, delayed coupling,
     row-stochastic matrix, Fredholm alternative, Dobrushin coefficient,
     fast-slow system, parameter sensitivity}
@@ -27,26 +27,26 @@ in networks of RFDEs}
 \maketitle
 
 \begin{abstract}
-We study finite networks of retarded functional differential equations with
-row-stochastic instantaneous and multilayer delayed coupling.  Perturbations
-preserve the layer sum and are annihilated by the stationary row at each
-delay.  Thus the stationary projection of the vector field is
-unchanged at every history, although the projected variables need not form a
-closed system.  We determine the transverse first variation entering a
-codimension-one Fredholm solvability condition near a fast--slow fold.  With
-two distinct delays, the first delay moment maps the full admissible matrix
-tangent space onto the stationary-mean-zero subspace and admits a norm-optimal
-right inverse.  Under a prescribed matrix pattern, its range is the image of
-\(R\mapsto R\mathbf1\); a generator-supported pattern admits a uniform right
-inverse under Dobrushin contraction.  Block elimination yields
-\(\Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N\).  For a polynomial fast--slow
-network, we construct a local invariant manifold and identify \(\Lambda_N\)
-in the derivative of a finite-interval matching function.  A computation with
-two positive delays and a growing network family exhibits a nonzero
-coefficient uniform in network size.  A conditional theorem transfers this
-coefficient to a heteroclinic parameter if global invariant manifolds and the
-required uniform \(C^1\) comparison are independently established; neither is
-verified here.
+We study the sensitivity of local fold matching in finite networks of
+retarded functional differential equations.  Perturbations of the delayed
+coupling preserve the sum of the coupling layers and are annihilated by the
+stationary row at each delay.  The stationary projection of the vector field
+is therefore unchanged at every history, although the projected variables
+need not form a closed system.  For a polynomial fast--slow network, we
+construct a two-dimensional locally invariant manifold of compatible
+histories and a finite-interval matching function with parameter-derivative
+bounds uniform in network size.  Its unique local zero satisfies
+\(D_\eta\mu_N^{\rm fin}=\delta^3\Lambda_N+
+O(\delta^4+\delta^3\|\eta\|)\).  The functional
+\(\Lambda_N=\mathfrak r_NA_N^{-1}\mathsf S_N\) combines the first delay
+moment, a transverse inverse, and the feedback from heterogeneous quadratic
+coefficients.  Two distinct delays give a norm-optimal right inverse for the
+unrestricted first-moment map; prescribed matrix patterns have an exact range
+criterion.  Dobrushin contraction makes these bounds independent of network
+size, and an explicit growing family has a nonzero uniform response.  A
+separate conditional result transfers the coefficient to a heteroclinic
+parameter when global invariant-manifold sections and the required comparison
+with local matching are available.
 \end{abstract}
 
 \noindent\textbf{Keywords.}
@@ -62,6 +62,7 @@ Primary: 34K26; Secondary: 34K19, 34K27, 37G10
 \input{rewrite-sections/02-model-results}
 \input{rewrite-sections/03-fredholm-sensitivity}
 \input{rewrite-sections/04-fold-passage}
+\clearpage
 \input{rewrite-sections/05-heteroclinic-connection}
 \input{rewrite-sections/06-scope-and-transfer}
 
@@ -71,9 +72,8 @@ expository and proof prose throughout, assist with \LaTeX{}, Python numerical
 code, and Matplotlib figure-source code, and assist with algebraic, scaling,
 cross-reference, and literature checks.  No generative-image or synthetic-data
 tool was used; the plotted values were produced deterministically by the
-disclosed numerical scripts.  The author checked the equations, hypotheses,
-signs, estimates, citations, source changes, parameter choices, code, rendered
-figures, and test outputs and remains responsible for every claim.
+disclosed numerical scripts.  The author retains responsibility for the mathematical statements, their
+verification, and the submitted numerical and source material.
 
 \section*{Declarations}
 \paragraph{Funding.} No funding was received for conducting this study.
@@ -83,17 +83,15 @@ non-financial interests to disclose.
 and do not rely on numerical data, and no external data sets were used.
 Figure~\ref{fig:three-node-finite-section} is a reproducible numerical
 illustration generated from the displayed model and parameters and is not
-used in any proof.  The \LaTeX{} sources, numerical and figure code, generated
-values, and reproduction instructions are publicly available at
-\url{https://github.com/h-lu/canard-aware-network-control}.  The source state
-used for submission is preserved in the versioned release
+used in any proof.  The \LaTeX{} sources, numerical and figure code, generated values, and
+reproduction instructions accompany this manuscript.  The development
+repository is \url{https://github.com/h-lu/canard-aware-network-control}.
+An earlier submission source, preceding the present revision, is archived at
 \url{https://github.com/h-lu/canard-aware-network-control/releases/tag/paper-a-dcds-submission-v1}.
 
-\clearpage
 \appendix
 \numberwithin{equation}{section}
 \input{appendices/01-fold-details}
-\input{appendices/02-connection-details}
 
 \begingroup
 \small

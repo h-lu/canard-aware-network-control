@@ -1,39 +1,20 @@
-\begin{figure}[t]
+\begin{figure}[p]
 \centering
 \includegraphics[width=\textwidth]{figures/three-node-finite-section.pdf}
-\caption{Finite-section diagnostics for the local Fredholm coefficient.
-\textbf{(a)} The open symbols are the intersections of the three computed
-section-mismatch curves
-\(\widehat E_S=Y(S)-X(S)^2+1/2\) with the gray zero level.  Their horizontal movement
-shows that redistributing the perturbation between distinct delays moves the
-finite-section zero, although the stationary projection of the RFDE vector
-field is exactly unchanged at every fixed full history.
-\textbf{(b)} The blue values are the scaled zero displacement
-\(\widehat q_{\delta}
- =\{\widehat\nu_{\rm sec}(\delta,\zeta_*;S)
-             -\widehat\nu_{\rm sec}(\delta,-\zeta_*;S)\}
-            /(2\zeta_*\delta)\); their proximity to the dashed line shows
-agreement in sign and scale with the exact Fredholm coefficient
-\(\Lambda_3=-1/3\).  In the green same-delay control, the perturbation terms
-cancel and the displacement is exactly zero.
-\textbf{(c)} For the growing family in
-\cref{eq:rw-mixing-family,eq:rw-growing-curvature}, the open circles show the
-same quotient at \(N=3,5,9,17,33\); all remain close to the exact value
-\(\Lambda_N=-1/2\) although the curvature coefficients are distinct at every
-node.
-Panels~\textbf{(a)}--\textbf{(b)} use
-\(\sigma=1/2\), \(\beta=3\), \(D=1\), \(K=2\),
-\((\theta_0,\theta_1)=(1,2)\), \(B_0=B_1=P/2\), and
-\(\zeta_*=0.04\).  Thus both delay layers are dynamically active.  The exact
-fold-coordinate RFDE is integrated from the prescribed singular history by a
-method-of-steps Radau solver.  Panel~\textbf{(a)} uses
-\((\delta,S)=(0.05,3)\); panel~\textbf{(b)} uses
+\caption{Prescribed-history section diagnostics for the local Fredholm
+coefficient, with parameters from \cref{eq:numerical-section-quotient} and
+its preceding paragraph.  \textbf{(a)} The marked zeros of
+\(\widehat E_S=Y(S)-X(S)^2+1/2\) shift under opposite perturbations of the two
+delay layers, while the projected vector field is unchanged at each fixed
+history; \((\delta,S)=(0.05,3)\).
+\textbf{(b)} The computed quotient is compared with \(\Lambda_3=-1/3\) along
 \((\delta,S)=(0.12,2.5),(0.08,2.75),(0.05,3),(0.02,3.5),(0.01,4)\).
-Panel~\textbf{(c)} uses \(\rho=1\), \((\delta,S)=(0.02,3.5)\), and the same
-\(\sigma,\beta,D,K,(\theta_0,\theta_1),\zeta_*\).
-Curves and symbols are numerical; the projection identity, coefficient, and
-same-delay cancellation are exact.  This prescribed-history calculation is
-not \(D_N^{\rm fin}\) and does not compute a heteroclinic connection or a
-maximal canard.}
+Combining the perturbation layers at one delay makes their contribution
+cancel exactly (green triangles).
+\textbf{(c)} The growing family at \(N=3,5,9,17,33\) has computed quotients
+close to its common coefficient \(\Lambda_N=-1/2\).  Symbols and curves are
+numerical; dashed reference coefficients and the cancellation identity are
+analytic.  This calculation is not \(D_N^{\rm fin}\) and does not compute a
+heteroclinic connection or a maximal canard.}
 \label{fig:three-node-finite-section}
 \end{figure}

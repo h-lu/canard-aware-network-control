@@ -180,7 +180,7 @@ def plot_response(ax: plt.Axes, payload: dict[str, object]) -> None:
     ax.set_xlabel(r"scale parameter $\delta$")
     ax.set_ylabel(r"scaled zero shift $\widehat q_{\delta}$")
     ax.set_title(
-        r"(b)  Scaled shift approaches theory", loc="left", fontweight="bold"
+        r"(b)  Scaled shift versus theory", loc="left", fontweight="bold"
     )
     ax.set_xlim(0.0, 0.128)
     ax.set_ylim(-0.365, 0.035)

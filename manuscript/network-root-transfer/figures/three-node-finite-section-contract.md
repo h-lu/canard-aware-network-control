@@ -9,7 +9,7 @@
   `Lambda_3=-2 sigma/3`, and cancellation in the coincident-delay control are
   exact analytic statements.
 - System, parameters, coordinates, and time convention: the specialized
-  exact fold-coordinate RFDE in equation (4.2), with `N=3`,
+  exact fold-coordinate RFDE in the displayed exact fold system, with `N=3`,
   `pi=(1,1,1)/3`, `P=1 pi^T`, `c=(1/2,1,3/2)`, `D=1`, `K=2`,
   `beta=3`, two positive delays `(1,2)`, base delay layers `P/2`, and
   perturbation amplitude `zeta`.  Increasing
@@ -51,12 +51,16 @@
   `src/canard_control/growing_network_finite_section.py`,
   `experiments/growing_network_finite_section_diagnostic.py`, and
   `experiments/results/growing_network_finite_section_diagnostic.json`.
-- Final placement and size: full text width immediately after the
-  finite-interval derivative proposition, with a forward reference after the
+- Final placement and size: full text width in the prescribed-history numerical subsection, with a forward reference after the
   three-node calculation in the introduction.
 - Checks required before delivery: projection RHS residual is zero; scalar
   root residuals are small; the centered quotient has negative sign and
-  approaches `-1/3`; the coincident-delay computation is independent of
+  is close in scale to `-1/3`; the coincident-delay computation is independent of
   `zeta`; solver and difference-step refinements are smaller than the
   displayed asymptotic discrepancy; labels remain legible in the final PDF
   and in grayscale.
+
+- Revision check (2026-09-05): a rectangular delta/S table separates the
+  window effect. Panel (b) is labelled "Scaled shift versus theory" and is
+  not presented as a one-parameter convergence test. The table is generated
+  by experiments/three_node_window_diagnostic.py, with three solver refinements.

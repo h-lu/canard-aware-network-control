@@ -6,39 +6,45 @@ one paper.
 
 | Workspace | Role | Status |
 | --- | --- | --- |
-| [`manuscript/network-root-transfer`](manuscript/network-root-transfer) | Paper A: a Fredholm formula for constrained delayed-coupling perturbations | Rewritten single-PDF article |
+| [`manuscript/network-root-transfer`](manuscript/network-root-transfer) | Paper A: local fold matching and sensitivity to constrained delayed coupling | Local major revision; single PDF |
 | [`manuscript/pulse-threshold`](manuscript/pulse-threshold) | Paper B: stable-manifold pulse threshold in a delayed FitzHugh--Nagumo equation | Research draft; proof chain incomplete |
 | [`manuscript/rfde-methods-notes`](manuscript/rfde-methods-notes) | Paper C: regularity and event maps for RFDEs | Working notes; independent novelty still under review |
 
 ## Paper A
 
-Paper A studies finite networks of retarded functional differential
-equations with a row-stochastic instantaneous coupling and additional
-feedback distributed among several delays. A perturbation that preserves
-the sum of the delayed-coupling matrices and has zero
-stationary row leaves the stationary projection of the vector field
-unchanged at every history. Nevertheless, two distinct delay locations
-generate every transverse first-order forcing direction. The paper gives an
-explicit right inverse, dimension-independent bounds, and the resulting
-bounded linear functional from the Fredholm solvability condition.
+**Local fold matching in RFDE networks with constrained delayed coupling**
+constructs a two-dimensional locally invariant manifold of compatible RFDE
+histories near a fold. Two finite boundary-value problems define the matching
+function `D_N^fin`, its unique nearby zero `nu_N^fin`, and
+`mu_N^fin = delta^2 nu_N^fin`. The first main theorem proves
 
-For a prescribed linear matrix pattern, the paper identifies the exact range
-of the first-moment map and gives a fixed-support realization. It also
-constructs a local invariant graph of compatible RFDE histories for the
-polynomial fast--slow network, computes the coefficient in a finite-interval
-matching function, and exhibits a growing family whose nonzero coefficient is
-independent of network size. Applying that coefficient to a heteroclinic
-orbit in a specified modified equation is a separate, conditional result: it
-requires uniform invariant-manifold sections and a `C^1` comparison estimate.
-That global verification is not claimed here. The
-paper neither proves a maximal canard for the unmodified recovery law nor
-identifies an experimental threshold.
+```text
+D_eta mu_N^fin(delta, eta)
+  = delta^3 Lambda_N + O(delta^4 + delta^3 ||eta||),
+```
 
-The manuscript preceding the rewrite is preserved at the immutable tag
-`paper-a-pre-rewrite-2026-09-02` and its associated GitHub release.
+uniformly over finite networks with common Dobrushin mixing, coefficient, and
+delay bounds. This zero belongs to the specified finite matching problem.
 
-The DCDS submission source is preserved at the immutable tag and release
-`paper-a-dcds-submission-v1`.
+The constrained delayed-coupling perturbations preserve the layer sum and
+have zero stationary row at every delay. Their direct contribution to the
+projected vector field vanishes at each full history, while their effect on
+transverse histories returns through heterogeneous node nonlinearities. The
+paper computes that response from the first delay moment, the transverse
+inverse, and a Gaussian Fredholm pairing. Supporting results give the exact
+range under prescribed matrix patterns, norm-optimal unrestricted right
+inverses, and growing-family examples.
+
+The heteroclinic application in Section 5 remains conditional. It requires
+actual invariant-manifold sections and a scalar defining function `G`, with
+`E = G - D_N^fin` satisfying `|E| + |partial_nu E| <= C delta^2` and
+`||D_eta E|| <= C delta^3`. These global estimates are not verified for the
+specified modified recovery equation. The paper does not prove a maximal
+canard for the unmodified recovery law or identify an experimental threshold.
+
+The immutable tags `paper-a-pre-rewrite-2026-09-02` and
+`paper-a-dcds-submission-v1` preserve earlier manuscript versions. The present
+revision is not a tagged release.
 
 ## Build and verify Paper A
 
@@ -51,38 +57,44 @@ make paper
 make check
 ```
 
-The build regenerates the vector figures and produces the single submission
-file `main.pdf`, including both proof appendices. The test target checks the public theorem architecture and
-the analytic identities used by Paper A, together with lightweight
-regression checks for the illustrative three-node and growing-network
-calculations; it is not a
-substitute for the proofs.
+The normal build produces `main.pdf` with Appendix A and one numerical figure
+(Figure 1); it no longer includes the connection Appendix B or the
+connection-geometry figure. The test target checks source dependencies,
+labels, citations, and graphics through `tests/test_paper_a_sources.py`, plus
+analytic identities and numerical regressions. These checks do not verify
+the RFDE proofs or freeze editorial wording.
 
 ### Numerical reproduction details
 
-The locked Python environment is recorded in `uv.lock`.  The reference JSON
-files were generated with Python 3.14.4, NumPy 2.5.2, and SciPy 1.18.1; each
-JSON file also records these versions and SHA-256 hashes of its numerical
-source files.  Both diagnostics use a literal method of steps with
-`scipy.integrate.solve_ivp(method="Radau", dense_output=True)`, relative
-tolerance `2e-9`, absolute tolerance `2e-11`, and maximum step `0.08`.
-The scalar outgoing-section zero is found with Brent's method
-(`scipy.optimize.root_scalar(method="brentq")`) using absolute and relative
-root tolerances `2e-10`.  The full data and Figure 2 can be regenerated from
-the repository root by running
+`uv.lock` records the Python dependencies. Each diagnostic JSON records the
+Python, NumPy, and SciPy versions used for that run, together with its solver
+settings and source hashes. Regenerated artifacts may therefore report a
+different Python patch version while retaining the locked numerical packages.
+
+The diagnostics use a literal method of steps with Radau, `rtol=2e-9`,
+`atol=2e-11`, and `max_step=0.08`; Brent root finding uses `xtol=rtol=2e-10`.
+The root bracket starts with half-width `0.4` about the singular center and is
+doubled at most four times. The original three-node sweep uses
+`(delta,S)=(0.12,2.5),(0.08,2.75),(0.05,3),(0.02,3.5),(0.01,4)`, and the
+growing-family sweep uses `delta=0.02`, `S=3.5`, and `N=3,5,9,17,33`.
+The centered perturbation step is `0.04`.
+
+`experiments/three_node_window_diagnostic.py` varies `delta=0.05,0.02,0.01`
+and `S=3,3.5,4` independently on a nine-point grid. Three tighter solver
+repeats use `rtol=5e-10`, `atol=5e-12`, `max_step=0.04`, and root tolerances
+`1e-11`; their largest normalized-quotient change is about `1.43e-8`. These
+are floating-point diagnostics of finite-window and solver effects, not
+rigorous error bounds. Neither Figure 1 nor the window table computes
+`D_N^fin` or a heteroclinic connection.
+
+To force regeneration of all three data files and rebuild the figure/PDF
+from the repository root, run:
 
 ```sh
 uv sync --extra numeric --extra paper
-make -B -C manuscript/network-root-transfer paper
+make -B -C manuscript/network-root-transfer diagnostic-data
+make -C manuscript/network-root-transfer paper
 ```
-
-The root bracket starts with half-width `0.4` about the singular center and is
-doubled at most four times.  The three-node refinement additionally uses
-`rtol=5e-10`, `atol=5e-12`, and `max_step=0.04`.
-The three-node sweep uses
-`(delta,S)=(0.12,2.5),(0.08,2.75),(0.05,3),(0.02,3.5),(0.01,4)`, and the
-growing-family sweep uses `delta=0.02`, `S=3.5`, and
-`N=3,5,9,17,33`.  In both cases the centered perturbation step is `0.04`.
 
 ## Repository map
 
@@ -99,6 +111,7 @@ The closest-literature summaries are in
 Historical numerical artifacts retain their original environments and should
 not be interpreted as inputs to the analytic theorem in Paper A. The current
 finite-section diagnostics are reproducible from
-`experiments/three_node_finite_section_diagnostic.py` and
-`experiments/growing_network_finite_section_diagnostic.py`; neither is used as
-a proof of the global hypotheses.
+`experiments/three_node_finite_section_diagnostic.py`,
+`experiments/growing_network_finite_section_diagnostic.py`, and
+`experiments/three_node_window_diagnostic.py`; none is used as a proof of the
+global hypotheses.

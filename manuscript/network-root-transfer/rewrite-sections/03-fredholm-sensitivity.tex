@@ -1,19 +1,11 @@
-\section{Fredholm reduction and sensitivity of a defining function}
+\section{Delay-moment range and the Fredholm functional}
 \label{sec:fredholm-sensitivity}
 
-This section identifies the part of the argument that can be used without
-the modified recovery equation introduced in \cref{subsec:global-modification}.
-The calculation has
-three distinct levels.  First, the admissible delayed-coupling perturbation is
-annihilated by the stationary projection at every fixed history.  Second, its
-first delay moment enters the network-transverse block, and a one-dimensional
-Lyapunov--Schmidt reduction evaluates its contribution to the collective
-solvability condition.  Third, if a defining function for a heteroclinic connection
-has been constructed and has the stated expansion, the implicit-function
-theorem converts the Fredholm sensitivity functional into the derivative of the
-connection parameter associated with that defining function.  The last step assumes the defining function; it does
-not assert that a general RFDE automatically possesses the required global
-stable and unstable objects.
+The two algebraic ingredients are the range of the first delay moment and
+the inverse of the network-transverse generator.  We prove their uniform
+bounds before identifying the collective cokernel and the resulting
+Fredholm functional.  Section~\ref{sec:fold-passage} then shows that this
+functional is the derivative appearing in the local RFDE matching problem.
 
 \subsection{The stationary projection and the first delay moment}
 
@@ -44,61 +36,12 @@ network-transverse equation is the first delay moment
  \label{eq:fredholm-delay-moment}
 \end{equation}
 
-The following proposition gives its exact range and shows precisely where
-two distinct delay locations enter.
+We first prove the range theorem and its sharp norm bounds.
 
-\begin{proposition}[A norm-optimal right inverse for the first delay moment]
-\label[proposition]{prop:fredholm-two-delay-inverse}
-Combine terms with the same delay and put
+\begin{proof}[Proof of \cref{thm:rw-first-moment-map}]
+Let \(k_-=0\), \(k_+=m\), and
+\(\Delta_\theta=\theta_m-\theta_0\).
 
-\[
- \theta_-:=\min_k\theta_k,\qquad
- \theta_+:=\max_k\theta_k,\qquad
- \Delta_\theta:=\theta_+-\theta_-.
-\]
-
-If \(\Delta_\theta>0\), then
-
-\[
- \mathsf S_N:\mathcal T_N\longrightarrow E_N
-\]
-
-is onto.  If \(k_-\) and \(k_+\) index the two extreme locations, a right
-inverse is
-
-\begin{equation}
- \begin{aligned}
-  (\mathsf Q_Ny)_{k_-}
-   &=-\frac{2\alpha}{K\Delta_\theta}\,y\pi_N^T,
-  &
-  (\mathsf Q_Ny)_{k_+}
-   &= \frac{2\alpha}{K\Delta_\theta}\,y\pi_N^T,\\
-  (\mathsf Q_Ny)_k&=0
-  &&(k\notin\{k_-,k_+\}),
- \end{aligned}
- \qquad y\in E_N.
- \label{eq:fredholm-delay-right-inverse}
-\end{equation}
-
-Moreover,
-
-\begin{equation}
- \norm{\mathsf S_N}
-  =\frac{|K|\Delta_\theta}{4\alpha},
- \qquad
- \norm{\mathsf Q_N}
-  =\frac{4\alpha}{|K|\Delta_\theta}.
- \label{eq:fredholm-delay-sharp-norms}
-\end{equation}
-
-If only one delay value remains after the terms are combined, then
-\(\mathsf S_N=0\) on \(\mathcal T_N\).  Thus two distinct
-locations are necessary and sufficient for surjectivity of this
-first-moment map on \(\mathcal T_N\).  No assertion
-is made about higher delay moments or other perturbation spaces.
-\end{proposition}
-
-\begin{proof}
 For \(R\) satisfying \(\pi_N^TR=0\), set
 
 \[
@@ -120,7 +63,7 @@ Indeed, the upper bound follows from
 \(\norm{\mathsf v_N}=\norm{\mathsf j_N}=1\), and
 \(\mathsf v_N\mathsf j_N=\Id_{E_N}\).
 
-Let \(\bar\theta=(\theta_-+\theta_+)/2\).  For
+Let \(\bar\theta=(\theta_0+\theta_m)/2\).  For
 \(R\in\mathcal T_N\),
 
 \[
@@ -137,10 +80,10 @@ and hence
       \norm{R}_{\mathcal T_N}.
 \]
 
-The matrices in the tuple \cref{eq:fredholm-delay-right-inverse} sum to zero,
+The matrices in the tuple \cref{eq:rw-source-right-inverse} sum to zero,
 and the tuple
 satisfies \(\mathsf S_N\mathsf Q_Ny=y\).  Its norm is the second quantity
-in \cref{eq:fredholm-delay-sharp-norms}.  Since a right inverse satisfies
+in \cref{eq:rw-source-sharp-norms}.  Since a right inverse satisfies
 \(1\le\norm{\mathsf S_N}\norm{\mathsf Q_N}\), the preceding upper bound
 is sharp as well.  If all \(\theta_k=\theta_*\), then
 
@@ -152,79 +95,18 @@ which proves the last statement.
 \end{proof}
 
 The full-range right inverse above answers the unconstrained matrix problem.
-For a fixed topology or another linear matrix restriction, its replacement is
-the following elementary range criterion.
+For a fixed topology or another linear matrix restriction, the evaluation
+map \(R\mapsto R\mathbf1\) gives the range criterion.
 
-\begin{proposition}[First-moment range under prescribed matrix patterns]
-\label[proposition]{prop:fredholm-structured-delay-range}
-Let \(k_-\) and \(k_+\) index two delay values with
-\(\theta_{k_-}<\theta_{k_+}\), and let
-\[
- \mathcal U_N\subset
- \{R\in\mathbb R^{N\times N}:\pi_N^TR=0\}
-\]
-be a linear space.  On the restricted tuples
-\[
- R_{k_-}=R,\qquad R_{k_+}=-R,
- \qquad R\in\mathcal U_N,
-\]
-with all other components zero, one has
-\begin{equation}
- \operatorname{Ran}\mathsf S_N
- =-\frac{K(\theta_{k_+}-\theta_{k_-})}{2\alpha}
-       \{R\mathbf1:R\in\mathcal U_N\}.               \label{eq:fredholm-structured-range}
-\end{equation}
-Hence this restriction is onto \(E_N\) precisely when the evaluation map
-\begin{equation}
- \mathsf e_N:\mathcal U_N\longrightarrow E_N,
- \qquad \mathsf e_N(R)=R\mathbf1                     \label{eq:fredholm-pattern-evaluation}
-\end{equation}
-is onto.  It is zero whenever the allowed matrices have zero row sums.
+\begin{proof}[Proof of \cref{thm:rw-structured-delay-range}]
 
-If \(P_N\) is irreducible, the space
-\begin{equation}
- \mathcal U_N^{\rm gen}
- =\{(P_N-\Id)\diag(d):d\in E_N\}                    \label{eq:fredholm-generator-pattern}
-\end{equation}
-has an onto evaluation map and is supported on the entries of
-\(P_N-\Id\).  If the two base delay layers are nonnegative and strictly
-positive on that support, then sufficiently small scalar multiples of any
-direction in \(\mathcal U_N^{\rm gen}\) remain nonnegative and preserve the
-existing support of both layers.  No dimension-uniform bound for a right inverse of
-\(\mathsf e_N\) is asserted without a corresponding uniform hypothesis on
-the prescribed pattern.
-
-If \(\tau(P_N)\le1-\gamma\), define
-\begin{equation}
- \mathsf J_Ny=(P_N-\Id)\diag(d_y),
- \qquad
- d_y=\{(P_N-\Id)|_{E_N}\}^{-1}y.                    \label{eq:fredholm-generator-right-inverse}
-\end{equation}
-Then \(\mathsf J_Ny\,\mathbf1=y\) and
-\begin{equation}
- \norm{\mathsf J_N}\le\frac{2(2-\gamma)}{\gamma}.
- \label{eq:fredholm-generator-right-inverse-bound}
-\end{equation}
-The resulting right inverse of the structured first-moment map has norm at
-most
-\begin{equation}
- \frac{8\alpha(2-\gamma)}
-      {|K|(\theta_{k_+}-\theta_{k_-})\gamma}.         \label{eq:fredholm-structured-source-inverse-bound}
-\end{equation}
-For the base layers
-\(B_{k_-}=B_{k_+}=(P_N+\Id)/2\), the two perturbed layers associated with
-\(R=(P_N-\Id)\diag(d)\) preserve nonnegativity and the common support when
-\(|\zeta|\norm{d}_\infty<1/2\).
-\end{proposition}
-
-\begin{proof}
 For the displayed tuple,
 \[
  \sum_k\theta_kR_k
  =-(\theta_{k_+}-\theta_{k_-})R.
 \]
 Since \(\pi_N^TR=0\), one has \(R\mathbf1\in E_N\), and
-\cref{eq:fredholm-structured-range} follows from
+\cref{eq:rw-structured-range} follows from
 \cref{eq:fredholm-delay-moment}.  This also proves the range criterion and
 the row-sum statement.  For
 \(R=(P_N-\Id)\diag(d)\),
@@ -245,11 +127,11 @@ For \(d\in E_N\) and arbitrary \(x\),
 \]
 Together with
 \(\osc\{(P_N-\Id)u\}\le(2-\gamma)\osc(u)\), this gives
-\cref{eq:fredholm-generator-right-inverse-bound}.  Multiplying
+\cref{eq:rw-generator-right-inverse-bound}.  Multiplying
 \(\mathsf J_N\) by \(-2\alpha/
 \{K(\theta_{k_+}-\theta_{k_-})\}\) in layer \(k_-\), and by the opposite
 coefficient in layer \(k_+\), gives
-\cref{eq:fredholm-structured-source-inverse-bound}.  Finally, every off-diagonal
+\cref{eq:rw-structured-source-inverse-bound}.  Finally, every off-diagonal
 entry of the two base layers is \(P_{ij}/2\), while the corresponding entry of
 \(R\) is \(P_{ij}d_j\); on the diagonal the base entry is
 \((1+P_{jj})/2\) and the perturbation is
@@ -320,13 +202,8 @@ and the inverse bound follows.  Finally,
 \]
 \end{proof}
 
-\begin{proposition}[Uniform mixing and degeneration on a local cycle]
-\label[proposition]{prop:fredholm-growing-families}
-The two network families in \cref{prop:rw-growing-families} satisfy
-\cref{eq:rw-growing-response,eq:rw-cycle-degeneration}.
-\end{proposition}
+\begin{proof}[Proof of \cref{prop:rw-growing-families}]
 
-\begin{proof}
 For the mixing family,
 \[
  \osc(P_N^{\rm mix}x)=(1-\rho)\osc(x),
@@ -566,222 +443,9 @@ Since the cokernel is one dimensional and
 follow because \(\ell_N\) annihilates the collective range.
 \end{proof}
 
-\subsection{Sensitivity from a heteroclinic defining function}
-
-The following implicit-function theorem isolates the required hypotheses.  It
-begins with an already constructed invariant-manifold connection
-condition.  For the modified network equation in
-\cref{eq:rw-voltage-rfde,eq:rw-modified-recovery}, the theorem would apply
-once the incoming unstable branch, the local stable-manifold section, a
-defining function whose zero set is their intersection, and the stated
-uniform expansion have been
-established.  These global inputs are assumed in the conditional application
-of \cref{sec:heteroclinic-connection}; they are not verified by the local fold
-calculation.  For another RFDE the same objects and estimates must be proved
-anew.
-
-\begin{theorem}[Sensitivity from a defining function for a codimension-one heteroclinic connection]
-\label{thm:fredholm-heteroclinic-sensitivity}
-Let \(I\subset\R\) be a compact interval.  For every \(N\), let
-\(\nu_{0,N}\in I\) and let \(\mathcal T_N\) be a real Banach space.  Assume
-
-\begin{equation}
- d_*:=\inf_N\operatorname{dist}(\nu_{0,N},\partial I)>0.
- \label{eq:fredholm-center-buffer}
-\end{equation}
-
-Suppose the hypotheses of \cref{thm:fredholm-reduction} hold with constants
-uniform in \(N\).  Choose \(\ell_N\) as there and put
-
-\begin{equation}
- a_N=\ell_Nf_{\nu,N},
- \qquad
- b_N(R)=\ell_N\mathcal B_N
-                  L_{\perp,N}^{-1}\mathsf S_NR,
- \qquad
- \Lambda_N=-a_N^{-1}b_N.
- \label{eq:fredholm-ab-lambda}
-\end{equation}
-
-Assume
-
-\begin{equation}
- 0<a_*\le|a_N|\le a^*,
- \qquad
- \sup_N\norm{b_N}_{\mathcal T_N^*}\le b^*.
- \label{eq:fredholm-ab-bounds}
-\end{equation}
-
-For \(0<\delta<\bar\delta\), \(\nu\in I\), and
-\(\eta\in B_{2\eta_*}(0)\subset\mathcal T_N\), suppose that a specified
-incoming branch and a codimension-one local stable manifold have already
-been constructed on a common phase section.  Denote the incoming intersection
-point by \(q_N^{\rm in}(\delta,\nu,\eta)\) and the section of the stable manifold by
-\(\mathcal S_N^-(\delta,\nu,\eta)\).  Let
-
-\[
- G_N(\delta,\nu,\eta)
-\]
-
-be a scalar defining function, jointly \(C^1\) in \((\nu,\eta)\), for
-membership in the stable-manifold section:
-
-\begin{equation}
- G_N(\delta,\nu,\eta)=0
- \quad\Longleftrightarrow\quad
- q_N^{\rm in}(\delta,\nu,\eta)
- \in\mathcal S_N^-(\delta,\nu,\eta).
- \label{eq:fredholm-defining-zero-set}
-\end{equation}
-
-By hypothesis, this membership is equivalent to a heteroclinic orbit of the
-prescribed branch within the specified neighborhoods and phase section.
-
-Assume that this same defining function is normalized consistently with
-\cref{eq:fredholm-ab-lambda} and, uniformly in \(N,\nu,\eta\), satisfies
-
-\begin{align}
- \left|\frac{G_N(\delta,\nu,\eta)}{\delta}
-       -a_N(\nu-\nu_{0,N})\right|
- &\le C_0\delta,
- \label{eq:fredholm-exact-gap-level}\\
- |\partial_\nu G_N-\delta a_N|
- &\le C_1\delta^2,
- \label{eq:fredholm-exact-gap-slope}\\
- \norm{D_\eta G_N-\delta^2b_N}_{\mathcal T_N^*}
- &\le C_2\{\delta^3+\delta^2\norm{\eta}_{\mathcal T_N}\}.
- \label{eq:fredholm-exact-gap-structural}
-\end{align}
-
-Then there are \(\delta_0,\eta_0,c_0,C>0\), independent of \(N\), such
-that for \(0<\delta<\delta_0\) and
-\(\norm{\eta}_{\mathcal T_N}<\eta_0\), the equation \(G_N=0\) has exactly
-one solution in
-
-\[
- |\nu-\nu_{0,N}|<c_0.
-\]
-
-The resulting connection-parameter map
-\(\nu_{c,N}(\delta,\eta)\) is \(C^1\) Fr\'echet in \(\eta\), and
-
-\begin{equation}
- \norm{D_\eta\nu_{c,N}(\delta,\eta)-\delta\Lambda_N}
- \le C\{\delta^2+\delta\norm{\eta}_{\mathcal T_N}\}.
- \label{eq:fredholm-nu-sensitivity}
-\end{equation}
-
-For the parameter \(\mu=\delta^2\nu\),
-
-\begin{align}
- \norm{D_\eta\mu_{c,N}(\delta,\eta)-\delta^3\Lambda_N}
- &\le C\{\delta^4+\delta^3\norm{\eta}_{\mathcal T_N}\},
- \label{eq:fredholm-mu-sensitivity}\\
- \left|\mu_{c,N}(\delta,\eta)-\mu_{c,N}(\delta,0)
-       -\delta^3\Lambda_N(\eta)\right|
- &\le C\{\delta^4\norm{\eta}_{\mathcal T_N}
-          +\delta^3\norm{\eta}_{\mathcal T_N}^2\}.
- \label{eq:fredholm-mu-increment}
-\end{align}
-
-Equivalently, define
-
-\[
- \Xi_{N,\delta}(\eta)
- =\delta^{-3}\{\mu_{c,N}(\delta,\eta)
-                    -\mu_{c,N}(\delta,0)\}.
-\]
-
-Then
-
-\begin{equation}
- \norm{D_\eta\Xi_{N,\delta}(\eta)-\Lambda_N}
- \le C\{\delta+\norm{\eta}_{\mathcal T_N}\},
- \label{eq:fredholm-weighted-conormal-bound}
-\end{equation}
-
-and the \(\dd\xi\)-normalized conormal to the local connection locus in
-the coordinates
-
-\[
- \xi=\delta^{-3}\{\mu-\mu_{c,N}(\delta,0)\}
-\]
-
-satisfies
-
-\begin{equation}
- \norm{(1,-D_\eta\Xi_{N,\delta}(0))-(1,-\Lambda_N)}
- \le C\delta.
- \label{eq:fredholm-conormal-limit}
-\end{equation}
-\end{theorem}
-
-\begin{proof}
-Choose \(c_0<d_*\).  At
-\(\nu=\nu_{0,N}\pm c_0\), the leading terms in
-\cref{eq:fredholm-exact-gap-level} have opposite signs.  After decreasing
-\(\delta_0\), the full values still have opposite signs, uniformly in
-\(N\) and \(\eta\), so a zero exists.  Likewise,
-
-\begin{equation}
- |\partial_\nu G_N|\ge\frac{a_*}{2}\delta
- \label{eq:fredholm-uniform-root-slope}
-\end{equation}
-
-throughout the local window, and its sign is constant.  The zero is
-therefore unique.  The Banach-space implicit-function theorem gives the
-\(C^1\) connection-parameter map.  By
-\cref{eq:fredholm-defining-zero-set}, its value yields the prescribed
-heteroclinic connection, rather than merely a zero of an auxiliary matching
-condition.
-
-Along the connection-parameter graph
-\(\nu=\nu_{c,N}(\delta,\eta)\),
-
-\[
- D_\eta\nu_{c,N}
- =-\frac{D_\eta G_N}{\partial_\nu G_N}.
-\]
-
-Write
-
-\[
- D_\eta G_N=\delta^2b_N+e_{\eta,N},
- \qquad
- \partial_\nu G_N=\delta a_N+e_{\nu,N}.
-\]
-
-The hypotheses give
-
-\[
- \norm{e_{\eta,N}}
- \le C_2\{\delta^3+\delta^2\norm\eta\},
- \qquad
- |e_{\nu,N}|\le C_1\delta^2.
-\]
-
-Using \cref{eq:fredholm-uniform-root-slope,eq:fredholm-ab-bounds} and
-\(\Lambda_N=-a_N^{-1}b_N\) proves
-\cref{eq:fredholm-nu-sensitivity}.  Multiplication by \(\delta^2\) gives
-\cref{eq:fredholm-mu-sensitivity}.  Integrating the latter derivative along
-the segment \(t\mapsto t\eta\) gives
-\cref{eq:fredholm-mu-increment}.  Division by \(\delta^3\) proves
-\cref{eq:fredholm-weighted-conormal-bound}.  Finally, the centered, rescaled
-connection-parameter function is
-
-\[
- \xi=\Xi_{N,\delta}(\eta),
-\]
-
-so its normalized conormal is
-\(\dd\xi-D_\eta\Xi_{N,\delta}(0)\); evaluation of
-\cref{eq:fredholm-weighted-conormal-bound} at \(\eta=0\) proves
-\cref{eq:fredholm-conormal-limit}.
-\end{proof}
-
 \subsection{The induced functional on the transverse subspace}
 
-The connection derivative determines only the linear functional on the
+The sensitivity functional determines only the linear functional on the
 transverse subspace that has entered the one-dimensional Fredholm equation.
 It does not determine
 the coupling matrix \(P_N\) or an arbitrary history state.
@@ -827,8 +491,8 @@ and
 \end{equation}
 
 For the transverse block \(L_{\perp,N}=A_N\) associated with the
-row-stochastic coupling, with
-\cref{eq:fredholm-delay-right-inverse},
+row-stochastic coupling, use \cref{eq:rw-source-right-inverse} and write
+\(\Delta_\theta=\theta_m-\theta_0\).  Then
 
 \begin{equation}
  \frac{|K|\Delta_\theta}{4\alpha D(2-\gamma)}
@@ -857,7 +521,7 @@ Equation~\eqref{eq:fredholm-return-factorization} is
 which proves \cref{eq:fredholm-return-reconstruction}.  The two norm
 bounds follow from this identity and
 \cref{eq:fredholm-return-factorization}.  Finally,
-\cref{eq:fredholm-delay-sharp-norms,eq:fredholm-dobrushin-operator-bounds}
+\cref{eq:rw-source-sharp-norms,eq:fredholm-dobrushin-operator-bounds}
 give
 
 \[
@@ -913,6 +577,8 @@ For the network equation in \cref{eq:rw-voltage-rfde},
  \label{eq:fredholm-curvature-lambda}
 \end{equation}
 
+For two chosen delays \(\theta_{k_-}<\theta_{k_+}\), write
+\(\Delta_\theta=\theta_{k_+}-\theta_{k_-}\).
 If \(P_N\) is irreducible and \(d\in E_N\), let
 \(R(d)\in\mathcal T_N\) be the tangent direction with
 
@@ -936,21 +602,6 @@ and all other components zero.  Then
 Consequently this restriction is nonzero exactly when
 \(c_N\ne\alpha\mathbf1\).
 
-If, in addition, a defining function for a heteroclinic connection satisfies the
-hypotheses of \cref{thm:fredholm-heteroclinic-sensitivity}, then along the
-ray \(\zeta\mapsto\zeta R(d)\),
-
-\begin{equation}
- \partial_\zeta\mu_{c,N}(\delta,0)
- =\delta^3\frac{K\Delta_\theta}{2\alpha^2D}
-   \left\langle c_N-\alpha\mathbf1,d\right\rangle_{\pi_N}
-  +O(\delta^4),
- \label{eq:fredholm-curvature-root-response}
-\end{equation}
-
-uniformly for uniformly bounded direction families.  This last statement is
-conditional on the invariant-manifold defining function; the
-Fredholm calculation alone does not construct that function.
 \end{corollary}
 
 \begin{proof}
@@ -974,7 +625,4 @@ Since \(d\in E_N\),
 and \cref{eq:fredholm-curvature-pairing} follows.  The weighted pairing is
 nondegenerate on \(E_N\); taking \(d=c_N-\alpha\mathbf1\) gives the positive
 stationary variance whenever the quadratic coefficients are heterogeneous.
-The final parameter-derivative formula is
-\cref{eq:fredholm-mu-sensitivity} evaluated at the origin in the direction
-\(R(d)\).
 \end{proof}
